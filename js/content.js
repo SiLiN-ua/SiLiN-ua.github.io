@@ -459,5 +459,89 @@
     target.innerHTML = items.map(renderRecCard).join('');
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations };
+  async function renderToolsStack(targetSelector) {
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    try {
+      const res = await fetch(rootPath() + 'content/tools-stack.json?t=' + Date.now(), { cache: 'no-store' });
+      const data = await res.json();
+      renderStackHTML(target, data);
+    } catch (e) {
+      target.innerHTML = '<p class="center" style="color:var(--text-mute)">Не вдалося завантажити стек.</p>';
+    }
+  }
+
+  function renderStackHTML(target, data) {
+    const groups = {};
+    data.categories.forEach(c => {
+      (groups[c.group] = groups[c.group] || []).push(c);
+    });
+    const groupOrder = Object.keys(groups);
+    const ordered = data.categories.reduce((acc, c) => {
+      if (!acc.includes(c.group)) acc.push(c.group);
+      return acc;
+    }, []);
+
+    const html = `
+      <div class="stack__meta">
+        <div class="stack__counts">
+          <span><strong>${data.total_links}</strong> посилань</span>
+          <span><strong>${data.total_categories}</strong> категорій</span>
+          <span><strong>${ordered.length}</strong> напрямків</span>
+        </div>
+        <div class="stack__search">
+          <input type="search" id="stack-search" placeholder="Швидкий пошук по назві або категорії…" autocomplete="off">
+        </div>
+      </div>
+
+      ${ordered.map(g => `
+        <section class="stack__group" data-group="${escapeHtml(g)}">
+          <h2 class="stack__group-title">${escapeHtml(g)}</h2>
+          <div class="stack__cards">
+            ${groups[g].map(cat => `
+              <div class="stack__cat" data-cat-title="${escapeHtml(cat.title.toLowerCase())}">
+                <div class="stack__cat-head">
+                  <h3>${escapeHtml(cat.title)}</h3>
+                  <span class="stack__count">${cat.links.length}</span>
+                </div>
+                <ul class="stack__links">
+                  ${cat.links.map(l => {
+                    let host = '';
+                    try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
+                    const t = (l.title || '').toLowerCase();
+                    return `<li data-search="${escapeHtml(t + ' ' + host)}">
+                      <a href="${escapeHtml(l.url)}" target="_blank" rel="noopener nofollow">${escapeHtml(l.title || host)}</a>
+                      <span class="stack__host">${escapeHtml(host)}</span>
+                    </li>`;
+                  }).join('')}
+                </ul>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      `).join('')}
+    `;
+    target.innerHTML = html;
+
+    const input = target.querySelector('#stack-search');
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      target.querySelectorAll('.stack__cat').forEach(cat => {
+        const catTitle = cat.dataset.catTitle;
+        let anyMatch = catTitle.includes(q);
+        cat.querySelectorAll('li').forEach(li => {
+          const match = !q || anyMatch || li.dataset.search.includes(q);
+          li.style.display = match ? '' : 'none';
+          if (match) anyMatch = true;
+        });
+        cat.style.display = (!q || anyMatch) ? '' : 'none';
+      });
+      target.querySelectorAll('.stack__group').forEach(g => {
+        const anyVisible = Array.from(g.querySelectorAll('.stack__cat')).some(c => c.style.display !== 'none');
+        g.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  }
+
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack };
 })();

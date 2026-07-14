@@ -46,8 +46,19 @@
   <section style="padding-top:0">
     <div class="container">
       <div class="grid" id="tools-list">
-        <p class="center" style="grid-column:1/-1;color:var(--text-mute)">Завантаження…</p>
+        <p class="center" style="grid-column:1/-1;color:var(--text-mute);display:none">Завантаження…</p>
       </div>
+    </div>
+  </section>
+
+  <!-- OSINT STACK: full bookmarks-derived toolkit -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="sec-title" style="margin-bottom:2rem">
+        <h2>OSINT-стек</h2>
+        <p>Мій робочий набір посилань та інструментів, згрупований за категоріями. Пошук працює по назвах і категоріях.</p>
+      </div>
+      <div id="tools-stack"></div>
     </div>
   </section>
 </div>
@@ -79,6 +90,7 @@
       document.getElementById('article-view').style.display = 'block';
     }
     await YSContent.renderToolsListOrArticle('#tools-list', '#article-body');
+    YSContent.renderToolsStack('#tools-stack');
   })();
 </script>
 </body>
