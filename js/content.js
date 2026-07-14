@@ -463,7 +463,7 @@
     const target = document.querySelector(targetSelector);
     if (!target) return;
     try {
-      const res = await fetch(rootPath() + 'content/tools-stack.json?t=' + Date.now(), { cache: 'no-store' });
+      const res = await fetch('content/tools-stack.json?t=' + Date.now(), { cache: 'no-store' });
       const data = await res.json();
       renderStackHTML(target, data);
     } catch (e) {
