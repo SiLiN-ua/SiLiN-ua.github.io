@@ -68,7 +68,7 @@
     const date  = escapeHtml(fmtDate(item.date));
     const href  = `${collection === 'cases' ? 'cases' : 'blog'}.html?slug=${encodeURIComponent(item.__slug)}`;
     return `
-      <article class="card reveal">
+      <article class="card">
         ${tag ? `<div class="card__tag">${tag}</div>` : ''}
         ${date ? `<div class="card__date">${date}</div>` : ''}
         <h3>${title}</h3>
@@ -88,7 +88,7 @@
     if (item.patreon_url) links.push(`<a href="${escapeHtml(item.patreon_url)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 English on Patreon ↗</a>`);
     if (!links.length && item.buy_url) links.push(`<a href="${escapeHtml(item.buy_url)}" target="_blank" rel="noopener" class="card__link">Читати ↗</a>`);
     return `
-      <div class="book reveal">
+      <div class="book">
         <div class="book__cover">${cover}</div>
         <div>
           <div class="book__meta">${year}${langs ? ' · ' + langs : ''}</div>
@@ -164,7 +164,7 @@
       const desc  = label('books.cat.' + cat + '.desc', '');
       const cards = groups[cat].map(renderBookCard).join('');
       return `
-        <section class="book-category reveal" style="margin-bottom:5rem">
+        <section class="book-category" style="margin-bottom:5rem">
           <div style="margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">
             <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:.35rem" data-i18n="books.cat.${cat}">${escapeHtml(title)}</h2>
             ${desc ? `<p style="color:var(--text-dim);font-size:.95rem" data-i18n="books.cat.${cat}.desc">${escapeHtml(desc)}</p>` : ''}
@@ -197,7 +197,7 @@
       ? `<a href="${detailHref}" class="card__link">Читати огляд →</a>`
       : (url ? `<a href="${url}" target="_blank" rel="noopener" class="card__link">Відкрити ↗</a>` : '');
     return `
-      <article class="card reveal">
+      <article class="card">
         ${cat ? `<div class="card__tag">${cat}</div>` : ''}
         <h3>${name}${isOwn}</h3>
         <p>${desc}</p>
