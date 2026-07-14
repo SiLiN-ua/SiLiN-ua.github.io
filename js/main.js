@@ -99,6 +99,30 @@
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
 
+  function initLightbox() {
+    let lb;
+    function ensureLb() {
+      if (lb) return lb;
+      lb = document.createElement('div');
+      lb.className = 'lightbox';
+      lb.innerHTML = '<button class="lightbox__close" aria-label="Закрити">✕</button><img alt="">';
+      document.body.appendChild(lb);
+      const img = lb.querySelector('img');
+      const close = () => lb.classList.remove('open');
+      lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lightbox__close')) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+      return lb;
+    }
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('.cert__img img');
+      if (!img) return;
+      e.preventDefault();
+      const box = ensureLb();
+      box.querySelector('img').src = img.src;
+      box.classList.add('open');
+    });
+  }
+
   function markActiveNav() {
     const path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav__links a').forEach(a => {
@@ -118,6 +142,7 @@
     initNavScroll();
     initBurger();
     initReveal();
+    initLightbox();
     markActiveNav();
   }
 
