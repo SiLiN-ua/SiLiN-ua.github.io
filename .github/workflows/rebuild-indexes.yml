@@ -1,0 +1,48 @@
+name: Rebuild content indexes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**/*.json'
+      - '!content/**/_index.json'
+      - '.github/workflows/rebuild-indexes.yml'
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip indexes]')"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild _index.json for each collection
+        run: |
+          python3 <<'PY'
+          import json, os, glob
+          for name in ['posts','cases','books','certificates','awards','recommendations','media-coverage','tools']:
+              folder = os.path.join('content', name)
+              if not os.path.isdir(folder): continue
+              items = []
+              for path in sorted(glob.glob(os.path.join(folder, '*.json'))):
+                  fname = os.path.basename(path)
+                  if fname.startswith('_'): continue
+                  try:
+                      with open(path, 'r', encoding='utf-8') as f: data = json.load(f)
+                      data['__slug'] = fname.replace('.json','')
+                      items.append(data)
+                  except Exception as e:
+                      print(f'skip {fname}: {e}')
+              with open(os.path.join(folder, '_index.json'), 'w', encoding='utf-8') as f:
+                  json.dump(items, f, ensure_ascii=False, indent=2)
+              print(f'{name}: {len(items)} items')
+          PY
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add content/*/_index.json
+            git commit -m "chore: rebuild content indexes [skip indexes]"
+            git push
+          else
+            echo "No changes."
+          fi

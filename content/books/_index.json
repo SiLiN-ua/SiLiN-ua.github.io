@@ -1,0 +1,62 @@
+[
+  {
+    "title_uk": "REPUTATION",
+    "title_en": "REPUTATION",
+    "category": "fiction",
+    "year": 2026,
+    "languages": "UA · EN",
+    "cover": "/img/uploads/Cover_REPUTATION_UK.png",
+    "description_uk": "Художній трилер. Сіетл, зима. Приватний детектив Адам Венс отримує замовлення, що виглядає буденно — репутаційна перевірка потенційного партнера великої юридичної фірми. Через сорок вісім годин він розуміє: об'єктом є людина, яка офіційно не існує. Прізвище, що не залишає слідів. Обличчя, знайоме тільки за одним старим фото. Чоловік, якого спільнота відкритих джерел давно називає «Тінню». Двадцять три розділи про полювання, у якому кожен наступний крок ускладнює відступ. Про індустрію репутації як зброю. Про професійну одержимість, що поступово стає особистою. І про питання, на яке немає безпечної відповіді: що робити, коли усвідомлюєш — той, кого ти шукаєш, шукає тебе довше.",
+    "description_en": "A fiction thriller. Seattle, winter. Private investigator Adam Vance takes an assignment that looks routine — a reputation check on a prospective partner at a major law firm. Forty-eight hours later, he realises the subject is a man who does not officially exist. A surname that leaves no trace. A face known only from one aging photograph. The man the open-source community has long called 'the Shadow.' Twenty-three chapters of a hunt in which every next step makes retreat harder. About the reputation industry as a weapon. About professional obsession slowly turning personal. And about the question that has no safe answer: what do you do when you realise the person you're hunting has been hunting you longer?",
+    "pdf_url_uk": "/content/books/pdfs/REPUTATION_UK.pdf",
+    "patreon_url": "https://www.patreon.com/cw/YehorSelin",
+    "order": 20,
+    "published": true,
+    "__slug": "reputation"
+  },
+  {
+    "title_uk": "The Shadow Files · Том I: Фундамент",
+    "title_en": "The Shadow Files · Vol I: Foundations",
+    "category": "educational",
+    "year": 2026,
+    "languages": "UA · EN",
+    "cover": "/img/uploads/Cover_ShadowFiles_Vol1_UK.png",
+    "description_uk": "Перший том авторського курсу з OSINT — для тих, хто робить перші кроки у сфері відкритих джерел. Основи галузі, юридичні та етичні рамки, OPSEC-мислення, побудова аналітичної логіки та перші робочі техніки: пошук за ім'ям користувача, email, телефоном. Кожен розділ — не лекція, а тренування: реальні кейси, вправи, розбір помилок. Мета книги — не перерахувати інструменти, а навчити думати як слідчий.",
+    "description_en": "The first volume of the author's OSINT course — for those taking their first steps into open-source intelligence. Foundations of the field, legal and ethical frameworks, an OPSEC mindset, analytical reasoning, and the first working techniques: username, email, and phone-based searches. Each chapter is training, not a lecture — real cases, exercises, breakdowns of mistakes. The goal is not to list tools, but to teach how to think like an investigator.",
+    "pdf_url_uk": "/content/books/pdfs/The_Shadow_Files_Vol1_UK.pdf",
+    "patreon_url": "https://www.patreon.com/cw/YehorSelin",
+    "order": 1,
+    "published": true,
+    "__slug": "the-shadow-files-vol-1-foundations"
+  },
+  {
+    "title_uk": "The Shadow Files · Том II: Крос-платформна атрибуція",
+    "title_en": "The Shadow Files · Vol II: Cross-Platform Attribution",
+    "category": "educational",
+    "year": 2026,
+    "languages": "UA · EN",
+    "cover": "/img/uploads/Cover_ShadowFiles_Vol2_UK.png",
+    "description_uk": "Другий том, суттєво глибший за перший. Тут OSINT перестає бути пошуком — і стає атрибуцією. Дев'ять розділів про роботу з приватними акаунтами, глибокий Telegram-аналіз, ідентифікацію за обличчям і фото, коректну роботу з витоками, побудову Identity Graph та сигнатурну техніку Family Chain. Окремий блок — про боротьбу з власними упередженнями: чому досвідчений аналітик помиляється частіше, ніж думає, і як цьому запобігти. Книга для тих, хто пройшов перший том або вже має базовий досвід.",
+    "description_en": "The second volume — significantly deeper than the first. Here OSINT stops being search and becomes attribution. Nine chapters on private accounts, deep Telegram analysis, face and image identification, working correctly with breach data, building the Identity Graph, and the signature Family Chain technique. A dedicated section on fighting your own certainty — why experienced analysts fail more often than they think, and how to prevent it. For those who have completed Vol I or already have working experience.",
+    "pdf_url_uk": "/content/books/pdfs/The_Shadow_Files_Vol2_UK.pdf",
+    "patreon_url": "https://www.patreon.com/cw/YehorSelin",
+    "order": 2,
+    "published": true,
+    "__slug": "the-shadow-files-vol-2-cross-platform-attribution"
+  },
+  {
+    "title_uk": "Все добре",
+    "title_en": "Everything Is Fine",
+    "category": "memoir",
+    "year": 2026,
+    "languages": "UA · EN",
+    "cover": "/img/uploads/Cover_EverythingIsFine_UK.png",
+    "description_uk": "Особиста хроніка про те, як виглядає робота OSINT-спеціаліста зсередини країни, що воює. Дніпро, п'ята зима повномасштабної війни. Тривоги о другій ночі, гул «Шахедів», страх за родину — і холодний, майже клінічний аналіз відкритих джерел, який мусить тривати попри все. Тут немає героїки: тільки чесна оптика людини, яка навчилася жити на двох поверхах одночасно — на професійному та людському. Про людей, що поруч. Про тих, кого вже немає. Про мовчання, яке іноді голосніше за вибух. І про те, чому фраза «Все добре» — це не брехня, а форма опору.",
+    "description_en": "A personal chronicle of what OSINT work looks like from inside a country at war. Dnipro, the fifth winter of the full-scale invasion. Air-raid sirens at 2 a.m., the drone of Shaheds, the fear for one's family — and the cold, almost clinical analysis of open sources that must continue regardless. There is no heroism here: only the honest lens of someone who has learned to live on two floors at once — the professional and the human. About the people beside me. About those no longer here. About silence louder than any explosion. And about why the phrase 'Everything Is Fine' is not a lie — it is a form of resistance.",
+    "pdf_url_uk": "/content/books/pdfs/Everything_Is_Fine_UK.pdf",
+    "patreon_url": "https://www.patreon.com/cw/YehorSelin",
+    "order": 10,
+    "published": true,
+    "__slug": "vse-dobre"
+  }
+]

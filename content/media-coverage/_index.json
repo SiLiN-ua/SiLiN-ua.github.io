@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Мошеннический колл-центр в Каменском обманывал латышей",
+    "source": "COM1",
+    "date": "2023-01-14T00:00:00.000Z",
+    "url": "https://com1.org.ua/moshennycheskyj-koll-tsentr-v-kamenskom-obmanyval-latyshej/",
+    "summary_uk": "Матеріал про транскордонний характер шахрайства — основними жертвами колл-центру стали громадяни Латвії. Загальна сума збитків склала близько €40 000 на цей епізод. Описано технологію переконання жертв та вилучення коштів.",
+    "summary_en": "Coverage of the cross-border scope of the scam — Latvian citizens were the primary victims of the call-centre. Losses in this episode totalled around €40,000. The article describes the technique used to persuade victims and extract funds.",
+    "order": 3,
+    "published": true,
+    "__slug": "com1-latvians"
+  },
+  {
+    "title": "На Дніпропетровщині викрили call-центр, провідником якого вважають довірену особу «злодія в законі» Лаші Свана",
+    "source": "Detective Info",
+    "date": "2023-01-14T00:00:00.000Z",
+    "url": "https://detective-info.com.ua/na-dnipropetrovshhini-vikrili-call-czentr-providnikom-yakogo-vvazhayut-dovirenu-osobu-zlodiya-v-zakoni-lashi-svana.html",
+    "summary_uk": "Детальний матеріал спеціалізованого детективного видання про структуру організованої злочинної групи, керівництво якої слідство пов'язує з довіреною особою «злодія в законі» Лаші Свана. Розкрито ієрархію, ролі та фінансові потоки схеми.",
+    "summary_en": "In-depth material by a specialised investigative publication on the structure of the organised crime group whose leadership investigators link to a trusted associate of the 'thief-in-law' Lasha Svan. The article details hierarchy, roles, and financial flows of the scheme.",
+    "order": 4,
+    "published": true,
+    "__slug": "detective-info-svan"
+  },
+  {
+    "title": "У Кам'янському шахрайські «кол-центри» видурювали гроші в іноземців",
+    "source": "Наш Репортер",
+    "date": "2023-01-14T00:00:00.000Z",
+    "url": "https://nashreporter.com/kryminal/u-kamyanskomu-shahrajski-kol-czentry-vyduryuvaly-groshi-v-inozemcziv-video-67250",
+    "summary_uk": "Регіональне видання про викриття мережі шахрайських колл-центрів у Кам'янському, Дніпропетровська область. Оператори видавали себе за працівників банків та фінансових установ, виманюючи кошти в іноземних громадян. Матеріал з відеокадрами з місця подій.",
+    "summary_en": "Regional coverage of the exposure of a fraud call-centre network in Kamianske, Dnipropetrovsk region. Operators impersonated bank and financial-institution staff to extract funds from foreign citizens. Article includes on-scene video footage.",
+    "order": 2,
+    "published": true,
+    "__slug": "nashreporter-kamianske"
+  },
+  {
+    "title": "Ошукали громадян Литви на 11 мільйонів: поліція затримала працівників шахрайського call-центру",
+    "source": "Укрінформ",
+    "date": "2023-01-15T00:00:00.000Z",
+    "url": "https://www.ukrinform.ua/rubric-society/3970096-osukali-gromadan-litvi-na-11-miljoniv-policia-zatrimala-pracivnikiv-sahrajskogo-sallcentru.html",
+    "summary_uk": "Публікація найбільшого державного інформагентства України про завершальну фазу операції. Викрито колл-центр у Кам'янському, що ошукав громадян Литви на 11 мільйонів гривень. Затримано працівників, вилучено обладнання та фінансові документи.",
+    "summary_en": "Coverage by Ukraine's largest state news agency of the operation's final phase — a call-centre in Kamianske defrauded Lithuanian citizens of 11 million UAH. Operators were detained, equipment and financial documents seized.",
+    "order": 1,
+    "published": true,
+    "__slug": "ukrinform-lithuania-11m"
+  }
+]
