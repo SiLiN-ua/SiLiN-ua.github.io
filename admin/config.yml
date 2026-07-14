@@ -89,6 +89,38 @@ collections:
       - { name: cover,          label: "Скріншот/іконка",          widget: image, required: false }
       - { name: published,      label: "Опубліковано",             widget: boolean, default: true }
 
+  # ---------- РЕКОМЕНДАЦІЇ ----------
+  - name: recommendations
+    label: "Рекомендації"
+    label_singular: "Рекомендація"
+    folder: "content/recommendations"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: author_name
+    extension: json
+    format: json
+    summary: "{{author_name}} · {{date}}"
+    sortable_fields: [order, date]
+    fields:
+      - { name: author_name,     label: "Автор (ПІБ)",                widget: string }
+      - { name: author_role,     label: "Посада / компанія",          widget: string, required: false }
+      - { name: author_linkedin, label: "LinkedIn URL",               widget: string, required: false }
+      - { name: author_avatar,   label: "Аватар (опційно)",           widget: image, required: false }
+      - name: relationship
+        label: "Стосунок"
+        widget: select
+        default: teammate
+        options:
+          - { label: "Клієнт",             value: client }
+          - { label: "Колега по команді",  value: teammate }
+          - { label: "Керівник",           value: manager }
+          - { label: "Учень",              value: mentee }
+      - { name: date,            label: "Дата",                       widget: datetime, date_format: "DD.MM.YYYY", time_format: false }
+      - { name: text_uk,         label: "Текст (UA)",                 widget: text }
+      - { name: text_en,         label: "Text (EN)",                  widget: text, required: false }
+      - { name: order,           label: "Порядок",                    widget: number, value_type: int, default: 10 }
+      - { name: published,       label: "Опубліковано",               widget: boolean, default: true }
+
   # ---------- ВІДЗНАКИ ТА НАГОРОДИ ----------
   - name: awards
     label: "Відзнаки та нагороди"

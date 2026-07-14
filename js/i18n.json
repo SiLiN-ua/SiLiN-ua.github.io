@@ -14,6 +14,7 @@
     "nav.books": "Книги",
     "nav.certificates": "Сертифікати",
     "nav.awards": "Відзнаки",
+    "nav.recommendations": "Рекомендації",
     "nav.contact": "Контакти",
 
     "hero.eyebrow": "OSINT-слідчий · Дніпро, Україна",
@@ -32,7 +33,7 @@
     "about.p1": "Спеціалізуюся на OSINT- та SOCMINT-розслідуваннях, зосереджених на ідентифікації осіб, внутрішніх ризиках та корпоративній перевірці контрагентів.",
     "about.p2": "Моя робота підтримує команди безпеки, комплаєнсу та HR при оцінці ризиків: кандидати, співробітники, керівники, треті сторони. Я перетворюю фрагментовані відкриті дані на структуровану, доказову розвідку через кореляцію крос-платформних сигналів, поведінкових патернів та ідентифікаційних індикаторів.",
     "about.p3": "Мої розслідування включають верифікацію особи, аналіз цифрового сліду, оцінку витоків даних та мапінг мережевих зв'язків. Пріоритет — точність, відтворюваність та доказова якість.",
-    "about.p4": "Раніше — оперативний досвід у поліції: транскордонні шахрайські розслідування та координація оперативних груп. Сьогодні застосовую ті самі методології в корпоративному контексті. Мій підхід — гіпотезно-керований, з фокусом на верифікацію: decision-grade intelligence, а не об'єм даних чи інструментів.",
+    "about.p4": "Раніше — старший оперуповноважений в особливо важливих справах відділу боротьби з транснаціональними та етнічними організованими злочинними групами Управління стратегічних розслідувань Національної поліції України. Сьогодні застосовую ті самі методології в корпоративному контексті. Мій підхід — гіпотезно-керований, з фокусом на верифікацію: decision-grade intelligence, а не об'єм даних чи інструментів.",
     "about.p5": "Окрім розслідувань — розробляю власні OSINT-інструменти з відкритим вихідним кодом та пишу книги: як практичні посібники з аналітики для початківців, так і авторські роботи про професію, війну та мислення слідчого. Все, що я публікую, спирається на реальну оперативну практику.",
     "about.more": "Дізнатися більше →",
 
@@ -122,6 +123,15 @@
     "media.subtitle": "Резонансна справа з розгромом транснаціональної шахрайської мережі — колл-центру у Кам'янському, що ошукав громадян Литви та інших країн ЄС. Операція тривала майже два роки, завершилася 15 арештами та вилученням активів на понад 11 млн грн.",
     "media.readSource": "Читати матеріал ↗",
 
+    "recs.eyebrow": "Рекомендації",
+    "recs.title": "Що говорять клієнти та колеги",
+    "recs.subtitle": "Рекомендації з LinkedIn від людей, з якими я працював — клієнтів, колег по команді та фахівців галузі.",
+    "recs.origLink": "Оригінал англійською на LinkedIn ↗",
+    "recs.rel.client": "Клієнт",
+    "recs.rel.teammate": "Колега по команді",
+    "recs.rel.manager": "Керівник",
+    "recs.rel.mentee": "Учень",
+
     "books.eyebrow": "Книги",
     "books.title": "Авторські роботи",
     "books.subtitle": "Про роботу в OSINT, війну в Україні та мислення слідчого.",
@@ -183,6 +193,7 @@
     "nav.books": "Books",
     "nav.certificates": "Certificates",
     "nav.awards": "Awards",
+    "nav.recommendations": "Recommendations",
     "nav.contact": "Contact",
 
     "hero.eyebrow": "OSINT Investigator · Dnipro, Ukraine",
@@ -201,7 +212,7 @@
     "about.p1": "I specialize in OSINT and SOCMINT investigations focused on identity attribution, insider risk, and corporate due diligence.",
     "about.p2": "My work supports security, compliance, and HR teams in assessing risk when evaluating candidates, employees, executives, and third-party relationships. I turn fragmented open-source data into structured, defensible intelligence by correlating cross-platform signals, behavioral patterns, and identity-related indicators.",
     "about.p3": "My investigations include identity verification, digital footprint analysis, breach exposure assessment, and network relationship mapping to identify inconsistencies and potential risk factors.",
-    "about.p4": "I have prior experience in law enforcement intelligence operations, including cross-border fraud investigations and operational team coordination. Today, I apply structured investigative methodologies in a corporate context, prioritizing accuracy, reproducibility, and evidential quality. My approach is hypothesis-driven and validation-focused.",
+    "about.p4": "Formerly Senior Detective for Cases of Particular Importance at the Unit for Countering Transnational and Ethnic Organised Crime Groups, Strategic Investigations Department, National Police of Ukraine. Today I apply the same methodologies in a corporate context. My approach is hypothesis-driven and validation-focused: decision-grade intelligence, not data volume or tooling.",
     "about.p5": "Beyond investigations, I build my own open-source OSINT tools and write books — both practical guides for aspiring analysts and author works on the profession, the war, and the mind of an investigator. Everything I publish is grounded in real operational practice.",
     "about.more": "Learn more →",
 
@@ -290,6 +301,15 @@
     "media.title": "Press publications",
     "media.subtitle": "High-profile case: the takedown of a transnational fraud network — a call-centre in Kamianske that defrauded citizens of Lithuania and other EU countries. The operation lasted nearly two years and ended with 15 arrests and seized assets exceeding 11 million UAH.",
     "media.readSource": "Read the article ↗",
+
+    "recs.eyebrow": "Recommendations",
+    "recs.title": "What clients and colleagues say",
+    "recs.subtitle": "LinkedIn recommendations from people I've worked with — clients, teammates, and industry professionals.",
+    "recs.origLink": "Original on LinkedIn ↗",
+    "recs.rel.client": "Client",
+    "recs.rel.teammate": "Teammate",
+    "recs.rel.manager": "Manager",
+    "recs.rel.mentee": "Mentee",
 
     "books.eyebrow": "Books",
     "books.title": "Author works",

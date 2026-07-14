@@ -417,5 +417,47 @@
     target.innerHTML = items.map(renderMediaCard).join('');
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage };
+  function renderRecCard(item) {
+    const name = escapeHtml(item.author_name || '');
+    const role = escapeHtml(item.author_role || '');
+    const linkedin = item.author_linkedin ? escapeHtml(item.author_linkedin) : '';
+    const date = escapeHtml(fmtDate(item.date));
+    const text = escapeHtml(tr(item, 'text') || '').replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const relKey = 'recs.rel.' + (item.relationship || 'teammate');
+    const relLbl = escapeHtml(dict[relKey] || item.relationship || '');
+    const initials = name.split(/\s+/).slice(0, 2).map(w => w[0] || '').join('').toUpperCase();
+    const avatar = item.author_avatar
+      ? `<img src="${escapeHtml(item.author_avatar)}" alt="${name}">`
+      : `<span>${initials}</span>`;
+    const nameEl = linkedin
+      ? `<a href="${linkedin}" target="_blank" rel="noopener">${name}</a>`
+      : name;
+    return `
+      <article class="rec">
+        <div class="rec__quote">"</div>
+        <div class="rec__body"><p>${text}</p></div>
+        <div class="rec__author">
+          <div class="rec__avatar">${avatar}</div>
+          <div class="rec__meta">
+            <div class="rec__name">${nameEl}</div>
+            <div class="rec__role">${role}</div>
+            <div class="rec__badge">${relLbl} · ${date}</div>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  async function renderRecommendations(targetSelector) {
+    const items = await listCollection('recommendations');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (!items.length) {
+      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:2rem 0">Поки що порожньо.</p>`;
+      return;
+    }
+    target.innerHTML = items.map(renderRecCard).join('');
+  }
+
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations };
 })();
