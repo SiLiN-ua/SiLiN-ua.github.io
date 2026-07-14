@@ -35,7 +35,7 @@
 
   function tr(item, field) {
     const lang = LANG();
-    return item[field + '_' + lang] || item[field + '_uk'] || item[field] || '';
+    return item[field + '_' + lang] || item[field] || item[field + '_uk'] || '';
   }
 
   function fmtDate(iso) {
@@ -475,11 +475,12 @@
       return acc;
     }, []);
 
+    const lang = LANG();
     const rowHtml = (l) => {
       let host = '';
       try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
-      const name = l.real_title || l.title || host;
-      const desc = l.description || l.title || '';
+      const name = (lang === 'uk' ? (l.title_uk || l.real_title || l.title) : (l.real_title || l.title)) || host;
+      const desc = (lang === 'uk' ? (l.description_uk || l.description) : (l.description_en || l.description)) || l.title || '';
       const searchStr = (name + ' ' + desc + ' ' + host).toLowerCase();
       return `
         <tr class="stack__row" data-search="${escapeHtml(searchStr)}">
