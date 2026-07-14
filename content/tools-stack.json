@@ -302,7 +302,8 @@
           "title": "Gmail OSINT - ActiveTK.jp",
           "url": "https://gmail-osint.activetk.jp/",
           "real_title": "Gmail OSINT - ActiveTK.jp",
-          "description": "GmailアドレスからGoogleアカウントの情報(名前やプロフ画像、利用したサービスなど)を取得できます。悪用厳禁！"
+          "description": "GmailアドレスからGoogleアカウントの情報(名前やプロフ画像、利用したサービスなど)を取得できます。悪用厳禁！",
+          "description_uk": "浜у 涓 蹇"
         },
         {
           "title": "Проверка почты",
@@ -358,7 +359,8 @@
           "title": "Skype Resolver | WebResolver",
           "url": "https://webresolver.nl/tools/resolve",
           "real_title": "Webresolver.nl - The best Skype Resolver",
-          "description": "Webresolver.nl - Free API, Skype Resolver, Resolver, Email To Skype, Huge Database, Resolve Database, Leaked Databases"
+          "description": "Webresolver.nl - Free API, Skype Resolver, Resolver, Email To Skype, Huge Database, Resolve Database, Leaked Databases",
+          "description_uk": "Webresolver.nl - безкоштовний API, Skype Resolver, Resolver, електронної пошти в Skype, Величезна база даних, бази даних, зашифровані бази даних"
         },
         {
           "title": "Поиск по почте компаний",
@@ -686,7 +688,8 @@
           "url": "https://ghintel.secrets.ninja/",
           "real_title": "GitHub Commits Email Finder",
           "description": "Онлайн-ресурс на ghintel.secrets.ninja.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "浜у 涓 蹇."
         },
         {
           "title": "Поиск почты разработчиков",
@@ -939,7 +942,8 @@
           "title": "Twitter Archive",
           "url": "https://waybacktweets.streamlit.app/",
           "description": "Онлайн-ресурс на aybacktweets.streamlit.app.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "浜у 灞 绀."
         },
         {
           "title": "Попадал ли твиттер в бан",
@@ -952,7 +956,8 @@
           "title": "Твиттер на утечку",
           "url": "https://www.activetk.jp/tools/twitter-leaked200",
           "real_title": "Twitter Leaked Checker - ActiveTK.jp",
-          "description": "2021年後半に2億人超のアカウント情報がTwitterから流失したとみられており、本ツールではその流失した情報にご自身のアカウントが含まれているか確認できます。"
+          "description": "2021年後半に2億人超のアカウント情報がTwitterから流失したとみられており、本ツールではその流失した情報にご自身のアカウントが含まれているか確認できます。",
+          "description_uk": "2021 浜у 灞 绀。"
         }
       ],
       "group": "Соціальні мережі",
@@ -1139,7 +1144,8 @@
           "title": "Регистрация компаний",
           "url": "https://companiesregistry.cy/search-results/",
           "description": "Онлайн-ресурс на companiesregistry.cy.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "浜у 灞 绀."
         },
         {
           "title": "Business registers in EU countries",
@@ -1153,7 +1159,8 @@
           "url": "https://opencorporates.com/",
           "real_title": "OpenCorporates",
           "description": "Онлайн-ресурс на opencorporates.com.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "浜у 涓 蹇."
         },
         {
           "title": "Crunchbase",
@@ -1243,13 +1250,15 @@
           "title": "(PRC ID Decoder) 居民身份证号码免费查询系统",
           "url": "https://mid.weixingmap.com/",
           "real_title": "居民身份证号码免费查询系统",
-          "description": "身份证号码查询专业网站，查询身份证号码"
+          "description": "身份证号码查询专业网站，查询身份证号码",
+          "description_uk": "й"
         },
         {
           "title": "Visualizing China’s Anti-Corruption Campaign | ChinaFile",
           "url": "https://www.chinafile.com/infographics/visualizing-chinas-anti-corruption-campaign",
           "real_title": "Visualizing China’s Anti-Corruption Campaign | ChinaFile",
-          "description": "“Catching Tigers and Flies” is ChinaFile’s interactive tool for tracking and, we hope, better understanding the massive campaign against corruption that Xi Jinping launched shortly after he came to power in late 2012. It is designed to give users a sense of the scope and characte"
+          "description": "“Catching Tigers and Flies” is ChinaFile’s interactive tool for tracking and, we hope, better understanding the massive campaign against corruption that Xi Jinping launched shortly after he came to power in late 2012. It is designed to give users a sense of the scope and characte",
+          "description_uk": "«Ловля тигрів і мух» - це інтерактивний інструмент ChinaFile для відстеження та, ми сподіваємося, кращого розуміння масової кампанії проти корупції, яку Сі Цзіньпін розпочав незабаром після того, як прийшов до влади наприкінці 2012 року. Він призначений для того, щоб дати користувачам відчуття масштабу та характеру"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1268,7 +1277,8 @@
           "title": "ASIC Home | ASIC - Australian Securities and Investments Commission",
           "url": "https://asic.gov.au/",
           "real_title": "ASIC Home | ASIC",
-          "description": "ASIC is an independent Australian Government body responsible for regulating financial services and consumer credit, and authorised financial markets operating in Australia."
+          "description": "ASIC is an independent Australian Government body responsible for regulating financial services and consumer credit, and authorised financial markets operating in Australia.",
+          "description_uk": "ASiC - це незалежний урядовий орган Австралії, відповідальний за регулювання фінансових послуг та споживчого кредиту, а також авторизовані фінансові ринки, що працюють в Австралії."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1281,19 +1291,22 @@
           "title": "Centre for Strategic and International Studies",
           "url": "https://www.csis.org/programs/china-power-project",
           "real_title": "China Power Project | Geopolitics and Foreign Policy | CSIS",
-          "description": "The China Power Project provides in-depth, data-driven analysis of China’s evolving power, with a particular focus on Chinese foreign and security policy and Taiwan security issues"
+          "description": "The China Power Project provides in-depth, data-driven analysis of China’s evolving power, with a particular focus on Chinese foreign and security policy and Taiwan security issues",
+          "description_uk": "Проект China Power надає поглиблений аналіз на основі даних про міцність Китаю, що розвивається, з особливим акцентом на зовнішню політику та політику безпеки Китаю, а також питання безпеки Тайваню"
         },
         {
           "title": "The Brookings Institute",
           "url": "https://www.brookings.edu/topic/china/",
           "real_title": "China | Brookings",
-          "description": "Explore Brookings' extensive research on China. Access in-depth analysis, reports, and events addressing the country's economic policies, political strategies, and global impact."
+          "description": "Explore Brookings' extensive research on China. Access in-depth analysis, reports, and events addressing the country's economic policies, political strategies, and global impact.",
+          "description_uk": "Ознайомтеся з великими дослідженнями Брукінгського інституту щодо Китаю. Доступ до поглибленого аналізу, звітів та подій, що стосуються економічної політики країни, політичних стратегій та глобального впливу."
         },
         {
           "title": "The Council on Foreign Relations",
           "url": "https://www.cfr.org/asia/china",
           "real_title": "China | Council on Foreign Relations",
-          "description": "Explore our collection of content on China."
+          "description": "Explore our collection of content on China.",
+          "description_uk": "Ознайомтеся з нашою колекцією контенту про Китай."
         },
         {
           "title": "China | Chatham House",
@@ -1337,7 +1350,8 @@
           "title": "China – The Diplomat",
           "url": "https://thediplomat.com/countries/china/",
           "real_title": "China – The Diplomat",
-          "description": "Asia-Pacific’s leading current affairs magazine."
+          "description": "Asia-Pacific’s leading current affairs magazine.",
+          "description_uk": "Провідний журнал про поточні події в Азіатсько-Тихоокеанському регіоні."
         },
         {
           "title": "China Daily",
@@ -1357,13 +1371,15 @@
           "title": "Global Times",
           "url": "https://www.globaltimes.cn/",
           "real_title": "Global Times",
-          "description": "Global Times, an English-language Chinese newspaper under the People"
+          "description": "Global Times, an English-language Chinese newspaper under the People",
+          "description_uk": "Global Times, англомовна китайська газета під керівництвом People"
         },
         {
           "title": "South China Morning Post",
           "url": "https://www.scmp.com/",
           "real_title": "Breaking China, Asia, HK News, Opinions and Insights | South China Morning Post",
-          "description": "News, opinions, infographics and videos on China issues: geopolitics, diplomacy, economy, technology and lifestyle."
+          "description": "News, opinions, infographics and videos on China issues: geopolitics, diplomacy, economy, technology and lifestyle.",
+          "description_uk": "Новини, думки, інфографіка та відео з питань Китаю: геополітика, дипломатія, економіка, технології та спосіб життя."
         },
         {
           "title": "China | The Economist",
@@ -1384,7 +1400,8 @@
           "title": "Zhihu",
           "url": "https://www.zhihu.com/signin?next=%2F",
           "real_title": "知乎 - 有问题，就会有答案",
-          "description": "知乎，中文互联网高质量的问答社区和创作者聚集的原创内容平台，于 2011 年 1 月正式上线，以「让人们更好的分享知识、经验和见解，找到自己的解答」为品牌使命。知乎凭借认真、专业、友善的社区氛围、独特的产品机制以及结构化和易获得的优质内容，聚集了中文互联网科技、商业、影视、时尚、文化等领域最具创造力的人群，已成为综合性、全品类、在诸多领域具有关键影响力的知识分享社区和创作者聚集的原创内容平台，建立起了以社区驱动的内容变现商业模式。"
+          "description": "知乎，中文互联网高质量的问答社区和创作者聚集的原创内容平台，于 2011 年 1 月正式上线，以「让人们更好的分享知识、经验和见解，找到自己的解答」为品牌使命。知乎凭借认真、专业、友善的社区氛围、独特的产品机制以及结构化和易获得的优质内容，聚集了中文互联网科技、商业、影视、时尚、文化等领域最具创造力的人群，已成为综合性、全品类、在诸多领域具有关键影响力的知识分享社区和创作者聚集的原创内容平台，建立起了以社区驱动的内容变现商业模式。",
+          "description_uk": "Українська, Русский, Беларуская。"
         },
         {
           "title": "Chinese Defence Universities Tracker — ASPI",
@@ -1405,13 +1422,15 @@
           "title": "China National Intellectual Property Administration",
           "url": "https://pss-system.cponline.cnipa.gov.cn/Disclaimer",
           "description": "Онлайн-ресурс на pss-system.cponline.cnipa.gov.cn.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "China National Knowledge Infrastructure",
           "url": "https://oversea.cnki.net/index/",
           "real_title": "CNKI Overseas",
-          "description": "CNKI provides global users with a unified search and discovery service for Chinese academic resources such as journals, dissertations, yearbooks, conference papers, e-books, newspapers, e-books, and reference books, and supports various full-text download methods."
+          "description": "CNKI provides global users with a unified search and discovery service for Chinese academic resources such as journals, dissertations, yearbooks, conference papers, e-books, newspapers, e-books, and reference books, and supports various full-text download methods.",
+          "description_uk": "CNKI надає глобальним користувачам уніфіковану послугу пошуку та виявлення китайських академічних ресурсів, таких як журнали, дисертації, щорічники, доповіді на конференціях, електронні книги, газети, електронні книги та довідники, а також підтримує різні повнотекстові методи завантаження."
         },
         {
           "title": "kns.cnki 个性化首页-中国知网",
@@ -1431,13 +1450,15 @@
           "title": "UNITED KINGDOM",
           "url": "http://beta.companieshouse.gov.uk/",
           "real_title": "Search the register - Find and update company information - GOV.UK",
-          "description": "Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, business activity"
+          "description": "Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, business activity",
+          "description_uk": "Безкоштовна інформація про компанію з Реєстраційної палати, включаючи адресу зареєстрованого офісу, історію реєстрації, бухгалтерську звітність, річну звітність, посадових осіб, збори, ділову актив"
         },
         {
           "title": "British Phonebook",
           "url": "http://www.britishphonebook.com/",
           "real_title": "BritishPhoneBook.com - British Phone Book - UK Phone Book - United Kingdom Directory Enquiries - Phone Directory - Residential Numbers - Britsh Telecom",
-          "description": "british phonebook british phone book united kingdom directory enquiries\r\n192"
+          "description": "british phonebook british phone book united kingdom directory enquiries\r\n192",
+          "description_uk": "британський телефонний довідник британський телефонний довідник запити до каталогу Великобританії\r\n192"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1505,7 +1526,8 @@
           "title": "OSINT Industries | Phone| Email | Username",
           "url": "https://app.osint.industries/",
           "real_title": "OSINT Industries",
-          "description": "The Investigation Platform for Unmatched Accuracy & Real-time Data. The Leading OSINT Tools Built to Accelerate Your Investigations."
+          "description": "The Investigation Platform for Unmatched Accuracy & Real-time Data. The Leading OSINT Tools Built to Accelerate Your Investigations.",
+          "description_uk": "Платформа для розслідування неперевершеної точності та даних у реальному часі. Провідні інструменти OSINT, створені для прискорення ваших розслідувань."
         },
         {
           "title": "Search | X-Ray",
@@ -1518,25 +1540,29 @@
           "title": "BosINT Online // OSINT Platform",
           "url": "https://app.bosint.gg/?username_report=1e35a12b&report=a41864ff",
           "real_title": "OSINTNova // OSINT Platform",
-          "description": "OSINTNova gives OSINT researchers, investigators, and everyday users access to powerful intelligence tools from any device. Proprietary algorithms, undetectable crawlers, and some of the most popular open-source tools—all in one place, producing AI-driven reports with unmatched a"
+          "description": "OSINTNova gives OSINT researchers, investigators, and everyday users access to powerful intelligence tools from any device. Proprietary algorithms, undetectable crawlers, and some of the most popular open-source tools—all in one place, producing AI-driven reports with unmatched a",
+          "description_uk": "OSINTNova надає OSINT-дослідникам, слідчим та повсякденним користувачам доступ до потужних інструментів розвідки з будь-якого пристрою. Власні алгоритми, невизначувані сканери та деякі з найпопулярніших інструментів з відкритим вихідним кодом - все в одному місці, створюючи звіти на основі ШІ з неперевершеною"
         },
         {
           "title": "Email Search | Reverse Email Lookup - Spokeo",
           "url": "https://www.spokeo.com/email-search",
           "real_title": "Email Search | Reverse Email Lookup - Spokeo",
-          "description": "A free email lookup can find the owner's name, social media, phone number, and much more. Spokeo's extensive search tools help you find the full story."
+          "description": "A free email lookup can find the owner's name, social media, phone number, and much more. Spokeo's extensive search tools help you find the full story.",
+          "description_uk": "Безкоштовний пошук електронної пошти дає змогу знайти ім 'я власника, соціальні мережі, номер телефону тощо. Широкі інструменти пошуку Spokeo допоможуть вам знайти повну історію."
         },
         {
           "title": "FamilySearch",
           "url": "https://www.familysearch.org/uk/global",
           "real_title": "FamilySearch.org",
-          "description": "Discover your family history. Explore the world’s largest collection of free family trees, genealogy records and resources."
+          "description": "Discover your family history. Explore the world’s largest collection of free family trees, genealogy records and resources.",
+          "description_uk": "Дізнайтеся історію своєї сім 'ї. Ознайомтеся з найбільшою у світі колекцією безкоштовних родинних дерев, генеалогічних записів та ресурсів."
         },
         {
           "title": "DuckDuckGo! Чубчик",
           "url": "https://duckduckgo.com/bangs",
           "real_title": "DuckDuckGo !Bangs",
-          "description": "Search thousands of sites directly from DuckDuckGo."
+          "description": "Search thousands of sites directly from DuckDuckGo.",
+          "description_uk": "Шукайте на тисячах сайтів безпосередньо з DuckDuckGo."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1563,7 +1589,8 @@
           "title": "CANADA - Border Services",
           "url": "https://www.cbsa-asfc.gc.ca/menu-eng.html",
           "real_title": "Canada Border Services Agency",
-          "description": "Services and information related to the border and travel, customs tariff, trade, security, immigration processing and more"
+          "description": "Services and information related to the border and travel, customs tariff, trade, security, immigration processing and more",
+          "description_uk": "Послуги та інформація, пов 'язані з прикордонною та туристичною діяльністю, митним тарифом, торгівлею, безпекою, імміграційною обробкою тощо"
         },
         {
           "title": "CANADA - Federal Corporation",
@@ -1584,7 +1611,8 @@
           "title": "CANADA - People Search",
           "url": "http://www.canadianpeoplesearch.ca/",
           "description": "Онлайн-ресурс на canadianpeoplesearch.ca.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Головна сторінка UKRAINE UA > Продукція."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1624,7 +1652,8 @@
           "title": "China  Registration | Trademark & Copyright, Patent law firm",
           "url": "https://www.registrationchina.com/",
           "real_title": "Registration China: Company Registration, IP Services, Verification Reports",
-          "description": "Registration China is a one-stop shop for foreign entrepreneurs. We offer company registration, Trademark, Copyright, Patents, and Company Reports with expert support."
+          "description": "Registration China is a one-stop shop for foreign entrepreneurs. We offer company registration, Trademark, Copyright, Patents, and Company Reports with expert support.",
+          "description_uk": "Реєстрація в Китаї - це універсальний сервіс для іноземних підприємців. Ми пропонуємо реєстрацію компанії, торговельну марку, авторське право, патенти та звіти компанії з експертною підтримкою."
         },
         {
           "title": "Gonxi",
@@ -1644,7 +1673,8 @@
           "title": "Parent Searches",
           "url": "https://pss-system.cponline.cnipa.gov.cn/",
           "description": "Онлайн-ресурс на pss-system.cponline.cnipa.gov.cn.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "China National Intellectual Property Administration",
@@ -1657,7 +1687,8 @@
           "url": "https://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?DB=local&PAGE=First",
           "real_title": "U.S. Copyright Office Public Records System",
           "description": "Онлайн-ресурс на cocatalog.loc.gov.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1710,13 +1741,15 @@
           "title": "https://www.ccgp.gov.cn",
           "url": "https://www.ccgp.gov.cn/",
           "real_title": "中国政府采购网",
-          "description": "财政部唯一指定政府采购信息网络发布媒体，国家级政府采购专业网站。"
+          "description": "财政部唯一指定政府采购信息网络发布媒体，国家级政府采购专业网站。",
+          "description_uk": "й。"
         },
         {
           "title": "Central Bank Procurement",
           "url": "https://jzcg.pbc.gov.cn/",
           "real_title": "中国人民银行采购网",
-          "description": "中国人民银行采购网"
+          "description": "中国人民银行采购网",
+          "description_uk": "浜у 涓 蹇"
         },
         {
           "title": "Bid Chance",
@@ -1729,25 +1762,29 @@
           "title": "Bid Centre",
           "url": "https://www.bidcenter.com.cn/",
           "real_title": "éæç½--ææ ç½|ææ å ¬å|å·¥ç¨ææ éè´­ä¿¡æ¯",
-          "description": "ä¸­å½éæç½æ¯ææ ç½ä¸­è´åäºä¸ºä¼ä¸æä¾ææ ãéè´­ãæå¨å»ºé¡¹ç®ä¿¡æ¯åç½ä¸ææ éè´­ç­æå¡çææ ç½;éæç½æ¯ä¸­å½ææ ç½ç«éè´­é¢åçæä½³èµè®¯åäº¤æææ ç½ç«ï¼ä¸ºåçº§æ¿åºéè´­ãææ ä»£çæºæãææ ä¼ä¸ãä¾åºåæä¾å¼ºå¤§çä¸ä¸ææ éè´­ä"
+          "description": "ä¸­å½éæç½æ¯ææ ç½ä¸­è´åäºä¸ºä¼ä¸æä¾ææ ãéè´­ãæå¨å»ºé¡¹ç®ä¿¡æ¯åç½ä¸ææ éè´­ç­æå¡çææ ç½;éæç½æ¯ä¸­å½ææ ç½ç«éè´­é¢åçæä½³èµè®¯åäº¤æææ ç½ç«ï¼ä¸ºåçº§æ¿åºéè´­ãææ ä»£çæºæãææ ä¼ä¸ãä¾åºåæä¾å¼ºå¤§çä¸ä¸ææ éè´­ä",
+          "description_uk": "浜у 涓 蹇 浜у 涓 蹇"
         },
         {
           "title": "World Bank Procurement Database:",
           "url": "https://www.worldbank.org/en/topic/governance/brief/global-public-procurement-database",
           "real_title": "Global Public Procurement Database",
-          "description": "The Global Public Procurement Database is envisioned to become the one-stop online database of choice for the global public procurement community. It is commissioned by the World Bank and implemented by European Dynamics SA."
+          "description": "The Global Public Procurement Database is envisioned to become the one-stop online database of choice for the global public procurement community. It is commissioned by the World Bank and implemented by European Dynamics SA.",
+          "description_uk": "Передбачається, що Глобальна база даних державних закупівель стане єдиною онлайн-базою даних вибору для світової спільноти державних закупівель. Він здійснюється на замовлення Світового банку та впроваджується компанією European Dynamics SA."
         },
         {
           "title": "Global Tenders",
           "url": "https://www.globaltenders.com/",
           "real_title": "Global Tenders | Latest Global Tenders and Government tenders bids",
-          "description": "Latest Global Tenders government tenders bids public tenders private tenders RFQs RFPs tender notices ICB and Business Opportunities"
+          "description": "Latest Global Tenders government tenders bids public tenders private tenders RFQs RFPs tender notices ICB and Business Opportunities",
+          "description_uk": "Останні глобальні тендери державні тендери тендери публічні тендери приватні тендери запити на пропозиції тендерні повідомлення МКТ та бізнес-можливості"
         },
         {
           "title": "Tenders Info",
           "url": "https://www.tendersinfo.com/",
           "real_title": "Latest Tenders Details | Public, Government, Online, Business, Procurement Contracts, Private And Global E Tender Information | India's Central Government And State Govt Online Tender Notice",
-          "description": "Tenders info Provides Latest Tenders Details About Public, Private, Global And India’s Central And State Government Tenders. We Have More Than 15 Lakh Tender Results, Over 7 Lakh Live Tenders And Over 65K Fresh Tenders. Find More!"
+          "description": "Tenders info Provides Latest Tenders Details About Public, Private, Global And India’s Central And State Government Tenders. We Have More Than 15 Lakh Tender Results, Over 7 Lakh Live Tenders And Over 65K Fresh Tenders. Find More!",
+          "description_uk": "Інформація про тендери надає найновіші тендерні дані про державні, приватні, глобальні та державні тендери Індії. У нас більше 15 тендерних результатів Lakh, понад 7 Lakh Live Tenders та понад 65 тис. свіжих тендерів. Дізнайтеся більше!"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1761,7 +1798,8 @@
           "url": "https://www.planningportal.nsw.gov.au/spatialviewer/#/find-a-property/address",
           "real_title": "NSW Planning Portal Spatial Viewer",
           "description": "Онлайн-ресурс на planningportal.nsw.gov.au.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "On The House Property Research",
@@ -1773,7 +1811,8 @@
           "title": "Planning Alerts",
           "url": "https://www.planningalerts.org.au/",
           "real_title": "Planning Alerts",
-          "description": "A free service which searches Australian planning authority websites and emails you details of applications near you"
+          "description": "A free service which searches Australian planning authority websites and emails you details of applications near you",
+          "description_uk": "Безкоштовний сервіс, який шукає сайти австралійського органу планування та надсилає вам електронною поштою інформацію про програми поблизу вас"
         },
         {
           "title": "Domain - Real Estate",
@@ -1786,7 +1825,8 @@
           "title": "REA - Real Estate",
           "url": "https://www.realestate.com.au/",
           "description": "Онлайн-ресурс на realestate.com.au.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "Homely - Real Estate",
@@ -1860,13 +1900,15 @@
           "title": "Ancestry® | Genealogy, Family Trees & Family History Records",
           "url": "https://www.ancestry.com.au/?ranMID=50142&ranEAID=1635394&ranSiteID=PPkX79_c.b0-u.r7KIJMFMobaU0s46.pmw&o_xid=0001635394&o_lid=0001635394&o_sch=Affiliate%20External",
           "real_title": "Ancestry | Genealogy, Family Trees & Family History Records",
-          "description": "Discover your family history and start your family tree. Try free and access billions of genealogy records including Census, BDM & Military records"
+          "description": "Discover your family history and start your family tree. Try free and access billions of genealogy records including Census, BDM & Military records",
+          "description_uk": "Дізнайтеся свою сімейну історію та створіть родинне дерево. Спробуйте безкоштовно та отримайте доступ до мільярдів генеалогічних записів, включаючи перепис, BDM та військові записи"
         },
         {
           "title": "People Search",
           "url": "https://www.peoplesearch.com.au/",
           "real_title": "People Search - Australia's Free People Finder & Reunion Site",
-          "description": "People Search is the free Australian search, people finder, and reunion site. Start your search for someone here."
+          "description": "People Search is the free Australian search, people finder, and reunion site. Start your search for someone here.",
+          "description_uk": "Пошук людей - це безкоштовний австралійський пошук, пошук людей і сайт возз 'єднання. Почніть пошук когось тут."
         },
         {
           "title": "White Pages®",
@@ -1878,32 +1920,37 @@
           "title": "National Missing Persons Coordination Centre",
           "url": "https://www.missingpersons.gov.au/view-all-profiles",
           "description": "Онлайн-ресурс на missingpersons.gov.au.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "National Archives of Australia",
           "url": "https://recordsearch.naa.gov.au/SearchNRetrieve/Interface/SearchScreens/BasicSearch.aspx",
           "real_title": "Session expired | RecordSearch | National Archives of Australia",
           "description": "Онлайн-ресурс на recordsearch.naa.gov.au.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "Early Australian census records",
           "url": "https://guides.slv.vic.gov.au/earlycensus/findpeople",
           "real_title": "Find people - Early Australian census records - Research Guides at State Library of Victoria",
-          "description": "Illuminate Australian society and your family history using census records from 1788 to 1901"
+          "description": "Illuminate Australian society and your family history using census records from 1788 to 1901",
+          "description_uk": "Висвітлюйте історію австралійського суспільства та вашої сім 'ї, використовуючи записи перепису з 1788 по 1901 рік"
         },
         {
           "title": "Australia People Records Search",
           "url": "https://www.australiapublicrecord.com/people-finder/",
           "real_title": "Australia People Records Search - Public People Records",
-          "description": "Australia People records access varies depending on what part of Australia you are searching in. We provide the public People records resources you need to start your search."
+          "description": "Australia People records access varies depending on what part of Australia you are searching in. We provide the public People records resources you need to start your search.",
+          "description_uk": "Доступ до записів Australia People залежить від того, в якій частині Австралії ви шукаєте. Ми надаємо загальнодоступні ресурси записів людей, необхідні для початку пошуку."
         },
         {
           "title": "Australian Cemeteries Index",
           "url": "https://www.austcemindex.com/",
           "real_title": "Australian Cemeteries Index - Name/Cemetery Search",
-          "description": "Search for headstone inscriptions or cemeteries."
+          "description": "Search for headstone inscriptions or cemeteries.",
+          "description_uk": "Пошук написів на надгробках або кладовищах."
         },
         {
           "title": "My Tributes | Australia's trusted obituary, death and funeral notice destination. | Herald Sun",
@@ -1915,7 +1962,8 @@
           "title": "Search for Death Notices",
           "url": "http://ryersonindex.org/search.php",
           "real_title": "Search for Notices",
-          "description": "Find death notices, funeral notices, obituaries and legal/probate notices in Australian newspapers."
+          "description": "Find death notices, funeral notices, obituaries and legal/probate notices in Australian newspapers.",
+          "description_uk": "Знайдіть повідомлення про смерть, повідомлення про похорон, некрологи та юридичні повідомлення/повідомлення про заповіти в австралійських газетах."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1928,13 +1976,15 @@
           "title": "China’s Political System in Charts:",
           "url": "https://crsreports.congress.gov/product/pdf/R/R46977",
           "description": "Онлайн-ресурс на crsreports.congress.gov.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "ChinaPower Project",
           "url": "https://chinapower.csis.org/",
           "real_title": "Home | ChinaPower Project",
-          "description": "Unpacking the complexity of China's rise in the world through interactivity and visualization."
+          "description": "Unpacking the complexity of China's rise in the world through interactivity and visualization.",
+          "description_uk": "Розкриття складності підйому Китаю у світі за допомогою інтерактивності та візуалізації."
         },
         {
           "title": "China-Research-Source-Sheet.pdf",
@@ -1959,7 +2009,8 @@
           "title": "PLA’s Military Diplomacy: Key Institutions and Personnel - Jamestown",
           "url": "https://jamestown.org/program/managing-the-plas-military-diplomacy-key-institutions-and-personnel/",
           "real_title": "Managing the PLA’s Military Diplomacy: Key Institutions and Personnel - Jamestown",
-          "description": "Introduction  The People’s Liberation Army’s (PLA) status as the armed forces of the Chinese Communist Party (CCP) is particularly manifest in its handling of military diplomacy. This article examines the background and evolution of the Office of International Military Cooperation (OIMC)—the main Central Military Commi"
+          "description": "Introduction  The People’s Liberation Army’s (PLA) status as the armed forces of the Chinese Communist Party (CCP) is particularly manifest in its handling of military diplomacy. This article examines the background and evolution of the Office of International Military Cooperation (OIMC)—the main Central Military Commi",
+          "description_uk": "Вступ  Статус Народно-визвольної армії (НВАК) як збройних сил Комуністичної партії Китаю (КПК) особливо проявляється в її поводженні з військовою дипломатією. У цій статті розглядаються передумови та еволюція Управління міжнародного військового співробітництва (OIMC)- головної Центральної військової комісії"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1972,19 +2023,22 @@
           "title": "Baike Baidu",
           "url": "https://baike.baidu.com/",
           "real_title": "百度百科_全球领先的中文百科全书",
-          "description": "百度百科是一部内容开放、自由的网络百科全书，旨在创造一个涵盖所有领域知识，服务所有互联网用户的中文知识性百科全书。在这里你可以参与词条编辑，分享贡献你的知识。"
+          "description": "百度百科是一部内容开放、自由的网络百科全书，旨在创造一个涵盖所有领域知识，服务所有互联网用户的中文知识性百科全书。在这里你可以参与词条编辑，分享贡献你的知识。",
+          "description_uk": "Українська, Русский, Беларуская。"
         },
         {
           "title": "so.com",
           "url": "https://www.so.com/",
           "real_title": "360搜索，SO靠谱",
-          "description": "360搜索是安全、精准、可信赖的新一代搜索引擎，依托于360母品牌的安全优势，全面拦截各类钓鱼欺诈等恶意网站，提供更放心的搜索服务。 360搜索 so靠谱。"
+          "description": "360搜索是安全、精准、可信赖的新一代搜索引擎，依托于360母品牌的安全优势，全面拦截各类钓鱼欺诈等恶意网站，提供更放心的搜索服务。 360搜索 so靠谱。",
+          "description_uk": "360搜索是安全、精准、可信赖的新一代搜索引擎，依托于360母品牌的安全优势，全面拦截各类钓鱼欺诈等恶意网站，提供更放心的搜索服务。 360搜索 так靠谱。"
         },
         {
           "title": "Sogou",
           "url": "https://www.sogou.com/",
           "real_title": "搜狗搜索引擎 - 上网从搜狗开始",
-          "description": "搜狗搜索是全球第三代互动式搜索引擎，支持微信公众号和文章搜索、知乎搜索、英文搜索及翻译等，通过自主研发的人工智能算法为用户提供专业、精准、便捷的搜索服务。"
+          "description": "搜狗搜索是全球第三代互动式搜索引擎，支持微信公众号和文章搜索、知乎搜索、英文搜索及翻译等，通过自主研发的人工智能算法为用户提供专业、精准、便捷的搜索服务。",
+          "description_uk": "浜у 灞 绀。"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -2039,13 +2093,15 @@
           "title": "USA - Public Records",
           "url": "https://publicrecords.onlinesearches.com/",
           "real_title": "Free Public Records Directory | OnlineSearches.com",
-          "description": "Search public records fast and easy with our directory of online & offline free public record sources. Search jail, inmate, warrants, property records, and more."
+          "description": "Search public records fast and easy with our directory of online & offline free public record sources. Search jail, inmate, warrants, property records, and more.",
+          "description_uk": "Швидкий і простий пошук загальнодоступних записів за допомогою нашого каталогу безкоштовних загальнодоступних джерел записів в Інтернеті та в автономному режимі. Обшукайте в 'язницю, ув' язненого, ордери, записи про майно тощо."
         },
         {
           "title": "USA - Black Book Online",
           "url": "https://www.blackbookonline.info/USA-counties.aspx",
           "real_title": "Free County Public Records | Free County Criminal Records Directory | Black Book Online ✔️",
-          "description": "Free search for county public records by Black Book Online."
+          "description": "Free search for county public records by Black Book Online.",
+          "description_uk": "Безкоштовний пошук загальнодоступних записів округу за допомогою Black Book Online."
         },
         {
           "title": "USA - Biznar",
@@ -2065,13 +2121,15 @@
           "title": "WeChat",
           "url": "https://www.wechat.com/",
           "real_title": "WeChat - Connects with over 1 billion users | Chats · Calls · Life Services",
-          "description": "WeChat is a social communication app serving over 1 billion users, supporting free chat, HD voice and video calls, Moments, and mobile payments, making communication and life more convenient."
+          "description": "WeChat is a social communication app serving over 1 billion users, supporting free chat, HD voice and video calls, Moments, and mobile payments, making communication and life more convenient.",
+          "description_uk": "WeChat - це додаток для соціальних комунікацій, який обслуговує понад 1 мільярд користувачів, підтримує безкоштовний чат, голосові та відео-дзвінки у форматі HD, моменти та мобільні платежі, роблячи спілкування та життя зручнішими."
         },
         {
           "title": "qq",
           "url": "https://im.qq.com/index",
           "real_title": "QQ-轻松做自己",
-          "description": "腾讯QQ，全新版本QQ9上线了！ QQ9，不仅是轻松聊天，更是兴趣社区的聚集地。欢迎下载体验最新版本QQ，体验最新功能！欢迎访问QQ官网，下载新版QQ，了解QQ最新功能就在im.qq.com。"
+          "description": "腾讯QQ，全新版本QQ9上线了！ QQ9，不仅是轻松聊天，更是兴趣社区的聚集地。欢迎下载体验最新版本QQ，体验最新功能！欢迎访问QQ官网，下载新版QQ，了解QQ最新功能就在im.qq.com。",
+          "description_uk": "浜у 涓 蹇。"
         },
         {
           "title": "Weibo",
@@ -2126,33 +2184,38 @@
           "title": "NSW",
           "url": "https://www.service.nsw.gov.au/transaction/check-a-vehicle-registration",
           "real_title": "Check a vehicle registration | Service NSW",
-          "description": "Check a vehicle's registration status and expiry date, restrictions or concessions, compulsory third party (CTP) insurance information and odometer reading."
+          "description": "Check a vehicle's registration status and expiry date, restrictions or concessions, compulsory third party (CTP) insurance information and odometer reading.",
+          "description_uk": "Перевірте статус реєстрації та термін придатності транспортного засобу, обмеження або поступки, інформацію про обов 'язкове страхування третіх осіб (ОСАГО) та показники одометра."
         },
         {
           "title": "TAS",
           "url": "https://www.transport.tas.gov.au/MRSWebInterface/public/regoLookup/registrationLookup.jsf",
           "description": "Онлайн-ресурс на transport.tas.gov.au.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "VIC",
           "url": "https://www.vicroads.vic.gov.au/registration/buy-sell-or-transfer-a-vehicle/check-vehicle-registration",
           "real_title": "Check vehicle registration : VicRoads",
           "from_wayback": true,
-          "description": "Before you buy a vehicle, you should check the vehicle registration and status to protect yourself."
+          "description": "Before you buy a vehicle, you should check the vehicle registration and status to protect yourself.",
+          "description_uk": "Перш ніж придбати транспортний засіб, перевірте його реєстрацію та статус, щоб захистити себе."
         },
         {
           "title": "QLD",
           "url": "https://www.service.transport.qld.gov.au/checkrego/public/Welcome.xhtml?dswid=-9897",
           "real_title": "Check registration status | Transport and motoring | Queensland Government",
           "description": "Онлайн-ресурс на service.transport.qld.gov.au.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "WA",
           "url": "https://www.transport.wa.gov.au/dotdirect/dotdirect.asp",
           "real_title": "DoTDirect | Transport WA",
-          "description": "Manage and pay your licences and registrations online through DoTDirect."
+          "description": "Manage and pay your licences and registrations online through DoTDirect.",
+          "description_uk": "Керуйте своїми ліцензіями та реєстраціями та оплачуйте їх онлайн через DoTDirect."
         },
         {
           "title": "SA",
@@ -2181,7 +2244,8 @@
           "url": "https://checkrego.com.au/",
           "real_title": "✅ — Best Rego Check Australia: PPSR by Number Plate: Vehicle History",
           "from_wayback": true,
-          "description": "Write off, finance, theft, damage records and vehicle details compiled from reputable Australian sources"
+          "description": "Write off, finance, theft, damage records and vehicle details compiled from reputable Australian sources",
+          "description_uk": "Списання, фінансування, викрадення, записи про пошкодження та відомості про транспортний засіб, зібрані з авторитетних австралійських джерел"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -2288,7 +2352,8 @@
           "title": "Миротворец",
           "url": "https://myrotvorets.center/criminal/habor-kyryll-andreevych/",
           "description": "Онлайн-ресурс на myrotvorets.center.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "kadastr.live",
@@ -2310,7 +2375,8 @@
           "title": "Автоматизована система виконавчого провадження",
           "url": "https://asvpweb.minjust.gov.ua/#/search-debtors",
           "description": "Онлайн-ресурс на asvpweb.minjust.gov.ua.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -2323,7 +2389,8 @@
           "title": "FRANCE",
           "url": "http://societe.com/",
           "real_title": "Societe.com : RCS, siret, siren, bilan, l'information gratuite sur les entreprises du Registre du Commerce des Soci�t�s (RNCS)",
-          "description": "SOCIETE.COM, service gratuit d"
+          "description": "SOCIETE.COM, service gratuit d",
+          "description_uk": "SOCIETE.COM, благодійний платіж d"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -2336,31 +2403,36 @@
           "title": "Censored words in China - The Citizen Lab",
           "url": "https://citizenlab.ca/2014/12/repository-censored-sensitive-chinese-keywords-13-lists-9054-terms/",
           "real_title": "Lists of censored/sensitive Chinese keywords - The Citizen Lab",
-          "description": "A set of 9,054 sensitive Chinese keywords. These keywords may be helpful for searching for censored content in Chinese or testing for network interference."
+          "description": "A set of 9,054 sensitive Chinese keywords. These keywords may be helpful for searching for censored content in Chinese or testing for network interference.",
+          "description_uk": "Набір з 9054 чутливих китайських ключових слів. Ці ключові слова можуть бути корисними для пошуку цензурованого контенту китайською мовою або тестування на мережеві перешкоди."
         },
         {
           "title": "Censored words in China - citizenlab (GitHub)",
           "url": "https://github.com/citizenlab/chat-censorship/blob/master/wechat/709crackdown/all-keywords.csv",
           "real_title": "chat-censorship/wechat/709crackdown/all-keywords.csv at master · citizenlab/chat-censorship · GitHub",
-          "description": "Data related to the investigation of realtime censorship - chat-censorship/wechat/709crackdown/all-keywords.csv at master · citizenlab/chat-censorship"
+          "description": "Data related to the investigation of realtime censorship - chat-censorship/wechat/709crackdown/all-keywords.csv at master · citizenlab/chat-censorship",
+          "description_uk": "Дані, пов'язані з розслідуванням цензури в режимі реального часу - чат-censorship/wechat/709crackdown/all-keywords.csv в master · реслінг/чат- цензура"
         },
         {
           "title": "Blocked Websites China - Comparitech",
           "url": "https://www.comparitech.com/",
           "real_title": "Comparitech - Tech researched, compared and rated",
-          "description": "Tech researched, compared and rated"
+          "description": "Tech researched, compared and rated",
+          "description_uk": "Технології досліджували, порівнювали та оцінювали"
         },
         {
           "title": "China Firewall Test",
           "url": "http://www.chinafirewalltest.com/",
           "real_title": "China Firewall Test - Test if Any Site is Blocked in China",
-          "description": "Test any website to see if it is blocked in China in real time."
+          "description": "Test any website to see if it is blocked in China in real time.",
+          "description_uk": "Тестуйте будь-який вебсайт, щоб дізнатися, чи заблокований він у Китаї в режимі реального часу."
         },
         {
           "title": "Popular euphemisms - Chinese Social Media",
           "url": "https://restofworld.org/2022/china-social-media-censorship/",
           "real_title": "How Chinese citizens use puns on Weibo to talk about #MeToo and zero-Covid without being censored - Rest of World",
-          "description": "Chinese social media companies and users are locked in a never-ending battle between free speech and censorship."
+          "description": "Chinese social media companies and users are locked in a never-ending battle between free speech and censorship.",
+          "description_uk": "Китайські соціальні медіа-компанії та користувачі замкнені в нескінченній боротьбі між свободою слова та цензурою."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -2381,13 +2453,15 @@
           "title": "Cantonal company search, Commercial registry office of Canton Ticino",
           "url": "https://ti.chregister.ch/cr-portal/suche/suche.xhtml",
           "real_title": "Cantonal company search, Commercial registry office of Canton Ticino",
-          "description": "Official commercial register information of the Canton of Ticino"
+          "description": "Official commercial register information of the Canton of Ticino",
+          "description_uk": "Інформація офіційного комерційного реєстру кантону Тічіно"
         },
         {
           "title": "Moneyhouse - Commercial register and business information",
           "url": "https://www.moneyhouse.ch/en/",
           "real_title": "Moneyhouse - Commercial register and business information",
-          "description": "Managing risks, selling more, discovering background stories: On moneyhouse.ch you will find daily updated information on over 630"
+          "description": "Managing risks, selling more, discovering background stories: On moneyhouse.ch you will find daily updated information on over 630",
+          "description_uk": "Управління ризиками, збільшення продажів, відкриття довідкових історій: на moneyhouse.ch ви знайдете щоденно оновлювану інформацію про понад 630"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -2427,26 +2501,30 @@
           "url": "https://search.censys.io/",
           "real_title": "Censys Search",
           "from_wayback": true,
-          "description": "Censys helps organizations, individuals, and researchers find and monitor every server on the Internet to reduce exposure and improve security."
+          "description": "Censys helps organizations, individuals, and researchers find and monitor every server on the Internet to reduce exposure and improve security.",
+          "description_uk": "Censys допомагає організаціям, приватним особам та дослідникам знаходити та відстежувати кожен сервер в Інтернеті, щоб зменшити вплив та покращити безпеку."
         },
         {
           "title": "Утечки",
           "url": "https://browserleaks.com/",
           "real_title": "Browserleaks - Check your browser for privacy leaks",
-          "description": "BrowserLeaks is a suite of tools that offers a range of tests to evaluate the security and privacy of your web browser. These tests focus on identifying ways in which websites may leak your real IP address, collect information about your device, and perform a browser fingerprinti"
+          "description": "BrowserLeaks is a suite of tools that offers a range of tests to evaluate the security and privacy of your web browser. These tests focus on identifying ways in which websites may leak your real IP address, collect information about your device, and perform a browser fingerprinti",
+          "description_uk": "БраузерLeaks - це набір інструментів, які пропонує широкий спектр тестів для оцінки безпеки та конфіденційності вашого веб-браузера. Ці тести зосереджені на виявленні шляхів, в яких веб-сайти можуть витікати вашу реальну IP-адресу, збирати інформацію про пристрій, і виконувати браузер відбитків пальців"
         },
         {
           "title": "Геолокация",
           "url": "https://www.geodatatool.com/",
           "real_title": "Geo Data Tool - View my IP information: 5.181.177.162",
           "from_wayback": true,
-          "description": "View my IP information: 5.181.177.162"
+          "description": "View my IP information: 5.181.177.162",
+          "description_uk": "УвеличитьОписание 5.181.177.162"
         },
         {
           "title": "Поиск репутации || Cisco Talos Intelligence Group — комплексная разведка угроз",
           "url": "https://talosintelligence.com/reputation_center/lookup?search=46.211.72.69",
           "description": "Онлайн-ресурс на talosintelligence.com.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "Torrent downloads and distributions for IP 46.98.139.234",
@@ -2458,13 +2536,15 @@
           "title": "Доступность IP и его изминения",
           "url": "https://check-host.net/",
           "real_title": "Check server : Check host - online website monitoring",
-          "description": "Check server:\n website monitoring with useful tools, Check IP, Check website"
+          "description": "Check server:\n website monitoring with useful tools, Check IP, Check website",
+          "description_uk": "Перевірка сервера:\nМоніторинг сайтів з корисними інструментами, перевірка IP, перевірка веб-сайту"
         },
         {
           "title": "Создание поста для собирания IP",
           "url": "https://grabify.link/",
           "real_title": "Grabify IP Logger & URL Shortener",
-          "description": "Grabify IP Logger & URL Shortener allows you to tracks IP address, track locations and much more. Advanced web analytics at the tap of a finger!"
+          "description": "Grabify IP Logger & URL Shortener allows you to tracks IP address, track locations and much more. Advanced web analytics at the tap of a finger!",
+          "description_uk": "Перевірити IP Logger & URL Скорочення дозволяє відстежувати IP-адресу, відстежувати розташування та багато іншого. Просунутий веб-аналітика в крапці пальця!"
         }
       ],
       "group": "Витоки та безпека",
@@ -2477,7 +2557,8 @@
           "title": "Базы данных",
           "url": "https://9ghz.com/",
           "real_title": "Data Breach Search Engine - 9Ghz.com - Data Breach Monitor",
-          "description": "Discover and monitor data breaches and leaks with our powerful search engine and real-time alerts. Stay informed and protect your personal information from data security threats."
+          "description": "Discover and monitor data breaches and leaks with our powerful search engine and real-time alerts. Stay informed and protect your personal information from data security threats.",
+          "description_uk": "Відкрийте та відстежуйте порушення даних та витоки з нашим потужним пошуковим двигуном та сповіщеннями в режимі реального часу. Отримуйте інформацію про загрози безпеки даних."
         }
       ],
       "group": "Витоки та безпека",
@@ -2490,26 +2571,30 @@
           "title": "WHOIS Lookup of daddyskins.com",
           "url": "https://whoisfreaks.com/tools/whois/lookup/daddyskins.com",
           "real_title": "WHOIS Lookup for daddyskins.com | Owner & Registrar Info",
-          "description": "View live WHOIS data for daddyskins.com: registrant, registrar, expiry, nameservers, and status codes. Free real-time lookup across 1,528 TLDs."
+          "description": "View live WHOIS data for daddyskins.com: registrant, registrar, expiry, nameservers, and status codes. Free real-time lookup across 1,528 TLDs.",
+          "description_uk": "Перегляд даних WHOIS для daddyskins.com: реєстрант, реєстратор, термін дії, іменасервери та коди стану. Безкоштовний перегляд в режимі реального часу по 1,528 TLDs."
         },
         {
           "title": "Whois Lookup & IP Search - Who.is",
           "url": "https://who.is/",
           "real_title": "WHOIS Search, Domain Name, Website, and IP Tools - Who.is",
-          "description": "Find information on any domain name or website. Large database of whois information, RDAP, DNS, domain names, name servers, IPs, and tools for searching and monitoring domain names."
+          "description": "Find information on any domain name or website. Large database of whois information, RDAP, DNS, domain names, name servers, IPs, and tools for searching and monitoring domain names.",
+          "description_uk": "Знайдіть інформацію про доменне ім’я або веб-сайт. Велика база даних Whois, RDAP, DNS, доменних імен, серверів імен, IP-адреси та інструменти для пошуку та моніторингу доменних імен."
         },
         {
           "title": "Whoxy",
           "url": "https://www.whoxy.com/",
           "real_title": "WHOIS API | WHOIS Lookup API | Domain WHOIS API",
-          "description": "WHOIS API lets you quickly lookup a domain name"
+          "description": "WHOIS API lets you quickly lookup a domain name",
+          "description_uk": "Whois API дозволяє швидко переглядати доменне ім'я"
         },
         {
           "title": "Cisco Talos Intelligence Group - Comprehensive Threat Intelligence",
           "url": "https://talosintelligence.com/",
           "real_title": "Cisco Talos Intelligence Group - Comprehensive Threat Intelligence",
           "description": "Онлайн-ресурс на talosintelligence.com.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "MX Lookup Tool - Check your DNS MX Records online - MxToolbox",
@@ -2529,26 +2614,30 @@
           "title": "Актуальные регистрационные данные",
           "url": "https://lookup.icann.org/en",
           "real_title": "ICANN Lookup",
-          "description": "The ICANN registration data lookup tool gives you the ability to look up the current registration data for domain names and Internet number resources."
+          "description": "The ICANN registration data lookup tool gives you the ability to look up the current registration data for domain names and Internet number resources.",
+          "description_uk": "Інструмент для пошуку даних ICANN дає вам можливість переглядати поточні реєстраційні дані для доменних імен та ресурсів інтернету."
         },
         {
           "title": "Анализ сайта",
           "url": "https://moz.com/link-explorer",
           "real_title": "Free Backlink Checker - Moz Link Explorer - Moz",
-          "description": "Discover link opportunities and monitor link building efforts with Moz Link Explorer. This free backlink checker provides easy access to Domain Authority, Page Authority, linking domains, and more in just a few clicks."
+          "description": "Discover link opportunities and monitor link building efforts with Moz Link Explorer. This free backlink checker provides easy access to Domain Authority, Page Authority, linking domains, and more in just a few clicks.",
+          "description_uk": "Відкрийте для себе можливості посилання та моніторинг зусиль для побудови посилань з Moz Link Explorer. Цей безкоштовний резервний контроль надає легкий доступ до домену, Адміністрування сторінки, посилання доменів та багато іншого, всього за кілька кліків."
         },
         {
           "title": "Information Laundromat",
           "url": "https://informationlaundromat.com/",
           "real_title": "Information Laundromat",
           "description": "Онлайн-ресурс на informationlaundromat.com.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "Найти через домен какие сайты еще принадлежат человеку",
           "url": "https://analyzeid.com/",
           "real_title": "Find Other Websites Owned By The Same Person",
-          "description": "Reverse lookup Google Analytics, Google Adsense, Amazon affiliates, Emails, IPs, and other third party IDs."
+          "description": "Reverse lookup Google Analytics, Google Adsense, Amazon affiliates, Emails, IPs, and other third party IDs.",
+          "description_uk": "Зворотний перегляд Google Analytics, Google Adsense, афілійовані особи Amazon, електронні листи, IP-адреси та інші сторонні ідентифікатори."
         },
         {
           "title": "DNSlytics",
@@ -2567,44 +2656,51 @@
           "title": "Have I Been Pwned: Check if your email has been compromised in a data breach",
           "url": "https://haveibeenpwned.com/",
           "real_title": "Have I Been Pwned: Check if your email address has been exposed in a data breach",
-          "description": "Have I Been Pwned allows you to check whether your email address has been exposed in a data breach."
+          "description": "Have I Been Pwned allows you to check whether your email address has been exposed in a data breach.",
+          "description_uk": "У вас є можливість перевірити, чи є ваша адреса електронної пошти, яка була порушена у порушенні даних."
         },
         {
           "title": "DeHashed — #FreeThePassword",
           "url": "https://app.dehashed.com/search",
           "real_title": "DeHashed — #FreeThePassword",
-          "description": "Have you been compromised? DeHashed provides free deep-web scans and protection against credential leaks. A modern personal asset search engine created for security analysts, journalists, security companies, and everyday people to help secure accounts and provide insight on compromised assets. Free breach alerts & brea"
+          "description": "Have you been compromised? DeHashed provides free deep-web scans and protection against credential leaks. A modern personal asset search engine created for security analysts, journalists, security companies, and everyday people to help secure accounts and provide insight on compromised assets. Free breach alerts & brea",
+          "description_uk": "Ви змагалися? DeHashed надає безкоштовне сканування веб-сайтів та захист від критичних витоків. Сучасний особистий пошуковий двигун, створений для аналітиків безпеки, журналістів, охоронних компаній та повсякденних людей, щоб допомогти безпечним обліковим записам та надати розуміння про компромісні активи. Безкоштовні сповіщення про порушення та виправлення"
         },
         {
           "title": "BreachDirectory",
           "url": "https://breachdirectory.org/",
           "real_title": "BreachDirectory - Check If Your Email or Username was Compromised",
           "from_wayback": true,
-          "description": "BreachDirectory allows you to search through all public data breaches to make sure your emails, usernames, passwords, and domains haven"
+          "description": "BreachDirectory allows you to search through all public data breaches to make sure your emails, usernames, passwords, and domains haven",
+          "description_uk": "BreachDirectory дозволяє шукати всі порушення публічних даних, щоб переконатися, що ваші повідомлення, ім'я користувача, паролі та домени"
         },
         {
           "title": "Пароли по почте",
           "url": "https://leakpeek.com/",
           "real_title": "LeakPeek - Home",
-          "description": "LeakPeek is an all-in-one online data protection platform. Search for your publicly leaked passwords using an email or username; secure your personal data."
+          "description": "LeakPeek is an all-in-one online data protection platform. Search for your publicly leaked passwords using an email or username; secure your personal data.",
+          "description_uk": "LeakPeek - це платформа для захисту даних онлайн. Пошук ваших публічних витоків паролів за допомогою електронної пошти або імені користувача; забезпечення ваших персональних даних."
         },
         {
           "title": "Intelligence X",
           "url": "https://intelx.io/",
           "real_title": "Intelligence X",
-          "description": "Intelligence X is a search engine and data archive. Search Tor, I2P, data leaks and the public web by email, domain, IP, CIDR, Bitcoin address and more."
+          "description": "Intelligence X is a search engine and data archive. Search Tor, I2P, data leaks and the public web by email, domain, IP, CIDR, Bitcoin address and more.",
+          "description_uk": "Розвідка X є пошуковим двигуном та архівом даних. Search Tor, I2P, витоки даних і публічний веб-сайт по електронній пошті, домен, IP, CIDR, Bitcoin адреси і багато іншого."
         },
         {
           "title": "Почта и телефон",
           "url": "https://cybernews.com/personal-data-leak-check/",
           "real_title": "Personal Data Leak Checker: Your Email & Data - Breached? | CyberNews",
-          "description": "Check whether your online credentials have been comprised with our up to date personal data leak checker tool."
+          "description": "Check whether your online credentials have been comprised with our up to date personal data leak checker tool.",
+          "description_uk": "Ознайомтеся з нашим інструментом перевірки персональних даних."
         },
         {
           "title": "Facebook Data Breach Checker | HaveIBeenZuckered.com",
           "url": "https://haveibeenzuckered.com/",
           "real_title": "Facebook Data Breach Checker | HaveIBeenZuckered.com",
-          "description": "Check if your telephone number is present within the Facebook data breach. HaveIBeenZuckered.com is a simple, secure and privacy-aware tool that does not store user-provided input."
+          "description": "Check if your telephone number is present within the Facebook data breach. HaveIBeenZuckered.com is a simple, secure and privacy-aware tool that does not store user-provided input.",
+          "description_uk": "Перевірити, якщо Ваш номер телефону присутній в рамках порушення даних Facebook. HaveIBeenZuckered.com це простий, безпечний і безпечний інструмент, який не зберігає вхід користувача."
         },
         {
           "title": "Ashley Madison hacked email checker",
@@ -2618,7 +2714,8 @@
           "title": "HackedList.io",
           "url": "https://hackedlist.io/",
           "real_title": "HackedList.io",
-          "description": "Our search service will help you find out if your domain has been compromised by infostealer malware."
+          "description": "Our search service will help you find out if your domain has been compromised by infostealer malware.",
+          "description_uk": "Наша пошукова служба допоможе вам дізнатися, чи є ваш домен під загрозою для отримання інформації."
         }
       ],
       "group": "Витоки та безпека",
@@ -2631,7 +2728,8 @@
           "title": "EXIF / File Metadata Viewer",
           "url": "https://exif.tools/",
           "real_title": "EXIFTool Online | EXIF Tools Metadata Viewer",
-          "description": "EXIFTool online metadata viewer for EXIF data, image metadata, file metadata, GPS, XMP, IPTC, ICC, hashes, and magic bytes. Check metadata in your browser with exif.tools."
+          "description": "EXIFTool online metadata viewer for EXIF data, image metadata, file metadata, GPS, XMP, IPTC, ICC, hashes, and magic bytes. Check metadata in your browser with exif.tools.",
+          "description_uk": "EXIFTool Інтернет-переглядач метаданих для даних EXIF, метаданих зображень, метаданих файлів, GPS, XMP, IPTC, ICC, хеш та магічні байти. Перевірити метадані в браузері з exif.tools."
         },
         {
           "title": "Просмотр метаданных",
@@ -2644,25 +2742,29 @@
           "title": "Free EXIF Metadata Viewer for Photos & Videos | ExifMeta",
           "url": "https://exifmeta.com/#google_vignette",
           "real_title": "Free EXIF Metadata Viewer for Photos & Videos | ExifMeta",
-          "description": "Free online EXIF viewer for photos, videos & documents. Extract GPS coordinates, camera settings, timestamps from 50+ formats. No registration needed."
+          "description": "Free online EXIF viewer for photos, videos & documents. Extract GPS coordinates, camera settings, timestamps from 50+ formats. No registration needed.",
+          "description_uk": "Безкоштовно онлайн EXIF глядача для фотографій, відео та документів. Витяг GPS координати, налаштування камери, таймери від 50+ форматів. Немає необхідності реєстрації."
         },
         {
           "title": "Online EXIF metadata viewer for photos (UPDATED) | Jimpl",
           "url": "https://jimpl.com/",
           "real_title": "Online EXIF metadata viewer for photos (UPDATED)",
-          "description": "View EXIF metadata of photos and images online. Find when and where the picture was taken. Remove metadata and location from the photo to protect your privacy."
+          "description": "View EXIF metadata of photos and images online. Find when and where the picture was taken. Remove metadata and location from the photo to protect your privacy.",
+          "description_uk": "Перегляд метаданих EXIF зображень і зображень онлайн. Знайдіть, коли і де було взято картину. Видаліть метадані та розташування з фото, щоб захистити вашу конфіденційність."
         },
         {
           "title": "Metadata документов",
           "url": "https://www.extractmetadata.com/",
           "real_title": "Metadata Viewer",
-          "description": "Free online tool to view metadata from files of arbitrary type."
+          "description": "Free online tool to view metadata from files of arbitrary type.",
+          "description_uk": "Безкоштовний онлайн-інструмент для перегляду метаданих з файлів довільного типу."
         },
         {
           "title": "Фото локация с метаданных",
           "url": "https://www.pic2map.com/",
           "real_title": "Photo Location & Online EXIF Data Viewer - Pic 2 Map",
-          "description": "Pic2Map is an online EXIF data viewer with GPS coordinates support which allows you to locate and view your digital camera or smartphone photos on Google Maps."
+          "description": "Pic2Map is an online EXIF data viewer with GPS coordinates support which allows you to locate and view your digital camera or smartphone photos on Google Maps.",
+          "description_uk": "Pic2Map - це онлайн-переглядач даних EXIF з підтримкою GPS-координат, що дозволяє знаходити та переглядати цифрові фотокамери або смартфони на Google Maps."
         },
         {
           "title": "Додати метадані та EXIF до аудіо, відео, зображень і PDF онлайн",
@@ -2702,7 +2804,8 @@
           "title": "HTML to PNG | CloudConvert",
           "url": "https://cloudconvert.com/html-to-png",
           "real_title": "HTML to PNG | CloudConvert",
-          "description": "HTML to PNG Converter - CloudConvert is a free & fast online file conversion service."
+          "description": "HTML to PNG Converter - CloudConvert is a free & fast online file conversion service.",
+          "description_uk": "HTML в PNG Converter - CloudConvert це безкоштовний і швидкий Інтернет-сервіс перетворення файлів."
         },
         {
           "title": "Видалення фону зображень",
@@ -2715,37 +2818,43 @@
           "title": "Улучшение качества",
           "url": "https://letsenhance.io/uk/boost",
           "real_title": "LetsEnhance – free online image upscale and enhancement. Try neural networks to increase resolution and quality now! | LetsEnhance",
-          "description": "Simple machine learning software to enlarge images with no quality loss, enhance colors and photo resolution, automatically retouch product photos. Free trial"
+          "description": "Simple machine learning software to enlarge images with no quality loss, enhance colors and photo resolution, automatically retouch product photos. Free trial",
+          "description_uk": "Просте програмне забезпечення машинного навчання для збільшення зображень без втрати якості, підвищення кольорів і роздільної здатності фото, автоматично перезавантажити фотографії продуктів. Безкоштовна пробка"
         },
         {
           "title": "Шаблони – Canva",
           "url": "https://www.canva.com/templates",
           "real_title": "Free templates | Canva",
-          "description": "Browse through our professionally designed selection of free templates and customize a design for any occasion."
+          "description": "Browse through our professionally designed selection of free templates and customize a design for any occasion.",
+          "description_uk": "Переглядайте наші професійно розроблені підбір безкоштовних шаблонів та налаштуйте дизайн для будь-якого випадку."
         },
         {
           "title": "Удаление фона",
           "url": "https://bgeraser.com/",
           "real_title": "BgEraser - Free AI Background Eraser & Batch Remove Background Tool",
-          "description": "Use BgEraser to remove backgrounds from images online for free. Upload JPG, PNG, or WebP photos, erase backgrounds in batch, download transparent PNG results, and keep files private with auto-delete in 2 hours. No sign up required."
+          "description": "Use BgEraser to remove backgrounds from images online for free. Upload JPG, PNG, or WebP photos, erase backgrounds in batch, download transparent PNG results, and keep files private with auto-delete in 2 hours. No sign up required.",
+          "description_uk": "Використовуйте BgEraser для видалення фонів з зображень онлайн безкоштовно. Завантажте JPG, PNG, або WebP фотографії, стирайте фони в партії, завантажте прозорі результати PNG і зберігайте файли, приватні з автоматичною версією в 2 години. Немає необхідності входу."
         },
         {
           "title": "Удалить ненужное на фото",
           "url": "https://cleanup.pictures/",
           "real_title": "Cleanup.pictures - Remove objects, people, text and defects from any picture for free",
-          "description": "Remove unwanted objects from photos, people, text, and defects from any picture for free. It"
+          "description": "Remove unwanted objects from photos, people, text, and defects from any picture for free. It",
+          "description_uk": "Видалити небажані предмети з фотографій, людей, тексту та дефектів з будь-якої картини безкоштовно. Він"
         },
         {
           "title": "Редакция тона",
           "url": "https://photoscissors.com/",
           "real_title": "Remove Background from Image | Free Background Remover",
-          "description": "Automatically remove background and replace it with a transparent, solid color or background image with just a few clicks!"
+          "description": "Automatically remove background and replace it with a transparent, solid color or background image with just a few clicks!",
+          "description_uk": "Автоматично видаліть фон і замініть його прозорим, твердим кольором або фоновим зображенням всього за кілька кліків!"
         },
         {
           "title": "Редагувати текст у зображенні онлайн – інструмент штучного інтелекту для заміни, додавання або видалення тексту на зображеннях",
           "url": "https://refont.ai/edit-text-in-image",
           "real_title": "Edit Text in Image Online – AI Tool to Replace, Add, or Remove Text in Images",
-          "description": "Edit text in image online with AI. Replace, remove, or add text directly in pictures—perfect for posters, product photos, and marketing visuals. No Photoshop skills required."
+          "description": "Edit text in image online with AI. Replace, remove, or add text directly in pictures—perfect for posters, product photos, and marketing visuals. No Photoshop skills required.",
+          "description_uk": "Редагувати текст у зображеннях онлайн з AI. Замініть, видаліть або додайте текст безпосередньо у фотографіях. Не потрібні навички фотошопу."
         },
         {
           "title": "Бесплатное увеличение и улучшение качества изображений при помощи ИИ",
@@ -2758,7 +2867,8 @@
           "title": "Наложить пиксель",
           "url": "https://pixelate.imageonline.co/",
           "real_title": "Image Pixelator & Blur Tool | Pixelate Faces & Backgrounds - ImageOnline.co",
-          "description": "Free online tool to pixelate or blur specific areas of an image. Hide faces, license plates, or background details with adjustable strength. 100% Private."
+          "description": "Free online tool to pixelate or blur specific areas of an image. Hide faces, license plates, or background details with adjustable strength. 100% Private.",
+          "description_uk": "Безкоштовний онлайн-інструмент для піксельного або розмиття конкретних зон зображення. Приховувати особи, номери або фонові деталі з регульованою міцністю. 100% Приватне."
         }
       ],
       "group": "Верифікація та експертиза",
@@ -2777,44 +2887,51 @@
           "title": "Анализ фото метаданные судебная экспертиза",
           "url": "https://mever.iti.gr/forensics/",
           "real_title": "MeVer - Image Verification Assistant",
-          "description": "Analyse the veracity of online media"
+          "description": "Analyse the veracity of online media",
+          "description_uk": "Аналіз veracity онлайн-медіа"
         },
         {
           "title": "Судебная экспертиза",
           "url": "https://29a.ch/photo-forensics/#forensic-magnifier",
           "real_title": "Forensically, free online photo forensics tools - 29a.ch",
-          "description": "Forensically is a set of free tools for digital image forensics. It includes clone detection, error level analysis, meta data extraction and more."
+          "description": "Forensically is a set of free tools for digital image forensics. It includes clone detection, error level analysis, meta data extraction and more.",
+          "description_uk": "Судно – це набір безкоштовних інструментів для цифрового образу. Включає виявлення клонів, аналіз рівня помилок, видобуток метаданих та багато іншого."
         },
         {
           "title": "FotoForensics",
           "url": "https://fotoforensics.com/",
           "real_title": "FotoForensics",
-          "description": "FotoForensics provides tools and training for digital picture analysis, including error level analysis, metadata, and tutorials."
+          "description": "FotoForensics provides tools and training for digital picture analysis, including error level analysis, metadata, and tutorials.",
+          "description_uk": "FotoForensics надає інструменти та тренінги для аналізу цифрових зображень, включаючи аналіз рівня помилок, метадані та підручники."
         },
         {
           "title": "Steganography Что спрятано за фото расшифровка",
           "url": "https://stylesuxx.github.io/steganography/",
           "real_title": "Steganography Online",
           "description": "Онлайн-ресурс на stylesuxx.github.io.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "浜у 涓 蹇."
         },
         {
           "title": "Была ли отредактирована фото",
           "url": "https://imageedited.com/",
           "real_title": "Image Edited?",
-          "description": "imageedited: Is your image edited?"
+          "description": "imageedited: Is your image edited?",
+          "description_uk": "imageedited: Чи працює ваш образ?"
         },
         {
           "title": "Декодування штрих-кодів",
           "url": "https://online-barcode-reader.inliteresearch.com/",
           "real_title": "Barcode Reader. Free Online Web Application",
-          "description": "Read Code39, Code128, PDF417, DataMatrix, QR, and other barcodes from TIF, PDF and other image documents"
+          "description": "Read Code39, Code128, PDF417, DataMatrix, QR, and other barcodes from TIF, PDF and other image documents",
+          "description_uk": "Read Code39, Code128, PDF417, DataMatrix, QR та інші штрих-коди з TIF, PDF та інших документів зображення"
         },
         {
           "title": "Analyze PGP",
           "url": "https://kriztalz.sh/pgp-key-analyser/",
           "real_title": "PGP Key Analyser - View PGP key information in your browser",
-          "description": "Analyze PGP/OpenPGP keys in your browser. Check fingerprints, user IDs, capabilities, algorithms, and expiration dates with this privacy-focused tool."
+          "description": "Analyze PGP/OpenPGP keys in your browser. Check fingerprints, user IDs, capabilities, algorithms, and expiration dates with this privacy-focused tool.",
+          "description_uk": "Analyze PGP/OpenPGP ключі у вашому браузері. Перевірити відбитки пальців, ідентифікатори користувачів, можливості, алгоритми та дати закінчення терміну дії з цим інструментом конфіденційності."
         },
         {
           "title": "Стеганографія емодзи",
@@ -2836,28 +2953,32 @@
           "url": "https://archive.org/",
           "real_title": "Internet Archive: Digital Library of Free & Borrowable Texts, Movies, Music & Wayback Machine",
           "description": "Internet Archive та Wayback Machine — архіви веб-сторінок і медіа.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Інтернет Архів і Wayback машини - веб-сторінок і реклама."
         },
         {
           "title": "Исторический домен",
           "url": "https://tools.whoisxmlapi.com/reverse-whois-search",
           "real_title": "Login | WhoisXML API",
           "description": "Онлайн-ресурс на tools.whoisxmlapi.com.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "浜у 涓 蹇."
         },
         {
           "title": "Архив и архивировать",
           "url": "https://ghostarchive.org/",
           "real_title": "Ghostarchive, a website archive",
           "description": "Internet Archive та Wayback Machine — архіви веб-сторінок і медіа.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Інтернет Архів і Wayback машини - веб-сторінок і реклама."
         },
         {
           "title": "Webpage archive",
           "url": "https://archive.ph/",
           "real_title": "Welcome to nginx",
           "description": "archive.ph allows you to create a copy of a webpage that will always be up even if the original link is down",
-          "from_wayback": true
+          "from_wayback": true,
+          "description_uk": "архів.ph дозволяє створювати копію веб-сторінки, яка завжди буде виглядати навіть якщо оригінальне посилання вниз"
         }
       ],
       "group": "Веб та архіви",
@@ -2876,19 +2997,22 @@
           "title": "Пряматая трансляция с африки зоопарки",
           "url": "https://africam.com/",
           "real_title": "Africam | Wildlife Live Streams Across Africa",
-          "description": "Experience a live African safari! See lions, elephants, giraffes, and more from Africam’s real-time wildlife cameras across Southern & Eastern Africa"
+          "description": "Experience a live African safari! See lions, elephants, giraffes, and more from Africam’s real-time wildlife cameras across Southern & Eastern Africa",
+          "description_uk": "Досвід живого африканського сафарі! Дивитися леви, слони, циркафи та багато іншого з диких камер в реальному часі в Південній та Східній Африці"
         },
         {
           "title": "AirportWebcams.net - LIVE Airport Webcams From Around The World - Airport Webcams.net",
           "url": "https://airportwebcams.net/",
           "real_title": "AirportWebcams.net - LIVE Airport Webcams From Around The World - Airport Webcams.net",
-          "description": "Watch Live Airport Webcams Around The World. Aircraft arrivals & departures. Listen to ATC - air traffic radio. Monitor flight tracking to & from this airport. View data for pilots."
+          "description": "Watch Live Airport Webcams Around The World. Aircraft arrivals & departures. Listen to ATC - air traffic radio. Monitor flight tracking to & from this airport. View data for pilots.",
+          "description_uk": "Дивитися живі веб-камери аеропорту навколо світу. Авіаперевезення та відправлення. Слухати ATC - повітряний трафік радіо. Перевірити відстеження польоту і від цього аеропорту. Перегляд даних для пілотів."
         },
         {
           "title": "Каталог веб камер",
           "url": "https://www.webviewcams.com/",
           "real_title": "Webview Livescope Webcams",
-          "description": "Control and watch live webcams showing beaches, landscapes, traffic and people from all over the world. Zoom in and out, pan and tilt and many more."
+          "description": "Control and watch live webcams showing beaches, landscapes, traffic and people from all over the world. Zoom in and out, pan and tilt and many more.",
+          "description_uk": "Контроль і дивитися живі веб-камери показують пляжі, краєвиди, трафік і люди з усього світу. Зомбі і з-під, сковорідка і тент і багато іншого."
         },
         {
           "title": "Поиск по городам",
@@ -2901,7 +3025,8 @@
           "title": "▶️ Live HD Cams from the World! - SkylineWebcams",
           "url": "https://www.skylinewebcams.com/",
           "real_title": "▶️ Live HD Cams from the World! - SkylineWebcams",
-          "description": "Live HD webcams broadcasting from the world"
+          "description": "Live HD webcams broadcasting from the world",
+          "description_uk": "Live HD веб-камери мовлення з світу"
         }
       ],
       "group": "Веб та архіви",
@@ -2914,13 +3039,15 @@
           "title": "Анализ на вредоносные файлы",
           "url": "https://www.virustotal.com/gui/home/upload",
           "real_title": "VirusTotal",
-          "description": "VirusTotal"
+          "description": "VirusTotal",
+          "description_uk": "ВирусВсього"
         },
         {
           "title": "URL скан на вред",
           "url": "https://urlscan.io/",
           "real_title": "URL and website scanner - urlscan.io",
-          "description": "urlscan.io - Website scanner for suspicious and malicious URLs"
+          "description": "urlscan.io - Website scanner for suspicious and malicious URLs",
+          "description_uk": "urlscan.io - Адміністратор веб-сайтів для підозрілих і шкідливих URL"
         },
         {
           "title": "Jotti's malware scan",
@@ -2946,7 +3073,8 @@
           "title": "Видео которые были заблокированы",
           "url": "https://altcensored.com/",
           "real_title": "Limited State YouTube Videos Censored Banned | altCensored.com",
-          "description": "altCensored.com archives 472915 censored, banned and limited-state YouTube videos.\nPreserving deleted channels, restricted content and suppressed political speech that YouTube hides from public view."
+          "description": "altCensored.com archives 472915 censored, banned and limited-state YouTube videos.\nPreserving deleted channels, restricted content and suppressed political speech that YouTube hides from public view.",
+          "description_uk": "altCensored.com архіви 472915 цензурі, заборонені та обмежені особи відео YouTube.\nЗбереження видалених каналів, обмеженого вмісту та пригніченого політичного мовлення, яке YouTube приховує з публічного перегляду."
         }
       ],
       "group": "Веб та архіви",
@@ -2959,7 +3087,8 @@
           "title": "DeepL Translate",
           "url": "https://www.deepl.com/en/translator",
           "real_title": "DeepL Translator | World's Most Accurate Translator",
-          "description": "Translate texts & full document files instantly. Accurate translations for individuals and Teams. Millions translate with DeepL every day."
+          "description": "Translate texts & full document files instantly. Accurate translations for individuals and Teams. Millions translate with DeepL every day.",
+          "description_uk": "Переклад текстів та повнодокументних файлів миттєво. Точні переклади для фізичних осіб та команд. Мільйони перевести з DeepL щодня."
         }
       ],
       "group": "Веб та архіви",
@@ -2972,7 +3101,8 @@
           "title": "Показать полный URL",
           "url": "https://seintpl.github.io/osint/short-links-verification-cheatsheet",
           "real_title": "Short links verification cheatsheet",
-          "description": "Short links verification cheatsheet"
+          "description": "Short links verification cheatsheet",
+          "description_uk": "Короткі посилання перевірки чітколист"
         },
         {
           "title": "Redirect Detective - Discover where those redirects really go to",
@@ -3000,13 +3130,15 @@
           "title": "Временные получения смс на телефон",
           "url": "https://www.receivesms.co/",
           "real_title": "Receive SMS Online — Free Temporary Phone Numbers",
-          "description": "Receive SMS online using free public phone numbers. Browse active numbers, available countries, and phone number ratings. No registration required."
+          "description": "Receive SMS online using free public phone numbers. Browse active numbers, available countries, and phone number ratings. No registration required.",
+          "description_uk": "Отримайте SMS онлайн за допомогою безкоштовного публічного номера телефону. Переглядайте активні номери, доступні країни та рейтинги номерів телефонів. Реєстрація не потрібно."
         },
         {
           "title": "Временные смс",
           "url": "https://tempsmss.com/es/",
           "real_title": "Recibir SMS en línea | #1 Mejor sitio web para SMS temporales",
-          "description": "Receive SMS online instantly with free temporary phone numbers. No registration required. Virtual numbers from 14+ countries for OTP verification."
+          "description": "Receive SMS online instantly with free temporary phone numbers. No registration required. Virtual numbers from 14+ countries for OTP verification.",
+          "description_uk": "Отримайте SMS онлайн миттєво з безкоштовними тимчасовими номерами телефону. Реєстрація не потрібно. Віртуальні номери з 14 країн світу для перевірки ОТП."
         },
         {
           "title": "Временный мобильный номер",
@@ -3024,7 +3156,8 @@
           "title": "Почта",
           "url": "https://smailpro.com/temporary-email",
           "real_title": "Temporary Email Tool - Temporary Gmail & Outlook Addresses",
-          "description": "Create receive-only temporary Gmail and Outlook addresses for privacy, trials, and verification workflows without exposing your real inbox."
+          "description": "Create receive-only temporary Gmail and Outlook addresses for privacy, trials, and verification workflows without exposing your real inbox.",
+          "description_uk": "Створюйте тимчасові Gmail та адреси Outlook для конфіденційності, випробування та перевірки робочих процесів без розширення вашої реальної скриньки."
         },
         {
           "title": "Почта",
@@ -3036,7 +3169,8 @@
           "title": "Почта",
           "url": "https://tempail.com/",
           "real_title": "Temp Mail - Temporary Email",
-          "description": "Temp Mail provides temporary, anonymous, free, secure, disposable email address. You can use on facebook, twitter or instagram for anonymously sign up!"
+          "description": "Temp Mail provides temporary, anonymous, free, secure, disposable email address. You can use on facebook, twitter or instagram for anonymously sign up!",
+          "description_uk": "Тимчасова пошта забезпечує тимчасову, анонімну, безпечну, одноразову електронну адресу. Ви можете використовувати на Facebook, Twitter або instagram для анонімного входу!"
         },
         {
           "title": "Почта",
@@ -3070,32 +3204,37 @@
           "title": "Blog - Insights in OSINT",
           "url": "https://www.osintcombine.com/blog",
           "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
-          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts",
+          "description_uk": "Блоги, вебінари, лідерство та подкасти"
         },
         {
           "title": "Webinars - OSINT Combine",
           "url": "https://www.osintcombine.com/webinars",
           "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
-          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts",
+          "description_uk": "Блоги, вебінари, лідерство та подкасти"
         },
         {
           "title": "Thought Leadership - AI & Capability",
           "url": "https://www.osintcombine.com/thought-leadership",
           "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
-          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts",
+          "description_uk": "Блоги, вебінари, лідерство та подкасти"
         },
         {
           "title": "Podcast - OSINT Combine",
           "url": "https://www.osintcombine.com/podcast",
           "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
-          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts",
+          "description_uk": "Блоги, вебінари, лідерство та подкасти"
         },
         {
           "title": "NexusXplore",
           "url": "https://www.osintcombine.com/platform-new",
           "real_title": "NexusXplore OSINT Platform for Critical Missions | OSINT Combine",
           "description": "The leading OSINT platform globally. Trusted globally by Defense, National Security, Law Enforcement & Fortune 500s. Open-source intelligence training & tools by analysts for analysts.",
-          "from_wayback": true
+          "from_wayback": true,
+          "description_uk": "Провідна платформа OSINT глобально. Довіряється глобально захистом, національною безпекою, правоохоронними та Fortune 500s. Аналітики аналітиків для аналітиків."
         }
       ],
       "group": "Інструменти й утиліти",
@@ -3122,25 +3261,29 @@
           "title": "Точная дата и время",
           "url": "https://www.epochconverter.com/",
           "real_title": "Epoch Converter - Unix Timestamp Converter",
-          "description": "Easy Epoch & Unix timestamp converter tools for software developers. Includes epoch explanation and conversion syntax in many programming languages."
+          "description": "Easy Epoch & Unix timestamp converter tools for software developers. Includes epoch explanation and conversion syntax in many programming languages.",
+          "description_uk": "Ми можемо самі зателефонувати одержувачу і узгодити зручний для вас час. Включає epoch пояснення та перетворення синтаксису в багатьох мовах програмування."
         },
         {
           "title": "Декодирование шифра",
           "url": "https://www.dcode.fr/caesar-cipher",
           "real_title": "Caesar Cipher (Shift) Translator - Online Decoder, Encoder, Solver",
-          "description": "Tool for encoding and decoding with the Caesar cipher, a simple and famous shift cipher that replaces each letter with another one further down the alphabet. Compatible with ROT13 and other variants."
+          "description": "Tool for encoding and decoding with the Caesar cipher, a simple and famous shift cipher that replaces each letter with another one further down the alphabet. Compatible with ROT13 and other variants.",
+          "description_uk": "Інструмент для кодування та декодування з цезаром cipher, простий і відомий зсувний cipher, який замінює кожен лист з іншим додатково вниз алфавіту. Сумісний з ROT13 та іншими варіантами."
         },
         {
           "title": "Расшифровка хеша (зашифрованый код)",
           "url": "https://cmd5.org/",
           "real_title": "Cmd5 - MD5 Online ,MD5 Decryption, MD5 Hash Decoder",
-          "description": "Welcome to the project designed to md5 decrypt, This website contains the largest database in the world. \r\nWe have a total of just over 20.408 trillion unique hashes."
+          "description": "Welcome to the project designed to md5 decrypt, This website contains the largest database in the world. \r\nWe have a total of just over 20.408 trillion unique hashes.",
+          "description_uk": "Ласкаво просимо до проекту, призначеного для розшифрування md5, цей сайт містить найбільшу базу даних у світі.\nМи можемо самі зателефонувати одержувачу і узгодити зручний час."
         },
         {
           "title": "CrackStation расшифровка хеша",
           "url": "https://crackstation.net/",
           "real_title": "CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.",
-          "description": "Crackstation is the most effective hash cracking service. We crack: MD5, SHA1, SHA2, WPA, and much more..."
+          "description": "Crackstation is the most effective hash cracking service. We crack: MD5, SHA1, SHA2, WPA, and much more...",
+          "description_uk": "Crackstation є найбільш ефективна служба хеш тріщин. Ми тріщини: MD5, SHA1, SHA2, WPA і багато іншого..."
         },
         {
           "title": "Расшифровка хеша",
@@ -3159,7 +3302,8 @@
           "title": "ThunderTrace ・ Web Service ・ Render Dashboard",
           "url": "https://dashboard.render.com/web/srv-d89086mk1jcs73fvtntg/deploys/dep-d89086uk1jcs73fvtodg?r=2026-05-23%4019%3A45%3A35%7E2026-05-23%4019%3A48%3A44",
           "real_title": "Render · The Easiest Cloud For All Your Apps",
-          "description": "Render is a unified cloud to build and run all your apps and websites with free SSL, global CDN, private networks and automatic deploys from Git."
+          "description": "Render is a unified cloud to build and run all your apps and websites with free SSL, global CDN, private networks and automatic deploys from Git.",
+          "description_uk": "Render є єдиною хмарою для створення та запуску всіх ваших додатків та веб-сайтів з безкоштовним SSL, глобальним CDN, приватними мережами та автоматичними розгортаннями від Git."
         },
         {
           "title": "ThunderTrace",
@@ -3200,13 +3344,15 @@
           "url": "https://start.me/p/0Pqbdg/osint-500-tools",
           "real_title": "OSINT +500 Tools - Start.me",
           "from_wayback": true,
-          "description": "A startpage with online resources about OSINT +500 Tools, created by Joseph."
+          "description": "A startpage with online resources about OSINT +500 Tools, created by Joseph.",
+          "description_uk": "Стартап з Інтернет-ресурсами про інструменти OSINT +500, створених Джозефом."
         },
         {
           "title": "Social Media - Start.me",
           "url": "https://start.me/p/4K0DXg/social-media",
           "real_title": "Social Media - Start.me",
-          "description": "A startpage with online resources about Social Media, created by Osintia Zoekslag."
+          "description": "A startpage with online resources about Social Media, created by Osintia Zoekslag.",
+          "description_uk": "Стартап з Інтернет-ресурсами про соціальні медіа, створених Osintia Zoekslag."
         },
         {
           "title": "Deepweb en tools - Start.me",
@@ -3219,7 +3365,8 @@
           "title": "Trouble Fake - Start.me",
           "url": "https://start.me/p/QRQb0O/trouble-fake",
           "real_title": "Trouble Fake - Start.me",
-          "description": "A startpage with online resources about Trouble Fake, created by Troublefake."
+          "description": "A startpage with online resources about Trouble Fake, created by Troublefake.",
+          "description_uk": "Стартап з онлайн-ресурсами про Trouble Fake, створений Troublefake."
         },
         {
           "title": "FREE OSINT TOOLS | OSINT Combine",
@@ -3240,19 +3387,22 @@
           "title": "OSINT Platforms",
           "url": "https://www.osinthandbook.com/osint-platforms",
           "real_title": "OSINT Platforms",
-          "description": "An index of OSINT tools and resources curated by the team at i-Intelligence GmbH."
+          "description": "An index of OSINT tools and resources curated by the team at i-Intelligence GmbH.",
+          "description_uk": "Індекс інструментів OSINT та ресурсів, які вилікуються командою в i-Intelligence GmbH."
         },
         {
           "title": "Bellingcat's Online Investigation Toolkit",
           "url": "https://bellingcat.gitbook.io/toolkit",
           "real_title": "Home | Bellingcat's Online Investigation Toolkit",
-          "description": "A toolkit for open source researchers"
+          "description": "A toolkit for open source researchers",
+          "description_uk": "Інструментарій для дослідників відкритого джерела"
         },
         {
           "title": "ManuelBot59 (Manuel Travezaño) · GitHub",
           "url": "https://github.com/ManuelBot59",
           "real_title": "ManuelBot59 (Manuel Travezaño) · GitHub",
-          "description": "🛡️ Cyber Intelligence & Cybercrime | 🕵️ Tactical Analyst & Social Media Investigator 🔎 | 👨🏻‍💻 OSINT & SOCMINT Expert | 👨‍🏫 Instructor at LISA Institute - ManuelBot59"
+          "description": "🛡️ Cyber Intelligence & Cybercrime | 🕵️ Tactical Analyst & Social Media Investigator 🔎 | 👨🏻‍💻 OSINT & SOCMINT Expert | 👨‍🏫 Instructor at LISA Institute - ManuelBot59",
+          "description_uk": "浜у 涓 蹇"
         },
         {
           "title": "Копия Email-Username-OSINT-ManuelBOT.xlsx - Google Таблицы",
@@ -3265,7 +3415,8 @@
           "title": "GitHub - techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit: A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, and methodologies to aid in gathering and analyzing publicly available information. Designed for security researchers, journalists, and forensic analysts for ethical and legal investigations. · GitHub",
           "url": "https://github.com/techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit",
           "real_title": "GitHub - techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit: A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, a",
-          "description": "A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, and methodologies to aid in gathering and analyzing publicly available information. Designed for security researchers, journalists, and forensic ana"
+          "description": "A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, and methodologies to aid in gathering and analyzing publicly available information. Designed for security researchers, journalists, and forensic ana",
+          "description_uk": "Призначений інструментарій для проведення відкритих досліджень (OSINT) Цей репозиторій містить збірник сценаріїв, ресурсів та методологій, які допомагають збирати та аналізувати публічно доступну інформацію. Призначений для дослідників безпеки, журналістів та судових ана"
         },
         {
           "title": "GitHub - jivoi/awesome-osint: :scream: A curated list of amazingly awesome OSINT · GitHub",
@@ -3311,31 +3462,36 @@
           "title": "Bellingcat Open Source Challenge",
           "url": "https://challenge.bellingcat.com/",
           "real_title": "Bellingcat Open Source Challenge",
-          "description": "Test your open source research skills."
+          "description": "Test your open source research skills.",
+          "description_uk": "Тестувати навички відкритих джерел."
         },
         {
           "title": "Trace Labs",
           "url": "https://www.tracelabs.org/",
           "real_title": "Trace Labs",
-          "description": "Trace Labs is a nonprofit organization whose mission is to accelerate the family reunification of missing persons while training members in the tradecraft of open source intelligence (OSINT)."
+          "description": "Trace Labs is a nonprofit organization whose mission is to accelerate the family reunification of missing persons while training members in the tradecraft of open source intelligence (OSINT).",
+          "description_uk": "Trace Labs – це некомерційна організація, місія якої полягає в прискоренні сімейної реуніфікації відсутніх осіб під час підготовки членів торговельного апарату відкритого джерела (OSINT)."
         },
         {
           "title": "OSINT CTF Platform - OSINT Industries",
           "url": "https://ctf.osint.industries/challenges",
           "real_title": "OSINT CTF Platform - OSINT Industries",
-          "description": "Train your OSINT skills through realistic, scenario-based capture-the-flag challenges designed to simulate real-world research and digital tracing."
+          "description": "Train your OSINT skills through realistic, scenario-based capture-the-flag challenges designed to simulate real-world research and digital tracing.",
+          "description_uk": "Підготуйте свої навички OSINT через реалістичні, сценаріїзовані виклики, призначені для імітації досліджень реального світу та цифрового відстеження."
         },
         {
           "title": "CTF | EPCYBER",
           "url": "https://epcyber.com/ctf",
           "real_title": "EPCyber CTF | Capture The Flag Challenges",
-          "description": "Practice OSINT, dark web CTI, and threat intelligence skills on real-world capture-the-flag challenges. Hands-on exercises for serious practitioners."
+          "description": "Practice OSINT, dark web CTI, and threat intelligence skills on real-world capture-the-flag challenges. Hands-on exercises for serious practitioners.",
+          "description_uk": "Практика OSINT, темна веб-сторінка CTI і навички розвідки загроз на реальних світських викликах захоплення. Практичні заняття для серйозних практиків."
         },
         {
           "title": "Огляди OSINT Industries CTF 2025 | автор: Manikmaya | Середнє",
           "url": "https://0xmanikmaya.medium.com/osint-industries-ctf-2025-write-ups-fb7ffc1079d7",
           "real_title": "OSINT Industries CTF 2025 Write Ups | by Manikmaya | Medium",
-          "description": "“” is published by Manikmaya."
+          "description": "“” is published by Manikmaya.",
+          "description_uk": "«» публікується Манікомаєю."
         }
       ],
       "group": "Освіта",
@@ -3348,14 +3504,16 @@
           "title": "Онлайн-курсы — изучайте любую тему в собственном темпе | Udemy",
           "url": "https://www.udemy.com/",
           "real_title": "Udemy: Online Courses for Skills, Careers & AI",
-          "description": "Learn in-demand skills with online courses, get professional certificates that advance your career, and explore courses in AI, coding, business and more."
+          "description": "Learn in-demand skills with online courses, get professional certificates that advance your career, and explore courses in AI, coding, business and more.",
+          "description_uk": "Вивчайте навички з онлайн-курсами, отримуйте професійні сертифікати, які передають свою кар’єру, а також вивчення курсів в AI, кодуванні, бізнесі та багато іншого."
         },
         {
           "title": "OSINT Combine Academy",
           "url": "https://academy.osintcombine.com/l/dashboard",
           "real_title": "OSINT Combine Academy",
           "description": "Онлайн-ресурс на academy.osintcombine.com.",
-          "synth_desc": true
+          "synth_desc": true,
+          "description_uk": "Сайт розроблено компанією universalweb.com.ua."
         },
         {
           "title": "GEOINT-тренінг",
@@ -3369,7 +3527,8 @@
           "title": "Manuel Travezaño OSINT | Patreon",
           "url": "https://www.patreon.com/cw/ManuelBot59",
           "real_title": "Manuel Travezaño OSINT — recursos osint, metodologías SOCMINT, Ciberinteligencia | Patreon",
-          "description": "Get more from Manuel Travezaño OSINT on Patreon. recursos osint, metodologías SOCMINT, Ciberinteligencia. Support Manuel Travezaño OSINT and get exclusive access to their work."
+          "description": "Get more from Manuel Travezaño OSINT on Patreon. recursos osint, metodologías SOCMINT, Ciberinteligencia. Support Manuel Travezaño OSINT and get exclusive access to their work.",
+          "description_uk": "Отримайте більше від Manuel Travezaño OSINT на Patreon. рекурсос озін, метеорологічні засоби SOCMINT, Ciberinteligencia. Підтримка Manuel Travezaño OSINT і отримати ексклюзивний доступ до їх роботи."
         }
       ],
       "group": "Освіта",
@@ -3389,7 +3548,8 @@
           "title": "Узнавать за утечки",
           "url": "https://www.bleepingcomputer.com/",
           "real_title": "BleepingComputer | Cybersecurity, Technology News and Support",
-          "description": "BleepingComputer is a premier destination for cybersecurity news for over 20 years, delivering breaking stories on the latest hacks, malware threats, and how to protect your devices."
+          "description": "BleepingComputer is a premier destination for cybersecurity news for over 20 years, delivering breaking stories on the latest hacks, malware threats, and how to protect your devices.",
+          "description_uk": "BleepingComputer є прем'єрним місцем для новин з кібербезпеки протягом більш ніж 20 років, забезпечуючи розбиття історії на останніх хаках, загрозах шкідливих програм і як захистити ваші пристрої."
         },
         {
           "title": "Архив валютных курсов",
@@ -3409,7 +3569,8 @@
           "title": "daily court lists",
           "url": "https://web.archive.org/web/20200306131224/https://www.criminal-court-records.com.au/daily-court-lists.html",
           "real_title": "daily court lists",
-          "description": "Check to see whether someone is listed to appear before a particular state court on that day.  Some courts (e.g. NSW & VIC) also provide details of future listings."
+          "description": "Check to see whether someone is listed to appear before a particular state court on that day.  Some courts (e.g. NSW & VIC) also provide details of future listings.",
+          "description_uk": "Перевірити, чи є хто-небудь, щоб з'явитися до конкретного державного суду в цей день. Деякі суди (наприклад, NSW & VIC) також пропонують деталі майбутніх списків."
         }
       ],
       "group": "Інше",
@@ -3437,25 +3598,29 @@
           "title": "Карта движения самолётов и характеристика",
           "url": "https://globe.adsbexchange.com/",
           "real_title": "ADS-B Exchange - track aircraft live",
-          "description": "ADS-B Exchange - track aircraft live - aircraft flight history"
+          "description": "ADS-B Exchange - track aircraft live - aircraft flight history",
+          "description_uk": "ADS-B Exchange - відстежити авіапереліт"
         },
         {
           "title": "Справочник самолётов",
           "url": "https://www.aircraftrecognitionguide.com/",
           "real_title": "Aircraft Recognition Guide - Aircraft Recognition Guide",
-          "description": "Aircraft Recognition Guide helps you recognise different types of aircraft, airplanes and helicopters, based on the main characteristics."
+          "description": "Aircraft Recognition Guide helps you recognise different types of aircraft, airplanes and helicopters, based on the main characteristics.",
+          "description_uk": "Помічник з питань виявлення літаків допомагає розпізнати різні типи літаків, літаків та вертольотів, що базуються на основних характеристиках."
         },
         {
           "title": "Информация про аэропорты по айди или названию",
           "url": "https://www.airnav.com/airports/get",
           "real_title": "AirNav: Airport Information",
-          "description": "Up-to-date airport and fuel prices information.  Communication frequencies, navigation and runway details.  Extensive listing of FBO services and features, plus contacts.  Browse by identifier and any geographic element"
+          "description": "Up-to-date airport and fuel prices information.  Communication frequencies, navigation and runway details.  Extensive listing of FBO services and features, plus contacts.  Browse by identifier and any geographic element",
+          "description_uk": "Інформація про сучасні аеропорти та ціни на паливо. Комунікаційні частоти, навігаційні та проточні деталі. Широкий перелік послуг ФБО та функцій, плюс контакти. Перегляд ідентифікатора та будь-якого географічного елементу"
         },
         {
           "title": "Данные про рейсы и т.д",
           "url": "https://aviability.com/",
           "real_title": "Before Flight & Beyond - Aviability",
-          "description": "From planning to arrival and everything after, get the flight info and travel support you need"
+          "description": "From planning to arrival and everything after, get the flight info and travel support you need",
+          "description_uk": "Від планування до прибуття і все після того, як ви отримаєте інформацію про рейс і супровід подорожі"
         }
       ],
       "group": "Інше",
@@ -3468,13 +3633,15 @@
           "title": "Проверка по VIN USA",
           "url": "https://www.autodetective.com/",
           "real_title": "VIN Check & Lookup - Search the Owner by VIN - AutoDetective",
-          "description": "Run a VIN number check to get a detailed and real-time vehicle history & title report. \n                Look up the owner by VIN with AutoDetective and get instant free results."
+          "description": "Run a VIN number check to get a detailed and real-time vehicle history & title report. \n                Look up the owner by VIN with AutoDetective and get instant free results.",
+          "description_uk": "Запустіть перевірку номеру VIN для отримання детального та поточного звіту про історію та назву транспортного засобу.\nОзнайомтеся з власником VIN з AutoDetective і отримуйте миттєві безкоштовні результати."
         },
         {
           "title": "Установка марки авто",
           "url": "https://carnet.ai/",
           "real_title": "CarNet.AI - Car Make/Model Recognition API",
-          "description": "Car Make/Model Recognition API with 97% Accuracy"
+          "description": "Car Make/Model Recognition API with 97% Accuracy",
+          "description_uk": "API розпізнавання автомобіля/модель з 97% Точність"
         }
       ],
       "group": "Інше",
@@ -3487,13 +3654,15 @@
           "title": "BIC: Бюро міжнародних контейнерів",
           "url": "https://www.bic-code.org/",
           "real_title": "BIC: Bureau of International Containers",
-          "description": "We are the only non-governmental organization linking all groups interested in containerization and intermodal transport: from carriers to manufacturers."
+          "description": "We are the only non-governmental organization linking all groups interested in containerization and intermodal transport: from carriers to manufacturers.",
+          "description_uk": "Ми є єдиною недержавною організацією, яка пов'язана з усіма групами, які зацікавлені в контейнеризації та міжмодального транспорту: від перевізників до виробників."
         },
         {
           "title": "Проверка контрольных цыфр",
           "url": "https://container.checkdigit.info/",
           "real_title": "Container check digit calculator",
-          "description": "Container check digit calculator for calculation and verification"
+          "description": "Container check digit calculator for calculation and verification",
+          "description_uk": "Калькулятор контейнера для розрахунку та перевірки"
         },
         {
           "title": "Відстеження вантажів",
@@ -3528,7 +3697,8 @@
           "title": "Информационный центр про корабли яхты",
           "url": "https://www.boatinfoworld.com/",
           "real_title": "BoatInfoWorld.com - Search, View & Download Vessel Information",
-          "description": "Search, view & download vessel information on over 416,000 documented boats  - owner info, hull identification number, length, year, ship builder,..."
+          "description": "Search, view & download vessel information on over 416,000 documented boats  - owner info, hull identification number, length, year, ship builder,...",
+          "description_uk": "Пошук, перегляд та завантаження суднової інформації про понад 416,000 документальних човнів - власник інформації, номер ідентифікації корпусу, довжина, рік, суднобудівник, ..."
         },
         {
           "title": "База данных незаконных суден",
@@ -3549,13 +3719,15 @@
           "title": "Карта колий (поездов, трамваев и т.д.)",
           "url": "https://www.openrailwaymap.org/index.php",
           "real_title": "OpenRailwayMap",
-          "description": "OpenRailwayMap - An OpenStreetMap-based project for creating a map of the world's railway infrastructure."
+          "description": "OpenRailwayMap - An OpenStreetMap-based project for creating a map of the world's railway infrastructure.",
+          "description_uk": "OpenRailwayMap - Проект OpenStreetMap для створення карти світової залізничної інфраструктури."
         },
         {
           "title": "ВебКамеры вокзалов поездов",
           "url": "https://railwebcams.net/",
           "real_title": "RailWebcams.net - Live railway, railroad & light rail webcams worldwide - RailWebcams.net",
-          "description": "RailWebcams.net - Live Railway, Railroad & Light Rail, Metro & Tram Webcams from around the World. View railway timetables for each webcam view, map locations and more."
+          "description": "RailWebcams.net - Live Railway, Railroad & Light Rail, Metro & Tram Webcams from around the World. View railway timetables for each webcam view, map locations and more.",
+          "description_uk": "RailWebcams.net - Жива залізниця, Залізнична і світла Rail, Веб-камери Metro & Tram з усього світу. Перегляд залізничних розкладів для кожного перегляду веб-камери, розміщення карт та багато іншого."
         }
       ],
       "group": "Інше",
