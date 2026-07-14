@@ -387,20 +387,28 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   max-width: 940px !important;
 }
 .grid--rows .card { padding: 0; overflow: hidden; }
-.grid--rows .card--with-cover { flex-direction: row; }
+.grid--rows .card--with-cover { flex-direction: row; align-items: stretch; }
 .grid--rows .card__cover {
   aspect-ratio: unset;
-  width: 260px;
+  width: 42%;
+  min-width: 320px;
+  max-width: 440px;
   flex-shrink: 0;
   height: auto;
-  min-height: 180px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
-.grid--rows .card__body { flex: 1; padding: 1.5rem 1.75rem; display: flex; flex-direction: column; }
+.grid--rows .card__cover img { object-fit: contain; max-height: 100%; }
+.grid--rows .card__cover::after { display: none; }
+.grid--rows .card__body { flex: 1; padding: 1.75rem 2rem; display: flex; flex-direction: column; justify-content: center; }
 .grid--rows .card__body p { flex: 1; }
 .grid--rows .card:not(.card--with-cover) { padding: 1.5rem 1.75rem; }
 @media (max-width: 640px) {
   .grid--rows .card--with-cover { flex-direction: column; }
-  .grid--rows .card__cover { width: 100%; aspect-ratio: 16/9; }
+  .grid--rows .card__cover { width: 100%; max-width: none; padding: 1rem; aspect-ratio: 16/9; }
 }
 
 /* Card cover ---------------------------------------------- */
