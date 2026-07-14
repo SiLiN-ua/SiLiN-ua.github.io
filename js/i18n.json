@@ -31,6 +31,7 @@
     "about.p2": "Моя робота підтримує команди безпеки, комплаєнсу та HR при оцінці ризиків: кандидати, співробітники, керівники, треті сторони. Я перетворюю фрагментовані відкриті дані на структуровану, доказову розвідку через кореляцію крос-платформних сигналів, поведінкових патернів та ідентифікаційних індикаторів.",
     "about.p3": "Мої розслідування включають верифікацію особи, аналіз цифрового сліду, оцінку витоків даних та мапінг мережевих зв'язків. Пріоритет — точність, відтворюваність та доказова якість.",
     "about.p4": "Раніше — оперативний досвід у поліції: транскордонні шахрайські розслідування та координація оперативних груп. Сьогодні застосовую ті самі методології в корпоративному контексті. Мій підхід — гіпотезно-керований, з фокусом на верифікацію: decision-grade intelligence, а не об'єм даних чи інструментів.",
+    "about.p5": "Окрім розслідувань — розробляю власні OSINT-інструменти з відкритим вихідним кодом та пишу книги: як практичні посібники з аналітики для початківців, так і авторські роботи про професію, війну та мислення слідчого. Все, що я публікую, спирається на реальну оперативну практику.",
     "about.more": "Дізнатися більше →",
 
     "cases.eyebrow": "Кейси",
@@ -119,7 +120,7 @@
 
     "contact.eyebrow": "Контакти",
     "contact.title": "Зв'язок",
-    "contact.subtitle": "Для колег зі спільноти OSINT, медіа-запитів та зворотного зв'язку щодо статей і книг. Приватну практику зараз не веду — на комерційні пропозиції не відповідаю.",
+    "contact.subtitle": "Для зворотного зв'язку зі спільнотою OSINT, медіа-запитів та обговорення статей і книг.",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.telegram": "Telegram",
@@ -171,6 +172,7 @@
     "about.p2": "My work supports security, compliance, and HR teams in assessing risk when evaluating candidates, employees, executives, and third-party relationships. I turn fragmented open-source data into structured, defensible intelligence by correlating cross-platform signals, behavioral patterns, and identity-related indicators.",
     "about.p3": "My investigations include identity verification, digital footprint analysis, breach exposure assessment, and network relationship mapping to identify inconsistencies and potential risk factors.",
     "about.p4": "I have prior experience in law enforcement intelligence operations, including cross-border fraud investigations and operational team coordination. Today, I apply structured investigative methodologies in a corporate context, prioritizing accuracy, reproducibility, and evidential quality. My approach is hypothesis-driven and validation-focused.",
+    "about.p5": "Beyond investigations, I build my own open-source OSINT tools and write books — both practical guides for aspiring analysts and author works on the profession, the war, and the mind of an investigator. Everything I publish is grounded in real operational practice.",
     "about.more": "Learn more →",
 
     "cases.eyebrow": "Case studies",
@@ -259,7 +261,7 @@
 
     "contact.eyebrow": "Contact",
     "contact.title": "Get in touch",
-    "contact.subtitle": "For OSINT community peers, media inquiries, and feedback on articles and books. I'm not currently taking private engagements — commercial requests will not be answered.",
+    "contact.subtitle": "For feedback from the OSINT community, media inquiries, and discussion of my articles and books.",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.telegram": "Telegram",
