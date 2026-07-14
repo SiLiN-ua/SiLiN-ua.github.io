@@ -76,6 +76,7 @@
     const source = item.source
       ? `<div style="font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-mute);margin-top:1rem">${sourceLbl} · ${escapeHtml(item.source)}</div>`
       : '';
+    const linkLbl = escapeHtml(dict[collection === 'cases' ? 'cases.readMore' : 'cases.readMore'] || readMoreText || 'Читати →');
     return `
       <article class="card ${cover ? 'card--with-cover' : ''}">
         ${cover}
@@ -85,7 +86,7 @@
           <h3>${title}</h3>
           <p>${desc}</p>
           ${source}
-          <a href="${href}" class="card__link">${readMoreText}</a>
+          <a href="${href}" class="card__link">${linkLbl}</a>
         </div>
       </article>`;
   }

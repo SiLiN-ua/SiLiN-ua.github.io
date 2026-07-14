@@ -78,7 +78,9 @@
       document.getElementById('list-view').style.display = 'none';
       document.getElementById('article-view').style.display = 'block';
     }
-    await YSContent.renderListOrArticle('cases', '#cases-list', '#article-body', 'Читати кейс →');
+    const render = () => YSContent.renderListOrArticle('cases', '#cases-list', '#article-body', 'Читати кейс →');
+    await render();
+    document.addEventListener('langchange', render);
   })();
 </script>
 </body>

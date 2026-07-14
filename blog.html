@@ -107,7 +107,9 @@
       document.getElementById('list-view').style.display = 'none';
       document.getElementById('article-view').style.display = 'block';
     }
-    await YSContent.renderListOrArticle('posts', '#posts-list', '#article-body', 'Читати →');
+    const render = () => YSContent.renderListOrArticle('posts', '#posts-list', '#article-body', 'Читати →');
+    await render();
+    document.addEventListener('langchange', render);
   })();
 </script>
 </body>

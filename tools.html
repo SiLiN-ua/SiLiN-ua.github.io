@@ -89,8 +89,12 @@
       document.getElementById('list-view').style.display = 'none';
       document.getElementById('article-view').style.display = 'block';
     }
-    await YSContent.renderToolsListOrArticle('#tools-list', '#article-body');
-    YSContent.renderToolsStack('#tools-stack');
+    const render = async () => {
+      await YSContent.renderToolsListOrArticle('#tools-list', '#article-body');
+      YSContent.renderToolsStack('#tools-stack');
+    };
+    await render();
+    document.addEventListener('langchange', render);
   })();
 </script>
 </body>
