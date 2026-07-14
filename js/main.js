@@ -15,6 +15,7 @@
     try {
       const res = await fetch(rootPath() + 'js/i18n.json', { cache: 'no-cache' });
       dict = await res.json();
+      window.__i18nDict = dict;
     } catch (e) {
       console.warn('i18n load failed', e);
     }
@@ -51,6 +52,7 @@
       b.classList.toggle('active', b.dataset.lang === lang);
     });
     localStorage.setItem(STORAGE, lang);
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
   }
 
   function initLangSwitcher() {

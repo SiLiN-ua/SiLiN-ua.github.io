@@ -104,8 +104,16 @@ collections:
     fields:
       - { name: title_uk,    label: "Назва (UA)",              widget: string }
       - { name: title_en,    label: "Title (EN)",              widget: string, required: false }
+      - name: category
+        label: "Категорія"
+        widget: select
+        default: educational
+        options:
+          - { label: "Навчальні",  value: educational }
+          - { label: "Мемуари",    value: memoir }
+          - { label: "Художні",    value: fiction }
       - { name: year,        label: "Рік",                     widget: number, value_type: int }
-      - { name: languages,   label: "Мови",                    widget: string, hint: "Наприклад: UA / EN / RU" }
+      - { name: languages,   label: "Мови",                    widget: string, hint: "Наприклад: UA / EN" }
       - { name: cover,        label: "Обкладинка",              widget: image, required: false }
       - { name: description_uk, label: "Опис (UA)",             widget: text }
       - { name: description_en, label: "Description (EN)",      widget: text, required: false }
