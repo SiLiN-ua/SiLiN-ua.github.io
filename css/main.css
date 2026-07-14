@@ -533,16 +533,7 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .prose h2 { margin: 3rem 0 1.25rem; font-size: 2rem; }
 .prose h3 { margin: 2.5rem 0 1rem; font-size: 1.4rem; color: var(--ice); }
 .prose p  { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.85; color: var(--text); }
-.prose p:first-of-type::first-letter {
-  font-family: var(--font-serif);
-  font-size: 3.5rem;
-  color: var(--ice);
-  float: left;
-  line-height: 1;
-  padding-right: .5rem;
-  padding-top: .25rem;
-  text-shadow: 0 0 20px rgba(74,158,255,.3);
-}
+/* Drop cap disabled — was leaking into blockquotes and emojis */
 .prose ul, .prose ol { margin: 0 0 1.5rem 1.5rem; }
 .prose li { margin-bottom: .5rem; color: var(--text); }
 .prose table {
@@ -596,6 +587,31 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   padding: 2rem 0 3rem;
   border-bottom: 1px solid var(--border);
   margin-bottom: 3rem;
+}
+.prose__hero {
+  margin: -1rem calc(-1 * var(--gutter)) 3rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+.prose__hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 560px;
+}
+.prose__hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 55%, var(--bg) 100%),
+    radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(5,7,13,.4) 100%);
+}
+@media (min-width: 900px) {
+  .prose__hero { margin: -1rem -6rem 3rem; }
 }
 .article-meta h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); margin: 1rem 0; }
 .article-meta .mono { color: var(--text-mute); }

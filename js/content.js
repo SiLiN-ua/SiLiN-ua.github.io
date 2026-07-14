@@ -107,7 +107,7 @@
     const body  = tr(item, 'body') || tr(item, 'summary');
     const bodyHtml = window.marked ? window.marked.parse(body || '') : escapeHtml(body).replace(/\n/g, '<br>');
     const cover  = item.cover
-      ? `<div style="margin:2rem 0"><img src="${escapeHtml(item.cover)}" alt="" style="width:100%;max-height:420px;object-fit:cover;border:1px solid var(--border)"></div>`
+      ? `<figure class="prose__hero"><img src="${escapeHtml(item.cover)}" alt=""></figure>`
       : '';
     const sourceLbl = escapeHtml(dict['card.source'] || 'Джерело');
     const source = (item.source || item.source_url)
@@ -118,10 +118,8 @@
         </div>`
       : '';
     const primary = item.source_url
-      ? `<p style="text-align:center;margin-top:3rem"><a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener" class="btn">Перейти до джерела ↗</a></p>`
-      : (item.linkedin
-        ? `<p style="text-align:center;margin-top:3rem"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener" class="btn">Оригінал на LinkedIn ↗</a></p>`
-        : '');
+      ? `<p style="text-align:center;margin-top:3rem"><a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener" class="btn">${escapeHtml(dict['media.readSource']||'Перейти до джерела ↗')}</a></p>`
+      : '';
     return `
       <div class="article-meta">
         ${tag ? `<span class="eyebrow">${tag}${date ? ' · ' + date : ''}</span>` : (date ? `<span class="eyebrow">${date}</span>` : '')}
