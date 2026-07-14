@@ -39,10 +39,10 @@ collections:
       - { name: linkedin,    label: "LinkedIn URL (опційно)",  widget: string, required: false }
       - { name: published,   label: "Опубліковано",            widget: boolean, default: true }
 
-  # ---------- НОВИНИ / СТАТТІ ----------
+  # ---------- OSINT-НОВИНИ ----------
   - name: posts
-    label: "Новини та статті"
-    label_singular: "Стаття"
+    label: "OSINT-новини"
+    label_singular: "Новина"
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
@@ -55,13 +55,14 @@ collections:
       - { name: title_uk,    label: "Заголовок (UA)",          widget: string }
       - { name: title_en,    label: "Title (EN)",              widget: string, required: false }
       - { name: date,        label: "Дата",                    widget: datetime, date_format: "DD.MM.YYYY", time_format: false }
-      - { name: tag,         label: "Категорія",               widget: string, hint: "Наприклад: OSINT, Case study, Опінія" }
-      - { name: summary_uk,  label: "Анонс (UA)",              widget: text }
-      - { name: summary_en,  label: "Summary (EN)",            widget: text, required: false }
+      - { name: tag,         label: "Категорія",               widget: string, hint: "Наприклад: Україна, Світ, Інструменти, Право" }
+      - { name: source,      label: "Джерело",                 widget: string, hint: "Назва видання/автора первинного повідомлення", required: false }
+      - { name: source_url,  label: "Посилання на джерело",    widget: string, required: false }
+      - { name: summary_uk,  label: "Короткий переказ (UA)",   widget: text }
+      - { name: summary_en,  label: "Short summary (EN)",      widget: text, required: false }
       - { name: cover,       label: "Обкладинка (опційно)",    widget: image, required: false }
-      - { name: body_uk,     label: "Повний текст (UA)",       widget: markdown, required: false }
-      - { name: body_en,     label: "Full text (EN)",          widget: markdown, required: false }
-      - { name: linkedin,    label: "LinkedIn URL (опційно)",  widget: string, required: false }
+      - { name: body_uk,     label: "Розширений коментар (UA)", widget: markdown, required: false, hint: "Твій погляд, контекст, чому це важливо. Опційно." }
+      - { name: body_en,     label: "Extended commentary (EN)", widget: markdown, required: false }
       - { name: published,   label: "Опубліковано",            widget: boolean, default: true }
 
   # ---------- ІНСТРУМЕНТИ ----------

@@ -96,9 +96,9 @@
     "exp.police.l3": "Співпраця з Chainalysis: аналіз криптовалютних транзакцій та фінансових потоків",
     "exp.police.l4": "Затримання та обвинувачення 15 членів злочинної організації; вилучено доказів на понад 11 млн грн",
 
-    "blog.eyebrow": "Новини та статті",
-    "blog.title": "Публікації та методологічні розбори",
-    "blog.subtitle": "Реальні кейси. Реальні інструменти. Реальні результати.",
+    "blog.eyebrow": "OSINT-новини",
+    "blog.title": "Головні події сфери OSINT",
+    "blog.subtitle": "Новини галузі, розслідування колег, оновлення інструментів та законодавства — з України та світу.",
 
     "tools.eyebrow": "Інструменти",
     "tools.title": "Робочий арсенал",
@@ -237,9 +237,9 @@
     "exp.police.l3": "Established cooperation with Chainalysis: analysis of cryptocurrency transactions and financial flows",
     "exp.police.l4": "Led to arrest and charging of 15 members of the criminal organization; evidence and seized equipment worth over 11 million UAH",
 
-    "blog.eyebrow": "News & articles",
-    "blog.title": "Publications and methodology breakdowns",
-    "blog.subtitle": "Real cases. Real tools. Real results.",
+    "blog.eyebrow": "OSINT news",
+    "blog.title": "Key developments in the OSINT world",
+    "blog.subtitle": "Industry news, investigations by peers, tool updates, and regulatory changes — from Ukraine and the world.",
 
     "tools.eyebrow": "Tools",
     "tools.title": "The working arsenal",
