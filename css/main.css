@@ -380,6 +380,29 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .sec-title p { color: var(--text-dim); margin-top: 1rem; max-width: 640px; margin-inline: auto; }
 .sec-title--left p { margin-inline: 0; }
 
+/* News horizontal layout (blog page) ---------------------- */
+.grid--rows {
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem !important;
+  max-width: 940px !important;
+}
+.grid--rows .card { padding: 0; overflow: hidden; }
+.grid--rows .card--with-cover { flex-direction: row; }
+.grid--rows .card__cover {
+  aspect-ratio: unset;
+  width: 260px;
+  flex-shrink: 0;
+  height: auto;
+  min-height: 180px;
+}
+.grid--rows .card__body { flex: 1; padding: 1.5rem 1.75rem; display: flex; flex-direction: column; }
+.grid--rows .card__body p { flex: 1; }
+.grid--rows .card:not(.card--with-cover) { padding: 1.5rem 1.75rem; }
+@media (max-width: 640px) {
+  .grid--rows .card--with-cover { flex-direction: column; }
+  .grid--rows .card__cover { width: 100%; aspect-ratio: 16/9; }
+}
+
 /* Card cover ---------------------------------------------- */
 .card--with-cover { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .card__cover {
@@ -775,7 +798,7 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .book__cover {
   aspect-ratio: 2/3;
   background: linear-gradient(135deg, #0a1024 0%, #050a18 100%);
-  border: 1px solid var(--border-hi);
+  border: 1px solid rgba(74,158,255,.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -783,15 +806,15 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform .4s var(--ease-out);
-  box-shadow: 0 20px 40px rgba(5,7,13,.6);
+  transition: transform .4s var(--ease-out), border-color .3s var(--ease);
+  box-shadow: 0 12px 30px rgba(0,0,0,.5);
 }
-.book:hover .book__cover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(5,7,13,.7), var(--glow); }
-.book__cover::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(74,158,255,.2), transparent 60%);
+.book:hover .book__cover {
+  transform: translateY(-4px);
+  border-color: rgba(74,158,255,.4);
+  box-shadow: 0 18px 40px rgba(0,0,0,.6);
 }
+.book__cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .book__cover h3 {
   font-family: var(--font-serif);
   font-style: italic;

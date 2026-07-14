@@ -15,8 +15,9 @@
   async function listCollection(name) {
     if (CACHE[name]) return CACHE[name];
     try {
-      const res = await fetch(`${API}/content/${name}?ref=${BRANCH}`, {
-        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      const res = await fetch(`${API}/content/${name}?ref=${BRANCH}&t=${Date.now()}`, {
+        headers: { 'Accept': 'application/vnd.github.v3+json' },
+        cache: 'no-store'
       });
       if (!res.ok) throw new Error('list failed: ' + res.status);
       const files = await res.json();
