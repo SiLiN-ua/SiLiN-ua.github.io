@@ -67,13 +67,23 @@
     const tag   = escapeHtml(item.tag || '');
     const date  = escapeHtml(fmtDate(item.date));
     const href  = `${collection === 'cases' ? 'cases' : 'blog'}.html?slug=${encodeURIComponent(item.__slug)}`;
+    const cover = item.cover
+      ? `<div class="card__cover"><img src="${escapeHtml(item.cover)}" alt="" loading="lazy"></div>`
+      : '';
+    const source = item.source
+      ? `<div style="font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-mute);margin-top:1rem">Джерело · ${escapeHtml(item.source)}</div>`
+      : '';
     return `
-      <article class="card">
-        ${tag ? `<div class="card__tag">${tag}</div>` : ''}
-        ${date ? `<div class="card__date">${date}</div>` : ''}
-        <h3>${title}</h3>
-        <p>${desc}</p>
-        <a href="${href}" class="card__link">${readMoreText}</a>
+      <article class="card ${cover ? 'card--with-cover' : ''}">
+        ${cover}
+        <div class="card__body">
+          ${tag ? `<div class="card__tag">${tag}</div>` : ''}
+          ${date ? `<div class="card__date">${date}</div>` : ''}
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          ${source}
+          <a href="${href}" class="card__link">${readMoreText}</a>
+        </div>
       </article>`;
   }
 
@@ -103,18 +113,32 @@
     const title = escapeHtml(tr(item, 'title'));
     const tag   = escapeHtml(item.tag || '');
     const date  = escapeHtml(fmtDate(item.date));
-    const body  = tr(item, 'body');
+    const body  = tr(item, 'body') || tr(item, 'summary');
     const bodyHtml = window.marked ? window.marked.parse(body || '') : escapeHtml(body).replace(/\n/g, '<br>');
-    const linkedin = item.linkedin
-      ? `<p style="text-align:center;margin-top:3rem"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener" class="btn">Оригінал на LinkedIn ↗</a></p>`
+    const cover  = item.cover
+      ? `<div style="margin:2rem 0"><img src="${escapeHtml(item.cover)}" alt="" style="width:100%;max-height:420px;object-fit:cover;border:1px solid var(--border)"></div>`
       : '';
+    const source = (item.source || item.source_url)
+      ? `<div style="border:1px solid var(--border);border-left:2px solid var(--ice);padding:1rem 1.25rem;margin:2rem 0;background:rgba(15,21,36,.6);font-size:.9rem">
+          <div style="font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);margin-bottom:.4rem">Джерело</div>
+          ${item.source ? `<div style="color:var(--cream)">${escapeHtml(item.source)}</div>` : ''}
+          ${item.source_url ? `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener" style="color:var(--ice-glow);word-break:break-all">${escapeHtml(item.source_url)}</a>` : ''}
+        </div>`
+      : '';
+    const primary = item.source_url
+      ? `<p style="text-align:center;margin-top:3rem"><a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener" class="btn">Перейти до джерела ↗</a></p>`
+      : (item.linkedin
+        ? `<p style="text-align:center;margin-top:3rem"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener" class="btn">Оригінал на LinkedIn ↗</a></p>`
+        : '');
     return `
       <div class="article-meta">
         ${tag ? `<span class="eyebrow">${tag}${date ? ' · ' + date : ''}</span>` : (date ? `<span class="eyebrow">${date}</span>` : '')}
         <h1>${title}</h1>
       </div>
+      ${cover}
+      ${source}
       <div>${bodyHtml}</div>
-      ${linkedin}`;
+      ${primary}`;
   }
 
   function getSlugParam() {
