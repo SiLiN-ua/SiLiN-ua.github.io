@@ -1337,8 +1337,8 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   transition: all .2s var(--ease);
 }
 .lightbox__close:hover { border-color: var(--ice); color: var(--ice); }
-.cert__img { cursor: zoom-in; transition: opacity .2s var(--ease); }
-.cert__img:hover { opacity: .85; }
+.cert__img, .prose__hero img, .card__cover img { cursor: zoom-in; transition: opacity .2s var(--ease); }
+.cert__img:hover, .prose__hero img:hover, .card__cover img:hover { opacity: .9; }
 
 /* Utility ------------------------------------------------- */
 .center { text-align: center; }

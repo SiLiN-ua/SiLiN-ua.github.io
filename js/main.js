@@ -114,11 +114,11 @@
       return lb;
     }
     document.addEventListener('click', (e) => {
-      const img = e.target.closest('.cert__img img');
-      if (!img) return;
+      const trigger = e.target.closest('.cert__img img, .prose__hero img, .card__cover img');
+      if (!trigger) return;
       e.preventDefault();
       const box = ensureLb();
-      box.querySelector('img').src = img.src;
+      box.querySelector('img').src = trigger.src;
       box.classList.add('open');
     });
   }
