@@ -106,9 +106,11 @@ collections:
       - { name: title_en,    label: "Title (EN)",              widget: string, required: false }
       - { name: year,        label: "Рік",                     widget: number, value_type: int }
       - { name: languages,   label: "Мови",                    widget: string, hint: "Наприклад: UA / EN / RU" }
-      - { name: cover,       label: "Обкладинка",              widget: image, required: false }
-      - { name: description_uk, label: "Опис (UA)",            widget: text }
-      - { name: description_en, label: "Description (EN)",     widget: text, required: false }
-      - { name: buy_url,     label: "Посилання купити/читати", widget: string, required: false }
-      - { name: order,       label: "Порядок відображення",    widget: number, value_type: int, default: 0 }
-      - { name: published,   label: "Опубліковано",            widget: boolean, default: true }
+      - { name: cover,        label: "Обкладинка",              widget: image, required: false }
+      - { name: description_uk, label: "Опис (UA)",             widget: text }
+      - { name: description_en, label: "Description (EN)",      widget: text, required: false }
+      - { name: pdf_url_uk,   label: "PDF українською (файл)",  widget: file, required: false, hint: "Завантаж PDF або встав URL — з'явиться кнопка «Читати українською»" }
+      - { name: patreon_url,  label: "Посилання на Patreon (EN)", widget: string, required: false, hint: "Кнопка «Читати англійською на Patreon»" }
+      - { name: buy_url,      label: "Універсальне посилання (опц.)", widget: string, required: false, hint: "Якщо не задано pdf_url_uk та patreon_url — використається це" }
+      - { name: order,        label: "Порядок відображення",    widget: number, value_type: int, default: 0 }
+      - { name: published,    label: "Опубліковано",            widget: boolean, default: true }

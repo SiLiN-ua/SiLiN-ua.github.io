@@ -83,7 +83,10 @@
     const year  = escapeHtml(item.year || '');
     const langs = escapeHtml(item.languages || '');
     const cover = item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${title}" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
-    const buy   = item.buy_url ? `<a href="${escapeHtml(item.buy_url)}" target="_blank" rel="noopener" class="card__link">Читати ↗</a>` : '';
+    const links = [];
+    if (item.pdf_url_uk) links.push(`<a href="${escapeHtml(item.pdf_url_uk)}" target="_blank" rel="noopener" class="btn" style="padding:.6rem 1rem;font-size:.7rem">📖 Читати українською</a>`);
+    if (item.patreon_url) links.push(`<a href="${escapeHtml(item.patreon_url)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 English on Patreon ↗</a>`);
+    if (!links.length && item.buy_url) links.push(`<a href="${escapeHtml(item.buy_url)}" target="_blank" rel="noopener" class="card__link">Читати ↗</a>`);
     return `
       <div class="book reveal">
         <div class="book__cover">${cover}</div>
@@ -91,7 +94,7 @@
           <div class="book__meta">${year}${langs ? ' · ' + langs : ''}</div>
           <h4>${title}</h4>
           <p>${desc}</p>
-          ${buy}
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem">${links.join('')}</div>
         </div>
       </div>`;
   }

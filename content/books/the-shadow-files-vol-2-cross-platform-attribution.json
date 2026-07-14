@@ -1,0 +1,13 @@
+{
+  "title_uk": "The Shadow Files · Том II: Крос-платформна атрибуція",
+  "title_en": "The Shadow Files · Vol II: Cross-Platform Attribution",
+  "year": 2026,
+  "languages": "UA · EN",
+  "cover": "/img/uploads/Cover_ShadowFiles_Vol2_UK.png",
+  "description_uk": "Другий том, суттєво глибший за перший. Тут OSINT перестає бути пошуком — і стає атрибуцією. Дев'ять розділів про роботу з приватними акаунтами, глибокий Telegram-аналіз, ідентифікацію за обличчям і фото, коректну роботу з витоками, побудову Identity Graph та сигнатурну техніку Family Chain. Окремий блок — про боротьбу з власними упередженнями: чому досвідчений аналітик помиляється частіше, ніж думає, і як цьому запобігти. Книга для тих, хто пройшов перший том або вже має базовий досвід.",
+  "description_en": "The second volume — significantly deeper than the first. Here OSINT stops being search and becomes attribution. Nine chapters on private accounts, deep Telegram analysis, face and image identification, working correctly with breach data, building the Identity Graph, and the signature Family Chain technique. A dedicated section on fighting your own certainty — why experienced analysts fail more often than they think, and how to prevent it. For those who have completed Vol I or already have working experience.",
+  "pdf_url_uk": "/content/books/pdfs/The_Shadow_Files_Vol2_UK.pdf",
+  "patreon_url": "https://www.patreon.com/cw/YehorSelin",
+  "order": 2,
+  "published": true
+}
