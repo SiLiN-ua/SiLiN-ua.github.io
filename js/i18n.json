@@ -12,6 +12,7 @@
     "nav.blog": "Новини",
     "nav.tools": "Інструменти",
     "nav.books": "Книги",
+    "nav.certificates": "Ліцензії",
     "nav.contact": "Контакти",
 
     "hero.eyebrow": "OSINT-слідчий · Дніпро, Україна",
@@ -104,6 +105,12 @@
     "tools.title": "Робочий арсенал",
     "tools.subtitle": "Інструменти, які я використовую у розслідуваннях та огляди на них.",
 
+    "certs.eyebrow": "Ліцензії та сертифікати",
+    "certs.title": "Освіта та підтвердження кваліфікації",
+    "certs.subtitle": "Курси, які я пройшов, та значки, підтверджені органами-емітентами. Кожен сертифікат має посилання на верифікацію в оригінального провайдера.",
+    "certs.verify": "Перевірити ↗",
+    "certs.issued": "Видано",
+
     "books.eyebrow": "Книги",
     "books.title": "Авторські роботи",
     "books.subtitle": "Про роботу в OSINT, війну в Україні та мислення слідчого.",
@@ -163,6 +170,7 @@
     "nav.blog": "News",
     "nav.tools": "Tools",
     "nav.books": "Books",
+    "nav.certificates": "Credentials",
     "nav.contact": "Contact",
 
     "hero.eyebrow": "OSINT Investigator · Dnipro, Ukraine",
@@ -254,6 +262,12 @@
     "tools.eyebrow": "Tools",
     "tools.title": "The working arsenal",
     "tools.subtitle": "Tools I use in investigations and my reviews of them.",
+
+    "certs.eyebrow": "Credentials",
+    "certs.title": "Training and verified qualifications",
+    "certs.subtitle": "Courses I completed and badges verified by the issuing bodies. Every certificate links to verification with the original provider.",
+    "certs.verify": "Verify ↗",
+    "certs.issued": "Issued",
 
     "books.eyebrow": "Books",
     "books.title": "Author works",

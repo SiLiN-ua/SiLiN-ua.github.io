@@ -1,0 +1,15 @@
+{
+  "title": "Безпека в інтернеті під час війни: практичний курс",
+  "issuer": "Prometheus",
+  "date": "2025-09-20T00:00:00.000Z",
+  "credential_id": "39a4825a2d214bea9e5f72ec6b706fff",
+  "recipient": "Селін Єгор Миколайович",
+  "signed_by": "Іван Примаченко · Директор ГО «Прометеус»",
+  "duration": "15 годин · 0,5 кредитів ЄКТС",
+  "image": "/img/uploads/certificates/prometheus-war-security.png",
+  "verify_url": "https://certs.prometheus.org.ua/cert/39a4825a2d214bea9e5f72ec6b706fff",
+  "description_uk": "Практичний курс з інтернет-безпеки в умовах повномасштабної війни. Формування цифрової та інформаційно-комунікаційної компетентностей, навичок критичного підходу та системного мислення. Обсяг — 15 годин (0,5 кредита ЄКТС). Сертифікат підписаний Іваном Примаченком, директором ГО «Прометеус».",
+  "description_en": "Practical course on internet security during full-scale war. Building digital and information-communication competencies, critical thinking, and systems thinking. 15 hours (0.5 ECTS credits). Certificate signed by Ivan Prymachenko, Director of Prometheus NGO.",
+  "order": 92,
+  "published": true
+}

@@ -89,6 +89,34 @@ collections:
       - { name: cover,          label: "Скріншот/іконка",          widget: image, required: false }
       - { name: published,      label: "Опубліковано",             widget: boolean, default: true }
 
+  # ---------- ЛІЦЕНЗІЇ ТА СЕРТИФІКАТИ ----------
+  - name: certificates
+    label: "Ліцензії та сертифікати"
+    label_singular: "Сертифікат"
+    folder: "content/certificates"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    extension: json
+    format: json
+    summary: "{{title}} · {{issuer}}"
+    sortable_fields: [order, date, issuer]
+    fields:
+      - { name: title,          label: "Назва",                 widget: string }
+      - { name: issuer,         label: "Ким видано",            widget: string, hint: "Наприклад: Trace Labs, OSINT Combine, Prometheus, YouControl Academy" }
+      - { name: date,           label: "Дата видачі",           widget: datetime, date_format: "DD.MM.YYYY", time_format: false }
+      - { name: credential_id,  label: "ІД / серійний номер",   widget: string, required: false }
+      - { name: recipient,      label: "Отримувач",             widget: string, required: false }
+      - { name: signed_by,      label: "Підпис / посадова особа", widget: string, required: false }
+      - { name: duration,       label: "Тривалість / кредити",  widget: string, required: false }
+      - { name: skills,         label: "Навички (розділювач · )", widget: string, required: false }
+      - { name: image,          label: "Скан сертифіката",      widget: image, required: false }
+      - { name: verify_url,     label: "URL верифікації",       widget: string, required: false }
+      - { name: description_uk, label: "Опис (UA)",             widget: text }
+      - { name: description_en, label: "Description (EN)",      widget: text, required: false }
+      - { name: order,          label: "Порядок (менше = вище)", widget: number, value_type: int, default: 10 }
+      - { name: published,      label: "Опубліковано",          widget: boolean, default: true }
+
   # ---------- КНИГИ ----------
   - name: books
     label: "Книги"

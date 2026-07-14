@@ -1,0 +1,13 @@
+{
+  "title": "OSINT — розвідка з відкритих джерел та інформаційна безпека",
+  "issuer": "Prometheus",
+  "date": "2025-09-20T00:00:00.000Z",
+  "credential_id": "461d9a139a07488189b50b563826d69a",
+  "recipient": "Селін Єгор Миколайович",
+  "image": "/img/uploads/certificates/prometheus-osint.png",
+  "verify_url": "https://certs.prometheus.org.ua/cert/461d9a139a07488189b50b563826d69a",
+  "description_uk": "Онлайн-курс на державній освітній платформі Prometheus. Огляд OSINT-методології, робота з відкритими реєстрами, принципи інформаційної безпеки: браузерні патерни, використання проксі, VPN, TOR, робота з витоками даних, розпізнавання фейків. Сертифікат супроводжується цифровим PGP-підписом для верифікації автентичності.",
+  "description_en": "Online course on Ukraine's state educational platform Prometheus. OSINT methodology, work with open registries, information-security principles: browser patterns, use of proxies, VPN, TOR, handling breach data, fake detection. The certificate carries a PGP digital signature for authenticity verification.",
+  "order": 90,
+  "published": true
+}

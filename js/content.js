@@ -298,5 +298,48 @@
     await renderTools(listSelector);
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle };
+  function renderCertCard(item) {
+    const title  = escapeHtml(item.title || '');
+    const issuer = escapeHtml(item.issuer || '');
+    const date   = escapeHtml(fmtDate(item.date));
+    const desc   = escapeHtml(tr(item, 'description'));
+    const img    = item.image
+      ? `<div class="cert__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
+      : '';
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const verify = item.verify_url
+      ? `<a href="${escapeHtml(item.verify_url)}" target="_blank" rel="noopener" class="card__link">${escapeHtml(dict['certs.verify'] || 'Перевірити ↗')}</a>`
+      : '';
+    const meta = [];
+    if (item.credential_id) meta.push(`<div class="cert__meta-row"><span>ID</span><code>${escapeHtml(item.credential_id)}</code></div>`);
+    if (item.duration)      meta.push(`<div class="cert__meta-row"><span>Тривалість</span>${escapeHtml(item.duration)}</div>`);
+    if (item.skills)        meta.push(`<div class="cert__meta-row"><span>Навички</span>${escapeHtml(item.skills)}</div>`);
+    if (item.signed_by)     meta.push(`<div class="cert__meta-row"><span>Підпис</span>${escapeHtml(item.signed_by)}</div>`);
+    const metaBlock = meta.length ? `<div class="cert__meta">${meta.join('')}</div>` : '';
+    return `
+      <article class="cert">
+        ${img}
+        <div class="cert__body">
+          <div class="card__tag">${issuer}</div>
+          <div class="card__date">${date}</div>
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          ${metaBlock}
+          ${verify}
+        </div>
+      </article>`;
+  }
+
+  async function renderCertificates(targetSelector) {
+    const items = await listCollection('certificates');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (items.length === 0) {
+      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:2rem 0">Поки що порожньо. Заходь на <a href="admin/">/admin</a> та додавай.</p>`;
+      return;
+    }
+    target.innerHTML = items.map(renderCertCard).join('');
+  }
+
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates };
 })();

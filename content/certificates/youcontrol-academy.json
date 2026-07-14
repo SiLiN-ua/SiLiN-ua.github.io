@@ -1,0 +1,13 @@
+{
+  "title": "Методи конкурентної розвідки за допомогою OSINTу",
+  "issuer": "YouControl Academy",
+  "date": "2025-09-24T00:00:00.000Z",
+  "recipient": "Єгор Селін",
+  "signed_by": "Сергій Мільман · CEO компанії YouControl",
+  "image": "/img/uploads/certificates/youcontrol-academy.png",
+  "verify_url": "https://app.academyocean.com/verify/eLHJwh41EIO35sSe",
+  "description_uk": "Курс YouControl Academy — застосування OSINT у конкурентній розвідці та корпоративних розслідуваннях. Перевірка контрагентів, due diligence, аналіз юридичних осіб, робота з українськими відкритими реєстрами (ЄДРПОУ, судова влада, майновий реєстр). Сертифікат підписаний CEO YouControl Сергієм Мільманом.",
+  "description_en": "YouControl Academy course — applying OSINT in competitive intelligence and corporate investigations. Counterparty checks, due diligence, legal-entity analysis, work with Ukrainian open registries (EDRPOU, judicial system, property records). Signed by Sergiy Milman, CEO of YouControl.",
+  "order": 93,
+  "published": true
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Цифрова безпека на персональному рівні",
+  "issuer": "Prometheus",
+  "date": "2025-09-21T00:00:00.000Z",
+  "credential_id": "bf244f77bd35476c8638b549556f59ad",
+  "recipient": "Селін Єгор Миколайович",
+  "signed_by": "Аліна Елєвтєрова · Незалежна консультантка з цифрової безпеки",
+  "image": "/img/uploads/certificates/prometheus-digital-security.png",
+  "verify_url": "https://certs.prometheus.org.ua/cert/bf244f77bd35476c8638b549556f59ad",
+  "description_uk": "Курс з цифрової безпеки для щоденного користування — OPSEC-принципи, захист акаунтів, безпечна комунікація, робота з паролями та двофакторною автентифікацією, гігієна пристроїв та мереж. Курс розроблено та підписано Аліною Елєвтєровою, незалежною консультанткою з цифрової безпеки.",
+  "description_en": "Digital security course for daily use — OPSEC principles, account protection, secure communication, password and 2FA practices, device and network hygiene. Course developed and signed by Alina Yelievtierova, independent digital-security consultant.",
+  "order": 91,
+  "published": true
+}
