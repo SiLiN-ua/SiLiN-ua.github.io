@@ -1,6 +1,9 @@
 {
   "title": "Подяка Національної поліції України",
+  "title_en": "Commendation from the National Police of Ukraine",
   "issuer": "Національна поліція України",
+  "issuer_en": "National Police of Ukraine",
+  "recipient_rank_en": "Senior Lieutenant of Police",
   "date": "2023-01-01T00:00:00.000Z",
   "credential_id": "Наказ № 1382",
   "recipient_rank": "Старший лейтенант поліції",

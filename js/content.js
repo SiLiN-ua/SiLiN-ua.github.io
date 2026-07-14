@@ -63,16 +63,18 @@
   }
 
   function renderCard(item, collection, readMoreText) {
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const title = escapeHtml(tr(item, 'title'));
     const desc  = escapeHtml(tr(item, 'summary'));
-    const tag   = escapeHtml(item.tag || '');
+    const tag   = escapeHtml(tr(item, 'tag') || item.tag || '');
     const date  = escapeHtml(fmtDate(item.date));
     const href  = `${collection === 'cases' ? 'cases' : 'blog'}.html?slug=${encodeURIComponent(item.__slug)}`;
     const cover = item.cover
       ? `<div class="card__cover"><img src="${escapeHtml(item.cover)}" alt="" loading="lazy"></div>`
       : '';
+    const sourceLbl = escapeHtml(dict['card.source'] || 'Джерело');
     const source = item.source
-      ? `<div style="font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-mute);margin-top:1rem">Джерело · ${escapeHtml(item.source)}</div>`
+      ? `<div style="font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-mute);margin-top:1rem">${sourceLbl} · ${escapeHtml(item.source)}</div>`
       : '';
     return `
       <article class="card ${cover ? 'card--with-cover' : ''}">
@@ -111,17 +113,19 @@
   }
 
   function renderArticle(item) {
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const title = escapeHtml(tr(item, 'title'));
-    const tag   = escapeHtml(item.tag || '');
+    const tag   = escapeHtml(tr(item, 'tag') || item.tag || '');
     const date  = escapeHtml(fmtDate(item.date));
     const body  = tr(item, 'body') || tr(item, 'summary');
     const bodyHtml = window.marked ? window.marked.parse(body || '') : escapeHtml(body).replace(/\n/g, '<br>');
     const cover  = item.cover
       ? `<div style="margin:2rem 0"><img src="${escapeHtml(item.cover)}" alt="" style="width:100%;max-height:420px;object-fit:cover;border:1px solid var(--border)"></div>`
       : '';
+    const sourceLbl = escapeHtml(dict['card.source'] || 'Джерело');
     const source = (item.source || item.source_url)
       ? `<div style="border:1px solid var(--border);border-left:2px solid var(--ice);padding:1rem 1.25rem;margin:2rem 0;background:rgba(15,21,36,.6);font-size:.9rem">
-          <div style="font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);margin-bottom:.4rem">Джерело</div>
+          <div style="font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);margin-bottom:.4rem">${sourceLbl}</div>
           ${item.source ? `<div style="color:var(--cream)">${escapeHtml(item.source)}</div>` : ''}
           ${item.source_url ? `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener" style="color:var(--ice-glow);word-break:break-all">${escapeHtml(item.source_url)}</a>` : ''}
         </div>`
@@ -152,7 +156,8 @@
       const item = await loadBySlug(collection, slug);
       const target = document.querySelector(singleTargetSelector);
       if (!target) return;
-      target.innerHTML = item ? renderArticle(item) : `<p>Не знайдено. <a href="?">← Назад</a></p>`;
+      const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+      target.innerHTML = item ? renderArticle(item) : `<p>${escapeHtml(dict['card.notFound']||'Не знайдено.')} <a href="?">←</a></p>`;
       if (item) document.title = tr(item, 'title') + ' · Єгор Селін';
       return;
     }
@@ -299,22 +304,22 @@
   }
 
   function renderCertCard(item) {
-    const title  = escapeHtml(item.title || '');
-    const issuer = escapeHtml(item.issuer || '');
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const title  = escapeHtml(tr(item, 'title') || item.title || '');
+    const issuer = escapeHtml(tr(item, 'issuer') || item.issuer || '');
     const date   = escapeHtml(fmtDate(item.date));
     const desc   = escapeHtml(tr(item, 'description'));
     const img    = item.image
       ? `<div class="cert__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
       : '';
-    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const verify = item.verify_url
       ? `<a href="${escapeHtml(item.verify_url)}" target="_blank" rel="noopener" class="card__link">${escapeHtml(dict['certs.verify'] || 'Перевірити ↗')}</a>`
       : '';
     const meta = [];
-    if (item.credential_id) meta.push(`<div class="cert__meta-row"><span>ID</span><code>${escapeHtml(item.credential_id)}</code></div>`);
-    if (item.duration)      meta.push(`<div class="cert__meta-row"><span>Тривалість</span>${escapeHtml(item.duration)}</div>`);
-    if (item.skills)        meta.push(`<div class="cert__meta-row"><span>Навички</span>${escapeHtml(item.skills)}</div>`);
-    if (item.signed_by)     meta.push(`<div class="cert__meta-row"><span>Підпис</span>${escapeHtml(item.signed_by)}</div>`);
+    if (item.credential_id) meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.id']||'ID')}</span><code>${escapeHtml(item.credential_id)}</code></div>`);
+    if (item.duration)      meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.duration']||'Тривалість')}</span>${escapeHtml(tr(item,'duration')||item.duration)}</div>`);
+    if (item.skills)        meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.skills']||'Навички')}</span>${escapeHtml(item.skills)}</div>`);
+    if (item.signed_by)     meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.signed']||'Підпис')}</span>${escapeHtml(item.signed_by)}</div>`);
     const metaBlock = meta.length ? `<div class="cert__meta">${meta.join('')}</div>` : '';
     return `
       <article class="cert">
@@ -342,24 +347,25 @@
   }
 
   function renderAwardCard(item) {
-    const title  = escapeHtml(item.title || '');
-    const issuer = escapeHtml(item.issuer || '');
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const title  = escapeHtml(tr(item, 'title') || item.title || '');
+    const issuer = escapeHtml(tr(item, 'issuer') || item.issuer || '');
     const date   = escapeHtml(fmtDate(item.date));
     const reason = escapeHtml(tr(item, 'reason'));
-    const rank   = escapeHtml(item.recipient_rank || '');
+    const rank   = escapeHtml(tr(item, 'recipient_rank') || item.recipient_rank || '');
     const recipient = escapeHtml(item.recipient || '');
     const signedBy  = escapeHtml(item.signed_by || '');
-    const occasion  = escapeHtml(item.occasion || '');
+    const occasion  = escapeHtml(tr(item, 'occasion') || item.occasion || '');
     const cid       = escapeHtml(item.credential_id || '');
     const img       = item.image
       ? `<div class="cert__img award__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
       : '';
     const meta = [];
-    if (rank)      meta.push(`<div class="cert__meta-row"><span>Звання</span>${rank}</div>`);
-    if (recipient) meta.push(`<div class="cert__meta-row"><span>Отримувач</span>${recipient}</div>`);
-    if (occasion)  meta.push(`<div class="cert__meta-row"><span>З нагоди</span>${occasion}</div>`);
-    if (signedBy)  meta.push(`<div class="cert__meta-row"><span>Підпис</span>${signedBy}</div>`);
-    if (cid)       meta.push(`<div class="cert__meta-row"><span>Наказ</span><code>${cid}</code></div>`);
+    if (rank)      meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.rank']||'Звання')}</span>${rank}</div>`);
+    if (recipient) meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.recipient']||'Отримувач')}</span>${recipient}</div>`);
+    if (occasion)  meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.occasion']||'З нагоди')}</span>${occasion}</div>`);
+    if (signedBy)  meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.signed']||'Підпис')}</span>${signedBy}</div>`);
+    if (cid)       meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.order']||'Наказ')}</span><code>${cid}</code></div>`);
     return `
       <article class="cert award">
         ${img}
