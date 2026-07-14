@@ -4,7 +4,7 @@ backend:
   branch: main
   base_url: https://silin-ua.github.io   # sveltia uses PKCE, no proxy needed
   auth_type: pkce
-  app_id: REPLACE_WITH_GITHUB_OAUTH_APP_CLIENT_ID
+  app_id: Ov23lieYYCdFhAd8UQw0
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
