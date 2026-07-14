@@ -9,6 +9,6 @@
   "verify_url": "https://factory.cancred.ca/obv3/credentials/589d725b46b460b8caa1b492305f9ff4ebf7d18d.html",
   "description_uk": "Освітня програма Trace Labs з трьох рівнів OSINT — від Beginner до Advanced. Формат — практичний, орієнтований на реальні кейси, ~6 годин навчання. Значок затверджено організацією F1NDX та випущено через платформу цифрових облікових даних CanCred Factory. ІД облікових даних: 589d725b46b460b8caa1b492305f9ff4ebf7d18d.",
   "description_en": "Trace Labs three-level OSINT training programme — from Beginner to Advanced. Hands-on format focused on real-world applications, ~6 hours of study. Badge endorsed by F1NDX and issued via the CanCred Factory digital credentials platform. Credential ID: 589d725b46b460b8caa1b492305f9ff4ebf7d18d.",
-  "order": 1,
+  "order": 4,
   "published": true
 }

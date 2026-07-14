@@ -1,21 +1,5 @@
 [
   {
-    "title": "Aprende OSINT y SOCMINT con casos y situaciones reales",
-    "issuer": "Manuel Travezaño · Udemy",
-    "date": "2026-03-13T00:00:00.000Z",
-    "credential_id": "UC-073ae955-f020-4e09-bd92-8a8519755d90",
-    "recipient": "Yehor Selin",
-    "duration": "14 годин",
-    "image": "/img/uploads/certificates/aprende-osint-socmint.jpg",
-    "verify_url": "https://ude.my/UC-073ae955-f020-4e09-bd92-8a8519755d90",
-    "skills": "Corporate Investigations · Insider Threat Detection · SOCMINT",
-    "description_uk": "Авторський курс тактичного аналітика кіберрозвідки Мануеля Травезаньо. 14 годин навчання на реальних кейсах: від видаленого посилання у Facebook до реконструкції особи; від Telegram User ID — до телефона та домашньої адреси; від анонімного акаунта у Twitter — до імені, email та зареєстрованих доменів. Сертифікат Udemy № UC-073ae955-f020-4e09-bd92-8a8519755d90.",
-    "description_en": "The signature course of tactical cyber-intelligence analyst Manuel Travezaño. 14 hours of training built on real cases: from a deleted Facebook link to a full identity reconstruction; from a Telegram User ID to phone and home address; from an anonymous Twitter account to name, email, and registered domains. Udemy certificate № UC-073ae955-f020-4e09-bd92-8a8519755d90.",
-    "order": 3,
-    "published": true,
-    "__slug": "aprende-osint-socmint"
-  },
-  {
     "title": "OSINT: Educational Series",
     "issuer": "Trace Labs",
     "date": "2026-01-18T00:00:00.000Z",
@@ -26,7 +10,7 @@
     "verify_url": "https://factory.cancred.ca/obv3/credentials/589d725b46b460b8caa1b492305f9ff4ebf7d18d.html",
     "description_uk": "Освітня програма Trace Labs з трьох рівнів OSINT — від Beginner до Advanced. Формат — практичний, орієнтований на реальні кейси, ~6 годин навчання. Значок затверджено організацією F1NDX та випущено через платформу цифрових облікових даних CanCred Factory. ІД облікових даних: 589d725b46b460b8caa1b492305f9ff4ebf7d18d.",
     "description_en": "Trace Labs three-level OSINT training programme — from Beginner to Advanced. Hands-on format focused on real-world applications, ~6 hours of study. Badge endorsed by F1NDX and issued via the CanCred Factory digital credentials platform. Credential ID: 589d725b46b460b8caa1b492305f9ff4ebf7d18d.",
-    "order": 1,
+    "order": 4,
     "published": true,
     "__slug": "osint-educational-series"
   },
@@ -88,24 +72,9 @@
     "verify_url": "https://factory.cancred.ca/obv3/credentials/79f48d58e14a1a37926c587d32e8657999853425.html",
     "description_uk": "Участь у глобальному live-CTF Trace Labs Global OSINT Search Party — некомерційній ініціативі, що допомагає правоохоронним органам знаходити зниклих безвісти людей через колективний OSINT-пошук. Команди у прямому ефірі досліджують реальні відкриті справи зникнень. ІД облікових даних: 79f48d58e14a1a37926c587d32e8657999853425.",
     "description_en": "Participation in Trace Labs Global OSINT Search Party — a non-profit live CTF that helps law enforcement locate missing persons through crowdsourced OSINT. Teams work in real time on active missing-person cases. Credential ID: 79f48d58e14a1a37926c587d32e8657999853425.",
-    "order": 4,
+    "order": 1,
     "published": true,
     "__slug": "trace-labs-ctf-participant"
-  },
-  {
-    "title": "Trace Labs OSINT Foundations Course",
-    "issuer": "OSINT Combine Academy",
-    "date": "2026-02-15T00:00:00.000Z",
-    "credential_id": "cert_20yjfgdn",
-    "recipient": "Yehor Selin",
-    "image": "/img/uploads/certificates/trace-labs-foundations.jpg",
-    "verify_url": "",
-    "skills": "Background Investigation · Due Diligence · OSINT Methodology",
-    "description_uk": "Сертифікат випуску (Certificate of Graduation) від OSINT Combine Academy у партнерстві з Trace Labs. Курс охоплює методологію відкритих джерел, стандарти документування, робочі процеси у розслідуваннях, юридичні та етичні рамки. Визнаний галузевий стандарт для аналітиків-початківців. Серійний номер сертифіката: cert_20yjfgdn.",
-    "description_en": "Certificate of Graduation from OSINT Combine Academy in partnership with Trace Labs. The course covers open-source methodology, documentation standards, investigative workflows, and legal/ethical frameworks. A recognised industry standard for entry-level analysts. Serial number: cert_20yjfgdn.",
-    "order": 2,
-    "published": true,
-    "__slug": "trace-labs-foundations"
   },
   {
     "title": "Методи конкурентної розвідки за допомогою OSINTу",
