@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Єгор Селін — OSINT & SOCMINT слідчий</title>
+<meta name="description" content="OSINT та SOCMINT-розслідування, ідентифікація осіб, due diligence, insider risk. Досвід у Національній поліції України та приватних розслідуваннях. Кожна тінь має ім'я.">
+<meta name="keywords" content="OSINT, SOCMINT, розслідування, ідентифікація особи, due diligence, insider risk, Ukraine, Єгор Селін, Yehor Selin">
+<link rel="canonical" href="https://yehor-selin.github.io/">
+<link rel="alternate" hreflang="uk" href="https://yehor-selin.github.io/">
+<link rel="alternate" hreflang="en" href="https://yehor-selin.github.io/?lang=en">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Єгор Селін — OSINT & SOCMINT слідчий">
+<meta property="og:description" content="Кожна тінь має ім'я. Розслідування, ідентифікація осіб, due diligence.">
+<meta property="og:image" content="img/yehor.jpg">
+<meta property="og:url" content="https://yehor-selin.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Єгор Селін",
+  "alternateName": "Yehor Selin",
+  "jobTitle": "OSINT & SOCMINT Investigator",
+  "description": "OSINT та SOCMINT-розслідування, ідентифікація осіб, due diligence.",
+  "url": "https://yehor-selin.github.io/",
+  "image": "https://yehor-selin.github.io/img/yehor.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/yehor-selin",
+    "https://github.com/SiLiN-ua",
+    "https://www.patreon.com/cw/YehorSelin"
+  ],
+  "worksFor": { "@type": "Organization", "name": "Confidential Defense Contractor" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Дніпропетровський державний університет внутрішніх справ" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Дніпро", "addressCountry": "UA" }
+}
+</script>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<nav class="nav" aria-label="Головна навігація">
+  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
+  <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  <ul class="nav__links">
+    <li><a href="index.html" class="active" data-i18n="nav.home">Головна</a></li>
+    <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+    <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+    <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+    <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Контакти</a></li>
+    <li class="nav__lang">
+      <button data-lang="uk" class="active">UA</button>
+      <button data-lang="en">EN</button>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="hero-graph"></canvas>
+  <div class="hero__vignette"></div>
+  <div class="container hero__grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="hero.eyebrow">OSINT-слідчий · Дніпро, Україна</span>
+      <h1 class="hero__title"><span data-i18n="brand.first">Єгор</span> <span data-i18n="brand.last" style="color:var(--ice);font-style:italic">Селін</span></h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">OSINT · SOCMINT · Ідентифікація осіб · Due Diligence · Національна безпека</p>
+      <p class="hero__tag" data-i18n="hero.tag">Кожна тінь має ім'я.</p>
+      <div class="hero__cta">
+        <a href="cases.html" class="btn btn--filled" data-i18n="hero.cta1">Переглянути кейси</a>
+        <a href="contact.html" class="btn" data-i18n="hero.cta2">Зв'язатися</a>
+      </div>
+    </div>
+    <div class="hero__photo reveal delay-2">
+      <img src="img/yehor.jpg" alt="Єгор Селін" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal"><div class="stat__num">240+</div><div class="stat__label" data-i18n="stats.socmint">SOCMINT-розслідувань</div></div>
+  <div class="stat reveal delay-1"><div class="stat__num">1 000+</div><div class="stat__label" data-i18n="stats.screening">Перевірок кандидатів</div></div>
+  <div class="stat reveal delay-2"><div class="stat__num">350+</div><div class="stat__label" data-i18n="stats.attribution">Ідентифікацій особистостей</div></div>
+  <div class="stat reveal delay-3"><div class="stat__num">4</div><div class="stat__label" data-i18n="stats.projects">Open-source проєкти</div></div>
+</div>
+
+<!-- ABOUT PREVIEW -->
+<section>
+  <div class="narrow reveal">
+    <span class="eyebrow" data-i18n="about.eyebrow">Про мене</span>
+    <h2 data-i18n="about.title">Перетворюю розрізнені відкриті сигнали на доказову розвідку</h2>
+    <p style="margin-top:1.5rem" data-i18n="about.p1">Спеціалізуюся на OSINT- та SOCMINT-розслідуваннях, зосереджених на ідентифікації осіб, внутрішніх ризиках та корпоративній перевірці контрагентів.</p>
+    <div style="margin-top:2rem"><a href="about.html" class="btn btn--ghost" data-i18n="about.more">Дізнатися більше →</a></div>
+  </div>
+</section>
+
+<!-- CASES PREVIEW -->
+<section style="background:linear-gradient(180deg, transparent, rgba(10,14,26,.6) 20%, rgba(10,14,26,.6) 80%, transparent)">
+  <div class="container">
+    <div class="sec-title reveal">
+      <span class="eyebrow" data-i18n="cases.eyebrow">Кейси</span>
+      <h2 data-i18n="cases.title">Розслідування зі справжньої практики</h2>
+      <p data-i18n="cases.subtitle">Кожен кейс — реальна робота. Усі імена, місця та ідентифікатори анонімізовано.</p>
+    </div>
+    <div class="grid" id="cases-preview">
+      <p class="center" style="grid-column:1/-1;color:var(--text-mute)">Завантаження…</p>
+    </div>
+    <div class="center" style="margin-top:3rem">
+      <a href="cases.html" class="btn" data-i18n="cases.viewAll">Усі кейси</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div>
+      <p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.nav">Навігація</h4>
+      <ul>
+        <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+        <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+        <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+        <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.contacts">Контакти</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li>
+        <li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="mailto:selinegor22@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span data-i18n="footer.rights">© 2026 Єгор Селін</span>
+    <span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span>
+  </div>
+</footer>
+
+<script src="js/graph.js"></script>
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+<script>YSContent.renderPreview('cases', '#cases-preview', 3, 'Читати кейс →');</script>
+</body>
+</html>

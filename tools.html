@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Інструменти · Єгор Селін</title>
+<meta name="description" content="OSINT-інструменти, огляди та рекомендації.">
+<link rel="canonical" href="https://yehor-selin.github.io/tools.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
+  <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  <ul class="nav__links">
+    <li><a href="index.html" data-i18n="nav.home">Головна</a></li>
+    <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+    <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+    <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+    <li><a href="tools.html" class="active" data-i18n="nav.tools">Інструменти</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Контакти</a></li>
+    <li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li>
+  </ul>
+</nav>
+
+<div id="list-view">
+  <section style="padding-top:9rem">
+    <div class="container">
+      <div class="sec-title reveal">
+        <span class="eyebrow" data-i18n="tools.eyebrow">Інструменти</span>
+        <h1 data-i18n="tools.title">Робочий арсенал</h1>
+        <p data-i18n="tools.subtitle">Інструменти, які я використовую у розслідуваннях та огляди на них.</p>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="grid" id="tools-list">
+        <p class="center" style="grid-column:1/-1;color:var(--text-mute)">Завантаження…</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<article id="article-view" style="padding-top:9rem;display:none">
+  <div class="prose" id="article-body"></div>
+  <div style="margin-top:3rem;text-align:center">
+    <a href="tools.html" class="card__link" data-i18n="back">← Назад</a>
+  </div>
+</article>
+
+<footer class="footer" style="margin-top:6rem">
+  <div class="footer__grid">
+    <div><div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div><p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p></div>
+    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li></ul></div>
+    <div class="footer__col"><h4 data-i18n="footer.contacts">Контакти</h4><ul><li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li><li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li><li><a href="mailto:selinegor22@gmail.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer__bottom"><span data-i18n="footer.rights">© 2026 Єгор Селін</span><span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span></div>
+</footer>
+
+<script src="js/graph.js"></script>
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+<script>
+  (async () => {
+    const slug = new URLSearchParams(location.search).get('slug');
+    if (slug) {
+      document.getElementById('list-view').style.display = 'none';
+      document.getElementById('article-view').style.display = 'block';
+    }
+    await YSContent.renderToolsListOrArticle('#tools-list', '#article-body');
+  })();
+</script>
+</body>
+</html>
