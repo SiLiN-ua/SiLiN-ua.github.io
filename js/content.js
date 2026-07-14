@@ -141,6 +141,8 @@
     target.innerHTML = items.map(x => renderCard(x, collection, readMoreText)).join('');
   }
 
+  let __booksState = { current: 'all' };
+
   async function renderBooks(targetSelector) {
     const items = await listCollection('books');
     const target = document.querySelector(targetSelector);
@@ -153,25 +155,55 @@
     const i18n = (window.__i18nDict && window.__i18nDict[lang]) || {};
     const label = (k, fb) => i18n[k] || fb;
     const CAT_ORDER = ['educational', 'memoir', 'fiction'];
-    const groups = {};
+
+    const counts = { all: items.length };
     items.forEach(it => {
-      const cat = it.category || 'other';
-      (groups[cat] = groups[cat] || []).push(it);
+      const c = it.category || 'other';
+      counts[c] = (counts[c] || 0) + 1;
     });
-    const ordered = [...CAT_ORDER.filter(c => groups[c]), ...Object.keys(groups).filter(c => !CAT_ORDER.includes(c))];
-    target.innerHTML = ordered.map(cat => {
-      const title = label('books.cat.' + cat, cat);
-      const desc  = label('books.cat.' + cat + '.desc', '');
-      const cards = groups[cat].map(renderBookCard).join('');
-      return `
+
+    const activeCats = [...CAT_ORDER, ...Object.keys(counts).filter(c => !CAT_ORDER.includes(c) && c !== 'all')];
+
+    const pills = [
+      { key: 'all', title: label('books.filter.all', 'Усі') },
+      ...activeCats.filter(c => counts[c]).map(c => ({ key: c, title: label('books.cat.' + c, c) }))
+    ];
+
+    const pillsHtml = pills.map(p => `
+      <button class="filter-pill ${p.key === __booksState.current ? 'active' : ''}" data-cat="${p.key}">
+        ${escapeHtml(p.title)}<span class="filter-count">${counts[p.key]}</span>
+      </button>
+    `).join('');
+
+    const filtered = __booksState.current === 'all' ? items : items.filter(it => (it.category || 'other') === __booksState.current);
+    let bodyHtml;
+    if (__booksState.current === 'all') {
+      bodyHtml = activeCats.filter(c => counts[c]).map(cat => `
         <section class="book-category" style="margin-bottom:5rem">
-          <div style="margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">
-            <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:.35rem" data-i18n="books.cat.${cat}">${escapeHtml(title)}</h2>
-            ${desc ? `<p style="color:var(--text-dim);font-size:.95rem" data-i18n="books.cat.${cat}.desc">${escapeHtml(desc)}</p>` : ''}
+          <div class="category-header">
+            <h2>${escapeHtml(label('books.cat.' + cat, cat))}</h2>
+            ${label('books.cat.' + cat + '.desc', '') ? `<p>${escapeHtml(label('books.cat.' + cat + '.desc', ''))}</p>` : ''}
           </div>
-          <div class="book-grid">${cards}</div>
-        </section>`;
-    }).join('');
+          <div class="book-grid">${items.filter(it => (it.category || 'other') === cat).map(renderBookCard).join('')}</div>
+        </section>
+      `).join('');
+    } else {
+      const cat = __booksState.current;
+      bodyHtml = `
+        <div class="category-header">
+          ${label('books.cat.' + cat + '.desc', '') ? `<p>${escapeHtml(label('books.cat.' + cat + '.desc', ''))}</p>` : ''}
+        </div>
+        <div class="book-grid">${filtered.length ? filtered.map(renderBookCard).join('') : `<p class="center" style="grid-column:1/-1;color:var(--text-mute);padding:2rem 0">${escapeHtml(label('books.empty.category', 'Поки що порожньо.'))}</p>`}</div>`;
+    }
+
+    target.innerHTML = `<div class="filters">${pillsHtml}</div>${bodyHtml}`;
+
+    target.querySelectorAll('.filter-pill').forEach(b => {
+      b.addEventListener('click', () => {
+        __booksState.current = b.dataset.cat;
+        renderBooks(targetSelector);
+      });
+    });
   }
 
   async function renderPreview(collection, targetSelector, limit, readMoreText) {
