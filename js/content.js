@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const REPO   = 'SiLiN-ua/yehor-selin.github.io';   // адаптуй якщо репо назвався інакше
+  const REPO   = 'SiLiN-ua/silin-ua.github.io';   // адаптуй якщо репо назвався інакше
   const BRANCH = 'main';
   const API    = `https://api.github.com/repos/${REPO}/contents`;
 
