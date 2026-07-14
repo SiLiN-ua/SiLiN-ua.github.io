@@ -467,7 +467,8 @@
       const data = await res.json();
       renderStackHTML(target, data);
     } catch (e) {
-      target.innerHTML = '<p class="center" style="color:var(--text-mute)">Не вдалося завантажити стек.</p>';
+      console.error('renderToolsStack error:', e);
+      target.innerHTML = '<p class="center" style="color:var(--text-mute)">Не вдалося завантажити стек. <br><code style="color:var(--red);font-size:.8em">' + escapeHtml(String(e && e.message || e)) + '</code></p>';
     }
   }
 
