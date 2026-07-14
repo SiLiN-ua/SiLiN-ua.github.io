@@ -923,6 +923,79 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .cert__body { padding: 1.5rem; }
 }
 
+/* Awards -------------------------------------------------- */
+.award__img {
+  width: 260px;
+  padding: 1.25rem;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(74,158,255,.08), transparent 70%),
+    linear-gradient(180deg, #060a15 0%, #05070d 100%);
+  position: relative;
+}
+.award__img::before {
+  content: '';
+  position: absolute;
+  inset: .75rem;
+  border: 1px solid rgba(157, 176, 212, .12);
+  pointer-events: none;
+}
+.award__img img {
+  max-height: 320px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.6);
+  transition: transform .4s var(--ease-out);
+}
+.award:hover .award__img img { transform: translateY(-3px); }
+.award em { color: var(--steel-hi); font-style: italic; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.55; }
+@media (max-width: 700px) {
+  .award__img { width: 100%; }
+  .award__img img { max-height: 380px; }
+}
+
+/* Media coverage ------------------------------------------ */
+.media-grid {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.media-card {
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--ice);
+  background: linear-gradient(90deg, rgba(74,158,255,.04), transparent 60%);
+  transition: all .25s var(--ease);
+}
+.media-card:hover { border-color: var(--border-hi); border-left-color: var(--cyan); transform: translateX(2px); }
+.media-card__meta {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  margin-bottom: .6rem;
+}
+.media-card__source { color: var(--ice); }
+.media-card__date { color: var(--text-mute); }
+.media-card h3 { font-size: 1.15rem; margin-bottom: .6rem; line-height: 1.35; }
+.media-card h3 a { color: var(--cream); transition: color .2s var(--ease); }
+.media-card h3 a:hover { color: var(--ice); }
+.media-card p { color: var(--text-dim); font-size: .93rem; margin-bottom: 1rem; }
+.media-card__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.media-card__domain {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--text-mute);
+  letter-spacing: .05em;
+}
+
 /* Lightbox ------------------------------------------------ */
 .lightbox {
   position: fixed;

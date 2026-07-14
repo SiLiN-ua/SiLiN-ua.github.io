@@ -1,0 +1,14 @@
+{
+  "title": "Подяка Національної поліції України",
+  "issuer": "Національна поліція України",
+  "date": "2023-01-01T00:00:00.000Z",
+  "credential_id": "Наказ № 1382",
+  "recipient_rank": "Старший лейтенант поліції",
+  "recipient": "Селін Єгор Миколайович",
+  "signed_by": "Іван Виговський · Голова НПУ, генерал поліції третього рангу",
+  "image": "/img/uploads/awards/podyaka-vygovskyi.jpg",
+  "reason_uk": "За успішне і сумлінне виконання службового обов'язку, відданість Присязі, високий професіоналізм, вагомий особистий внесок у справу забезпечення охорони прав та свобод людини, протидії злочинності, підтримання публічної (громадської) безпеки і порядку, високі особисті досягнення в службовій діяльності та ефективне виконання завдань і функцій поліції.",
+  "reason_en": "For successful and diligent performance of duty, loyalty to the Oath, high professionalism, and a significant personal contribution to protecting human rights and freedoms, countering crime, maintaining public safety and order, personal achievements in service, and effective execution of police tasks and functions.",
+  "order": 3,
+  "published": true
+}

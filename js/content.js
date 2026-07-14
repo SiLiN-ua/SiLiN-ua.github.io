@@ -341,5 +341,81 @@
     target.innerHTML = items.map(renderCertCard).join('');
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates };
+  function renderAwardCard(item) {
+    const title  = escapeHtml(item.title || '');
+    const issuer = escapeHtml(item.issuer || '');
+    const date   = escapeHtml(fmtDate(item.date));
+    const reason = escapeHtml(tr(item, 'reason'));
+    const rank   = escapeHtml(item.recipient_rank || '');
+    const recipient = escapeHtml(item.recipient || '');
+    const signedBy  = escapeHtml(item.signed_by || '');
+    const occasion  = escapeHtml(item.occasion || '');
+    const cid       = escapeHtml(item.credential_id || '');
+    const img       = item.image
+      ? `<div class="cert__img award__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
+      : '';
+    const meta = [];
+    if (rank)      meta.push(`<div class="cert__meta-row"><span>Звання</span>${rank}</div>`);
+    if (recipient) meta.push(`<div class="cert__meta-row"><span>Отримувач</span>${recipient}</div>`);
+    if (occasion)  meta.push(`<div class="cert__meta-row"><span>З нагоди</span>${occasion}</div>`);
+    if (signedBy)  meta.push(`<div class="cert__meta-row"><span>Підпис</span>${signedBy}</div>`);
+    if (cid)       meta.push(`<div class="cert__meta-row"><span>Наказ</span><code>${cid}</code></div>`);
+    return `
+      <article class="cert award">
+        ${img}
+        <div class="cert__body">
+          <div class="card__tag">${issuer}</div>
+          <div class="card__date">${date}</div>
+          <h3>${title}</h3>
+          <p><em>«${reason}»</em></p>
+          ${meta.length ? `<div class="cert__meta">${meta.join('')}</div>` : ''}
+        </div>
+      </article>`;
+  }
+
+  async function renderAwards(targetSelector) {
+    const items = await listCollection('awards');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (!items.length) {
+      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:2rem 0">Поки що порожньо.</p>`;
+      return;
+    }
+    target.innerHTML = items.map(renderAwardCard).join('');
+  }
+
+  function renderMediaCard(item) {
+    const title  = escapeHtml(item.title || '');
+    const source = escapeHtml(item.source || '');
+    const date   = escapeHtml(fmtDate(item.date));
+    const summary = escapeHtml(tr(item, 'summary'));
+    const url    = escapeHtml(item.url || '');
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const readLbl = escapeHtml(dict['media.readSource'] || 'Читати матеріал ↗');
+    let domain = '';
+    try { domain = new URL(item.url).hostname.replace(/^www\./, ''); } catch {}
+    return `
+      <article class="media-card">
+        <div class="media-card__meta">
+          <span class="media-card__source">${source}</span>
+          <span class="media-card__date">${date}</span>
+        </div>
+        <h3><a href="${url}" target="_blank" rel="noopener">${title}</a></h3>
+        <p>${summary}</p>
+        <div class="media-card__foot">
+          <span class="media-card__domain">${escapeHtml(domain)}</span>
+          <a href="${url}" target="_blank" rel="noopener" class="card__link">${readLbl}</a>
+        </div>
+      </article>`;
+  }
+
+  async function renderMediaCoverage(targetSelector) {
+    const items = await listCollection('media-coverage');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (!items.length) { target.innerHTML = ''; return; }
+    target.innerHTML = items.map(renderMediaCard).join('');
+  }
+
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage };
 })();

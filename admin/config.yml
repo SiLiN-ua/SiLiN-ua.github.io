@@ -89,9 +89,58 @@ collections:
       - { name: cover,          label: "Скріншот/іконка",          widget: image, required: false }
       - { name: published,      label: "Опубліковано",             widget: boolean, default: true }
 
-  # ---------- ЛІЦЕНЗІЇ ТА СЕРТИФІКАТИ ----------
+  # ---------- ВІДЗНАКИ ТА НАГОРОДИ ----------
+  - name: awards
+    label: "Відзнаки та нагороди"
+    label_singular: "Відзнака"
+    folder: "content/awards"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    extension: json
+    format: json
+    summary: "{{title}} · {{date}}"
+    sortable_fields: [order, date]
+    fields:
+      - { name: title,           label: "Назва відзнаки",             widget: string }
+      - { name: issuer,          label: "Ким видано",                 widget: string }
+      - { name: date,            label: "Дата",                       widget: datetime, date_format: "DD.MM.YYYY", time_format: false }
+      - { name: credential_id,   label: "Номер наказу",               widget: string, required: false }
+      - { name: recipient_rank,  label: "Звання отримувача",          widget: string, required: false }
+      - { name: recipient,       label: "Отримувач (ПІБ)",            widget: string, required: false }
+      - { name: signed_by,       label: "Хто підписав",               widget: string, required: false }
+      - { name: occasion,        label: "З нагоди",                   widget: string, required: false }
+      - { name: image,           label: "Фото подяки / грамоти",      widget: image, required: false }
+      - { name: reason_uk,       label: "Формулювання (UA)",          widget: text }
+      - { name: reason_en,       label: "Citation (EN)",              widget: text, required: false }
+      - { name: order,           label: "Порядок (менше = вище)",     widget: number, value_type: int, default: 10 }
+      - { name: published,       label: "Опубліковано",               widget: boolean, default: true }
+
+  # ---------- МЕДІА-ПОКРИТТЯ ----------
+  - name: media-coverage
+    label: "Медіа-покриття"
+    label_singular: "Публікація"
+    folder: "content/media-coverage"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    extension: json
+    format: json
+    summary: "{{source}} · {{date}}"
+    sortable_fields: [order, date, source]
+    fields:
+      - { name: title,       label: "Заголовок публікації",  widget: string }
+      - { name: source,      label: "Видання",               widget: string }
+      - { name: date,        label: "Дата",                  widget: datetime, date_format: "DD.MM.YYYY", time_format: false, required: false }
+      - { name: url,         label: "Посилання",             widget: string }
+      - { name: summary_uk,  label: "Короткий опис (UA)",    widget: text }
+      - { name: summary_en,  label: "Short summary (EN)",    widget: text, required: false }
+      - { name: order,       label: "Порядок",               widget: number, value_type: int, default: 10 }
+      - { name: published,   label: "Опубліковано",          widget: boolean, default: true }
+
+  # ---------- СЕРТИФІКАТИ ----------
   - name: certificates
-    label: "Ліцензії та сертифікати"
+    label: "Сертифікати"
     label_singular: "Сертифікат"
     folder: "content/certificates"
     create: true
