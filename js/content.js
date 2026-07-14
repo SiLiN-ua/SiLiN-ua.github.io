@@ -5,31 +5,17 @@
 (function () {
   'use strict';
 
-  const REPO   = 'SiLiN-ua/silin-ua.github.io';   // адаптуй якщо репо назвався інакше
-  const BRANCH = 'main';
-  const API    = `https://api.github.com/repos/${REPO}/contents`;
-
   const CACHE = {};
   const LANG = () => (localStorage.getItem('ys_lang') || 'uk');
 
   async function listCollection(name) {
     if (CACHE[name]) return CACHE[name];
     try {
-      const res = await fetch(`${API}/content/${name}?ref=${BRANCH}&t=${Date.now()}`, {
-        headers: { 'Accept': 'application/vnd.github.v3+json' },
-        cache: 'no-store'
-      });
-      if (!res.ok) throw new Error('list failed: ' + res.status);
-      const files = await res.json();
-      const jsonFiles = files.filter(f => f.name.endsWith('.json'));
-      const items = await Promise.all(jsonFiles.map(async f => {
-        const r = await fetch(f.download_url + '?t=' + Date.now());
-        const data = await r.json();
-        data.__slug = f.name.replace(/\.json$/, '');
-        return data;
-      }));
+      const res = await fetch(`content/${name}/_index.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error('index missing: ' + res.status);
+      const items = await res.json();
       const visible = items.filter(x => x.published !== false);
-      if (name === 'books') {
+      if (name === 'books' || name === 'certificates' || name === 'awards' || name === 'recommendations') {
         visible.sort((a, b) => (a.order || 0) - (b.order || 0));
       } else {
         visible.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
@@ -37,7 +23,7 @@
       CACHE[name] = visible;
       return visible;
     } catch (e) {
-      console.warn('content load failed', e);
+      console.warn('content load failed for ' + name, e);
       return [];
     }
   }
