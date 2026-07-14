@@ -477,11 +477,49 @@
     data.categories.forEach(c => {
       (groups[c.group] = groups[c.group] || []).push(c);
     });
-    const groupOrder = Object.keys(groups);
     const ordered = data.categories.reduce((acc, c) => {
       if (!acc.includes(c.group)) acc.push(c.group);
       return acc;
     }, []);
+
+    const rowHtml = (l) => {
+      let host = '';
+      try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
+      const name = l.real_title || l.title || host;
+      const desc = l.description || l.title || '';
+      const searchStr = (name + ' ' + desc + ' ' + host).toLowerCase();
+      return `
+        <tr class="stack__row" data-search="${escapeHtml(searchStr)}">
+          <td class="stack__name">${escapeHtml(name)}</td>
+          <td class="stack__desc">${escapeHtml(desc)}</td>
+          <td class="stack__link">
+            <a href="${escapeHtml(l.url)}" target="_blank" rel="noopener nofollow">
+              <span class="stack__link-host">${escapeHtml(host)}</span>
+              <span class="stack__link-arrow">↗</span>
+            </a>
+          </td>
+        </tr>`;
+    };
+
+    const catHtml = (cat) => `
+      <div class="stack__cat" data-cat-title="${escapeHtml(cat.title.toLowerCase())}">
+        <div class="stack__cat-head">
+          <h3>${escapeHtml(cat.title)}</h3>
+          <span class="stack__count">${cat.links.length}</span>
+        </div>
+        <div class="stack__table-wrap">
+          <table class="stack__table">
+            <thead>
+              <tr>
+                <th class="stack__th-name">Назва</th>
+                <th class="stack__th-desc">Опис</th>
+                <th class="stack__th-link">Посилання</th>
+              </tr>
+            </thead>
+            <tbody>${cat.links.map(rowHtml).join('')}</tbody>
+          </table>
+        </div>
+      </div>`;
 
     const html = `
       <div class="stack__meta">
@@ -491,33 +529,15 @@
           <span><strong>${ordered.length}</strong> напрямків</span>
         </div>
         <div class="stack__search">
-          <input type="search" id="stack-search" placeholder="Швидкий пошук по назві або категорії…" autocomplete="off">
+          <input type="search" id="stack-search" placeholder="Швидкий пошук: назва, опис, домен, категорія…" autocomplete="off">
         </div>
       </div>
 
       ${ordered.map(g => `
         <section class="stack__group" data-group="${escapeHtml(g)}">
           <h2 class="stack__group-title">${escapeHtml(g)}</h2>
-          <div class="stack__cards">
-            ${groups[g].map(cat => `
-              <div class="stack__cat" data-cat-title="${escapeHtml(cat.title.toLowerCase())}">
-                <div class="stack__cat-head">
-                  <h3>${escapeHtml(cat.title)}</h3>
-                  <span class="stack__count">${cat.links.length}</span>
-                </div>
-                <ul class="stack__links">
-                  ${cat.links.map(l => {
-                    let host = '';
-                    try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
-                    const t = (l.title || '').toLowerCase();
-                    return `<li data-search="${escapeHtml(t + ' ' + host)}">
-                      <a href="${escapeHtml(l.url)}" target="_blank" rel="noopener nofollow">${escapeHtml(l.title || host)}</a>
-                      <span class="stack__host">${escapeHtml(host)}</span>
-                    </li>`;
-                  }).join('')}
-                </ul>
-              </div>
-            `).join('')}
+          <div class="stack__cats">
+            ${groups[g].map(catHtml).join('')}
           </div>
         </section>
       `).join('')}
@@ -529,13 +549,14 @@
       const q = input.value.trim().toLowerCase();
       target.querySelectorAll('.stack__cat').forEach(cat => {
         const catTitle = cat.dataset.catTitle;
-        let anyMatch = catTitle.includes(q);
-        cat.querySelectorAll('li').forEach(li => {
-          const match = !q || anyMatch || li.dataset.search.includes(q);
-          li.style.display = match ? '' : 'none';
-          if (match) anyMatch = true;
+        const catMatch = catTitle.includes(q);
+        let anyVisible = false;
+        cat.querySelectorAll('tr.stack__row').forEach(row => {
+          const match = !q || catMatch || row.dataset.search.includes(q);
+          row.style.display = match ? '' : 'none';
+          if (match) anyVisible = true;
         });
-        cat.style.display = (!q || anyMatch) ? '' : 'none';
+        cat.style.display = (!q || anyVisible) ? '' : 'none';
       });
       target.querySelectorAll('.stack__group').forEach(g => {
         const anyVisible = Array.from(g.querySelectorAll('.stack__cat')).some(c => c.style.display !== 'none');

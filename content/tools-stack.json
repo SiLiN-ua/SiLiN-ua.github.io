@@ -8,15 +8,21 @@
       "links": [
         {
           "title": "Электрика",
-          "url": "https://www.flosm.org/en/powergrid.html?lat=47.4962267&lon=42.2170742&r=1066.0754&st=0&sw=cabledistributioncabinet,catenarymast,generator,powerbay,powerbiofuel,powerbiogas,powerbiomass,powerbusbar,powercable,powercoal,powercompensator,powerconverter,powergeothermal,powerhydro,powerline,powerline110k,powerline115k,powerline16hz110k,powerline16hz115k,powerline16hz20k,powerline16hz220k,powerline16hz30k,powerline16hz380k,powerline16hz50k,powerline16hz6k,powerline20k,powerline220k,powerline220v,powerline225k,powerline30k,powerline380k,powerline3k,powerline400k,powerline420k,powerline500v,powerline50k,powerline6k,powerline750k,powerline765k,powerlinedchigh,powerlinedclow,powerminordistribution,powernuclear,poweroil,powerplantarea,powerpole,powersolar,powersolarphotovoltaic,powersolarthermal,powersubstation,powerswitch,powertidal,powertower,powerwaste,powerwind,railwayacline1500v,railwayacline15k,railwayacline25k,railwayacline3k,railwayacline750v,railwaydcline1500v,railwaydcline15k,railwaydcline25k,railwaydcline3k,railwaydcline750v,railwaypowerline,separationzone,transformer"
+          "url": "https://www.flosm.org/en/powergrid.html?lat=47.4962267&lon=42.2170742&r=1066.0754&st=0&sw=cabledistributioncabinet,catenarymast,generator,powerbay,powerbiofuel,powerbiogas,powerbiomass,powerbusbar,powercable,powercoal,powercompensator,powerconverter,powergeothermal,powerhydro,powerline,powerline110k,powerline115k,powerline16hz110k,powerline16hz115k,powerline16hz20k,powerline16hz220k,powerline16hz30k,powerline16hz380k,powerline16hz50k,powerline16hz6k,powerline20k,powerline220k,powerline220v,powerline225k,powerline30k,powerline380k,powerline3k,powerline400k,powerline420k,powerline500v,powerline50k,powerline6k,powerline750k,powerline765k,powerlinedchigh,powerlinedclow,powerminordistribution,powernuclear,poweroil,powerplantarea,powerpole,powersolar,powersolarphotovoltaic,powersolarthermal,powersubstation,powerswitch,powertidal,powertower,powerwaste,powerwind,railwayacline1500v,railwayacline15k,railwayacline25k,railwayacline3k,railwayacline750v,railwaydcline1500v,railwaydcline15k,railwaydcline25k,railwaydcline3k,railwaydcline750v,railwaypowerline,separationzone,transformer",
+          "real_title": "Power grids with substations and detailed infrastructure",
+          "description": "The power grid map shows the global infrastructure of high to low voltage grids, transformers, power poles, substations in detail as well as power plants."
         },
         {
           "title": "Mapy.vom",
-          "url": "https://mapy.com/uk/letecka?l=0&source=osm&id=1031976719&x=42.2159690&y=47.4957927&z=16"
+          "url": "https://mapy.com/uk/letecka?l=0&source=osm&id=1031976719&x=42.2159690&y=47.4957927&z=16",
+          "real_title": "Mapy.com",
+          "description": "The Mapy.cz service is growing into a new portal, Mapy.com. It offers detailed search on maps of the entire world. It displays hiking trails, cycling paths, detailed maps of all cities and towns, and allows for route planning."
         },
         {
           "title": "Open Infrastructure Map",
-          "url": "https://openinframap.org/#14.74/47.49638/42.21574/A,B,L,P,S"
+          "url": "https://openinframap.org/#14.74/47.49638/42.21574/A,B,L,P,S",
+          "real_title": "Open Infrastructure Map",
+          "description": "Open map of the world"
         },
         {
           "title": "Wikimapia - Let's describe the whole world!",
@@ -28,35 +34,48 @@
         },
         {
           "title": "Google Maps",
-          "url": "https://www.google.com/maps/place/44%C2%B055'32.5%22N+34%C2%B012'40.6%22E/@44.9255779,34.2097885,767a,35y,23.35h,1.15t/data=!3m1!1e3!4m4!3m3!8m2!3d44.925698!4d34.211269!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+          "url": "https://www.google.com/maps/place/44%C2%B055'32.5%22N+34%C2%B012'40.6%22E/@44.9255779,34.2097885,767a,35y,23.35h,1.15t/data=!3m1!1e3!4m4!3m3!8m2!3d44.925698!4d34.211269!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoASAFQAw%3D%3D",
+          "real_title": "Карти Google",
+          "description": "Знаходьте місцеві підприємства, переглядайте карти та прокладайте маршрути в службі Карти Google."
         },
         {
           "title": "Mapillary",
-          "url": "https://www.mapillary.com/app/?lat=44.940624090532765&lng=34.223019579152606&z=16.620698564085796&mapStyle=Esri+satellite&menu=false"
+          "url": "https://www.mapillary.com/app/?lat=44.940624090532765&lng=34.223019579152606&z=16.620698564085796&mapStyle=Esri+satellite&menu=false",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Яндекс Maps",
-          "url": "https://yandex.com/maps/?ll=34.224823%2C44.942189&mode=whatshere&whatshere%5Bpoint%5D=34.223344%2C44.942147&whatshere%5Bzoom%5D=17&z=16"
+          "url": "https://yandex.com/maps/?ll=34.224823%2C44.942189&mode=whatshere&whatshere%5Bpoint%5D=34.223344%2C44.942147&whatshere%5Bzoom%5D=17&z=16",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "SunCalc",
-          "url": "https://www.suncalc.org/#/27.6936,-97.5195,3/2026.02.19/17:26/1/3"
+          "url": "https://www.suncalc.org/#/27.6936,-97.5195,3/2026.02.19/17:26/1/3",
+          "real_title": "SunCalc - sunrise, sunset, shadow length, solar eclipse, sun position, sun phase, sun height, sun calculator, sun movement, map, sunlight phases, elevation, Photovoltaic system, Photovoltaic",
+          "description": "Online application to ascertain the sun movement with interactive map, sunrise, sunset, shadow length, solar eclipse, sun position, sun phase, sun height, sun calculator, solar eclipse, elevation, Photovoltaic system, Photovoltaic"
         },
         {
           "title": "ShadeMap - Simulate sun shadows for any time and place on Earth",
-          "url": "https://shademap.app/@44.99696,38.96683,15.91631z,1769418004666t,0b,0p,0m!1769403119501!1769437413400"
+          "url": "https://shademap.app/@44.99696,38.96683,15.91631z,1769418004666t,0b,0p,0m!1769403119501!1769437413400",
+          "real_title": "ShadeMap - Simulate sun shadows for any time and place on Earth",
+          "description": "Every mountain, building and tree shadow in the world simulated for any date and time"
         },
         {
           "title": "Bellingcat OpenStreetMap search",
-          "url": "https://osm-search.bellingcat.com/"
+          "url": "https://osm-search.bellingcat.com/",
+          "real_title": "Bellingcat OpenStreetMap search"
         },
         {
           "title": "NASA | LANCE | FIRMS",
-          "url": "https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@35.041,48.421,12.000z"
+          "url": "https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@35.041,48.421,12.000z",
+          "real_title": "NASA | LANCE | FIRMS",
+          "description": "Global fire map and data. NASA | LANCE | Fire Information for Resource Management System provides near real-time active fire data from MODIS and VIIRS to meet the needs of firefighters, scientists and users interested in monitoring fires. Fire data is available for download or ca"
         },
         {
           "title": "Карта войны в Украине - Новости Украины на карте - liveuamap.com/ru",
-          "url": "https://liveuamap.com/ru"
+          "url": "https://liveuamap.com/ru",
+          "real_title": "Карта войны в Украине - Новости Украины на карте - liveuamap.com/ru",
+          "description": "Исследуйте карту и узнавайте о последних новостях и событиях Украины, конфликта в Восточной Украине и Крыму с помощью интерактивной карты"
         }
       ],
       "group": "Ідентифікація особи",
@@ -67,47 +86,66 @@
       "links": [
         {
           "title": "Инстаграм ID",
-          "url": "https://miniwebtool.com/instagram-user-id-lookup/"
+          "url": "https://miniwebtool.com/instagram-user-id-lookup/",
+          "real_title": "Instagram User ID Lookup - Find Any Instagram Numeric ID Instantly",
+          "description": "Instagram User ID Lookup - Free online tool to find the unique numeric ID of any public Instagram account from a profile URL or username. Perfect for developers, marketers, and social media analysts."
         },
         {
           "title": "ID Instagram и другие",
-          "url": "https://www.mediamister.com/find-instagram-user-id"
+          "url": "https://www.mediamister.com/find-instagram-user-id",
+          "real_title": "Find Instagram User ID By Username | Media Mister",
+          "description": "Find Instagram user ID quickly and easily with our free tool. Enter the username and get the ID in seconds."
         },
         {
           "title": "Поиск через ID Instagram",
-          "url": "https://commentpicker.com/instagram-username.php"
+          "url": "https://commentpicker.com/instagram-username.php",
+          "real_title": "Find any Instagram username by Instagram user ID",
+          "description": "Get an Instagram username from an Instagram User ID without login. Enter your Instagram ID and find any Instagram username. Try for free!"
         },
         {
           "title": "TikTok ID",
-          "url": "https://omar-thing.site/"
+          "url": "https://omar-thing.site/",
+          "real_title": "TikTok User Finder: View User Region, info | Free",
+          "description": "view TikTok User Country and more info like (Following, likes, videos) for free. Discover user region and download TikTok stories easily. No login required for this TikTok Profile Viewer & Story Downloader."
         },
         {
           "title": "Facebook ID",
-          "url": "https://miniwebtool.com/facebook-user-id-lookup/"
+          "url": "https://miniwebtool.com/facebook-user-id-lookup/",
+          "real_title": "Facebook User ID Lookup - Find Your Facebook Numeric ID Instantly",
+          "description": "Facebook User ID Lookup - Free online tool to find any Facebook user, page, or group numeric ID from a profile URL or username. Essential for developers, marketers, and social media managers."
         },
         {
           "title": "Найти идентификатор Facebook онлайн | Совершенно бесплатно - Beehosting Web Tools",
-          "url": "https://webtools.beehosting.pro/ru/find-facebook-id"
+          "url": "https://webtools.beehosting.pro/ru/find-facebook-id",
+          "real_title": "Найти идентификатор Facebook онлайн | Совершенно бесплатно - Beehosting Web Tools",
+          "description": "Найти идентификатор Facebook онлайн. С помощью бесплатного набора инструментов от Beehosting мы облегчаем веб-разработчикам и профессионалам ежедневное управление своими проектами."
         },
         {
           "title": "Twitter ID",
-          "url": "https://twiteridfinder.com/"
+          "url": "https://twiteridfinder.com/",
+          "real_title": "Twitter ID Finder and Converter (100% Working ✅)",
+          "description": "The only Twitter ID finder that"
         },
         {
           "title": "GitHub ID",
-          "url": "https://caius.github.io/github_id/"
+          "url": "https://caius.github.io/github_id/",
+          "real_title": "Find your GitHub user id"
         },
         {
           "title": "Twich ID",
-          "url": "https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/"
+          "url": "https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Bluesky ID",
-          "url": "https://commentpicker.com/bluesky-id.php"
+          "url": "https://commentpicker.com/bluesky-id.php",
+          "real_title": "Find your Bluesky ID: Bsky User ID & DID Lookup Tool",
+          "description": "Find your Bluesky user ID quickly and easily by your username or profile link. Get your Bluesky Decentralized Identifier (DID) instantly. Try now!"
         },
         {
           "title": "ID Reddit",
-          "url": "https://www.reddit.com/user/lizarge/about.json"
+          "url": "https://www.reddit.com/user/lizarge/about.json",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Ідентифікація особи",
@@ -122,43 +160,57 @@
         },
         {
           "title": "Free Safe OSINT Username Discovery Tool - WhatsMyName",
-          "url": "https://whatsmyname.dev/"
+          "url": "https://whatsmyname.dev/",
+          "real_title": "Free Safe OSINT Username Discovery Tool - WhatsMyName",
+          "description": "Advanced whatsmyname OSINT tool for safe and comprehensive digital intelligence gathering. Free professional username analysis across 500+ platforms for security research, cyber investigations, and digital forensics."
         },
         {
           "title": "ManuelBot59 | Suite OSINT · Streamlit",
-          "url": "https://whatsmyname.streamlit.app/"
+          "url": "https://whatsmyname.streamlit.app/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Namechk",
-          "url": "https://namechk.com/"
+          "url": "https://namechk.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "YouTube, Instagram, Twitch, TikTok, and more Statistics - SocialBlade.com",
-          "url": "https://socialblade.com/"
+          "url": "https://socialblade.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Поиск по XBox",
-          "url": "https://xboxgamertag.com/"
+          "url": "https://xboxgamertag.com/",
+          "real_title": "Xbox Gamertag - Search Xbox Live Profiles, Xbox Clips, Gamertags, Gamertag Suggestions, Xbox Tracker & More",
+          "description": "Use Xbox Gamertag to search Xbox Live Profiles, view xbox 360, xbox one, and xbox series game and achievement history, get gamertag suggestions, share gamercards and view the xbox leaderboards."
         },
         {
           "title": "Поиск по PS",
-          "url": "https://psnprofiles.com/"
+          "url": "https://psnprofiles.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Instant Username Search",
-          "url": "https://instantusername.com/"
+          "url": "https://instantusername.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Userscanner - Instant Lead Scoring",
-          "url": "https://userscanner.com/dashboard"
+          "url": "https://userscanner.com/dashboard",
+          "real_title": "Userscanner - Instant Lead Scoring"
         },
         {
           "title": "Connect and Grow Your Social Network",
-          "url": "https://addmecontacts.com/"
+          "url": "https://addmecontacts.com/",
+          "real_title": "Connect and Grow Your Social Network",
+          "description": "Add your social media accounts and connect with new friends"
         },
         {
           "title": "Free Username Search: Search Social Media Username | Find User Profiles | Dating Sites",
-          "url": "https://www.user-searcher.com/"
+          "url": "https://www.user-searcher.com/",
+          "real_title": "Free Username Search: Search Social Media Username | Find User Profiles | Dating Sites",
+          "description": "Username Search across 2000+ social media platforms, dating sites, forums, and more. Find social media profiles, verify online dating profiles, conduct background checks, and manage your online presence with our comprehensive reverse username search engine."
         }
       ],
       "group": "Ідентифікація особи",
@@ -169,59 +221,83 @@
       "links": [
         {
           "title": "Epieos, the ultimate OSINT tool",
-          "url": "https://epieos.com/"
+          "url": "https://epieos.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Проверка по почте",
-          "url": "https://intelbase.is/"
+          "url": "https://intelbase.is/",
+          "real_title": "IntelBase",
+          "description": "Discover the identity behind any email with our accurate reverse email lookup service."
         },
         {
           "title": "Аватар API.com — Вкажіть ім'я та обличчя на цій електронній адресі",
-          "url": "https://avatarapi.com/"
+          "url": "https://avatarapi.com/",
+          "real_title": "Avatar API.com - Put a name and face to your email address",
+          "description": "One API call. Pass in any email address you"
         },
         {
           "title": "Gmail OSINT - ActiveTK.jp",
-          "url": "https://gmail-osint.activetk.jp/"
+          "url": "https://gmail-osint.activetk.jp/",
+          "real_title": "Gmail OSINT - ActiveTK.jp",
+          "description": "GmailアドレスからGoogleアカウントの情報(名前やプロフ画像、利用したサービスなど)を取得できます。悪用厳禁！"
         },
         {
           "title": "Проверка почты",
-          "url": "https://www.comprobarcorreo.com/"
+          "url": "https://www.comprobarcorreo.com/",
+          "real_title": "Comprobar Correo – Validar email – Limpiar tu lista de correos",
+          "description": "Comprueba si una cuenta de correo es correcta y existe. Verifica el formato de la cuenta, comprueba que existe el servidor de correo y que acepta mensajes para esa cuenta. Validar correos."
         },
         {
           "title": "Проверка в базах мошенников",
-          "url": "https://scamsearch.io/"
+          "url": "https://scamsearch.io/",
+          "real_title": "Global Scammer Database - Catch a Scammer",
+          "description": "Global Scammer Database | Report Scammer | Reverse Lookups | Search by email, username, picture, phone number & Crypto Address."
         },
         {
           "title": "Существует или нет",
-          "url": "https://cleantalk.org/email-checker/aaaakostya@gmail.com"
+          "url": "https://cleantalk.org/email-checker/aaaakostya@gmail.com",
+          "real_title": "aaaakostya@gmail.com is Fake | Email Checker - Check Email for Spam | CleanTalk",
+          "description": "Email checker to verify email reputation, spam activity, and scam risk. Detect fake, disposable, or abusive emails using CleanTalk’s global spam database."
         },
         {
           "title": "Дійсна чи ні",
-          "url": "https://www.verifyemailaddress.org/email-validation"
+          "url": "https://www.verifyemailaddress.org/email-validation",
+          "real_title": "Email ID Checker"
         },
         {
           "title": "Проверка почты есть или нет",
-          "url": "https://tools.emailhippo.com/"
+          "url": "https://tools.emailhippo.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Пробив почты по Граватару",
-          "url": "https://gravatar.com/site/check"
+          "url": "https://gravatar.com/site/check",
+          "real_title": "Gravatar - Globally Recognized Avatars",
+          "description": "Your email address becomes your passport to the digital world, empowering you with complete control over your personal data."
         },
         {
           "title": "ViewDNS.info - Reverse Whois Email Lookup",
-          "url": "https://viewdns.info/reversewhois/"
+          "url": "https://viewdns.info/reversewhois/",
+          "real_title": "Reverse Whois Lookup - ViewDNS.info",
+          "description": "This free tool will allow you to find domain names owned by an individual person or company.  Simply enter the email address or name of the person or company to find other domains registered using those same details."
         },
         {
           "title": "Skype Resolver | WebResolver",
-          "url": "https://webresolver.nl/tools/resolve"
+          "url": "https://webresolver.nl/tools/resolve",
+          "real_title": "Webresolver.nl - The best Skype Resolver",
+          "description": "Webresolver.nl - Free API, Skype Resolver, Resolver, Email To Skype, Huge Database, Resolve Database, Leaked Databases"
         },
         {
           "title": "Поиск по почте компаний",
-          "url": "https://hunter.io/search"
+          "url": "https://hunter.io/search",
+          "real_title": "Sign in • Hunter",
+          "description": "Sign in to your existing Hunter account or use your Google account. Start using Hunter and connect with the people that matter for your business."
         },
         {
           "title": "Существует или нет",
-          "url": "https://centralops.net/co/emaildossier.aspx"
+          "url": "https://centralops.net/co/emaildossier.aspx",
+          "real_title": "Email Dossier - Investigate email addresses"
         }
       ],
       "group": "Ідентифікація особи",
@@ -232,23 +308,32 @@
       "links": [
         {
           "title": "🛑 Truecaller - Leading Global Caller ID & Call Blocking App",
-          "url": "https://www.truecaller.com/"
+          "url": "https://www.truecaller.com/",
+          "real_title": "Truecaller – Identify Unknown Callers & Block Spam Calls",
+          "description": "Truecaller helps you identify unknown numbers, block spam calls and messages, and stay protected from fraud. Trusted by millions for smarter, safer communication."
         },
         {
           "title": "Действительный ли телефон",
-          "url": "https://veriphone.io/"
+          "url": "https://veriphone.io/",
+          "real_title": "Free Phone Number Validator & Carrier Lookup — Veriphone",
+          "description": "Validate any phone number and identify its carrier, line type, and country in milliseconds — one number or millions, by API or CSV. 1,000 free lookups a month."
         },
         {
           "title": "Проверка на спам",
-          "url": "https://www.listaspam.com/"
+          "url": "https://www.listaspam.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Интернациональные номера",
-          "url": "https://www.thisnumber.com/"
+          "url": "https://www.thisnumber.com/",
+          "real_title": "International Phone Number Lookup (Free) - ThisNumber",
+          "description": "Free international phone number lookup & reverse search. Find foreign, overseas & international cell phone numbers. Look up any international number from over 200 countries."
         },
         {
           "title": "Генератор номер для поиска",
-          "url": "https://www.no-nonsense-intel.com/phone-variant-search"
+          "url": "https://www.no-nonsense-intel.com/phone-variant-search",
+          "real_title": "Phone Variant Search",
+          "description": "Free phone number search tool. Breaks a phone number into different formats and conducts a search on your preferred search engine. Find out whether a phone number was mentioned online."
         }
       ],
       "group": "Ідентифікація особи",
@@ -259,47 +344,68 @@
       "links": [
         {
           "title": "Lenso.ai - Зворотний пошук зображень з ШІ та розпізнаванням облич",
-          "url": "https://lenso.ai/uk"
+          "url": "https://lenso.ai/uk",
+          "real_title": "Lenso.ai - Зворотний пошук зображень з ШІ та розпізнаванням облич",
+          "description": "Lenso.ai - Пошук місць, людей, дублікатів і багато іншого за допомогою зворотнього пошуку зображень на основі ШІ"
         },
         {
           "title": "Search | CamGirlFinder",
-          "url": "https://camgirlfinder.to/search"
+          "url": "https://camgirlfinder.to/search",
+          "real_title": "Search | CamGirlFinder",
+          "description": "CamGirlFinder is a face recognition based cam model search engine. You can upload images to find the most similar looking cam models from the platforms: AmateurTV, BongaCams, Cam4, CamSoda, Chaturbate, CherryTV, Flirt4Free, ImLive, LiveJasmin, MyFreeCams, ShowUpTV, Streamate, Str"
         },
         {
           "title": "PimEyes: поисковая система распознавания лиц и обратный поиск изображений",
-          "url": "https://pimeyes.com/ru"
+          "url": "https://pimeyes.com/ru",
+          "real_title": "PimEyes: Face Recognition Search Engine and Reverse Image Search",
+          "description": "PimEyes is an advanced face recognition search engine, a reverse image search tool, and a photo search mechanism used to find which websites publish your photos online."
         },
         {
           "title": "search4faces: форма поиска по аватаркам вконтакте и одноклассники 2020",
-          "url": "https://search4faces.com/search_vkok.html"
+          "url": "https://search4faces.com/search_vkok.html",
+          "real_title": "search4faces: форма поиска по аватаркам вконтакте и одноклассники 2020",
+          "description": "поисковая система распознавания лиц, инструмент обратного поиска изображений и механизм поиска фотографий, используемый для определения того, где ваше лицо появляется в сети."
         },
         {
           "title": "FaceCheck - Reverse Image Search",
-          "url": "https://facecheck.id/"
+          "url": "https://facecheck.id/",
+          "real_title": "FaceCheck - Reverse Image Search - Face Recognition Search Engine",
+          "description": "Find anyone online with FaceCheck.ID face recognition search engine. Search for people by photo and verify you are talking to the person they claim to be."
         },
         {
           "title": "TinEye Reverse Image Search",
-          "url": "https://tineye.com/"
+          "url": "https://tineye.com/",
+          "real_title": "TinEye Reverse Image Search"
         },
         {
           "title": "Яндекс Зображення: пошук за зображенням",
-          "url": "https://yandex.ru/images/search?rpt=imageview&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F3516125%2F3zJgyHa_zUr43gajE2j_Vg5457%2Forig&cbir_page=search-by-image&crop=0.016%3B0.016%3B0.984%3B0.984"
+          "url": "https://yandex.ru/images/search?rpt=imageview&url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-images-cbir%2F3516125%2F3zJgyHa_zUr43gajE2j_Vg5457%2Forig&cbir_page=search-by-image&crop=0.016%3B0.016%3B0.984%3B0.984",
+          "real_title": "Яндекс Картинки",
+          "description": "Поиск одежды и похожих товаров по картинке, распознавание и перевод текста, проверка уникальности изображения в интернете, поиск копий изображения, определение, что изображено на картинке. Поиск по картинке и фото. #yandexvision"
         },
         {
           "title": "Порівняння обличчя / Тест на схожість обличчя онлайн",
-          "url": "https://facecomparison.toolpie.com/"
+          "url": "https://facecomparison.toolpie.com/",
+          "real_title": "Face Comparison / Face Similarity Test Online",
+          "description": "Upload two photos to compare face similarity online in real time, and the AI model is free to detect, recognition accuracy rate exceeds 99%."
         },
         {
           "title": "Сравнение по фото человека",
-          "url": "https://mxface.ai/"
+          "url": "https://mxface.ai/",
+          "real_title": "Leading Face Recognition API & Biometric Identity",
+          "description": "Secure your business with fast, accurate face recognition, liveness detection & verification APIs. Ideal for seamless KYC, onboarding & biometric authentication."
         },
         {
           "title": "Google Об’єктив – шукайте інформацію про речі навколо",
-          "url": "https://lens.google/"
+          "url": "https://lens.google/",
+          "real_title": "Google Lens - Search What You See",
+          "description": "Discover how Lens in the Google app can help you explore the world around you. Use your phone's camera to search what you see in an entirely new way."
         },
         {
           "title": "Сравнение тот же человек или нет?",
-          "url": "https://profacefinder.com/face-comparison/"
+          "url": "https://profacefinder.com/face-comparison/",
+          "real_title": "AI Face Comparison Online - Instantly See If Two Faces Match",
+          "description": "Compare two faces online using AI. Fast, private, and free face comparison to see if two photos show the same person."
         }
       ],
       "group": "Ідентифікація особи",
@@ -310,39 +416,54 @@
       "links": [
         {
           "title": "GeoSpy | Free & No Signup Geo Image Location Detector",
-          "url": "https://www.geospy.tech/en#upload"
+          "url": "https://www.geospy.tech/en#upload",
+          "real_title": "GeoSpy | Free & No Signup Geo Image Location Detector",
+          "description": "GeoSpy uses advanced AI technology to analyze your photos and identify potential locations where they were taken. Perfect for travelers, researchers, and anyone curious about image locations."
         },
         {
           "title": "Free Reverse Image Search - Find Similar Images | Pic Detective",
-          "url": "https://picdetective.com/"
+          "url": "https://picdetective.com/",
+          "real_title": "Free Reverse Image Search - Find Similar Images | Pic Detective",
+          "description": "Free reverse image search tool powered by AI. Find image sources, duplicates, and high-res versions on mobile, desktop, and social – try now!"
         },
         {
           "title": "GeoLocator | AI-Powered Photo Geolocation",
-          "url": "https://geolocator.app/dashboard"
+          "url": "https://geolocator.app/dashboard",
+          "real_title": "GeoLocator | AI-Powered Photo Geolocation",
+          "description": "Find where any photo was taken using AI. Works on any image—no EXIF needed. Perfect for OSINT, research, and solving mysteries."
         },
         {
           "title": "ImgGeo | Advanced Image Geolocation Tool",
-          "url": "https://www.imggeo.com/analyze"
+          "url": "https://www.imggeo.com/analyze",
+          "real_title": "Access Control - ImgGeo OSINT"
         },
         {
           "title": "RootAbout",
-          "url": "https://rootabout.com/"
+          "url": "https://rootabout.com/",
+          "real_title": "RootAbout"
         },
         {
           "title": "EarthKit",
-          "url": "https://earthkit.app/sift"
+          "url": "https://earthkit.app/sift",
+          "real_title": "EarthKit",
+          "description": "EarthKit is a tool for locating images on the Earth."
         },
         {
           "title": "GeoVLM - a Hugging Face Space by AceXRoux",
-          "url": "https://huggingface.co/spaces/AceXRoux/GeoVLM"
+          "url": "https://huggingface.co/spaces/AceXRoux/GeoVLM",
+          "real_title": "GeoVLM - a Hugging Face Space by AceXRoux",
+          "description": "Upload any image, and the app will predict where it was taken, providing details like city, region, country, and coordinates. The result includes a map for easy visualization."
         },
         {
           "title": "Photo Location Search using AI",
-          "url": "https://picarta.ai/"
+          "url": "https://picarta.ai/",
+          "real_title": "Photo Location Search using AI",
+          "description": "Find where a photo was taken with AI. Upload any image to discover its GPS location, city, and country. Powered by Picarta"
         },
         {
           "title": "Безкоштовний AI-локатор фото та пошук місцезнаходження зображень",
-          "url": "https://www.whereisthisphoto.com/"
+          "url": "https://www.whereisthisphoto.com/",
+          "fetch_error": "URLError"
         }
       ],
       "group": "Ідентифікація особи",
@@ -353,7 +474,9 @@
       "links": [
         {
           "title": "Анализ игроков",
-          "url": "https://chessstalker.com/"
+          "url": "https://chessstalker.com/",
+          "real_title": "Lichess, Chess.com & FIDE Player Analysis | Chess Stalker",
+          "description": "Chess Stalker — free opponent analysis for Lichess, Chess.com and FIDE players. Scout 11M+ games, opening repertoire, weaknesses and playing style."
         }
       ],
       "group": "Соціальні мережі",
@@ -364,7 +487,9 @@
       "links": [
         {
           "title": "Clubhouse Database - User Search & Analytics",
-          "url": "https://clubhousedb.com/"
+          "url": "https://clubhousedb.com/",
+          "real_title": "Clubhouse Database - User Search & Analytics",
+          "description": "ClubhouseDB is the first free Clubhouse analytics tool. Find the most followed users and clubs using our database."
         }
       ],
       "group": "Соціальні мережі",
@@ -375,11 +500,14 @@
       "links": [
         {
           "title": "discord.id — Неофіційний пошук ID у Discord",
-          "url": "https://discord.id/"
+          "url": "https://discord.id/",
+          "real_title": "discord.id — Unofficial Discord ID Lookup",
+          "description": "Instantly find out when an account was created, view their profile picture, banner, and see all their badges."
         },
         {
           "title": "Поиск по юзеру",
-          "url": "https://disboard.org/"
+          "url": "https://disboard.org/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Соціальні мережі",
@@ -390,19 +518,24 @@
       "links": [
         {
           "title": "Хто що опублікував?",
-          "url": "https://whopostedwhat.com/"
+          "url": "https://whopostedwhat.com/",
+          "real_title": "Who Posted What? — Facebook Search Tools"
         },
         {
           "title": "Скрапинг",
-          "url": "https://kitploit.com/2019/11/ultimate-facebook-scraper-bot-which.html/"
+          "url": "https://kitploit.com/2019/11/ultimate-facebook-scraper-bot-which.html/",
+          "real_title": "Kitploit – Maintenance in Progress",
+          "description": "Kitploit is temporarily under maintenance. We’ll be back shortly with improvements."
         },
         {
           "title": "Panel Táctico VIP | SOCMINT Data Search",
-          "url": "https://socmint.manuelbot59.com/"
+          "url": "https://socmint.manuelbot59.com/",
+          "real_title": "Acceso Restringido | Panel VIP SOCMINT"
         },
         {
           "title": "Утечки по FB",
-          "url": "https://tools.manuelbot59.com/"
+          "url": "https://tools.manuelbot59.com/",
+          "real_title": "Suite de Herramientas OSINT | Manuel Travezaño"
         }
       ],
       "group": "Соціальні мережі",
@@ -413,7 +546,8 @@
       "links": [
         {
           "title": "(1) Oleksandr A. Profile | Freelancer",
-          "url": "https://www.freelancer.com/u/sashaankudinov"
+          "url": "https://www.freelancer.com/u/sashaankudinov",
+          "real_title": "Oleksandr A. Profile | Freelancer"
         }
       ],
       "group": "Соціальні мережі",
@@ -424,19 +558,25 @@
       "links": [
         {
           "title": "Поиск почты по нику",
-          "url": "https://ghintel.secrets.ninja/"
+          "url": "https://ghintel.secrets.ninja/",
+          "real_title": "GitHub Commits Email Finder"
         },
         {
           "title": "Поиск почты разработчиков",
-          "url": "https://github-email-finder.netlify.app/"
+          "url": "https://github-email-finder.netlify.app/",
+          "real_title": "GitHub Email Finder - Find email of any GitHub Developer",
+          "description": "Find email of any GitHub Developer using their GitHub username."
         },
         {
           "title": "GitHub Email Finder",
-          "url": "https://elliott.diy/projects/github/"
+          "url": "https://elliott.diy/projects/github/",
+          "real_title": "GitHub Email Finder",
+          "description": "Find public email addresses from GitHub usernames. Useful for OSINT, cybersecurity investigations, and attribution work."
         },
         {
           "title": "Поиск почті",
-          "url": "https://emailaddress.github.io/?user=ManuelBot59"
+          "url": "https://emailaddress.github.io/?user=ManuelBot59",
+          "real_title": "Find (almost) any GitHub user's email address!"
         }
       ],
       "group": "Соціальні мережі",
@@ -447,11 +587,13 @@
       "links": [
         {
           "title": "Экспорт подписок",
-          "url": "https://chrome-stats.com/d/diobnppoomflbfopidklhnonklfpigng/download"
+          "url": "https://chrome-stats.com/d/diobnppoomflbfopidklhnonklfpigng/download",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Анонимный просмотр",
-          "url": "https://imginn.com/#google_vignette"
+          "url": "https://imginn.com/#google_vignette",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Соціальні мережі",
@@ -462,15 +604,19 @@
       "links": [
         {
           "title": "OnlySearch | #1 OnlyFans Search Engine & Finder: Near me, Name, Niche & Location",
-          "url": "https://onlysearch.co/"
+          "url": "https://onlysearch.co/",
+          "real_title": "OnlySearch | #1 OnlyFans Search Engine & Finder: Near me, Name, Niche & Location",
+          "description": "Search millions of OnlyFans profiles by keyword, location, age, body type, ethnicity, price, gender, and interests. Filter for new, free, or no PPV profiles."
         },
         {
           "title": "Search OnlyFans Accounts — OnlyFans Finder #1 | FansMetrics.com",
-          "url": "https://fansmetrics.com/"
+          "url": "https://fansmetrics.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "OnlyFinder - The Onlyfans Search Engine",
-          "url": "https://onlyfinder.com/"
+          "url": "https://onlyfinder.com/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Соціальні мережі",
@@ -481,19 +627,25 @@
       "links": [
         {
           "title": "Reddit User Analyser",
-          "url": "https://reddit-user-analyser.netlify.app/"
+          "url": "https://reddit-user-analyser.netlify.app/",
+          "real_title": "Reddit User Analyser"
         },
         {
           "title": "Анализ профиля",
-          "url": "https://www.redective.com/"
+          "url": "https://www.redective.com/",
+          "fetch_error": "URLError"
         },
         {
           "title": "Анализ профиля",
-          "url": "https://redditmetis.com/"
+          "url": "https://redditmetis.com/",
+          "real_title": "RedditMetis - Discover Your Reddit Persona",
+          "description": "Track stats, explore patterns, and see what your Reddit profile says about you!"
         },
         {
           "title": "Просмотр удалённых постов и комментариев",
-          "url": "https://www.reveddit.com/"
+          "url": "https://www.reveddit.com/",
+          "real_title": "reveddit",
+          "description": "Reveddit reveals content secretly removed from your reddit account."
         }
       ],
       "group": "Соціальні мережі",
@@ -504,7 +656,9 @@
       "links": [
         {
           "title": "Roblox User Email Database | PDF",
-          "url": "https://www.scribd.com/document/735329355/FREE-DataBase-Roblox#google_vignette&content=query:polp888,pageNum:17,indexOnPage:0,bestMatch:false"
+          "url": "https://www.scribd.com/document/735329355/FREE-DataBase-Roblox#google_vignette&content=query:polp888,pageNum:17,indexOnPage:0,bestMatch:false",
+          "real_title": "Roblox User Email Database | PDF",
+          "description": "[FREE] DataBase Roblox - Free download as Text File (.txt), PDF File (.pdf) or read online for free. The document contains a list of names and email addresses. There are over 300 entries in the list with names, user IDs, and corresponding emails. The list appears to be of user ac"
         }
       ],
       "group": "Соціальні мережі",
@@ -515,7 +669,9 @@
       "links": [
         {
           "title": "Поиск по юезру",
-          "url": "https://www.speed-friends.com/online/users"
+          "url": "https://www.speed-friends.com/online/users",
+          "real_title": "Speed-Friends : find online Skype users",
+          "description": "Speed-Friends.com helps you to find online Skype™ users all over the world. All our connected users are really online now, and they are waiting for new contacts.You stay anonymous and your Skype name is never revealed until you accept request from other members.\nIt's free, secure"
         }
       ],
       "group": "Соціальні мережі",
@@ -526,15 +682,18 @@
       "links": [
         {
           "title": "SteamID » MixZarin steam | STEAM_0:0:517380444 | 76561198995026616",
-          "url": "https://steamid.uk/profile/76561198995026616"
+          "url": "https://steamid.uk/profile/76561198995026616",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Сколько денег потрачено на игры",
-          "url": "https://steamdb.info/calculator/"
+          "url": "https://steamdb.info/calculator/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "VAC-баны, активность в играх, друзья, статус",
-          "url": "https://rep.tf/76561198995026616"
+          "url": "https://rep.tf/76561198995026616",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Соціальні мережі",
@@ -545,27 +704,37 @@
       "links": [
         {
           "title": "TikTok время публикации",
-          "url": "https://bellingcat.github.io/tiktok-timestamp/"
+          "url": "https://bellingcat.github.io/tiktok-timestamp/",
+          "real_title": "Tiktok date extractor"
         },
         {
           "title": "Время публикации",
-          "url": "https://manuelbot59.github.io/Tiktok-Timestamps/"
+          "url": "https://manuelbot59.github.io/Tiktok-Timestamps/",
+          "real_title": "SOCMINT. TikTok Timestamps - Date Extractor for Tik Tok video creation",
+          "description": "SOCMINT tool that facilitates the creation date of Tiktok videos. It also works with videos that have been deleted."
         },
         {
           "title": "Tiktok Analytics Tool",
-          "url": "https://mavekite.com/"
+          "url": "https://mavekite.com/",
+          "real_title": "MaveKite | Tiktok Analytics Tool",
+          "description": "A web application made for people who want to calculate tiktok engagement rate and analyse tiktok profile, video, song, or hashtag."
         },
         {
           "title": "Download TikTok Video",
-          "url": "https://ttsave.app/en"
+          "url": "https://ttsave.app/en",
+          "real_title": "Download TikTok Video Without Watermark - TikTok Downloader HD - TTSave.APP",
+          "description": "TTSave.APP is tiktok downloader with the most complete features. You can use TTSave on all types of devices easily, fast, and free without the need to install any software."
         },
         {
           "title": "Анонимный просмотр",
-          "url": "https://urlebird.com/es/"
+          "url": "https://urlebird.com/es/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Anonymous TikTok",
-          "url": "https://www.tikface.com/"
+          "url": "https://www.tikface.com/",
+          "real_title": "Anonymous TikTok Viewer - View and Download TikTok Videos",
+          "description": "View TikTok profiles, videos, and content anonymously. No account needed! Enjoy secure and private access to TikTok content on any device."
         }
       ],
       "group": "Соціальні мережі",
@@ -576,7 +745,9 @@
       "links": [
         {
           "title": "Анализ стримов и канала",
-          "url": "https://twitchtracker.com/"
+          "url": "https://twitchtracker.com/",
+          "real_title": "Twitch Stats and Rankings for Channels, Games and Streams · TwitchTracker",
+          "description": "Explore Twitch viewer stats for streams and games. See channel rankings and key insights presented in tables and charts."
         }
       ],
       "group": "Соціальні мережі",
@@ -595,15 +766,20 @@
         },
         {
           "title": "Twitter Archive",
-          "url": "https://waybacktweets.streamlit.app/"
+          "url": "https://waybacktweets.streamlit.app/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Попадал ли твиттер в бан",
-          "url": "https://shadowban.yuzurisa.com/"
+          "url": "https://shadowban.yuzurisa.com/",
+          "real_title": "Twitter Shadowban Test",
+          "description": "Check whether a Twitter (X) account is shadowbanned and view visibility test results."
         },
         {
           "title": "Твиттер на утечку",
-          "url": "https://www.activetk.jp/tools/twitter-leaked200"
+          "url": "https://www.activetk.jp/tools/twitter-leaked200",
+          "real_title": "Twitter Leaked Checker - ActiveTK.jp",
+          "description": "2021年後半に2億人超のアカウント情報がTwitterから流失したとみられており、本ツールではその流失した情報にご自身のアカウントが含まれているか確認できます。"
         }
       ],
       "group": "Соціальні мережі",
@@ -614,15 +790,21 @@
       "links": [
         {
           "title": "Информация и фото профиля",
-          "url": "https://whatsapp.checkleaked.cc/uk"
+          "url": "https://whatsapp.checkleaked.cc/uk",
+          "real_title": "Перевірка профілю та перегляд DP у WhatsApp — перегляд або завантаження зображення будь-якого номера - Whatsapp Checkleaked",
+          "description": "Безкоштовний переглядач DP-файлів та перевірка фотографій профілю WhatsApp. Переглядайте або завантажуйте фотографії профілю будь-кого за номером телефону, перевіряйте, чи є номер у WhatsApp, та переглядайте статус бізнесу — без входу в систему."
         },
         {
           "title": "Достоверность номера",
-          "url": "https://2chat.co/es/tools/whatsapp-checker"
+          "url": "https://2chat.co/es/tools/whatsapp-checker",
+          "real_title": "Verificador de números de WhatsApp — 2Chat",
+          "description": "Verificador de números de WhatsApp. Esta API te permite verificar si un número de teléfono tiene una cuenta de WhatsApp o no."
         },
         {
           "title": "Генерация смс чата сам с собой",
-          "url": "https://www.nepchatapp.nl/"
+          "url": "https://www.nepchatapp.nl/",
+          "real_title": "Maak nep WhatsApp en Messenger berichten - NepChatApp.nl - NepChatApp.nl",
+          "description": "NepChatApp.nl - de niet van echt te onderscheiden chat imitator"
         }
       ],
       "group": "Соціальні мережі",
@@ -633,43 +815,59 @@
       "links": [
         {
           "title": "Метаданные с геолокацией если есть",
-          "url": "https://mattw.io/youtube-geofind/"
+          "url": "https://mattw.io/youtube-geofind/",
+          "real_title": "Channel Search - Discover Geo-tagged Videos - MW Geofind",
+          "description": "Search YouTube for geographically tagged videos by location, topic, or channel. Videos are viewable in a map and data exportable in JSON and CSV."
         },
         {
           "title": "Метаданные",
-          "url": "https://mattw.io/youtube-metadata/"
+          "url": "https://mattw.io/youtube-metadata/",
+          "real_title": "MW Metadata",
+          "description": "Quickly gather all the metadata about a video, playlist, or channel from the YouTube API. Reverse image search thumbnails, geolocate in google maps, and translate ISO country and language codes."
         },
         {
           "title": "Архив видео и метаданные",
-          "url": "https://findyoutubevideo.thetechrobo.ca/"
+          "url": "https://findyoutubevideo.thetechrobo.ca/",
+          "real_title": "YouTube Video Finder",
+          "description": "Easily search for YouTube videos in several archives."
         },
         {
           "title": "Поиск архива или архивирование",
-          "url": "https://preservetube.com/"
+          "url": "https://preservetube.com/",
+          "real_title": "Home | PreserveTube"
         },
         {
           "title": "Поиск удаленних видео",
-          "url": "https://quiteaplaylist.com/"
+          "url": "https://quiteaplaylist.com/",
+          "real_title": "quite a playlist - Find deleted or private YouTube videos from Playlists"
         },
         {
           "title": "Експорт даних с ютуба",
-          "url": "https://ytdt.digitalmethods.net/"
+          "url": "https://ytdt.digitalmethods.net/",
+          "real_title": "YouTube Data Tools"
         },
         {
           "title": "YouTube Коментарии",
-          "url": "https://commentviewer.com/"
+          "url": "https://commentviewer.com/",
+          "real_title": "YouTube Comment Viewer",
+          "description": "Viewer for YouTube comments. Sort by oldest first, graph comment trends, and more."
         },
         {
           "title": "Поиск коментариев",
-          "url": "https://ytcomment.kmcat.uk/"
+          "url": "https://ytcomment.kmcat.uk/",
+          "real_title": "YCF - Youtube Comment Finder",
+          "description": "Find and search comments on Youtube. Search for keywords mentioned in any Youtube videos comment section in seconds"
         },
         {
           "title": "Скачивание субтитров",
-          "url": "https://downsub.com/"
+          "url": "https://downsub.com/",
+          "real_title": "Download subtitles from Youtube, Viki, Viu, Kocowa, Wetv and more"
         },
         {
           "title": "Конвертация с видео в МР3 и т.д.",
-          "url": "https://yout.com/"
+          "url": "https://yout.com/",
+          "real_title": "Yout.com - The Internet DVR",
+          "description": "Yout.com: The Internet DVR that allows you to format shift videos from YouTube, TikTok, Instagram, Facebook and others too many formats with audio and video clipping. Intuitively easy to use.  Yout the Internet DVR"
         }
       ],
       "group": "Соціальні мережі",
@@ -684,7 +882,9 @@
         },
         {
           "title": "i2OCR",
-          "url": "https://www.i2ocr.com/"
+          "url": "https://www.i2ocr.com/",
+          "real_title": "Free Online OCR Tool – Extract Text from Images & PDFs | i2OCR",
+          "description": "i2OCR is a free online OCR tool that extracts text from images and PDFs using AI-powered optical character recognition. Supports 128 languages. Convert image and PDF files to editable, searchable text online."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -695,7 +895,9 @@
       "links": [
         {
           "title": "DeepL Translate",
-          "url": "https://www.deepl.com/translator"
+          "url": "https://www.deepl.com/translator",
+          "real_title": "DeepL Translator | World's Most Accurate Translator",
+          "description": "Translate texts & full document files instantly. Accurate translations for individuals and Teams. Millions translate with DeepL every day."
         },
         {
           "title": "Google Translate",
@@ -703,7 +905,9 @@
         },
         {
           "title": "Cambridge Dictionary Translate",
-          "url": "https://dictionary.cambridge.org/translate/"
+          "url": "https://dictionary.cambridge.org/translate/",
+          "real_title": "TRANSLATE in English, Spanish, French and more with Cambridge",
+          "description": "Free online translator enhanced by dictionary definitions, pronunciations, synonyms, examples and supporting the 19 languages most used on the web."
         },
         {
           "title": "Google Translate - Chrome Web Store",
@@ -715,7 +919,8 @@
         },
         {
           "title": "Multi Language Keyboard",
-          "url": "https://www.lexilogos.com/english/index.htm"
+          "url": "https://www.lexilogos.com/english/index.htm",
+          "fetch_error": "URLError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -726,51 +931,70 @@
       "links": [
         {
           "title": "Регистрация компаний",
-          "url": "https://companiesregistry.cy/search-results/"
+          "url": "https://companiesregistry.cy/search-results/",
+          "fetch_error": "URLError"
         },
         {
           "title": "Business registers in EU countries",
-          "url": "https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-eu-countries_en"
+          "url": "https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-eu-countries_en",
+          "real_title": "Business registers in EU countries | European e-Justice Portal",
+          "description": "In Europe, business registers offer a range of services, which may vary from one Member State to another."
         },
         {
           "title": "Open Corporates: Trusted Company Data",
-          "url": "https://opencorporates.com/"
+          "url": "https://opencorporates.com/",
+          "real_title": "OpenCorporates"
         },
         {
           "title": "Crunchbase",
-          "url": "https://www.crunchbase.com/"
+          "url": "https://www.crunchbase.com/",
+          "real_title": "Crunchbase"
         },
         {
           "title": "Scribd: Home to the world’s documents.",
-          "url": "https://www.scribd.com/"
+          "url": "https://www.scribd.com/",
+          "real_title": "Scribd: Home to the world's documents.",
+          "description": "Get the world's best ebooks, audiobooks, podcasts, magazines, documents, and more. Find anywhere else. Home to the world's documents, 300M+ and counting."
         },
         {
           "title": "Санкции",
-          "url": "https://www.opensanctions.org/"
+          "url": "https://www.opensanctions.org/",
+          "real_title": "OpenSanctions: The open database of sanctions, PEPs and watchlists",
+          "description": "The open-source database of sanctions, watchlists, and politically exposed persons — aggregating hundreds of sources and relied on by compliance teams, investigators, and journalists."
         },
         {
           "title": "Поиск по Британии",
-          "url": "https://www.192.com/"
+          "url": "https://www.192.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Поиск по Америке",
-          "url": "https://publicrecords.searchsystems.net/"
+          "url": "https://publicrecords.searchsystems.net/",
+          "real_title": "SearchSystems.net - Free Public Records Directory | Court, Criminal, Property & Vital Records",
+          "description": "The first free public records directory since 1997. Search official government databases across all 50 states and 3,200+ counties. Court records, criminal records, property records, vital records."
         },
         {
           "title": "Поиск по Чили",
-          "url": "https://www.nombrerutyfirma.com/"
+          "url": "https://www.nombrerutyfirma.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Проверка даты рождения по ИНН Чили",
-          "url": "https://villena.cl/rut-a-edad-fecha-de-nacimiento.html"
+          "url": "https://villena.cl/rut-a-edad-fecha-de-nacimiento.html",
+          "real_title": "Obtener la Edad y Fecha de Nacimiento con RUT",
+          "description": "Acá puedes obtener la edad y fecha de nacimiento de una persona con tan sólo conocer su número de RUT. Método estadísticamente comprobado."
         },
         {
           "title": "Whitepages® | Find People, Phone Numbers, Addresses & More",
-          "url": "https://www.whitepages.com/"
+          "url": "https://www.whitepages.com/",
+          "real_title": "Whitepages: People Search, Phone Numbers & Addresses",
+          "description": "Founded in 1997, Whitepages is the largest U.S. directory and trusted source for contact info and property data. Find people, phone numbers, addresses, and emails nationwide. Free and premium search across the Whitepages Identity Graph: 350M+ identity records, 4B+ data linkages, "
         },
         {
           "title": "Китай поиск по IP + телефон",
-          "url": "https://ip138.com/"
+          "url": "https://ip138.com/",
+          "real_title": "iP地址查询--手机号码查询归属地 | 邮政编码查询 | iP地址归属地查询 | 身份证号码验证在线查询网",
+          "description": "公网ip地址归属地查询"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -781,19 +1005,26 @@
       "links": [
         {
           "title": "Xinjiang Victims Database",
-          "url": "https://shahit.biz/eng/"
+          "url": "https://shahit.biz/eng/",
+          "real_title": "Xinjiang Victims Database",
+          "description": "The goal of this database consists in documenting the aforementioned individuals, so as to both protect them now and hold the Chinese authorities accountable later, by creating the foundations for future legal action and reparations."
         },
         {
           "title": "(Kanzhun) 看准网-查工资|聊面试|评公司|搜职位|国内领先的职场信息平台",
-          "url": "https://www.kanzhun.com/"
+          "url": "https://www.kanzhun.com/",
+          "fetch_error": "URLError"
         },
         {
           "title": "(PRC ID Decoder) 居民身份证号码免费查询系统",
-          "url": "https://mid.weixingmap.com/"
+          "url": "https://mid.weixingmap.com/",
+          "real_title": "居民身份证号码免费查询系统",
+          "description": "身份证号码查询专业网站，查询身份证号码"
         },
         {
           "title": "Visualizing China’s Anti-Corruption Campaign | ChinaFile",
-          "url": "https://www.chinafile.com/infographics/visualizing-chinas-anti-corruption-campaign"
+          "url": "https://www.chinafile.com/infographics/visualizing-chinas-anti-corruption-campaign",
+          "real_title": "Visualizing China’s Anti-Corruption Campaign | ChinaFile",
+          "description": "“Catching Tigers and Flies” is ChinaFile’s interactive tool for tracking and, we hope, better understanding the massive campaign against corruption that Xi Jinping launched shortly after he came to power in late 2012. It is designed to give users a sense of the scope and characte"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -804,11 +1035,14 @@
       "links": [
         {
           "title": "Australia Business Directory",
-          "url": "https://au.companiesdb.net/"
+          "url": "https://au.companiesdb.net/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ASIC Home | ASIC - Australian Securities and Investments Commission",
-          "url": "https://asic.gov.au/"
+          "url": "https://asic.gov.au/",
+          "real_title": "ASIC Home | ASIC",
+          "description": "ASIC is an independent Australian Government body responsible for regulating financial services and consumer credit, and authorised financial markets operating in Australia."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -819,87 +1053,115 @@
       "links": [
         {
           "title": "Centre for Strategic and International Studies",
-          "url": "https://www.csis.org/programs/china-power-project"
+          "url": "https://www.csis.org/programs/china-power-project",
+          "real_title": "China Power Project | Geopolitics and Foreign Policy | CSIS",
+          "description": "The China Power Project provides in-depth, data-driven analysis of China’s evolving power, with a particular focus on Chinese foreign and security policy and Taiwan security issues"
         },
         {
           "title": "The Brookings Institute",
-          "url": "https://www.brookings.edu/topic/china/"
+          "url": "https://www.brookings.edu/topic/china/",
+          "real_title": "China | Brookings",
+          "description": "Explore Brookings' extensive research on China. Access in-depth analysis, reports, and events addressing the country's economic policies, political strategies, and global impact."
         },
         {
           "title": "The Council on Foreign Relations",
-          "url": "https://www.cfr.org/asia/china"
+          "url": "https://www.cfr.org/asia/china",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "China | Chatham House",
-          "url": "https://www.chathamhouse.org/regions/asia-pacific/china"
+          "url": "https://www.chathamhouse.org/regions/asia-pacific/china",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Australian Strategic Policy Institute - China",
-          "url": "https://www.aspi.org.au/?s=china"
+          "url": "https://www.aspi.org.au/?s=china",
+          "real_title": "You searched for china - ASPI"
         },
         {
           "title": "The European Council on Foreign Relations",
-          "url": "https://ecfr.eu/?s=china"
+          "url": "https://ecfr.eu/?s=china",
+          "real_title": "Search Results for “china” – European Council on Foreign Relations"
         },
         {
           "title": "Hudson Institute",
-          "url": "https://www.hudson.org/china"
+          "url": "https://www.hudson.org/china",
+          "real_title": "China | Hudson Institute"
         },
         {
           "title": "China | Hoover Institution",
-          "url": "https://www.hoover.org/topic/china"
+          "url": "https://www.hoover.org/topic/china",
+          "real_title": "China | Hoover Institution"
         },
         {
           "title": "China – The Diplomat",
-          "url": "https://thediplomat.com/countries/china/"
+          "url": "https://thediplomat.com/countries/china/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "China Daily",
-          "url": "https://www.chinadaily.com.cn/"
+          "url": "https://www.chinadaily.com.cn/",
+          "real_title": "China Daily Website - Connecting China Connecting the World",
+          "description": "Chinadaily.com.cn is the largest English portal in China, providing news, business information, BBS, learning materials. The Website has channels as China, BizChina, World, Opinion, Sports/Olympics, Entertainment, Lifestyle, Culture, Citylife, Photo, Forum and Weather."
         },
         {
           "title": "China Economic Daily",
-          "url": "https://en.ce.cn/National/"
+          "url": "https://en.ce.cn/National/",
+          "real_title": "China--China Economic Net"
         },
         {
           "title": "Global Times",
-          "url": "https://www.globaltimes.cn/"
+          "url": "https://www.globaltimes.cn/",
+          "real_title": "Global Times",
+          "description": "Global Times, an English-language Chinese newspaper under the People"
         },
         {
           "title": "South China Morning Post",
-          "url": "https://www.scmp.com/"
+          "url": "https://www.scmp.com/",
+          "real_title": "Breaking China, Asia, HK News, Opinions and Insights | South China Morning Post",
+          "description": "News, opinions, infographics and videos on China issues: geopolitics, diplomacy, economy, technology and lifestyle."
         },
         {
           "title": "China | The Economist",
-          "url": "https://www.economist.com/china"
+          "url": "https://www.economist.com/china",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Toutiao",
-          "url": "https://www.toutiao.com/?wid=1675892874578"
+          "url": "https://www.toutiao.com/?wid=1675892874578",
+          "real_title": "今日头条"
         },
         {
           "title": "Zhihu",
-          "url": "https://www.zhihu.com/signin?next=%2F"
+          "url": "https://www.zhihu.com/signin?next=%2F",
+          "real_title": "知乎 - 有问题，就会有答案",
+          "description": "知乎，中文互联网高质量的问答社区和创作者聚集的原创内容平台，于 2011 年 1 月正式上线，以「让人们更好的分享知识、经验和见解，找到自己的解答」为品牌使命。知乎凭借认真、专业、友善的社区氛围、独特的产品机制以及结构化和易获得的优质内容，聚集了中文互联网科技、商业、影视、时尚、文化等领域最具创造力的人群，已成为综合性、全品类、在诸多领域具有关键影响力的知识分享社区和创作者聚集的原创内容平台，建立起了以社区驱动的内容变现商业模式。"
         },
         {
           "title": "Chinese Defence Universities Tracker — ASPI",
-          "url": "https://unitracker.aspi.org.au/"
+          "url": "https://unitracker.aspi.org.au/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "National Library of China",
-          "url": "https://www.nlc.cn/"
+          "url": "https://www.nlc.cn/",
+          "fetch_error": "TimeoutError"
         },
         {
           "title": "China National Intellectual Property Administration",
-          "url": "https://pss-system.cponline.cnipa.gov.cn/Disclaimer"
+          "url": "https://pss-system.cponline.cnipa.gov.cn/Disclaimer",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "China National Knowledge Infrastructure",
-          "url": "https://oversea.cnki.net/index/"
+          "url": "https://oversea.cnki.net/index/",
+          "real_title": "CNKI Overseas",
+          "description": "CNKI provides global users with a unified search and discovery service for Chinese academic resources such as journals, dissertations, yearbooks, conference papers, e-books, newspapers, e-books, and reference books, and supports various full-text download methods."
         },
         {
           "title": "kns.cnki 个性化首页-中国知网",
-          "url": "https://kns.cnki.net/kns8"
+          "url": "https://kns.cnki.net/kns8",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -910,11 +1172,15 @@
       "links": [
         {
           "title": "UNITED KINGDOM",
-          "url": "http://beta.companieshouse.gov.uk/"
+          "url": "http://beta.companieshouse.gov.uk/",
+          "real_title": "Search the register - Find and update company information - GOV.UK",
+          "description": "Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, business activity"
         },
         {
           "title": "British Phonebook",
-          "url": "http://www.britishphonebook.com/"
+          "url": "http://www.britishphonebook.com/",
+          "real_title": "BritishPhoneBook.com - British Phone Book - UK Phone Book - United Kingdom Directory Enquiries - Phone Directory - Residential Numbers - Britsh Telecom",
+          "description": "british phonebook british phone book united kingdom directory enquiries\r\n192"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -925,23 +1191,29 @@
       "links": [
         {
           "title": "DENMARK - Official Buildings",
-          "url": "https://ois.dk/"
+          "url": "https://ois.dk/",
+          "real_title": "OIS - Din genvej til ejendomsdata",
+          "description": "OIS.dk - Din genvej til ejendomsdata. Den Offentlige Informationsserver, OIS, er en statslig database der samler en række oplysninger vedrørende ejendomme i Danmark."
         },
         {
           "title": "DENMARK - Official Register",
-          "url": "https://datacvr.virk.dk/data/?_np_c=et%2Ckampagneboks%2Cindberet"
+          "url": "https://datacvr.virk.dk/data/?_np_c=et%2Ckampagneboks%2Cindberet",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "DENMARK - Ownership of house or car",
-          "url": "https://www.tinglysning.dk/tinglysning/landingpage/landingpage.xhtml"
+          "url": "https://www.tinglysning.dk/tinglysning/landingpage/landingpage.xhtml",
+          "fetch_error": "URLError"
         },
         {
           "title": "DENMARK - Properties for sale",
-          "url": "https://www.boligsiden.dk/"
+          "url": "https://www.boligsiden.dk/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "DENMARK - Search for Person",
-          "url": "https://www.krak.dk/"
+          "url": "https://www.krak.dk/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -952,7 +1224,8 @@
       "links": [
         {
           "title": "ESTONIA",
-          "url": "http://teatmik.ee/en/personlegal/14144085-Asicvault-O%C3%9C"
+          "url": "http://teatmik.ee/en/personlegal/14144085-Asicvault-O%C3%9C",
+          "real_title": "teatmik.ee"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -963,7 +1236,8 @@
       "links": [
         {
           "title": "OSINT Industries | Phone| Email | Username",
-          "url": "https://app.osint.industries/"
+          "url": "https://app.osint.industries/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Search | X-Ray",
@@ -971,19 +1245,26 @@
         },
         {
           "title": "BosINT Online // OSINT Platform",
-          "url": "https://app.bosint.gg/?username_report=1e35a12b&report=a41864ff"
+          "url": "https://app.bosint.gg/?username_report=1e35a12b&report=a41864ff",
+          "real_title": "OSINTNova // OSINT Platform",
+          "description": "OSINTNova gives OSINT researchers, investigators, and everyday users access to powerful intelligence tools from any device. Proprietary algorithms, undetectable crawlers, and some of the most popular open-source tools—all in one place, producing AI-driven reports with unmatched a"
         },
         {
           "title": "Email Search | Reverse Email Lookup - Spokeo",
-          "url": "https://www.spokeo.com/email-search"
+          "url": "https://www.spokeo.com/email-search",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "FamilySearch",
-          "url": "https://www.familysearch.org/uk/global"
+          "url": "https://www.familysearch.org/uk/global",
+          "real_title": "FamilySearch.org",
+          "description": "Discover your family history. Explore the world’s largest collection of free family trees, genealogy records and resources."
         },
         {
           "title": "DuckDuckGo! Чубчик",
-          "url": "https://duckduckgo.com/bangs"
+          "url": "https://duckduckgo.com/bangs",
+          "real_title": "DuckDuckGo !Bangs",
+          "description": "Search thousands of sites directly from DuckDuckGo."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -994,27 +1275,34 @@
       "links": [
         {
           "title": "CANADA",
-          "url": "http://www.canada411.ca/"
+          "url": "http://www.canada411.ca/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "CANADA - 411",
-          "url": "http://www.canada411.ca/search/reverse.html"
+          "url": "http://www.canada411.ca/search/reverse.html",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "CANADA - Border Services",
-          "url": "https://www.cbsa-asfc.gc.ca/menu-eng.html"
+          "url": "https://www.cbsa-asfc.gc.ca/menu-eng.html",
+          "real_title": "Canada Border Services Agency",
+          "description": "Services and information related to the border and travel, customs tariff, trade, security, immigration processing and more"
         },
         {
           "title": "CANADA - Federal Corporation",
-          "url": "https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html"
+          "url": "https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html",
+          "real_title": "Search for a Federal Corporation - Online Filing Centre - Corporations Canada - Corporations - Innovation, Science and Economic Development Canada"
         },
         {
           "title": "CANADA - Sedar",
-          "url": "https://www.sedar.com/search/search_en.htm"
+          "url": "https://www.sedar.com/search/search_en.htm",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "CANADA - People Search",
-          "url": "http://www.canadianpeoplesearch.ca/"
+          "url": "http://www.canadianpeoplesearch.ca/",
+          "fetch_error": "URLError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1029,39 +1317,49 @@
         },
         {
           "title": "Qichacha",
-          "url": "https://www.qcc.com/#"
+          "url": "https://www.qcc.com/#",
+          "real_title": "企查查 - 查企业_查老板_查风险_企业信息查询系统",
+          "description": "企查查是官方备案的企业征信机构，为您提供全国企业信息查询，包括企业工商信息查询，信用信息查询，经营状况查询等相关信息。查企业，查老板，查风险就上企查查!"
         },
         {
           "title": "NECIPS",
-          "url": "https://www.gsxt.gov.cn/index.html"
+          "url": "https://www.gsxt.gov.cn/index.html",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ICP Databse",
-          "url": "https://www.beianx.cn/"
+          "url": "https://www.beianx.cn/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "China  Registration | Trademark & Copyright, Patent law firm",
-          "url": "https://www.registrationchina.com/"
+          "url": "https://www.registrationchina.com/",
+          "fetch_error": "TimeoutError"
         },
         {
           "title": "Gonxi",
-          "url": "https://www.gongsi.com.cn/"
+          "url": "https://www.gongsi.com.cn/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Weimao",
-          "url": "https://www.weimao.com/"
+          "url": "https://www.weimao.com/",
+          "fetch_error": "URLError"
         },
         {
           "title": "Parent Searches",
-          "url": "https://pss-system.cponline.cnipa.gov.cn/"
+          "url": "https://pss-system.cponline.cnipa.gov.cn/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "China National Intellectual Property Administration",
-          "url": "https://wcjs.sbj.cnipa.gov.cn/"
+          "url": "https://wcjs.sbj.cnipa.gov.cn/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Copyright Catalogue",
-          "url": "https://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?DB=local&PAGE=First"
+          "url": "https://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?DB=local&PAGE=First",
+          "real_title": "U.S. Copyright Office Public Records System"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1072,7 +1370,8 @@
       "links": [
         {
           "title": "CYPRUS - Offshore Companies",
-          "url": "https://efiling.drcor.mcit.gov.cy/DrcorPublic/SearchForm.aspx?sc=0&lang=EN"
+          "url": "https://efiling.drcor.mcit.gov.cy/DrcorPublic/SearchForm.aspx?sc=0&lang=EN",
+          "fetch_error": "URLError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1083,31 +1382,40 @@
       "links": [
         {
           "title": "Mapping China's Tech Giants - ASPI",
-          "url": "https://chinatechmap.aspi.org.au/#/homepage"
+          "url": "https://chinatechmap.aspi.org.au/#/homepage",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Central Government of China Procurement Website",
-          "url": "https://www.zzcg.gov.cn/"
+          "url": "https://www.zzcg.gov.cn/",
+          "real_title": "中共中央直属机关采购中心"
         },
         {
           "title": "Shanghai Government Procurement Website",
-          "url": "https://www.ccgp-shanghai.gov.cn/"
+          "url": "https://www.ccgp-shanghai.gov.cn/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Guangdong Government Procurement Website",
-          "url": "http://www.ccgp-beijing.gov.cn/"
+          "url": "http://www.ccgp-beijing.gov.cn/",
+          "real_title": "北京市政府采购网"
         },
         {
           "title": "https://www.ccgp.gov.cn",
-          "url": "https://www.ccgp.gov.cn/"
+          "url": "https://www.ccgp.gov.cn/",
+          "real_title": "中国政府采购网",
+          "description": "财政部唯一指定政府采购信息网络发布媒体，国家级政府采购专业网站。"
         },
         {
           "title": "Central Bank Procurement",
-          "url": "https://jzcg.pbc.gov.cn/"
+          "url": "https://jzcg.pbc.gov.cn/",
+          "real_title": "中国人民银行采购网",
+          "description": "中国人民银行采购网"
         },
         {
           "title": "Bid Chance",
-          "url": "https://www.bidchance.com/"
+          "url": "https://www.bidchance.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Bid Centre",
@@ -1115,15 +1423,21 @@
         },
         {
           "title": "World Bank Procurement Database:",
-          "url": "https://www.worldbank.org/en/topic/governance/brief/global-public-procurement-database"
+          "url": "https://www.worldbank.org/en/topic/governance/brief/global-public-procurement-database",
+          "real_title": "Global Public Procurement Database",
+          "description": "The Global Public Procurement Database is envisioned to become the one-stop online database of choice for the global public procurement community. It is commissioned by the World Bank and implemented by European Dynamics SA."
         },
         {
           "title": "Global Tenders",
-          "url": "https://www.globaltenders.com/"
+          "url": "https://www.globaltenders.com/",
+          "real_title": "Global Tenders | Latest Global Tenders and Government tenders bids",
+          "description": "Latest Global Tenders government tenders bids public tenders private tenders RFQs RFPs tender notices ICB and Business Opportunities"
         },
         {
           "title": "Tenders Info",
-          "url": "https://www.tendersinfo.com/"
+          "url": "https://www.tendersinfo.com/",
+          "real_title": "Latest Tenders Details | Public, Government, Online, Business, Procurement Contracts, Private And Global E Tender Information | India's Central Government And State Govt Online Tender Notice",
+          "description": "Tenders info Provides Latest Tenders Details About Public, Private, Global And India’s Central And State Government Tenders. We Have More Than 15 Lakh Tender Results, Over 7 Lakh Live Tenders And Over 65K Fresh Tenders. Find More!"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1134,7 +1448,8 @@
       "links": [
         {
           "title": "NSW Planning Portal Spatial Viewer",
-          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/#/find-a-property/address"
+          "url": "https://www.planningportal.nsw.gov.au/spatialviewer/#/find-a-property/address",
+          "real_title": "NSW Planning Portal Spatial Viewer"
         },
         {
           "title": "On The House Property Research",
@@ -1142,23 +1457,29 @@
         },
         {
           "title": "Planning Alerts",
-          "url": "https://www.planningalerts.org.au/"
+          "url": "https://www.planningalerts.org.au/",
+          "real_title": "Planning Alerts",
+          "description": "A free service which searches Australian planning authority websites and emails you details of applications near you"
         },
         {
           "title": "Domain - Real Estate",
-          "url": "https://www.domain.com.au/?gclid=EAIaIQobChMIsJSo-fPagAMVdBZ7Bx3zLgrYEAAYASAAEgIhTPD_BwE"
+          "url": "https://www.domain.com.au/?gclid=EAIaIQobChMIsJSo-fPagAMVdBZ7Bx3zLgrYEAAYASAAEgIhTPD_BwE",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "REA - Real Estate",
-          "url": "https://www.realestate.com.au/"
+          "url": "https://www.realestate.com.au/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Homely - Real Estate",
-          "url": "https://www.homely.com.au/"
+          "url": "https://www.homely.com.au/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Rental Properties",
-          "url": "https://www.rent.com.au/"
+          "url": "https://www.rent.com.au/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1169,19 +1490,26 @@
       "links": [
         {
           "title": "NORWAY - Yellow Pages",
-          "url": "https://www.gulesider.no/"
+          "url": "https://www.gulesider.no/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "NORWAY - 1881",
-          "url": "https://www.1881.no/"
+          "url": "https://www.1881.no/",
+          "real_title": "Opplysningen 1881® - telefonkatalogen og nummeropplysning",
+          "description": "Opplysningen 1881® gir deg Norges mest oppdaterte telefonkatalog. Søk etter pålitelig nummeropplysning på personer og bedrifter. Finn det du trenger raskt!"
         },
         {
           "title": "NORWAY - All registered businesses/entities",
-          "url": "https://www.brreg.no/"
+          "url": "https://www.brreg.no/",
+          "real_title": "Forsiden - Brønnøysundregistrene",
+          "description": "På brreg.no kan du registrere og endre opplysninger på bedrift, finne bedriftsinformasjon og kunngjøringer, sjekke heftelser i bil og stoppe telefonsalg"
         },
         {
           "title": "NORWAY - Proff - Business site, find info about companies, key persons, accounting info etc:",
-          "url": "https://www.proff.no/"
+          "url": "https://www.proff.no/",
+          "real_title": "Proff™ – Nøkkeltall, Regnskap og Roller for norske bedrifter",
+          "description": "Få oversikt over regnskapstall, offisielle roller, aksjonærer, adresser m.m. for alle bedrifter som leverer årsregnskap til Brønnøysundregistrene"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1192,51 +1520,68 @@
       "links": [
         {
           "title": "Australian War Memorial",
-          "url": "https://www.awm.gov.au/collection/understanding-the-memorials-collection/researching-a-person"
+          "url": "https://www.awm.gov.au/collection/understanding-the-memorials-collection/researching-a-person",
+          "real_title": "Researching a person | Australian War Memorial"
         },
         {
           "title": "Defence and war service records | naa.gov.au",
-          "url": "https://www.naa.gov.au/explore-collection/defence-and-war-service-records"
+          "url": "https://www.naa.gov.au/explore-collection/defence-and-war-service-records",
+          "fetch_error": "TimeoutError"
         },
         {
           "title": "Ancestry® | Genealogy, Family Trees & Family History Records",
-          "url": "https://www.ancestry.com.au/?ranMID=50142&ranEAID=1635394&ranSiteID=PPkX79_c.b0-u.r7KIJMFMobaU0s46.pmw&o_xid=0001635394&o_lid=0001635394&o_sch=Affiliate%20External"
+          "url": "https://www.ancestry.com.au/?ranMID=50142&ranEAID=1635394&ranSiteID=PPkX79_c.b0-u.r7KIJMFMobaU0s46.pmw&o_xid=0001635394&o_lid=0001635394&o_sch=Affiliate%20External",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "People Search",
-          "url": "https://www.peoplesearch.com.au/"
+          "url": "https://www.peoplesearch.com.au/",
+          "real_title": "People Search - Australia's Free People Finder & Reunion Site",
+          "description": "People Search is the free Australian search, people finder, and reunion site. Start your search for someone here."
         },
         {
           "title": "White Pages®",
-          "url": "https://www.whitepages.com.au/residential"
+          "url": "https://www.whitepages.com.au/residential",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "National Missing Persons Coordination Centre",
-          "url": "https://www.missingpersons.gov.au/view-all-profiles"
+          "url": "https://www.missingpersons.gov.au/view-all-profiles",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "National Archives of Australia",
-          "url": "https://recordsearch.naa.gov.au/SearchNRetrieve/Interface/SearchScreens/BasicSearch.aspx"
+          "url": "https://recordsearch.naa.gov.au/SearchNRetrieve/Interface/SearchScreens/BasicSearch.aspx",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Early Australian census records",
-          "url": "https://guides.slv.vic.gov.au/earlycensus/findpeople"
+          "url": "https://guides.slv.vic.gov.au/earlycensus/findpeople",
+          "real_title": "Find people - Early Australian census records - Research Guides at State Library of Victoria",
+          "description": "Illuminate Australian society and your family history using census records from 1788 to 1901"
         },
         {
           "title": "Australia People Records Search",
-          "url": "https://www.australiapublicrecord.com/people-finder/"
+          "url": "https://www.australiapublicrecord.com/people-finder/",
+          "real_title": "Australia People Records Search - Public People Records",
+          "description": "Australia People records access varies depending on what part of Australia you are searching in. We provide the public People records resources you need to start your search."
         },
         {
           "title": "Australian Cemeteries Index",
-          "url": "https://www.austcemindex.com/"
+          "url": "https://www.austcemindex.com/",
+          "real_title": "Australian Cemeteries Index - Name/Cemetery Search",
+          "description": "Search for headstone inscriptions or cemeteries."
         },
         {
           "title": "My Tributes | Australia's trusted obituary, death and funeral notice destination. | Herald Sun",
-          "url": "https://www.heraldsun.com.au/tributes"
+          "url": "https://www.heraldsun.com.au/tributes",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Search for Death Notices",
-          "url": "http://ryersonindex.org/search.php"
+          "url": "http://ryersonindex.org/search.php",
+          "real_title": "Search for Notices",
+          "description": "Find death notices, funeral notices, obituaries and legal/probate notices in Australian newspapers."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1247,27 +1592,34 @@
       "links": [
         {
           "title": "China’s Political System in Charts:",
-          "url": "https://crsreports.congress.gov/product/pdf/R/R46977"
+          "url": "https://crsreports.congress.gov/product/pdf/R/R46977",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ChinaPower Project",
-          "url": "https://chinapower.csis.org/"
+          "url": "https://chinapower.csis.org/",
+          "real_title": "Home | ChinaPower Project",
+          "description": "Unpacking the complexity of China's rise in the world through interactivity and visualization."
         },
         {
           "title": "China-Research-Source-Sheet.pdf",
-          "url": "https://jamestown.org/wp-content/uploads/2017/06/China-Research-Source-Sheet.pdf"
+          "url": "https://jamestown.org/wp-content/uploads/2017/06/China-Research-Source-Sheet.pdf",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "PLA Terms and Concepts",
-          "url": "https://www.airuniversity.af.edu/LinkClick.aspx?fileticket=fPXsLbsP_Ik%3D&portalid=10"
+          "url": "https://www.airuniversity.af.edu/LinkClick.aspx?fileticket=fPXsLbsP_Ik%3D&portalid=10",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "2022-10-24 PLARF Organization.pdf",
-          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Research/PLARF/2022-10-24%20PLARF%20Organization.pdf"
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Research/PLARF/2022-10-24%20PLARF%20Organization.pdf",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "PLA’s Military Diplomacy: Key Institutions and Personnel - Jamestown",
-          "url": "https://jamestown.org/program/managing-the-plas-military-diplomacy-key-institutions-and-personnel/"
+          "url": "https://jamestown.org/program/managing-the-plas-military-diplomacy-key-institutions-and-personnel/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1278,15 +1630,21 @@
       "links": [
         {
           "title": "Baike Baidu",
-          "url": "https://baike.baidu.com/"
+          "url": "https://baike.baidu.com/",
+          "real_title": "百度百科_全球领先的中文百科全书",
+          "description": "百度百科是一部内容开放、自由的网络百科全书，旨在创造一个涵盖所有领域知识，服务所有互联网用户的中文知识性百科全书。在这里你可以参与词条编辑，分享贡献你的知识。"
         },
         {
           "title": "so.com",
-          "url": "https://www.so.com/"
+          "url": "https://www.so.com/",
+          "real_title": "360搜索，SO靠谱",
+          "description": "360搜索是安全、精准、可信赖的新一代搜索引擎，依托于360母品牌的安全优势，全面拦截各类钓鱼欺诈等恶意网站，提供更放心的搜索服务。 360搜索 so靠谱。"
         },
         {
           "title": "Sogou",
-          "url": "https://www.sogou.com/"
+          "url": "https://www.sogou.com/",
+          "real_title": "搜狗搜索引擎 - 上网从搜狗开始",
+          "description": "搜狗搜索是全球第三代互动式搜索引擎，支持微信公众号和文章搜索、知乎搜索、英文搜索及翻译等，通过自主研发的人工智能算法为用户提供专业、精准、便捷的搜索服务。"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1297,7 +1655,8 @@
       "links": [
         {
           "title": "RUSSIA",
-          "url": "https://egrul.nalog.ru/index.html"
+          "url": "https://egrul.nalog.ru/index.html",
+          "fetch_error": "URLError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1308,15 +1667,18 @@
       "links": [
         {
           "title": "nebaz.ru",
-          "url": "https://nebaz.ru/vk/id4051079"
+          "url": "https://nebaz.ru/vk/id4051079",
+          "fetch_error": "URLError"
         },
         {
           "title": "okigo.ru",
-          "url": "https://okigo.ru/user/okid532031276572"
+          "url": "https://okigo.ru/user/okid532031276572",
+          "fetch_error": "URLError"
         },
         {
           "title": "Поиск коментов и т.д. ВК",
-          "url": "https://vk.watch/en"
+          "url": "https://vk.watch/en",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1327,15 +1689,20 @@
       "links": [
         {
           "title": "USA - Public Records",
-          "url": "https://publicrecords.onlinesearches.com/"
+          "url": "https://publicrecords.onlinesearches.com/",
+          "real_title": "Free Public Records Directory | OnlineSearches.com",
+          "description": "Search public records fast and easy with our directory of online & offline free public record sources. Search jail, inmate, warrants, property records, and more."
         },
         {
           "title": "USA - Black Book Online",
-          "url": "https://www.blackbookonline.info/USA-counties.aspx"
+          "url": "https://www.blackbookonline.info/USA-counties.aspx",
+          "real_title": "Free County Public Records | Free County Criminal Records Directory | Black Book Online ✔️",
+          "description": "Free search for county public records by Black Book Online."
         },
         {
           "title": "USA - Biznar",
-          "url": "https://biznar.com/biznar/desktop/en/search.html"
+          "url": "https://biznar.com/biznar/desktop/en/search.html",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1346,35 +1713,46 @@
       "links": [
         {
           "title": "WeChat",
-          "url": "https://www.wechat.com/"
+          "url": "https://www.wechat.com/",
+          "real_title": "WeChat - Connects with over 1 billion users | Chats · Calls · Life Services",
+          "description": "WeChat is a social communication app serving over 1 billion users, supporting free chat, HD voice and video calls, Moments, and mobile payments, making communication and life more convenient."
         },
         {
           "title": "qq",
-          "url": "https://im.qq.com/index"
+          "url": "https://im.qq.com/index",
+          "real_title": "QQ-轻松做自己",
+          "description": "腾讯QQ，全新版本QQ9上线了！ QQ9，不仅是轻松聊天，更是兴趣社区的聚集地。欢迎下载体验最新版本QQ，体验最新功能！欢迎访问QQ官网，下载新版QQ，了解QQ最新功能就在im.qq.com。"
         },
         {
           "title": "Weibo",
-          "url": "https://weibo.com/overseas"
+          "url": "https://weibo.com/overseas",
+          "real_title": "Sina Visitor System"
         },
         {
           "title": "TikTok",
-          "url": "https://www.tiktok.com/en/"
+          "url": "https://www.tiktok.com/en/",
+          "real_title": "TikTok - Make Your Day"
         },
         {
           "title": "Tieba Baidu",
-          "url": "https://tieba.baidu.com/"
+          "url": "https://tieba.baidu.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Tencent Video",
-          "url": "https://v.qq.com/"
+          "url": "https://v.qq.com/",
+          "real_title": "腾讯视频-中国领先的在线视频媒体平台，海量高清视频在线观看",
+          "description": "腾讯视频官方网站，腾讯视频提供最新热门电视剧、电影、综艺、动漫、纪录片等高清正版视频在线观看。海量独家内容持续更新，涵盖国产剧、美剧、韩剧、院线大片、热门综艺，支持超清流畅播放，尽在腾讯视频，当前热播《百花杀》，支持高清在线观看。"
         },
         {
           "title": "PandaMetrics – Track Chinese Words WeChat and Weibo",
-          "url": "https://www.pandametrics.com/"
+          "url": "https://www.pandametrics.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Extracting TikTok video Timestaps",
-          "url": "https://bellingcat.github.io/tiktok-timestamp/"
+          "url": "https://bellingcat.github.io/tiktok-timestamp/",
+          "real_title": "Tiktok date extractor"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1385,39 +1763,50 @@
       "links": [
         {
           "title": "NSW",
-          "url": "https://www.service.nsw.gov.au/transaction/check-a-vehicle-registration"
+          "url": "https://www.service.nsw.gov.au/transaction/check-a-vehicle-registration",
+          "real_title": "Check a vehicle registration | Service NSW",
+          "description": "Check a vehicle's registration status and expiry date, restrictions or concessions, compulsory third party (CTP) insurance information and odometer reading."
         },
         {
           "title": "TAS",
-          "url": "https://www.transport.tas.gov.au/MRSWebInterface/public/regoLookup/registrationLookup.jsf"
+          "url": "https://www.transport.tas.gov.au/MRSWebInterface/public/regoLookup/registrationLookup.jsf",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "VIC",
-          "url": "https://www.vicroads.vic.gov.au/registration/buy-sell-or-transfer-a-vehicle/check-vehicle-registration"
+          "url": "https://www.vicroads.vic.gov.au/registration/buy-sell-or-transfer-a-vehicle/check-vehicle-registration",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "QLD",
-          "url": "https://www.service.transport.qld.gov.au/checkrego/public/Welcome.xhtml?dswid=-9897"
+          "url": "https://www.service.transport.qld.gov.au/checkrego/public/Welcome.xhtml?dswid=-9897",
+          "real_title": "Check registration status | Transport and motoring | Queensland Government"
         },
         {
           "title": "WA",
-          "url": "https://www.transport.wa.gov.au/dotdirect/dotdirect.asp"
+          "url": "https://www.transport.wa.gov.au/dotdirect/dotdirect.asp",
+          "real_title": "DoTDirect | Transport WA",
+          "description": "Manage and pay your licences and registrations online through DoTDirect."
         },
         {
           "title": "SA",
-          "url": "https://www.sa.gov.au/topics/driving-and-transport/registration/vehicle-registration/check-registration-expiry"
+          "url": "https://www.sa.gov.au/topics/driving-and-transport/registration/vehicle-registration/check-registration-expiry",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "NT",
-          "url": "https://nt.gov.au/driving/rego/existing-nt-registration/rego-check"
+          "url": "https://nt.gov.au/driving/rego/existing-nt-registration/rego-check",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ACT",
-          "url": "https://rego.act.gov.au/regosoawicket/public/reg/FindRegistrationPage;jsessionid=2A1CCC30F91615FCFB5E57222479C750?0"
+          "url": "https://rego.act.gov.au/regosoawicket/public/reg/FindRegistrationPage;jsessionid=2A1CCC30F91615FCFB5E57222479C750?0",
+          "real_title": "ACT Rego Transaction"
         },
         {
           "title": "Rego Check Australia",
-          "url": "https://checkrego.com.au/"
+          "url": "https://checkrego.com.au/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1428,71 +1817,97 @@
       "links": [
         {
           "title": "Рєстр судових рішень",
-          "url": "https://data-ua.com/search/person?person_search=%D0%90%D0%BD%D1%82%D0%B8%D0%BF%D0%B5%D0%BD%D0%BA%D0%BE+%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80+%D0%A1%D0%B5%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87#google_vignette"
+          "url": "https://data-ua.com/search/person?person_search=%D0%90%D0%BD%D1%82%D0%B8%D0%BF%D0%B5%D0%BD%D0%BA%D0%BE+%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80+%D0%A1%D0%B5%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87#google_vignette",
+          "real_title": "Пошук судових рішень за прізвищем",
+          "description": "Реєстр судових рішень за прізвищем. Перелік судових рішень по особі"
         },
         {
           "title": "Судова влада України",
-          "url": "https://court.gov.ua/fair/"
+          "url": "https://court.gov.ua/fair/",
+          "real_title": "Стан розгляду справ",
+          "description": "Стан розгляду справ"
         },
         {
           "title": "Державний реєстр санкцій",
-          "url": "https://drs.nsdc.gov.ua/?__cf_chl_rt_tk=Rhm0.ccNFLeshCIAcTTDrs.T7ckZ3OADKnBehBl8euE-1772790374-1.0.1.1-kz9On21WYTsLl21YD67WuYfyi7KqjtCvjnfKENuKu0I"
+          "url": "https://drs.nsdc.gov.ua/?__cf_chl_rt_tk=Rhm0.ccNFLeshCIAcTTDrs.T7ckZ3OADKnBehBl8euE-1772790374-1.0.1.1-kz9On21WYTsLl21YD67WuYfyi7KqjtCvjnfKENuKu0I",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ПДР Штрафи",
-          "url": "https://bdr.mvs.gov.ua/?__cf_chl_rt_tk=_ewEadxMPVIdJlf7iuaQnfXOKnIKX2cL4rmaqViWUSs-1772798347-1.0.1.1-k4is8F6pJStVOhFcAeqgjCwuZhdb66cNqAqWABhW34E"
+          "url": "https://bdr.mvs.gov.ua/?__cf_chl_rt_tk=_ewEadxMPVIdJlf7iuaQnfXOKnIKX2cL4rmaqViWUSs-1772798347-1.0.1.1-k4is8F6pJStVOhFcAeqgjCwuZhdb66cNqAqWABhW34E",
+          "real_title": "Пошук подій з ознаками адміністративних правопорушень в сфері безпеки дорожнього руху, зафіксованними в автоматичному режимі - Головна - Безпека Дорожнього Руху"
         },
         {
           "title": "Штрафи в автоматичному режимі",
-          "url": "https://wim.dsbt.gov.ua/subscription/ee331d59b898d9ba7f76fa42c30801ce/"
+          "url": "https://wim.dsbt.gov.ua/subscription/ee331d59b898d9ba7f76fa42c30801ce/",
+          "real_title": "Результат пошуку - Безпека на автомобільному транспорті"
         },
         {
           "title": "Шана Захисникам – \"Шана захисникам\" – місце, де вшановуються та зберігаються спогади про загиблих на війні героїв",
-          "url": "https://kol-shana.if.ua/"
+          "url": "https://kol-shana.if.ua/",
+          "real_title": "Шана Захисникам – \"Шана захисникам\" – місце, де вшановуються та зберігаються спогади про загиблих на війні героїв",
+          "description": "\"Шана захисникам\" - місце, де вшановуються та зберігаються спогади про наших загиблих на війні героїв"
         },
         {
           "title": "Osint Kit | Plate number",
-          "url": "https://osintkit.net/search"
+          "url": "https://osintkit.net/search",
+          "real_title": "Loading..."
         },
         {
           "title": "UA Втрати",
-          "url": "https://ualosses.org/uk/soldiers/"
+          "url": "https://ualosses.org/uk/soldiers/",
+          "real_title": "Втрати України",
+          "description": "На цьому сайті подано статистику задокументованих українських втрат під час війни в Україні."
         },
         {
           "title": "Реєстр російських військовослужбовців | RussianWarCriminals",
-          "url": "https://rwc.shtab.net/troopers"
+          "url": "https://rwc.shtab.net/troopers",
+          "real_title": "Реєстр російських військовослужбовців | RussianWarCriminals",
+          "description": "Найповніша база даних російських військовослужбовців, що містить їхні персональні дані та докази воєнних злочинів."
         },
         {
           "title": "ДМС",
-          "url": "https://dmsu.gov.ua/services/nd.html"
+          "url": "https://dmsu.gov.ua/services/nd.html",
+          "real_title": "Перевірка недійсних документів :: Державна міграційна служба України",
+          "description": "Перевірка недійсних документів"
         },
         {
           "title": "YouControl",
-          "url": "https://youcontrol.com.ua/sign_in/"
+          "url": "https://youcontrol.com.ua/sign_in/",
+          "real_title": "Вхід в систему - YouControl",
+          "description": "Вхід в систему YouControl. Отримайте \nунікальні можливості від YouControl. Економте час та зусилля на пошук вичерпної інформації про вашого партнера. Отримайте повне досьє на кожну компанію України."
         },
         {
           "title": "Опендатабот",
-          "url": "https://opendatabot.ua/"
+          "url": "https://opendatabot.ua/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ИНН проверка",
-          "url": "https://ind-kod.org.ua/"
+          "url": "https://ind-kod.org.ua/",
+          "real_title": "Сервис проверки идентификационного кода (Украина)",
+          "description": "Проверить идентификационный код. Узнать дату рождения по ИНН коду."
         },
         {
           "title": "Миротворец",
-          "url": "https://myrotvorets.center/criminal/habor-kyryll-andreevych/"
+          "url": "https://myrotvorets.center/criminal/habor-kyryll-andreevych/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "kadastr.live",
-          "url": "https://kadastr.live/"
+          "url": "https://kadastr.live/",
+          "fetch_error": "URLError"
         },
         {
           "title": "Публічна кадастрова карта України",
-          "url": "https://kadastrova-karta.com/dilyanka/4821782000:03:000:0131"
+          "url": "https://kadastrova-karta.com/dilyanka/4821782000:03:000:0131",
+          "real_title": "4821782000:03:000:0131 | Публічна кадастрова карта України",
+          "description": "Кадастровий номер земельної ділянки 4821782000:03:000:0131 на публічній кадастровій карті України."
         },
         {
           "title": "Автоматизована система виконавчого провадження",
-          "url": "https://asvpweb.minjust.gov.ua/#/search-debtors"
+          "url": "https://asvpweb.minjust.gov.ua/#/search-debtors",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1503,7 +1918,9 @@
       "links": [
         {
           "title": "FRANCE",
-          "url": "http://societe.com/"
+          "url": "http://societe.com/",
+          "real_title": "Societe.com : RCS, siret, siren, bilan, l'information gratuite sur les entreprises du Registre du Commerce des Soci�t�s (RNCS)",
+          "description": "SOCIETE.COM, service gratuit d"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1514,23 +1931,33 @@
       "links": [
         {
           "title": "Censored words in China - The Citizen Lab",
-          "url": "https://citizenlab.ca/2014/12/repository-censored-sensitive-chinese-keywords-13-lists-9054-terms/"
+          "url": "https://citizenlab.ca/2014/12/repository-censored-sensitive-chinese-keywords-13-lists-9054-terms/",
+          "real_title": "Lists of censored/sensitive Chinese keywords - The Citizen Lab",
+          "description": "A set of 9,054 sensitive Chinese keywords. These keywords may be helpful for searching for censored content in Chinese or testing for network interference."
         },
         {
           "title": "Censored words in China - citizenlab (GitHub)",
-          "url": "https://github.com/citizenlab/chat-censorship/blob/master/wechat/709crackdown/all-keywords.csv"
+          "url": "https://github.com/citizenlab/chat-censorship/blob/master/wechat/709crackdown/all-keywords.csv",
+          "real_title": "chat-censorship/wechat/709crackdown/all-keywords.csv at master · citizenlab/chat-censorship · GitHub",
+          "description": "Data related to the investigation of realtime censorship - chat-censorship/wechat/709crackdown/all-keywords.csv at master · citizenlab/chat-censorship"
         },
         {
           "title": "Blocked Websites China - Comparitech",
-          "url": "https://www.comparitech.com/"
+          "url": "https://www.comparitech.com/",
+          "real_title": "Comparitech - Tech researched, compared and rated",
+          "description": "Tech researched, compared and rated"
         },
         {
           "title": "China Firewall Test",
-          "url": "http://www.chinafirewalltest.com/"
+          "url": "http://www.chinafirewalltest.com/",
+          "real_title": "China Firewall Test - Test if Any Site is Blocked in China",
+          "description": "Test any website to see if it is blocked in China in real time."
         },
         {
           "title": "Popular euphemisms - Chinese Social Media",
-          "url": "https://restofworld.org/2022/china-social-media-censorship/"
+          "url": "https://restofworld.org/2022/china-social-media-censorship/",
+          "real_title": "How Chinese citizens use puns on Weibo to talk about #MeToo and zero-Covid without being censored - Rest of World",
+          "description": "Chinese social media companies and users are locked in a never-ending battle between free speech and censorship."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1541,15 +1968,20 @@
       "links": [
         {
           "title": "SWITZERLAND - Search companies and individuals in Switzerland.",
-          "url": "http://zefix.ch/en/search/entity/welcome"
+          "url": "http://zefix.ch/en/search/entity/welcome",
+          "real_title": "ZefixWebApp"
         },
         {
           "title": "Cantonal company search, Commercial registry office of Canton Ticino",
-          "url": "https://ti.chregister.ch/cr-portal/suche/suche.xhtml"
+          "url": "https://ti.chregister.ch/cr-portal/suche/suche.xhtml",
+          "real_title": "Cantonal company search, Commercial registry office of Canton Ticino",
+          "description": "Official commercial register information of the Canton of Ticino"
         },
         {
           "title": "Moneyhouse - Commercial register and business information",
-          "url": "https://www.moneyhouse.ch/en/"
+          "url": "https://www.moneyhouse.ch/en/",
+          "real_title": "Moneyhouse - Commercial register and business information",
+          "description": "Managing risks, selling more, discovering background stories: On moneyhouse.ch you will find daily updated information on over 630"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1560,15 +1992,20 @@
       "links": [
         {
           "title": "SWEDEN",
-          "url": "http://www.allabolag.se/"
+          "url": "http://www.allabolag.se/",
+          "real_title": "Allabolag – Nyckeltal, Resultatredovisning och Befattningar för svenska företag",
+          "description": "Få en översikt över nyckeltal, officiella befattningar, adresser etc. för alla företag som levererar årsredovisning till Bolagsverket."
         },
         {
           "title": "SWEDEN - Find person",
-          "url": "http://www.hitta.se/"
+          "url": "http://www.hitta.se/",
+          "real_title": "Hitta.se | Privatpersoner och Företag i Sverige",
+          "description": "Gratis nummerupplysning. Sök företag, personer och platser. Hitta telefonnummer, adresser, företagsinfo mm."
         },
         {
           "title": "SWEDEN - Eniro",
-          "url": "http://www.eniro.se/"
+          "url": "http://www.eniro.se/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1579,31 +2016,41 @@
       "links": [
         {
           "title": "Censys Search",
-          "url": "https://search.censys.io/"
+          "url": "https://search.censys.io/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Утечки",
-          "url": "https://browserleaks.com/"
+          "url": "https://browserleaks.com/",
+          "real_title": "Browserleaks - Check your browser for privacy leaks",
+          "description": "BrowserLeaks is a suite of tools that offers a range of tests to evaluate the security and privacy of your web browser. These tests focus on identifying ways in which websites may leak your real IP address, collect information about your device, and perform a browser fingerprinti"
         },
         {
           "title": "Геолокация",
-          "url": "https://www.geodatatool.com/"
+          "url": "https://www.geodatatool.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Поиск репутации || Cisco Talos Intelligence Group — комплексная разведка угроз",
-          "url": "https://talosintelligence.com/reputation_center/lookup?search=46.211.72.69"
+          "url": "https://talosintelligence.com/reputation_center/lookup?search=46.211.72.69",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Torrent downloads and distributions for IP 46.98.139.234",
-          "url": "https://iknowwhatyoudownload.com/en/peer/?ip=46.98.139.234"
+          "url": "https://iknowwhatyoudownload.com/en/peer/?ip=46.98.139.234",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Доступность IP и его изминения",
-          "url": "https://check-host.net/"
+          "url": "https://check-host.net/",
+          "real_title": "Check server : Check host - online website monitoring",
+          "description": "Check server:\n website monitoring with useful tools, Check IP, Check website"
         },
         {
           "title": "Создание поста для собирания IP",
-          "url": "https://grabify.link/"
+          "url": "https://grabify.link/",
+          "real_title": "Grabify IP Logger & URL Shortener",
+          "description": "Grabify IP Logger & URL Shortener allows you to tracks IP address, track locations and much more. Advanced web analytics at the tap of a finger!"
         }
       ],
       "group": "Витоки та безпека",
@@ -1614,7 +2061,9 @@
       "links": [
         {
           "title": "Базы данных",
-          "url": "https://9ghz.com/"
+          "url": "https://9ghz.com/",
+          "real_title": "Data Breach Search Engine - 9Ghz.com - Data Breach Monitor",
+          "description": "Discover and monitor data breaches and leaks with our powerful search engine and real-time alerts. Stay informed and protect your personal information from data security threats."
         }
       ],
       "group": "Витоки та безпека",
@@ -1625,47 +2074,65 @@
       "links": [
         {
           "title": "WHOIS Lookup of daddyskins.com",
-          "url": "https://whoisfreaks.com/tools/whois/lookup/daddyskins.com"
+          "url": "https://whoisfreaks.com/tools/whois/lookup/daddyskins.com",
+          "real_title": "WHOIS Lookup for daddyskins.com | Owner & Registrar Info",
+          "description": "View live WHOIS data for daddyskins.com: registrant, registrar, expiry, nameservers, and status codes. Free real-time lookup across 1,528 TLDs."
         },
         {
           "title": "Whois Lookup & IP Search - Who.is",
-          "url": "https://who.is/"
+          "url": "https://who.is/",
+          "real_title": "WHOIS Search, Domain Name, Website, and IP Tools - Who.is",
+          "description": "Find information on any domain name or website. Large database of whois information, RDAP, DNS, domain names, name servers, IPs, and tools for searching and monitoring domain names."
         },
         {
           "title": "Whoxy",
-          "url": "https://www.whoxy.com/"
+          "url": "https://www.whoxy.com/",
+          "real_title": "WHOIS API | WHOIS Lookup API | Domain WHOIS API",
+          "description": "WHOIS API lets you quickly lookup a domain name"
         },
         {
           "title": "Cisco Talos Intelligence Group - Comprehensive Threat Intelligence",
-          "url": "https://talosintelligence.com/"
+          "url": "https://talosintelligence.com/",
+          "real_title": "Cisco Talos Intelligence Group - Comprehensive Threat Intelligence"
         },
         {
           "title": "MX Lookup Tool - Check your DNS MX Records online - MxToolbox",
-          "url": "https://mxtoolbox.com/"
+          "url": "https://mxtoolbox.com/",
+          "real_title": "MX Lookup Tool - Check your DNS MX Records online - MxToolbox"
         },
         {
           "title": "Является ли сайт мошенническим",
-          "url": "https://desenmascara.me/"
+          "url": "https://desenmascara.me/",
+          "real_title": "Desenmascara.me — Detecta fraude y scams en cualquier web",
+          "description": "Phishing, tiendas falsas, chiringuitos de inversión y cripto, endorsements falsos de famosos, marcas y gobiernos suplantados, y trampas para agentes de IA. Al descubierto en segundos. Gratis."
         },
         {
           "title": "Актуальные регистрационные данные",
-          "url": "https://lookup.icann.org/en"
+          "url": "https://lookup.icann.org/en",
+          "real_title": "ICANN Lookup",
+          "description": "The ICANN registration data lookup tool gives you the ability to look up the current registration data for domain names and Internet number resources."
         },
         {
           "title": "Анализ сайта",
-          "url": "https://moz.com/link-explorer"
+          "url": "https://moz.com/link-explorer",
+          "real_title": "Free Backlink Checker - Moz Link Explorer - Moz",
+          "description": "Discover link opportunities and monitor link building efforts with Moz Link Explorer. This free backlink checker provides easy access to Domain Authority, Page Authority, linking domains, and more in just a few clicks."
         },
         {
           "title": "Information Laundromat",
-          "url": "https://informationlaundromat.com/"
+          "url": "https://informationlaundromat.com/",
+          "real_title": "Information Laundromat"
         },
         {
           "title": "Найти через домен какие сайты еще принадлежат человеку",
-          "url": "https://analyzeid.com/"
+          "url": "https://analyzeid.com/",
+          "real_title": "Find Other Websites Owned By The Same Person",
+          "description": "Reverse lookup Google Analytics, Google Adsense, Amazon affiliates, Emails, IPs, and other third party IDs."
         },
         {
           "title": "DNSlytics",
-          "url": "https://search.dnslytics.com/ip/193.110.106.254"
+          "url": "https://search.dnslytics.com/ip/193.110.106.254",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Витоки та безпека",
@@ -1676,39 +2143,53 @@
       "links": [
         {
           "title": "Have I Been Pwned: Check if your email has been compromised in a data breach",
-          "url": "https://haveibeenpwned.com/"
+          "url": "https://haveibeenpwned.com/",
+          "real_title": "Have I Been Pwned: Check if your email address has been exposed in a data breach",
+          "description": "Have I Been Pwned allows you to check whether your email address has been exposed in a data breach."
         },
         {
           "title": "DeHashed — #FreeThePassword",
-          "url": "https://app.dehashed.com/search"
+          "url": "https://app.dehashed.com/search",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "BreachDirectory",
-          "url": "https://breachdirectory.org/"
+          "url": "https://breachdirectory.org/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Пароли по почте",
-          "url": "https://leakpeek.com/"
+          "url": "https://leakpeek.com/",
+          "real_title": "LeakPeek - Home",
+          "description": "LeakPeek is an all-in-one online data protection platform. Search for your publicly leaked passwords using an email or username; secure your personal data."
         },
         {
           "title": "Intelligence X",
-          "url": "https://intelx.io/"
+          "url": "https://intelx.io/",
+          "real_title": "Intelligence X",
+          "description": "Intelligence X is a search engine and data archive. Search Tor, I2P, data leaks and the public web by email, domain, IP, CIDR, Bitcoin address and more."
         },
         {
           "title": "Почта и телефон",
-          "url": "https://cybernews.com/personal-data-leak-check/"
+          "url": "https://cybernews.com/personal-data-leak-check/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Facebook Data Breach Checker | HaveIBeenZuckered.com",
-          "url": "https://haveibeenzuckered.com/"
+          "url": "https://haveibeenzuckered.com/",
+          "real_title": "Facebook Data Breach Checker | HaveIBeenZuckered.com",
+          "description": "Check if your telephone number is present within the Facebook data breach. HaveIBeenZuckered.com is a simple, secure and privacy-aware tool that does not store user-provided input."
         },
         {
           "title": "Ashley Madison hacked email checker",
-          "url": "https://ashley.cynic.al/"
+          "url": "https://ashley.cynic.al/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "HackedList.io",
-          "url": "https://hackedlist.io/"
+          "url": "https://hackedlist.io/",
+          "real_title": "HackedList.io",
+          "description": "Our search service will help you find out if your domain has been compromised by infostealer malware."
         }
       ],
       "group": "Витоки та безпека",
@@ -1719,39 +2200,57 @@
       "links": [
         {
           "title": "EXIF / File Metadata Viewer",
-          "url": "https://exif.tools/"
+          "url": "https://exif.tools/",
+          "real_title": "EXIFTool Online | EXIF Tools Metadata Viewer",
+          "description": "EXIFTool online metadata viewer for EXIF data, image metadata, file metadata, GPS, XMP, IPTC, ICC, hashes, and magic bytes. Check metadata in your browser with exif.tools."
         },
         {
           "title": "Просмотр метаданных",
-          "url": "https://www.metadata2go.com/ru/view-metadata"
+          "url": "https://www.metadata2go.com/ru/view-metadata",
+          "real_title": "Просмотр метаданных",
+          "description": "Этот онлайн‑просмотрщик метаданных показывает все скрытые метаданные аудио, видео, документов, электронных книг и изображений. Онлайн‑просмотрщик EXIF без установки!"
         },
         {
           "title": "Free EXIF Metadata Viewer for Photos & Videos | ExifMeta",
-          "url": "https://exifmeta.com/#google_vignette"
+          "url": "https://exifmeta.com/#google_vignette",
+          "real_title": "Free EXIF Metadata Viewer for Photos & Videos | ExifMeta",
+          "description": "Free online EXIF viewer for photos, videos & documents. Extract GPS coordinates, camera settings, timestamps from 50+ formats. No registration needed."
         },
         {
           "title": "Online EXIF metadata viewer for photos (UPDATED) | Jimpl",
-          "url": "https://jimpl.com/"
+          "url": "https://jimpl.com/",
+          "real_title": "Online EXIF metadata viewer for photos (UPDATED)",
+          "description": "View EXIF metadata of photos and images online. Find when and where the picture was taken. Remove metadata and location from the photo to protect your privacy."
         },
         {
           "title": "Metadata документов",
-          "url": "https://www.extractmetadata.com/"
+          "url": "https://www.extractmetadata.com/",
+          "real_title": "Metadata Viewer",
+          "description": "Free online tool to view metadata from files of arbitrary type."
         },
         {
           "title": "Фото локация с метаданных",
-          "url": "https://www.pic2map.com/"
+          "url": "https://www.pic2map.com/",
+          "real_title": "Photo Location & Online EXIF Data Viewer - Pic 2 Map",
+          "description": "Pic2Map is an online EXIF data viewer with GPS coordinates support which allows you to locate and view your digital camera or smartphone photos on Google Maps."
         },
         {
           "title": "Додати метадані та EXIF до аудіо, відео, зображень і PDF онлайн",
-          "url": "https://online-metadata.com/uk/add-metadata"
+          "url": "https://online-metadata.com/uk/add-metadata",
+          "real_title": "Додати метадані та EXIF до аудіо, відео, зображень і PDF онлайн",
+          "description": "Додавайте метадані та EXIF-інформацію до аудіо, відео та PDF-файлів онлайн. Наш веб-додаток дозволяє безкоштовно додавати відомості про авторські права, імена профілів, обкладинки, тексти пісень, коментарі та інші важливі дані до ваших файлів."
         },
         {
           "title": "Редактор метаданих JPEG | Редагуйте інформацію про зображення онлайн",
-          "url": "https://compressjpeg.dev/uk/jpeg-metadata-editor"
+          "url": "https://compressjpeg.dev/uk/jpeg-metadata-editor",
+          "real_title": "Редактор метаданих JPEG | Редагуйте інформацію про зображення онлайн",
+          "description": "Легко редагуйте метадані JPEG за допомогою нашого онлайн-інструменту. Швидко та ефективно змінюйте дані EXIF, IPTC та XMP для ваших зображень."
         },
         {
           "title": "JPG Редактор метаданих: зміна властивостей JPG в Інтернеті",
-          "url": "https://products.groupdocs.app/uk/metadata/jpg"
+          "url": "https://products.groupdocs.app/uk/metadata/jpg",
+          "real_title": "JPG Редактор метаданих: зміна властивостей JPG в Інтернеті",
+          "description": "Переглядайте та редагуйте метадані у ваших зображеннях JPG онлайн безкоштовно за допомогою нашого веб-інструменту. Підтримує метадані EXIF. Забезпечує підтримку метаданих IPTC IIM. Надає повний доступ до властивостей метаданих XMP."
         }
       ],
       "group": "Верифікація та експертиза",
@@ -1762,47 +2261,68 @@
       "links": [
         {
           "title": "Убрать водяной знак",
-          "url": "https://www.watermarkremover.io/es/upload"
+          "url": "https://www.watermarkremover.io/es/upload",
+          "real_title": "AI Image Watermark Remover – Borrador online gratuito y eliminador de logos",
+          "description": "La herramienta para remover marcas de agua te permite eliminar marcas en cuestión de segundos y completamente gratis, sin registrarte."
         },
         {
           "title": "HTML to PNG | CloudConvert",
-          "url": "https://cloudconvert.com/html-to-png"
+          "url": "https://cloudconvert.com/html-to-png",
+          "real_title": "HTML to PNG | CloudConvert",
+          "description": "HTML to PNG Converter - CloudConvert is a free & fast online file conversion service."
         },
         {
           "title": "Видалення фону зображень",
-          "url": "https://www.remove.bg/uk"
+          "url": "https://www.remove.bg/uk",
+          "real_title": "Видалення фону зображень – remove.bg",
+          "description": "Прибирайте фони повністю автоматично лише одним натисканням за 5 секунд. Не витрачайте час на виділення пікселів уручну. Передайте фото просто зараз і готуйтеся побачити магію."
         },
         {
           "title": "Улучшение качества",
-          "url": "https://letsenhance.io/uk/boost"
+          "url": "https://letsenhance.io/uk/boost",
+          "real_title": "LetsEnhance – free online image upscale and enhancement. Try neural networks to increase resolution and quality now! | LetsEnhance",
+          "description": "Simple machine learning software to enlarge images with no quality loss, enhance colors and photo resolution, automatically retouch product photos. Free trial"
         },
         {
           "title": "Шаблони – Canva",
-          "url": "https://www.canva.com/templates"
+          "url": "https://www.canva.com/templates",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Удаление фона",
-          "url": "https://bgeraser.com/"
+          "url": "https://bgeraser.com/",
+          "real_title": "BgEraser - Free AI Background Eraser & Batch Remove Background Tool",
+          "description": "Use BgEraser to remove backgrounds from images online for free. Upload JPG, PNG, or WebP photos, erase backgrounds in batch, download transparent PNG results, and keep files private with auto-delete in 2 hours. No sign up required."
         },
         {
           "title": "Удалить ненужное на фото",
-          "url": "https://cleanup.pictures/"
+          "url": "https://cleanup.pictures/",
+          "real_title": "Cleanup.pictures - Remove objects, people, text and defects from any picture for free",
+          "description": "Remove unwanted objects from photos, people, text, and defects from any picture for free. It"
         },
         {
           "title": "Редакция тона",
-          "url": "https://photoscissors.com/"
+          "url": "https://photoscissors.com/",
+          "real_title": "Remove Background from Image | Free Background Remover",
+          "description": "Automatically remove background and replace it with a transparent, solid color or background image with just a few clicks!"
         },
         {
           "title": "Редагувати текст у зображенні онлайн – інструмент штучного інтелекту для заміни, додавання або видалення тексту на зображеннях",
-          "url": "https://refont.ai/edit-text-in-image"
+          "url": "https://refont.ai/edit-text-in-image",
+          "real_title": "Edit Text in Image Online – AI Tool to Replace, Add, or Remove Text in Images",
+          "description": "Edit text in image online with AI. Replace, remove, or add text directly in pictures—perfect for posters, product photos, and marketing visuals. No Photoshop skills required."
         },
         {
           "title": "Бесплатное увеличение и улучшение качества изображений при помощи ИИ",
-          "url": "https://www.iloveimg.com/ru/upscale-image"
+          "url": "https://www.iloveimg.com/ru/upscale-image",
+          "real_title": "Бесплатное увеличение и улучшение качества изображений при помощи ИИ",
+          "description": "Продвинутый инструмент для увеличения изображений от iLoveIMG. Попробуйте бесплатно улучшить качество картинки онлайн всего в пару кликов."
         },
         {
           "title": "Наложить пиксель",
-          "url": "https://pixelate.imageonline.co/"
+          "url": "https://pixelate.imageonline.co/",
+          "real_title": "Image Pixelator & Blur Tool | Pixelate Faces & Backgrounds - ImageOnline.co",
+          "description": "Free online tool to pixelate or blur specific areas of an image. Hide faces, license plates, or background details with adjustable strength. 100% Private."
         }
       ],
       "group": "Верифікація та експертиза",
@@ -1813,39 +2333,55 @@
       "links": [
         {
           "title": "Аналіз стеганографії",
-          "url": "https://www.aperisolve.com/"
+          "url": "https://www.aperisolve.com/",
+          "real_title": "Aperi'Solve - Online Image Steganography Analyzer",
+          "description": "Free online steganography analysis: layer/bit-plane extraction plus zsteg, steghide, binwalk, exiftool, foremost, outguess and more on PNG, JPG, GIF, BMP, TIFF and WebP images."
         },
         {
           "title": "Анализ фото метаданные судебная экспертиза",
-          "url": "https://mever.iti.gr/forensics/"
+          "url": "https://mever.iti.gr/forensics/",
+          "real_title": "MeVer - Image Verification Assistant",
+          "description": "Analyse the veracity of online media"
         },
         {
           "title": "Судебная экспертиза",
-          "url": "https://29a.ch/photo-forensics/#forensic-magnifier"
+          "url": "https://29a.ch/photo-forensics/#forensic-magnifier",
+          "real_title": "Forensically, free online photo forensics tools - 29a.ch",
+          "description": "Forensically is a set of free tools for digital image forensics. It includes clone detection, error level analysis, meta data extraction and more."
         },
         {
           "title": "FotoForensics",
-          "url": "https://fotoforensics.com/"
+          "url": "https://fotoforensics.com/",
+          "real_title": "FotoForensics",
+          "description": "FotoForensics provides tools and training for digital picture analysis, including error level analysis, metadata, and tutorials."
         },
         {
           "title": "Steganography Что спрятано за фото расшифровка",
-          "url": "https://stylesuxx.github.io/steganography/"
+          "url": "https://stylesuxx.github.io/steganography/",
+          "real_title": "Steganography Online"
         },
         {
           "title": "Была ли отредактирована фото",
-          "url": "https://imageedited.com/"
+          "url": "https://imageedited.com/",
+          "real_title": "Image Edited?",
+          "description": "imageedited: Is your image edited?"
         },
         {
           "title": "Декодування штрих-кодів",
-          "url": "https://online-barcode-reader.inliteresearch.com/"
+          "url": "https://online-barcode-reader.inliteresearch.com/",
+          "real_title": "Barcode Reader. Free Online Web Application",
+          "description": "Read Code39, Code128, PDF417, DataMatrix, QR, and other barcodes from TIF, PDF and other image documents"
         },
         {
           "title": "Analyze PGP",
-          "url": "https://kriztalz.sh/pgp-key-analyser/"
+          "url": "https://kriztalz.sh/pgp-key-analyser/",
+          "real_title": "PGP Key Analyser - View PGP key information in your browser",
+          "description": "Analyze PGP/OpenPGP keys in your browser. Check fingerprints, user IDs, capabilities, algorithms, and expiration dates with this privacy-focused tool."
         },
         {
           "title": "Стеганографія емодзи",
-          "url": "https://dorksearch.pro/emoji-crypt.html"
+          "url": "https://dorksearch.pro/emoji-crypt.html",
+          "real_title": "Emoji Steganography Tool | DorkSearch PRO"
         }
       ],
       "group": "Верифікація та експертиза",
@@ -1856,19 +2392,23 @@
       "links": [
         {
           "title": "Wayback Machine",
-          "url": "https://archive.org/"
+          "url": "https://archive.org/",
+          "real_title": "Internet Archive: Digital Library of Free & Borrowable Texts, Movies, Music & Wayback Machine"
         },
         {
           "title": "Исторический домен",
-          "url": "https://tools.whoisxmlapi.com/reverse-whois-search"
+          "url": "https://tools.whoisxmlapi.com/reverse-whois-search",
+          "real_title": "Login | WhoisXML API"
         },
         {
           "title": "Архив и архивировать",
-          "url": "https://ghostarchive.org/"
+          "url": "https://ghostarchive.org/",
+          "real_title": "Ghostarchive, a website archive"
         },
         {
           "title": "Webpage archive",
-          "url": "https://archive.ph/"
+          "url": "https://archive.ph/",
+          "real_title": "Welcome to nginx"
         }
       ],
       "group": "Веб та архіви",
@@ -1879,27 +2419,38 @@
       "links": [
         {
           "title": "ВебКамеры по миру",
-          "url": "https://www.feratel.com/en/webcams-by-topic"
+          "url": "https://www.feratel.com/en/webcams-by-topic",
+          "real_title": "Webcams by theme - Highlights, FlyingCams & Panoramas | feratel",
+          "description": "Discover feratel"
         },
         {
           "title": "Пряматая трансляция с африки зоопарки",
-          "url": "https://africam.com/"
+          "url": "https://africam.com/",
+          "real_title": "Africam | Wildlife Live Streams Across Africa",
+          "description": "Experience a live African safari! See lions, elephants, giraffes, and more from Africam’s real-time wildlife cameras across Southern & Eastern Africa"
         },
         {
           "title": "AirportWebcams.net - LIVE Airport Webcams From Around The World - Airport Webcams.net",
-          "url": "https://airportwebcams.net/"
+          "url": "https://airportwebcams.net/",
+          "real_title": "AirportWebcams.net - LIVE Airport Webcams From Around The World - Airport Webcams.net",
+          "description": "Watch Live Airport Webcams Around The World. Aircraft arrivals & departures. Listen to ATC - air traffic radio. Monitor flight tracking to & from this airport. View data for pilots."
         },
         {
           "title": "Каталог веб камер",
-          "url": "https://www.webviewcams.com/"
+          "url": "https://www.webviewcams.com/",
+          "real_title": "Webview Livescope Webcams",
+          "description": "Control and watch live webcams showing beaches, landscapes, traffic and people from all over the world. Zoom in and out, pan and tilt and many more."
         },
         {
           "title": "Поиск по городам",
-          "url": "https://cipher387.github.io/webcamcse/"
+          "url": "https://cipher387.github.io/webcamcse/",
+          "real_title": "Google Custom Search Engine for search 10 worldwide webcams catalogs"
         },
         {
           "title": "▶️ Live HD Cams from the World! - SkylineWebcams",
-          "url": "https://www.skylinewebcams.com/"
+          "url": "https://www.skylinewebcams.com/",
+          "real_title": "▶️ Live HD Cams from the World! - SkylineWebcams",
+          "description": "Live HD webcams broadcasting from the world"
         }
       ],
       "group": "Веб та архіви",
@@ -1910,19 +2461,26 @@
       "links": [
         {
           "title": "Анализ на вредоносные файлы",
-          "url": "https://www.virustotal.com/gui/home/upload"
+          "url": "https://www.virustotal.com/gui/home/upload",
+          "real_title": "VirusTotal",
+          "description": "VirusTotal"
         },
         {
           "title": "URL скан на вред",
-          "url": "https://urlscan.io/"
+          "url": "https://urlscan.io/",
+          "real_title": "URL and website scanner - urlscan.io",
+          "description": "urlscan.io - Website scanner for suspicious and malicious URLs"
         },
         {
           "title": "Jotti's malware scan",
-          "url": "https://virusscan.jotti.org/"
+          "url": "https://virusscan.jotti.org/",
+          "real_title": "Jotti's malware scan"
         },
         {
           "title": "Анализ трафика на сайтах програмах",
-          "url": "https://www.similarweb.com/es/"
+          "url": "https://www.similarweb.com/es/",
+          "real_title": "Similarweb: Soluciones de inteligencia de datos digitales impulsadas por IA",
+          "description": "Similarweb es una empresa de datos digitales impulsada por IA que proporciona inteligencia de mercado en tiempo real, insights competitivos y tendencias de consumo para acelerar el crecimiento empresarial."
         }
       ],
       "group": "Веб та архіви",
@@ -1933,7 +2491,9 @@
       "links": [
         {
           "title": "Видео которые были заблокированы",
-          "url": "https://altcensored.com/"
+          "url": "https://altcensored.com/",
+          "real_title": "Limited State YouTube Videos Censored Banned | altCensored.com",
+          "description": "altCensored.com archives 472915 censored, banned and limited-state YouTube videos.\nPreserving deleted channels, restricted content and suppressed political speech that YouTube hides from public view."
         }
       ],
       "group": "Веб та архіви",
@@ -1944,7 +2504,9 @@
       "links": [
         {
           "title": "DeepL Translate",
-          "url": "https://www.deepl.com/en/translator"
+          "url": "https://www.deepl.com/en/translator",
+          "real_title": "DeepL Translator | World's Most Accurate Translator",
+          "description": "Translate texts & full document files instantly. Accurate translations for individuals and Teams. Millions translate with DeepL every day."
         }
       ],
       "group": "Веб та архіви",
@@ -1955,15 +2517,19 @@
       "links": [
         {
           "title": "Показать полный URL",
-          "url": "https://seintpl.github.io/osint/short-links-verification-cheatsheet"
+          "url": "https://seintpl.github.io/osint/short-links-verification-cheatsheet",
+          "real_title": "Short links verification cheatsheet",
+          "description": "Short links verification cheatsheet"
         },
         {
           "title": "Redirect Detective - Discover where those redirects really go to",
-          "url": "https://redirectdetective.com/"
+          "url": "https://redirectdetective.com/",
+          "real_title": "Redirect Detective - Discover where those redirects really go to"
         },
         {
           "title": "Unshorten that URL! - Unshorten.It!",
-          "url": "https://unshorten.it/"
+          "url": "https://unshorten.it/",
+          "real_title": "Unshorten that URL! - Unshorten.It!"
         }
       ],
       "group": "Веб та архіви",
@@ -1974,43 +2540,61 @@
       "links": [
         {
           "title": "Временные получения смс на телефон",
-          "url": "https://www.receivesms.co/"
+          "url": "https://www.receivesms.co/",
+          "real_title": "Receive SMS Online — Free Temporary Phone Numbers",
+          "description": "Receive SMS online using free public phone numbers. Browse active numbers, available countries, and phone number ratings. No registration required."
         },
         {
           "title": "Временные смс",
-          "url": "https://tempsmss.com/es/"
+          "url": "https://tempsmss.com/es/",
+          "real_title": "Recibir SMS en línea | #1 Mejor sitio web para SMS temporales",
+          "description": "Receive SMS online instantly with free temporary phone numbers. No registration required. Virtual numbers from 14+ countries for OTP verification."
         },
         {
           "title": "Временный мобильный номер",
-          "url": "https://online-sim.pro/es"
+          "url": "https://online-sim.pro/es",
+          "real_title": "100% Números de teléfono temporales gratuitos para SMS - Recibe OTP en línea · ONLINE-SIM.PRO · 10 min number",
+          "description": "Números de teléfono virtuales temporales gratuitos para SMS. Recibe OTP en línea en EE. UU., Reino Unido, India, China y más de 30 países. Números de teléfono desechables para evitar la verificación"
         },
         {
           "title": "Мобильный номер",
-          "url": "https://es.mytempsms.com/receive-sms-online/phone-number/page/54.html"
+          "url": "https://es.mytempsms.com/receive-sms-online/phone-number/page/54.html",
+          "real_title": "(2026 Best) Gratis Reciba SMS en línea | Número de teléfono temporal para el código de verificación",
+          "description": "Permanente Gratis Reciba SMS en línea. Sin registro número de teléfono virtual virtual desechable falso para el código de verificación para China, EE. UU., Reino Unido  puede usarlo para registrar el sitio web o la aplicación Google Voice, Apple ID, Gmail , facebook, whatsapp, te"
         },
         {
           "title": "Почта",
-          "url": "https://smailpro.com/temporary-email"
+          "url": "https://smailpro.com/temporary-email",
+          "real_title": "Temporary Email Tool - Temporary Gmail & Outlook Addresses",
+          "description": "Create receive-only temporary Gmail and Outlook addresses for privacy, trials, and verification workflows without exposing your real inbox."
         },
         {
           "title": "Почта",
-          "url": "https://tempmail.ninja/es"
+          "url": "https://tempmail.ninja/es",
+          "real_title": "Correo Temporal - Email Desechable y Anónimo | TempMail Ninja",
+          "description": "Genera una dirección de correo temporal gratis en segundos. Protege tu privacidad y mantén tu bandeja de entrada libre de spam. Sin registro, 100% anónimo."
         },
         {
           "title": "Почта",
-          "url": "https://tempail.com/"
+          "url": "https://tempail.com/",
+          "real_title": "Temp Mail - Temporary Email",
+          "description": "Temp Mail provides temporary, anonymous, free, secure, disposable email address. You can use on facebook, twitter or instagram for anonymously sign up!"
         },
         {
           "title": "Почта",
-          "url": "https://www.emailtemporalgratis.com/#/armyspy.com/Artiong1968/"
+          "url": "https://www.emailtemporalgratis.com/#/armyspy.com/Artiong1968/",
+          "real_title": "Fake Mail Generator - Free temporary email addresses"
         },
         {
           "title": "Почта",
-          "url": "https://temp-mail.org/es/"
+          "url": "https://temp-mail.org/es/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "ᐉ Отримайте миттєвий віртуальний телефонний номер безкоштовно. Оплата за отримання SMS від $0.10 - SMS ACTIVATION SERVICE.",
-          "url": "https://sms-verification-number.com/uk/?ref=72&site=activation-pw#widget"
+          "url": "https://sms-verification-number.com/uk/?ref=72&site=activation-pw#widget",
+          "real_title": "ᐉ Отримайте миттєвий віртуальний телефонний номер безкоштовно. Оплата за отримання SMS від $0.10 - SMS ACTIVATION SERVICE.",
+          "description": "Отримайте номер телефону зараз для SMS-підтвердження та отримуйте SMS онлайн. Доступно понад 200 країн. Отримайте SMS за 30 секунд за допомогою SMS-активатора. SMS-активація для будь-якого сайту..."
         }
       ],
       "group": "Комунікації",
@@ -2021,23 +2605,32 @@
       "links": [
         {
           "title": "Blog - Insights in OSINT",
-          "url": "https://www.osintcombine.com/blog"
+          "url": "https://www.osintcombine.com/blog",
+          "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
         },
         {
           "title": "Webinars - OSINT Combine",
-          "url": "https://www.osintcombine.com/webinars"
+          "url": "https://www.osintcombine.com/webinars",
+          "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
         },
         {
           "title": "Thought Leadership - AI & Capability",
-          "url": "https://www.osintcombine.com/thought-leadership"
+          "url": "https://www.osintcombine.com/thought-leadership",
+          "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
         },
         {
           "title": "Podcast - OSINT Combine",
-          "url": "https://www.osintcombine.com/podcast"
+          "url": "https://www.osintcombine.com/podcast",
+          "real_title": "OSINT Resources that Build Intelligence Capability | OSINT Combine",
+          "description": "Blogs, Webinars, Thought Leadership & Podcasts"
         },
         {
           "title": "NexusXplore",
-          "url": "https://www.osintcombine.com/platform-new"
+          "url": "https://www.osintcombine.com/platform-new",
+          "real_title": "NexusXplore OSINT Platform for Critical Missions | OSINT Combine"
         }
       ],
       "group": "Інструменти й утиліти",
@@ -2048,7 +2641,8 @@
       "links": [
         {
           "title": "Открыть CSV файл",
-          "url": "https://osintcombine.tools/"
+          "url": "https://osintcombine.tools/",
+          "real_title": "DataVis by OSINT Combine"
         }
       ],
       "group": "Інструменти й утиліти",
@@ -2059,23 +2653,33 @@
       "links": [
         {
           "title": "Точная дата и время",
-          "url": "https://www.epochconverter.com/"
+          "url": "https://www.epochconverter.com/",
+          "real_title": "Epoch Converter - Unix Timestamp Converter",
+          "description": "Easy Epoch & Unix timestamp converter tools for software developers. Includes epoch explanation and conversion syntax in many programming languages."
         },
         {
           "title": "Декодирование шифра",
-          "url": "https://www.dcode.fr/caesar-cipher"
+          "url": "https://www.dcode.fr/caesar-cipher",
+          "real_title": "Caesar Cipher (Shift) Translator - Online Decoder, Encoder, Solver",
+          "description": "Tool for encoding and decoding with the Caesar cipher, a simple and famous shift cipher that replaces each letter with another one further down the alphabet. Compatible with ROT13 and other variants."
         },
         {
           "title": "Расшифровка хеша (зашифрованый код)",
-          "url": "https://cmd5.org/"
+          "url": "https://cmd5.org/",
+          "real_title": "Cmd5 - MD5 Online ,MD5 Decryption, MD5 Hash Decoder",
+          "description": "Welcome to the project designed to md5 decrypt, This website contains the largest database in the world. \r\nWe have a total of just over 20.408 trillion unique hashes."
         },
         {
           "title": "CrackStation расшифровка хеша",
-          "url": "https://crackstation.net/"
+          "url": "https://crackstation.net/",
+          "real_title": "CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.",
+          "description": "Crackstation is the most effective hash cracking service. We crack: MD5, SHA1, SHA2, WPA, and much more..."
         },
         {
           "title": "Расшифровка хеша",
-          "url": "https://hashes.com/es/decrypt/hash"
+          "url": "https://hashes.com/es/decrypt/hash",
+          "real_title": "Desencripta hashes MD5, SHA1, MySQL, NTLM, SHA256, SHA512, Wordpress, Bcrypt gratis",
+          "description": "Desencripta y crackea tus hashes MD5, SHA1, SHA256, MySQL y NTLM hashes gratis. También son compatibles Bcrypt, SHA512, Wordpress y muchos más."
         }
       ],
       "group": "Інструменти й утиліти",
@@ -2086,19 +2690,24 @@
       "links": [
         {
           "title": "ThunderTrace ・ Web Service ・ Render Dashboard",
-          "url": "https://dashboard.render.com/web/srv-d89086mk1jcs73fvtntg/deploys/dep-d89086uk1jcs73fvtodg?r=2026-05-23%4019%3A45%3A35%7E2026-05-23%4019%3A48%3A44"
+          "url": "https://dashboard.render.com/web/srv-d89086mk1jcs73fvtntg/deploys/dep-d89086uk1jcs73fvtodg?r=2026-05-23%4019%3A45%3A35%7E2026-05-23%4019%3A48%3A44",
+          "real_title": "Render · The Easiest Cloud For All Your Apps",
+          "description": "Render is a unified cloud to build and run all your apps and websites with free SSL, global CDN, private networks and automatic deploys from Git."
         },
         {
           "title": "ThunderTrace",
-          "url": "https://thundertrace.onrender.com/"
+          "url": "https://thundertrace.onrender.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "影鏡 KagamiID",
-          "url": "https://kagamiid.onrender.com/"
+          "url": "https://kagamiid.onrender.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Payoneer: Главная страница",
-          "url": "https://myaccount.payoneer.com/ma/"
+          "url": "https://myaccount.payoneer.com/ma/",
+          "real_title": "Payoneer: My Account"
         }
       ],
       "group": "Інструменти й утиліти",
@@ -2109,55 +2718,74 @@
       "links": [
         {
           "title": "OSINT та SOCMINT Resources 2026 | Довідник інструментів розслідування - Мануель Травесаньо",
-          "url": "https://manuelbot59.com/en/osint/"
+          "url": "https://manuelbot59.com/en/osint/",
+          "real_title": "Recursos OSINT y SOCMINT 2026 | Directorio de Herramientas de Investigación - Manuel Travezaño | Manuel Travezaño | OSINT & Ciberinteligencia",
+          "description": "Directorio especializado con +100 herramientas OSINT, IMINT, GEOINT y SOCMINT. Recursos gratuitos y avanzados para investigadores y analistas de inteligencia digital controlados por Manuel Travezaño."
         },
         {
           "title": "OSINT +500 Tools - Start.me",
-          "url": "https://start.me/p/0Pqbdg/osint-500-tools"
+          "url": "https://start.me/p/0Pqbdg/osint-500-tools",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Social Media - Start.me",
-          "url": "https://start.me/p/4K0DXg/social-media"
+          "url": "https://start.me/p/4K0DXg/social-media",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Deepweb en tools - Start.me",
-          "url": "https://start.me/p/ydJLqE/deepweb-en-tools"
+          "url": "https://start.me/p/ydJLqE/deepweb-en-tools",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Trouble Fake - Start.me",
-          "url": "https://start.me/p/QRQb0O/trouble-fake"
+          "url": "https://start.me/p/QRQb0O/trouble-fake",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "FREE OSINT TOOLS | OSINT Combine",
-          "url": "https://www.osintcombine.com/free-osint-tools/osint-bookmark-stack"
+          "url": "https://www.osintcombine.com/free-osint-tools/osint-bookmark-stack",
+          "real_title": "OSINT Bookmark Stack | OSINT Combine"
         },
         {
           "title": "UNISHKA | Resources",
-          "url": "https://unishka.com/resources/"
+          "url": "https://unishka.com/resources/",
+          "real_title": "UNISHKA | Resources"
         },
         {
           "title": "OSINT Platforms",
-          "url": "https://www.osinthandbook.com/osint-platforms"
+          "url": "https://www.osinthandbook.com/osint-platforms",
+          "real_title": "OSINT Platforms",
+          "description": "An index of OSINT tools and resources curated by the team at i-Intelligence GmbH."
         },
         {
           "title": "Bellingcat's Online Investigation Toolkit",
-          "url": "https://bellingcat.gitbook.io/toolkit"
+          "url": "https://bellingcat.gitbook.io/toolkit",
+          "real_title": "Home | Bellingcat's Online Investigation Toolkit",
+          "description": "A toolkit for open source researchers"
         },
         {
           "title": "ManuelBot59 (Manuel Travezaño) · GitHub",
-          "url": "https://github.com/ManuelBot59"
+          "url": "https://github.com/ManuelBot59",
+          "real_title": "ManuelBot59 (Manuel Travezaño) · GitHub",
+          "description": "🛡️ Cyber Intelligence & Cybercrime | 🕵️ Tactical Analyst & Social Media Investigator 🔎 | 👨🏻‍💻 OSINT & SOCMINT Expert | 👨‍🏫 Instructor at LISA Institute - ManuelBot59"
         },
         {
           "title": "Копия Email-Username-OSINT-ManuelBOT.xlsx - Google Таблицы",
-          "url": "https://docs.google.com/spreadsheets/d/1S5wHrEhplqs1pza0Ra-LRzHc5H26GsVb/edit?gid=183866541#gid=183866541"
+          "url": "https://docs.google.com/spreadsheets/d/1S5wHrEhplqs1pza0Ra-LRzHc5H26GsVb/edit?gid=183866541#gid=183866541",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "GitHub - techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit: A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, and methodologies to aid in gathering and analyzing publicly available information. Designed for security researchers, journalists, and forensic analysts for ethical and legal investigations. · GitHub",
-          "url": "https://github.com/techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit"
+          "url": "https://github.com/techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit",
+          "real_title": "GitHub - techenthusiast167/D4rk_Intel-OSINT-Investigative-Toolkit: A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, a",
+          "description": "A curated toolkit for Open-Source Intelligence (OSINT) investigations. This repository contains a collection of scripts, resources, and methodologies to aid in gathering and analyzing publicly available information. Designed for security researchers, journalists, and forensic ana"
         },
         {
           "title": "GitHub - jivoi/awesome-osint: :scream: A curated list of amazingly awesome OSINT · GitHub",
-          "url": "https://github.com/jivoi/awesome-osint"
+          "url": "https://github.com/jivoi/awesome-osint",
+          "real_title": "GitHub - jivoi/awesome-osint: :scream: A curated list of amazingly awesome OSINT · GitHub",
+          "description": ":scream: A curated list of amazingly awesome OSINT - jivoi/awesome-osint"
         }
       ],
       "group": "Інструменти й утиліти",
@@ -2168,7 +2796,8 @@
       "links": [
         {
           "title": "Blockchair — Universal blockchain explorer and search engine",
-          "url": "https://blockchair.com/"
+          "url": "https://blockchair.com/",
+          "fetch_error": "HTTPError"
         }
       ],
       "group": "Крипто та фінанси",
@@ -2179,31 +2808,43 @@
       "links": [
         {
           "title": "HACKTORIA - OSINT CTF",
-          "url": "https://hacktoria.com/"
+          "url": "https://hacktoria.com/",
+          "real_title": "HACKTORIA",
+          "description": "OSINT Capture The Flag Events"
         },
         {
           "title": "Maltego Community OSINT CTF",
-          "url": "https://maltego.ctfd.io/user?"
+          "url": "https://maltego.ctfd.io/user?",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Bellingcat Open Source Challenge",
-          "url": "https://challenge.bellingcat.com/"
+          "url": "https://challenge.bellingcat.com/",
+          "real_title": "Bellingcat Open Source Challenge",
+          "description": "Test your open source research skills."
         },
         {
           "title": "Trace Labs",
-          "url": "https://www.tracelabs.org/"
+          "url": "https://www.tracelabs.org/",
+          "real_title": "Trace Labs",
+          "description": "Trace Labs is a nonprofit organization whose mission is to accelerate the family reunification of missing persons while training members in the tradecraft of open source intelligence (OSINT)."
         },
         {
           "title": "OSINT CTF Platform - OSINT Industries",
-          "url": "https://ctf.osint.industries/challenges"
+          "url": "https://ctf.osint.industries/challenges",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "CTF | EPCYBER",
-          "url": "https://epcyber.com/ctf"
+          "url": "https://epcyber.com/ctf",
+          "real_title": "EPCyber CTF | Capture The Flag Challenges",
+          "description": "Practice OSINT, dark web CTI, and threat intelligence skills on real-world capture-the-flag challenges. Hands-on exercises for serious practitioners."
         },
         {
           "title": "Огляди OSINT Industries CTF 2025 | автор: Manikmaya | Середнє",
-          "url": "https://0xmanikmaya.medium.com/osint-industries-ctf-2025-write-ups-fb7ffc1079d7"
+          "url": "https://0xmanikmaya.medium.com/osint-industries-ctf-2025-write-ups-fb7ffc1079d7",
+          "real_title": "OSINT Industries CTF 2025 Write Ups | by Manikmaya | Medium",
+          "description": "“” is published by Manikmaya."
         }
       ],
       "group": "Освіта",
@@ -2214,19 +2855,24 @@
       "links": [
         {
           "title": "Онлайн-курсы — изучайте любую тему в собственном темпе | Udemy",
-          "url": "https://www.udemy.com/"
+          "url": "https://www.udemy.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "OSINT Combine Academy",
-          "url": "https://academy.osintcombine.com/l/dashboard"
+          "url": "https://academy.osintcombine.com/l/dashboard",
+          "real_title": "OSINT Combine Academy"
         },
         {
           "title": "GEOINT-тренінг",
-          "url": "https://osintflow.com/osint-courses/geoint-training/"
+          "url": "https://osintflow.com/osint-courses/geoint-training/",
+          "real_title": "GEOINT-тренінг"
         },
         {
           "title": "Manuel Travezaño OSINT | Patreon",
-          "url": "https://www.patreon.com/cw/ManuelBot59"
+          "url": "https://www.patreon.com/cw/ManuelBot59",
+          "real_title": "Manuel Travezaño OSINT — recursos osint, metodologías SOCMINT, Ciberinteligencia | Patreon",
+          "description": "Get more from Manuel Travezaño OSINT on Patreon. recursos osint, metodologías SOCMINT, Ciberinteligencia. Support Manuel Travezaño OSINT and get exclusive access to their work."
         }
       ],
       "group": "Освіта",
@@ -2237,15 +2883,19 @@
       "links": [
         {
           "title": "АНТИКОР — національний антикорупційний портал",
-          "url": "https://antikor.info/"
+          "url": "https://antikor.info/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Узнавать за утечки",
-          "url": "https://www.bleepingcomputer.com/"
+          "url": "https://www.bleepingcomputer.com/",
+          "fetch_error": "HTTPError"
         },
         {
           "title": "Архив валютных курсов",
-          "url": "https://index.minfin.com.ua/exchange/archive/"
+          "url": "https://index.minfin.com.ua/exchange/archive/",
+          "real_title": "Архив валютных курсов",
+          "description": "Архив валютных курсов. НБУ, коммерческие банки, Visa, Mastercard, межбанк, ЦБ РФ, мировые валюты, драгоценные металлы."
         }
       ],
       "group": "Освіта",
@@ -2256,7 +2906,9 @@
       "links": [
         {
           "title": "daily court lists",
-          "url": "https://web.archive.org/web/20200306131224/https://www.criminal-court-records.com.au/daily-court-lists.html"
+          "url": "https://web.archive.org/web/20200306131224/https://www.criminal-court-records.com.au/daily-court-lists.html",
+          "real_title": "daily court lists",
+          "description": "Check to see whether someone is listed to appear before a particular state court on that day.  Some courts (e.g. NSW & VIC) also provide details of future listings."
         }
       ],
       "group": "Інше",
@@ -2267,7 +2919,8 @@
       "links": [
         {
           "title": "App configuration",
-          "url": "https://my.telegram.org/apps"
+          "url": "https://my.telegram.org/apps",
+          "real_title": "Authorization"
         }
       ],
       "group": "Інше",
@@ -2278,19 +2931,27 @@
       "links": [
         {
           "title": "Карта движения самолётов и характеристика",
-          "url": "https://globe.adsbexchange.com/"
+          "url": "https://globe.adsbexchange.com/",
+          "real_title": "ADS-B Exchange - track aircraft live",
+          "description": "ADS-B Exchange - track aircraft live - aircraft flight history"
         },
         {
           "title": "Справочник самолётов",
-          "url": "https://www.aircraftrecognitionguide.com/"
+          "url": "https://www.aircraftrecognitionguide.com/",
+          "real_title": "Aircraft Recognition Guide - Aircraft Recognition Guide",
+          "description": "Aircraft Recognition Guide helps you recognise different types of aircraft, airplanes and helicopters, based on the main characteristics."
         },
         {
           "title": "Информация про аэропорты по айди или названию",
-          "url": "https://www.airnav.com/airports/get"
+          "url": "https://www.airnav.com/airports/get",
+          "real_title": "AirNav: Airport Information",
+          "description": "Up-to-date airport and fuel prices information.  Communication frequencies, navigation and runway details.  Extensive listing of FBO services and features, plus contacts.  Browse by identifier and any geographic element"
         },
         {
           "title": "Данные про рейсы и т.д",
-          "url": "https://aviability.com/"
+          "url": "https://aviability.com/",
+          "real_title": "Before Flight & Beyond - Aviability",
+          "description": "From planning to arrival and everything after, get the flight info and travel support you need"
         }
       ],
       "group": "Інше",
@@ -2301,11 +2962,15 @@
       "links": [
         {
           "title": "Проверка по VIN USA",
-          "url": "https://www.autodetective.com/"
+          "url": "https://www.autodetective.com/",
+          "real_title": "VIN Check & Lookup - Search the Owner by VIN - AutoDetective",
+          "description": "Run a VIN number check to get a detailed and real-time vehicle history & title report. \n                Look up the owner by VIN with AutoDetective and get instant free results."
         },
         {
           "title": "Установка марки авто",
-          "url": "https://carnet.ai/"
+          "url": "https://carnet.ai/",
+          "real_title": "CarNet.AI - Car Make/Model Recognition API",
+          "description": "Car Make/Model Recognition API with 97% Accuracy"
         }
       ],
       "group": "Інше",
@@ -2316,15 +2981,20 @@
       "links": [
         {
           "title": "BIC: Бюро міжнародних контейнерів",
-          "url": "https://www.bic-code.org/"
+          "url": "https://www.bic-code.org/",
+          "real_title": "BIC: Bureau of International Containers",
+          "description": "We are the only non-governmental organization linking all groups interested in containerization and intermodal transport: from carriers to manufacturers."
         },
         {
           "title": "Проверка контрольных цыфр",
-          "url": "https://container.checkdigit.info/"
+          "url": "https://container.checkdigit.info/",
+          "real_title": "Container check digit calculator",
+          "description": "Container check digit calculator for calculation and verification"
         },
         {
           "title": "Відстеження вантажів",
-          "url": "https://ct.shipmentlink.com/servlet/TDB1_CargoTracking.do"
+          "url": "https://ct.shipmentlink.com/servlet/TDB1_CargoTracking.do",
+          "real_title": "ShipmentLink - Cargo Tracking"
         }
       ],
       "group": "Інше",
@@ -2335,19 +3005,24 @@
       "links": [
         {
           "title": "Реестр кораблей/суднов",
-          "url": "https://www.equasis.org/EquasisWeb/restricted/ShipHistory?fs=ShipInfo"
+          "url": "https://www.equasis.org/EquasisWeb/restricted/ShipHistory?fs=ShipInfo",
+          "real_title": "Equasis - HomePage"
         },
         {
           "title": "База даних кораблів",
-          "url": "https://www.balticshipping.com/vessels"
+          "url": "https://www.balticshipping.com/vessels",
+          "real_title": "BalticShipping.com"
         },
         {
           "title": "Информационный центр про корабли яхты",
-          "url": "https://www.boatinfoworld.com/"
+          "url": "https://www.boatinfoworld.com/",
+          "real_title": "BoatInfoWorld.com - Search, View & Download Vessel Information",
+          "description": "Search, view & download vessel information on over 416,000 documented boats  - owner info, hull identification number, length, year, ship builder,..."
         },
         {
           "title": "База данных незаконных суден",
-          "url": "https://www.iuu-vessels.org/Home/Search"
+          "url": "https://www.iuu-vessels.org/Home/Search",
+          "real_title": "IUU Vessel List"
         }
       ],
       "group": "Інше",
@@ -2358,11 +3033,15 @@
       "links": [
         {
           "title": "Карта колий (поездов, трамваев и т.д.)",
-          "url": "https://www.openrailwaymap.org/index.php"
+          "url": "https://www.openrailwaymap.org/index.php",
+          "real_title": "OpenRailwayMap",
+          "description": "OpenRailwayMap - An OpenStreetMap-based project for creating a map of the world's railway infrastructure."
         },
         {
           "title": "ВебКамеры вокзалов поездов",
-          "url": "https://railwebcams.net/"
+          "url": "https://railwebcams.net/",
+          "real_title": "RailWebcams.net - Live railway, railroad & light rail webcams worldwide - RailWebcams.net",
+          "description": "RailWebcams.net - Live Railway, Railroad & Light Rail, Metro & Tram Webcams from around the World. View railway timetables for each webcam view, map locations and more."
         }
       ],
       "group": "Інше",

@@ -1056,73 +1056,112 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   width: 60px; height: 2px;
   background: linear-gradient(90deg, var(--ice), transparent);
 }
-.stack__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
+.stack__cats { display: flex; flex-direction: column; gap: 2rem; }
 .stack__cat {
   border: 1px solid var(--border);
   background: linear-gradient(180deg, var(--surface), rgba(15,21,36,.55));
-  padding: 1.25rem 1.5rem;
-  transition: all .25s var(--ease);
-  position: relative;
   overflow: hidden;
 }
-.stack__cat:hover {
-  border-color: var(--border-hi);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,.4);
-}
-.stack__cat::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--ice), transparent);
-  opacity: 0;
-  transition: opacity .3s var(--ease);
-}
-.stack__cat:hover::before { opacity: 1; }
 .stack__cat-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: .75rem;
-  padding-bottom: .75rem;
-  margin-bottom: .75rem;
+  padding: 1.25rem 1.75rem;
   border-bottom: 1px solid var(--border);
+  background: rgba(74,158,255,.03);
 }
 .stack__cat-head h3 {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--cream);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 .stack__count {
   font-family: var(--font-mono);
-  font-size: .7rem;
+  font-size: .72rem;
   color: var(--ice);
   background: rgba(74,158,255,.08);
-  padding: .1rem .55rem;
+  padding: .15rem .6rem;
   border: 1px solid var(--border-hi);
   flex-shrink: 0;
+  letter-spacing: .05em;
 }
-.stack__links { display: flex; flex-direction: column; gap: .5rem; list-style: none; padding: 0; margin: 0; }
-.stack__links li { display: flex; flex-direction: column; gap: .1rem; padding: .35rem 0; border-bottom: 1px solid rgba(30,41,66,.5); }
-.stack__links li:last-child { border-bottom: none; }
-.stack__links a {
+
+/* Table */
+.stack__table-wrap { overflow-x: auto; }
+.stack__table {
+  width: 100%;
+  border-collapse: collapse;
   font-size: .92rem;
-  color: var(--text);
-  line-height: 1.35;
-  transition: color .15s var(--ease);
 }
-.stack__links a:hover { color: var(--ice); }
-.stack__host {
+.stack__table thead {
+  background: rgba(10,14,26,.5);
+}
+.stack__table th {
   font-family: var(--font-mono);
   font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
   color: var(--text-mute);
-  letter-spacing: .02em;
+  text-align: left;
+  padding: .8rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.stack__th-name { width: 26%; }
+.stack__th-desc { width: 54%; }
+.stack__th-link { width: 20%; text-align: right; }
+
+.stack__row { transition: background .15s var(--ease); border-bottom: 1px solid rgba(30,41,66,.5); }
+.stack__row:last-child { border-bottom: none; }
+.stack__row:hover { background: rgba(74,158,255,.04); }
+
+.stack__table td {
+  padding: .9rem 1.25rem;
+  vertical-align: top;
+  line-height: 1.45;
+}
+.stack__name {
+  color: var(--cream);
+  font-weight: 500;
+}
+.stack__desc {
+  color: var(--text-dim);
+  font-size: .88rem;
+}
+.stack__desc:empty::before {
+  content: '—';
+  color: var(--text-mute);
+  opacity: .4;
+}
+.stack__link { text-align: right; white-space: nowrap; }
+.stack__link a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .4rem .75rem;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--ice);
+  border: 1px solid var(--border-hi);
+  background: rgba(74,158,255,.04);
+  transition: all .2s var(--ease);
+}
+.stack__link a:hover {
+  color: var(--bg);
+  background: var(--ice);
+  border-color: var(--ice);
+  box-shadow: 0 0 12px rgba(74,158,255,.35);
+}
+.stack__link-arrow { font-size: .9em; }
+
+@media (max-width: 720px) {
+  .stack__th-desc, .stack__desc { display: none; }
+  .stack__th-name { width: 60%; }
+  .stack__th-link { width: 40%; }
+  .stack__table td, .stack__table th { padding: .7rem .9rem; font-size: .85rem; }
 }
 
 /* Recommendations ----------------------------------------- */
