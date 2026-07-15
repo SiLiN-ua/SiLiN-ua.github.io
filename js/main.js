@@ -132,7 +132,7 @@
       return lb;
     }
     document.addEventListener('click', (e) => {
-      const trigger = e.target.closest('.cert__img img, .prose__hero img, .card__cover img');
+      const trigger = e.target.closest('.cert__img img, .prose__hero img, .card__cover img, .prose img, .proj__shot img, .proj__hero img');
       if (!trigger) return;
       e.preventDefault();
       const box = ensureLb();
