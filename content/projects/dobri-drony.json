@@ -1,0 +1,42 @@
+{
+  "name": "Добрі Дрони · 🚁",
+  "subtitle_uk": "Моніторинг реакцій цивільних під час російських дронових атак",
+  "subtitle_en": "Monitoring civilian reactions during Russian drone attacks",
+  "tag": "War OSINT · SOCMINT · Sentiment",
+  "year": 2026,
+  "lang": "Python 3.11 · Flask · Telethon · Claude API · SocketIO · EventLet",
+  "license": "MIT",
+  "live_url": "",
+  "repo_url": "https://github.com/SiLiN-ua/dobri-drony",
+  "cover": "/img/uploads/projects/drony-splash.png",
+  "screenshots": [
+    "/img/uploads/projects/drony-splash.png",
+    "/img/uploads/projects/drony-login.png",
+    "/img/uploads/projects/drony-feed.png",
+    "/img/uploads/projects/drony-report.png"
+  ],
+  "description_uk": "OSINT-платформа для моніторингу реакцій цивільного населення в російських Telegram-каналах під час дронових атак на Україну та окуповані території. Збирає та класифікує повідомлення з **153 Telegram-джерел** по РФ і окупованих регіонах у реальному часі. Коли трапляється удар, платформа фіксує реакції: паніка / заперечення / злість / гумор / скарги / нейтральна інформація. Автоматично витягує назву міста з тексту повідомлення. AI-звіт від Claude формує структурований бриф про суспільні настрої.",
+  "description_en": "OSINT platform for monitoring civilian reactions in Russian Telegram channels during drone attacks on Ukraine and occupied territories. Collects and classifies messages from **153 Telegram sources** across Russia and occupied regions in real time. When a strike happens, the platform captures reactions: panic / denial / anger / humor / complaint / neutral info. Automatically extracts city names from message text. Claude AI report generates a structured brief on public sentiment.",
+  "features_uk": [
+    "Live-моніторинг у реальному часі: 153 Telegram-джерела",
+    "Автокласифікатор реакцій: паніка / заперечення / злість / гумор / скарги / інфо",
+    "Автовизначення міста з тексту повідомлення",
+    "AI-звіт з класифікацією настроїв через Claude",
+    "Експорт: PDF · HTML · Word (.doc) · CSV",
+    "Трекінг медіа: фото/відео з розмірами",
+    "Фільтр фіду і звітів за містами",
+    "Real-time через WebSockets + EventLet"
+  ],
+  "features_en": [
+    "Live monitoring: 153 Telegram sources in real time",
+    "Reaction auto-classifier: panic / denial / anger / humor / complaint / info",
+    "City detection from message text",
+    "Sentiment-classified AI report via Claude",
+    "Export: PDF · HTML · Word (.doc) · CSV",
+    "Media tracking: photo/video with size stats",
+    "City filter for feed and reports",
+    "Real-time via WebSockets + EventLet"
+  ],
+  "order": 6,
+  "published": true
+}

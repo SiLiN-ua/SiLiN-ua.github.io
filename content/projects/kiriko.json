@@ -1,0 +1,42 @@
+{
+  "name": "Kiriko · 霧子",
+  "subtitle_uk": "AI-агент для глибокого OSINT-скринінгу · «Fog leaves a trace»",
+  "subtitle_en": "AI agent for deep OSINT screening · Fog leaves a trace",
+  "tag": "AI · OSINT · Deep Screening",
+  "year": 2026,
+  "lang": "Python 3.12 · Flask · Claude API · Telethon · PyMuPDF · python-docx",
+  "license": "Closed",
+  "live_url": "",
+  "repo_url": "https://github.com/SiLiN-ua/kiriko",
+  "cover": "/img/uploads/projects/kiriko-splash.jpg",
+  "screenshots": [
+    "/img/uploads/projects/kiriko-splash.jpg",
+    "/img/uploads/projects/kiriko-chat.jpg",
+    "/img/uploads/projects/kiriko-report.jpg",
+    "/img/uploads/projects/kiriko-export.png"
+  ],
+  "description_uk": "Закрита AI-платформа для глибокого OSINT-скринінгу — автономний агент на Claude AI з інтеграцією Telegram-ботів. Проводить повний цикл верифікації самостійно: підключається до OSINT-баз через Telegram (Nemezida, Sherlock, FanStatistik), парсить PDF-звіти, шукає username через **ThunderTrace** по 350+ платформах, витягує повну історію Telegram-акаунту (усі username і display-name). Експортує звіти у Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом та live-дощем зі символів. Три мови: EN / UA / RU.",
+  "description_en": "Closed AI-powered OSINT platform for deep background screening — an autonomous agent built on Claude AI with Telegram-bot integration. Runs the full verification cycle independently: connects to OSINT databases via Telegram (Nemezida, Sherlock, FanStatistik), parses PDF reports, searches usernames via **ThunderTrace** across 350+ platforms, extracts full Telegram account history (all usernames and display names). Exports reports to Word / PDF / HTML. Cyber-noir Japanese UI with matrix-style glitch effects and live character rain. Trilingual: EN / UA / RU.",
+  "features_uk": [
+    "Автономний AI-агент на Claude — повний цикл верифікації без ручного втручання",
+    "OSINT-інструменти через Telegram: deep-бази, соцмережі, пошук за телефоном",
+    "ThunderTrace — 350+ платформ одночасно",
+    "FanStatistik — повна історія Telegram-акаунту",
+    "Експорт: Word (.docx) · PDF · HTML",
+    "Matrix-UI з glitch-ефектами та символьним дощем",
+    "Мультимовність: EN · UA · RU",
+    "Історія сесій з завантажуваними звітами"
+  ],
+  "features_en": [
+    "Autonomous Claude AI agent — full verification cycle hands-off",
+    "OSINT tools via Telegram: deep databases, social media, phone lookup",
+    "ThunderTrace — 350+ platforms simultaneously",
+    "FanStatistik — full Telegram account history",
+    "Export: Word (.docx) · PDF · HTML",
+    "Matrix UI with glitch effects and live character rain",
+    "Multilingual: EN · UA · RU",
+    "Session history with downloadable reports"
+  ],
+  "order": 4,
+  "published": true
+}
