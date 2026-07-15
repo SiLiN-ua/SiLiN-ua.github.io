@@ -37,6 +37,6 @@
     "City filter for feed and reports",
     "Real-time via WebSockets + EventLet"
   ],
-  "order": 6,
+  "order": 3,
   "published": true
 }

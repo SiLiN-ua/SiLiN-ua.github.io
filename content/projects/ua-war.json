@@ -43,6 +43,6 @@
     "OCR: text extraction from Telegram photos",
     "Monitor 1–5 cities simultaneously with filter"
   ],
-  "order": 5,
+  "order": 2,
   "published": true
 }
