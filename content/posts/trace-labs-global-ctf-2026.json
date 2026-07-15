@@ -1,0 +1,15 @@
+{
+  "title_uk": "Trace Labs провів другий у 2026 глобальний OSINT Search Party CTF",
+  "title_en": "Trace Labs holds second Global OSINT Search Party CTF of 2026",
+  "date": "2026-06-14T00:00:00.000Z",
+  "tag": "OSINT · Community · CTF",
+  "tag_en": "OSINT · Community · CTF",
+  "source": "Trace Labs",
+  "source_url": "https://www.tracelabs.org/initiatives/search-party",
+  "summary_uk": "Trace Labs провів другий глобальний CTF 2026 року — командне змагання, у якому OSINT-дослідники з усього світу генерують нові зачіпки у справах реальних зниклих безвісти людей. Зібрані під час CTF розвіддані передаються правоохоронним органам. Формат — команди по 4 особи, 6 годин, дефіцитний час, реальні кейси.",
+  "summary_en": "Trace Labs held its second Global CTF of 2026 — a team competition in which OSINT researchers worldwide generate new leads on real missing-persons cases. Intelligence gathered during the CTF is passed to law enforcement. Format: 4-person teams, 6 hours, time pressure, real cases.",
+  "body_uk": "## Що це\n\nТrace Labs — некомерційна організація, яка з 2018 року поєднує спільноту OSINT-дослідників з правоохоронними органами для пошуку зниклих. Її Search Party CTF — це геймифікований формат, у якому кожен виконаний flag (fresh contact, additional social profile, last-seen location) реально йде в справу.\n\n## Чому це важливо для OSINT-спільноти\n\n- Стандарт індустрії — багато сучасних методик перевірки username і pivoting з'явилися саме у CTF-звітах учасників\n- Етичний плацдарм — усі дані з відкритих джерел, суворі правила щодо контакту з рідними\n- Розсадник кадрів — рекрутери приватних розвід-платформ моніторять топ-10 команд\n\n## Як долучитись\n\nЗвичайно 2–3 глобальних CTF на рік + локальні DEF CON-edition і партнерські з CTFTime. Реєстрація — на офіційному сайті.",
+  "body_en": "## What it is\n\nTrace Labs is a non-profit that since 2018 has bridged the OSINT research community with law enforcement to find missing persons. Its Search Party CTF is a gamified format in which every completed flag (fresh contact, additional social profile, last-seen location) genuinely goes into the case file.\n\n## Why it matters for the OSINT community\n\n- Industry standard — many modern username-verification and pivoting techniques first appeared in participant CTF write-ups\n- Ethical proving ground — all data from open sources, strict rules on contact with relatives\n- Talent pipeline — private intelligence-platform recruiters watch the top 10 teams\n\n## How to join\n\nTypically 2–3 global CTFs per year + local DEF CON editions and CTFTime partnerships. Registration on the official site.",
+  "published": true,
+  "cover": "/img/uploads/news/trace-labs-global-ctf-2026.jpg"
+}

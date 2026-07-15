@@ -1,5 +1,37 @@
 [
   {
+    "title_uk": "Bellingcat + AFP: спільні OSINT-розслідування війни в Україні",
+    "title_en": "Bellingcat + AFP: joint OSINT investigations into the war in Ukraine",
+    "date": "2026-05-28T00:00:00.000Z",
+    "tag": "OSINT · Розслідування",
+    "tag_en": "OSINT · Investigations",
+    "source": "EDMO · Bellingcat · AFP",
+    "source_url": "https://edmo.eu/blog/afp-and-bellingcat-combining-osint-and-field-reporting-in-ukraine/",
+    "summary_uk": "Bellingcat разом з AFP випустили серію з трьох великих матеріалів, що поєднують супутникову зйомку, аналіз соцмереж і публічних наборів даних з польовою журналістикою. Тематика: руйнування Вовчанська, забруднення української території мінами та наслідки війни для дітей і підлітків.",
+    "summary_en": "Bellingcat and AFP released three long-form reports combining satellite imagery, social-media analysis, and public datasets with on-the-ground journalism. Topics: the destruction of Vovchansk, landmine contamination of Ukrainian territory, and the war's impact on Ukrainian youth.",
+    "body_uk": "## Що зроблено\n\nПартнерство побудоване на розподілі ролей: AFP забезпечує поле — інтерв'ю, свідчення, фотофіксацію. Bellingcat — верифікацію через супутникові знімки Planet Labs і Maxar, аналіз відкритих датасетів, геолокацію та крос-перевірку відео з соцмереж.\n\n## Три матеріали\n\n- **Вовчанськ** — покадрове документування знищення міста через до/після супутникові знімки\n- **Мінна забрудненість** — оцінка масштабу мінних полів на деокупованих територіях\n- **Діти війни** — довгостроковий вплив вторгнення на українську молодь\n\n## Чому це важливо\n\nМодель AFP × Bellingcat стала референсом для інших редакцій. Вона показує, що OSINT — це не альтернатива класичній журналістиці, а її обов'язковий шар верифікації.",
+    "body_en": "## What was done\n\nThe partnership is built on a division of roles: AFP provides the ground — interviews, testimonies, photo documentation. Bellingcat provides verification through Planet Labs and Maxar satellite imagery, open-dataset analysis, geolocation, and cross-verification of social-media video.\n\n## Three reports\n\n- **Vovchansk** — frame-by-frame documentation of the city's destruction via before/after satellite imagery\n- **Landmine contamination** — assessing the scale of minefields on de-occupied territory\n- **Children of war** — long-term impact of the invasion on Ukrainian youth\n\n## Why it matters\n\nThe AFP × Bellingcat model has become a reference for other newsrooms. It shows that OSINT is not an alternative to traditional journalism, but a required verification layer.",
+    "published": true,
+    "cover": "/img/uploads/news/bellingcat-afp-ukraine-2026.jpg",
+    "__slug": "bellingcat-afp-ukraine-2026"
+  },
+  {
+    "title_uk": "Bellingcat відстежив «тіньовий флот» РФ: викрадене українське зерно дійшло до Лівії",
+    "title_en": "Bellingcat tracks Russia's shadow fleet: stolen Ukrainian grain reached Libya",
+    "date": "2026-06-12T00:00:00.000Z",
+    "tag": "OSINT · GEOINT · Санкції",
+    "tag_en": "OSINT · GEOINT · Sanctions",
+    "source": "Bellingcat",
+    "source_url": "https://www.bellingcat.com/news/2026/06/12/shadow-fleet-russian-grain-stolen-ukraine-libya-ais-technique-grumant/",
+    "summary_uk": "Розслідувачі задокументували балкер Grumant, який 15 лютого 2026 завантажився зерном у окупованій Феодосії та 18 квітня прибув до Бенгазі в Лівії. Це вже другий підтверджений випадок постачання «краденого» українського зерна з окупованих територій до Лівії. Ключова інновація — нова методика аналізу AIS-даних напрямку руху, яка дозволяє відновити маршрут навіть коли GPS-сигнал глушиться.",
+    "summary_en": "Investigators documented the bulk carrier Grumant loading grain at occupied Feodosia on 15 February 2026 and arriving in Benghazi, Libya on 18 April. This is the second confirmed case of grain from occupied Ukrainian territory being delivered to Libya. The key innovation: a new technique for analysing AIS heading data that allows the vessel's route to be reconstructed even when the GPS signal is jammed.",
+    "body_uk": "## Методика\n\nКоли трекери спуфляться або глушаться, класична AIS-геолокація стає ненадійною. Команда Bellingcat використала **дані напрямку носа судна (heading)** — які часто передаються навіть при спотвореному GPS — і реконструювала маршрут через тригонометрію та зіставлення з супутниковими знімками портів.\n\n## Ланцюжок\n\n- 15 лютого — завантаження у Феодосії (окупований Крим)\n- 23 лютого — Ізмір, Туреччина: судно стало на якір, у порт не заходило\n- 13 березня — залишає рейд Ізміру\n- 18 квітня — прибуття до Бенгазі, Лівія\n\n## Значення\n\nМетодика годиться для будь-яких санкційних кейсів, де супротивник глушить AIS. Це готовий інструментарій для правоохоронців ЄС і команд документування воєнних злочинів.",
+    "body_en": "## The method\n\nWhen trackers are spoofed or jammed, classical AIS geolocation becomes unreliable. The Bellingcat team used **vessel heading data** — often still transmitted even with distorted GPS — and reconstructed the route through trigonometry and cross-referencing with satellite imagery of ports.\n\n## The chain\n\n- 15 February — loading at Feodosia (occupied Crimea)\n- 23 February — Izmir, Turkey: vessel anchors, does not enter port\n- 13 March — leaves the Izmir roadstead\n- 18 April — arrival in Benghazi, Libya\n\n## Significance\n\nThe method applies to any sanctions case where the adversary jams AIS. It's ready-to-use tooling for EU law enforcement and war-crimes documentation teams.",
+    "published": true,
+    "cover": "/img/uploads/news/bellingcat-shadow-fleet-grain-libya.jpg",
+    "__slug": "bellingcat-shadow-fleet-grain-libya"
+  },
+  {
     "title_uk": "IT Arena 2026: панель «Онлайн-безпека — як використати OSINT на користь Україні»",
     "title_en": "IT Arena 2026: panel 'Online security — how to use OSINT for the benefit of Ukraine'",
     "date": "2026-06-30T00:00:00.000Z",
@@ -13,6 +45,38 @@
     "published": true,
     "cover": "/img/uploads/news/it-arena-2026-osint-panel.jpg",
     "__slug": "it-arena-2026-osint-panel"
+  },
+  {
+    "title_uk": "Кабмін затвердив план заходів з реалізації Стратегії кібербезпеки України на 2026",
+    "title_en": "Ukraine's Cabinet approves 2026 Cybersecurity Strategy action plan",
+    "date": "2026-06-24T00:00:00.000Z",
+    "tag": "Законодавство · Кібербезпека",
+    "tag_en": "Legislation · Cybersecurity",
+    "source": "Кабінет Міністрів України · Розпорядження №631-р",
+    "source_url": "https://zakon.rada.gov.ua/laws/show/631-2026-%D1%80",
+    "summary_uk": "Розпорядженням №631-р від 24 червня 2026 Кабмін затвердив річний план заходів з реалізації Стратегії кібербезпеки України. Документ покриває десять напрямів — від розбудови кібервійськ і протидії кіберзлочинності до розвитку кадрового потенціалу і співпраці з НАТО та ЄС. Звіт про виконання — до грудня 2026.",
+    "summary_en": "By Order No. 631-r of 24 June 2026, the Cabinet of Ministers approved the annual action plan for implementing Ukraine's Cybersecurity Strategy. The document covers ten directions — from building up cyber forces and combating cybercrime to talent development and cooperation with NATO and the EU. Reporting on implementation is due by December 2026.",
+    "body_uk": "## Ключові напрями плану\n\n1. **Кібервійська та операційна спроможність** — розвиток окремих військових структур за стандартами НАТО\n2. **Протидія кіберзлочинності** — посилення профільних підрозділів НПУ та СБУ\n3. **Захист критичної інфраструктури** — енергетика, телеком, фінансовий сектор\n4. **Безпечна розробка** — вимоги до бізнесу та держави щодо secure-by-design\n5. **Кіберграмотність держслужбовців** — навчальні програми, обов'язкові тренінги\n6. **Міжнародна кооперація** — інтеграція з ENISA (ЄС), участь у ініціативах НАТО CCD COE\n\n## Що це означає для OSINT-фахівців\n\nПоряд з класичним cyber-defense план прямо згадує розвіддані з відкритих джерел як частину екосистеми національної кібербезпеки. Це створює довгостроковий попит на профільних аналітиків у державному секторі.",
+    "body_en": "## Key directions of the plan\n\n1. **Cyber forces and operational capability** — development of dedicated military structures aligned with NATO standards\n2. **Cybercrime response** — strengthening specialised units within the National Police and SBU\n3. **Critical infrastructure protection** — energy, telecom, financial sector\n4. **Secure development** — requirements for business and the state on secure-by-design\n5. **Cyber literacy of civil servants** — training programmes, mandatory drills\n6. **International cooperation** — integration with ENISA (EU), participation in NATO CCD COE initiatives\n\n## What this means for OSINT professionals\n\nAlongside classical cyber-defence, the plan explicitly names open-source intelligence as part of the national cybersecurity ecosystem. This creates long-term demand for specialised analysts in the public sector.",
+    "published": true,
+    "cover": "/img/uploads/news/kabmin-plan-kiberbezpeky-2026.jpg",
+    "__slug": "kabmin-plan-kiberbezpeky-2026"
+  },
+  {
+    "title_uk": "Законопроєкт про Кіберсили ЗСУ №12349 готують до другого читання",
+    "title_en": "Cyber Forces of the Armed Forces of Ukraine — Bill No. 12349 heads to second reading",
+    "date": "2026-02-26T00:00:00.000Z",
+    "tag": "Законодавство · Кібероборона",
+    "tag_en": "Legislation · Cyber Defence",
+    "source": "LB.ua · Генштаб ЗСУ",
+    "source_url": "https://lb.ua/news/2026/02/26/724536_zakonoproiekt_pro_kibersili_zsu.html",
+    "summary_uk": "Генштаб ЗСУ разом з профільним комітетом ВРУ та Міноборони завершив доопрацювання законопроєкту №12349 про Кіберсили. Документ вводить у структурі ЗСУ окрему військову та технічну складову за стандартами НАТО — з завданнями кіберстримування, наступальних кібероперацій і захисту оборонних інфосистем.",
+    "summary_en": "The General Staff, together with the parliamentary committee and the Ministry of Defence, has finalised amendments to Bill No. 12349 on the Cyber Forces. The document establishes a dedicated military and technical structure within the Armed Forces of Ukraine, aligned with NATO standards — tasked with cyber deterrence, offensive cyber operations, and protection of defence information systems.",
+    "body_uk": "## Що вводить закон\n\n- **Окремий рід військ** у складі ЗСУ з централізованим командуванням\n- **Наступальні кібероперації** як штатне завдання (раніше — сіра зона)\n- **Стандарти НАТО** для доктрини, підготовки, взаємодії з союзниками\n- **Кар'єрна вертикаль** для військових кібер-фахівців — окремі звання, підвищення, атестація\n\n## Контекст\n\nДосі кібероборона держави була фрагментована між СБУ, Держспецзв'язку, кіберполіцією і різними підрозділами Міноборони. Закон робить ЗСУ основним оператором з наступального і оборонного кіберспроможностей.\n\n## Що це означає для галузі\n\nРозширення професії — окрема кар'єрна траєкторія для кіберфахівців у війську. OSINT як частина розвідувального забезпечення офіційно вбудовується в доктрину.",
+    "body_en": "## What the law introduces\n\n- **A dedicated service branch** within the Armed Forces of Ukraine with centralised command\n- **Offensive cyber operations** as a standing mission (previously a grey zone)\n- **NATO standards** for doctrine, training, and interoperability with allies\n- **Career vertical** for military cyber specialists — dedicated ranks, promotion, certification\n\n## Context\n\nUntil now, national cyber defence has been fragmented across the SBU, State Special Communications Service, cyber police, and various Ministry of Defence units. The law makes the Armed Forces the primary operator for both offensive and defensive cyber capabilities.\n\n## What this means for the field\n\nProfession expansion — a dedicated career path for cyber specialists in uniform. OSINT, as part of intelligence support, is formally embedded in doctrine.",
+    "published": true,
+    "cover": "/img/uploads/news/kibersyly-zsu-zakonoproekt-2026.jpg",
+    "__slug": "kibersyly-zsu-zakonoproekt-2026"
   },
   {
     "title_uk": "Комітет ВРУ закликав українців вивчати OSINT-інструменти для перевірки інформації",
@@ -76,6 +140,22 @@
     "__slug": "osint-analitik-oficijna-profesija"
   },
   {
+    "title_uk": "OSINT for Ukraine: як міжнародна спільнота документує російські воєнні злочини",
+    "title_en": "OSINT for Ukraine: how the international community documents Russian war crimes",
+    "date": "2026-07-05T00:00:00.000Z",
+    "tag": "OSINT · Воєнні злочини",
+    "tag_en": "OSINT · War Crimes",
+    "source": "OSINT for Ukraine",
+    "source_url": "https://osintforukraine.com/",
+    "summary_uk": "Міжнародна ініціатива OSINT for Ukraine продовжує масштабну роботу з документування воєнних злочинів РФ через відкриті джерела. У фокусі 2026 року — незаконне переміщення українських дітей до Росії, обхід санкцій, ідентифікація конкретних виконавців. Матеріали передаються до Європолу, МКС та Спеціального трибуналу з агресії.",
+    "summary_en": "The international OSINT for Ukraine initiative continues its large-scale documentation of Russian war crimes through open sources. The 2026 focus: illegal transfer of Ukrainian children to Russia, sanctions evasion, and identification of specific perpetrators. Findings are handed to Europol, the ICC, and the Special Tribunal for Aggression.",
+    "body_uk": "## Що робить проєкт\n\nOSINT for Ukraine — це волонтерська мережа аналітиків з Європи та Північної Америки. Основні напрями:\n\n- **Ідентифікація виконавців** — офіцери та рядові РФ, які фігурують у злочинах у Бучі, Ізюмі, Маріуполі\n- **Депортація дітей** — верифікація маршрутів переміщення, ідентифікація «прийомних сімей» у РФ, картування системи «евакуацій»\n- **Обхід санкцій** — корпоративні ланцюги, підставні реєстрації, схеми паралельного імпорту\n- **Криза дезінформації** — деконструкція наративів кремлівської пропаганди у медіа третіх країн\n\n## Куди йдуть матеріали\n\nЄвропол відкрив у 2023 році окрему OSINT-таксфорс саме для координації з волонтерськими проєктами такого типу. Матеріали також ідуть у Міжнародний центр з переслідування злочину агресії проти України (ICPA) та готуються для майбутнього спеціального трибуналу.\n\n## Чому це важливо\n\nЦе один з найкращих прикладів у світі того, як розподілена OSINT-спільнота бере на себе функції, які раніше могли виконувати лише державні розвідки.",
+    "body_en": "## What the project does\n\nOSINT for Ukraine is a volunteer network of analysts from Europe and North America. Main directions:\n\n- **Perpetrator identification** — Russian officers and enlisted personnel linked to crimes in Bucha, Izium, Mariupol\n- **Child deportation** — verification of transfer routes, identification of \"foster families\" in Russia, mapping the \"evacuation\" system\n- **Sanctions evasion** — corporate chains, shell registrations, parallel-import schemes\n- **Disinformation crisis** — deconstruction of Kremlin propaganda narratives in third-country media\n\n## Where the findings go\n\nEuropol opened a dedicated OSINT taskforce in 2023 specifically to coordinate with volunteer projects of this kind. Materials also go to the International Centre for the Prosecution of the Crime of Aggression against Ukraine (ICPA) and are being prepared for the future Special Tribunal.\n\n## Why it matters\n\nThis is one of the world's best examples of a distributed OSINT community taking on functions that previously could only be performed by state intelligence services.",
+    "published": true,
+    "cover": "/img/uploads/news/osint-for-ukraine-war-crimes-2026.jpg",
+    "__slug": "osint-for-ukraine-war-crimes-2026"
+  },
+  {
     "title_uk": "«Школа OSINT» на Дія.Освіта — безкоштовний освітній серіал від Мінцифри",
     "title_en": "'OSINT School' on Diia.Education — free educational series from the Ministry of Digital Transformation",
     "date": "2026-07-10T00:00:00.000Z",
@@ -89,5 +169,21 @@
     "published": true,
     "cover": "/img/uploads/news/shkola-osint-diia-osvita.jpg",
     "__slug": "shkola-osint-diia-osvita"
+  },
+  {
+    "title_uk": "Trace Labs провів другий у 2026 глобальний OSINT Search Party CTF",
+    "title_en": "Trace Labs holds second Global OSINT Search Party CTF of 2026",
+    "date": "2026-06-14T00:00:00.000Z",
+    "tag": "OSINT · Community · CTF",
+    "tag_en": "OSINT · Community · CTF",
+    "source": "Trace Labs",
+    "source_url": "https://www.tracelabs.org/initiatives/search-party",
+    "summary_uk": "Trace Labs провів другий глобальний CTF 2026 року — командне змагання, у якому OSINT-дослідники з усього світу генерують нові зачіпки у справах реальних зниклих безвісти людей. Зібрані під час CTF розвіддані передаються правоохоронним органам. Формат — команди по 4 особи, 6 годин, дефіцитний час, реальні кейси.",
+    "summary_en": "Trace Labs held its second Global CTF of 2026 — a team competition in which OSINT researchers worldwide generate new leads on real missing-persons cases. Intelligence gathered during the CTF is passed to law enforcement. Format: 4-person teams, 6 hours, time pressure, real cases.",
+    "body_uk": "## Що це\n\nТrace Labs — некомерційна організація, яка з 2018 року поєднує спільноту OSINT-дослідників з правоохоронними органами для пошуку зниклих. Її Search Party CTF — це геймифікований формат, у якому кожен виконаний flag (fresh contact, additional social profile, last-seen location) реально йде в справу.\n\n## Чому це важливо для OSINT-спільноти\n\n- Стандарт індустрії — багато сучасних методик перевірки username і pivoting з'явилися саме у CTF-звітах учасників\n- Етичний плацдарм — усі дані з відкритих джерел, суворі правила щодо контакту з рідними\n- Розсадник кадрів — рекрутери приватних розвід-платформ моніторять топ-10 команд\n\n## Як долучитись\n\nЗвичайно 2–3 глобальних CTF на рік + локальні DEF CON-edition і партнерські з CTFTime. Реєстрація — на офіційному сайті.",
+    "body_en": "## What it is\n\nTrace Labs is a non-profit that since 2018 has bridged the OSINT research community with law enforcement to find missing persons. Its Search Party CTF is a gamified format in which every completed flag (fresh contact, additional social profile, last-seen location) genuinely goes into the case file.\n\n## Why it matters for the OSINT community\n\n- Industry standard — many modern username-verification and pivoting techniques first appeared in participant CTF write-ups\n- Ethical proving ground — all data from open sources, strict rules on contact with relatives\n- Talent pipeline — private intelligence-platform recruiters watch the top 10 teams\n\n## How to join\n\nTypically 2–3 global CTFs per year + local DEF CON editions and CTFTime partnerships. Registration on the official site.",
+    "published": true,
+    "cover": "/img/uploads/news/trace-labs-global-ctf-2026.jpg",
+    "__slug": "trace-labs-global-ctf-2026"
   }
 ]

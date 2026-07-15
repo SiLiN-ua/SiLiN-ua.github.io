@@ -1,0 +1,15 @@
+{
+  "title_uk": "Кабмін затвердив план заходів з реалізації Стратегії кібербезпеки України на 2026",
+  "title_en": "Ukraine's Cabinet approves 2026 Cybersecurity Strategy action plan",
+  "date": "2026-06-24T00:00:00.000Z",
+  "tag": "Законодавство · Кібербезпека",
+  "tag_en": "Legislation · Cybersecurity",
+  "source": "Кабінет Міністрів України · Розпорядження №631-р",
+  "source_url": "https://zakon.rada.gov.ua/laws/show/631-2026-%D1%80",
+  "summary_uk": "Розпорядженням №631-р від 24 червня 2026 Кабмін затвердив річний план заходів з реалізації Стратегії кібербезпеки України. Документ покриває десять напрямів — від розбудови кібервійськ і протидії кіберзлочинності до розвитку кадрового потенціалу і співпраці з НАТО та ЄС. Звіт про виконання — до грудня 2026.",
+  "summary_en": "By Order No. 631-r of 24 June 2026, the Cabinet of Ministers approved the annual action plan for implementing Ukraine's Cybersecurity Strategy. The document covers ten directions — from building up cyber forces and combating cybercrime to talent development and cooperation with NATO and the EU. Reporting on implementation is due by December 2026.",
+  "body_uk": "## Ключові напрями плану\n\n1. **Кібервійська та операційна спроможність** — розвиток окремих військових структур за стандартами НАТО\n2. **Протидія кіберзлочинності** — посилення профільних підрозділів НПУ та СБУ\n3. **Захист критичної інфраструктури** — енергетика, телеком, фінансовий сектор\n4. **Безпечна розробка** — вимоги до бізнесу та держави щодо secure-by-design\n5. **Кіберграмотність держслужбовців** — навчальні програми, обов'язкові тренінги\n6. **Міжнародна кооперація** — інтеграція з ENISA (ЄС), участь у ініціативах НАТО CCD COE\n\n## Що це означає для OSINT-фахівців\n\nПоряд з класичним cyber-defense план прямо згадує розвіддані з відкритих джерел як частину екосистеми національної кібербезпеки. Це створює довгостроковий попит на профільних аналітиків у державному секторі.",
+  "body_en": "## Key directions of the plan\n\n1. **Cyber forces and operational capability** — development of dedicated military structures aligned with NATO standards\n2. **Cybercrime response** — strengthening specialised units within the National Police and SBU\n3. **Critical infrastructure protection** — energy, telecom, financial sector\n4. **Secure development** — requirements for business and the state on secure-by-design\n5. **Cyber literacy of civil servants** — training programmes, mandatory drills\n6. **International cooperation** — integration with ENISA (EU), participation in NATO CCD COE initiatives\n\n## What this means for OSINT professionals\n\nAlongside classical cyber-defence, the plan explicitly names open-source intelligence as part of the national cybersecurity ecosystem. This creates long-term demand for specialised analysts in the public sector.",
+  "published": true,
+  "cover": "/img/uploads/news/kabmin-plan-kiberbezpeky-2026.jpg"
+}

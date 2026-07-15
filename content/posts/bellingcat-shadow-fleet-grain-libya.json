@@ -1,0 +1,15 @@
+{
+  "title_uk": "Bellingcat відстежив «тіньовий флот» РФ: викрадене українське зерно дійшло до Лівії",
+  "title_en": "Bellingcat tracks Russia's shadow fleet: stolen Ukrainian grain reached Libya",
+  "date": "2026-06-12T00:00:00.000Z",
+  "tag": "OSINT · GEOINT · Санкції",
+  "tag_en": "OSINT · GEOINT · Sanctions",
+  "source": "Bellingcat",
+  "source_url": "https://www.bellingcat.com/news/2026/06/12/shadow-fleet-russian-grain-stolen-ukraine-libya-ais-technique-grumant/",
+  "summary_uk": "Розслідувачі задокументували балкер Grumant, який 15 лютого 2026 завантажився зерном у окупованій Феодосії та 18 квітня прибув до Бенгазі в Лівії. Це вже другий підтверджений випадок постачання «краденого» українського зерна з окупованих територій до Лівії. Ключова інновація — нова методика аналізу AIS-даних напрямку руху, яка дозволяє відновити маршрут навіть коли GPS-сигнал глушиться.",
+  "summary_en": "Investigators documented the bulk carrier Grumant loading grain at occupied Feodosia on 15 February 2026 and arriving in Benghazi, Libya on 18 April. This is the second confirmed case of grain from occupied Ukrainian territory being delivered to Libya. The key innovation: a new technique for analysing AIS heading data that allows the vessel's route to be reconstructed even when the GPS signal is jammed.",
+  "body_uk": "## Методика\n\nКоли трекери спуфляться або глушаться, класична AIS-геолокація стає ненадійною. Команда Bellingcat використала **дані напрямку носа судна (heading)** — які часто передаються навіть при спотвореному GPS — і реконструювала маршрут через тригонометрію та зіставлення з супутниковими знімками портів.\n\n## Ланцюжок\n\n- 15 лютого — завантаження у Феодосії (окупований Крим)\n- 23 лютого — Ізмір, Туреччина: судно стало на якір, у порт не заходило\n- 13 березня — залишає рейд Ізміру\n- 18 квітня — прибуття до Бенгазі, Лівія\n\n## Значення\n\nМетодика годиться для будь-яких санкційних кейсів, де супротивник глушить AIS. Це готовий інструментарій для правоохоронців ЄС і команд документування воєнних злочинів.",
+  "body_en": "## The method\n\nWhen trackers are spoofed or jammed, classical AIS geolocation becomes unreliable. The Bellingcat team used **vessel heading data** — often still transmitted even with distorted GPS — and reconstructed the route through trigonometry and cross-referencing with satellite imagery of ports.\n\n## The chain\n\n- 15 February — loading at Feodosia (occupied Crimea)\n- 23 February — Izmir, Turkey: vessel anchors, does not enter port\n- 13 March — leaves the Izmir roadstead\n- 18 April — arrival in Benghazi, Libya\n\n## Significance\n\nThe method applies to any sanctions case where the adversary jams AIS. It's ready-to-use tooling for EU law enforcement and war-crimes documentation teams.",
+  "published": true,
+  "cover": "/img/uploads/news/bellingcat-shadow-fleet-grain-libya.jpg"
+}

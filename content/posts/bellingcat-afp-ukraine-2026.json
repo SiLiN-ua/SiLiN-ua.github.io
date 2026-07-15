@@ -1,0 +1,15 @@
+{
+  "title_uk": "Bellingcat + AFP: спільні OSINT-розслідування війни в Україні",
+  "title_en": "Bellingcat + AFP: joint OSINT investigations into the war in Ukraine",
+  "date": "2026-05-28T00:00:00.000Z",
+  "tag": "OSINT · Розслідування",
+  "tag_en": "OSINT · Investigations",
+  "source": "EDMO · Bellingcat · AFP",
+  "source_url": "https://edmo.eu/blog/afp-and-bellingcat-combining-osint-and-field-reporting-in-ukraine/",
+  "summary_uk": "Bellingcat разом з AFP випустили серію з трьох великих матеріалів, що поєднують супутникову зйомку, аналіз соцмереж і публічних наборів даних з польовою журналістикою. Тематика: руйнування Вовчанська, забруднення української території мінами та наслідки війни для дітей і підлітків.",
+  "summary_en": "Bellingcat and AFP released three long-form reports combining satellite imagery, social-media analysis, and public datasets with on-the-ground journalism. Topics: the destruction of Vovchansk, landmine contamination of Ukrainian territory, and the war's impact on Ukrainian youth.",
+  "body_uk": "## Що зроблено\n\nПартнерство побудоване на розподілі ролей: AFP забезпечує поле — інтерв'ю, свідчення, фотофіксацію. Bellingcat — верифікацію через супутникові знімки Planet Labs і Maxar, аналіз відкритих датасетів, геолокацію та крос-перевірку відео з соцмереж.\n\n## Три матеріали\n\n- **Вовчанськ** — покадрове документування знищення міста через до/після супутникові знімки\n- **Мінна забрудненість** — оцінка масштабу мінних полів на деокупованих територіях\n- **Діти війни** — довгостроковий вплив вторгнення на українську молодь\n\n## Чому це важливо\n\nМодель AFP × Bellingcat стала референсом для інших редакцій. Вона показує, що OSINT — це не альтернатива класичній журналістиці, а її обов'язковий шар верифікації.",
+  "body_en": "## What was done\n\nThe partnership is built on a division of roles: AFP provides the ground — interviews, testimonies, photo documentation. Bellingcat provides verification through Planet Labs and Maxar satellite imagery, open-dataset analysis, geolocation, and cross-verification of social-media video.\n\n## Three reports\n\n- **Vovchansk** — frame-by-frame documentation of the city's destruction via before/after satellite imagery\n- **Landmine contamination** — assessing the scale of minefields on de-occupied territory\n- **Children of war** — long-term impact of the invasion on Ukrainian youth\n\n## Why it matters\n\nThe AFP × Bellingcat model has become a reference for other newsrooms. It shows that OSINT is not an alternative to traditional journalism, but a required verification layer.",
+  "published": true,
+  "cover": "/img/uploads/news/bellingcat-afp-ukraine-2026.jpg"
+}
