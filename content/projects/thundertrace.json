@@ -1,0 +1,39 @@
+{
+  "name": "ThunderTrace",
+  "subtitle_uk": "Пошук username по 350+ платформах одночасно",
+  "subtitle_en": "OSINT username intelligence tool — search across 350+ platforms",
+  "tag": "OSINT · Username Enumeration",
+  "year": 2026,
+  "lang": "Python · Flask · JavaScript",
+  "license": "MIT",
+  "live_url": "",
+  "repo_url": "https://github.com/SiLiN-ua/ThunderTrace",
+  "cover": "/img/uploads/projects/thundertrace-screen1.png",
+  "screenshots": [
+    "/img/uploads/projects/thundertrace-screen1.png",
+    "/img/uploads/projects/thundertrace-screen2.png",
+    "/img/uploads/projects/thundertrace-screen3.png"
+  ],
+  "description_uk": "Open-source інструмент для одночасного пошуку username по **350+ платформах** — соцмережі, ігрові сервіси, dev-спільноти, dating-додатки, крипто, CIS/Ukraine-specific сервіси. Показує знайдені профілі на світовій мапі, оцінює confidence-рівень кожного результату. Генерує варіації username автоматично. Підтримка EN / UK / RU інтерфейсів.",
+  "description_en": "Open-source tool for searching a username across **350+ platforms** simultaneously — social media, gaming, dev communities, dating apps, crypto, CIS/Ukraine-specific services. Displays found profiles on a world map with per-result confidence levels. Auto-generates username variations. EN / UK / RU interface support.",
+  "features_uk": [
+    "Пошук по 350+ платформах у реальному часі",
+    "Візуалізація знайдених профілів на світовій мапі",
+    "Confidence-рівні для кожного результату",
+    "Автогенерація варіацій username",
+    "Експорт: JSON · CSV · HTML · PDF",
+    "Додавання власних платформ",
+    "Мови інтерфейсу: EN · UK · RU"
+  ],
+  "features_en": [
+    "Real-time search across 350+ platforms",
+    "Found profiles visualised on a world map",
+    "Per-result confidence levels",
+    "Auto-generated username variations",
+    "Export: JSON · CSV · HTML · PDF",
+    "Add your own custom platforms",
+    "Interface languages: EN · UK · RU"
+  ],
+  "order": 3,
+  "published": true
+}

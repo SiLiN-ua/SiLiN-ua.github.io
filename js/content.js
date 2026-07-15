@@ -577,5 +577,52 @@
     if (uaOnly) uaOnly.addEventListener('change', applyFilter);
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack };
+  function renderProjectCard(item) {
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const name = escapeHtml(item.name || '');
+    const subtitle = escapeHtml(tr(item, 'subtitle') || '');
+    const tag = escapeHtml(item.tag || '');
+    const year = escapeHtml(item.year || '');
+    const lang = escapeHtml(item.lang || '');
+    const license = escapeHtml(item.license || '');
+    const desc = escapeHtml(tr(item, 'description') || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const cover = item.cover ? `<div class="proj__hero"><img src="${escapeHtml(item.cover)}" alt="${name}" loading="lazy"></div>` : '';
+    const shots = (item.screenshots || []).slice(1).map(s => `<div class="proj__shot"><img src="${escapeHtml(s)}" alt="" loading="lazy"></div>`).join('');
+    const features = (tr(item, 'features') || item.features_uk || []).map(f => `<li>${escapeHtml(f)}</li>`).join('');
+    const featLbl = escapeHtml(dict['projects.features'] || 'Ключові можливості');
+    const btnRepo = item.repo_url ? `<a href="${escapeHtml(item.repo_url)}" target="_blank" rel="noopener" class="btn">${escapeHtml(dict['projects.repo'] || 'GitHub ↗')}</a>` : '';
+    const btnLive = item.live_url ? `<a href="${escapeHtml(item.live_url)}" target="_blank" rel="noopener" class="btn btn--filled">${escapeHtml(dict['projects.live'] || 'Live demo ↗')}</a>` : '';
+    return `
+      <article class="proj">
+        ${cover}
+        <div class="proj__body">
+          <div class="proj__head">
+            <div>
+              <div class="card__tag">${tag}</div>
+              <h2 class="proj__name">${name}</h2>
+              <p class="proj__sub">${subtitle}</p>
+            </div>
+            <div class="proj__meta">
+              ${year ? `<div class="proj__meta-row"><span>Рік</span>${year}</div>` : ''}
+              ${lang ? `<div class="proj__meta-row"><span>Стек</span>${lang}</div>` : ''}
+              ${license ? `<div class="proj__meta-row"><span>Ліцензія</span>${license}</div>` : ''}
+            </div>
+          </div>
+          <p class="proj__desc">${desc}</p>
+          ${features ? `<div class="proj__features"><h4>${featLbl}</h4><ul>${features}</ul></div>` : ''}
+          <div class="proj__actions">${btnLive}${btnRepo}</div>
+          ${shots ? `<div class="proj__shots">${shots}</div>` : ''}
+        </div>
+      </article>`;
+  }
+
+  async function renderProjects(targetSelector) {
+    const items = await listCollection('projects');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (!items.length) { target.innerHTML = `<p class="center" style="color:var(--text-mute)">Поки що порожньо.</p>`; return; }
+    target.innerHTML = items.map(renderProjectCard).join('');
+  }
+
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects };
 })();

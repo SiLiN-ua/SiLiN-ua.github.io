@@ -1,0 +1,39 @@
+{
+  "name": "KagamiID",
+  "subtitle_uk": "OSINT-платформа ідентифікації · Every shadow has a name",
+  "subtitle_en": "OSINT Identity Lookup Platform · Every shadow has a name",
+  "tag": "OSINT · Identity Attribution",
+  "year": 2026,
+  "lang": "Python · Flask · Vanilla JS · Canvas 2D",
+  "license": "MIT",
+  "live_url": "https://kagamiid.onrender.com",
+  "repo_url": "https://github.com/SiLiN-ua/KagamiID",
+  "cover": "/img/uploads/projects/kagamiid-splash.png",
+  "screenshots": [
+    "/img/uploads/projects/kagamiid-splash.png",
+    "/img/uploads/projects/kagamiid-search.png",
+    "/img/uploads/projects/kagamiid-dorks.png"
+  ],
+  "description_uk": "Open-source OSINT-платформа для швидкої ідентифікації по username, numeric ID, email. Пошук по **15 платформах** одночасно: GitHub, Reddit, VK, YouTube, Steam, Bluesky, TikTok, Facebook, Instagram, Twitter/X, Twitch, Pinterest, DeviantArt, Patreon, OK.ru. Ключова фіча — **VK FOAF XML enrichment**, який працює навіть по закритих/видалених профілях. Ротація User-Agent проти блокувань IP, ротація Instagram/OK.ru сесій. Автогенерація OSINT-дорків. Експорт у JSON, CSV, STIX 2.1.",
+  "description_en": "Open-source OSINT platform for fast identification by username, numeric ID, or email. Searches **15 platforms** simultaneously: GitHub, Reddit, VK, YouTube, Steam, Bluesky, TikTok, Facebook, Instagram, Twitter/X, Twitch, Pinterest, DeviantArt, Patreon, OK.ru. The signature feature is **VK FOAF XML enrichment**, which works even for closed or deleted profiles. User-Agent rotation to bypass IP blocks, Instagram/OK.ru session rotation. Automated OSINT-dork generation. Export to JSON, CSV, STIX 2.1.",
+  "features_uk": [
+    "Пошук username / ID по 15 платформах",
+    "VK FOAF enrichment (закриті профілі)",
+    "Автогенерація Google/Bing/DuckDuckGo дорків",
+    "Ротація UA + сесій проти rate-limit",
+    "Експорт: JSON · CSV · STIX 2.1",
+    "Японська естетика Ghost of Tsushima (сакура, місяць, зорі на Canvas)",
+    "Self-hosted · MIT · без БД"
+  ],
+  "features_en": [
+    "Username / ID search across 15 platforms",
+    "VK FOAF enrichment (closed profiles)",
+    "Auto-generated Google/Bing/DuckDuckGo dorks",
+    "UA + session rotation against rate limits",
+    "Export: JSON · CSV · STIX 2.1",
+    "Japanese Ghost of Tsushima aesthetic (sakura, moon, stars on Canvas)",
+    "Self-hosted · MIT · no database"
+  ],
+  "order": 1,
+  "published": true
+}
