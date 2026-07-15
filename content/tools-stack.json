@@ -2881,7 +2881,8 @@
           "title": "Аналіз стеганографії",
           "url": "https://www.aperisolve.com/",
           "real_title": "Aperi'Solve - Online Image Steganography Analyzer",
-          "description": "Free online steganography analysis: layer/bit-plane extraction plus zsteg, steghide, binwalk, exiftool, foremost, outguess and more on PNG, JPG, GIF, BMP, TIFF and WebP images."
+          "description": "Free online steganography analysis: layer/bit-plane extraction plus zsteg, steghide, binwalk, exiftool, foremost, outguess and more on PNG, JPG, GIF, BMP, TIFF and WebP images.",
+          "description_uk": "Безкоштовний онлайн-аналіз стеганографії: видобуток шару/бітової площини плюс zsteg, steghide, binwalk, exiftool, передусім, перевершення та багато іншого на зображеннях PNG, JPG, GIF, BMP, tiff та WebP."
         },
         {
           "title": "Анализ фото метаданные судебная экспертиза",
@@ -2991,7 +2992,8 @@
           "title": "ВебКамеры по миру",
           "url": "https://www.feratel.com/en/webcams-by-topic",
           "real_title": "Webcams by theme - Highlights, FlyingCams & Panoramas | feratel",
-          "description": "Discover feratel"
+          "description": "Discover feratel",
+          "description_uk": "Відкрийте для себе FERATEL"
         },
         {
           "title": "Пряматая трансляция с африки зоопарки",
@@ -3449,7 +3451,8 @@
           "title": "HACKTORIA - OSINT CTF",
           "url": "https://hacktoria.com/",
           "real_title": "HACKTORIA",
-          "description": "OSINT Capture The Flag Events"
+          "description": "OSINT Capture The Flag Events",
+          "description_uk": "OSINT Захоплення подій прапора"
         },
         {
           "title": "Maltego Community OSINT CTF",

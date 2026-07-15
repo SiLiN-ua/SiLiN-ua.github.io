@@ -26,6 +26,7 @@
     "summary_en": "The Ukrainian Parliament's Committee on Digital Transformation has issued a public call for citizens to learn to verify information and analyse data using OSINT tools. The Committee stresses that OSINT is not only an intelligence method but also a means of defending against disinformation — critical in the context of information warfare — and recommends free educational resources accessible to everyone.",
     "body_uk": "## Меседж комітету\n\nЗахист від дезінформації — не задача лише спецслужб. У сучасному інформаційному середовищі кожен громадянин має вміти хоча б базово перевіряти першоджерела, зображення та контекст новин. Комітет позиціонує OSINT-грамотність як елемент цифрової безпеки нації.\n\n## Практична складова\n\nУ заяві згадуються безкоштовні онлайн-курси на державних та громадських платформах, вебінари, довідники. Мета — щоб кожен активний користувач мережі мав базовий інструментарій верифікації.",
     "published": true,
+    "cover": "/img/uploads/news/komitet-vru-osint-instrumenty.jpg",
     "__slug": "komitet-vru-osint-instrumenty"
   },
   {
@@ -55,6 +56,7 @@
     "summary_en": "Ukraine's National Agency on Civil Service (NAUCS) has officially recommended that public servants and HR services take the free online course 'OSINT — Intelligence from Open Sources and Information Security' on the Prometheus platform. Completion earns a certificate that counts toward mandatory professional development — a step toward mass adoption of OSINT competencies in the public sector.",
     "body_uk": "## Хто це стосується\n\nПерш за все — публічних службовців рівня категорії А, Б, В, а також кадровиків, які проводять перевірки кандидатів на посади. Курс включено до переліку рекомендованих програм підвищення кваліфікації.\n\n## Що всередині\n\nОснови OSINT, робота з відкритими реєстрами, інформаційна безпека у щоденній діяльності, розпізнавання дезінформації. Формат — самостійне проходження, тести, підсумковий сертифікат.\n\n## Контекст\n\nДержавний сектор давно потребував базових OSINT-навичок — від перевірки контрагентів на тендерах до фонових перевірок кандидатів. Ця ініціатива закриває первинний розрив у грамотності.",
     "published": true,
+    "cover": "/img/uploads/news/nads-osint-navchannia-derzhsluzhbovtsiv.jpg",
     "__slug": "nads-osint-navchannia-derzhsluzhbovtsiv"
   },
   {
@@ -70,6 +72,7 @@
     "body_uk": "## Що змінюється\n\nПоява офіційного профстандарту — це не просто папірець. Це фундамент для трьох речей одночасно:\n\n- **Освіта.** Університети та центри перекваліфікації тепер можуть будувати навчальні програми на визнаній державою рамці компетенцій.\n- **Наймання.** Роботодавці — від оборонного сектору до великого бізнесу та комплаєнсу — отримують чіткий перелік того, що людина з посадою «OSINT-аналітик» повинна вміти.\n- **Кар'єра.** Аналітики можуть бути внесені у трудові книжки під офіційною назвою професії, а не під розмитими формулюваннями типу «спеціаліст з інформації».\n\n## Хто стояв за розробкою\n\nПроєкт готувала НА СБУ разом із науковцями та практиками інших установ сектору безпеки і оборони, а також представниками громадських організацій, що займаються OSINT-розслідуваннями. Громадське обговорення проєкту завершилось у травні 2026 року.\n\n## Що це означає для галузі\n\nУкраїна — країна, де OSINT став критичною інфраструктурою під час повномасштабної війни. Визнання професії — логічний крок після трьох років напрацювань спільноти. Тепер аналітика перестає бути «сірою зоною» і стає повноцінним фахом з чіткими правилами гри.",
     "body_en": "## What changes\n\nAn official professional standard is more than paperwork. It lays the foundation for three things at once: education (universities can now build programmes on a state-recognised competency framework), hiring (employers get a clear checklist of what an 'OSINT analyst' should be able to do), and career development (analysts can be officially recorded in employment records under the professional title).\n\n## Who built it\n\nThe project was drafted by the National Academy of the Security Service of Ukraine together with academics and practitioners from other security-sector institutions and OSINT-focused civil society organisations. Public consultation concluded in May 2026.\n\n## Why this matters for the field\n\nUkraine is a country where OSINT has become critical infrastructure during the full-scale war. Recognising the profession is a logical step after three years of community work. Analytics is no longer a grey zone — it is now a full profession with clear rules.",
     "published": true,
+    "cover": "/img/uploads/news/osint-analitik-oficijna-profesija.jpg",
     "__slug": "osint-analitik-oficijna-profesija"
   },
   {
@@ -84,6 +87,7 @@
     "summary_en": "The state platform Diia.Education is running a free five-episode series 'OSINT School', produced on the initiative of the Ministry of Digital Transformation. Hosts include Dmytro Zolotukhin (author of OSINT Academy) and Dmytro Odnokoz (developer of OSINT technical solutions). After completing the course, viewers can verify online information, recognise fakes, recover deleted pages from archives, and search for information about people on social media.",
     "body_uk": "## Про курс\n\nЦе перший OSINT-курс, вбудований у державну освітню платформу. Формат серіальний — короткі епізоди, приклади з реальних розслідувань. Курс розрахований на широку аудиторію: журналістів, HR-фахівців, працівників комплаєнсу, звичайних громадян, які хочуть навчитись перевіряти інформацію в мережі.\n\n## Що дає\n\n- Розуміння базових OSINT-технік (пошук за іменем, зображенням, номером телефону)\n- Робота з архівами Wayback Machine\n- Верифікація фейків та маніпуляцій\n- Пошук інформації в соцмережах у межах чинного законодавства\n\n## Чому це важливо\n\nОсвітня ініціатива державного рівня — це системний сигнал: OSINT перестав бути нішевим навичком силовиків. Тепер це базова грамотність цифрової епохи.",
     "published": true,
+    "cover": "/img/uploads/news/shkola-osint-diia-osvita.jpg",
     "__slug": "shkola-osint-diia-osvita"
   }
 ]
