@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="alternate" type="application/rss+xml" title="OSINT-новини" href="/feed.xml">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_UMAMI_WEBSITE_ID"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -58,6 +60,10 @@
         <h2>OSINT-стек</h2>
         <p>Мій робочий набір посилань та інструментів, згрупований за категоріями. Пошук працює по назвах і категоріях.</p>
       </div>
+      <label style="display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-dim);cursor:pointer;margin-bottom:1.5rem">
+        <input type="checkbox" id="ua-only" style="width:16px;height:16px;accent-color:var(--ice)">
+        <span data-i18n="tools.uaOnly">Тільки з українським описом</span>
+      </label>
       <div id="tools-stack"></div>
     </div>
   </section>

@@ -99,6 +99,11 @@
       </div>`;
   }
 
+  function readingTime(text) {
+    const words = (text || '').trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 200));
+  }
+
   function renderArticle(item) {
     const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const title = escapeHtml(tr(item, 'title'));
@@ -106,6 +111,10 @@
     const date  = escapeHtml(fmtDate(item.date));
     const body  = tr(item, 'body') || tr(item, 'summary');
     const bodyHtml = window.marked ? window.marked.parse(body || '') : escapeHtml(body).replace(/\n/g, '<br>');
+    const mins = readingTime(body);
+    const readLbl = escapeHtml(dict['article.readTime'] || 'хв читання');
+    const copyLbl = escapeHtml(dict['article.copyLink'] || 'Скопіювати посилання');
+    const copiedLbl = escapeHtml(dict['article.linkCopied'] || 'Скопійовано ✓');
     const cover  = item.cover
       ? `<figure class="prose__hero"><img src="${escapeHtml(item.cover)}" alt=""></figure>`
       : '';
@@ -124,6 +133,10 @@
       <div class="article-meta">
         ${tag ? `<span class="eyebrow">${tag}${date ? ' · ' + date : ''}</span>` : (date ? `<span class="eyebrow">${date}</span>` : '')}
         <h1>${title}</h1>
+        <div class="article-utils">
+          <span class="article-utils__time">⧗ ${mins} ${readLbl}</span>
+          <button class="article-utils__copy" data-copy="${escapeHtml(location.href)}" data-label="${copyLbl}" data-done="${copiedLbl}">📋 ${copyLbl}</button>
+        </div>
       </div>
       ${cover}
       ${source}
@@ -480,8 +493,9 @@
       const name = (lang === 'uk' ? (l.title_uk || l.real_title || l.title) : (l.real_title || l.title)) || host;
       const desc = (lang === 'uk' ? (l.description_uk || l.description) : (l.description_en || l.description)) || l.title || '';
       const searchStr = (name + ' ' + desc + ' ' + host).toLowerCase();
+      const hasUk = !!l.description_uk;
       return `
-        <tr class="stack__row" data-search="${escapeHtml(searchStr)}">
+        <tr class="stack__row" data-search="${escapeHtml(searchStr)}" data-has-uk="${hasUk ? '1' : '0'}">
           <td class="stack__name">${escapeHtml(name)}</td>
           <td class="stack__desc">${escapeHtml(desc)}</td>
           <td class="stack__link">
@@ -537,24 +551,30 @@
     target.innerHTML = html;
 
     const input = target.querySelector('#stack-search');
-    input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
+    const uaOnly = document.getElementById('ua-only');
+    const applyFilter = () => {
+      const q = (input.value || '').trim().toLowerCase();
+      const ua = !!(uaOnly && uaOnly.checked);
       target.querySelectorAll('.stack__cat').forEach(cat => {
         const catTitle = cat.dataset.catTitle;
         const catMatch = catTitle.includes(q);
         let anyVisible = false;
         cat.querySelectorAll('tr.stack__row').forEach(row => {
-          const match = !q || catMatch || row.dataset.search.includes(q);
+          const searchMatch = !q || catMatch || row.dataset.search.includes(q);
+          const uaMatch = !ua || row.dataset.hasUk === '1';
+          const match = searchMatch && uaMatch;
           row.style.display = match ? '' : 'none';
           if (match) anyVisible = true;
         });
-        cat.style.display = (!q || anyVisible) ? '' : 'none';
+        cat.style.display = anyVisible ? '' : 'none';
       });
       target.querySelectorAll('.stack__group').forEach(g => {
         const anyVisible = Array.from(g.querySelectorAll('.stack__cat')).some(c => c.style.display !== 'none');
         g.style.display = anyVisible ? '' : 'none';
       });
-    });
+    };
+    input.addEventListener('input', applyFilter);
+    if (uaOnly) uaOnly.addEventListener('change', applyFilter);
   }
 
   window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack };

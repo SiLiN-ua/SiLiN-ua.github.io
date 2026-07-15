@@ -99,6 +99,24 @@
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
 
+  function initCopyLink() {
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+      e.preventDefault();
+      const url = btn.dataset.copy || location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        const orig = btn.textContent;
+        btn.textContent = '✓ ' + (btn.dataset.done || 'Copied');
+        btn.classList.add('done');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('done'); }, 1800);
+      } catch (err) {
+        console.warn('copy failed', err);
+      }
+    });
+  }
+
   function initLightbox() {
     let lb;
     function ensureLb() {
@@ -143,6 +161,7 @@
     initBurger();
     initReveal();
     initLightbox();
+    initCopyLink();
     markActiveNav();
   }
 

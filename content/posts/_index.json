@@ -11,6 +11,7 @@
     "summary_en": "IT Arena — Eastern Europe's largest tech conference — has for the first time given OSINT a dedicated panel in 2026, titled 'Online Security: How to Use OSINT for the Benefit of Ukraine'. Speakers discuss the role of open sources in documenting war crimes, fighting disinformation, and protecting critical infrastructure — a sign that OSINT has entered the country's mainstream tech agenda.",
     "body_uk": "## Про панель\n\nФормат — відкрита дискусія за участі представників приватних OSINT-команд, державного сектору та громадських розслідувальних платформ. Теми: етика розслідувань під час війни, ліміти використання персональних даних, кооперація між приватним та державним сектором.\n\n## Чому це важливо\n\nIT Arena — головна індустріальна подія українського айті. Наявність OSINT-панелі означає, що галузь визнає його не як екзотику, а як напрямок з попитом на кадри, інвестиції та інфраструктуру.",
     "published": true,
+    "cover": "/img/uploads/news/it-arena-2026-osint-panel.jpg",
     "__slug": "it-arena-2026-osint-panel"
   },
   {
@@ -39,6 +40,7 @@
     "summary_en": "Ukraine's Molfar Intelligence Institute continues publishing investigations of Russian war crimes as of July 2026. The team uses OSINT methodologies to identify perpetrators, locate military units, document episodes of violence against civilians, and trace abducted children. Molfar is part of a global network of 19 OSINT teams documenting war crimes for international legal proceedings.",
     "body_uk": "## Що робить Molfar\n\nЗаснований у 2019 як приватне OSINT-агентство, після повномасштабного вторгнення Molfar переорієнтувався на документування воєнних злочинів, протидію російській пропаганді та підтримку українських розвідслужб. Команда розробила власні методики ідентифікації через комбінацію facial recognition, аналізу соцмереж та геолокації.\n\n## Значущі кейси\n\n- Ідентифікація російських військових, причетних до злочинів у Бучі\n- Локалізація місць утримання викрадених українських дітей\n- Виявлення позицій російських підрозділів через фейкові профілі знайомств\n- Складання санкційних досьє на впливових осіб\n\n## Мережа\n\nMolfar діє у складі широкої OSINT-екосистеми: щонайменше 6 юридичних фірм, 9 академічних хабів, 19 інвестигативних команд (Bellingcat, Berkeley HRC, OSINT For Ukraine та інші), 17 IT-проєктів та 39 громадських організацій.",
     "published": true,
+    "cover": "/img/uploads/news/molfar-nove-rozsliduvannia-2026.jpg",
     "__slug": "molfar-nove-rozsliduvannia-2026"
   },
   {

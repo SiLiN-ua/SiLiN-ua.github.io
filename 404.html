@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Тінь загубилась · Єгор Селін</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .lost { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; position: relative; z-index: 2; }
+  .lost__inner { max-width: 640px; }
+  .lost__code {
+    font-family: var(--font-serif);
+    font-size: clamp(6rem, 18vw, 12rem);
+    line-height: 1;
+    color: var(--ice);
+    text-shadow: 0 0 40px rgba(74,158,255,.4);
+    letter-spacing: -.05em;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .lost h1 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 1.25rem; }
+  .lost p { color: var(--text-dim); font-size: 1.05rem; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .lost__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .lost__quote { margin-top: 4rem; font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: var(--steel-hi); opacity: .7; }
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<nav class="nav">
+  <a href="/" class="nav__brand"><span>Єгор</span><span style="margin:0 .2em;opacity:.5">.</span><span>Селін</span></a>
+</nav>
+
+<section class="lost">
+  <div class="lost__inner">
+    <div class="lost__code">404</div>
+    <h1>Тінь загубилась</h1>
+    <p>Сторінка, яку ти шукаєш, не залишила після себе жодного цифрового сліду. Іноді трапляється. Спробуй повернутись на головну — там точно є з чого почати пошук.</p>
+    <div class="lost__actions">
+      <a href="/" class="btn btn--filled">← На головну</a>
+      <a href="/cases.html" class="btn">Переглянути кейси</a>
+      <a href="/tools.html" class="btn btn--ghost">OSINT-стек</a>
+    </div>
+    <div class="lost__quote">Every shadow has a name — but not every URL.</div>
+  </div>
+</section>
+
+<script src="/js/graph.js"></script>
+</body>
+</html>

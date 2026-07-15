@@ -14,10 +14,11 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip indexes]')"
     steps:
       - uses: actions/checkout@v4
-      - name: Rebuild _index.json for each collection
+      - name: Rebuild _index.json + RSS feed
         run: |
           python3 <<'PY'
-          import json, os, glob
+          import json, os, glob, html
+          from datetime import datetime, timezone
           for name in ['posts','cases','books','certificates','awards','recommendations','media-coverage','tools']:
               folder = os.path.join('content', name)
               if not os.path.isdir(folder): continue
@@ -34,14 +35,49 @@ jobs:
               with open(os.path.join(folder, '_index.json'), 'w', encoding='utf-8') as f:
                   json.dump(items, f, ensure_ascii=False, indent=2)
               print(f'{name}: {len(items)} items')
+
+          # RSS
+          SITE='https://silin-ua.github.io'
+          posts=[]
+          for p in sorted(glob.glob('content/posts/*.json'), reverse=True):
+              if os.path.basename(p).startswith('_'): continue
+              try: d=json.load(open(p,encoding='utf-8'))
+              except: continue
+              if d.get('published') is False: continue
+              slug=os.path.basename(p).replace('.json','')
+              posts.append({'title':d.get('title_uk') or d.get('title',''),'link':f'{SITE}/blog.html?slug={slug}','date':d.get('date',''),'summary':d.get('summary_uk') or d.get('summary',''),'tag':d.get('tag',''),'source':d.get('source',''),'cover':d.get('cover')})
+          def fd(iso):
+              if not iso: return ''
+              try: return datetime.fromisoformat(iso.replace('Z','+00:00')).strftime('%a, %d %b %Y %H:%M:%S %z')
+              except: return iso
+          posts.sort(key=lambda x:x['date'],reverse=True)
+          now=datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S %z')
+          xml=['<?xml version="1.0" encoding="UTF-8"?>','<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>',
+               '<title>Єгор Селін — OSINT-новини</title>',f'<link>{SITE}/blog.html</link>',
+               f'<atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/>',
+               '<description>OSINT-новини з України та світу</description>','<language>uk</language>',
+               f'<lastBuildDate>{now}</lastBuildDate>']
+          for it in posts:
+              xml.append('<item>')
+              xml.append(f'<title>{html.escape(it["title"])}</title>')
+              xml.append(f'<link>{html.escape(it["link"])}</link>')
+              xml.append(f'<guid isPermaLink="true">{html.escape(it["link"])}</guid>')
+              xml.append(f'<pubDate>{fd(it["date"])}</pubDate>')
+              if it['tag']: xml.append(f'<category>{html.escape(it["tag"])}</category>')
+              if it['cover']: xml.append(f'<enclosure url="{SITE}{html.escape(it["cover"])}" type="image/jpeg"/>')
+              xml.append(f'<description>{html.escape(it["summary"])}</description>')
+              xml.append('</item>')
+          xml.append('</channel></rss>')
+          open('feed.xml','w',encoding='utf-8').write('\n'.join(xml))
+          print(f'RSS: {len(posts)} items')
           PY
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
-            git add content/*/_index.json
-            git commit -m "chore: rebuild content indexes [skip indexes]"
+            git add content/*/_index.json feed.xml
+            git commit -m "chore: rebuild content indexes + RSS [skip indexes]"
             git push
           else
             echo "No changes."
