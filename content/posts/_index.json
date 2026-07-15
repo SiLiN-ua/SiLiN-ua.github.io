@@ -32,6 +32,22 @@
     "__slug": "bellingcat-shadow-fleet-grain-libya"
   },
   {
+    "title_uk": "DEF CON 34: Trace Labs Global OSINT Search Party CTF — квитки з 18 липня",
+    "title_en": "DEF CON 34: Trace Labs Global OSINT Search Party CTF — tickets go live July 18",
+    "date": "2026-07-15T00:00:00.000Z",
+    "tag": "OSINT · CTF · DEF CON",
+    "tag_en": "OSINT · CTF · DEF CON",
+    "source": "Trace Labs · DEF CON 34",
+    "source_url": "https://www.zeffy.com/en-CA/ticketing/global-osint-search-party-ctf-2026-def-con--34",
+    "summary_uk": "Trace Labs оголосив головну літню подію — Global OSINT Search Party CTF на DEF CON 34 у Лас-Вегасі. Формат — гібридний: фізична локація в OSINT 4 Good Community + віртуальна участь з будь-якої точки світу. Квитки безкоштовні, реєстрація відкривається 18 липня 2026 о 19:00 UTC.",
+    "summary_en": "Trace Labs has announced its main summer event — the Global OSINT Search Party CTF at DEF CON 34 in Las Vegas. Hybrid format: a physical location in the OSINT 4 Good Community plus virtual participation from anywhere in the world. Tickets are free; registration opens on 18 July 2026 at 19:00 UTC.",
+    "body_uk": "## Що це\n\nЩорічний захід Trace Labs у межах DEF CON — найпрестижнішої хакерської конференції світу. Формат CTF залишається класичним: команди по 4 людини за 6 годин збирають розвіддані по реальних справах зниклих безвісти. Усі знахідки передаються правоохоронним органам.\n\n## Технічні деталі\n\n- **Дата події** — серпень 2026, DEF CON 34, Las Vegas\n- **Формат** — гібрид: on-site OSINT 4 Good Community + віртуальна участь\n- **Реєстрація** — 18 липня 2026, 19:00 UTC / 12:00 PDT\n- **Ціна** — безкоштовно, але квиток обов'язковий\n\n## Для кого\n\n- OSINT-практики будь-якого рівня\n- Команди від приватних розвід-платформ\n- Дослідники, які хочуть вкласти свої навички у соціально важливу справу\n\n## Чому вартує уваги\n\nDEF CON edition Search Party завжди збирає топові команди і генерує найбільше свіжих лідів у реальних справах. Для української OSINT-спільноти це можливість зіставити свої методи з міжнародним стандартом.",
+    "body_en": "## What it is\n\nTrace Labs' annual event within DEF CON — the world's most prestigious hacker conference. The CTF format stays classical: teams of 4 spend 6 hours collecting intelligence on real missing-persons cases. All findings are forwarded to law enforcement.\n\n## Technical details\n\n- **Event date** — August 2026, DEF CON 34, Las Vegas\n- **Format** — hybrid: on-site OSINT 4 Good Community + virtual participation\n- **Registration** — 18 July 2026, 19:00 UTC / 12:00 PDT\n- **Price** — free, but ticket required\n\n## Who it's for\n\n- OSINT practitioners of any level\n- Teams from private intelligence platforms\n- Researchers who want to put their skills to socially meaningful use\n\n## Why it's worth attention\n\nThe DEF CON edition of Search Party always draws top teams and generates the most fresh leads on real cases. For the Ukrainian OSINT community, it's a chance to benchmark local methods against the international standard.",
+    "published": true,
+    "cover": "/img/uploads/news/defcon-34-trace-labs-tickets-2026.jpg",
+    "__slug": "defcon-34-trace-labs-tickets-2026"
+  },
+  {
     "title_uk": "IT Arena 2026: панель «Онлайн-безпека — як використати OSINT на користь Україні»",
     "title_en": "IT Arena 2026: panel 'Online security — how to use OSINT for the benefit of Ukraine'",
     "date": "2026-06-30T00:00:00.000Z",
@@ -109,6 +125,38 @@
     "__slug": "molfar-nove-rozsliduvannia-2026"
   },
   {
+    "title_uk": "Molfar Intelligence × Swarmer: OSINT-дані для автономних роїв FPV",
+    "title_en": "Molfar Intelligence × Swarmer: OSINT data feeds for autonomous FPV swarms",
+    "date": "2026-07-08T00:00:00.000Z",
+    "tag": "OSINT · Оборонтех · AI",
+    "tag_en": "OSINT · DefenseTech · AI",
+    "source": "The Defender · Swarmer · Molfar",
+    "source_url": "https://thedefender.media/en/2026/06/swarmer-molfar-intelligence/",
+    "summary_uk": "Українсько-американський розробник Swarmer оголосив стратегічне партнерство з Molfar Intelligence. Molfar постачатиме Swarmer масиви OSINT-даних — геолокаційні знімки, відео та супутникові спостереження за ворожою технікою — які використовуватимуться для тренування AI-моделей об'єктного розпізнавання. Це прецедент вбудовування цивільного OSINT у контур бойового AI.",
+    "summary_en": "Ukrainian-American developer Swarmer has announced a strategic partnership with Molfar Intelligence. Molfar will supply Swarmer with OSINT datasets — geolocated imagery, video, and satellite observations of enemy equipment — used to train AI object-recognition models. This is a precedent for embedding civilian OSINT into the loop of combat AI.",
+    "body_uk": "## Що саме передається\n\n- **Геолокаційні знімки** з підтвердженими координатами\n- **Відео з полів бою**, включно з ідентифікацією типу техніки\n- **Супутникові спостереження** за пересуванням військових колон\n- **Тренувальні датасети** з класифікацією об'єктів\n\n## Куди йде\n\nДані живлять AI-моделі Swarmer — платформи, що керує роями FPV-дронів у автономному режимі. Точніші тренувальні дані = вища ймовірність правильного визначення пріоритетної цілі у складному візуальному середовищі.\n\n## Значення партнерства\n\nЦе перший публічний випадок, коли українська приватна OSINT-компанія системно постачає дані розробнику військового AI. Модель показує, що межа між цивільною розвідкою і бойовим циклом ухвалення рішень у сучасній війні остаточно розмита — і що OSINT-експертиза перетворюється на стратегічний ресурс національної оборони.",
+    "body_en": "## What is being transferred\n\n- **Geolocated imagery** with verified coordinates\n- **Battlefield video**, including equipment-type identification\n- **Satellite observations** of military column movements\n- **Training datasets** with object classification\n\n## Where it goes\n\nThe data feeds Swarmer's AI models — the platform controls swarms of FPV drones in autonomous mode. More accurate training data = higher probability of correctly identifying the priority target in a complex visual environment.\n\n## Significance of the partnership\n\nThis is the first public case of a Ukrainian private OSINT company systematically supplying data to a military-AI developer. The model shows that the boundary between civilian intelligence and the combat decision loop in modern warfare has finally blurred — and that OSINT expertise is turning into a strategic national-defence resource.",
+    "published": true,
+    "cover": "/img/uploads/news/molfar-swarmer-osint-partnership-2026.jpg",
+    "__slug": "molfar-swarmer-osint-partnership-2026"
+  },
+  {
+    "title_uk": "Нацполіція: 206 361 воєнний злочин РФ у провадженні станом на липень 2026",
+    "title_en": "Ukraine's National Police: 206,361 Russian war crimes under investigation as of July 2026",
+    "date": "2026-07-02T00:00:00.000Z",
+    "tag": "Воєнні злочини · Статистика",
+    "tag_en": "War Crimes · Statistics",
+    "source": "Національна поліція України · Офіс Генпрокурора",
+    "source_url": "https://supreme.court.gov.ua/supreme/pres-centr/news/1883443",
+    "summary_uk": "Станом на 2 липня 2026 Національна поліція розслідує 206 361 злочин, що кваліфікуються як воєнні. Загалом відкрито 223 504 кримінальні провадження за фактами злочинів військовослужбовців ЗС РФ та їх посібників на території України. Офіс Генпрокурора зафіксував понад 265 000 фактів злочинів, пов'язаних зі збройною агресією. OSINT — один з ключових інструментів документування.",
+    "summary_en": "As of 2 July 2026, Ukraine's National Police is investigating 206,361 crimes classified as war crimes. In total, 223,504 criminal proceedings have been opened for crimes committed by Russian Armed Forces personnel and their collaborators on Ukrainian territory. The Office of the Prosecutor General has recorded over 265,000 facts of crimes related to the armed aggression. OSINT is one of the key tools of documentation.",
+    "body_uk": "## Цифри липня 2026\n\n- **206 361** — злочинів у розслідуванні НПУ (кваліфікація «воєнний»)\n- **223 504** — кримінальні провадження загалом\n- **265 000+** — фактів злочинів, зафіксованих Офісом Генпрокурора\n\n## Роль OSINT\n\nCистемно застосовуються практичні алгоритми виявлення, фіксації та верифікації інформації з відкритих джерел. OSINT грає ключову роль в ідентифікації осіб, винних у воєнних злочинах — від атрибуції за геолокацією до крос-платформного зіставлення профілів у соцмережах військових РФ.\n\n## Міжнародна координація\n\nДані передаються до Європолу через окрему OSINT-таксфорс, до Міжнародного центру з переслідування злочину агресії (ICPA) та готуються для матеріалів майбутнього спеціального трибуналу.\n\n## Що це означає\n\nМасштаб доказової бази вже вимагає індустріальних процесів документування. OSINT перестав бути допоміжним інструментом — це основний робочий шар доказової системи міжнародного правосуддя щодо війни в Україні.",
+    "body_en": "## July 2026 numbers\n\n- **206,361** — crimes under National Police investigation (classified as \"war crimes\")\n- **223,504** — total criminal proceedings\n- **265,000+** — crime facts registered by the Prosecutor General's Office\n\n## The role of OSINT\n\nPractical algorithms for detecting, recording, and verifying information from open sources are being systematically applied. OSINT plays a key role in identifying persons guilty of war crimes — from geolocation-based attribution to cross-platform correlation of Russian servicemen's social-media profiles.\n\n## International coordination\n\nData is passed to Europol through a dedicated OSINT taskforce, to the International Centre for the Prosecution of the Crime of Aggression (ICPA), and is being prepared for the future Special Tribunal.\n\n## What it means\n\nThe scale of the evidence base already requires industrial documentation processes. OSINT has stopped being an auxiliary tool — it is the main working layer of the international justice evidence system regarding the war in Ukraine.",
+    "published": true,
+    "cover": "/img/uploads/news/nacpol-war-crimes-206k-2026.jpg",
+    "__slug": "nacpol-war-crimes-206k-2026"
+  },
+  {
     "title_uk": "НАДС запустив навчання OSINT для державних службовців",
     "title_en": "NAUCS launches OSINT training for civil servants",
     "date": "2026-06-25T00:00:00.000Z",
@@ -154,6 +202,22 @@
     "published": true,
     "cover": "/img/uploads/news/osint-for-ukraine-war-crimes-2026.jpg",
     "__slug": "osint-for-ukraine-war-crimes-2026"
+  },
+  {
+    "title_uk": "OSINT Varta × SLON FM: безкоштовний онлайн-курс з OSINT для військових",
+    "title_en": "OSINT Varta × SLON FM: free online OSINT course for military personnel",
+    "date": "2026-07-12T00:00:00.000Z",
+    "tag": "Освіта · Спільнота",
+    "tag_en": "Education · Community",
+    "source": "Militarnyi · OSINT Varta",
+    "source_url": "https://militarnyi.com/uk/news/osint-varta-ta-slon-fm-zapustyly-bezkoshtovnyj-onlajn-kurs-z-osint-rozvidky/",
+    "summary_uk": "Український проєкт OSINT Varta спільно зі спільнотою SLON FM запустив безкоштовний онлайн-курс з розвідки за відкритими джерелами. У програмі — чотири модулі відеокурсу, п'ятий (технічний OSINT) — у розробці. Основна цільова аудиторія — військові, яким потрібні практичні навички для розвідки на фронті.",
+    "summary_en": "The Ukrainian OSINT Varta project, in partnership with the SLON FM community, has launched a free online course on open-source intelligence. The programme currently includes four video modules, with a fifth — dedicated to technical OSINT — in development. The main target audience is military personnel who need practical skills for battlefield reconnaissance.",
+    "body_uk": "## Про курс\n\n- **Чотири готових модулі** — базова методологія, соцмережі, гео/сателіти, верифікація\n- **Технічний OSINT (5-й модуль)** — у розробці, буде охоплювати мережевий аналіз, метадані, автоматизацію\n- **Формат** — асинхронне відео, без прив'язки до розкладу\n- **Ціна** — безкоштовно для всіх охочих\n\n## Чому це важливо\n\nПопит на OSINT-навички у ЗСУ стрибнув після 2022 року. Раніше системного відкритого українськомовного курсу для військових не було — тільки поодинокі тренінги від приватних платформ. Ініціатива Varta × SLON FM закриває цю прогалину, робить методологію публічним ресурсом і фактично стандартизує базовий рівень підготовки OSINT-аналітика в українському війську.\n\n## Що далі\n\nПідготовка серії безкоштовних воркшопів як практичного доповнення до відео-курсу.",
+    "body_en": "## About the course\n\n- **Four completed modules** — basic methodology, social media, geo/satellites, verification\n- **Technical OSINT (5th module)** — in development, will cover network analysis, metadata, automation\n- **Format** — asynchronous video, no fixed schedule\n- **Price** — free for anyone interested\n\n## Why it matters\n\nDemand for OSINT skills in the Armed Forces of Ukraine surged after 2022. Until now, no systematic open Ukrainian-language course for military personnel existed — only isolated trainings from private platforms. The Varta × SLON FM initiative closes this gap, makes the methodology a public resource, and effectively standardises the baseline preparation of an OSINT analyst in the Ukrainian military.\n\n## What's next\n\nA series of free workshops as a practical companion to the video course.",
+    "published": true,
+    "cover": "/img/uploads/news/osint-varta-slon-fm-course-2026.jpg",
+    "__slug": "osint-varta-slon-fm-course-2026"
   },
   {
     "title_uk": "«Школа OSINT» на Дія.Освіта — безкоштовний освітній серіал від Мінцифри",

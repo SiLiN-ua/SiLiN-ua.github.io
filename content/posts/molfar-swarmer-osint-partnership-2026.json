@@ -1,0 +1,15 @@
+{
+  "title_uk": "Molfar Intelligence × Swarmer: OSINT-дані для автономних роїв FPV",
+  "title_en": "Molfar Intelligence × Swarmer: OSINT data feeds for autonomous FPV swarms",
+  "date": "2026-07-08T00:00:00.000Z",
+  "tag": "OSINT · Оборонтех · AI",
+  "tag_en": "OSINT · DefenseTech · AI",
+  "source": "The Defender · Swarmer · Molfar",
+  "source_url": "https://thedefender.media/en/2026/06/swarmer-molfar-intelligence/",
+  "summary_uk": "Українсько-американський розробник Swarmer оголосив стратегічне партнерство з Molfar Intelligence. Molfar постачатиме Swarmer масиви OSINT-даних — геолокаційні знімки, відео та супутникові спостереження за ворожою технікою — які використовуватимуться для тренування AI-моделей об'єктного розпізнавання. Це прецедент вбудовування цивільного OSINT у контур бойового AI.",
+  "summary_en": "Ukrainian-American developer Swarmer has announced a strategic partnership with Molfar Intelligence. Molfar will supply Swarmer with OSINT datasets — geolocated imagery, video, and satellite observations of enemy equipment — used to train AI object-recognition models. This is a precedent for embedding civilian OSINT into the loop of combat AI.",
+  "body_uk": "## Що саме передається\n\n- **Геолокаційні знімки** з підтвердженими координатами\n- **Відео з полів бою**, включно з ідентифікацією типу техніки\n- **Супутникові спостереження** за пересуванням військових колон\n- **Тренувальні датасети** з класифікацією об'єктів\n\n## Куди йде\n\nДані живлять AI-моделі Swarmer — платформи, що керує роями FPV-дронів у автономному режимі. Точніші тренувальні дані = вища ймовірність правильного визначення пріоритетної цілі у складному візуальному середовищі.\n\n## Значення партнерства\n\nЦе перший публічний випадок, коли українська приватна OSINT-компанія системно постачає дані розробнику військового AI. Модель показує, що межа між цивільною розвідкою і бойовим циклом ухвалення рішень у сучасній війні остаточно розмита — і що OSINT-експертиза перетворюється на стратегічний ресурс національної оборони.",
+  "body_en": "## What is being transferred\n\n- **Geolocated imagery** with verified coordinates\n- **Battlefield video**, including equipment-type identification\n- **Satellite observations** of military column movements\n- **Training datasets** with object classification\n\n## Where it goes\n\nThe data feeds Swarmer's AI models — the platform controls swarms of FPV drones in autonomous mode. More accurate training data = higher probability of correctly identifying the priority target in a complex visual environment.\n\n## Significance of the partnership\n\nThis is the first public case of a Ukrainian private OSINT company systematically supplying data to a military-AI developer. The model shows that the boundary between civilian intelligence and the combat decision loop in modern warfare has finally blurred — and that OSINT expertise is turning into a strategic national-defence resource.",
+  "published": true,
+  "cover": "/img/uploads/news/molfar-swarmer-osint-partnership-2026.jpg"
+}
