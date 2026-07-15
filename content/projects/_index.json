@@ -93,8 +93,8 @@
   },
   {
     "name": "Добрі Дрони · 🚁",
-    "subtitle_uk": "Моніторинг реакцій цивільних під час російських дронових атак",
-    "subtitle_en": "Monitoring civilian reactions during Russian drone attacks",
+    "subtitle_uk": "Моніторинг реакцій росіян під час прильотів по РФ",
+    "subtitle_en": "Monitoring Russian civilian reactions to strikes on Russian territory",
     "tag": "War OSINT · SOCMINT · Sentiment",
     "year": 2026,
     "lang": "Python 3.11 · Flask · Telethon · Claude API · SocketIO · EventLet",
@@ -108,8 +108,8 @@
       "/img/uploads/projects/drony-feed.png",
       "/img/uploads/projects/drony-report.png"
     ],
-    "description_uk": "OSINT-платформа для моніторингу реакцій цивільного населення в російських Telegram-каналах під час дронових атак на Україну та окуповані території. Збирає та класифікує повідомлення з **153 Telegram-джерел** по РФ і окупованих регіонах у реальному часі. Коли трапляється удар, платформа фіксує реакції: паніка / заперечення / злість / гумор / скарги / нейтральна інформація. Автоматично витягує назву міста з тексту повідомлення. AI-звіт від Claude формує структурований бриф про суспільні настрої.",
-    "description_en": "OSINT platform for monitoring civilian reactions in Russian Telegram channels during drone attacks on Ukraine and occupied territories. Collects and classifies messages from **153 Telegram sources** across Russia and occupied regions in real time. When a strike happens, the platform captures reactions: panic / denial / anger / humor / complaint / neutral info. Automatically extracts city names from message text. Claude AI report generates a structured brief on public sentiment.",
+    "description_uk": "OSINT-платформа для моніторингу реакцій російського цивільного населення на прильоти по території РФ та окупованих регіонах. Збирає та класифікує повідомлення з **153 Telegram-джерел** по російських містах у реальному часі. Коли по РФ прилітає дрон або ракета, платформа фіксує реакції росіян: паніка / заперечення / злість / гумор / скарги / нейтральна інформація. Автоматично витягує назву міста з тексту повідомлення. AI-звіт від Claude формує структурований бриф про суспільні настрої населення країни-агресора під ударами.",
+    "description_en": "OSINT platform for monitoring Russian civilian reactions to strikes on Russian territory and occupied regions. Collects and classifies messages from **153 Telegram sources** across Russian cities in real time. When a drone or missile hits Russia, the platform captures Russian civilian reactions: panic / denial / anger / humor / complaint / neutral info. Automatically extracts city names from message text. Claude AI report generates a structured brief on public sentiment inside the aggressor state under attack.",
     "features_uk": [
       "Live-моніторинг у реальному часі: 153 Telegram-джерела",
       "Автокласифікатор реакцій: паніка / заперечення / злість / гумор / скарги / інфо",
