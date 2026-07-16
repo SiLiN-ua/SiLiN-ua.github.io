@@ -8,7 +8,7 @@
     "date": "2026-05-04T00:00:00.000Z",
     "text_uk": "Побачила один із дописів Єгора про те, як досліджувати Telegram-користувача, і звернулася з питаннями. Він люб'язно спілкувався у листуванні, а згодом організував Zoom-зустріч, щоб особисто провести мене крізь весь процес. Презентація була надзвичайно змістовною, а сам Єгор — щедрий у часі та інформації. Фантастичний ресурс.",
     "text_en": "I saw one of Yehor's posts on how to investigate a Telegram user, and reached out to him with questions. He was kind enough to message with me and then ultimately arrange a Zoom meeting to actually walk me through the process in person. His presentation was extremely high value and he was more than generous with his time and information. Fantastic resource.",
-    "order": 1,
+    "order": 2,
     "published": true,
     "__slug": "claire-roise"
   },
@@ -20,7 +20,7 @@
     "date": "2026-03-31T00:00:00.000Z",
     "text_uk": "Наразі я працюю з Єгором Селіним як з OSINT-спеціалістом і особисто бачу вплив його роботи. Він застосовує структурований та аналітичний підхід, стабільно виявляючи неочевидні зв'язки та індикатори ризиків, що підвищує точність і глибину наших розслідувань і due diligence.\n\nЄгор також був моїм ментором у розслідуваннях у соціальних мережах — він перекладає складні техніки у практичні методи, і я продовжую в нього вчитися щодня.\n\nНадійний професіонал. Впевнено рекомендую на ролі в OSINT, due diligence та інвестигативних дослідженнях.",
     "text_en": "I currently work with Yehor Selin as an OSINT specialist and have personally seen the impact of his work. He applies a structured and analytical approach, consistently uncovering non-obvious connections and risk indicators, which enhances the accuracy and depth of our investigations and due diligence.\n\nI have also been mentored by him in social media investigations — he translates complex techniques into practical methods, and I continue to learn from him every day.\n\nA reliable professional, highly recommended for roles in OSINT, due diligence, and investigative research.",
-    "order": 2,
+    "order": 3,
     "published": true,
     "__slug": "denis-kirilov"
   },
@@ -33,7 +33,7 @@
     "date": "2026-07-16T00:00:00.000Z",
     "text_uk": "Навчання у Єгора — найкраща інвестиція, яку можна зробити. Він люб'язно погодився бути спікером і поділитися своїми знаннями з SOCMINT зі спеціалістами з Молдови. Для його знань немає кордонів — він не просто занурюється глибоко, а йде в саму суть того, як має мислити аналітик.\n\nВін не говорить про інструменти — він вчить, як думати, як працювати з тупиковими ситуаціями і як зрозуміти момент, коли слід зупинитись, бо на питання вже отримано відповідь.\n\nПояснює простою мовою — так, ніби тобі п'ять років, а найскладніші концепції стають простими як день. Ми продовжуємо співпрацювати з Єгором і чекаємо на багато плідних майбутніх проєктів.",
     "text_en": "Learning from Yehor is the best investment you can do. He was super kind to be a speaker and share his knowledge in SOCMINT with specialists from Moldova. He has no borders for his knowledge and goes not just deep, but to the core of how an analyst needs to think.\n\nHe will not talk about tools, but teach you how to think, how to work through dead ends, and how one should stop once the question has been answered.\n\nHe will take you in plain language, like you were five, and make complicated concepts easy like day. We are continuing to work with Yehor and looking forward to many more fruitful collaborations.",
-    "order": 4,
+    "order": 1,
     "published": true,
     "__slug": "diana-farima"
   },
@@ -46,7 +46,7 @@
     "date": "2026-03-09T00:00:00.000Z",
     "text_uk": "Працюю з Єгором як колега-OSINT-аналітик, і вплив був помітним з першого дня. Він приніс нові інструменти та підходи, які зробили наш процес скринінгу швидшим і суттєво точнішим.\n\nСправжній слідчий інстинкт — знаходить те, що інші пропускають. Алиаси, приховані зв'язки, red flags, які прослизають повз стандартні перевірки.\n\nҐрунтовний професіонал. Впевнено рекомендую всім, хто працює з background screening, розслідуваннями у соцмережах чи due diligence.",
     "text_en": "I've been working with Yehor as a fellow OSINT analyst and the impact was noticeable from day one. He brought new tools and approaches that made our screening process faster and significantly more accurate.\n\nReal investigative instinct — he finds things others miss. Aliases, hidden connections, red flags that slip through standard checks.\n\nSolid professional. Highly recommend for anyone dealing with background screening, social media investigations or due diligence.",
-    "order": 3,
+    "order": 4,
     "published": true,
     "__slug": "igor-kulish"
   }
