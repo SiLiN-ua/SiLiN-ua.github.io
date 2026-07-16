@@ -48,6 +48,22 @@
     "__slug": "defcon-34-trace-labs-tickets-2026"
   },
   {
+    "title_uk": "ЄС та Британія: санкції проти офіцерів ГРУ РФ за багаторічну кібероперацію",
+    "title_en": "EU and UK: sanctions against Russian GRU officers over a years-long cyber-spying campaign",
+    "date": "2026-07-13T00:00:00.000Z",
+    "tag": "Санкції · Cyber OSINT",
+    "tag_en": "Sanctions · Cyber OSINT",
+    "source": "WSLS · Reuters · Рішення ЄС",
+    "source_url": "https://www.wsls.com/news/world/2026/07/13/eu-targets-russian-intelligence-officers-accused-of-running-a-yearslong-cyber-spying-campaign/",
+    "summary_uk": "Європейський Союз і Велика Британія 13 липня 2026 запровадили санкції проти офіцерів російської військової розвідки, хакерів та приватних компаній, причетних до багаторічної кібероперації. Санкції ЄС охоплюють **9 фізичних осіб і 4 організації** за причетність до атак на державні мережі та критичну інфраструктуру — включно з тепло- та енергосистемами — з 2010 року. Персонально названо офіцера ГРУ Євгена Башева і його компанію «Импульс».",
+    "summary_en": "On 13 July 2026, the European Union and the United Kingdom imposed sanctions on Russian military-intelligence officers, hackers, and private companies involved in a years-long cyber-spying operation. The EU sanctions cover **9 individuals and 4 entities** linked to attacks on government networks and critical infrastructure — including heating and power systems — dating back to 2010. Named personally: GRU officer Yevgeny Bashev and his company Impuls.",
+    "body_uk": "## Що саме санкціоновано\n\n- **Особи**: 9 фізичних осіб, включно з іменованим офіцером ГРУ Євгеном Башевим\n- **Юрособи**: 4 підставні компанії, у тому числі «Импульс» (пов'язана з Башевим)\n- **Період операцій**: від 2010 року до сьогодні\n- **Цілі**: державні мережі країн ЄС, критична інфраструктура (тепло, електроенергія), об'єкти саботажу\n\n## OSINT-контекст\n\nПідґрунтя санкцій — комбінація закритої розвідданих і публічних OSINT-розслідувань. Особи ГРУ, як правило, ідентифікуються через: витоки телефонних баз даних, метадані фотографій, реєстрові записи компаній-фасадів, геолокацію об'єктів через супутникові знімки. Bellingcat, The Insider та Der Spiegel протягом років публікували матеріали, з яких значна частина стала доказовою базою для нинішніх рішень.\n\n## Значення для України\n\nЦе один з найбільших ударів по інфраструктурі російського кіберпідпілля в Європі за останній рік. Показує, що методологія OSINT-атрибуції, обкатана на кейсах Скрипаля / Навального / Boeing-777, тепер працює як штатний інструмент санкційних режимів.",
+    "body_en": "## What was sanctioned\n\n- **Individuals**: 9 people, including named GRU officer Yevgeny Bashev\n- **Legal entities**: 4 front companies, including Impuls (linked to Bashev)\n- **Operational period**: from 2010 to present\n- **Targets**: EU government networks, critical infrastructure (heating, electricity), sabotage objects\n\n## The OSINT context\n\nThe basis for sanctions is a combination of classified intelligence and public OSINT investigations. GRU personnel are typically identified through: leaked phone-number databases, photo metadata, front-company registration records, satellite geolocation of objects. Bellingcat, The Insider, and Der Spiegel have published years of material, much of which has become the evidentiary base for these decisions.\n\n## Significance for Ukraine\n\nThis is one of the largest blows to Russian cyber underground infrastructure in Europe in the past year. It shows that the OSINT attribution methodology forged on the Skripal / Navalny / MH17 cases now works as a standing instrument of sanctions regimes.",
+    "published": true,
+    "cover": "/img/uploads/news/eu-uk-sankcii-gru-cyber-2026.jpg",
+    "__slug": "eu-uk-sankcii-gru-cyber-2026"
+  },
+  {
     "title_uk": "IT Arena 2026: панель «Онлайн-безпека — як використати OSINT на користь Україні»",
     "title_en": "IT Arena 2026: panel 'Online security — how to use OSINT for the benefit of Ukraine'",
     "date": "2026-06-30T00:00:00.000Z",
@@ -110,6 +126,22 @@
     "__slug": "komitet-vru-osint-instrumenty"
   },
   {
+    "title_uk": "Комітет ВРУ з цифрової трансформації: практичний семінар з OSINT-верифікації",
+    "title_en": "Verkhovna Rada Committee on Digital Transformation: hands-on OSINT-verification workshop",
+    "date": "2026-07-15T00:00:00.000Z",
+    "tag": "Освіта · Держава",
+    "tag_en": "Education · State",
+    "source": "Комітет ВРУ з цифрової трансформації",
+    "source_url": "https://komit.rada.gov.ua/news/main_news/75596.html",
+    "summary_uk": "Комітет Верховної Ради з цифрової трансформації провів практичний семінар для депутатів, помічників і державних службовців з інструментів OSINT для перевірки інформації та аналізу даних. Формат — гібридний. Основний акцент — верифікація фото/відео з мережі, робота з реєстрами відкритих даних, крос-перевірка джерел. Це продовження серії освітніх ініціатив держсектору для підвищення інформаційної гігієни.",
+    "summary_en": "The Verkhovna Rada Committee on Digital Transformation has held a hands-on workshop for MPs, staff, and civil servants on OSINT tools for information verification and data analysis. Hybrid format. Main focus: verifying online photos/videos, working with open-data registries, cross-checking sources. This continues a series of public-sector educational initiatives aimed at raising information hygiene.",
+    "body_uk": "## Що на воркшопі\n\n- **Верифікація візуалу** — reverse image search, аналіз метаданих, розпізнавання генеративного AI-контенту\n- **Робота з відкритими даними** — реєстри Мін'юсту, ProZorro, YouControl, Opendatabot, Datacrat, ДРФО\n- **Крос-перевірка** — методології перевірки одного факту через ≥3 незалежні джерела\n- **Практичні кейси** — розбір типових пасток дезінформації, з якими стикаються нардепи у соцмережах\n\n## Чому це важливо\n\nІнформаційна гігієна на рівні законодавчого органу — це стратегічний ресурс. Нардепи є медіа-мультиплікаторами: помилково поширений неправдивий факт з їхнього акаунту може розлетітись у мільйони. Тому базовий OSINT — це не «нішева навичка», а обов'язкова частина цифрової грамотності публічного діяча.\n\n## Тенденція\n\nДля 2026 року такі семінари вже стандарт — окрім Комітету ВРУ їх системно проводять НАДС, Дія.Освіта, Академія прокуратури, Академія СБУ. Наступний крок — обов'язкові модулі OSINT-верифікації в програмах підготовки й перепідготовки держслужбовців.",
+    "body_en": "## What was covered\n\n- **Visual verification** — reverse image search, metadata analysis, detection of generative-AI content\n- **Open-data work** — registries of the Ministry of Justice, ProZorro, YouControl, Opendatabot, Datacrat, DRFO\n- **Cross-checking** — methodologies for verifying a single fact through ≥3 independent sources\n- **Practical cases** — walk-throughs of typical disinformation traps MPs encounter on social media\n\n## Why it matters\n\nInformation hygiene at the level of the legislative body is a strategic resource. MPs are media multipliers: a mistakenly shared false claim from their account can reach millions. This makes basic OSINT not a «niche skill» but a mandatory part of the digital literacy of a public official.\n\n## The trend\n\nBy 2026 such workshops are already standard — besides the Rada Committee they are systematically run by NADS, Diia.Education, the Prosecutor's Academy, and the SBU Academy. Next step: mandatory OSINT-verification modules in civil-servant preparation and re-qualification programmes.",
+    "published": true,
+    "cover": "/img/uploads/news/komitet-vru-osint-verification-seminar-2026.jpg",
+    "__slug": "komitet-vru-osint-verification-seminar-2026"
+  },
+  {
     "title_uk": "Molfar продовжує ідентифікувати російських військових злочинців через OSINT",
     "title_en": "Molfar continues identifying Russian war criminals through OSINT",
     "date": "2026-07-07T00:00:00.000Z",
@@ -123,6 +155,22 @@
     "published": true,
     "cover": "/img/uploads/news/molfar-nove-rozsliduvannia-2026.jpg",
     "__slug": "molfar-nove-rozsliduvannia-2026"
+  },
+  {
+    "title_uk": "Молфар: OSINT-ідентифікація точної локації російського батальйону «П'ятнашка»",
+    "title_en": "Molfar: OSINT identification of the exact location of Russia's «Pyatnashka» battalion",
+    "date": "2026-07-16T00:00:00.000Z",
+    "tag": "OSINT-кейс · GEOINT · SOCMINT",
+    "tag_en": "OSINT case · GEOINT · SOCMINT",
+    "source": "Molfar",
+    "source_url": "https://molfar.com/ukraine",
+    "summary_uk": "Українська OSINT-агенція Molfar задокументувала кейс ідентифікації точної локації дислокації російського батальйону «П'ятнашка» — виключно через публікації у соціальних мережах: фотографії, відео та текстові коментарі особового складу. Кейс став прикладом того, як публічно розкриті бійцями дрібнички OPSEC складаються в точні координати для подальшого прицільного ураження.",
+    "summary_en": "Ukrainian OSINT agency Molfar has documented a case of identifying the exact location of the Russian «Pyatnashka» battalion — solely through social-media publications: photos, videos, and text comments by personnel. The case exemplifies how small OPSEC leaks by soldiers add up to precise coordinates for follow-on targeting.",
+    "body_uk": "## Методологія кейсу\n\n1. **Збір публікацій** — Telegram-канали і сторінки VK бійців батальйону, підбір фото та відео з характерними деталями (архітектура, рельєф, вивіски)\n2. **Крос-верифікація** — накладення візуальних маркерів з Google Earth, Yandex Panoramas, історичних архівів OSM\n3. **Аналіз коментарів** — фіксація географічних натяків у текстах бійців та їхніх родичів\n4. **Синтез** — зведення візуальних, текстових і метаданих сигналів у конкретні координати\n\n## Ключові OPSEC-помилки\n\n- Фото у формі на фоні розпізнаваних будівель\n- Відео побутових сцен з чутним оточенням (звуки промзон, вокзалів)\n- Геотеги, які автори «забули» вимкнути\n- Коментарі рідних, що вказують на населений пункт\n\n## Чому це важливо\n\nКейс — навчальний зразок повного OSINT-циклу: від публічно доступних сирих даних до операційно значимого висновку. Використовується Молфаром і українськими навчальними програмами як референс-методика для аналітиків.",
+    "body_en": "## Case methodology\n\n1. **Content collection** — Telegram channels and VK pages of battalion personnel; selection of photos and videos with characteristic details (architecture, terrain, signage)\n2. **Cross-verification** — overlaying visual markers with Google Earth, Yandex Panoramas, historical OSM archives\n3. **Comment analysis** — capturing geographic hints in soldiers' texts and their relatives' posts\n4. **Synthesis** — merging visual, textual, and metadata signals into concrete coordinates\n\n## Key OPSEC failures\n\n- Photos in uniform against recognisable buildings\n- Videos of everyday scenes with audible surroundings (industrial-zone / railway-station sounds)\n- Geotags authors «forgot» to disable\n- Relatives' comments pointing to specific settlements\n\n## Why it matters\n\nThe case is a teaching example of the full OSINT cycle: from publicly available raw data to operationally significant conclusion. Molfar and Ukrainian training programmes use it as a reference methodology for analysts.",
+    "published": true,
+    "cover": "/img/uploads/news/molfar-piatnashka-osint-case.jpg",
+    "__slug": "molfar-piatnashka-osint-case"
   },
   {
     "title_uk": "Molfar Intelligence × Swarmer: OSINT-дані для автономних роїв FPV",
@@ -172,6 +220,22 @@
     "__slug": "nads-osint-navchannia-derzhsluzhbovtsiv"
   },
   {
+    "title_uk": "Ніч на 16 липня: 8 балістичних + 146 БПЛА по території України, ППО збила 132 цілі",
+    "title_en": "Night of 16 July: 8 ballistic missiles + 146 UAVs against Ukraine, air defence downed 132 targets",
+    "date": "2026-07-16T00:00:00.000Z",
+    "tag": "Оперативна ситуація · GEOINT",
+    "tag_en": "Operational · GEOINT",
+    "source": "Interfax-Україна · Командування ПС ЗСУ",
+    "source_url": "https://en.interfax.com.ua/news/general/1185367.html",
+    "summary_uk": "У ніч на 16 липня 2026 РФ атакувала Україну **8 балістичними Іскандер-М/С-400, 4 крилатими Х-22/32, 1 Х-31П, 5 боєприпасами «Бандероль» та 146 ударними БПЛА** (Shahed / Gerbera / Італмас / Пародія). Станом на 09:00 українська ППО збила / придушила 3 балістичні та 129 БПЛА. Влучання зафіксовано у 15 локаціях. OSINT-спільнота вже фіксує місця прольотів і збитих цілей.",
+    "summary_en": "On the night of 16 July 2026, Russia attacked Ukraine with **8 Iskander-M/S-400 ballistic missiles, 4 Kh-22/32 cruise missiles, 1 Kh-31P anti-radar, 5 Banderol loitering munitions, and 146 strike UAVs** (Shahed / Gerbera / Italmas / Parody). By 09:00 Ukrainian air defence had shot down or suppressed 3 ballistic missiles and 129 UAVs. Impacts recorded at 15 locations. The OSINT community is already documenting flight paths and downed targets.",
+    "body_uk": "## Цифри ночі\n\n| Тип загрози | Пусків | Збито / придушено |\n|---|---|---|\n| **Балістичні Іскандер-М / С-400** | 8 | 3 |\n| **Крилаті Х-22/32** | 4 | — |\n| **Х-31П (антирадарна)** | 1 | — |\n| **«Бандероль» (loitering)** | 5 | — |\n| **Ударні БПЛА** (Shahed / Gerbera / Італмас / Пародія) | 146 | 129 |\n| **Влучань** | | **у 15 локаціях** |\n\n## Роль OSINT\n\nЗ перших годин після атаки українські OSINT-канали (Molfar, InformNapalm, окремі геоаналітики) картують маршрути прольотів через відео з камер, повідомлення у Telegram-каналах моніторингу повітряних тривог і супутникові знімки в місцях влучань. Це формує **паралельну доказову базу** до офіційних зведень Командування ПС.\n\n## Що це дає\n\n- Верифікація типів засобів ураження (важливо для оцінки санкційного тиску на постачальників компонентів)\n- Документування цивільних об'єктів для майбутніх матеріалів МКС та ICPA\n- Аналіз ефективності ППО по типах цілей",
+    "body_en": "## Numbers of the night\n\n| Threat type | Launches | Shot down / suppressed |\n|---|---|---|\n| **Iskander-M / S-400 ballistic** | 8 | 3 |\n| **Kh-22/32 cruise** | 4 | — |\n| **Kh-31P (anti-radar)** | 1 | — |\n| **Banderol loitering** | 5 | — |\n| **Strike UAVs** (Shahed / Gerbera / Italmas / Parody) | 146 | 129 |\n| **Impacts** | | **15 locations** |\n\n## The OSINT role\n\nFrom the first hours after the attack, Ukrainian OSINT channels (Molfar, InformNapalm, individual geolocation analysts) are mapping flight paths through camera footage, Telegram alert-monitoring channel reports, and satellite imagery over impact zones. This creates a **parallel evidence base** to the official Air Force Command reports.\n\n## What it enables\n\n- Verification of the specific weapon types used (crucial for assessing sanctions pressure on component suppliers)\n- Documentation of civilian objects for future ICC and ICPA case files\n- Analysis of air-defence effectiveness by target type",
+    "published": true,
+    "cover": "/img/uploads/news/nichna-ataka-16-lypnia-2026.jpg",
+    "__slug": "nichna-ataka-16-lypnia-2026"
+  },
+  {
     "title_uk": "OSINT-аналітик отримав статус офіційної професії в Україні",
     "title_en": "OSINT analyst becomes an officially recognised profession in Ukraine",
     "date": "2026-05-15T00:00:00.000Z",
@@ -202,6 +266,22 @@
     "published": true,
     "cover": "/img/uploads/news/osint-for-ukraine-war-crimes-2026.jpg",
     "__slug": "osint-for-ukraine-war-crimes-2026"
+  },
+  {
+    "title_uk": "OSINT Industries — у топ-93 стеку інструментів OSINT 2026 року",
+    "title_en": "OSINT Industries — named in the 2026 OSINT Stack of top 93 tools",
+    "date": "2026-07-16T00:00:00.000Z",
+    "tag": "Індустрія · Інструменти",
+    "tag_en": "Industry · Tools",
+    "source": "Massive · OSINT Industries",
+    "source_url": "https://www.joinmassive.com/blog/the-osint-stack-in-2026-93-osint-tools-across-12-categories",
+    "summary_uk": "У щорічній індустріальній мапі «The OSINT Stack in 2026» (93 інструменти × 12 категорій) OSINT Industries увійшла в категорію **People Search & Screening** — як одна з платформ, що визначає стандарт цифрової ідентифікації особистостей у розслідуваннях. Це підтверджує статус платформи як робочого інструменту №1 для крос-платформного пошуку за email / телефоном / username / крипто-гаманцем.",
+    "summary_en": "In the annual industry map «The OSINT Stack in 2026» (93 tools across 12 categories), OSINT Industries has been named in the **People Search & Screening** layer — as one of the platforms defining the standard for digital-identity resolution in investigations. This confirms the platform's status as the go-to tool for cross-platform search by email / phone / username / crypto wallet.",
+    "body_uk": "## Про платформу\n\nOSINT Industries — SaaS для розслідувачів, приватних детективів, правоохоронних органів, комплаєнсу і корпоративної безпеки. Особливості:\n\n- **1000+ джерел** одночасно за одним селектором (email / телефон / username / ім'я / крипто-гаманець)\n- **Real-time** — без зберігання історії пошуків, дані живі\n- **Крос-платформна атрибуція** — Facebook, Instagram, WhatsApp, Telegram, Strava, CashApp, Airbnb та десятки інших\n\n## Що це для української спільноти\n\n- **Стандартний робочий інструмент** для due diligence, insider risk, скринінгу кандидатів на чутливі позиції\n- **Референс** — те, з чим порівнюють українські розробки в цьому сегменті\n- **Комплементарність** — OSINT Industries дає breadth, а вужчі спеціалізовані інструменти (Sherlock, Maigret, ThunderTrace) — depth\n\n## Індустріальний контекст\n\nПотрапляння в цей огляд є фактично професійним «сертифікатом якості» для платформи. У People Search & Screening — категорії, де конкуренція жорстка (Pipl, Spokeo, TruePeopleSearch, IDentIntel), утриматись у топі означає безперервно оновлювати список джерел і швидкість запитів.",
+    "body_en": "## About the platform\n\nOSINT Industries is a SaaS for investigators, private detectives, law enforcement, compliance, and corporate security. Key features:\n\n- **1000+ sources** in parallel from a single selector (email / phone / username / name / crypto wallet)\n- **Real-time** — no search history stored, data is live\n- **Cross-platform attribution** — Facebook, Instagram, WhatsApp, Telegram, Strava, CashApp, Airbnb and dozens more\n\n## Meaning for the Ukrainian community\n\n- **Standard working tool** for due diligence, insider risk, screening candidates for sensitive positions\n- **Reference** — the benchmark Ukrainian developments in this segment are measured against\n- **Complementarity** — OSINT Industries provides breadth, while narrower specialised tools (Sherlock, Maigret, ThunderTrace) provide depth\n\n## Industry context\n\nInclusion in this map is effectively a professional «quality stamp» for the platform. In People Search & Screening — a category with fierce competition (Pipl, Spokeo, TruePeopleSearch, IDentIntel) — staying at the top requires continuous updates of source lists and query speed.",
+    "published": true,
+    "cover": "/img/uploads/news/osint-industries-stack-2026.jpg",
+    "__slug": "osint-industries-stack-2026"
   },
   {
     "title_uk": "OSINT Varta × SLON FM: безкоштовний онлайн-курс з OSINT для військових",
@@ -249,5 +329,21 @@
     "published": true,
     "cover": "/img/uploads/news/trace-labs-global-ctf-2026.jpg",
     "__slug": "trace-labs-global-ctf-2026"
+  },
+  {
+    "title_uk": "Втрати ворога 16 липня 2026: 1 340 в/с, 1 801 БПЛА, 66 артсистем",
+    "title_en": "Enemy losses on 16 July 2026: 1,340 personnel, 1,801 UAVs, 66 artillery systems",
+    "date": "2026-07-16T00:00:00.000Z",
+    "tag": "Статистика · Оперативна",
+    "tag_en": "Statistics · Operational",
+    "source": "Міністерство оборони України · Генштаб ЗСУ",
+    "source_url": "https://mod.gov.ua/news/bojovi-vtrati-voroga-na-16-lipnya-2026-roku",
+    "summary_uk": "За добу 15 липня ворог зазнав втрат: **1 340 особового складу, 1 801 БПЛА, 66 артсистем**. Того ж дня по території України було завдано 1 ракетного удару (4 ракети), 88 авіаційних, скинуто 295 керованих авіабомб, використано 9 922 дрони-камікадзе та здійснено 3 148 обстрілів населених пунктів. OSINT-канали додатково верифікують значну частину втрат за фото/відео з поля бою.",
+    "summary_en": "Over 15 July, enemy losses totalled: **1,340 personnel, 1,801 UAVs, 66 artillery systems**. On the same day, Ukrainian territory was hit by 1 missile strike (4 missiles), 88 air strikes, 295 guided aerial bombs, 9,922 kamikaze drones, and 3,148 shellings of populated areas. OSINT channels are additionally verifying a substantial portion of losses through battlefield photo/video.",
+    "body_uk": "## Основні цифри доби 15.07\n\n- **1 340** — особового складу\n- **1 801** — БПЛА оперативно-тактичного рівня\n- **66** — артилерійських систем\n- **1** ракетний удар (4 ракети)\n- **88** авіаударів\n- **295** керованих авіабомб (КАБ)\n- **9 922** дронів-камікадзе\n- **3 148** обстрілів населених пунктів, у т.ч. 42 РСЗВ\n\n## Роль OSINT\n\nОфіційні цифри Генштабу — це первинна статистика. Верифікація здійснюється OSINT-командами (Oryx, Ukraine Weapons Tracker, локальні аналітики):\n\n- **Візуальне підтвердження втрат** — кожен знищений об'єкт документується фото/відео з чіткою прив'язкою\n- **Класифікація по типах** — тип танка, конкретна модифікація БПЛА, батарея зенітної системи\n- **Гео-верифікація** — supersмплення локацій ударів по картах з високою деталізацією\n\n## Значення\n\nЦе робить статистику **аудитованою** — і в разі майбутніх процесів (МКС, ICPA, компенсаційний механізм) кожна цифра має публічно доступний слід. OSINT перестав бути «доповненням» — це вбудований шар контролю в державній звітності про хід війни.",
+    "body_en": "## Key figures for 15 July\n\n- **1,340** — personnel\n- **1,801** — operational-tactical UAVs\n- **66** — artillery systems\n- **1** missile strike (4 missiles)\n- **88** air strikes\n- **295** guided aerial bombs (KAB)\n- **9,922** kamikaze drones\n- **3,148** shellings of populated areas, including 42 MLRS strikes\n\n## The OSINT role\n\nOfficial General Staff numbers are the primary statistics. Verification is done by OSINT teams (Oryx, Ukraine Weapons Tracker, local analysts):\n\n- **Visual confirmation of losses** — every destroyed asset is documented with photo/video and precise location\n- **Classification by type** — tank model, specific UAV modification, air-defence battery\n- **Geo-verification** — precise mapping of strike locations on high-detail maps\n\n## Significance\n\nThis makes the statistics **auditable** — and in future proceedings (ICC, ICPA, compensation mechanism) every figure has a publicly traceable footprint. OSINT has stopped being a «supplement» — it is a built-in control layer over state-level reporting on the war.",
+    "published": true,
+    "cover": "/img/uploads/news/vtraty-vorog-16-lypnia-2026.jpg",
+    "__slug": "vtraty-vorog-16-lypnia-2026"
   }
 ]
