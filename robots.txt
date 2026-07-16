@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://silin-ua.github.io/sitemap.xml
+Sitemap: https://yehorselin.com/sitemap.xml

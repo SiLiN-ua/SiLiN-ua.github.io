@@ -2,8 +2,8 @@
 
 Статичне портфоліо + вбудована адмінка (Sveltia CMS, форк Decap CMS з PKCE OAuth). Ти заходиш на `/admin`, логінишся через GitHub, додаєш/редагуєш кейси, статті та книги через форму — вони автоматично коммітяться у репо, GitHub Pages деплоїть за 30-60 секунд.
 
-**Живий сайт:** `https://silin-ua.github.io/` *(після деплою)*
-**Адмінка:** `https://silin-ua.github.io/admin/`
+**Живий сайт:** `https://yehorselin.com/` *(після деплою)*
+**Адмінка:** `https://yehorselin.com/admin/`
 
 ## Стек
 
@@ -42,7 +42,7 @@ site/
 
 ### 1. Створити репозиторій GitHub
 
-- Створи публічний репо `silin-ua.github.io` в акаунті **SiLiN-ua** (назва повинна збігатися з `<login>.github.io`).
+- Створи публічний репо `yehorselin.com` в акаунті **SiLiN-ua** (назва повинна збігатися з `<login>.github.io`).
 - Клонуй порожній репо локально або запусти git у папці `site/`:
 
 ```bash
@@ -51,12 +51,12 @@ git init
 git branch -M main
 git add .
 git commit -m "Initial portfolio + Sveltia CMS"
-git remote add origin https://github.com/SiLiN-ua/silin-ua.github.io.git
+git remote add origin https://github.com/SiLiN-ua/yehorselin.com.git
 git push -u origin main
 ```
 
 - Settings → Pages → Source → **Deploy from a branch → main / (root)**.
-- Через 1-2 хв сайт живий на `https://silin-ua.github.io/`.
+- Через 1-2 хв сайт живий на `https://yehorselin.com/`.
 
 ### 2. Створити GitHub OAuth App (для входу в адмінку)
 
@@ -65,8 +65,8 @@ git push -u origin main
 1. Йди на https://github.com/settings/developers → **OAuth Apps** → **New OAuth App**.
 2. Заповни:
    - **Application name:** `Yehor Selin Portfolio CMS`
-   - **Homepage URL:** `https://silin-ua.github.io/`
-   - **Authorization callback URL:** `https://silin-ua.github.io/admin/`
+   - **Homepage URL:** `https://yehorselin.com/`
+   - **Authorization callback URL:** `https://yehorselin.com/admin/`
    - **Enable Device Flow:** не потрібно
 3. **Register application**.
 4. На сторінці нового App — скопіюй **Client ID** (це не секрет — його безпечно тримати в коді).
@@ -80,7 +80,7 @@ git push -u origin main
 
 ### 3. Перший вхід у адмінку
 
-- Йди на `https://silin-ua.github.io/admin/`.
+- Йди на `https://yehorselin.com/admin/`.
 - Натисни **Login with GitHub** → відкриється GitHub → авторизуй App → повернешся у CMS.
 - Побачиш три колекції: **Кейси**, **Новини та статті**, **Книги**. Порожні.
 - Натисни **New** → заповни поля → **Publish** → воно закомітиться в репо, GitHub Pages за хвилину оновиться, і карточка з'явиться на сайті.
@@ -119,7 +119,7 @@ git push -u origin main
 ## Власний домен (опційно, ~$10/рік)
 
 1. Купи `yehorselin.com` (Namecheap / Cloudflare Registrar / Порт.).
-2. У DNS-провайдера додай A-записи на: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (GitHub Pages IPs), плюс CNAME `www` → `silin-ua.github.io`.
+2. У DNS-провайдера додай A-записи на: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (GitHub Pages IPs), плюс CNAME `www` → `yehorselin.com`.
 3. У GitHub → Settings → Pages → Custom domain → `yehorselin.com` → Save (галочка Enforce HTTPS).
 4. Створи файл `CNAME` у корені репо з одним рядком: `yehorselin.com`.
 5. Оновити **Authorization callback URL** у OAuth App на `https://yehorselin.com/admin/` + `Homepage URL` теж.
@@ -133,7 +133,7 @@ git push -u origin main
 - ✅ hreflang UA/EN
 
 **Після деплою:**
-- Google Search Console → додай властивість `https://silin-ua.github.io/` → submit `sitemap.xml`.
+- Google Search Console → додай властивість `https://yehorselin.com/` → submit `sitemap.xml`.
 - Bing Webmaster Tools — те саме.
 - Додай посилання на сайт у профіль LinkedIn / GitHub bio / Patreon.
 

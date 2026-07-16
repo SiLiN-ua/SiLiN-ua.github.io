@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
   <title>Єгор Селін — OSINT-новини</title>
-  <link>https://silin-ua.github.io/blog.html</link>
-  <atom:link href="https://silin-ua.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+  <link>https://yehorselin.com/blog.html</link>
+  <atom:link href="https://yehorselin.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Головні події сфери OSINT з України та світу. Куратор: Єгор Селін.</description>
   <language>uk</language>
   <lastBuildDate>Wed, 15 Jul 2026 06:08:48 +0000</lastBuildDate>
-  <image><url>https://silin-ua.github.io/img/yehor.jpg</url><title>Єгор Селін</title><link>https://silin-ua.github.io/</link></image>
+  <image><url>https://yehorselin.com/img/yehor.jpg</url><title>Єгор Селін</title><link>https://yehorselin.com/</link></image>
   <item>
     <title>«Школа OSINT» на Дія.Освіта — безкоштовний освітній серіал від Мінцифри</title>
-    <link>https://silin-ua.github.io/blog.html?slug=shkola-osint-diia-osvita</link>
-    <guid isPermaLink="true">https://silin-ua.github.io/blog.html?slug=shkola-osint-diia-osvita</guid>
+    <link>https://yehorselin.com/blog.html?slug=shkola-osint-diia-osvita</link>
+    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=shkola-osint-diia-osvita</guid>
     <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
     <category>Освіта</category>
-    <source url="https://silin-ua.github.io">Дія.Освіта · Мінцифри</source>
+    <source url="https://yehorselin.com">Дія.Освіта · Мінцифри</source>
     <description>На державній платформі Дія.Освіта доступний безкоштовний освітній серіал «Школа OSINT» з 5 епізодів. Курс створено за ініціативи Міністерства цифрової трансформації. Ведучі — Дмитро Золотухін (автор OSINT Academy) та Дмитро Однокоз (розробник технічних рішень для OSINT). Після проходження курсу глядач вміє перевіряти інформацію онлайн, розпізнавати фейки, знаходити видалені сторінки в архівах та шукати інформацію про людей у соцмережах.</description>
   </item>
   <item>
     <title>Molfar продовжує ідентифікувати російських військових злочинців через OSINT</title>
-    <link>https://silin-ua.github.io/blog.html?slug=molfar-nove-rozsliduvannia-2026</link>
-    <guid isPermaLink="true">https://silin-ua.github.io/blog.html?slug=molfar-nove-rozsliduvannia-2026</guid>
+    <link>https://yehorselin.com/blog.html?slug=molfar-nove-rozsliduvannia-2026</link>
+    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=molfar-nove-rozsliduvannia-2026</guid>
     <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
     <category>Розслідування</category>
-    <source url="https://silin-ua.github.io">Molfar Intelligence Institute</source>
-    <enclosure url="https://silin-ua.github.io/img/uploads/news/molfar-nove-rozsliduvannia-2026.jpg" type="image/jpeg"/>
+    <source url="https://yehorselin.com">Molfar Intelligence Institute</source>
+    <enclosure url="https://yehorselin.com/img/uploads/news/molfar-nove-rozsliduvannia-2026.jpg" type="image/jpeg"/>
     <description>Український аналітичний інститут Molfar станом на липень 2026 року публікує нові розслідування щодо російських військових злочинів в Україні. Команда використовує методології OSINT для ідентифікації осіб, локалізації підрозділів, документування епізодів насильства над цивільними та пошуку викрадених дітей. Molfar входить до глобальної мережі з 19 OSINT-команд, що документують воєнні злочини для міжнародних правових процесів.</description>
   </item>
   <item>
     <title>IT Arena 2026: панель «Онлайн-безпека — як використати OSINT на користь Україні»</title>
-    <link>https://silin-ua.github.io/blog.html?slug=it-arena-2026-osint-panel</link>
-    <guid isPermaLink="true">https://silin-ua.github.io/blog.html?slug=it-arena-2026-osint-panel</guid>
+    <link>https://yehorselin.com/blog.html?slug=it-arena-2026-osint-panel</link>
+    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=it-arena-2026-osint-panel</guid>
     <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
     <category>Події</category>
-    <source url="https://silin-ua.github.io">IT Arena · Львів</source>
-    <enclosure url="https://silin-ua.github.io/img/uploads/news/it-arena-2026-osint-panel.jpg" type="image/jpeg"/>
+    <source url="https://yehorselin.com">IT Arena · Львів</source>
+    <enclosure url="https://yehorselin.com/img/uploads/news/it-arena-2026-osint-panel.jpg" type="image/jpeg"/>
     <description>Найбільша IT-конференція Східної Європи IT Arena у 2026 році вперше винесла OSINT в окрему панель під назвою «Онлайн-безпека: як використати OSINT на користь Україні». Учасники обговорюють роль відкритих джерел у документуванні воєнних злочинів, боротьбі з дезінформацією та захисті критичної інфраструктури. Це — сигнал того, що OSINT увійшов у мейнстрім IT-порядку денного країни.</description>
   </item>
   <item>
     <title>НАДС запустив навчання OSINT для державних службовців</title>
-    <link>https://silin-ua.github.io/blog.html?slug=nads-osint-navchannia-derzhsluzhbovtsiv</link>
-    <guid isPermaLink="true">https://silin-ua.github.io/blog.html?slug=nads-osint-navchannia-derzhsluzhbovtsiv</guid>
+    <link>https://yehorselin.com/blog.html?slug=nads-osint-navchannia-derzhsluzhbovtsiv</link>
+    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=nads-osint-navchannia-derzhsluzhbovtsiv</guid>
     <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     <category>Держслужба</category>
-    <source url="https://silin-ua.github.io">Національне агентство України з питань державної служби</source>
+    <source url="https://yehorselin.com">Національне агентство України з питань державної служби</source>
     <description>Національне агентство України з питань державної служби (НАДС) офіційно рекомендувало публічним службовцям та службам управління персоналом пройти онлайн-курс «OSINT — розвідка з відкритих джерел та інформаційна безпека» на платформі Prometheus. Курс безкоштовний, з видачею сертифіката, що зараховується як підвищення кваліфікації. Це — крок до масового впровадження OSINT-компетенцій у державному секторі.</description>
   </item>
   <item>
     <title>OSINT-аналітик отримав статус офіційної професії в Україні</title>
-    <link>https://silin-ua.github.io/blog.html?slug=osint-analitik-oficijna-profesija</link>
-    <guid isPermaLink="true">https://silin-ua.github.io/blog.html?slug=osint-analitik-oficijna-profesija</guid>
+    <link>https://yehorselin.com/blog.html?slug=osint-analitik-oficijna-profesija</link>
+    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osint-analitik-oficijna-profesija</guid>
     <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
     <category>Україна</category>
-    <source url="https://silin-ua.github.io">Національна академія Служби безпеки України</source>
+    <source url="https://yehorselin.com">Національна академія Служби безпеки України</source>
     <description>У 2026 році в Україні затверджено професійний стандарт «Аналітик інформації з відкритих джерел (OSINT-аналітик)». Стандарт розроблено Національною академією Служби безпеки України спільно з науковцями сектору безпеки і оборони та громадськими організаціями. Це офіційно закріплює OSINT-аналітику як окрему професію, відкриває шлях до сертифікації, освітніх програм та кваліфікаційних вимог.</description>
   </item>
   <item>
     <title>Комітет ВРУ закликав українців вивчати OSINT-інструменти для перевірки інформації</title>
-    <link>https://silin-ua.github.io/blog.html?slug=komitet-vru-osint-instrumenty</link>
-    <guid isPermaLink="true">https://silin-ua.github.io/blog.html?slug=komitet-vru-osint-instrumenty</guid>
+    <link>https://yehorselin.com/blog.html?slug=komitet-vru-osint-instrumenty</link>
+    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=komitet-vru-osint-instrumenty</guid>
     <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
     <category>Україна</category>
-    <source url="https://silin-ua.github.io">Комітет ВРУ з питань цифрової трансформації</source>
+    <source url="https://yehorselin.com">Комітет ВРУ з питань цифрової трансформації</source>
     <description>Комітет Верховної Ради України з питань цифрової трансформації опублікував заклик до громадян навчитися перевіряти інформацію та аналізувати дані за допомогою OSINT-інструментів. У повідомленні наголошується, що OSINT — це не лише інструмент розвідки, а й спосіб захисту від дезінформації, важливий у контексті інформаційної війни. Комітет рекомендує безкоштовні освітні ресурси, доступні кожному.</description>
   </item>
 </channel></rss>

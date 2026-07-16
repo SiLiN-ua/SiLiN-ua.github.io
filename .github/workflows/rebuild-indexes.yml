@@ -37,7 +37,7 @@ jobs:
               print(f'{name}: {len(items)} items')
 
           # RSS
-          SITE='https://silin-ua.github.io'
+          SITE='https://yehorselin.com'
           posts=[]
           for p in sorted(glob.glob('content/posts/*.json'), reverse=True):
               if os.path.basename(p).startswith('_'): continue

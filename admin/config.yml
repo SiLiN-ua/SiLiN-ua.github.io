@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: SiLiN-ua/silin-ua.github.io      # заміни якщо назва репо інша
+  repo: SiLiN-ua/yehorselin.com      # заміни якщо назва репо інша
   branch: main
-  base_url: https://silin-ua.github.io   # sveltia uses PKCE, no proxy needed
+  base_url: https://yehorselin.com   # sveltia uses PKCE, no proxy needed
   auth_type: pkce
   app_id: Ov23lieYYCdFhAd8UQw0
 
