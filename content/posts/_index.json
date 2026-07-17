@@ -32,6 +32,22 @@
     "__slug": "bellingcat-shadow-fleet-grain-libya"
   },
   {
+    "title_uk": "Berkeley Protocol у Міноборони: OSINT-стандарт входить в офіційні розслідування ЗСУ",
+    "title_en": "Berkeley Protocol at the Ministry of Defence: OSINT standard enters the Armed Forces' formal investigations",
+    "date": "2026-07-16T00:00:00.000Z",
+    "tag": "Стандарти · Justice · OSINT",
+    "tag_en": "Standards · Justice · OSINT",
+    "source": "UNLA · Berkeley Human Rights Center · Мін'юст",
+    "source_url": "https://unla.org.ua/en/2026/05/experts-berkeley-protocol-remains-a-key-international-standard-for-documenting-war-crimes-but-needs-to-be-adapted-to-modern-challenges/",
+    "summary_uk": "Міністерство оборони України розробляє проєкт положення про службові перевірки та розслідування, що враховує **принципи Berkeley Protocol** — міжнародного стандарту цифрових розслідувань з відкритих джерел. Військова служба правопорядку ЗСУ вже активно використовує OSINT-матеріали. Це системний крок: OSINT перестає бути «додатком» і стає інституційно вбудованим шаром доказової системи.",
+    "summary_en": "Ukraine's Ministry of Defence is drafting regulations on official inspections and investigations that incorporate **the principles of the Berkeley Protocol** — the international standard for digital open-source investigations. The Armed Forces' Military Law Enforcement Service already actively uses OSINT materials. This is a systemic step: OSINT is moving from an «add-on» to an institutionally embedded layer of the evidence system.",
+    "body_uk": "## Що таке Berkeley Protocol\n\nСпільна розробка **Human Rights Centre Berkeley Law** та **Управління Верховного комісара ООН з прав людини (OHCHR)**, 2020 (переглянутий у 2022 і 2024). Це міжнародний стандарт **проведення розслідувань з відкритих цифрових джерел** для доказування порушень міжнародного кримінального, гуманітарного права та прав людини.\n\n## Ключові вимоги стандарту\n\n- **Хешування** усіх зібраних цифрових доказів через SHA-256\n- **Документування контексту** акquisition: URL, timestamp, метод доступу\n- **Мульти-джерельна корроборація** — геолокація, хронолокація, аналіз метаданих\n- **Безпека** — цифрова, фізична та психосоціальна для дослідників, свідків, потерпілих\n- **Прозорість методології** — здатність відтворити ланцюжок аналізу\n\n## Що робить Мінoборони\n\nПроєкт положення передбачає:\n\n- Прийняття Berkeley Protocol як методологічної основи службових розслідувань\n- Стандартизацію збору цифрових доказів у ЗСУ\n- Інтеграцію з чинними процедурами військової прокуратури\n- Навчальні модулі для військових слідчих\n\n## Значення\n\nЦе прецедент: Berkeley Protocol офіційно входить у процесуальну практику військового відомства. Для української OSINT-спільноти — це визнання, що ті методи, які роками застосовували волонтерські ініціативи (Bellingcat, InformNapalm, OSINT for Ukraine), тепер стають стандартом дeржавної системи. Аналогічний рух зараз відбувається у прокуратурі та СБУ.",
+    "body_en": "## What is the Berkeley Protocol\n\nA joint development of the **Human Rights Centre at Berkeley Law** and the **United Nations Office of the High Commissioner for Human Rights (OHCHR)**, 2020 (revised in 2022 and 2024). It is the international standard for **conducting open-source digital investigations** to document violations of international criminal, humanitarian, and human-rights law.\n\n## Key requirements of the standard\n\n- **Hashing** all collected digital evidence using SHA-256\n- **Documenting acquisition context**: URL, timestamp, access method\n- **Multi-source corroboration** — geolocation, chronolocation, metadata analysis\n- **Safety** — digital, physical, and psychosocial for investigators, witnesses, and victims\n- **Methodology transparency** — ability to reproduce the chain of analysis\n\n## What the Ministry of Defence is doing\n\nThe draft regulation includes:\n\n- Adopting the Berkeley Protocol as the methodological foundation for official investigations\n- Standardising digital evidence collection in the Armed Forces\n- Integration with existing military-prosecution procedures\n- Training modules for military investigators\n\n## Significance\n\nThis is a precedent: the Berkeley Protocol formally enters the procedural practice of a military authority. For the Ukrainian OSINT community, it is recognition that methods long applied by volunteer initiatives (Bellingcat, InformNapalm, OSINT for Ukraine) are now becoming a standard of the state system. A parallel movement is happening in the Prosecutor's Office and the SBU.",
+    "published": true,
+    "cover": "/img/uploads/news/berkeley-protocol-mou-ukraine-2026.jpg",
+    "__slug": "berkeley-protocol-mou-ukraine-2026"
+  },
+  {
     "title_uk": "Рада Європи · Київ: OSINT-воркшоп для НАЗК, НАБУ та САП",
     "title_en": "Council of Europe · Kyiv: OSINT workshop for NACP, NABU, and SAPO",
     "date": "2026-07-02T00:00:00.000Z",
@@ -62,6 +78,22 @@
     "published": true,
     "cover": "/img/uploads/news/defcon-34-trace-labs-tickets-2026.jpg",
     "__slug": "defcon-34-trace-labs-tickets-2026"
+  },
+  {
+    "title_uk": "Дія.Бізнес × YouControl Academy: безкоштовний OSINT-курс «Робота з реєстрами»",
+    "title_en": "Diia.Business × YouControl Academy: free OSINT course «Working with Registries»",
+    "date": "2026-07-17T00:00:00.000Z",
+    "tag": "Освіта · Бізнес · Реєстри",
+    "tag_en": "Education · Business · Registries",
+    "source": "Дія.Бізнес · YouControl Academy",
+    "source_url": "https://business.diia.gov.ua/news/bezoplatnyi-onlain-kurs-z-poshuku-informatsii-pro-kontrahentiv-z-vidkrytykh-dzherel",
+    "summary_uk": "На порталі Дія.Бізнес відкрився безкоштовний онлайн-курс від YouControl Academy — **«OSINT. Робота з реєстрами»**. Курс покриває всі відкриті реєстри для due diligence контрагентів: перевірка бізнесу, майна, санкцій, судових справ, податкових боргів. Цільова аудиторія — підприємці, юристи, бізнес-аналітики, розслідувальні журналісти.",
+    "summary_en": "The Diia.Business portal has launched a free online course from YouControl Academy — **«OSINT. Working with Registries»**. The course covers all open registries used for counterparty due diligence: business checks, property, sanctions, court cases, tax debts. Target audience: entrepreneurs, lawyers, business analysts, investigative journalists.",
+    "body_uk": "## Що на курсі\n\n- **Які реєстри існують і що в них шукати** — Мін'юст, ProZorro, YouControl, Opendatabot, Datacrat, ДРФО, реєстр судових рішень, санкційні бази\n- **Перевірка контрагента** — від ЄДРПОУ до кінцевого бенефіціара і всіх пов'язаних юросіб\n- **Майновий скринінг** — нерухомість, транспорт, земля\n- **Юридичний профіль** — судові справи, виконавчі провадження\n- **Фінансовий стан** — податкові борги, санкції, боргові навантаження\n- **Практичні кейси** — типові запити з бізнес-практики\n\n## Чому це важливо\n\nOSINT-навички для роботи з реєстрами — це вже базова цифрова грамотність підприємця, а не «вузько-профільна навичка». Кожен, хто підписує договір, наймає партнера, чи бере кредит, повинен уміти самостійно перевірити другу сторону. YouControl + Дія.Бізнес закривають цю прогалину системно і безкоштовно — це важливий інфраструктурний крок для економічної гігієни.\n\n## Формат\n\n- **Ціна:** безкоштовно\n- **Мова:** українська\n- **Формат:** асинхронне відео + практичні завдання\n- **Сертифікат:** так, від Дія.Бізнес",
+    "body_en": "## What's inside\n\n- **What registries exist and what to search in them** — Ministry of Justice, ProZorro, YouControl, Opendatabot, Datacrat, DRFO, court decisions registry, sanctions databases\n- **Counterparty check** — from company registration number to ultimate beneficial owner and all linked legal entities\n- **Property screening** — real estate, transport, land\n- **Legal profile** — court cases, enforcement proceedings\n- **Financial standing** — tax debts, sanctions, debt exposure\n- **Practical cases** — typical requests from business practice\n\n## Why it matters\n\nOSINT skills for working with registries are now basic digital literacy for entrepreneurs, not a «narrow specialist skill». Anyone signing a contract, hiring a partner, or taking a loan should be able to check the counterparty themselves. YouControl + Diia.Business close this gap systematically and free of charge — an important infrastructural step for economic hygiene.\n\n## Format\n\n- **Price:** free\n- **Language:** Ukrainian\n- **Format:** asynchronous video + practical exercises\n- **Certificate:** yes, from Diia.Business",
+    "published": true,
+    "cover": "/img/uploads/news/diia-business-youcontrol-osint-2026.jpg",
+    "__slug": "diia-business-youcontrol-osint-2026"
   },
   {
     "title_uk": "ЄС та Британія: санкції проти офіцерів ГРУ РФ за багаторічну кібероперацію",
@@ -237,6 +269,22 @@
     "__slug": "nacpol-war-crimes-206k-2026"
   },
   {
+    "title_uk": "НАДС оголосив набір на OSINT-навчання для HR-служб держсектору",
+    "title_en": "NADS opens enrolment for OSINT training for HR services of the public sector",
+    "date": "2026-07-17T00:00:00.000Z",
+    "tag": "Освіта · Держслужба · Скринінг",
+    "tag_en": "Education · Civil Service · Screening",
+    "source": "Національне агентство України з питань державної служби",
+    "source_url": "https://nads.gov.ua/news/do-uvahy-publichnykh-sluzhbovtsiv-ta-sluzhb-upravlinnia-personalom-proponuiemo-navchannia-instrumentam-osint",
+    "summary_uk": "Національне агентство України з питань державної служби (НАДС) відкрило набір на навчальну програму з інструментів OSINT для публічних службовців та служб управління персоналом. Курс — про застосування відкритих джерел у скринінгу кандидатів на посади в держсекторі, перевірці доброчесності та профілактиці інсайдерських ризиків.",
+    "summary_en": "The National Agency of Ukraine on Civil Service (NADS) has opened enrolment for a training programme on OSINT tools for public officials and human-resources services. The course covers the use of open sources in screening candidates for public-sector positions, integrity checks, and prevention of insider risks.",
+    "body_uk": "## Про програму\n\n- **Цільова аудиторія:** служби управління персоналом органів державної влади, ОМС, комунальних підприємств\n- **Ключові теми:** OSINT-скринінг кандидатів, перевірка доброчесності, оцінка репутаційних ризиків, ідентифікація прихованих афіліацій\n- **Практичні модулі:** робота з відкритими реєстрами, соцмережі, крос-верифікація фактів, документування знахідок для HR-справ\n- **Формат:** гібридний — базові модулі онлайн, практикуми офлайн\n\n## Контекст\n\nЯкість кадрового відбору у держсекторі — стратегічний фактор національної безпеки. Політика доброчесності Уряду вимагає систематичної перевірки не тільки декларацій, а й публічного цифрового сліду кандидатів. OSINT дає HR-фахівцям законний інструментарій для такої перевірки — від виявлення прихованих афіліацій з санкційними структурами до оцінки поведінкових ризиків.\n\n## Тенденція\n\nЦе продовження системної роботи держсектору 2026 року: раніше подібні програми запустили Академія прокуратури, Академія СБУ, Дія.Освіта, Комітет ВРУ з цифрової трансформації. НАДС — важливий елемент цього ланцюга, бо покриває **всі 300+ тис. держслужбовців країни через HR-канал**.",
+    "body_en": "## About the programme\n\n- **Target audience:** HR services of state authorities, local self-government bodies, municipal enterprises\n- **Key topics:** OSINT candidate screening, integrity checks, reputational-risk assessment, identification of hidden affiliations\n- **Practical modules:** open registries, social media, cross-verification of facts, documenting findings for HR files\n- **Format:** hybrid — basic modules online, practicums offline\n\n## Context\n\nThe quality of personnel selection in the public sector is a strategic factor of national security. The government's integrity policy requires systematic checks not only of declarations but also of candidates' public digital footprints. OSINT provides HR professionals with a legal toolkit for such checks — from surfacing hidden affiliations with sanctioned structures to assessing behavioural risks.\n\n## The trend\n\nThis continues the public sector's systematic 2026 work: similar programmes were previously launched by the Prosecutor's Academy, the SBU Academy, Diia.Education, and the Rada Committee on Digital Transformation. NADS is an important element in this chain because it reaches **all 300,000+ civil servants of the country through the HR channel**.",
+    "published": true,
+    "cover": "/img/uploads/news/nads-osint-hr-training-2026.jpg",
+    "__slug": "nads-osint-hr-training-2026"
+  },
+  {
     "title_uk": "НАДС запустив навчання OSINT для державних службовців",
     "title_en": "NAUCS launches OSINT training for civil servants",
     "date": "2026-06-25T00:00:00.000Z",
@@ -316,6 +364,22 @@
     "__slug": "osint-varta-slon-fm-course-2026"
   },
   {
+    "title_uk": "OSINTech Timeline #171: щотижневий OSINT-дайджест — 16.07.2026",
+    "title_en": "OSINTech Timeline #171: weekly OSINT digest — 16.07.2026",
+    "date": "2026-07-16T00:00:00.000Z",
+    "tag": "Спільнота · Інструменти",
+    "tag_en": "Community · Tools",
+    "source": "OSINTech Substack",
+    "source_url": "https://osintech.substack.com/p/osintechs-timeline-171-16072026",
+    "summary_uk": "Свіжий 171-й випуск щотижневого OSINT-дайджесту OSINTech покриває сім категорій: регіональний OSINT (Швейцарія, SMS-верифікація), нові інструменти (Global Ping, Lookyloo, browser isolation), AI-агенти для розслідувань (Chrome-side panel для Hermes Agent, LLM-powered Google Dorks), інфраструктурні утиліти, безпека Wi-Fi (WEP → WPA3), і найцікавіше — Telegram-аналітика по **6 000+ ботах і 6 000+ TON mini-apps** для розслідувань.",
+    "summary_en": "The fresh 171st issue of OSINTech's weekly digest covers seven categories: regional OSINT (Switzerland, SMS verification), new tools (Global Ping, Lookyloo, browser isolation), AI agents for investigations (Chrome side panel for Hermes Agent, LLM-powered Google dorks), infrastructure utilities, Wi-Fi security (WEP → WPA3), and most notably — Telegram analytics covering **6,000+ bots and 6,000+ TON mini-apps** for investigative use.",
+    "body_uk": "## Що всередині випуску\n\n**🌍 Регіональний OSINT**\n- Документація методів SMS-верифікації\n- Швейцарський toolkit для дослідження місцевих юрсуб'єктів\n\n**🛠️ Інструменти**\n- Global Ping — мережева діагностика з різних географій\n- Lookyloo — картування трафіку сайту\n- Розширення browser isolation\n- Архівація YouTube-контенту\n- Encrypted file storage\n\n**🤖 AI-агенти для розслідувань**\n- Chrome/Edge side panel для Hermes Agent runtime\n- LLM-powered Google Dorks для security testing\n\n**🌐 Інфраструктура**\n- Docker monitoring dashboards\n- Утиліти для network discovery\n- Термінальні інструменти packet inspection\n\n**📡 Wi-Fi security**\n- Аналіз протоколів від WEP до WPA3\n\n**📱 Telegram Intelligence** ⭐\n- Аналітична платформа зі статистикою по **6 000+ Telegram-ботах** і 6 000+ TON mini-apps\n\n## Чому це важливо\n\nЩотижневі дайджести типу OSINTech Timeline — головне джерело нових інструментів і методик для практикуючих OSINT-аналітиків. За 171 випуск — це вже інституція. Особливо цінна остання секція: систематизований огляд Telegram-ботів дає можливість атрибувати авторів, партнерів, ланцюжки монетизації — і це напрямок, який росте разом з Telegram-екосистемою.",
+    "body_en": "## Inside the issue\n\n**🌍 Regional OSINT**\n- Documentation of SMS verification methods\n- Swiss-specific toolkit for local-entity research\n\n**🛠️ Tools**\n- Global Ping — network diagnostics from multiple geographies\n- Lookyloo — website traffic mapping\n- Browser isolation extensions\n- YouTube content archiving\n- Encrypted file storage\n\n**🤖 AI agents for investigations**\n- Chrome/Edge side panel for the Hermes Agent runtime\n- LLM-powered Google dorks for security testing\n\n**🌐 Infrastructure**\n- Docker monitoring dashboards\n- Network discovery utilities\n- Terminal packet inspection tools\n\n**📡 Wi-Fi security**\n- Protocol analysis from WEP through WPA3\n\n**📱 Telegram Intelligence** ⭐\n- Analytics platform covering **6,000+ Telegram bots** and 6,000+ TON mini-apps\n\n## Why it matters\n\nWeekly digests like OSINTech Timeline are a primary source of new tools and techniques for practising OSINT analysts. At 171 issues, it's already an institution. The final section is especially valuable: a systematic view of Telegram bots enables attribution of authors, partners, and monetisation chains — a direction growing alongside the Telegram ecosystem itself.",
+    "published": true,
+    "cover": "/img/uploads/news/osintech-timeline-171-16072026.jpg",
+    "__slug": "osintech-timeline-171-16072026"
+  },
+  {
     "title_uk": "«Школа OSINT» на Дія.Освіта — безкоштовний освітній серіал від Мінцифри",
     "title_en": "'OSINT School' on Diia.Education — free educational series from the Ministry of Digital Transformation",
     "date": "2026-07-10T00:00:00.000Z",
@@ -329,6 +393,22 @@
     "published": true,
     "cover": "/img/uploads/news/shkola-osint-diia-osvita.jpg",
     "__slug": "shkola-osint-diia-osvita"
+  },
+  {
+    "title_uk": "DEF CON 34 · Trace Labs Global CTF — квитки live завтра, 18 липня о 19:00 UTC",
+    "title_en": "DEF CON 34 · Trace Labs Global CTF — tickets go live tomorrow, 18 July at 19:00 UTC",
+    "date": "2026-07-17T00:00:00.000Z",
+    "tag": "CTF · Community · Reminder",
+    "tag_en": "CTF · Community · Reminder",
+    "source": "Trace Labs · DEF CON Forums",
+    "source_url": "https://forum.defcon.org/node/240970",
+    "summary_uk": "Нагадування: реєстрація на **Global OSINT Search Party CTF @ DEF CON 34** відкривається завтра, 18 липня 2026 о **12:00 PDT / 19:00 UTC / 22:00 Київ**. Формат — гібридний: фізична локація OSINT 4 Good Community + віртуальна участь. Квитки безкоштовні, але обов'язкові — місця обмежені. Топові команди зазвичай розхоплюють слоти у перші 30 хвилин.",
+    "summary_en": "Reminder: registration for the **Global OSINT Search Party CTF @ DEF CON 34** opens tomorrow, 18 July 2026 at **12:00 PDT / 19:00 UTC / 22:00 Kyiv**. Hybrid format: physical OSINT 4 Good Community location + virtual participation. Tickets are free but required — spots are limited. Top teams typically grab slots within the first 30 minutes.",
+    "body_uk": "## Точні деталі реєстрації\n\n- **Дата:** 18 липня 2026\n- **Час:** 12:00 PDT / 19:00 UTC / **22:00 за Києвом**\n- **Платформа:** Zeffy — 100% зборів іде Trace Labs\n- **Формат:** hybrid — on-site у Vegas + virtual\n- **Мінімальна команда:** 1 особа (можна grow до 4 після реєстрації)\n\n## Як підготуватися\n\n**За 1 годину до старту:**\n- Створи акаунт на Zeffy (потім не буде часу)\n- Підготуй два браузери — один для реєстрації, один запасний\n- Синхронізуй годинник\n\n**За 5 хвилин:**\n- Оновлюй сторінку https://forum.defcon.org/node/240970\n- Тримай посилання на Zeffy ready\n\n**Стратегія:**\n- Реєструй мінімальну команду (себе), потім додаватимеш людей\n- Якщо ти в Україні — це нічний час, план на «до 22:15 підтверджено» реалістичний\n- Слоти закінчуються **за 5-15 хвилин** — швидкість критична\n\n## Чому це вартує уваги\n\nDEF CON Edition Search Party — найпрестижніший OSINT-CTF у світі. Тут визначаються методологічні тренди, тут «народжуються» нові техніки атрибуції та pivoting'у. Українська OSINT-спільнота історично добре представлена — це нагода зіставити свої методи з міжнародним фронтіром.",
+    "body_en": "## Precise registration details\n\n- **Date:** 18 July 2026\n- **Time:** 12:00 PDT / 19:00 UTC / **22:00 Kyiv time**\n- **Platform:** Zeffy — 100% of proceeds to Trace Labs\n- **Format:** hybrid — on-site in Vegas + virtual\n- **Minimum team:** 1 person (can grow to 4 after registration)\n\n## How to prepare\n\n**1 hour before:**\n- Create your Zeffy account (no time later)\n- Prepare two browsers — one for registration, one as backup\n- Sync your clock\n\n**5 minutes before:**\n- Keep refreshing https://forum.defcon.org/node/240970\n- Keep the Zeffy link ready\n\n**Strategy:**\n- Register a minimal team (yourself), add teammates later\n- If you're in Ukraine — this is night time, «confirmed by 22:15» is a realistic plan\n- Slots go in **5-15 minutes** — speed is critical\n\n## Why it matters\n\nThe DEF CON edition of Search Party is the most prestigious OSINT CTF in the world. Methodological trends are defined here; new attribution and pivoting techniques are born here. The Ukrainian OSINT community is historically well-represented — this is a chance to benchmark local methods against the international frontier.",
+    "published": true,
+    "cover": "/img/uploads/news/trace-labs-defcon-tickets-live-2026.jpg",
+    "__slug": "trace-labs-defcon-tickets-live-2026"
   },
   {
     "title_uk": "Trace Labs провів другий у 2026 глобальний OSINT Search Party CTF",
