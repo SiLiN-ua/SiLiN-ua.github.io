@@ -15,8 +15,8 @@
     "/img/uploads/projects/kiriko-report.jpg",
     "/img/uploads/projects/kiriko-export.png"
   ],
-  "description_uk": "Закрита AI-платформа для **швидкої перевірки кандидатів** через OSINT — автономний агент на Claude AI. Самостійно виконує повний цикл скринінгу: підключається до внутрішніх OSINT-джерел, парсить PDF-звіти, шукає username по 350+ платформах через власний **ThunderTrace**, реконструює повну історію цифрових ідентифікаторів кандидата. Експортує звіти у Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом та live-дощем зі символів. Три мови: EN / UA / RU.",
-  "description_en": "Closed AI-powered OSINT platform for **fast candidate screening** — an autonomous agent built on Claude AI. Runs the full screening cycle independently: connects to internal OSINT sources, parses PDF reports, searches usernames across 350+ platforms via the in-house **ThunderTrace**, reconstructs the candidate's complete history of digital identifiers. Exports reports to Word / PDF / HTML. Cyber-noir Japanese UI with matrix-style glitch effects and live character rain. Trilingual: EN / UA / RU.",
+  "description_uk": "Закрита AI-платформа для **швидкої перевірки кандидатів** через OSINT — автономний агент на Claude AI, який виступає **робочим інструментом досвідченого аналітика**, а не його замінником. Kiriko забирає рутинну частину — паралельний збір з внутрішніх OSINT-джерел, парсинг PDF-документів, ThunderTrace по 350+ платформах, реконструкцію ідентифікаторів, форматування звіту. Аналітик отримує на вхід структурований чорновик замість купи розрізнених даних — і фокусується на головному: інтерпретації, побудові гіпотез, фінальному вердикті. Експорт: Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом. Три мови: EN / UA / RU.",
+  "description_en": "Closed AI-powered OSINT platform for **fast candidate screening** — an autonomous agent built on Claude AI, designed as a **working tool for an experienced analyst, not a replacement for one**. Kiriko takes the routine layer — parallel collection from internal OSINT sources, PDF parsing, ThunderTrace across 350+ platforms, identifier reconstruction, report formatting. The analyst receives a structured draft instead of a pile of raw data — and focuses on what matters: interpretation, hypothesis-building, final verdict. Export: Word / PDF / HTML. Cyber-noir Japanese UI with matrix effects. Trilingual: EN / UA / RU.",
   "features_uk": [
     "Автономний AI-агент на Claude — повний цикл скринінгу кандидата без ручного втручання",
     "Інтеграція з операційними OSINT-джерелами (deep-пошук, соцмережі, телефон)",
@@ -72,13 +72,15 @@
   "highlights_uk": [
     "10-15 хв",
     "350+ платформ",
-    "3 мови",
+    "AI-assist, не заміна",
     "EN · UA · RU"
   ],
   "highlights_en": [
     "10-15 min",
     "350+ platforms",
-    "3 languages",
+    "AI-assist, not replacement",
     "EN · UA · RU"
-  ]
+  ],
+  "note_uk": "**Kiriko не замінює аналітика — він його підсилює.** Автоматизація закриває рутинну частину скринінгу (збір, категоризація, форматування). Але **інтерпретація знайденого, побудова гіпотези і фінальний вердикт** — залишаються за людиною. AI без досвідченого аналітика на іншому кінці дає багато даних і мало сенсу. Kiriko — це прискорювач методології, а не її заміна.",
+  "note_en": "**Kiriko doesn't replace the analyst — it amplifies them.** Automation covers the routine layer of screening (collection, categorisation, formatting). But **interpretation of findings, hypothesis-building, and the final verdict** stay with the human. AI without an experienced analyst on the other end delivers a lot of data and little meaning. Kiriko is a methodology accelerator, not a substitute for one."
 }

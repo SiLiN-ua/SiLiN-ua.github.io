@@ -696,8 +696,11 @@
     const shots = (item.screenshots || []).slice(1).map(s => `<div class="proj-shot"><img src="${escapeHtml(s)}" alt="" loading="lazy"></div>`).join('');
     const chips = highlights.length
       ? `<div class="proj-chips">${highlights.map(h => `<span class="proj-chip">${escapeHtml(h)}</span>`).join('')}</div>` : '';
+    const note = escapeHtml(tr(item, 'note') || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     const problemBlock = problem
       ? `<div class="proj-problem"><div class="proj-problem__label">${L('problem', 'Проблема')}</div><p>${problem}</p></div>` : '';
+    const noteBlock = note
+      ? `<div class="proj-note"><div class="proj-note__label">${L('note', 'Позиціонування')}</div><p>${note}</p></div>` : '';
     const howBlock = howItWorks.length
       ? `<div class="proj-block"><h3>${L('how', 'Як працює')}</h3><ol class="proj-steps">${howItWorks.map(s => `<li>${escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</li>`).join('')}</ol></div>` : '';
     const whomBlock = forWhom.length
@@ -724,6 +727,7 @@
           ${chips}
         </div>
         ${problemBlock}
+        ${noteBlock}
         <div class="proj-grid">
           <div class="proj-grid__main">
             ${howBlock}

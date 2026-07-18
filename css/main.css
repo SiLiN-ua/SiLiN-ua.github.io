@@ -1812,3 +1812,27 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .proj-row__name { font-size: 1.6rem; }
   .proj-row__cover { aspect-ratio: 16/9; }
 }
+
+/* Project positioning note (AI-assist framing) */
+.proj-note {
+  margin: 2rem 0 3rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid rgba(255, 200, 100, .3);
+  background: linear-gradient(90deg, rgba(255, 200, 100, .05), transparent 70%);
+  border-radius: 2px;
+}
+.proj-note__label {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #ffc864;
+  margin-bottom: .7rem;
+}
+.proj-note p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+.proj-note strong { color: var(--cream); font-weight: 500; }
