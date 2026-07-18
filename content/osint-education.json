@@ -1,0 +1,270 @@
+{
+  "total": 24,
+  "groups": [
+    {
+      "id": "ua-courses",
+      "title_uk": "Українські онлайн-курси",
+      "title_en": "Ukrainian online courses",
+      "items": [
+        {
+          "name": "OSINT — розвідка з відкритих джерел та інформаційна безпека",
+          "provider": "Prometheus",
+          "url": "https://prometheus.org.ua/prometheus-free/osint-open-source-intelligence/",
+          "for_whom_uk": "Військові, волонтери, журналісти, держслужба, освітяни",
+          "for_whom_en": "Military, volunteers, journalists, civil service, educators",
+          "cost": "free", "level": "beginner", "language": "uk", "format": "course",
+          "meta_uk": "~20 год · сертифікат · Victory Drones / Molfar / ЦПК / YouControl Academy",
+          "meta_en": "~20 hrs · certificate · Victory Drones / Molfar / ACC / YouControl Academy"
+        },
+        {
+          "name": "OSINT-школа",
+          "provider": "Дія.Освіта",
+          "url": "https://osvita.diia.gov.ua/courses/osint-school",
+          "for_whom_uk": "Широка аудиторія · перший контакт з OSINT",
+          "for_whom_en": "General audience · first contact with OSINT",
+          "cost": "free", "level": "beginner", "language": "uk", "format": "course",
+          "meta_uk": "Формат «серіалу» · державна платформа",
+          "meta_en": "«Series» format · state platform"
+        },
+        {
+          "name": "OSINT. Робота з реєстрами",
+          "provider": "Дія.Бізнес × YouControl Academy",
+          "url": "https://business.diia.gov.ua/",
+          "for_whom_uk": "Підприємці, юристи, бізнес-аналітики, журналісти",
+          "for_whom_en": "Entrepreneurs, lawyers, business analysts, journalists",
+          "cost": "free", "level": "junior", "language": "uk", "format": "course",
+          "meta_uk": "ЄДРПОУ · ProZorro · Datacrat · санкційні бази · сертифікат",
+          "meta_en": "EDRPOU · ProZorro · Datacrat · sanctions databases · certificate"
+        },
+        {
+          "name": "Навчання інструментам OSINT для держслужби",
+          "provider": "НАДС",
+          "url": "https://nads.gov.ua/",
+          "for_whom_uk": "Публічні службовці, HR-служби органів влади",
+          "for_whom_en": "Civil servants, HR services of state authorities",
+          "cost": "free", "level": "beginner", "language": "uk", "format": "workshop",
+          "meta_uk": "Підтримка Centre for Information Resilience",
+          "meta_en": "Supported by Centre for Information Resilience"
+        },
+        {
+          "name": "OSINT-аналітика для ветеранів та ветеранок",
+          "provider": "Ветеранський фонд",
+          "url": "https://veteranfund.com.ua/proiekty-test/shliakh-veterana-osvita/kurs-z-osint-analityky/",
+          "for_whom_uk": "Ветерани та ветеранки, які шукають цивільну кар'єру в OSINT",
+          "for_whom_en": "Veterans looking for a civilian career in OSINT",
+          "cost": "free", "level": "beginner", "language": "uk", "format": "course",
+          "meta_uk": "Проєкт «Шлях ветерана · Освіта»",
+          "meta_en": "«Veteran's Path · Education» project"
+        },
+        {
+          "name": "Безкоштовний онлайн-курс з OSINT-розвідки",
+          "provider": "OSINT Varta × SLON FM",
+          "url": "https://militarnyi.com/uk/news/osint-varta-ta-slon-fm-zapustyly-bezkoshtovnyj-onlajn-kurs-z-osint-rozvidky/",
+          "for_whom_uk": "Військові, розвідники, аналітики",
+          "for_whom_en": "Military, intelligence officers, analysts",
+          "cost": "free", "level": "junior", "language": "uk", "format": "course",
+          "meta_uk": "4 модулі · 5-й (технічний OSINT) у розробці",
+          "meta_en": "4 modules · 5th (technical OSINT) in development"
+        },
+        {
+          "name": "OSINT: як знайти будь-яку інформацію в Інтернеті",
+          "provider": "Pritula.Academy",
+          "url": "https://pritula.academy/ua/osint",
+          "for_whom_uk": "Практики, які хочуть комерційний трек з практичними кейсами",
+          "for_whom_en": "Practitioners wanting a commercial track with practical cases",
+          "cost": "paid", "level": "junior", "language": "uk", "format": "course",
+          "meta_uk": "Комерційна освітня платформа",
+          "meta_en": "Commercial ed-tech platform"
+        },
+        {
+          "name": "OSINT-аналітик",
+          "provider": "Laba",
+          "url": "https://laba.ua/",
+          "for_whom_uk": "Ті, хто хоче професійного треку з підготовкою під приватний сектор",
+          "for_whom_en": "Those seeking a professional track for the private sector",
+          "cost": "paid", "level": "junior", "language": "uk", "format": "course",
+          "meta_uk": "Комерційна ed-tech",
+          "meta_en": "Commercial ed-tech"
+        }
+      ]
+    },
+    {
+      "id": "my-books",
+      "title_uk": "Мої книги — Shadow Files серія",
+      "title_en": "My books — Shadow Files series",
+      "items": [
+        {
+          "name": "The Shadow Files · Том I: Фундамент",
+          "provider": "Yehor Selin",
+          "url": "https://yehorselin.com/books.html",
+          "for_whom_uk": "Початківці · перші 30 днів у професії · базові техніки OSINT/SOCMINT",
+          "for_whom_en": "Beginners · first 30 days in the profession · OSINT/SOCMINT basics",
+          "cost": "paid", "level": "beginner", "language": "uk", "format": "book",
+          "meta_uk": "PDF · UA + EN · практичні вправи + case studies",
+          "meta_en": "PDF · UA + EN · practical exercises + case studies"
+        },
+        {
+          "name": "The Shadow Files · Том II: Крос-платформна атрибуція",
+          "provider": "Yehor Selin",
+          "url": "https://yehorselin.com/books.html",
+          "for_whom_uk": "Junior/mid · системна методологія pivot-chains через 15+ платформ",
+          "for_whom_en": "Junior/mid · systematic pivot-chain methodology across 15+ platforms",
+          "cost": "paid", "level": "junior", "language": "uk", "format": "book",
+          "meta_uk": "PDF · UA + EN · продовження Vol I",
+          "meta_en": "PDF · UA + EN · sequel to Vol I"
+        },
+        {
+          "name": "За цифровим слідом · Behind the Digital Trace",
+          "provider": "Yehor Selin",
+          "url": "https://yehorselin.com/books.html",
+          "for_whom_uk": "Ті, хто розглядає OSINT як професію · мемуар про те, як робота змінює того, хто нею займається",
+          "for_whom_en": "Those considering OSINT as a profession · memoir on how the work changes the person doing it",
+          "cost": "paid", "level": "beginner", "language": "uk", "format": "book",
+          "meta_uk": "Мемуар · 15 розділів + епілог · UA + EN",
+          "meta_en": "Memoir · 15 chapters + epilogue · UA + EN"
+        }
+      ]
+    },
+    {
+      "id": "international-courses",
+      "title_uk": "Міжнародні курси",
+      "title_en": "International courses",
+      "items": [
+        {
+          "name": "SEC487 — Open-Source Intelligence Gathering and Analysis",
+          "provider": "SANS Institute",
+          "url": "https://www.sans.org/cyber-security-courses/open-source-intelligence-gathering/",
+          "for_whom_uk": "Foundational, професійний стандарт індустрії. Для тих, хто планує міжнародну кар'єру",
+          "for_whom_en": "Foundational, industry-standard. For those planning an international career",
+          "cost": "paid", "level": "junior", "language": "en", "format": "course",
+          "meta_uk": "6 днів · GIAC-сертифікат · ~$8К",
+          "meta_en": "6 days · GIAC certificate · ~$8K"
+        },
+        {
+          "name": "SEC587 — Advanced Open-Source Intelligence",
+          "provider": "SANS Institute",
+          "url": "https://www.sans.org/cyber-security-courses/advanced-open-source-intelligence-gathering-analysis/",
+          "for_whom_uk": "Advanced · dark web, крипто-трасування, дезінформація, deepfake-forensics",
+          "for_whom_en": "Advanced · dark web, crypto tracing, disinformation, deepfake forensics",
+          "cost": "paid", "level": "advanced", "language": "en", "format": "course",
+          "meta_uk": "6 днів · 28+ hands-on labs",
+          "meta_en": "6 days · 28+ hands-on labs"
+        },
+        {
+          "name": "The OSINT Handbook: Mastering Open Source Intelligence",
+          "provider": "Coursera / Packt",
+          "url": "https://www.coursera.org/learn/packt-the-osint-handbook-mastering-open-source-intelligence",
+          "for_whom_uk": "Junior · англомовна альтернатива для тих, хто хоче сертифікат Coursera",
+          "for_whom_en": "Junior · English-language alternative for a Coursera certificate",
+          "cost": "paid", "level": "junior", "language": "en", "format": "course",
+          "meta_uk": "Онлайн · self-paced · сертифікат",
+          "meta_en": "Online · self-paced · certificate"
+        },
+        {
+          "name": "OSINT online courses",
+          "provider": "OSINT Combine",
+          "url": "https://www.osintcombine.com/training",
+          "for_whom_uk": "Різні рівні від beginner до advanced. Комерційна платформа з фокусом на приватний сектор",
+          "for_whom_en": "All levels from beginner to advanced. Commercial platform focused on private sector",
+          "cost": "paid", "level": "junior", "language": "en", "format": "course",
+          "meta_uk": "Онлайн · різні треки",
+          "meta_en": "Online · multiple tracks"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title_uk": "Практика та CTF",
+      "title_en": "Practice and CTF",
+      "items": [
+        {
+          "name": "Global OSINT Search Party CTF",
+          "provider": "Trace Labs",
+          "url": "https://www.tracelabs.org/initiatives/search-party",
+          "for_whom_uk": "Будь-хто. Найкращий спосіб набити реальний досвід через справи зниклих безвісти",
+          "for_whom_en": "Anyone. The best way to gain real experience through missing-persons cases",
+          "cost": "paid", "level": "junior", "language": "en", "format": "ctf",
+          "meta_uk": "~$20-25 remote · 250 free on-site на DEF CON · 100% на charity",
+          "meta_en": "~$20-25 remote · 250 free on-site at DEF CON · 100% to charity"
+        },
+        {
+          "name": "OSINT VM 2026.05 (робоче середовище)",
+          "provider": "Trace Labs",
+          "url": "https://www.tracelabs.org/blog/trace-labs-osint-vm-2026-05-rebuilt-on-debian",
+          "for_whom_uk": "Готова робоча ОС для OSINT-практиків (Debian 13 + Obsidian + Brave + Owlculus)",
+          "for_whom_en": "Ready-to-go OS for OSINT practitioners (Debian 13 + Obsidian + Brave + Owlculus)",
+          "cost": "free", "level": "junior", "language": "en", "format": "reference",
+          "meta_uk": "Безкоштовно · Debian-based",
+          "meta_en": "Free · Debian-based"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title_uk": "Довідники та методологічні стандарти",
+      "title_en": "References and methodological standards",
+      "items": [
+        {
+          "name": "Bellingcat Online Investigation Toolkit",
+          "provider": "Bellingcat",
+          "url": "https://bellingcat.gitbook.io/toolkit",
+          "for_whom_uk": "Всі рівні. Живий довідник з 12 категорій інструментів — читається як підручник",
+          "for_whom_en": "All levels. Living reference across 12 tool categories — reads like a textbook",
+          "cost": "free", "level": "beginner", "language": "en", "format": "reference",
+          "meta_uk": "Безкоштовно · оновлюється командою Bellingcat",
+          "meta_en": "Free · updated by the Bellingcat team"
+        },
+        {
+          "name": "Berkeley Protocol on Digital Open Source Investigations",
+          "provider": "Berkeley Law × OHCHR",
+          "url": "https://humanrights.berkeley.edu/wp-content/uploads/archive/2024/02/Berkeley-Protocol.pdf",
+          "for_whom_uk": "Обов'язковий для тих, хто працює з воєнними злочинами і правами людини",
+          "for_whom_en": "Mandatory for those working on war crimes and human rights",
+          "cost": "free", "level": "advanced", "language": "en", "format": "reference",
+          "meta_uk": "Міжнародний стандарт · безкоштовний PDF",
+          "meta_en": "International standard · free PDF"
+        },
+        {
+          "name": "Council of Europe OSINT Training Manual",
+          "provider": "Council of Europe",
+          "url": "https://www.coe.int/",
+          "for_whom_uk": "Використовується у навчанні антикорупційних органів (НАЗК, НАБУ, САП)",
+          "for_whom_en": "Used in training of anti-corruption bodies (NACP, NABU, SAPO)",
+          "cost": "free", "level": "junior", "language": "en", "format": "reference",
+          "meta_uk": "Офіційний методичний посібник",
+          "meta_en": "Official methodological handbook"
+        },
+        {
+          "name": "Nixintel blog",
+          "provider": "Nixintel",
+          "url": "https://nixintel.info/",
+          "for_whom_uk": "Живий practitioner-блог з розборами конкретних технік і кейсів",
+          "for_whom_en": "Live practitioner blog with breakdowns of specific techniques and cases",
+          "cost": "free", "level": "junior", "language": "en", "format": "reference",
+          "meta_uk": "Безкоштовно · регулярні пости",
+          "meta_en": "Free · regular posts"
+        },
+        {
+          "name": "IntelTechniques Blog",
+          "provider": "Jason Edison / Michael Bazzell",
+          "url": "https://inteltechniques.com/blog/",
+          "for_whom_uk": "Один з найстарших практикуючих OSINT-ресурсів світу. Багато кейсів приватного сектору",
+          "for_whom_en": "One of the oldest practising OSINT resources in the world. Many private-sector cases",
+          "cost": "free", "level": "junior", "language": "en", "format": "reference",
+          "meta_uk": "Безкоштовний блог · платні книги і курси окремо",
+          "meta_en": "Free blog · paid books and courses separately"
+        },
+        {
+          "name": "OSINTech Timeline",
+          "provider": "OSINTech Substack",
+          "url": "https://osintech.substack.com/",
+          "for_whom_uk": "Щотижневий дайджест новин і інструментів для практиків",
+          "for_whom_en": "Weekly digest of news and tools for practitioners",
+          "cost": "free", "level": "junior", "language": "en", "format": "reference",
+          "meta_uk": "Безкоштовна підписка · Substack",
+          "meta_en": "Free subscription · Substack"
+        }
+      ]
+    }
+  ]
+}

@@ -745,5 +745,131 @@
       ${backLink}`;
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects, renderProjectDetail, renderSpeaking };
+  async function renderEducation(targetSelector) {
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const L = (k, dflt) => escapeHtml(dict['edu.'+k] || dflt);
+    const lang = LANG();
+    try {
+      const res = await fetch('content/osint-education.json?t=' + Date.now(), { cache: 'no-store' });
+      const data = await res.json();
+
+      const total = data.groups.reduce((s, g) => s + g.items.length, 0);
+      const costLabel   = { free: L('cost.free', 'Безкоштовно'), paid: L('cost.paid', 'Платно') };
+      const levelLabel  = { beginner: L('lvl.beginner', 'Початковий'), junior: L('lvl.junior', 'Junior'), advanced: L('lvl.advanced', 'Advanced') };
+      const formatLabel = { course: L('fmt.course', 'Курс'), book: L('fmt.book', 'Книга'), workshop: L('fmt.workshop', 'Воркшоп'), ctf: L('fmt.ctf', 'CTF'), reference: L('fmt.reference', 'Довідник') };
+
+      const rowHtml = (it) => {
+        const forWhom = (lang === 'uk' ? it.for_whom_uk : it.for_whom_en) || it.for_whom_uk || '';
+        const meta    = (lang === 'uk' ? it.meta_uk    : it.meta_en)    || it.meta_uk    || '';
+        const search  = (it.name + ' ' + it.provider + ' ' + forWhom + ' ' + meta).toLowerCase();
+        let host = ''; try { host = new URL(it.url).hostname.replace(/^www\./, ''); } catch {}
+        return `
+          <tr class="edu-row" data-search="${escapeHtml(search)}" data-cost="${escapeHtml(it.cost||'')}" data-level="${escapeHtml(it.level||'')}" data-format="${escapeHtml(it.format||'')}" data-language="${escapeHtml(it.language||'')}">
+            <td class="edu-col-name">
+              <div class="edu-name">${escapeHtml(it.name)}</div>
+              <div class="edu-provider">${escapeHtml(it.provider)}</div>
+            </td>
+            <td class="edu-col-whom">${escapeHtml(forWhom)}${meta ? `<div class="edu-meta">${escapeHtml(meta)}</div>` : ''}</td>
+            <td class="edu-col-tags">
+              <span class="edu-tag edu-tag--${escapeHtml(it.cost)}">${escapeHtml(costLabel[it.cost] || it.cost)}</span>
+              <span class="edu-tag">${escapeHtml(levelLabel[it.level] || it.level)}</span>
+              <span class="edu-tag">${escapeHtml(formatLabel[it.format] || it.format)}</span>
+              <span class="edu-tag edu-tag--lang">${escapeHtml((it.language||'').toUpperCase())}</span>
+            </td>
+            <td class="edu-col-link">
+              <a href="${escapeHtml(it.url)}" target="_blank" rel="noopener nofollow" title="${escapeHtml(host)}">
+                <span>${escapeHtml(host)}</span>
+                <span class="edu-arrow">↗</span>
+              </a>
+            </td>
+          </tr>`;
+      };
+
+      const groupHtml = (g) => {
+        const title = lang === 'uk' ? (g.title_uk || g.title_en) : (g.title_en || g.title_uk);
+        return `
+          <section class="edu-group" data-group="${escapeHtml(g.id)}">
+            <div class="edu-group__head">
+              <h2>${escapeHtml(title)}</h2>
+              <span class="edu-count">${g.items.length}</span>
+            </div>
+            <div class="edu-table-wrap">
+              <table class="edu-table">
+                <thead>
+                  <tr>
+                    <th class="edu-th-name">${L('col.name', 'Назва / провайдер')}</th>
+                    <th class="edu-th-whom">${L('col.whom', 'Для кого')}</th>
+                    <th class="edu-th-tags">${L('col.tags', 'Теги')}</th>
+                    <th class="edu-th-link">${L('col.link', 'Посилання')}</th>
+                  </tr>
+                </thead>
+                <tbody>${g.items.map(rowHtml).join('')}</tbody>
+              </table>
+            </div>
+          </section>`;
+      };
+
+      const html = `
+        <div class="edu-meta-bar">
+          <div class="edu-counts">
+            <span><strong>${total}</strong> ${L('resources', 'ресурсів')}</span>
+            <span><strong>${data.groups.length}</strong> ${L('groups', 'категорій')}</span>
+          </div>
+          <div class="edu-filters">
+            <select id="edu-cost">
+              <option value="">${L('filter.cost.all', 'Ціна: усі')}</option>
+              <option value="free">${L('filter.cost.free', 'Тільки безкоштовні')}</option>
+              <option value="paid">${L('filter.cost.paid', 'Тільки платні')}</option>
+            </select>
+            <select id="edu-level">
+              <option value="">${L('filter.level.all', 'Рівень: усі')}</option>
+              <option value="beginner">${L('lvl.beginner', 'Початковий')}</option>
+              <option value="junior">${L('lvl.junior', 'Junior')}</option>
+              <option value="advanced">${L('lvl.advanced', 'Advanced')}</option>
+            </select>
+            <select id="edu-format">
+              <option value="">${L('filter.format.all', 'Формат: усі')}</option>
+              <option value="course">${L('fmt.course', 'Курс')}</option>
+              <option value="book">${L('fmt.book', 'Книга')}</option>
+              <option value="workshop">${L('fmt.workshop', 'Воркшоп')}</option>
+              <option value="ctf">${L('fmt.ctf', 'CTF')}</option>
+              <option value="reference">${L('fmt.reference', 'Довідник')}</option>
+            </select>
+            <input type="search" id="edu-search" placeholder="${L('search', 'Пошук: назва, провайдер…')}" autocomplete="off">
+          </div>
+        </div>
+        ${data.groups.map(groupHtml).join('')}`;
+      target.innerHTML = html;
+
+      const sel = (id) => target.querySelector('#' + id);
+      const inputs = [sel('edu-cost'), sel('edu-level'), sel('edu-format'), sel('edu-search')];
+      const apply = () => {
+        const q      = (sel('edu-search').value || '').trim().toLowerCase();
+        const cost   = sel('edu-cost').value;
+        const level  = sel('edu-level').value;
+        const format = sel('edu-format').value;
+        target.querySelectorAll('.edu-group').forEach(g => {
+          let any = false;
+          g.querySelectorAll('tr.edu-row').forEach(row => {
+            const match = (!q || row.dataset.search.includes(q))
+              && (!cost || row.dataset.cost === cost)
+              && (!level || row.dataset.level === level)
+              && (!format || row.dataset.format === format);
+            row.style.display = match ? '' : 'none';
+            if (match) any = true;
+          });
+          g.style.display = any ? '' : 'none';
+        });
+      };
+      inputs.forEach(i => i && i.addEventListener('input', apply));
+      inputs.forEach(i => i && i.addEventListener('change', apply));
+    } catch (e) {
+      console.error('renderEducation error:', e);
+      target.innerHTML = '<p class="center" style="color:var(--text-mute)">Не вдалося завантажити ресурси.</p>';
+    }
+  }
+
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects, renderProjectDetail, renderSpeaking, renderEducation };
 })();

@@ -16,6 +16,7 @@
   <url><loc>https://yehorselin.com/awards.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/recommendations.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/tools.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://yehorselin.com/education.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/projects.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/guide.html</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/speaking.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>

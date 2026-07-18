@@ -1836,3 +1836,120 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   line-height: 1.65;
 }
 .proj-note strong { color: var(--cream); font-weight: 500; }
+
+/* ==========================================================
+   OSINT Education aggregator
+   ========================================================== */
+.edu-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  background: rgba(15, 21, 36, .5);
+  border: 1px solid var(--border);
+}
+.edu-counts { display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: .78rem; color: var(--text-mute); text-transform: uppercase; letter-spacing: .15em; }
+.edu-counts strong { color: var(--ice); font-weight: 500; }
+.edu-filters { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+.edu-filters select,
+.edu-filters input[type="search"] {
+  padding: .55rem .8rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: .85rem;
+  min-width: 160px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.edu-filters select:focus,
+.edu-filters input:focus { outline: none; border-color: var(--ice); }
+.edu-filters input[type="search"] { min-width: 220px; }
+
+.edu-group { margin-bottom: 3rem; }
+.edu-group__head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.edu-group__head h2 { margin: 0; font-family: var(--font-serif); font-weight: 500; font-size: 1.6rem; color: var(--cream); }
+.edu-count {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .15em;
+  padding: .25rem .55rem;
+  background: rgba(74, 158, 255, .1);
+  border: 1px solid rgba(74, 158, 255, .3);
+  color: var(--ice);
+}
+.edu-table-wrap { overflow-x: auto; }
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+.edu-table th {
+  text-align: left;
+  padding: .8rem 1rem;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 21, 36, .3);
+}
+.edu-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text);
+}
+.edu-row:hover td { background: rgba(74, 158, 255, .04); }
+
+.edu-col-name { min-width: 240px; max-width: 340px; }
+.edu-name { color: var(--cream); font-weight: 500; font-size: 1rem; line-height: 1.35; margin-bottom: .3rem; }
+.edu-provider { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em; color: var(--text-mute); text-transform: uppercase; }
+.edu-col-whom { min-width: 260px; line-height: 1.55; color: var(--text-dim); }
+.edu-meta { margin-top: .5rem; font-family: var(--font-mono); font-size: .72rem; color: var(--text-mute); letter-spacing: .04em; }
+.edu-col-tags { min-width: 220px; }
+.edu-col-tags .edu-tag {
+  display: inline-block;
+  margin: .15rem .3rem .15rem 0;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .28rem .55rem;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: rgba(15, 21, 36, .5);
+}
+.edu-tag--free { color: #a3e6a3; border-color: rgba(120, 220, 120, .35); background: rgba(120, 220, 120, .06); }
+.edu-tag--paid { color: #ffc864; border-color: rgba(255, 200, 100, .35); background: rgba(255, 200, 100, .06); }
+.edu-tag--lang { color: var(--ice); border-color: rgba(74, 158, 255, .3); }
+.edu-col-link { min-width: 140px; text-align: right; white-space: nowrap; }
+.edu-col-link a {
+  display: inline-flex; align-items: center; gap: .3rem;
+  color: var(--ice); text-decoration: none;
+  font-family: var(--font-mono); font-size: .78rem;
+  padding: .4rem .75rem;
+  border: 1px solid var(--border);
+  transition: border-color .2s, color .2s;
+}
+.edu-col-link a:hover { border-color: var(--ice); color: var(--cream); }
+.edu-arrow { font-size: .9em; }
+
+@media (max-width: 720px) {
+  .edu-filters { width: 100%; }
+  .edu-filters select, .edu-filters input[type="search"] { min-width: 0; flex: 1 0 45%; }
+  .edu-col-tags { display: none; }
+  .edu-col-link { min-width: 90px; }
+  .edu-name { font-size: .92rem; }
+}
