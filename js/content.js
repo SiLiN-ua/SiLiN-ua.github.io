@@ -452,6 +452,52 @@
       </article>`;
   }
 
+  function renderSpeakingCard(item) {
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const title    = escapeHtml(tr(item, 'title') || item.title || '');
+    const date     = escapeHtml(fmtDate(item.date));
+    const format   = escapeHtml(tr(item, 'format') || item.format || '');
+    const audience = escapeHtml(tr(item, 'audience') || item.audience || '');
+    const location = escapeHtml(tr(item, 'location') || item.location || '');
+    const topic    = escapeHtml(tr(item, 'topic') || item.topic || '');
+    const desc     = escapeHtml(tr(item, 'description') || item.description || '');
+    const link     = item.link ? escapeHtml(item.link) : '';
+    const linkLbl  = escapeHtml(tr(item, 'link_label') || item.link_label || '');
+    const img      = item.image
+      ? `<div class="cert__img award__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
+      : '';
+    const meta = [];
+    if (format)   meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.format']||'Формат')}</span>${format}</div>`);
+    if (audience) meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.audience']||'Аудиторія')}</span>${audience}</div>`);
+    if (location) meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.location']||'Локація')}</span>${location}</div>`);
+    if (topic)    meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.topic']||'Тема')}</span>${topic}</div>`);
+    const linkHtml = link
+      ? `<p style="margin-top:1rem"><a href="${link}" target="_blank" rel="noopener" style="color:var(--ice);border-bottom:1px solid var(--border-hi)">${linkLbl || link} ↗</a></p>`
+      : '';
+    return `
+      <article class="cert award">
+        ${img}
+        <div class="cert__body">
+          <div class="card__date">${date}</div>
+          <h3>${title}</h3>
+          <p>${desc.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')}</p>
+          ${meta.length ? `<div class="cert__meta">${meta.join('')}</div>` : ''}
+          ${linkHtml}
+        </div>
+      </article>`;
+  }
+
+  async function renderSpeaking(targetSelector) {
+    const items = await listCollection('speaking');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (!items.length) {
+      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:2rem 0">Поки що порожньо.</p>`;
+      return;
+    }
+    target.innerHTML = items.map(renderSpeakingCard).join('');
+  }
+
   async function renderRecommendations(targetSelector) {
     const items = await listCollection('recommendations');
     const target = document.querySelector(targetSelector);
@@ -624,5 +670,5 @@
     target.innerHTML = items.map(renderProjectCard).join('');
   }
 
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects };
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects, renderSpeaking };
 })();

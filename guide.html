@@ -102,6 +102,7 @@
     <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
     <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
     <li><a href="guide.html" class="active" data-i18n="nav.guide">Гайд</a></li>
+    <li><a href="speaking.html" data-i18n="nav.speaking">Виступи</a></li>
     <li><a href="certificates.html" data-i18n="nav.certificates">Сертифікати</a></li>
     <li><a href="awards.html" data-i18n="nav.awards">Відзнаки</a></li>
     <li><a href="recommendations.html" data-i18n="nav.recommendations">Рекомендації</a></li>
@@ -187,14 +188,20 @@
 
 <h3>Типові щоденні задачі</h3>
 <ul>
+  <li><strong>SOCMINT-розслідування</strong> — глибокий аналіз соцмереж: поведінкові патерни, соціальний граф, «сімейні ланцюжки», приховані другі акаунти, репутаційні ризики. Це <em>ядро роботи</em>, з якого починається більшість кейсів</li>
   <li><strong>Скринінг кандидата</strong> на чутливу посаду — цифровий слід, приховані афіліації, репутаційні ризики</li>
   <li><strong>Due diligence контрагента</strong> — реєстри, бенефіціари, санкційна історія, судові справи</li>
-  <li><strong>Identity attribution</strong> — реконструкція реальної особи за фрагментарними ідентифікаторами (username, phone, email)</li>
+  <li><strong>Identity attribution</strong> — реконструкція реальної особи за фрагментарними ідентифікаторами (username, phone, email, обличчя)</li>
   <li><strong>Threat intelligence</strong> — моніторинг активності конкретних осіб / груп / бренду в мережі</li>
   <li><strong>Розслідування шахрайства</strong> — від фішинг-кампаній до складних фінансових схем</li>
   <li><strong>GEOINT</strong> — верифікація геолокації фото/відео, аналіз супутникових знімків</li>
   <li><strong>Документування воєнних злочинів</strong> — за стандартом Berkeley Protocol, з подальшою передачею у МКС / ICPA / національні органи</li>
 </ul>
+
+<div class="callout">
+<strong>OSINT vs SOCMINT — коротко про різницю</strong>
+<p><strong>OSINT</strong> — це «парасолька» над усіма відкритими джерелами (реєстри, супутники, DNS, breach-датасети, публікації, форуми). <strong>SOCMINT</strong> — це підмножина OSINT, зосереджена саме на <em>соцмережах</em>: цифровий слід у Facebook / Instagram / LinkedIn / Telegram / VK / TikTok, аналіз поведінки, крос-платформна атрибуція, «family chain»-техніки. У реальній практиці межа розмита — більшість кейсів комбінує обидва підходи.</p>
+</div>
 
 <hr>
 
@@ -246,7 +253,7 @@
 
 <h3>Тижні 3-4: практика на реальних кейсах</h3>
 <ul>
-  <li>Долучитись до першого <strong>Trace Labs Global OSINT Search Party CTF</strong> (безкоштовно, віртуально) — 6-годинне командне змагання, де знаходиш реальну інформацію про зниклих людей</li>
+  <li>Долучитись до першого <strong>Trace Labs Global OSINT Search Party CTF</strong> (~$20-25 за remote-квиток, virtual; на DEF CON edition — 250 безкоштовних on-site) — 6-годинне командне змагання, де знаходиш реальну інформацію про зниклих людей. 100% зборів іде на Trace Labs як charity</li>
   <li>Взяти <strong>3 навчальні кейси</strong>: (1) верифікація місця фото з новин, (2) знайти всі публічні акаунти публічної особи, (3) reverse-lookup власника доменного імені</li>
   <li>Написати <strong>перший звіт</strong> у форматі «Question / Method / Findings / Confidence / Sources» — це стандартна структура професійного OSINT-звіту</li>
   <li>Опублікувати write-up у себе (LinkedIn / Medium / особистий блог) — <strong>публічний слід — це і є твоє CV</strong> в OSINT</li>
@@ -296,7 +303,7 @@
 
   <li><strong>Bellingcat онлайн-воркшопи</strong> — регулярні тренінги від команди-легенди галузі.</li>
 
-  <li><strong>Trace Labs Search Party CTF</strong> — не курс, а безкоштовна практика на реальних справах зниклих безвісти. Найкращий спосіб набити реальний досвід.</li>
+  <li><strong>Trace Labs Search Party CTF</strong> — не курс, а практика на реальних справах зниклих безвісти. Регулярні virtual-івенти (~$20-25 за квиток, 100% на charity), плюс безкоштовні on-site слоти на DEF CON. Найкращий спосіб набити реальний досвід.</li>
 
   <li><strong>OSINT Combine · online courses</strong> — комерційні курси різних рівнів.</li>
 
@@ -519,7 +526,7 @@
 
 <ol>
   <li><strong>Сьогодні</strong> — запишись на <a href="https://prometheus.org.ua/prometheus-free/osint-open-source-intelligence/" target="_blank" rel="noopener">безкоштовний Prometheus-курс</a>. Це нульовий бар'єр і 20 годин чистого фундаменту.</li>
-  <li><strong>Цього тижня</strong> — приєднайся до <a href="https://www.tracelabs.org/" target="_blank" rel="noopener">Trace Labs Discord</a> і зареєструйся на найближчий Search Party CTF (безкоштовно, віртуально). Перше реальне бойове хрещення.</li>
+  <li><strong>Цього тижня</strong> — приєднайся до <a href="https://www.tracelabs.org/" target="_blank" rel="noopener">Trace Labs Discord</a> і зареєструйся на найближчий Search Party CTF (~$20-25 за virtual, 100% на charity). Перше реальне бойове хрещення.</li>
   <li><strong>Цього місяця</strong> — розбери один <a href="cases.html">кейс з мого сайту</a>, повтори методологію на публічній персоні і опублікуй write-up у LinkedIn. Ти вже входиш у спільноту.</li>
 </ol>
 

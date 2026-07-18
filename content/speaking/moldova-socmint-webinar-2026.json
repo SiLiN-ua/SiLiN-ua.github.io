@@ -1,0 +1,21 @@
+{
+  "title_uk": "Вебінар для OSINT-фахівців Молдови: SOCMINT-методології",
+  "title_en": "Webinar for OSINT specialists from Moldova: SOCMINT methodologies",
+  "date": "2026-07-15T00:00:00.000Z",
+  "format_uk": "Онлайн-вебінар",
+  "format_en": "Online webinar",
+  "audience_uk": "OSINT-практики з Молдови · ~7 учасників",
+  "audience_en": "OSINT practitioners from Moldova · ~7 participants",
+  "location_uk": "Онлайн · Молдова",
+  "location_en": "Online · Moldova",
+  "topic_uk": "SOCMINT: як думає аналітик — методологія, шари верифікації, робота з тупиковими ситуаціями",
+  "topic_en": "SOCMINT: how the analyst thinks — methodology, verification layers, working through dead ends",
+  "description_uk": "На запрошення OSINT-спільноти Молдови (координація через Diana Farima / Diana's CyberHunters) провів дводенний огляд SOCMINT-методології для локальних фахівців. Основний фокус — не на конкретних інструментах, а на *мисленнєвому каркасі* аналітика: як формулювати гіпотезу, як шарувати верифікацію, як розпізнати момент, коли на питання вже отримано відповідь і час зупинитись. Формат — розбір реальних кейсів + Q&A.",
+  "description_en": "At the invitation of the Moldovan OSINT community (coordinated via Diana Farima / Diana's CyberHunters), I delivered a session on SOCMINT methodology for local specialists. The focus was not on specific tools but on the *mental framework* of the analyst: how to formulate a hypothesis, how to layer verification, how to recognise when the question has been answered and it's time to stop. Format — real case walkthroughs + Q&A.",
+  "link": "https://www.linkedin.com/posts/osint-moldova_osint-socmint-opensourceintelligence-activity-7483824214194601984-VaNN",
+  "link_label_uk": "Пост OSINT Moldova у LinkedIn",
+  "link_label_en": "OSINT Moldova LinkedIn post",
+  "image": "",
+  "order": 1,
+  "published": true
+}

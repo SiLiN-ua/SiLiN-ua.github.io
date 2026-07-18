@@ -181,7 +181,15 @@
     "footer.rights": "© 2026 Єгор Селін",
     "footer.built": "Створено з увагою · Дніпро, UA",
     "back": "← Назад",
-    "nav.guide": "Гайд"
+    "nav.guide": "Гайд",
+    "nav.speaking": "Виступи",
+    "speaking.eyebrow": "Виступи · Менторство",
+    "speaking.title": "Публічні виступи, вебінари та менторство",
+    "speaking.subtitle": "Ділюсь методологією з фахівцями по всьому світу — від міжнародних вебінарів до персонального 1-on-1 менторства й onboarding молодших аналітиків у команді.",
+    "meta.format": "Формат",
+    "meta.audience": "Аудиторія",
+    "meta.location": "Локація",
+    "meta.topic": "Тема"
   },
   "en": {
     "brand.first": "Yehor",
@@ -365,6 +373,14 @@
     "footer.rights": "© 2026 Yehor Selin",
     "footer.built": "Built with care · Dnipro, UA",
     "back": "← Back",
-    "nav.guide": "Guide"
+    "nav.guide": "Guide",
+    "nav.speaking": "Speaking",
+    "speaking.eyebrow": "Speaking · Mentoring",
+    "speaking.title": "Public talks, webinars and mentoring",
+    "speaking.subtitle": "Sharing methodology with practitioners worldwide — from international webinars to 1-on-1 personal mentoring and onboarding of junior analysts on the team.",
+    "meta.format": "Format",
+    "meta.audience": "Audience",
+    "meta.location": "Location",
+    "meta.topic": "Topic"
   }
 }

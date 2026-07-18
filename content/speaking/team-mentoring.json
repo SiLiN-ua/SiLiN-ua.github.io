@@ -1,0 +1,21 @@
+{
+  "title_uk": "Внутрішнє менторство молодших аналітиків",
+  "title_en": "Internal mentoring of junior analysts",
+  "date": "2025-11-01T00:00:00.000Z",
+  "format_uk": "Постійне менторство · onboarding + coaching",
+  "format_en": "Ongoing mentoring · onboarding + coaching",
+  "audience_uk": "Junior OSINT-аналітики · оборонний сектор України",
+  "audience_en": "Junior OSINT analysts · defence sector of Ukraine",
+  "location_uk": "Україна · in-house",
+  "location_en": "Ukraine · in-house",
+  "topic_uk": "OSINT / SOCMINT / GEOINT-методологія · робочий стек інструментів · дисципліна документування",
+  "topic_en": "OSINT / SOCMINT / GEOINT methodology · working toolkit · documentation discipline",
+  "description_uk": "На нинішній позиції — регулярне менторство молодших аналітиків: від onboarding нових членів команди до розбору конкретних робочих кейсів. Основний фокус — не «показати інструмент», а сформувати мисленнєву дисципліну: як шарувати верифікацію, як писати decision-grade звіти, як розпізнавати межу між гіпотезою і доказом. Постійна практика, з початку роботи на позиції.",
+  "description_en": "In my current role — regular mentoring of junior analysts: from onboarding new team members to walking through specific working cases. The main focus is not «show the tool» but building the mindset discipline: how to layer verification, how to write decision-grade reports, how to recognise the line between hypothesis and evidence. Ongoing practice, since the start of the role.",
+  "link": "",
+  "link_label_uk": "",
+  "link_label_en": "",
+  "image": "",
+  "order": 3,
+  "published": true
+}
