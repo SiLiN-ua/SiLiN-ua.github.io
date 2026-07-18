@@ -2066,3 +2066,169 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .lb__th-games, .lb__games { display: none; }
   .lb__th-rank, .lb__rank { display: none; }
 }
+
+/* ==========================================================
+   Simulator Card + Game Rows (v3)
+   ========================================================== */
+.sim-card {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 2.25rem;
+  border: 1px solid var(--border-hi);
+  background: linear-gradient(135deg, rgba(20,28,48,.55), rgba(10,14,26,.75));
+}
+.sim-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.sim-card__num {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .28em;
+  color: var(--ice);
+  text-transform: uppercase;
+  padding: .35rem .7rem;
+  border: 1px solid rgba(74,158,255,.4);
+  background: rgba(74,158,255,.08);
+}
+.sim-card__tag {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .18em;
+  color: var(--text-hi);
+  text-transform: uppercase;
+}
+.sim-card__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: var(--cream);
+  margin: 0 0 .8rem;
+  line-height: 1.15;
+}
+.sim-card__sub {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1.75rem;
+}
+
+.sim-card__cert {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 200, 100, .35);
+  background: linear-gradient(90deg, rgba(255, 200, 100, .05), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.sim-card__cert-label {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: #ffc864;
+  text-transform: uppercase;
+}
+.sim-card__cert-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--cream);
+}
+.sim-card__cert-req {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--text-dim);
+  letter-spacing: .04em;
+}
+
+.sim-card__games-head {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  padding-bottom: .8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed rgba(45,61,99,.5);
+}
+.sim-games { display: flex; flex-direction: column; gap: .75rem; }
+.game-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  background: rgba(15, 21, 36, .35);
+  align-items: center;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.game-row--ready:hover { border-color: var(--border-hi); background: rgba(15, 21, 36, .55); }
+.game-row--locked { opacity: .45; filter: grayscale(.5); }
+.game-row__idx {
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  letter-spacing: .1em;
+  color: var(--ice);
+  font-weight: 500;
+  text-align: center;
+  padding: .5rem 0;
+  border: 1px solid var(--border);
+  background: rgba(74,158,255,.05);
+}
+.game-row__body { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+.game-row__body h4 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--cream);
+  line-height: 1.2;
+}
+.game-row__body p {
+  margin: 0;
+  color: var(--text);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+.game-row__chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .35rem; }
+.game-row__chips .proj-chip { font-size: .65rem; padding: .25rem .55rem; }
+.game-row__actions {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-end;
+  min-width: 180px;
+}
+.game-row__status {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  text-align: right;
+}
+.game-row--ready .game-row__status { color: var(--ice); }
+.game-row--locked .game-row__status { color: var(--text-mute); }
+
+.sim-card__foot {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .sim-card { padding: 1.5rem; }
+  .sim-card__title { font-size: 1.6rem; }
+  .game-row { grid-template-columns: 50px 1fr; padding: 1rem; }
+  .game-row__actions { grid-column: 1 / -1; align-items: stretch; margin-top: .5rem; }
+  .game-row__status { text-align: left; }
+}

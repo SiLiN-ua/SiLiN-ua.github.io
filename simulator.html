@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
-<title>Shadow Simulator · Interactive OSINT cases · Єгор Селін</title>
-<meta name="description" content="Shadow Simulator — серія інтерактивних OSINT/SOCMINT/GEOINT кейсів у форматі детективного тренажера. Тупики, ранги, глобальний leaderboard.">
-<meta name="keywords" content="OSINT гра, OSINT симулятор, OSINT тренажер, SOCMINT гра, OSINT тест, OSINT практика, OSINT кейс онлайн, shadow simulator">
+<title>Shadow Simulator · Interactive OSINT training · Єгор Селін</title>
+<meta name="description" content="Shadow Simulator — тренажерні симуляції для OSINT-практиків. Кожен симулятор — 5 інтерактивних кейсів однієї теми + сертифікат за успішне проходження.">
+<meta name="keywords" content="OSINT симулятор, OSINT тренажер, скринінг кандидатів OSINT, red-flag OSINT, OSINT-сертифікат онлайн">
 <link rel="canonical" href="https://yehorselin.com/simulator.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Shadow Simulator · Interactive OSINT cases">
-<meta property="og:description" content="Серія інтерактивних OSINT-кейсів у форматі детективного тренажера — тупики, ранги, глобальний leaderboard.">
+<meta property="og:title" content="Shadow Simulator · Interactive OSINT training">
+<meta property="og:description" content="Тренажерні симуляції для OSINT-практиків. Кожен симулятор — 5 кейсів + сертифікат.">
 <meta property="og:url" content="https://yehorselin.com/simulator.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,14 +49,14 @@
 <section class="ss-hero">
   <div class="container ss-hero__inner">
     <span class="ss-hero__badge" data-i18n="ss.hero.badge">SHADOW SIMULATOR · 2026</span>
-    <h1 data-i18n="ss.hero.title">Серія інтерактивних OSINT-кейсів</h1>
-    <p class="ss-hero__lead" data-i18n="ss.hero.lead">Тренажер для практиків — від скринінгу кандидатів до пошуку зниклих і атрибуції об'єктів. Кожен кейс: свій сценарій, свої fake-tools, свої тупики. Реальна методологія у форматі детективної гри.</p>
+    <h1 data-i18n="ss.hero.title">Тренажерні симуляції для OSINT-практиків</h1>
+    <p class="ss-hero__lead" data-i18n="ss.hero.lead">Кожен симулятор — 5 інтерактивних кейсів однієї теми, з тупиками, рангами і глобальним leaderboard. Проходиш усі 5 і збираєш 1000+ pts — отримуєш сертифікат про успішне навчання по цій темі.</p>
     <div class="ss-hero__stripe">
-      <div><span data-i18n="ss.stripe.cases">Кейси</span><strong data-i18n="ss.stripe.cases.val">1 готовий · 5 у планах</strong></div>
-      <div><span data-i18n="ss.stripe.ranks">Ранги</span><strong data-i18n="ss.stripe.ranks.val">Trainee → Certified</strong></div>
+      <div><span data-i18n="ss.stripe.sims">Симулятори</span><strong data-i18n="ss.stripe.sims.val">1 у розробці</strong></div>
+      <div><span data-i18n="ss.stripe.games">Кейсів</span><strong data-i18n="ss.stripe.games.val">5 у симуляторі</strong></div>
       <div><span data-i18n="ss.stripe.time">Час</span><strong data-i18n="ss.stripe.time.val">~12 хв / кейс</strong></div>
       <div><span data-i18n="ss.stripe.cooldown">Кулдаун</span><strong data-i18n="ss.stripe.cooldown.val">1 год при fail</strong></div>
-      <div><span data-i18n="ss.stripe.cert">Сертифікат</span><strong data-i18n="ss.stripe.cert.val">при 1000+ pts</strong></div>
+      <div><span data-i18n="ss.stripe.cert">Сертифікат</span><strong data-i18n="ss.stripe.cert.val">за симулятор</strong></div>
     </div>
   </div>
 </section>
@@ -68,68 +68,92 @@
   </div>
 </section>
 
-<!-- CASES -->
+<!-- SIMULATOR #01 -->
 <section class="ss-section">
   <div class="container">
     <div class="ss-secttl">
-      <span class="ss-secttl__pre" data-i18n="ss.cases.pre">КЕЙСИ</span>
-      <h2 data-i18n="ss.cases.title">Доступні сценарії</h2>
-      <p data-i18n="ss.cases.subtitle">Перший кейс на MVP-стадії. Наступні розблоковуються після його проходження.</p>
+      <span class="ss-secttl__pre" data-i18n="ss.sims.pre">СИМУЛЯТОРИ</span>
+      <h2 data-i18n="ss.sims.title">Доступні тематичні симулятори</h2>
+      <p data-i18n="ss.sims.subtitle">Поки що один симулятор у розробці. Наступні відкриються після завершення першого.</p>
     </div>
 
-    <article class="case-card case-card--ready">
-      <header class="case-card__head">
-        <div class="case-card__idx">01 / 06</div>
-        <div class="case-card__tag" data-i18n="ss.case01.tag">🚩 СКРИНІНГ НА RED-FLAG</div>
+    <!-- Simulator Card -->
+    <article class="sim-card">
+      <header class="sim-card__head">
+        <div class="sim-card__num">SIM #01</div>
+        <div class="sim-card__tag" data-i18n="ss.sim1.tag">🚩 CANDIDATE RED-FLAG SCREENING</div>
       </header>
-      <h3 class="case-card__title" data-i18n="ss.case01.title">Кейс #01 · «Fake CFO»</h3>
-      <p class="case-card__sub" data-i18n="ss.case01.sub">Компанія X розглядає Романа Морозова на позицію CFO за $180K/рік. Резюме бездоганне, паспорт-фото додано. Твоє завдання — за 12 ігрових хвилин зібрати достатньо доказів для червоного або зеленого прапорця. Тупики й пастки чекають.</p>
-      <div class="case-card__chips">
-        <span class="proj-chip" data-i18n="ss.chip.phases">5 фаз</span>
-        <span class="proj-chip">~250 pts max</span>
-        <span class="proj-chip" data-i18n="ss.chip.hard">Hard mode</span>
-        <span class="proj-chip" data-i18n="ss.chip.fakeui">Real fake-UI</span>
+      <h3 class="sim-card__title" data-i18n="ss.sim1.title">Симулятор #01 · Скринінг кандидатів на red-flag</h3>
+      <p class="sim-card__sub" data-i18n="ss.sim1.sub">Тренажер для HR, corporate security, детективних агенцій і комплаєнс-департаментів. 5 різних кейсів — від фейкового CFO до кандидата з прихованою кримінальною історією. Кожен кейс — реалістичний workflow OSINT-скринінгу з тупиками і пастками.</p>
+      <div class="sim-card__cert">
+        <div class="sim-card__cert-label" data-i18n="ss.sim.cert_lbl">🎖️ Сертифікат про проходження</div>
+        <div class="sim-card__cert-name" data-i18n="ss.sim1.cert_name">«Candidate Red-Flag Screening · OSINT Training»</div>
+        <div class="sim-card__cert-req" data-i18n="ss.sim.cert_req">Умова: пройти всі 5 кейсів + зібрати 1000+ pts сумарно</div>
       </div>
-      <div class="case-card__meta">
-        <div class="case-card__meta-cell">
-          <span class="case-card__meta-lbl" data-i18n="ss.case.category">Категорія</span>
-          <span class="case-card__meta-val">SOCMINT · Face Rec · Breach Data</span>
-        </div>
-        <div class="case-card__meta-cell">
-          <span class="case-card__meta-lbl" data-i18n="ss.case.time_budget">Час на кейс</span>
-          <span class="case-card__meta-val" data-i18n="ss.case01.time_val">12 хв</span>
-        </div>
-        <div class="case-card__meta-cell">
-          <span class="case-card__meta-lbl" data-i18n="ss.case.difficulty">Складність</span>
-          <span class="case-card__meta-val" data-i18n="ss.difficulty.advanced">Просунутий</span>
-        </div>
-        <div class="case-card__meta-cell">
-          <span class="case-card__meta-lbl" data-i18n="ss.case.status">Статус</span>
-          <span class="case-card__meta-val case-card__meta-val--pending" data-i18n="ss.case01.status">MVP shell · playable у Session 2</span>
-        </div>
+
+      <div class="sim-card__games-head">
+        <span data-i18n="ss.sim.games_head">5 кейсів у симуляторі</span>
       </div>
-      <footer class="case-card__actions">
-        <button class="btn btn--filled" id="btn-play-fake-cfo" data-i18n="ss.case.play_soon">▶ Грати (скоро)</button>
+
+      <div class="sim-games">
+        <article class="game-row game-row--ready">
+          <div class="game-row__idx">1 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="ss.game1.title">Кейс 1 · «Fake CFO»</h4>
+            <p data-i18n="ss.game1.sub">Компанія X розглядає Романа Морозова на позицію CFO за $180K/рік. Резюме бездоганне, паспорт-фото додано. Твоє завдання — за 12 хв зібрати достатньо доказів для red/green прапорця.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip" data-i18n="ss.game1.tag1">Face Recognition</span>
+              <span class="proj-chip" data-i18n="ss.game1.tag2">Breach Data</span>
+              <span class="proj-chip" data-i18n="ss.game1.tag3">SOCMINT</span>
+              <span class="proj-chip">~250 pts max</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <div class="game-row__status" data-i18n="ss.game.status_soon">MVP shell · playable soon</div>
+            <button class="btn btn--filled btn--sm" id="btn-play-fake-cfo" data-i18n="ss.game.play_soon">▶ Грати (скоро)</button>
+          </div>
+        </article>
+
+        <article class="game-row game-row--locked">
+          <div class="game-row__idx">2 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="ss.game.tbd_title">Кейс 2 · TBD</h4>
+            <p data-i18n="ss.game.tbd_sub">Розблокується після виходу playable-версії Кейса 1.</p>
+          </div>
+          <div class="game-row__actions"><div class="game-row__status" data-i18n="ss.game.locked_status">🔒 ЗАБЛОКОВАНО</div></div>
+        </article>
+
+        <article class="game-row game-row--locked">
+          <div class="game-row__idx">3 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="ss.game.tbd_title">Кейс 3 · TBD</h4>
+            <p data-i18n="ss.game.tbd_sub">Розблокується після виходу playable-версії Кейса 1.</p>
+          </div>
+          <div class="game-row__actions"><div class="game-row__status" data-i18n="ss.game.locked_status">🔒 ЗАБЛОКОВАНО</div></div>
+        </article>
+
+        <article class="game-row game-row--locked">
+          <div class="game-row__idx">4 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="ss.game.tbd_title">Кейс 4 · TBD</h4>
+            <p data-i18n="ss.game.tbd_sub">Розблокується після виходу playable-версії Кейса 1.</p>
+          </div>
+          <div class="game-row__actions"><div class="game-row__status" data-i18n="ss.game.locked_status">🔒 ЗАБЛОКОВАНО</div></div>
+        </article>
+
+        <article class="game-row game-row--locked">
+          <div class="game-row__idx">5 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="ss.game.tbd_title">Кейс 5 · TBD</h4>
+            <p data-i18n="ss.game.tbd_sub">Розблокується після виходу playable-версії Кейса 1.</p>
+          </div>
+          <div class="game-row__actions"><div class="game-row__status" data-i18n="ss.game.locked_status">🔒 ЗАБЛОКОВАНО</div></div>
+        </article>
+      </div>
+
+      <footer class="sim-card__foot">
         <a href="#leaderboard" class="btn" data-i18n="ss.case.lb_btn">Leaderboard ↓</a>
       </footer>
-    </article>
-
-    <article class="case-card case-card--locked">
-      <header class="case-card__head">
-        <div class="case-card__idx">02 / 06</div>
-        <div class="case-card__tag" data-i18n="ss.case.locked_tag">🔒 ЗАБЛОКОВАНО</div>
-      </header>
-      <h3 class="case-card__title" data-i18n="ss.case02.title">Кейс #02 · Зникла особа</h3>
-      <p class="case-card__sub" data-i18n="ss.case02.sub">Trace-Labs-style. Знайти зниклу особу через GEOINT + SOCMINT. Розблоковується після Кейса #01.</p>
-    </article>
-
-    <article class="case-card case-card--locked">
-      <header class="case-card__head">
-        <div class="case-card__idx">03 / 06</div>
-        <div class="case-card__tag" data-i18n="ss.case.locked_tag">🔒 ЗАБЛОКОВАНО</div>
-      </header>
-      <h3 class="case-card__title" data-i18n="ss.case03.title">Кейс #03 · Тіньовий флот</h3>
-      <p class="case-card__sub" data-i18n="ss.case03.sub">Advanced GEOINT + аналіз документів. Відстежити судно через AIS-маніпуляції та реєстри.</p>
     </article>
   </div>
 </section>
@@ -175,8 +199,8 @@
     e.preventDefault();
     const lang = document.documentElement.lang || 'uk';
     const msg = lang === 'en'
-      ? '🎮 Case #01 · «Fake CFO» — playable game coming in the next dev session. Shell + Firebase leaderboard are live. Your nickname is already in the system.'
-      : '🎮 Кейс #01 · «Fake CFO» — playable-версія готується у наступній сесії розробки. Shell + Firebase leaderboard уже працюють. Твій нік уже у системі.';
+      ? '🎮 Case 1 · «Fake CFO» — playable version coming in the next dev session. Shell + Firebase leaderboard are live. Your nickname is already registered.'
+      : '🎮 Кейс 1 · «Fake CFO» — playable-версія готується у наступній сесії розробки. Shell + Firebase leaderboard уже працюють. Твій нік уже у системі.';
     alert(msg);
   });
 </script>
