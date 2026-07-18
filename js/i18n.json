@@ -3,7 +3,6 @@
     "brand.first": "Єгор",
     "brand.last": "Селін",
     "brand.dot": ".",
-
     "nav.home": "Головна",
     "nav.about": "Про мене",
     "nav.cases": "Кейси",
@@ -23,18 +22,15 @@
     "projects.live": "Live demo ↗",
     "projects.features": "Ключові можливості",
     "nav.contact": "Контакти",
-
     "hero.eyebrow": "OSINT-слідчий · Дніпро, Україна",
     "hero.subtitle": "OSINT · SOCMINT · Ідентифікація осіб · Due Diligence",
     "hero.tag": "Кожна тінь має ім'я.",
     "hero.cta1": "Переглянути кейси",
     "hero.cta2": "Зв'язатися",
-
     "stats.socmint": "SOCMINT-розслідувань",
     "stats.screening": "Перевірок кандидатів",
     "stats.attribution": "Ідентифікацій особистостей",
     "stats.projects": "Open-source проєкти",
-
     "about.eyebrow": "Про мене",
     "about.title": "Перетворюю розрізнені відкриті сигнали на доказову розвідку",
     "about.p1": "Спеціалізуюся на OSINT- та SOCMINT-розслідуваннях, зосереджених на ідентифікації осіб, внутрішніх ризиках та корпоративній перевірці контрагентів.",
@@ -43,7 +39,6 @@
     "about.p4": "Раніше — старший оперуповноважений в особливо важливих справах відділу боротьби з транснаціональними та етнічними організованими злочинними групами Управління стратегічних розслідувань Національної поліції України. Сьогодні застосовую ті самі методології в корпоративному контексті. Мій підхід — гіпотезно-керований, з фокусом на верифікацію: decision-grade intelligence, а не об'єм даних чи інструментів.",
     "about.p5": "Окрім розслідувань — розробляю власні OSINT-інструменти з відкритим вихідним кодом та пишу книги: як практичні посібники з аналітики для початківців, так і авторські роботи про професію, війну та мислення слідчого. Все, що я публікую, спирається на реальну оперативну практику.",
     "about.more": "Дізнатися більше →",
-
     "cases.eyebrow": "Кейси",
     "cases.title": "Розслідування зі справжньої практики",
     "cases.subtitle": "Кожен кейс — реальна робота. Усі імена, місця та ідентифікатори анонімізовано. Методологія збережена.",
@@ -63,7 +58,6 @@
     "meta.recipient": "Отримувач",
     "meta.occasion": "З нагоди",
     "meta.order": "Наказ",
-
     "case.waze.title": "Waze → повна деанонімізація",
     "case.waze.desc": "Одне повідомлення в навігаційному додатку → username → Telegram → телефон → email → повна крос-платформна атрибуція.",
     "case.crypto.title": "Всередині машини: анатомія крипто-скам колл-центру",
@@ -76,7 +70,6 @@
     "case.face.desc": "Фейковий паспорт → Search4Faces → VKontakte → 912 повідомлень про шахрайство, прив'язані до одного email.",
     "case.family.title": "«Family Chain» у SOCMINT",
     "case.family.desc": "Кандидат на чутливу позицію ідеально приховав себе. Пост його своячки відкрив другий Telegram-акаунт та фінансові ризики.",
-
     "skills.eyebrow": "Навички та інструменти",
     "skills.title": "Що я роблю та чим працюю",
     "skills.osint": "OSINT / SOCMINT",
@@ -91,7 +84,6 @@
     "skills.auto.desc": "Власні інструменти на Python/Flask: ThunderTrace, KagamiID, MooN Attacks. Автоматизація масових перевірок.",
     "skills.tools": "Інструментарій",
     "skills.tools.desc": "OSINT Industries · Sherlock · Manuel Travezaño Suite · Epieos · IDCrawl · HIBP · BreachDirectory · FunStat · VK FOAF · Search4Faces · PimEyes · Google Dorks",
-
     "exp.eyebrow": "Досвід",
     "exp.title": "Шлях",
     "exp.current.date": "Листопад 2025 — Дотепер",
@@ -119,21 +111,17 @@
     "exp.police.l2": "Розгромлено транснаціональну шахрайську мережу через колл-центр, що ошукав громадян ЄС на ~€40,000",
     "exp.police.l3": "Співпраця з Chainalysis: аналіз криптовалютних транзакцій та фінансових потоків",
     "exp.police.l4": "Затримання та обвинувачення 15 членів злочинної організації; вилучено доказів на понад 11 млн грн",
-
     "blog.eyebrow": "OSINT-новини",
     "blog.title": "Головні події сфери OSINT",
     "blog.subtitle": "Новини галузі, розслідування колег, оновлення інструментів та законодавства — з України та світу.",
-
     "tools.eyebrow": "Інструменти",
     "tools.title": "Робочий арсенал",
     "tools.subtitle": "Інструменти, які я використовую у розслідуваннях та огляди на них.",
-
     "certs.eyebrow": "Сертифікати",
     "certs.title": "Освіта та підтвердження кваліфікації",
     "certs.subtitle": "Курси, які я пройшов, та значки, підтверджені органами-емітентами. Кожен сертифікат має посилання на верифікацію в оригінального провайдера.",
     "certs.verify": "Перевірити ↗",
     "certs.issued": "Видано",
-
     "awards.eyebrow": "Відзнаки та нагороди",
     "awards.title": "Службові відзнаки",
     "awards.subtitle": "Подяки та відзнаки, отримані за роки служби у Національній поліції України. Кожна пов'язана з конкретною операцією або періодом служби.",
@@ -143,7 +131,6 @@
     "media.title": "Публікації у пресі",
     "media.subtitle": "Резонансна справа з розгромом транснаціональної шахрайської мережі — колл-центру у Кам'янському, що ошукав громадян Литви та інших країн ЄС. Операція тривала майже два роки, завершилася 15 арештами та вилученням активів на понад 11 млн грн.",
     "media.readSource": "Читати матеріал ↗",
-
     "recs.eyebrow": "Рекомендації",
     "recs.title": "Що говорять клієнти та колеги",
     "recs.subtitle": "Рекомендації з LinkedIn від людей, з якими я працював — клієнтів, колег по команді та фахівців галузі.",
@@ -152,7 +139,6 @@
     "recs.rel.teammate": "Колега по команді",
     "recs.rel.manager": "Керівник",
     "recs.rel.mentee": "Учень",
-
     "books.eyebrow": "Книги",
     "books.title": "Авторські роботи",
     "books.subtitle": "Про роботу в OSINT, війну в Україні та мислення слідчого.",
@@ -176,7 +162,6 @@
     "books.b4.desc": "Курс OSINT для початківців. Основи, право, етика, OPSEC, аналітичне мислення.",
     "books.b5.title": "The Shadow Files · Vol 2: Cross-Platform Attribution",
     "books.b5.desc": "9 розділів про глибокий OSINT: приватні акаунти, Telegram, обличчя, витоки, Identity Graph.",
-
     "contact.eyebrow": "Контакти",
     "contact.title": "Зв'язок",
     "contact.subtitle": "Для зворотного зв'язку зі спільнотою OSINT, медіа-запитів та обговорення статей і книг.",
@@ -189,21 +174,19 @@
     "contact.form.email": "Email",
     "contact.form.msg": "Повідомлення",
     "contact.form.send": "Надіслати",
-
     "footer.tag": "Кожна тінь має ім'я.",
     "footer.role": "OSINT & SOCMINT Investigator · Дніпро, Україна",
     "footer.nav": "Навігація",
     "footer.contacts": "Контакти",
     "footer.rights": "© 2026 Єгор Селін",
     "footer.built": "Створено з увагою · Дніпро, UA",
-
-    "back": "← Назад"
+    "back": "← Назад",
+    "nav.guide": "Гайд"
   },
   "en": {
     "brand.first": "Yehor",
     "brand.last": "Selin",
     "brand.dot": ".",
-
     "nav.home": "Home",
     "nav.about": "About",
     "nav.cases": "Cases",
@@ -223,18 +206,15 @@
     "projects.live": "Live demo ↗",
     "projects.features": "Key features",
     "nav.contact": "Contact",
-
     "hero.eyebrow": "OSINT Investigator · Dnipro, Ukraine",
     "hero.subtitle": "OSINT · SOCMINT · Identity Attribution · Due Diligence",
     "hero.tag": "Every shadow has a name.",
     "hero.cta1": "View case studies",
     "hero.cta2": "Get in touch",
-
     "stats.socmint": "SOCMINT investigations",
     "stats.screening": "Candidate screenings",
     "stats.attribution": "Identity attributions",
     "stats.projects": "Open-source projects",
-
     "about.eyebrow": "About",
     "about.title": "Turning fragmented open signals into defensible intelligence",
     "about.p1": "I specialize in OSINT and SOCMINT investigations focused on identity attribution, insider risk, and corporate due diligence.",
@@ -243,7 +223,6 @@
     "about.p4": "Formerly Senior Detective for Cases of Particular Importance at the Unit for Countering Transnational and Ethnic Organised Crime Groups, Strategic Investigations Department, National Police of Ukraine. Today I apply the same methodologies in a corporate context. My approach is hypothesis-driven and validation-focused: decision-grade intelligence, not data volume or tooling.",
     "about.p5": "Beyond investigations, I build my own open-source OSINT tools and write books — both practical guides for aspiring analysts and author works on the profession, the war, and the mind of an investigator. Everything I publish is grounded in real operational practice.",
     "about.more": "Learn more →",
-
     "cases.eyebrow": "Case studies",
     "cases.title": "Investigations from real practice",
     "cases.subtitle": "Every case is real work. All names, places and identifiers are anonymized.",
@@ -263,7 +242,6 @@
     "meta.recipient": "Recipient",
     "meta.occasion": "Occasion",
     "meta.order": "Order №",
-
     "case.waze.title": "Waze → full identity de-anonymization",
     "case.waze.desc": "One report in a navigation app → username → Telegram → phone → email → full cross-platform attribution.",
     "case.crypto.title": "Inside the machine: anatomy of a crypto scam call centre",
@@ -276,7 +254,6 @@
     "case.face.desc": "Forged passport → Search4Faces → VKontakte → 912 fraud reports tied to a single email.",
     "case.family.title": "The Family Chain in SOCMINT",
     "case.family.desc": "A candidate for a sensitive role hid himself perfectly. His sister-in-law's post opened a second Telegram account and financial red flags.",
-
     "skills.eyebrow": "Skills & tools",
     "skills.title": "What I do and what I work with",
     "skills.osint": "OSINT / SOCMINT",
@@ -291,7 +268,6 @@
     "skills.auto.desc": "Custom tools in Python/Flask: ThunderTrace, KagamiID, MooN Attacks. Automation of mass screening.",
     "skills.tools": "Toolkit",
     "skills.tools.desc": "OSINT Industries · Sherlock · Manuel Travezaño Suite · Epieos · IDCrawl · HIBP · BreachDirectory · FunStat · VK FOAF · Search4Faces · PimEyes · Google Dorks",
-
     "exp.eyebrow": "Experience",
     "exp.title": "Path",
     "exp.current.date": "November 2025 — Present",
@@ -319,21 +295,17 @@
     "exp.police.l2": "Dismantled a transnational fraud network operating through a call center in Ukraine that defrauded EU citizens of nearly €40,000",
     "exp.police.l3": "Established cooperation with Chainalysis: analysis of cryptocurrency transactions and financial flows",
     "exp.police.l4": "Led to arrest and charging of 15 members of the criminal organization; evidence and seized equipment worth over 11 million UAH",
-
     "blog.eyebrow": "OSINT news",
     "blog.title": "Key developments in the OSINT world",
     "blog.subtitle": "Industry news, investigations by peers, tool updates, and regulatory changes — from Ukraine and the world.",
-
     "tools.eyebrow": "Tools",
     "tools.title": "The working arsenal",
     "tools.subtitle": "Tools I use in investigations and my reviews of them.",
-
     "certs.eyebrow": "Certificates",
     "certs.title": "Training and verified qualifications",
     "certs.subtitle": "Courses I completed and badges verified by the issuing bodies. Every certificate links to verification with the original provider.",
     "certs.verify": "Verify ↗",
     "certs.issued": "Issued",
-
     "awards.eyebrow": "Awards & Recognition",
     "awards.title": "Service awards",
     "awards.subtitle": "Commendations received during years of service in the National Police of Ukraine. Each is tied to a specific operation or period of service.",
@@ -343,7 +315,6 @@
     "media.title": "Press publications",
     "media.subtitle": "High-profile case: the takedown of a transnational fraud network — a call-centre in Kamianske that defrauded citizens of Lithuania and other EU countries. The operation lasted nearly two years and ended with 15 arrests and seized assets exceeding 11 million UAH.",
     "media.readSource": "Read the article ↗",
-
     "recs.eyebrow": "Recommendations",
     "recs.title": "What clients and colleagues say",
     "recs.subtitle": "LinkedIn recommendations from people I've worked with — clients, teammates, and industry professionals.",
@@ -352,7 +323,6 @@
     "recs.rel.teammate": "Teammate",
     "recs.rel.manager": "Manager",
     "recs.rel.mentee": "Mentee",
-
     "books.eyebrow": "Books",
     "books.title": "Author works",
     "books.subtitle": "On OSINT work, the war in Ukraine, and the mind of an investigator.",
@@ -376,7 +346,6 @@
     "books.b4.desc": "OSINT course for beginners. Foundations, law, ethics, OPSEC, analytical thinking.",
     "books.b5.title": "The Shadow Files · Vol 2: Cross-Platform Attribution",
     "books.b5.desc": "9 chapters on deep OSINT: private accounts, Telegram, faces, breaches, the identity graph.",
-
     "contact.eyebrow": "Contact",
     "contact.title": "Get in touch",
     "contact.subtitle": "For feedback from the OSINT community, media inquiries, and discussion of my articles and books.",
@@ -389,14 +358,13 @@
     "contact.form.email": "Email",
     "contact.form.msg": "Message",
     "contact.form.send": "Send",
-
     "footer.tag": "Every shadow has a name.",
     "footer.role": "OSINT & SOCMINT Investigator · Dnipro, Ukraine",
     "footer.nav": "Navigation",
     "footer.contacts": "Contact",
     "footer.rights": "© 2026 Yehor Selin",
     "footer.built": "Built with care · Dnipro, UA",
-
-    "back": "← Back"
+    "back": "← Back",
+    "nav.guide": "Guide"
   }
 }

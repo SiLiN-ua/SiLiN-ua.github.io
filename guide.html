@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
+<title>Як стати OSINT-аналітиком в Україні · Повний гайд 2026 · Єгор Селін</title>
+<meta name="description" content="Референсний гайд 2026 з професії OSINT-аналітик в Україні: офіційний статус, скіли, курси, зарплати, кар'єрні шляхи (держава, приватка, військо, волонтерство), інструментарій та етика.">
+<meta name="keywords" content="OSINT Україна, OSINT-аналітик, професія OSINT, як стати OSINT, курси OSINT Україна, зарплата OSINT-аналітика, класифікатор професій OSINT, OSINT робота Україна, розвідка відкритих джерел кар'єра">
+<link rel="canonical" href="https://yehorselin.com/guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Як стати OSINT-аналітиком в Україні · Повний гайд 2026">
+<meta property="og:description" content="Референсний гайд 2026: офіційний статус професії, скіли, курси, зарплати, кар'єрні шляхи, інструментарій та етика.">
+<meta property="og:image" content="https://yehorselin.com/img/yehor.jpg">
+<meta property="og:url" content="https://yehorselin.com/guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="alternate" type="application/rss+xml" title="OSINT-новини" href="/feed.xml">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Як стати OSINT-аналітиком в Україні — Повний гайд 2026",
+  "description": "Референсний гайд 2026 з професії OSINT-аналітик в Україні: офіційний статус, скіли, курси, зарплати, кар'єрні шляхи, інструментарій та етика.",
+  "author": {
+    "@type": "Person",
+    "name": "Єгор Селін",
+    "url": "https://yehorselin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Єгор Селін",
+    "url": "https://yehorselin.com/"
+  },
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "inLanguage": "uk-UA",
+  "image": "https://yehorselin.com/img/yehor.jpg",
+  "mainEntityOfPage": "https://yehorselin.com/guide.html"
+}
+</script>
+<style>
+.guide-hero { padding: 8rem 0 4rem; text-align: center; }
+.guide-hero .eyebrow { display: block; margin-bottom: 1.5rem; }
+.guide-hero h1 { max-width: 900px; margin: 0 auto; }
+.guide-hero .lead { max-width: 720px; margin: 2rem auto 0; color: var(--text-mute); font-size: 1.15rem; }
+.guide-meta { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; font-family: var(--font-mono); font-size: .78rem; color: var(--text-mute); text-transform: uppercase; letter-spacing: .18em; }
+.toc { max-width: 720px; margin: 0 auto 4rem; padding: 2rem; border: 1px solid var(--border-hi); background: rgba(20,28,48,.4); }
+.toc h3 { margin: 0 0 1.25rem; font-family: var(--font-mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .2em; color: var(--ice); }
+.toc ol { counter-reset: toc; list-style: none; padding: 0; margin: 0; }
+.toc ol li { counter-increment: toc; margin: .6rem 0; padding-left: 3rem; position: relative; }
+.toc ol li::before { content: counter(toc,decimal-leading-zero); position: absolute; left: 0; font-family: var(--font-mono); font-size: .78rem; color: var(--text-mute); }
+.toc a { color: var(--text-hi); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
+.toc a:hover { border-color: var(--ice); }
+.guide-body { max-width: 780px; margin: 0 auto; }
+.guide-body h2 { margin: 4.5rem 0 1.5rem; padding-top: 2rem; font-family: var(--font-serif); font-size: 2.2rem; line-height: 1.2; color: var(--text-hi); border-top: 1px solid var(--border-lo); }
+.guide-body h3 { margin: 3rem 0 1rem; font-family: var(--font-sans); font-size: 1.35rem; font-weight: 600; color: var(--ice); }
+.guide-body p { margin: 0 0 1.25rem; line-height: 1.75; color: var(--text-mid); font-size: 1.05rem; }
+.guide-body ul, .guide-body ol { margin: 1.25rem 0; padding-left: 1.5rem; color: var(--text-mid); line-height: 1.75; }
+.guide-body ul li, .guide-body ol li { margin: .6rem 0; }
+.guide-body strong { color: var(--text-hi); font-weight: 600; }
+.guide-body em { color: var(--ice); }
+.guide-body a { color: var(--ice); text-decoration: none; border-bottom: 1px solid var(--border-hi); transition: border-color .2s; }
+.guide-body a:hover { border-color: var(--ice); }
+.guide-body blockquote { margin: 2rem 0; padding: 1.5rem 2rem; border-left: 3px solid var(--ice); background: rgba(20,28,48,.3); font-style: italic; color: var(--text-hi); }
+.guide-body table { width: 100%; margin: 2rem 0; border-collapse: collapse; font-size: .95rem; }
+.guide-body table th, .guide-body table td { padding: .8rem 1rem; text-align: left; border-bottom: 1px solid var(--border-lo); }
+.guide-body table th { background: rgba(20,28,48,.5); font-family: var(--font-mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ice); font-weight: 500; }
+.guide-body .callout { margin: 2rem 0; padding: 1.5rem 1.75rem; border: 1px solid var(--border-hi); background: rgba(20,28,48,.35); border-radius: 2px; }
+.guide-body .callout strong { display: block; margin-bottom: .5rem; color: var(--ice); font-family: var(--font-mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .15em; }
+.guide-body hr { margin: 4rem 0; border: 0; border-top: 1px solid var(--border-lo); }
+.guide-cta { max-width: 780px; margin: 5rem auto; padding: 3rem; border: 1px solid var(--ice); background: linear-gradient(135deg, rgba(20,28,48,.7), rgba(10,14,26,.9)); text-align: center; }
+.guide-cta h3 { font-family: var(--font-serif); font-style: italic; font-size: 1.8rem; color: var(--text-hi); margin: 0 0 1rem; }
+.guide-cta p { color: var(--text-mute); margin: 0 0 1.5rem; }
+.guide-cta .btn { display: inline-block; margin: .3rem; }
+@media (max-width: 720px) {
+  .guide-hero { padding: 7rem 1rem 3rem; }
+  .guide-hero h1 { font-size: 2.2rem; }
+  .guide-meta { flex-direction: column; gap: .5rem; text-align: center; }
+  .toc { margin: 0 1rem 3rem; padding: 1.5rem; }
+  .guide-body { padding: 0 1rem; }
+  .guide-body h2 { font-size: 1.75rem; }
+  .guide-cta { margin: 3rem 1rem; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
+  <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  <ul class="nav__links">
+    <li><a href="index.html" data-i18n="nav.home">Головна</a></li>
+    <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+    <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+    <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
+    <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+    <li><a href="guide.html" class="active" data-i18n="nav.guide">Гайд</a></li>
+    <li><a href="certificates.html" data-i18n="nav.certificates">Сертифікати</a></li>
+    <li><a href="awards.html" data-i18n="nav.awards">Відзнаки</a></li>
+    <li><a href="recommendations.html" data-i18n="nav.recommendations">Рекомендації</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Контакти</a></li>
+    <li class="nav__lang">
+      <button data-lang="uk" class="active">UA</button>
+      <button data-lang="en">EN</button>
+    </li>
+  </ul>
+</nav>
+
+<section class="guide-hero reveal">
+  <div class="container">
+    <span class="eyebrow">OSINT · Кар'єрний гайд · Україна · 2026</span>
+    <h1>Як стати OSINT-аналітиком в Україні: повний гайд 2026</h1>
+    <p class="lead">Референсний матеріал для тих, хто розглядає OSINT як професію після офіційного визнання її державою. Формальний статус, реальні скіли, український та світовий стек курсів, зарплатні вилки, кар'єрні шляхи (держава / приватка / військо / волонтерство), інструментарій, юридичні межі — та практичний план першого місяця.</p>
+    <div class="guide-meta">
+      <span>Автор · Єгор Селін</span>
+      <span>Оновлено · 17.07.2026</span>
+      <span>≈ 18 хв читання</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="toc reveal">
+    <h3>Зміст</h3>
+    <ol>
+      <li><a href="#status">Офіційний статус професії у 2025-2026</a></li>
+      <li><a href="#who">Хто такий OSINT-аналітик і що він реально робить</a></li>
+      <li><a href="#skills">Скіли: hard + soft</a></li>
+      <li><a href="#start">Перший місяць: практичний план з нуля</a></li>
+      <li><a href="#courses-ua">Курси — український стек</a></li>
+      <li><a href="#courses-world">Курси — міжнародний стек</a></li>
+      <li><a href="#paths">Кар'єрні шляхи та зарплати</a></li>
+      <li><a href="#tools">Базовий інструментарій</a></li>
+      <li><a href="#ethics">Юридичні та етичні межі</a></li>
+      <li><a href="#community">Спільнота та де шукати роботу</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#next">Куди рухатись далі</a></li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:0" class="guide-body">
+
+<h2 id="status">1. Офіційний статус професії у 2025-2026</h2>
+
+<p>Ще п'ять років тому «OSINT-аналітик» в українських HR-документах виглядав екзотично. Кадровики не знали під якою рубрикою його оформити, кар'єрні консультанти радили писати «аналітик даних» або «спеціаліст з інформаційної безпеки». Формального професійного треку не існувало.</p>
+
+<p>У 2025 році ситуація змінилась. <strong>Національна академія Служби безпеки України розробила професійний стандарт «Аналітик інформації з відкритих джерел (OSINT-аналітик)»</strong>. Це офіційний документ, який визначає:</p>
+
+<ul>
+  <li>Кваліфікаційні рівні (від молодшого до провідного аналітика)</li>
+  <li>Перелік обов'язкових компетенцій</li>
+  <li>Необхідні знання (юридична база, методологія, інструментарій)</li>
+  <li>Умови допуску до професії</li>
+</ul>
+
+<p>Паралельно <strong>наказом Мінекономіки № 3073 від 12.12.2025</strong> внесено чергові зміни до Національного класифікатора професій ДК 003:2010, у межах яких формалізовано низку нових IT- і аналітичних спеціальностей. OSINT-аналітик увійшов у цю систему — тобто тепер його можна офіційно вписувати у штатний розпис, трудову книжку, оголошення про вакансії.</p>
+
+<div class="callout">
+<strong>Що це означає на практиці</strong>
+<p>Роботодавець тепер може відкривати вакансію «OSINT-аналітик» офіційно, з чіткою тарифною сіткою. Держслужба, силові структури, приватні компанії отримали правову рамку. Ти можеш вписувати «OSINT-аналітик» у CV і резюме без пояснювальної записки. Освітні заклади можуть будувати програми під офіційний профстандарт. Це фундамент, на якому у 2026-2028 виросте вся українська OSINT-екосистема.</p>
+</div>
+
+<p>З точки зору кар'єрної стратегії — це <strong>найкращий момент за останні 10 років, щоб заходити у професію</strong>. Ринок зростає, попит випереджає пропозицію, юридична рамка вже є, а конкуренція серед сертифікованих фахівців ще не насичена.</p>
+
+<hr>
+
+<h2 id="who">2. Хто такий OSINT-аналітик і що він реально робить</h2>
+
+<p>Формальне визначення: OSINT-аналітик — це фахівець, який <strong>збирає інформацію з відкритих джерел, верифікує її і перетворює на основу для рішення</strong>. Ключове тут — не «шукає в Google», а «перетворює на основу для рішення». Це три різні речі:</p>
+
+<h3>Збір</h3>
+<p>Систематичний, а не інтуїтивний. OSINT-аналітик знає ~200-400 джерел за категоріями (реєстри, соцмережі, супутникові знімки, судові рішення, крипто-транзакції, DNS-записи, доменна історія, breach-датасети). Він не гуглить — він працює з конкретним «стеком» під задачу.</p>
+
+<h3>Верифікація</h3>
+<p>Кожен факт має пройти крос-перевірку через ≥3 незалежні джерела. Одне джерело — гіпотеза. Три — доказ. Це фундаментальна дисципліна професії, яка відрізняє OSINT-аналітика від блогера-детектива.</p>
+
+<h3>Перетворення на рішення</h3>
+<p>Клієнт (роботодавець, слідчий, комплаєнс, HR) не потребує сирої купи даних. Він потребує <strong>структурованого звіту</strong> з висновком і рівнем впевненості. Це вимагає навички наративу, розуміння того, що з зібраного важливо, що ні, і як подати так, щоб зайняло 5 хвилин читання.</p>
+
+<h3>Типові щоденні задачі</h3>
+<ul>
+  <li><strong>Скринінг кандидата</strong> на чутливу посаду — цифровий слід, приховані афіліації, репутаційні ризики</li>
+  <li><strong>Due diligence контрагента</strong> — реєстри, бенефіціари, санкційна історія, судові справи</li>
+  <li><strong>Identity attribution</strong> — реконструкція реальної особи за фрагментарними ідентифікаторами (username, phone, email)</li>
+  <li><strong>Threat intelligence</strong> — моніторинг активності конкретних осіб / груп / бренду в мережі</li>
+  <li><strong>Розслідування шахрайства</strong> — від фішинг-кампаній до складних фінансових схем</li>
+  <li><strong>GEOINT</strong> — верифікація геолокації фото/відео, аналіз супутникових знімків</li>
+  <li><strong>Документування воєнних злочинів</strong> — за стандартом Berkeley Protocol, з подальшою передачею у МКС / ICPA / національні органи</li>
+</ul>
+
+<hr>
+
+<h2 id="skills">3. Скіли: hard + soft</h2>
+
+<h3>Hard skills — обов'язковий мінімум</h3>
+
+<ul>
+  <li><strong>Розуміння інтернет-інфраструктури</strong> — як працюють DNS, WHOIS, домени, IP-адреси, SSL-сертифікати. Не треба бути мережевим інженером, але треба вміти читати ці дані</li>
+  <li><strong>Роботa з реєстрами</strong> — ЄДРПОУ, ProZorro, YouControl, Opendatabot, реєстр судових рішень, ДРФО, санкційні бази</li>
+  <li><strong>Соцмережеві дослідження</strong> — Facebook, Instagram, LinkedIn, Telegram, VK, TikTok, YouTube, Twitter/X, специфіка кожної</li>
+  <li><strong>Візуальна верифікація</strong> — reverse image search, аналіз метаданих, розпізнавання генеративного AI-контенту</li>
+  <li><strong>Геолокація</strong> — робота з Google Earth / Yandex Panoramas / супутниковими знімками, техніки chronolocation</li>
+  <li><strong>Google Dorks</strong> — точкові оператори пошуку для таргетованих запитів</li>
+  <li><strong>Базова автоматизація</strong> — bash-скрипти, Python на рівні читання чужих інструментів (Sherlock, Maigret, Holehe, Recon-ng), робота з API</li>
+  <li><strong>OPSEC</strong> — операційна безпека самого аналітика: VPN, sock puppet-акаунти, ізольовані середовища, робота без утиску власного цифрового сліду</li>
+</ul>
+
+<h3>Soft skills — фактично визначають вершину</h3>
+
+<ul>
+  <li><strong>Аналітичне мислення</strong> — здатність будувати гіпотези, шукати спростування, тримати одразу декілька версій</li>
+  <li><strong>Увага до деталей</strong> — 90% розслідувань виграється у тому, що більшість пропускає (дата створення акаунту, тип шрифту у метаданих, дрібниця у фоні фото)</li>
+  <li><strong>Терпіння</strong> — багато роботи — це рутина. Той хто не витримує 3 години на одному номері телефону — не залишиться</li>
+  <li><strong>Наратив</strong> — вміння написати звіт так, щоб клієнт зрозумів за 5 хвилин</li>
+  <li><strong>Етичний компас</strong> — розуміння де межа між публічним і приватним, коли зупинитись</li>
+  <li><strong>Іноземна мова</strong> — англійська обов'язково. Російська дає доступ до величезного пласту джерел. Європейські (польська, німецька) — плюс для міжнародних кейсів</li>
+</ul>
+
+<div class="callout">
+<strong>Про технічний бекграунд</strong>
+<p>Всупереч очікуванням, <em>технічна освіта не обов'язкова</em>. У профі OSINT працюють колишні економісти (краще бачать фінансові невідповідності), юристи (швидко ідентифікують підозрілу структуру угод), психологи (розуміють поведінкові патерни у соцмережах), журналісти, вчителі, військові, айтішники, історики. Критично важливий <em>склад розуму</em>, а не диплом.</p>
+</div>
+
+<hr>
+
+<h2 id="start">4. Перший місяць: практичний план з нуля</h2>
+
+<p>Це не «пройди курс і чекай роботи». Це <strong>практичний рухомий план на 30 днів</strong>, який доводить твою серйозність собі і, згодом, роботодавцю.</p>
+
+<h3>Тижні 1-2: фундамент</h3>
+<ul>
+  <li>Пройти <strong>безкоштовний курс на Prometheus</strong> «OSINT — розвідка з відкритих джерел» (~20 год, є сертифікат)</li>
+  <li>Створити <strong>окремий email + профілі-«сокпапети»</strong> для роботи (Gmail + Proton, з випадковими іменами, без прив'язки до реального телефону)</li>
+  <li>Встановити <strong>Firefox / Brave</strong> як робочий браузер з розширеннями: Wappalyzer, Hunchly (trial), Nimbus Screenshot, uBlock Origin, Vytal (для підміни таймзони)</li>
+  <li>Створити <strong>Obsidian-vault</strong> або Notion-workspace для case-notes: один файл = один pivot</li>
+  <li>Прочитати <strong>Bellingcat Online Investigation Toolkit</strong> — це де-факто дефолт-довідник індустрії</li>
+</ul>
+
+<h3>Тижні 3-4: практика на реальних кейсах</h3>
+<ul>
+  <li>Долучитись до першого <strong>Trace Labs Global OSINT Search Party CTF</strong> (безкоштовно, віртуально) — 6-годинне командне змагання, де знаходиш реальну інформацію про зниклих людей</li>
+  <li>Взяти <strong>3 навчальні кейси</strong>: (1) верифікація місця фото з новин, (2) знайти всі публічні акаунти публічної особи, (3) reverse-lookup власника доменного імені</li>
+  <li>Написати <strong>перший звіт</strong> у форматі «Question / Method / Findings / Confidence / Sources» — це стандартна структура професійного OSINT-звіту</li>
+  <li>Опублікувати write-up у себе (LinkedIn / Medium / особистий блог) — <strong>публічний слід — це і є твоє CV</strong> в OSINT</li>
+  <li>Підписатись на <strong>OSINTech Timeline</strong> (щотижневий community-дайджест), <strong>Bellingcat</strong>, <strong>Nixintel</strong>, <strong>IntelTechniques Blog</strong></li>
+</ul>
+
+<p>Після 30 днів у тебе є: сертифікат Prometheus, 1 CTF-досвід, 3 задокументовані міні-кейси, публікація, налагоджене робоче середовище. Це вже досить, щоб <strong>подавати на молодшу позицію</strong>.</p>
+
+<hr>
+
+<h2 id="courses-ua">5. Курси — український стек</h2>
+
+<p>Всі — реально запущені у 2024-2026, з підтвердженою методологією:</p>
+
+<ul>
+  <li><strong>Prometheus · «OSINT — розвідка з відкритих джерел та інформаційна безпека»</strong> (2024) — базовий курс, безкоштовно. Створений <em>Victory Drones (БФ Dignitas)</em> у партнерстві з <em>Molfar</em>, <em>Лабораторією цифрової безпеки</em>, <em>Центром Протидії Корупції</em>, <em>YouControl Academy</em>. Цільова аудиторія: військові, волонтери, журналісти, освітяни, держслужба. Сертифікат — так.</li>
+
+  <li><strong>Дія.Освіта · OSINT-школа</strong> — публічний OSINT-курс у форматі «серіалу», для широкої аудиторії. Безкоштовно.</li>
+
+  <li><strong>Дія.Бізнес × YouControl Academy · «OSINT. Робота з реєстрами»</strong> — для підприємців/юристів/бізнес-аналітиків. Робота з ЄДРПОУ, ProZorro, YouControl, Datacrat, реєстром судових рішень. Безкоштовно, з сертифікатом.</li>
+
+  <li><strong>НАДС · навчання інструментам OSINT для держслужби</strong> — для публічних службовців і HR-служб. Проводиться з підтримкою CIR (Centre for Information Resilience).</li>
+
+  <li><strong>Ветеранський фонд · «Шлях ветерана · Освіта» — OSINT-аналітика</strong> — безкоштовно для ветеранів і ветеранок.</li>
+
+  <li><strong>OSINT Varta × SLON FM</strong> — безкоштовний онлайн-курс з чотирма модулями, п'ятий у розробці. Основна аудиторія — військові.</li>
+
+  <li><strong>Академія прокуратури, Академія СБУ, юрфак ЛНУ</strong> — формальні магістерські курси «OSINT та цифрова розвідка у праві» (з 2025-2026), для юристів і майбутніх слідчих.</li>
+
+  <li><strong>Pritula.Academy · «OSINT: як знайти інформацію в Інтернеті»</strong> — платний, з практичними кейсами.</li>
+
+  <li><strong>Laba · «OSINT-аналітик»</strong> — платний, комерційний трек з підготовкою під приватний сектор.</li>
+</ul>
+
+<hr>
+
+<h2 id="courses-world">6. Курси — міжнародний стек</h2>
+
+<p>Для тих, хто планує вихід на міжнародний ринок або хоче cutting-edge методологію:</p>
+
+<ul>
+  <li><strong>SANS SEC487 — Open-Source Intelligence Gathering and Analysis</strong> — фундаментальний, 6-денний, професійний стандарт індустрії. Дорого (~$8К), але з сертифікатом GIAC.</li>
+
+  <li><strong>SANS SEC587 — Advanced Open-Source Intelligence</strong> — просунутий, покриває dark web, крипто-трасування, дезінформаційні кампанії, російський і китайський OSINT, deepfake-forensics. 28+ hands-on labs.</li>
+
+  <li><strong>Bellingcat Online Investigation Toolkit</strong> — не курс, а живий довідник з 12 категорій інструментів (безкоштовно, з детальними описами і use-cases). Читається як підручник.</li>
+
+  <li><strong>Bellingcat онлайн-воркшопи</strong> — регулярні тренінги від команди-легенди галузі.</li>
+
+  <li><strong>Trace Labs Search Party CTF</strong> — не курс, а безкоштовна практика на реальних справах зниклих безвісти. Найкращий спосіб набити реальний досвід.</li>
+
+  <li><strong>OSINT Combine · online courses</strong> — комерційні курси різних рівнів.</li>
+
+  <li><strong>Berkeley Protocol on Digital Open Source Investigations</strong> — міжнародний стандарт, безкоштовний PDF від OHCHR × Berkeley Law. Обов'язковий для тих, хто працює з воєнними злочинами і правами людини.</li>
+
+  <li><strong>Coursera / Udemy · різні OSINT-курси</strong> — від початківців до практиків, ціни від безкоштовних до ~$100.</li>
+
+  <li><strong>Council of Europe OSINT Training Manual</strong> — офіційний методичний посібник, використовується у навчанні антикорупційних органів (НАЗК, НАБУ, САП).</li>
+</ul>
+
+<hr>
+
+<h2 id="paths">7. Кар'єрні шляхи та зарплати</h2>
+
+<p>OSINT в Україні — це не одна кар'єра, а <strong>чотири суттєво різних треки</strong> з різними зарплатами, ритмом, ризиками і темами роботи. Обирай свідомо.</p>
+
+<table>
+<thead>
+<tr><th>Трек</th><th>Приклади роботодавців</th><th>Зарплата (грн/міс)</th><th>Ритм</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Держава / силові</strong></td>
+  <td>СБУ, Нацполіція, НАЗК, НАБУ, САП, Мін'юст</td>
+  <td>15 000 – 40 000</td>
+  <td>Стабільно, з великим соц-пакетом</td>
+</tr>
+<tr>
+  <td><strong>Військо</strong></td>
+  <td>СБС (Сили Безпілотних Систем), військові бригади, розвідка</td>
+  <td>20 000 – 50 000+ бойові</td>
+  <td>Інтенсивно, у зоні ризику</td>
+</tr>
+<tr>
+  <td><strong>Приватка (UA)</strong></td>
+  <td>Molfar, YouControl, детективні агенції, банки, corporate security</td>
+  <td>30 000 – 90 000</td>
+  <td>Проєкти + retainer</td>
+</tr>
+<tr>
+  <td><strong>Міжнародний ринок / фріланс</strong></td>
+  <td>Bellingcat, OSINT for Ukraine, consulting, closed clients</td>
+  <td>$2 000 – $17 000 (~90К – 700К грн)</td>
+  <td>Проєктно, remote</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Держава / силові</h3>
+<p>Стабільна вертикаль, соц-пакет, доступ до унікальних баз. Мінус — офіційна зарплата нижча за приватку, бюрократія, обмеження на публічну активність. Плюс — <strong>найкраща школа</strong> для формування дисципліни і методології. Багато топ-приватників починали саме звідси.</p>
+
+<h3>Військо / СБС</h3>
+<p>Найбільш затребувані зараз OSINT-фахівці у ЗСУ і СБС. Робота на реальних цілях, з реальними наслідками. Зарплата — тарифна ставка + бойові + іноді донатські бонуси через профільні фонди. Психологічний тиск високий, але і зростання швидке.</p>
+
+<h3>Приватка (Україна)</h3>
+<p>Найкращий баланс «зарплата / умови». Головні напрями: due diligence для банків і корпорацій, background checks для HR, розслідування шахрайства, антикорупційні дослідження для медіа. <strong>Molfar</strong> — де-факто найбільший приватний OSINT-роботодавець в Україні. Крім них: <strong>YouControl</strong> (продуктова компанія), детективні агенції, appearance-focus стартапи.</p>
+
+<h3>Міжнародний ринок / фріланс</h3>
+<p>Найвища стеля, але вимагає англійської і портфоліо. Клієнти: іноземні консалтингові фірми, юридичні компанії, приватні детективні агенції, дослідницькі організації, медіа. Ставки: junior $30-60/год, mid $75-120/год, senior $150-300+/год. Fedeзорних майданчиків мало, більшість роботи — через нетворкінг, LinkedIn, репутацію.</p>
+
+<h3>Волонтерство (окремий трек, часто паралельно з іншими)</h3>
+<p>InformNapalm, OSINT for Ukraine, Molfar Intelligence Institute, локальні розслідувальні спільноти. Оплата — нуль або символічна, але <strong>найкраща школа для реальних кейсів</strong> і найшвидший шлях до впізнаваності у міжнародній спільноті.</p>
+
+<hr>
+
+<h2 id="tools">8. Базовий інструментарій</h2>
+
+<p>«Стек» OSINT-практика виглядає приблизно так. Все нижче — або безкоштовне, або має безкоштовну версію:</p>
+
+<h3>Пошук людей / крос-платформна атрибуція</h3>
+<ul>
+  <li><strong>Sherlock, Maigret, WhatsMyName</strong> — перевірка username по 400+ платформам</li>
+  <li><strong>Holehe</strong> — перевірка email на реєстрації у сервісах</li>
+  <li><strong>Epieos</strong> — reverse lookup email → Google account footprint</li>
+  <li><strong>Have I Been Pwned, DeHashed, IntelX</strong> — breach-датасети</li>
+  <li><strong>GetContact</strong> — crowd-sourced контактна атрибуція за телефоном</li>
+</ul>
+
+<h3>Реєстри та корпоративні дані (Україна)</h3>
+<ul>
+  <li><strong>YouControl, Opendatabot, Datacrat</strong> — бенефіціари, юрособи, зв'язки</li>
+  <li><strong>Реєстр судових рішень</strong> (reyestr.court.gov.ua)</li>
+  <li><strong>Мін'юст ЄДР</strong> — офіційна реєстрація</li>
+  <li><strong>ProZorro</strong> — держзакупівлі</li>
+  <li><strong>Дія.Бізнес реєстри</strong></li>
+</ul>
+
+<h3>Візуальна верифікація</h3>
+<ul>
+  <li><strong>Google Reverse Image, Yandex, TinEye, Bing Visual</strong></li>
+  <li><strong>Search4Faces, PimEyes</strong> (facial recognition, останній — платний і етично суперечливий)</li>
+  <li><strong>InVID, WeVerify</strong> — верифікація відео</li>
+  <li><strong>ExifTool</strong> — метадані фото</li>
+</ul>
+
+<h3>Геолокація</h3>
+<ul>
+  <li><strong>Google Earth Pro</strong> (безкоштовно) + <strong>Yandex Panoramas</strong> (СНД, але покриття унікальне)</li>
+  <li><strong>Sentinel Hub, Planet Explorer</strong> — супутникові знімки</li>
+  <li><strong>SunCalc</strong> — визначення часу за тінями</li>
+</ul>
+
+<h3>Робоче середовище</h3>
+<ul>
+  <li><strong>Trace Labs OSINT VM</strong> (v2026.05, на Debian 13) — готова робоча ОС з інструментами</li>
+  <li><strong>Obsidian</strong> — case-notes і knowledge graph</li>
+  <li><strong>Hunchly</strong> — автоматичне збереження всього перегляду з ланцюжком доказів</li>
+  <li><strong>Maltego CE</strong> — link-analysis графи</li>
+</ul>
+
+<h3>Комерційні платформи (для приватки)</h3>
+<ul>
+  <li><strong>OSINT Industries</strong> — крос-платформне збагачення за одним селектором (1000+ джерел), стандарт індустрії</li>
+  <li><strong>ShadowDragon</strong> — for law enforcement / enterprise</li>
+  <li><strong>Social Links</strong>, <strong>Fivecast</strong>, <strong>Osavul</strong> — конкуренти у сегменті</li>
+</ul>
+
+<hr>
+
+<h2 id="ethics">9. Юридичні та етичні межі</h2>
+
+<p>Це найважливіший розділ. Без нього OSINT перетворюється на переслідування або незаконну діяльність.</p>
+
+<h3>Юридична база в Україні</h3>
+<ul>
+  <li>Закон «Про національну безпеку» (№ 2469-VIII, 2018)</li>
+  <li>Закон «Про розвідку» (№ 2331-III, 2001)</li>
+  <li>ЗУ «Про захист персональних даних»</li>
+  <li>Кримінальний кодекс — статті про порушення таємниці приватного життя (ст. 182), несанкціонований доступ (ст. 361), тощо</li>
+</ul>
+
+<h3>Ключові принципи (Berkeley Protocol)</h3>
+<ol>
+  <li><strong>Тільки відкриті джерела</strong> — жодного несанкціонованого доступу, паролів, приватних баз</li>
+  <li><strong>Хешування доказів</strong> — SHA-256 для кожного файлу-доказу</li>
+  <li><strong>Документування контексту</strong> — URL, timestamp, метод доступу для кожного знімка</li>
+  <li><strong>Мульти-джерельна кореляція</strong> — мінімум 3 незалежні підтвердження</li>
+  <li><strong>Безпека</strong> — цифрова, фізична і психосоціальна для дослідників, свідків, потерпілих</li>
+  <li><strong>Прозорість методології</strong> — здатність відтворити ланцюжок аналізу</li>
+</ol>
+
+<h3>Червоні лінії — що НЕ роблять професіонали</h3>
+<ul>
+  <li>❌ Не логіняться у чужі акаунти (навіть якщо є пароль з витоку)</li>
+  <li>❌ Не звертаються до об'єкта розслідування напряму без згоди клієнта</li>
+  <li>❌ Не публікують сирі персональні дані (адреси, номери, документи) у відкритих матеріалах</li>
+  <li>❌ Не працюють на замовлення сталкінгу, погроз чи насилля</li>
+  <li>❌ Не приймають кейси, де об'єкт — приватна особа без юридичної підстави для перевірки</li>
+</ul>
+
+<div class="callout">
+<strong>Практичне правило</strong>
+<p>Якщо ти не можеш чесно розповісти клієнту, знайомому та журналісту, як саме отримав дані — ти вже за межею. Професійний OSINT — це те, методологію якого можна опублікувати як case study без ризику для тебе.</p>
+</div>
+
+<hr>
+
+<h2 id="community">10. Спільнота та де шукати роботу</h2>
+
+<h3>Українські спільноти</h3>
+<ul>
+  <li><strong>OSINT Varta</strong> — Telegram / Discord</li>
+  <li><strong>InformNapalm</strong> — Telegram + сайт informnapalm.org</li>
+  <li><strong>Molfar</strong> — Telegram-канал і публікації</li>
+  <li>Профільні OSINT-чати в Telegram (шукати «OSINT Ukraine», «OSINT community UA»)</li>
+</ul>
+
+<h3>Міжнародні</h3>
+<ul>
+  <li><strong>Trace Labs Discord</strong> — обов'язково, ключова англомовна OSINT-спільнота</li>
+  <li><strong>Bellingcat Discord</strong> — доступ через їхній сайт</li>
+  <li><strong>OSINT Curious</strong>, <strong>Nixintel</strong> — блоги-community</li>
+  <li><strong>SANS OSINT community</strong></li>
+  <li><strong>OSINT.SH / OSINT Framework</strong> — публічні бази інструментів</li>
+</ul>
+
+<h3>Де шукати вакансії</h3>
+<ul>
+  <li><strong>Work.ua, Robota.ua</strong> — фільтр «OSINT», «аналітик відкритих джерел»</li>
+  <li><strong>OSINT-Jobs.com</strong> — міжнародні OSINT-позиції</li>
+  <li><strong>lfrecruiting.mil.gov.ua</strong> — військові позиції</li>
+  <li><strong>LinkedIn</strong> — головна платформа для міжнародних позицій, потрібен активний англійський профіль</li>
+  <li><strong>Discord-канали Trace Labs і Bellingcat</strong> — часто публікують внутрішні позиції та контракти</li>
+  <li><strong>Прямий контакт з Molfar / YouControl / Дія.Business партнерами</strong> — багато вакансій не публікуються</li>
+</ul>
+
+<hr>
+
+<h2 id="faq">11. FAQ</h2>
+
+<h3>Скільки часу треба, щоб стати junior OSINT-аналітиком?</h3>
+<p>Реалістично — 3-6 місяців інтенсивної практики. Місяць — базовий курс + перші кейси. Далі — CTF, публікації, застосування до реальних вакансій. Ті, хто вчаться між іншим, доходять за 12+ місяців.</p>
+
+<h3>Чи треба вища освіта?</h3>
+<p>Формально — ні. Практично — залежить від треку. Для держави / силових зазвичай треба (правнича, гуманітарна, безпекова). Для приватки і фрілансу — важливий портфель, а не диплом. Для міжнародних клієнтів — важлива англійська і сертифікати (SANS, GIAC, Coursera).</p>
+
+<h3>Чи можна поєднувати з основною роботою?</h3>
+<p>Так, і це часто оптимальний старт. 1-2 години вечорами на курс + вихідні на CTF і практичні кейси. Через 6 місяців — портфель з 5-10 задокументованих робіт + сертифікати. Тоді можна робити рішення про перехід.</p>
+
+<h3>Що потрібно для міжнародних клієнтів?</h3>
+<p>Англійська B2+, LinkedIn з активним контентом (пости, репости, коментарі), 3-5 задокументованих кейсів (з дозволу клієнта або анонімізовані), 1-2 сертифікати SANS або GIAC, участь у Trace Labs CTF (є publicly verifiable результати).</p>
+
+<h3>Чи є вікові обмеження?</h3>
+<p>Ні. У професії однаково успішні і 22-річні студенти, і 50-річні фахівці з попереднім бекграундом. Багато топ-практиків прийшли з інших сфер після 35.</p>
+
+<h3>Що робити, якщо немає технічного бекграунду?</h3>
+<p>Це не бар'єр. Технічну базу (Google Dorks, WHOIS, DNS) можна опанувати за 2 тижні. Важливіше — <em>склад розуму</em>: аналітичність, увага до деталей, терпіння. Якщо у тебе був досвід дослідницької роботи (журналіст, юрист, бухгалтер, науковець) — ти вже 60% дороги пройшов.</p>
+
+<h3>Скільки заробляє senior OSINT в Україні?</h3>
+<p>Приватка / senior позиція — 60-120К грн/місяць. Міжнародний фріланс на своїх клієнтах — від $3К до $15К/місяць (з досвідом 5+ років і сформованим брендом).</p>
+
+<h3>Чи це «сіра» професія?</h3>
+<p>Ні. З 2025 — офіційна, з профстандартом. Легально працюють у держструктурах, приватних компаніях, як ФОПи. Юридичні межі — у розділі 9.</p>
+
+<hr>
+
+<h2 id="next">12. Куди рухатись далі</h2>
+
+<p>Якщо ти прочитав до цієї точки — ти вже маєш більше системного розуміння професії, ніж 90% тих, хто «десь бачив слово OSINT». Три конкретні наступні кроки:</p>
+
+<ol>
+  <li><strong>Сьогодні</strong> — запишись на <a href="https://prometheus.org.ua/prometheus-free/osint-open-source-intelligence/" target="_blank" rel="noopener">безкоштовний Prometheus-курс</a>. Це нульовий бар'єр і 20 годин чистого фундаменту.</li>
+  <li><strong>Цього тижня</strong> — приєднайся до <a href="https://www.tracelabs.org/" target="_blank" rel="noopener">Trace Labs Discord</a> і зареєструйся на найближчий Search Party CTF (безкоштовно, віртуально). Перше реальне бойове хрещення.</li>
+  <li><strong>Цього місяця</strong> — розбери один <a href="cases.html">кейс з мого сайту</a>, повтори методологію на публічній персоні і опублікуй write-up у LinkedIn. Ти вже входиш у спільноту.</li>
+</ol>
+
+</section>
+
+<div class="guide-cta reveal">
+  <h3>Питання чи консультація?</h3>
+  <p>Якщо шукаєш ментора, хочеш обговорити конкретний кейс або порадитись з приводу треку — пиши.</p>
+  <a href="contact.html" class="btn btn--filled">Зв'язатися</a>
+  <a href="cases.html" class="btn">Розбір кейсів</a>
+  <a href="tools.html" class="btn">Стек інструментів</a>
+</div>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div>
+      <p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.nav">Навігація</h4>
+      <ul>
+        <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+        <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+        <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+        <li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li>
+        <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
+        <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+        <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.contacts">Контакти</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li>
+        <li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="mailto:selinegor22@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span data-i18n="footer.rights">© 2026 Єгор Селін</span>
+    <span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span>
+  </div>
+</footer>
+
+<script src="js/graph.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
