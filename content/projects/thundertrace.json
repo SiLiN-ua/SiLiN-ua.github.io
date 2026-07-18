@@ -35,5 +35,49 @@
     "Interface languages: EN · UK · RU"
   ],
   "order": 6,
-  "published": true
+  "published": true,
+  "problem_uk": "Класичні username-скрипти (Sherlock, Maigret) покривають 300-400 платформ, але без візуалізації, без confidence-scoring і без автогенерації варіацій. ThunderTrace — з усім цим у продакшн-інтерфейсі.",
+  "problem_en": "Classical username scripts (Sherlock, Maigret) cover 300-400 platforms, but without visualisation, confidence scoring, or variation generation. ThunderTrace adds all of that in a production-grade interface.",
+  "for_whom_uk": [
+    "OSINT-практики, які хочуть широту одним запитом",
+    "Red teams та pentesters (recon-фаза)",
+    "Incident response (пошук атакера за нікнеймом)",
+    "Threat intel аналітики"
+  ],
+  "for_whom_en": [
+    "OSINT practitioners who want breadth in one query",
+    "Red teams and pentesters (recon phase)",
+    "Incident response (locating an attacker by nickname)",
+    "Threat intel analysts"
+  ],
+  "how_it_works_uk": [
+    "Введи цільовий username",
+    "ThunderTrace паралельно перевіряє 350+ платформ",
+    "Кожен результат отримує confidence-рівень",
+    "Знайдені профілі рендеряться на світовій мапі з підказками",
+    "Автогенеруються варіації нікнейму для розширеного пошуку",
+    "Експорт у JSON / CSV / HTML / PDF"
+  ],
+  "how_it_works_en": [
+    "Enter the target username",
+    "ThunderTrace checks 350+ platforms in parallel",
+    "Each result gets a confidence level",
+    "Found profiles render on a world map with tooltips",
+    "Username variations are auto-generated for expanded search",
+    "Export to JSON / CSV / HTML / PDF"
+  ],
+  "status_uk": "Активний open-source · MIT · додавання власних платформ",
+  "status_en": "Active open-source · MIT · custom platform definitions supported",
+  "highlights_uk": [
+    "350+ платформ",
+    "3 мови UI",
+    "Світова мапа",
+    "MIT"
+  ],
+  "highlights_en": [
+    "350+ platforms",
+    "3 UI languages",
+    "World map",
+    "MIT"
+  ]
 }

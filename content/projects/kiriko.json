@@ -38,5 +38,47 @@
     "Session history with downloadable reports"
   ],
   "order": 1,
-  "published": true
+  "published": true,
+  "problem_uk": "Ручний OSINT-скринінг однієї особи забирає 4-6 годин. Kiriko робить повний цикл верифікації за 10-15 хвилин, автономно.",
+  "problem_en": "Manual OSINT screening of one subject takes 4-6 hours. Kiriko runs the full verification cycle autonomously in 10-15 minutes.",
+  "for_whom_uk": [
+    "Приватні детективи та детективні агенції",
+    "Corporate security · due diligence · insider risk",
+    "Розслідувальні журналісти",
+    "Комплаєнс і фрод-департаменти"
+  ],
+  "for_whom_en": [
+    "Private investigators and detective agencies",
+    "Corporate security · due diligence · insider risk",
+    "Investigative journalists",
+    "Compliance and fraud departments"
+  ],
+  "how_it_works_uk": [
+    "Клієнт вводить стартовий селектор (ПІБ / email / телефон / username)",
+    "AI-агент на Claude формулює план розслідування і запускає паралельний збір",
+    "Підключення до внутрішніх OSINT-джерел, парсинг PDF-звітів, ThunderTrace по 350+ платформах",
+    "Консолідація знайденого у єдиний identity-граф з мітками confidence",
+    "Автогенерація звіту у Word / PDF / HTML з повною доказовою трасабельністю"
+  ],
+  "how_it_works_en": [
+    "Client submits a starting selector (name / email / phone / username)",
+    "Claude-based AI agent formulates the investigation plan and launches parallel collection",
+    "Connects to internal OSINT sources, parses PDF reports, ThunderTrace across 350+ platforms",
+    "Consolidates findings into a single identity graph with confidence tags",
+    "Auto-generates the report in Word / PDF / HTML with full evidential traceability"
+  ],
+  "status_uk": "Закрита commercial-платформа · в активному використанні",
+  "status_en": "Closed commercial platform · in active use",
+  "highlights_uk": [
+    "10-15 хв",
+    "350+ платформ",
+    "3 мови",
+    "EN · UA · RU"
+  ],
+  "highlights_en": [
+    "10-15 min",
+    "350+ platforms",
+    "3 languages",
+    "EN · UA · RU"
+  ]
 }

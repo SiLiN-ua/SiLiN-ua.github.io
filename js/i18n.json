@@ -189,7 +189,14 @@
     "meta.format": "Формат",
     "meta.audience": "Аудиторія",
     "meta.location": "Локація",
-    "meta.topic": "Тема"
+    "meta.topic": "Тема",
+    "projects.problem": "Проблема",
+    "projects.how": "Як працює",
+    "projects.for_whom": "Для кого",
+    "projects.year": "Рік",
+    "projects.stack": "Стек",
+    "projects.license": "Ліцензія",
+    "projects.status": "Статус"
   },
   "en": {
     "brand.first": "Yehor",
@@ -381,6 +388,13 @@
     "meta.format": "Format",
     "meta.audience": "Audience",
     "meta.location": "Location",
-    "meta.topic": "Topic"
+    "meta.topic": "Topic",
+    "projects.problem": "Problem",
+    "projects.how": "How it works",
+    "projects.for_whom": "For whom",
+    "projects.year": "Year",
+    "projects.stack": "Stack",
+    "projects.license": "License",
+    "projects.status": "Status"
   }
 }

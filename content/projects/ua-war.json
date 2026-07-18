@@ -44,5 +44,49 @@
     "Monitor 1–5 cities simultaneously with filter"
   ],
   "order": 2,
-  "published": true
+  "published": true,
+  "problem_uk": "Жоден публічний інструмент не поєднує live-моніторинг 400+ Telegram-каналів + 9-типову класифікацію + автоматичне відтворення траєкторій атак + OCR тексту з фото. UA-War — перший, який робить це в одному інтерфейсі.",
+  "problem_en": "No public tool combines live monitoring of 400+ Telegram channels + 9-type classification + automatic attack-trajectory reconstruction + OCR of text from photos. UA-War is the first to do it in one interface.",
+  "for_whom_uk": [
+    "Воєнні аналітики та дослідники",
+    "Розслідувальні журналісти, що покривають Україну",
+    "OSINT-волонтерські команди",
+    "Дослідники, які документують події для міжнародних інстанцій"
+  ],
+  "for_whom_en": [
+    "Military analysts and researchers",
+    "Investigative journalists covering Ukraine",
+    "OSINT volunteer teams",
+    "Researchers documenting events for international bodies"
+  ],
+  "how_it_works_uk": [
+    "Моніторинг 400+ Telegram-каналів у реальному часі",
+    "Кожне повідомлення класифікується автоматично (9 типів: балістика / ракета / БПЛА / FPV / вибух / збито / тривога / проліт / розвід)",
+    "OCR-модуль витягує текст з прикріплених фото",
+    "Події гео-прив'язуються і рендеряться на Leaflet-мапі (Україна + РФ)",
+    "З послідовності подій автоматично відновлюються траєкторії атак",
+    "AI-звіт від Claude — з мапою, статистикою і посиланнями на джерела"
+  ],
+  "how_it_works_en": [
+    "Monitor 400+ Telegram channels in real time",
+    "Every message is auto-classified (9 types: ballistic / missile / UAV / FPV / explosion / shot-down / alarm / overflight / recon)",
+    "OCR module extracts text from attached photos",
+    "Events are geo-tagged and rendered on a Leaflet map (Ukraine + Russia)",
+    "Attack trajectories are automatically reconstructed from event sequences",
+    "Claude AI report — with map, statistics, and source links"
+  ],
+  "status_uk": "Активний · MIT · продакшн-використання",
+  "status_en": "Active · MIT · in production use",
+  "highlights_uk": [
+    "400+ джерел",
+    "9 типів подій",
+    "Auto-траєкторії",
+    "OCR"
+  ],
+  "highlights_en": [
+    "400+ sources",
+    "9 event types",
+    "Auto-trajectories",
+    "OCR"
+  ]
 }

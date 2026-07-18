@@ -40,6 +40,46 @@
     ],
     "order": 3,
     "published": true,
+    "problem_uk": "Немає публічної платформи, яка системно моніторить настрої у російських регіонах під час резонансних подій. Dobri Drony закриває цей пробіл — автоматизований SOCMINT для суспільно-сентиментальної аналітики.",
+    "problem_en": "No public platform systematically monitors sentiment across Russian regions during notable events. Dobri Drony closes this gap — automated SOCMINT for public-sentiment analytics.",
+    "for_whom_uk": [
+      "Аналітики інформаційно-психологічних операцій",
+      "Дослідники суспільних настроїв",
+      "OSINT-команди, які вивчають регіональну динаміку РФ"
+    ],
+    "for_whom_en": [
+      "Analysts of information-psychological operations",
+      "Researchers of public sentiment",
+      "OSINT teams studying Russian regional dynamics"
+    ],
+    "how_it_works_uk": [
+      "Live-моніторинг 153 Telegram-джерел по російських містах",
+      "Автоматична класифікація тональності: паніка / заперечення / роздратування / гумор / скарги / нейтральна інформація",
+      "Автовитяг назви міста з тексту повідомлення",
+      "Фільтр фіду і звітів за містами",
+      "AI-звіт від Claude — структурований бриф про динаміку настроїв за обраний період"
+    ],
+    "how_it_works_en": [
+      "Live monitoring of 153 Telegram sources across Russian cities",
+      "Automatic sentiment classification: panic / denial / irritation / humour / complaint / neutral info",
+      "Automatic city extraction from message text",
+      "Feed and report filters by city",
+      "Claude AI report — structured brief on sentiment dynamics for the selected period"
+    ],
+    "status_uk": "Активний · MIT · WebSockets real-time",
+    "status_en": "Active · MIT · real-time WebSockets",
+    "highlights_uk": [
+      "153 джерела",
+      "6 тонів",
+      "Real-time",
+      "MIT"
+    ],
+    "highlights_en": [
+      "153 sources",
+      "6 tones",
+      "Real-time",
+      "MIT"
+    ],
     "__slug": "dobri-drony"
   },
   {
@@ -80,6 +120,48 @@
     ],
     "order": 4,
     "published": true,
+    "problem_uk": "Стандартні username-lookup інструменти не бачать закриті/видалені VK-профілі, швидко попадають під rate-limit і не тримають numeric ID як селектор. KagamiID закриває всі три проблеми в одному місці.",
+    "problem_en": "Standard username-lookup tools don't see closed/deleted VK profiles, hit rate limits fast, and don't handle numeric IDs as a selector. KagamiID solves all three in one place.",
+    "for_whom_uk": [
+      "OSINT-дослідники (self-hosted, без залежності від хмарних сервісів)",
+      "Threat intel аналітики",
+      "Розслідувальні журналісти",
+      "Викладачі OSINT-курсів (як референс open-source стеку)"
+    ],
+    "for_whom_en": [
+      "OSINT researchers (self-hosted, no cloud dependencies)",
+      "Threat intel analysts",
+      "Investigative journalists",
+      "OSINT course instructors (as an open-source reference stack)"
+    ],
+    "how_it_works_uk": [
+      "Введи username / numeric ID / email у пошуковий рядок",
+      "KagamiID паралельно запитує 15 платформ (GitHub, VK, Reddit, TikTok, Instagram та інші)",
+      "VK-профілі додатково збагачуються через FOAF XML (навіть якщо профіль закритий чи видалений)",
+      "Автогенеруються Google/Bing/DuckDuckGo дорки для подальшого поглиблення",
+      "Експорт у JSON / CSV / STIX 2.1 для інтеграції в інші робочі процеси"
+    ],
+    "how_it_works_en": [
+      "Enter a username / numeric ID / email in the search bar",
+      "KagamiID queries 15 platforms in parallel (GitHub, VK, Reddit, TikTok, Instagram and others)",
+      "VK profiles get additional FOAF XML enrichment (works even for closed/deleted profiles)",
+      "Google/Bing/DuckDuckGo dorks auto-generated for deeper follow-up",
+      "Export to JSON / CSV / STIX 2.1 for integration with other workflows"
+    ],
+    "status_uk": "Активний open-source · MIT · self-hosted, без БД · live demo доступне",
+    "status_en": "Active open-source · MIT · self-hosted, no database · live demo available",
+    "highlights_uk": [
+      "15 платформ",
+      "MIT",
+      "VK FOAF",
+      "STIX 2.1 експорт"
+    ],
+    "highlights_en": [
+      "15 platforms",
+      "MIT",
+      "VK FOAF",
+      "STIX 2.1 export"
+    ],
     "__slug": "kagamiid"
   },
   {
@@ -123,6 +205,48 @@
     ],
     "order": 1,
     "published": true,
+    "problem_uk": "Ручний OSINT-скринінг однієї особи забирає 4-6 годин. Kiriko робить повний цикл верифікації за 10-15 хвилин, автономно.",
+    "problem_en": "Manual OSINT screening of one subject takes 4-6 hours. Kiriko runs the full verification cycle autonomously in 10-15 minutes.",
+    "for_whom_uk": [
+      "Приватні детективи та детективні агенції",
+      "Corporate security · due diligence · insider risk",
+      "Розслідувальні журналісти",
+      "Комплаєнс і фрод-департаменти"
+    ],
+    "for_whom_en": [
+      "Private investigators and detective agencies",
+      "Corporate security · due diligence · insider risk",
+      "Investigative journalists",
+      "Compliance and fraud departments"
+    ],
+    "how_it_works_uk": [
+      "Клієнт вводить стартовий селектор (ПІБ / email / телефон / username)",
+      "AI-агент на Claude формулює план розслідування і запускає паралельний збір",
+      "Підключення до внутрішніх OSINT-джерел, парсинг PDF-звітів, ThunderTrace по 350+ платформах",
+      "Консолідація знайденого у єдиний identity-граф з мітками confidence",
+      "Автогенерація звіту у Word / PDF / HTML з повною доказовою трасабельністю"
+    ],
+    "how_it_works_en": [
+      "Client submits a starting selector (name / email / phone / username)",
+      "Claude-based AI agent formulates the investigation plan and launches parallel collection",
+      "Connects to internal OSINT sources, parses PDF reports, ThunderTrace across 350+ platforms",
+      "Consolidates findings into a single identity graph with confidence tags",
+      "Auto-generates the report in Word / PDF / HTML with full evidential traceability"
+    ],
+    "status_uk": "Закрита commercial-платформа · в активному використанні",
+    "status_en": "Closed commercial platform · in active use",
+    "highlights_uk": [
+      "10-15 хв",
+      "350+ платформ",
+      "3 мови",
+      "EN · UA · RU"
+    ],
+    "highlights_en": [
+      "10-15 min",
+      "350+ platforms",
+      "3 languages",
+      "EN · UA · RU"
+    ],
     "__slug": "kiriko"
   },
   {
@@ -164,6 +288,48 @@
     ],
     "order": 5,
     "published": true,
+    "problem_uk": "Ручне відстеження воєнних подій через сотні Telegram-каналів у реальному часі — неможливе для одного аналітика. MooN Attacks автоматизує збір, класифікацію і геолокацію — залишає аналітику лише інтерпретацію.",
+    "problem_en": "Manual tracking of military events through hundreds of Telegram channels in real time is impossible for one analyst. MooN Attacks automates collection, classification, and geolocation — leaving only interpretation to the analyst.",
+    "for_whom_uk": [
+      "Воєнні аналітики",
+      "Дослідники конфлікту",
+      "Журналісти, що покривають зони бойових дій"
+    ],
+    "for_whom_en": [
+      "Military analysts",
+      "Conflict researchers",
+      "Journalists covering conflict zones"
+    ],
+    "how_it_works_uk": [
+      "Постійний моніторинг сотень Telegram-каналів",
+      "Автоматична класифікація подій (вибухи / дрони / ракети / ППО)",
+      "Гео-визначення координат події з тексту або медіа",
+      "Візуалізація на інтерактивній Leaflet-мапі з RF-фільтром",
+      "AI-звіт: таймлайн, реконструкція маршрутів, статистика, посилання на джерела",
+      "Експорт у HTML / PDF / Word / JSON / CSV"
+    ],
+    "how_it_works_en": [
+      "Continuous monitoring of hundreds of Telegram channels",
+      "Automatic event classification (explosions / drones / missiles / air defence)",
+      "Geo-coordinate extraction from text or media",
+      "Visualisation on an interactive Leaflet map with RF filter",
+      "AI report: timeline, attack-route reconstruction, statistics, source links",
+      "Export to HTML / PDF / Word / JSON / CSV"
+    ],
+    "status_uk": "Активний · MIT · відкритий код",
+    "status_en": "Active · MIT · open source",
+    "highlights_uk": [
+      "Сотні каналів",
+      "Live-мапа",
+      "AI-звіти",
+      "MIT"
+    ],
+    "highlights_en": [
+      "Hundreds of channels",
+      "Live map",
+      "AI reports",
+      "MIT"
+    ],
     "__slug": "moon-attacks"
   },
   {
@@ -204,6 +370,50 @@
     ],
     "order": 6,
     "published": true,
+    "problem_uk": "Класичні username-скрипти (Sherlock, Maigret) покривають 300-400 платформ, але без візуалізації, без confidence-scoring і без автогенерації варіацій. ThunderTrace — з усім цим у продакшн-інтерфейсі.",
+    "problem_en": "Classical username scripts (Sherlock, Maigret) cover 300-400 platforms, but without visualisation, confidence scoring, or variation generation. ThunderTrace adds all of that in a production-grade interface.",
+    "for_whom_uk": [
+      "OSINT-практики, які хочуть широту одним запитом",
+      "Red teams та pentesters (recon-фаза)",
+      "Incident response (пошук атакера за нікнеймом)",
+      "Threat intel аналітики"
+    ],
+    "for_whom_en": [
+      "OSINT practitioners who want breadth in one query",
+      "Red teams and pentesters (recon phase)",
+      "Incident response (locating an attacker by nickname)",
+      "Threat intel analysts"
+    ],
+    "how_it_works_uk": [
+      "Введи цільовий username",
+      "ThunderTrace паралельно перевіряє 350+ платформ",
+      "Кожен результат отримує confidence-рівень",
+      "Знайдені профілі рендеряться на світовій мапі з підказками",
+      "Автогенеруються варіації нікнейму для розширеного пошуку",
+      "Експорт у JSON / CSV / HTML / PDF"
+    ],
+    "how_it_works_en": [
+      "Enter the target username",
+      "ThunderTrace checks 350+ platforms in parallel",
+      "Each result gets a confidence level",
+      "Found profiles render on a world map with tooltips",
+      "Username variations are auto-generated for expanded search",
+      "Export to JSON / CSV / HTML / PDF"
+    ],
+    "status_uk": "Активний open-source · MIT · додавання власних платформ",
+    "status_en": "Active open-source · MIT · custom platform definitions supported",
+    "highlights_uk": [
+      "350+ платформ",
+      "3 мови UI",
+      "Світова мапа",
+      "MIT"
+    ],
+    "highlights_en": [
+      "350+ platforms",
+      "3 UI languages",
+      "World map",
+      "MIT"
+    ],
     "__slug": "thundertrace"
   },
   {
@@ -253,6 +463,50 @@
     ],
     "order": 2,
     "published": true,
+    "problem_uk": "Жоден публічний інструмент не поєднує live-моніторинг 400+ Telegram-каналів + 9-типову класифікацію + автоматичне відтворення траєкторій атак + OCR тексту з фото. UA-War — перший, який робить це в одному інтерфейсі.",
+    "problem_en": "No public tool combines live monitoring of 400+ Telegram channels + 9-type classification + automatic attack-trajectory reconstruction + OCR of text from photos. UA-War is the first to do it in one interface.",
+    "for_whom_uk": [
+      "Воєнні аналітики та дослідники",
+      "Розслідувальні журналісти, що покривають Україну",
+      "OSINT-волонтерські команди",
+      "Дослідники, які документують події для міжнародних інстанцій"
+    ],
+    "for_whom_en": [
+      "Military analysts and researchers",
+      "Investigative journalists covering Ukraine",
+      "OSINT volunteer teams",
+      "Researchers documenting events for international bodies"
+    ],
+    "how_it_works_uk": [
+      "Моніторинг 400+ Telegram-каналів у реальному часі",
+      "Кожне повідомлення класифікується автоматично (9 типів: балістика / ракета / БПЛА / FPV / вибух / збито / тривога / проліт / розвід)",
+      "OCR-модуль витягує текст з прикріплених фото",
+      "Події гео-прив'язуються і рендеряться на Leaflet-мапі (Україна + РФ)",
+      "З послідовності подій автоматично відновлюються траєкторії атак",
+      "AI-звіт від Claude — з мапою, статистикою і посиланнями на джерела"
+    ],
+    "how_it_works_en": [
+      "Monitor 400+ Telegram channels in real time",
+      "Every message is auto-classified (9 types: ballistic / missile / UAV / FPV / explosion / shot-down / alarm / overflight / recon)",
+      "OCR module extracts text from attached photos",
+      "Events are geo-tagged and rendered on a Leaflet map (Ukraine + Russia)",
+      "Attack trajectories are automatically reconstructed from event sequences",
+      "Claude AI report — with map, statistics, and source links"
+    ],
+    "status_uk": "Активний · MIT · продакшн-використання",
+    "status_en": "Active · MIT · in production use",
+    "highlights_uk": [
+      "400+ джерел",
+      "9 типів подій",
+      "Auto-траєкторії",
+      "OCR"
+    ],
+    "highlights_en": [
+      "400+ sources",
+      "9 event types",
+      "Auto-trajectories",
+      "OCR"
+    ],
     "__slug": "ua-war"
   }
 ]

@@ -38,5 +38,45 @@
     "Real-time via WebSockets + EventLet"
   ],
   "order": 3,
-  "published": true
+  "published": true,
+  "problem_uk": "Немає публічної платформи, яка системно моніторить настрої у російських регіонах під час резонансних подій. Dobri Drony закриває цей пробіл — автоматизований SOCMINT для суспільно-сентиментальної аналітики.",
+  "problem_en": "No public platform systematically monitors sentiment across Russian regions during notable events. Dobri Drony closes this gap — automated SOCMINT for public-sentiment analytics.",
+  "for_whom_uk": [
+    "Аналітики інформаційно-психологічних операцій",
+    "Дослідники суспільних настроїв",
+    "OSINT-команди, які вивчають регіональну динаміку РФ"
+  ],
+  "for_whom_en": [
+    "Analysts of information-psychological operations",
+    "Researchers of public sentiment",
+    "OSINT teams studying Russian regional dynamics"
+  ],
+  "how_it_works_uk": [
+    "Live-моніторинг 153 Telegram-джерел по російських містах",
+    "Автоматична класифікація тональності: паніка / заперечення / роздратування / гумор / скарги / нейтральна інформація",
+    "Автовитяг назви міста з тексту повідомлення",
+    "Фільтр фіду і звітів за містами",
+    "AI-звіт від Claude — структурований бриф про динаміку настроїв за обраний період"
+  ],
+  "how_it_works_en": [
+    "Live monitoring of 153 Telegram sources across Russian cities",
+    "Automatic sentiment classification: panic / denial / irritation / humour / complaint / neutral info",
+    "Automatic city extraction from message text",
+    "Feed and report filters by city",
+    "Claude AI report — structured brief on sentiment dynamics for the selected period"
+  ],
+  "status_uk": "Активний · MIT · WebSockets real-time",
+  "status_en": "Active · MIT · real-time WebSockets",
+  "highlights_uk": [
+    "153 джерела",
+    "6 тонів",
+    "Real-time",
+    "MIT"
+  ],
+  "highlights_en": [
+    "153 sources",
+    "6 tones",
+    "Real-time",
+    "MIT"
+  ]
 }

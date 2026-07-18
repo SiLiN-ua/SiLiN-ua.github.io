@@ -36,5 +36,47 @@
     "Splash with animated 3D Moon on Three.js"
   ],
   "order": 5,
-  "published": true
+  "published": true,
+  "problem_uk": "Ручне відстеження воєнних подій через сотні Telegram-каналів у реальному часі — неможливе для одного аналітика. MooN Attacks автоматизує збір, класифікацію і геолокацію — залишає аналітику лише інтерпретацію.",
+  "problem_en": "Manual tracking of military events through hundreds of Telegram channels in real time is impossible for one analyst. MooN Attacks automates collection, classification, and geolocation — leaving only interpretation to the analyst.",
+  "for_whom_uk": [
+    "Воєнні аналітики",
+    "Дослідники конфлікту",
+    "Журналісти, що покривають зони бойових дій"
+  ],
+  "for_whom_en": [
+    "Military analysts",
+    "Conflict researchers",
+    "Journalists covering conflict zones"
+  ],
+  "how_it_works_uk": [
+    "Постійний моніторинг сотень Telegram-каналів",
+    "Автоматична класифікація подій (вибухи / дрони / ракети / ППО)",
+    "Гео-визначення координат події з тексту або медіа",
+    "Візуалізація на інтерактивній Leaflet-мапі з RF-фільтром",
+    "AI-звіт: таймлайн, реконструкція маршрутів, статистика, посилання на джерела",
+    "Експорт у HTML / PDF / Word / JSON / CSV"
+  ],
+  "how_it_works_en": [
+    "Continuous monitoring of hundreds of Telegram channels",
+    "Automatic event classification (explosions / drones / missiles / air defence)",
+    "Geo-coordinate extraction from text or media",
+    "Visualisation on an interactive Leaflet map with RF filter",
+    "AI report: timeline, attack-route reconstruction, statistics, source links",
+    "Export to HTML / PDF / Word / JSON / CSV"
+  ],
+  "status_uk": "Активний · MIT · відкритий код",
+  "status_en": "Active · MIT · open source",
+  "highlights_uk": [
+    "Сотні каналів",
+    "Live-мапа",
+    "AI-звіти",
+    "MIT"
+  ],
+  "highlights_en": [
+    "Hundreds of channels",
+    "Live map",
+    "AI reports",
+    "MIT"
+  ]
 }

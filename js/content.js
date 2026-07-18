@@ -623,8 +623,9 @@
     if (uaOnly) uaOnly.addEventListener('change', applyFilter);
   }
 
-  function renderProjectCard(item) {
+  function renderProjectCard(item, idx, total) {
     const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const L = (k, dflt) => escapeHtml(dict['projects.'+k] || dflt);
     const name = escapeHtml(item.name || '');
     const subtitle = escapeHtml(tr(item, 'subtitle') || '');
     const tag = escapeHtml(item.tag || '');
@@ -632,33 +633,73 @@
     const lang = escapeHtml(item.lang || '');
     const license = escapeHtml(item.license || '');
     const desc = escapeHtml(tr(item, 'description') || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    const cover = item.cover ? `<div class="proj__hero"><img src="${escapeHtml(item.cover)}" alt="${name}" loading="lazy"></div>` : '';
-    const shots = (item.screenshots || []).slice(1).map(s => `<div class="proj__shot"><img src="${escapeHtml(s)}" alt="" loading="lazy"></div>`).join('');
-    const features = (tr(item, 'features') || item.features_uk || []).map(f => `<li>${escapeHtml(f)}</li>`).join('');
-    const featLbl = escapeHtml(dict['projects.features'] || 'Ключові можливості');
-    const btnRepo = item.repo_url ? `<a href="${escapeHtml(item.repo_url)}" target="_blank" rel="noopener" class="btn">${escapeHtml(dict['projects.repo'] || 'GitHub ↗')}</a>` : '';
-    const btnLive = item.live_url ? `<a href="${escapeHtml(item.live_url)}" target="_blank" rel="noopener" class="btn btn--filled">${escapeHtml(dict['projects.live'] || 'Live demo ↗')}</a>` : '';
+    const problem = escapeHtml(tr(item, 'problem') || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const status = escapeHtml(tr(item, 'status') || '');
+    const highlights = tr(item, 'highlights') || item.highlights_uk || [];
+    const forWhom = tr(item, 'for_whom') || item.for_whom_uk || [];
+    const howItWorks = tr(item, 'how_it_works') || item.how_it_works_uk || [];
+    const features = tr(item, 'features') || item.features_uk || [];
+
+    const cover = item.cover ? `<div class="proj-hero"><img src="${escapeHtml(item.cover)}" alt="${name}" loading="lazy"></div>` : '';
+    const shots = (item.screenshots || []).slice(1).map(s => `<div class="proj-shot"><img src="${escapeHtml(s)}" alt="" loading="lazy"></div>`).join('');
+
+    const num = String(idx + 1).padStart(2, '0');
+    const totalStr = String(total).padStart(2, '0');
+
+    const chips = highlights.length
+      ? `<div class="proj-chips">${highlights.map(h => `<span class="proj-chip">${escapeHtml(h)}</span>`).join('')}</div>`
+      : '';
+
+    const problemBlock = problem
+      ? `<div class="proj-problem"><div class="proj-problem__label">${L('problem', 'Проблема')}</div><p>${problem}</p></div>`
+      : '';
+
+    const howBlock = howItWorks.length
+      ? `<div class="proj-block"><h3>${L('how', 'Як працює')}</h3><ol class="proj-steps">${howItWorks.map(s => `<li>${escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</li>`).join('')}</ol></div>`
+      : '';
+
+    const whomBlock = forWhom.length
+      ? `<div class="proj-block"><h3>${L('for_whom', 'Для кого')}</h3><ul class="proj-whom">${forWhom.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul></div>`
+      : '';
+
+    const featBlock = features.length
+      ? `<div class="proj-block"><h3>${L('features', 'Ключові можливості')}</h3><ul class="proj-feat">${features.map(f => `<li>${escapeHtml(f)}</li>`).join('')}</ul></div>`
+      : '';
+
+    const metaRows = [
+      year ? `<div class="proj-meta__row"><span>${L('year', 'Рік')}</span>${year}</div>` : '',
+      lang ? `<div class="proj-meta__row"><span>${L('stack', 'Стек')}</span>${lang}</div>` : '',
+      license ? `<div class="proj-meta__row"><span>${L('license', 'Ліцензія')}</span>${license}</div>` : '',
+      status ? `<div class="proj-meta__row"><span>${L('status', 'Статус')}</span>${status}</div>` : '',
+    ].filter(Boolean).join('');
+
+    const btnRepo = item.repo_url ? `<a href="${escapeHtml(item.repo_url)}" target="_blank" rel="noopener" class="btn">${L('repo', 'GitHub ↗')}</a>` : '';
+    const btnLive = item.live_url ? `<a href="${escapeHtml(item.live_url)}" target="_blank" rel="noopener" class="btn btn--filled">${L('live', 'Live demo ↗')}</a>` : '';
+
     return `
-      <article class="proj">
+      <article class="proj-section" id="proj-${escapeHtml(item.__slug || '')}">
+        <div class="proj-index"><span>${num}</span> / ${totalStr}</div>
         ${cover}
-        <div class="proj__body">
-          <div class="proj__head">
-            <div>
-              <div class="card__tag">${tag}</div>
-              <h2 class="proj__name">${name}</h2>
-              <p class="proj__sub">${subtitle}</p>
-            </div>
-            <div class="proj__meta">
-              ${year ? `<div class="proj__meta-row"><span>Рік</span>${year}</div>` : ''}
-              ${lang ? `<div class="proj__meta-row"><span>Стек</span>${lang}</div>` : ''}
-              ${license ? `<div class="proj__meta-row"><span>Ліцензія</span>${license}</div>` : ''}
-            </div>
-          </div>
-          <p class="proj__desc">${desc}</p>
-          ${features ? `<div class="proj__features"><h4>${featLbl}</h4><ul>${features}</ul></div>` : ''}
-          <div class="proj__actions">${btnLive}${btnRepo}</div>
-          ${shots ? `<div class="proj__shots">${shots}</div>` : ''}
+        <div class="proj-head">
+          <div class="card__tag">${tag}</div>
+          <h2 class="proj-name">${name}</h2>
+          <p class="proj-sub">${subtitle}</p>
+          ${chips}
         </div>
+        ${problemBlock}
+        <div class="proj-grid">
+          <div class="proj-grid__main">
+            ${howBlock}
+            ${whomBlock}
+            ${featBlock}
+            <p class="proj-desc">${desc}</p>
+          </div>
+          <aside class="proj-grid__side">
+            ${metaRows ? `<div class="proj-meta">${metaRows}</div>` : ''}
+            <div class="proj-actions">${btnLive}${btnRepo}</div>
+          </aside>
+        </div>
+        ${shots ? `<div class="proj-shots">${shots}</div>` : ''}
       </article>`;
   }
 
@@ -667,7 +708,7 @@
     const target = document.querySelector(targetSelector);
     if (!target) return;
     if (!items.length) { target.innerHTML = `<p class="center" style="color:var(--text-mute)">Поки що порожньо.</p>`; return; }
-    target.innerHTML = items.map(renderProjectCard).join('');
+    target.innerHTML = items.map((it, i) => renderProjectCard(it, i, items.length)).join('');
   }
 
   window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects, renderSpeaking };

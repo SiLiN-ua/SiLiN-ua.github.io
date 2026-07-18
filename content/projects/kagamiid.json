@@ -35,5 +35,47 @@
     "Self-hosted · MIT · no database"
   ],
   "order": 4,
-  "published": true
+  "published": true,
+  "problem_uk": "Стандартні username-lookup інструменти не бачать закриті/видалені VK-профілі, швидко попадають під rate-limit і не тримають numeric ID як селектор. KagamiID закриває всі три проблеми в одному місці.",
+  "problem_en": "Standard username-lookup tools don't see closed/deleted VK profiles, hit rate limits fast, and don't handle numeric IDs as a selector. KagamiID solves all three in one place.",
+  "for_whom_uk": [
+    "OSINT-дослідники (self-hosted, без залежності від хмарних сервісів)",
+    "Threat intel аналітики",
+    "Розслідувальні журналісти",
+    "Викладачі OSINT-курсів (як референс open-source стеку)"
+  ],
+  "for_whom_en": [
+    "OSINT researchers (self-hosted, no cloud dependencies)",
+    "Threat intel analysts",
+    "Investigative journalists",
+    "OSINT course instructors (as an open-source reference stack)"
+  ],
+  "how_it_works_uk": [
+    "Введи username / numeric ID / email у пошуковий рядок",
+    "KagamiID паралельно запитує 15 платформ (GitHub, VK, Reddit, TikTok, Instagram та інші)",
+    "VK-профілі додатково збагачуються через FOAF XML (навіть якщо профіль закритий чи видалений)",
+    "Автогенеруються Google/Bing/DuckDuckGo дорки для подальшого поглиблення",
+    "Експорт у JSON / CSV / STIX 2.1 для інтеграції в інші робочі процеси"
+  ],
+  "how_it_works_en": [
+    "Enter a username / numeric ID / email in the search bar",
+    "KagamiID queries 15 platforms in parallel (GitHub, VK, Reddit, TikTok, Instagram and others)",
+    "VK profiles get additional FOAF XML enrichment (works even for closed/deleted profiles)",
+    "Google/Bing/DuckDuckGo dorks auto-generated for deeper follow-up",
+    "Export to JSON / CSV / STIX 2.1 for integration with other workflows"
+  ],
+  "status_uk": "Активний open-source · MIT · self-hosted, без БД · live demo доступне",
+  "status_en": "Active open-source · MIT · self-hosted, no database · live demo available",
+  "highlights_uk": [
+    "15 платформ",
+    "MIT",
+    "VK FOAF",
+    "STIX 2.1 експорт"
+  ],
+  "highlights_en": [
+    "15 platforms",
+    "MIT",
+    "VK FOAF",
+    "STIX 2.1 export"
+  ]
 }
