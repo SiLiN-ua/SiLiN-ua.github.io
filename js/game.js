@@ -180,11 +180,13 @@ function renderPhase2() {
   const p = State.scenario.phase2;
   const toolCard = (t) => {
     const used = State.toolsUsed[t.id];
+    const tooltip = tr(t, 'tooltip');
+    const tipAttr = tooltip ? `data-tip="${escapeHtml(tooltip)}"` : '';
     return `
-      <button class="tool-btn${used?' tool-btn--used':''}" data-tool="${t.id}" ${used?'disabled':''}>
+      <button class="tool-btn${used?' tool-btn--used':''}" data-tool="${t.id}" ${used?'disabled':''} ${tipAttr}>
         <div class="tool-btn__icon">${t.icon}</div>
         <div class="tool-btn__body">
-          <div class="tool-btn__name">${escapeHtml(tr(t,'name'))}</div>
+          <div class="tool-btn__name">${escapeHtml(tr(t,'name'))}${tooltip?' <span class="tool-btn__info" aria-label="info">ⓘ</span>':''}</div>
           <div class="tool-btn__provider">${escapeHtml(t.provider)}</div>
           <div class="tool-btn__desc">${escapeHtml(tr(t,'desc'))}</div>
         </div>
@@ -235,7 +237,20 @@ function useTool(toolId) {
   const tool = p.tools.find(x => x.id === toolId);
   if (!tool || State.toolsUsed[toolId]) return;
 
-  State.toolsUsed[toolId] = true;
+  // Show warning modal for red-herring tools (educational, not gotcha)
+  const warning = tr(tool, 'warning');
+  if (warning && !tool._warned) {
+    showWarningModal(tool, warning, () => {
+      tool._warned = true;
+      commitTool(tool);
+    });
+    return;
+  }
+  commitTool(tool);
+}
+
+function commitTool(tool) {
+  State.toolsUsed[tool.id] = true;
   State.points += tool.points;
   State.timeLeft = Math.max(0, State.timeLeft - tool.time_cost);
   State.toolResults.push({
@@ -246,9 +261,32 @@ function useTool(toolId) {
     correct: tool.correct
   });
   updateHud();
-
-  // Open fake-tool modal
   showToolModal(tool);
+}
+
+function showWarningModal(tool, warning, onConfirm) {
+  const modal = document.createElement('div');
+  modal.className = 'tool-modal';
+  modal.innerHTML = `
+    <div class="tool-modal__backdrop"></div>
+    <div class="tool-modal__box tool-modal__box--warn">
+      <div class="tool-modal__head">
+        <div class="tool-modal__title">⚠️ ${LANG()==='en'?'Analyst warning':'Попередження аналітика'}</div>
+      </div>
+      <div class="tool-modal__warn-body">${escapeHtml(warning)}</div>
+      <div class="tool-modal__foot">
+        <button class="btn" data-act="cancel">${LANG()==='en'?'← Cancel, pick another tool':'← Скасувати, обрати інший тул'}</button>
+        <button class="btn btn--filled" data-act="proceed">${LANG()==='en'?'Continue anyway →':'Все одно продовжити →'}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+  const close = () => modal.remove();
+  modal.querySelector('[data-act="cancel"]').addEventListener('click', close);
+  modal.querySelector('.tool-modal__backdrop').addEventListener('click', close);
+  modal.querySelector('[data-act="proceed"]').addEventListener('click', () => {
+    close();
+    onConfirm();
+  });
 }
 
 // ==================== FAKE-TOOL MODAL ====================
@@ -289,26 +327,39 @@ function renderFakeUI(tool) {
   const s = State.scenario;
   const cand = s.briefing.candidate;
   switch (tool.ui_component) {
+    case 'multi-reverse':
     case 'yandex-reverse': return `
-      <div class="fake fake--yandex">
-        <div class="fake__topbar">🔎 <span>Yandex Images · Reverse Search</span></div>
+      <div class="fake fake--multi-reverse">
+        <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
         <div class="fake__search-row">
           <img src="${cand.photo}" class="fake__input-img" alt="query">
-          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · <strong>4 matches found</strong></div>
+          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · <strong>Queried 4 engines</strong></div>
         </div>
-        <div class="fake__matches">
-          <div class="fake__match fake__match--highlight">
-            <img src="/img/uploads/simulator/candidate-vk.jpg" alt="">
-            <div><strong>vk.com/roma_yellow_dnepr</strong><br><small>«Роман Ж.» · Дніпро · 92% match</small></div>
+        <div class="fake__engines">
+          <div class="fake__engine fake__engine--strong">
+            <div class="fake__engine-h">🎯 PimEyes <span>·  face-specific</span></div>
+            <div class="fake__engine-body"><strong>1 strong match · 91% confidence</strong><br><small>Public photo, unattributed. Same face.</small></div>
           </div>
-          <div class="fake__match">
-            <div class="fake__match-thumb">?</div>
-            <div><strong>ok.ru/profile/564293841</strong><br><small>Roman Zh. · 87% match</small></div>
+          <div class="fake__engine fake__engine--strong">
+            <div class="fake__engine-h">🎯 FaceCheck.ID <span>· deep-web faces</span></div>
+            <div class="fake__engine-body"><strong>2 matches · 88% + 84%</strong><br><small>Both from Ukrainian classifieds (2019, 2021).</small></div>
           </div>
-          <div class="fake__match">
-            <div class="fake__match-thumb">?</div>
-            <div><strong>facebook.com/roma.yellow.5</strong><br><small>82% match · locked profile</small></div>
+          <div class="fake__engine fake__engine--strong">
+            <div class="fake__engine-h">🔎 Yandex <span>· CIS-strong</span></div>
+            <div class="fake__engine-body">
+              <div class="fake__match fake__match--highlight">
+                <img src="/img/uploads/simulator/candidate-vk.jpg" alt="">
+                <div><strong>vk.com/roma_yellow_dnepr</strong><br><small>«Роман Ж.» · Дніпро · 92% match</small></div>
+              </div>
+            </div>
           </div>
+          <div class="fake__engine">
+            <div class="fake__engine-h">TinEye <span>· exact-copy</span></div>
+            <div class="fake__engine-body"><small>0 exact matches (photo not indexed as-is)</small></div>
+          </div>
+        </div>
+        <div class="fake__consensus">
+          <strong>Consensus:</strong> 3 of 4 engines confirm same face under different identity («Роман Ж.», Dnipro). PimEyes 91% is decisive.
         </div>
       </div>`;
     case 'hibp': return `
@@ -372,6 +423,38 @@ function renderFakeUI(tool) {
             <div class="fake__li-row"><strong>Financial Analyst · [company hidden]</strong><br>2016-2018 · unverified</div>
           </div>
         </div>
+      </div>`;
+    case 'sanctions-pep': return `
+      <div class="fake fake--sanctions">
+        <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+        <div class="fake__sanc-name">Query: <code>Roman Morozov · +380 67 ***-**-45</code></div>
+        <div class="fake__sanc-grid">
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>OFAC (US Treasury)</span><strong>✓ CLEAN</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>EU Sanctions</span><strong>✓ CLEAN</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>UK HMT Sanctions</span><strong>✓ CLEAN</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>СБУ / РНБО (UA)</span><strong>✓ CLEAN</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--warn"><span>PEP database</span><strong>⚠ PARTIAL</strong><small>3rd-degree kin of district council deputy (2020-2024). Not disqualifying, must document.</small></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>Interpol Red Notices</span><strong>✓ CLEAN</strong></div>
+        </div>
+      </div>`;
+    case 'insead-alumni': return `
+      <div class="fake fake--insead">
+        <div class="fake__topbar">🎓 <span>INSEAD Alumni Directory</span></div>
+        <div class="fake__insead-query">Verifying MBA claim: <code>Roman Morozov · MBA · INSEAD</code></div>
+        <div class="fake__insead-search">
+          <div class="fake__insead-row">▸ Searching alumni database (1957 — 2025)…</div>
+          <div class="fake__insead-row">▸ Cross-referencing full MBA & EMBA cohorts…</div>
+          <div class="fake__insead-row">▸ Checking name variants: Morozov, Морозов, Roman, Роман…</div>
+        </div>
+        <div class="fake__insead-result">
+          <div class="fake__insead-result-icon">∅</div>
+          <div class="fake__insead-result-title">NO RECORD FOUND</div>
+          <div class="fake__insead-result-body">
+            «Roman Morozov» — <strong>0 matches</strong> across all cohorts (MBA, EMBA, PhD, GEMBA, TIEMBA).<br>
+            INSEAD Career Services confirms: <em>no alumni with this name have ever graduated</em>.
+          </div>
+        </div>
+        <div class="fake__insead-verdict">💥 MBA claim on CV is <strong>fabricated</strong>. This is a material misrepresentation of qualifications.</div>
       </div>`;
     case 'youcontrol': return `
       <div class="fake fake--youcontrol">
@@ -549,6 +632,7 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
         <div><span>${LANG()==='en'?'Time bonus':'Бонус за час'}</span><strong>+${timeBonus}</strong></div>
       </div>
       ${cdRow}
+      ${pivotChainHtml()}
       ${State.nickname ? submitRow : ''}
       <div class="result__share">
         <button class="btn" id="btn-share">📤 ${LANG()==='en'?'Share result':'Поділитись результатом'}</button>
@@ -563,6 +647,47 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
   scrollTop();
   const shareBtn = $('#btn-share');
   if (shareBtn) shareBtn.addEventListener('click', () => shareResult(points, rank, tr(s,'title')));
+}
+
+function pivotChainHtml() {
+  const positive = State.toolResults.filter(r => r.correct && r.points > 0);
+  const negative = State.toolResults.filter(r => !r.correct || r.points < 0);
+  if (positive.length === 0 && negative.length === 0) return '';
+  const conf = (r) => {
+    if (r.points >= 15) return { l: 'HIGH', c: '#7fd6ff' };
+    if (r.points >= 10) return { l: 'MEDIUM', c: '#ffc864' };
+    return { l: 'LOW', c: '#a67c52' };
+  };
+  const titleUk = '🧭 Pivot-Chain — твої підтверджені сигнали';
+  const titleEn = '🧭 Pivot-Chain — your confirmed signals';
+  const rows = positive.map((r, i) => {
+    const cf = conf(r);
+    return `
+      <li class="pivot__row">
+        <div class="pivot__num">${String(i+1).padStart(2,'0')}</div>
+        <div class="pivot__body">
+          <div class="pivot__tool">${escapeHtml(r.tool)}</div>
+          <div class="pivot__clue">${escapeHtml(r.clue)}</div>
+        </div>
+        <div class="pivot__conf" style="color:${cf.c};border-color:${cf.c}">${cf.l}</div>
+      </li>`;
+  }).join('');
+  const negRows = negative.length ? `
+    <div class="pivot__neg-title">${LANG()==='en'?'⚠️ Wasted moves':'⚠️ Марні ходи'}</div>
+    <ul class="pivot__list pivot__list--neg">${negative.map(r => `
+      <li class="pivot__row pivot__row--neg">
+        <div class="pivot__body">
+          <div class="pivot__tool">${escapeHtml(r.tool)}</div>
+          <div class="pivot__clue">${escapeHtml(r.clue)}</div>
+        </div>
+        <div class="pivot__conf pivot__conf--neg">-${Math.abs(r.points)} pts</div>
+      </li>`).join('')}</ul>` : '';
+  return `
+    <div class="pivot">
+      <h3 class="pivot__title">${LANG()==='en'?titleEn:titleUk}</h3>
+      ${positive.length ? `<ul class="pivot__list">${rows}</ul>` : ''}
+      ${negRows}
+    </div>`;
 }
 
 function shareResult(points, rank, caseTitle) {
