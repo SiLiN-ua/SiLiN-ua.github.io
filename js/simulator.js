@@ -1,4 +1,4 @@
-// Shadow Simulation — engine + Firebase leaderboard
+// Shadow Simulator — engine + Firebase leaderboard
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import {
   getDatabase, ref, set, get, query, orderByChild, limitToLast
@@ -83,6 +83,11 @@ export async function fetchLeaderboard(topN = 50) {
 function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+function LANG() { return (document.documentElement.lang || 'uk'); }
+function T(key, fallback = '') {
+  const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+  return dict[key] || fallback;
+}
 
 // ==================== REGISTRATION MODAL ====================
 export function ensureRegistered() {
@@ -105,6 +110,12 @@ function showRegistrationModal(onDone) {
   modal.id = 'ss-register-modal';
   modal.setAttribute('role', 'dialog');
   modal.setAttribute('aria-modal', 'true');
+  const lbl = T('ss.modal.label', 'SHADOW SIMULATOR · REGISTRATION');
+  const ttl = T('ss.modal.title', 'Обери свій оперативний позивний');
+  const txt = T('ss.modal.text', "Твій нікнейм з'явиться у публічному Leaderboard, коли пройдеш перший кейс. Без email, без пароля — тільки нік. Зберігається у твоєму браузері.");
+  const ph  = T('ss.modal.placeholder', 'напр. shadow_hunter_25');
+  const hnt = T('ss.modal.hint', '3-16 символів · латиниця, цифри, _ - .');
+  const btn = T('ss.modal.enter', 'Enter the Simulator →');
   modal.innerHTML = `
     <div class="ss-modal__backdrop"></div>
     <div class="ss-modal__box">
@@ -112,14 +123,14 @@ function showRegistrationModal(onDone) {
       <span class="ss-modal__ret ss-r-tr"></span>
       <span class="ss-modal__ret ss-r-bl"></span>
       <span class="ss-modal__ret ss-r-br"></span>
-      <div class="ss-modal__label">SHADOW SIMULATION · REGISTRATION</div>
-      <h3>Обери свій оперативний позивний</h3>
-      <p>Твій нікнейм з'явиться у публічному Leaderboard, коли пройдеш перший кейс. Без email, без пароля — тільки нік. Зберігається у твоєму браузері.</p>
-      <input type="text" id="ss-nick-input" placeholder="напр. shadow_hunter_25" autocomplete="off" spellcheck="false" maxlength="16">
-      <div class="ss-modal__hint">3-16 символів · латиниця, цифри, _ - .</div>
+      <div class="ss-modal__label">${escapeHtml(lbl)}</div>
+      <h3>${escapeHtml(ttl)}</h3>
+      <p>${escapeHtml(txt)}</p>
+      <input type="text" id="ss-nick-input" placeholder="${escapeHtml(ph)}" autocomplete="off" spellcheck="false" maxlength="16">
+      <div class="ss-modal__hint">${escapeHtml(hnt)}</div>
       <div class="ss-modal__err" id="ss-nick-err" style="display:none"></div>
       <div class="ss-modal__actions">
-        <button class="btn btn--filled" id="ss-nick-go">Enter the Simulation →</button>
+        <button class="btn btn--filled" id="ss-nick-go">${escapeHtml(btn)}</button>
       </div>
     </div>`;
   document.body.appendChild(modal);
@@ -130,7 +141,7 @@ function showRegistrationModal(onDone) {
   const submit = () => {
     const v = input.value.trim();
     if (!validateNickname(v)) {
-      err.textContent = 'Невалідний нік. Правило: 3-16 символів, англ. літери / цифри / _ - .';
+      err.textContent = T('ss.modal.err', 'Невалідний нік. Правило: 3-16 символів, англ. літери / цифри / _ - .');
       err.style.display = 'block';
       input.focus();
       return;
@@ -151,24 +162,29 @@ export function renderAgentPanel(targetSelector, nickname) {
   const stats = getLocalStats();
   const rank = calcRankByTotal(stats.total);
   const progress = Math.min(100, (stats.total / 1000) * 100).toFixed(1);
+  const lang = LANG();
+  const gamesWord = lang === 'en'
+    ? (stats.games === 1 ? 'case completed' : 'cases completed')
+    : (stats.games === 1 ? 'кейс пройдено' : 'кейсів пройдено');
+  const hint = (T('ss.ap.progress.hint', '{n} / 1000 pts · розблокується на 1000+')).replace('{n}', stats.total);
   target.innerHTML = `
     <div class="ap">
-      <div class="ap__label">AGENT PROFILE</div>
+      <div class="ap__label">${T('ss.ap.label', 'ПРОФІЛЬ АГЕНТА')}</div>
       <div class="ap__grid">
         <div class="ap__cell">
-          <div class="ap__cell-label">Nickname</div>
+          <div class="ap__cell-label">${T('ss.ap.nickname', 'Нікнейм')}</div>
           <div class="ap__nick">${escapeHtml(nickname)}</div>
           <div class="ap__rank" style="color:${rank.color}">${rank.icon} ${escapeHtml(rank.label)}</div>
         </div>
         <div class="ap__cell">
-          <div class="ap__cell-label">Score</div>
+          <div class="ap__cell-label">${T('ss.ap.score', 'Очки')}</div>
           <div class="ap__score">${stats.total} <span>pts</span></div>
-          <div class="ap__sub">${stats.games} ${stats.games === 1 ? 'кейс' : 'кейсів'} пройдено</div>
+          <div class="ap__sub">${stats.games} ${gamesWord}</div>
         </div>
         <div class="ap__cell">
-          <div class="ap__cell-label">Progress to Certificate</div>
+          <div class="ap__cell-label">${T('ss.ap.progress', 'Прогрес до сертифіката')}</div>
           <div class="ap__bar"><div class="ap__bar-fill" style="width:${progress}%"></div></div>
-          <div class="ap__sub">${stats.total} / 1000 pts · unlocks at 1000+</div>
+          <div class="ap__sub">${escapeHtml(hint)}</div>
         </div>
       </div>
     </div>`;
@@ -178,21 +194,22 @@ export function renderAgentPanel(targetSelector, nickname) {
 export async function renderLeaderboard(targetSelector, currentNick) {
   const target = document.querySelector(targetSelector);
   if (!target) return;
-  target.innerHTML = `<div class="lb__loading">Завантаження leaderboard…</div>`;
+  target.innerHTML = `<div class="lb__loading">${T('ss.lb.loading', 'Завантаження leaderboard…')}</div>`;
   const rows = await fetchLeaderboard(50);
+  const lang = LANG();
   if (rows === null) {
-    target.innerHTML = `<div class="lb__err">Не вдалося завантажити leaderboard. Firebase-помилка (можливо, rules ще не опубліковані).</div>`;
+    target.innerHTML = `<div class="lb__err">${T('ss.lb.err', 'Не вдалося завантажити leaderboard. Firebase-помилка (можливо, rules ще не опубліковані).')}</div>`;
     return;
   }
   if (!rows.length) {
     target.innerHTML = `<div class="lb__empty">
       <div class="lb__empty-icon">📊</div>
-      <div class="lb__empty-title">Leaderboard порожній</div>
-      <div class="lb__empty-sub">Стань першим, хто пройде кейс — твій нік з'явиться тут.</div>
+      <div class="lb__empty-title">${T('ss.lb.empty.title', 'Leaderboard порожній')}</div>
+      <div class="lb__empty-sub">${T('ss.lb.empty.sub', "Стань першим, хто пройде кейс — твій нік з'явиться тут.")}</div>
     </div>`;
     return;
   }
-  const fmt = (n) => new Intl.NumberFormat('uk').format(n);
+  const fmt = (n) => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'uk').format(n);
   const rowHtml = (r, i) => {
     const rank = calcRankByTotal(r.total_points);
     const isMe = currentNick && r.nickname === currentNick;
@@ -211,10 +228,10 @@ export async function renderLeaderboard(targetSelector, currentNick) {
         <thead>
           <tr>
             <th class="lb__th-pos">#</th>
-            <th class="lb__th-nick">Nickname</th>
-            <th class="lb__th-pts">Total pts</th>
-            <th class="lb__th-games">Games</th>
-            <th class="lb__th-rank">Rank</th>
+            <th class="lb__th-nick">${T('ss.lb.th.nickname', 'Нікнейм')}</th>
+            <th class="lb__th-pts">${T('ss.lb.th.pts', 'Всього pts')}</th>
+            <th class="lb__th-games">${T('ss.lb.th.games', 'Кейсів')}</th>
+            <th class="lb__th-rank">${T('ss.lb.th.rank', 'Ранг')}</th>
           </tr>
         </thead>
         <tbody>${rows.map(rowHtml).join('')}</tbody>
