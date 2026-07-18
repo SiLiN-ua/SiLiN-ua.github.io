@@ -166,9 +166,9 @@
   },
   {
     "name": "Kiriko · 霧子",
-    "subtitle_uk": "AI-агент для глибокого OSINT-скринінгу · «Fog leaves a trace»",
-    "subtitle_en": "AI agent for deep OSINT screening · Fog leaves a trace",
-    "tag": "AI · OSINT · Deep Screening",
+    "subtitle_uk": "AI-агент для швидкої перевірки кандидатів через OSINT · «Fog leaves a trace»",
+    "subtitle_en": "AI agent for fast candidate screening via OSINT · Fog leaves a trace",
+    "tag": "AI · OSINT · Candidate Screening",
     "year": 2026,
     "lang": "Python 3.12 · Flask · Claude API · Telethon · PyMuPDF · python-docx",
     "license": "Closed",
@@ -181,10 +181,10 @@
       "/img/uploads/projects/kiriko-report.jpg",
       "/img/uploads/projects/kiriko-export.png"
     ],
-    "description_uk": "Закрита AI-платформа для глибокого OSINT-скринінгу — автономний агент на Claude AI. Проводить повний цикл верифікації самостійно: підключається до внутрішніх OSINT-джерел, парсить PDF-звіти, шукає username по 350+ платформах через власний **ThunderTrace**, реконструює повну історію цифрових ідентифікаторів об'єкта. Експортує звіти у Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом та live-дощем зі символів. Три мови: EN / UA / RU.",
-    "description_en": "Closed AI-powered OSINT platform for deep background screening — an autonomous agent built on Claude AI. Runs the full verification cycle independently: connects to internal OSINT sources, parses PDF reports, searches usernames across 350+ platforms via the in-house **ThunderTrace**, reconstructs the subject's complete history of digital identifiers. Exports reports to Word / PDF / HTML. Cyber-noir Japanese UI with matrix-style glitch effects and live character rain. Trilingual: EN / UA / RU.",
+    "description_uk": "Закрита AI-платформа для **швидкої перевірки кандидатів** через OSINT — автономний агент на Claude AI. Самостійно виконує повний цикл скринінгу: підключається до внутрішніх OSINT-джерел, парсить PDF-звіти, шукає username по 350+ платформах через власний **ThunderTrace**, реконструює повну історію цифрових ідентифікаторів кандидата. Експортує звіти у Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом та live-дощем зі символів. Три мови: EN / UA / RU.",
+    "description_en": "Closed AI-powered OSINT platform for **fast candidate screening** — an autonomous agent built on Claude AI. Runs the full screening cycle independently: connects to internal OSINT sources, parses PDF reports, searches usernames across 350+ platforms via the in-house **ThunderTrace**, reconstructs the candidate's complete history of digital identifiers. Exports reports to Word / PDF / HTML. Cyber-noir Japanese UI with matrix-style glitch effects and live character rain. Trilingual: EN / UA / RU.",
     "features_uk": [
-      "Автономний AI-агент на Claude — повний цикл верифікації без ручного втручання",
+      "Автономний AI-агент на Claude — повний цикл скринінгу кандидата без ручного втручання",
       "Інтеграція з операційними OSINT-джерелами (deep-пошук, соцмережі, телефон)",
       "ThunderTrace — 350+ платформ одночасно",
       "Реконструкція повної історії цифрового сліду об'єкта",
@@ -194,7 +194,7 @@
       "Історія сесій з завантажуваними звітами"
     ],
     "features_en": [
-      "Autonomous Claude AI agent — full verification cycle hands-off",
+      "Autonomous Claude AI agent — full candidate-screening cycle hands-off",
       "Integrated with operational OSINT sources (deep search, social, phone)",
       "ThunderTrace — 350+ platforms simultaneously",
       "Reconstruction of subject's complete digital-footprint history",
@@ -205,33 +205,33 @@
     ],
     "order": 1,
     "published": true,
-    "problem_uk": "Ручний OSINT-скринінг однієї особи забирає 4-6 годин. Kiriko робить повний цикл верифікації за 10-15 хвилин, автономно.",
-    "problem_en": "Manual OSINT screening of one subject takes 4-6 hours. Kiriko runs the full verification cycle autonomously in 10-15 minutes.",
+    "problem_uk": "Ручна перевірка одного кандидата через OSINT забирає 4-6 годин. Kiriko робить повний скринінг за 10-15 хвилин, автономно.",
+    "problem_en": "Manual OSINT screening of one candidate takes 4-6 hours. Kiriko runs the full screening autonomously in 10-15 minutes.",
     "for_whom_uk": [
-      "Приватні детективи та детективні агенції",
-      "Corporate security · due diligence · insider risk",
-      "Розслідувальні журналісти",
-      "Комплаєнс і фрод-департаменти"
+      "HR-служби · швидкий скринінг кандидатів на посади",
+      "Corporate security · insider risk перед наймом",
+      "Детективні агенції · pre-hire перевірки",
+      "Комплаєнс-департаменти · due diligence фізосіб"
     ],
     "for_whom_en": [
-      "Private investigators and detective agencies",
-      "Corporate security · due diligence · insider risk",
-      "Investigative journalists",
-      "Compliance and fraud departments"
+      "HR services · fast candidate screening for hiring",
+      "Corporate security · insider risk before hire",
+      "Detective agencies · pre-hire checks",
+      "Compliance departments · individual due diligence"
     ],
     "how_it_works_uk": [
-      "Клієнт вводить стартовий селектор (ПІБ / email / телефон / username)",
-      "AI-агент на Claude формулює план розслідування і запускає паралельний збір",
-      "Підключення до внутрішніх OSINT-джерел, парсинг PDF-звітів, ThunderTrace по 350+ платформах",
-      "Консолідація знайденого у єдиний identity-граф з мітками confidence",
-      "Автогенерація звіту у Word / PDF / HTML з повною доказовою трасабельністю"
+      "HR / рекрутер вводить дані кандидата (ПІБ / email / телефон / username)",
+      "AI-агент на Claude формулює план перевірки і запускає паралельний збір",
+      "Підключення до внутрішніх OSINT-джерел, парсинг наданих PDF-документів, ThunderTrace по 350+ платформах",
+      "Консолідація знайденого у єдиний профіль кандидата з мітками confidence і red flags",
+      "Автогенерація готового скринінг-звіту у Word / PDF / HTML — можна одразу підшити до HR-справи"
     ],
     "how_it_works_en": [
-      "Client submits a starting selector (name / email / phone / username)",
-      "Claude-based AI agent formulates the investigation plan and launches parallel collection",
-      "Connects to internal OSINT sources, parses PDF reports, ThunderTrace across 350+ platforms",
-      "Consolidates findings into a single identity graph with confidence tags",
-      "Auto-generates the report in Word / PDF / HTML with full evidential traceability"
+      "HR / recruiter submits candidate data (name / email / phone / username)",
+      "Claude-based AI agent formulates the check plan and launches parallel collection",
+      "Connects to internal OSINT sources, parses provided PDF documents, ThunderTrace across 350+ platforms",
+      "Consolidates findings into a single candidate profile with confidence tags and red flags",
+      "Auto-generates a ready-to-file screening report in Word / PDF / HTML"
     ],
     "status_uk": "Закрита commercial-платформа · в активному використанні",
     "status_en": "Closed commercial platform · in active use",
