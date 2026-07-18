@@ -56,13 +56,18 @@ export async function submitScore(nickname, gamePoints, gameCaseId) {
   }
 }
 
+// Nicknames excluded from leaderboard render (dev/test accounts).
+// Firebase rules block deletion, so we filter client-side.
+const HIDDEN_NICKS = new Set(['yehor_dev','C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test']);
+
 export async function fetchLeaderboard(topN = 50) {
   try {
-    const q = query(ref(db, 'leaderboard'), orderByChild('total_points'), limitToLast(topN));
+    const q = query(ref(db, 'leaderboard'), orderByChild('total_points'), limitToLast(topN + HIDDEN_NICKS.size));
     const snap = await get(q);
     if (!snap.exists()) return [];
     const rows = [];
     snap.forEach(child => {
+      if (HIDDEN_NICKS.has(child.key)) return;
       const v = child.val();
       rows.push({
         nickname: child.key,
@@ -72,7 +77,7 @@ export async function fetchLeaderboard(topN = 50) {
       });
     });
     rows.sort((a, b) => b.total_points - a.total_points);
-    return rows;
+    return rows.slice(0, topN);
   } catch (e) {
     console.error('fetchLeaderboard failed', e);
     return null;

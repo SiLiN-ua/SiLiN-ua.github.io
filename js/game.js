@@ -51,7 +51,15 @@ function clearCooldown(caseId) {
 }
 
 // ==================== FIREBASE SUBMIT ====================
+// Dev/test accounts — never write to leaderboard.
+const NO_SUBMIT_NICKS = new Set(['yehor_dev','C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test']);
+const isTestNick = (n) => NO_SUBMIT_NICKS.has(n) || /^(test|dev|qa|hard|v\d)/i.test(n);
+
 async function submitScore(nickname, gamePoints, caseId) {
+  if (isTestNick(nickname)) {
+    console.log('[submitScore] skipped for dev/test nickname:', nickname);
+    return { ok: true, skipped: true, total: gamePoints, games: 1 };
+  }
   const now = new Date().toISOString();
   const userRef = ref(db, `leaderboard/${nickname}`);
   let existing = {};
