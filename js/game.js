@@ -341,9 +341,28 @@ function showToolModal(tool) {
 function renderFakeUI(tool) {
   const s = State.scenario;
   const cand = s.briefing.candidate;
+  const d = s.ui_data || {};
   switch (tool.ui_component) {
     case 'multi-reverse':
-    case 'yandex-reverse': return `
+    case 'yandex-reverse':
+      if (d.reverse_engines) {
+        return `
+          <div class="fake fake--multi-reverse">
+            <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+            <div class="fake__search-row">
+              <img src="${cand.photo}" class="fake__input-img" alt="query">
+              <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines · Interpret carefully.</div>
+            </div>
+            <div class="fake__engines">
+              ${d.reverse_engines.map(e => `
+                <div class="fake__engine">
+                  <div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div>
+                  <div class="fake__engine-body">${escapeHtml(e.body)}</div>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--multi-reverse">
         <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
         <div class="fake__search-row">
@@ -378,7 +397,20 @@ function renderFakeUI(tool) {
           </div>
         </div>
       </div>`;
-    case 'hibp': return `
+    case 'hibp':
+      if (d.hibp_breaches) {
+        return `
+          <div class="fake fake--hibp">
+            <div class="fake__topbar">🔥 <span>Have I Been Pwned</span></div>
+            <div class="fake__hibp-email">Email: <code>${escapeHtml(cand.email)}</code></div>
+            <div class="fake__hibp-status"><strong>Found in ${d.hibp_breaches.length} breaches</strong> <small>(baseline for 10+ year email = 3-5)</small></div>
+            <div class="fake__hibp-list">
+              ${d.hibp_breaches.map(b => `<div class="fake__hibp-row"><strong>${escapeHtml(b.name)}</strong> · ${b.year} · ${escapeHtml(b.size)} · ${escapeHtml(b.type)}</div>`).join('')}
+            </div>
+            <div class="fake__hibp-hint">${escapeHtml(tr(d, 'hibp_note'))}</div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--hibp">
         <div class="fake__topbar">🔥 <span>Have I Been Pwned</span></div>
         <div class="fake__hibp-email">Email: <code>${escapeHtml(cand.email)}</code></div>
@@ -390,7 +422,20 @@ function renderFakeUI(tool) {
         </div>
         <div class="fake__hibp-hint">Note: all 3 are consumer services + one aggregate dump. No dating, no gambling, no leaked internal-employee databases. Read the *pattern*, not the count.</div>
       </div>`;
-    case 'getcontact': return `
+    case 'getcontact':
+      if (d.getcontact_tags) {
+        return `
+          <div class="fake fake--getcontact">
+            <div class="fake__topbar">📱 <span>GetContact</span></div>
+            <div class="fake__gc-num">${escapeHtml(cand.phone)}</div>
+            <div class="fake__gc-count"><strong>${d.getcontact_tags.length + 10} tags</strong> from other users</div>
+            <div class="fake__gc-tags">
+              ${d.getcontact_tags.map(t => `<span class="fake__tag${t.kind==='red'?' fake__tag--red':''}">${escapeHtml(t.text)}</span>`).join('')}
+            </div>
+            <div class="fake__gc-hint">${escapeHtml(tr(d, 'getcontact_note'))}</div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--getcontact">
         <div class="fake__topbar">📱 <span>GetContact</span></div>
         <div class="fake__gc-num">${escapeHtml(cand.phone)}</div>
@@ -413,7 +458,23 @@ function renderFakeUI(tool) {
         </div>
         <div class="fake__gc-hint">GetContact does not distinguish real names from insults; frequency ≠ truth. Count red vs neutral and weigh.</div>
       </div>`;
-    case 'google-dorks': return `
+    case 'google-dorks':
+      if (d.google_dorks_results) {
+        return `
+          <div class="fake fake--google">
+            <div class="fake__topbar">🌐 <span>Google Search Operators</span></div>
+            <div class="fake__google-query"><code>${escapeHtml(d.google_dorks_query)}</code></div>
+            <div class="fake__google-results">
+              ${d.google_dorks_results.map(r => `
+                <div class="fake__google-row">
+                  <div class="fake__google-link">${escapeHtml(r.url)}</div>
+                  <div class="fake__google-snippet">${escapeHtml(r.snippet)}</div>
+                </div>`).join('')}
+            </div>
+            <div class="fake__hibp-hint">${escapeHtml(tr(d, 'google_dorks_note'))}</div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--google">
         <div class="fake__topbar">🌐 <span>Google Search Operators</span></div>
         <div class="fake__google-query"><code>"Роман Морозов" (finance OR CFO OR fin) site:linkedin.com OR site:job.ua OR site:work.ua filetype:pdf</code></div>
@@ -440,7 +501,26 @@ function renderFakeUI(tool) {
           </div>
         </div>
       </div>`;
-    case 'linkedin': return `
+    case 'linkedin':
+      if (d.linkedin_experience) {
+        return `
+          <div class="fake fake--linkedin">
+            <div class="fake__topbar">💼 <span>LinkedIn</span></div>
+            <div class="fake__li-profile">
+              <div class="fake__li-name">${escapeHtml(tr(cand,'name'))} · <span>${escapeHtml(tr(d,'linkedin_summary'))}</span></div>
+              <div class="fake__li-meta">📍 ${escapeHtml(d.linkedin_meta)}</div>
+              <div class="fake__li-exp">
+                ${d.linkedin_experience.map(x => `
+                  <div class="fake__li-row"><strong>${escapeHtml(tr(x,'role'))}</strong><br>${escapeHtml(x.period)} · <em>${escapeHtml(tr(x,'note'))}</em></div>`).join('')}
+              </div>
+              <div class="fake__li-endorsements">
+                <small>Endorsements: ${d.linkedin_endorsements.map(e => escapeHtml(e.name)).join(' · ')}</small>
+              </div>
+            </div>
+            <div class="fake__hibp-hint">${escapeHtml(tr(d, 'linkedin_note'))}</div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--linkedin">
         <div class="fake__topbar">💼 <span>LinkedIn</span></div>
         <div class="fake__li-profile">
@@ -460,7 +540,25 @@ function renderFakeUI(tool) {
           </div>
         </div>
       </div>`;
-    case 'sanctions-pep': return `
+    case 'sanctions-pep':
+      if (d.sanctions_grid) {
+        return `
+          <div class="fake fake--sanctions">
+            <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+            <div class="fake__sanc-name">Query: <code>${escapeHtml(tr(cand,'name'))} · ${escapeHtml(cand.phone)}</code></div>
+            <div class="fake__sanc-grid">
+              ${d.sanctions_grid.map(g => `
+                <div class="fake__sanc-cell fake__sanc-cell--${g.status==='clean'?'ok':'warn'}">
+                  <span>${escapeHtml(g.list)}</span><strong>${g.status==='clean'?'✓ CLEAN':'⚠ CHECK'}</strong>
+                </div>`).join('')}
+              <div class="fake__sanc-cell fake__sanc-cell--warn">
+                <span>Namesake disambiguation</span><strong>⚠ AUTO-MATCH</strong>
+                <small>${escapeHtml(tr(d,'sanctions_namesake'))}</small>
+              </div>
+            </div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--sanctions">
         <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
         <div class="fake__sanc-name">Query: <code>Roman Morozov · +380 67 ***-**-45</code></div>
@@ -473,7 +571,24 @@ function renderFakeUI(tool) {
           <div class="fake__sanc-cell fake__sanc-cell--ok"><span>Interpol Red Notices</span><strong>✓ CLEAN</strong></div>
         </div>
       </div>`;
-    case 'court-registry': return `
+    case 'court-registry':
+    case 'court-registry-clean':
+      if (d.court_cases) {
+        return `
+          <div class="fake fake--court">
+            <div class="fake__topbar">⚖️ <span>Єдиний реєстр судових рішень + Opendatabot</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.court_query)}</code></div>
+            <div class="fake__court-list">
+              ${d.court_cases.map(c => `
+                <div class="fake__court-case">
+                  <div class="fake__court-h">📄 Справа ${escapeHtml(c.num)} · ${c.date} · ${escapeHtml(tr(c,'court'))}</div>
+                  <div class="fake__court-body">${escapeHtml(tr(c,'body'))}</div>
+                </div>`).join('')}
+            </div>
+            <div class="fake__court-hint">${escapeHtml(tr(d,'court_note'))}</div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--court">
         <div class="fake__topbar">⚖️ <span>Єдиний реєстр судових рішень + Opendatabot</span></div>
         <div class="fake__court-query">Query: <code>Морозов Роман · ПІБ · всі області</code></div>
@@ -491,7 +606,20 @@ function renderFakeUI(tool) {
         </div>
         <div class="fake__court-hint">Закриття справи ≠ невинуватість — це відсутність доказів. Свідок ≠ підозрюваний, але зв'язок з тепер-збанкрутілою фірмою — інформація до досьє.</div>
       </div>`;
-    case 'insead-alumni': return `
+    case 'insead-alumni':
+      if (d.insead_query) {
+        return `
+          <div class="fake fake--insead">
+            <div class="fake__topbar">🎓 <span>Education Verification (state + alumni registries)</span></div>
+            <div class="fake__insead-query">${escapeHtml(d.insead_query)}</div>
+            <div class="fake__insead-result" style="background:rgba(163,230,163,.06)">
+              <div class="fake__insead-result-icon" style="color:#a3e6a3">✓</div>
+              <div class="fake__insead-result-title" style="color:#a3e6a3">${escapeHtml(d.insead_result_title)}</div>
+              <div class="fake__insead-result-body">${escapeHtml(tr(d,'insead_result_body'))}</div>
+            </div>
+          </div>`;
+      }
+      return `
       <div class="fake fake--insead">
         <div class="fake__topbar">🎓 <span>INSEAD Alumni Directory (public search)</span></div>
         <div class="fake__insead-query">Verifying claim from CV: <code>Roman Morozov · MBA · INSEAD · 2013—2014</code></div>
