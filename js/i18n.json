@@ -196,7 +196,9 @@
     "projects.year": "Рік",
     "projects.stack": "Стек",
     "projects.license": "Ліцензія",
-    "projects.status": "Статус"
+    "projects.status": "Статус",
+    "projects.more": "Подробніше →",
+    "projects.back": "До списку розробок"
   },
   "en": {
     "brand.first": "Yehor",
@@ -395,6 +397,8 @@
     "projects.year": "Year",
     "projects.stack": "Stack",
     "projects.license": "License",
-    "projects.status": "Status"
+    "projects.status": "Status",
+    "projects.more": "Learn more →",
+    "projects.back": "Back to projects"
   }
 }

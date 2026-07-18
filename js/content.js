@@ -623,9 +623,62 @@
     if (uaOnly) uaOnly.addEventListener('change', applyFilter);
   }
 
-  function renderProjectCard(item, idx, total) {
+  function renderProjectRow(item, idx, total) {
     const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const L = (k, dflt) => escapeHtml(dict['projects.'+k] || dflt);
+    const slug = escapeHtml(item.__slug || '');
+    const name = escapeHtml(item.name || '');
+    const subtitle = escapeHtml(tr(item, 'subtitle') || '');
+    const tag = escapeHtml(item.tag || '');
+    const problem = escapeHtml(tr(item, 'problem') || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const highlights = tr(item, 'highlights') || item.highlights_uk || [];
+    const forWhom = tr(item, 'for_whom') || item.for_whom_uk || [];
+    const cover = item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${name}" loading="lazy">` : '';
+    const num = String(idx + 1).padStart(2, '0');
+    const totalStr = String(total).padStart(2, '0');
+    const chips = highlights.slice(0, 4).map(h => `<span class="proj-chip">${escapeHtml(h)}</span>`).join('');
+    const whomShort = forWhom.slice(0, 3).map(w => `<li>${escapeHtml(w)}</li>`).join('');
+    const btnRepo = item.repo_url ? `<a href="${escapeHtml(item.repo_url)}" target="_blank" rel="noopener" class="btn btn--sm">${L('repo', 'GitHub ↗')}</a>` : '';
+    const btnMore = `<a href="project.html?slug=${slug}" class="btn btn--sm btn--filled">${L('more', 'Подробніше →')}</a>`;
+
+    return `
+      <article class="proj-row">
+        <a href="project.html?slug=${slug}" class="proj-row__cover">
+          <span class="proj-row__num">${num} / ${totalStr}</span>
+          ${cover}
+        </a>
+        <div class="proj-row__body">
+          <div class="proj-row__tag">${tag}</div>
+          <h2 class="proj-row__name"><a href="project.html?slug=${slug}">${name}</a></h2>
+          <p class="proj-row__sub">${subtitle}</p>
+          ${problem ? `<p class="proj-row__problem">${problem}</p>` : ''}
+          ${whomShort ? `<div class="proj-row__whom-wrap"><span class="proj-row__whom-label">${L('for_whom', 'Для кого')}</span><ul class="proj-row__whom">${whomShort}</ul></div>` : ''}
+          ${chips ? `<div class="proj-row__chips">${chips}</div>` : ''}
+          <div class="proj-row__actions">${btnMore}${btnRepo}</div>
+        </div>
+      </article>`;
+  }
+
+  async function renderProjects(targetSelector) {
+    const items = await listCollection('projects');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (!items.length) { target.innerHTML = `<p class="center" style="color:var(--text-mute)">Поки що порожньо.</p>`; return; }
+    target.innerHTML = items.map((it, i) => renderProjectRow(it, i, items.length)).join('');
+  }
+
+  async function renderProjectDetail(targetSelector, slug) {
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    const items = await listCollection('projects');
+    const item = items.find(x => x.__slug === slug);
+    if (!item) {
+      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:5rem 0">Проєкт не знайдено. <a href="projects.html" style="color:var(--ice)">← до списку</a></p>`;
+      return;
+    }
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+    const L = (k, dflt) => escapeHtml(dict['projects.'+k] || dflt);
+    document.title = `${item.name} · Єгор Селін`;
     const name = escapeHtml(item.name || '');
     const subtitle = escapeHtml(tr(item, 'subtitle') || '');
     const tag = escapeHtml(item.tag || '');
@@ -639,50 +692,34 @@
     const forWhom = tr(item, 'for_whom') || item.for_whom_uk || [];
     const howItWorks = tr(item, 'how_it_works') || item.how_it_works_uk || [];
     const features = tr(item, 'features') || item.features_uk || [];
-
     const cover = item.cover ? `<div class="proj-hero"><img src="${escapeHtml(item.cover)}" alt="${name}" loading="lazy"></div>` : '';
     const shots = (item.screenshots || []).slice(1).map(s => `<div class="proj-shot"><img src="${escapeHtml(s)}" alt="" loading="lazy"></div>`).join('');
-
-    const num = String(idx + 1).padStart(2, '0');
-    const totalStr = String(total).padStart(2, '0');
-
     const chips = highlights.length
-      ? `<div class="proj-chips">${highlights.map(h => `<span class="proj-chip">${escapeHtml(h)}</span>`).join('')}</div>`
-      : '';
-
+      ? `<div class="proj-chips">${highlights.map(h => `<span class="proj-chip">${escapeHtml(h)}</span>`).join('')}</div>` : '';
     const problemBlock = problem
-      ? `<div class="proj-problem"><div class="proj-problem__label">${L('problem', 'Проблема')}</div><p>${problem}</p></div>`
-      : '';
-
+      ? `<div class="proj-problem"><div class="proj-problem__label">${L('problem', 'Проблема')}</div><p>${problem}</p></div>` : '';
     const howBlock = howItWorks.length
-      ? `<div class="proj-block"><h3>${L('how', 'Як працює')}</h3><ol class="proj-steps">${howItWorks.map(s => `<li>${escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</li>`).join('')}</ol></div>`
-      : '';
-
+      ? `<div class="proj-block"><h3>${L('how', 'Як працює')}</h3><ol class="proj-steps">${howItWorks.map(s => `<li>${escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</li>`).join('')}</ol></div>` : '';
     const whomBlock = forWhom.length
-      ? `<div class="proj-block"><h3>${L('for_whom', 'Для кого')}</h3><ul class="proj-whom">${forWhom.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul></div>`
-      : '';
-
+      ? `<div class="proj-block"><h3>${L('for_whom', 'Для кого')}</h3><ul class="proj-whom">${forWhom.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul></div>` : '';
     const featBlock = features.length
-      ? `<div class="proj-block"><h3>${L('features', 'Ключові можливості')}</h3><ul class="proj-feat">${features.map(f => `<li>${escapeHtml(f)}</li>`).join('')}</ul></div>`
-      : '';
-
+      ? `<div class="proj-block"><h3>${L('features', 'Ключові можливості')}</h3><ul class="proj-feat">${features.map(f => `<li>${escapeHtml(f)}</li>`).join('')}</ul></div>` : '';
     const metaRows = [
       year ? `<div class="proj-meta__row"><span>${L('year', 'Рік')}</span>${year}</div>` : '',
       lang ? `<div class="proj-meta__row"><span>${L('stack', 'Стек')}</span>${lang}</div>` : '',
       license ? `<div class="proj-meta__row"><span>${L('license', 'Ліцензія')}</span>${license}</div>` : '',
       status ? `<div class="proj-meta__row"><span>${L('status', 'Статус')}</span>${status}</div>` : '',
     ].filter(Boolean).join('');
-
     const btnRepo = item.repo_url ? `<a href="${escapeHtml(item.repo_url)}" target="_blank" rel="noopener" class="btn">${L('repo', 'GitHub ↗')}</a>` : '';
-    const btnLive = item.live_url ? `<a href="${escapeHtml(item.live_url)}" target="_blank" rel="noopener" class="btn btn--filled">${L('live', 'Live demo ↗')}</a>` : '';
+    const backLink = `<a href="projects.html" class="proj-back">← ${L('back', 'До списку розробок')}</a>`;
 
-    return `
-      <article class="proj-section" id="proj-${escapeHtml(item.__slug || '')}">
-        <div class="proj-index"><span>${num}</span> / ${totalStr}</div>
+    target.innerHTML = `
+      ${backLink}
+      <article class="proj-section">
         ${cover}
         <div class="proj-head">
           <div class="card__tag">${tag}</div>
-          <h2 class="proj-name">${name}</h2>
+          <h1 class="proj-name">${name}</h1>
           <p class="proj-sub">${subtitle}</p>
           ${chips}
         </div>
@@ -696,20 +733,13 @@
           </div>
           <aside class="proj-grid__side">
             ${metaRows ? `<div class="proj-meta">${metaRows}</div>` : ''}
-            <div class="proj-actions">${btnLive}${btnRepo}</div>
+            <div class="proj-actions">${btnRepo}</div>
           </aside>
         </div>
         ${shots ? `<div class="proj-shots">${shots}</div>` : ''}
-      </article>`;
+      </article>
+      ${backLink}`;
   }
 
-  async function renderProjects(targetSelector) {
-    const items = await listCollection('projects');
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
-    if (!items.length) { target.innerHTML = `<p class="center" style="color:var(--text-mute)">Поки що порожньо.</p>`; return; }
-    target.innerHTML = items.map((it, i) => renderProjectCard(it, i, items.length)).join('');
-  }
-
-  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects, renderSpeaking };
+  window.YSContent = { renderListOrArticle, renderBooks, renderPreview, renderTools, renderToolsListOrArticle, renderCertificates, renderAwards, renderMediaCoverage, renderRecommendations, renderToolsStack, renderProjects, renderProjectDetail, renderSpeaking };
 })();

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
-<title>Розробки · Єгор Селін</title>
-<meta name="description" content="Особисті open-source OSINT-проєкти: KagamiID, MooN Attacks, ThunderTrace.">
-<link rel="canonical" href="https://yehorselin.com/projects.html">
+<title>Проєкт · Єгор Селін</title>
+<meta name="description" content="Детальний опис open-source OSINT-інструмента: проблема, як працює, для кого, стек, скріншоти.">
+<link rel="canonical" href="https://yehorselin.com/project.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -38,28 +38,18 @@
   </ul>
 </nav>
 
-<section style="padding-top:9rem">
+<section style="padding-top:8rem">
   <div class="container">
-    <div class="sec-title reveal">
-      <span class="eyebrow" data-i18n="projects.eyebrow">Особисті розробки</span>
-      <h1 data-i18n="projects.title">Open-source OSINT-інструменти</h1>
-      <p data-i18n="projects.subtitle">Платформи, які я створив і підтримую сам.</p>
+    <div class="proj-detail" id="proj-detail">
+      <p class="center" style="color:var(--text-mute);padding:5rem 0">Завантаження…</p>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="container">
-    <div class="proj-list-h" id="projects-list">
-      <p class="center" style="color:var(--text-mute)">Завантаження…</p>
-    </div>
-  </div>
-</section>
-
-<footer class="footer" style="margin-top:6rem">
+<footer class="footer" style="margin-top:2rem">
   <div class="footer__grid">
     <div><div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div><p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p></div>
-    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li><li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li></ul></div>
+    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li><li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li><li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li></ul></div>
     <div class="footer__col"><h4 data-i18n="footer.contacts">Контакти</h4><ul><li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li><li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li><li><a href="mailto:selinegor22@gmail.com">Email</a></li></ul></div>
   </div>
   <div class="footer__bottom"><span data-i18n="footer.rights">© 2026 Єгор Селін</span><span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span></div>
@@ -69,8 +59,9 @@
 <script src="js/content.js"></script>
 <script src="js/main.js"></script>
 <script>
-  YSContent.renderProjects('#projects-list');
-  document.addEventListener('langchange', () => YSContent.renderProjects('#projects-list'));
+  const slug = new URLSearchParams(location.search).get('slug') || '';
+  YSContent.renderProjectDetail('#proj-detail', slug);
+  document.addEventListener('langchange', () => YSContent.renderProjectDetail('#proj-detail', slug));
 </script>
 </body>
 </html>
