@@ -2232,3 +2232,95 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .game-row__actions { grid-column: 1 / -1; align-items: stretch; margin-top: .5rem; }
   .game-row__status { text-align: left; }
 }
+
+/* ==========================================================
+   Nav — «Більше» dropdown (v2)
+   ========================================================== */
+.nav__more { position: relative; }
+.nav__more-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  transition: color .2s;
+  letter-spacing: inherit;
+}
+.nav__more-btn:hover,
+.nav__more:hover > .nav__more-btn,
+.nav__more--active > .nav__more-btn { color: var(--ice); }
+.nav__more--active > .nav__more-btn::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.1rem;
+  height: 1px;
+  background: var(--ice);
+}
+.nav__more-caret {
+  font-size: 0.7em;
+  transition: transform 0.2s var(--ease);
+}
+.nav__more.is-open .nav__more-caret { transform: rotate(180deg); }
+
+.nav__submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 220px;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style: none;
+  background: rgba(15, 21, 36, .98);
+  border: 1px solid var(--border-hi);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
+  z-index: 200;
+  backdrop-filter: blur(10px);
+}
+.nav__more.is-open .nav__submenu,
+.nav__more:hover .nav__submenu { display: block; }
+
+.nav__submenu li { margin: 0; list-style: none; }
+.nav__submenu li a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: background 0.15s, color 0.15s;
+  border-left: 2px solid transparent;
+}
+.nav__submenu li a:hover {
+  background: rgba(74, 158, 255, .08);
+  color: var(--ice);
+  border-left-color: var(--ice);
+}
+.nav__submenu li a.active {
+  color: var(--ice);
+  background: rgba(74, 158, 255, .12);
+  border-left-color: var(--ice);
+}
+
+/* Improve breakpoint for hamburger — trigger earlier */
+@media (max-width: 1100px) {
+  .nav__submenu {
+    display: block !important;
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0.5rem 0 0 1rem;
+    backdrop-filter: none;
+    min-width: 0;
+  }
+  .nav__more-btn { pointer-events: none; }
+  .nav__more-caret { display: none; }
+}
