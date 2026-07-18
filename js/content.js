@@ -15,7 +15,7 @@
       if (!res.ok) throw new Error('index missing: ' + res.status);
       const items = await res.json();
       const visible = items.filter(x => x.published !== false);
-      if (name === 'books' || name === 'certificates' || name === 'awards' || name === 'recommendations') {
+      if (name === 'books' || name === 'certificates' || name === 'awards' || name === 'recommendations' || name === 'projects' || name === 'speaking') {
         visible.sort((a, b) => (a.order || 0) - (b.order || 0));
       } else {
         visible.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
