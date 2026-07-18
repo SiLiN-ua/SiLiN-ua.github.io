@@ -1,0 +1,302 @@
+{
+  "id": "fake-cfo",
+  "title_uk": "Кейс 1 · «Fake CFO»",
+  "title_en": "Case 1 · «Fake CFO»",
+  "simulator_id": "candidate-red-flag",
+  "time_limit_sec": 720,
+  "max_points": 250,
+  "briefing": {
+    "client_uk": "IT-компанія «TechCorp»",
+    "client_en": "IT company «TechCorp»",
+    "position": "CFO",
+    "salary": "$180K/рік · $180K/year",
+    "candidate": {
+      "name_uk": "Роман Морозов",
+      "name_en": "Roman Morozov",
+      "photo": "/img/uploads/simulator/candidate-passport.jpg",
+      "email": "r.morozov.cfo@protonmail.com",
+      "phone": "+380 67 ***-**-45"
+    },
+    "body_uk": "Компанія розглядає Романа Морозова на позицію CFO. Резюме бездоганне: 15 років у фінансах, 3 попередні CFO-позиції у міжнародних компаніях, MBA з INSEAD. Пропонують $180K/рік з опціонами. Клієнт просить швидкий OSINT-скринінг на red-flag до кінця дня. Твоє завдання — за 12 ігрових хвилин зібрати достатньо доказів для вердикту. Тупики й пастки чекають.",
+    "body_en": "The company is considering Roman Morozov for the CFO position. Resume is flawless: 15 years in finance, 3 previous CFO positions at international companies, MBA from INSEAD. Offering $180K/year with options. Client requests a fast OSINT red-flag screening by end of day. Your task — in 12 in-game minutes, gather enough evidence for a verdict. Dead ends and traps await.",
+    "start_btn_uk": "▶ Розпочати розслідування",
+    "start_btn_en": "▶ Start investigation"
+  },
+  "phase2": {
+    "title_uk": "Фаза 2 · Первинний Pivot",
+    "title_en": "Phase 2 · Initial Pivots",
+    "instruction_uk": "Обери 3-4 інструменти. Кожен клік коштує часу. Червоні оселедці ЗМЕНШАТЬ очки. Уважно.",
+    "instruction_en": "Pick 3-4 tools. Each click costs time. Red herrings will REDUCE your score. Be careful.",
+    "next_btn_uk": "→ Далі: Крос-верифікація",
+    "next_btn_en": "→ Next: Cross-verification",
+    "min_tools_used": 3,
+    "tools": [
+      {
+        "id": "reverse-image",
+        "icon": "🔍",
+        "name_uk": "Reverse Image Search",
+        "name_en": "Reverse Image Search",
+        "provider": "Yandex",
+        "desc_uk": "Пошук за фотографією",
+        "desc_en": "Search by photo",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "ui_component": "yandex-reverse",
+        "clue_uk": "🎯 КЛЮЧОВА ЗНАХІДКА: збіг з VK-профілем «roma_yellow_dnepr». На тому ж обличчі — інше ім'я і місто.",
+        "clue_en": "🎯 KEY FINDING: match with VK profile «roma_yellow_dnepr». Same face — different name and city."
+      },
+      {
+        "id": "hibp",
+        "icon": "📧",
+        "name_uk": "HIBP Breach Check",
+        "name_en": "HIBP Breach Check",
+        "provider": "Have I Been Pwned",
+        "desc_uk": "Перевірка email у витоках",
+        "desc_en": "Check email in leaks",
+        "correct": true,
+        "points": 12,
+        "time_cost": 45,
+        "ui_component": "hibp",
+        "clue_uk": "📊 Email у 3 витоках: Ashley Madison 2015, Cit0Day 2020, Dating-site 2019. Профіль небезпечний.",
+        "clue_en": "📊 Email in 3 breaches: Ashley Madison 2015, Cit0Day 2020, Dating-site 2019. Risky profile."
+      },
+      {
+        "id": "getcontact",
+        "icon": "📱",
+        "name_uk": "GetContact",
+        "name_en": "GetContact",
+        "provider": "GetContact crowd-sourced",
+        "desc_uk": "Теги контактів за номером",
+        "desc_en": "Contact tags by phone",
+        "correct": true,
+        "points": 15,
+        "time_cost": 45,
+        "ui_component": "getcontact",
+        "clue_uk": "⚠️ 47 тегів на цей номер: «Рома Шахрай», «Кредит-обман», «Не давати гроші», «BMW Boryspil sales fraud». Дуже сильний red flag.",
+        "clue_en": "⚠️ 47 tags on this number: «Roma Fraud», «Loan-scam», «Don't give money», «BMW Boryspil sales fraud». Very strong red flag."
+      },
+      {
+        "id": "google-dorks",
+        "icon": "🌐",
+        "name_uk": "Google Dorks",
+        "name_en": "Google Dorks",
+        "provider": "Google search operators",
+        "desc_uk": "Точковий пошук через оператори",
+        "desc_en": "Targeted operator search",
+        "correct": true,
+        "points": 12,
+        "time_cost": 60,
+        "ui_component": "google-dorks",
+        "clue_uk": "📄 Знайдено CV 2020: «Роман Морозов, sales manager у BMW Boryspil». Ані слова про CFO чи фінанси. Історія не збігається з поточним резюме.",
+        "clue_en": "📄 Found 2020 CV: «Roman Morozov, sales manager at BMW Boryspil». Not a word about CFO or finance. History doesn't match current resume."
+      },
+      {
+        "id": "linkedin",
+        "icon": "💼",
+        "name_uk": "LinkedIn Direct",
+        "name_en": "LinkedIn Direct",
+        "provider": "LinkedIn public profile",
+        "desc_uk": "Прямий пошук на LinkedIn",
+        "desc_en": "Direct LinkedIn lookup",
+        "correct": true,
+        "points": 8,
+        "time_cost": 30,
+        "ui_component": "linkedin",
+        "clue_uk": "💼 Профіль створено 2 місяці тому. 12 зв'язків — усі recent, теж свіжостворені. Ознака синтетичної особи.",
+        "clue_en": "💼 Profile created 2 months ago. 12 connections — all recent, also newly created. Sign of synthetic identity."
+      },
+      {
+        "id": "youcontrol",
+        "icon": "📄",
+        "name_uk": "YouControl by phone",
+        "name_en": "YouControl by phone",
+        "provider": "YouControl",
+        "desc_uk": "Пошук юрособи за номером",
+        "desc_en": "Search legal entity by phone",
+        "correct": false,
+        "points": -10,
+        "time_cost": 90,
+        "ui_component": "youcontrol",
+        "clue_uk": "🎣 RED HERRING. YouControl шукає юросіб, не фізосіб. Використання його на цьому етапі — марна витрата часу і -10 очок. Правильна тактика: YouControl тільки коли знаєш компанію.",
+        "clue_en": "🎣 RED HERRING. YouControl searches legal entities, not individuals. Using it here — wasted time and -10 points. Correct tactic: use YouControl only when you know the company."
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Фаза 3 · Крос-верифікація",
+    "title_en": "Phase 3 · Cross-verification",
+    "instruction_uk": "Тобі задають 3 прямі запитання на основі знайдених доказів. Обирай уважно — гра ловить типові когнітивні помилки.",
+    "instruction_en": "You'll be asked 3 direct questions based on what you found. Choose carefully — the game catches typical cognitive errors.",
+    "next_btn_uk": "→ Далі: Вердикт",
+    "next_btn_en": "→ Next: Verdict",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Обличчя на паспорті збігається з обличчям на VK-профілі, який ти знайшов через Reverse Image?",
+        "text_en": "Does the passport face match the VK face you found via Reverse Image?",
+        "options": [
+          {
+            "text_uk": "Так, це одна людина — все ок",
+            "text_en": "Yes, same person — all good",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ Візуальне враження — не доказ. Треба face-comparison з об'єктивним confidence score. І — навіть якщо це одна людина, чому у неї два різних імені?",
+            "feedback_en": "❌ Visual impression is not evidence. Need face-comparison with objective confidence score. Also — even if same person, why two different names?"
+          },
+          {
+            "text_uk": "Ні, це різні люди — VK-профіль однофамільця",
+            "text_en": "No, different people — VK profile of a namesake",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Знову лише гіпотеза. Reverse Image повернув КОНКРЕТНО цю фотографію як збіг — ймовірність однофамільця з ідентичним обличчям = близько нуля.",
+            "feedback_en": "❌ Just a hypothesis again. Reverse Image returned this specific photo as a match — probability of a namesake with identical face ≈ zero."
+          },
+          {
+            "text_uk": "Потрібна face-comparison для об'єктивної відповіді",
+            "text_en": "Need face-comparison for an objective answer",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Запускаю face-compare... **84% схожість** — це той самий чоловік, але з іншим ім'ям на паспорті. Однозначний RED FLAG.",
+            "feedback_en": "✓ Correct. Running face-compare... **84% similarity** — same man, different name on passport. Unambiguous RED FLAG."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "GetContact повернув 47 негативних тегів на цей номер («Рома Шахрай», «Кредит-обман»). Твоя інтерпретація?",
+        "text_en": "GetContact returned 47 negative tags on this number («Roma Fraud», «Loan-scam»). Your interpretation?",
+        "options": [
+          {
+            "text_uk": "Однофамільці — не наш кандидат",
+            "text_en": "Namesakes — not our candidate",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Теги прив'язані до КОНКРЕТНОГО номера телефону, який дав клієнт. Це наш кандидат.",
+            "feedback_en": "❌ Tags are tied to the SPECIFIC phone number given by client. This is our candidate."
+          },
+          {
+            "text_uk": "Багато скарг = поведінковий red flag. Треба поглиблення.",
+            "text_en": "Many complaints = behavioural red flag. Need deeper check.",
+            "points": 15,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. GetContact — crowd-sourced, але 47 негативних тегів на один номер = це не збіг. Це системний поведінковий red flag.",
+            "feedback_en": "✓ Correct. GetContact is crowd-sourced, but 47 negative tags on one number = not a coincidence. Systemic behavioural red flag."
+          },
+          {
+            "text_uk": "Ігноруємо — GetContact недостовірний",
+            "text_en": "Ignore — GetContact is unreliable",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ GetContact — не суд, але це серйозний сигнал. Ігнорувати такий обсяг негативу = професійна помилка.",
+            "feedback_en": "❌ GetContact is not a court, but this is a serious signal. Ignoring this volume of negativity = professional error."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "CV від 2020 показує позицію sales manager у BMW Boryspil. Поточне резюме — CFO. Твій висновок?",
+        "text_en": "The 2020 CV shows sales manager at BMW Boryspil. Current resume — CFO. Your conclusion?",
+        "options": [
+          {
+            "text_uk": "Швидка кар'єра — можливо в реальності",
+            "text_en": "Fast career growth — possible in reality",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Sales manager → CFO за 4 роки без жодної проміжної позиції — це не швидка кар'єра, це фальсифікація резюме.",
+            "feedback_en": "❌ Sales manager → CFO in 4 years with no intermediate positions — that's not fast career, that's resume falsification."
+          },
+          {
+            "text_uk": "Різні люди з однаковим ім'ям",
+            "text_en": "Different people, same name",
+            "points": -5,
+            "correct": false,
+            "feedback_uk": "❌ Можливо, але GetContact-tag «BMW Boryspil sales fraud» на його номер — це підтвердження, що це та ж людина.",
+            "feedback_en": "❌ Possible, but GetContact tag «BMW Boryspil sales fraud» on his number = confirmation same person."
+          },
+          {
+            "text_uk": "Матеріальна фальсифікація резюме — CFO-позицій не було",
+            "text_en": "Material resume falsification — CFO positions never existed",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Резюме сфабриковано. GetContact-tag «BMW Boryspil» підтверджує зв'язок з попередньою sales-позицією — легенду підтягли з реальності.",
+            "feedback_en": "✓ Correct. Resume fabricated. GetContact tag «BMW Boryspil» confirms link to previous sales position — the story was borrowed from reality."
+          }
+        ]
+      }
+    ]
+  },
+  "phase4": {
+    "title_uk": "Фаза 4 · Фінальний вердикт",
+    "title_en": "Phase 4 · Final Verdict",
+    "instruction_uk": "Твій вердикт для клієнта. Обирай уважно — це визначить фінальний ранг.",
+    "instruction_en": "Your verdict for the client. Choose carefully — this determines your final rank.",
+    "options": [
+      {
+        "id": "confirmed",
+        "label_uk": "✅ Підтверджую особу — рекомендую наймати",
+        "label_en": "✅ Confirm identity — recommend to hire",
+        "points": -50,
+        "correct": false,
+        "verdict": "fail",
+        "feedback_uk": "💥 КАТАСТРОФА. Ти рекомендував клієнту наймати шахрая на CFO-позицію з доступом до всіх фінансів. У реальності це коштувало б компанії мільйони — і твоєї професійної репутації.",
+        "feedback_en": "💥 CATASTROPHE. You recommended hiring a fraudster to CFO with access to all finances. In reality this would cost the client millions — and your professional reputation."
+      },
+      {
+        "id": "red_flag",
+        "label_uk": "🚩 RED FLAG — категорично не рекомендую",
+        "label_en": "🚩 RED FLAG — strongly do not recommend",
+        "points": 50,
+        "correct": true,
+        "verdict": "success",
+        "feedback_uk": "✓ ПРАВИЛЬНО. Ти зупинив прийом шахрая, врятував клієнту потенційно мільйонні збитки. Face-mismatch (84% на VK) + 47 fraud-тегів на GetContact + сфабриковане резюме = однозначний red flag. Клієнт вдячний.",
+        "feedback_en": "✓ CORRECT. You stopped the hiring of a fraudster, saving the client potentially millions. Face-mismatch (84% on VK) + 47 fraud tags on GetContact + fabricated resume = unambiguous red flag. Client is grateful."
+      },
+      {
+        "id": "insufficient",
+        "label_uk": "⚠️ Недостатньо даних для рішення",
+        "label_en": "⚠️ Insufficient data for a decision",
+        "points": 10,
+        "correct": false,
+        "verdict": "weak",
+        "feedback_uk": "⚠️ Обережно, але безсило. У тебе був face-mismatch + 47 fraud-тегів + фальш-резюме — цього достатньо для red flag. «Недостатньо даних», коли даних достатньо, — це небажання брати відповідальність.",
+        "feedback_en": "⚠️ Cautious but powerless. You had face-mismatch + 47 fraud tags + fake resume — that's enough for a red flag. «Insufficient data» when data is sufficient = refusal to take responsibility."
+      }
+    ]
+  },
+  "ranks": {
+    "master": {
+      "min": 200,
+      "label_uk": "💎 Master · Shadow Hunter",
+      "label_en": "💎 Master · Shadow Hunter",
+      "color": "#7fd6ff",
+      "msg_uk": "Ти читаєш об'єкт з натяку. Клієнт запам'ятає це ім'я.",
+      "msg_en": "You read the subject from a hint. The client will remember this name."
+    },
+    "senior": {
+      "min": 150,
+      "label_uk": "🥇 Senior Investigator",
+      "label_en": "🥇 Senior Investigator",
+      "color": "#ffc864",
+      "msg_uk": "Впевнена робота. Кейс закритий чисто.",
+      "msg_en": "Confident work. Case closed cleanly."
+    },
+    "junior": {
+      "min": 100,
+      "label_uk": "🥈 Junior Analyst",
+      "label_en": "🥈 Junior Analyst",
+      "color": "#c0c8d8",
+      "msg_uk": "Правильний вердикт, але з зайвими кроками. Це виправляється практикою.",
+      "msg_en": "Correct verdict, but with extra steps. Practice fixes this."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "🥉 Trainee",
+      "label_en": "🥉 Trainee",
+      "color": "#a67c52",
+      "msg_uk": "Ти на самому початку шляху. Пройди ще раз — тепер знаєш пастки.",
+      "msg_en": "You're at the very start. Try again — now you know the traps."
+    }
+  },
+  "cooldown_sec": 3600
+}

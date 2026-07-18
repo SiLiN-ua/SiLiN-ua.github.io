@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
+<title>Shadow Simulator · Гра · Єгор Селін</title>
+<meta name="description" content="Shadow Simulator — інтерактивний кейс OSINT/SOCMINT. Fake-tools, timer, ranking.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
+</head>
+<body class="game-body">
+<canvas id="stars"></canvas>
+
+<div class="game-topbar">
+  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
+  <a href="simulator.html" class="game-exit">✕ <span data-i18n="game.exit">Вийти з симуляції</span></a>
+</div>
+
+<main class="game-main">
+  <div class="container">
+    <div id="game-root">
+      <div class="game-loading">
+        <div class="game-loading__spinner"></div>
+        <div class="game-loading__text">Завантаження кейсу…</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/graph.js"></script>
+<script src="js/main.js"></script>
+<script type="module" src="js/game.js"></script>
+</body>
+</html>

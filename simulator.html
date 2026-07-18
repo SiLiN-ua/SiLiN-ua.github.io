@@ -114,8 +114,8 @@
             </div>
           </div>
           <div class="game-row__actions">
-            <div class="game-row__status" data-i18n="ss.game.status_soon">MVP shell · playable soon</div>
-            <button class="btn btn--filled btn--sm" id="btn-play-fake-cfo" data-i18n="ss.game.play_soon">▶ Грати (скоро)</button>
+            <div class="game-row__status game-row__status--live" data-i18n="ss.game.status_live">✓ Playable</div>
+            <a href="game.html?case=fake-cfo" class="btn btn--filled btn--sm" data-i18n="ss.game.play_now">▶ Грати</a>
           </div>
         </article>
 
@@ -200,14 +200,7 @@
       renderLeaderboard('#leaderboard-list', nick);
     }
   });
-  document.getElementById('btn-play-fake-cfo').addEventListener('click', (e) => {
-    e.preventDefault();
-    const lang = document.documentElement.lang || 'uk';
-    const msg = lang === 'en'
-      ? '🎮 Case 1 · «Fake CFO» — playable version coming in the next dev session. Shell + Firebase leaderboard are live. Your nickname is already registered.'
-      : '🎮 Кейс 1 · «Fake CFO» — playable-версія готується у наступній сесії розробки. Shell + Firebase leaderboard уже працюють. Твій нік уже у системі.';
-    alert(msg);
-  });
+  // Play button now links directly to game.html — no interceptor
 </script>
 </body>
 </html>

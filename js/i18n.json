@@ -262,7 +262,10 @@
     "ss.game.locked_status": "🔒 ЗАБЛОКОВАНО",
     "ss.game.tbd_title": "Кейс · TBD",
     "ss.game.tbd_sub": "Розблокується після виходу playable-версії Кейса 1.",
-    "nav.more": "Більше"
+    "nav.more": "Більше",
+    "ss.game.status_live": "✓ Playable",
+    "ss.game.play_now": "▶ Грати",
+    "game.exit": "Вийти з симуляції"
   },
   "en": {
     "brand.first": "Yehor",
@@ -527,6 +530,9 @@
     "ss.game.locked_status": "🔒 LOCKED",
     "ss.game.tbd_title": "Case · TBD",
     "ss.game.tbd_sub": "Unlocks after the playable version of Case 1 ships.",
-    "nav.more": "More"
+    "nav.more": "More",
+    "ss.game.status_live": "✓ Playable",
+    "ss.game.play_now": "▶ Play",
+    "game.exit": "Exit simulation"
   }
 }
