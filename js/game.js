@@ -92,6 +92,8 @@ const State = {
   q3Answers: {},        // {qId: {optIdx, correct, points, feedback}}
   q3Order: {},          // {qId: [shuffled indices]}
   verdictOrder: [],     // shuffled indices for phase 4
+  citations: [],        // [toolId] — picks from citation phase
+  citationScore: 0,
   finalVerdict: null,
   startedAt: 0,
   ended: false,
@@ -471,6 +473,24 @@ function renderFakeUI(tool) {
           <div class="fake__sanc-cell fake__sanc-cell--ok"><span>Interpol Red Notices</span><strong>✓ CLEAN</strong></div>
         </div>
       </div>`;
+    case 'court-registry': return `
+      <div class="fake fake--court">
+        <div class="fake__topbar">⚖️ <span>Єдиний реєстр судових рішень + Opendatabot</span></div>
+        <div class="fake__court-query">Query: <code>Морозов Роман · ПІБ · всі області</code></div>
+        <div class="fake__court-list">
+          <div class="fake__court-case">
+            <div class="fake__court-h">📄 Справа №520/1428/19 · 2019-03-12 · Голосіївський р/с Києва</div>
+            <div class="fake__court-body">Позовна заява <em>ТОВ «Автосалон Схід»</em> проти <strong>Морозова Р.М.</strong>: стягнення заборгованості 340 000 грн за фактично отриманий бонусний фонд. <br><strong>Рішення:</strong> у задоволенні позову відмовлено, справу закрито за відсутністю достатніх доказів.</div>
+            <small>Судова колегія: 1 суддя. Апеляція: не подавалась. Доступ: публічний.</small>
+          </div>
+          <div class="fake__court-case">
+            <div class="fake__court-h">📄 Справа №910/8834/21 · 2021-09-04 · Господарський суд Києва</div>
+            <div class="fake__court-body">Банкрутство <strong>ТОВ «Прайм Кепітал Груп»</strong>. Морозов Р.М. — свідок. Опитування підтверджено. Розмір кредиторки: 12.4 млн грн. Судові збори покриті ліквідатором. <em>Дата ліквідації: 2022-04-18.</em></div>
+            <small>Прайм Кепітал = одна з компаній з LinkedIn (позначена як «page taken down»).</small>
+          </div>
+        </div>
+        <div class="fake__court-hint">Закриття справи ≠ невинуватість — це відсутність доказів. Свідок ≠ підозрюваний, але зв'язок з тепер-збанкрутілою фірмою — інформація до досьє.</div>
+      </div>`;
     case 'insead-alumni': return `
       <div class="fake fake--insead">
         <div class="fake__topbar">🎓 <span>INSEAD Alumni Directory (public search)</span></div>
@@ -556,12 +576,85 @@ function renderPhase3() {
   const nextBtn = $('#btn-next');
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.addEventListener('click', () => {
-      State.phase = 'phase4';
-      renderPhase4();
+      State.phase = 'citation';
+      renderCitationPhase();
       scrollTop();
     });
   }
 }
+
+// ==================== RENDER: CITATION PHASE (3.5) ====================
+function renderCitationPhase() {
+  const cp = State.scenario.citation_phase;
+  if (!cp) { State.phase = 'phase4'; renderPhase4(); return; }
+  const usedTools = State.scenario.phase2.tools.filter(t => State.toolsUsed[t.id]);
+  if (usedTools.length < 3) {
+    // shouldn't happen (min_tools_used=4), but fallback
+    State.phase = 'phase4'; renderPhase4(); return;
+  }
+  const max = cp.max_picks || 3;
+  const picks = new Set(State.citations);
+  const cardFor = (t) => {
+    const picked = picks.has(t.id);
+    return `
+      <button class="cite-card${picked?' cite-card--picked':''}" data-cite="${t.id}">
+        <div class="cite-card__icon">${t.icon}</div>
+        <div class="cite-card__body">
+          <div class="cite-card__name">${escapeHtml(tr(t,'name'))}</div>
+          <div class="cite-card__clue">${escapeHtml(tr(t,'clue'))}</div>
+        </div>
+        <div class="cite-card__check">${picked?'✓':''}</div>
+      </button>`;
+  };
+  const html = `
+    ${progressBar('phase3')}
+    <div class="game-phase game-phase--cite">
+      <div class="game-phase__head">
+        <div class="game-phase__num">3.5 / 04</div>
+        <h2>${escapeHtml(tr(cp,'title'))}</h2>
+        <p>${escapeHtml(tr(cp,'instruction'))}</p>
+        <div class="cite-counter">${LANG()==='en'?'Picked':'Обрано'}: <strong id="cite-count">${picks.size}</strong> / ${max}</div>
+      </div>
+      <div class="cite-grid">${usedTools.map(cardFor).join('')}</div>
+      <div class="game-phase__foot">
+        <button class="btn btn--filled" id="btn-cite-next" ${picks.size===max?'':'disabled'}>${escapeHtml(tr(cp,'next_btn'))}</button>
+      </div>
+    </div>`;
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  $('#game-root').querySelectorAll('.cite-card').forEach(btn => {
+    btn.addEventListener('click', () => toggleCitation(btn.dataset.cite, max));
+  });
+  const nb = $('#btn-cite-next');
+  if (nb && !nb.disabled) nb.addEventListener('click', () => {
+    commitCitations();
+    State.phase = 'phase4';
+    renderPhase4();
+    scrollTop();
+  });
+}
+function toggleCitation(toolId, max) {
+  const idx = State.citations.indexOf(toolId);
+  if (idx >= 0) State.citations.splice(idx, 1);
+  else if (State.citations.length < max) State.citations.push(toolId);
+  else return;
+  renderCitationPhase();
+}
+function commitCitations() {
+  const cp = State.scenario.citation_phase;
+  const tools = State.scenario.phase2.tools;
+  let score = 0;
+  State.citations.forEach(tid => {
+    const t = tools.find(x => x.id === tid);
+    if (!t) return;
+    const w = t.weight || 'supporting';
+    score += (cp.scoring && cp.scoring[w]) || 0;
+  });
+  State.citationScore = score;
+  State.points += score;
+  updateHud();
+}
+
 function answerQ3(qId, optIdx) {
   const p = State.scenario.phase3;
   const q = p.questions.find(x => x.id === qId);
@@ -609,10 +702,17 @@ async function submitVerdict(verdictId) {
   State.ended = true;
   stopTimer();
 
-  // Time bonus: if finished quickly, add up to 30 pts bonus
+  // Tiered time bonus — fast+correct gets much more than slow+correct
   const s = State.scenario;
   const timeUsed = s.time_limit_sec - State.timeLeft;
-  const timeBonus = opt.correct ? Math.max(0, Math.floor((s.time_limit_sec - timeUsed) / s.time_limit_sec * 30)) : 0;
+  const timeFraction = timeUsed / s.time_limit_sec;
+  let timeBonus = 0;
+  if (opt.correct) {
+    if (timeFraction < 0.35) timeBonus = 60;      // under 35% of budget = huge
+    else if (timeFraction < 0.55) timeBonus = 35; // decent pace
+    else if (timeFraction < 0.75) timeBonus = 15; // acceptable
+    // else 0 — took too long
+  }
   State.points += timeBonus;
 
   // Set cooldown if fail
@@ -696,18 +796,24 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
 function pivotChainHtml() {
   const positive = State.toolResults.filter(r => r.correct && r.points > 0);
   const negative = State.toolResults.filter(r => !r.correct || r.points < 0);
-  // Q3 review — now revealed here
   const q3Rev = renderQ3Review();
-  if (positive.length === 0 && negative.length === 0 && !q3Rev) return '';
-  const conf = (r) => {
-    if (r.points >= 15) return { l: 'HIGH', c: '#7fd6ff' };
-    if (r.points >= 10) return { l: 'MEDIUM', c: '#ffc864' };
-    return { l: 'LOW', c: '#a67c52' };
+  const citeRev = renderCitationReview();
+  if (positive.length === 0 && negative.length === 0 && !q3Rev && !citeRev) return '';
+  const weightBadge = (w) => {
+    const map = {
+      diagnostic: { l: 'DIAGNOSTIC', c: '#7fd6ff' },
+      supporting: { l: 'SUPPORTING', c: '#a3e6a3' },
+      noise:      { l: 'NOISE',      c: '#a67c52' },
+      decoy:      { l: 'DECOY',      c: '#ff5a5a' }
+    };
+    return map[w] || map.supporting;
   };
+  const tools = State.scenario.phase2.tools;
   const titleUk = '🧭 Pivot-Chain — твої підтверджені сигнали';
   const titleEn = '🧭 Pivot-Chain — your confirmed signals';
   const rows = positive.map((r, i) => {
-    const cf = conf(r);
+    const tool = tools.find(t => tr(t,'name') === r.tool);
+    const wt = weightBadge(tool?.weight || 'supporting');
     return `
       <li class="pivot__row">
         <div class="pivot__num">${String(i+1).padStart(2,'0')}</div>
@@ -715,7 +821,7 @@ function pivotChainHtml() {
           <div class="pivot__tool">${escapeHtml(r.tool)}</div>
           <div class="pivot__clue">${escapeHtml(r.clue)}</div>
         </div>
-        <div class="pivot__conf" style="color:${cf.c};border-color:${cf.c}">${cf.l}</div>
+        <div class="pivot__conf" style="color:${wt.c};border-color:${wt.c}">${wt.l}</div>
       </li>`;
   }).join('');
   const negRows = negative.length ? `
@@ -733,8 +839,36 @@ function pivotChainHtml() {
       <h3 class="pivot__title">${LANG()==='en'?titleEn:titleUk}</h3>
       ${positive.length ? `<ul class="pivot__list">${rows}</ul>` : ''}
       ${negRows}
+      ${citeRev}
       ${q3Rev}
     </div>`;
+}
+
+function renderCitationReview() {
+  if (!State.citations.length) return '';
+  const cp = State.scenario.citation_phase;
+  if (!cp) return '';
+  const tools = State.scenario.phase2.tools;
+  const scoring = cp.scoring || {};
+  const rows = State.citations.map(tid => {
+    const t = tools.find(x => x.id === tid);
+    if (!t) return '';
+    const w = t.weight || 'supporting';
+    const pts = scoring[w] || 0;
+    const cls = pts > 0 ? 'ok' : (pts < 0 ? 'bad' : 'neu');
+    const wLabel = { diagnostic:'DIAGNOSTIC', supporting:'SUPPORTING', noise:'NOISE', decoy:'DECOY' }[w] || w.toUpperCase();
+    return `
+      <li class="cite-review cite-review--${cls}">
+        <div class="cite-review__name">${t.icon} ${escapeHtml(tr(t,'name'))}</div>
+        <div class="cite-review__meta"><span class="cite-review__weight cite-review__weight--${w}">${wLabel}</span> <strong>${pts>0?'+':''}${pts} pts</strong></div>
+      </li>`;
+  }).join('');
+  const totalPts = State.citationScore;
+  const totalCls = totalPts > 0 ? 'ok' : (totalPts < 0 ? 'bad' : 'neu');
+  return `
+    <div class="pivot__cite-title">${LANG()==='en'?'📋 Your citations (Phase 3.5)':'📋 Твої цитати (Фаза 3.5)'}</div>
+    <ul class="pivot__cite-list">${rows}</ul>
+    <div class="pivot__cite-total pivot__cite-total--${totalCls}">${LANG()==='en'?'Citation score':'Оцінка цитат'}: <strong>${totalPts>0?'+':''}${totalPts} pts</strong></div>`;
 }
 
 function renderQ3Review() {

@@ -4,7 +4,7 @@
   "title_en": "Case 1 · «Fake CFO»",
   "simulator_id": "candidate-red-flag",
   "time_limit_sec": 780,
-  "max_points": 300,
+  "max_points": 350,
   "briefing": {
     "client_uk": "IT-компанія «TechCorp»",
     "client_en": "IT company «TechCorp»",
@@ -45,6 +45,7 @@
         "points": 15,
         "time_cost": 60,
         "ui_component": "multi-reverse",
+        "weight": "diagnostic",
         "clue_uk": "Multi-engine повернув 4 матчі різних якостей. Тобі вирішувати, чи «інше ім'я на схожому обличчі» = синтетика, чи однофамільці/родичі, чи просто збіг движка. Confidence: твоя відповідальність.",
         "clue_en": "Multi-engine returned 4 matches of varying quality. It's your call whether «different name on similar face» = synthetic identity, or namesakes/relatives, or just engine noise. Confidence: your responsibility."
       },
@@ -62,6 +63,7 @@
         "points": 12,
         "time_cost": 45,
         "ui_component": "hibp",
+        "weight": "noise",
         "clue_uk": "Email у 3 витоках. Сам факт — не red flag: у 60% дорослих інтернет-користувачів email десь фігурує. Питання не «є витоки?», а «що це говорить про поведінковий профіль?»",
         "clue_en": "Email in 3 breaches. The fact alone is not a red flag: 60% of adult internet users have an email in some breach. The question is not «are there breaches?», but «what does this say about the behavioral profile?»"
       },
@@ -79,6 +81,7 @@
         "points": 15,
         "time_cost": 45,
         "ui_component": "getcontact",
+        "weight": "supporting",
         "clue_uk": "47 тегів на номер. Серед них — і нейтральні («Рома BMW», «Морозов Р.», «Sales manager»), і різко негативні. Question для тебе: чи це один поведінковий патерн, чи кілька контекстів одного номера за роки?",
         "clue_en": "47 tags on the number. Some are neutral («Roma BMW», «Morozov R.», «Sales manager»), some sharply negative. Question for you: is this one behavioral pattern, or multiple contexts of one number over years?"
       },
@@ -96,6 +99,7 @@
         "points": 12,
         "time_cost": 60,
         "ui_component": "google-dorks",
+        "weight": "diagnostic",
         "clue_uk": "Знайдено кілька історичних згадок. Прочитай уважно — там є як факти, що суперечать поточному CV, так і матеріали, які можна трактувати по-різному. Що з цього — фальсифікація, а що — нормальна еволюція кар'єри?",
         "clue_en": "Found several historical mentions. Read carefully — there are both facts that contradict the current CV and materials that can be interpreted multiple ways. What of this is falsification, and what is normal career evolution?"
       },
@@ -113,6 +117,7 @@
         "points": 8,
         "time_cost": 30,
         "ui_component": "linkedin",
+        "weight": "supporting",
         "clue_uk": "Профіль існує 8 місяців, 87 зв'язків, кілька старіших знайомих ~2020. Виглядає більш-менш нормально для людини, яка «пізно прийшла» на LinkedIn. Але деякі деталі — читай уважно — не сходяться.",
         "clue_en": "Profile exists 8 months, 87 connections, several older acquaintances ~2020. Looks more or less normal for someone who «came late» to LinkedIn. But some details — read carefully — don't add up."
       },
@@ -132,6 +137,7 @@
         "points": -10,
         "time_cost": 90,
         "ui_component": "youcontrol",
+        "weight": "decoy",
         "clue_uk": "🎣 RED HERRING (попереджали!). YouControl шукає юросіб, не фізосіб. -10 очок і 90с. Урок: читай попередження перед кліком.",
         "clue_en": "🎣 RED HERRING (you were warned!). YouControl searches legal entities, not individuals. -10 points and 90s. Lesson: read the warning before clicking."
       },
@@ -149,8 +155,27 @@
         "points": 15,
         "time_cost": 45,
         "ui_component": "sanctions-pep",
+        "weight": "noise",
         "clue_uk": "Чисто по прямих санкційних списках. Партіальний PEP-adjacent матч через 3-й ступінь спорідненості — сам по собі не дискваліфікує. Але як цей сигнал сідає у загальну картину — вирішуй ти.",
         "clue_en": "Clean in direct sanctions lists. Partial PEP-adjacent match via 3rd-degree kinship — not disqualifying by itself. But how this signal fits into the total picture — you decide."
+      },
+      {
+        "id": "court-registry",
+        "icon": "⚖️",
+        "name_uk": "Court Registry (reyestr.court.gov.ua)",
+        "name_en": "Court Registry (reyestr.court.gov.ua)",
+        "provider": "Єдиний реєстр судових рішень + Opendatabot",
+        "desc_uk": "Судові справи за ПІБ",
+        "desc_en": "Court cases by full name",
+        "tooltip_uk": "Що робить: шукає в Єдиному реєстрі судових рішень та Opendatabot усі згадки ПІБ. Для чого: суди — публічний слід. Позивач/відповідач/свідок — усе документується. Обов'язково для будь-якого українського DD, особливо для CFO-позицій з доступом до фінансів.",
+        "tooltip_en": "What it does: searches the Unified State Registry of Court Decisions and Opendatabot for all mentions of the full name. Use it: courts leave a public trail. Plaintiff/defendant/witness — all documented. Mandatory for any Ukrainian DD, especially CFO positions with financial access.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "ui_component": "court-registry",
+        "weight": "diagnostic",
+        "clue_uk": "Знайдено дві згадки: 2019 — цивільний позов, закритий за відсутністю доказів; 2021 — свідок у справі про банкрутство ТОВ «Прайм Кепітал» (компанія що зникла з LinkedIn). Сам факт закриття справи ≠ невинуватість. Питання: чи це патерн систематичної обережності юриста, чи випадкові згадки?",
+        "clue_en": "Found two mentions: 2019 — civil claim, dismissed for lack of evidence; 2021 — witness in bankruptcy case of Prime Capital LLC (the company that vanished from LinkedIn). Case dismissal ≠ innocence. Question: is this a pattern of systematic legal caution, or coincidental mentions?"
       },
       {
         "id": "insead-alumni",
@@ -166,6 +191,7 @@
         "points": 18,
         "time_cost": 45,
         "ui_component": "insead-alumni",
+        "weight": "diagnostic",
         "clue_uk": "INSEAD alumni-каталог: пряме ім'я не знайдено. Перевір також варіанти написання і рік — CV не завжди точно збігається з реєстром. Це може бути фальсифікація, а може — інша школа, яку кандидат помилково назвав INSEAD, або обмеження в directory-visibility (alumni-опція).",
         "clue_en": "INSEAD alumni directory: exact name not found. Also check spelling variants and year — CVs don't always match registry precisely. Could be falsification, or a different school candidate mislabeled as INSEAD, or directory-visibility restriction (alumni opt-out)."
       }
@@ -274,6 +300,21 @@
       }
     ]
   },
+  "citation_phase": {
+    "title_uk": "Фаза 3.5 · Обґрунтування",
+    "title_en": "Phase 3.5 · Source Citation",
+    "instruction_uk": "Перед вердиктом — вибери 3 знахідки, які НАЙБІЛЬШЕ вплинули на твоє рішення. Це імітує вимогу compliance-меморандуму: аргументувати, а не просто клікнути. Обирай уважно — decoy та noise-сигнали мінусують.",
+    "instruction_en": "Before the verdict — pick 3 findings that MOST drove your decision. This simulates the compliance-memo requirement: argue, not just click. Choose carefully — decoy and noise signals penalize.",
+    "next_btn_uk": "→ Далі: Фінальний вердикт",
+    "next_btn_en": "→ Next: Final verdict",
+    "max_picks": 3,
+    "scoring": {
+      "diagnostic": 15,
+      "supporting": 5,
+      "noise": -3,
+      "decoy": -10
+    }
+  },
   "phase4": {
     "title_uk": "Фаза 4 · Фінальний вердикт",
     "title_en": "Phase 4 · Final Verdict",
@@ -314,7 +355,7 @@
   },
   "ranks": {
     "master": {
-      "min": 220,
+      "min": 260,
       "label_uk": "💎 Master · Shadow Hunter",
       "label_en": "💎 Master · Shadow Hunter",
       "color": "#7fd6ff",
@@ -322,7 +363,7 @@
       "msg_en": "You read the subject from a hint. The client will remember this name."
     },
     "senior": {
-      "min": 165,
+      "min": 190,
       "label_uk": "🥇 Senior Investigator",
       "label_en": "🥇 Senior Investigator",
       "color": "#ffc864",
@@ -330,7 +371,7 @@
       "msg_en": "Confident work. Case closed cleanly."
     },
     "junior": {
-      "min": 100,
+      "min": 120,
       "label_uk": "🥈 Junior Analyst",
       "label_en": "🥈 Junior Analyst",
       "color": "#c0c8d8",
