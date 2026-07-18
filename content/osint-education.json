@@ -99,7 +99,7 @@
           "url": "https://yehorselin.com/books.html",
           "for_whom_uk": "Початківці · перші 30 днів у професії · базові техніки OSINT/SOCMINT",
           "for_whom_en": "Beginners · first 30 days in the profession · OSINT/SOCMINT basics",
-          "cost": "paid", "level": "beginner", "language": "uk", "format": "book",
+          "cost": "free", "level": "beginner", "language": "uk", "format": "book",
           "meta_uk": "PDF · UA + EN · практичні вправи + case studies",
           "meta_en": "PDF · UA + EN · practical exercises + case studies"
         },
@@ -109,7 +109,7 @@
           "url": "https://yehorselin.com/books.html",
           "for_whom_uk": "Junior/mid · системна методологія pivot-chains через 15+ платформ",
           "for_whom_en": "Junior/mid · systematic pivot-chain methodology across 15+ platforms",
-          "cost": "paid", "level": "junior", "language": "uk", "format": "book",
+          "cost": "free", "level": "junior", "language": "uk", "format": "book",
           "meta_uk": "PDF · UA + EN · продовження Vol I",
           "meta_en": "PDF · UA + EN · sequel to Vol I"
         },
@@ -119,7 +119,7 @@
           "url": "https://yehorselin.com/books.html",
           "for_whom_uk": "Ті, хто розглядає OSINT як професію · мемуар про те, як робота змінює того, хто нею займається",
           "for_whom_en": "Those considering OSINT as a profession · memoir on how the work changes the person doing it",
-          "cost": "paid", "level": "beginner", "language": "uk", "format": "book",
+          "cost": "free", "level": "beginner", "language": "uk", "format": "book",
           "meta_uk": "Мемуар · 15 розділів + епілог · UA + EN",
           "meta_en": "Memoir · 15 chapters + epilogue · UA + EN"
         }
