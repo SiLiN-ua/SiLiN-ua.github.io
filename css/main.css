@@ -3413,3 +3413,14 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .cite-card { grid-template-columns: 30px 1fr; }
   .cite-card__check { grid-column: 2; justify-self: end; margin-top: .5rem; }
 }
+
+/* Nav panther icon */
+.nav__ico {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  margin-right: .15em;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 4px rgba(255, 90, 90, .15));
+}
