@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
-<title>Shadow Simulator · Interactive OSINT cases · Єгор Селін</title>
-<meta name="description" content="Shadow Simulator — інтерактивні OSINT/SOCMINT/GEOINT кейси у форматі детективної гри з тупиками, рангами і глобальним leaderboard. Тренуйся як справжній аналітик.">
-<meta name="keywords" content="OSINT гра, OSINT симулятор, OSINT тренажер, SOCMINT гра, OSINT тест, OSINT практика, OSINT кейс онлайн">
+<title>Shadow Simulation · Interactive OSINT cases · Єгор Селін</title>
+<meta name="description" content="Shadow Simulation — серія інтерактивних OSINT/SOCMINT/GEOINT кейсів у форматі детективного тренажера. Тупики, ранги, глобальний leaderboard. Тренуйся як справжній аналітик.">
+<meta name="keywords" content="OSINT гра, OSINT симулятор, OSINT тренажер, SOCMINT гра, OSINT тест, OSINT практика, OSINT кейс онлайн, shadow simulation">
 <link rel="canonical" href="https://yehorselin.com/simulator.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Shadow Simulator · Interactive OSINT cases">
-<meta property="og:description" content="Інтерактивні OSINT-кейси у форматі детективної гри — з тупиками, рангами і глобальним leaderboard.">
+<meta property="og:title" content="Shadow Simulation · Interactive OSINT cases">
+<meta property="og:description" content="Серія інтерактивних OSINT-кейсів у форматі детективного тренажера — тупики, ранги, глобальний leaderboard.">
 <meta property="og:url" content="https://yehorselin.com/simulator.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
     <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
     <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
     <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
-    <li><a href="simulator.html" class="active" data-i18n="nav.simulator">🎮 Симулятор</a></li>
+    <li><a href="simulator.html" class="active" data-i18n="nav.simulator">🎮 Симуляція</a></li>
     <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
     <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
     <li><a href="education.html" data-i18n="nav.education">Освіта</a></li>
@@ -47,92 +47,109 @@
 
 <!-- HERO -->
 <section class="ss-hero">
-  <div class="container">
-    <div class="ss-hero__inner reveal">
-      <span class="eyebrow">SHADOW SIMULATOR · CASE 01 · 2026</span>
-      <h1>Тренуйся як аналітик — гри з тупиками, рангами і глобальним leaderboard.</h1>
-      <p class="ss-hero__lead">Це не квіз. Це інтерактивний детектив, де ти сам обираєш дії, натикаєшся на тупики, втрачаєш очки за помилки і врешті виносиш вердикт клієнту. Fake-tools у HTML, реалістичний workflow, справжня методологія.</p>
-      <div class="ss-hero__meta">
-        <span>⏱ 12 хв на гру · 1 год cooldown при fail</span>
-        <span>🏆 4 ранги: Trainee → Master</span>
-        <span>💎 Сертифікат при 1000+ pts за 5 ігор</span>
-      </div>
+  <div class="container ss-hero__inner">
+    <span class="ss-hero__badge">SHADOW SIMULATION · 2026</span>
+    <h1>Серія інтерактивних OSINT-кейсів</h1>
+    <p class="ss-hero__lead">Тренажер для практиків — від скринінгу кандидатів до пошуку зниклих і атрибуції об'єктів. Кожен кейс: свій сценарій, свої fake-tools, свої тупики. Реальна методологія у форматі детективної гри.</p>
+    <div class="ss-hero__stripe">
+      <div><span>Cases</span><strong>1 ready · 5 planned</strong></div>
+      <div><span>Ranks</span><strong>Trainee → Certified</strong></div>
+      <div><span>Time</span><strong>~12 min / case</strong></div>
+      <div><span>Cooldown</span><strong>1 h on fail</strong></div>
+      <div><span>Certificate</span><strong>at 1000+ pts</strong></div>
     </div>
   </div>
 </section>
 
-<!-- MY PANEL -->
-<section style="padding:2rem 0">
+<!-- AGENT PROFILE -->
+<section class="ss-section">
   <div class="container">
-    <div id="my-panel" class="ss-me-wrap"></div>
+    <div id="agent-panel"></div>
   </div>
 </section>
 
 <!-- CASES -->
-<section>
+<section class="ss-section">
   <div class="container">
-    <div class="sec-title reveal">
-      <span class="eyebrow">Cases</span>
-      <h2>Доступні кейси</h2>
-      <p>Перший кейс уже готовий. Наступні розблоковуються по мірі проходження.</p>
+    <div class="ss-secttl">
+      <span class="ss-secttl__pre">CASES</span>
+      <h2>Доступні сценарії</h2>
+      <p>Перший кейс на MVP-стадії. Наступні розблоковуються після його проходження.</p>
     </div>
-    <div class="ss-cases">
-      <article class="ss-case" data-status="ready">
-        <div class="ss-case__num">01 / 06</div>
-        <div class="ss-case__tag">🚩 RED-FLAG SCREENING · HR / DUE DILIGENCE</div>
-        <h3>Case #01 · «Fake CFO»</h3>
-        <p class="ss-case__sub">Компанія X розглядає Романа Морозова на позицію CFO за $180K/рік. Резюме бездоганне, паспорт-фото додано. Твоє завдання — за 12 ігрових хвилин зібрати достатньо доказів для червоного або зеленого прапорця. Тупики й пастки чекають.</p>
-        <div class="ss-case__chips">
-          <span class="proj-chip">5 фаз</span>
-          <span class="proj-chip">~250 pts max</span>
-          <span class="proj-chip">Hard mode</span>
-          <span class="proj-chip">Real fake-UI</span>
-        </div>
-        <div class="ss-case__meta">
-          <div><span>Складність</span>Advanced</div>
-          <div><span>Час</span>12 хв</div>
-          <div><span>Категорія</span>SOCMINT · Face rec · Breach data</div>
-          <div><span>Статус</span><em>MVP shell · playable game — Session 2</em></div>
-        </div>
-        <div class="ss-case__actions">
-          <a href="#" class="btn btn--filled" id="btn-play-fake-cfo">▶ Play (soon)</a>
-          <a href="#leaderboard" class="btn">Leaderboard ↓</a>
-        </div>
-      </article>
 
-      <article class="ss-case ss-case--locked">
-        <div class="ss-case__num">02 / 06</div>
-        <div class="ss-case__tag">🔒 LOCKED</div>
-        <h3>Case #02 · TBD</h3>
-        <p class="ss-case__sub">Missing person · Trace-Labs-style · GEOINT + SOCMINT. Розблоковується після Case #01.</p>
-      </article>
+    <article class="case-card case-card--ready">
+      <header class="case-card__head">
+        <div class="case-card__idx">01 / 06</div>
+        <div class="case-card__tag">🚩 RED-FLAG SCREENING</div>
+      </header>
+      <h3 class="case-card__title">Case #01 · «Fake CFO»</h3>
+      <p class="case-card__sub">Компанія X розглядає Романа Морозова на позицію CFO за $180K/рік. Резюме бездоганне, паспорт-фото додано. Твоє завдання — за 12 ігрових хвилин зібрати достатньо доказів для червоного або зеленого прапорця. Тупики й пастки чекають.</p>
+      <div class="case-card__chips">
+        <span class="proj-chip">5 фаз</span>
+        <span class="proj-chip">~250 pts max</span>
+        <span class="proj-chip">Hard mode</span>
+        <span class="proj-chip">Real fake-UI</span>
+      </div>
+      <div class="case-card__meta">
+        <div class="case-card__meta-cell">
+          <span class="case-card__meta-lbl">Category</span>
+          <span class="case-card__meta-val">SOCMINT · Face Rec · Breach Data</span>
+        </div>
+        <div class="case-card__meta-cell">
+          <span class="case-card__meta-lbl">Time budget</span>
+          <span class="case-card__meta-val">12 min</span>
+        </div>
+        <div class="case-card__meta-cell">
+          <span class="case-card__meta-lbl">Difficulty</span>
+          <span class="case-card__meta-val">Advanced</span>
+        </div>
+        <div class="case-card__meta-cell">
+          <span class="case-card__meta-lbl">Status</span>
+          <span class="case-card__meta-val case-card__meta-val--pending">MVP shell · playable у Session 2</span>
+        </div>
+      </div>
+      <footer class="case-card__actions">
+        <button class="btn btn--filled" id="btn-play-fake-cfo">▶ Play (soon)</button>
+        <a href="#leaderboard" class="btn">Leaderboard ↓</a>
+      </footer>
+    </article>
 
-      <article class="ss-case ss-case--locked">
-        <div class="ss-case__num">03 / 06</div>
-        <div class="ss-case__tag">🔒 LOCKED</div>
-        <h3>Case #03 · TBD</h3>
-        <p class="ss-case__sub">Shadow fleet vessel tracking · Advanced GEOINT + document analysis.</p>
-      </article>
-    </div>
+    <article class="case-card case-card--locked">
+      <header class="case-card__head">
+        <div class="case-card__idx">02 / 06</div>
+        <div class="case-card__tag">🔒 LOCKED</div>
+      </header>
+      <h3 class="case-card__title">Case #02 · Missing Person</h3>
+      <p class="case-card__sub">Trace-Labs-style. Знайти зниклу особу через GEOINT + SOCMINT. Розблоковується після Case #01.</p>
+    </article>
+
+    <article class="case-card case-card--locked">
+      <header class="case-card__head">
+        <div class="case-card__idx">03 / 06</div>
+        <div class="case-card__tag">🔒 LOCKED</div>
+      </header>
+      <h3 class="case-card__title">Case #03 · Shadow Fleet Vessel</h3>
+      <p class="case-card__sub">Advanced GEOINT + document analysis. Відстежити судно через AIS-манипуляції та реєстри.</p>
+    </article>
   </div>
 </section>
 
 <!-- LEADERBOARD -->
-<section style="background:linear-gradient(180deg, transparent, rgba(10,14,26,.6) 15%, rgba(10,14,26,.6) 85%, transparent);margin-top:3rem" id="leaderboard">
+<section class="ss-section ss-section--alt" id="leaderboard">
   <div class="container">
-    <div class="sec-title reveal">
-      <span class="eyebrow">GLOBAL RANKING</span>
+    <div class="ss-secttl">
+      <span class="ss-secttl__pre">GLOBAL RANKING</span>
       <h2>🏆 Leaderboard</h2>
-      <p>Top-50 гравців за сумарними очками. Реальні дані з бази — оновлюється у real-time.</p>
+      <p>Top-50 гравців за сумарними очками. Дані з Firebase у real-time.</p>
     </div>
-    <div id="leaderboard-list" class="ss-lb"></div>
+    <div id="leaderboard-list"></div>
   </div>
 </section>
 
-<footer class="footer" style="margin-top:3rem">
+<footer class="footer">
   <div class="footer__grid">
     <div><div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div><p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p></div>
-    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="simulator.html" data-i18n="nav.simulator">Симулятор</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li><li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="education.html" data-i18n="nav.education">Освіта</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li><li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li></ul></div>
+    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="simulator.html" data-i18n="nav.simulator">Симуляція</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li><li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="education.html" data-i18n="nav.education">Освіта</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li><li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li></ul></div>
     <div class="footer__col"><h4 data-i18n="footer.contacts">Контакти</h4><ul><li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li><li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li><li><a href="mailto:selinegor22@gmail.com">Email</a></li></ul></div>
   </div>
   <div class="footer__bottom"><span data-i18n="footer.rights">© 2026 Єгор Селін</span><span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span></div>
@@ -141,17 +158,15 @@
 <script src="js/graph.js"></script>
 <script src="js/main.js"></script>
 <script type="module">
-  import { ensureRegistered, renderLeaderboard, renderMyPanel } from './js/simulator.js';
-
+  import { ensureRegistered, renderLeaderboard, renderAgentPanel } from './js/simulator.js';
   (async () => {
     const nick = await ensureRegistered();
-    renderMyPanel('#my-panel', nick);
+    renderAgentPanel('#agent-panel', nick);
     await renderLeaderboard('#leaderboard-list', nick);
   })();
-
   document.getElementById('btn-play-fake-cfo').addEventListener('click', (e) => {
     e.preventDefault();
-    alert('🎮 Case #01 · «Fake CFO» — playable game готується у наступній сесії розробки. Shell + Firebase-leaderboard уже працюють — ти зареєстрований, як тільки з\'явиться playable гра — очки одразу підуть у глобальний ranking.');
+    alert('🎮 Case #01 · «Fake CFO» — playable game готується у наступній сесії розробки. Shell + Firebase leaderboard уже працюють. Твій нік уже у системі — як тільки з\'явиться playable гра, очки одразу підуть у global ranking.');
   });
 </script>
 </body>
