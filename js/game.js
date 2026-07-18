@@ -16,6 +16,19 @@ const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;'
 const LANG = () => (document.documentElement.lang || 'uk');
 const tr = (obj, field) => obj[field + '_' + LANG()] || obj[field + '_uk'] || obj[field] || '';
 const fmtTime = (sec) => `${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+// Deterministic shuffle using Fisher-Yates + seeded PRNG (mulberry32).
+// Same seed → same order across re-renders inside one game session.
+function seededShuffle(arr, seed) {
+  let a = seed >>> 0;
+  const rng = () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a>>>15, 1|a); t = t + Math.imul(t ^ t>>>7, 61|t) ^ t; return ((t ^ t>>>14) >>> 0) / 4294967296; };
+  const out = arr.slice();
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+function hashStr(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
 
 // ==================== NICKNAME REQUIRED ====================
 function getNickname() { return localStorage.getItem(NICK_KEY) || ''; }
@@ -77,6 +90,8 @@ const State = {
   toolsUsed: {},        // {toolId: true}
   toolResults: [],      // [{tool, clue, points}]
   q3Answers: {},        // {qId: {optIdx, correct, points, feedback}}
+  q3Order: {},          // {qId: [shuffled indices]}
+  verdictOrder: [],     // shuffled indices for phase 4
   finalVerdict: null,
   startedAt: 0,
   ended: false,
@@ -205,9 +220,9 @@ function renderPhase2() {
       <div class="tool-grid">${p.tools.map(toolCard).join('')}</div>
       <div class="game-phase__notes" id="tool-log">
         ${State.toolResults.length ? State.toolResults.map(r => `
-          <div class="tool-log ${r.points<0?'tool-log--neg':'tool-log--pos'}">
-            <div class="tool-log__head">${escapeHtml(r.tool)} · <strong>${r.points>0?'+':''}${r.points} pts</strong> · -${r.time}s</div>
-            <div class="tool-log__clue">${escapeHtml(r.clue)}</div>
+          <div class="tool-log">
+            <div class="tool-log__head">${escapeHtml(r.tool)} · <small>-${r.time}s</small></div>
+            <div class="tool-log__clue tool-log__clue--muted">${LANG()==='en'?'✓ result recorded — review at end':'✓ результат збережено — розбір у кінці'}</div>
           </div>`).join('') : '<div class="tool-log__empty">' + (LANG()==='en'?'No tools used yet.':'Поки не використано жодного інструмента.') + '</div>'}
       </div>
       <div class="game-phase__foot">
@@ -293,8 +308,7 @@ function showWarningModal(tool, warning, onConfirm) {
 function showToolModal(tool) {
   const modal = document.createElement('div');
   modal.className = 'tool-modal';
-  const points = tool.points;
-  const pointsCls = points >= 0 ? 'tool-modal__pts--pos' : 'tool-modal__pts--neg';
+  // Hard mode: NO clue text, NO points badge — player interprets raw data
   modal.innerHTML = `
     <div class="tool-modal__backdrop"></div>
     <div class="tool-modal__box">
@@ -305,9 +319,8 @@ function showToolModal(tool) {
       <div class="tool-modal__ui">
         ${renderFakeUI(tool)}
       </div>
-      <div class="tool-modal__clue">${escapeHtml(tr(tool,'clue'))}</div>
-      <div class="tool-modal__foot">
-        <div class="tool-modal__pts ${pointsCls}">${points > 0 ? '+' : ''}${points} pts</div>
+      <div class="tool-modal__foot tool-modal__foot--hard">
+        <div class="tool-modal__hint">${LANG()==='en'?'Interpret the raw output. Score and interpretation revealed at the end.':'Інтерпретуй сирі дані. Оцінка і розбір — тільки в фіналі.'}</div>
         <button class="btn btn--filled tool-modal__ok">${LANG()==='en'?'Continue investigation →':'Продовжити розслідування →'}</button>
       </div>
     </div>`;
@@ -333,80 +346,95 @@ function renderFakeUI(tool) {
         <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
         <div class="fake__search-row">
           <img src="${cand.photo}" class="fake__input-img" alt="query">
-          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · <strong>Queried 4 engines</strong></div>
+          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines · Interpret carefully.</div>
         </div>
         <div class="fake__engines">
-          <div class="fake__engine fake__engine--strong">
-            <div class="fake__engine-h">🎯 PimEyes <span>·  face-specific</span></div>
-            <div class="fake__engine-body"><strong>1 strong match · 91% confidence</strong><br><small>Public photo, unattributed. Same face.</small></div>
+          <div class="fake__engine">
+            <div class="fake__engine-h">PimEyes <span>· face-specific</span></div>
+            <div class="fake__engine-body"><strong>1 match · 74% confidence</strong><br><small>Unattributed public photo, low-res thumbnail. No metadata.</small></div>
           </div>
-          <div class="fake__engine fake__engine--strong">
-            <div class="fake__engine-h">🎯 FaceCheck.ID <span>· deep-web faces</span></div>
-            <div class="fake__engine-body"><strong>2 matches · 88% + 84%</strong><br><small>Both from Ukrainian classifieds (2019, 2021).</small></div>
+          <div class="fake__engine">
+            <div class="fake__engine-h">FaceCheck.ID <span>· deep-web faces</span></div>
+            <div class="fake__engine-body"><strong>2 matches · 81% + 63%</strong><br><small>Both from Ukrainian classifieds. 81% has watermark; 63% is a group photo (crop bias possible).</small></div>
           </div>
-          <div class="fake__engine fake__engine--strong">
-            <div class="fake__engine-h">🔎 Yandex <span>· CIS-strong</span></div>
+          <div class="fake__engine">
+            <div class="fake__engine-h">Yandex <span>· CIS-strong</span></div>
             <div class="fake__engine-body">
-              <div class="fake__match fake__match--highlight">
+              <div class="fake__match">
                 <img src="/img/uploads/simulator/candidate-vk.jpg" alt="">
-                <div><strong>vk.com/roma_yellow_dnepr</strong><br><small>«Роман Ж.» · Дніпро · 92% match</small></div>
+                <div><strong>vk.com/roma_yellow_dnepr</strong><br><small>«Роман Ж.» · Дніпро · 79% match · profile last active 2022</small></div>
+              </div>
+              <div class="fake__match" style="opacity:.7">
+                <div class="fake__match-thumb">?</div>
+                <div><strong>ok.ru/profile/564293841</strong><br><small>«Роман Морозов» (сам!) · 68% · 2019</small></div>
               </div>
             </div>
           </div>
           <div class="fake__engine">
             <div class="fake__engine-h">TinEye <span>· exact-copy</span></div>
-            <div class="fake__engine-body"><small>0 exact matches (photo not indexed as-is)</small></div>
+            <div class="fake__engine-body"><small>0 exact matches (photo not indexed as-is). Could mean: recent, or private, or edited.</small></div>
           </div>
-        </div>
-        <div class="fake__consensus">
-          <strong>Consensus:</strong> 3 of 4 engines confirm same face under different identity («Роман Ж.», Dnipro). PimEyes 91% is decisive.
         </div>
       </div>`;
     case 'hibp': return `
       <div class="fake fake--hibp">
         <div class="fake__topbar">🔥 <span>Have I Been Pwned</span></div>
         <div class="fake__hibp-email">Email: <code>${escapeHtml(cand.email)}</code></div>
-        <div class="fake__hibp-status">⚠️ <strong>Oh no — pwned in 3 breaches</strong></div>
+        <div class="fake__hibp-status"><strong>Found in 3 breaches</strong> <small>(baseline for adult internet user with 10+ year email = 3-5)</small></div>
         <div class="fake__hibp-list">
-          <div class="fake__hibp-row"><strong>Ashley Madison</strong> · 2015 · 32M accounts leaked</div>
-          <div class="fake__hibp-row"><strong>Cit0Day</strong> · 2020 · 226M accounts (combined)</div>
-          <div class="fake__hibp-row"><strong>DatingSite2019</strong> · 2019 · 8.4M accounts</div>
+          <div class="fake__hibp-row"><strong>LinkedIn</strong> · 2012 · 164M · Emails + hashed passwords</div>
+          <div class="fake__hibp-row"><strong>Dropbox</strong> · 2016 · 68M · Emails + bcrypt hashes</div>
+          <div class="fake__hibp-row"><strong>Collection #1</strong> · 2019 · 773M · Aggregate credential stuffing list</div>
         </div>
+        <div class="fake__hibp-hint">Note: all 3 are consumer services + one aggregate dump. No dating, no gambling, no leaked internal-employee databases. Read the *pattern*, not the count.</div>
       </div>`;
     case 'getcontact': return `
       <div class="fake fake--getcontact">
         <div class="fake__topbar">📱 <span>GetContact</span></div>
         <div class="fake__gc-num">${escapeHtml(cand.phone)}</div>
-        <div class="fake__gc-count"><strong>47 tags</strong> from other users</div>
+        <div class="fake__gc-count"><strong>47 tags</strong> from other users · sorted by frequency (not by sentiment)</div>
         <div class="fake__gc-tags">
-          <span class="fake__tag fake__tag--red">Рома Шахрай</span>
-          <span class="fake__tag fake__tag--red">Кредит-обман</span>
-          <span class="fake__tag fake__tag--red">Не давати гроші</span>
-          <span class="fake__tag fake__tag--red">BMW Boryspil sales fraud</span>
-          <span class="fake__tag fake__tag--red">Обманщик</span>
-          <span class="fake__tag fake__tag--red">Ромик з БМВ</span>
           <span class="fake__tag">Рома BMW</span>
-          <span class="fake__tag">Роман sales</span>
           <span class="fake__tag">Морозов Р.</span>
-          <span class="fake__tag">+ 38 tags…</span>
+          <span class="fake__tag">Sales manager</span>
+          <span class="fake__tag">Roman салон</span>
+          <span class="fake__tag">Морозов автосалон</span>
+          <span class="fake__tag fake__tag--red">Рома Шахрай</span>
+          <span class="fake__tag">Ромик</span>
+          <span class="fake__tag fake__tag--red">НЕ давати гроші</span>
+          <span class="fake__tag">Roman Consulting</span>
+          <span class="fake__tag fake__tag--red">Кредит-обман</span>
+          <span class="fake__tag">Морозов Р. фінанси</span>
+          <span class="fake__tag">Roman Finance</span>
+          <span class="fake__tag fake__tag--red">Обманщик BMW</span>
+          <span class="fake__tag">+ 34 tags…</span>
         </div>
+        <div class="fake__gc-hint">GetContact does not distinguish real names from insults; frequency ≠ truth. Count red vs neutral and weigh.</div>
       </div>`;
     case 'google-dorks': return `
       <div class="fake fake--google">
         <div class="fake__topbar">🌐 <span>Google Search Operators</span></div>
-        <div class="fake__google-query"><code>"Роман Морозов" site:linkedin.com OR site:job.ua filetype:pdf</code></div>
+        <div class="fake__google-query"><code>"Роман Морозов" (finance OR CFO OR fin) site:linkedin.com OR site:job.ua OR site:work.ua filetype:pdf</code></div>
         <div class="fake__google-results">
           <div class="fake__google-row">
             <div class="fake__google-link">job.ua/resume/roman-morozov-sales-bmw-2020.pdf</div>
-            <div class="fake__google-snippet">Роман Морозов — <strong>Sales Manager, BMW Boryspil</strong> (2018-2020). Освіта: КНЕУ, бакалавр економіки. Досвід у продажах преміум-авто...</div>
+            <div class="fake__google-snippet">Роман Морозов — <strong>Sales Manager, BMW Boryspil</strong> (2018-2020). Освіта: КНЕУ, бакалавр економіки.</div>
           </div>
           <div class="fake__google-row">
             <div class="fake__google-link">work.ua/resumes/9384021</div>
-            <div class="fake__google-snippet">Роман Морозов — Sales Consultant. Останнє оновлення: 2020-11-15. Позиція: продавець автомобілів...</div>
+            <div class="fake__google-snippet">Роман Морозов, м. Київ — Sales Consultant. Оновлено 2020-11-15. <em>Профіль позначено як застарілий.</em></div>
           </div>
           <div class="fake__google-row">
-            <div class="fake__google-link">insead.edu · <em>0 results</em></div>
-            <div class="fake__google-snippet">Пошук MBA-alumni «Roman Morozov» — не знайдено жодного випускника з таким ім'ям.</div>
+            <div class="fake__google-link">forum.finance.ua/threads/consulting-partners-2023</div>
+            <div class="fake__google-snippet">…рекомендую R.Morozov для fractional-CFO робіт з малими компаніями, працював з ним у 2022 — швидко, коректно. Ставки помірні.</div>
+          </div>
+          <div class="fake__google-row">
+            <div class="fake__google-link">news.epravda.com.ua/2019/04/bmw-boryspil-претензії-клієнтів</div>
+            <div class="fake__google-snippet">…клієнти автосалону подали 12 скарг на менеджера відділу продажу, серед прізвищ згаданий Морозов Р.М. Внутрішнє розслідування закрито без розголошення.</div>
+          </div>
+          <div class="fake__google-row">
+            <div class="fake__google-link">insead.edu/alumni-search · <em>0 exact matches</em></div>
+            <div class="fake__google-snippet">Public alumni search: no results for «Roman Morozov». Note: alumni may opt out of directory visibility.</div>
           </div>
         </div>
       </div>`;
@@ -414,13 +442,19 @@ function renderFakeUI(tool) {
       <div class="fake fake--linkedin">
         <div class="fake__topbar">💼 <span>LinkedIn</span></div>
         <div class="fake__li-profile">
-          <div class="fake__li-name">Roman Morozov · <span>CFO at TechCorp (2 months)</span></div>
-          <div class="fake__li-meta">📍 Kyiv, Ukraine · Joined LinkedIn 2 months ago · 12 connections</div>
-          <div class="fake__li-warning">⚠️ Newly created profile · minimal history · connections all also recently joined</div>
+          <div class="fake__li-name">Roman Morozov · <span>CFO candidate · Open to opportunities</span></div>
+          <div class="fake__li-meta">📍 Kyiv, Ukraine · Joined LinkedIn 8 months ago · 87 connections</div>
           <div class="fake__li-exp">
-            <div class="fake__li-row"><strong>CFO · TechCorp</strong><br>Sep 2024 — Present · «managing finance ops»</div>
-            <div class="fake__li-row fake__li-row--gap">— GAP · 2018-2024 · 6 years — </div>
-            <div class="fake__li-row"><strong>Financial Analyst · [company hidden]</strong><br>2016-2018 · unverified</div>
+            <div class="fake__li-row"><strong>Independent Consultant</strong><br>Jan 2024 — Present · «Financial advisory for SME»</div>
+            <div class="fake__li-row"><strong>CFO · GlobalFin Advisory Ltd</strong> <em>(company not searchable)</em><br>Jan 2020 — Dec 2023 · «Multi-jurisdictional treasury»</div>
+            <div class="fake__li-row"><strong>Head of Finance · Prime Capital Group</strong> <em>(private, page taken down)</em><br>2017 — 2019</div>
+            <div class="fake__li-row"><strong>Senior Analyst · «regional firm»</strong><br>2014 — 2016 · no logo, no location</div>
+          </div>
+          <div class="fake__li-education">
+            <div class="fake__li-row"><strong>INSEAD · MBA</strong><br>2013 — 2014 (self-reported)</div>
+          </div>
+          <div class="fake__li-endorsements">
+            <small>Endorsed by: 3 people (all joined LinkedIn within last 12 months)</small>
           </div>
         </div>
       </div>`;
@@ -439,22 +473,22 @@ function renderFakeUI(tool) {
       </div>`;
     case 'insead-alumni': return `
       <div class="fake fake--insead">
-        <div class="fake__topbar">🎓 <span>INSEAD Alumni Directory</span></div>
-        <div class="fake__insead-query">Verifying MBA claim: <code>Roman Morozov · MBA · INSEAD</code></div>
+        <div class="fake__topbar">🎓 <span>INSEAD Alumni Directory (public search)</span></div>
+        <div class="fake__insead-query">Verifying claim from CV: <code>Roman Morozov · MBA · INSEAD · 2013—2014</code></div>
         <div class="fake__insead-search">
-          <div class="fake__insead-row">▸ Searching alumni database (1957 — 2025)…</div>
-          <div class="fake__insead-row">▸ Cross-referencing full MBA & EMBA cohorts…</div>
-          <div class="fake__insead-row">▸ Checking name variants: Morozov, Морозов, Roman, Роман…</div>
+          <div class="fake__insead-row">▸ Public alumni search over 2013—2015 cohorts…</div>
+          <div class="fake__insead-row">▸ Variants: Morozov, Морозов, R. Morozov, Roman M…</div>
+          <div class="fake__insead-row">▸ Cross-check LinkedIn INSEAD alumni group…</div>
         </div>
         <div class="fake__insead-result">
-          <div class="fake__insead-result-icon">∅</div>
-          <div class="fake__insead-result-title">NO RECORD FOUND</div>
+          <div class="fake__insead-result-icon">?</div>
+          <div class="fake__insead-result-title">NO PUBLIC MATCH</div>
           <div class="fake__insead-result-body">
-            «Roman Morozov» — <strong>0 matches</strong> across all cohorts (MBA, EMBA, PhD, GEMBA, TIEMBA).<br>
-            INSEAD Career Services confirms: <em>no alumni with this name have ever graduated</em>.
+            Public directory: <strong>0 matches</strong> for the exact query.<br>
+            <small>Note: ~40% of INSEAD alumni opt out of public directory visibility. Official verification requires a signed release from the candidate to INSEAD Career Services.</small>
           </div>
         </div>
-        <div class="fake__insead-verdict">💥 MBA claim on CV is <strong>fabricated</strong>. This is a material misrepresentation of qualifications.</div>
+        <div class="fake__insead-hint">Interpret carefully: public absence ≠ fabrication proof. But for a claim this specific, absence + no LinkedIn INSEAD group membership + no thesis / publication trail = tilts toward suspicion.</div>
       </div>`;
     case 'youcontrol': return `
       <div class="fake fake--youcontrol">
@@ -475,17 +509,23 @@ function renderPhase3() {
   const p = State.scenario.phase3;
   const questionCard = (q, i) => {
     const answered = State.q3Answers[q.id];
-    const optHtml = q.options.map((opt, oi) => {
+    // Shuffle options once per session using deterministic seed
+    if (!State.q3Order[q.id]) {
+      const seed = hashStr(State.nickname + State.startedAt + q.id);
+      State.q3Order[q.id] = seededShuffle(q.options.map((_, i) => i), seed);
+    }
+    const order = State.q3Order[q.id];
+    const optHtml = order.map((origIdx) => {
+      const opt = q.options[origIdx];
       let cls = 'q-opt';
       if (answered) {
-        if (oi === answered.optIdx) cls += answered.correct ? ' q-opt--correct' : ' q-opt--wrong';
-        else if (opt.correct) cls += ' q-opt--reveal';
+        if (origIdx === answered.optIdx) cls += ' q-opt--picked';
         cls += ' q-opt--disabled';
       }
       const disabled = answered ? 'disabled' : '';
-      return `<button class="${cls}" data-q="${q.id}" data-opt="${oi}" ${disabled}>${escapeHtml(tr(opt,'text'))}</button>`;
+      return `<button class="${cls}" data-q="${q.id}" data-opt="${origIdx}" ${disabled}>${escapeHtml(tr(opt,'text'))}</button>`;
     }).join('');
-    const feedback = answered ? `<div class="q-feedback q-feedback--${answered.correct?'ok':'bad'}">${escapeHtml(answered.feedback)} <strong>(${answered.points > 0 ? '+' : ''}${answered.points} pts)</strong></div>` : '';
+    const feedback = answered ? `<div class="q-feedback q-feedback--muted">${LANG()==='en'?'✓ answer locked — review at end':'✓ відповідь зафіксовано — розбір у кінці'}</div>` : '';
     return `
       <div class="q-card">
         <div class="q-card__num">Q${i+1} / ${p.questions.length}</div>
@@ -537,7 +577,11 @@ function answerQ3(qId, optIdx) {
 // ==================== RENDER: PHASE 4 (VERDICT) ====================
 function renderPhase4() {
   const p = State.scenario.phase4;
-  const optHtml = p.options.map((opt) => `
+  if (!State.verdictOrder.length) {
+    const seed = hashStr(State.nickname + State.startedAt + 'verdict');
+    State.verdictOrder = seededShuffle(p.options.map((_, i) => i), seed);
+  }
+  const optHtml = State.verdictOrder.map(i => p.options[i]).map((opt) => `
     <button class="verdict-opt verdict-opt--${opt.id}" data-verdict="${opt.id}">
       <div class="verdict-opt__label">${escapeHtml(tr(opt,'label'))}</div>
     </button>`).join('');
@@ -652,7 +696,9 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
 function pivotChainHtml() {
   const positive = State.toolResults.filter(r => r.correct && r.points > 0);
   const negative = State.toolResults.filter(r => !r.correct || r.points < 0);
-  if (positive.length === 0 && negative.length === 0) return '';
+  // Q3 review — now revealed here
+  const q3Rev = renderQ3Review();
+  if (positive.length === 0 && negative.length === 0 && !q3Rev) return '';
   const conf = (r) => {
     if (r.points >= 15) return { l: 'HIGH', c: '#7fd6ff' };
     if (r.points >= 10) return { l: 'MEDIUM', c: '#ffc864' };
@@ -687,7 +733,37 @@ function pivotChainHtml() {
       <h3 class="pivot__title">${LANG()==='en'?titleEn:titleUk}</h3>
       ${positive.length ? `<ul class="pivot__list">${rows}</ul>` : ''}
       ${negRows}
+      ${q3Rev}
     </div>`;
+}
+
+function renderQ3Review() {
+  const p = State.scenario.phase3;
+  if (!p) return '';
+  const rows = p.questions.map((q, i) => {
+    const ans = State.q3Answers[q.id];
+    if (!ans) return '';
+    const chosen = q.options[ans.optIdx];
+    const correct = q.options.find(o => o.correct);
+    const cls = ans.correct ? 'pivot__q pivot__q--ok' : 'pivot__q pivot__q--bad';
+    const feedback = ans.correct
+      ? `<div class="pivot__q-fb pivot__q-fb--ok">${escapeHtml(ans.feedback)}</div>`
+      : `<div class="pivot__q-fb pivot__q-fb--bad">${escapeHtml(ans.feedback)}</div>
+         <div class="pivot__q-correct"><strong>${LANG()==='en'?'Correct answer would have been':'Правильна відповідь була б'}:</strong> ${escapeHtml(tr(correct,'text'))}</div>`;
+    return `
+      <li class="${cls}">
+        <div class="pivot__q-num">Q${i+1}</div>
+        <div class="pivot__q-body">
+          <div class="pivot__q-text">${escapeHtml(tr(q,'text'))}</div>
+          <div class="pivot__q-yours"><span>${LANG()==='en'?'Your answer':'Твоя відповідь'}:</span> ${escapeHtml(tr(chosen,'text'))} <strong>(${ans.points > 0 ? '+' : ''}${ans.points} pts)</strong></div>
+          ${feedback}
+        </div>
+      </li>`;
+  }).filter(Boolean).join('');
+  if (!rows) return '';
+  return `
+    <div class="pivot__q-title">${LANG()==='en'?'📝 Verification review':'📝 Розбір верифікації'}</div>
+    <ul class="pivot__q-list">${rows}</ul>`;
 }
 
 function shareResult(points, rank, caseTitle) {
@@ -716,7 +792,7 @@ function copyShareText(txt) {
 // ==================== HUD ====================
 function updateHud() {
   const pts = $('#hud-points');
-  if (pts) pts.textContent = State.points;
+  if (pts) pts.textContent = Object.keys(State.toolsUsed).length;
 }
 
 function renderCooldownScreen(sec) {
@@ -745,7 +821,7 @@ function mountHud() {
   hud.innerHTML = `
     <div class="game-hud__cell"><span>${LANG()==='en'?'Agent':'Агент'}</span><strong>${escapeHtml(State.nickname || '—')}</strong></div>
     <div class="game-hud__cell"><span>${LANG()==='en'?'Case':'Кейс'}</span><strong>${escapeHtml(tr(State.scenario,'title'))}</strong></div>
-    <div class="game-hud__cell game-hud__cell--score"><span>${LANG()==='en'?'Score':'Очки'}</span><strong id="hud-points">${State.points}</strong></div>
+    <div class="game-hud__cell game-hud__cell--score"><span>${LANG()==='en'?'Tools':'Тулів'}</span><strong id="hud-points">${Object.keys(State.toolsUsed).length}</strong></div>
     <div class="game-hud__cell game-hud__cell--time"><span>${LANG()==='en'?'Time':'Час'}</span><strong id="hud-time">${fmtTime(State.timeLeft)}</strong></div>`;
   const root = $('#game-root');
   root.parentNode.insertBefore(hud, root);

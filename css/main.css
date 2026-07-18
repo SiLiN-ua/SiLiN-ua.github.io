@@ -3115,3 +3115,152 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .pivot__conf { grid-column: 2; justify-self: start; margin-top: .5rem; }
   .tool-btn[data-tip]:hover::after { width: min(300px, 90vw); font-size: .8rem; }
 }
+
+/* ==========================================================
+   Shadow Simulator — HARD MODE (v4)
+   Hide scoring during play, reveal in pivot-chain
+   ========================================================== */
+
+/* Tool modal — hard mode footer */
+.tool-modal__foot--hard {
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+.tool-modal__hint {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--text-mute);
+  font-style: italic;
+  flex: 1;
+}
+
+/* Tool log — muted "recorded" state */
+.tool-log__clue--muted {
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  font-style: italic;
+}
+.tool-log__head small {
+  color: var(--text-mute);
+  font-weight: normal;
+  font-family: var(--font-mono);
+}
+
+/* Q3 — hard mode: no immediate feedback */
+.q-opt--picked {
+  border-color: var(--ice) !important;
+  background: rgba(74, 158, 255, .08) !important;
+}
+.q-feedback--muted {
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  font-style: italic;
+  padding: .5rem .75rem;
+  border-left: 2px solid var(--border);
+}
+
+/* GetContact — new hint style */
+.fake__gc-hint {
+  padding: .8rem 1rem;
+  background: rgba(255, 200, 100, .06);
+  border-top: 1px solid rgba(255, 200, 100, .3);
+  font-size: .82rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+.fake__hibp-hint {
+  padding: .8rem 1rem;
+  border-top: 1px solid var(--border);
+  font-size: .82rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+.fake__hibp-status small {
+  font-weight: normal;
+  color: var(--text-mute);
+  margin-left: .5em;
+}
+.fake__insead-hint {
+  padding: 1rem;
+  background: rgba(74, 158, 255, .06);
+  color: var(--cream);
+  font-size: .88rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+.fake__li-education {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+.fake__li-endorsements {
+  margin-top: 1rem;
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+}
+
+/* Q3 review inside pivot-chain */
+.pivot__q-title {
+  margin: 1.5rem 0 .75rem;
+  font-family: var(--font-mono);
+  font-size: .9rem;
+  letter-spacing: .15em;
+  color: var(--ice);
+  text-transform: uppercase;
+}
+.pivot__q-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.pivot__q {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1rem;
+  padding: .9rem 1rem;
+  background: rgba(10, 14, 26, .4);
+  border-left: 3px solid var(--border);
+}
+.pivot__q--ok { border-left-color: #a3e6a3; }
+.pivot__q--bad { border-left-color: #ff5a5a; }
+.pivot__q-num {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--ice);
+  opacity: .7;
+}
+.pivot__q-text {
+  color: var(--cream);
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+.pivot__q-yours {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--text-dim);
+  margin-bottom: .5rem;
+}
+.pivot__q-yours span {
+  color: var(--text-mute);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-right: .5em;
+}
+.pivot__q-fb {
+  padding: .5rem .75rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  border-radius: 2px;
+}
+.pivot__q-fb--ok { background: rgba(163, 230, 163, .1); color: #a3e6a3; }
+.pivot__q-fb--bad { background: rgba(255, 90, 90, .1); color: #ff9a9a; }
+.pivot__q-correct {
+  margin-top: .5rem;
+  padding: .5rem .75rem;
+  font-size: .85rem;
+  color: var(--cream);
+  background: rgba(74, 158, 255, .08);
+  border-left: 2px solid var(--ice);
+}

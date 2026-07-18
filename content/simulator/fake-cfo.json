@@ -14,11 +14,11 @@
       "name_uk": "Роман Морозов",
       "name_en": "Roman Morozov",
       "photo": "/img/uploads/simulator/candidate-passport.jpg",
-      "email": "r.morozov.cfo@protonmail.com",
+      "email": "roman.morozov@gmail.com",
       "phone": "+380 67 ***-**-45"
     },
-    "body_uk": "Компанія розглядає Романа Морозова на позицію CFO. Резюме бездоганне: 15 років у фінансах, 3 попередні CFO-позиції у міжнародних компаніях, MBA з INSEAD. Пропонують $180K/рік з опціонами. Клієнт просить швидкий OSINT-скринінг на red-flag до кінця дня. Твоє завдання — за 12 ігрових хвилин зібрати достатньо доказів для вердикту. Тупики й пастки чекають.",
-    "body_en": "The company is considering Roman Morozov for the CFO position. Resume is flawless: 15 years in finance, 3 previous CFO positions at international companies, MBA from INSEAD. Offering $180K/year with options. Client requests a fast OSINT red-flag screening by end of day. Your task — in 12 in-game minutes, gather enough evidence for a verdict. Dead ends and traps await.",
+    "body_uk": "Компанія розглядає Романа Морозова на позицію CFO. Резюме солідне: 15 років у фінансах, 3 попередні CFO-позиції, MBA. HR-департамент уже провів first-round: враження позитивні, англійська на рівні, референси надіслані окремим листом (додаються нижче). Пропонують $180K/рік з опціонами — це середина ринку для позиції, не overpay. Клієнт просить OSINT-скринінг «для галочки» до кінця дня. Твоє завдання — за 13 ігрових хвилин зібрати достатньо доказів для АРГУМЕНТОВАНОГО вердикту. Не всі сигнали однозначні. Не все, що виглядає підозріло — фрод. Не все, що виглядає чисто — чисто.",
+    "body_en": "The company is considering Roman Morozov for the CFO position. Resume is solid: 15 years in finance, 3 previous CFO positions, MBA. HR already did the first round: positive impressions, English good, references sent separately (attached below). Offering $180K/year with options — mid-market for the position, not overpay. Client requests a quick OSINT screening «for the checkmark» by end of day. Your task — in 13 in-game minutes, gather enough evidence for an ARGUED verdict. Not all signals are unambiguous. Not everything that looks suspicious is fraud. Not everything that looks clean is clean.",
     "start_btn_uk": "▶ Розпочати розслідування",
     "start_btn_en": "▶ Start investigation"
   },
@@ -45,8 +45,8 @@
         "points": 15,
         "time_cost": 60,
         "ui_component": "multi-reverse",
-        "clue_uk": "🎯 КЛЮЧОВА ЗНАХІДКА: PimEyes 91% + Yandex збіг з VK-профілем «roma_yellow_dnepr». Обличчя — інше ім'я, інше місто.",
-        "clue_en": "🎯 KEY FINDING: PimEyes 91% + Yandex match with VK profile «roma_yellow_dnepr». Same face — different name and city."
+        "clue_uk": "Multi-engine повернув 4 матчі різних якостей. Тобі вирішувати, чи «інше ім'я на схожому обличчі» = синтетика, чи однофамільці/родичі, чи просто збіг движка. Confidence: твоя відповідальність.",
+        "clue_en": "Multi-engine returned 4 matches of varying quality. It's your call whether «different name on similar face» = synthetic identity, or namesakes/relatives, or just engine noise. Confidence: your responsibility."
       },
       {
         "id": "hibp",
@@ -62,8 +62,8 @@
         "points": 12,
         "time_cost": 45,
         "ui_component": "hibp",
-        "clue_uk": "📊 Email у 3 витоках: Ashley Madison 2015, Cit0Day 2020, Dating-site 2019. Профіль небезпечний.",
-        "clue_en": "📊 Email in 3 breaches: Ashley Madison 2015, Cit0Day 2020, Dating-site 2019. Risky profile."
+        "clue_uk": "Email у 3 витоках. Сам факт — не red flag: у 60% дорослих інтернет-користувачів email десь фігурує. Питання не «є витоки?», а «що це говорить про поведінковий профіль?»",
+        "clue_en": "Email in 3 breaches. The fact alone is not a red flag: 60% of adult internet users have an email in some breach. The question is not «are there breaches?», but «what does this say about the behavioral profile?»"
       },
       {
         "id": "getcontact",
@@ -79,8 +79,8 @@
         "points": 15,
         "time_cost": 45,
         "ui_component": "getcontact",
-        "clue_uk": "⚠️ 47 тегів на цей номер: «Рома Шахрай», «Кредит-обман», «Не давати гроші», «BMW Boryspil sales fraud». Дуже сильний red flag.",
-        "clue_en": "⚠️ 47 tags on this number: «Roma Fraud», «Loan-scam», «Don't give money», «BMW Boryspil sales fraud». Very strong red flag."
+        "clue_uk": "47 тегів на номер. Серед них — і нейтральні («Рома BMW», «Морозов Р.», «Sales manager»), і різко негативні. Question для тебе: чи це один поведінковий патерн, чи кілька контекстів одного номера за роки?",
+        "clue_en": "47 tags on the number. Some are neutral («Roma BMW», «Morozov R.», «Sales manager»), some sharply negative. Question for you: is this one behavioral pattern, or multiple contexts of one number over years?"
       },
       {
         "id": "google-dorks",
@@ -96,8 +96,8 @@
         "points": 12,
         "time_cost": 60,
         "ui_component": "google-dorks",
-        "clue_uk": "📄 Знайдено CV 2020: «Роман Морозов, sales manager у BMW Boryspil». Ані слова про CFO чи фінанси. Історія не збігається з поточним резюме.",
-        "clue_en": "📄 Found 2020 CV: «Roman Morozov, sales manager at BMW Boryspil». Not a word about CFO or finance. History doesn't match current resume."
+        "clue_uk": "Знайдено кілька історичних згадок. Прочитай уважно — там є як факти, що суперечать поточному CV, так і матеріали, які можна трактувати по-різному. Що з цього — фальсифікація, а що — нормальна еволюція кар'єри?",
+        "clue_en": "Found several historical mentions. Read carefully — there are both facts that contradict the current CV and materials that can be interpreted multiple ways. What of this is falsification, and what is normal career evolution?"
       },
       {
         "id": "linkedin",
@@ -113,8 +113,8 @@
         "points": 8,
         "time_cost": 30,
         "ui_component": "linkedin",
-        "clue_uk": "💼 Профіль створено 2 місяці тому. 12 зв'язків — усі recent, теж свіжостворені. Ознака синтетичної особи.",
-        "clue_en": "💼 Profile created 2 months ago. 12 connections — all recent, also newly created. Sign of synthetic identity."
+        "clue_uk": "Профіль існує 8 місяців, 87 зв'язків, кілька старіших знайомих ~2020. Виглядає більш-менш нормально для людини, яка «пізно прийшла» на LinkedIn. Але деякі деталі — читай уважно — не сходяться.",
+        "clue_en": "Profile exists 8 months, 87 connections, several older acquaintances ~2020. Looks more or less normal for someone who «came late» to LinkedIn. But some details — read carefully — don't add up."
       },
       {
         "id": "youcontrol",
@@ -149,8 +149,8 @@
         "points": 15,
         "time_cost": 45,
         "ui_component": "sanctions-pep",
-        "clue_uk": "✓ Чисто по OFAC/EU/UK/СБУ. НО: часткове співпадіння в PEP-adjacent базі (родич — 3-й ступінь спорідненості з депутатом райради). Не критично, але задокументувати треба. Головне — санкцій нема.",
-        "clue_en": "✓ Clean in OFAC/EU/UK/SBU. HOWEVER: partial match in PEP-adjacent database (relative — 3rd-degree kinship with a district council deputy). Not critical but must be documented. Main point — no sanctions."
+        "clue_uk": "Чисто по прямих санкційних списках. Партіальний PEP-adjacent матч через 3-й ступінь спорідненості — сам по собі не дискваліфікує. Але як цей сигнал сідає у загальну картину — вирішуй ти.",
+        "clue_en": "Clean in direct sanctions lists. Partial PEP-adjacent match via 3rd-degree kinship — not disqualifying by itself. But how this signal fits into the total picture — you decide."
       },
       {
         "id": "insead-alumni",
@@ -166,8 +166,8 @@
         "points": 18,
         "time_cost": 45,
         "ui_component": "insead-alumni",
-        "clue_uk": "💥 ПРЯМИЙ ДОКАЗ БРЕХНІ: «Roman Morozov» відсутній у alumni-каталозі INSEAD за всі роки. Жодного випуску MBA. Пряма фальсифікація ключової кваліфікації.",
-        "clue_en": "💥 DIRECT PROOF OF LIE: «Roman Morozov» is absent from INSEAD alumni directory across all years. No MBA graduation whatsoever. Direct falsification of key qualification."
+        "clue_uk": "INSEAD alumni-каталог: пряме ім'я не знайдено. Перевір також варіанти написання і рік — CV не завжди точно збігається з реєстром. Це може бути фальсифікація, а може — інша школа, яку кандидат помилково назвав INSEAD, або обмеження в directory-visibility (alumni-опція).",
+        "clue_en": "INSEAD alumni directory: exact name not found. Also check spelling variants and year — CVs don't always match registry precisely. Could be falsification, or a different school candidate mislabeled as INSEAD, or directory-visibility restriction (alumni opt-out)."
       }
     ]
   },
