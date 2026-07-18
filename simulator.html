@@ -122,7 +122,7 @@
           </div>
         </article>
 
-        <article class="game-row game-row--ready">
+        <article class="game-row game-row--ready" data-case-id="suspicious-consultant" data-requires="fake-cfo">
           <div class="game-row__idx">2 / 5</div>
           <div class="game-row__body">
             <h4 data-i18n="ss.game2.title">Кейс 2 · «Підозріла консультантка»</h4>
@@ -200,6 +200,23 @@
 <script src="js/main.js"></script>
 <script type="module">
   import { ensureRegistered, renderLeaderboard, renderAgentPanel } from './js/simulator.js';
+  // Sequential unlock: lock any case card whose prerequisite is unfinished
+  function applyUnlock() {
+    document.querySelectorAll('.game-row[data-requires]').forEach(card => {
+      const need = card.dataset.requires;
+      const done = localStorage.getItem('ss.completed.' + need) === '1';
+      if (done) return;
+      card.classList.remove('game-row--ready');
+      card.classList.add('game-row--locked');
+      const isEn = (document.documentElement.lang || 'uk') === 'en';
+      const prereqName = need === 'fake-cfo' ? (isEn ? 'Case 1' : 'Кейса 1') : need;
+      const lockedText = isEn ? '🔒 Locked — pass ' + prereqName + ' first' : '🔒 Заблоковано — спочатку пройди ' + prereqName;
+      const actions = card.querySelector('.game-row__actions');
+      if (actions) actions.innerHTML = '<div class="game-row__status">' + lockedText + '</div>';
+    });
+  }
+  applyUnlock();
+
   (async () => {
     const nick = await ensureRegistered();
     renderAgentPanel('#agent-panel', nick);

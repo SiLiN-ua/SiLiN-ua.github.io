@@ -858,6 +858,11 @@ async function submitVerdict(verdictId) {
     clearCooldown(s.id);
   }
 
+  // Mark case as completed if correct verdict — unlocks next case in sequence
+  if (opt.correct) {
+    localStorage.setItem('ss.completed.' + s.id, '1');
+  }
+
   showResult({ verdict: opt, timeBonus, submitted: false });
 
   // Submit to Firebase
