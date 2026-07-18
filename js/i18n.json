@@ -203,7 +203,8 @@
     "nav.education": "Освіта",
     "edu.eyebrow": "OSINT-освіта · агрегатор",
     "edu.title": "Куди йти вчитись OSINT — український + міжнародний стек",
-    "edu.subtitle": "Куратований перелік курсів, книг, CTF і методологічних стандартів. Від безкоштовних для новачка до просунутих SANS-програм. Регулярно оновлюється."
+    "edu.subtitle": "Куратований перелік курсів, книг, CTF і методологічних стандартів. Від безкоштовних для новачка до просунутих SANS-програм. Регулярно оновлюється.",
+    "nav.simulator": "🎮 Симулятор"
   },
   "en": {
     "brand.first": "Yehor",
@@ -409,6 +410,7 @@
     "nav.education": "Education",
     "edu.eyebrow": "OSINT education · aggregator",
     "edu.title": "Where to learn OSINT — Ukrainian + international stack",
-    "edu.subtitle": "Curated list of courses, books, CTFs and methodological standards. From free beginner tracks to advanced SANS programmes. Updated regularly."
+    "edu.subtitle": "Curated list of courses, books, CTFs and methodological standards. From free beginner tracks to advanced SANS programmes. Updated regularly.",
+    "nav.simulator": "🎮 Simulator"
   }
 }
