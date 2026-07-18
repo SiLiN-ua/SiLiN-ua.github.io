@@ -223,6 +223,7 @@
     await renderLeaderboard('#leaderboard-list', nick);
   })();
   document.addEventListener('langchange', () => {
+    applyUnlock();
     const nick = localStorage.getItem('ss.nickname') || '';
     if (nick) {
       renderAgentPanel('#agent-panel', nick);
