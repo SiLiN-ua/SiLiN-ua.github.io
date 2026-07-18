@@ -106,44 +106,72 @@ function forceTimeout() {
 }
 
 // ==================== RENDER: BRIEFING ====================
+function progressBar(current) {
+  const phases = ['briefing', 'phase2', 'phase3', 'phase4'];
+  const labels = LANG()==='en'
+    ? ['Briefing', 'Investigation', 'Verification', 'Verdict']
+    : ['Брифінг', 'Розслідування', 'Верифікація', 'Вердикт'];
+  return `<div class="game-progress">${phases.map((p, i) => {
+    const cur = phases.indexOf(current);
+    const cls = i < cur ? 'game-progress__step--done'
+              : i === cur ? 'game-progress__step--active'
+              : 'game-progress__step--todo';
+    return `<div class="game-progress__step ${cls}"><span>${String(i+1).padStart(2,'0')}</span><em>${labels[i]}</em></div>`;
+  }).join('')}</div>`;
+}
+function scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function fadeInRoot() {
+  const root = $('#game-root');
+  if (!root) return;
+  root.classList.remove('game-fade');
+  void root.offsetWidth; // reflow
+  root.classList.add('game-fade');
+}
+
 function renderBriefing() {
   const s = State.scenario;
   const br = s.briefing;
   const cand = br.candidate;
   const html = `
+    ${progressBar('briefing')}
     <div class="game-brief">
+      <div class="game-brief__bg" style="background-image:url('/img/uploads/simulator/shadow-simulator-splash.jpg')"></div>
       <div class="game-brief__reticle game-brief__r-tl"></div>
       <div class="game-brief__reticle game-brief__r-tr"></div>
       <div class="game-brief__reticle game-brief__r-bl"></div>
       <div class="game-brief__reticle game-brief__r-br"></div>
-      <div class="game-brief__label">📋 ${LANG()==='en' ? 'CLIENT BRIEFING' : 'БРИФ КЛІЄНТА'}</div>
-      <div class="game-brief__grid">
-        <div class="game-brief__photo">
-          <img src="${cand.photo}" alt="${escapeHtml(tr(cand,'name'))}">
-          <div class="game-brief__photo-label">PASSPORT PHOTO</div>
-        </div>
-        <div class="game-brief__body">
-          <h2>${escapeHtml(tr(cand,'name'))}</h2>
-          <div class="game-brief__meta">
-            <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
-            <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(br.position)}</div>
-            <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(br.salary)}</div>
-            <div><span>Email</span><code>${escapeHtml(cand.email)}</code></div>
-            <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>
+      <div class="game-brief__inner">
+        <div class="game-brief__label">📋 ${LANG()==='en' ? 'CLIENT BRIEFING' : 'БРИФ КЛІЄНТА'}</div>
+        <div class="game-brief__grid">
+          <div class="game-brief__photo">
+            <img src="${cand.photo}" alt="${escapeHtml(tr(cand,'name'))}">
+            <div class="game-brief__photo-label">PASSPORT PHOTO</div>
           </div>
-          <p class="game-brief__text">${escapeHtml(tr(br,'body'))}</p>
-          <div class="game-brief__actions">
-            <button class="btn btn--filled" id="btn-start">${escapeHtml(tr(br,'start_btn'))}</button>
+          <div class="game-brief__body">
+            <h2>${escapeHtml(tr(cand,'name'))}</h2>
+            <div class="game-brief__meta">
+              <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
+              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(br.position)}</div>
+              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(br.salary)}</div>
+              <div><span>Email</span><code>${escapeHtml(cand.email)}</code></div>
+              <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>
+            </div>
+            <p class="game-brief__text">${escapeHtml(tr(br,'body'))}</p>
+            <div class="game-brief__actions">
+              <button class="btn btn--filled" id="btn-start">${escapeHtml(tr(br,'start_btn'))}</button>
+            </div>
           </div>
         </div>
       </div>
     </div>`;
   $('#game-root').innerHTML = html;
+  fadeInRoot();
   $('#btn-start').addEventListener('click', () => {
     State.phase = 'phase2';
     State.startedAt = Date.now();
     startTimer();
     renderPhase2();
+    scrollTop();
   });
 }
 
@@ -165,6 +193,7 @@ function renderPhase2() {
   };
   const usedCount = Object.keys(State.toolsUsed).length;
   const html = `
+    ${progressBar('phase2')}
     <div class="game-phase">
       <div class="game-phase__head">
         <div class="game-phase__num">02 / 04</div>
@@ -187,6 +216,7 @@ function renderPhase2() {
       </div>
     </div>`;
   $('#game-root').innerHTML = html;
+  fadeInRoot();
   $('#game-root').querySelectorAll('.tool-btn:not(.tool-btn--used)').forEach(btn => {
     btn.addEventListener('click', () => useTool(btn.dataset.tool));
   });
@@ -195,6 +225,7 @@ function renderPhase2() {
     nextBtn.addEventListener('click', () => {
       State.phase = 'phase3';
       renderPhase3();
+      scrollTop();
     });
   }
 }
@@ -382,6 +413,7 @@ function renderPhase3() {
   };
   const allAnswered = p.questions.every(q => State.q3Answers[q.id]);
   const html = `
+    ${progressBar('phase3')}
     <div class="game-phase">
       <div class="game-phase__head">
         <div class="game-phase__num">03 / 04</div>
@@ -394,6 +426,7 @@ function renderPhase3() {
       </div>
     </div>`;
   $('#game-root').innerHTML = html;
+  fadeInRoot();
   $('#game-root').querySelectorAll('.q-opt:not(.q-opt--disabled)').forEach(btn => {
     btn.addEventListener('click', () => answerQ3(btn.dataset.q, parseInt(btn.dataset.opt,10)));
   });
@@ -402,6 +435,7 @@ function renderPhase3() {
     nextBtn.addEventListener('click', () => {
       State.phase = 'phase4';
       renderPhase4();
+      scrollTop();
     });
   }
 }
@@ -425,6 +459,7 @@ function renderPhase4() {
       <div class="verdict-opt__label">${escapeHtml(tr(opt,'label'))}</div>
     </button>`).join('');
   const html = `
+    ${progressBar('phase4')}
     <div class="game-phase game-phase--verdict">
       <div class="game-phase__head">
         <div class="game-phase__num">04 / 04</div>
@@ -434,6 +469,7 @@ function renderPhase4() {
       <div class="verdict-grid">${optHtml}</div>
     </div>`;
   $('#game-root').innerHTML = html;
+  fadeInRoot();
   $('#game-root').querySelectorAll('.verdict-opt').forEach(btn => {
     btn.addEventListener('click', () => submitVerdict(btn.dataset.verdict));
   });
@@ -514,12 +550,42 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
       </div>
       ${cdRow}
       ${State.nickname ? submitRow : ''}
+      <div class="result__share">
+        <button class="btn" id="btn-share">📤 ${LANG()==='en'?'Share result':'Поділитись результатом'}</button>
+      </div>
       <div class="result__actions">
         <a href="simulator.html" class="btn btn--filled">← ${LANG()==='en'?'Back to Simulator':'До Симулятора'}</a>
         <a href="simulator.html#leaderboard" class="btn">🏆 Leaderboard</a>
       </div>
     </div>`;
   $('#game-root').innerHTML = html;
+  fadeInRoot();
+  scrollTop();
+  const shareBtn = $('#btn-share');
+  if (shareBtn) shareBtn.addEventListener('click', () => shareResult(points, rank, tr(s,'title')));
+}
+
+function shareResult(points, rank, caseTitle) {
+  const url = 'https://yehorselin.com/simulator.html';
+  const text = LANG()==='en'
+    ? `I scored ${points} pts (${rank.label_en || rank.label}) on Shadow Simulator · ${caseTitle}. Test your OSINT skills 👇`
+    : `Пройшов ${caseTitle} у Shadow Simulator · ${points} pts (${rank.label_uk || rank.label}). Перевір свої OSINT-навички 👇`;
+  const shareData = { title: 'Shadow Simulator', text, url };
+  if (navigator.share) {
+    navigator.share(shareData).catch(() => copyShareText(text + '\n' + url));
+  } else {
+    copyShareText(text + '\n' + url);
+  }
+}
+function copyShareText(txt) {
+  navigator.clipboard.writeText(txt).then(() => {
+    const btn = $('#btn-share');
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = LANG()==='en' ? '✓ Copied — paste in LinkedIn/X' : '✓ Скопійовано — вставляй у LinkedIn/X';
+      setTimeout(() => { btn.textContent = orig; }, 3000);
+    }
+  }).catch(() => alert(txt));
 }
 
 // ==================== HUD ====================

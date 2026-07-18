@@ -2744,3 +2744,115 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .result__stats { grid-template-columns: 1fr 1fr; }
   .result__score-num { font-size: 2.8rem; }
 }
+
+/* ==========================================================
+   Shadow Simulator — Polish v2
+   ========================================================== */
+
+/* Fade transition between phases */
+@keyframes gameFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.game-fade { animation: gameFadeIn .35s var(--ease); }
+
+/* Progress bar (4 phase steps) */
+.game-progress {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+  max-width: 1080px;
+  margin: 0 auto 2rem;
+  padding: 0;
+  list-style: none;
+}
+.game-progress__step {
+  position: relative;
+  padding: .8rem 1rem;
+  border: 1px solid var(--border);
+  background: rgba(15, 21, 36, .3);
+  display: flex; flex-direction: column; gap: .2rem;
+  transition: border-color .3s var(--ease), background .3s var(--ease);
+}
+.game-progress__step span {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+.game-progress__step em {
+  font-style: normal;
+  font-size: .85rem;
+  color: var(--text-dim);
+}
+.game-progress__step--active {
+  border-color: var(--ice);
+  background: rgba(74, 158, 255, .12);
+}
+.game-progress__step--active span { color: var(--ice); }
+.game-progress__step--active em  { color: var(--cream); font-weight: 500; }
+.game-progress__step--done {
+  border-color: rgba(163, 230, 163, .3);
+  background: rgba(120, 220, 120, .05);
+}
+.game-progress__step--done span { color: #a3e6a3; }
+.game-progress__step--done span::before { content: '✓ '; }
+
+/* Briefing splash background */
+.game-brief { position: relative; overflow: hidden; }
+.game-brief__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: .18;
+  filter: blur(2px) saturate(1.1);
+  pointer-events: none;
+}
+.game-brief__bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(20,28,48,.65), rgba(10,14,26,.9));
+}
+.game-brief__inner { position: relative; z-index: 2; }
+
+/* Share button on result */
+.result__share {
+  padding: 1rem 0;
+  border-top: 1px dashed rgba(45, 61, 99, .5);
+  margin-bottom: 1rem;
+}
+.result__share .btn { transition: all .2s var(--ease); }
+
+/* Nice hover ripple on tool buttons */
+.tool-btn {
+  position: relative;
+  overflow: hidden;
+}
+.tool-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(74, 158, 255, .12);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width .5s, height .5s;
+  pointer-events: none;
+}
+.tool-btn:active:not(.tool-btn--used)::after {
+  width: 300px; height: 300px;
+}
+
+/* Modal slide-in animation */
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(20px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.tool-modal__box { animation: modalSlideIn .3s var(--ease); }
+
+@media (max-width: 720px) {
+  .game-progress { grid-template-columns: repeat(4, 1fr); gap: .25rem; }
+  .game-progress__step { padding: .5rem; }
+  .game-progress__step em { font-size: .7rem; }
+  .game-progress__step span { font-size: .62rem; }
+}
