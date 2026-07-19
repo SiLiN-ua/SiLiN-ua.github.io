@@ -1,0 +1,508 @@
+{
+  "id": "shadow-candidate",
+  "title_uk": "Кейс 4 · «Двійник у тіні»",
+  "title_en": "Case 4 · «The Shadow Candidate»",
+  "simulator_id": "candidate-red-flag",
+  "time_limit_sec": 900,
+  "max_points": 400,
+  "briefing": {
+    "client_uk": "Remote-first US SaaS-компанія",
+    "client_en": "Remote-first US SaaS company",
+    "position": "Senior Backend Engineer",
+    "salary": "$160K/рік · $160K/year",
+    "splash": "img/uploads/simulator/case4/case4-splash.png",
+    "candidate": {
+      "name_uk": "Артем Богданов",
+      "name_en": "Artem Bogdanov",
+      "photo": "img/uploads/simulator/case4/candidate-portrait.png",
+      "email": "a.bogdanov.dev@gmail.com",
+      "phone": "+380 93 ***-**-51"
+    },
+    "body_uk": "Кандидата вже переговорили. Резюме сильне, 3 інтерв'ю пройшли добре. Вся комунікація — через месенджери, voice-notes приходять регулярно, відповіді швидкі й професійні. Соцмережі виглядають чисто. Клієнт готовий підписувати offer. Твій скринінг — остання формальність. 15 хвилин. Твій вердикт.",
+    "body_en": "Candidate has been fully interviewed. Resume strong, 3 rounds passed well. All communication — through messengers, voice notes arrive regularly, replies are fast and professional. Social profiles look clean. Client is ready to sign offer. Your screening is the last formality. 15 minutes. Your verdict.",
+    "start_btn_uk": "▶ Розпочати розслідування",
+    "start_btn_en": "▶ Start investigation"
+  },
+  "phase2": {
+    "title_uk": "Фаза 2 · Первинний Pivot",
+    "title_en": "Phase 2 · Initial Pivots",
+    "instruction_uk": "Обирай тули уважно. Не всі результати очевидні.",
+    "instruction_en": "Pick tools carefully. Not every result is obvious.",
+    "next_btn_uk": "→ Далі: Крос-верифікація",
+    "next_btn_en": "→ Next: Cross-verification",
+    "min_tools_used": 5,
+    "tools": [
+      {
+        "id": "wayback",
+        "icon": "🕰️",
+        "name_uk": "Internet Archive (Wayback)",
+        "name_en": "Internet Archive (Wayback)",
+        "provider": "archive.org · web.archive.org",
+        "desc_uk": "Архівні знімки веб-сторінок",
+        "desc_en": "Archived web snapshots",
+        "tooltip_uk": "Що робить: індексує архівні знімки веб-сторінок за роками. Для чого: показує СТАРУ версію профілю до того, як людина його \"причесала\". Часто розкриває інші імена, старі ніки, видалені пости.",
+        "tooltip_en": "What it does: indexes archived web snapshots by year. Use it: shows the OLD version of a profile before the person «cleaned it up». Often reveals other names, old handles, deleted posts.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 75,
+        "ui_component": "wayback",
+        "weight": "diagnostic",
+        "clue_uk": "Кілька архівних сторінок за різні роки. Читай уважно — не всі стосуються твоєї цілі.",
+        "clue_en": "Several archived pages across years. Read carefully — not all belong to your target."
+      },
+      {
+        "id": "telegram-analytics",
+        "icon": "📊",
+        "name_uk": "Telegram username-history tool",
+        "name_en": "Telegram username-history tool",
+        "provider": "Specialized Telegram analytics",
+        "desc_uk": "Історія username-змін",
+        "desc_en": "Username-change history",
+        "tooltip_uk": "Що робить: показує коли user змінював username, які були попередні хендли, дати. Для чого: недавня зміна ніку перед працевлаштуванням — сигнал підготовки OPSEC.",
+        "tooltip_en": "What it does: shows when a user changed usernames, previous handles, dates. Use it: recent handle change before job hunt is a signal of OPSEC preparation.",
+        "correct": true,
+        "points": 12,
+        "time_cost": 45,
+        "ui_component": "telegram-history",
+        "weight": "supporting",
+        "clue_uk": "Історія змін нікнейму. Порівняй з датою подачі на позицію.",
+        "clue_en": "Handle change history. Compare with the application date."
+      },
+      {
+        "id": "osint-industries",
+        "icon": "🔎",
+        "name_uk": "OSINT Industries",
+        "name_en": "OSINT Industries",
+        "provider": "1000+ platforms aggregator",
+        "desc_uk": "Крос-платформна перевірка email/phone/username",
+        "desc_en": "Cross-platform email/phone/username scan",
+        "tooltip_uk": "Що робить: один запит по всіх ідентифікаторах. Для чого: якщо в тебе кілька username-ів з різних джерел — перевір їх усі разом, побачиш зв'язки.",
+        "tooltip_en": "What it does: one query across all identifiers. Use it: if you have multiple usernames from different sources — query them all together to see links.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 60,
+        "ui_component": "osint-industries-c4",
+        "weight": "supporting",
+        "clue_uk": "Крос-платформний скан. Кількість збігів говорить сама.",
+        "clue_en": "Cross-platform scan. The number of hits speaks for itself."
+      },
+      {
+        "id": "reverse-image",
+        "icon": "🔍",
+        "name_uk": "Reverse Image (multi-engine)",
+        "name_en": "Reverse Image (multi-engine)",
+        "provider": "PimEyes + FaceCheck.ID + Yandex + TinEye",
+        "desc_uk": "Пошук обличчя в 4 движках",
+        "desc_en": "Face search across 4 engines",
+        "tooltip_uk": "Що робить: шукає обличчя у соцмережах і публічних фото. Для чого: знаходить те саме обличчя де воно раніше з'являлося.",
+        "tooltip_en": "What it does: searches for the face across social networks and public photos. Use it: finds where that face appeared before.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 60,
+        "ui_component": "multi-reverse-c4",
+        "weight": "supporting",
+        "clue_uk": "Кілька матчів різної якості. Читай метадані.",
+        "clue_en": "Several matches of varying quality. Read metadata."
+      },
+      {
+        "id": "instagram-friends",
+        "icon": "📸",
+        "name_uk": "Instagram (friends pivot)",
+        "name_en": "Instagram (friends pivot)",
+        "provider": "Instagram public + friend-graph",
+        "desc_uk": "Профілі найактивніших друзів",
+        "desc_en": "Most-active friends' profiles",
+        "tooltip_uk": "Що робить: збирає найактивніших коментаторів / лайкерів на профілі цілі. Для чого: якщо рідні мовчать — друзі часто мають старі теги, спільні фото, історичний контекст.",
+        "tooltip_en": "What it does: gathers most-active commenters / likers on target's profile. Use it: when family is quiet, friends often have old tags, shared photos, historical context.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 90,
+        "ui_component": "instagram-friends-c4",
+        "weight": "diagnostic",
+        "clue_uk": "Багато старих постів у різних друзів. Час копирсатися в архіві.",
+        "clue_en": "Many old posts across different friends. Time to dig through the archive."
+      },
+      {
+        "id": "voice-biometric",
+        "icon": "🎤",
+        "name_uk": "Voice Biometric Comparison",
+        "name_en": "Voice Biometric Comparison",
+        "provider": "Spectrogram + formant analysis",
+        "desc_uk": "Порівняння голосових зразків",
+        "desc_en": "Voice sample comparison",
+        "tooltip_uk": "Що робить: порівнює два аудіосемпли за спектральними характеристиками (F0, форманти, темп). Для чого: коли у тебе є голос кандидата з інтерв'ю І з іншого джерела — можеш перевірити, чи це та сама людина.",
+        "tooltip_en": "What it does: compares two audio samples by spectral characteristics (F0, formants, tempo). Use it: when you have candidate's voice from interviews AND from another source — you can check if it's the same person.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 90,
+        "ui_component": "voice-biometric",
+        "weight": "diagnostic",
+        "clue_uk": "Три аудіо-семпли. Обирай пару для порівняння. Не кожна пара дає значущий результат.",
+        "clue_en": "Three audio samples. Pick a pair to compare. Not every pair yields a meaningful result."
+      },
+      {
+        "id": "facebook-direct",
+        "icon": "📘",
+        "name_uk": "Facebook Direct",
+        "name_en": "Facebook Direct",
+        "provider": "Facebook public",
+        "desc_uk": "Прямий пошук на Facebook",
+        "desc_en": "Direct Facebook search",
+        "tooltip_uk": "Що робить: перевіряє публічний профіль. Для чого: базова перевірка. Часто малоцінна для технічних кандидатів, які тримають профілі curated.",
+        "tooltip_en": "What it does: checks the public profile. Use it: basic check. Often low-value for tech candidates who curate profiles.",
+        "correct": true,
+        "points": 5,
+        "time_cost": 30,
+        "ui_component": "facebook-clean-c4",
+        "weight": "noise",
+        "clue_uk": "Профіль curated.",
+        "clue_en": "Profile is curated."
+      },
+      {
+        "id": "sanctions-pep",
+        "icon": "⚖️",
+        "name_uk": "Sanctions & PEP",
+        "name_en": "Sanctions & PEP",
+        "provider": "OFAC + EU + UK + СБУ + РНБО",
+        "desc_uk": "Санкції + політично значущі особи",
+        "desc_en": "Sanctions + politically exposed",
+        "tooltip_uk": "Санкційний скринінг.",
+        "tooltip_en": "Sanctions screening.",
+        "correct": true,
+        "points": 5,
+        "time_cost": 45,
+        "ui_component": "sanctions-clean-c4",
+        "weight": "noise",
+        "clue_uk": "Чисто по всіх списках.",
+        "clue_en": "Clean across all lists."
+      },
+      {
+        "id": "youcontrol",
+        "icon": "📄",
+        "name_uk": "YouControl by phone",
+        "name_en": "YouControl by phone",
+        "provider": "YouControl",
+        "desc_uk": "Пошук юрособи за номером ⚠",
+        "desc_en": "Search legal entity by phone ⚠",
+        "tooltip_uk": "YouControl індексує юросіб (компанії) України, не фізосіб. Для фізособи-кандидата — марно.",
+        "tooltip_en": "YouControl indexes Ukrainian legal entities (companies), not individuals. For an individual candidate — pointless.",
+        "warning_uk": "⚠️ YouControl індексує юросіб, не фізосіб. Пошук по мобільному коштуватиме 90с і -10 очок. Все одно продовжити?",
+        "warning_en": "⚠️ YouControl indexes legal entities, not individuals. Phone lookup will cost 90s and -10 points. Continue anyway?",
+        "correct": false,
+        "points": -10,
+        "time_cost": 90,
+        "ui_component": "youcontrol",
+        "weight": "decoy",
+        "clue_uk": "🎣 RED HERRING (попереджали). -10 і 90с.",
+        "clue_en": "🎣 RED HERRING (you were warned). -10 and 90s."
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Фаза 3 · Крос-верифікація",
+    "title_en": "Phase 3 · Cross-verification",
+    "instruction_uk": "3 прямі запитання за знайденими доказами.",
+    "instruction_en": "3 direct questions based on your findings.",
+    "next_btn_uk": "→ Далі: Обґрунтування",
+    "next_btn_en": "→ Next: Source citation",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Wayback знайшов старі архіви під іншим ніком на кандидата. Твоя інтерпретація?",
+        "text_en": "Wayback found old archives under a different handle tied to the candidate. Your interpretation?",
+        "options": [
+          {
+            "text_uk": "Старий legacy-нік, у більшості людей такі є",
+            "text_en": "Old legacy handle, most people have them",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Legacy-нік був би публічно згадуваним у CV чи LinkedIn. Кандидат НЕ вказав інший нік — це не забудькуватість, це приховування.",
+            "feedback_en": "❌ A legacy handle would be publicly mentioned in the CV or LinkedIn. The candidate did NOT declare another handle — this is not forgetfulness, this is concealment."
+          },
+          {
+            "text_uk": "Незадекларована ідентичність — гідна поглибленої перевірки",
+            "text_en": "Undeclared identity — warrants deeper checks",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Wayback не бреше — під іншим ніком є контент, за який кандидат не хоче відповідати. Треба з'ясувати чому.",
+            "feedback_en": "✓ Correct. Wayback doesn't lie — there's content under a different handle that the candidate doesn't want associated. Find out why."
+          },
+          {
+            "text_uk": "Автоматичний red flag — відмовляти",
+            "text_en": "Automatic red flag — terminate",
+            "points": -5,
+            "correct": false,
+            "feedback_uk": "⚠️ Занадто рано. Legacy-акаунт сам по собі не доводить фрод. Треба з'ясувати ЩО саме приховано.",
+            "feedback_en": "⚠️ Too early. A legacy account alone doesn't prove fraud. Find out WHAT is being hidden."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Voice biometric показує, що інтерв'ю-голос і одне з видео мають різні спектральні характеристики. Що це означає?",
+        "text_en": "Voice biometric shows the interview voice and one of the videos have different spectral characteristics. What does this mean?",
+        "options": [
+          {
+            "text_uk": "Різниця запису або мікрофону — непереконливо",
+            "text_en": "Recording or microphone difference — inconclusive",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Мікрофон впливає на амплітуду і high-frequency, але не на F0 (базову частоту голосу) і форманти. Дві людини мають різні F0. Це — два різних спікери.",
+            "feedback_en": "❌ Microphones affect amplitude and high-frequency response, but not F0 (base voice frequency) or formants. Two people have different F0. This is two different speakers."
+          },
+          {
+            "text_uk": "Два різних голоси = два різних спікери. Атрибуція розсипалася.",
+            "text_en": "Two different voices = two different speakers. Attribution has collapsed.",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. F0 і форманти — біометричні. Якщо інтерв'ю-голос і відео-голос НЕ співпадають — це значить, що людина в одному з джерел НЕ та сама, за кого себе видає. Далі — з'ясувати, ЯКА з двох.",
+            "feedback_en": "✓ Correct. F0 and formants are biometric. If interview voice ≠ video voice — that means the person in one of the sources is NOT who they claim. Next — figure out WHICH of the two."
+          },
+          {
+            "text_uk": "Не суд — не приймати рішень без експертного висновку",
+            "text_en": "Not court-grade — no decision without expert opinion",
+            "points": -5,
+            "correct": false,
+            "feedback_uk": "❌ Для найму не потрібен експертний висновок. Спектральна невідповідність F0 = достатньо для 'do not hire' рекомендації.",
+            "feedback_en": "❌ For a hire, no expert opinion is needed. Spectral F0 mismatch = enough for 'do not hire' recommendation."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Instagram-карусель 2017 з підписом «my two best friends, the twins» показує кандидата поряд з його точною копією. Взяти до уваги?",
+        "text_en": "A 2017 Instagram carousel with the caption «my two best friends, the twins» shows the candidate next to his exact copy. Take this into account?",
+        "options": [
+          {
+            "text_uk": "Схожість людей — випадковість, не сигнал",
+            "text_en": "People-similarity is coincidence, not signal",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ Підпис ПРЯМО каже «двійники». Це не «схожість», це біологічна ідентичність двох людей. У поєднанні з voice-mismatch це стає центральним фактом.",
+            "feedback_en": "❌ The caption LITERALLY says «twins». This is not «similarity», this is biological identity of two people. Combined with voice-mismatch this becomes the central fact."
+          },
+          {
+            "text_uk": "Двійник + невідповідність голосу = робити висновок про можливе impersonation",
+            "text_en": "Twin + voice mismatch = conclude possible impersonation",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Один інтерв'юється, інший підписує offer. Два різних голоси не є випадковістю, коли існує ідентичний брат. Це готова схема шахрайства при наймі.",
+            "feedback_en": "✓ Correct. One interviews, the other signs the offer. Two different voices are no coincidence when an identical brother exists. This is a ready-made hiring-fraud scheme."
+          },
+          {
+            "text_uk": "Просити кандидата на живий відео-дзвінок і з'ясувати",
+            "text_en": "Ask candidate for a live video call and clarify",
+            "points": 3,
+            "correct": false,
+            "feedback_uk": "⚠️ Обережно, але це попереджає ціль. Двійник просто прийде замість брата на відео. Правильно — задокументувати і рекомендувати клієнту НЕ приймати оффер БЕЗ контакту з ціллю.",
+            "feedback_en": "⚠️ Cautious, but this warns the target. The twin will simply show up instead of the brother on video. Correct — document and recommend the client NOT accept the offer WITHOUT contacting the target."
+          }
+        ]
+      }
+    ]
+  },
+  "citation_phase": {
+    "title_uk": "Фаза 3.5 · Обґрунтування",
+    "title_en": "Phase 3.5 · Source Citation",
+    "instruction_uk": "Вибери 3 знахідки, що НАЙБІЛЬШЕ обґрунтовують твоє рішення.",
+    "instruction_en": "Pick 3 findings that MOST justify your decision.",
+    "next_btn_uk": "→ Далі: Фінальний вердикт",
+    "next_btn_en": "→ Next: Final verdict",
+    "max_picks": 3,
+    "scoring": {
+      "diagnostic": 15,
+      "supporting": 5,
+      "noise": -3,
+      "decoy": -10
+    }
+  },
+  "phase4": {
+    "title_uk": "Фаза 4 · Фінальний вердикт",
+    "title_en": "Phase 4 · Final Verdict",
+    "instruction_uk": "Твій вердикт для клієнта.",
+    "instruction_en": "Your verdict for the client.",
+    "options": [
+      {
+        "id": "reject",
+        "label_uk": "🚩 REJECT — impersonation-фрод, зупинити оффер",
+        "label_en": "🚩 REJECT — impersonation fraud, halt offer",
+        "points": 50,
+        "correct": true,
+        "verdict": "success",
+        "feedback_uk": "✓ ПРАВИЛЬНО. Ти вловив: незадекларована стара ідентичність + недавня зміна нікнейму + невідповідність voice biometric між інтерв'ю та відео-джерелом + існування ідентичного близнюка на старій фотографії = один брат вів весь процес найму замість іншого. Клієнт врятував себе від найму людини, яка не проходила інтерв'ю. У реальності це — миттєве звільнення на першому робочому дні + втрачений семестр рекрутингу.",
+        "feedback_en": "✓ CORRECT. You caught: undeclared old identity + recent handle change + voice biometric mismatch between interview and video source + existence of an identical twin in an old photo = one brother ran the entire hiring process for the other. Client saved themselves from hiring someone who didn't actually interview. In reality — instant termination on day one + a lost recruiting quarter."
+      },
+      {
+        "id": "approve",
+        "label_uk": "✅ APPROVE — рекомендую наймати",
+        "label_en": "✅ APPROVE — recommend to hire",
+        "points": -50,
+        "correct": false,
+        "verdict": "fail",
+        "feedback_uk": "💥 КАТАСТРОФА. Ти пропустив impersonation-фрод. Компанія найняла людину, яка НЕ проходила інтерв'ю. Перший робочий день покаже, що технічний рівень нижчий заявленого, звільнення протягом тижня. Втрачено: onboarding-цикл, seat, час рекрутера, репутація твоя.",
+        "feedback_en": "💥 CATASTROPHE. You missed impersonation fraud. Company hired someone who did NOT actually interview. First day will show technical level below claimed, termination within a week. Lost: onboarding cycle, seat, recruiter time, your reputation."
+      },
+      {
+        "id": "insufficient",
+        "label_uk": "⚠️ Недостатньо даних для рішення",
+        "label_en": "⚠️ Insufficient data for a decision",
+        "points": 10,
+        "correct": false,
+        "verdict": "weak",
+        "feedback_uk": "⚠️ Обережно, але безсило. Voice biometric mismatch + twin у Instagram-карусельі — це не суд, але для скринінгу достатньо. «Недостатньо» тут = боятися зафіксувати очевидний фрод.",
+        "feedback_en": "⚠️ Cautious but powerless. Voice biometric mismatch + twin in Instagram carousel — this isn't court, but it's enough for screening. «Insufficient» here = afraid to commit on obvious fraud."
+      }
+    ]
+  },
+  "ranks": {
+    "master": {
+      "min": 280,
+      "label_uk": "💎 Master · Shadow Hunter",
+      "label_en": "💎 Master · Shadow Hunter",
+      "color": "#7fd6ff",
+      "msg_uk": "Ти відрізнив кандидата від його близнюка через voice biometric і карусель 2017. Це рівень майстра.",
+      "msg_en": "You distinguished the candidate from his twin via voice biometric and a 2017 carousel. This is master-level."
+    },
+    "senior": {
+      "min": 210,
+      "label_uk": "🥇 Senior Investigator",
+      "label_en": "🥇 Senior Investigator",
+      "color": "#ffc864",
+      "msg_uk": "Правильний вердикт, впевнена робота під нетривіальний фрод.",
+      "msg_en": "Correct verdict, confident work against a non-trivial fraud."
+    },
+    "junior": {
+      "min": 140,
+      "label_uk": "🥈 Junior Analyst",
+      "label_en": "🥈 Junior Analyst",
+      "color": "#c0c8d8",
+      "msg_uk": "Правильний вердикт, але з пропущеним ланцюжком.",
+      "msg_en": "Correct verdict, but with a missed link."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "🥉 Trainee",
+      "label_en": "🥉 Trainee",
+      "color": "#a67c52",
+      "msg_uk": "Impersonation через близнюка — рідкісний, але реальний фрод. Прочитай методологію і спробуй ще.",
+      "msg_en": "Twin-impersonation is rare but real fraud. Read the methodology and try again."
+    }
+  },
+  "cooldown_sec": 3600,
+  "ui_data": {
+    "wayback_query": "web.archive.org · «Artem Bogdanov» + variants",
+    "wayback_snapshots": [
+      { "url": "web.archive.org/web/2016*/twitter.com/artem_dev_ua", "date": "2016-2018", "detail": "user @artem_dev_ua · tech-heavy, English, backend/DevOps · profile deleted 2018-06" },
+      { "url": "web.archive.org/web/2019*/twitter.com/artembgd_kyiv", "date": "2019-2023", "detail": "user @artembgd_kyiv · shared same avatar as current LinkedIn photo · pinned tweet: «migrated from @artem_dev_ua»" },
+      { "url": "web.archive.org/web/2020*/artembogdanov.com", "date": "2020", "detail": "personal blog · 3 posts · disappeared 2021" },
+      { "url": "web.archive.org/web/2021*/facebook.com/artem.bogdanov.404", "date": "2021", "detail": "«Artem Bogdanov» · Львів · музикант · unrelated to tech · different bio" },
+      { "url": "web.archive.org/web/2015*/livejournal.com/users/a-bogdanov-95", "date": "2015", "detail": "old LJ · «Artem Bogdanov» · Дніпро · student diary · fashion, cars · unclear match" }
+    ],
+    "telegram_username_query": "handle @artem_bgd (current)",
+    "telegram_username_history": [
+      { "handle": "@artem_bgd", "since": "2024-11-04 (7 days ago)", "status": "current" },
+      { "handle": "@artembgd_kyiv", "period": "2019-06 → 2024-11-04", "status": "previous" },
+      { "handle": "@artem_dev_ua", "period": "2016-03 → 2018-06", "status": "abandoned" }
+    ],
+    "telegram_note": "Handle change occurred 7 days before candidate applied for the position.",
+    "osint_industries_c4_query": "email a.bogdanov.dev@gmail.com · phone +380 93 ***-**-51 · usernames: artem_bgd, artembgd_kyiv, artem_dev_ua",
+    "osint_industries_c4_results": [
+      { "platform": "LinkedIn", "hit": "@artembogdanov-cfa · public, clean", "note": "matches CV" },
+      { "platform": "GitHub", "hit": "artembgd", "note": "12 repos, sporadic 2022-2024, mostly forks — thin for a senior claim" },
+      { "platform": "Stack Overflow", "hit": "artem-bogdanov-12481", "note": "1200 rep, active 2015-2018 then silent until 2024-10" },
+      { "platform": "Reddit", "hit": "u/artembgd_kyiv", "note": "144 comments 2019-2023 in r/UkrainianIT, then silent" },
+      { "platform": "Twitter/X", "hit": "@artem_dev_ua (deleted 2018), @artembgd_kyiv (renamed)", "note": "both historical" },
+      { "platform": "Discord", "hit": "artem#4013", "note": "member of 3 UA-dev servers, minimal activity" },
+      { "platform": "Instagram", "hit": "@artem.b.kyiv", "note": "private, 89 followers, 47 posts, joined 2015" },
+      { "platform": "Facebook", "hit": "artem.bogdanov.94", "note": "public but curated: work anniversaries + generic reposts" }
+    ],
+    "reverse_engines": [
+      { "name": "PimEyes", "meta": "face-specific", "matches": [
+        { "img": "img/uploads/simulator/case4/candidate-portrait.png", "site": "linkedin.com/in/artembogdanov-cfa", "label": "profile photo · 2024", "conf": "97%" },
+        { "img": "img/uploads/simulator/case4/candidate-portrait.png", "site": "artembgd.dev · about page", "label": "author photo · 2023", "conf": "94%" }
+      ]},
+      { "name": "FaceCheck.ID", "meta": "deep-web faces", "matches": [
+        { "img": "img/uploads/simulator/case4/candidate-portrait.png", "site": "medium.com/@artem-bogdanov", "label": "author avatar · 2022", "conf": "91%" }
+      ]},
+      { "name": "Yandex", "meta": "CIS-strong", "matches": [
+        { "img": "img/uploads/simulator/case4/twins-carousel.png", "site": "instagram.com/p/BXY_2017_a3f7/", "label": "post by @kate_bff_lviv · 2017 · «with my two best friends, the twins»", "conf": "89%", "warn": true }
+      ]},
+      { "name": "TinEye", "meta": "exact-copy", "matches": [] }
+    ],
+    "instagram_friends_query": "top-3 most-active commenters on @artem.b.kyiv (private, seen via public friends' tags)",
+    "instagram_friends": [
+      {
+        "handle": "@kate_bff_lviv",
+        "note": "Kateryna, ~10 mutual photos across 2015-2023 · university-friend context",
+        "posts_with_target": 12,
+        "notable_post": {
+          "date": "2017-08-14",
+          "img": "img/uploads/simulator/case4/twins-carousel.png",
+          "caption": "Літня подорож в Одесу з @artem.b.kyiv @andr_bgd_travel — з моїми двома найкращими друзями, близнюками ❤️👬",
+          "type": "carousel + 1 video",
+          "video_note": "0:38 video · both boys speak · voice track available for extraction"
+        }
+      },
+      {
+        "handle": "@lena_photobook",
+        "note": "photographer, 6 photos with target from concerts/events 2018-2021",
+        "posts_with_target": 6,
+        "notable_post": null
+      },
+      {
+        "handle": "@vlad_kpi_20",
+        "note": "university coursemate, tagged in 4 group photos from KPI 2020",
+        "posts_with_target": 4,
+        "notable_post": null
+      }
+    ],
+    "voice_samples": [
+      {
+        "id": "sample_A",
+        "label_uk": "Voice-note з інтерв'ю (round 3, 2024-11-08)",
+        "label_en": "Voice note from interview (round 3, 2024-11-08)",
+        "duration": "0:47",
+        "f0_avg": "142 Hz",
+        "formants": "F1=520 F2=1740 F3=2680"
+      },
+      {
+        "id": "sample_B",
+        "label_uk": "Voice-note з інтерв'ю (round 1, 2024-10-29)",
+        "label_en": "Voice note from interview (round 1, 2024-10-29)",
+        "duration": "1:12",
+        "f0_avg": "144 Hz",
+        "formants": "F1=525 F2=1750 F3=2695"
+      },
+      {
+        "id": "sample_C",
+        "label_uk": "Аудіо з відео Instagram 2017 (@kate_bff_lviv carousel · 0:38)",
+        "label_en": "Audio from 2017 Instagram video (@kate_bff_lviv carousel · 0:38)",
+        "duration": "0:38",
+        "f0_avg": "118 Hz",
+        "formants": "F1=480 F2=1580 F3=2510",
+        "note_uk": "На відео двоє юнаків. Голосова доріжка змішана.",
+        "note_en": "Video shows two young men. Voice track is mixed."
+      }
+    ],
+    "voice_pairs": [
+      { "a": "sample_A", "b": "sample_B", "verdict_uk": "F0 delta 2 Hz · формантні відхилення <1% · **той самий спікер**", "verdict_en": "F0 delta 2 Hz · formant deviation <1% · **same speaker**" },
+      { "a": "sample_A", "b": "sample_C", "verdict_uk": "F0 delta 24 Hz · формантні відхилення 8-11% · **різні спікери** (за межами внутрішньоособистісної варіативності)", "verdict_en": "F0 delta 24 Hz · formant deviation 8-11% · **different speakers** (beyond intra-personal variability)" },
+      { "a": "sample_B", "b": "sample_C", "verdict_uk": "F0 delta 26 Hz · формантні відхилення 9-12% · **різні спікери**", "verdict_en": "F0 delta 26 Hz · formant deviation 9-12% · **different speakers**" }
+    ],
+    "facebook_curated": {
+      "name": "Artem Bogdanov · @artem.bogdanov.94",
+      "followers": 512,
+      "posts_yearly": "~4-6 · work anniversaries, birthday photos, generic reposts",
+      "friends_shown": 20,
+      "photos_visible": 3
+    },
+    "sanctions_grid": [
+      { "list": "OFAC (US Treasury)", "status": "clean" },
+      { "list": "EU Sanctions", "status": "clean" },
+      { "list": "UK HMT Sanctions", "status": "clean" },
+      { "list": "СБУ / РНБО (UA)", "status": "clean" },
+      { "list": "PEP database", "status": "clean" },
+      { "list": "Interpol Red Notices", "status": "clean" }
+    ]
+  }
+}

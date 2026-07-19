@@ -275,7 +275,12 @@
         "ss.game3.sub": "Кандидат на Head of Compliance у fintech-банку. Прямі профілі закриті, LinkedIn стерильний, Google порожній. Твій навик — обхід через рідних, старі оголошення, витоки, Telegram reverse-lookup. Family chain: коли головні двері замкнені, дивись у вікна.",
         "ss.game3.tag1": "Family Chain",
         "ss.game3.tag2": "Insider Threat",
-        "ss.game3.tag3": "Indirect Pivot"
+        "ss.game3.tag3": "Indirect Pivot",
+        "ss.game4.title": "Кейс 4 · «Двійник у тіні»",
+        "ss.game4.sub": "Remote-first US SaaS наймає Senior Backend Engineer за $160K. Кандидата вже переговорили, все через месенджери. Voice-notes регулярні, соцмережі чисті. Клієнт готовий підписати. Твій вердикт — чи все так, як здається? Найскладніший з чотирьох.",
+        "ss.game4.tag1": "Voice Biometric",
+        "ss.game4.tag2": "Impersonation Fraud",
+        "ss.game4.tag3": "Wayback Archive"
     },
     "en": {
         "brand.first": "Yehor",
@@ -553,6 +558,11 @@
         "ss.game3.sub": "Head of Compliance candidate at a fintech bank. Direct profiles locked, LinkedIn sterile, Google empty. Your skill — pivot through relatives, old ads, breaches, Telegram reverse-lookup. Family chain: when the front door is locked, look through the windows.",
         "ss.game3.tag1": "Family Chain",
         "ss.game3.tag2": "Insider Threat",
-        "ss.game3.tag3": "Indirect Pivot"
+        "ss.game3.tag3": "Indirect Pivot",
+        "ss.game4.title": "Case 4 · «The Shadow Candidate»",
+        "ss.game4.sub": "Remote-first US SaaS hiring a Senior Backend Engineer at $160K. Candidate fully interviewed via messengers, regular voice notes, clean social. Client ready to sign. Your verdict — is everything as it seems? Hardest of the four.",
+        "ss.game4.tag1": "Voice Biometric",
+        "ss.game4.tag2": "Impersonation Fraud",
+        "ss.game4.tag3": "Wayback Archive"
     }
 }

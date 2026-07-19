@@ -811,6 +811,169 @@ function renderFakeUI(tool) {
           </div>`;
       }
       break;
+    case 'wayback':
+      if (d.wayback_snapshots) {
+        return `
+          <div class="fake fake--wayback">
+            <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback Machine</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.wayback_query)}</code></div>
+            <div class="fake__court-list">
+              ${d.wayback_snapshots.map(s => `
+                <div class="fake__court-case">
+                  <div class="fake__court-h">📄 ${escapeHtml(s.url)} · ${escapeHtml(s.date)}</div>
+                  <div class="fake__court-body">${escapeHtml(s.detail)}</div>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
+    case 'telegram-history':
+      if (d.telegram_username_history) {
+        return `
+          <div class="fake fake--court">
+            <div class="fake__topbar">📊 <span>Telegram Username History</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.telegram_username_query)}</code></div>
+            <table class="fake__oi-table">
+              <thead><tr><th>Handle</th><th>Period</th><th>Status</th></tr></thead>
+              <tbody>
+                ${d.telegram_username_history.map(h => `
+                  <tr class="fake__oi-row fake__oi-row--${h.status}">
+                    <td><strong>${escapeHtml(h.handle)}</strong></td>
+                    <td><small>${escapeHtml(h.since || h.period || '')}</small></td>
+                    <td>${escapeHtml(h.status)}</td>
+                  </tr>`).join('')}
+              </tbody>
+            </table>
+            ${d.telegram_note ? `<div class="fake__court-hint">${escapeHtml(d.telegram_note)}</div>` : ''}
+          </div>`;
+      }
+      break;
+    case 'osint-industries-c4':
+      if (d.osint_industries_c4_results) {
+        return `
+          <div class="fake fake--oi">
+            <div class="fake__topbar">🔎 <span>OSINT Industries · cross-platform</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.osint_industries_c4_query)}</code></div>
+            <table class="fake__oi-table">
+              <thead><tr><th>Platform</th><th>Hit</th><th>Note</th></tr></thead>
+              <tbody>
+                ${d.osint_industries_c4_results.map(r => `
+                  <tr class="fake__oi-row fake__oi-row--found">
+                    <td><strong>${escapeHtml(r.platform)}</strong></td>
+                    <td><code>${escapeHtml(r.hit)}</code></td>
+                    <td><small>${escapeHtml(r.note)}</small></td>
+                  </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>`;
+      }
+      break;
+    case 'multi-reverse-c4':
+      if (d.reverse_engines) {
+        const renderMatch = (m) => `
+          <div class="fake__match${m.warn?' fake__match--warn':''}">
+            <img src="${escapeHtml(m.img)}" alt="" onerror="this.style.display='none'">
+            <div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(m.label)} · ${escapeHtml(m.conf)}</small></div>
+          </div>`;
+        return `
+          <div class="fake fake--multi-reverse">
+            <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+            <div class="fake__search-row">
+              <img src="${cand.photo}" class="fake__input-img" alt="query">
+              <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines.</div>
+            </div>
+            <div class="fake__engines">
+              ${d.reverse_engines.map(e => `
+                <div class="fake__engine">
+                  <div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div>
+                  <div class="fake__engine-body">
+                    ${e.matches && e.matches.length ? e.matches.map(renderMatch).join('') : '<small>no matches</small>'}
+                  </div>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
+    case 'instagram-friends-c4':
+      if (d.instagram_friends) {
+        return `
+          <div class="fake fake--ig">
+            <div class="fake__topbar">📸 <span>Instagram · Friends Pivot</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.instagram_friends_query)}</code></div>
+            ${d.instagram_friends.map(f => `
+              <div class="fake__ig-block${f.notable_post ? ' fake__ig-block--highlight' : ''}">
+                <div class="fake__ig-h">${escapeHtml(f.handle)} <span>· ${f.posts_with_target} posts with target</span></div>
+                <div class="fake__ig-body">${escapeHtml(f.note)}</div>
+                ${f.notable_post ? `
+                  <div class="fake__ig-photo">
+                    ${f.notable_post.img ? `<img src="${escapeHtml(f.notable_post.img)}" alt="carousel" onerror="this.style.display='none'">` : ''}
+                    <div class="fake__ig-caption">${escapeHtml(f.notable_post.date)} · ${escapeHtml(f.notable_post.type)}<br>«${escapeHtml(f.notable_post.caption)}»</div>
+                    ${f.notable_post.video_note ? `<div class="fake__ig-tagged">${escapeHtml(f.notable_post.video_note)}</div>` : ''}
+                  </div>` : ''}
+              </div>`).join('')}
+          </div>`;
+      }
+      break;
+    case 'voice-biometric':
+      if (d.voice_samples) {
+        return `
+          <div class="fake fake--voice">
+            <div class="fake__topbar">🎤 <span>Voice Biometric Comparison</span></div>
+            <div class="fake__court-query">3 samples available · pick a pair to compare</div>
+            <div class="fake__voice-samples">
+              ${d.voice_samples.map(s => `
+                <div class="fake__voice-sample">
+                  <div class="fake__voice-h">${escapeHtml(s.id)}</div>
+                  <div class="fake__voice-label">${escapeHtml(tr(s,'label'))}</div>
+                  <div class="fake__voice-meta">
+                    <span>duration: <strong>${escapeHtml(s.duration)}</strong></span>
+                    <span>F0 avg: <strong>${escapeHtml(s.f0_avg)}</strong></span>
+                    <span>formants: <strong>${escapeHtml(s.formants)}</strong></span>
+                  </div>
+                  ${tr(s,'note') ? `<div class="fake__voice-note">${escapeHtml(tr(s,'note'))}</div>` : ''}
+                </div>`).join('')}
+            </div>
+            <div class="fake__voice-pairs">
+              <div class="fake__voice-pairs-h">Comparison results (all pairs):</div>
+              ${d.voice_pairs.map(p => `
+                <div class="fake__voice-pair">
+                  <strong>${escapeHtml(p.a)} ↔ ${escapeHtml(p.b)}</strong>: ${escapeHtml(tr(p,'verdict'))}
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
+    case 'facebook-clean-c4':
+      if (d.facebook_curated) {
+        const fb = d.facebook_curated;
+        return `
+          <div class="fake fake--linkedin">
+            <div class="fake__topbar">📘 <span>Facebook · Direct</span></div>
+            <div class="fake__li-profile">
+              <div class="fake__li-name">${escapeHtml(fb.name)}</div>
+              <div class="fake__li-meta">${fb.followers} followers · ${fb.friends_shown} friends shown · ${fb.photos_visible} photos visible</div>
+              <div class="fake__li-exp">
+                <div class="fake__li-row">${escapeHtml(fb.posts_yearly)}</div>
+              </div>
+            </div>
+          </div>`;
+      }
+      break;
+    case 'sanctions-clean-c4':
+      if (d.sanctions_grid) {
+        return `
+          <div class="fake fake--sanctions">
+            <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+            <div class="fake__sanc-name">Query: <code>${escapeHtml(tr(cand,'name'))}</code></div>
+            <div class="fake__sanc-grid">
+              ${d.sanctions_grid.map(g => `
+                <div class="fake__sanc-cell fake__sanc-cell--ok">
+                  <span>${escapeHtml(g.list)}</span><strong>✓ CLEAN</strong>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
     case 'youcontrol': return `
       <div class="fake fake--youcontrol">
         <div class="fake__topbar">📄 <span>YouControl — Legal Entity Search</span></div>

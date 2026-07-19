@@ -3587,3 +3587,68 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   font-style: italic;
   font-size: .9rem;
 }
+
+/* Case 4 — Voice biometric comparison UI */
+.fake--voice { padding: 0; }
+.fake__voice-samples {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem;
+  padding: 1rem;
+}
+.fake__voice-sample {
+  padding: .8rem 1rem;
+  background: rgba(15, 21, 36, .4);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ice);
+}
+.fake__voice-h {
+  font-family: var(--font-mono);
+  color: var(--ice);
+  font-size: .78rem;
+  margin-bottom: .3rem;
+  letter-spacing: .1em;
+}
+.fake__voice-label {
+  color: var(--cream);
+  font-size: .88rem;
+  margin-bottom: .5rem;
+}
+.fake__voice-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--text-mute);
+}
+.fake__voice-meta strong { color: var(--cream); }
+.fake__voice-note {
+  margin-top: .5rem;
+  padding: .4rem .6rem;
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: .82rem;
+  border-top: 1px dashed var(--border);
+}
+.fake__voice-pairs {
+  padding: 1rem;
+  background: rgba(10, 14, 26, .5);
+  border-top: 1px solid var(--border);
+}
+.fake__voice-pairs-h {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--ice);
+  letter-spacing: .1em;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+.fake__voice-pair {
+  padding: .4rem .6rem;
+  margin-bottom: .3rem;
+  color: var(--cream);
+  font-size: .85rem;
+  border-left: 2px solid var(--border);
+}
+.fake__voice-pair strong { font-family: var(--font-mono); color: var(--ice); }
