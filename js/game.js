@@ -160,7 +160,7 @@ function renderBriefing() {
   const html = `
     ${progressBar('briefing')}
     <div class="game-brief">
-      <div class="game-brief__bg" style="background-image:url('${br.splash || '/img/uploads/simulator/shadow-simulator-splash.jpg'}')"></div>
+      <div class="game-brief__bg" style="background-image:url('${br.splash || 'img/uploads/simulator/shadow-simulator-splash.jpg'}')"></div>
       <div class="game-brief__reticle game-brief__r-tl"></div>
       <div class="game-brief__reticle game-brief__r-tr"></div>
       <div class="game-brief__reticle game-brief__r-bl"></div>
@@ -399,7 +399,7 @@ function renderFakeUI(tool) {
             <div class="fake__engine-h">Yandex <span>· CIS-strong</span></div>
             <div class="fake__engine-body">
               <div class="fake__match">
-                <img src="/img/uploads/simulator/candidate-vk.jpg" alt="">
+                <img src="img/uploads/simulator/candidate-vk.jpg" alt="">
                 <div><strong>vk.com/roma_yellow_dnepr</strong><br><small>«Роман Ж.» · Дніпро · 79% match · profile last active 2022</small></div>
               </div>
               <div class="fake__match" style="opacity:.7">
