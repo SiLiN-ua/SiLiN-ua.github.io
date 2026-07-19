@@ -336,7 +336,7 @@
         "id": "red_flag",
         "label_uk": "🚩 RED FLAG — не рекомендую",
         "label_en": "🚩 RED FLAG — do not recommend",
-        "points": -50,
+        "points": -70,
         "correct": false,
         "verdict": "fail",
         "feedback_uk": "💥 FALSE POSITIVE. Ти прогорнув кожен слабкий сигнал як доказ. Компанія втратила senior-експерта, який був потрібен. Кандидатка може подати позов за наклеп (в UA — стаття 297 КК). У реальності це коштувало б клієнту суду + втрату експертизи + твоєї репутації. Convergence-bias — це не аналіз, це паніка.",
@@ -346,7 +346,7 @@
         "id": "insufficient",
         "label_uk": "⚠️ Недостатньо даних",
         "label_en": "⚠️ Insufficient data",
-        "points": 10,
+        "points": 5,
         "correct": false,
         "verdict": "weak",
         "feedback_uk": "⚠️ Обережно, але безпідставно. Ти мав: реальний CVE-слід + верифікований КПІ + чіткий disambiguation. Це достатньо для GREEN. «Недостатньо даних» тут = страх взяти відповідальність на себе. Клієнт не отримав відповіді, ти витратив бюджет OSINT-скринінгу даремно.",
@@ -430,21 +430,22 @@
       { "text": "Petrenko O.", "kind": "neutral" },
       { "text": "Olena OSCP", "kind": "neutral" },
       { "text": "Елена ІТ", "kind": "neutral" },
-      { "text": "Petrenko pentest", "kind": "neutral" },
       { "text": "не рекомендую", "kind": "red" },
       { "text": "завищує ціни", "kind": "red" },
-      { "text": "врятувала бекап", "kind": "neutral" },
+      { "text": "звільнена скандально", "kind": "red" },
+      { "text": "конфліктна", "kind": "red" },
+      { "text": "підозріла", "kind": "red" },
       { "text": "Petrenko SANS", "kind": "neutral" },
-      { "text": "Elena аудитор", "kind": "neutral" },
-      { "text": "+ 11 tags…", "kind": "neutral" }
+      { "text": "врятувала бекап", "kind": "neutral" },
+      { "text": "+ 9 tags…", "kind": "neutral" }
     ],
     "google_dorks_query": "\"Olena Petrenko\" (CVE OR github OR SANS OR pentest) filetype:pdf OR site:youtube.com",
     "google_dorks_results": [
-      { "url": "cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14328", "snippet": "CVE-2018-14328 · Vulnerability discovered by Olena Petrenko · Improper access control in banking SWIFT gateway…" },
-      { "url": "cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9231", "snippet": "CVE-2019-9231 · Credit given to Olena Petrenko for reporting…" },
-      { "url": "youtube.com/watch?v=rSTh_kyiv2021", "snippet": "OSCONF Kyiv 2021 · Olena Petrenko: «Insider Threat in Ukrainian FinTech» · 42:11 · 8.4K views" },
-      { "url": "github.com/petrenkoolena/repos", "snippet": "petrenkoolena · 40 public repositories · pinned: swift-scanner, osint-toolkit, kyiv-appsec-notes · joined 2013" },
-      { "url": "dou.ua/users/olena-petrenko/", "snippet": "Olena Petrenko · Author page · 6 articles since 2017 · «Як я знайшла CVE в українському банку», «Redteam-звіт: реальний випадок»" }
+      { "url": "cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9231", "snippet": "CVE-2019-9231 · Credit given to «O. Petrenko, ISSP Kyiv» for reporting · single credit, no follow-up research published" },
+      { "url": "youtube.com/watch?v=rSTh_kyiv2021", "snippet": "OSCONF Kyiv 2021 · «Insider Threat in Ukrainian FinTech» · speaker list includes O. Petrenko · 41:22 · 1.2K views · small conference" },
+      { "url": "github.com/petrenkoolena/repos", "snippet": "petrenkoolena · 18 public repositories · 12 are forks, 6 originals · pinned repos have last commits 2020-2022 · joined 2016" },
+      { "url": "dou.ua/users/olena-petrenko/", "snippet": "Olena Petrenko · Author page · 2 articles 2018-2019 · «Як я знайшла CVE в українському банку», «Redteam-звіт» · comments closed, ratings mixed" },
+      { "url": "web.archive.org/web/2015*/olena-blog.livejournal.com", "snippet": "«Мій досвід у російській IT-компанії до анексії» · post 2015-06 · reflection on 2007-2013 employment in Moscow office · archive only, blog deleted 2016" }
     ],
     "linkedin_meta": "Kyiv · Joined LinkedIn 12 years ago · 780 connections",
     "linkedin_summary_uk": "Senior Security Consultant · Independent · «Adversary emulation, insider-threat programs, offensive research»",
@@ -469,17 +470,18 @@
       { "list": "PEP database", "status": "clean" },
       { "list": "Interpol Red Notices", "status": "clean" }
     ],
-    "sanctions_namesake_uk": "AUTO-MATCH · surname «Petrenko» · OFAC SDN 2022 · Yuriy Oleksiyovych Petrenko · DOB 1968-04-11 · citizenship: RU · residence: Moscow · designation: senior finance official at sanctioned entity. Subject on query: Olena Olehivna Petrenko · DOB 1985-02-19 · citizenship: UA · residence: Kyiv. Match score: 41%. Auto-status: REVIEW.",
-    "sanctions_namesake_en": "AUTO-MATCH · surname «Petrenko» · OFAC SDN 2022 · Yuriy Oleksiyovych Petrenko · DOB 1968-04-11 · citizenship: RU · residence: Moscow · designation: senior finance official at sanctioned entity. Subject on query: Olena Olehivna Petrenko · DOB 1985-02-19 · citizenship: UA · residence: Kyiv. Match score: 41%. Auto-status: REVIEW.",
+    "sanctions_namesake_uk": "AUTO-MATCH · full name «Olena Petrenko» · EU sanctions consolidated 2023 · Olena Oleksiivna Petrenko · DOB 1984-11-03 · dual citizenship RU/UA · residence: previously Moscow, now unknown · designation: money-laundering scheme, tier-2 sanctions 2023. Subject on query: Olena Olehivna Petrenko · DOB 1985-02-19 · citizenship: UA (single) · residence: Kyiv. Match score: 71%. Auto-status: MANUAL REVIEW REQUIRED.",
+    "sanctions_namesake_en": "AUTO-MATCH · full name «Olena Petrenko» · EU sanctions consolidated 2023 · Olena Oleksiivna Petrenko · DOB 1984-11-03 · dual RU/UA citizenship · residence: previously Moscow, now unknown · designation: money-laundering scheme, tier-2 sanctions 2023. Subject on query: Olena Olehivna Petrenko · DOB 1985-02-19 · citizenship: UA (single) · residence: Kyiv. Match score: 71%. Auto-status: MANUAL REVIEW REQUIRED.",
     "insead_query": "Verifying CV education: Olena Petrenko · MSc Cybersecurity · NTUU KPI · 2007",
     "insead_result_title": "✓ VERIFIED",
     "insead_result_body_uk": "edbo.gov.ua record: Petrenko O.O. · MSc · NTUU KPI · Faculty of Applied Mathematics · 2007. Thesis on file: «Аналіз атак на банківські SWIFT-протоколи», public in KPI library archive. No INSEAD / Harvard / Wharton records found. No LinkedIn INSEAD-alumni group membership.",
     "insead_result_body_en": "edbo.gov.ua record: Petrenko O.O. · MSc · NTUU KPI · Faculty of Applied Mathematics · 2007. Thesis on file: «Analysis of attacks on banking SWIFT protocols», public in KPI library archive. No INSEAD / Harvard / Wharton records found. No LinkedIn INSEAD-alumni group membership.",
     "court_query": "Петренко Олена Олегівна · ПІБ · всі області · 2010-2024",
     "court_cases": [
-      { "num": "№520/2841/16", "date": "2016-05-22", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. до Іваненко С.П. — поділ спільно нажитого майна. Задоволено частково (квартира — за позивачем, автомобіль — за відповідачем).", "body_en": "Petrenko O.O. v. Ivanenko S.P. — division of joint marital property. Partially granted (apartment to plaintiff, car to defendant).", "kind": "family" },
-      { "num": "№520/9114/18", "date": "2018-11-08", "court_uk": "Печерський р/с Києва", "court_en": "Pecherskyi District Court of Kyiv", "body_uk": "Розлучення Петренко О.О. та Іваненко С.П. (спрощена процедура — за спільною заявою).", "body_en": "Divorce of Petrenko O.O. and Ivanenko S.P. (simplified — by joint application).", "kind": "family" },
-      { "num": "№520/4471/19", "date": "2019-03-15", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. — визначення порядку побачень батька з дитиною. Задоволено на користь позивачки.", "body_en": "Petrenko O.O. claim — determination of father's visitation schedule with the child. Granted in plaintiff's favor.", "kind": "family" }
+      { "num": "№520/2841/16", "date": "2016-05-22", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. до Іваненко С.П. — поділ спільно нажитого майна. Задоволено частково.", "body_en": "Petrenko O.O. v. Ivanenko S.P. — division of joint marital property. Partially granted.", "kind": "family" },
+      { "num": "№520/9114/18", "date": "2018-11-08", "court_uk": "Печерський р/с Києва", "court_en": "Pecherskyi District Court of Kyiv", "body_uk": "Розлучення Петренко О.О. та Іваненко С.П. (спрощена процедура).", "body_en": "Divorce of Petrenko O.O. and Ivanenko S.P. (simplified).", "kind": "family" },
+      { "num": "№520/4471/19", "date": "2019-03-15", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. — визначення порядку побачень батька з дитиною. Задоволено на користь позивачки.", "body_en": "Petrenko O.O. claim — father's visitation schedule with child. Granted in plaintiff's favor.", "kind": "family" },
+      { "num": "№910/2287/21", "date": "2021-04-19", "court_uk": "Господарський суд Києва", "court_en": "Kyiv Commercial Court", "body_uk": "Позов ТОВ «Berezha Security» (колишній роботодавець) до Петренко О.О. — стягнення 480 000 грн за порушення NDA після звільнення. Рішення: у задоволенні позову відмовлено, справу закрито за відсутністю достатніх доказів.", "body_en": "«Berezha Security» LLC (former employer) v. Petrenko O.O. — 480 000 UAH claim for NDA breach post-employment. Ruling: claim denied, case dismissed for lack of sufficient evidence.", "kind": "commercial" }
     ],
     "court_doc_image": "img/uploads/simulator/case2/court-doc-blur.png"
   }
