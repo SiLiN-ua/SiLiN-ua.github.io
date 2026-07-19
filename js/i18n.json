@@ -285,7 +285,19 @@
         "ss.game5.sub": "ФІНАЛ. Український оборонний R&D-стартап наймає DevOps з допуском на дві виробничі локації. Кандидат чистий на поверхні. Твій вердикт вирішує не тільки долю найму — вирішує безпеку об'єктів. Помилка коштує життя. 20 хвилин. Максимально складно.",
         "ss.game5.tag1": "Counterintelligence",
         "ss.game5.tag2": "Dual-Layer Threat",
-        "ss.game5.tag3": "Defense Screening"
+        "ss.game5.tag3": "Defense Screening",
+        "ss.tile.live": "✓ Live",
+        "ss.tile.soon": "🔒 Скоро",
+        "ss.tile.cases": "Кейсів: <strong>5</strong>",
+        "ss.tile.cert": "Сертифікат: <strong>так</strong>",
+        "ss.tile.enter": "▶ Відкрити симулятор",
+        "ss.tile.soon_cta": "В розробці",
+        "ss.tile.01.title": "🚩 Скринінг кандидатів на red-flag",
+        "ss.tile.01.sub": "Для HR, corporate security, детективних агенцій і комплаєнс-департаментів. 5 кейсів: fake CFO, adversarial APPROVE-trap, family-chain pivot, twin-impersonation через voice biometric, counterintel dual-layer.",
+        "ss.tile.02.title": "?????",
+        "ss.tile.02.sub": "Наступна тематична серія. Розблокується після виходу.",
+        "ss.tile.03.title": "?????",
+        "ss.tile.03.sub": "Наступна тематична серія. Розблокується після виходу."
     },
     "en": {
         "brand.first": "Yehor",
@@ -573,6 +585,18 @@
         "ss.game5.sub": "FINAL. Ukrainian defense R&D startup hires a DevOps with access to two production facilities. Candidate looks clean on the surface. Your verdict decides not only hiring — but facility security. Error costs lives. 20 minutes. Maximum difficulty.",
         "ss.game5.tag1": "Counterintelligence",
         "ss.game5.tag2": "Dual-Layer Threat",
-        "ss.game5.tag3": "Defense Screening"
+        "ss.game5.tag3": "Defense Screening",
+        "ss.tile.live": "✓ Live",
+        "ss.tile.soon": "🔒 Soon",
+        "ss.tile.cases": "Cases: <strong>5</strong>",
+        "ss.tile.cert": "Certificate: <strong>yes</strong>",
+        "ss.tile.enter": "▶ Open simulator",
+        "ss.tile.soon_cta": "In development",
+        "ss.tile.01.title": "🚩 Candidate red-flag screening",
+        "ss.tile.01.sub": "For HR, corporate security, detective agencies and compliance departments. 5 cases: fake CFO, adversarial APPROVE-trap, family-chain pivot, twin-impersonation via voice biometric, counterintel dual-layer.",
+        "ss.tile.02.title": "?????",
+        "ss.tile.02.sub": "Next thematic series. Unlocks after release.",
+        "ss.tile.03.title": "?????",
+        "ss.tile.03.sub": "Next thematic series. Unlocks after release."
     }
 }

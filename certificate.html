@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="img/brand/panther-180.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shadow Certificate · Єгор Селін</title>
-<meta name="description" content="Shadow Certificate — офіційне свідоцтво про успішне проходження OSINT-симулятора">
+<meta name="description" content="Shadow Certificate — official completion certificate">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,26 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
   min-height: 100vh;
-  background: #0a0e1a;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(74, 158, 255, .08) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 90%, rgba(255, 200, 100, .05) 0%, transparent 40%),
+    linear-gradient(180deg, #141c30 0%, #0d1424 100%);
   color: #f0e6d2;
   font-family: 'Inter', sans-serif;
 }
+
+/* Starfield canvas — behind everything */
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .7;
+}
+
 .cert-page {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   padding: 2rem 1rem;
   display: flex;
@@ -33,85 +48,87 @@ html, body {
   gap: .5rem;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
 }
 .cert-toolbar__btn {
   padding: .55rem 1.1rem;
-  background: rgba(15, 21, 36, .6);
-  border: 1px solid rgba(74, 158, 255, .4);
+  background: rgba(30, 42, 68, .7);
+  border: 1px solid rgba(127, 214, 255, .4);
   color: #f0e6d2;
   font-family: 'JetBrains Mono', monospace;
   font-size: .85rem;
   cursor: pointer;
   transition: all .2s;
+  text-decoration: none;
+  display: inline-block;
 }
-.cert-toolbar__btn:hover { background: rgba(74, 158, 255, .12); border-color: #4a9eff; }
-.cert-toolbar__btn--active { background: rgba(74, 158, 255, .2); color: #7fd6ff; border-color: #7fd6ff; }
-.cert-toolbar__btn--primary { background: #4a9eff; color: #0a0e1a; border-color: #4a9eff; font-weight: 600; }
-.cert-toolbar__btn--primary:hover { background: #7fd6ff; }
+.cert-toolbar__btn:hover { background: rgba(74, 158, 255, .18); border-color: #7fd6ff; }
+.cert-toolbar__btn--active { background: rgba(74, 158, 255, .3); color: #7fd6ff; border-color: #7fd6ff; }
+.cert-toolbar__btn--primary { background: #7fd6ff; color: #0a0e1a; border-color: #7fd6ff; font-weight: 600; }
+.cert-toolbar__btn--primary:hover { background: #a3e0ff; }
 
-/* === CERTIFICATE CARD === */
+/* === CERTIFICATE CARD (landscape) === */
 .cert {
   width: 100%;
-  max-width: 900px;
-  aspect-ratio: 1 / 1.414; /* A4 portrait */
+  max-width: 1200px;
+  aspect-ratio: 1.414 / 1; /* A4 landscape */
   background:
-    linear-gradient(135deg, rgba(20, 28, 48, .96) 0%, rgba(10, 14, 26, .98) 100%);
+    radial-gradient(ellipse at 50% 50%, rgba(48, 68, 105, .95) 0%, rgba(30, 42, 68, .96) 60%, rgba(22, 30, 52, .98) 100%);
   position: relative;
   overflow: hidden;
-  color: #f0e6d2;
-  padding: 3.5rem 3rem;
+  color: #f5ecd8;
+  padding: 3.5rem 4.5rem;
   display: flex;
   flex-direction: column;
   font-family: 'Cormorant Garamond', serif;
-  box-shadow: 0 20px 80px rgba(0, 0, 0, .7), 0 0 0 1px rgba(200, 180, 120, .15);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, .6), 0 0 0 1px rgba(220, 195, 130, .25);
   border: 8px solid transparent;
   background-clip: padding-box;
 }
-/* Ornate border */
+/* Ornate borders */
 .cert::before {
   content: '';
   position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(200, 180, 120, .35);
+  inset: 14px;
+  border: 1.5px solid rgba(220, 195, 130, .55);
   pointer-events: none;
   z-index: 2;
 }
 .cert::after {
   content: '';
   position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(200, 180, 120, .15);
+  inset: 22px;
+  border: 1px solid rgba(220, 195, 130, .25);
   pointer-events: none;
   z-index: 2;
 }
-/* Watermark */
+/* Round panther seal — WATERMARK */
 .cert__watermark {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 65%;
+  width: 46%;
   aspect-ratio: 1;
-  background: url('img/brand/panther-cert.jpg') center/contain no-repeat;
-  opacity: .07;
-  filter: grayscale(.3);
+  background: url('img/brand/panther-seal-round.png') center/contain no-repeat;
+  opacity: .16;
   pointer-events: none;
   z-index: 1;
+  filter: sepia(.3) hue-rotate(-10deg) brightness(1.15);
 }
 /* Corner ornaments */
 .cert__corner {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  border-color: #c8b478;
+  width: 55px;
+  height: 55px;
+  border-color: #dcc382;
   z-index: 3;
 }
-.cert__corner--tl { top: 26px; left: 26px; border-top: 2px solid; border-left: 2px solid; }
-.cert__corner--tr { top: 26px; right: 26px; border-top: 2px solid; border-right: 2px solid; }
-.cert__corner--bl { bottom: 26px; left: 26px; border-bottom: 2px solid; border-left: 2px solid; }
-.cert__corner--br { bottom: 26px; right: 26px; border-bottom: 2px solid; border-right: 2px solid; }
+.cert__corner--tl { top: 28px; left: 28px; border-top: 2px solid; border-left: 2px solid; }
+.cert__corner--tr { top: 28px; right: 28px; border-top: 2px solid; border-right: 2px solid; }
+.cert__corner--bl { bottom: 28px; left: 28px; border-bottom: 2px solid; border-left: 2px solid; }
+.cert__corner--br { bottom: 28px; right: 28px; border-bottom: 2px solid; border-right: 2px solid; }
 
 /* Content */
 .cert__inner {
@@ -123,29 +140,29 @@ html, body {
 }
 .cert__head {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 .cert__eyebrow {
   font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  letter-spacing: .3em;
-  color: #c8b478;
+  font-size: .75rem;
+  letter-spacing: .35em;
+  color: #dcc382;
   text-transform: uppercase;
-  margin-bottom: .75rem;
+  margin-bottom: .5rem;
 }
 .cert__title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 500;
-  letter-spacing: .06em;
-  color: #f0e6d2;
+  letter-spacing: .08em;
+  color: #f5ecd8;
   line-height: 1;
-  margin-bottom: .5rem;
+  margin-bottom: .4rem;
 }
 .cert__subtitle {
   font-family: 'JetBrains Mono', monospace;
-  font-size: .85rem;
-  letter-spacing: .18em;
+  font-size: .78rem;
+  letter-spacing: .2em;
   color: #7fd6ff;
   text-transform: uppercase;
 }
@@ -153,78 +170,72 @@ html, body {
 .cert__preamble {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-style: italic;
-  color: rgba(240, 230, 210, .8);
-  margin: 1.5rem 0 1rem;
+  color: rgba(245, 236, 216, .82);
+  margin: 1rem 0 .5rem;
   letter-spacing: .04em;
 }
 .cert__name {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: 600;
-  color: #c8b478;
+  color: #dcc382;
   letter-spacing: .06em;
-  margin: .5rem 0 1.5rem;
-  border-bottom: 1px solid rgba(200, 180, 120, .35);
-  padding-bottom: 1.2rem;
-  text-shadow: 0 0 20px rgba(200, 180, 120, .2);
+  margin: .3rem 0 .8rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(220, 195, 130, .4);
+  text-shadow: 0 0 25px rgba(220, 195, 130, .3);
   word-break: break-word;
 }
 .cert__body {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-style: italic;
-  color: #f0e6d2;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: #f5ecd8;
+  line-height: 1.55;
+  margin-bottom: 1rem;
   letter-spacing: .02em;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cert__body strong {
   font-style: normal;
   font-weight: 600;
-  color: #f0e6d2;
-}
-.cert__prog {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1rem;
-  letter-spacing: .12em;
-  color: #7fd6ff;
-  text-align: center;
-  margin: 1rem 0;
 }
 
-/* Stats grid */
+/* Stats grid — landscape 3-col */
 .cert__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 1.5rem 0;
-  max-width: 620px;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  max-width: 720px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 .cert__stat {
   text-align: center;
-  padding: 1rem .5rem;
-  border-top: 1px solid rgba(200, 180, 120, .3);
-  border-bottom: 1px solid rgba(200, 180, 120, .3);
+  padding: .8rem .5rem;
+  border-top: 1px solid rgba(220, 195, 130, .3);
+  border-bottom: 1px solid rgba(220, 195, 130, .3);
 }
 .cert__stat-val {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 500;
-  color: #c8b478;
+  color: #dcc382;
   line-height: 1;
 }
 .cert__stat-lbl {
   font-family: 'JetBrains Mono', monospace;
-  font-size: .68rem;
+  font-size: .65rem;
   letter-spacing: .18em;
-  color: rgba(240, 230, 210, .7);
+  color: rgba(245, 236, 216, .7);
   text-transform: uppercase;
   margin-top: .4rem;
 }
@@ -233,77 +244,91 @@ html, body {
 .cert__foot {
   margin-top: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
   align-items: end;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
-.cert__sig {
-  text-align: left;
+.cert__sig { text-align: left; }
+.cert__sig-img {
+  max-width: 320px;
+  height: auto;
+  margin-bottom: .2rem;
+  display: block;
 }
 .cert__sig-line {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.4rem;
-  color: #f0e6d2;
-  line-height: 1;
-  margin-bottom: .3rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid rgba(200, 180, 120, .4);
-}
-.cert__sig-role {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .72rem;
-  letter-spacing: .12em;
-  color: rgba(240, 230, 210, .7);
-  text-transform: uppercase;
-  margin-top: .4rem;
+  border-bottom: 1px solid rgba(220, 195, 130, .5);
+  padding-bottom: .3rem;
+  margin-bottom: .5rem;
 }
 .cert__sig-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  color: #f0e6d2;
+  font-size: 1.1rem;
+  color: #f5ecd8;
   letter-spacing: .04em;
 }
+.cert__sig-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  color: rgba(245, 236, 216, .7);
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+
 .cert__meta {
   text-align: right;
   font-family: 'JetBrains Mono', monospace;
   font-size: .75rem;
   letter-spacing: .1em;
-  color: rgba(240, 230, 210, .7);
-  line-height: 1.7;
+  color: rgba(245, 236, 216, .8);
+  line-height: 1.9;
 }
-.cert__meta strong { color: #c8b478; font-weight: normal; }
+.cert__meta strong { color: #dcc382; font-weight: normal; }
+.cert__meta-issued {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: .9rem;
+  color: rgba(245, 236, 216, .75);
+  margin-top: .8rem;
+  letter-spacing: .02em;
+}
 
 /* Print styles */
 @media print {
   html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
+  #stars { display: none !important; }
   .cert-page { padding: 0 !important; background: white !important; }
   .cert-toolbar { display: none !important; }
   .cert {
     box-shadow: none !important;
     max-width: none !important;
     width: 100vw !important;
+    height: 100vh !important;
     aspect-ratio: unset !important;
-    min-height: 100vh !important;
     page-break-after: avoid !important;
   }
+  @page { size: A4 landscape; margin: 0; }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .cert { padding: 2rem 1.5rem; aspect-ratio: auto; min-height: 90vh; }
-  .cert__title { font-size: 2rem; }
-  .cert__name { font-size: 2.4rem; }
-  .cert__body { font-size: 1.05rem; }
-  .cert__foot { grid-template-columns: 1fr; text-align: center; }
+  .cert__title { font-size: 1.8rem; }
+  .cert__name { font-size: 2rem; }
+  .cert__body { font-size: .95rem; max-width: 100%; }
+  .cert__foot { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
   .cert__meta { text-align: center; }
   .cert__sig { text-align: center; }
+  .cert__sig-img { margin-left: auto; margin-right: auto; max-width: 240px; }
   .cert__stats { grid-template-columns: 1fr; gap: .5rem; }
   .cert__stat { padding: .5rem; }
-  .cert__stat-val { font-size: 1.8rem; }
+  .cert__stat-val { font-size: 1.6rem; }
 }
 </style>
 </head>
 <body>
+
+<canvas id="stars"></canvas>
 
 <div class="cert-page">
 
@@ -351,24 +376,25 @@ html, body {
         </div>
       </div>
 
-      <div class="cert__prog" id="c-issued-line">Видано · Дніпро, Україна</div>
-
       <div class="cert__foot">
         <div class="cert__sig">
-          <div class="cert__sig-line">Yehor Selin</div>
-          <div class="cert__sig-name">Єгор Селін</div>
-          <div class="cert__sig-role" id="c-sig-role">OSINT & SOCMINT Investigator · Дніпро</div>
+          <div class="cert__sig-line"><img src="img/brand/signature-yehor.png" alt="Yehor Selin signature" class="cert__sig-img"></div>
+          <div class="cert__sig-name">Єгор Селін · Yehor Selin</div>
+          <div class="cert__sig-role" id="c-sig-role">OSINT & SOCMINT Investigator</div>
         </div>
         <div class="cert__meta">
           <div><span id="c-meta-date-lbl">Дата</span>: <strong id="c-date">—</strong></div>
           <div><span id="c-meta-id-lbl">Cert ID</span>: <strong id="c-id">—</strong></div>
           <div><span id="c-meta-verify-lbl">Verify</span>: <strong>yehorselin.com</strong></div>
+          <div class="cert__meta-issued" id="c-issued">Issued by a Shadow Company</div>
         </div>
       </div>
     </div>
   </div>
 
 </div>
+
+<script src="js/graph.js"></script>
 
 <script>
 const I18N = {
@@ -381,11 +407,11 @@ const I18N = {
     cases_lbl: 'Кейсів пройдено',
     pts_lbl: 'Всього очок',
     rank_lbl: 'Ранг',
-    issued: 'Видано · Дніпро, Україна',
-    sig_role: 'OSINT & SOCMINT Investigator · Дніпро',
+    sig_role: 'OSINT & SOCMINT Investigator',
     meta_date: 'Дата',
     meta_id: 'Cert ID',
     meta_verify: 'Перевірка',
+    issued: 'Issued by a Shadow Company',
     rank_master: 'Master · Shadow Hunter',
     rank_senior: 'Senior Investigator',
     rank_junior: 'Junior Analyst',
@@ -400,11 +426,11 @@ const I18N = {
     cases_lbl: 'Cases completed',
     pts_lbl: 'Total points',
     rank_lbl: 'Rank',
-    issued: 'Issued · Dnipro, Ukraine',
-    sig_role: 'OSINT & SOCMINT Investigator · Dnipro',
+    sig_role: 'OSINT & SOCMINT Investigator',
     meta_date: 'Date',
     meta_id: 'Cert ID',
     meta_verify: 'Verify',
+    issued: 'Issued by a Shadow Company',
     rank_master: 'Master · Shadow Hunter',
     rank_senior: 'Senior Investigator',
     rank_junior: 'Junior Analyst',
@@ -418,21 +444,16 @@ function rankByPts(pts) {
   if (pts >= 1000) return 'junior';
   return 'trainee';
 }
-
 function fmtDate(iso, lang) {
   const d = new Date(iso);
-  const opts = { year: 'numeric', month: 'long', day: 'numeric' };
-  return d.toLocaleDateString(lang === 'en' ? 'en-US' : 'uk-UA', opts);
+  return d.toLocaleDateString(lang === 'en' ? 'en-US' : 'uk-UA', { year: 'numeric', month: 'long', day: 'numeric' });
 }
-
-// Generate deterministic cert-ID from nick + date
 function certId(nick, dateISO) {
   const src = nick + '|' + dateISO;
   let hash = 0;
   for (let i = 0; i < src.length; i++) hash = ((hash << 5) - hash + src.charCodeAt(i)) | 0;
   const short = Math.abs(hash).toString(36).toUpperCase().slice(0, 6);
-  const y = new Date(dateISO).getFullYear();
-  return 'SS-01-' + short + '-' + y;
+  return 'SS-01-' + short + '-' + new Date(dateISO).getFullYear();
 }
 
 function render(lang) {
@@ -444,7 +465,6 @@ function render(lang) {
   const rank = rankByPts(pts);
 
   document.documentElement.lang = lang;
-
   document.getElementById('c-eyebrow').textContent = T.eyebrow;
   document.getElementById('c-title').textContent = T.title;
   document.getElementById('c-subtitle').textContent = T.subtitle;
@@ -456,26 +476,21 @@ function render(lang) {
   document.getElementById('c-stat-pts-lbl').textContent = T.pts_lbl;
   document.getElementById('c-stat-rank-lbl').textContent = T.rank_lbl;
   document.getElementById('c-stat-rank').textContent = T['rank_' + rank];
-  document.getElementById('c-issued-line').textContent = T.issued;
   document.getElementById('c-sig-role').textContent = T.sig_role;
   document.getElementById('c-meta-date-lbl').textContent = T.meta_date;
   document.getElementById('c-meta-id-lbl').textContent = T.meta_id;
   document.getElementById('c-meta-verify-lbl').textContent = T.meta_verify;
+  document.getElementById('c-issued').textContent = T.issued;
   document.getElementById('c-date').textContent = fmtDate(dateISO, lang);
   document.getElementById('c-id').textContent = certId(nick, dateISO);
-
   document.title = T.title + ' · ' + nick;
-
   document.getElementById('btn-lang-uk').classList.toggle('cert-toolbar__btn--active', lang === 'uk');
   document.getElementById('btn-lang-en').classList.toggle('cert-toolbar__btn--active', lang === 'en');
 }
-
 document.getElementById('btn-lang-uk').addEventListener('click', () => render('uk'));
 document.getElementById('btn-lang-en').addEventListener('click', () => render('en'));
 document.getElementById('btn-print').addEventListener('click', () => window.print());
-
-const paramLang = new URLSearchParams(location.search).get('lang');
-render(paramLang === 'en' ? 'en' : 'uk');
+render(new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'uk');
 </script>
 
 </body>

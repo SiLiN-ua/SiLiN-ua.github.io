@@ -9,18 +9,116 @@
 <meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
 <title>Shadow Simulator · Interactive OSINT training · Єгор Селін</title>
 <meta name="description" content="Shadow Simulator — тренажерні симуляції для OSINT-практиків. Кожен симулятор — 5 інтерактивних кейсів однієї теми + сертифікат за успішне проходження.">
-<meta name="keywords" content="OSINT симулятор, OSINT тренажер, скринінг кандидатів OSINT, red-flag OSINT, OSINT-сертифікат онлайн">
+<meta name="keywords" content="OSINT симулятор, OSINT тренажер, скринінг кандидатів OSINT, red-flag OSINT">
 <link rel="canonical" href="https://yehorselin.com/simulator.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shadow Simulator · Interactive OSINT training">
-<meta property="og:description" content="Тренажерні симуляції для OSINT-практиків. Кожен симулятор — 5 кейсів + сертифікат.">
+<meta property="og:description" content="Тренажерні симуляції для OSINT-практиків. Обирай тематичний симулятор.">
 <meta property="og:url" content="https://yehorselin.com/simulator.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
-<link rel="alternate" type="application/rss+xml" title="OSINT-новини" href="/feed.xml">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
+<style>
+/* Sim gallery tiles */
+.sim-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.sim-tile {
+  position: relative;
+  padding: 2rem 1.75rem 1.75rem;
+  background: rgba(15, 21, 36, .55);
+  border: 1px solid var(--border);
+  transition: all .25s var(--ease);
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+.sim-tile--live {
+  border-color: rgba(127, 214, 255, .5);
+  background: linear-gradient(160deg, rgba(74, 158, 255, .10) 0%, rgba(15, 21, 36, .55) 60%);
+}
+.sim-tile--live:hover {
+  border-color: var(--ice);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(74, 158, 255, .18);
+}
+.sim-tile--soon { opacity: .55; cursor: not-allowed; }
+.sim-tile__num {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  color: var(--ice);
+  margin-bottom: .5rem;
+}
+.sim-tile__tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: .3rem .7rem;
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .15em;
+  border-radius: 2px;
+}
+.sim-tile__tag--live { color: #a3e6a3; border-color: rgba(163, 230, 163, .5); background: rgba(163, 230, 163, .08); }
+.sim-tile__tag--soon { color: var(--text-mute); }
+.sim-tile__title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--cream);
+  margin: .5rem 0 .75rem;
+  line-height: 1.15;
+}
+.sim-tile__sub {
+  color: var(--text-dim);
+  font-size: .95rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.sim-tile__meta {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--text-mute);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.sim-tile__meta span strong { color: var(--cream); }
+.sim-tile__cta {
+  align-self: flex-start;
+  padding: .55rem 1.1rem;
+  background: var(--ice);
+  color: var(--dark);
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  letter-spacing: .1em;
+  border: none;
+  cursor: pointer;
+  transition: background .2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.sim-tile--live .sim-tile__cta:hover { background: #a3e0ff; }
+.sim-tile--soon .sim-tile__cta { background: rgba(200, 200, 200, .1); color: var(--text-mute); pointer-events: none; }
+.sim-tile__lock {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  opacity: .35;
+}
+</style>
 </head>
 <body>
 <canvas id="stars"></canvas>
@@ -60,11 +158,11 @@
     <h1 data-i18n="ss.hero.title">Тренажерні симуляції для OSINT-практиків</h1>
     <p class="ss-hero__lead" data-i18n="ss.hero.lead">Кожен симулятор — 5 інтерактивних кейсів однієї теми, з тупиками, рангами і глобальним leaderboard. Проходиш усі 5 і збираєш 1000+ pts — отримуєш сертифікат про успішне навчання по цій темі.</p>
     <div class="ss-hero__stripe">
-      <div><span data-i18n="ss.stripe.sims">Симулятори</span><strong data-i18n="ss.stripe.sims.val">1 у розробці</strong></div>
-      <div><span data-i18n="ss.stripe.games">Кейсів</span><strong data-i18n="ss.stripe.games.val">5 у симуляторі</strong></div>
-      <div><span data-i18n="ss.stripe.time">Час</span><strong data-i18n="ss.stripe.time.val">~12 хв / кейс</strong></div>
-      <div><span data-i18n="ss.stripe.cooldown">Кулдаун</span><strong data-i18n="ss.stripe.cooldown.val">1 год при fail</strong></div>
-      <div><span data-i18n="ss.stripe.cert">Сертифікат</span><strong data-i18n="ss.stripe.cert.val">за симулятор</strong></div>
+      <div><span data-i18n="ss.stripe.sims">Симулятори</span><strong>1 · live</strong></div>
+      <div><span data-i18n="ss.stripe.games">Кейсів</span><strong>5 у симуляторі</strong></div>
+      <div><span data-i18n="ss.stripe.time">Час</span><strong>~12-20 хв / кейс</strong></div>
+      <div><span data-i18n="ss.stripe.cooldown">Кулдаун</span><strong>1 год при fail</strong></div>
+      <div><span data-i18n="ss.stripe.cert">Сертифікат</span><strong>за симулятор</strong></div>
     </div>
   </div>
 </section>
@@ -76,130 +174,57 @@
   </div>
 </section>
 
-<!-- SIMULATOR #01 -->
+<!-- SIM GALLERY -->
 <section class="ss-section">
   <div class="container">
     <div class="ss-secttl">
       <span class="ss-secttl__pre" data-i18n="ss.sims.pre">СИМУЛЯТОРИ</span>
-      <h2 data-i18n="ss.sims.title">Доступні тематичні симулятори</h2>
-      <p data-i18n="ss.sims.subtitle">Поки що один симулятор у розробці. Наступні відкриються після завершення першого.</p>
+      <h2 data-i18n="ss.sims.title">Обери тематичний симулятор</h2>
+      <p data-i18n="ss.sims.subtitle">Клацай на живий симулятор — там на тебе чекають 5 кейсів + сертифікат.</p>
     </div>
 
-    <!-- Simulator Card -->
-    <article class="sim-card">
-      <header class="sim-card__head">
-        <div class="sim-card__num">SIM #01</div>
-        <div class="sim-card__tag" data-i18n="ss.sim1.tag">🚩 CANDIDATE RED-FLAG SCREENING</div>
-      </header>
-      <h3 class="sim-card__title" data-i18n="ss.sim1.title">Симулятор #01 · Скринінг кандидатів на red-flag</h3>
-      <p class="sim-card__sub" data-i18n="ss.sim1.sub">Тренажер для HR, corporate security, детективних агенцій і комплаєнс-департаментів. 5 різних кейсів — від фейкового CFO до кандидата з прихованою кримінальною історією. Кожен кейс — реалістичний workflow OSINT-скринінгу з тупиками і пастками.</p>
-      <div class="sim-card__cert" id="cert-block">
-        <div class="sim-card__cert-label" data-i18n="ss.sim.cert_lbl">🎖️ Сертифікат про проходження</div>
-        <div class="sim-card__cert-name" data-i18n="ss.sim1.cert_name">«Candidate Red-Flag Screening · OSINT Training»</div>
-        <div class="sim-card__cert-req" data-i18n="ss.sim.cert_req">Умова: пройти всі 5 кейсів + зібрати 1000+ pts сумарно</div>
-        <div id="cert-status" class="sim-card__cert-status"></div>
+    <div class="sim-gallery">
+
+      <!-- SIM #01 — LIVE -->
+      <a href="simulator-01.html" class="sim-tile sim-tile--live">
+        <div class="sim-tile__tag sim-tile__tag--live" data-i18n="ss.tile.live">✓ Live</div>
+        <div class="sim-tile__num">SIM #01</div>
+        <h3 class="sim-tile__title" data-i18n="ss.tile.01.title">🚩 Скринінг кандидатів на red-flag</h3>
+        <p class="sim-tile__sub" data-i18n="ss.tile.01.sub">Для HR, corporate security, детективних агенцій і комплаєнс-департаментів. 5 кейсів: fake CFO, adversarial APPROVE-trap, family-chain pivot, twin-impersonation через voice biometric, counterintel dual-layer.</p>
+        <div class="sim-tile__meta">
+          <span data-i18n="ss.tile.cases">Кейсів: <strong>5</strong></span>
+          <span data-i18n="ss.tile.cert">Сертифікат: <strong>так</strong></span>
+        </div>
+        <span class="sim-tile__cta" data-i18n="ss.tile.enter">▶ Відкрити симулятор</span>
+      </a>
+
+      <!-- SIM #02 — COMING SOON -->
+      <div class="sim-tile sim-tile--soon">
+        <div class="sim-tile__tag sim-tile__tag--soon" data-i18n="ss.tile.soon">🔒 Скоро</div>
+        <div class="sim-tile__num">SIM #02</div>
+        <h3 class="sim-tile__title" data-i18n="ss.tile.02.title">?????</h3>
+        <p class="sim-tile__sub" data-i18n="ss.tile.02.sub">Наступна тематична серія. Розблокується після виходу.</p>
+        <div class="sim-tile__meta">
+          <span>—</span>
+        </div>
+        <span class="sim-tile__cta" data-i18n="ss.tile.soon_cta">In development</span>
+        <div class="sim-tile__lock">🔒</div>
       </div>
 
-      <div class="sim-card__games-head">
-        <span data-i18n="ss.sim.games_head">5 кейсів у симуляторі</span>
+      <!-- SIM #03 — COMING SOON -->
+      <div class="sim-tile sim-tile--soon">
+        <div class="sim-tile__tag sim-tile__tag--soon" data-i18n="ss.tile.soon">🔒 Скоро</div>
+        <div class="sim-tile__num">SIM #03</div>
+        <h3 class="sim-tile__title" data-i18n="ss.tile.03.title">?????</h3>
+        <p class="sim-tile__sub" data-i18n="ss.tile.03.sub">Наступна тематична серія. Розблокується після виходу.</p>
+        <div class="sim-tile__meta">
+          <span>—</span>
+        </div>
+        <span class="sim-tile__cta" data-i18n="ss.tile.soon_cta">In development</span>
+        <div class="sim-tile__lock">🔒</div>
       </div>
 
-      <div class="sim-games">
-        <article class="game-row game-row--ready">
-          <div class="game-row__idx">1 / 5</div>
-          <div class="game-row__body">
-            <h4 data-i18n="ss.game1.title">Кейс 1 · «Fake CFO»</h4>
-            <p data-i18n="ss.game1.sub">Компанія X розглядає Романа Морозова на позицію CFO за $180K/рік. Резюме бездоганне, паспорт-фото додано. Твоє завдання — за 12 хв зібрати достатньо доказів для red/green прапорця.</p>
-            <div class="game-row__chips">
-              <span class="proj-chip" data-i18n="ss.game1.tag1">Face Recognition</span>
-              <span class="proj-chip" data-i18n="ss.game1.tag2">Breach Data</span>
-              <span class="proj-chip" data-i18n="ss.game1.tag3">SOCMINT</span>
-              <span class="proj-chip">~250 pts max</span>
-            </div>
-          </div>
-          <div class="game-row__actions">
-            <div class="game-row__status game-row__status--live" data-i18n="ss.game.status_live">✓ Playable</div>
-            <a href="game.html?case=fake-cfo" class="btn btn--filled btn--sm" data-i18n="ss.game.play_now">▶ Грати</a>
-          </div>
-        </article>
-
-        <article class="game-row game-row--ready" data-case-id="suspicious-consultant" data-requires="fake-cfo">
-          <div class="game-row__idx">2 / 5</div>
-          <div class="game-row__body">
-            <h4 data-i18n="ss.game2.title">Кейс 2 · «Підозріла консультантка»</h4>
-            <p data-i18n="ss.game2.sub">Fintech наймає Senior Security Consultant за $120K. Кандидатка виглядає підозріло: reverse-image повертає її фото на 12 сайтах, санкційна перевірка ловить намесейка, court registry знаходить 3 справи. АЛЕ — не все, що виглядає як red flag, є фродом. Adversarial-кейс на false-positive cost.</p>
-            <div class="game-row__chips">
-              <span class="proj-chip" data-i18n="ss.game2.tag1">False Positive Cost</span>
-              <span class="proj-chip" data-i18n="ss.game2.tag2">Convergence Bias</span>
-              <span class="proj-chip" data-i18n="ss.game2.tag3">Namesake Disambiguation</span>
-              <span class="proj-chip">~350 pts max</span>
-            </div>
-          </div>
-          <div class="game-row__actions">
-            <div class="game-row__status game-row__status--live" data-i18n="ss.game.status_live">✓ Playable</div>
-            <a href="game.html?case=suspicious-consultant" class="btn btn--filled btn--sm" data-i18n="ss.game.play_now">▶ Грати</a>
-          </div>
-        </article>
-
-        <article class="game-row game-row--ready" data-case-id="family-chain" data-requires="suspicious-consultant">
-          <div class="game-row__idx">3 / 5</div>
-          <div class="game-row__body">
-            <h4 data-i18n="ss.game3.title">Кейс 3 · «Сімейний ланцюжок»</h4>
-            <p data-i18n="ss.game3.sub">Кандидат на Head of Compliance у fintech-банку. Прямі профілі закриті, LinkedIn стерильний, Google порожній. Твій навик — обхід через рідних, старі оголошення, витоки, Telegram reverse-lookup. Family chain: коли головні двері замкнені, дивись у вікна.</p>
-            <div class="game-row__chips">
-              <span class="proj-chip" data-i18n="ss.game3.tag1">Family Chain</span>
-              <span class="proj-chip" data-i18n="ss.game3.tag2">Insider Threat</span>
-              <span class="proj-chip" data-i18n="ss.game3.tag3">Indirect Pivot</span>
-              <span class="proj-chip">~350 pts max</span>
-            </div>
-          </div>
-          <div class="game-row__actions">
-            <div class="game-row__status game-row__status--live" data-i18n="ss.game.status_live">✓ Playable</div>
-            <a href="game.html?case=family-chain" class="btn btn--filled btn--sm" data-i18n="ss.game.play_now">▶ Грати</a>
-          </div>
-        </article>
-
-        <article class="game-row game-row--ready" data-case-id="shadow-candidate" data-requires="family-chain">
-          <div class="game-row__idx">4 / 5</div>
-          <div class="game-row__body">
-            <h4 data-i18n="ss.game4.title">Кейс 4 · «Двійник у тіні»</h4>
-            <p data-i18n="ss.game4.sub">Remote-first US SaaS наймає Senior Backend Engineer за $160K. Кандидата вже переговорили, все через месенджери. Voice-notes регулярні, соцмережі чисті. Клієнт готовий підписати. Твій вердикт — чи все так, як здається? Найскладніший з чотирьох.</p>
-            <div class="game-row__chips">
-              <span class="proj-chip" data-i18n="ss.game4.tag1">Voice Biometric</span>
-              <span class="proj-chip" data-i18n="ss.game4.tag2">Impersonation Fraud</span>
-              <span class="proj-chip" data-i18n="ss.game4.tag3">Wayback Archive</span>
-              <span class="proj-chip">~400 pts max</span>
-            </div>
-          </div>
-          <div class="game-row__actions">
-            <div class="game-row__status game-row__status--live" data-i18n="ss.game.status_live">✓ Playable</div>
-            <a href="game.html?case=shadow-candidate" class="btn btn--filled btn--sm" data-i18n="ss.game.play_now">▶ Грати</a>
-          </div>
-        </article>
-
-        <article class="game-row game-row--ready" data-case-id="coordinate-hunter" data-requires="shadow-candidate">
-          <div class="game-row__idx">5 / 5</div>
-          <div class="game-row__body">
-            <h4 data-i18n="ss.game5.title">Кейс 5 · «Мисливець за координатами»</h4>
-            <p data-i18n="ss.game5.sub">ФІНАЛ. Український оборонний R&D-стартап наймає DevOps з допуском на дві виробничі локації. Кандидат чистий на поверхні. Твій вердикт вирішує не тільки долю найму — вирішує безпеку об'єктів. Помилка коштує життя. 20 хвилин. Максимально складно.</p>
-            <div class="game-row__chips">
-              <span class="proj-chip" data-i18n="ss.game5.tag1">Counterintelligence</span>
-              <span class="proj-chip" data-i18n="ss.game5.tag2">Dual-Layer Threat</span>
-              <span class="proj-chip" data-i18n="ss.game5.tag3">Defense Screening</span>
-              <span class="proj-chip">~500 pts max</span>
-            </div>
-          </div>
-          <div class="game-row__actions">
-            <div class="game-row__status game-row__status--live" data-i18n="ss.game.status_live">✓ Playable</div>
-            <a href="game.html?case=coordinate-hunter" class="btn btn--filled btn--sm" data-i18n="ss.game.play_now">▶ Грати</a>
-          </div>
-        </article>
-      </div>
-
-      <footer class="sim-card__foot">
-        <a href="#leaderboard" class="btn" data-i18n="ss.case.lb_btn">Leaderboard ↓</a>
-      </footer>
-    </article>
+    </div>
   </div>
 </section>
 
@@ -228,67 +253,18 @@
 <script src="js/main.js"></script>
 <script type="module">
   import { ensureRegistered, renderLeaderboard, renderAgentPanel } from './js/simulator.js';
-  // Sequential unlock: lock any case card whose prerequisite is unfinished
-  function applyUnlock() {
-    document.querySelectorAll('.game-row[data-requires]').forEach(card => {
-      const need = card.dataset.requires;
-      const done = localStorage.getItem('ss.completed.' + need) === '1';
-      if (done) return;
-      card.classList.remove('game-row--ready');
-      card.classList.add('game-row--locked');
-      const isEn = (document.documentElement.lang || 'uk') === 'en';
-      const prereqName = need === 'fake-cfo' ? (isEn ? 'Case 1' : 'Кейса 1') : need;
-      const lockedText = isEn ? '🔒 Locked — pass ' + prereqName + ' first' : '🔒 Заблоковано — спочатку пройди ' + prereqName;
-      const actions = card.querySelector('.game-row__actions');
-      if (actions) actions.innerHTML = '<div class="game-row__status">' + lockedText + '</div>';
-    });
-  }
-  applyUnlock();
-
-  // Certificate auto-unlock
-  function renderCertStatus() {
-    const el = document.getElementById('cert-status');
-    if (!el) return;
-    const requiredCases = ['fake-cfo','suspicious-consultant','family-chain','shadow-candidate','coordinate-hunter'];
-    const done = requiredCases.filter(c => localStorage.getItem('ss.completed.' + c) === '1').length;
-    const stats = JSON.parse(localStorage.getItem('ss.local') || '{"total":0}');
-    const pts = stats.total || 0;
-    const nick = localStorage.getItem('ss.nickname') || '';
-    const isEn = (document.documentElement.lang || 'uk') === 'en';
-    if (done >= 5 && pts >= 1000 && nick) {
-      const dateISO = localStorage.getItem('ss.cert_date') || new Date().toISOString();
-      localStorage.setItem('ss.cert_date', dateISO);
-      const url = 'certificate.html?nick=' + encodeURIComponent(nick) + '&pts=' + pts + '&date=' + encodeURIComponent(dateISO) + '&lang=' + (isEn ? 'en' : 'uk');
-      el.innerHTML = '<a href="' + url + '" class="btn btn--filled" style="margin-top:1rem;display:inline-block">🎖 ' + (isEn ? 'Get Certificate' : 'Отримати сертифікат') + '</a>';
-    } else {
-      const remaining = 5 - done;
-      const ptsShort = Math.max(0, 1000 - pts);
-      let msg;
-      if (!nick) msg = isEn ? 'Register nickname first.' : 'Спочатку зареєструй нікнейм.';
-      else if (remaining > 0 && ptsShort > 0) msg = isEn ? ('Progress: ' + done + '/5 cases · ' + pts + '/1000 pts') : ('Прогрес: ' + done + '/5 кейсів · ' + pts + '/1000 pts');
-      else if (remaining > 0) msg = isEn ? (remaining + ' case(s) remaining · pts ok') : (remaining + ' кейс(ів) залишилось · pts ok');
-      else msg = isEn ? ('Need ' + ptsShort + ' more pts') : ('Потрібно ще ' + ptsShort + ' pts');
-      el.innerHTML = '<div style="margin-top:.75rem;font-family:var(--font-mono);font-size:.82rem;color:var(--text-mute)">' + msg + '</div>';
-    }
-  }
-  renderCertStatus();
-
   (async () => {
     const nick = await ensureRegistered();
     renderAgentPanel('#agent-panel', nick);
     await renderLeaderboard('#leaderboard-list', nick);
-    renderCertStatus();
   })();
   document.addEventListener('langchange', () => {
-    applyUnlock();
-    renderCertStatus();
     const nick = localStorage.getItem('ss.nickname') || '';
     if (nick) {
       renderAgentPanel('#agent-panel', nick);
       renderLeaderboard('#leaderboard-list', nick);
     }
   });
-  // Play button now links directly to game.html — no interceptor
 </script>
 </body>
 </html>
