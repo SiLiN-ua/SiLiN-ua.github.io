@@ -160,7 +160,7 @@ function renderBriefing() {
   const html = `
     ${progressBar('briefing')}
     <div class="game-brief">
-      <div class="game-brief__bg" style="background-image:url('/img/uploads/simulator/shadow-simulator-splash.jpg')"></div>
+      <div class="game-brief__bg" style="background-image:url('${br.splash || '/img/uploads/simulator/shadow-simulator-splash.jpg'}')"></div>
       <div class="game-brief__reticle game-brief__r-tl"></div>
       <div class="game-brief__reticle game-brief__r-tr"></div>
       <div class="game-brief__reticle game-brief__r-bl"></div>

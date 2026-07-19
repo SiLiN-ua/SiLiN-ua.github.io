@@ -10,10 +10,11 @@
     "client_en": "Ukrainian fintech «FinSecure»",
     "position": "Senior Security Consultant",
     "salary": "$120K/рік · $120K/year",
+    "splash": "img/uploads/simulator/case2/case2-splash.png",
     "candidate": {
       "name_uk": "Олена Петренко",
       "name_en": "Olena Petrenko",
-      "photo": "/img/uploads/simulator/case2/olena-portrait.jpg",
+      "photo": "img/uploads/simulator/case2/olena-portrait.png",
       "email": "olena.petrenko.sec@gmail.com",
       "phone": "+380 63 ***-**-27"
     },
