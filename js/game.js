@@ -1581,5 +1581,23 @@ async function init() {
   mountHud();
   State.phase = 'briefing';
   renderBriefing();
+
+  // Live re-render on language toggle
+  document.addEventListener('langchange', () => {
+    // Re-mount HUD (recreate with new lang labels)
+    const oldHud = document.querySelector('.game-hud');
+    if (oldHud) oldHud.remove();
+    mountHud();
+    // Restart timer display if running
+    const el = document.getElementById('hud-time');
+    if (el) el.textContent = fmtTime(Math.max(0, State.timeLeft));
+    // Re-render current phase
+    if (State.phase === 'briefing') renderBriefing();
+    else if (State.phase === 'phase2') renderPhase2();
+    else if (State.phase === 'phase3') renderPhase3();
+    else if (State.phase === 'citation') renderCitationPhase();
+    else if (State.phase === 'phase4') renderPhase4();
+    else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
+  });
 }
 init();
