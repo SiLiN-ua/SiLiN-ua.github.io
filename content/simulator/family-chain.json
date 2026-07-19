@@ -101,8 +101,8 @@
         "time_cost": 90,
         "ui_component": "instagram-family",
         "weight": "diagnostic",
-        "clue_uk": "Дружина тегує кількох жінок як «сестру» або «сестричку». Лише одна з них — рідна сестра. Далі — саме її профіль.",
-        "clue_en": "The wife tags several women as «sister» or «sis». Only one is the actual sister. Her profile is where the chain continues."
+        "clue_uk": "Профіль дружини + її оточення. Обери сам, кого копати далі.",
+        "clue_en": "Wife's profile + her circle. Pick who to dig into next yourself."
       },
       {
         "id": "classifieds",
@@ -220,8 +220,8 @@
             "feedback_en": "❌ This is not «insufficient data». This is a high OPSEC level — a signal in itself. A person with a clean conscience has no reason to close all profiles this totally. Next step — pivot through the surroundings."
           },
           {
-            "text_uk": "Ескалувати pivot на рідних, друзів, старі оголошення",
-            "text_en": "Escalate pivot to family, friends, old ads",
+            "text_uk": "Розширити пошук на суміжні відкриті джерела (оточення, старі архіви)",
+            "text_en": "Widen search to adjacent open sources (surroundings, old archives)",
             "points": 20,
             "correct": true,
             "feedback_uk": "✓ Правильно. Family chain — це системна методологія. Рідні майже ніколи не закриваються тотально. Один відкритий пост дружини або сестри — і весь ланцюжок розплітається.",
@@ -251,8 +251,8 @@
             "feedback_en": "❌ A relative tagging a person in a family photo is not a 'joke'. Face-match + family-circle context + additional confirming signal from BreachDirectory (phone in stealer log yielded different telegram_id) = convincing attribution."
           },
           {
-            "text_uk": "Face-match + сімейний контекст + телефонний слід = впевнена атрибуція, це другий нік того ж кандидата",
-            "text_en": "Face-match + family context + phone trail = confident attribution, this is the candidate's second alias",
+            "text_uk": "Кілька незалежних сигналів сходяться на одній людині — атрибуція витримає",
+            "text_en": "Multiple independent signals converge on the same person — attribution holds",
             "points": 20,
             "correct": true,
             "feedback_uk": "✓ Правильно. Одиничний сигнал (тільки тег) був би слабким. Три незалежні сигнали (обличчя + сімейне коло + phone→telegram_id) конвергуються на одну людину. Це стандартна OSINT-атрибуція.",
@@ -282,8 +282,8 @@
             "feedback_en": "❌ Absolutely not. A Head of Compliance candidate who personally bypasses compliance is the definition of insider threat. The combination «regulatory understanding + motivation to circumvent + position to do so» is a critical risk."
           },
           {
-            "text_uk": "Прямий insider-threat індикатор, несумісний з посадою",
-            "text_en": "Direct insider-threat indicator, incompatible with the role",
+            "text_uk": "Поведінковий патерн, несумісний з фідуціарною роллю у compliance",
+            "text_en": "Behavior pattern incompatible with a fiduciary compliance role",
             "points": 20,
             "correct": true,
             "feedback_uk": "✓ Правильно. Комплаєнс-офіцер з double-life у P2P-обході — це не гіпотеза, це готова схема майбутньої фрод-операції. Коментар «ніхто не копатиме глибоко» показує обдумувану мотивацію.",
@@ -324,8 +324,8 @@
     "options": [
       {
         "id": "red_flag",
-        "label_uk": "🚩 RED FLAG — категорично не рекомендую",
-        "label_en": "🚩 RED FLAG — strongly do not recommend",
+        "label_uk": "🚩 REJECT — не наймати",
+        "label_en": "🚩 REJECT — do not hire",
         "points": 50,
         "correct": true,
         "verdict": "success",
@@ -334,8 +334,8 @@
       },
       {
         "id": "green",
-        "label_uk": "✅ GREEN — рекомендую наймати",
-        "label_en": "✅ GREEN — recommend to hire",
+        "label_uk": "✅ APPROVE — наймати",
+        "label_en": "✅ APPROVE — hire",
         "points": -50,
         "correct": false,
         "verdict": "fail",
@@ -397,13 +397,13 @@
       { "platform": "work.ua", "status": "found", "detail": "stale profile 2020, generic avatar" },
       { "platform": "Instagram", "status": "private", "detail": "@d_kovalchuk_kyiv (private, 47 posts)" },
       { "platform": "Facebook", "status": "empty", "detail": "no public data" },
-      { "platform": "Twitter/X", "status": "found", "detail": "@dima.finance (5 posts 2016-2018, then silent — dormant?)" },
+      { "platform": "Twitter/X", "status": "found", "detail": "@dima.finance · 5 posts 2016-2018 · last activity 2018-11-04" },
       { "platform": "TikTok", "status": "null", "detail": "no match" },
-      { "platform": "Reddit", "status": "found", "detail": "u/DK_1988 (2 comments in r/UkrainianFinance 2021) — unverified match" },
+      { "platform": "Reddit", "status": "found", "detail": "u/DK_1988 · 2 comments in r/UkrainianFinance · 2021-09" },
       { "platform": "GitHub", "status": "null", "detail": "no match" },
-      { "platform": "Telegram (public)", "status": "found", "detail": "@dkovalchuk · «Head of Compliance @ [bank]» · zero messages public" },
-      { "platform": "ok.ru", "status": "found", "detail": "profile «Дмитро Ковальчук» Львів · 45 y.o. · photo of different man — namesake?" },
-      { "platform": "VK archive", "status": "found", "detail": "one deleted profile trace 2013, no photo" }
+      { "platform": "Telegram (public)", "status": "found", "detail": "@dkovalchuk · bio: «Head of Compliance @ [bank]» · zero messages" },
+      { "platform": "ok.ru", "status": "found", "detail": "profile «Дмитро Ковальчук» · Львів · 45 y.o. · own photo attached" },
+      { "platform": "VK archive", "status": "found", "detail": "one deleted profile trace 2013" }
     ],
     "hibp_breaches": [
       { "name": "LinkedIn", "year": 2012, "size": "164M", "type": "Emails + hashed passwords" },
@@ -413,16 +413,16 @@
     "stealer_log_hit": {
       "source": "BreachDirectory · stealer_log_2023_batch_47.txt",
       "phone": "+380 50 ***-**-82",
-      "telegram_id_public": "@dkovalchuk (verified)",
-      "telegram_id_extra": "6712834XXX (unresolved to public @, second account exists)"
+      "telegram_id_public": "@dkovalchuk",
+      "telegram_id_extra": "6712834XXX"
     },
     "google_dorks_query": "«Дмитро Ковальчук» (дружина OR сім'я OR брат OR сестра) site:facebook.com OR site:ok.ru",
     "google_dorks_results": [
-      { "url": "facebook.com/olga.kovalchuk.5482", "snippet": "Ольга Ковальчук · Kyiv · «Мама 2х деток, дружина Дмитра ❤️ | insta: @olga_kovalchuk_ua» · profile locked since 2022-08" },
-      { "url": "facebook.com/olga.kovalchuk.lviv.teacher", "snippet": "Olga Kovalchuk · Lviv · «Вчитель математики, ліцей №5» · public profile · husband: Serhii" },
-      { "url": "ok.ru/profile/571298437", "snippet": "Katya Svitlichna · «сестра моєї дружини» tagged in old post by @olga_kovalchuk_ua" },
-      { "url": "vesillia.kv.ua/gallery/kovalchuk-anniversary-2019", "snippet": "«10-й рік разом» · Дмитро + Ольга Ковальчук · весільна річниця · Київ · тегнуто 12 гостей" },
-      { "url": "archive.org/web/20200315/olx.ua/ad/9284712", "snippet": "Продам Kia Optima 2018 · контакт Дмитро +380 50 ***-**-82 · «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»" },
+      { "url": "facebook.com/olga.kovalchuk.5482", "snippet": "Ольга Ковальчук · Київ · bio: «Мама 2х · insta @olga_kovalchuk_ua» · last update 2022-08" },
+      { "url": "facebook.com/olga.kovalchuk.lviv.teacher", "snippet": "Olga Kovalchuk · Львів · bio: «Вчитель математики, ліцей №5» · married to Serhii Kovalchuk" },
+      { "url": "ok.ru/profile/571298437", "snippet": "Katya Svitlichna · Київ · tagged by @olga_kovalchuk_ua in family album 2022" },
+      { "url": "vesillia.kv.ua/gallery/kovalchuk-anniversary-2019", "snippet": "Дмитро + Ольга Ковальчук · весільна річниця · Київ · 12 guests tagged" },
+      { "url": "archive.org/web/20200315/olx.ua/ad/9284712", "snippet": "Kia Optima 2018 · Дмитро +380 50 ***-**-82 · note: «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»" },
       { "url": "linkedin.com/in/dmytro-kovalchuk-cfa/", "snippet": "Dmytro Kovalchuk · Head of Compliance Operations · Kyiv · 1200 connections" }
     ],
     "instagram_wife": {
@@ -432,9 +432,9 @@
       "followers": 1247,
       "recent": "family trips, kids, home decor, occasional yoga",
       "tagged_as_sister": [
-        { "handle": "@anya_bff_kyiv", "note": "«сестричка з дитсадка» — best friend, not blood relative", "hint": "childhood friend" },
-        { "handle": "@kate_svit_2024", "note": "«моя сестра ❤️» — appears in most family posts + at both kids' birthdays", "hint": "actual sister" },
-        { "handle": "@marina.wed.style", "note": "«наречена-сестричка» — bridesmaid from wedding 2014", "hint": "wedding-only appearance" }
+        { "handle": "@anya_bff_kyiv", "note": "«сестричка з дитсадка» · 4 photos with her over 6 years · caption context: birthdays, girls-nights" },
+        { "handle": "@kate_svit_2024", "note": "«моя сестра ❤️» · 47 photos over 6 years · both children's birthdays, holidays, hospital visits" },
+        { "handle": "@marina.wed.style", "note": "«наречена-сестричка» · 3 photos, all from single 2014 wedding album · captioned «дружка на весіллі»" }
       ]
     },
     "instagram_sister": {
@@ -442,13 +442,13 @@
       "status": "open",
       "posts": 812,
       "followers": 3400,
-      "highlights": ["Travel 2023", "Family", "Money tips 💰", "Crypto"],
+      "highlights": ["Travel 2023", "Family", "Money", "Crypto"],
       "family_photo_2023": {
         "img": "img/uploads/simulator/case3/family-photo-tag.png",
         "caption": "Наша сім'я в Одесі 🌊 з @olga_kovalchuk_ua @dima_finance_pro та малятами",
-        "tagged": "@dima_finance_pro (=candidate under second alias)"
+        "tagged": "@olga_kovalchuk_ua, @dima_finance_pro"
       },
-      "highlights_content": "Screenshots of P2P exchange apps (Binance P2P, LocalBitcoins archive, Persona-2-persona telegram bots), posts about 'grey' cash-out schemes, no-KYC exchanges in Kyiv-region"
+      "highlights_content": "Money highlight: screenshots of P2P interfaces (Binance P2P, LocalBitcoins archive), Telegram-bot cash-out tools. Crypto highlight: 2 reels 'how to convert USDT to UAH without going through bank', 'no-KYC exchangers in Kyiv-region — my top 3'."
     },
     "classifieds_ads": [
       {
@@ -470,24 +470,24 @@
       "accounts_found": 3,
       "account_1": {
         "handle": "@kate_svit_2024",
-        "owner": "Kateryna Svitlichna (owner of the number, expected)",
+        "owner": "Kateryna Svitlichna",
         "channels": ["family chat", "kids school parents"],
-        "activity": "daily, family-context messages"
+        "activity": "daily · family-context messages"
       },
       "account_2": {
         "handle": "@nova_dostavka_bot",
-        "owner": "Nova Poshta delivery bot (auto-linked via SMS-verify 2022, dormant)",
+        "owner": "Nova Poshta Delivery Bot",
         "channels": [],
-        "activity": "no messages, service bot"
+        "activity": "service bot · no messages"
       },
       "account_3": {
         "handle": "@dima_finance_pro",
-        "owner": "(unverified) — same alias appears in @kate_svit_2024's tagged family photo",
+        "owner": "no name on profile · bio empty · avatar generic",
         "channels": [
-          "@p2p_kyiv_no_kyc (4200 members)",
-          "@grey_finance_ua (1800 members)",
-          "@crypto_cashout_kyiv (900 members)",
-          "@compliance_leaks (350 members, invite-only)"
+          "@p2p_kyiv_no_kyc · 4200 members",
+          "@grey_finance_ua · 1800 members",
+          "@crypto_cashout_kyiv · 900 members",
+          "@compliance_leaks · 350 members · invite-only"
         ],
         "activity": "2024-05-14 у @grey_finance_ua: «На роботі все під контролем. Ніхто так глибоко не копатиме. Схема працює вже 3-й рік»",
         "screenshot": "img/uploads/simulator/case3/telegram-second-account.jpg"
