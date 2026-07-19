@@ -288,8 +288,6 @@
         "ss.game5.tag3": "Defense Screening",
         "ss.tile.live": "✓ Live",
         "ss.tile.soon": "🔒 Скоро",
-        "ss.tile.cases": "Кейсів: <strong>5</strong>",
-        "ss.tile.cert": "Сертифікат: <strong>так</strong>",
         "ss.tile.enter": "▶ Відкрити симулятор",
         "ss.tile.soon_cta": "В розробці",
         "ss.tile.01.title": "🚩 Скринінг кандидатів на red-flag",
@@ -297,7 +295,10 @@
         "ss.tile.02.title": "?????",
         "ss.tile.02.sub": "Наступна тематична серія. Розблокується після виходу.",
         "ss.tile.03.title": "?????",
-        "ss.tile.03.sub": "Наступна тематична серія. Розблокується після виходу."
+        "ss.tile.03.sub": "Наступна тематична серія. Розблокується після виходу.",
+        "ss.tile.cases_lbl": "Кейсів",
+        "ss.tile.cert_lbl": "Сертифікат",
+        "ss.tile.cert_yes": "так"
     },
     "en": {
         "brand.first": "Yehor",
@@ -588,8 +589,6 @@
         "ss.game5.tag3": "Defense Screening",
         "ss.tile.live": "✓ Live",
         "ss.tile.soon": "🔒 Soon",
-        "ss.tile.cases": "Cases: <strong>5</strong>",
-        "ss.tile.cert": "Certificate: <strong>yes</strong>",
         "ss.tile.enter": "▶ Open simulator",
         "ss.tile.soon_cta": "In development",
         "ss.tile.01.title": "🚩 Candidate red-flag screening",
@@ -597,6 +596,9 @@
         "ss.tile.02.title": "?????",
         "ss.tile.02.sub": "Next thematic series. Unlocks after release.",
         "ss.tile.03.title": "?????",
-        "ss.tile.03.sub": "Next thematic series. Unlocks after release."
+        "ss.tile.03.sub": "Next thematic series. Unlocks after release.",
+        "ss.tile.cases_lbl": "Cases",
+        "ss.tile.cert_lbl": "Certificate",
+        "ss.tile.cert_yes": "yes"
     }
 }
