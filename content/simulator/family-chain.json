@@ -18,8 +18,8 @@
       "email": "d.kovalchuk.compliance@gmail.com",
       "phone": "+380 50 ***-**-82"
     },
-    "body_uk": "Клієнт розглядає Дмитра Ковальчука (36, ПІБ і фото додано) на позицію Head of Compliance Operations. Резюме бездоганне: 12 років у compliance, 3 попередні позиції у великих банках. LinkedIn — виключно професійний. Instagram — приватний. Facebook — «пусто». Google — нічого підозрілого. НА ПОВЕРХНІ — ідеальний кандидат. У тебе 15 хвилин. Прямий OSINT нічого не дасть — все закрито. Твій навик: коли головні двері замкнені, шукай через вікна. Пам'ятай — це compliance-позиція. Ціна помилки в обидва боки — реальні гроші банку.",
-    "body_en": "Client considers Dmytro Kovalchuk (36, full name and photo attached) for Head of Compliance Operations. Resume flawless: 12 years in compliance, 3 previous positions at major banks. LinkedIn — strictly professional. Instagram — private. Facebook — empty. Google — nothing suspicious. ON THE SURFACE — ideal candidate. You have 15 minutes. Direct OSINT will give you nothing — everything is closed. Your skill: when the front door is locked, look through the windows. Remember — this is a compliance position. The cost of error in either direction is real bank money.",
+    "body_uk": "Клієнт розглядає Дмитра Ковальчука (36) на позицію Head of Compliance Operations. Резюме бездоганне: 12 років у compliance, 3 попередні позиції у великих банках. Прямі профілі — закриті або порожні. 15 хвилин. Твій вердикт.",
+    "body_en": "Client considers Dmytro Kovalchuk (36) for Head of Compliance Operations. Resume flawless: 12 years in compliance, 3 previous positions at major banks. Direct profiles — closed or empty. 15 minutes. Your verdict.",
     "start_btn_uk": "▶ Розпочати розслідування",
     "start_btn_en": "▶ Start investigation"
   },
@@ -47,8 +47,8 @@
         "time_cost": 60,
         "ui_component": "osint-industries",
         "weight": "supporting",
-        "clue_uk": "Прямий email + телефон — знайдено лише LinkedIn + сірі профілі на dou.ua/work.ua. Instagram: 'private'. Facebook: 'no public data'. TikTok/X/Reddit/GitHub: null. Highly locked-down profile.",
-        "clue_en": "Direct email + phone — found only LinkedIn + faceless profiles on dou.ua/work.ua. Instagram: 'private'. Facebook: 'no public data'. TikTok/X/Reddit/GitHub: null. Highly locked-down profile."
+        "clue_uk": "12 платформ у скані. Читай сам.",
+        "clue_en": "12 platforms scanned. Read the results yourself."
       },
       {
         "id": "hibp-breach",
@@ -65,8 +65,8 @@
         "time_cost": 45,
         "ui_component": "hibp-stealer",
         "weight": "supporting",
-        "clue_uk": "HIBP: 3 baseline breaches (LinkedIn 2012, Dropbox 2016, Collection#1). BreachDirectory: stealer-log 2023 з телефоном +380 50 ***-**-82 — знайдено додатковий telegram_id, який НЕ співпадає з @dkovalchuk (публічний). Другий telegram-акаунт існує.",
-        "clue_en": "HIBP: 3 baseline breaches (LinkedIn 2012, Dropbox 2016, Collection#1). BreachDirectory: stealer log 2023 with phone +380 50 ***-**-82 — found additional telegram_id that does NOT match @dkovalchuk (public one). A second telegram account exists."
+        "clue_uk": "HIBP baseline + BreachDirectory stealer-log дав кілька telegram_id за номером кандидата. Спробуй самостійно зрозуміти чи це нормально.",
+        "clue_en": "HIBP baseline + BreachDirectory stealer-log returned multiple telegram_ids on the candidate's phone. Figure out for yourself if that's normal."
       },
       {
         "id": "google-dorks-family",
@@ -83,8 +83,8 @@
         "time_cost": 90,
         "ui_component": "google-dorks-family",
         "weight": "diagnostic",
-        "clue_uk": "Знайдено старий Facebook дружини (Ольга Ковальчук) — публічний до 2022, потім прикритий. У 2020 залишила посилання на власний Instagram (@olga_kovalchuk_ua). Профіль дружини — досі відкритий. Family chain починається.",
-        "clue_en": "Found wife's old Facebook (Olga Kovalchuk) — public until 2022, then restricted. In 2020 she left a link to her own Instagram (@olga_kovalchuk_ua). Wife's profile — still open. Family chain begins."
+        "clue_uk": "Пошук за прізвищем повернув кілька зв'язків. Не всі — та людина, яку ти шукаєш.",
+        "clue_en": "Surname search returned multiple links. Not all of them are the person you're looking for."
       },
       {
         "id": "instagram-family",
@@ -101,8 +101,8 @@
         "time_cost": 90,
         "ui_component": "instagram-family",
         "weight": "diagnostic",
-        "clue_uk": "@olga_kovalchuk_ua → у сторіс тегує сестру @kate_svit_2024 (Катерина Світлічна). ЇЇ профіль повністю відкритий. У 2023-му пості з сімейної подорожі — фото КАНДИДАТА, але тегує його як @dima_finance_pro. Друге ім'я. Highlights: скріншоти P2P-обмінників, пости про 'сірі' транзакції, обмінники без верифікації.",
-        "clue_en": "@olga_kovalchuk_ua → in stories tags sister @kate_svit_2024 (Kateryna Svitlichna). HER profile fully open. In a 2023 post from a family trip — a photo of the CANDIDATE, but tagged as @dima_finance_pro. Second name. Highlights: screenshots of P2P exchanges, posts about 'grey' transactions, no-KYC exchangers."
+        "clue_uk": "Дружина тегує кількох жінок як «сестру» або «сестричку». Лише одна з них — рідна сестра. Далі — саме її профіль.",
+        "clue_en": "The wife tags several women as «sister» or «sis». Only one is the actual sister. Her profile is where the chain continues."
       },
       {
         "id": "classifieds",
@@ -119,8 +119,8 @@
         "time_cost": 60,
         "ui_component": "classifieds",
         "weight": "supporting",
-        "clue_uk": "Знайдено 2 архівні оголошення 2019-2020: продаж авто + оренда квартири. В обох — той же телефон кандидата, і в одному підпис: «Якщо мене немає — телефонуйте сестрі дружини +380 63 ***-**-14». Ключ від додаткового channel — телефон Катерини.",
-        "clue_en": "Found 2 archived ads 2019-2020: car sale + apartment rental. Both — same candidate's phone, and in one a note: «If I'm not available — call wife's sister +380 63 ***-**-14». Key to additional channel — Kateryna's phone."
+        "clue_uk": "2 архівні оголошення 2019-2020. Читай контактну секцію уважно.",
+        "clue_en": "2 archived ads 2019-2020. Read the contact block carefully."
       },
       {
         "id": "telegram-reverse",
@@ -137,8 +137,8 @@
         "time_cost": 75,
         "ui_component": "telegram-reverse",
         "weight": "diagnostic",
-        "clue_uk": "За номером Катерини (сестри дружини) знайдено 2 telegram-акаунти. Один — сам сестрин. Другий — @dima_finance_pro (той самий нік з тегу в Instagram). Активний у 4 P2P-каналах з обходу комплаєнсу. Найтоксичніший коментар (2024-05): «На роботі все під контролем. Ніхто так глибоко не копатиме.»",
-        "clue_en": "Kateryna's number (wife's sister) returns 2 telegram accounts. One — hers. The other — @dima_finance_pro (same nick as the Instagram tag). Active in 4 P2P channels for compliance bypass. Most damning comment (2024-05): «At work everything is under control. Nobody will dig this deep.»"
+        "clue_uk": "Reverse-lookup повернув кілька акаунтів на цей номер. Один з них не належить власниці номера.",
+        "clue_en": "Reverse-lookup returned multiple accounts on this number. One of them does not belong to the number's owner."
       },
       {
         "id": "linkedin-direct",
@@ -155,8 +155,8 @@
         "time_cost": 30,
         "ui_component": "linkedin-clean",
         "weight": "noise",
-        "clue_uk": "LinkedIn: 12 років, 1200 зв'язків, 3 попередні compliance-позиції (всі верифіковані), CFA рівень 2. Пости — виключно про AML/KYC регуляції. Профіль ідеальний. Це не заперечує insider-threat — навпаки, це надійне професійне прикриття.",
-        "clue_en": "LinkedIn: 12 years, 1200 connections, 3 previous compliance positions (all verified), CFA level 2. Posts — exclusively about AML/KYC regulations. Profile is impeccable. This does NOT rule out insider-threat — on the contrary, it is a solid professional cover."
+        "clue_uk": "LinkedIn стерильний. Що з цим робити — думай сам.",
+        "clue_en": "LinkedIn is sterile. What that means is your call."
       },
       {
         "id": "sanctions-pep",
@@ -173,8 +173,8 @@
         "time_cost": 45,
         "ui_component": "sanctions-clean",
         "weight": "noise",
-        "clue_uk": "Чисто по всіх списках. Жодного PEP-adjacent матчу. Але це очікувано — insider-threat не є санкційним ризиком. Треба інший вимір оцінки.",
-        "clue_en": "Clean across all lists. No PEP-adjacent match. But this is expected — insider threat is not a sanctions risk. A different dimension of assessment is needed."
+        "clue_uk": "Чисто по всіх санкційних списках.",
+        "clue_en": "Clean across all sanctions lists."
       },
       {
         "id": "youcontrol",
@@ -208,8 +208,8 @@
     "questions": [
       {
         "id": "q1",
-        "text_uk": "Прямі профілі кандидата (Instagram, Facebook, Google) — все закрито або порожньо. Наступний крок?",
-        "text_en": "Candidate's direct profiles (Instagram, Facebook, Google) — all closed or empty. Next move?",
+        "text_uk": "Прямі профілі кандидата закриті. Твоя стратегія?",
+        "text_en": "Candidate's direct profiles are locked. Your strategy?",
         "options": [
           {
             "text_uk": "Недостатньо даних, закрити кейс",
@@ -239,8 +239,8 @@
       },
       {
         "id": "q2",
-        "text_uk": "Instagram сестри дружини тегує кандидата у сімейному фото 2023 під ніком @dima_finance_pro. Це доводить, що обидва акаунти належать одній людині?",
-        "text_en": "The wife's sister's Instagram tags the candidate in a 2023 family photo under the alias @dima_finance_pro. Does this prove both accounts belong to the same person?",
+        "text_uk": "У сімейному фото 2023 кандидата тегнули під ніком @dima_finance_pro. Наскільки це вагомий доказ, що це його акаунт?",
+        "text_en": "In a 2023 family photo the candidate is tagged as @dima_finance_pro. How strong is this as evidence that the alias is his?",
         "options": [
           {
             "text_uk": "Ні — тег може бути жартом, однофамілець, спільник",
@@ -270,8 +270,8 @@
       },
       {
         "id": "q3",
-        "text_uk": "Другий Telegram-акаунт активний у P2P-каналах з обхoду комплаєнсу + коментар «на роботі все під контролем». Клієнт наймає на Head of Compliance. Твій висновок?",
-        "text_en": "The second Telegram is active in P2P compliance-bypass channels + comment «at work everything is under control». Client is hiring for Head of Compliance. Your conclusion?",
+        "text_uk": "Знайдений акаунт активний у каналах з P2P-схемами та має коментар «на роботі все під контролем». Кандидат — на Head of Compliance. Твій висновок?",
+        "text_en": "The discovered account is active in P2P-scheme channels and has a comment «at work everything is under control». The candidate is up for Head of Compliance. Your conclusion?",
         "options": [
           {
             "text_uk": "Особисті фінанси — не пов'язано з роботою, ігнорувати",
@@ -392,16 +392,18 @@
   "ui_data": {
     "osint_industries_query": "d.kovalchuk.compliance@gmail.com · +380 50 ***-**-82 · «Dmytro Kovalchuk»",
     "osint_industries_results": [
-      { "platform": "LinkedIn", "status": "found", "detail": "public profile, 1200 conn" },
-      { "platform": "dou.ua", "status": "found", "detail": "faceless profile, 2 posts 2019" },
-      { "platform": "work.ua", "status": "found", "detail": "stale profile 2020" },
-      { "platform": "Instagram", "status": "private", "detail": "handle @d_kovalchuk_kyiv (private)" },
+      { "platform": "LinkedIn", "status": "found", "detail": "public profile, 1200 conn · matches CV" },
+      { "platform": "dou.ua", "status": "found", "detail": "faceless profile, 2 posts 2019, no photo" },
+      { "platform": "work.ua", "status": "found", "detail": "stale profile 2020, generic avatar" },
+      { "platform": "Instagram", "status": "private", "detail": "@d_kovalchuk_kyiv (private, 47 posts)" },
       { "platform": "Facebook", "status": "empty", "detail": "no public data" },
-      { "platform": "Twitter/X", "status": "null", "detail": "no match" },
+      { "platform": "Twitter/X", "status": "found", "detail": "@dima.finance (5 posts 2016-2018, then silent — dormant?)" },
       { "platform": "TikTok", "status": "null", "detail": "no match" },
-      { "platform": "Reddit", "status": "null", "detail": "no match" },
+      { "platform": "Reddit", "status": "found", "detail": "u/DK_1988 (2 comments in r/UkrainianFinance 2021) — unverified match" },
       { "platform": "GitHub", "status": "null", "detail": "no match" },
-      { "platform": "Telegram (public)", "status": "found", "detail": "@dkovalchuk · «Head of Compliance @ [bank]» · zero messages public" }
+      { "platform": "Telegram (public)", "status": "found", "detail": "@dkovalchuk · «Head of Compliance @ [bank]» · zero messages public" },
+      { "platform": "ok.ru", "status": "found", "detail": "profile «Дмитро Ковальчук» Львів · 45 y.o. · photo of different man — namesake?" },
+      { "platform": "VK archive", "status": "found", "detail": "one deleted profile trace 2013, no photo" }
     ],
     "hibp_breaches": [
       { "name": "LinkedIn", "year": 2012, "size": "164M", "type": "Emails + hashed passwords" },
@@ -417,16 +419,23 @@
     "google_dorks_query": "«Дмитро Ковальчук» (дружина OR сім'я OR брат OR сестра) site:facebook.com OR site:ok.ru",
     "google_dorks_results": [
       { "url": "facebook.com/olga.kovalchuk.5482", "snippet": "Ольга Ковальчук · Kyiv · «Мама 2х деток, дружина Дмитра ❤️ | insta: @olga_kovalchuk_ua» · profile locked since 2022-08" },
+      { "url": "facebook.com/olga.kovalchuk.lviv.teacher", "snippet": "Olga Kovalchuk · Lviv · «Вчитель математики, ліцей №5» · public profile · husband: Serhii" },
       { "url": "ok.ru/profile/571298437", "snippet": "Katya Svitlichna · «сестра моєї дружини» tagged in old post by @olga_kovalchuk_ua" },
-      { "url": "archive.org/web/20200315/olx.ua/ad/9284712", "snippet": "Продам Kia Optima 2018 · контакт Дмитро +380 50 ***-**-82 · «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»" }
+      { "url": "vesillia.kv.ua/gallery/kovalchuk-anniversary-2019", "snippet": "«10-й рік разом» · Дмитро + Ольга Ковальчук · весільна річниця · Київ · тегнуто 12 гостей" },
+      { "url": "archive.org/web/20200315/olx.ua/ad/9284712", "snippet": "Продам Kia Optima 2018 · контакт Дмитро +380 50 ***-**-82 · «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»" },
+      { "url": "linkedin.com/in/dmytro-kovalchuk-cfa/", "snippet": "Dmytro Kovalchuk · Head of Compliance Operations · Kyiv · 1200 connections" }
     ],
     "instagram_wife": {
       "handle": "@olga_kovalchuk_ua",
       "status": "open",
       "posts": 340,
       "followers": 1247,
-      "recent": "family trips, kids, home decor",
-      "key_finding": "Story 2024-03: tagged sister @kate_svit_2024"
+      "recent": "family trips, kids, home decor, occasional yoga",
+      "tagged_as_sister": [
+        { "handle": "@anya_bff_kyiv", "note": "«сестричка з дитсадка» — best friend, not blood relative", "hint": "childhood friend" },
+        { "handle": "@kate_svit_2024", "note": "«моя сестра ❤️» — appears in most family posts + at both kids' birthdays", "hint": "actual sister" },
+        { "handle": "@marina.wed.style", "note": "«наречена-сестричка» — bridesmaid from wedding 2014", "hint": "wedding-only appearance" }
+      ]
     },
     "instagram_sister": {
       "handle": "@kate_svit_2024",
@@ -458,23 +467,30 @@
     ],
     "telegram_reverse_query": "phone: +380 63 ***-**-14 (sister-in-law Kateryna)",
     "telegram_reverse_result": {
-      "accounts_found": 2,
+      "accounts_found": 3,
       "account_1": {
         "handle": "@kate_svit_2024",
-        "owner": "Kateryna Svitlichna (sister-in-law, expected)",
-        "channels": ["family chat", "kids school"]
+        "owner": "Kateryna Svitlichna (owner of the number, expected)",
+        "channels": ["family chat", "kids school parents"],
+        "activity": "daily, family-context messages"
       },
       "account_2": {
+        "handle": "@nova_dostavka_bot",
+        "owner": "Nova Poshta delivery bot (auto-linked via SMS-verify 2022, dormant)",
+        "channels": [],
+        "activity": "no messages, service bot"
+      },
+      "account_3": {
         "handle": "@dima_finance_pro",
-        "owner": "= CANDIDATE (second alias, matches Instagram tag)",
+        "owner": "(unverified) — same alias appears in @kate_svit_2024's tagged family photo",
         "channels": [
-          "@p2p_kyiv_no_kyc (4200 members) — P2P без верифікації",
-          "@grey_finance_ua (1800 members) — обхід банківського контролю",
-          "@crypto_cashout_kyiv (900 members) — крипта→готівка без сліду",
-          "@compliance_leaks (350 members, private) — витоки внутрішніх регуляторних документів"
+          "@p2p_kyiv_no_kyc (4200 members)",
+          "@grey_finance_ua (1800 members)",
+          "@crypto_cashout_kyiv (900 members)",
+          "@compliance_leaks (350 members, invite-only)"
         ],
-        "damning_quote": "2024-05-14 у @grey_finance_ua: «На роботі все під контролем. Ніхто так глибоко не копатиме. Схема працює вже 3-й рік»",
-        "screenshot": "img/uploads/simulator/case3/telegram-second-account.png"
+        "activity": "2024-05-14 у @grey_finance_ua: «На роботі все під контролем. Ніхто так глибоко не копатиме. Схема працює вже 3-й рік»",
+        "screenshot": "img/uploads/simulator/case3/telegram-second-account.jpg"
       }
     },
     "linkedin_clean": {

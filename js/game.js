@@ -713,26 +713,33 @@ function renderFakeUI(tool) {
       }
       break;
     case 'instagram-family':
-      if (d.instagram_sister) {
-        const s = d.instagram_sister;
+      if (d.instagram_wife) {
         const w = d.instagram_wife;
+        const s = d.instagram_sister;
+        const tagged = (w.tagged_as_sister || []);
         return `
           <div class="fake fake--ig">
             <div class="fake__topbar">📸 <span>Instagram · Family Pivot</span></div>
             <div class="fake__ig-block">
-              <div class="fake__ig-h">${escapeHtml(w.handle)} · <span>Wife · ${escapeHtml(w.status)} · ${w.posts} posts · ${w.followers} followers</span></div>
-              <div class="fake__ig-body">Content: ${escapeHtml(w.recent)}<br><strong>${escapeHtml(w.key_finding)}</strong></div>
+              <div class="fake__ig-h">${escapeHtml(w.handle)} · <span>${escapeHtml(w.status)} · ${w.posts} posts · ${w.followers} followers</span></div>
+              <div class="fake__ig-body">Recent content: ${escapeHtml(w.recent)}</div>
+              ${tagged.length ? `
+                <div class="fake__ig-highlights"><strong>Tagged as «sister» in various posts:</strong>
+                  <ul style="margin:.5rem 0 0;padding-left:1.2rem">
+                    ${tagged.map(t => `<li><code>${escapeHtml(t.handle)}</code> — <em>${escapeHtml(t.note)}</em></li>`).join('')}
+                  </ul>
+                </div>` : ''}
             </div>
             <div class="fake__ig-arrow">↓</div>
             <div class="fake__ig-block fake__ig-block--highlight">
-              <div class="fake__ig-h">${escapeHtml(s.handle)} · <span>Sister-in-law · ${escapeHtml(s.status)} · ${s.posts} posts · ${s.followers} followers</span></div>
+              <div class="fake__ig-h">${escapeHtml(s.handle)} · <span>${escapeHtml(s.status)} · ${s.posts} posts · ${s.followers} followers</span></div>
               <div class="fake__ig-body">Highlights: ${s.highlights.map(h => `<span class="fake__ig-tag">${escapeHtml(h)}</span>`).join(' ')}</div>
               <div class="fake__ig-photo">
                 <img src="${escapeHtml(s.family_photo_2023.img)}" alt="family photo" onerror="this.style.display='none'">
                 <div class="fake__ig-caption">${escapeHtml(s.family_photo_2023.caption)}</div>
-                <div class="fake__ig-tagged"><strong>Tagged:</strong> ${escapeHtml(s.family_photo_2023.tagged)}</div>
+                <div class="fake__ig-tagged"><strong>Tagged in this photo:</strong> ${escapeHtml(s.family_photo_2023.tagged)}</div>
               </div>
-              <div class="fake__ig-highlights"><em>${escapeHtml(s.highlights_content)}</em></div>
+              <div class="fake__ig-highlights">${escapeHtml(s.highlights_content)}</div>
             </div>
           </div>`;
       }
@@ -756,21 +763,19 @@ function renderFakeUI(tool) {
     case 'telegram-reverse':
       if (d.telegram_reverse_result) {
         const tr2 = d.telegram_reverse_result;
+        const accs = [tr2.account_1, tr2.account_2, tr2.account_3].filter(Boolean);
         return `
           <div class="fake fake--tg">
             <div class="fake__topbar">📱 <span>Telegram Reverse Lookup</span></div>
             <div class="fake__court-query">Query: <code>${escapeHtml(d.telegram_reverse_query)}</code> · Accounts found: <strong>${tr2.accounts_found}</strong></div>
-            <div class="fake__tg-account">
-              <div class="fake__tg-h">Account 1: ${escapeHtml(tr2.account_1.handle)} <span>(expected)</span></div>
-              <div class="fake__tg-body">Owner: ${escapeHtml(tr2.account_1.owner)}<br>Channels: ${tr2.account_1.channels.map(escapeHtml).join(', ')}</div>
-            </div>
-            <div class="fake__tg-account fake__tg-account--red">
-              <div class="fake__tg-h">Account 2: ${escapeHtml(tr2.account_2.handle)} <span>· NOT expected on this number</span></div>
-              <div class="fake__tg-body">Owner: <strong>${escapeHtml(tr2.account_2.owner)}</strong></div>
-              <div class="fake__tg-channels">Channels subscribed:<ul>${tr2.account_2.channels.map(c => `<li>${escapeHtml(c)}</li>`).join('')}</ul></div>
-              <div class="fake__tg-quote">${escapeHtml(tr2.account_2.damning_quote)}</div>
-              ${tr2.account_2.screenshot ? `<img src="${escapeHtml(tr2.account_2.screenshot)}" class="fake__court-doc" alt="telegram screenshot" onerror="this.style.display='none'">` : ''}
-            </div>
+            ${accs.map((a, i) => `
+              <div class="fake__tg-account${a.channels && a.channels.length >= 3 ? ' fake__tg-account--red' : ''}">
+                <div class="fake__tg-h">Account ${i+1}: ${escapeHtml(a.handle)}</div>
+                <div class="fake__tg-body">Owner: ${escapeHtml(a.owner)}</div>
+                ${a.channels && a.channels.length ? `<div class="fake__tg-channels">Channels:<ul>${a.channels.map(c => `<li>${escapeHtml(c)}</li>`).join('')}</ul></div>` : ''}
+                ${a.activity ? `<div class="fake__tg-quote">${escapeHtml(a.activity)}</div>` : ''}
+                ${a.screenshot ? `<img src="${escapeHtml(a.screenshot)}" class="fake__court-doc" alt="" onerror="this.style.display='none'">` : ''}
+              </div>`).join('')}
           </div>`;
       }
       break;
