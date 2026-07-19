@@ -280,7 +280,12 @@
         "ss.game4.sub": "Remote-first US SaaS наймає Senior Backend Engineer за $160K. Кандидата вже переговорили, все через месенджери. Voice-notes регулярні, соцмережі чисті. Клієнт готовий підписати. Твій вердикт — чи все так, як здається? Найскладніший з чотирьох.",
         "ss.game4.tag1": "Voice Biometric",
         "ss.game4.tag2": "Impersonation Fraud",
-        "ss.game4.tag3": "Wayback Archive"
+        "ss.game4.tag3": "Wayback Archive",
+        "ss.game5.title": "Кейс 5 · «Мисливець за координатами»",
+        "ss.game5.sub": "ФІНАЛ. Український оборонний R&D-стартап наймає DevOps з допуском на дві виробничі локації. Кандидат чистий на поверхні. Твій вердикт вирішує не тільки долю найму — вирішує безпеку об'єктів. Помилка коштує життя. 20 хвилин. Максимально складно.",
+        "ss.game5.tag1": "Counterintelligence",
+        "ss.game5.tag2": "Dual-Layer Threat",
+        "ss.game5.tag3": "Defense Screening"
     },
     "en": {
         "brand.first": "Yehor",
@@ -563,6 +568,11 @@
         "ss.game4.sub": "Remote-first US SaaS hiring a Senior Backend Engineer at $160K. Candidate fully interviewed via messengers, regular voice notes, clean social. Client ready to sign. Your verdict — is everything as it seems? Hardest of the four.",
         "ss.game4.tag1": "Voice Biometric",
         "ss.game4.tag2": "Impersonation Fraud",
-        "ss.game4.tag3": "Wayback Archive"
+        "ss.game4.tag3": "Wayback Archive",
+        "ss.game5.title": "Case 5 · «The Coordinate Hunter»",
+        "ss.game5.sub": "FINAL. Ukrainian defense R&D startup hires a DevOps with access to two production facilities. Candidate looks clean on the surface. Your verdict decides not only hiring — but facility security. Error costs lives. 20 minutes. Maximum difficulty.",
+        "ss.game5.tag1": "Counterintelligence",
+        "ss.game5.tag2": "Dual-Layer Threat",
+        "ss.game5.tag3": "Defense Screening"
     }
 }

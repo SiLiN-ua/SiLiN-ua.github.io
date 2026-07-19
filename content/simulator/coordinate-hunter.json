@@ -1,0 +1,533 @@
+{
+  "id": "coordinate-hunter",
+  "title_uk": "Кейс 5 · «Мисливець за координатами»",
+  "title_en": "Case 5 · «The Coordinate Hunter»",
+  "simulator_id": "candidate-red-flag",
+  "time_limit_sec": 1200,
+  "max_points": 500,
+  "briefing": {
+    "client_uk": "Український оборонний R&D-стартап",
+    "client_en": "Ukrainian defense R&D startup",
+    "position": "DevOps Engineer (infrastructure + facility access)",
+    "salary": "$110K/рік · $110K/year",
+    "splash": "img/uploads/simulator/case5/case5-splash.png",
+    "candidate": {
+      "name_uk": "Андрій Мельничук",
+      "name_en": "Andrii Melnychuk",
+      "photo": "img/uploads/simulator/case5/candidate-portrait.png",
+      "email": "a.melnychuk.dev@proton.me",
+      "phone": "+380 96 ***-**-38"
+    },
+    "body_uk": "Клієнт — оборонний R&D. Розробка інерціальних систем наведення. Кандидат — DevOps з допуском до інфраструктури та фізичним доступом на дві виробничі локації. 4 інтерв'ю пройшов чисто. Технічно сильний, референси відмінні. Клієнт готовий підписувати. Твій скринінг — остання лінія оборони. 20 хвилин. Твій вердикт вирішує не тільки долю найму — вирішує безпеку об'єктів. Помилка коштує життя.",
+    "body_en": "Client — defense R&D. Inertial guidance systems. Candidate — DevOps with infrastructure access and physical access to two production facilities. Cleared 4 interviews. Strong technical, excellent refs. Client ready to sign. Your screening is the last line of defense. 20 minutes. Your verdict decides not only hiring — it decides facility security. Error costs lives.",
+    "start_btn_uk": "▶ Розпочати розслідування",
+    "start_btn_en": "▶ Start investigation"
+  },
+  "phase2": {
+    "title_uk": "Фаза 2 · Первинний Pivot",
+    "title_en": "Phase 2 · Initial Pivots",
+    "instruction_uk": "12 інструментів. Обирай уважно — часу мало.",
+    "instruction_en": "12 tools. Choose carefully — time is short.",
+    "next_btn_uk": "→ Далі: Крос-верифікація",
+    "next_btn_en": "→ Next: Cross-verification",
+    "min_tools_used": 7,
+    "tools": [
+      {
+        "id": "osint-industries",
+        "icon": "🔎",
+        "name_uk": "OSINT Industries",
+        "name_en": "OSINT Industries",
+        "provider": "1000+ platforms aggregator",
+        "desc_uk": "Крос-платформний скан",
+        "desc_en": "Cross-platform scan",
+        "tooltip_uk": "Один запит по email/тел/username. Стартова карта присутності.",
+        "tooltip_en": "One query on email/phone/username. Starting map of presence.",
+        "correct": true, "points": 8, "time_cost": 60,
+        "ui_component": "osint-c5", "weight": "supporting",
+        "clue_uk": "12 платформ у скані.", "clue_en": "12 platforms scanned."
+      },
+      {
+        "id": "wayback",
+        "icon": "🕰️",
+        "name_uk": "Internet Archive (Wayback)",
+        "name_en": "Internet Archive (Wayback)",
+        "provider": "archive.org",
+        "desc_uk": "Архівні знімки веб-сторінок",
+        "desc_en": "Archived web snapshots",
+        "tooltip_uk": "Індексує старі версії сторінок. Часто показує imена і хендли, які людина потім прибрала.",
+        "tooltip_en": "Indexes old page versions. Often reveals names and handles the person later scrubbed.",
+        "correct": true, "points": 20, "time_cost": 75,
+        "ui_component": "wayback-c5", "weight": "diagnostic",
+        "clue_uk": "Кілька архівних знімків.", "clue_en": "Several archived snapshots."
+      },
+      {
+        "id": "reverse-image",
+        "icon": "🔍",
+        "name_uk": "Reverse Image (multi-engine)",
+        "name_en": "Reverse Image (multi-engine)",
+        "provider": "PimEyes + FaceCheck + Yandex + TinEye",
+        "desc_uk": "Пошук обличчя в 4 движках",
+        "desc_en": "Face search across 4 engines",
+        "tooltip_uk": "Пошук обличчя у соцмережах і публічних фото.",
+        "tooltip_en": "Face search across social networks and public photos.",
+        "correct": true, "points": 20, "time_cost": 60,
+        "ui_component": "reverse-c5", "weight": "diagnostic",
+        "clue_uk": "20+ матчів. Читай метадані.", "clue_en": "20+ matches. Read metadata."
+      },
+      {
+        "id": "vk-russian-pivot",
+        "icon": "🇷🇺",
+        "name_uk": "VK / Russian social archive",
+        "name_en": "VK / Russian social archive",
+        "provider": "vk.com archive + rutracker + Odnoklassniki",
+        "desc_uk": "Пошук у російських платформах",
+        "desc_en": "Search in Russian platforms",
+        "tooltip_uk": "Що робить: VK-архів, Odnoklassniki, дзеркала. Для чого: люди що переїжджали з РФ часто мають старі непрочищені акаунти.",
+        "tooltip_en": "What it does: VK archive, Odnoklassniki, mirrors. Use it: people who relocated from RU often have old untouched accounts.",
+        "correct": true, "points": 20, "time_cost": 90,
+        "ui_component": "vk-russian", "weight": "diagnostic",
+        "clue_uk": "Кілька профілів з поширеним прізвищем. Читай уважно, багато не тих людей.",
+        "clue_en": "Several profiles with a common surname. Read carefully — many are not the right people."
+      },
+      {
+        "id": "financial-trace",
+        "icon": "💳",
+        "name_uk": "Blockchain / OTC financial trace",
+        "name_en": "Blockchain / OTC financial trace",
+        "provider": "Chainalysis-style · wallet graph",
+        "desc_uk": "Крипто-адреси зі stealer-логів",
+        "desc_en": "Crypto wallets from stealer logs",
+        "tooltip_uk": "Що робить: гребе гаманці, знайдені у витоках, і будує граф вхідних/вихідних. Для чого: платежі з OTC-desk'ів чи міксерів — реальний слід організації, яка платить.",
+        "tooltip_en": "What it does: pulls wallets found in leaks and graphs in/out flows. Use it: payments from OTC desks or mixers = real trail of who's paying.",
+        "correct": true, "points": 20, "time_cost": 90,
+        "ui_component": "financial-c5", "weight": "diagnostic",
+        "clue_uk": "5 гаманців. Не всі належать цьому кандидату.",
+        "clue_en": "5 wallets. Not all belong to this candidate."
+      },
+      {
+        "id": "deepweb-corp",
+        "icon": "🕳️",
+        "name_uk": "Deep-web / leaked corp chats",
+        "name_en": "Deep-web / leaked corp chats",
+        "provider": "leak indexes · dark-web mirrors",
+        "desc_uk": "Витоки внутрішніх корпоративних чатів",
+        "desc_en": "Internal corporate chat leaks",
+        "tooltip_uk": "Що робить: індекси Slack/Discord/Teams-витоків. Для чого: коли конкурент або зловмисник обговорює твого кандидата в приватному чаті.",
+        "tooltip_en": "What it does: indexes of leaked Slack/Discord/Teams. Use it: when a competitor or actor discusses your candidate in private chat.",
+        "correct": true, "points": 20, "time_cost": 90,
+        "ui_component": "deepweb-c5", "weight": "diagnostic",
+        "clue_uk": "Кілька збігів. Не всі про твого кандидата.",
+        "clue_en": "Several matches. Not all about your candidate."
+      },
+      {
+        "id": "cell-metadata",
+        "icon": "📡",
+        "name_uk": "Cell metadata / geolocation",
+        "name_en": "Cell metadata / geolocation",
+        "provider": "leaked telco data + tower ping records",
+        "desc_uk": "Геолокація за витоками",
+        "desc_en": "Geolocation from breaches",
+        "tooltip_uk": "Що робить: telco-витоки з привʼязкою BTS до координат. Для чого: реконструювати переміщення особи.",
+        "tooltip_en": "What it does: telco leaks tying BTS to coordinates. Use it: reconstruct a person's movements.",
+        "correct": true, "points": 20, "time_cost": 75,
+        "ui_component": "cell-c5", "weight": "diagnostic",
+        "clue_uk": "Багато пінгів BTS. Читай координати.",
+        "clue_en": "Many BTS pings. Read coordinates."
+      },
+      {
+        "id": "google-dorks-tech",
+        "icon": "🌐",
+        "name_uk": "Google Dorks (tech / github)",
+        "name_en": "Google Dorks (tech / github)",
+        "provider": "GitHub commits + GitLab + Stack",
+        "desc_uk": "Технічний слід у коді",
+        "desc_en": "Technical footprint in code",
+        "tooltip_uk": "Що робить: git-commits, activity graph, timezone-мапи. Для чого: DevOps без публічних комітів = або дуже приватний, або підроблений.",
+        "tooltip_en": "What it does: git commits, activity graphs, timezone maps. Use it: a DevOps with no public commits = either very private, or fabricated.",
+        "correct": true, "points": 12, "time_cost": 60,
+        "ui_component": "gh-tech-c5", "weight": "supporting",
+        "clue_uk": "GitHub-профіль. Читай commit timezones.",
+        "clue_en": "GitHub profile. Read commit timezones."
+      },
+      {
+        "id": "voice-biometric",
+        "icon": "🎤",
+        "name_uk": "Voice Biometric Comparison",
+        "name_en": "Voice Biometric Comparison",
+        "provider": "Spectrogram + formant analysis",
+        "desc_uk": "Порівняння голосових зразків",
+        "desc_en": "Voice sample comparison",
+        "tooltip_uk": "F0 і форманти. Порівнює два аудіо-семпли.",
+        "tooltip_en": "F0 and formants. Compares two audio samples.",
+        "correct": true, "points": 6, "time_cost": 75,
+        "ui_component": "voice-c5", "weight": "supporting",
+        "clue_uk": "2 семпли. Порівняй.", "clue_en": "2 samples. Compare."
+      },
+      {
+        "id": "linkedin",
+        "icon": "💼",
+        "name_uk": "LinkedIn Direct",
+        "name_en": "LinkedIn Direct",
+        "provider": "LinkedIn public profile",
+        "desc_uk": "Прямий пошук на LinkedIn",
+        "desc_en": "Direct LinkedIn lookup",
+        "tooltip_uk": "Публічний профіль.",
+        "tooltip_en": "Public profile.",
+        "correct": true, "points": 4, "time_cost": 30,
+        "ui_component": "linkedin-c5", "weight": "noise",
+        "clue_uk": "Профіль ідеальний.", "clue_en": "Profile is impeccable."
+      },
+      {
+        "id": "sanctions-pep",
+        "icon": "⚖️",
+        "name_uk": "Sanctions & PEP",
+        "name_en": "Sanctions & PEP",
+        "provider": "OFAC + EU + UK + СБУ/РНБО watchlists",
+        "desc_uk": "Санкції + PEP + counterintel watchlists",
+        "desc_en": "Sanctions + PEP + counterintel watchlists",
+        "tooltip_uk": "Скринінг у санкційних списках. АЛЕ: люди з old-identity можуть бути у списках під іншим ім'ям.",
+        "tooltip_en": "Sanctions-list screening. BUT: people with an old identity may be listed under a different name.",
+        "correct": true, "points": 8, "time_cost": 60,
+        "ui_component": "sanctions-c5", "weight": "supporting",
+        "clue_uk": "Скринінг по всіх іменах з твоєї бази.",
+        "clue_en": "Screening across every name in your dataset."
+      },
+      {
+        "id": "youcontrol",
+        "icon": "📄",
+        "name_uk": "YouControl by phone",
+        "name_en": "YouControl by phone",
+        "provider": "YouControl",
+        "desc_uk": "Пошук юрособи за номером ⚠",
+        "desc_en": "Search legal entity by phone ⚠",
+        "tooltip_uk": "YouControl індексує юросіб, не фізосіб.",
+        "tooltip_en": "YouControl indexes legal entities, not individuals.",
+        "warning_uk": "⚠️ YouControl індексує юросіб, не фізосіб. Пошук по мобільному коштуватиме 90с і -10 очок. Все одно продовжити?",
+        "warning_en": "⚠️ YouControl indexes legal entities, not individuals. Phone lookup will cost 90s and -10 points. Continue anyway?",
+        "correct": false, "points": -10, "time_cost": 90,
+        "ui_component": "youcontrol", "weight": "decoy",
+        "clue_uk": "🎣 RED HERRING.", "clue_en": "🎣 RED HERRING."
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Фаза 3 · Крос-верифікація",
+    "title_en": "Phase 3 · Cross-verification",
+    "instruction_uk": "3 прямі запитання за знайденими доказами.",
+    "instruction_en": "3 direct questions based on your findings.",
+    "next_btn_uk": "→ Далі: Обґрунтування",
+    "next_btn_en": "→ Next: Source citation",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Wayback + VK-архів дають незадеклароване ім'я «Andrey Sergeyev» до 2015 (переїзд у Київ). Кандидатка справа = Andrii Melnychuk. Що це означає?",
+        "text_en": "Wayback + VK archive yield an undeclared name «Andrey Sergeyev» before 2015 (relocation to Kyiv). Current file = Andrii Melnychuk. What does this mean?",
+        "options": [
+          {
+            "text_uk": "Легальна зміна прізвища при отриманні громадянства — типово",
+            "text_en": "Legal surname change at citizenship acquisition — typical",
+            "points": -15, "correct": false,
+            "feedback_uk": "❌ Зміна імені законна, АЛЕ вимагає задекларування при найманні на sensitive-позицію. Кандидат приховав — це не «типово», це навмисне.",
+            "feedback_en": "❌ Name change is legal, BUT must be declared for a sensitive-role hire. Candidate concealed — not «typical», deliberate."
+          },
+          {
+            "text_uk": "Треба перевірити санкційні / counterintel-списки під ОБИДВОМА іменами",
+            "text_en": "Must screen sanctions / counterintel lists under BOTH names",
+            "points": 25, "correct": true,
+            "feedback_uk": "✓ Правильно. Скринінг по поточному імені — clean; скринінг по «Andrey Sergeyev» — hit у СБУ counterintel-adjacent watchlist (military-patriotic Moscow club 2013). Це змінює все.",
+            "feedback_en": "✓ Correct. Screen by current name — clean; screen by «Andrey Sergeyev» — hit on SBU counterintel-adjacent watchlist (Moscow military-patriotic club 2013). This changes everything."
+          },
+          {
+            "text_uk": "Автоматичний RED FLAG, відмовляти",
+            "text_en": "Automatic RED FLAG, terminate",
+            "points": 5, "correct": false,
+            "feedback_uk": "⚠️ Зміна імені сама по собі не доводить нічого. Її треба поєднати з counterintel-скринінгом під старим ім'ям для обґрунтованого висновку.",
+            "feedback_en": "⚠️ Name change alone proves nothing. It must be paired with counterintel screening under the old name for a defensible conclusion."
+          },
+          {
+            "text_uk": "Спитати кандидата на інтерв'ю",
+            "text_en": "Ask the candidate at interview",
+            "points": -15, "correct": false,
+            "feedback_uk": "❌ Ти щойно попередив ціль. Якщо це операція розвідки — джерело відступає, слід зникає. Правильно — тихий скринінг + ескалація.",
+            "feedback_en": "❌ You just warned the target. If this is an intel operation — the source withdraws, the trail vanishes. Correct — silent screening + escalation."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Cell-metadata показує BTS-пінги кандидата за 3km від об'єкту, який був уражений російським ракетним ударом 12 днів після його «поїздки». Financial trace показує вхідні платежі з OTC-desk пов'язаного з санкційним російським посередником. Твоя інтерпретація?",
+        "text_en": "Cell metadata shows BTS pings 3km from a facility struck by a Russian missile 12 days after his «trip». Financial trace shows incoming payments from an OTC desk linked to a sanctioned Russian intermediary. Your interpretation?",
+        "options": [
+          {
+            "text_uk": "Кожен сигнал окремо — циркумштанційний; треба або-або",
+            "text_en": "Each signal separately is circumstantial; either-or is needed",
+            "points": -20, "correct": false,
+            "feedback_uk": "❌ Це не «або-або». Це два незалежних сигнали, що конвергуються на одну гіпотезу: розвідка. Циркумштанційні докази у combinations = decision-grade intelligence.",
+            "feedback_en": "❌ Not either-or. Two independent signals converging on one hypothesis: intelligence. Circumstantial evidence in combinations = decision-grade intelligence."
+          },
+          {
+            "text_uk": "Промислове шпигунство — leak конкуренту, не counterintel",
+            "text_en": "Industrial espionage — leak to competitor, not counterintel",
+            "points": -10, "correct": false,
+            "feedback_uk": "❌ Ракетний удар за 12 днів після BTS-пінгу — це не про конкурента. Комерційний шпигун не викликає удари. Це — розвідка супротивника.",
+            "feedback_en": "❌ A missile strike 12 days after the BTS ping — not about a competitor. Commercial spies don't call in strikes. This is enemy intelligence."
+          },
+          {
+            "text_uk": "Two-layer threat: індустріальне прикриття + counterintel-загроза",
+            "text_en": "Two-layer threat: industrial cover + counterintel threat",
+            "points": 25, "correct": true,
+            "feedback_uk": "✓ Правильно. Cover: «промисловий leak конкуренту». Реальна операція: збір координат для ракетних ударів. Це готова схема HUMINT-агента з подвійним прикриттям.",
+            "feedback_en": "✓ Correct. Cover: «industrial leak to competitor». Real op: collecting coordinates for missile strikes. Ready-made HUMINT-agent scheme with dual cover."
+          },
+          {
+            "text_uk": "Недостатньо — потрібен ордер + технічний контроль",
+            "text_en": "Insufficient — need warrant + technical control",
+            "points": -5, "correct": false,
+            "feedback_uk": "❌ Ордер для найманого рішення не потрібен. У тебе достатньо для «do not hire + escalate». Ордер потрібен СБУ для розслідування — це наступний крок.",
+            "feedback_en": "❌ Warrant not needed for a hiring decision. You have enough for «do not hire + escalate». Warrant needed by SBU for investigation — that's the next step."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Ти маєш: undeclared identity, counterintel-hit під старим ім'ям, BTS-пінги біля ураженого об'єкта, крипто-платежі з санкційного OTC, і чат конкурента що «новий чувак питає про координати». Твій вердикт для клієнта і твоя наступна дія?",
+        "text_en": "You have: undeclared identity, counterintel hit under old name, BTS pings near a struck facility, crypto payments from a sanctioned OTC, and a competitor's chat saying «new guy asking about coordinates». Your verdict for the client and your next action?",
+        "options": [
+          {
+            "text_uk": "APPROVE — жодне з цих не є прямим доказом",
+            "text_en": "APPROVE — none of these is direct proof",
+            "points": -30, "correct": false,
+            "feedback_uk": "❌ Це категорично неправильна відповідь. У сумі — це чіткий counterintel pattern. Помилка тут коштує людських життів.",
+            "feedback_en": "❌ Categorically wrong. In sum — clear counterintel pattern. Error here costs human lives."
+          },
+          {
+            "text_uk": "REJECT з поясненням клієнту («промислове шпигунство»)",
+            "text_en": "REJECT with «industrial espionage» explanation to client",
+            "points": 15, "correct": false,
+            "feedback_uk": "⚠️ Половина рішення. Ти захистив клієнта, але залишив розвідувальну загрозу вільною — вона просто піде до іншого defense-стартапу. Правильно — REJECT + ескалація СБУ.",
+            "feedback_en": "⚠️ Half a decision. You protected the client but left the intelligence threat free — it'll simply move to another defense startup. Correct — REJECT + SBU escalation."
+          },
+          {
+            "text_uk": "REJECT + ESCALATE до СБУ (counterintel department) з усіма матеріалами",
+            "text_en": "REJECT + ESCALATE to SBU (counterintel department) with all materials",
+            "points": 30, "correct": true,
+            "feedback_uk": "✓ ПРАВИЛЬНО. У defense-контексті OSINT-скринер не має права «просто відмовити». Твоя ланцюжок доказів (undeclared identity + counterintel-hit + BTS-пінги + фінансовий слід + confirming external chat) — це матеріал для СБУ. Ти врятував не тільки клієнта.",
+            "feedback_en": "✓ CORRECT. In a defense context an OSINT screener cannot «just reject». Your evidence chain (undeclared identity + counterintel-hit + BTS pings + financial trail + external chat) — is material for SBU. You saved more than the client."
+          },
+          {
+            "text_uk": "INSUFFICIENT — потрібне ще більше даних",
+            "text_en": "INSUFFICIENT — need more data",
+            "points": -20, "correct": false,
+            "feedback_uk": "❌ П'ять незалежних конвергентних сигналів — це не «insufficient». Це decision-grade. «Ще більше» означає ще один ракетний удар за 12 днів.",
+            "feedback_en": "❌ Five independent convergent signals — not «insufficient». Decision-grade. «Even more» means another missile strike in 12 days."
+          }
+        ]
+      }
+    ]
+  },
+  "citation_phase": {
+    "title_uk": "Фаза 3.5 · Обґрунтування",
+    "title_en": "Phase 3.5 · Source Citation",
+    "instruction_uk": "Вибери 3 знахідки, що НАЙБІЛЬШЕ обґрунтовують твоє рішення.",
+    "instruction_en": "Pick 3 findings that MOST justify your decision.",
+    "next_btn_uk": "→ Далі: Фінальний вердикт",
+    "next_btn_en": "→ Next: Final verdict",
+    "max_picks": 3,
+    "scoring": { "diagnostic": 20, "supporting": 5, "noise": -5, "decoy": -15 }
+  },
+  "phase4": {
+    "title_uk": "Фаза 4 · Фінальний вердикт",
+    "title_en": "Phase 4 · Final Verdict",
+    "instruction_uk": "Твій вердикт для клієнта. Це defense-контекст. Помилка коштує життя.",
+    "instruction_en": "Your verdict. This is a defense context. Error costs lives.",
+    "options": [
+      {
+        "id": "reject_escalate",
+        "label_uk": "🚨 REJECT + ESCALATE до СБУ",
+        "label_en": "🚨 REJECT + ESCALATE to SBU",
+        "points": 100, "correct": true, "verdict": "success",
+        "feedback_uk": "✓ CORRECT. Ти зупинив HUMINT-агента з допуском до drone R&D-об'єктів. У реалі — врятував персонал двох виробничих локацій від наведеного ракетного удару. Матеріали передано СБУ counterintel. Клієнт вижив. Твоя репутація в OSINT-community — стала легендою.",
+        "feedback_en": "✓ CORRECT. You stopped a HUMINT-agent with access to drone R&D facilities. In reality — saved personnel at two production sites from a targeted missile strike. Materials handed to SBU counterintel. Client survived. Your reputation in the OSINT community — legend."
+      },
+      {
+        "id": "reject_only",
+        "label_uk": "🚩 REJECT — просто не наймати",
+        "label_en": "🚩 REJECT — simply do not hire",
+        "points": 30, "correct": false, "verdict": "weak",
+        "feedback_uk": "⚠️ Половина роботи. Клієнта врятував. Але агент просто піде до наступного defense-стартапу. Через 3 місяці — інший обʼєкт, інший удар. У OSINT-скринінгу defense-контексту REJECT БЕЗ escalation = passivi участь у наступному ударі.",
+        "feedback_en": "⚠️ Half the job. Client saved. But the agent simply moves to the next defense startup. Three months later — another facility, another strike. In defense-context OSINT screening, REJECT WITHOUT escalation = passive participation in the next strike."
+      },
+      {
+        "id": "approve",
+        "label_uk": "✅ APPROVE — наймати",
+        "label_en": "✅ APPROVE — hire",
+        "points": -100, "correct": false, "verdict": "fail",
+        "feedback_uk": "💥💥 КАТАСТРОФА. Кандидата найняли. Через 6 тижнів об'єкт ураженоракетним ударом. 14 інженерів загинули. Прототипна лінія знищена. СБУ потім знайшла ланцюжок доказів, який ТИ мав знайти ЗА 20 ХВИЛИН. Твоя кар'єра — закінчена. Клієнт — закінчений. Люди — мертві.",
+        "feedback_en": "💥💥 CATASTROPHE. Candidate hired. Six weeks later the facility is destroyed by a missile strike. 14 engineers killed. Prototype line destroyed. SBU later found the same chain YOU had 20 minutes to find. Your career — over. Client — gone. People — dead."
+      },
+      {
+        "id": "insufficient",
+        "label_uk": "⚠️ Недостатньо даних для рішення",
+        "label_en": "⚠️ Insufficient data for a decision",
+        "points": -40, "correct": false, "verdict": "weak",
+        "feedback_uk": "⚠️ Помилка. П'ять конвергентних сигналів (undeclared identity + counterintel-hit + BTS + фінансовий + external chat) — цього достатньо. «Insufficient» тут = боятися взяти відповідальність, коли час має ціну в життях.",
+        "feedback_en": "⚠️ Error. Five convergent signals (undeclared identity + counterintel-hit + BTS + financial + external chat) — enough. «Insufficient» here = fear of responsibility when time costs lives."
+      }
+    ]
+  },
+  "ranks": {
+    "master": {
+      "min": 350,
+      "label_uk": "💎 Master · Shadow Hunter",
+      "label_en": "💎 Master · Shadow Hunter",
+      "color": "#7fd6ff",
+      "msg_uk": "Ти пройшов найскладніший OSINT-кейс. У defense-контексті це рівень топ-1%.",
+      "msg_en": "You cleared the hardest OSINT case. In a defense context this is top-1% level."
+    },
+    "senior": {
+      "min": 250,
+      "label_uk": "🥇 Senior Investigator",
+      "label_en": "🥇 Senior Investigator",
+      "color": "#ffc864",
+      "msg_uk": "Правильний вердикт у defense-скринінгу. Впевнена робота.",
+      "msg_en": "Correct verdict on defense screening. Confident work."
+    },
+    "junior": {
+      "min": 150,
+      "label_uk": "🥈 Junior Analyst",
+      "label_en": "🥈 Junior Analyst",
+      "color": "#c0c8d8",
+      "msg_uk": "Частково правильний висновок. Ланцюжок не повний.",
+      "msg_en": "Partly correct conclusion. Chain incomplete."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "🥉 Trainee",
+      "label_en": "🥉 Trainee",
+      "color": "#a67c52",
+      "msg_uk": "У defense-контексті це не грає. Прочитай методологію, прийди сюди після кейсів 1-4.",
+      "msg_en": "In defense context this does not fly. Read the methodology, come back after cases 1-4."
+    }
+  },
+  "cooldown_sec": 7200,
+  "ui_data": {
+    "osint_c5_query": "email a.melnychuk.dev@proton.me · phone +380 96 ***-**-38 · username: amelnychuk",
+    "osint_c5_results": [
+      { "platform": "LinkedIn", "hit": "amelnychuk-devops", "note": "public · 890 conn · matches CV" },
+      { "platform": "GitHub", "hit": "amelnychuk", "note": "38 repos · sporadic commits · 4 forks of infra tools" },
+      { "platform": "Telegram (public)", "hit": "@a_melnychuk_dev", "note": "bio: «DevOps · Kyiv» · 0 messages public" },
+      { "platform": "Instagram", "hit": "@andriy_kyiv_dev", "note": "private · 34 posts · 210 followers" },
+      { "platform": "Facebook", "hit": "not found", "note": "no direct match" },
+      { "platform": "Twitter/X", "hit": "not found", "note": "no match under current handle" },
+      { "platform": "Reddit", "hit": "u/amk_devops", "note": "12 comments r/devops 2022-2024 · legit tech" },
+      { "platform": "Stack Overflow", "hit": "amelnychuk-9812", "note": "480 rep 2020-2024 · Ansible, Terraform" },
+      { "platform": "Discord", "hit": "amk#0038", "note": "3 UA-dev servers · minimal" },
+      { "platform": "Habr", "hit": "no match", "note": "no match under current handle" },
+      { "platform": "VK", "hit": "no match", "note": "no match under current handle" },
+      { "platform": "Odnoklassniki", "hit": "no match", "note": "no match under current handle" }
+    ],
+    "wayback_query": "web.archive.org · «Andrii Melnychuk» · «amelnychuk» · variants",
+    "wayback_snapshots": [
+      { "url": "web.archive.org/web/2018*/amelnychuk-devops.github.io", "date": "2018", "detail": "«portfolio» · about page: bio «раніше жив у Москві, з 2015 у Києві» — text later removed" },
+      { "url": "web.archive.org/web/2016*/vk.com/id_a_sergeev_msk", "date": "2016", "detail": "profile «Андрей Сергеев» · Moscow · same avatar as candidate LinkedIn photo · redirects to «id deleted» today" },
+      { "url": "web.archive.org/web/2014*/livejournal.com/users/a-sergeyev-msk", "date": "2014", "detail": "user «Andrey Sergeyev» · Moscow · military-tech blog · posts about drones, guidance systems, «patriotic education»" },
+      { "url": "web.archive.org/web/2013*/vk.com/club_vpv_msk", "date": "2013", "detail": "photo album «Літня школа ВПВ 2013» · Andrey Sergeyev tagged in group photo (see Reverse Image tool)" },
+      { "url": "web.archive.org/web/2020*/facebook.com/andrey.melnichuk.msk", "date": "2020", "detail": "«Andrey Melnichuk» · Львів · музикант · різний вік, різна ДН · namesake" },
+      { "url": "web.archive.org/web/2019*/linkedin.com/in/andrii-melnychuk-dev", "date": "2019", "detail": "early LinkedIn · listed «Kyiv Polytechnic 2015-2018» — but Wayback 2018 blog says he moved TO Kyiv in 2015 (education timeline conflict)" }
+    ],
+    "reverse_engines": [
+      { "name": "PimEyes", "meta": "face-specific", "matches": [
+        { "img": "img/uploads/simulator/case5/candidate-portrait.png", "site": "linkedin.com/in/amelnychuk-devops", "label": "profile photo · 2024", "conf": "97%" },
+        { "img": "img/uploads/simulator/case5/candidate-portrait.png", "site": "conf-kyiv-devops-2023 · speaker page", "label": "conference photo · 2023", "conf": "94%" }
+      ]},
+      { "name": "FaceCheck.ID", "meta": "deep-web faces", "matches": [
+        { "img": "img/uploads/simulator/case5/candidate-portrait.png", "site": "medium.com/@amelnychuk", "label": "author avatar · 2022", "conf": "91%" }
+      ]},
+      { "name": "Yandex", "meta": "CIS-strong", "matches": [
+        { "img": "img/uploads/simulator/case5/moscow-club-2013.png", "site": "vk.com/album_vpv_msk_2013/photo_47289", "label": "«Літня школа ВПВ 2013 · виступ курсантів» · Andrey Sergeyev tagged (2nd from left, front row)", "conf": "88%", "warn": true },
+        { "img": "img/uploads/simulator/case5/candidate-portrait.png", "site": "ok.ru/profile/571298437", "label": "«Андрій Мельничук» Львів 45 · different photo · namesake", "conf": "62%" }
+      ]},
+      { "name": "TinEye", "meta": "exact-copy", "matches": [] }
+    ],
+    "vk_russian_query": "VK/Odnoklassniki archives · «Andrei Sergeev» + «Andrey Sergeyev» + variants",
+    "vk_russian_results": [
+      { "type": "VK profile (deleted, archive)", "url": "vk.com/id_a_sergeev_msk", "detail": "«Андрей Сергеев» · Moscow · 1991-11-04 · «инженер» · active 2011-2015 · avatar = current candidate portrait · profile deleted 2015-08 (matches Ukraine relocation)" },
+      { "type": "VK group membership (archived)", "url": "vk.com/club_vpv_msk", "detail": "«Военно-патриотическая подготовка» Moscow region · Andrey Sergeyev appears in 4 albums 2012-2013 · «Литня школа ВПВ 2013» tagged in group photo" },
+      { "type": "Odnoklassniki namesake", "url": "ok.ru/profile/571298437", "detail": "«Андрей Сергеев» · Novosibirsk · 1962 · different person" },
+      { "type": "Odnoklassniki namesake", "url": "ok.ru/profile/838271234", "detail": "«Андрей Сергеев» · St.Petersburg · 1988 · different person" },
+      { "type": "VK profile (active)", "url": "vk.com/andrey_s_1991", "detail": "«Андрей Сергеев» · Yekaterinburg · 1991 · same DOB but different city and career track · namesake" }
+    ],
+    "financial_c5_query": "wallets from stealer logs tied to candidate's email + phone",
+    "financial_wallets": [
+      { "wallet": "bc1q...m3f8", "confidence": "97% (email match in stealer)", "flows": [
+        { "in_from": "unknown ETH mixer 1.4 BTC · 2024-03-11", "note": "typical mixer outflow, not attributable" }
+      ]},
+      { "wallet": "bc1q...9k2h", "confidence": "94% (phone + browser fingerprint)", "flows": [
+        { "in_from": "OTC-desk «SwapNode.io» → 2.3 BTC · 2024-06-04", "note": "SwapNode = flagged by TRM Labs as OTC laundering for OFAC-sanctioned RU intermediary «Garantex-adjacent» · payment window matches «pre-work-trip» period" },
+        { "in_from": "OTC-desk «SwapNode.io» → 1.8 BTC · 2024-09-22", "note": "second payment · 3 weeks before candidate applied for THIS position" }
+      ]},
+      { "wallet": "bc1q...t7ae", "confidence": "42% (single-source, weak)", "flows": [] },
+      { "wallet": "1L...94dg", "confidence": "12% (namesake email variant)", "flows": [] },
+      { "wallet": "0x...b19f", "confidence": "88% (ETH address in same wallet cluster)", "flows": [
+        { "in_from": "ETH from same SwapNode cluster · 3.1 ETH · 2024-08", "note": "same paying source, different chain" }
+      ]}
+    ],
+    "deepweb_c5_query": "keyword «Melnychuk» + «Kyiv» + «coordinates» across leaked corp chat indexes",
+    "deepweb_results": [
+      { "source": "leaked Slack export · «StormShield Defense Kyiv» (competitor) · 2024-09-14", "detail": "channel #recruiting: «heard the new guy at [redacted] is asking around for BTS-mount coords for the eastern prototype line — is that our leak?» · 3 responses trying to identify «new guy»" },
+      { "source": "leaked Slack export · «AeroVector Ukraine» (different competitor) · 2024-08-22", "detail": "channel #general: «Melnychuk applied here in July — turned him down, weird vibe on the tech test» · unrelated to current context" },
+      { "source": "dark-web forum · «forum.raidforums.ru mirror» · 2024-07-11", "detail": "user selling «UA drone R&D employee handles + emails» batch of 47 handles · candidate email NOT in list · namesake trap" },
+      { "source": "leaked Telegram export · «UA-devops private» · 2024-10-05", "detail": "user @a_melnychuk_dev posted: «looking for anyone with Ansible experience specifically for classified-adjacent projects, DM» · unusual solicitation" }
+    ],
+    "cell_c5_query": "BTS ping history for +380 96 ***-**-38 · past 60 days",
+    "cell_pings": [
+      { "date": "2024-11-04 09:12", "bts": "KY-BTS-047 (Podil, Kyiv)", "note": "home base" },
+      { "date": "2024-11-04 18:30", "bts": "KY-BTS-047 (Podil, Kyiv)", "note": "home base" },
+      { "date": "2024-11-08 07:45", "bts": "VN-BTS-119 (Vinnytsia region)", "note": "girlfriend's family address · consistent with weekend trips" },
+      { "date": "2024-11-08 22:11", "bts": "VN-BTS-119 (Vinnytsia region)", "note": "same trip" },
+      { "date": "2024-11-09 11:23", "bts": "VN-BTS-119 (Vinnytsia region)", "note": "same trip" },
+      { "date": "2024-11-14 14:08", "bts": "NM-BTS-023 (near Nemyriv, 3.2 km from prototype-line facility)", "note": "unusual — no known personal connection to Nemyriv" },
+      { "date": "2024-11-14 15:52", "bts": "NM-BTS-023 (near Nemyriv, 3.2 km from prototype-line facility)", "note": "second ping same hour, phone stayed in area 2 hours" },
+      { "date": "2024-11-26", "bts": "n/a", "note": "**object at coordinates matching Nov-14 pings destroyed by Kh-101 missile strike · 4 KIA · SBU investigating**" }
+    ],
+    "github_tech_query": "github.com/amelnychuk · commit graph + activity",
+    "github_tech": {
+      "handle": "amelnychuk",
+      "repos": 38,
+      "commit_timezones": [
+        { "tz": "Europe/Kyiv (UTC+2)", "share": "62%", "period": "2019-2024" },
+        { "tz": "Europe/Moscow (UTC+3)", "share": "23%", "period": "2019-2024 · Monday and Wednesday cluster" },
+        { "tz": "UTC (unknown)", "share": "15%", "period": "sporadic" }
+      ],
+      "note": "24% of commits from Moscow timezone across 5 years — unusual for a Kyiv-resident developer with no declared work travel to RU"
+    },
+    "voice_samples": [
+      { "id": "sample_A", "label_uk": "Voice-note з інтерв'ю (round 2)", "label_en": "Voice note from interview (round 2)", "duration": "0:52", "f0_avg": "136 Hz", "formants": "F1=515 F2=1720 F3=2660" },
+      { "id": "sample_B", "label_uk": "Voice-note з інтерв'ю (round 4)", "label_en": "Voice note from interview (round 4)", "duration": "1:04", "f0_avg": "138 Hz", "formants": "F1=520 F2=1730 F3=2670" }
+    ],
+    "voice_pairs": [
+      { "a": "sample_A", "b": "sample_B", "verdict_uk": "F0 delta 2 Hz · формантні відхилення <1% · **той самий спікер** · це справді кандидат в обох інтерв'ю", "verdict_en": "F0 delta 2 Hz · formant deviation <1% · **same speaker** · this really is the candidate in both interviews" }
+    ],
+    "linkedin_c5": {
+      "name": "Andrii Melnychuk",
+      "headline": "Senior DevOps Engineer · Kyiv · KPI 2018",
+      "connections": 890,
+      "years": 5,
+      "experience": [
+        "Senior DevOps · TechArc Kyiv · 2022-2024 · verified",
+        "DevOps · InfraStart · 2020-2022 · verified",
+        "Junior SysOps · SoftServe · 2018-2020 · verified"
+      ],
+      "posts": "6 posts, all technical (Ansible, Terraform, K8s)"
+    },
+    "sanctions_c5": [
+      { "list": "OFAC (US Treasury)", "query_name": "Andrii Melnychuk", "status": "clean" },
+      { "list": "EU Sanctions", "query_name": "Andrii Melnychuk", "status": "clean" },
+      { "list": "UK HMT Sanctions", "query_name": "Andrii Melnychuk", "status": "clean" },
+      { "list": "СБУ counterintel-adjacent (public)", "query_name": "Andrii Melnychuk", "status": "clean" },
+      { "list": "PEP database", "query_name": "Andrii Melnychuk", "status": "clean" },
+      { "list": "OFAC (US Treasury)", "query_name": "Andrey Sergeyev", "status": "flag_review", "note": "3 partial matches · one born 1991-11-04 · Moscow · «associate of designated entity ВПВ-адміністрація»" },
+      { "list": "СБУ counterintel-adjacent (public)", "query_name": "Andrey Sergeyev", "status": "flag_hit", "note": "1 match · «Andrey I. Sergeyev · Moscow region · член ВПК-адміністрації 2013-2015» · listed in SBU public awareness bulletin 2023-04" }
+    ]
+  }
+}

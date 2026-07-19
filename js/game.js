@@ -976,6 +976,121 @@ function renderFakeUI(tool) {
           </div>`;
       }
       break;
+    case 'osint-c5':
+      if (d.osint_c5_results) {
+        return `<div class="fake fake--oi">
+          <div class="fake__topbar">🔎 <span>OSINT Industries · cross-platform</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.osint_c5_query)}</code></div>
+          <table class="fake__oi-table">
+            <thead><tr><th>Platform</th><th>Hit</th><th>Note</th></tr></thead>
+            <tbody>${d.osint_c5_results.map(r => `<tr class="fake__oi-row fake__oi-row--${r.hit.includes('not found') || r.hit === 'no match' ? 'null' : 'found'}"><td><strong>${escapeHtml(r.platform)}</strong></td><td><code>${escapeHtml(r.hit)}</code></td><td><small>${escapeHtml(r.note)}</small></td></tr>`).join('')}</tbody>
+          </table>
+        </div>`;
+      }
+      break;
+    case 'wayback-c5':
+      if (d.wayback_snapshots) {
+        return `<div class="fake fake--wayback">
+          <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.wayback_query)}</code></div>
+          <div class="fake__court-list">${d.wayback_snapshots.map(s => `<div class="fake__court-case"><div class="fake__court-h">📄 ${escapeHtml(s.url)} · ${escapeHtml(s.date)}</div><div class="fake__court-body">${escapeHtml(s.detail)}</div></div>`).join('')}</div>
+        </div>`;
+      }
+      break;
+    case 'reverse-c5':
+      if (d.reverse_engines) {
+        const rm = (m) => `<div class="fake__match${m.warn?' fake__match--warn':''}"><img src="${escapeHtml(m.img)}" alt="" onerror="this.style.display='none'"><div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(m.label)} · ${escapeHtml(m.conf)}</small></div></div>`;
+        return `<div class="fake fake--multi-reverse">
+          <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+          <div class="fake__search-row"><img src="${cand.photo}" class="fake__input-img"><div class="fake__query">Uploaded: candidate.jpg · Queried 4 engines.</div></div>
+          <div class="fake__engines">${d.reverse_engines.map(e => `<div class="fake__engine"><div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div><div class="fake__engine-body">${e.matches && e.matches.length ? e.matches.map(rm).join('') : '<small>no matches</small>'}</div></div>`).join('')}</div>
+        </div>`;
+      }
+      break;
+    case 'vk-russian':
+      if (d.vk_russian_results) {
+        return `<div class="fake fake--court">
+          <div class="fake__topbar">🇷🇺 <span>VK / Odnoklassniki Archive</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.vk_russian_query)}</code></div>
+          <div class="fake__court-list">${d.vk_russian_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">${escapeHtml(r.type)} · ${escapeHtml(r.url)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
+        </div>`;
+      }
+      break;
+    case 'financial-c5':
+      if (d.financial_wallets) {
+        return `<div class="fake fake--court">
+          <div class="fake__topbar">💳 <span>Blockchain / OTC Financial Trace</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.financial_c5_query)}</code></div>
+          <div class="fake__court-list">${d.financial_wallets.map(w => `<div class="fake__court-case"><div class="fake__court-h">💰 ${escapeHtml(w.wallet)} · confidence: ${escapeHtml(w.confidence)}</div><div class="fake__court-body">${w.flows.length ? w.flows.map(f => `<div>← ${escapeHtml(f.in_from)}<br><small>${escapeHtml(f.note)}</small></div>`).join('<hr style="opacity:.2;margin:.5rem 0">') : '<em>no flows on record</em>'}</div></div>`).join('')}</div>
+        </div>`;
+      }
+      break;
+    case 'deepweb-c5':
+      if (d.deepweb_results) {
+        return `<div class="fake fake--court">
+          <div class="fake__topbar">🕳️ <span>Deep-Web / Leaked Corp Chats</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.deepweb_c5_query)}</code></div>
+          <div class="fake__court-list">${d.deepweb_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">📎 ${escapeHtml(r.source)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
+        </div>`;
+      }
+      break;
+    case 'cell-c5':
+      if (d.cell_pings) {
+        return `<div class="fake fake--court">
+          <div class="fake__topbar">📡 <span>Cell Metadata / Tower Pings</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.cell_c5_query)}</code></div>
+          <table class="fake__oi-table">
+            <thead><tr><th>Date/Time</th><th>BTS</th><th>Note</th></tr></thead>
+            <tbody>${d.cell_pings.map(p => `<tr class="fake__oi-row"><td><strong>${escapeHtml(p.date)}</strong></td><td><code>${escapeHtml(p.bts)}</code></td><td>${escapeHtml(p.note)}</td></tr>`).join('')}</tbody>
+          </table>
+        </div>`;
+      }
+      break;
+    case 'gh-tech-c5':
+      if (d.github_tech) {
+        const g = d.github_tech;
+        return `<div class="fake fake--court">
+          <div class="fake__topbar">🌐 <span>GitHub Commit Analysis</span></div>
+          <div class="fake__court-query">Query: <code>${escapeHtml(d.github_tech_query)}</code></div>
+          <div class="fake__court-case"><div class="fake__court-h">Handle: ${escapeHtml(g.handle)} · Repos: ${g.repos}</div>
+            <div class="fake__court-body">Commit timezones:<br>${g.commit_timezones.map(t => `→ <code>${escapeHtml(t.tz)}</code>: <strong>${escapeHtml(t.share)}</strong> · ${escapeHtml(t.period)}`).join('<br>')}<br><br><em>${escapeHtml(g.note)}</em></div>
+          </div>
+        </div>`;
+      }
+      break;
+    case 'voice-c5':
+      if (d.voice_samples) {
+        return `<div class="fake fake--voice">
+          <div class="fake__topbar">🎤 <span>Voice Biometric Comparison</span></div>
+          <div class="fake__voice-samples">${d.voice_samples.map(s => `<div class="fake__voice-sample"><div class="fake__voice-h">${escapeHtml(s.id)}</div><div class="fake__voice-label">${escapeHtml(tr(s,'label'))}</div><div class="fake__voice-meta"><span>F0: <strong>${escapeHtml(s.f0_avg)}</strong></span><span>formants: <strong>${escapeHtml(s.formants)}</strong></span></div></div>`).join('')}</div>
+          <div class="fake__voice-pairs"><div class="fake__voice-pairs-h">Comparison:</div>${d.voice_pairs.map(p => `<div class="fake__voice-pair"><strong>${escapeHtml(p.a)} ↔ ${escapeHtml(p.b)}</strong>: ${escapeHtml(tr(p,'verdict'))}</div>`).join('')}</div>
+        </div>`;
+      }
+      break;
+    case 'linkedin-c5':
+      if (d.linkedin_c5) {
+        const l = d.linkedin_c5;
+        return `<div class="fake fake--linkedin"><div class="fake__topbar">💼 <span>LinkedIn</span></div>
+          <div class="fake__li-profile"><div class="fake__li-name">${escapeHtml(l.name)} · <span>${escapeHtml(l.headline)}</span></div>
+            <div class="fake__li-meta">${l.years} yrs on LinkedIn · ${l.connections} connections</div>
+            <div class="fake__li-exp">${l.experience.map(e => `<div class="fake__li-row">${escapeHtml(e)}</div>`).join('')}</div>
+            <div class="fake__li-endorsements"><small>${escapeHtml(l.posts)}</small></div>
+          </div>
+        </div>`;
+      }
+      break;
+    case 'sanctions-c5':
+      if (d.sanctions_c5) {
+        return `<div class="fake fake--sanctions">
+          <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+          <div class="fake__sanc-grid">${d.sanctions_c5.map(g => {
+            const cls = g.status === 'clean' ? 'ok' : 'warn';
+            const label = g.status === 'clean' ? '✓ CLEAN' : g.status === 'flag_hit' ? '🚨 HIT' : '⚠ REVIEW';
+            return `<div class="fake__sanc-cell fake__sanc-cell--${cls}"><span>${escapeHtml(g.list)} · <em>«${escapeHtml(g.query_name)}»</em></span><strong>${label}</strong>${g.note ? `<small>${escapeHtml(g.note)}</small>` : ''}</div>`;
+          }).join('')}</div>
+        </div>`;
+      }
+      break;
     case 'youcontrol': return `
       <div class="fake fake--youcontrol">
         <div class="fake__topbar">📄 <span>YouControl — Legal Entity Search</span></div>
