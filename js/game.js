@@ -364,7 +364,7 @@ function renderFakeUI(tool) {
             <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
             <div class="fake__search-row">
               <img src="${cand.photo}" class="fake__input-img" alt="query">
-              <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines · Interpret carefully.</div>
+              <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines.</div>
             </div>
             <div class="fake__engines">
               ${d.reverse_engines.map(e => `
@@ -384,7 +384,7 @@ function renderFakeUI(tool) {
         <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
         <div class="fake__search-row">
           <img src="${cand.photo}" class="fake__input-img" alt="query">
-          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines · Interpret carefully.</div>
+          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines.</div>
         </div>
         <div class="fake__engines">
           <div class="fake__engine">
@@ -424,7 +424,7 @@ function renderFakeUI(tool) {
             <div class="fake__hibp-list">
               ${d.hibp_breaches.map(b => `<div class="fake__hibp-row"><strong>${escapeHtml(b.name)}</strong> · ${b.year} · ${escapeHtml(b.size)} · ${escapeHtml(b.type)}</div>`).join('')}
             </div>
-            <div class="fake__hibp-hint">${escapeHtml(tr(d, 'hibp_note'))}</div>
+            ${tr(d, 'hibp_note') ? `<div class="fake__hibp-hint">${escapeHtml(tr(d, 'hibp_note'))}</div>` : ''}
           </div>`;
       }
       return `
@@ -449,7 +449,7 @@ function renderFakeUI(tool) {
             <div class="fake__gc-tags">
               ${d.getcontact_tags.map(t => `<span class="fake__tag${t.kind==='red'?' fake__tag--red':''}">${escapeHtml(t.text)}</span>`).join('')}
             </div>
-            <div class="fake__gc-hint">${escapeHtml(tr(d, 'getcontact_note'))}</div>
+            ${tr(d, 'getcontact_note') ? `<div class="fake__gc-hint">${escapeHtml(tr(d, 'getcontact_note'))}</div>` : ''}
           </div>`;
       }
       return `
@@ -488,7 +488,7 @@ function renderFakeUI(tool) {
                   <div class="fake__google-snippet">${escapeHtml(r.snippet)}</div>
                 </div>`).join('')}
             </div>
-            <div class="fake__hibp-hint">${escapeHtml(tr(d, 'google_dorks_note'))}</div>
+            ${tr(d, 'google_dorks_note') ? `<div class="fake__hibp-hint">${escapeHtml(tr(d, 'google_dorks_note'))}</div>` : ''}
           </div>`;
       }
       return `
@@ -534,7 +534,7 @@ function renderFakeUI(tool) {
                 <small>Endorsements: ${d.linkedin_endorsements.map(e => escapeHtml(e.name)).join(' · ')}</small>
               </div>
             </div>
-            <div class="fake__hibp-hint">${escapeHtml(tr(d, 'linkedin_note'))}</div>
+            ${tr(d, 'linkedin_note') ? `<div class="fake__hibp-hint">${escapeHtml(tr(d, 'linkedin_note'))}</div>` : ''}
           </div>`;
       }
       return `
@@ -603,7 +603,7 @@ function renderFakeUI(tool) {
                   ${i === 0 && d.court_doc_image ? `<img src="${escapeHtml(d.court_doc_image)}" class="fake__court-doc" alt="court document photo">` : ''}
                 </div>`).join('')}
             </div>
-            <div class="fake__court-hint">${escapeHtml(tr(d,'court_note'))}</div>
+            ${tr(d,'court_note') ? `<div class="fake__court-hint">${escapeHtml(tr(d,'court_note'))}</div>` : ''}
           </div>`;
       }
       return `

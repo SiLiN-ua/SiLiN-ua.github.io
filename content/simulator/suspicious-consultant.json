@@ -18,8 +18,8 @@
       "email": "olena.petrenko.sec@gmail.com",
       "phone": "+380 63 ***-**-27"
     },
-    "body_uk": "Компанія розглядає Олену Петренко на позицію Senior Security Consultant. 20 років у InfoSec, MSc КПІ, OSCP + OSCE. Пропонують $120K/рік — це верхня межа ринку для позиції. HR-круг пройшла добре, технічне інтерв'ю — відмінно. АЛЕ: HR-директор внутрішньо тривожиться. Причини — «щось не так, треба перевірити». Клієнт просить OSINT-скринінг: якщо є червоні прапори, він хоче знати. Твоє завдання — за 13 хвилин розібратися. Пам'ятай: helpFP-cost симетричний. Хибний RED FLAG на чистій кандидатці = втрачений експерт + потенційний позов за наклеп. «Insufficient data» = теж не нейтрально. Аргументований GREEN — це теж професійне рішення.",
-    "body_en": "The company is considering Olena Petrenko for the Senior Security Consultant position. 20 years in InfoSec, MSc from KPI, OSCP + OSCE. Offering $120K/year — top of market for the role. HR round went well, tech interview — excellent. BUT: the HR director has an internal unease. The reason — «something feels off, needs checking». Client requests OSINT screening: if there are red flags, he wants to know. Your task — figure it out in 13 minutes. Remember: false-positive cost is symmetric. A wrong RED FLAG on a clean candidate = lost expert + potential defamation suit. «Insufficient data» is also not neutral. An argued GREEN is also a professional decision.",
+    "body_uk": "Компанія розглядає Олену Петренко на позицію Senior Security Consultant. 20 років у InfoSec, MSc КПІ, OSCP + OSCE. Пропонують $120K/рік. HR-круг пройшла добре, технічне інтерв'ю — відмінно. АЛЕ: HR-директор внутрішньо тривожиться, каже «щось не так, треба перевірити». Клієнт просить OSINT-скринінг до кінця дня. Твоє завдання — за 13 хвилин зібрати достатньо для АРГУМЕНТОВАНОГО вердикту.",
+    "body_en": "The company is considering Olena Petrenko for the Senior Security Consultant position. 20 years in InfoSec, MSc from KPI, OSCP + OSCE. Offering $120K/year. HR round went well, tech interview — excellent. BUT: the HR director has an internal unease, says «something feels off, needs checking». Client requests OSINT screening by end of day. Your task — in 13 minutes, gather enough for an ARGUED verdict.",
     "start_btn_uk": "▶ Розпочати розслідування",
     "start_btn_en": "▶ Start investigation"
   },
@@ -201,15 +201,15 @@
   "phase3": {
     "title_uk": "Фаза 3 · Крос-верифікація",
     "title_en": "Phase 3 · Cross-verification",
-    "instruction_uk": "3 прямі запитання. Головна пастка цього кейсу — convergence-bias. Багато сигналів схожих на червоні прапори ≠ фрод.",
-    "instruction_en": "3 direct questions. The main trap of this case is convergence bias. Many red-flag-looking signals ≠ fraud.",
+    "instruction_uk": "3 прямі запитання за знайденими доказами. Обирай уважно.",
+    "instruction_en": "3 direct questions based on your findings. Choose carefully.",
     "next_btn_uk": "→ Далі: Обґрунтування",
     "next_btn_en": "→ Next: Source citation",
     "questions": [
       {
         "id": "q1",
-        "text_uk": "Reverse Image повернув її фото на 12 сайтах, включно з російським VK 2015. Твоя інтерпретація?",
-        "text_en": "Reverse Image returned her photo on 12 sites, including a 2015 Russian VK. Your interpretation?",
+        "text_uk": "Обличчя знайдено на 12 сайтах, у тому числі російський VK 2015 (Kaspersky Moscow). Що це говорить?",
+        "text_en": "Face found on 12 sites, including a 2015 Russian VK (Kaspersky Moscow). What does this tell you?",
         "options": [
           {
             "text_uk": "Багатоплатформова присутність = синтетична особа, RED FLAG",
@@ -239,8 +239,8 @@
       },
       {
         "id": "q2",
-        "text_uk": "Sanctions-скринінг дав намесейк-хіт на прізвище Петренко (санкційний Юрій Петренко, OFAC 2022). Що робити?",
-        "text_en": "Sanctions screening returned a namesake hit on the Petrenko surname (sanctioned Yuriy Petrenko, OFAC 2022). What to do?",
+        "text_uk": "Sanctions AUTO-MATCH: OFAC 2022 запис на прізвище Петренко (Юрій Олексійович, РФ, 1968). Що робити?",
+        "text_en": "Sanctions AUTO-MATCH: OFAC 2022 entry on surname Petrenko (Yuriy Oleksiyovych, RU, 1968). What to do?",
         "options": [
           {
             "text_uk": "Прізвище-збіг з санкційним = high risk, ставимо на паузу",
@@ -270,8 +270,8 @@
       },
       {
         "id": "q3",
-        "text_uk": "Court Registry: 3 цивільні справи (2016 поділ майна, 2018 розлучення, 2019 порядок побачень з дитиною). Це впливає на security-consultant позицію?",
-        "text_en": "Court Registry: 3 civil cases (2016 property division, 2018 divorce, 2019 child visitation schedule). Does this affect a security-consultant position?",
+        "text_uk": "Court Registry: 3 записи на її ім'я (2016, 2018, 2019). Твоя дія?",
+        "text_en": "Court Registry: 3 records under her name (2016, 2018, 2019). Your call?",
         "options": [
           {
             "text_uk": "Литигіозна, нестабільна, RED FLAG",
@@ -304,8 +304,8 @@
   "citation_phase": {
     "title_uk": "Фаза 3.5 · Обґрунтування",
     "title_en": "Phase 3.5 · Source Citation",
-    "instruction_uk": "Вибери 3 знахідки, що НАЙБІЛЬШЕ обґрунтовують твоє рішення. У цьому кейсі diagnostic-тули — ті, що ПІДТВЕРДЖУЮТЬ легітимність (реальний слід, disambiguation, справжні endorsements), а не «схожі на red flag».",
-    "instruction_en": "Pick 3 findings that MOST justify your decision. In this case, diagnostic tools are those that CONFIRM legitimacy (real trail, disambiguation, genuine endorsements), not those that «look like red flags».",
+    "instruction_uk": "Вибери 3 знахідки, що НАЙБІЛЬШЕ обґрунтовують твоє рішення. Гра рахує вагу тулу — правильні мають бути ті, що реально керували вердиктом. Розбір — після.",
+    "instruction_en": "Pick 3 findings that MOST justify your decision. The game scores by tool weight — right picks are the ones that actually drove your verdict. Review comes after.",
     "next_btn_uk": "→ Далі: Фінальний вердикт",
     "next_btn_en": "→ Next: Final verdict",
     "max_picks": 3,
@@ -319,8 +319,8 @@
   "phase4": {
     "title_uk": "Фаза 4 · Фінальний вердикт",
     "title_en": "Phase 4 · Final Verdict",
-    "instruction_uk": "Твій вердикт для клієнта. У цьому кейсі false-positive коштує стільки ж, скільки false-negative — мінус 50.",
-    "instruction_en": "Your verdict for the client. In this case, a false positive costs the same as a false negative — minus 50.",
+    "instruction_uk": "Твій вердикт для клієнта. Обирай уважно — це визначить фінальний ранг.",
+    "instruction_en": "Your verdict for the client. Choose carefully — this determines your final rank.",
     "options": [
       {
         "id": "green",
@@ -394,30 +394,26 @@
       {
         "name": "PimEyes", "meta": "face-specific",
         "matches": [
-          { "img": "img/uploads/simulator/case2/olena-passport-photo.png", "site": "dou.ua/users/olena-petrenko", "label": "Author profile photo · 2022", "conf": "91% match" },
-          { "img": "img/uploads/simulator/case2/olena-podcast.png", "site": "youtube.com/@securitypodcastua", "label": "Podcast thumbnail · 2023", "conf": "87% match" }
-        ],
-        "note": "12 total matches — all with clear attribution. No unattributed / stock hits."
+          { "img": "img/uploads/simulator/case2/olena-passport-photo.png", "site": "dou.ua/users/olena-petrenko", "label": "author profile · undated", "conf": "91%" },
+          { "img": "img/uploads/simulator/case2/olena-podcast.png", "site": "youtube.com/@securitypodcastua", "label": "video thumbnail · unattributed", "conf": "87%" }
+        ]
       },
       {
         "name": "FaceCheck.ID", "meta": "deep-web faces",
         "matches": [
-          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "threatsec.com.ua/2019/speakers", "label": "Speaker · ThreatSec Kyiv 2019", "conf": "94% match" }
-        ],
-        "note": "8 total matches — conference posters, blog author pages, YouTube. All benign attribution."
+          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "threatsec.com.ua/2019/speakers", "label": "speaker page · 2019", "conf": "94%" }
+        ]
       },
       {
         "name": "Yandex", "meta": "CIS-strong",
         "matches": [
-          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "osconf.com.ua/2021/agenda", "label": "OSCONF 2021 speaker · Kyiv", "conf": "92% match" },
-          { "img": "img/uploads/simulator/case2/olena-vk-scrape.png", "site": "vk.com/kaspersky_events (archive 2015)", "label": "«Elena Petrenko» · corporate event · Moscow · 2015 · Kaspersky Lab", "conf": "81% match", "warn": true }
-        ],
-        "note": "Legacy VK hit is from 2015 — matches candidate's declared pre-2014 employment at Kaspersky Moscow office. Consistent, not synthetic."
+          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "osconf.com.ua/2021/agenda", "label": "«Petrenko O.» · agenda · 2021", "conf": "92%" },
+          { "img": "img/uploads/simulator/case2/olena-vk-scrape.png", "site": "vk.com/id228417 (archive 2015)", "label": "«Elena P.» · Moscow · 2015", "conf": "81%", "warn": true }
+        ]
       },
       {
         "name": "TinEye", "meta": "exact-copy",
-        "matches": [],
-        "note": "1 exact match — origin: her personal blog 2018 (author photo). Others are derivatives / crops."
+        "matches": []
       }
     ],
     "hibp_breaches": [
@@ -426,8 +422,6 @@
       { "name": "Dropbox", "year": 2016, "size": "68M", "type": "Emails + bcrypt hashes" },
       { "name": "Collection #1", "year": 2019, "size": "773M", "type": "Aggregate credential-stuffing list" }
     ],
-    "hibp_note_uk": "Всі 4 — консюмерські сервіси десятиліття тому. Baseline для 10+річного email. Жодного корпоративного витоку, жодного дампу з offensive-security форумів.",
-    "hibp_note_en": "All 4 are consumer services from a decade ago. Baseline for a 10+ year email. No corporate leaks, no dumps from offensive-security forums.",
     "getcontact_tags": [
       { "text": "Olena SecOps", "kind": "neutral" },
       { "text": "Elena FinSecure", "kind": "neutral" },
@@ -444,8 +438,6 @@
       { "text": "Elena аудитор", "kind": "neutral" },
       { "text": "+ 11 tags…", "kind": "neutral" }
     ],
-    "getcontact_note_uk": "24 теги. 21 нейтрально-професійний + 2 негативних + 1 позитивний. Нормальний фон 20-річного практика.",
-    "getcontact_note_en": "24 tags. 21 neutral-professional + 2 negative + 1 positive. Normal background for a 20-year practitioner.",
     "google_dorks_query": "\"Olena Petrenko\" (CVE OR github OR SANS OR pentest) filetype:pdf OR site:youtube.com",
     "google_dorks_results": [
       { "url": "cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14328", "snippet": "CVE-2018-14328 · Vulnerability discovered by Olena Petrenko · Improper access control in banking SWIFT gateway…" },
@@ -454,8 +446,6 @@
       { "url": "github.com/petrenkoolena/repos", "snippet": "petrenkoolena · 40 public repositories · pinned: swift-scanner, osint-toolkit, kyiv-appsec-notes · joined 2013" },
       { "url": "dou.ua/users/olena-petrenko/", "snippet": "Olena Petrenko · Author page · 6 articles since 2017 · «Як я знайшла CVE в українському банку», «Redteam-звіт: реальний випадок»" }
     ],
-    "google_dorks_note_uk": "Реальний слід у часі: CVE 2018/2019/2021, публічний github з 2013, автор dou.ua, доповіді на YouTube. 20 років експертизи мають слід — і він тут.",
-    "google_dorks_note_en": "Real trail across time: CVEs 2018/2019/2021, public GitHub since 2013, dou.ua author, YouTube talks. 20 years of expertise leaves a trail — and it's here.",
     "linkedin_meta": "Kyiv · Joined LinkedIn 12 years ago · 780 connections",
     "linkedin_summary_uk": "Senior Security Consultant · Independent · «Adversary emulation, insider-threat programs, offensive research»",
     "linkedin_summary_en": "Senior Security Consultant · Independent · «Adversary emulation, insider-threat programs, offensive research»",
@@ -471,8 +461,6 @@
       { "name": "Vlad Styran, Berezha Security (co-founder)", "note_uk": "known Ukrainian InfoSec name" },
       { "name": "+ 15 more from verified security professionals", "note_uk": "" }
     ],
-    "linkedin_note_uk": "Профіль істинного senior: 12 років, стабільна кар'єра, реальні endorsements від верифікованих людей. Пости рідкі, але кожен технічний.",
-    "linkedin_note_en": "Genuine senior profile: 12 years, stable career, real endorsements from verified people. Posts are rare but each is technical.",
     "sanctions_grid": [
       { "list": "OFAC (US Treasury)", "status": "clean" },
       { "list": "EU Sanctions", "status": "clean" },
@@ -481,20 +469,18 @@
       { "list": "PEP database", "status": "clean" },
       { "list": "Interpol Red Notices", "status": "clean" }
     ],
-    "sanctions_namesake_uk": "⚠ AUTO-MATCH by surname: OFAC 2022 entry — Yuriy Petrenko (Russian financier). DISAMBIGUATION: different patronymic (Юрій vs Олег), different DOB (1963 vs 1985), different citizenship (RU vs UA), different residence. NOT the same person. Direct candidate = CLEAN.",
-    "sanctions_namesake_en": "⚠ AUTO-MATCH by surname: OFAC 2022 entry — Yuriy Petrenko (Russian financier). DISAMBIGUATION: different patronymic (Yuriy vs Oleh), different DOB (1963 vs 1985), different citizenship (RU vs UA), different residence. NOT the same person. Direct candidate = CLEAN.",
+    "sanctions_namesake_uk": "AUTO-MATCH · surname «Petrenko» · OFAC SDN 2022 · Yuriy Oleksiyovych Petrenko · DOB 1968-04-11 · citizenship: RU · residence: Moscow · designation: senior finance official at sanctioned entity. Subject on query: Olena Olehivna Petrenko · DOB 1985-02-19 · citizenship: UA · residence: Kyiv. Match score: 41%. Auto-status: REVIEW.",
+    "sanctions_namesake_en": "AUTO-MATCH · surname «Petrenko» · OFAC SDN 2022 · Yuriy Oleksiyovych Petrenko · DOB 1968-04-11 · citizenship: RU · residence: Moscow · designation: senior finance official at sanctioned entity. Subject on query: Olena Olehivna Petrenko · DOB 1985-02-19 · citizenship: UA · residence: Kyiv. Match score: 41%. Auto-status: REVIEW.",
     "insead_query": "Verifying CV education: Olena Petrenko · MSc Cybersecurity · NTUU KPI · 2007",
     "insead_result_title": "✓ VERIFIED",
-    "insead_result_body_uk": "State education registry (edbo.gov.ua) confirms: Petrenko Olena Olehivna · MSc КПІ ФПМ 2007 · thesis «Аналіз атак на банківські SWIFT-протоколи» (publicly available in KPI library). Candidate does NOT claim INSEAD / Harvard / Wharton. Education claim MATCHES reality.",
-    "insead_result_body_en": "State education registry (edbo.gov.ua) confirms: Petrenko Olena Olehivna · MSc KPI FPM 2007 · thesis «Analysis of attacks on banking SWIFT protocols» (publicly available in KPI library). Candidate does NOT claim INSEAD / Harvard / Wharton. Education claim MATCHES reality.",
+    "insead_result_body_uk": "edbo.gov.ua record: Petrenko O.O. · MSc · NTUU KPI · Faculty of Applied Mathematics · 2007. Thesis on file: «Аналіз атак на банківські SWIFT-протоколи», public in KPI library archive. No INSEAD / Harvard / Wharton records found. No LinkedIn INSEAD-alumni group membership.",
+    "insead_result_body_en": "edbo.gov.ua record: Petrenko O.O. · MSc · NTUU KPI · Faculty of Applied Mathematics · 2007. Thesis on file: «Analysis of attacks on banking SWIFT protocols», public in KPI library archive. No INSEAD / Harvard / Wharton records found. No LinkedIn INSEAD-alumni group membership.",
     "court_query": "Петренко Олена Олегівна · ПІБ · всі області · 2010-2024",
     "court_cases": [
       { "num": "№520/2841/16", "date": "2016-05-22", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. до Іваненко С.П. — поділ спільно нажитого майна. Задоволено частково (квартира — за позивачем, автомобіль — за відповідачем).", "body_en": "Petrenko O.O. v. Ivanenko S.P. — division of joint marital property. Partially granted (apartment to plaintiff, car to defendant).", "kind": "family" },
       { "num": "№520/9114/18", "date": "2018-11-08", "court_uk": "Печерський р/с Києва", "court_en": "Pecherskyi District Court of Kyiv", "body_uk": "Розлучення Петренко О.О. та Іваненко С.П. (спрощена процедура — за спільною заявою).", "body_en": "Divorce of Petrenko O.O. and Ivanenko S.P. (simplified — by joint application).", "kind": "family" },
       { "num": "№520/4471/19", "date": "2019-03-15", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. — визначення порядку побачень батька з дитиною. Задоволено на користь позивачки.", "body_en": "Petrenko O.O. claim — determination of father's visitation schedule with the child. Granted in plaintiff's favor.", "kind": "family" }
     ],
-    "court_note_uk": "Всі 3 записи — сімейні справи (розлучення, поділ майна, порядок побачень). Жодної кримінальної, господарської, адміністративної. Приватне життя, не бізнес-red-flag.",
-    "court_note_en": "All 3 records — family matters (divorce, property division, visitation schedule). No criminal, commercial, or administrative cases. Private life, not a business red flag.",
     "court_doc_image": "img/uploads/simulator/case2/court-doc-blur.png"
   }
 }
