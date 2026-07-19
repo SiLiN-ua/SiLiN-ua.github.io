@@ -67,6 +67,33 @@ html, body {
 .cert-toolbar__btn--active { background: rgba(74, 158, 255, .3); color: #7fd6ff; border-color: #7fd6ff; }
 .cert-toolbar__btn--primary { background: #7fd6ff; color: #0a0e1a; border-color: #7fd6ff; font-weight: 600; }
 .cert-toolbar__btn--primary:hover { background: #a3e0ff; }
+.cert-toolbar--share {
+  padding: .6rem 1rem;
+  background: rgba(15, 21, 36, .4);
+  border: 1px dashed rgba(127, 214, 255, .25);
+  border-radius: 2px;
+  align-items: center;
+  gap: .4rem;
+}
+.cert-toolbar__label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  letter-spacing: .15em;
+  color: rgba(245, 236, 216, .7);
+  text-transform: uppercase;
+  margin-right: .5rem;
+}
+.cert-toolbar__btn--share {
+  padding: .4rem .8rem;
+  font-size: .78rem;
+}
+.cert-toolbar__hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  color: rgba(245, 236, 216, .5);
+  font-style: italic;
+  margin-left: .5rem;
+}
 
 /* === CERTIFICATE CARD (landscape) === */
 .cert {
@@ -336,7 +363,18 @@ html, body {
     <button class="cert-toolbar__btn cert-toolbar__btn--active" id="btn-lang-uk">UA</button>
     <button class="cert-toolbar__btn" id="btn-lang-en">EN</button>
     <button class="cert-toolbar__btn cert-toolbar__btn--primary" id="btn-print">🖨 Print / Save PDF</button>
-    <a class="cert-toolbar__btn" href="simulator.html">← Back to Simulator</a>
+    <button class="cert-toolbar__btn cert-toolbar__btn--primary" id="btn-download">⬇ Download PNG</button>
+    <a class="cert-toolbar__btn" href="simulator.html">← Back</a>
+  </div>
+
+  <div class="cert-toolbar cert-toolbar--share">
+    <span class="cert-toolbar__label" id="lbl-share">Поділитися:</span>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-linkedin" target="_blank" rel="noopener">💼 LinkedIn</a>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-twitter" target="_blank" rel="noopener">𝕏 Twitter</a>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-facebook" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-telegram" target="_blank" rel="noopener">✈ Telegram</a>
+    <button class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-copy">🔗 <span id="sh-copy-txt">Copy link</span></button>
+    <span class="cert-toolbar__hint" id="sh-hint">Instagram / Patreon — завантаж PNG і завантаж окремо</span>
   </div>
 
   <div class="cert" id="cert">
@@ -395,6 +433,7 @@ html, body {
 </div>
 
 <script src="js/graph.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 <script>
 const I18N = {
@@ -412,6 +451,11 @@ const I18N = {
     meta_id: 'Cert ID',
     meta_verify: 'Перевірка',
     issued: 'Issued by a Shadow Company',
+    share_lbl: 'Поділитися:',
+    share_hint: 'Instagram / Patreon — завантаж PNG і опублікуй вручну',
+    share_text: 'Я отримав Shadow Certificate у симуляторі OSINT-скринінгу від Єгора Селіна 🕵',
+    copy_ok: 'Скопійовано ✓',
+    copy_lbl: 'Copy link',
     rank_master: 'Master · Shadow Hunter',
     rank_senior: 'Senior Investigator',
     rank_junior: 'Junior Analyst',
@@ -431,6 +475,11 @@ const I18N = {
     meta_id: 'Cert ID',
     meta_verify: 'Verify',
     issued: 'Issued by a Shadow Company',
+    share_lbl: 'Share:',
+    share_hint: 'Instagram / Patreon — download PNG and post manually',
+    share_text: 'I earned a Shadow Certificate on Yehor Selin’s OSINT-screening simulator 🕵',
+    copy_ok: 'Copied ✓',
+    copy_lbl: 'Copy link',
     rank_master: 'Master · Shadow Hunter',
     rank_senior: 'Senior Investigator',
     rank_junior: 'Junior Analyst',
@@ -486,10 +535,67 @@ function render(lang) {
   document.title = T.title + ' · ' + nick;
   document.getElementById('btn-lang-uk').classList.toggle('cert-toolbar__btn--active', lang === 'uk');
   document.getElementById('btn-lang-en').classList.toggle('cert-toolbar__btn--active', lang === 'en');
+  document.getElementById('lbl-share').textContent = T.share_lbl;
+  document.getElementById('sh-hint').textContent = T.share_hint;
+  document.getElementById('sh-copy-txt').textContent = T.copy_lbl;
+
+  // Build share URLs
+  const shareUrl = location.origin + location.pathname + '?nick=' + encodeURIComponent(nick) + '&pts=' + pts + '&date=' + encodeURIComponent(dateISO) + '&lang=' + lang;
+  const shareText = T.share_text + ' ' + T['rank_' + rank] + ' · ' + pts + ' pts';
+  document.getElementById('sh-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+  document.getElementById('sh-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl);
+  document.getElementById('sh-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+  document.getElementById('sh-telegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareText);
+  document.getElementById('sh-copy').dataset.url = shareUrl;
+  document.getElementById('sh-copy').dataset.okText = T.copy_ok;
+  document.getElementById('sh-copy').dataset.origText = T.copy_lbl;
 }
 document.getElementById('btn-lang-uk').addEventListener('click', () => render('uk'));
 document.getElementById('btn-lang-en').addEventListener('click', () => render('en'));
 document.getElementById('btn-print').addEventListener('click', () => window.print());
+
+document.getElementById('btn-download').addEventListener('click', async () => {
+  const btn = document.getElementById('btn-download');
+  const orig = btn.textContent;
+  btn.textContent = '⏳ Rendering…';
+  btn.disabled = true;
+  try {
+    const cert = document.getElementById('cert');
+    const canvas = await html2canvas(cert, { scale: 2, backgroundColor: null, useCORS: true, logging: false });
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const nick = (document.getElementById('c-name')?.textContent || 'cert').replace(/[^A-Za-z0-9_-]/g, '_');
+      a.download = 'shadow-certificate-' + nick + '.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      btn.textContent = '✓ Downloaded';
+      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+    });
+  } catch (e) {
+    console.error(e);
+    btn.textContent = '⚠ Error — try Print';
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500);
+  }
+});
+
+document.getElementById('sh-copy').addEventListener('click', function() {
+  const url = this.dataset.url;
+  const okText = this.dataset.okText || 'Copied ✓';
+  const origText = this.dataset.origText || 'Copy link';
+  const span = document.getElementById('sh-copy-txt');
+  navigator.clipboard.writeText(url).then(() => {
+    span.textContent = okText;
+    setTimeout(() => { span.textContent = origText; }, 2000);
+  }).catch(() => {
+    span.textContent = '⚠ ' + url.slice(0, 30);
+    setTimeout(() => { span.textContent = origText; }, 3000);
+  });
+});
+
 render(new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'uk');
 </script>
 
