@@ -3666,3 +3666,23 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   text-align: center;
   border-radius: 2px;
 }
+
+/* Game topbar — right group (lang toggle + exit) */
+.game-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.game-topbar__lang { margin: 0; }
+.game-topbar__lang button {
+  padding: .35rem .7rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+.game-topbar__lang button:hover { color: var(--cream); border-color: var(--ice); }
+.game-topbar__lang button.active { color: var(--ice); border-color: var(--ice); background: rgba(74, 158, 255, .1); }
