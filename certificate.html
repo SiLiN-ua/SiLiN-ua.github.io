@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/brand/panther-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/brand/panther-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/brand/panther-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow Certificate · Єгор Селін</title>
+<meta name="description" content="Shadow Certificate — офіційне свідоцтво про успішне проходження OSINT-симулятора">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  min-height: 100vh;
+  background: #0a0e1a;
+  color: #f0e6d2;
+  font-family: 'Inter', sans-serif;
+}
+.cert-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.cert-toolbar {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+}
+.cert-toolbar__btn {
+  padding: .55rem 1.1rem;
+  background: rgba(15, 21, 36, .6);
+  border: 1px solid rgba(74, 158, 255, .4);
+  color: #f0e6d2;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+.cert-toolbar__btn:hover { background: rgba(74, 158, 255, .12); border-color: #4a9eff; }
+.cert-toolbar__btn--active { background: rgba(74, 158, 255, .2); color: #7fd6ff; border-color: #7fd6ff; }
+.cert-toolbar__btn--primary { background: #4a9eff; color: #0a0e1a; border-color: #4a9eff; font-weight: 600; }
+.cert-toolbar__btn--primary:hover { background: #7fd6ff; }
+
+/* === CERTIFICATE CARD === */
+.cert {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 1 / 1.414; /* A4 portrait */
+  background:
+    linear-gradient(135deg, rgba(20, 28, 48, .96) 0%, rgba(10, 14, 26, .98) 100%);
+  position: relative;
+  overflow: hidden;
+  color: #f0e6d2;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cormorant Garamond', serif;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, .7), 0 0 0 1px rgba(200, 180, 120, .15);
+  border: 8px solid transparent;
+  background-clip: padding-box;
+}
+/* Ornate border */
+.cert::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(200, 180, 120, .35);
+  pointer-events: none;
+  z-index: 2;
+}
+.cert::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(200, 180, 120, .15);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Watermark */
+.cert__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  aspect-ratio: 1;
+  background: url('img/brand/panther-cert.jpg') center/contain no-repeat;
+  opacity: .07;
+  filter: grayscale(.3);
+  pointer-events: none;
+  z-index: 1;
+}
+/* Corner ornaments */
+.cert__corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: #c8b478;
+  z-index: 3;
+}
+.cert__corner--tl { top: 26px; left: 26px; border-top: 2px solid; border-left: 2px solid; }
+.cert__corner--tr { top: 26px; right: 26px; border-top: 2px solid; border-right: 2px solid; }
+.cert__corner--bl { bottom: 26px; left: 26px; border-bottom: 2px solid; border-left: 2px solid; }
+.cert__corner--br { bottom: 26px; right: 26px; border-bottom: 2px solid; border-right: 2px solid; }
+
+/* Content */
+.cert__inner {
+  position: relative;
+  z-index: 4;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cert__head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.cert__eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  letter-spacing: .3em;
+  color: #c8b478;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.cert__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: #f0e6d2;
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+.cert__subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  letter-spacing: .18em;
+  color: #7fd6ff;
+  text-transform: uppercase;
+}
+
+.cert__preamble {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(240, 230, 210, .8);
+  margin: 1.5rem 0 1rem;
+  letter-spacing: .04em;
+}
+.cert__name {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: #c8b478;
+  letter-spacing: .06em;
+  margin: .5rem 0 1.5rem;
+  border-bottom: 1px solid rgba(200, 180, 120, .35);
+  padding-bottom: 1.2rem;
+  text-shadow: 0 0 20px rgba(200, 180, 120, .2);
+  word-break: break-word;
+}
+.cert__body {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #f0e6d2;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  letter-spacing: .02em;
+}
+.cert__body strong {
+  font-style: normal;
+  font-weight: 600;
+  color: #f0e6d2;
+}
+.cert__prog {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  letter-spacing: .12em;
+  color: #7fd6ff;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Stats grid */
+.cert__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  max-width: 620px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cert__stat {
+  text-align: center;
+  padding: 1rem .5rem;
+  border-top: 1px solid rgba(200, 180, 120, .3);
+  border-bottom: 1px solid rgba(200, 180, 120, .3);
+}
+.cert__stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #c8b478;
+  line-height: 1;
+}
+.cert__stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .18em;
+  color: rgba(240, 230, 210, .7);
+  text-transform: uppercase;
+  margin-top: .4rem;
+}
+
+/* Footer signature area */
+.cert__foot {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: end;
+  padding-top: 2rem;
+}
+.cert__sig {
+  text-align: left;
+}
+.cert__sig-line {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: #f0e6d2;
+  line-height: 1;
+  margin-bottom: .3rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(200, 180, 120, .4);
+}
+.cert__sig-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: rgba(240, 230, 210, .7);
+  text-transform: uppercase;
+  margin-top: .4rem;
+}
+.cert__sig-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #f0e6d2;
+  letter-spacing: .04em;
+}
+.cert__meta {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  letter-spacing: .1em;
+  color: rgba(240, 230, 210, .7);
+  line-height: 1.7;
+}
+.cert__meta strong { color: #c8b478; font-weight: normal; }
+
+/* Print styles */
+@media print {
+  html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
+  .cert-page { padding: 0 !important; background: white !important; }
+  .cert-toolbar { display: none !important; }
+  .cert {
+    box-shadow: none !important;
+    max-width: none !important;
+    width: 100vw !important;
+    aspect-ratio: unset !important;
+    min-height: 100vh !important;
+    page-break-after: avoid !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .cert { padding: 2rem 1.5rem; aspect-ratio: auto; min-height: 90vh; }
+  .cert__title { font-size: 2rem; }
+  .cert__name { font-size: 2.4rem; }
+  .cert__body { font-size: 1.05rem; }
+  .cert__foot { grid-template-columns: 1fr; text-align: center; }
+  .cert__meta { text-align: center; }
+  .cert__sig { text-align: center; }
+  .cert__stats { grid-template-columns: 1fr; gap: .5rem; }
+  .cert__stat { padding: .5rem; }
+  .cert__stat-val { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="cert-page">
+
+  <div class="cert-toolbar">
+    <button class="cert-toolbar__btn cert-toolbar__btn--active" id="btn-lang-uk">UA</button>
+    <button class="cert-toolbar__btn" id="btn-lang-en">EN</button>
+    <button class="cert-toolbar__btn cert-toolbar__btn--primary" id="btn-print">🖨 Print / Save PDF</button>
+    <a class="cert-toolbar__btn" href="simulator.html">← Back to Simulator</a>
+  </div>
+
+  <div class="cert" id="cert">
+    <div class="cert__watermark"></div>
+    <div class="cert__corner cert__corner--tl"></div>
+    <div class="cert__corner cert__corner--tr"></div>
+    <div class="cert__corner cert__corner--bl"></div>
+    <div class="cert__corner cert__corner--br"></div>
+
+    <div class="cert__inner">
+      <div class="cert__head">
+        <div class="cert__eyebrow" id="c-eyebrow">SHADOW CERTIFICATE · 2026</div>
+        <div class="cert__title" id="c-title">Shadow Certificate</div>
+        <div class="cert__subtitle" id="c-subtitle">CANDIDATE RED-FLAG SCREENING</div>
+      </div>
+
+      <div class="cert__preamble" id="c-preamble">Це офіційне свідоцтво про те, що</div>
+
+      <div class="cert__name" id="c-name">Nickname</div>
+
+      <div class="cert__body" id="c-body">
+        успішно пройшов усі <strong>5 кейсів</strong> симулятора «Candidate Red-Flag Screening», продемонструвавши компетенції у виявленні impersonation, disambiguation, family-chain pivot, voice biometric та counterintel-скринінгу.
+      </div>
+
+      <div class="cert__stats">
+        <div class="cert__stat">
+          <div class="cert__stat-val" id="c-stat-cases">5 / 5</div>
+          <div class="cert__stat-lbl" id="c-stat-cases-lbl">Кейсів пройдено</div>
+        </div>
+        <div class="cert__stat">
+          <div class="cert__stat-val" id="c-stat-pts">—</div>
+          <div class="cert__stat-lbl" id="c-stat-pts-lbl">Всього очок</div>
+        </div>
+        <div class="cert__stat">
+          <div class="cert__stat-val" id="c-stat-rank">—</div>
+          <div class="cert__stat-lbl" id="c-stat-rank-lbl">Ранг</div>
+        </div>
+      </div>
+
+      <div class="cert__prog" id="c-issued-line">Видано · Дніпро, Україна</div>
+
+      <div class="cert__foot">
+        <div class="cert__sig">
+          <div class="cert__sig-line">Yehor Selin</div>
+          <div class="cert__sig-name">Єгор Селін</div>
+          <div class="cert__sig-role" id="c-sig-role">OSINT & SOCMINT Investigator · Дніпро</div>
+        </div>
+        <div class="cert__meta">
+          <div><span id="c-meta-date-lbl">Дата</span>: <strong id="c-date">—</strong></div>
+          <div><span id="c-meta-id-lbl">Cert ID</span>: <strong id="c-id">—</strong></div>
+          <div><span id="c-meta-verify-lbl">Verify</span>: <strong>yehorselin.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const I18N = {
+  uk: {
+    eyebrow: 'SHADOW CERTIFICATE · 2026',
+    title: 'Shadow Certificate',
+    subtitle: 'CANDIDATE RED-FLAG SCREENING',
+    preamble: 'Це офіційне свідоцтво про те, що',
+    body: 'успішно пройшов усі <strong>5 кейсів</strong> симулятора «Candidate Red-Flag Screening», продемонструвавши компетенції у виявленні impersonation, disambiguation, family-chain pivot, voice biometric та counterintel-скринінгу.',
+    cases_lbl: 'Кейсів пройдено',
+    pts_lbl: 'Всього очок',
+    rank_lbl: 'Ранг',
+    issued: 'Видано · Дніпро, Україна',
+    sig_role: 'OSINT & SOCMINT Investigator · Дніпро',
+    meta_date: 'Дата',
+    meta_id: 'Cert ID',
+    meta_verify: 'Перевірка',
+    rank_master: 'Master · Shadow Hunter',
+    rank_senior: 'Senior Investigator',
+    rank_junior: 'Junior Analyst',
+    rank_trainee: 'Trainee'
+  },
+  en: {
+    eyebrow: 'SHADOW CERTIFICATE · 2026',
+    title: 'Shadow Certificate',
+    subtitle: 'CANDIDATE RED-FLAG SCREENING',
+    preamble: 'This is to certify that',
+    body: 'has successfully completed all <strong>5 cases</strong> of the «Candidate Red-Flag Screening» simulator, demonstrating competencies in impersonation detection, disambiguation, family-chain pivot, voice biometric and counterintel screening.',
+    cases_lbl: 'Cases completed',
+    pts_lbl: 'Total points',
+    rank_lbl: 'Rank',
+    issued: 'Issued · Dnipro, Ukraine',
+    sig_role: 'OSINT & SOCMINT Investigator · Dnipro',
+    meta_date: 'Date',
+    meta_id: 'Cert ID',
+    meta_verify: 'Verify',
+    rank_master: 'Master · Shadow Hunter',
+    rank_senior: 'Senior Investigator',
+    rank_junior: 'Junior Analyst',
+    rank_trainee: 'Trainee'
+  }
+};
+
+function rankByPts(pts) {
+  if (pts >= 1750) return 'master';
+  if (pts >= 1350) return 'senior';
+  if (pts >= 1000) return 'junior';
+  return 'trainee';
+}
+
+function fmtDate(iso, lang) {
+  const d = new Date(iso);
+  const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+  return d.toLocaleDateString(lang === 'en' ? 'en-US' : 'uk-UA', opts);
+}
+
+// Generate deterministic cert-ID from nick + date
+function certId(nick, dateISO) {
+  const src = nick + '|' + dateISO;
+  let hash = 0;
+  for (let i = 0; i < src.length; i++) hash = ((hash << 5) - hash + src.charCodeAt(i)) | 0;
+  const short = Math.abs(hash).toString(36).toUpperCase().slice(0, 6);
+  const y = new Date(dateISO).getFullYear();
+  return 'SS-01-' + short + '-' + y;
+}
+
+function render(lang) {
+  const T = I18N[lang] || I18N.uk;
+  const params = new URLSearchParams(location.search);
+  const nick = params.get('nick') || localStorage.getItem('ss.nickname') || 'Anonymous';
+  const pts = parseInt(params.get('pts') || localStorage.getItem('ss.total_pts') || '0', 10);
+  const dateISO = params.get('date') || localStorage.getItem('ss.cert_date') || new Date().toISOString();
+  const rank = rankByPts(pts);
+
+  document.documentElement.lang = lang;
+
+  document.getElementById('c-eyebrow').textContent = T.eyebrow;
+  document.getElementById('c-title').textContent = T.title;
+  document.getElementById('c-subtitle').textContent = T.subtitle;
+  document.getElementById('c-preamble').textContent = T.preamble;
+  document.getElementById('c-body').innerHTML = T.body;
+  document.getElementById('c-name').textContent = nick;
+  document.getElementById('c-stat-pts').textContent = pts.toLocaleString(lang === 'en' ? 'en-US' : 'uk-UA');
+  document.getElementById('c-stat-cases-lbl').textContent = T.cases_lbl;
+  document.getElementById('c-stat-pts-lbl').textContent = T.pts_lbl;
+  document.getElementById('c-stat-rank-lbl').textContent = T.rank_lbl;
+  document.getElementById('c-stat-rank').textContent = T['rank_' + rank];
+  document.getElementById('c-issued-line').textContent = T.issued;
+  document.getElementById('c-sig-role').textContent = T.sig_role;
+  document.getElementById('c-meta-date-lbl').textContent = T.meta_date;
+  document.getElementById('c-meta-id-lbl').textContent = T.meta_id;
+  document.getElementById('c-meta-verify-lbl').textContent = T.meta_verify;
+  document.getElementById('c-date').textContent = fmtDate(dateISO, lang);
+  document.getElementById('c-id').textContent = certId(nick, dateISO);
+
+  document.title = T.title + ' · ' + nick;
+
+  document.getElementById('btn-lang-uk').classList.toggle('cert-toolbar__btn--active', lang === 'uk');
+  document.getElementById('btn-lang-en').classList.toggle('cert-toolbar__btn--active', lang === 'en');
+}
+
+document.getElementById('btn-lang-uk').addEventListener('click', () => render('uk'));
+document.getElementById('btn-lang-en').addEventListener('click', () => render('en'));
+document.getElementById('btn-print').addEventListener('click', () => window.print());
+
+const paramLang = new URLSearchParams(location.search).get('lang');
+render(paramLang === 'en' ? 'en' : 'uk');
+</script>
+
+</body>
+</html>

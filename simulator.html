@@ -93,10 +93,11 @@
       </header>
       <h3 class="sim-card__title" data-i18n="ss.sim1.title">Симулятор #01 · Скринінг кандидатів на red-flag</h3>
       <p class="sim-card__sub" data-i18n="ss.sim1.sub">Тренажер для HR, corporate security, детективних агенцій і комплаєнс-департаментів. 5 різних кейсів — від фейкового CFO до кандидата з прихованою кримінальною історією. Кожен кейс — реалістичний workflow OSINT-скринінгу з тупиками і пастками.</p>
-      <div class="sim-card__cert">
+      <div class="sim-card__cert" id="cert-block">
         <div class="sim-card__cert-label" data-i18n="ss.sim.cert_lbl">🎖️ Сертифікат про проходження</div>
         <div class="sim-card__cert-name" data-i18n="ss.sim1.cert_name">«Candidate Red-Flag Screening · OSINT Training»</div>
         <div class="sim-card__cert-req" data-i18n="ss.sim.cert_req">Умова: пройти всі 5 кейсів + зібрати 1000+ pts сумарно</div>
+        <div id="cert-status" class="sim-card__cert-status"></div>
       </div>
 
       <div class="sim-card__games-head">
@@ -244,13 +245,43 @@
   }
   applyUnlock();
 
+  // Certificate auto-unlock
+  function renderCertStatus() {
+    const el = document.getElementById('cert-status');
+    if (!el) return;
+    const requiredCases = ['fake-cfo','suspicious-consultant','family-chain','shadow-candidate','coordinate-hunter'];
+    const done = requiredCases.filter(c => localStorage.getItem('ss.completed.' + c) === '1').length;
+    const stats = JSON.parse(localStorage.getItem('ss.local') || '{"total":0}');
+    const pts = stats.total || 0;
+    const nick = localStorage.getItem('ss.nickname') || '';
+    const isEn = (document.documentElement.lang || 'uk') === 'en';
+    if (done >= 5 && pts >= 1000 && nick) {
+      const dateISO = localStorage.getItem('ss.cert_date') || new Date().toISOString();
+      localStorage.setItem('ss.cert_date', dateISO);
+      const url = 'certificate.html?nick=' + encodeURIComponent(nick) + '&pts=' + pts + '&date=' + encodeURIComponent(dateISO) + '&lang=' + (isEn ? 'en' : 'uk');
+      el.innerHTML = '<a href="' + url + '" class="btn btn--filled" style="margin-top:1rem;display:inline-block">🎖 ' + (isEn ? 'Get Certificate' : 'Отримати сертифікат') + '</a>';
+    } else {
+      const remaining = 5 - done;
+      const ptsShort = Math.max(0, 1000 - pts);
+      let msg;
+      if (!nick) msg = isEn ? 'Register nickname first.' : 'Спочатку зареєструй нікнейм.';
+      else if (remaining > 0 && ptsShort > 0) msg = isEn ? ('Progress: ' + done + '/5 cases · ' + pts + '/1000 pts') : ('Прогрес: ' + done + '/5 кейсів · ' + pts + '/1000 pts');
+      else if (remaining > 0) msg = isEn ? (remaining + ' case(s) remaining · pts ok') : (remaining + ' кейс(ів) залишилось · pts ok');
+      else msg = isEn ? ('Need ' + ptsShort + ' more pts') : ('Потрібно ще ' + ptsShort + ' pts');
+      el.innerHTML = '<div style="margin-top:.75rem;font-family:var(--font-mono);font-size:.82rem;color:var(--text-mute)">' + msg + '</div>';
+    }
+  }
+  renderCertStatus();
+
   (async () => {
     const nick = await ensureRegistered();
     renderAgentPanel('#agent-panel', nick);
     await renderLeaderboard('#leaderboard-list', nick);
+    renderCertStatus();
   })();
   document.addEventListener('langchange', () => {
     applyUnlock();
+    renderCertStatus();
     const nick = localStorage.getItem('ss.nickname') || '';
     if (nick) {
       renderAgentPanel('#agent-panel', nick);
