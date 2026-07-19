@@ -2861,8 +2861,8 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
    Shadow Simulator — Polish v3 (tooltips, warnings, new UIs, pivot chain)
    ========================================================== */
 
-/* Tool button — hover tooltip via data-tip */
-.tool-btn { position: relative; }
+/* Tool button — inline expandable tooltip (hover ⓘ opens dedicated row below) */
+.tool-btn { position: relative; overflow: hidden; }
 .tool-btn__info {
   display: inline-block;
   margin-left: .4em;
@@ -2872,40 +2872,36 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   opacity: .7;
   cursor: help;
 }
-.tool-btn[data-tip]:hover::after,
-.tool-btn[data-tip]:focus-visible::after {
+.tool-btn[data-tip]::after {
   content: attr(data-tip);
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(360px, 90vw);
-  padding: .9rem 1rem;
-  background: rgba(10, 14, 26, .98);
-  border: 1px solid var(--ice);
-  border-radius: 4px;
+  display: block;
+  grid-column: 1 / -1;
+  margin-top: .8rem;
+  padding: .75rem .9rem;
+  background: rgba(10, 14, 26, .85);
+  border-left: 3px solid var(--ice);
+  border-radius: 2px;
   color: var(--cream);
   font-family: var(--font-body);
-  font-size: .85rem;
-  line-height: 1.5;
+  font-size: .8rem;
+  line-height: 1.45;
   text-align: left;
-  white-space: normal;
-  z-index: 100;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, .6);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .3s var(--ease), opacity .25s var(--ease), padding .3s var(--ease), margin-top .3s var(--ease);
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
   pointer-events: none;
-  animation: gameFadeIn .2s var(--ease);
 }
-.tool-btn[data-tip]:hover::before,
-.tool-btn[data-tip]:focus-visible::before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 6px solid transparent;
-  border-top-color: var(--ice);
-  z-index: 101;
-  pointer-events: none;
+.tool-btn[data-tip]:hover::after,
+.tool-btn[data-tip]:focus-visible::after {
+  max-height: 240px;
+  opacity: 1;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  margin-top: .8rem;
 }
 
 /* Warning modal (red-herring tools) */

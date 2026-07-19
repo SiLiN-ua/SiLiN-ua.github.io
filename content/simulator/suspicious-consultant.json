@@ -392,27 +392,27 @@
   "ui_data": {
     "reverse_engines": [
       {
-        "name": "PimEyes", "meta": "face-specific",
+        "name": "PimEyes", "meta_uk": "спеціалізується на обличчях", "meta_en": "face-specific",
         "matches": [
-          { "img": "img/uploads/simulator/case2/olena-passport-photo.png", "site": "dou.ua/users/olena-petrenko", "label": "author profile · undated", "conf": "91%" },
-          { "img": "img/uploads/simulator/case2/olena-podcast.png", "site": "youtube.com/@securitypodcastua", "label": "video thumbnail · unattributed", "conf": "87%" }
+          { "img": "img/uploads/simulator/case2/olena-passport-photo.png", "site": "dou.ua/users/olena-petrenko", "label_uk": "аватар автора · без дати", "label_en": "author profile · undated", "conf": "91%" },
+          { "img": "img/uploads/simulator/case2/olena-podcast.png", "site": "youtube.com/@securitypodcastua", "label_uk": "прев'ю відео · без атрибуції", "label_en": "video thumbnail · unattributed", "conf": "87%" }
         ]
       },
       {
-        "name": "FaceCheck.ID", "meta": "deep-web faces",
+        "name": "FaceCheck.ID", "meta_uk": "обличчя в deep-web", "meta_en": "deep-web faces",
         "matches": [
-          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "threatsec.com.ua/2019/speakers", "label": "speaker page · 2019", "conf": "94%" }
+          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "threatsec.com.ua/2019/speakers", "label_uk": "сторінка спікера · 2019", "label_en": "speaker page · 2019", "conf": "94%" }
         ]
       },
       {
-        "name": "Yandex", "meta": "CIS-strong",
+        "name": "Yandex", "meta_uk": "сильний по СНД", "meta_en": "CIS-strong",
         "matches": [
-          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "osconf.com.ua/2021/agenda", "label": "«Petrenko O.» · agenda · 2021", "conf": "92%" },
-          { "img": "img/uploads/simulator/case2/olena-vk-scrape.png", "site": "vk.com/id228417 (archive 2015)", "label": "«Elena P.» · Moscow · 2015", "conf": "81%", "warn": true }
+          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "osconf.com.ua/2021/agenda", "label_uk": "«Petrenko O.» · програма · 2021", "label_en": "«Petrenko O.» · agenda · 2021", "conf": "92%" },
+          { "img": "img/uploads/simulator/case2/olena-vk-scrape.png", "site": "vk.com/id228417 (archive 2015)", "label_uk": "«Elena P.» · Москва · 2015", "label_en": "«Elena P.» · Moscow · 2015", "conf": "81%", "warn": true }
         ]
       },
       {
-        "name": "TinEye", "meta": "exact-copy",
+        "name": "TinEye", "meta_uk": "пошук точних копій", "meta_en": "exact-copy",
         "matches": []
       }
     ],

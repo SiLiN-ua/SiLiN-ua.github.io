@@ -51,9 +51,9 @@ function clearCooldown(caseId) {
 }
 
 // ==================== FIREBASE SUBMIT ====================
-// Dev/test accounts — never write to leaderboard.
-const NO_SUBMIT_NICKS = new Set(['yehor_dev','C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test']);
-const isTestNick = (n) => NO_SUBMIT_NICKS.has(n) || /^(test|dev|qa|hard|v\d)/i.test(n);
+// Explicit test accounts only — never write to leaderboard.
+const NO_SUBMIT_NICKS = new Set(['C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test','C4Test','C5Test','C5Wire','C4Wire','C3Test','C3Hard','Case2Vis','LangTest','PhotoTest','CertTest','CertHero','TestGallery']);
+const isTestNick = (n) => NO_SUBMIT_NICKS.has(n);
 
 async function submitScore(nickname, gamePoints, caseId) {
   if (isTestNick(nickname)) {
@@ -357,23 +357,23 @@ function renderFakeUI(tool) {
         const renderMatch = (m) => `
           <div class="fake__match${m.warn?' fake__match--warn':''}">
             <img src="${escapeHtml(m.img)}" alt="" onerror="this.style.background='#1a2038';this.style.minHeight='60px'">
-            <div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(m.label)} · ${escapeHtml(m.conf)}</small></div>
+            <div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(tr(m,'label') || m.label || '')} · ${escapeHtml(m.conf)}</small></div>
           </div>`;
         return `
           <div class="fake fake--multi-reverse">
-            <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+            <div class="fake__topbar">🔎 <span>${LANG()==='en'?'Multi-Engine Reverse Face Search':'Пошук обличчя · 4 движки'}</span></div>
             <div class="fake__search-row">
               <img src="${cand.photo}" class="fake__input-img" alt="query">
-              <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines.</div>
+              <div class="fake__query">${LANG()==='en'?'Uploaded':'Завантажено'}: <code>candidate.jpg</code> · ${LANG()==='en'?'Queried 4 engines':'Опитано 4 движки'}.</div>
             </div>
             <div class="fake__engines">
               ${d.reverse_engines.map(e => `
                 <div class="fake__engine">
-                  <div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div>
+                  <div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(tr(e,'meta') || e.meta || '')}</span></div>
                   <div class="fake__engine-body">
                     ${e.matches && e.matches.length ? e.matches.map(renderMatch).join('') : ''}
-                    ${e.note ? `<div class="fake__engine-note"><em>${escapeHtml(e.note)}</em></div>` : ''}
-                    ${e.body ? escapeHtml(e.body) : ''}
+                    ${e.note ? `<div class="fake__engine-note"><em>${escapeHtml(tr(e,'note') || e.note)}</em></div>` : ''}
+                    ${e.body ? escapeHtml(tr(e,'body') || e.body) : ''}
                   </div>
                 </div>`).join('')}
             </div>
@@ -381,10 +381,10 @@ function renderFakeUI(tool) {
       }
       return `
       <div class="fake fake--multi-reverse">
-        <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+        <div class="fake__topbar">🔎 <span>${LANG()==='en'?'Multi-Engine Reverse Face Search':'Пошук обличчя · 4 движки'}</span></div>
         <div class="fake__search-row">
           <img src="${cand.photo}" class="fake__input-img" alt="query">
-          <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines.</div>
+          <div class="fake__query">${LANG()==='en'?'Uploaded':'Завантажено'}: <code>candidate.jpg</code> · ${LANG()==='en'?'Queried 4 engines':'Опитано 4 движки'}.</div>
         </div>
         <div class="fake__engines">
           <div class="fake__engine">
@@ -878,10 +878,10 @@ function renderFakeUI(tool) {
           </div>`;
         return `
           <div class="fake fake--multi-reverse">
-            <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+            <div class="fake__topbar">🔎 <span>${LANG()==='en'?'Multi-Engine Reverse Face Search':'Пошук обличчя · 4 движки'}</span></div>
             <div class="fake__search-row">
               <img src="${cand.photo}" class="fake__input-img" alt="query">
-              <div class="fake__query">Uploaded: <code>candidate.jpg</code> · Queried 4 engines.</div>
+              <div class="fake__query">${LANG()==='en'?'Uploaded':'Завантажено'}: <code>candidate.jpg</code> · ${LANG()==='en'?'Queried 4 engines':'Опитано 4 движки'}.</div>
             </div>
             <div class="fake__engines">
               ${d.reverse_engines.map(e => `
@@ -1001,7 +1001,7 @@ function renderFakeUI(tool) {
       if (d.reverse_engines) {
         const rm = (m) => `<div class="fake__match${m.warn?' fake__match--warn':''}"><img src="${escapeHtml(m.img)}" alt="" onerror="this.style.display='none'"><div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(m.label)} · ${escapeHtml(m.conf)}</small></div></div>`;
         return `<div class="fake fake--multi-reverse">
-          <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
+          <div class="fake__topbar">🔎 <span>${LANG()==='en'?'Multi-Engine Reverse Face Search':'Пошук обличчя · 4 движки'}</span></div>
           <div class="fake__search-row"><img src="${cand.photo}" class="fake__input-img"><div class="fake__query">Uploaded: candidate.jpg · Queried 4 engines.</div></div>
           <div class="fake__engines">${d.reverse_engines.map(e => `<div class="fake__engine"><div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div><div class="fake__engine-body">${e.matches && e.matches.length ? e.matches.map(rm).join('') : '<small>no matches</small>'}</div></div>`).join('')}</div>
         </div>`;
