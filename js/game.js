@@ -354,6 +354,11 @@ function renderFakeUI(tool) {
     case 'multi-reverse':
     case 'yandex-reverse':
       if (d.reverse_engines) {
+        const renderMatch = (m) => `
+          <div class="fake__match${m.warn?' fake__match--warn':''}">
+            <img src="${escapeHtml(m.img)}" alt="" onerror="this.style.background='#1a2038';this.style.minHeight='60px'">
+            <div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(m.label)} · ${escapeHtml(m.conf)}</small></div>
+          </div>`;
         return `
           <div class="fake fake--multi-reverse">
             <div class="fake__topbar">🔎 <span>Multi-Engine Reverse Face Search</span></div>
@@ -365,7 +370,11 @@ function renderFakeUI(tool) {
               ${d.reverse_engines.map(e => `
                 <div class="fake__engine">
                   <div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div>
-                  <div class="fake__engine-body">${escapeHtml(e.body)}</div>
+                  <div class="fake__engine-body">
+                    ${e.matches && e.matches.length ? e.matches.map(renderMatch).join('') : ''}
+                    ${e.note ? `<div class="fake__engine-note"><em>${escapeHtml(e.note)}</em></div>` : ''}
+                    ${e.body ? escapeHtml(e.body) : ''}
+                  </div>
                 </div>`).join('')}
             </div>
           </div>`;
@@ -587,10 +596,11 @@ function renderFakeUI(tool) {
             <div class="fake__topbar">⚖️ <span>Єдиний реєстр судових рішень + Opendatabot</span></div>
             <div class="fake__court-query">Query: <code>${escapeHtml(d.court_query)}</code></div>
             <div class="fake__court-list">
-              ${d.court_cases.map(c => `
+              ${d.court_cases.map((c, i) => `
                 <div class="fake__court-case">
                   <div class="fake__court-h">📄 Справа ${escapeHtml(c.num)} · ${c.date} · ${escapeHtml(tr(c,'court'))}</div>
                   <div class="fake__court-body">${escapeHtml(tr(c,'body'))}</div>
+                  ${i === 0 && d.court_doc_image ? `<img src="${escapeHtml(d.court_doc_image)}" class="fake__court-doc" alt="court document photo">` : ''}
                 </div>`).join('')}
             </div>
             <div class="fake__court-hint">${escapeHtml(tr(d,'court_note'))}</div>

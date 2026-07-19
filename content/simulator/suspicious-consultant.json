@@ -391,10 +391,34 @@
   "cooldown_sec": 3600,
   "ui_data": {
     "reverse_engines": [
-      { "name": "PimEyes", "meta": "face-specific", "body": "12 matches across public sources · confidence 88% avg", "kind": "clean" },
-      { "name": "FaceCheck.ID", "meta": "deep-web faces", "body": "8 matches · all with attribution (conference posters, blog authorpage, YouTube thumbnails)", "kind": "clean" },
-      { "name": "Yandex", "meta": "CIS-strong", "body": "Matches: ThreatSec Kyiv 2019 (official conference site), OSCONF 2021 poster, dou.ua author page, blog.threatlab.net author photo, plus 1 legacy VK 2015 (Russian IT company — matches CV pre-2014 employment)", "kind": "clean" },
-      { "name": "TinEye", "meta": "exact-copy", "body": "1 exact match — origin: her personal blog 2018 (author photo). Others = derivatives / crops.", "kind": "clean" }
+      {
+        "name": "PimEyes", "meta": "face-specific",
+        "matches": [
+          { "img": "img/uploads/simulator/case2/olena-passport-photo.png", "site": "dou.ua/users/olena-petrenko", "label": "Author profile photo · 2022", "conf": "91% match" },
+          { "img": "img/uploads/simulator/case2/olena-podcast.png", "site": "youtube.com/@securitypodcastua", "label": "Podcast thumbnail · 2023", "conf": "87% match" }
+        ],
+        "note": "12 total matches — all with clear attribution. No unattributed / stock hits."
+      },
+      {
+        "name": "FaceCheck.ID", "meta": "deep-web faces",
+        "matches": [
+          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "threatsec.com.ua/2019/speakers", "label": "Speaker · ThreatSec Kyiv 2019", "conf": "94% match" }
+        ],
+        "note": "8 total matches — conference posters, blog author pages, YouTube. All benign attribution."
+      },
+      {
+        "name": "Yandex", "meta": "CIS-strong",
+        "matches": [
+          { "img": "img/uploads/simulator/case2/olena-conference-stage.png", "site": "osconf.com.ua/2021/agenda", "label": "OSCONF 2021 speaker · Kyiv", "conf": "92% match" },
+          { "img": "img/uploads/simulator/case2/olena-vk-scrape.png", "site": "vk.com/kaspersky_events (archive 2015)", "label": "«Elena Petrenko» · corporate event · Moscow · 2015 · Kaspersky Lab", "conf": "81% match", "warn": true }
+        ],
+        "note": "Legacy VK hit is from 2015 — matches candidate's declared pre-2014 employment at Kaspersky Moscow office. Consistent, not synthetic."
+      },
+      {
+        "name": "TinEye", "meta": "exact-copy",
+        "matches": [],
+        "note": "1 exact match — origin: her personal blog 2018 (author photo). Others are derivatives / crops."
+      }
     ],
     "hibp_breaches": [
       { "name": "LinkedIn", "year": 2012, "size": "164M", "type": "Emails + hashed passwords" },
@@ -470,6 +494,7 @@
       { "num": "№520/4471/19", "date": "2019-03-15", "court_uk": "Голосіївський р/с Києва", "court_en": "Holosiivskyi District Court of Kyiv", "body_uk": "Позов Петренко О.О. — визначення порядку побачень батька з дитиною. Задоволено на користь позивачки.", "body_en": "Petrenko O.O. claim — determination of father's visitation schedule with the child. Granted in plaintiff's favor.", "kind": "family" }
     ],
     "court_note_uk": "Всі 3 записи — сімейні справи (розлучення, поділ майна, порядок побачень). Жодної кримінальної, господарської, адміністративної. Приватне життя, не бізнес-red-flag.",
-    "court_note_en": "All 3 records — family matters (divorce, property division, visitation schedule). No criminal, commercial, or administrative cases. Private life, not a business red flag."
+    "court_note_en": "All 3 records — family matters (divorce, property division, visitation schedule). No criminal, commercial, or administrative cases. Private life, not a business red flag.",
+    "court_doc_image": "img/uploads/simulator/case2/court-doc-blur.png"
   }
 }
