@@ -817,6 +817,7 @@ function renderFakeUI(tool) {
           <div class="fake fake--wayback">
             <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback Machine</span></div>
             <div class="fake__court-query">Query: <code>${escapeHtml(d.wayback_query)}</code></div>
+            <img src="img/uploads/simulator/case4/wayback-archive.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:0;">
             <div class="fake__court-list">
               ${d.wayback_snapshots.map(s => `
                 <div class="fake__court-case">
@@ -920,6 +921,7 @@ function renderFakeUI(tool) {
           <div class="fake fake--voice">
             <div class="fake__topbar">🎤 <span>Voice Biometric Comparison</span></div>
             <div class="fake__court-query">3 samples available · pick a pair to compare</div>
+            <img src="img/uploads/simulator/case4/voice-waveform.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:0;">
             <div class="fake__voice-samples">
               ${d.voice_samples.map(s => `
                 <div class="fake__voice-sample">
