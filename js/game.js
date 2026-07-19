@@ -1021,6 +1021,7 @@ function renderFakeUI(tool) {
         return `<div class="fake fake--court">
           <div class="fake__topbar">💳 <span>Blockchain / OTC Financial Trace</span></div>
           <div class="fake__court-query">Query: <code>${escapeHtml(d.financial_c5_query)}</code></div>
+          <img src="img/uploads/simulator/case5/crypto-wallet-trace.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <div class="fake__court-list">${d.financial_wallets.map(w => `<div class="fake__court-case"><div class="fake__court-h">💰 ${escapeHtml(w.wallet)} · confidence: ${escapeHtml(w.confidence)}</div><div class="fake__court-body">${w.flows.length ? w.flows.map(f => `<div>← ${escapeHtml(f.in_from)}<br><small>${escapeHtml(f.note)}</small></div>`).join('<hr style="opacity:.2;margin:.5rem 0">') : '<em>no flows on record</em>'}</div></div>`).join('')}</div>
         </div>`;
       }
@@ -1030,6 +1031,7 @@ function renderFakeUI(tool) {
         return `<div class="fake fake--court">
           <div class="fake__topbar">🕳️ <span>Deep-Web / Leaked Corp Chats</span></div>
           <div class="fake__court-query">Query: <code>${escapeHtml(d.deepweb_c5_query)}</code></div>
+          <img src="img/uploads/simulator/case5/deepweb-chat.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <div class="fake__court-list">${d.deepweb_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">📎 ${escapeHtml(r.source)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
         </div>`;
       }
@@ -1039,6 +1041,7 @@ function renderFakeUI(tool) {
         return `<div class="fake fake--court">
           <div class="fake__topbar">📡 <span>Cell Metadata / Tower Pings</span></div>
           <div class="fake__court-query">Query: <code>${escapeHtml(d.cell_c5_query)}</code></div>
+          <img src="img/uploads/simulator/case5/cell-tower-map.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <table class="fake__oi-table">
             <thead><tr><th>Date/Time</th><th>BTS</th><th>Note</th></tr></thead>
             <tbody>${d.cell_pings.map(p => `<tr class="fake__oi-row"><td><strong>${escapeHtml(p.date)}</strong></td><td><code>${escapeHtml(p.bts)}</code></td><td>${escapeHtml(p.note)}</td></tr>`).join('')}</tbody>
