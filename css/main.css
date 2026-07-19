@@ -3455,3 +3455,135 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   border: 1px solid var(--border);
   opacity: .85;
 }
+
+/* Case 3 — Family Chain UIs */
+.fake--oi .fake__oi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+}
+.fake--oi .fake__oi-table th {
+  text-align: left;
+  padding: .5rem .75rem;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+.fake--oi .fake__oi-table td {
+  padding: .5rem .75rem;
+  border-bottom: 1px solid rgba(45, 61, 99, .3);
+  color: var(--cream);
+}
+.fake__oi-row--found { color: #a3e6a3; }
+.fake__oi-row--private td { color: #ffc864; }
+.fake__oi-row--empty td, .fake__oi-row--null td { color: var(--text-mute); }
+.fake__oi-row small { color: var(--text-dim); }
+
+/* Instagram family pivot */
+.fake--ig { padding: 1rem; }
+.fake__ig-block {
+  padding: 1rem;
+  background: rgba(15, 21, 36, .4);
+  border: 1px solid var(--border);
+  margin-bottom: .75rem;
+}
+.fake__ig-block--highlight {
+  border-color: rgba(255, 90, 90, .4);
+  background: rgba(255, 90, 90, .04);
+}
+.fake__ig-h {
+  font-family: var(--font-mono);
+  color: var(--ice);
+  font-size: .85rem;
+  margin-bottom: .5rem;
+}
+.fake__ig-h span { color: var(--text-mute); font-weight: normal; }
+.fake__ig-body { color: var(--cream); font-size: .9rem; line-height: 1.5; }
+.fake__ig-arrow {
+  text-align: center;
+  color: var(--ice);
+  font-size: 1.5rem;
+  margin: -.3rem 0 .3rem;
+}
+.fake__ig-tag {
+  display: inline-block;
+  padding: .15rem .5rem;
+  margin: .1rem;
+  background: rgba(74, 158, 255, .1);
+  border: 1px solid var(--ice);
+  border-radius: 12px;
+  font-size: .75rem;
+  color: var(--ice);
+}
+.fake__ig-photo {
+  margin-top: .75rem;
+  padding: .75rem;
+  background: rgba(10, 14, 26, .5);
+  border-left: 3px solid #ffc864;
+}
+.fake__ig-photo img {
+  max-width: 100%;
+  border-radius: 2px;
+  margin-bottom: .5rem;
+}
+.fake__ig-caption {
+  font-size: .85rem;
+  color: var(--cream);
+  font-style: italic;
+  margin-bottom: .3rem;
+}
+.fake__ig-tagged {
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: #ff9a9a;
+}
+.fake__ig-highlights {
+  margin-top: .75rem;
+  padding: .5rem .75rem;
+  color: var(--text-dim);
+  font-size: .82rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* Telegram reverse-lookup */
+.fake--tg { padding: 0; }
+.fake__tg-account {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 21, 36, .3);
+}
+.fake__tg-account--red {
+  background: rgba(255, 90, 90, .06);
+  border-left: 3px solid #ff5a5a;
+}
+.fake__tg-h {
+  font-family: var(--font-mono);
+  color: var(--ice);
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+.fake__tg-account--red .fake__tg-h { color: #ff9a9a; }
+.fake__tg-h span { color: var(--text-mute); font-weight: normal; font-style: italic; }
+.fake__tg-body { color: var(--cream); font-size: .88rem; margin-bottom: .5rem; }
+.fake__tg-channels {
+  margin: .5rem 0;
+  color: var(--cream);
+  font-size: .85rem;
+}
+.fake__tg-channels ul {
+  margin: .25rem 0 0;
+  padding-left: 1.5rem;
+}
+.fake__tg-channels li { padding: .15rem 0; color: #ffbbbb; }
+.fake__tg-quote {
+  margin-top: .75rem;
+  padding: .75rem 1rem;
+  background: rgba(255, 90, 90, .12);
+  border-left: 3px solid #ff5a5a;
+  color: var(--cream);
+  font-style: italic;
+  font-size: .9rem;
+}

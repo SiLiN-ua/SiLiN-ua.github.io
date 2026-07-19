@@ -656,6 +656,156 @@ function renderFakeUI(tool) {
         </div>
         <div class="fake__insead-hint">Interpret carefully: public absence ≠ fabrication proof. But for a claim this specific, absence + no LinkedIn INSEAD group membership + no thesis / publication trail = tilts toward suspicion.</div>
       </div>`;
+    case 'osint-industries':
+      if (d.osint_industries_results) {
+        return `
+          <div class="fake fake--oi">
+            <div class="fake__topbar">🔎 <span>OSINT Industries · Aggregator</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.osint_industries_query)}</code></div>
+            <table class="fake__oi-table">
+              <thead><tr><th>Platform</th><th>Status</th><th>Detail</th></tr></thead>
+              <tbody>
+                ${d.osint_industries_results.map(r => `
+                  <tr class="fake__oi-row fake__oi-row--${r.status}">
+                    <td><strong>${escapeHtml(r.platform)}</strong></td>
+                    <td>${r.status === 'found' ? '✓' : r.status === 'private' ? '🔒' : r.status === 'empty' ? '∅' : '—'} ${escapeHtml(r.status)}</td>
+                    <td><small>${escapeHtml(r.detail)}</small></td>
+                  </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>`;
+      }
+      break;
+    case 'hibp-stealer':
+      if (d.stealer_log_hit) {
+        return `
+          <div class="fake fake--hibp">
+            <div class="fake__topbar">🔥 <span>HIBP + BreachDirectory</span></div>
+            <div class="fake__hibp-email">Email: <code>${escapeHtml(cand.email)}</code> · Phone: <code>${escapeHtml(cand.phone)}</code></div>
+            <div class="fake__hibp-status"><strong>HIBP · ${d.hibp_breaches.length} baseline breaches</strong></div>
+            <div class="fake__hibp-list">
+              ${d.hibp_breaches.map(b => `<div class="fake__hibp-row"><strong>${escapeHtml(b.name)}</strong> · ${b.year} · ${escapeHtml(b.size)}</div>`).join('')}
+            </div>
+            <div class="fake__hibp-status" style="margin-top:1rem"><strong>BreachDirectory · stealer log hit</strong></div>
+            <div class="fake__hibp-list">
+              <div class="fake__hibp-row"><strong>Source:</strong> ${escapeHtml(d.stealer_log_hit.source)}</div>
+              <div class="fake__hibp-row"><strong>Phone:</strong> ${escapeHtml(d.stealer_log_hit.phone)}</div>
+              <div class="fake__hibp-row"><strong>Telegram (public):</strong> ${escapeHtml(d.stealer_log_hit.telegram_id_public)}</div>
+              <div class="fake__hibp-row" style="color:#ffc864"><strong>Telegram (extra ID):</strong> ${escapeHtml(d.stealer_log_hit.telegram_id_extra)}</div>
+            </div>
+          </div>`;
+      }
+      break;
+    case 'google-dorks-family':
+      if (d.google_dorks_results && d.google_dorks_query) {
+        return `
+          <div class="fake fake--google">
+            <div class="fake__topbar">🌐 <span>Google Dorks · Family Angle</span></div>
+            <div class="fake__google-query"><code>${escapeHtml(d.google_dorks_query)}</code></div>
+            <div class="fake__google-results">
+              ${d.google_dorks_results.map(r => `
+                <div class="fake__google-row">
+                  <div class="fake__google-link">${escapeHtml(r.url)}</div>
+                  <div class="fake__google-snippet">${escapeHtml(r.snippet)}</div>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
+    case 'instagram-family':
+      if (d.instagram_sister) {
+        const s = d.instagram_sister;
+        const w = d.instagram_wife;
+        return `
+          <div class="fake fake--ig">
+            <div class="fake__topbar">📸 <span>Instagram · Family Pivot</span></div>
+            <div class="fake__ig-block">
+              <div class="fake__ig-h">${escapeHtml(w.handle)} · <span>Wife · ${escapeHtml(w.status)} · ${w.posts} posts · ${w.followers} followers</span></div>
+              <div class="fake__ig-body">Content: ${escapeHtml(w.recent)}<br><strong>${escapeHtml(w.key_finding)}</strong></div>
+            </div>
+            <div class="fake__ig-arrow">↓</div>
+            <div class="fake__ig-block fake__ig-block--highlight">
+              <div class="fake__ig-h">${escapeHtml(s.handle)} · <span>Sister-in-law · ${escapeHtml(s.status)} · ${s.posts} posts · ${s.followers} followers</span></div>
+              <div class="fake__ig-body">Highlights: ${s.highlights.map(h => `<span class="fake__ig-tag">${escapeHtml(h)}</span>`).join(' ')}</div>
+              <div class="fake__ig-photo">
+                <img src="${escapeHtml(s.family_photo_2023.img)}" alt="family photo" onerror="this.style.display='none'">
+                <div class="fake__ig-caption">${escapeHtml(s.family_photo_2023.caption)}</div>
+                <div class="fake__ig-tagged"><strong>Tagged:</strong> ${escapeHtml(s.family_photo_2023.tagged)}</div>
+              </div>
+              <div class="fake__ig-highlights"><em>${escapeHtml(s.highlights_content)}</em></div>
+            </div>
+          </div>`;
+      }
+      break;
+    case 'classifieds':
+      if (d.classifieds_ads) {
+        return `
+          <div class="fake fake--court">
+            <div class="fake__topbar">📰 <span>Local Classifieds Archive · OLX + Bezplatka</span></div>
+            <div class="fake__court-list">
+              ${d.classifieds_ads.map(a => `
+                <div class="fake__court-case">
+                  <div class="fake__court-h">${escapeHtml(a.site)}</div>
+                  <div class="fake__court-body"><strong>${escapeHtml(a.title)}</strong><br>Contact: <code>${escapeHtml(a.contact)}</code><br>${escapeHtml(a.note)}</div>
+                  ${a.img ? `<img src="${escapeHtml(a.img)}" class="fake__court-doc" alt="ad screenshot" onerror="this.style.display='none'">` : ''}
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
+    case 'telegram-reverse':
+      if (d.telegram_reverse_result) {
+        const tr2 = d.telegram_reverse_result;
+        return `
+          <div class="fake fake--tg">
+            <div class="fake__topbar">📱 <span>Telegram Reverse Lookup</span></div>
+            <div class="fake__court-query">Query: <code>${escapeHtml(d.telegram_reverse_query)}</code> · Accounts found: <strong>${tr2.accounts_found}</strong></div>
+            <div class="fake__tg-account">
+              <div class="fake__tg-h">Account 1: ${escapeHtml(tr2.account_1.handle)} <span>(expected)</span></div>
+              <div class="fake__tg-body">Owner: ${escapeHtml(tr2.account_1.owner)}<br>Channels: ${tr2.account_1.channels.map(escapeHtml).join(', ')}</div>
+            </div>
+            <div class="fake__tg-account fake__tg-account--red">
+              <div class="fake__tg-h">Account 2: ${escapeHtml(tr2.account_2.handle)} <span>· NOT expected on this number</span></div>
+              <div class="fake__tg-body">Owner: <strong>${escapeHtml(tr2.account_2.owner)}</strong></div>
+              <div class="fake__tg-channels">Channels subscribed:<ul>${tr2.account_2.channels.map(c => `<li>${escapeHtml(c)}</li>`).join('')}</ul></div>
+              <div class="fake__tg-quote">${escapeHtml(tr2.account_2.damning_quote)}</div>
+              ${tr2.account_2.screenshot ? `<img src="${escapeHtml(tr2.account_2.screenshot)}" class="fake__court-doc" alt="telegram screenshot" onerror="this.style.display='none'">` : ''}
+            </div>
+          </div>`;
+      }
+      break;
+    case 'linkedin-clean':
+      if (d.linkedin_clean) {
+        const l = d.linkedin_clean;
+        return `
+          <div class="fake fake--linkedin">
+            <div class="fake__topbar">💼 <span>LinkedIn · Direct</span></div>
+            <div class="fake__li-profile">
+              <div class="fake__li-name">${escapeHtml(l.name)} · <span>${escapeHtml(l.headline)}</span></div>
+              <div class="fake__li-meta">📍 ${l.years} years · ${l.connections} connections</div>
+              <div class="fake__li-exp">
+                ${l.experience.map(e => `<div class="fake__li-row">${escapeHtml(e)}</div>`).join('')}
+              </div>
+              <div class="fake__li-endorsements"><small>${escapeHtml(l.posts)}</small></div>
+            </div>
+          </div>`;
+      }
+      break;
+    case 'sanctions-clean':
+      if (d.sanctions_grid) {
+        return `
+          <div class="fake fake--sanctions">
+            <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+            <div class="fake__sanc-name">Query: <code>${escapeHtml(tr(cand,'name'))}</code></div>
+            <div class="fake__sanc-grid">
+              ${d.sanctions_grid.map(g => `
+                <div class="fake__sanc-cell fake__sanc-cell--ok">
+                  <span>${escapeHtml(g.list)}</span><strong>✓ CLEAN</strong>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+      break;
     case 'youcontrol': return `
       <div class="fake fake--youcontrol">
         <div class="fake__topbar">📄 <span>YouControl — Legal Entity Search</span></div>

@@ -1,0 +1,501 @@
+{
+  "id": "family-chain",
+  "title_uk": "Кейс 3 · «Сімейний ланцюжок»",
+  "title_en": "Case 3 · «Family Chain»",
+  "simulator_id": "candidate-red-flag",
+  "time_limit_sec": 900,
+  "max_points": 350,
+  "briefing": {
+    "client_uk": "Український fintech-банк",
+    "client_en": "Ukrainian fintech-bank",
+    "position": "Head of Compliance Operations",
+    "salary": "$140K/рік · $140K/year",
+    "splash": "img/uploads/simulator/case3/case3-splash.png",
+    "candidate": {
+      "name_uk": "Дмитро Ковальчук",
+      "name_en": "Dmytro Kovalchuk",
+      "photo": "img/uploads/simulator/case3/candidate-portrait.png",
+      "email": "d.kovalchuk.compliance@gmail.com",
+      "phone": "+380 50 ***-**-82"
+    },
+    "body_uk": "Клієнт розглядає Дмитра Ковальчука (36, ПІБ і фото додано) на позицію Head of Compliance Operations. Резюме бездоганне: 12 років у compliance, 3 попередні позиції у великих банках. LinkedIn — виключно професійний. Instagram — приватний. Facebook — «пусто». Google — нічого підозрілого. НА ПОВЕРХНІ — ідеальний кандидат. У тебе 15 хвилин. Прямий OSINT нічого не дасть — все закрито. Твій навик: коли головні двері замкнені, шукай через вікна. Пам'ятай — це compliance-позиція. Ціна помилки в обидва боки — реальні гроші банку.",
+    "body_en": "Client considers Dmytro Kovalchuk (36, full name and photo attached) for Head of Compliance Operations. Resume flawless: 12 years in compliance, 3 previous positions at major banks. LinkedIn — strictly professional. Instagram — private. Facebook — empty. Google — nothing suspicious. ON THE SURFACE — ideal candidate. You have 15 minutes. Direct OSINT will give you nothing — everything is closed. Your skill: when the front door is locked, look through the windows. Remember — this is a compliance position. The cost of error in either direction is real bank money.",
+    "start_btn_uk": "▶ Розпочати розслідування",
+    "start_btn_en": "▶ Start investigation"
+  },
+  "phase2": {
+    "title_uk": "Фаза 2 · Первинний Pivot",
+    "title_en": "Phase 2 · Initial Pivots",
+    "instruction_uk": "Прямі профілі закриті. Обирай уважно — не все дасть результат одразу.",
+    "instruction_en": "Direct profiles are locked. Choose carefully — not every tool will produce immediate results.",
+    "next_btn_uk": "→ Далі: Крос-верифікація",
+    "next_btn_en": "→ Next: Cross-verification",
+    "min_tools_used": 5,
+    "tools": [
+      {
+        "id": "osint-industries",
+        "icon": "🔎",
+        "name_uk": "OSINT Industries",
+        "name_en": "OSINT Industries",
+        "provider": "1000+ platforms aggregator",
+        "desc_uk": "Мега-агрегатор email/phone/username",
+        "desc_en": "Mega-aggregator email/phone/username",
+        "tooltip_uk": "Що робить: один запит по email/тел/нік → 20-40 потенційних платформ. Для чого: швидкий скан присутності. АЛЕ: якщо ціль ретельно закрилась — може повернути порожньо, і це вже сигнал про рівень OPSEC.",
+        "tooltip_en": "What it does: one query by email/phone/username → 20-40 potential platforms. Use it: fast presence scan. BUT: if target is carefully locked down — may return empty, which is itself a signal about OPSEC level.",
+        "correct": true,
+        "points": 8,
+        "time_cost": 60,
+        "ui_component": "osint-industries",
+        "weight": "supporting",
+        "clue_uk": "Прямий email + телефон — знайдено лише LinkedIn + сірі профілі на dou.ua/work.ua. Instagram: 'private'. Facebook: 'no public data'. TikTok/X/Reddit/GitHub: null. Highly locked-down profile.",
+        "clue_en": "Direct email + phone — found only LinkedIn + faceless profiles on dou.ua/work.ua. Instagram: 'private'. Facebook: 'no public data'. TikTok/X/Reddit/GitHub: null. Highly locked-down profile."
+      },
+      {
+        "id": "hibp-breach",
+        "icon": "📧",
+        "name_uk": "HIBP + BreachDirectory",
+        "name_en": "HIBP + BreachDirectory",
+        "provider": "Have I Been Pwned + stealer-log indexes",
+        "desc_uk": "Витоки + stealer-логи + комбо-списки",
+        "desc_en": "Breaches + stealer logs + combo lists",
+        "tooltip_uk": "Що робить: HIBP — великі відомі витоки. BreachDirectory — свіжі stealer-логи, комбо-списки, telegram-активність. Разом покривають те, що поодинці пропускають.",
+        "tooltip_en": "What it does: HIBP — large known breaches. BreachDirectory — fresh stealer logs, combo lists, telegram activity. Together cover what each misses alone.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 45,
+        "ui_component": "hibp-stealer",
+        "weight": "supporting",
+        "clue_uk": "HIBP: 3 baseline breaches (LinkedIn 2012, Dropbox 2016, Collection#1). BreachDirectory: stealer-log 2023 з телефоном +380 50 ***-**-82 — знайдено додатковий telegram_id, який НЕ співпадає з @dkovalchuk (публічний). Другий telegram-акаунт існує.",
+        "clue_en": "HIBP: 3 baseline breaches (LinkedIn 2012, Dropbox 2016, Collection#1). BreachDirectory: stealer log 2023 with phone +380 50 ***-**-82 — found additional telegram_id that does NOT match @dkovalchuk (public one). A second telegram account exists."
+      },
+      {
+        "id": "google-dorks-family",
+        "icon": "🌐",
+        "name_uk": "Google Dorks (family angle)",
+        "name_en": "Google Dorks (family angle)",
+        "provider": "Google search operators",
+        "desc_uk": "Пошук через рідних та згадки",
+        "desc_en": "Search via relatives and mentions",
+        "tooltip_uk": "Що робить: оператори site:, filetype: + повне ПІБ + «дружина / сім'я / брат / сестра». Для чого: коли прямий кандидат закритий — рідні майже завжди відкриті. Family chain — це системна методологія.",
+        "tooltip_en": "What it does: operators site:, filetype: + full name + «wife / family / brother / sister». Use it: when the direct candidate is locked, relatives are almost always open. Family chain is a systemic methodology.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 90,
+        "ui_component": "google-dorks-family",
+        "weight": "diagnostic",
+        "clue_uk": "Знайдено старий Facebook дружини (Ольга Ковальчук) — публічний до 2022, потім прикритий. У 2020 залишила посилання на власний Instagram (@olga_kovalchuk_ua). Профіль дружини — досі відкритий. Family chain починається.",
+        "clue_en": "Found wife's old Facebook (Olga Kovalchuk) — public until 2022, then restricted. In 2020 she left a link to her own Instagram (@olga_kovalchuk_ua). Wife's profile — still open. Family chain begins."
+      },
+      {
+        "id": "instagram-family",
+        "icon": "📸",
+        "name_uk": "Instagram (family pivot)",
+        "name_en": "Instagram (family pivot)",
+        "provider": "Instagram public + tag scraping",
+        "desc_uk": "Профіль дружини → теги → сестра",
+        "desc_en": "Wife's profile → tags → sister",
+        "tooltip_uk": "Що робить: рекурсивний обхід тегів у відкритому профілі. Для чого: розкрутити коло контактів. Сестри, кузини, матері рідко закриваються повністю — це найслабша ланка OPSEC у сім'ї.",
+        "tooltip_en": "What it does: recursive tag walk in an open profile. Use it: unravel contact circle. Sisters, cousins, mothers rarely lock down fully — the weakest OPSEC link in the family.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 90,
+        "ui_component": "instagram-family",
+        "weight": "diagnostic",
+        "clue_uk": "@olga_kovalchuk_ua → у сторіс тегує сестру @kate_svit_2024 (Катерина Світлічна). ЇЇ профіль повністю відкритий. У 2023-му пості з сімейної подорожі — фото КАНДИДАТА, але тегує його як @dima_finance_pro. Друге ім'я. Highlights: скріншоти P2P-обмінників, пости про 'сірі' транзакції, обмінники без верифікації.",
+        "clue_en": "@olga_kovalchuk_ua → in stories tags sister @kate_svit_2024 (Kateryna Svitlichna). HER profile fully open. In a 2023 post from a family trip — a photo of the CANDIDATE, but tagged as @dima_finance_pro. Second name. Highlights: screenshots of P2P exchanges, posts about 'grey' transactions, no-KYC exchangers."
+      },
+      {
+        "id": "classifieds",
+        "icon": "📰",
+        "name_uk": "Local classifieds (OLX + old boards)",
+        "name_en": "Local classifieds (OLX + old boards)",
+        "provider": "OLX + Bezplatka + archived boards",
+        "desc_uk": "Старі оголошення та контакти",
+        "desc_en": "Old ads and contacts",
+        "tooltip_uk": "Що робить: пошук старих оголошень + архівні дошки. Для чого: у оголошеннях люди залишають старі телефони, альтернативні контакти, іноді номери рідних як 'запасний'. Часто забуті і не приховані.",
+        "tooltip_en": "What it does: search old ads + archived boards. Use it: in ads people leave old phones, alternate contacts, sometimes relatives' numbers as 'backup'. Often forgotten and not hidden.",
+        "correct": true,
+        "points": 12,
+        "time_cost": 60,
+        "ui_component": "classifieds",
+        "weight": "supporting",
+        "clue_uk": "Знайдено 2 архівні оголошення 2019-2020: продаж авто + оренда квартири. В обох — той же телефон кандидата, і в одному підпис: «Якщо мене немає — телефонуйте сестрі дружини +380 63 ***-**-14». Ключ від додаткового channel — телефон Катерини.",
+        "clue_en": "Found 2 archived ads 2019-2020: car sale + apartment rental. Both — same candidate's phone, and in one a note: «If I'm not available — call wife's sister +380 63 ***-**-14». Key to additional channel — Kateryna's phone."
+      },
+      {
+        "id": "telegram-reverse",
+        "icon": "📱",
+        "name_uk": "Telegram reverse-lookup",
+        "name_en": "Telegram reverse-lookup",
+        "provider": "Specialized telegram OSINT tools",
+        "desc_uk": "Пошук акаунтів за номером телефону",
+        "desc_en": "Account lookup by phone number",
+        "tooltip_uk": "Що робить: reverse-lookup інструменти для Telegram — знаходять акаунти, прив'язані до номера. Для чого: якщо основний Telegram закритий/чистий — другий акаунт на іншому номері (свій, сімейний, купленому) вкриє те, що людина ховає.",
+        "tooltip_en": "What it does: reverse-lookup tools for Telegram — find accounts linked to a phone. Use it: if the main Telegram is closed/clean — a second account on a different number (own, family, purchased) reveals what the person hides.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 75,
+        "ui_component": "telegram-reverse",
+        "weight": "diagnostic",
+        "clue_uk": "За номером Катерини (сестри дружини) знайдено 2 telegram-акаунти. Один — сам сестрин. Другий — @dima_finance_pro (той самий нік з тегу в Instagram). Активний у 4 P2P-каналах з обходу комплаєнсу. Найтоксичніший коментар (2024-05): «На роботі все під контролем. Ніхто так глибоко не копатиме.»",
+        "clue_en": "Kateryna's number (wife's sister) returns 2 telegram accounts. One — hers. The other — @dima_finance_pro (same nick as the Instagram tag). Active in 4 P2P channels for compliance bypass. Most damning comment (2024-05): «At work everything is under control. Nobody will dig this deep.»"
+      },
+      {
+        "id": "linkedin-direct",
+        "icon": "💼",
+        "name_uk": "LinkedIn Direct",
+        "name_en": "LinkedIn Direct",
+        "provider": "LinkedIn public profile",
+        "desc_uk": "Прямий пошук на LinkedIn",
+        "desc_en": "Direct LinkedIn lookup",
+        "tooltip_uk": "Що робить: перевіряє публічний профіль. Для чого: базова перевірка кар'єрної історії. АЛЕ: якщо кандидат живе double-life, його LinkedIn буде stellar — це не сигнал ні за, ні проти.",
+        "tooltip_en": "What it does: checks public profile. Use it: basic career-history check. BUT: if the candidate lives a double life, their LinkedIn will be stellar — this is not a signal either way.",
+        "correct": true,
+        "points": 5,
+        "time_cost": 30,
+        "ui_component": "linkedin-clean",
+        "weight": "noise",
+        "clue_uk": "LinkedIn: 12 років, 1200 зв'язків, 3 попередні compliance-позиції (всі верифіковані), CFA рівень 2. Пости — виключно про AML/KYC регуляції. Профіль ідеальний. Це не заперечує insider-threat — навпаки, це надійне професійне прикриття.",
+        "clue_en": "LinkedIn: 12 years, 1200 connections, 3 previous compliance positions (all verified), CFA level 2. Posts — exclusively about AML/KYC regulations. Profile is impeccable. This does NOT rule out insider-threat — on the contrary, it is a solid professional cover."
+      },
+      {
+        "id": "sanctions-pep",
+        "icon": "⚖️",
+        "name_uk": "Sanctions & PEP",
+        "name_en": "Sanctions & PEP",
+        "provider": "OFAC + EU + UK + СБУ + РНБО",
+        "desc_uk": "Санкції + політично значущі особи",
+        "desc_en": "Sanctions + politically exposed",
+        "tooltip_uk": "Що робить: перевірка у санкційних списках + PEP. Для чого: mandatory для compliance-ролі. АЛЕ: insider-threat зазвичай не сидить у санкційних списках — це операційний ризик, не політичний.",
+        "tooltip_en": "What it does: sanctions + PEP screening. Use it: mandatory for a compliance role. BUT: insider threat usually doesn't sit on sanctions lists — it's an operational risk, not political.",
+        "correct": true,
+        "points": 8,
+        "time_cost": 45,
+        "ui_component": "sanctions-clean",
+        "weight": "noise",
+        "clue_uk": "Чисто по всіх списках. Жодного PEP-adjacent матчу. Але це очікувано — insider-threat не є санкційним ризиком. Треба інший вимір оцінки.",
+        "clue_en": "Clean across all lists. No PEP-adjacent match. But this is expected — insider threat is not a sanctions risk. A different dimension of assessment is needed."
+      },
+      {
+        "id": "youcontrol",
+        "icon": "📄",
+        "name_uk": "YouControl by phone",
+        "name_en": "YouControl by phone",
+        "provider": "YouControl",
+        "desc_uk": "Пошук юрособи за номером ⚠",
+        "desc_en": "Search legal entity by phone ⚠",
+        "tooltip_uk": "YouControl індексує юросіб (компанії) України, не фізосіб. Для фізособи-кандидата — марно.",
+        "tooltip_en": "YouControl indexes Ukrainian legal entities (companies), not individuals. For an individual candidate — pointless.",
+        "warning_uk": "⚠️ YouControl індексує юросіб, не фізосіб. Пошук по мобільному коштуватиме 90с і -10 очок. Все одно продовжити?",
+        "warning_en": "⚠️ YouControl indexes legal entities, not individuals. Phone lookup will cost 90s and -10 points. Continue anyway?",
+        "correct": false,
+        "points": -10,
+        "time_cost": 90,
+        "ui_component": "youcontrol",
+        "weight": "decoy",
+        "clue_uk": "🎣 RED HERRING (попереджали). -10 і 90с.",
+        "clue_en": "🎣 RED HERRING (you were warned). -10 and 90s."
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Фаза 3 · Крос-верифікація",
+    "title_en": "Phase 3 · Cross-verification",
+    "instruction_uk": "3 прямі запитання за знайденими доказами. Обирай уважно.",
+    "instruction_en": "3 direct questions based on your findings. Choose carefully.",
+    "next_btn_uk": "→ Далі: Обґрунтування",
+    "next_btn_en": "→ Next: Source citation",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Прямі профілі кандидата (Instagram, Facebook, Google) — все закрито або порожньо. Наступний крок?",
+        "text_en": "Candidate's direct profiles (Instagram, Facebook, Google) — all closed or empty. Next move?",
+        "options": [
+          {
+            "text_uk": "Недостатньо даних, закрити кейс",
+            "text_en": "Insufficient data, close case",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ Це не «недостатньо даних». Це високий рівень OPSEC — сам по собі сигнал. У людини з чистою совістю немає причини так тотально закривати всі профілі. Наступний крок — обхід через оточення.",
+            "feedback_en": "❌ This is not «insufficient data». This is a high OPSEC level — a signal in itself. A person with a clean conscience has no reason to close all profiles this totally. Next step — pivot through the surroundings."
+          },
+          {
+            "text_uk": "Ескалувати pivot на рідних, друзів, старі оголошення",
+            "text_en": "Escalate pivot to family, friends, old ads",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Family chain — це системна методологія. Рідні майже ніколи не закриваються тотально. Один відкритий пост дружини або сестри — і весь ланцюжок розплітається.",
+            "feedback_en": "✓ Correct. Family chain is a systemic methodology. Relatives almost never lock down totally. One open post by a wife or sister — and the whole chain unravels."
+          },
+          {
+            "text_uk": "Просити кандидата надати додаткові акаунти для перевірки",
+            "text_en": "Ask the candidate for additional accounts for verification",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Ти щойно попередив ціль про своє розслідування. Тепер він видалить сліди. Правильна тактика — обхід через відкриті сторонні джерела, БЕЗ контакту з ціллю.",
+            "feedback_en": "❌ You just alerted the target about your investigation. Now he will scrub traces. Correct tactic — pivot through open third-party sources WITHOUT contacting the target."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Instagram сестри дружини тегує кандидата у сімейному фото 2023 під ніком @dima_finance_pro. Це доводить, що обидва акаунти належать одній людині?",
+        "text_en": "The wife's sister's Instagram tags the candidate in a 2023 family photo under the alias @dima_finance_pro. Does this prove both accounts belong to the same person?",
+        "options": [
+          {
+            "text_uk": "Ні — тег може бути жартом, однофамілець, спільник",
+            "text_en": "No — tag could be a joke, namesake, associate",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ Родич тегує людину на сімейному фото — не 'жарт'. Face-match + контекст сімейного кола + додатковий підтверджуючий сигнал з BreachDirectory (телефон в stealer-логу дав інший telegram_id) = переконлива атрибуція.",
+            "feedback_en": "❌ A relative tagging a person in a family photo is not a 'joke'. Face-match + family-circle context + additional confirming signal from BreachDirectory (phone in stealer log yielded different telegram_id) = convincing attribution."
+          },
+          {
+            "text_uk": "Face-match + сімейний контекст + телефонний слід = впевнена атрибуція, це другий нік того ж кандидата",
+            "text_en": "Face-match + family context + phone trail = confident attribution, this is the candidate's second alias",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Одиничний сигнал (тільки тег) був би слабким. Три незалежні сигнали (обличчя + сімейне коло + phone→telegram_id) конвергуються на одну людину. Це стандартна OSINT-атрибуція.",
+            "feedback_en": "✓ Correct. A single signal (tag alone) would be weak. Three independent signals (face + family circle + phone→telegram_id) converge on one person. Standard OSINT attribution."
+          },
+          {
+            "text_uk": "Не суд — не приймати рішення без підтвердження від кандидата",
+            "text_en": "Not court-grade — don't decide without candidate's confirmation",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ OSINT-скринінг ≠ судовий процес. Стандарт — «достатньо переконливо для business-decision», не «beyond reasonable doubt». Три конвергентні сигнали для screening'у достатньо.",
+            "feedback_en": "❌ OSINT screening ≠ court process. Standard is «convincing enough for business decision», not «beyond reasonable doubt». Three convergent signals are enough for screening."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Другий Telegram-акаунт активний у P2P-каналах з обхoду комплаєнсу + коментар «на роботі все під контролем». Клієнт наймає на Head of Compliance. Твій висновок?",
+        "text_en": "The second Telegram is active in P2P compliance-bypass channels + comment «at work everything is under control». Client is hiring for Head of Compliance. Your conclusion?",
+        "options": [
+          {
+            "text_uk": "Особисті фінанси — не пов'язано з роботою, ігнорувати",
+            "text_en": "Personal finances — not work-related, ignore",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ Категорично ні. Кандидат на Head of Compliance, який особисто обходить комплаєнс — це визначення insider-threat. Комбінація «розуміння регуляції + мотивація її обходити + позиція для цього» — критичний ризик.",
+            "feedback_en": "❌ Absolutely not. A Head of Compliance candidate who personally bypasses compliance is the definition of insider threat. The combination «regulatory understanding + motivation to circumvent + position to do so» is a critical risk."
+          },
+          {
+            "text_uk": "Прямий insider-threat індикатор, несумісний з посадою",
+            "text_en": "Direct insider-threat indicator, incompatible with the role",
+            "points": 20,
+            "correct": true,
+            "feedback_uk": "✓ Правильно. Комплаєнс-офіцер з double-life у P2P-обході — це не гіпотеза, це готова схема майбутньої фрод-операції. Коментар «ніхто не копатиме глибоко» показує обдумувану мотивацію.",
+            "feedback_en": "✓ Correct. A compliance officer with a double life in P2P bypass — not a hypothesis, a ready-made scheme for a future fraud operation. The comment «nobody will dig this deep» shows premeditated motivation."
+          },
+          {
+            "text_uk": "Побічний доказ, треба банківські виписки",
+            "text_en": "Circumstantial, need bank statements",
+            "points": -5,
+            "correct": false,
+            "feedback_uk": "❌ У тебе немає доступу до банківських виписок, і ти НЕ маєш на них права до найму. OSINT-докази + власна цитата кандидата про обхід — вже достатньо для 'do not hire' рекомендації.",
+            "feedback_en": "❌ You have no access to bank statements and you have NO right to them before hiring. OSINT evidence + candidate's own quote about bypass — already enough for 'do not hire' recommendation."
+          }
+        ]
+      }
+    ]
+  },
+  "citation_phase": {
+    "title_uk": "Фаза 3.5 · Обґрунтування",
+    "title_en": "Phase 3.5 · Source Citation",
+    "instruction_uk": "Вибери 3 знахідки, що НАЙБІЛЬШЕ обґрунтовують твоє рішення. Гра рахує вагу тулу — правильні мають бути ті, що реально керували вердиктом. Розбір — після.",
+    "instruction_en": "Pick 3 findings that MOST justify your decision. The game scores by tool weight — right picks are the ones that actually drove your verdict. Review comes after.",
+    "next_btn_uk": "→ Далі: Фінальний вердикт",
+    "next_btn_en": "→ Next: Final verdict",
+    "max_picks": 3,
+    "scoring": {
+      "diagnostic": 15,
+      "supporting": 5,
+      "noise": -3,
+      "decoy": -10
+    }
+  },
+  "phase4": {
+    "title_uk": "Фаза 4 · Фінальний вердикт",
+    "title_en": "Phase 4 · Final Verdict",
+    "instruction_uk": "Твій вердикт для клієнта. Обирай уважно — це визначить фінальний ранг.",
+    "instruction_en": "Your verdict for the client. Choose carefully — this determines your final rank.",
+    "options": [
+      {
+        "id": "red_flag",
+        "label_uk": "🚩 RED FLAG — категорично не рекомендую",
+        "label_en": "🚩 RED FLAG — strongly do not recommend",
+        "points": 50,
+        "correct": true,
+        "verdict": "success",
+        "feedback_uk": "✓ ПРАВИЛЬНО. Ти розкрутив family-chain: закриті прямі профілі → відкритий Facebook дружини → Instagram сестри → тег другого ніку → phone→telegram_id → другий акаунт у P2P-каналах з обхідних схем. Клієнт врятував ~$500K потенційних збитків від insider-fraud. Твоя репутація — росте.",
+        "feedback_en": "✓ CORRECT. You unraveled the family chain: locked direct profiles → open wife's Facebook → sister's Instagram → tag of second alias → phone→telegram_id → second account in P2P compliance-bypass channels. Client saved ~$500K of potential insider-fraud losses. Your reputation grows."
+      },
+      {
+        "id": "green",
+        "label_uk": "✅ GREEN — рекомендую наймати",
+        "label_en": "✅ GREEN — recommend to hire",
+        "points": -50,
+        "correct": false,
+        "verdict": "fail",
+        "feedback_uk": "💥 КАТАСТРОФА. Ти пропустив insider-threat на compliance-позицію у fintech-банку. У реальності це коштувало б клієнту 6-7 знаків збитків + регуляторні санкції за проваленого DD.",
+        "feedback_en": "💥 CATASTROPHE. You missed insider-threat on a compliance position at a fintech bank. In reality this would cost the client 6-7 figures of losses + regulatory sanctions for failed DD."
+      },
+      {
+        "id": "insufficient",
+        "label_uk": "⚠️ Недостатньо даних для рішення",
+        "label_en": "⚠️ Insufficient data for a decision",
+        "points": 10,
+        "correct": false,
+        "verdict": "weak",
+        "feedback_uk": "⚠️ Обережно, але безсило. Якщо ти дійшов до другого telegram-акаунту з цитатою про обхід — у тебе достатньо для RED FLAG. «Недостатньо» тут = невміння комітитись на висновку. Клієнт не отримав відповіді.",
+        "feedback_en": "⚠️ Cautious but powerless. If you reached the second telegram account with the bypass quote — you have enough for RED FLAG. «Insufficient» here = inability to commit to a conclusion. Client got no answer."
+      }
+    ]
+  },
+  "ranks": {
+    "master": {
+      "min": 260,
+      "label_uk": "💎 Master · Shadow Hunter",
+      "label_en": "💎 Master · Shadow Hunter",
+      "color": "#7fd6ff",
+      "msg_uk": "Ти розкрутив family-chain від першого закритого профілю до P2P-цитати. Клієнт запам'ятає це ім'я.",
+      "msg_en": "You unraveled the family chain from the first locked profile to the P2P quote. The client will remember this name."
+    },
+    "senior": {
+      "min": 190,
+      "label_uk": "🥇 Senior Investigator",
+      "label_en": "🥇 Senior Investigator",
+      "color": "#ffc864",
+      "msg_uk": "Правильний вердикт, впевнена робота. Family chain опанована.",
+      "msg_en": "Correct verdict, confident work. Family chain mastered."
+    },
+    "junior": {
+      "min": 120,
+      "label_uk": "🥈 Junior Analyst",
+      "label_en": "🥈 Junior Analyst",
+      "color": "#c0c8d8",
+      "msg_uk": "Правильний вердикт, але з зайвими кроками або пропущеним ланцюжком.",
+      "msg_en": "Correct verdict, but with extra steps or a missed link."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "🥉 Trainee",
+      "label_en": "🥉 Trainee",
+      "color": "#a67c52",
+      "msg_uk": "Family chain — не інтуїтивна. Прочитай методологію і спробуй ще.",
+      "msg_en": "Family chain is not intuitive. Read the methodology and try again."
+    }
+  },
+  "cooldown_sec": 3600,
+  "ui_data": {
+    "osint_industries_query": "d.kovalchuk.compliance@gmail.com · +380 50 ***-**-82 · «Dmytro Kovalchuk»",
+    "osint_industries_results": [
+      { "platform": "LinkedIn", "status": "found", "detail": "public profile, 1200 conn" },
+      { "platform": "dou.ua", "status": "found", "detail": "faceless profile, 2 posts 2019" },
+      { "platform": "work.ua", "status": "found", "detail": "stale profile 2020" },
+      { "platform": "Instagram", "status": "private", "detail": "handle @d_kovalchuk_kyiv (private)" },
+      { "platform": "Facebook", "status": "empty", "detail": "no public data" },
+      { "platform": "Twitter/X", "status": "null", "detail": "no match" },
+      { "platform": "TikTok", "status": "null", "detail": "no match" },
+      { "platform": "Reddit", "status": "null", "detail": "no match" },
+      { "platform": "GitHub", "status": "null", "detail": "no match" },
+      { "platform": "Telegram (public)", "status": "found", "detail": "@dkovalchuk · «Head of Compliance @ [bank]» · zero messages public" }
+    ],
+    "hibp_breaches": [
+      { "name": "LinkedIn", "year": 2012, "size": "164M", "type": "Emails + hashed passwords" },
+      { "name": "Dropbox", "year": 2016, "size": "68M", "type": "Emails + bcrypt hashes" },
+      { "name": "Collection #1", "year": 2019, "size": "773M", "type": "Aggregate credential-stuffing list" }
+    ],
+    "stealer_log_hit": {
+      "source": "BreachDirectory · stealer_log_2023_batch_47.txt",
+      "phone": "+380 50 ***-**-82",
+      "telegram_id_public": "@dkovalchuk (verified)",
+      "telegram_id_extra": "6712834XXX (unresolved to public @, second account exists)"
+    },
+    "google_dorks_query": "«Дмитро Ковальчук» (дружина OR сім'я OR брат OR сестра) site:facebook.com OR site:ok.ru",
+    "google_dorks_results": [
+      { "url": "facebook.com/olga.kovalchuk.5482", "snippet": "Ольга Ковальчук · Kyiv · «Мама 2х деток, дружина Дмитра ❤️ | insta: @olga_kovalchuk_ua» · profile locked since 2022-08" },
+      { "url": "ok.ru/profile/571298437", "snippet": "Katya Svitlichna · «сестра моєї дружини» tagged in old post by @olga_kovalchuk_ua" },
+      { "url": "archive.org/web/20200315/olx.ua/ad/9284712", "snippet": "Продам Kia Optima 2018 · контакт Дмитро +380 50 ***-**-82 · «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»" }
+    ],
+    "instagram_wife": {
+      "handle": "@olga_kovalchuk_ua",
+      "status": "open",
+      "posts": 340,
+      "followers": 1247,
+      "recent": "family trips, kids, home decor",
+      "key_finding": "Story 2024-03: tagged sister @kate_svit_2024"
+    },
+    "instagram_sister": {
+      "handle": "@kate_svit_2024",
+      "status": "open",
+      "posts": 812,
+      "followers": 3400,
+      "highlights": ["Travel 2023", "Family", "Money tips 💰", "Crypto"],
+      "family_photo_2023": {
+        "img": "img/uploads/simulator/case3/family-photo-tag.png",
+        "caption": "Наша сім'я в Одесі 🌊 з @olga_kovalchuk_ua @dima_finance_pro та малятами",
+        "tagged": "@dima_finance_pro (=candidate under second alias)"
+      },
+      "highlights_content": "Screenshots of P2P exchange apps (Binance P2P, LocalBitcoins archive, Persona-2-persona telegram bots), posts about 'grey' cash-out schemes, no-KYC exchanges in Kyiv-region"
+    },
+    "classifieds_ads": [
+      {
+        "site": "OLX (archived 2019-11)",
+        "img": "img/uploads/simulator/case3/olx-old-ad.png",
+        "title": "Продам Kia Optima 2018 · пробіг 43К",
+        "contact": "Дмитро +380 50 ***-**-82",
+        "note": "«Якщо не відповідаю — телефонуйте сестрі дружини Кетрін +380 63 ***-**-14»"
+      },
+      {
+        "site": "Bezplatka (archived 2020-06)",
+        "title": "Оренда 2-кімн Печерськ 700$/міс",
+        "contact": "+380 50 ***-**-82",
+        "note": "Довгостроково, тільки родина, без комісії"
+      }
+    ],
+    "telegram_reverse_query": "phone: +380 63 ***-**-14 (sister-in-law Kateryna)",
+    "telegram_reverse_result": {
+      "accounts_found": 2,
+      "account_1": {
+        "handle": "@kate_svit_2024",
+        "owner": "Kateryna Svitlichna (sister-in-law, expected)",
+        "channels": ["family chat", "kids school"]
+      },
+      "account_2": {
+        "handle": "@dima_finance_pro",
+        "owner": "= CANDIDATE (second alias, matches Instagram tag)",
+        "channels": [
+          "@p2p_kyiv_no_kyc (4200 members) — P2P без верифікації",
+          "@grey_finance_ua (1800 members) — обхід банківського контролю",
+          "@crypto_cashout_kyiv (900 members) — крипта→готівка без сліду",
+          "@compliance_leaks (350 members, private) — витоки внутрішніх регуляторних документів"
+        ],
+        "damning_quote": "2024-05-14 у @grey_finance_ua: «На роботі все під контролем. Ніхто так глибоко не копатиме. Схема працює вже 3-й рік»",
+        "screenshot": "img/uploads/simulator/case3/telegram-second-account.png"
+      }
+    },
+    "linkedin_clean": {
+      "name": "Dmytro Kovalchuk",
+      "headline": "Head of Compliance Operations · CFA Level 2 · AML/KYC expert",
+      "connections": 1200,
+      "years": 12,
+      "experience": [
+        "Compliance Manager · PrivatBank · 2018-2024 · verified",
+        "Senior AML Analyst · Alfa-Bank · 2015-2018 · verified",
+        "Compliance Analyst · Raiffeisen · 2012-2015 · verified"
+      ],
+      "posts": "12 posts, all professional (AML regulations, KYC best practices)"
+    },
+    "sanctions_grid": [
+      { "list": "OFAC (US Treasury)", "status": "clean" },
+      { "list": "EU Sanctions", "status": "clean" },
+      { "list": "UK HMT Sanctions", "status": "clean" },
+      { "list": "СБУ / РНБО (UA)", "status": "clean" },
+      { "list": "PEP database", "status": "clean" },
+      { "list": "Interpol Red Notices", "status": "clean" }
+    ]
+  }
+}
