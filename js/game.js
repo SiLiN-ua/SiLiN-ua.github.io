@@ -1629,6 +1629,7 @@ const HELP = {
   briefing: {
     uk: {
       title: 'Брифінг',
+      intro: 'Ти OSINT-скринер. Клієнт (HR / compliance / служба безпеки) питає: чи можна довіряти цій людині? Твоя робота — дослідити її через фейкові тули (соцмережі, реєстри, витоки) і винести ВЕРДИКТ: <strong>APPROVE</strong> (взяти) · <strong>REJECT</strong> (відмовити) · <strong>INSUFFICIENT</strong> (мало даних) · <strong>ESCALATE</strong> (передати вище). Гра — 5 кейсів різного профілю.',
       steps: [
         'Прочитай завдання клієнта уважно — тут вся вихідна інформація.',
         'Зверни увагу на: фото кандидата, ПІБ, email, телефон, роль, зарплату, компанію.',
@@ -1638,6 +1639,7 @@ const HELP = {
     },
     en: {
       title: 'Briefing',
+      intro: 'You are an OSINT screener. A client (HR / compliance / security) asks: can we trust this person? Your job — investigate them via fake tools (social, registries, leaks) and deliver a VERDICT: <strong>APPROVE</strong> (hire) · <strong>REJECT</strong> (decline) · <strong>INSUFFICIENT</strong> (not enough data) · <strong>ESCALATE</strong> (kick upstairs). The game — 5 cases of different profiles.',
       steps: [
         'Read the client brief carefully — all baseline info is here.',
         'Note: candidate photo, full name, email, phone, role, salary, company.',
@@ -1760,14 +1762,45 @@ const HELP = {
   }
 };
 
+const HELP_GLOSSARY = {
+  uk: {
+    title: 'Словник термінів',
+    items: [
+      ['DIAGNOSTIC', 'ключовий доказ — саме він мав вплинути на вердикт (+15 при цитуванні).'],
+      ['SUPPORTING', 'підтверджуючий факт — не вирішальний, але у копилку (+5).'],
+      ['NOISE', 'шум — тул спрацював, але результат до кейсу не стосується (-3 якщо цитуєш).'],
+      ['DECOY', 'пастка — виглядає як доказ, але веде не туди. Не цитуй (-10).'],
+      ['Pivot-Chain', 'ланцюжок «від тула до тула»: кожна знахідка веде до наступного кроку.'],
+      ['Defense-кейс', 'кейс де погроза = розвідка/зрада. Просто REJECT мало — треба ESCALATE (передати профільній службі).'],
+      ['Compliance', 'юридична/безпекова відповідність. Твій вердикт — це меморандум який клієнт покаже юристу.']
+    ]
+  },
+  en: {
+    title: 'Glossary',
+    items: [
+      ['DIAGNOSTIC', 'key evidence — the one that should drive the verdict (+15 when cited).'],
+      ['SUPPORTING', 'confirming fact — not decisive, but helpful (+5).'],
+      ['NOISE', 'noise — tool returned data but irrelevant to the case (-3 if cited).'],
+      ['DECOY', 'trap — looks like evidence but leads nowhere. Do not cite (-10).'],
+      ['Pivot-Chain', 'the "tool-to-tool" chain: each finding points to the next step.'],
+      ['Defense case', 'case where the threat = espionage/betrayal. Plain REJECT is not enough — ESCALATE (kick to the proper agency).'],
+      ['Compliance', 'legal / security compliance. Your verdict = a memo the client will hand to a lawyer.']
+    ]
+  }
+};
+
 function renderHelpPanel() {
   const phase = State.phase || 'briefing';
   const key = ['briefing','phase2','phase3','citation','phase4','result'].includes(phase) ? phase : 'briefing';
   const content = HELP[key][LANG()] || HELP[key].uk;
+  const gloss = HELP_GLOSSARY[LANG()] || HELP_GLOSSARY.uk;
   const panel = document.getElementById('help-panel');
   if (panel) {
     panel.querySelector('.help-panel__title').textContent = content.title;
-    panel.querySelector('.help-panel__list').innerHTML = content.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('');
+    const introHtml = content.intro ? `<div class="help-panel__intro">${content.intro}</div>` : '';
+    const stepsHtml = `<ol class="help-panel__list">${content.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ol>`;
+    const glossHtml = `<div class="help-panel__gloss"><h4 class="help-panel__gloss-title">${escapeHtml(gloss.title)}</h4><dl class="help-panel__gloss-list">${gloss.items.map(([term, def]) => `<div class="help-panel__gloss-row"><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(def)}</dd></div>`).join('')}</dl></div>`;
+    panel.querySelector('.help-panel__content').innerHTML = introHtml + stepsHtml + glossHtml;
   }
   const label = document.getElementById('help-btn-label');
   if (label) label.textContent = LANG() === 'en' ? 'How to play' : 'Як грати';
@@ -1784,7 +1817,7 @@ function mountHelpPanel() {
         <h3 class="help-panel__title">—</h3>
         <button class="help-panel__close" aria-label="Close">✕</button>
       </div>
-      <ol class="help-panel__list"></ol>
+      <div class="help-panel__content"></div>
     </div>`;
   document.body.appendChild(panel);
   const openIt = () => { panel.classList.add('help-panel--open'); renderHelpPanel(); };

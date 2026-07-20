@@ -3852,6 +3852,63 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   color: var(--ice);
   font-weight: 600;
 }
+.help-panel__intro {
+  padding: .85rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(74, 158, 255, .08);
+  border-left: 3px solid var(--ice);
+  border-radius: 0 3px 3px 0;
+  font-size: .9rem;
+  line-height: 1.55;
+  color: var(--cream);
+}
+.help-panel__intro strong {
+  color: var(--ice);
+  font-weight: 600;
+}
+.help-panel__gloss {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.help-panel__gloss-title {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin: 0 0 .7rem 0;
+}
+.help-panel__gloss-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+.help-panel__gloss-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: .7rem;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.help-panel__gloss-row dt {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--ice);
+  letter-spacing: .05em;
+  padding-top: .1rem;
+}
+.help-panel__gloss-row dd {
+  margin: 0;
+  color: var(--cream);
+}
+@media (max-width: 520px) {
+  .help-panel__gloss-row {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
 @media (max-width: 720px) {
   .help-panel__body { max-width: 95vw; padding: 1.25rem; }
   .game-topbar__help { padding: .3rem .55rem; font-size: .72rem; }
