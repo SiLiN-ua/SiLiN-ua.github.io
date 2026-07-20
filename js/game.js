@@ -391,11 +391,11 @@ function renderFakeUI(tool) {
         <div class="fake__engines">
           <div class="fake__engine">
             <div class="fake__engine-h">PimEyes <span>· face-specific</span></div>
-            <div class="fake__engine-body"><strong>1 match · 74% confidence</strong><br><small>Unattributed public photo, low-res thumbnail. No metadata.</small></div>
+            <div class="fake__engine-body"><strong>${L('1 збіг · 74% впевненості','1 match · 74% confidence')}</strong><br><small>${L('Неатрибутоване публічне фото, low-res thumbnail. Немає метаданих.','Unattributed public photo, low-res thumbnail. No metadata.')}</small></div>
           </div>
           <div class="fake__engine">
             <div class="fake__engine-h">FaceCheck.ID <span>· deep-web faces</span></div>
-            <div class="fake__engine-body"><strong>2 matches · 81% + 63%</strong><br><small>Both from Ukrainian classifieds. 81% has watermark; 63% is a group photo (crop bias possible).</small></div>
+            <div class="fake__engine-body"><strong>${L('2 збіги · 81% + 63%','2 matches · 81% + 63%')}</strong><br><small>${L('Обидва з українських дошок оголошень. 81% з watermark; 63% — групове фото (можливий crop bias).','Both from Ukrainian classifieds. 81% has watermark; 63% is a group photo (crop bias possible).')}</small></div>
           </div>
           <div class="fake__engine">
             <div class="fake__engine-h">Yandex <span>· CIS-strong</span></div>
@@ -443,13 +443,13 @@ function renderFakeUI(tool) {
       <div class="fake fake--hibp">
         <div class="fake__topbar">🔥 <span>Have I Been Pwned</span></div>
         <div class="fake__hibp-email">Email: <code>${escapeHtml(cand.email)}</code></div>
-        <div class="fake__hibp-status"><strong>Found in 3 breaches</strong> <small>(baseline for adult internet user with 10+ year email = 3-5)</small></div>
+        <div class="fake__hibp-status"><strong>${L('Знайдено у 3 витоках','Found in 3 breaches')}</strong> <small>(${L('baseline для email 10+ років','baseline for 10+ year email')} = 3-5)</small></div>
         <div class="fake__hibp-list">
-          <div class="fake__hibp-row"><strong>LinkedIn</strong> · 2012 · 164M · Emails + hashed passwords</div>
-          <div class="fake__hibp-row"><strong>Dropbox</strong> · 2016 · 68M · Emails + bcrypt hashes</div>
-          <div class="fake__hibp-row"><strong>Collection #1</strong> · 2019 · 773M · Aggregate credential stuffing list</div>
+          <div class="fake__hibp-row"><strong>LinkedIn</strong> · 2012 · 164M · ${L('Email + захешовані паролі','Emails + hashed passwords')}</div>
+          <div class="fake__hibp-row"><strong>Dropbox</strong> · 2016 · 68M · ${L('Email + bcrypt-хеші','Emails + bcrypt hashes')}</div>
+          <div class="fake__hibp-row"><strong>Collection #1</strong> · 2019 · 773M · ${L('Агрегований список credential-stuffing','Aggregate credential stuffing list')}</div>
         </div>
-        <div class="fake__hibp-hint">Note: all 3 are consumer services + one aggregate dump. No dating, no gambling, no leaked internal-employee databases. Read the *pattern*, not the count.</div>
+        <div class="fake__hibp-hint">${L('Примітка: всі 3 — консюмерські сервіси + один агрегатор. Жодного dating, gambling, витоків з корп-БД. Читай *патерн*, не кількість.','Note: all 3 are consumer services + one aggregate dump. No dating, no gambling, no leaked internal-employee databases. Read the *pattern*, not the count.')}</div>
       </div>`;
     case 'getcontact':
       if (d.getcontact_tags) {
@@ -505,7 +505,7 @@ function renderFakeUI(tool) {
       }
       return `
       <div class="fake fake--google">
-        <div class="fake__topbar">🌐 <span>Google Search Operators</span></div>
+        <div class="fake__topbar">🌐 <span>${L('Google — оператори пошуку', 'Google Search Operators')}</span></div>
         <div class="fake__google-query"><code>"Роман Морозов" (finance OR CFO OR fin) site:linkedin.com OR site:job.ua OR site:work.ua filetype:pdf</code></div>
         <div class="fake__google-results">
           <div class="fake__google-row">
@@ -589,15 +589,15 @@ function renderFakeUI(tool) {
       }
       return `
       <div class="fake fake--sanctions">
-        <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+        <div class="fake__topbar">⚖️ <span>${L('Санкції & PEP · скринінг', 'Sanctions & PEP Screening')}</span></div>
         <div class="fake__sanc-name">Query: <code>Roman Morozov · +380 67 ***-**-45</code></div>
         <div class="fake__sanc-grid">
-          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>OFAC (US Treasury)</span><strong>✓ CLEAN</strong></div>
-          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>EU Sanctions</span><strong>✓ CLEAN</strong></div>
-          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>UK HMT Sanctions</span><strong>✓ CLEAN</strong></div>
-          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>СБУ / РНБО (UA)</span><strong>✓ CLEAN</strong></div>
-          <div class="fake__sanc-cell fake__sanc-cell--warn"><span>PEP database</span><strong>⚠ PARTIAL</strong><small>3rd-degree kin of district council deputy (2020-2024). Not disqualifying, must document.</small></div>
-          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>Interpol Red Notices</span><strong>✓ CLEAN</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>OFAC (US Treasury)</span><strong>${L('✓ ЧИСТО','✓ CLEAN')}</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>EU Sanctions</span><strong>${L('✓ ЧИСТО','✓ CLEAN')}</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>UK HMT Sanctions</span><strong>${L('✓ ЧИСТО','✓ CLEAN')}</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>СБУ / РНБО (UA)</span><strong>${L('✓ ЧИСТО','✓ CLEAN')}</strong></div>
+          <div class="fake__sanc-cell fake__sanc-cell--warn"><span>${L('PEP база','PEP database')}</span><strong>${L('⚠ ЧАСТКОВО','⚠ PARTIAL')}</strong><small>${L('3-й ступінь спорідненості з депутатом райради (2020-2024). Не дискваліфікує, треба задокументувати.','3rd-degree kin of district council deputy (2020-2024). Not disqualifying, must document.')}</small></div>
+          <div class="fake__sanc-cell fake__sanc-cell--ok"><span>Interpol Red Notices</span><strong>${L('✓ ЧИСТО','✓ CLEAN')}</strong></div>
         </div>
       </div>`;
     case 'court-registry':
@@ -672,10 +672,10 @@ function renderFakeUI(tool) {
       if (d.osint_industries_results) {
         return `
           <div class="fake fake--oi">
-            <div class="fake__topbar">🔎 <span>OSINT Industries · Aggregator</span></div>
+            <div class="fake__topbar">🔎 <span>${L('OSINT Industries · агрегатор', 'OSINT Industries · Aggregator')}</span></div>
             <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.osint_industries_query)}</code></div>
             <table class="fake__oi-table">
-              <thead><tr><th>Platform</th><th>Status</th><th>Detail</th></tr></thead>
+              <thead><tr><th>${L('Платформа','Platform')}</th><th>${L('Статус','Status')}</th><th>${L('Деталь','Detail')}</th></tr></thead>
               <tbody>
                 ${d.osint_industries_results.map(r => `
                   <tr class="fake__oi-row fake__oi-row--${r.status}">
@@ -700,8 +700,8 @@ function renderFakeUI(tool) {
             </div>
             <div class="fake__hibp-status" style="margin-top:1rem"><strong>BreachDirectory · stealer log hit</strong></div>
             <div class="fake__hibp-list">
-              <div class="fake__hibp-row"><strong>Source:</strong> ${escapeHtml(d.stealer_log_hit.source)}</div>
-              <div class="fake__hibp-row"><strong>Phone:</strong> ${escapeHtml(d.stealer_log_hit.phone)}</div>
+              <div class="fake__hibp-row"><strong>${L('Джерело', 'Source')}:</strong> ${escapeHtml(d.stealer_log_hit.source)}</div>
+              <div class="fake__hibp-row"><strong>${L('Телефон', 'Phone')}:</strong> ${escapeHtml(d.stealer_log_hit.phone)}</div>
               <div class="fake__hibp-row"><strong>Telegram (public):</strong> ${escapeHtml(d.stealer_log_hit.telegram_id_public)}</div>
               <div class="fake__hibp-row" style="color:#ffc864"><strong>Telegram (extra ID):</strong> ${escapeHtml(d.stealer_log_hit.telegram_id_extra)}</div>
             </div>
@@ -712,7 +712,7 @@ function renderFakeUI(tool) {
       if (d.google_dorks_results && d.google_dorks_query) {
         return `
           <div class="fake fake--google">
-            <div class="fake__topbar">🌐 <span>Google Dorks · Family Angle</span></div>
+            <div class="fake__topbar">🌐 <span>${L('Google Dorks · через сімʼю', 'Google Dorks · Family Angle')}</span></div>
             <div class="fake__google-query"><code>${escapeHtml(d.google_dorks_query)}</code></div>
             <div class="fake__google-results">
               ${d.google_dorks_results.map(r => `
@@ -731,12 +731,12 @@ function renderFakeUI(tool) {
         const tagged = (w.tagged_as_sister || []);
         return `
           <div class="fake fake--ig">
-            <div class="fake__topbar">📸 <span>Instagram · Family Pivot</span></div>
+            <div class="fake__topbar">📸 <span>${L('Instagram · pivot через сімʼю', 'Instagram · Family Pivot')}</span></div>
             <div class="fake__ig-block">
               <div class="fake__ig-h">${escapeHtml(w.handle)} · <span>${escapeHtml(w.status)} · ${w.posts} posts · ${w.followers} followers</span></div>
-              <div class="fake__ig-body">Recent content: ${escapeHtml(w.recent)}</div>
+              <div class="fake__ig-body">${L('Свіжий контент', 'Recent content')}: ${escapeHtml(w.recent)}</div>
               ${tagged.length ? `
-                <div class="fake__ig-highlights"><strong>Tagged as «sister» in various posts:</strong>
+                <div class="fake__ig-highlights"><strong>${L('Тегнуті як «сестра» в різних постах', 'Tagged as «sister» in various posts')}:</strong>
                   <ul style="margin:.5rem 0 0;padding-left:1.2rem">
                     ${tagged.map(t => `<li><code>${escapeHtml(t.handle)}</code> — <em>${escapeHtml(t.note)}</em></li>`).join('')}
                   </ul>
@@ -749,7 +749,7 @@ function renderFakeUI(tool) {
               <div class="fake__ig-photo">
                 <img src="${escapeHtml(s.family_photo_2023.img)}" alt="family photo" onerror="this.style.display='none'">
                 <div class="fake__ig-caption">${escapeHtml(s.family_photo_2023.caption)}</div>
-                <div class="fake__ig-tagged"><strong>Tagged in this photo:</strong> ${escapeHtml(s.family_photo_2023.tagged)}</div>
+                <div class="fake__ig-tagged"><strong>${L('Тегнуті на цьому фото', 'Tagged in this photo')}:</strong> ${escapeHtml(s.family_photo_2023.tagged)}</div>
               </div>
               <div class="fake__ig-highlights">${escapeHtml(s.highlights_content)}</div>
             </div>
@@ -760,12 +760,12 @@ function renderFakeUI(tool) {
       if (d.classifieds_ads) {
         return `
           <div class="fake fake--court">
-            <div class="fake__topbar">📰 <span>Local Classifieds Archive · OLX + Bezplatka</span></div>
+            <div class="fake__topbar">📰 <span>${L('Дошки оголошень (архів) · OLX + Безплатка', 'Local Classifieds Archive · OLX + Bezplatka')}</span></div>
             <div class="fake__court-list">
               ${d.classifieds_ads.map(a => `
                 <div class="fake__court-case">
                   <div class="fake__court-h">${escapeHtml(a.site)}</div>
-                  <div class="fake__court-body"><strong>${escapeHtml(a.title)}</strong><br>Contact: <code>${escapeHtml(a.contact)}</code><br>${escapeHtml(a.note)}</div>
+                  <div class="fake__court-body"><strong>${escapeHtml(a.title)}</strong><br>${L('Контакт', 'Contact')}: <code>${escapeHtml(a.contact)}</code><br>${escapeHtml(a.note)}</div>
                   ${a.img ? `<img src="${escapeHtml(a.img)}" class="fake__court-doc" alt="ad screenshot" onerror="this.style.display='none'">` : ''}
                 </div>`).join('')}
             </div>
@@ -778,13 +778,13 @@ function renderFakeUI(tool) {
         const accs = [tr2.account_1, tr2.account_2, tr2.account_3].filter(Boolean);
         return `
           <div class="fake fake--tg">
-            <div class="fake__topbar">📱 <span>Telegram Reverse Lookup</span></div>
+            <div class="fake__topbar">📱 <span>${L('Telegram · reverse-lookup', 'Telegram Reverse Lookup')}</span></div>
             <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.telegram_reverse_query)}</code> · ${L('Знайдено акаунтів', 'Accounts found')}: <strong>${tr2.accounts_found}</strong></div>
             ${accs.map((a, i) => `
               <div class="fake__tg-account${a.channels && a.channels.length >= 3 ? ' fake__tg-account--red' : ''}">
                 <div class="fake__tg-h">Account ${i+1}: ${escapeHtml(a.handle)}</div>
-                <div class="fake__tg-body">Owner: ${escapeHtml(a.owner)}</div>
-                ${a.channels && a.channels.length ? `<div class="fake__tg-channels">Channels:<ul>${a.channels.map(c => `<li>${escapeHtml(c)}</li>`).join('')}</ul></div>` : ''}
+                <div class="fake__tg-body">${L('Власник', 'Owner')}: ${escapeHtml(a.owner)}</div>
+                ${a.channels && a.channels.length ? `<div class="fake__tg-channels">${L('Канали', 'Channels')}:<ul>${a.channels.map(c => `<li>${escapeHtml(c)}</li>`).join('')}</ul></div>` : ''}
                 ${a.activity ? `<div class="fake__tg-quote">${escapeHtml(a.activity)}</div>` : ''}
                 ${a.screenshot ? `<img src="${escapeHtml(a.screenshot)}" class="fake__court-doc" alt="" onerror="this.style.display='none'">` : ''}
               </div>`).join('')}
@@ -796,7 +796,7 @@ function renderFakeUI(tool) {
         const l = d.linkedin_clean;
         return `
           <div class="fake fake--linkedin">
-            <div class="fake__topbar">💼 <span>LinkedIn · Direct</span></div>
+            <div class="fake__topbar">💼 <span>${L('LinkedIn · прямий пошук', 'LinkedIn · Direct')}</span></div>
             <div class="fake__li-profile">
               <div class="fake__li-name">${escapeHtml(l.name)} · <span>${escapeHtml(l.headline)}</span></div>
               <div class="fake__li-meta">📍 ${l.years} years · ${l.connections} connections</div>
@@ -812,8 +812,8 @@ function renderFakeUI(tool) {
       if (d.sanctions_grid) {
         return `
           <div class="fake fake--sanctions">
-            <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
-            <div class="fake__sanc-name">Query: <code>${escapeHtml(tr(cand,'name'))}</code></div>
+            <div class="fake__topbar">⚖️ <span>${L('Санкції & PEP · скринінг', 'Sanctions & PEP Screening')}</span></div>
+            <div class="fake__sanc-name">${L('Запит', 'Query')}: <code>${escapeHtml(tr(cand,'name'))}</code></div>
             <div class="fake__sanc-grid">
               ${d.sanctions_grid.map(g => `
                 <div class="fake__sanc-cell fake__sanc-cell--ok">
@@ -827,7 +827,7 @@ function renderFakeUI(tool) {
       if (d.wayback_snapshots) {
         return `
           <div class="fake fake--wayback">
-            <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback Machine</span></div>
+            <div class="fake__topbar">🕰️ <span>${L('Internet Archive · Wayback', 'Internet Archive · Wayback Machine')}</span></div>
             <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.wayback_query)}</code></div>
             <img src="img/uploads/simulator/case4/wayback-archive.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:0;">
             <div class="fake__court-list">
@@ -844,10 +844,10 @@ function renderFakeUI(tool) {
       if (d.telegram_username_history) {
         return `
           <div class="fake fake--court">
-            <div class="fake__topbar">📊 <span>Telegram Username History</span></div>
+            <div class="fake__topbar">📊 <span>${L('Telegram · історія username', 'Telegram Username History')}</span></div>
             <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.telegram_username_query)}</code></div>
             <table class="fake__oi-table">
-              <thead><tr><th>Handle</th><th>Period</th><th>Status</th></tr></thead>
+              <thead><tr><th>Handle</th><th>${L('Період','Period')}</th><th>${L('Статус','Status')}</th></tr></thead>
               <tbody>
                 ${d.telegram_username_history.map(h => `
                   <tr class="fake__oi-row fake__oi-row--${h.status}">
@@ -865,10 +865,10 @@ function renderFakeUI(tool) {
       if (d.osint_industries_c4_results) {
         return `
           <div class="fake fake--oi">
-            <div class="fake__topbar">🔎 <span>OSINT Industries · cross-platform</span></div>
+            <div class="fake__topbar">🔎 <span>${L('OSINT Industries · крос-платформ', 'OSINT Industries · cross-platform')}</span></div>
             <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.osint_industries_c4_query)}</code></div>
             <table class="fake__oi-table">
-              <thead><tr><th>Platform</th><th>Hit</th><th>Note</th></tr></thead>
+              <thead><tr><th>${L('Платформа','Platform')}</th><th>${L('Знахідка','Hit')}</th><th>${L('Примітка','Note')}</th></tr></thead>
               <tbody>
                 ${d.osint_industries_c4_results.map(r => `
                   <tr class="fake__oi-row fake__oi-row--found">
@@ -911,7 +911,7 @@ function renderFakeUI(tool) {
       if (d.instagram_friends) {
         return `
           <div class="fake fake--ig">
-            <div class="fake__topbar">📸 <span>Instagram · Friends Pivot</span></div>
+            <div class="fake__topbar">📸 <span>${L('Instagram · pivot через друзів', 'Instagram · Friends Pivot')}</span></div>
             <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.instagram_friends_query)}</code></div>
             ${d.instagram_friends.map(f => `
               <div class="fake__ig-block${f.notable_post ? ' fake__ig-block--highlight' : ''}">
@@ -931,7 +931,7 @@ function renderFakeUI(tool) {
       if (d.voice_samples) {
         return `
           <div class="fake fake--voice">
-            <div class="fake__topbar">🎤 <span>Voice Biometric Comparison</span></div>
+            <div class="fake__topbar">🎤 <span>${L('Голосова біометрія — порівняння', 'Voice Biometric Comparison')}</span></div>
             <div class="fake__court-query">3 samples available · pick a pair to compare</div>
             <img src="img/uploads/simulator/case4/voice-waveform.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:0;">
             <div class="fake__voice-samples">
@@ -940,15 +940,15 @@ function renderFakeUI(tool) {
                   <div class="fake__voice-h">${escapeHtml(s.id)}</div>
                   <div class="fake__voice-label">${escapeHtml(tr(s,'label'))}</div>
                   <div class="fake__voice-meta">
-                    <span>duration: <strong>${escapeHtml(s.duration)}</strong></span>
+                    <span>${L('тривалість','duration')}: <strong>${escapeHtml(s.duration)}</strong></span>
                     <span>F0 avg: <strong>${escapeHtml(s.f0_avg)}</strong></span>
-                    <span>formants: <strong>${escapeHtml(s.formants)}</strong></span>
+                    <span>${L('форманти','formants')}: <strong>${escapeHtml(s.formants)}</strong></span>
                   </div>
                   ${tr(s,'note') ? `<div class="fake__voice-note">${escapeHtml(tr(s,'note'))}</div>` : ''}
                 </div>`).join('')}
             </div>
             <div class="fake__voice-pairs">
-              <div class="fake__voice-pairs-h">Comparison results (all pairs):</div>
+              <div class="fake__voice-pairs-h">${L('Результати порівняння (всі пари)', 'Comparison results (all pairs)')}:</div>
               ${d.voice_pairs.map(p => `
                 <div class="fake__voice-pair">
                   <strong>${escapeHtml(p.a)} ↔ ${escapeHtml(p.b)}</strong>: ${escapeHtml(tr(p,'verdict'))}
@@ -962,7 +962,7 @@ function renderFakeUI(tool) {
         const fb = d.facebook_curated;
         return `
           <div class="fake fake--linkedin">
-            <div class="fake__topbar">📘 <span>Facebook · Direct</span></div>
+            <div class="fake__topbar">📘 <span>${L('Facebook · прямий пошук', 'Facebook · Direct')}</span></div>
             <div class="fake__li-profile">
               <div class="fake__li-name">${escapeHtml(fb.name)}</div>
               <div class="fake__li-meta">${fb.followers} followers · ${fb.friends_shown} friends shown · ${fb.photos_visible} photos visible</div>
@@ -977,8 +977,8 @@ function renderFakeUI(tool) {
       if (d.sanctions_grid) {
         return `
           <div class="fake fake--sanctions">
-            <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
-            <div class="fake__sanc-name">Query: <code>${escapeHtml(tr(cand,'name'))}</code></div>
+            <div class="fake__topbar">⚖️ <span>${L('Санкції & PEP · скринінг', 'Sanctions & PEP Screening')}</span></div>
+            <div class="fake__sanc-name">${L('Запит', 'Query')}: <code>${escapeHtml(tr(cand,'name'))}</code></div>
             <div class="fake__sanc-grid">
               ${d.sanctions_grid.map(g => `
                 <div class="fake__sanc-cell fake__sanc-cell--ok">
@@ -991,10 +991,10 @@ function renderFakeUI(tool) {
     case 'osint-c5':
       if (d.osint_c5_results) {
         return `<div class="fake fake--oi">
-          <div class="fake__topbar">🔎 <span>OSINT Industries · cross-platform</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.osint_c5_query)}</code></div>
+          <div class="fake__topbar">🔎 <span>${L('OSINT Industries · крос-платформ', 'OSINT Industries · cross-platform')}</span></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.osint_c5_query)}</code></div>
           <table class="fake__oi-table">
-            <thead><tr><th>Platform</th><th>Hit</th><th>Note</th></tr></thead>
+            <thead><tr><th>${L('Платформа','Platform')}</th><th>${L('Знахідка','Hit')}</th><th>${L('Примітка','Note')}</th></tr></thead>
             <tbody>${d.osint_c5_results.map(r => `<tr class="fake__oi-row fake__oi-row--${r.hit.includes('not found') || r.hit === 'no match' ? 'null' : 'found'}"><td><strong>${escapeHtml(r.platform)}</strong></td><td><code>${escapeHtml(r.hit)}</code></td><td><small>${escapeHtml(r.note)}</small></td></tr>`).join('')}</tbody>
           </table>
         </div>`;
@@ -1014,7 +1014,7 @@ function renderFakeUI(tool) {
         const rm = (m) => `<div class="fake__match${m.warn?' fake__match--warn':''}"><img src="${escapeHtml(m.img)}" alt="" onerror="this.style.display='none'"><div><strong>${escapeHtml(m.site)}</strong><br><small>${escapeHtml(m.label)} · ${escapeHtml(m.conf)}</small></div></div>`;
         return `<div class="fake fake--multi-reverse">
           <div class="fake__topbar">🔎 <span>${LANG()==='en'?'Multi-Engine Reverse Face Search':'Пошук обличчя · 4 движки'}</span></div>
-          <div class="fake__search-row"><img src="${cand.photo}" class="fake__input-img"><div class="fake__query">Uploaded: candidate.jpg · Queried 4 engines.</div></div>
+          <div class="fake__search-row"><img src="${cand.photo}" class="fake__input-img"><div class="fake__query">${L('Завантажено','Uploaded')}: candidate.jpg · ${L('Опитано 4 движки','Queried 4 engines')}.</div></div>
           <div class="fake__engines">${d.reverse_engines.map(e => `<div class="fake__engine"><div class="fake__engine-h">${escapeHtml(e.name)} <span>· ${escapeHtml(e.meta)}</span></div><div class="fake__engine-body">${e.matches && e.matches.length ? e.matches.map(rm).join('') : '<small>no matches</small>'}</div></div>`).join('')}</div>
         </div>`;
       }
@@ -1022,8 +1022,8 @@ function renderFakeUI(tool) {
     case 'vk-russian':
       if (d.vk_russian_results) {
         return `<div class="fake fake--court">
-          <div class="fake__topbar">🇷🇺 <span>VK / Odnoklassniki Archive</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.vk_russian_query)}</code></div>
+          <div class="fake__topbar">🇷🇺 <span>${L('VK / Однокласники · архів', 'VK / Odnoklassniki Archive')}</span></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.vk_russian_query)}</code></div>
           <div class="fake__court-list">${d.vk_russian_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">${escapeHtml(r.type)} · ${escapeHtml(r.url)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
         </div>`;
       }
@@ -1031,8 +1031,8 @@ function renderFakeUI(tool) {
     case 'financial-c5':
       if (d.financial_wallets) {
         return `<div class="fake fake--court">
-          <div class="fake__topbar">💳 <span>Blockchain / OTC Financial Trace</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.financial_c5_query)}</code></div>
+          <div class="fake__topbar">💳 <span>${L('Blockchain · OTC-фінансовий слід', 'Blockchain / OTC Financial Trace')}</span></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.financial_c5_query)}</code></div>
           <img src="img/uploads/simulator/case5/crypto-wallet-trace.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <div class="fake__court-list">${d.financial_wallets.map(w => `<div class="fake__court-case"><div class="fake__court-h">💰 ${escapeHtml(w.wallet)} · confidence: ${escapeHtml(w.confidence)}</div><div class="fake__court-body">${w.flows.length ? w.flows.map(f => `<div>← ${escapeHtml(f.in_from)}<br><small>${escapeHtml(f.note)}</small></div>`).join('<hr style="opacity:.2;margin:.5rem 0">') : '<em>no flows on record</em>'}</div></div>`).join('')}</div>
         </div>`;
@@ -1041,8 +1041,8 @@ function renderFakeUI(tool) {
     case 'deepweb-c5':
       if (d.deepweb_results) {
         return `<div class="fake fake--court">
-          <div class="fake__topbar">🕳️ <span>Deep-Web / Leaked Corp Chats</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.deepweb_c5_query)}</code></div>
+          <div class="fake__topbar">🕳️ <span>${L('Deep-web · витоки корп-чатів', 'Deep-Web / Leaked Corp Chats')}</span></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.deepweb_c5_query)}</code></div>
           <img src="img/uploads/simulator/case5/deepweb-chat.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <div class="fake__court-list">${d.deepweb_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">📎 ${escapeHtml(r.source)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
         </div>`;
@@ -1051,11 +1051,11 @@ function renderFakeUI(tool) {
     case 'cell-c5':
       if (d.cell_pings) {
         return `<div class="fake fake--court">
-          <div class="fake__topbar">📡 <span>Cell Metadata / Tower Pings</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.cell_c5_query)}</code></div>
+          <div class="fake__topbar">📡 <span>${L('Cell metadata · пінги BTS', 'Cell Metadata / Tower Pings')}</span></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.cell_c5_query)}</code></div>
           <img src="img/uploads/simulator/case5/cell-tower-map.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <table class="fake__oi-table">
-            <thead><tr><th>Date/Time</th><th>BTS</th><th>Note</th></tr></thead>
+            <thead><tr><th>${L('Дата/Час','Date/Time')}</th><th>BTS</th><th>${L('Примітка','Note')}</th></tr></thead>
             <tbody>${d.cell_pings.map(p => `<tr class="fake__oi-row"><td><strong>${escapeHtml(p.date)}</strong></td><td><code>${escapeHtml(p.bts)}</code></td><td>${escapeHtml(p.note)}</td></tr>`).join('')}</tbody>
           </table>
         </div>`;
@@ -1065,10 +1065,10 @@ function renderFakeUI(tool) {
       if (d.github_tech) {
         const g = d.github_tech;
         return `<div class="fake fake--court">
-          <div class="fake__topbar">🌐 <span>GitHub Commit Analysis</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.github_tech_query)}</code></div>
-          <div class="fake__court-case"><div class="fake__court-h">Handle: ${escapeHtml(g.handle)} · Repos: ${g.repos}</div>
-            <div class="fake__court-body">Commit timezones:<br>${g.commit_timezones.map(t => `→ <code>${escapeHtml(t.tz)}</code>: <strong>${escapeHtml(t.share)}</strong> · ${escapeHtml(t.period)}`).join('<br>')}<br><br><em>${escapeHtml(g.note)}</em></div>
+          <div class="fake__topbar">🌐 <span>${L('GitHub · аналіз комітів', 'GitHub Commit Analysis')}</span></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.github_tech_query)}</code></div>
+          <div class="fake__court-case"><div class="fake__court-h">Handle: ${escapeHtml(g.handle)} · ${L('Репо', 'Repos')}: ${g.repos}</div>
+            <div class="fake__court-body">${L('Часові пояси комітів', 'Commit timezones')}:<br>${g.commit_timezones.map(t => `→ <code>${escapeHtml(t.tz)}</code>: <strong>${escapeHtml(t.share)}</strong> · ${escapeHtml(t.period)}`).join('<br>')}<br><br><em>${escapeHtml(g.note)}</em></div>
           </div>
         </div>`;
       }
@@ -1076,9 +1076,9 @@ function renderFakeUI(tool) {
     case 'voice-c5':
       if (d.voice_samples) {
         return `<div class="fake fake--voice">
-          <div class="fake__topbar">🎤 <span>Voice Biometric Comparison</span></div>
-          <div class="fake__voice-samples">${d.voice_samples.map(s => `<div class="fake__voice-sample"><div class="fake__voice-h">${escapeHtml(s.id)}</div><div class="fake__voice-label">${escapeHtml(tr(s,'label'))}</div><div class="fake__voice-meta"><span>F0: <strong>${escapeHtml(s.f0_avg)}</strong></span><span>formants: <strong>${escapeHtml(s.formants)}</strong></span></div></div>`).join('')}</div>
-          <div class="fake__voice-pairs"><div class="fake__voice-pairs-h">Comparison:</div>${d.voice_pairs.map(p => `<div class="fake__voice-pair"><strong>${escapeHtml(p.a)} ↔ ${escapeHtml(p.b)}</strong>: ${escapeHtml(tr(p,'verdict'))}</div>`).join('')}</div>
+          <div class="fake__topbar">🎤 <span>${L('Голосова біометрія — порівняння', 'Voice Biometric Comparison')}</span></div>
+          <div class="fake__voice-samples">${d.voice_samples.map(s => `<div class="fake__voice-sample"><div class="fake__voice-h">${escapeHtml(s.id)}</div><div class="fake__voice-label">${escapeHtml(tr(s,'label'))}</div><div class="fake__voice-meta"><span>F0: <strong>${escapeHtml(s.f0_avg)}</strong></span><span>${L('форманти','formants')}: <strong>${escapeHtml(s.formants)}</strong></span></div></div>`).join('')}</div>
+          <div class="fake__voice-pairs"><div class="fake__voice-pairs-h">${L('Порівняння', 'Comparison')}:</div>${d.voice_pairs.map(p => `<div class="fake__voice-pair"><strong>${escapeHtml(p.a)} ↔ ${escapeHtml(p.b)}</strong>: ${escapeHtml(tr(p,'verdict'))}</div>`).join('')}</div>
         </div>`;
       }
       break;
@@ -1097,10 +1097,10 @@ function renderFakeUI(tool) {
     case 'sanctions-c5':
       if (d.sanctions_c5) {
         return `<div class="fake fake--sanctions">
-          <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
+          <div class="fake__topbar">⚖️ <span>${L('Санкції & PEP · скринінг', 'Sanctions & PEP Screening')}</span></div>
           <div class="fake__sanc-grid">${d.sanctions_c5.map(g => {
             const cls = g.status === 'clean' ? 'ok' : 'warn';
-            const label = g.status === 'clean' ? '✓ CLEAN' : g.status === 'flag_hit' ? '🚨 HIT' : '⚠ REVIEW';
+            const label = g.status === 'clean' ? L('✓ ЧИСТО','✓ CLEAN') : g.status === 'flag_hit' ? L('🚨 ХІТ','🚨 HIT') : L('⚠ ПЕРЕВІРКА','⚠ REVIEW');
             return `<div class="fake__sanc-cell fake__sanc-cell--${cls}"><span>${escapeHtml(g.list)} · <em>«${escapeHtml(g.query_name)}»</em></span><strong>${label}</strong>${g.note ? `<small>${escapeHtml(g.note)}</small>` : ''}</div>`;
           }).join('')}</div>
         </div>`;
@@ -1108,12 +1108,12 @@ function renderFakeUI(tool) {
       break;
     case 'youcontrol': return `
       <div class="fake fake--youcontrol">
-        <div class="fake__topbar">📄 <span>YouControl — Legal Entity Search</span></div>
-        <div class="fake__yc-search">Search: <code>${escapeHtml(cand.phone)}</code></div>
+        <div class="fake__topbar">📄 <span>${L('YouControl — пошук юрособи', 'YouControl — Legal Entity Search')}</span></div>
+        <div class="fake__yc-search">${L('Пошук', 'Search')}: <code>${escapeHtml(cand.phone)}</code></div>
         <div class="fake__yc-empty">
           <div class="fake__yc-empty-icon">∅</div>
-          <div class="fake__yc-empty-title">No legal entities linked to this phone</div>
-          <div class="fake__yc-empty-hint">YouControl indexes companies and their contact data, not personal phones. Use it after you identify a company name.</div>
+          <div class="fake__yc-empty-title">${L('Немає юросіб привʼязаних до цього номера', 'No legal entities linked to this phone')}</div>
+          <div class="fake__yc-empty-hint">${L('YouControl індексує компанії та їх контактні дані, не особисті телефони. Використовуй його ПІСЛЯ ідентифікації назви компанії.', 'YouControl indexes companies and their contact data, not personal phones. Use it after you identify a company name.')}</div>
         </div>
       </div>`;
   }
