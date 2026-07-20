@@ -1765,19 +1765,20 @@ function renderHelpPanel() {
   const key = ['briefing','phase2','phase3','citation','phase4','result'].includes(phase) ? phase : 'briefing';
   const content = HELP[key][LANG()] || HELP[key].uk;
   const panel = document.getElementById('help-panel');
-  if (!panel) return;
-  panel.querySelector('.help-panel__title').textContent = content.title;
-  panel.querySelector('.help-panel__list').innerHTML = content.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('');
-  panel.querySelector('.help-panel__label').textContent = LANG() === 'en' ? 'How to play' : 'Як грати';
+  if (panel) {
+    panel.querySelector('.help-panel__title').textContent = content.title;
+    panel.querySelector('.help-panel__list').innerHTML = content.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('');
+  }
+  const label = document.getElementById('help-btn-label');
+  if (label) label.textContent = LANG() === 'en' ? 'How to play' : 'Як грати';
 }
 
 function mountHelpPanel() {
   if (document.getElementById('help-panel')) return;
   const panel = document.createElement('div');
   panel.id = 'help-panel';
-  panel.className = 'help-panel help-panel--collapsed';
+  panel.className = 'help-panel';
   panel.innerHTML = `
-    <button class="help-panel__toggle" aria-label="How to play">❔ <span class="help-panel__label">Як грати</span></button>
     <div class="help-panel__body">
       <div class="help-panel__head">
         <h3 class="help-panel__title">—</h3>
@@ -1786,13 +1787,13 @@ function mountHelpPanel() {
       <ol class="help-panel__list"></ol>
     </div>`;
   document.body.appendChild(panel);
-  panel.querySelector('.help-panel__toggle').addEventListener('click', () => {
-    panel.classList.remove('help-panel--collapsed');
-    renderHelpPanel();
-  });
-  panel.querySelector('.help-panel__close').addEventListener('click', () => {
-    panel.classList.add('help-panel--collapsed');
-  });
+  const openIt = () => { panel.classList.add('help-panel--open'); renderHelpPanel(); };
+  const closeIt = () => panel.classList.remove('help-panel--open');
+  const btn = document.getElementById('help-btn');
+  if (btn) btn.addEventListener('click', openIt);
+  panel.querySelector('.help-panel__close').addEventListener('click', closeIt);
+  panel.addEventListener('click', (e) => { if (e.target === panel) closeIt(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeIt(); });
   renderHelpPanel();
 }
 
