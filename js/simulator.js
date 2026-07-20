@@ -12,9 +12,16 @@ const NICK_KEY = 'ss.nickname';
 const SCORE_KEY = 'ss.local';
 
 // ==================== NICKNAME ====================
-export function getNickname() { return localStorage.getItem(NICK_KEY) || ''; }
-export function saveNickname(nick) { localStorage.setItem(NICK_KEY, nick); }
-export function validateNickname(nick) { return /^[A-Za-z0-9_.-]{3,16}$/.test(nick); }
+// Firebase Realtime DB path chars: no . # $ [ ] /
+export function sanitizeNickname(nick) { return String(nick || '').replace(/[.#$\[\]\/]/g, '_'); }
+export function getNickname() {
+  const raw = localStorage.getItem(NICK_KEY) || '';
+  const clean = sanitizeNickname(raw);
+  if (raw && raw !== clean) localStorage.setItem(NICK_KEY, clean);
+  return clean;
+}
+export function saveNickname(nick) { localStorage.setItem(NICK_KEY, sanitizeNickname(nick)); }
+export function validateNickname(nick) { return /^[A-Za-z0-9_-]{3,16}$/.test(nick); }
 
 // ==================== LOCAL SCORE ====================
 export function getLocalStats() {
@@ -33,26 +40,30 @@ export function calcRankByTotal(total) {
 
 // ==================== FIREBASE ====================
 export async function submitScore(nickname, gamePoints, gameCaseId) {
-  const nowIso = new Date().toISOString();
-  const userRef = ref(db, `leaderboard/${nickname}`);
-  let existing = {};
   try {
-    const snap = await get(userRef);
-    if (snap.exists()) existing = snap.val();
-  } catch (e) { console.warn('read own record failed', e); }
-  const newTotal = (existing.total_points || 0) + gamePoints;
-  const newGames = (existing.games_played || 0) + 1;
-  const payload = {
-    total_points: newTotal, games_played: newGames,
-    last_case: gameCaseId, last_points: gamePoints, updated: nowIso,
-  };
-  try {
+    const cleanNick = sanitizeNickname(nickname);
+    if (!cleanNick || cleanNick.length < 3) {
+      return { ok: false, error: 'invalid_nick' };
+    }
+    const nowIso = new Date().toISOString();
+    const userRef = ref(db, `leaderboard/${cleanNick}`);
+    let existing = {};
+    try {
+      const snap = await get(userRef);
+      if (snap.exists()) existing = snap.val();
+    } catch (e) { console.warn('read own record failed', e); }
+    const newTotal = (existing.total_points || 0) + gamePoints;
+    const newGames = (existing.games_played || 0) + 1;
+    const payload = {
+      total_points: newTotal, games_played: newGames,
+      last_case: gameCaseId, last_points: gamePoints, updated: nowIso,
+    };
     await set(userRef, payload);
     saveLocalStats({ total: newTotal, games: newGames });
     return { ok: true, total: newTotal, games: newGames };
   } catch (e) {
     console.error('submitScore failed', e);
-    return { ok: false, error: e.message };
+    return { ok: false, error: e.message || String(e) };
   }
 }
 
