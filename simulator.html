@@ -51,6 +51,13 @@
   box-shadow: 0 12px 40px rgba(74, 158, 255, .18);
 }
 .sim-tile--soon { opacity: .55; cursor: not-allowed; }
+.sim-tile--dev {
+  border-color: rgba(220, 195, 130, .4);
+  background: linear-gradient(160deg, rgba(220, 195, 130, .08) 0%, rgba(15, 21, 36, .55) 60%);
+  opacity: .95;
+}
+.sim-tile__tag--dev { color: #dcc382; border-color: rgba(220, 195, 130, .5); background: rgba(220, 195, 130, .08); }
+.sim-tile--dev .sim-tile__cta { background: rgba(220, 195, 130, .15); color: #dcc382; border: 1px solid rgba(220, 195, 130, .4); pointer-events: none; }
 .sim-tile__num {
   font-family: var(--font-mono);
   font-size: .72rem;
@@ -198,17 +205,19 @@
         <span class="sim-tile__cta" data-i18n="ss.tile.enter">▶ Відкрити симулятор</span>
       </a>
 
-      <!-- SIM #02 — COMING SOON -->
-      <div class="sim-tile sim-tile--soon">
-        <div class="sim-tile__tag sim-tile__tag--soon" data-i18n="ss.tile.soon">🔒 Скоро</div>
+      <!-- SIM #02 — IN DEVELOPMENT (announced) -->
+      <div class="sim-tile sim-tile--dev">
+        <div class="sim-tile__tag sim-tile__tag--dev" data-i18n="ss.tile.dev">⚙ У розробці</div>
         <div class="sim-tile__num">SIM #02</div>
-        <h3 class="sim-tile__title" data-i18n="ss.tile.02.title">?????</h3>
-        <p class="sim-tile__sub" data-i18n="ss.tile.02.sub">Наступна тематична серія. Розблокується після виходу.</p>
+        <h3 class="sim-tile__title" data-i18n="ss.tile.02.title">🏢 Corporate Investigations</h3>
+        <p class="sim-tile__sub" data-i18n="ss.tile.02.sub">Для Corporate Security, Compliance, Audit, Fraud Investigations. 5 кейсів: витік IP, kickback-схема, підставні vendor, конфлікт інтересів топ-менеджера, insider trading. Нові механіки: Timeline Builder + Memo Builder + Corporate Policy per case.</p>
         <div class="sim-tile__meta">
-          <span>—</span>
+          <span><span data-i18n="ss.tile.cases_lbl">Кейсів</span>: <strong>5</strong></span>
+          <span><span data-i18n="ss.tile.cert_lbl">Сертифікат</span>: <strong data-i18n="ss.tile.cert_yes">так</strong></span>
+          <span><span data-i18n="ss.tile.eta_lbl">Реліз</span>: <strong data-i18n="ss.tile.eta_02">4-6 тижнів</strong></span>
         </div>
-        <span class="sim-tile__cta" data-i18n="ss.tile.soon_cta">In development</span>
-        <div class="sim-tile__lock">🔒</div>
+        <span class="sim-tile__cta" data-i18n="ss.tile.dev_cta">Анонсовано · Case 1 скоро</span>
+        <div class="sim-tile__lock">⚙</div>
       </div>
 
       <!-- SIM #03 — COMING SOON -->
