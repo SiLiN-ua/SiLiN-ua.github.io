@@ -227,7 +227,7 @@
 <script src="js/graph.js"></script>
 <script src="js/main.js"></script>
 <script type="module">
-  import { ensureRegistered, renderLeaderboard, renderAgentPanel } from './js/simulator.js';
+  import { ensureRegistered, renderLeaderboard, renderAgentPanel, syncProgressFromFirebase } from './js/simulator.js';
   // Sequential unlock: HIDE cards whose prerequisite is unfinished (no spoilers)
   function applyUnlock() {
     document.querySelectorAll('.game-row[data-requires]').forEach(card => {
@@ -287,6 +287,11 @@
 
   (async () => {
     const nick = await ensureRegistered();
+    // Pull Firebase-side progress (completed_cases + totals) into localStorage.
+    // Fixes cases where localStorage was cleared / user switched browsers, and
+    // makes it possible to seed a player's progress server-side.
+    await syncProgressFromFirebase(nick);
+    applyUnlock();
     renderAgentPanel('#agent-panel', nick);
     await renderLeaderboard('#leaderboard-list', nick);
     renderCertStatus();

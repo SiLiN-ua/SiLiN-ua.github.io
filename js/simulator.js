@@ -39,7 +39,7 @@ export function calcRankByTotal(total) {
 }
 
 // ==================== FIREBASE ====================
-export async function submitScore(nickname, gamePoints, gameCaseId) {
+export async function submitScore(nickname, gamePoints, gameCaseId, correct = false) {
   try {
     const cleanNick = sanitizeNickname(nickname);
     if (!cleanNick || cleanNick.length < 3) {
@@ -54,16 +54,53 @@ export async function submitScore(nickname, gamePoints, gameCaseId) {
     } catch (e) { console.warn('read own record failed', e); }
     const newTotal = (existing.total_points || 0) + gamePoints;
     const newGames = (existing.games_played || 0) + 1;
+    // Track completed cases so a returning player on another browser still sees unlock state
+    const priorCompleted = Array.isArray(existing.completed_cases) ? existing.completed_cases : [];
+    const completed_cases = correct && !priorCompleted.includes(gameCaseId)
+      ? [...priorCompleted, gameCaseId]
+      : priorCompleted;
     const payload = {
       total_points: newTotal, games_played: newGames,
       last_case: gameCaseId, last_points: gamePoints, updated: nowIso,
+      completed_cases,
     };
     await set(userRef, payload);
     saveLocalStats({ total: newTotal, games: newGames });
+    // Mirror completed cases to localStorage so simulator gallery reflects Firebase truth
+    completed_cases.forEach(cid => localStorage.setItem('ss.completed.' + cid, '1'));
     return { ok: true, total: newTotal, games: newGames };
   } catch (e) {
     console.error('submitScore failed', e);
     return { ok: false, error: e.message || String(e) };
+  }
+}
+
+// Sync Firebase-side completed cases into localStorage — call on simulator page load
+// so a player returning on the same device (or after cache clear) sees their unlocks.
+export async function syncProgressFromFirebase(nickname) {
+  try {
+    const cleanNick = sanitizeNickname(nickname);
+    if (!cleanNick || cleanNick.length < 3) return { ok: false };
+    const snap = await get(ref(db, `leaderboard/${cleanNick}`));
+    if (!snap.exists()) return { ok: true, synced: 0 };
+    const v = snap.val();
+    let synced = 0;
+    if (Array.isArray(v.completed_cases)) {
+      v.completed_cases.forEach(cid => {
+        localStorage.setItem('ss.completed.' + cid, '1');
+        synced++;
+      });
+    }
+    // Legacy records without completed_cases: use last_case as best-effort seed
+    else if (v.last_case && v.total_points >= 100) {
+      localStorage.setItem('ss.completed.' + v.last_case, '1');
+      synced = 1;
+    }
+    saveLocalStats({ total: v.total_points || 0, games: v.games_played || 0 });
+    return { ok: true, synced };
+  } catch (e) {
+    console.warn('syncProgressFromFirebase failed', e);
+    return { ok: false, error: e.message };
   }
 }
 

@@ -1361,7 +1361,7 @@ async function submitVerdict(verdictId) {
 
   // Submit to Firebase
   if (State.nickname) {
-    const res = await submitScore(State.nickname, State.points, s.id);
+    const res = await submitScore(State.nickname, State.points, s.id, !!opt.correct);
     showResult({ verdict: opt, timeBonus, submitted: true, submitResult: res });
   }
 }
