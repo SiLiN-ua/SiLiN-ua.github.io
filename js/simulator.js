@@ -69,7 +69,7 @@ export async function submitScore(nickname, gamePoints, gameCaseId) {
 
 // Nicknames excluded from leaderboard render (dev/test accounts).
 // Firebase rules block deletion, so we filter client-side.
-const HIDDEN_NICKS = new Set(['C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test','C4Test','C5Test','C5Wire','C4Wire','C3Test','C3Hard','Case2Vis','LangTest','PhotoTest','CertTest','CertHero','TestGallery','yehor_dev']);
+const HIDDEN_NICKS = new Set(['C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test','C4Test','C5Test','C5Wire','C4Wire','C3Test','C3Hard','Case2Vis','LangTest','PhotoTest','CertTest','CertHero','TestGallery','yehor_dev','testnew1','test_991']);
 
 export async function fetchLeaderboard(topN = 50) {
   try {
