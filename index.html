@@ -89,12 +89,46 @@
       <p class="hero__subtitle" data-i18n="hero.subtitle">OSINT · SOCMINT · Ідентифікація осіб · Due Diligence · Національна безпека</p>
       <p class="hero__tag" data-i18n="hero.tag">Кожна тінь має ім'я.</p>
       <div class="hero__cta">
-        <a href="cases.html" class="btn btn--filled" data-i18n="hero.cta1">Переглянути кейси</a>
-        <a href="contact.html" class="btn" data-i18n="hero.cta2">Зв'язатися</a>
+        <a href="simulator.html" class="btn btn--filled" data-umami-event="hero-cta-simulator" data-i18n="hero.cta_sim">▶ Спробувати OSINT-симулятор</a>
+        <a href="cases.html" class="btn" data-i18n="hero.cta1">Переглянути кейси</a>
       </div>
     </div>
     <div class="hero__photo reveal delay-2">
       <img src="img/yehor.jpg" alt="Єгор Селін" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATOR BANNER -->
+<section class="sim-banner">
+  <div class="container sim-banner__grid">
+    <div class="sim-banner__body">
+      <span class="eyebrow sim-banner__eyebrow" data-i18n="simb.eyebrow">Інтерактивний OSINT-тренажер</span>
+      <h2 class="sim-banner__title"><span data-i18n="simb.title_a">Спробуй роль слідчого</span> <em data-i18n="simb.title_b">за 20 хвилин</em></h2>
+      <p class="sim-banner__lead" data-i18n="simb.lead">Клієнт скидає тобі кандидата. У тебе 15+ фейкових тулів, таймер і одна відповідь: APPROVE · REJECT · INSUFFICIENT · ESCALATE. Помилишся — програєш. 5 кейсів + сертифікат Master.</p>
+      <div class="sim-banner__meta">
+        <div><span data-i18n="simb.m1_lbl">Кейсів</span><strong>5</strong></div>
+        <div><span data-i18n="simb.m2_lbl">На кейс</span><strong>~20 хв</strong></div>
+        <div><span data-i18n="simb.m3_lbl">Реєстрація</span><strong data-i18n="simb.m3_val">не потрібна</strong></div>
+        <div><span data-i18n="simb.m4_lbl">Мова</span><strong>UA · EN</strong></div>
+      </div>
+      <div class="sim-banner__cta">
+        <a href="simulator.html" class="btn btn--filled btn--lg" data-umami-event="sim-banner-primary" data-i18n="simb.cta_play">▶ Грати безкоштовно</a>
+        <a href="cases.html" class="btn" data-umami-event="sim-banner-cases" data-i18n="simb.cta_read">Спочатку почитати розбір</a>
+      </div>
+    </div>
+    <div class="sim-banner__visual" aria-hidden="true">
+      <div class="sim-banner__terminal">
+        <div class="sim-banner__term-head"><span></span><span></span><span></span></div>
+        <div class="sim-banner__term-body">
+          <div class="sim-banner__line"><span class="sim-banner__prompt">&gt;</span> case #01 loaded · <span class="sim-banner__ok">READY</span></div>
+          <div class="sim-banner__line"><span class="sim-banner__prompt">&gt;</span> candidate: <em>REDACTED</em></div>
+          <div class="sim-banner__line"><span class="sim-banner__prompt">&gt;</span> tools: 15 available · time: 20:00</div>
+          <div class="sim-banner__line"><span class="sim-banner__prompt">&gt;</span> reverse-image → <span class="sim-banner__warn">match found</span></div>
+          <div class="sim-banner__line"><span class="sim-banner__prompt">&gt;</span> getcontact → <span class="sim-banner__warn">47 negative tags</span></div>
+          <div class="sim-banner__line"><span class="sim-banner__prompt">&gt;</span> verdict: <span class="sim-banner__cursor">_</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

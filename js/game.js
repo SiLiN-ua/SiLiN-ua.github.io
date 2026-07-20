@@ -199,6 +199,7 @@ function renderBriefing() {
     State.phase = 'phase2';
     State.startedAt = Date.now();
     startTimer();
+    track('game-start');
     renderPhase2();
     scrollTop();
   });
@@ -278,6 +279,7 @@ function renderPhase2() {
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.addEventListener('click', () => {
       State.phase = 'phase3';
+      track('game-phase3', { tools_used: Object.keys(State.toolsUsed).length });
       renderPhase3();
       scrollTop();
     });
@@ -1199,6 +1201,7 @@ function renderPhase3() {
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.addEventListener('click', () => {
       State.phase = 'citation';
+      track('game-citation', { q_answered: Object.keys(State.q3Answers).length });
       renderCitationPhase();
       scrollTop();
     });
@@ -1252,6 +1255,7 @@ function renderCitationPhase() {
   if (nb && !nb.disabled) nb.addEventListener('click', () => {
     commitCitations();
     State.phase = 'phase4';
+    track('game-phase4');
     renderPhase4();
     scrollTop();
   });
@@ -1325,6 +1329,8 @@ async function submitVerdict(verdictId) {
   State.finalVerdict = opt;
   State.ended = true;
   stopTimer();
+  track('game-verdict', { verdict: verdictId, correct: !!opt.correct, points: State.points });
+  track(opt.correct ? 'game-completed' : 'game-failed', { verdict: verdictId, points: Math.max(0, State.points) });
 
   // Tiered time bonus — fast+correct gets much more than slow+correct
   const s = State.scenario;
@@ -1604,6 +1610,16 @@ function mountHud() {
   root.parentNode.insertBefore(hud, root);
 }
 
+// ==================== ANALYTICS ====================
+function track(event, data = {}) {
+  try {
+    if (window.umami && typeof window.umami.track === 'function') {
+      const payload = { case_id: State.scenario?.id || 'unknown', ...data };
+      window.umami.track(event, payload);
+    }
+  } catch (_) { /* silent */ }
+}
+
 // ==================== INIT ====================
 async function init() {
   const params = new URLSearchParams(location.search);
@@ -1637,6 +1653,7 @@ async function init() {
   State.phase = 'briefing';
   renderBriefing();
   renderHelpPanel();
+  track('game-briefing-open');
 
   // Live re-render on language toggle
   document.addEventListener('langchange', () => {
