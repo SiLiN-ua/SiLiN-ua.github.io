@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/brand/panther-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/brand/panther-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/brand/panther-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow Certificate · Corporate Investigations · Єгор Селін</title>
+<meta name="description" content="Shadow Certificate — Corporate Investigations Track completion">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(220, 195, 130, .10) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 90%, rgba(60, 140, 100, .08) 0%, transparent 40%),
+    linear-gradient(180deg, #0f1a15 0%, #08120e 100%);
+  color: #f0e6d2;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Starfield canvas — behind everything */
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .7;
+}
+
+.cert-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.cert-toolbar {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+.cert-toolbar__btn {
+  padding: .55rem 1.1rem;
+  background: rgba(20, 40, 30, .7);
+  border: 1px solid rgba(127, 214, 255, .4);
+  color: #f0e6d2;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.cert-toolbar__btn:hover { background: rgba(220, 195, 130, .18); border-color: #dcc382; }
+.cert-toolbar__btn--active { background: rgba(220, 195, 130, .3); color: #dcc382; border-color: #dcc382; }
+.cert-toolbar__btn--primary { background: #dcc382; color: #0a0e1a; border-color: #dcc382; font-weight: 600; }
+.cert-toolbar__btn--primary:hover { background: #f0d69a; }
+.cert-toolbar--share {
+  padding: .6rem 1rem;
+  background: rgba(10, 20, 14, .4);
+  border: 1px dashed rgba(127, 214, 255, .25);
+  border-radius: 2px;
+  align-items: center;
+  gap: .4rem;
+}
+.cert-toolbar__label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  letter-spacing: .15em;
+  color: rgba(245, 236, 216, .7);
+  text-transform: uppercase;
+  margin-right: .5rem;
+}
+.cert-toolbar__btn--share {
+  padding: .4rem .8rem;
+  font-size: .78rem;
+}
+.cert-toolbar__hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  color: rgba(245, 236, 216, .5);
+  font-style: italic;
+  margin-left: .5rem;
+}
+
+/* === CERTIFICATE CARD (landscape) === */
+.cert {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 1.414 / 1; /* A4 landscape */
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(28, 58, 42, .95) 0%, rgba(20, 44, 32, .96) 60%, rgba(12, 26, 18, .98) 100%);
+  position: relative;
+  overflow: hidden;
+  color: #f5ecd8;
+  padding: 3.5rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cormorant Garamond', serif;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, .6), 0 0 0 1px rgba(220, 195, 130, .25);
+  border: 8px solid transparent;
+  background-clip: padding-box;
+}
+/* Ornate borders */
+.cert::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1.5px solid rgba(220, 195, 130, .55);
+  pointer-events: none;
+  z-index: 2;
+}
+.cert::after {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(220, 195, 130, .25);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Round panther seal — WATERMARK */
+.cert__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46%;
+  aspect-ratio: 1;
+  background: url('img/brand/panther-seal-round.png') center/contain no-repeat;
+  opacity: .16;
+  pointer-events: none;
+  z-index: 1;
+  filter: sepia(.6) hue-rotate(-30deg) saturate(1.4) brightness(1.05);
+}
+/* Corner ornaments */
+.cert__corner {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-color: #dcc382;
+  z-index: 3;
+}
+.cert__corner--tl { top: 28px; left: 28px; border-top: 2px solid; border-left: 2px solid; }
+.cert__corner--tr { top: 28px; right: 28px; border-top: 2px solid; border-right: 2px solid; }
+.cert__corner--bl { bottom: 28px; left: 28px; border-bottom: 2px solid; border-left: 2px solid; }
+.cert__corner--br { bottom: 28px; right: 28px; border-bottom: 2px solid; border-right: 2px solid; }
+
+/* Content */
+.cert__inner {
+  position: relative;
+  z-index: 4;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cert__head {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.cert__eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  letter-spacing: .35em;
+  color: #dcc382;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.cert__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: #f5ecd8;
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.cert__subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  color: #dcc382;
+  text-transform: uppercase;
+}
+
+.cert__preamble {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(245, 236, 216, .82);
+  margin: 1rem 0 .5rem;
+  letter-spacing: .04em;
+}
+.cert__name {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #dcc382;
+  letter-spacing: .06em;
+  margin: .3rem 0 .8rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(220, 195, 130, .4);
+  text-shadow: 0 0 25px rgba(220, 195, 130, .3);
+  word-break: break-word;
+}
+.cert__body {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #f5ecd8;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  letter-spacing: .02em;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cert__body strong {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Stats grid — landscape 3-col */
+.cert__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1rem 0;
+  max-width: 720px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cert__stat {
+  text-align: center;
+  padding: .8rem .5rem;
+  border-top: 1px solid rgba(220, 195, 130, .3);
+  border-bottom: 1px solid rgba(220, 195, 130, .3);
+}
+.cert__stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #dcc382;
+  line-height: 1;
+}
+.cert__stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  letter-spacing: .18em;
+  color: rgba(245, 236, 216, .7);
+  text-transform: uppercase;
+  margin-top: .4rem;
+}
+
+/* Footer signature area */
+.cert__foot {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  padding-top: 1rem;
+}
+.cert__sig { text-align: left; }
+.cert__sig-img {
+  max-width: 320px;
+  height: auto;
+  margin-bottom: .2rem;
+  display: block;
+}
+.cert__sig-line {
+  border-bottom: 1px solid rgba(220, 195, 130, .5);
+  padding-bottom: .3rem;
+  margin-bottom: .5rem;
+}
+.cert__sig-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #f5ecd8;
+  letter-spacing: .04em;
+}
+.cert__sig-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  color: rgba(245, 236, 216, .7);
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+
+.cert__meta {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  letter-spacing: .1em;
+  color: rgba(245, 236, 216, .8);
+  line-height: 1.9;
+}
+.cert__meta strong { color: #dcc382; font-weight: normal; }
+.cert__meta-issued {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: .9rem;
+  color: rgba(245, 236, 216, .75);
+  margin-top: .8rem;
+  letter-spacing: .02em;
+}
+
+/* Print styles */
+@media print {
+  html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
+  #stars { display: none !important; }
+  .cert-page { padding: 0 !important; background: white !important; }
+  .cert-toolbar { display: none !important; }
+  .cert {
+    box-shadow: none !important;
+    max-width: none !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    aspect-ratio: unset !important;
+    page-break-after: avoid !important;
+  }
+  @page { size: A4 landscape; margin: 0; }
+}
+
+@media (max-width: 800px) {
+  .cert { padding: 2rem 1.5rem; aspect-ratio: auto; min-height: 90vh; }
+  .cert__title { font-size: 1.8rem; }
+  .cert__name { font-size: 2rem; }
+  .cert__body { font-size: .95rem; max-width: 100%; }
+  .cert__foot { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+  .cert__meta { text-align: center; }
+  .cert__sig { text-align: center; }
+  .cert__sig-img { margin-left: auto; margin-right: auto; max-width: 240px; }
+  .cert__stats { grid-template-columns: 1fr; gap: .5rem; }
+  .cert__stat { padding: .5rem; }
+  .cert__stat-val { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="cert-page">
+
+  <div class="cert-toolbar">
+    <button class="cert-toolbar__btn cert-toolbar__btn--active" id="btn-lang-uk">UA</button>
+    <button class="cert-toolbar__btn" id="btn-lang-en">EN</button>
+    <button class="cert-toolbar__btn cert-toolbar__btn--primary" id="btn-print">🖨 Print / Save PDF</button>
+    <button class="cert-toolbar__btn cert-toolbar__btn--primary" id="btn-download">⬇ Download PNG</button>
+    <a class="cert-toolbar__btn" href="simulator.html">← Back</a>
+  </div>
+
+  <div class="cert-toolbar cert-toolbar--share">
+    <span class="cert-toolbar__label" id="lbl-share">Поділитися:</span>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-linkedin" target="_blank" rel="noopener">💼 LinkedIn</a>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-twitter" target="_blank" rel="noopener">𝕏 Twitter</a>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-facebook" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-telegram" target="_blank" rel="noopener">✈ Telegram</a>
+    <button class="cert-toolbar__btn cert-toolbar__btn--share" id="sh-copy">🔗 <span id="sh-copy-txt">Copy link</span></button>
+    <span class="cert-toolbar__hint" id="sh-hint">Instagram / Patreon — завантаж PNG і завантаж окремо</span>
+  </div>
+
+  <div class="cert" id="cert">
+    <div class="cert__watermark"></div>
+    <div class="cert__corner cert__corner--tl"></div>
+    <div class="cert__corner cert__corner--tr"></div>
+    <div class="cert__corner cert__corner--bl"></div>
+    <div class="cert__corner cert__corner--br"></div>
+
+    <div class="cert__inner">
+      <div class="cert__head">
+        <div class="cert__eyebrow" id="c-eyebrow">SHADOW CERTIFICATE · TRACK II · 2026</div>
+        <div class="cert__title" id="c-title">Shadow Certificate</div>
+        <div class="cert__subtitle" id="c-subtitle">CORPORATE INVESTIGATIONS TRACK</div>
+      </div>
+
+      <div class="cert__preamble" id="c-preamble">Це офіційне свідоцтво про те, що</div>
+
+      <div class="cert__name" id="c-name">Nickname</div>
+
+      <div class="cert__body" id="c-body">
+        успішно пройшов усі <strong>5 кейсів</strong> симулятора «Candidate Red-Flag Screening», продемонструвавши компетенції у виявленні impersonation, disambiguation, family-chain pivot, voice biometric та counterintel-скринінгу.
+      </div>
+
+      <div class="cert__stats">
+        <div class="cert__stat">
+          <div class="cert__stat-val" id="c-stat-cases">5 / 5</div>
+          <div class="cert__stat-lbl" id="c-stat-cases-lbl">Кейсів пройдено</div>
+        </div>
+        <div class="cert__stat">
+          <div class="cert__stat-val" id="c-stat-pts">—</div>
+          <div class="cert__stat-lbl" id="c-stat-pts-lbl">Всього очок</div>
+        </div>
+        <div class="cert__stat">
+          <div class="cert__stat-val" id="c-stat-rank">—</div>
+          <div class="cert__stat-lbl" id="c-stat-rank-lbl">Ранг</div>
+        </div>
+      </div>
+
+      <div class="cert__foot">
+        <div class="cert__sig">
+          <div class="cert__sig-line"><img src="img/brand/signature-yehor.png" alt="Yehor Selin signature" class="cert__sig-img"></div>
+          <div class="cert__sig-name">Єгор Селін · Yehor Selin</div>
+          <div class="cert__sig-role" id="c-sig-role">OSINT & SOCMINT Investigator</div>
+        </div>
+        <div class="cert__meta">
+          <div><span id="c-meta-date-lbl">Дата</span>: <strong id="c-date">—</strong></div>
+          <div><span id="c-meta-id-lbl">Cert ID</span>: <strong id="c-id">—</strong></div>
+          <div><span id="c-meta-verify-lbl">Verify</span>: <strong>yehorselin.com</strong></div>
+          <div class="cert__meta-issued" id="c-issued">Issued by a Shadow Company</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/graph.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<script>
+const I18N = {
+  uk: {
+    eyebrow: 'SHADOW CERTIFICATE · TRACK II · 2026',
+    title: 'Shadow Certificate',
+    subtitle: 'CORPORATE INVESTIGATIONS TRACK',
+    preamble: 'Це офіційне свідоцтво про те, що',
+    body: 'успішно завершив/ла Track II — <strong>Corporate Investigations</strong>, продемонструвавши компетенції у розслідуванні витоку IP, kickback-схем, підставних vendor, конфлікту інтересів топ-менеджменту та insider trading. Оволодів методиками Timeline Reconstruction, Memo Drafting та Corporate Policy Compliance.',
+    cases_lbl: 'Кейсів пройдено',
+    pts_lbl: 'Всього очок',
+    rank_lbl: 'Ранг',
+    sig_role: 'OSINT & SOCMINT Investigator',
+    meta_date: 'Дата',
+    meta_id: 'Cert ID',
+    meta_verify: 'Перевірка',
+    issued: 'Issued by a Shadow Company',
+    share_lbl: 'Поділитися:',
+    share_hint: 'Instagram / Patreon — завантаж PNG і опублікуй вручну',
+    share_text: 'Я отримав Shadow Certificate · Corporate Investigations Track від Єгора Селіна 🏢',
+    copy_ok: 'Скопійовано ✓',
+    copy_lbl: 'Copy link',
+    rank_master: 'Master · Corporate Threat Hunter',
+    rank_senior: 'Senior Investigator',
+    rank_junior: 'Investigator',
+    rank_trainee: 'Junior Auditor'
+  },
+  en: {
+    eyebrow: 'SHADOW CERTIFICATE · TRACK II · 2026',
+    title: 'Shadow Certificate',
+    subtitle: 'CORPORATE INVESTIGATIONS TRACK',
+    preamble: 'This is to certify that',
+    body: 'has successfully completed Track II — <strong>Corporate Investigations</strong>, demonstrating competencies across IP theft detection, kickback scheme unravelling, shell-vendor screening, executive conflict-of-interest reviews, and insider trading investigations. Skilled in Timeline Reconstruction, Memo Drafting, and Corporate Policy Compliance.',
+    cases_lbl: 'Cases completed',
+    pts_lbl: 'Total points',
+    rank_lbl: 'Rank',
+    sig_role: 'OSINT & SOCMINT Investigator',
+    meta_date: 'Date',
+    meta_id: 'Cert ID',
+    meta_verify: 'Verify',
+    issued: 'Issued by a Shadow Company',
+    share_lbl: 'Share:',
+    share_hint: 'Instagram / Patreon — download PNG and post manually',
+    share_text: 'I earned a Shadow Certificate · Corporate Investigations Track from Yehor Selin 🏢',
+    copy_ok: 'Copied ✓',
+    copy_lbl: 'Copy link',
+    rank_master: 'Master · Corporate Threat Hunter',
+    rank_senior: 'Senior Investigator',
+    rank_junior: 'Investigator',
+    rank_trainee: 'Junior Auditor'
+  }
+};
+
+function rankByPts(pts) {
+  if (pts >= 2500) return 'master';
+  if (pts >= 2000) return 'senior';
+  if (pts >= 1500) return 'junior';
+  return 'trainee';
+}
+function fmtDate(iso, lang) {
+  const d = new Date(iso);
+  return d.toLocaleDateString(lang === 'en' ? 'en-US' : 'uk-UA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+function certId(nick, dateISO) {
+  const src = nick + '|' + dateISO;
+  let hash = 0;
+  for (let i = 0; i < src.length; i++) hash = ((hash << 5) - hash + src.charCodeAt(i)) | 0;
+  const short = Math.abs(hash).toString(36).toUpperCase().slice(0, 6);
+  return 'SS-02-' + short + '-' + new Date(dateISO).getFullYear();
+}
+
+function render(lang) {
+  const T = I18N[lang] || I18N.uk;
+  const params = new URLSearchParams(location.search);
+  const nick = params.get('nick') || localStorage.getItem('ss.nickname') || 'Anonymous';
+  const pts = parseInt(params.get('pts') || localStorage.getItem('ss.total_pts') || '0', 10);
+  const dateISO = params.get('date') || localStorage.getItem('ss.cert_date') || new Date().toISOString();
+  const rank = rankByPts(pts);
+
+  document.documentElement.lang = lang;
+  document.getElementById('c-eyebrow').textContent = T.eyebrow;
+  document.getElementById('c-title').textContent = T.title;
+  document.getElementById('c-subtitle').textContent = T.subtitle;
+  document.getElementById('c-preamble').textContent = T.preamble;
+  document.getElementById('c-body').innerHTML = T.body;
+  document.getElementById('c-name').textContent = nick;
+  document.getElementById('c-stat-pts').textContent = pts.toLocaleString(lang === 'en' ? 'en-US' : 'uk-UA');
+  document.getElementById('c-stat-cases-lbl').textContent = T.cases_lbl;
+  document.getElementById('c-stat-pts-lbl').textContent = T.pts_lbl;
+  document.getElementById('c-stat-rank-lbl').textContent = T.rank_lbl;
+  document.getElementById('c-stat-rank').textContent = T['rank_' + rank];
+  document.getElementById('c-sig-role').textContent = T.sig_role;
+  document.getElementById('c-meta-date-lbl').textContent = T.meta_date;
+  document.getElementById('c-meta-id-lbl').textContent = T.meta_id;
+  document.getElementById('c-meta-verify-lbl').textContent = T.meta_verify;
+  document.getElementById('c-issued').textContent = T.issued;
+  document.getElementById('c-date').textContent = fmtDate(dateISO, lang);
+  document.getElementById('c-id').textContent = certId(nick, dateISO);
+  document.title = T.title + ' · ' + nick;
+  document.getElementById('btn-lang-uk').classList.toggle('cert-toolbar__btn--active', lang === 'uk');
+  document.getElementById('btn-lang-en').classList.toggle('cert-toolbar__btn--active', lang === 'en');
+  document.getElementById('lbl-share').textContent = T.share_lbl;
+  document.getElementById('sh-hint').textContent = T.share_hint;
+  document.getElementById('sh-copy-txt').textContent = T.copy_lbl;
+
+  // Build share URLs
+  const shareUrl = location.origin + location.pathname + '?nick=' + encodeURIComponent(nick) + '&pts=' + pts + '&date=' + encodeURIComponent(dateISO) + '&lang=' + lang;
+  const shareText = T.share_text + ' ' + T['rank_' + rank] + ' · ' + pts + ' pts';
+  document.getElementById('sh-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+  document.getElementById('sh-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl);
+  document.getElementById('sh-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+  document.getElementById('sh-telegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareText);
+  document.getElementById('sh-copy').dataset.url = shareUrl;
+  document.getElementById('sh-copy').dataset.okText = T.copy_ok;
+  document.getElementById('sh-copy').dataset.origText = T.copy_lbl;
+}
+document.getElementById('btn-lang-uk').addEventListener('click', () => render('uk'));
+document.getElementById('btn-lang-en').addEventListener('click', () => render('en'));
+document.getElementById('btn-print').addEventListener('click', () => window.print());
+
+document.getElementById('btn-download').addEventListener('click', async () => {
+  const btn = document.getElementById('btn-download');
+  const orig = btn.textContent;
+  btn.textContent = '⏳ Rendering…';
+  btn.disabled = true;
+  try {
+    const cert = document.getElementById('cert');
+    const canvas = await html2canvas(cert, { scale: 2, backgroundColor: null, useCORS: true, logging: false });
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const nick = (document.getElementById('c-name')?.textContent || 'cert').replace(/[^A-Za-z0-9_-]/g, '_');
+      a.download = 'shadow-certificate-track2-' + nick + '.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      btn.textContent = '✓ Downloaded';
+      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+    });
+  } catch (e) {
+    console.error(e);
+    btn.textContent = '⚠ Error — try Print';
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500);
+  }
+});
+
+document.getElementById('sh-copy').addEventListener('click', function() {
+  const url = this.dataset.url;
+  const okText = this.dataset.okText || 'Copied ✓';
+  const origText = this.dataset.origText || 'Copy link';
+  const span = document.getElementById('sh-copy-txt');
+  navigator.clipboard.writeText(url).then(() => {
+    span.textContent = okText;
+    setTimeout(() => { span.textContent = origText; }, 2000);
+  }).catch(() => {
+    span.textContent = '⚠ ' + url.slice(0, 30);
+    setTimeout(() => { span.textContent = origText; }, 3000);
+  });
+});
+
+render(new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'uk');
+</script>
+
+</body>
+</html>

@@ -57,7 +57,9 @@
   opacity: .95;
 }
 .sim-tile__tag--dev { color: #dcc382; border-color: rgba(220, 195, 130, .5); background: rgba(220, 195, 130, .08); }
-.sim-tile--dev .sim-tile__cta { background: rgba(220, 195, 130, .15); color: #dcc382; border: 1px solid rgba(220, 195, 130, .4); pointer-events: none; }
+.sim-tile--dev .sim-tile__cta { background: rgba(220, 195, 130, .15); color: #dcc382; border: 1px solid rgba(220, 195, 130, .4); }
+.sim-tile--dev:hover { border-color: #dcc382; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(220, 195, 130, .15); }
+.sim-tile--dev:hover .sim-tile__cta { background: rgba(220, 195, 130, .25); }
 .sim-tile__num {
   font-family: var(--font-mono);
   font-size: .72rem;
@@ -205,8 +207,8 @@
         <span class="sim-tile__cta" data-i18n="ss.tile.enter">▶ Відкрити симулятор</span>
       </a>
 
-      <!-- SIM #02 — IN DEVELOPMENT (announced) -->
-      <div class="sim-tile sim-tile--dev">
+      <!-- SIM #02 — IN DEVELOPMENT (announced, clickable to landing) -->
+      <a href="simulator-02.html" class="sim-tile sim-tile--dev" data-umami-event="sim2-tile-click">
         <div class="sim-tile__tag sim-tile__tag--dev" data-i18n="ss.tile.dev">⚙ У розробці</div>
         <div class="sim-tile__num">SIM #02</div>
         <h3 class="sim-tile__title" data-i18n="ss.tile.02.title">🏢 Corporate Investigations</h3>
@@ -214,11 +216,11 @@
         <div class="sim-tile__meta">
           <span><span data-i18n="ss.tile.cases_lbl">Кейсів</span>: <strong>5</strong></span>
           <span><span data-i18n="ss.tile.cert_lbl">Сертифікат</span>: <strong data-i18n="ss.tile.cert_yes">так</strong></span>
-          <span><span data-i18n="ss.tile.eta_lbl">Реліз</span>: <strong data-i18n="ss.tile.eta_02">4-6 тижнів</strong></span>
+          <span><span data-i18n="ss.tile.eta_lbl">Реліз</span>: <strong data-i18n="ss.tile.eta_02">3-4 тижні</strong></span>
         </div>
-        <span class="sim-tile__cta" data-i18n="ss.tile.dev_cta">Анонсовано · Case 1 скоро</span>
+        <span class="sim-tile__cta" data-i18n="ss.tile.dev_cta">Переглянути анонс →</span>
         <div class="sim-tile__lock">⚙</div>
-      </div>
+      </a>
 
       <!-- SIM #03 — COMING SOON -->
       <div class="sim-tile sim-tile--soon">

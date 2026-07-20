@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/brand/panther-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/brand/panther-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/brand/panther-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
+<title>Simulator #02 · Corporate Investigations · Єгор Селін</title>
+<meta name="description" content="Симулятор #02 — 5 кейсів корпоративних розслідувань. Timeline Builder, Memo Builder, Corporate Policy. В розробці.">
+<link rel="canonical" href="https://yehorselin.com/simulator-02.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shadow Simulator #02 · Corporate Investigations">
+<meta property="og:description" content="Наступна серія симулятора: розслідування корпоративних інцидентів. В розробці.">
+<meta property="og:url" content="https://yehorselin.com/simulator-02.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css?v=5">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
+<style>
+/* SIM #02 — bronze/emerald accent (contrasts blue Sim #01) */
+:root {
+  --sim2-accent: #dcc382;
+  --sim2-accent-glow: #f0d69a;
+  --sim2-deep: #1a3628;
+}
+.ss-hero--sim2 {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(220,195,130,.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, rgba(26,54,40,.15) 0%, transparent 50%);
+}
+.ss-hero--sim2 .ss-hero__badge { color: var(--sim2-accent); }
+.ss-hero--sim2 h1 em { color: var(--sim2-accent); }
+.ss-hero--sim2 .ss-hero__stripe strong { color: var(--sim2-accent); }
+.sim2-status-banner {
+  background: linear-gradient(90deg, rgba(220,195,130,.12), rgba(26,54,40,.12));
+  border: 1px solid rgba(220,195,130,.35);
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.sim2-status-banner__dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--sim2-accent);
+  box-shadow: 0 0 12px var(--sim2-accent-glow);
+  animation: sim2-pulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes sim2-pulse { 0%,100% { opacity:1 } 50% { opacity:.4 } }
+.sim2-status-banner strong { color: var(--sim2-accent); }
+.sim-card--sim2 {
+  border-color: rgba(220,195,130,.3);
+}
+.game-row--dev {
+  opacity: .7;
+  border-left: 3px solid var(--sim2-accent);
+}
+.game-row__status--dev {
+  color: var(--sim2-accent);
+  border: 1px solid rgba(220,195,130,.4);
+  background: rgba(220,195,130,.08);
+  padding: .3rem .7rem;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  border-radius: 2px;
+}
+.sim2-notify {
+  padding: 2rem;
+  background: rgba(15,21,36,.6);
+  border: 1px dashed rgba(220,195,130,.35);
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 2rem;
+}
+.sim2-notify h3 {
+  font-family: var(--font-serif);
+  color: var(--cream);
+  font-size: 1.35rem;
+  margin: 0 0 .5rem;
+}
+.sim2-notify p {
+  color: var(--text-mute);
+  font-size: .95rem;
+  margin-bottom: 1.25rem;
+}
+.sim2-notify__cta {
+  display: inline-flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
+  <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  <ul class="nav__links">
+    <li><a href="index.html" data-i18n="nav.home">Головна</a></li>
+    <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+    <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+    <li><a href="simulator.html" class="active"><img class="nav__ico" src="img/brand/panther-32.png?v=2" alt=""> <span data-i18n="nav.simulator">Симулятор</span></a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+    <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+    <li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li>
+    <li class="nav__more">
+      <button class="nav__more-btn" type="button" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.more">Більше</span> <span class="nav__more-caret">▾</span></button>
+      <ul class="nav__submenu" role="menu">
+        <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+        <li><a href="education.html" data-i18n="nav.education">Освіта</a></li>
+        <li><a href="speaking.html" data-i18n="nav.speaking">Виступи</a></li>
+        <li><a href="certificates.html" data-i18n="nav.certificates">Сертифікати</a></li>
+        <li><a href="awards.html" data-i18n="nav.awards">Відзнаки</a></li>
+        <li><a href="recommendations.html" data-i18n="nav.recommendations">Рекомендації</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Контакти</a></li>
+      </ul>
+    </li>
+    <li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="ss-hero ss-hero--sim2">
+  <div class="container ss-hero__inner">
+    <span class="ss-hero__badge" data-i18n="sim2.hero.badge">SHADOW SIMULATOR · TRACK II · CORPORATE INVESTIGATIONS</span>
+    <h1><span data-i18n="sim2.hero.title_a">Track II ·</span> <em data-i18n="sim2.hero.title_b">Corporate Investigations</em></h1>
+    <p class="ss-hero__lead" data-i18n="sim2.hero.lead">Другий трек. Ти вже не перевіряєш одну людину — ти розплітаєш схему. Витік IP, kickback-мережа, підставні vendor, конфлікт інтересів, insider trading. 5 кейсів + Timeline Builder + Memo Builder + Corporate Policy у кожному кейсі.</p>
+    <div class="ss-hero__stripe">
+      <div><span data-i18n="sim2.stripe.cases">Кейсів</span><strong>5</strong></div>
+      <div><span data-i18n="sim2.stripe.time">Час</span><strong>30-45 хв / кейс</strong></div>
+      <div><span data-i18n="sim2.stripe.new">Нові механіки</span><strong>Timeline · Memo · Policy</strong></div>
+      <div><span data-i18n="sim2.stripe.cert">Сертифікат</span><strong>Corporate Track</strong></div>
+      <div><span data-i18n="sim2.stripe.reward">Умова</span><strong>1500+ pts</strong></div>
+    </div>
+    <div class="sim2-status-banner">
+      <div class="sim2-status-banner__dot"></div>
+      <div><strong data-i18n="sim2.status.title">TRACK II · IN DEVELOPMENT</strong> · <span data-i18n="sim2.status.text">SPEC затверджено · Phase 0 виконано · Timeline Builder і Memo Builder у розробці · перший кейс запуститься за 3-4 тижні.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS - Track II eволюція -->
+<section class="ss-section ss-howto">
+  <div class="container">
+    <div class="ss-secttl">
+      <span class="ss-secttl__pre" data-i18n="sim2.howto.pre">ЯК ЦЕ ПРАЦЮЄ · 5 КРОКІВ · TRACK II</span>
+      <h2 data-i18n="sim2.howto.title">Ти корпоративний слідчий. Клієнт дає підозру. Ти розплітаєш схему.</h2>
+    </div>
+    <ol class="ss-howto__steps" style="grid-template-columns:repeat(5,1fr)">
+      <li>
+        <div class="ss-howto__num">01</div>
+        <div class="ss-howto__ico">📋</div>
+        <h4 data-i18n="sim2.howto.s1t">Бриф + Policy</h4>
+        <p data-i18n="sim2.howto.s1p">Клієнт (Board / HR / Compliance) дає задачу + окрему плашку з політикою компанії. Політику треба тримати у голові весь кейс.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">02</div>
+        <div class="ss-howto__ico">🧰</div>
+        <h4 data-i18n="sim2.howto.s2t">Тули + документи</h4>
+        <p data-i18n="sim2.howto.s2p">OpenCorporates, court registries, meeting minutes leaks, invoice analysis, email chains, Panama Papers, corporate ownership graphs.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">03</div>
+        <div class="ss-howto__ico">🕐</div>
+        <h4 data-i18n="sim2.howto.s3t">Timeline Builder</h4>
+        <p data-i18n="sim2.howto.s3p">НОВА фаза. Розставити знайдені події у правильному хронологічному й причинно-наслідковому порядку. Кожна правильна пара +5, помилка −3.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">04</div>
+        <div class="ss-howto__ico">🎯</div>
+        <h4 data-i18n="sim2.howto.s4t">Крос-верифікація</h4>
+        <p data-i18n="sim2.howto.s4p">3 питання по знайдених доказах. Читай ВСІ варіанти — правильний часто не найдраматичніший.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">05</div>
+        <div class="ss-howto__ico">📝</div>
+        <h4 data-i18n="sim2.howto.s5t">Memo Builder</h4>
+        <p data-i18n="sim2.howto.s5p">НОВА фаза. Заповни корпоративний меморандум: Subject, Evidence (drag&drop), Risk Score, Recommendation. Ігнорування Policy = штраф.</p>
+      </li>
+    </ol>
+    <div class="ss-howto__demo">
+      <a href="simulator-01.html" class="btn btn--filled btn--lg" data-umami-event="sim2-play-track1-first" data-i18n="sim2.howto.demo">▶ Спочатку пройди Track I · Candidate Screening</a>
+      <div class="ss-howto__demo-hint" data-i18n="sim2.howto.demo_hint">Track II запуститься за 3-4 тижні. Поки готуємо контент — освой основи механіки у Track I.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE PREVIEW LIST (5 announced cases) -->
+<section class="ss-section">
+  <div class="container">
+    <div class="ss-secttl">
+      <span class="ss-secttl__pre" data-i18n="sim2.cases.pre">ЗАПЛАНОВАНІ КЕЙСИ</span>
+      <h2 data-i18n="sim2.cases.title">5 корпоративних розслідувань</h2>
+      <p data-i18n="sim2.cases.subtitle">Кейси будуть виходити етапами: перші три одночасно (Launch 1), потім Case 4 і Case 5 з інтервалом 2 тижні для збору фідбеку.</p>
+    </div>
+
+    <article class="sim-card sim-card--sim2">
+      <div class="sim-card__games-head">
+        <span data-i18n="sim2.cases.head">5 кейсів у Track II</span>
+      </div>
+
+      <div class="sim-games">
+
+        <article class="game-row game-row--dev">
+          <div class="game-row__idx">1 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="sim2.case1.title">Кейс 1 · «The Leaking Engineer»</h4>
+            <p data-i18n="sim2.case1.sub">Senior engineer підозрюється у передачі архітектури продукту конкуренту через підставне ТОВ, зареєстроване на дружину. OpenCorporates + meeting minutes leak + timeline finance. Твоє рішення — не одразу Terminate, а правильна ескалація за політикою.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip">IP Theft</span>
+              <span class="proj-chip">Shell Company</span>
+              <span class="proj-chip">Family Chain</span>
+              <span class="proj-chip">Timeline</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <div class="game-row__status--dev" data-i18n="sim2.status.launch1">⚙ Launch 1</div>
+          </div>
+        </article>
+
+        <article class="game-row game-row--dev">
+          <div class="game-row__idx">2 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="sim2.case2.title">Кейс 2 · «Procurement Ghost»</h4>
+            <p data-i18n="sim2.case2.sub">Аудитор помітив, що постачання запчастин на 30-40% дорожче ринку. Procurement manager і ланцюжок 4 підставних vendor'ів. Однакова адреса будинку сусіда. Однаковий кіпрський банк. Google Street View + LinkedIn cross-check.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip">Kickback Scheme</span>
+              <span class="proj-chip">Shell Vendors</span>
+              <span class="proj-chip">Vendor Audit</span>
+              <span class="proj-chip">Procurement Freeze</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <div class="game-row__status--dev" data-i18n="sim2.status.launch1">⚙ Launch 1</div>
+          </div>
+        </article>
+
+        <article class="game-row game-row--dev">
+          <div class="game-row__idx">3 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="sim2.case3.title">Кейс 3 · «Fake Vendor Network» (adversarial)</h4>
+            <p data-i18n="sim2.case3.sub">Compliance flag: 3 нових vendor підозріло схожі — та ж адреса, та ж платіжка, схожі websites. Але це просто фрилансери з одного coworking. Пастка: інстинкт кричить «Terminate!», політика вимагає Additional Due Diligence. False Positive Avoidance тренується саме тут.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip">False Positive Trap</span>
+              <span class="proj-chip">Judgement Quality</span>
+              <span class="proj-chip">No-Action Skill</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <div class="game-row__status--dev" data-i18n="sim2.status.launch1">⚙ Launch 1</div>
+          </div>
+        </article>
+
+        <article class="game-row game-row--dev">
+          <div class="game-row__idx">4 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="sim2.case4.title">Кейс 4 · «Executive Conflict of Interest»</h4>
+            <p data-i18n="sim2.case4.sub">Публічна компанія, cap $2B. Правління на порозі mega-acquisition. Whistleblower: CFO має приховану 3%-долю у target через Panama-трест. Голосування через тиждень. Panama Papers + corporate ownership graph + SEC disclosure. Політика: тільки external Legal Counsel, ніяких self-investigations.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip">Panama Papers</span>
+              <span class="proj-chip">Hidden Ownership</span>
+              <span class="proj-chip">Executive COI</span>
+              <span class="proj-chip">SEC Escalation</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <div class="game-row__status--dev" data-i18n="sim2.status.launch2">⚙ +2 тижні</div>
+          </div>
+        </article>
+
+        <article class="game-row game-row--dev">
+          <div class="game-row__idx">5 / 5</div>
+          <div class="game-row__body">
+            <h4 data-i18n="sim2.case5.title">Кейс 5 · «Insider Trading Alert» (ФІНАЛ)</h4>
+            <p data-i18n="sim2.case5.sub">Investment bank compliance. Analyst торгував акціями клієнта за 3 дні до оголошення M&A. Але торгував через рахунок брата-студента, який живе за його адресою. Rolex на $8K як hedge. Найскладніший кейс, який зв'язує всі нові механіки.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip">Insider Trading</span>
+              <span class="proj-chip">Family Proxy</span>
+              <span class="proj-chip">Money Flow</span>
+              <span class="proj-chip">Regulator Escalation</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <div class="game-row__status--dev" data-i18n="sim2.status.launch3">⚙ +4 тижні</div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="sim2-notify">
+        <h3 data-i18n="sim2.notify.title">Хочеш дізнатись коли Case 1 запуститься?</h3>
+        <p data-i18n="sim2.notify.text">Не робимо email-розсилок. Підпишись на LinkedIn — там першим ділом пишу про кожен запуск + розбір нової механіки.</p>
+        <div class="sim2-notify__cta">
+          <a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener" class="btn btn--filled" data-umami-event="sim2-linkedin-follow">💼 Follow on LinkedIn</a>
+          <a href="https://t.me/shadowsint0" target="_blank" rel="noopener" class="btn" data-umami-event="sim2-telegram-follow">✈ Telegram</a>
+          <a href="simulator-01.html" class="btn" data-umami-event="sim2-back-to-track1">← Track I</a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+<!-- LEADERBOARD (shared with Sim #01) -->
+<section class="ss-section ss-section--alt" id="leaderboard">
+  <div class="container">
+    <div class="ss-secttl">
+      <span class="ss-secttl__pre" data-i18n="ss.lb.pre">ГЛОБАЛЬНИЙ РЕЙТИНГ</span>
+      <h2 data-i18n="ss.lb.title">🏆 Leaderboard</h2>
+      <p data-i18n="sim2.lb.subtitle">Спільний leaderboard для всіх треків Shadow Simulator. Track II очки додаватимуться після запуску Case 1.</p>
+    </div>
+    <div id="leaderboard-list"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div><div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div><p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p></div>
+    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="simulator.html" data-i18n="nav.simulator">Симулятор</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li><li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="education.html" data-i18n="nav.education">Освіта</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li><li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li></ul></div>
+    <div class="footer__col"><h4 data-i18n="footer.contacts">Контакти</h4><ul><li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li><li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li><li><a href="mailto:selinegor22@gmail.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer__bottom"><span data-i18n="footer.rights">© 2026 Єгор Селін</span><span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span></div>
+</footer>
+
+<script src="js/graph.js"></script>
+<script src="js/main.js"></script>
+<script type="module">
+  import { renderLeaderboard } from './js/simulator.js';
+  (async () => {
+    const nick = localStorage.getItem('ss.nickname') || '';
+    await renderLeaderboard('#leaderboard-list', nick);
+  })();
+  document.addEventListener('langchange', async () => {
+    const nick = localStorage.getItem('ss.nickname') || '';
+    await renderLeaderboard('#leaderboard-list', nick);
+  });
+</script>
+</body>
+</html>
