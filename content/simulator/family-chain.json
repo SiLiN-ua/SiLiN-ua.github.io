@@ -392,23 +392,104 @@
   "ui_data": {
     "osint_industries_query": "d.kovalchuk.compliance@gmail.com · +380 50 ***-**-82 · «Dmytro Kovalchuk»",
     "osint_industries_results": [
-      { "platform": "LinkedIn", "status": "found", "detail": "public profile, 1200 conn · matches CV" },
-      { "platform": "dou.ua", "status": "found", "detail": "faceless profile, 2 posts 2019, no photo" },
-      { "platform": "work.ua", "status": "found", "detail": "stale profile 2020, generic avatar" },
-      { "platform": "Instagram", "status": "private", "detail": "@d_kovalchuk_kyiv (private, 47 posts)" },
-      { "platform": "Facebook", "status": "empty", "detail": "no public data" },
-      { "platform": "Twitter/X", "status": "found", "detail": "@dima.finance · 5 posts 2016-2018 · last activity 2018-11-04" },
-      { "platform": "TikTok", "status": "null", "detail": "no match" },
-      { "platform": "Reddit", "status": "found", "detail": "u/DK_1988 · 2 comments in r/UkrainianFinance · 2021-09" },
-      { "platform": "GitHub", "status": "null", "detail": "no match" },
-      { "platform": "Telegram (public)", "status": "found", "detail": "@dkovalchuk · bio: «Head of Compliance @ [bank]» · zero messages" },
-      { "platform": "ok.ru", "status": "found", "detail": "profile «Дмитро Ковальчук» · Львів · 45 y.o. · own photo attached" },
-      { "platform": "VK archive", "status": "found", "detail": "one deleted profile trace 2013" }
+      {
+        "platform": "LinkedIn",
+        "status": "found",
+        "detail": "public profile, 1200 conn · matches CV"
+      },
+      {
+        "platform": "dou.ua",
+        "status": "found",
+        "detail": "faceless profile, 2 posts 2019, no photo",
+        "detail_en": "faceless profile, 2 posts 2019, no photo",
+        "detail_uk": "безликий профіль, 2 пости 2019, без фото"
+      },
+      {
+        "platform": "work.ua",
+        "status": "found",
+        "detail": "stale profile 2020, generic avatar",
+        "detail_en": "stale profile 2020, generic avatar",
+        "detail_uk": "застарілий профіль 2020, стандартна аватарка"
+      },
+      {
+        "platform": "Instagram",
+        "status": "private",
+        "detail": "@d_kovalchuk_kyiv (private, 47 posts)",
+        "detail_en": "@d_kovalchuk_kyiv (private, 47 posts)",
+        "detail_uk": "@d_kovalchuk_kyiv (приватний, 47 постів)"
+      },
+      {
+        "platform": "Facebook",
+        "status": "empty",
+        "detail": "no public data",
+        "detail_en": "no public data",
+        "detail_uk": "немає публічних даних"
+      },
+      {
+        "platform": "Twitter/X",
+        "status": "found",
+        "detail": "@dima.finance · 5 posts 2016-2018 · last activity 2018-11-04",
+        "detail_en": "@dima.finance · 5 posts 2016-2018 · last activity 2018-11-04",
+        "detail_uk": "@dima.finance · 5 постів 2016-2018 · остання активність 2018-11-04"
+      },
+      {
+        "platform": "TikTok",
+        "status": "null",
+        "detail": "no match"
+      },
+      {
+        "platform": "Reddit",
+        "status": "found",
+        "detail": "u/DK_1988 · 2 comments in r/UkrainianFinance · 2021-09",
+        "detail_en": "u/DK_1988 · 2 comments in r/UkrainianFinance · 2021-09",
+        "detail_uk": "u/DK_1988 · 2 коментарі у r/UkrainianFinance · 2021-09"
+      },
+      {
+        "platform": "GitHub",
+        "status": "null",
+        "detail": "no match"
+      },
+      {
+        "platform": "Telegram (public)",
+        "status": "found",
+        "detail": "@dkovalchuk · bio: «Head of Compliance @ [bank]» · zero messages",
+        "detail_en": "@dkovalchuk · bio: «Head of Compliance @ [bank]» · zero messages",
+        "detail_uk": "@dkovalchuk · био: «Head of Compliance @ [bank]» · 0 повідомлень"
+      },
+      {
+        "platform": "ok.ru",
+        "status": "found",
+        "detail": "profile «Дмитро Ковальчук» · Львів · 45 y.o. · own photo attached",
+        "detail_en": "profile «Дмитро Ковальчук» · Львів · 45 y.o. · own photo attached",
+        "detail_uk": "профіль «Дмитро Ковальчук» · Львів · 45 р. · власне фото"
+      },
+      {
+        "platform": "VK archive",
+        "status": "found",
+        "detail": "one deleted profile trace 2013",
+        "detail_en": "one deleted profile trace 2013",
+        "detail_uk": "один слід видаленого профілю 2013"
+      }
     ],
     "hibp_breaches": [
-      { "name": "LinkedIn", "year": 2012, "size": "164M", "type": "Emails + hashed passwords" },
-      { "name": "Dropbox", "year": 2016, "size": "68M", "type": "Emails + bcrypt hashes" },
-      { "name": "Collection #1", "year": 2019, "size": "773M", "type": "Aggregate credential-stuffing list" }
+      {
+        "name": "LinkedIn",
+        "year": 2012,
+        "size": "164M",
+        "type": "Emails + hashed passwords"
+      },
+      {
+        "name": "Dropbox",
+        "year": 2016,
+        "size": "68M",
+        "type": "Emails + bcrypt hashes"
+      },
+      {
+        "name": "Collection #1",
+        "year": 2019,
+        "size": "773M",
+        "type": "Aggregate credential-stuffing list"
+      }
     ],
     "stealer_log_hit": {
       "source": "BreachDirectory · stealer_log_2023_batch_47.txt",
@@ -418,12 +499,30 @@
     },
     "google_dorks_query": "«Дмитро Ковальчук» (дружина OR сім'я OR брат OR сестра) site:facebook.com OR site:ok.ru",
     "google_dorks_results": [
-      { "url": "facebook.com/olga.kovalchuk.5482", "snippet": "Ольга Ковальчук · Київ · bio: «Мама 2х · insta @olga_kovalchuk_ua» · last update 2022-08" },
-      { "url": "facebook.com/olga.kovalchuk.lviv.teacher", "snippet": "Olga Kovalchuk · Львів · bio: «Вчитель математики, ліцей №5» · married to Serhii Kovalchuk" },
-      { "url": "ok.ru/profile/571298437", "snippet": "Katya Svitlichna · Київ · tagged by @olga_kovalchuk_ua in family album 2022" },
-      { "url": "vesillia.kv.ua/gallery/kovalchuk-anniversary-2019", "snippet": "Дмитро + Ольга Ковальчук · весільна річниця · Київ · 12 guests tagged" },
-      { "url": "archive.org/web/20200315/olx.ua/ad/9284712", "snippet": "Kia Optima 2018 · Дмитро +380 50 ***-**-82 · note: «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»" },
-      { "url": "linkedin.com/in/dmytro-kovalchuk-cfa/", "snippet": "Dmytro Kovalchuk · Head of Compliance Operations · Kyiv · 1200 connections" }
+      {
+        "url": "facebook.com/olga.kovalchuk.5482",
+        "snippet": "Ольга Ковальчук · Київ · bio: «Мама 2х · insta @olga_kovalchuk_ua» · last update 2022-08"
+      },
+      {
+        "url": "facebook.com/olga.kovalchuk.lviv.teacher",
+        "snippet": "Olga Kovalchuk · Львів · bio: «Вчитель математики, ліцей №5» · married to Serhii Kovalchuk"
+      },
+      {
+        "url": "ok.ru/profile/571298437",
+        "snippet": "Katya Svitlichna · Київ · tagged by @olga_kovalchuk_ua in family album 2022"
+      },
+      {
+        "url": "vesillia.kv.ua/gallery/kovalchuk-anniversary-2019",
+        "snippet": "Дмитро + Ольга Ковальчук · весільна річниця · Київ · 12 guests tagged"
+      },
+      {
+        "url": "archive.org/web/20200315/olx.ua/ad/9284712",
+        "snippet": "Kia Optima 2018 · Дмитро +380 50 ***-**-82 · note: «якщо не відповідаю — телефонуйте сестрі дружини +380 63 ***-**-14»"
+      },
+      {
+        "url": "linkedin.com/in/dmytro-kovalchuk-cfa/",
+        "snippet": "Dmytro Kovalchuk · Head of Compliance Operations · Kyiv · 1200 connections"
+      }
     ],
     "instagram_wife": {
       "handle": "@olga_kovalchuk_ua",
@@ -432,9 +531,18 @@
       "followers": 1247,
       "recent": "family trips, kids, home decor, occasional yoga",
       "tagged_as_sister": [
-        { "handle": "@anya_bff_kyiv", "note": "«сестричка з дитсадка» · 4 photos with her over 6 years · caption context: birthdays, girls-nights" },
-        { "handle": "@kate_svit_2024", "note": "«моя сестра ❤️» · 47 photos over 6 years · both children's birthdays, holidays, hospital visits" },
-        { "handle": "@marina.wed.style", "note": "«наречена-сестричка» · 3 photos, all from single 2014 wedding album · captioned «дружка на весіллі»" }
+        {
+          "handle": "@anya_bff_kyiv",
+          "note": "«сестричка з дитсадка» · 4 photos with her over 6 years · caption context: birthdays, girls-nights"
+        },
+        {
+          "handle": "@kate_svit_2024",
+          "note": "«моя сестра ❤️» · 47 photos over 6 years · both children's birthdays, holidays, hospital visits"
+        },
+        {
+          "handle": "@marina.wed.style",
+          "note": "«наречена-сестричка» · 3 photos, all from single 2014 wedding album · captioned «дружка на весіллі»"
+        }
       ]
     },
     "instagram_sister": {
@@ -442,7 +550,12 @@
       "status": "open",
       "posts": 812,
       "followers": 3400,
-      "highlights": ["Travel 2023", "Family", "Money", "Crypto"],
+      "highlights": [
+        "Travel 2023",
+        "Family",
+        "Money",
+        "Crypto"
+      ],
       "family_photo_2023": {
         "img": "img/uploads/simulator/case3/family-photo-tag.png",
         "caption": "Наша сім'я в Одесі 🌊 з @olga_kovalchuk_ua @dima_finance_pro та малятами",
@@ -471,7 +584,10 @@
       "account_1": {
         "handle": "@kate_svit_2024",
         "owner": "Kateryna Svitlichna",
-        "channels": ["family chat", "kids school parents"],
+        "channels": [
+          "family chat",
+          "kids school parents"
+        ],
         "activity": "daily · family-context messages"
       },
       "account_2": {
@@ -506,12 +622,30 @@
       "posts": "12 posts, all professional (AML regulations, KYC best practices)"
     },
     "sanctions_grid": [
-      { "list": "OFAC (US Treasury)", "status": "clean" },
-      { "list": "EU Sanctions", "status": "clean" },
-      { "list": "UK HMT Sanctions", "status": "clean" },
-      { "list": "СБУ / РНБО (UA)", "status": "clean" },
-      { "list": "PEP database", "status": "clean" },
-      { "list": "Interpol Red Notices", "status": "clean" }
+      {
+        "list": "OFAC (US Treasury)",
+        "status": "clean"
+      },
+      {
+        "list": "EU Sanctions",
+        "status": "clean"
+      },
+      {
+        "list": "UK HMT Sanctions",
+        "status": "clean"
+      },
+      {
+        "list": "СБУ / РНБО (UA)",
+        "status": "clean"
+      },
+      {
+        "list": "PEP database",
+        "status": "clean"
+      },
+      {
+        "list": "Interpol Red Notices",
+        "status": "clean"
+      }
     ]
   }
 }

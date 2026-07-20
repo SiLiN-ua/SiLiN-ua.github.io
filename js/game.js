@@ -681,7 +681,7 @@ function renderFakeUI(tool) {
                   <tr class="fake__oi-row fake__oi-row--${r.status}">
                     <td><strong>${escapeHtml(r.platform)}</strong></td>
                     <td>${r.status === 'found' ? '✓' : r.status === 'private' ? '🔒' : r.status === 'empty' ? '∅' : '—'} ${escapeHtml(r.status)}</td>
-                    <td><small>${escapeHtml(r.detail)}</small></td>
+                    <td><small>${escapeHtml(tr(r,"detail") || r.detail || "")}</small></td>
                   </tr>`).join('')}
               </tbody>
             </table>
@@ -834,7 +834,7 @@ function renderFakeUI(tool) {
               ${d.wayback_snapshots.map(s => `
                 <div class="fake__court-case">
                   <div class="fake__court-h">📄 ${escapeHtml(s.url)} · ${escapeHtml(s.date)}</div>
-                  <div class="fake__court-body">${escapeHtml(s.detail)}</div>
+                  <div class="fake__court-body">${escapeHtml(tr(s,"detail") || s.detail || "")}</div>
                 </div>`).join('')}
             </div>
           </div>`;
@@ -874,7 +874,7 @@ function renderFakeUI(tool) {
                   <tr class="fake__oi-row fake__oi-row--found">
                     <td><strong>${escapeHtml(r.platform)}</strong></td>
                     <td><code>${escapeHtml(r.hit)}</code></td>
-                    <td><small>${escapeHtml(r.note)}</small></td>
+                    <td><small>${escapeHtml(tr(r,"note") || r.note || "")}</small></td>
                   </tr>`).join('')}
               </tbody>
             </table>
@@ -916,7 +916,7 @@ function renderFakeUI(tool) {
             ${d.instagram_friends.map(f => `
               <div class="fake__ig-block${f.notable_post ? ' fake__ig-block--highlight' : ''}">
                 <div class="fake__ig-h">${escapeHtml(f.handle)} <span>· ${f.posts_with_target} posts with target</span></div>
-                <div class="fake__ig-body">${escapeHtml(f.note)}</div>
+                <div class="fake__ig-body">${escapeHtml(tr(f,"note") || f.note || "")}</div>
                 ${f.notable_post ? `
                   <div class="fake__ig-photo">
                     ${f.notable_post.img ? `<img src="${escapeHtml(f.notable_post.img)}" alt="carousel" onerror="this.style.display='none'">` : ''}
@@ -995,7 +995,7 @@ function renderFakeUI(tool) {
           <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.osint_c5_query)}</code></div>
           <table class="fake__oi-table">
             <thead><tr><th>${L('Платформа','Platform')}</th><th>${L('Знахідка','Hit')}</th><th>${L('Примітка','Note')}</th></tr></thead>
-            <tbody>${d.osint_c5_results.map(r => `<tr class="fake__oi-row fake__oi-row--${r.hit.includes('not found') || r.hit === 'no match' ? 'null' : 'found'}"><td><strong>${escapeHtml(r.platform)}</strong></td><td><code>${escapeHtml(r.hit)}</code></td><td><small>${escapeHtml(r.note)}</small></td></tr>`).join('')}</tbody>
+            <tbody>${d.osint_c5_results.map(r => `<tr class="fake__oi-row fake__oi-row--${r.hit.includes('not found') || r.hit === 'no match' ? 'null' : 'found'}"><td><strong>${escapeHtml(r.platform)}</strong></td><td><code>${escapeHtml(r.hit)}</code></td><td><small>${escapeHtml(tr(r,"note") || r.note || "")}</small></td></tr>`).join('')}</tbody>
           </table>
         </div>`;
       }
@@ -1005,7 +1005,7 @@ function renderFakeUI(tool) {
         return `<div class="fake fake--wayback">
           <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback</span></div>
           <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.wayback_query)}</code></div>
-          <div class="fake__court-list">${d.wayback_snapshots.map(s => `<div class="fake__court-case"><div class="fake__court-h">📄 ${escapeHtml(s.url)} · ${escapeHtml(s.date)}</div><div class="fake__court-body">${escapeHtml(s.detail)}</div></div>`).join('')}</div>
+          <div class="fake__court-list">${d.wayback_snapshots.map(s => `<div class="fake__court-case"><div class="fake__court-h">📄 ${escapeHtml(s.url)} · ${escapeHtml(s.date)}</div><div class="fake__court-body">${escapeHtml(tr(s,"detail") || s.detail || "")}</div></div>`).join('')}</div>
         </div>`;
       }
       break;
@@ -1024,7 +1024,7 @@ function renderFakeUI(tool) {
         return `<div class="fake fake--court">
           <div class="fake__topbar">🇷🇺 <span>${L('VK / Однокласники · архів', 'VK / Odnoklassniki Archive')}</span></div>
           <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.vk_russian_query)}</code></div>
-          <div class="fake__court-list">${d.vk_russian_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">${escapeHtml(r.type)} · ${escapeHtml(r.url)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
+          <div class="fake__court-list">${d.vk_russian_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">${escapeHtml(r.type)} · ${escapeHtml(r.url)}</div><div class="fake__court-body">${escapeHtml(tr(r,"detail") || r.detail || "")}</div></div>`).join('')}</div>
         </div>`;
       }
       break;
@@ -1034,7 +1034,7 @@ function renderFakeUI(tool) {
           <div class="fake__topbar">💳 <span>${L('Blockchain · OTC-фінансовий слід', 'Blockchain / OTC Financial Trace')}</span></div>
           <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.financial_c5_query)}</code></div>
           <img src="img/uploads/simulator/case5/crypto-wallet-trace.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
-          <div class="fake__court-list">${d.financial_wallets.map(w => `<div class="fake__court-case"><div class="fake__court-h">💰 ${escapeHtml(w.wallet)} · confidence: ${escapeHtml(w.confidence)}</div><div class="fake__court-body">${w.flows.length ? w.flows.map(f => `<div>← ${escapeHtml(f.in_from)}<br><small>${escapeHtml(f.note)}</small></div>`).join('<hr style="opacity:.2;margin:.5rem 0">') : '<em>no flows on record</em>'}</div></div>`).join('')}</div>
+          <div class="fake__court-list">${d.financial_wallets.map(w => `<div class="fake__court-case"><div class="fake__court-h">💰 ${escapeHtml(w.wallet)} · confidence: ${escapeHtml(w.confidence)}</div><div class="fake__court-body">${w.flows.length ? w.flows.map(f => `<div>← ${escapeHtml(f.in_from)}<br><small>${escapeHtml(tr(f,"note") || f.note || "")}</small></div>`).join('<hr style="opacity:.2;margin:.5rem 0">') : '<em>no flows on record</em>'}</div></div>`).join('')}</div>
         </div>`;
       }
       break;
@@ -1044,7 +1044,7 @@ function renderFakeUI(tool) {
           <div class="fake__topbar">🕳️ <span>${L('Deep-web · витоки корп-чатів', 'Deep-Web / Leaked Corp Chats')}</span></div>
           <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.deepweb_c5_query)}</code></div>
           <img src="img/uploads/simulator/case5/deepweb-chat.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
-          <div class="fake__court-list">${d.deepweb_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">📎 ${escapeHtml(r.source)}</div><div class="fake__court-body">${escapeHtml(r.detail)}</div></div>`).join('')}</div>
+          <div class="fake__court-list">${d.deepweb_results.map(r => `<div class="fake__court-case"><div class="fake__court-h">📎 ${escapeHtml(r.source)}</div><div class="fake__court-body">${escapeHtml(tr(r,"detail") || r.detail || "")}</div></div>`).join('')}</div>
         </div>`;
       }
       break;
@@ -1056,7 +1056,7 @@ function renderFakeUI(tool) {
           <img src="img/uploads/simulator/case5/cell-tower-map.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:.5rem 0;">
           <table class="fake__oi-table">
             <thead><tr><th>${L('Дата/Час','Date/Time')}</th><th>BTS</th><th>${L('Примітка','Note')}</th></tr></thead>
-            <tbody>${d.cell_pings.map(p => `<tr class="fake__oi-row"><td><strong>${escapeHtml(p.date)}</strong></td><td><code>${escapeHtml(p.bts)}</code></td><td>${escapeHtml(p.note)}</td></tr>`).join('')}</tbody>
+            <tbody>${d.cell_pings.map(p => `<tr class="fake__oi-row"><td><strong>${escapeHtml(p.date)}</strong></td><td><code>${escapeHtml(p.bts)}</code></td><td>${escapeHtml(tr(p,"note") || p.note || "")}</td></tr>`).join('')}</tbody>
           </table>
         </div>`;
       }
@@ -1613,3 +1613,20 @@ async function init() {
   });
 }
 init();
+
+// Global click-to-zoom lightbox for tool images
+document.addEventListener('click', (e) => {
+  const t = e.target;
+  if (!(t instanceof HTMLImageElement)) return;
+  if (!t.matches('.fake__match img, .fake__ig-photo img, .fake__court-doc, .fake__insead img, .fake__ig-block img')) return;
+  if (!t.src || t.src.endsWith('#')) return;
+  e.preventDefault();
+  const lb = document.createElement('div');
+  lb.className = 'img-lightbox';
+  lb.innerHTML = `<button class="img-lightbox__close" aria-label="Close">✕</button><img class="img-lightbox__img" src="${t.src}" alt="">`;
+  const close = () => lb.remove();
+  lb.addEventListener('click', close);
+  const esc = (ev) => { if (ev.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+  document.addEventListener('keydown', esc);
+  document.body.appendChild(lb);
+});

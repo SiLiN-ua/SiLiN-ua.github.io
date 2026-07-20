@@ -3708,3 +3708,48 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 }
 .game-topbar__lang button:hover { color: var(--cream); border-color: var(--ice); }
 .game-topbar__lang button.active { color: var(--ice); border-color: var(--ice); background: rgba(74, 158, 255, .1); }
+
+/* Image lightbox — click any zoomable img to enlarge */
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, .92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+  animation: gameFadeIn .2s var(--ease);
+}
+.img-lightbox__img {
+  max-width: 95vw;
+  max-height: 92vh;
+  object-fit: contain;
+  border: 1px solid rgba(220, 195, 130, .3);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .8);
+}
+.img-lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: var(--cream);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  font-family: var(--font-mono);
+  background: rgba(15, 21, 36, .8);
+  border: 1px solid var(--ice);
+  border-radius: 2px;
+}
+.fake__match img,
+.fake__ig-photo img,
+.fake__court-doc {
+  cursor: zoom-in;
+  transition: transform .2s var(--ease);
+}
+.fake__match img:hover,
+.fake__ig-photo img:hover,
+.fake__court-doc:hover {
+  transform: scale(1.03);
+}

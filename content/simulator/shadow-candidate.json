@@ -392,42 +392,165 @@
   "ui_data": {
     "wayback_query": "web.archive.org · «Artem Bogdanov» + variants",
     "wayback_snapshots": [
-      { "url": "web.archive.org/web/2016*/twitter.com/artem_dev_ua", "date": "2016-2018", "detail": "user @artem_dev_ua · tech-heavy, English, backend/DevOps · profile deleted 2018-06" },
-      { "url": "web.archive.org/web/2019*/twitter.com/artembgd_kyiv", "date": "2019-2023", "detail": "user @artembgd_kyiv · shared same avatar as current LinkedIn photo · pinned tweet: «migrated from @artem_dev_ua»" },
-      { "url": "web.archive.org/web/2020*/artembogdanov.com", "date": "2020", "detail": "personal blog · 3 posts · disappeared 2021" },
-      { "url": "web.archive.org/web/2021*/facebook.com/artem.bogdanov.404", "date": "2021", "detail": "«Artem Bogdanov» · Львів · музикант · unrelated to tech · different bio" },
-      { "url": "web.archive.org/web/2015*/livejournal.com/users/a-bogdanov-95", "date": "2015", "detail": "old LJ · «Artem Bogdanov» · Дніпро · student diary · fashion, cars · unclear match" }
+      {
+        "url": "web.archive.org/web/2016*/twitter.com/artem_dev_ua",
+        "date": "2016-2018",
+        "detail": "user @artem_dev_ua · tech-heavy, English, backend/DevOps · profile deleted 2018-06",
+        "detail_en": "user @artem_dev_ua · tech-heavy, English, backend/DevOps · profile deleted 2018-06",
+        "detail_uk": "користувач @artem_dev_ua · технічні пости, англійською, backend/DevOps · профіль видалено 2018-06"
+      },
+      {
+        "url": "web.archive.org/web/2019*/twitter.com/artembgd_kyiv",
+        "date": "2019-2023",
+        "detail": "user @artembgd_kyiv · shared same avatar as current LinkedIn photo · pinned tweet: «migrated from @artem_dev_ua»",
+        "detail_en": "user @artembgd_kyiv · shared same avatar as current LinkedIn photo · pinned tweet: «migrated from @artem_dev_ua»",
+        "detail_uk": "користувач @artembgd_kyiv · та сама аватарка як на LinkedIn · закріплений твіт: «migrated from @artem_dev_ua»"
+      },
+      {
+        "url": "web.archive.org/web/2020*/artembogdanov.com",
+        "date": "2020",
+        "detail": "personal blog · 3 posts · disappeared 2021",
+        "detail_en": "personal blog · 3 posts · disappeared 2021",
+        "detail_uk": "особистий блог · 3 пости · зник у 2021"
+      },
+      {
+        "url": "web.archive.org/web/2021*/facebook.com/artem.bogdanov.404",
+        "date": "2021",
+        "detail": "«Artem Bogdanov» · Львів · музикант · unrelated to tech · different bio",
+        "detail_en": "«Artem Bogdanov» · Львів · музикант · unrelated to tech · different bio",
+        "detail_uk": "«Artem Bogdanov» · Львів · музикант · не пов'язаний з IT · інше био"
+      },
+      {
+        "url": "web.archive.org/web/2015*/livejournal.com/users/a-bogdanov-95",
+        "date": "2015",
+        "detail": "old LJ · «Artem Bogdanov» · Дніпро · student diary · fashion, cars · unclear match",
+        "detail_en": "old LJ · «Artem Bogdanov» · Дніпро · student diary · fashion, cars · unclear match",
+        "detail_uk": "старий LJ · «Artem Bogdanov» · Дніпро · студентський щоденник · мода, авто · неоднозначний збіг"
+      }
     ],
     "telegram_username_query": "handle @artem_bgd (current)",
     "telegram_username_history": [
-      { "handle": "@artem_bgd", "since": "2024-11-04 (7 days ago)", "status": "current" },
-      { "handle": "@artembgd_kyiv", "period": "2019-06 → 2024-11-04", "status": "previous" },
-      { "handle": "@artem_dev_ua", "period": "2016-03 → 2018-06", "status": "abandoned" }
+      {
+        "handle": "@artem_bgd",
+        "since": "2024-11-04 (7 days ago)",
+        "status": "current"
+      },
+      {
+        "handle": "@artembgd_kyiv",
+        "period": "2019-06 → 2024-11-04",
+        "status": "previous"
+      },
+      {
+        "handle": "@artem_dev_ua",
+        "period": "2016-03 → 2018-06",
+        "status": "abandoned"
+      }
     ],
     "telegram_note": "Handle change occurred 7 days before candidate applied for the position.",
     "osint_industries_c4_query": "email a.bogdanov.dev@gmail.com · phone +380 93 ***-**-51 · usernames: artem_bgd, artembgd_kyiv, artem_dev_ua",
     "osint_industries_c4_results": [
-      { "platform": "LinkedIn", "hit": "@artembogdanov-cfa · public, clean", "note": "matches CV" },
-      { "platform": "GitHub", "hit": "artembgd", "note": "12 repos, sporadic 2022-2024, mostly forks — thin for a senior claim" },
-      { "platform": "Stack Overflow", "hit": "artem-bogdanov-12481", "note": "1200 rep, active 2015-2018 then silent until 2024-10" },
-      { "platform": "Reddit", "hit": "u/artembgd_kyiv", "note": "144 comments 2019-2023 in r/UkrainianIT, then silent" },
-      { "platform": "Twitter/X", "hit": "@artem_dev_ua (deleted 2018), @artembgd_kyiv (renamed)", "note": "both historical" },
-      { "platform": "Discord", "hit": "artem#4013", "note": "member of 3 UA-dev servers, minimal activity" },
-      { "platform": "Instagram", "hit": "@artem.b.kyiv", "note": "private, 89 followers, 47 posts, joined 2015" },
-      { "platform": "Facebook", "hit": "artem.bogdanov.94", "note": "public but curated: work anniversaries + generic reposts" }
+      {
+        "platform": "LinkedIn",
+        "hit": "@artembogdanov-cfa · public, clean",
+        "note": "matches CV",
+        "note_en": "matches CV",
+        "note_uk": "збігається з CV"
+      },
+      {
+        "platform": "GitHub",
+        "hit": "artembgd",
+        "note": "12 repos, sporadic 2022-2024, mostly forks — thin for a senior claim",
+        "note_en": "12 repos, sporadic 2022-2024, mostly forks — thin for a senior claim",
+        "note_uk": "12 репо, спорадичні 2022-2024, переважно форки — тонко для senior-заявки"
+      },
+      {
+        "platform": "Stack Overflow",
+        "hit": "artem-bogdanov-12481",
+        "note": "1200 rep, active 2015-2018 then silent until 2024-10",
+        "note_en": "1200 rep, active 2015-2018 then silent until 2024-10",
+        "note_uk": "1200 rep, активний 2015-2018 потім тиша до 2024-10"
+      },
+      {
+        "platform": "Reddit",
+        "hit": "u/artembgd_kyiv",
+        "note": "144 comments 2019-2023 in r/UkrainianIT, then silent",
+        "note_en": "144 comments 2019-2023 in r/UkrainianIT, then silent",
+        "note_uk": "144 коментарі 2019-2023 у r/UkrainianIT, потім тиша"
+      },
+      {
+        "platform": "Twitter/X",
+        "hit": "@artem_dev_ua (deleted 2018), @artembgd_kyiv (renamed)",
+        "note": "both historical",
+        "note_en": "both historical",
+        "note_uk": "обидва історичні"
+      },
+      {
+        "platform": "Discord",
+        "hit": "artem#4013",
+        "note": "member of 3 UA-dev servers, minimal activity",
+        "note_en": "member of 3 UA-dev servers, minimal activity",
+        "note_uk": "учасник 3 UA-dev серверів, мінімальна активність"
+      },
+      {
+        "platform": "Instagram",
+        "hit": "@artem.b.kyiv",
+        "note": "private, 89 followers, 47 posts, joined 2015"
+      },
+      {
+        "platform": "Facebook",
+        "hit": "artem.bogdanov.94",
+        "note": "public but curated: work anniversaries + generic reposts"
+      }
     ],
     "reverse_engines": [
-      { "name": "PimEyes", "meta": "face-specific", "matches": [
-        { "img": "img/uploads/simulator/case4/candidate-portrait.png", "site": "linkedin.com/in/artembogdanov-cfa", "label": "profile photo · 2024", "conf": "97%" },
-        { "img": "img/uploads/simulator/case4/candidate-portrait.png", "site": "artembgd.dev · about page", "label": "author photo · 2023", "conf": "94%" }
-      ]},
-      { "name": "FaceCheck.ID", "meta": "deep-web faces", "matches": [
-        { "img": "img/uploads/simulator/case4/candidate-portrait.png", "site": "medium.com/@artem-bogdanov", "label": "author avatar · 2022", "conf": "91%" }
-      ]},
-      { "name": "Yandex", "meta": "CIS-strong", "matches": [
-        { "img": "img/uploads/simulator/case4/twins-carousel.png", "site": "instagram.com/p/BXY_2017_a3f7/", "label": "post by @kate_bff_lviv · 2017 · «with my two best friends, the twins»", "conf": "89%", "warn": true }
-      ]},
-      { "name": "TinEye", "meta": "exact-copy", "matches": [] }
+      {
+        "name": "PimEyes",
+        "meta": "face-specific",
+        "matches": [
+          {
+            "img": "img/uploads/simulator/case4/candidate-portrait.png",
+            "site": "linkedin.com/in/artembogdanov-cfa",
+            "label": "profile photo · 2024",
+            "conf": "97%"
+          },
+          {
+            "img": "img/uploads/simulator/case4/candidate-portrait.png",
+            "site": "artembgd.dev · about page",
+            "label": "author photo · 2023",
+            "conf": "94%"
+          }
+        ]
+      },
+      {
+        "name": "FaceCheck.ID",
+        "meta": "deep-web faces",
+        "matches": [
+          {
+            "img": "img/uploads/simulator/case4/candidate-portrait.png",
+            "site": "medium.com/@artem-bogdanov",
+            "label": "author avatar · 2022",
+            "conf": "91%"
+          }
+        ]
+      },
+      {
+        "name": "Yandex",
+        "meta": "CIS-strong",
+        "matches": [
+          {
+            "img": "img/uploads/simulator/case4/twins-carousel.png",
+            "site": "instagram.com/p/BXY_2017_a3f7/",
+            "label": "post by @kate_bff_lviv · 2017 · «with my two best friends, the twins»",
+            "conf": "89%",
+            "warn": true
+          }
+        ]
+      },
+      {
+        "name": "TinEye",
+        "meta": "exact-copy",
+        "matches": []
+      }
     ],
     "instagram_friends_query": "top-3 most-active commenters on @artem.b.kyiv (private, seen via public friends' tags)",
     "instagram_friends": [
@@ -441,19 +564,25 @@
           "caption": "Літня подорож в Одесу з @artem.b.kyiv @andr_bgd_travel — з моїми двома найкращими друзями, близнюками ❤️👬",
           "type": "carousel + 1 video",
           "video_note": "0:38 video · both boys speak · voice track available for extraction"
-        }
+        },
+        "note_en": "Kateryna, ~10 mutual photos across 2015-2023 · university-friend context",
+        "note_uk": "Катерина, ~10 спільних фото за 2015-2023 · університетська подруга"
       },
       {
         "handle": "@lena_photobook",
         "note": "photographer, 6 photos with target from concerts/events 2018-2021",
         "posts_with_target": 6,
-        "notable_post": null
+        "notable_post": null,
+        "note_en": "photographer, 6 photos with target from concerts/events 2018-2021",
+        "note_uk": "фотографка, 6 фото з ціллю з концертів/подій 2018-2021"
       },
       {
         "handle": "@vlad_kpi_20",
         "note": "university coursemate, tagged in 4 group photos from KPI 2020",
         "posts_with_target": 4,
-        "notable_post": null
+        "notable_post": null,
+        "note_en": "university coursemate, tagged in 4 group photos from KPI 2020",
+        "note_uk": "одногрупник з КПІ, тегнутий у 4 групових фото 2020"
       }
     ],
     "voice_samples": [
@@ -485,9 +614,24 @@
       }
     ],
     "voice_pairs": [
-      { "a": "sample_A", "b": "sample_B", "verdict_uk": "F0 delta 2 Hz · формантні відхилення <1% · **той самий спікер**", "verdict_en": "F0 delta 2 Hz · formant deviation <1% · **same speaker**" },
-      { "a": "sample_A", "b": "sample_C", "verdict_uk": "F0 delta 24 Hz · формантні відхилення 8-11% · **різні спікери** (за межами внутрішньоособистісної варіативності)", "verdict_en": "F0 delta 24 Hz · formant deviation 8-11% · **different speakers** (beyond intra-personal variability)" },
-      { "a": "sample_B", "b": "sample_C", "verdict_uk": "F0 delta 26 Hz · формантні відхилення 9-12% · **різні спікери**", "verdict_en": "F0 delta 26 Hz · formant deviation 9-12% · **different speakers**" }
+      {
+        "a": "sample_A",
+        "b": "sample_B",
+        "verdict_uk": "F0 delta 2 Hz · формантні відхилення <1% · **той самий спікер**",
+        "verdict_en": "F0 delta 2 Hz · formant deviation <1% · **same speaker**"
+      },
+      {
+        "a": "sample_A",
+        "b": "sample_C",
+        "verdict_uk": "F0 delta 24 Hz · формантні відхилення 8-11% · **різні спікери** (за межами внутрішньоособистісної варіативності)",
+        "verdict_en": "F0 delta 24 Hz · formant deviation 8-11% · **different speakers** (beyond intra-personal variability)"
+      },
+      {
+        "a": "sample_B",
+        "b": "sample_C",
+        "verdict_uk": "F0 delta 26 Hz · формантні відхилення 9-12% · **різні спікери**",
+        "verdict_en": "F0 delta 26 Hz · formant deviation 9-12% · **different speakers**"
+      }
     ],
     "facebook_curated": {
       "name": "Artem Bogdanov · @artem.bogdanov.94",
@@ -497,12 +641,30 @@
       "photos_visible": 3
     },
     "sanctions_grid": [
-      { "list": "OFAC (US Treasury)", "status": "clean" },
-      { "list": "EU Sanctions", "status": "clean" },
-      { "list": "UK HMT Sanctions", "status": "clean" },
-      { "list": "СБУ / РНБО (UA)", "status": "clean" },
-      { "list": "PEP database", "status": "clean" },
-      { "list": "Interpol Red Notices", "status": "clean" }
+      {
+        "list": "OFAC (US Treasury)",
+        "status": "clean"
+      },
+      {
+        "list": "EU Sanctions",
+        "status": "clean"
+      },
+      {
+        "list": "UK HMT Sanctions",
+        "status": "clean"
+      },
+      {
+        "list": "СБУ / РНБО (UA)",
+        "status": "clean"
+      },
+      {
+        "list": "PEP database",
+        "status": "clean"
+      },
+      {
+        "list": "Interpol Red Notices",
+        "status": "clean"
+      }
     ]
   }
 }
