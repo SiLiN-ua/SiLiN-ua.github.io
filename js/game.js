@@ -193,6 +193,7 @@ function renderBriefing() {
     </div>`;
   $('#game-root').innerHTML = html;
   fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
   $('#btn-start').addEventListener('click', () => {
     State.phase = 'phase2';
     State.startedAt = Date.now();
@@ -246,6 +247,7 @@ function renderPhase2() {
     </div>`;
   $('#game-root').innerHTML = html;
   fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
   $('#game-root').querySelectorAll('.tool-btn:not(.tool-btn--used)').forEach(btn => {
     btn.addEventListener('click', () => useTool(btn.dataset.tool));
   });
@@ -1166,6 +1168,7 @@ function renderPhase3() {
     </div>`;
   $('#game-root').innerHTML = html;
   fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
   $('#game-root').querySelectorAll('.q-opt:not(.q-opt--disabled)').forEach(btn => {
     btn.addEventListener('click', () => answerQ3(btn.dataset.q, parseInt(btn.dataset.opt,10)));
   });
@@ -1218,6 +1221,7 @@ function renderCitationPhase() {
     </div>`;
   $('#game-root').innerHTML = html;
   fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
   $('#game-root').querySelectorAll('.cite-card').forEach(btn => {
     btn.addEventListener('click', () => toggleCitation(btn.dataset.cite, max));
   });
@@ -1286,6 +1290,7 @@ function renderPhase4() {
     </div>`;
   $('#game-root').innerHTML = html;
   fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
   $('#game-root').querySelectorAll('.verdict-opt').forEach(btn => {
     btn.addEventListener('click', () => submitVerdict(btn.dataset.verdict));
   });
@@ -1389,6 +1394,7 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
     </div>`;
   $('#game-root').innerHTML = html;
   fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
   scrollTop();
   const shareBtn = $('#btn-share');
   if (shareBtn) shareBtn.addEventListener('click', () => shareResult(points, rank, tr(s,'title')));
@@ -1589,10 +1595,12 @@ async function init() {
     renderCooldownScreen(cd);
     return;
   }
-  // Mount HUD + render briefing
+  // Mount HUD + help panel + render briefing
   mountHud();
+  mountHelpPanel();
   State.phase = 'briefing';
   renderBriefing();
+  renderHelpPanel();
 
   // Live re-render on language toggle
   document.addEventListener('langchange', () => {
@@ -1610,9 +1618,183 @@ async function init() {
     else if (State.phase === 'citation') renderCitationPhase();
     else if (State.phase === 'phase4') renderPhase4();
     else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
+    // Re-render help panel with new lang
+    renderHelpPanel();
   });
 }
 init();
+
+// ==================== HELP PANEL (how to play, per-phase) ====================
+const HELP = {
+  briefing: {
+    uk: {
+      title: 'Брифінг',
+      steps: [
+        'Прочитай завдання клієнта уважно — тут вся вихідна інформація.',
+        'Зверни увагу на: фото кандидата, ПІБ, email, телефон, роль, зарплату, компанію.',
+        'Клікни ▶ Розпочати коли готовий — таймер піде.',
+        'Час — це очки: чим швидше пройдеш при правильному вердикті, тим більше бонус.'
+      ]
+    },
+    en: {
+      title: 'Briefing',
+      steps: [
+        'Read the client brief carefully — all baseline info is here.',
+        'Note: candidate photo, full name, email, phone, role, salary, company.',
+        'Click ▶ Start when ready — timer begins.',
+        'Time = points: faster + correct verdict = larger bonus.'
+      ]
+    }
+  },
+  phase2: {
+    uk: {
+      title: 'Фаза 2 · Розслідування',
+      steps: [
+        'Обирай тули що дадуть тобі докази для вердикту.',
+        'Наведи на ⓘ на картці тула → зʼявиться опис що робить цей тул.',
+        'КОЖЕН клік коштує часу (показано під картинкою тула).',
+        'Не всі тули корисні у кожному кейсі — деякі є NOISE, деякі DECOY.',
+        'YouControl показує WARNING перед кліком — читай уважно.',
+        'Фото у результатах можна ЗБІЛЬШИТИ — клац на нього.',
+        'Мінімум 4-7 тулів (залежно від кейсу) щоб перейти далі.'
+      ]
+    },
+    en: {
+      title: 'Phase 2 · Investigation',
+      steps: [
+        'Pick tools that give you evidence for the verdict.',
+        'Hover on ⓘ on a tool card → tooltip explains what the tool does.',
+        'EACH click costs time (shown below tool icon).',
+        'Not every tool is useful in every case — some are NOISE, some DECOY.',
+        'YouControl shows a WARNING before commit — read it.',
+        'Match photos can be ENLARGED — click on any thumbnail.',
+        'Minimum 4-7 tools (depends on case) to proceed.'
+      ]
+    }
+  },
+  phase3: {
+    uk: {
+      title: 'Фаза 3 · Крос-верифікація',
+      steps: [
+        '3 питання за знайденими доказами.',
+        'Читай ВСІ варіанти — правильний часто НЕ найдраматичніший.',
+        'Порядок варіантів рандомізовано — читай СЕНС, не позицію.',
+        'Розбір з правильними відповідями буде у ФІНАЛІ, не одразу.',
+        'Кожна відповідь дає ±очки. Погана відповідь мінусує.'
+      ]
+    },
+    en: {
+      title: 'Phase 3 · Cross-verification',
+      steps: [
+        '3 questions based on your findings.',
+        'Read ALL options — the correct one is often NOT the most dramatic.',
+        'Option order is randomized — read MEANING, not position.',
+        'Review with correct answers comes at the END, not immediately.',
+        'Each answer gives ± points. Wrong answer subtracts.'
+      ]
+    }
+  },
+  citation: {
+    uk: {
+      title: 'Фаза 3.5 · Обґрунтування',
+      steps: [
+        'Обери 3 знахідки що НАЙБІЛЬШЕ вплинули на твій вердикт.',
+        'Оцінка: DIAGNOSTIC +15 · SUPPORTING +5 · NOISE -3 · DECOY -10',
+        'Уявляй що пишеш compliance-меморандум: клієнт прочитає САМЕ ці 3.',
+        'Не обирай тули які не використовував — не рахуються.'
+      ]
+    },
+    en: {
+      title: 'Phase 3.5 · Source Citation',
+      steps: [
+        'Pick 3 findings that MOST drove your verdict.',
+        'Scoring: DIAGNOSTIC +15 · SUPPORTING +5 · NOISE -3 · DECOY -10',
+        'Imagine writing a compliance memo: the client will read THESE 3.',
+        'Don\'t pick tools you didn\'t use — won\'t count.'
+      ]
+    }
+  },
+  phase4: {
+    uk: {
+      title: 'Фаза 4 · Фінальний вердикт',
+      steps: [
+        'Твоє фінальне рішення для клієнта.',
+        'НЕМАЄ «безпечного» вердикту: INSUFFICIENT теж штрафується.',
+        'Приймай рішення на основі того що ти РЕАЛЬНО знайшов.',
+        'Для defense-кейсів REJECT недостатньо — потрібна ескалація.',
+        'Розбір, точки, ранг і сертифікат — на наступному екрані.'
+      ]
+    },
+    en: {
+      title: 'Phase 4 · Final Verdict',
+      steps: [
+        'Your final decision for the client.',
+        'NO «safe» verdict: INSUFFICIENT is also penalized.',
+        'Decide based on what you ACTUALLY found.',
+        'For defense cases REJECT alone is not enough — escalation required.',
+        'Review, points, rank and certificate — on next screen.'
+      ]
+    }
+  },
+  result: {
+    uk: {
+      title: 'Результат',
+      steps: [
+        'Дивись Pivot-Chain — які знахідки були DIAGNOSTIC vs NOISE.',
+        'Читай розбір Q3 — де помилився і чому.',
+        'Прогрес до сертифіката: 1000+ pts + 5 кейсів = розблокує.',
+        'Провал → 1 година кулдаун на цей кейс. Наступний доступний.',
+        'Клац Share щоб поділитись результатом.'
+      ]
+    },
+    en: {
+      title: 'Result',
+      steps: [
+        'Review Pivot-Chain — which findings were DIAGNOSTIC vs NOISE.',
+        'Read Q3 review — where you erred and why.',
+        'Cert progress: 1000+ pts + 5 cases = unlocks certificate.',
+        'Fail → 1 hour cooldown on this case. Next one available.',
+        'Click Share to share your result.'
+      ]
+    }
+  }
+};
+
+function renderHelpPanel() {
+  const phase = State.phase || 'briefing';
+  const key = ['briefing','phase2','phase3','citation','phase4','result'].includes(phase) ? phase : 'briefing';
+  const content = HELP[key][LANG()] || HELP[key].uk;
+  const panel = document.getElementById('help-panel');
+  if (!panel) return;
+  panel.querySelector('.help-panel__title').textContent = content.title;
+  panel.querySelector('.help-panel__list').innerHTML = content.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('');
+  panel.querySelector('.help-panel__label').textContent = LANG() === 'en' ? 'How to play' : 'Як грати';
+}
+
+function mountHelpPanel() {
+  if (document.getElementById('help-panel')) return;
+  const panel = document.createElement('div');
+  panel.id = 'help-panel';
+  panel.className = 'help-panel help-panel--collapsed';
+  panel.innerHTML = `
+    <button class="help-panel__toggle" aria-label="How to play">❔ <span class="help-panel__label">Як грати</span></button>
+    <div class="help-panel__body">
+      <div class="help-panel__head">
+        <h3 class="help-panel__title">—</h3>
+        <button class="help-panel__close" aria-label="Close">✕</button>
+      </div>
+      <ol class="help-panel__list"></ol>
+    </div>`;
+  document.body.appendChild(panel);
+  panel.querySelector('.help-panel__toggle').addEventListener('click', () => {
+    panel.classList.remove('help-panel--collapsed');
+    renderHelpPanel();
+  });
+  panel.querySelector('.help-panel__close').addEventListener('click', () => {
+    panel.classList.add('help-panel--collapsed');
+  });
+  renderHelpPanel();
+}
 
 // Global click-to-zoom lightbox for tool images
 document.addEventListener('click', (e) => {

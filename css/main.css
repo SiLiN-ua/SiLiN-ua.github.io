@@ -3753,3 +3753,115 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .fake__court-doc:hover {
   transform: scale(1.03);
 }
+
+/* ==========================================================
+   Help Panel (in-game "How to play")
+   ========================================================== */
+.help-panel {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+}
+.help-panel__toggle {
+  pointer-events: auto;
+  padding: .7rem .5rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background: rgba(15, 21, 36, .95);
+  border: 1px solid var(--ice);
+  border-right: none;
+  color: var(--ice);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .15em;
+  cursor: pointer;
+  border-radius: 4px 0 0 4px;
+  transition: all .2s var(--ease);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, .5);
+}
+.help-panel__toggle:hover {
+  background: rgba(74, 158, 255, .18);
+  padding-right: .8rem;
+}
+.help-panel__label {
+  margin-left: .5em;
+}
+.help-panel__body {
+  pointer-events: auto;
+  width: 360px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: rgba(10, 14, 26, .98);
+  border: 1px solid var(--ice);
+  border-radius: 6px 0 0 6px;
+  padding: 1.25rem 1.4rem;
+  color: var(--cream);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, .7);
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform .3s var(--ease), opacity .25s var(--ease);
+}
+.help-panel--collapsed .help-panel__body {
+  transform: translateX(105%);
+  opacity: 0;
+  pointer-events: none;
+}
+.help-panel--collapsed .help-panel__toggle {
+  transform: rotate(180deg) translateY(0);
+}
+.help-panel:not(.help-panel--collapsed) .help-panel__toggle {
+  display: none;
+}
+.help-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.help-panel__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--ice);
+  margin: 0;
+  letter-spacing: .04em;
+}
+.help-panel__close {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-mute);
+  padding: .3rem .55rem;
+  cursor: pointer;
+  font-size: .9rem;
+  border-radius: 2px;
+  transition: all .2s;
+}
+.help-panel__close:hover {
+  color: var(--cream);
+  border-color: var(--ice);
+}
+.help-panel__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: var(--cream);
+}
+.help-panel__list li {
+  margin-bottom: .6rem;
+  padding-left: .2rem;
+}
+.help-panel__list li::marker {
+  color: var(--ice);
+  font-weight: 600;
+}
+@media (max-width: 720px) {
+  .help-panel__body { width: 90vw; }
+}
