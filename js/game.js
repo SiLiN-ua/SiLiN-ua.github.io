@@ -1353,14 +1353,15 @@ async function submitVerdict(verdictId) {
   }
 
   // Mark case as completed if correct verdict — unlocks next case in sequence
-  if (opt.correct) {
+  // Demo doesn't count toward progress
+  if (opt.correct && !State.isDemo) {
     localStorage.setItem('ss.completed.' + s.id, '1');
   }
 
   showResult({ verdict: opt, timeBonus, submitted: false });
 
-  // Submit to Firebase
-  if (State.nickname) {
+  // Submit to Firebase (skip in demo mode)
+  if (State.nickname && !State.isDemo) {
     const res = await submitScore(State.nickname, State.points, s.id, !!opt.correct);
     showResult({ verdict: opt, timeBonus, submitted: true, submitResult: res });
   }
@@ -1624,6 +1625,7 @@ function track(event, data = {}) {
 async function init() {
   const params = new URLSearchParams(location.search);
   const caseId = params.get('case') || 'fake-cfo';
+  State.isDemo = params.get('demo') === '1';
   // Load scenario
   try {
     const res = await fetch(`content/simulator/${caseId}.json?t=${Date.now()}`, { cache: 'no-store' });
@@ -1632,14 +1634,26 @@ async function init() {
     $('#game-root').innerHTML = `<div class="game-error">Не вдалося завантажити сценарій: ${escapeHtml(e.message)}</div>`;
     return;
   }
-  State.timeLeft = State.scenario.time_limit_sec;
-  // Nickname
+  // Demo mode: double timer, anonymous, no leaderboard submit
+  State.timeLeft = State.isDemo
+    ? Math.round((State.scenario.time_limit_sec || 720) * 2)
+    : State.scenario.time_limit_sec;
+  // Nickname — demo allowed anonymous
   const nick = getNickname();
-  if (!nick) {
+  if (!nick && !State.isDemo) {
     location.href = 'simulator.html';
     return;
   }
-  State.nickname = nick;
+  State.nickname = nick || (State.isDemo ? 'DEMO' : '');
+  // Demo ribbon
+  if (State.isDemo) {
+    const ribbon = document.createElement('div');
+    ribbon.className = 'demo-ribbon';
+    ribbon.innerHTML = (LANG() === 'en'
+      ? '🎓 DEMO MODE · scores are not saved · double time · <a href="simulator.html">exit</a>'
+      : '🎓 ДЕМО-РЕЖИМ · очки не зберігаються · подвійний час · <a href="simulator.html">вийти</a>');
+    document.body.appendChild(ribbon);
+  }
   // Cooldown check
   const cd = getCooldownRemaining(State.scenario.id);
   if (cd > 0) {

@@ -68,8 +68,48 @@
   </div>
 </section>
 
-<!-- AGENT PROFILE -->
-<section class="ss-section">
+<!-- HOW TO PLAY (visible without registration) -->
+<section class="ss-section ss-howto">
+  <div class="container">
+    <div class="ss-secttl">
+      <span class="ss-secttl__pre" data-i18n="ss.howto.pre">ЯК ЦЕ ПРАЦЮЄ · 4 КРОКИ</span>
+      <h2 data-i18n="ss.howto.title">Ти OSINT-слідчий. Клієнт скидає кандидата. За 20 хв — вердикт.</h2>
+    </div>
+    <ol class="ss-howto__steps">
+      <li>
+        <div class="ss-howto__num">01</div>
+        <div class="ss-howto__ico">📋</div>
+        <h4 data-i18n="ss.howto.s1t">Читай бриф</h4>
+        <p data-i18n="ss.howto.s1p">Клієнт (HR / compliance / служба безпеки) дає задачу: перевір кандидата. Фото, ПІБ, email, телефон, позиція, зарплата.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">02</div>
+        <div class="ss-howto__ico">🧰</div>
+        <h4 data-i18n="ss.howto.s2t">Використовуй тули</h4>
+        <p data-i18n="ss.howto.s2p">15+ фейкових тулів: VK, GetContact, OSINT Industries, Wayback, YouControl, витоки. Кожен клік коштує часу. Одні знахідки — ключові, інші — пастки.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">03</div>
+        <div class="ss-howto__ico">🎯</div>
+        <h4 data-i18n="ss.howto.s3t">Обґрунтуй знахідки</h4>
+        <p data-i18n="ss.howto.s3p">3 питання по знайдених доказах + вибери 3 ключові знахідки для меморандуму клієнту. Помилковий доказ мінусує очки.</p>
+      </li>
+      <li>
+        <div class="ss-howto__num">04</div>
+        <div class="ss-howto__ico">⚖️</div>
+        <h4 data-i18n="ss.howto.s4t">Дай вердикт</h4>
+        <p data-i18n="ss.howto.s4p">APPROVE · REJECT · INSUFFICIENT · ESCALATE. Не помилися — від цього залежить репутація клієнта. Ти отримуєш очки + ранг.</p>
+      </li>
+    </ol>
+    <div class="ss-howto__demo">
+      <a href="game.html?case=fake-cfo&demo=1" class="btn btn--filled btn--lg" data-umami-event="try-demo" data-i18n="ss.howto.demo">🎓 Спробувати демо (без реєстрації, без таймера)</a>
+      <div class="ss-howto__demo-hint" data-i18n="ss.howto.demo_hint">Кейс #1 з підказками. Очки не рахуються. ~5 хвилин.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENT PROFILE (only shows if registered) -->
+<section class="ss-section" id="agent-section" style="display:none">
   <div class="container">
     <div id="agent-panel"></div>
   </div>
@@ -285,16 +325,44 @@
   }
   renderCertStatus();
 
+  // Gate ▶ Грати clicks with registration modal instead of blocking whole page.
+  // Users see how-to-play, demo, cases, leaderboard freely; only real play needs a nick.
+  function wirePlayGates() {
+    document.querySelectorAll('.game-row a[href^="game.html"]').forEach(a => {
+      if (a.dataset.wired === '1') return;
+      a.dataset.wired = '1';
+      a.addEventListener('click', async (e) => {
+        // Skip gating for demo links
+        if (a.getAttribute('href').includes('demo=1')) return;
+        // If nick already saved, let default navigation happen
+        const existing = localStorage.getItem('ss.nickname');
+        if (existing) return;
+        // No nick — show modal, then navigate on success
+        e.preventDefault();
+        const nick = await ensureRegistered();
+        if (nick) {
+          document.getElementById('agent-section').style.display = '';
+          renderAgentPanel('#agent-panel', nick);
+          window.location.href = a.getAttribute('href');
+        }
+      });
+    });
+  }
+  wirePlayGates();
+
   (async () => {
-    const nick = await ensureRegistered();
-    // Pull Firebase-side progress (completed_cases + totals) into localStorage.
-    // Fixes cases where localStorage was cleared / user switched browsers, and
-    // makes it possible to seed a player's progress server-side.
-    await syncProgressFromFirebase(nick);
-    applyUnlock();
-    renderAgentPanel('#agent-panel', nick);
-    await renderLeaderboard('#leaderboard-list', nick);
-    renderCertStatus();
+    // If user already registered on a prior visit, silently sync + show agent panel.
+    // First-time visitors see the page fully — no wall.
+    const existing = localStorage.getItem('ss.nickname');
+    if (existing) {
+      document.getElementById('agent-section').style.display = '';
+      await syncProgressFromFirebase(existing);
+      applyUnlock();
+      renderAgentPanel('#agent-panel', existing);
+      renderCertStatus();
+    }
+    // Leaderboard always visible (no nick needed)
+    await renderLeaderboard('#leaderboard-list', existing || '');
   })();
   document.addEventListener('langchange', () => {
     applyUnlock();

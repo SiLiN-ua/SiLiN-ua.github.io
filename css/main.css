@@ -626,6 +626,90 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .sim-banner__terminal { max-width: 100%; }
 }
 
+/* Demo ribbon (game.html?demo=1) --------------------------- */
+.demo-ribbon {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  background: linear-gradient(90deg, rgba(220,195,130,.95), rgba(190,150,80,.95));
+  color: #0a0e1a;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+.demo-ribbon a { color: #0a0e1a; text-decoration: underline; font-weight: 600; margin-left: .5rem; }
+.game-body:has(.demo-ribbon) { padding-top: 34px; }
+
+/* How to play (simulator-01.html) -------------------------- */
+.ss-howto { padding-bottom: 3rem; }
+.ss-howto__steps {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  counter-reset: none;
+}
+.ss-howto__steps > li {
+  padding: 1.5rem 1.25rem;
+  background: rgba(20,28,48,.6);
+  border: 1px solid rgba(74,158,255,.2);
+  border-radius: 4px;
+  position: relative;
+  transition: all .3s var(--ease);
+}
+.ss-howto__steps > li:hover {
+  border-color: var(--ice);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(74,158,255,.15);
+}
+.ss-howto__num {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .2em;
+  color: var(--ice);
+  margin-bottom: .3rem;
+}
+.ss-howto__ico { font-size: 2.2rem; line-height: 1; margin-bottom: .6rem; }
+.ss-howto__steps h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--cream);
+  margin: 0 0 .5rem;
+  font-weight: 500;
+}
+.ss-howto__steps p {
+  color: var(--text-mute);
+  font-size: .85rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.ss-howto__demo {
+  text-align: center;
+  padding: 2rem 0 0;
+  margin-top: 2rem;
+  border-top: 1px dashed rgba(74,158,255,.2);
+}
+.ss-howto__demo-hint {
+  margin-top: .75rem;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+@media (max-width: 800px) {
+  .ss-howto__steps { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+@media (max-width: 480px) {
+  .ss-howto__steps { grid-template-columns: 1fr; }
+}
+
 /* Stats strip --------------------------------------------- */
 .stats {
   display: grid;
