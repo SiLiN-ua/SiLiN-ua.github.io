@@ -16,6 +16,8 @@ const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;'
 const LANG = () => (document.documentElement.lang || 'uk');
 const tr = (obj, field) => obj[field + '_' + LANG()] || obj[field + '_uk'] || obj[field] || '';
 const fmtTime = (sec) => `${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+// Quick bilingual helper: L('укр', 'en')
+const L = (uk, en) => LANG() === 'en' ? en : uk;
 // Deterministic shuffle using Fisher-Yates + seeded PRNG (mulberry32).
 // Same seed → same order across re-renders inside one game session.
 function seededShuffle(arr, seed) {
@@ -416,13 +418,23 @@ function renderFakeUI(tool) {
       </div>`;
     case 'hibp':
       if (d.hibp_breaches) {
+        const trType = (t) => {
+          if (LANG() !== 'en') return t
+            .replace(/Emails \+ hashed passwords/g, 'Email + захешовані паролі')
+            .replace(/Emails \+ encrypted passwords/g, 'Email + шифровані паролі')
+            .replace(/Emails \+ bcrypt hashes/g, 'Email + bcrypt-хеші')
+            .replace(/Aggregate credential[- ]stuffing list/g, 'Агрегований список credential-stuffing')
+            .replace(/accounts leaked/g, 'акаунтів витекло')
+            .replace(/accounts \(combined\)/g, 'акаунтів (комбіновано)');
+          return t;
+        };
         return `
           <div class="fake fake--hibp">
             <div class="fake__topbar">🔥 <span>Have I Been Pwned</span></div>
             <div class="fake__hibp-email">Email: <code>${escapeHtml(cand.email)}</code></div>
-            <div class="fake__hibp-status"><strong>Found in ${d.hibp_breaches.length} breaches</strong> <small>(baseline for 10+ year email = 3-5)</small></div>
+            <div class="fake__hibp-status"><strong>${L('Знайдено у', 'Found in')} ${d.hibp_breaches.length} ${L('витоках', 'breaches')}</strong> <small>(${L('baseline для email 10+ років', 'baseline for 10+ year email')} = 3-5)</small></div>
             <div class="fake__hibp-list">
-              ${d.hibp_breaches.map(b => `<div class="fake__hibp-row"><strong>${escapeHtml(b.name)}</strong> · ${b.year} · ${escapeHtml(b.size)} · ${escapeHtml(b.type)}</div>`).join('')}
+              ${d.hibp_breaches.map(b => `<div class="fake__hibp-row"><strong>${escapeHtml(b.name)}</strong> · ${b.year} · ${escapeHtml(b.size)} · ${escapeHtml(trType(b.type))}</div>`).join('')}
             </div>
             ${tr(d, 'hibp_note') ? `<div class="fake__hibp-hint">${escapeHtml(tr(d, 'hibp_note'))}</div>` : ''}
           </div>`;
@@ -445,7 +457,7 @@ function renderFakeUI(tool) {
           <div class="fake fake--getcontact">
             <div class="fake__topbar">📱 <span>GetContact</span></div>
             <div class="fake__gc-num">${escapeHtml(cand.phone)}</div>
-            <div class="fake__gc-count"><strong>${d.getcontact_tags.length + 10} tags</strong> from other users</div>
+            <div class="fake__gc-count"><strong>${d.getcontact_tags.length + 10} ${L('тегів', 'tags')}</strong> ${L('від інших користувачів', 'from other users')}</div>
             <div class="fake__gc-tags">
               ${d.getcontact_tags.map(t => `<span class="fake__tag${t.kind==='red'?' fake__tag--red':''}">${escapeHtml(t.text)}</span>`).join('')}
             </div>
@@ -456,7 +468,7 @@ function renderFakeUI(tool) {
       <div class="fake fake--getcontact">
         <div class="fake__topbar">📱 <span>GetContact</span></div>
         <div class="fake__gc-num">${escapeHtml(cand.phone)}</div>
-        <div class="fake__gc-count"><strong>47 tags</strong> from other users · sorted by frequency (not by sentiment)</div>
+        <div class="fake__gc-count"><strong>47 ${L('тегів', 'tags')}</strong> ${L('від інших користувачів · сортовані за частотою (не за настроєм)', 'from other users · sorted by frequency (not by sentiment)')}</div>
         <div class="fake__gc-tags">
           <span class="fake__tag">Рома BMW</span>
           <span class="fake__tag">Морозов Р.</span>
@@ -473,13 +485,13 @@ function renderFakeUI(tool) {
           <span class="fake__tag fake__tag--red">Обманщик BMW</span>
           <span class="fake__tag">+ 34 tags…</span>
         </div>
-        <div class="fake__gc-hint">GetContact does not distinguish real names from insults; frequency ≠ truth. Count red vs neutral and weigh.</div>
+        <div class="fake__gc-hint">${L('GetContact не розрізняє реальні імена і образи; частота ≠ істина. Порахуй червоні vs нейтральні і зваж.', 'GetContact does not distinguish real names from insults; frequency ≠ truth. Count red vs neutral and weigh.')}</div>
       </div>`;
     case 'google-dorks':
       if (d.google_dorks_results) {
         return `
           <div class="fake fake--google">
-            <div class="fake__topbar">🌐 <span>Google Search Operators</span></div>
+            <div class="fake__topbar">🌐 <span>${L('Google — оператори пошуку', 'Google Search Operators')}</span></div>
             <div class="fake__google-query"><code>${escapeHtml(d.google_dorks_query)}</code></div>
             <div class="fake__google-results">
               ${d.google_dorks_results.map(r => `
@@ -531,7 +543,7 @@ function renderFakeUI(tool) {
                   <div class="fake__li-row"><strong>${escapeHtml(tr(x,'role'))}</strong><br>${escapeHtml(x.period)} · <em>${escapeHtml(tr(x,'note'))}</em></div>`).join('')}
               </div>
               <div class="fake__li-endorsements">
-                <small>Endorsements: ${d.linkedin_endorsements.map(e => escapeHtml(e.name)).join(' · ')}</small>
+                <small>${L('Схвалили', 'Endorsements')}: ${d.linkedin_endorsements.map(e => escapeHtml(e.name)).join(' · ')}</small>
               </div>
             </div>
             ${tr(d, 'linkedin_note') ? `<div class="fake__hibp-hint">${escapeHtml(tr(d, 'linkedin_note'))}</div>` : ''}
@@ -561,15 +573,15 @@ function renderFakeUI(tool) {
       if (d.sanctions_grid) {
         return `
           <div class="fake fake--sanctions">
-            <div class="fake__topbar">⚖️ <span>Sanctions & PEP Screening</span></div>
-            <div class="fake__sanc-name">Query: <code>${escapeHtml(tr(cand,'name'))} · ${escapeHtml(cand.phone)}</code></div>
+            <div class="fake__topbar">⚖️ <span>${L('Санкції & PEP Screening', 'Sanctions & PEP Screening')}</span></div>
+            <div class="fake__sanc-name">${L('Запит', 'Query')}: <code>${escapeHtml(tr(cand,'name'))} · ${escapeHtml(cand.phone)}</code></div>
             <div class="fake__sanc-grid">
               ${d.sanctions_grid.map(g => `
                 <div class="fake__sanc-cell fake__sanc-cell--${g.status==='clean'?'ok':'warn'}">
-                  <span>${escapeHtml(g.list)}</span><strong>${g.status==='clean'?'✓ CLEAN':'⚠ CHECK'}</strong>
+                  <span>${escapeHtml(g.list)}</span><strong>${g.status==='clean'?L('✓ ЧИСТО','✓ CLEAN'):L('⚠ ПЕРЕВІРКА','⚠ CHECK')}</strong>
                 </div>`).join('')}
               <div class="fake__sanc-cell fake__sanc-cell--warn">
-                <span>Namesake disambiguation</span><strong>⚠ AUTO-MATCH</strong>
+                <span>${L('Однофамільці — розчищення','Namesake disambiguation')}</span><strong>${L('⚠ АВТО-МАТЧ','⚠ AUTO-MATCH')}</strong>
                 <small>${escapeHtml(tr(d,'sanctions_namesake'))}</small>
               </div>
             </div>
@@ -594,7 +606,7 @@ function renderFakeUI(tool) {
         return `
           <div class="fake fake--court">
             <div class="fake__topbar">⚖️ <span>Єдиний реєстр судових рішень + Opendatabot</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.court_query)}</code></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.court_query)}</code></div>
             <div class="fake__court-list">
               ${d.court_cases.map((c, i) => `
                 <div class="fake__court-case">
@@ -628,7 +640,7 @@ function renderFakeUI(tool) {
       if (d.insead_query) {
         return `
           <div class="fake fake--insead">
-            <div class="fake__topbar">🎓 <span>Education Verification (state + alumni registries)</span></div>
+            <div class="fake__topbar">🎓 <span>${L('Верифікація освіти (state + alumni реєстри)', 'Education Verification (state + alumni registries)')}</span></div>
             <div class="fake__insead-query">${escapeHtml(d.insead_query)}</div>
             <div class="fake__insead-result" style="background:rgba(163,230,163,.06)">
               <div class="fake__insead-result-icon" style="color:#a3e6a3">✓</div>
@@ -639,29 +651,29 @@ function renderFakeUI(tool) {
       }
       return `
       <div class="fake fake--insead">
-        <div class="fake__topbar">🎓 <span>INSEAD Alumni Directory (public search)</span></div>
-        <div class="fake__insead-query">Verifying claim from CV: <code>Roman Morozov · MBA · INSEAD · 2013—2014</code></div>
+        <div class="fake__topbar">🎓 <span>${L('INSEAD Alumni Directory (публічний пошук)', 'INSEAD Alumni Directory (public search)')}</span></div>
+        <div class="fake__insead-query">${L('Перевіряю заявку з CV', 'Verifying claim from CV')}: <code>Roman Morozov · MBA · INSEAD · 2013—2014</code></div>
         <div class="fake__insead-search">
-          <div class="fake__insead-row">▸ Public alumni search over 2013—2015 cohorts…</div>
-          <div class="fake__insead-row">▸ Variants: Morozov, Морозов, R. Morozov, Roman M…</div>
-          <div class="fake__insead-row">▸ Cross-check LinkedIn INSEAD alumni group…</div>
+          <div class="fake__insead-row">▸ ${L('Публічний пошук alumni по 2013—2015 когортам…', 'Public alumni search over 2013—2015 cohorts…')}</div>
+          <div class="fake__insead-row">▸ ${L('Варіанти', 'Variants')}: Morozov, Морозов, R. Morozov, Roman M…</div>
+          <div class="fake__insead-row">▸ ${L('Крос-перевірка LinkedIn INSEAD alumni group…', 'Cross-check LinkedIn INSEAD alumni group…')}</div>
         </div>
         <div class="fake__insead-result">
           <div class="fake__insead-result-icon">?</div>
-          <div class="fake__insead-result-title">NO PUBLIC MATCH</div>
+          <div class="fake__insead-result-title">${L('НЕМАЄ ПУБЛІЧНОГО МАТЧУ', 'NO PUBLIC MATCH')}</div>
           <div class="fake__insead-result-body">
-            Public directory: <strong>0 matches</strong> for the exact query.<br>
-            <small>Note: ~40% of INSEAD alumni opt out of public directory visibility. Official verification requires a signed release from the candidate to INSEAD Career Services.</small>
+            ${L('Публічний каталог', 'Public directory')}: <strong>0 ${L('збігів', 'matches')}</strong> ${L('за точним запитом', 'for the exact query')}.<br>
+            <small>${L('Примітка: ~40% alumni INSEAD відмовляються від публічної видимості. Офіційна верифікація вимагає підписаного дозволу кандидата до INSEAD Career Services.', 'Note: ~40% of INSEAD alumni opt out of public directory visibility. Official verification requires a signed release from the candidate to INSEAD Career Services.')}</small>
           </div>
         </div>
-        <div class="fake__insead-hint">Interpret carefully: public absence ≠ fabrication proof. But for a claim this specific, absence + no LinkedIn INSEAD group membership + no thesis / publication trail = tilts toward suspicion.</div>
+        <div class="fake__insead-hint">${L('Інтерпретуй уважно: публічна відсутність ≠ доказ фальсифікації. Але для такої специфічної заяви — відсутність + жодного членства в LinkedIn INSEAD group + жодного сліду thesis/публікацій = схиляє до підозри.', 'Interpret carefully: public absence ≠ fabrication proof. But for a claim this specific, absence + no LinkedIn INSEAD group membership + no thesis / publication trail = tilts toward suspicion.')}</div>
       </div>`;
     case 'osint-industries':
       if (d.osint_industries_results) {
         return `
           <div class="fake fake--oi">
             <div class="fake__topbar">🔎 <span>OSINT Industries · Aggregator</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.osint_industries_query)}</code></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.osint_industries_query)}</code></div>
             <table class="fake__oi-table">
               <thead><tr><th>Platform</th><th>Status</th><th>Detail</th></tr></thead>
               <tbody>
@@ -767,7 +779,7 @@ function renderFakeUI(tool) {
         return `
           <div class="fake fake--tg">
             <div class="fake__topbar">📱 <span>Telegram Reverse Lookup</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.telegram_reverse_query)}</code> · Accounts found: <strong>${tr2.accounts_found}</strong></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.telegram_reverse_query)}</code> · ${L('Знайдено акаунтів', 'Accounts found')}: <strong>${tr2.accounts_found}</strong></div>
             ${accs.map((a, i) => `
               <div class="fake__tg-account${a.channels && a.channels.length >= 3 ? ' fake__tg-account--red' : ''}">
                 <div class="fake__tg-h">Account ${i+1}: ${escapeHtml(a.handle)}</div>
@@ -816,7 +828,7 @@ function renderFakeUI(tool) {
         return `
           <div class="fake fake--wayback">
             <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback Machine</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.wayback_query)}</code></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.wayback_query)}</code></div>
             <img src="img/uploads/simulator/case4/wayback-archive.png" class="fake__court-doc" alt="" onerror="this.style.display='none'" style="max-width:100%;margin:0;">
             <div class="fake__court-list">
               ${d.wayback_snapshots.map(s => `
@@ -833,7 +845,7 @@ function renderFakeUI(tool) {
         return `
           <div class="fake fake--court">
             <div class="fake__topbar">📊 <span>Telegram Username History</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.telegram_username_query)}</code></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.telegram_username_query)}</code></div>
             <table class="fake__oi-table">
               <thead><tr><th>Handle</th><th>Period</th><th>Status</th></tr></thead>
               <tbody>
@@ -854,7 +866,7 @@ function renderFakeUI(tool) {
         return `
           <div class="fake fake--oi">
             <div class="fake__topbar">🔎 <span>OSINT Industries · cross-platform</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.osint_industries_c4_query)}</code></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.osint_industries_c4_query)}</code></div>
             <table class="fake__oi-table">
               <thead><tr><th>Platform</th><th>Hit</th><th>Note</th></tr></thead>
               <tbody>
@@ -900,7 +912,7 @@ function renderFakeUI(tool) {
         return `
           <div class="fake fake--ig">
             <div class="fake__topbar">📸 <span>Instagram · Friends Pivot</span></div>
-            <div class="fake__court-query">Query: <code>${escapeHtml(d.instagram_friends_query)}</code></div>
+            <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.instagram_friends_query)}</code></div>
             ${d.instagram_friends.map(f => `
               <div class="fake__ig-block${f.notable_post ? ' fake__ig-block--highlight' : ''}">
                 <div class="fake__ig-h">${escapeHtml(f.handle)} <span>· ${f.posts_with_target} posts with target</span></div>
@@ -992,7 +1004,7 @@ function renderFakeUI(tool) {
       if (d.wayback_snapshots) {
         return `<div class="fake fake--wayback">
           <div class="fake__topbar">🕰️ <span>Internet Archive · Wayback</span></div>
-          <div class="fake__court-query">Query: <code>${escapeHtml(d.wayback_query)}</code></div>
+          <div class="fake__court-query">${L('Запит', 'Query')}: <code>${escapeHtml(d.wayback_query)}</code></div>
           <div class="fake__court-list">${d.wayback_snapshots.map(s => `<div class="fake__court-case"><div class="fake__court-h">📄 ${escapeHtml(s.url)} · ${escapeHtml(s.date)}</div><div class="fake__court-body">${escapeHtml(s.detail)}</div></div>`).join('')}</div>
         </div>`;
       }

@@ -2861,8 +2861,9 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
    Shadow Simulator — Polish v3 (tooltips, warnings, new UIs, pivot chain)
    ========================================================== */
 
-/* Tool button — inline expandable tooltip (hover ⓘ opens dedicated row below) */
-.tool-btn { position: relative; overflow: hidden; }
+/* Tool button — floating side tooltip via data-tip (does NOT break card layout) */
+.tool-btn { position: relative; }
+.tool-grid { position: relative; }
 .tool-btn__info {
   display: inline-block;
   margin-left: .4em;
@@ -2874,34 +2875,59 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 }
 .tool-btn[data-tip]::after {
   content: attr(data-tip);
-  display: block;
-  grid-column: 1 / -1;
-  margin-top: .8rem;
-  padding: .75rem .9rem;
-  background: rgba(10, 14, 26, .85);
-  border-left: 3px solid var(--ice);
-  border-radius: 2px;
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 0;
+  width: 320px;
+  padding: .95rem 1.05rem;
+  background: rgba(10, 14, 26, .98);
+  border: 1px solid var(--ice);
+  border-radius: 4px;
   color: var(--cream);
   font-family: var(--font-body);
-  font-size: .8rem;
-  line-height: 1.45;
+  font-size: .82rem;
+  line-height: 1.5;
   text-align: left;
-  max-height: 0;
+  white-space: normal;
+  z-index: 500;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .75), 0 0 0 1px rgba(127, 214, 255, .15);
   opacity: 0;
-  overflow: hidden;
-  transition: max-height .3s var(--ease), opacity .25s var(--ease), padding .3s var(--ease), margin-top .3s var(--ease);
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+  transition: opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear .2s;
   pointer-events: none;
 }
 .tool-btn[data-tip]:hover::after,
 .tool-btn[data-tip]:focus-visible::after {
-  max-height: 240px;
   opacity: 1;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  margin-top: .8rem;
+  visibility: visible;
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+/* If card is in the rightmost column — flip tooltip to LEFT side */
+.tool-grid > .tool-btn:nth-child(3n)[data-tip]::after,
+.tool-grid > .tool-btn:last-child[data-tip]::after {
+  left: auto;
+  right: calc(100% + 12px);
+  transform: translateX(8px);
+}
+.tool-grid > .tool-btn:nth-child(3n)[data-tip]:hover::after,
+.tool-grid > .tool-btn:last-child[data-tip]:hover::after {
+  transform: translateX(0);
+}
+/* Mobile — stack below */
+@media (max-width: 720px) {
+  .tool-btn[data-tip]::after,
+  .tool-grid > .tool-btn:nth-child(3n)[data-tip]::after {
+    left: 0;
+    right: auto;
+    top: calc(100% + 8px);
+    width: 90vw;
+    transform: translateY(-8px);
+  }
+  .tool-btn[data-tip]:hover::after {
+    transform: translateY(0);
+  }
 }
 
 /* Warning modal (red-herring tools) */
