@@ -2804,14 +2804,14 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .game-brief__bg {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
-  opacity: .18;
-  filter: blur(2px) saturate(1.1);
+  opacity: .6;
+  filter: saturate(1.1);
   pointer-events: none;
 }
 .game-brief__bg::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(20,28,48,.65), rgba(10,14,26,.9));
+  background: linear-gradient(180deg, rgba(20,28,48,.35) 0%, rgba(10,14,26,.75) 60%, rgba(10,14,26,.9) 100%);
 }
 .game-brief__inner { position: relative; z-index: 2; }
 
