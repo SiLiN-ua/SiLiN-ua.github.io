@@ -3903,6 +3903,83 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   margin: 0;
   color: var(--cream);
 }
+
+/* Help hint — first-time pointer to ❔ button */
+.help-hint {
+  position: fixed;
+  top: 68px;
+  right: 20px;
+  z-index: 150;
+  max-width: 300px;
+  padding: .85rem 1rem .85rem 1rem;
+  background: linear-gradient(180deg, rgba(74,158,255,.15), rgba(10,14,26,.98));
+  border: 1px solid var(--ice);
+  border-radius: 4px;
+  color: var(--cream);
+  font-size: .82rem;
+  line-height: 1.5;
+  box-shadow: 0 8px 30px rgba(0,0,0,.6);
+  animation: help-hint-in .35s var(--ease) both;
+}
+.help-hint__arrow {
+  position: absolute;
+  top: -8px;
+  right: 32px;
+  width: 14px;
+  height: 14px;
+  background: rgba(74,158,255,.35);
+  border-top: 1px solid var(--ice);
+  border-left: 1px solid var(--ice);
+  transform: rotate(45deg);
+}
+.help-hint__close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: var(--text-mute);
+  cursor: pointer;
+  font-size: .85rem;
+  padding: 2px 6px;
+}
+.help-hint__close:hover { color: var(--cream); }
+.help-hint__text { padding-right: 12px; }
+.help-hint__text strong { color: var(--ice); }
+.help-hint--fade { opacity: 0; transition: opacity .35s var(--ease); }
+@keyframes help-hint-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 720px) {
+  .help-hint { right: 8px; top: 60px; max-width: calc(100vw - 16px); font-size: .78rem; }
+}
+
+/* Result lesson — "correct verdict was X" on fail */
+.result__lesson {
+  margin: 1rem auto;
+  max-width: 720px;
+  padding: 1rem 1.25rem;
+  background: rgba(220, 195, 130, .1);
+  border-left: 4px solid #dcc382;
+  border-radius: 0 4px 4px 0;
+}
+.result__lesson-head {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  letter-spacing: .05em;
+  color: #dcc382;
+  margin-bottom: .5rem;
+}
+.result__lesson-head strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+.result__lesson-fb {
+  font-size: .92rem;
+  line-height: 1.55;
+  color: var(--cream);
+}
 @media (max-width: 520px) {
   .help-panel__gloss-row {
     grid-template-columns: 1fr;

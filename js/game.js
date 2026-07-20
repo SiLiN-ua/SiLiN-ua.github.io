@@ -194,6 +194,7 @@ function renderBriefing() {
   $('#game-root').innerHTML = html;
   fadeInRoot();
   if (typeof renderHelpPanel === 'function') renderHelpPanel();
+  showHelpHint();
   $('#btn-start').addEventListener('click', () => {
     State.phase = 'phase2';
     State.startedAt = Date.now();
@@ -201,6 +202,28 @@ function renderBriefing() {
     renderPhase2();
     scrollTop();
   });
+}
+
+function showHelpHint() {
+  if (localStorage.getItem('ss.help_hint_seen') === '1') return;
+  if (document.getElementById('help-hint')) return;
+  const hint = document.createElement('div');
+  hint.id = 'help-hint';
+  hint.className = 'help-hint';
+  hint.innerHTML = `
+    <button class="help-hint__close" aria-label="Close">✕</button>
+    <div class="help-hint__arrow"></div>
+    <div class="help-hint__text">${LANG()==='en' ? 'New here? Click <strong>❔ How to play</strong> anytime — full rules and glossary inside.' : 'Уперше тут? Клікни <strong>❔ Як грати</strong> будь-коли — правила і словник термінів усередині.'}</div>`;
+  document.body.appendChild(hint);
+  const dismiss = () => {
+    localStorage.setItem('ss.help_hint_seen', '1');
+    hint.classList.add('help-hint--fade');
+    setTimeout(() => hint.remove(), 400);
+  };
+  hint.querySelector('.help-hint__close').addEventListener('click', dismiss);
+  const helpBtn = document.getElementById('help-btn');
+  if (helpBtn) helpBtn.addEventListener('click', dismiss, { once: true });
+  setTimeout(dismiss, 12000);
 }
 
 // ==================== RENDER: PHASE 2 (TOOLBOARD) ====================
@@ -1360,6 +1383,18 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
       <div class="result__verdict-label">${escapeHtml(tr(verdict,'label'))}</div>
       <div class="result__verdict-fb">${escapeHtml(tr(verdict,'feedback'))}</div>
     </div>` : '';
+  // On FAIL — show the correct verdict + its explanation right up top
+  let lessonRow = '';
+  if (verdict && !verdict.correct) {
+    const correctOpt = (s.phase4?.options || []).find(o => o.correct && (o.points || 0) > 0);
+    if (correctOpt) {
+      lessonRow = `
+        <div class="result__lesson">
+          <div class="result__lesson-head">🎯 ${LANG()==='en' ? 'The correct verdict was' : 'Правильний вердикт був'}: <strong>${escapeHtml(tr(correctOpt,'label'))}</strong></div>
+          <div class="result__lesson-fb">${escapeHtml(tr(correctOpt,'feedback'))}</div>
+        </div>`;
+    }
+  }
   const submitRow = submitted && submitResult && submitResult.ok
     ? `<div class="result__submit result__submit--ok">✓ ${LANG()==='en'?'Score submitted to global leaderboard':'Очки відправлено у глобальний leaderboard'}. ${LANG()==='en'?'Total':'Всього'}: <strong>${submitResult.total}</strong> pts</div>`
     : submitted ? `<div class="result__submit result__submit--err">⚠️ ${LANG()==='en'?'Could not submit — check console':'Не вдалося відправити — див. консоль'}</div>`
@@ -1370,6 +1405,7 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
       <h2 class="result__title">${escapeHtml(tr(s,'title'))}</h2>
       ${timeoutRow}
       ${verdictRow}
+      ${lessonRow}
       <div class="result__score">
         <div class="result__score-num">${points} <span>pts</span></div>
         <div class="result__rank" style="color:${rank.color}">${escapeHtml(tr(rank,'label'))}</div>
