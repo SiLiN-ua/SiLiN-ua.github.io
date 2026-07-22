@@ -723,6 +723,134 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 }
 .tl-live-score strong { color: #dcc382; font-weight: 600; }
 
+/* Sim #02 corporate fake-UI components ------------------- */
+.fake--opencorp .fake__oc-row {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: .55rem 1rem;
+  border-bottom: 1px solid rgba(74,158,255,.08);
+  font-family: var(--font-mono);
+  font-size: .85rem;
+}
+.fake--opencorp .fake__oc-row span { color: var(--text-mute); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; }
+.fake--opencorp .fake__oc-row strong,
+.fake--opencorp .fake__oc-row code { color: var(--cream); }
+.fake--opencorp .fake__oc-section {
+  padding: 1rem;
+  margin-top: .5rem;
+  background: rgba(10,14,26,.4);
+  border-top: 1px dashed rgba(220,195,130,.25);
+}
+.fake--opencorp .fake__oc-section h4 {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .15em;
+  color: #dcc382;
+  text-transform: uppercase;
+  margin: 0 0 .6rem;
+}
+.fake--opencorp .fake__oc-officer {
+  padding: .5rem .75rem;
+  margin-bottom: .3rem;
+  background: rgba(20,28,48,.6);
+  border-left: 3px solid rgba(220,195,130,.4);
+  border-radius: 0 3px 3px 0;
+  font-size: .85rem;
+}
+
+.fake--email .fake__email-msg {
+  padding: .8rem 1rem;
+  border-bottom: 1px solid rgba(74,158,255,.1);
+  font-family: var(--font-mono);
+  font-size: .85rem;
+}
+.fake--email .fake__email-msg--hi { background: rgba(220,195,130,.06); border-left: 3px solid #dcc382; }
+.fake--email .fake__email-head {
+  display: flex; justify-content: space-between;
+  margin-bottom: .5rem;
+  color: var(--text-mute);
+  font-size: .78rem;
+}
+.fake--email .fake__email-head strong { color: var(--cream); }
+.fake--email .fake__email-body {
+  color: var(--cream);
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.fake--email .fake__email-attach {
+  margin-top: .5rem;
+  padding: .3rem .7rem;
+  background: rgba(74,158,255,.1);
+  border: 1px dashed rgba(74,158,255,.3);
+  border-radius: 2px;
+  color: #7fd6ff;
+  font-size: .78rem;
+  display: inline-block;
+}
+
+.fake--invoices .fake__inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: .82rem;
+}
+.fake--invoices .fake__inv-table th {
+  padding: .6rem .75rem;
+  text-align: left;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  border-bottom: 1px solid var(--border-hi);
+}
+.fake--invoices .fake__inv-table td {
+  padding: .55rem .75rem;
+  border-bottom: 1px solid rgba(74,158,255,.08);
+  color: var(--cream);
+}
+.fake--invoices .fake__inv-row--hi td {
+  background: rgba(220,195,130,.08);
+  border-left: none;
+}
+.fake--invoices .fake__inv-row--hi td:first-child { border-left: 3px solid #dcc382; }
+.fake--invoices .fake__inv-note {
+  padding: 1rem;
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  background: rgba(10,14,26,.5);
+  border-top: 1px dashed rgba(220,195,130,.2);
+}
+
+.fake--panama .fake__panama-row {
+  padding: .8rem 1rem;
+  margin: .5rem 1rem;
+  background: rgba(20,28,48,.5);
+  border-left: 3px solid #dcc382;
+  border-radius: 0 3px 3px 0;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--cream);
+  line-height: 1.5;
+}
+
+.fake--doc .fake__doc-meta {
+  padding: 1rem;
+  background: rgba(10,14,26,.5);
+  border-bottom: 1px dashed var(--border-hi);
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--cream);
+  line-height: 1.7;
+}
+.fake--doc .fake__doc-meta strong { color: #dcc382; }
+.fake--doc .fake__doc-body {
+  padding: 1.25rem 1.5rem;
+  color: var(--cream);
+  line-height: 1.7;
+  font-size: .92rem;
+}
+.fake--doc .fake__doc-body p { margin-bottom: .8rem; }
+
 /* Sim #02 Memo Phase (game.js + sim02-memo-test.html) ----- */
 .game-phase--memo .mb-policy {
   padding: 1rem 1.5rem;

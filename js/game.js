@@ -1170,6 +1170,100 @@ function renderFakeUI(tool) {
           <div class="fake__yc-empty-hint">${L('YouControl індексує компанії та їх контактні дані, не особисті телефони. Використовуй його ПІСЛЯ ідентифікації назви компанії.', 'YouControl indexes companies and their contact data, not personal phones. Use it after you identify a company name.')}</div>
         </div>
       </div>`;
+
+    // ============ SIM #02 / CORPORATE INVESTIGATIONS UIs ============
+    case 'opencorp': if (tool.opencorp) return `
+      <div class="fake fake--opencorp">
+        <div class="fake__topbar">🏢 <span>OpenCorporates + ${L('ЄДР', 'State Registry')}</span></div>
+        <div class="fake__search-row"><div class="fake__query">${L('Пошук', 'Search')}: <code>${escapeHtml(tool.opencorp.query || '')}</code></div></div>
+        <div class="fake__oc-row"><span>${L('Компанія', 'Company')}</span><strong>${escapeHtml(tool.opencorp.company_name || '')}</strong></div>
+        <div class="fake__oc-row"><span>${L('Реєстраційний №', 'Registration #')}</span><code>${escapeHtml(tool.opencorp.reg_no || '')}</code></div>
+        <div class="fake__oc-row"><span>${L('Створено', 'Founded')}</span><strong>${escapeHtml(tool.opencorp.founded || '')}</strong></div>
+        <div class="fake__oc-row"><span>${L('Юридична адреса', 'Legal address')}</span><strong>${escapeHtml(tr(tool.opencorp,'address') || tool.opencorp.address || '')}</strong></div>
+        <div class="fake__oc-row"><span>${L('Тип', 'Type')}</span><strong>${escapeHtml(tool.opencorp.entity_type || 'LLC')}</strong></div>
+        <div class="fake__oc-row"><span>${L('Статус', 'Status')}</span><strong style="color:#7dc98a">${escapeHtml(tool.opencorp.status || 'Active')}</strong></div>
+        <div class="fake__oc-section"><h4>${L('Директори / посадові особи', 'Directors / Officers')}</h4>
+          ${(tool.opencorp.officers || []).map(o => `
+            <div class="fake__oc-officer">
+              <div><strong>${escapeHtml(tr(o,'name') || o.name)}</strong> · <span style="color:var(--text-mute)">${escapeHtml(tr(o,'role') || o.role || '')}</span></div>
+              ${o.note ? `<div style="color:var(--text-mute);font-size:.85em">${escapeHtml(tr(o,'note') || o.note)}</div>` : ''}
+            </div>`).join('')}
+        </div>
+        <div class="fake__oc-section"><h4>${L('Засновники (KYC)', 'Founders (KYC)')}</h4>
+          ${(tool.opencorp.founders || []).map(f => `
+            <div class="fake__oc-officer">
+              <div><strong>${escapeHtml(tr(f,'name') || f.name)}</strong> · ${escapeHtml(f.share || '')}%</div>
+              ${f.note ? `<div style="color:var(--text-mute);font-size:.85em">${escapeHtml(tr(f,'note') || f.note)}</div>` : ''}
+            </div>`).join('')}
+        </div>
+      </div>`;
+      break;
+
+    case 'email-chain': if (tool.email_chain) return `
+      <div class="fake fake--email">
+        <div class="fake__topbar">✉ <span>${L('Ланцюжок листувань', 'Email chain')}</span> · <code>${escapeHtml(tool.email_chain.thread_subj || '')}</code></div>
+        ${(tool.email_chain.messages || []).map(m => `
+          <div class="fake__email-msg${m.highlight ? ' fake__email-msg--hi' : ''}">
+            <div class="fake__email-head">
+              <span><strong>${escapeHtml(m.from || '')}</strong> → ${escapeHtml(m.to || '')}</span>
+              <span style="color:var(--text-mute);font-family:var(--font-mono);font-size:.75em">${escapeHtml(m.date || '')}</span>
+            </div>
+            <div class="fake__email-body">${escapeHtml(tr(m,'body') || m.body || '')}</div>
+            ${m.attachment ? `<div class="fake__email-attach">📎 ${escapeHtml(m.attachment)}</div>` : ''}
+          </div>`).join('')}
+      </div>`;
+      break;
+
+    case 'invoice-analysis': if (tool.invoices) return `
+      <div class="fake fake--invoices">
+        <div class="fake__topbar">💰 <span>${L('Аналіз інвойсів (SAP export)', 'Invoice analysis (SAP export)')}</span></div>
+        <table class="fake__inv-table">
+          <thead><tr>
+            <th>${L('Інвойс #','Invoice #')}</th>
+            <th>${L('Дата','Date')}</th>
+            <th>${L('Постачальник','Vendor')}</th>
+            <th>${L('Сума','Amount')}</th>
+            <th>${L('Затверджено','Approved by')}</th>
+          </tr></thead>
+          <tbody>
+            ${tool.invoices.map(i => `
+              <tr${i.highlight ? ' class="fake__inv-row--hi"' : ''}>
+                <td><code>${escapeHtml(i.number || '')}</code></td>
+                <td>${escapeHtml(i.date || '')}</td>
+                <td>${escapeHtml(i.vendor || '')}</td>
+                <td style="text-align:right"><strong>${escapeHtml(i.amount || '')}</strong></td>
+                <td>${escapeHtml(i.approver || '')}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+        ${tool.invoices_note ? `<div class="fake__inv-note"><em>${escapeHtml(tr(tool,'invoices_note') || tool.invoices_note)}</em></div>` : ''}
+      </div>`;
+      break;
+
+    case 'panama-lookup': if (tool.panama) return `
+      <div class="fake fake--panama">
+        <div class="fake__topbar">🌴 <span>ICIJ Offshore Leaks · Panama Papers</span></div>
+        <div class="fake__search-row"><div class="fake__query">${L('Пошук', 'Search')}: <code>${escapeHtml(tool.panama.query || '')}</code></div></div>
+        ${(tool.panama.results || []).map(r => `
+          <div class="fake__panama-row">
+            <div><strong>${escapeHtml(r.entity || '')}</strong> · <span style="color:var(--text-mute)">${escapeHtml(r.jurisdiction || '')}</span></div>
+            <div style="color:var(--text-mute);font-size:.85em">${L('Роль','Role')}: ${escapeHtml(tr(r,'role') || r.role || '')} · ${L('Джерело','Source')}: ${escapeHtml(r.source || '')}</div>
+            ${r.note ? `<div style="margin-top:.3em">${escapeHtml(tr(r,'note') || r.note)}</div>` : ''}
+          </div>`).join('')}
+      </div>`;
+      break;
+
+    case 'meeting-minutes': if (tool.doc) return `
+      <div class="fake fake--doc">
+        <div class="fake__topbar">📄 <span>${escapeHtml(tool.doc.title || 'Meeting minutes')}</span></div>
+        <div class="fake__doc-meta">
+          <div><strong>${L('Дата','Date')}:</strong> ${escapeHtml(tool.doc.date || '')}</div>
+          <div><strong>${L('Учасники','Attendees')}:</strong> ${escapeHtml(tool.doc.attendees || '')}</div>
+          <div><strong>${L('Класифікація','Classification')}:</strong> <span style="color:#e97373">${escapeHtml(tool.doc.classification || 'INTERNAL')}</span></div>
+        </div>
+        <div class="fake__doc-body">${(tool.doc.paragraphs || []).map(p => `<p>${escapeHtml(tr({ text_uk: p.text_uk, text_en: p.text_en }, 'text') || p.text || '')}</p>`).join('')}</div>
+      </div>`;
+      break;
   }
   return `<div class="fake fake--empty">No UI for tool: ${tool.ui_component}</div>`;
 }
