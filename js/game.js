@@ -93,7 +93,7 @@ async function submitScore(nickname, gamePoints, caseId) {
 const State = {
   scenario: null,
   nickname: '',
-  phase: 'loading',     // loading | cooldown | briefing | phase2 | timeline | phase3 | phase4 | result
+  phase: 'loading',     // loading | cooldown | briefing | phase2 | timeline | phase3 | citation | phase4 | memo | result
   points: 0,
   timeLeft: 720,
   timerId: null,
@@ -107,10 +107,18 @@ const State = {
   finalVerdict: null,
   startedAt: 0,
   ended: false,
-  // Sim #02 Timeline Phase (optional; used only when scenario.timeline_phase exists)
+  // Sim #02 Timeline Phase (optional)
   timelineOrder: [],
   timelineSubmitted: false,
   timelinePoints: 0,
+  // Sim #02 Memo Phase (optional; replaces citation + phase4)
+  memoSubject: '',           // subject id
+  memoEvidence: [],          // [evidenceId, ...]
+  memoRisk: '',              // 'low' | 'medium' | 'high' | 'critical'
+  memoRecommendation: '',    // recommendation id
+  memoSubmitted: false,
+  memoPoints: 0,
+  memoPolicyBreach: false,
 };
 
 // ==================== TIMER ====================
@@ -138,19 +146,23 @@ function forceTimeout() {
 
 // ==================== RENDER: BRIEFING ====================
 function progressBar(current) {
-  const hasTimeline = !!State.scenario?.timeline_phase;
-  const phases = hasTimeline
-    ? ['briefing', 'phase2', 'timeline', 'phase3', 'phase4']
-    : ['briefing', 'phase2', 'phase3', 'phase4'];
-  const labels = hasTimeline
-    ? (LANG()==='en'
-        ? ['Briefing', 'Investigation', 'Timeline', 'Verification', 'Verdict']
-        : ['Брифінг', 'Розслідування', 'Хронологія', 'Верифікація', 'Вердикт'])
-    : (LANG()==='en'
-        ? ['Briefing', 'Investigation', 'Verification', 'Verdict']
-        : ['Брифінг', 'Розслідування', 'Верифікація', 'Вердикт']);
+  const s = State.scenario;
+  const hasTimeline = !!s?.timeline_phase;
+  const hasMemo = !!s?.memo_phase;
+  // Build phase list dynamically. 'memo' replaces 'phase4' when present.
+  const phases = ['briefing', 'phase2'];
+  if (hasTimeline) phases.push('timeline');
+  phases.push('phase3');
+  phases.push(hasMemo ? 'memo' : 'phase4');
+  const labelMap = LANG()==='en'
+    ? { briefing:'Briefing', phase2:'Investigation', timeline:'Timeline', phase3:'Verification', phase4:'Verdict', memo:'Memo' }
+    : { briefing:'Брифінг', phase2:'Розслідування', timeline:'Хронологія', phase3:'Верифікація', phase4:'Вердикт', memo:'Меморандум' };
+  const labels = phases.map(p => labelMap[p]);
+  // Normalize 'citation' → same slot as phase4/memo (visual last step)
+  const curNorm = (current === 'citation') ? (hasMemo ? 'memo' : 'phase4') : current;
+  const effectiveCurrent = curNorm;
   return `<div class="game-progress">${phases.map((p, i) => {
-    const cur = phases.indexOf(current);
+    const cur = phases.indexOf(effectiveCurrent);
     const cls = i < cur ? 'game-progress__step--done'
               : i === cur ? 'game-progress__step--active'
               : 'game-progress__step--todo';
@@ -1363,9 +1375,13 @@ function renderPhase3() {
   const nextBtn = $('#btn-next');
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.addEventListener('click', () => {
-      State.phase = 'citation';
-      track('game-citation', { q_answered: Object.keys(State.q3Answers).length });
-      renderCitationPhase();
+      // Route: phase3 → memo (Sim #02 replaces citation+phase4) OR → citation (legacy Sim #01)
+      const hasMemo = !!State.scenario.memo_phase;
+      const nextPhase = hasMemo ? 'memo' : 'citation';
+      State.phase = nextPhase;
+      track('game-' + nextPhase, { q_answered: Object.keys(State.q3Answers).length });
+      if (nextPhase === 'memo') renderMemoPhase();
+      else renderCitationPhase();
       scrollTop();
     });
   }
@@ -1455,6 +1471,279 @@ function answerQ3(qId, optIdx) {
   State.points += opt.points;
   updateHud();
   renderPhase3();
+}
+
+// ==================== RENDER: MEMO PHASE (Sim #02, optional; replaces citation+phase4) ====================
+function computeMemoScore() {
+  const mp = State.scenario.memo_phase;
+  if (!mp) return { total: 0, rows: [], breach: false };
+  const rows = [];
+  let total = 0;
+  let breach = false;
+  // Subject
+  const subj = (mp.subjects || []).find(s => s.id === State.memoSubject);
+  if (subj) { rows.push({ lbl: LANG()==='en'?'Subject':'Тема', val: tr(subj,'text'), pts: subj.points || 0 }); total += (subj.points || 0); }
+  else rows.push({ lbl: LANG()==='en'?'Subject':'Тема', val: '—', pts: 0 });
+  // Evidence
+  const ids = State.memoEvidence;
+  const minSlots = mp.min_evidence_slots || 3;
+  const maxSlots = mp.max_evidence_slots || 5;
+  if (ids.length < minSlots) {
+    const penalty = -20;
+    rows.push({ lbl: LANG()==='en'?'Evidence':'Докази', val: LANG()==='en'?`Too few (${ids.length}/${minSlots} min)`:`Замало (${ids.length}/${minSlots} мін)`, pts: penalty });
+    total += penalty;
+  } else if (ids.length > maxSlots) {
+    const penalty = -15;
+    rows.push({ lbl: LANG()==='en'?'Evidence':'Докази', val: LANG()==='en'?`Too many (${ids.length}/${maxSlots} max)`:`Забагато (${ids.length}/${maxSlots} макс)`, pts: penalty });
+    total += penalty;
+  } else {
+    const weightPts = mp.weight_points || { 5: 25, 4: 15, 3: 5, 2: -5, 1: -15 };
+    let evPts = 0;
+    ids.forEach(id => {
+      const e = (mp.evidence_pool || []).find(x => x.id === id);
+      if (e) evPts += (weightPts[e.weight] || 0);
+    });
+    rows.push({ lbl: LANG()==='en'?'Evidence':'Докази', val: `${ids.length} ${LANG()==='en'?'cards':'карток'}`, pts: evPts });
+    total += evPts;
+  }
+  // Risk
+  const riskPts = mp.risk_points || { low: -15, medium: -5, high: 20, critical: 10 };
+  if (State.memoRisk) {
+    const p = riskPts[State.memoRisk] || 0;
+    rows.push({ lbl: LANG()==='en'?'Risk':'Ризик', val: State.memoRisk.toUpperCase(), pts: p });
+    total += p;
+  } else rows.push({ lbl: LANG()==='en'?'Risk':'Ризик', val: '—', pts: 0 });
+  // Recommendation
+  const rec = (mp.recommendations || []).find(r => r.id === State.memoRecommendation);
+  if (rec) {
+    rows.push({ lbl: LANG()==='en'?'Recommendation':'Рекомендація', val: tr(rec,'text'), pts: rec.points || 0, feedback: tr(rec,'feedback') });
+    total += (rec.points || 0);
+    if (rec.policy_breach) {
+      breach = true;
+      const bp = (mp.policy && mp.policy.breach_penalty) || -30;
+      rows.push({ lbl: LANG()==='en'?'Policy Compliance':'Дотримання політики', val: LANG()==='en'?'❌ Breach':'❌ Порушено', pts: bp });
+      total += bp;
+    }
+  } else rows.push({ lbl: LANG()==='en'?'Recommendation':'Рекомендація', val: '—', pts: 0 });
+  return { total, rows, breach };
+}
+function renderMemoPhase() {
+  const mp = State.scenario.memo_phase;
+  if (!mp) {
+    // fallback — go to legacy citation/phase4
+    State.phase = 'citation'; renderCitationPhase(); return;
+  }
+  const isEn = LANG() === 'en';
+  const title = tr(mp,'title') || (isEn ? 'Fill in the corporate memorandum' : 'Заповни корпоративний меморандум');
+  const instr = tr(mp,'instruction') || (isEn
+    ? 'Fill Subject / Evidence / Risk / Recommendation. Corporate Policy MUST be respected.'
+    : 'Заповни Subject / Evidence / Risk / Recommendation. Політика компанії має бути дотримана.');
+  const policyText = tr(mp.policy || {}, 'text') || '';
+  const minSlots = mp.min_evidence_slots || 3;
+  const maxSlots = mp.max_evidence_slots || 5;
+  const submitLbl = tr(mp, 'submit_btn') || (isEn ? 'Submit Memo' : 'Подати меморандум');
+
+  // Shuffle subject + recommendation each render (deterministic per case+nick)
+  const seed = hashStr(State.scenario.id + '|memo|' + (State.nickname || ''));
+  const subjects = seededShuffle(mp.subjects || [], seed);
+  const recs     = seededShuffle(mp.recommendations || [], seed + 1);
+  const pool     = seededShuffle(mp.evidence_pool || [], seed + 2);
+
+  // Filter pool to exclude cards already dropped into zone (persist across re-renders)
+  const inZone = new Set(State.memoEvidence);
+  const zoneCards = State.memoEvidence.map(id => (mp.evidence_pool || []).find(e => e.id === id)).filter(Boolean);
+  const poolCards = pool.filter(e => !inZone.has(e.id));
+
+  const html = `
+    ${progressBar('memo')}
+    <div class="game-phase game-phase--memo">
+      <div class="game-phase__head">
+        <div class="game-phase__num">${State.scenario.timeline_phase ? '05 / 05' : '04 / 04'}</div>
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(instr)}</p>
+      </div>
+      ${policyText ? `
+        <div class="mb-policy">
+          <span class="mb-policy__label">${isEn ? '📋 COMPANY POLICY (mandatory)' : '📋 ПОЛІТИКА КОМПАНІЇ (обовʼязково)'}</span>
+          <div>${escapeHtml(policyText)}</div>
+        </div>` : ''}
+
+      <div class="mb-grid">
+        <div class="mb-memo">
+          <div class="mb-memo__header">
+            <div>TO: <strong>${isEn ? 'Board of Directors' : 'Правління'}</strong></div>
+            <div>FROM: <strong>${isEn ? 'Investigations Unit' : 'Розслідувальний підрозділ'}</strong></div>
+            <div>DATE: <strong>${new Date().toISOString().slice(0, 10)}</strong></div>
+            <div>RE: <strong>${escapeHtml(tr(State.scenario,'title'))}</strong></div>
+          </div>
+
+          <div class="mb-memo__section">
+            <div class="mb-memo__label">${isEn ? 'Subject' : 'Тема (Subject)'}</div>
+            <select class="mb-select" id="mb-subject">
+              <option value="">— ${isEn ? 'Choose…' : 'Обери…'} —</option>
+              ${subjects.map(s => `<option value="${escapeHtml(s.id)}"${State.memoSubject === s.id ? ' selected' : ''}>${escapeHtml(tr(s,'text'))}</option>`).join('')}
+            </select>
+          </div>
+
+          <div class="mb-memo__section">
+            <div class="mb-memo__label">${isEn ? `Key Evidence (drag ${minSlots}–${maxSlots} items from the pool)` : `Ключові докази (перетягни ${minSlots}–${maxSlots} карток з пулу)`}</div>
+            <div class="mb-dropzone" id="mb-evidence-zone" data-placeholder="${isEn ? 'drag evidence cards here…' : 'перетягни картки-докази сюди…'}">
+              ${zoneCards.map(e => `<div class="mb-card" data-id="${escapeHtml(e.id)}" data-weight="${e.weight}"><div>${escapeHtml(tr(e,'text'))}</div></div>`).join('')}
+            </div>
+          </div>
+
+          <div class="mb-memo__section">
+            <div class="mb-memo__label">${isEn ? 'Risk Assessment' : 'Оцінка ризику'}</div>
+            <div class="mb-risk" id="mb-risk">
+              ${['low','medium','high','critical'].map(lvl => `
+                <button class="mb-risk__btn${State.memoRisk === lvl ? ' mb-risk__btn--active' : ''}" data-level="${lvl}">${lvl.charAt(0).toUpperCase() + lvl.slice(1)}</button>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="mb-memo__section">
+            <div class="mb-memo__label">${isEn ? 'Recommendation' : 'Рекомендація'}</div>
+            <select class="mb-select" id="mb-recommendation">
+              <option value="">— ${isEn ? 'Choose…' : 'Обери…'} —</option>
+              ${recs.map(r => `<option value="${escapeHtml(r.id)}"${State.memoRecommendation === r.id ? ' selected' : ''}>${escapeHtml(tr(r,'text'))}</option>`).join('')}
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="mb-pool">
+            <div class="mb-pool__head">${isEn ? 'Evidence pool (drag into Memo)' : 'Пул доказів (перетягуй у меморандум)'}</div>
+            <div class="mb-pool__list" id="mb-pool-list">
+              ${poolCards.map(e => `<div class="mb-card" data-id="${escapeHtml(e.id)}" data-weight="${e.weight}"><div>${escapeHtml(tr(e,'text'))}</div></div>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-phase__foot" style="margin-top:1.5rem">
+        <div class="mb-live-hint" id="mb-live-hint" style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-mute)"></div>
+        <button class="btn btn--filled" id="btn-memo-submit">${escapeHtml(submitLbl)}</button>
+      </div>
+    </div>`;
+
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
+
+  // Init SortableJS on both zone + pool
+  if (typeof Sortable === 'undefined') {
+    console.warn('SortableJS not loaded — memo phase falling back to phase4');
+    State.phase = 'phase4'; renderPhase4(); return;
+  }
+  const zone = document.getElementById('mb-evidence-zone');
+  const pool2 = document.getElementById('mb-pool-list');
+  const sortableOpts = {
+    group: { name: 'memo-cards', pull: true, put: true },
+    animation: 180,
+    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    ghostClass: 'sortable-ghost',
+    chosenClass: 'sortable-chosen',
+    dragClass: 'sortable-drag',
+    touchStartThreshold: 3,
+    onSort: () => { State.memoEvidence = [...zone.querySelectorAll('.mb-card')].map(c => c.dataset.id); updateMemoHint(); }
+  };
+  const sortableZone = Sortable.create(zone, sortableOpts);
+  const sortablePool = Sortable.create(pool2, sortableOpts);
+
+  // Wire form
+  document.getElementById('mb-subject').addEventListener('change', (e) => { State.memoSubject = e.target.value; updateMemoHint(); });
+  document.getElementById('mb-recommendation').addEventListener('change', (e) => { State.memoRecommendation = e.target.value; updateMemoHint(); });
+  document.querySelectorAll('.mb-risk__btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.mb-risk__btn').forEach(x => x.classList.remove('mb-risk__btn--active'));
+      b.classList.add('mb-risk__btn--active');
+      State.memoRisk = b.dataset.level;
+      updateMemoHint();
+    });
+  });
+
+  document.getElementById('btn-memo-submit').addEventListener('click', () => submitMemo(sortableZone, sortablePool));
+  updateMemoHint();
+}
+function updateMemoHint() {
+  const el = document.getElementById('mb-live-hint');
+  if (!el) return;
+  const mp = State.scenario.memo_phase;
+  const min = mp.min_evidence_slots || 3;
+  const max = mp.max_evidence_slots || 5;
+  const isEn = LANG() === 'en';
+  const problems = [];
+  if (!State.memoSubject) problems.push(isEn ? 'Subject' : 'Тема');
+  if (State.memoEvidence.length < min) problems.push(isEn ? `Evidence (${State.memoEvidence.length}/${min})` : `Докази (${State.memoEvidence.length}/${min})`);
+  if (State.memoEvidence.length > max) problems.push(isEn ? `Evidence overflow (>${max})` : `Доказів забагато (>${max})`);
+  if (!State.memoRisk) problems.push(isEn ? 'Risk' : 'Ризик');
+  if (!State.memoRecommendation) problems.push(isEn ? 'Recommendation' : 'Рекомендація');
+  if (problems.length === 0) {
+    el.textContent = isEn ? '✓ Memo is ready — you can submit.' : '✓ Меморандум готовий — можна подавати.';
+    el.style.color = '#7dc98a';
+  } else {
+    el.textContent = (isEn ? 'Missing: ' : 'Не заповнено: ') + problems.join(', ');
+    el.style.color = 'var(--text-mute)';
+  }
+}
+async function submitMemo(sortableZone, sortablePool) {
+  if (State.memoSubmitted) return;
+  const mp = State.scenario.memo_phase;
+  const min = mp.min_evidence_slots || 3;
+  if (!State.memoSubject || State.memoEvidence.length < min || !State.memoRisk || !State.memoRecommendation) {
+    updateMemoHint();
+    return;
+  }
+  State.memoSubmitted = true;
+  State.ended = true;
+  stopTimer();
+
+  const { total, rows, breach } = computeMemoScore();
+  State.memoPoints = total;
+  State.memoPolicyBreach = breach;
+  State.points += total;
+
+  // The chosen recommendation defines "verdict correctness" for cooldown / unlock / cert
+  const rec = (mp.recommendations || []).find(r => r.id === State.memoRecommendation);
+  const isCorrect = !!(rec && rec.correct);
+  State.finalVerdict = {
+    id: rec?.id || 'memo',
+    verdict: isCorrect ? 'success' : 'fail',
+    correct: isCorrect,
+    label_uk: (rec && (rec.text_uk || rec.text)) || 'Memo',
+    label_en: (rec && (rec.text_en || rec.text)) || 'Memo',
+    feedback_uk: (rec && rec.feedback_uk) || '',
+    feedback_en: (rec && rec.feedback_en) || '',
+    points: total,
+    _memo: { rows, breach }
+  };
+
+  // Cooldown + unlock (same rules as phase4)
+  const s = State.scenario;
+  if (!isCorrect || State.points < 100) setCooldown(s.id, s.cooldown_sec);
+  else clearCooldown(s.id);
+  if (isCorrect) localStorage.setItem('ss.completed.' + s.id, '1');
+
+  // Time bonus if correct
+  const timeUsed = s.time_limit_sec - State.timeLeft;
+  const timeFraction = timeUsed / s.time_limit_sec;
+  let timeBonus = 0;
+  if (isCorrect) {
+    if (timeFraction < 0.35) timeBonus = 60;
+    else if (timeFraction < 0.55) timeBonus = 35;
+    else if (timeFraction < 0.75) timeBonus = 15;
+  }
+  State.points += timeBonus;
+
+  track('game-memo-submit', { total, breach, correct: isCorrect, evidence_count: State.memoEvidence.length });
+  track(isCorrect ? 'game-completed' : 'game-failed', { verdict: rec?.id, points: Math.max(0, State.points) });
+
+  showResult({ verdict: State.finalVerdict, timeBonus, submitted: false });
+
+  if (State.nickname && !State.isDemo) {
+    const res = await submitScore(State.nickname, State.points, s.id, isCorrect);
+    showResult({ verdict: State.finalVerdict, timeBonus, submitted: true, submitResult: res });
+  }
 }
 
 // ==================== RENDER: PHASE 4 (VERDICT) ====================
@@ -1834,6 +2123,7 @@ async function init() {
     else if (State.phase === 'timeline') renderTimelinePhase();
     else if (State.phase === 'phase3') renderPhase3();
     else if (State.phase === 'citation') renderCitationPhase();
+    else if (State.phase === 'memo') renderMemoPhase();
     else if (State.phase === 'phase4') renderPhase4();
     else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
     else if (State.phase === 'cooldown') {

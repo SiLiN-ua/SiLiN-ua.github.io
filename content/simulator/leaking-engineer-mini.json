@@ -139,27 +139,55 @@
     ]
   },
 
-  "phase4": {
-    "title_uk": "Фінальний вердикт",
-    "title_en": "Final verdict",
-    "instruction_uk": "Обери рекомендацію клієнту з урахуванням політики компанії (Legal-ескалація перед термінацією).",
-    "instruction_en": "Choose the client recommendation, considering company policy (Legal escalation before termination).",
-    "options": [
-      { "id": "escalate_legal", "verdict": "success", "correct": true, "points": 50,
-        "label_uk": "Escalate to Legal + Suspend pending investigation",
-        "label_en": "Escalate to Legal + Suspend pending investigation",
-        "feedback_uk": "✓ ПРАВИЛЬНО. Політика вимагає Legal-ескалації ДО термінації.",
-        "feedback_en": "✓ CORRECT. Policy requires Legal escalation BEFORE termination." },
-      { "id": "terminate_immediate", "verdict": "fail", "correct": false, "points": -30,
-        "label_uk": "Terminate immediately + Report",
-        "label_en": "Terminate immediately + Report",
-        "feedback_uk": "❌ Порушує політику. Термінація ДО Legal-ескалації може розвалити доказовість.",
-        "feedback_en": "❌ Policy breach. Termination BEFORE Legal escalation can break evidentiary chain." },
-      { "id": "no_action", "verdict": "fail", "correct": false, "points": -50,
-        "label_uk": "No action — insufficient evidence",
-        "label_en": "No action — insufficient evidence",
-        "feedback_uk": "❌ 7-крокова хронологія + документи + фінанси — це достатньо для ескалації.",
-        "feedback_en": "❌ 7-step timeline + docs + finances — plenty of evidence to escalate." }
+  "memo_phase": {
+    "title_uk": "Заповни корпоративний меморандум",
+    "title_en": "Fill in the corporate memorandum",
+    "instruction_uk": "Заповни Subject / Evidence / Risk / Recommendation. Політика компанії — обовʼязкова до дотримання.",
+    "instruction_en": "Fill Subject / Evidence / Risk / Recommendation. Corporate Policy MUST be respected.",
+    "submit_btn_uk": "✓ Подати меморандум",
+    "submit_btn_en": "✓ Submit Memo",
+    "min_evidence_slots": 3,
+    "max_evidence_slots": 5,
+    "policy": {
+      "text_uk": "Будь-яка підозра на IP theft потребує паралельної Legal-ескалації ДО термінації, щоб зберегти доказовий ланцюжок у суді.",
+      "text_en": "Any suspected IP theft requires parallel Legal escalation BEFORE termination, to preserve the evidentiary chain in court.",
+      "correct_recommendation_id": "escalate_legal",
+      "breach_penalty": -30
+    },
+    "subjects": [
+      { "id": "ip_theft",   "correct": true,  "points": 20, "text_uk": "Підозра у крадіжці IP співробітником", "text_en": "Suspected IP theft by employee" },
+      { "id": "vendor_pay", "correct": false, "points": -5, "text_uk": "Аномалія у постачальницьких платежах", "text_en": "Vendor payment irregularity" },
+      { "id": "kickback",   "correct": false, "points": -5, "text_uk": "Потенційна kickback-схема",              "text_en": "Potential kickback scheme" },
+      { "id": "exec_coi",   "correct": false, "points": -5, "text_uk": "Конфлікт інтересів топ-менеджменту",     "text_en": "Executive conflict of interest" }
+    ],
+    "evidence_pool": [
+      { "id": "ev_llc_wife",       "weight": 5, "text_uk": "ТОВ «TechConsult» — директор = дружина інженера (OpenCorporates + EDR)", "text_en": "LLC «TechConsult» — director = engineer's wife (OpenCorporates + EDR)" },
+      { "id": "ev_meeting_leak",   "weight": 5, "text_uk": "Meeting minutes з внутрішньою архітектурою вставлені у чат акаунтом суб'єкта (03.03.2026)", "text_en": "Meeting minutes with internal architecture pasted to chat by subject's account (03.03.2026)" },
+      { "id": "ev_vendor_contract","weight": 4, "text_uk": "Vendor-контракт з ТОВ на $180K, підписаний конкурентом (05.03.2026)", "text_en": "$180K vendor contract with the LLC, signed by competitor (05.03.2026)" },
+      { "id": "ev_money_flow",     "weight": 4, "text_uk": "Оплата $180K на банківський рахунок ТОВ (25.03.2026)", "text_en": "$180K transferred to the LLC's bank account (25.03.2026)" },
+      { "id": "ev_timeline",       "weight": 3, "text_uk": "Хронологія: реєстрація ТОВ і директорство дружини — одного дня, за 6 тижнів після найму", "text_en": "Timeline: LLC registration and wife director assignment same day, 6 weeks post-hire" },
+      { "id": "ev_linkedin",       "weight": 2, "text_uk": "LinkedIn інженера — нещодавно додав «Enterprise Architecture Consulting»", "text_en": "Engineer's LinkedIn — recently added «Enterprise Architecture Consulting»" },
+      { "id": "ev_fb_old",         "weight": 2, "text_uk": "Старий Facebook-пост інженера про підготовку «власного бізнесу»", "text_en": "Old Facebook post by engineer about preparing a «own business»" },
+      { "id": "ev_salon",          "weight": 1, "text_uk": "Дружина суб'єкта також має салон краси у Львові", "text_en": "Subject's wife also owns a beauty salon in Lviv" },
+      { "id": "ev_ig_photo",       "weight": 1, "text_uk": "Фото з корпоративу 2022 — суб'єкт з нинішнім директором конкурента", "text_en": "Corporate photo 2022 — subject with the competitor's current director" },
+      { "id": "ev_rumor",          "weight": 1, "text_uk": "Ex-колега з попередньої роботи сказав, що суб'єкт «завжди був підозрілим»", "text_en": "Ex-colleague from previous job said subject was «always suspicious»" }
+    ],
+    "risk_correct": "high",
+    "risk_points": { "low": -15, "medium": -5, "high": 20, "critical": 10 },
+    "weight_points": { "5": 25, "4": 15, "3": 5, "2": -5, "1": -15 },
+    "recommendations": [
+      { "id": "escalate_legal",     "correct": true,  "points": 40, "text_uk": "Escalate to Legal + Suspend pending investigation", "text_en": "Escalate to Legal + Suspend pending investigation",
+        "feedback_uk": "✓ Правильно. Політика вимагає Legal-ескалації ДО термінації.", "feedback_en": "✓ Correct. Policy requires Legal escalation BEFORE termination." },
+      { "id": "terminate_report",   "correct": false, "points": -30, "policy_breach": true, "text_uk": "Terminate immediately + Report to authorities", "text_en": "Terminate immediately + Report to authorities",
+        "feedback_uk": "❌ POLICY BREACH. Термінація ДО Legal-ескалації ламає ланцюжок доказовості.", "feedback_en": "❌ POLICY BREACH. Termination BEFORE Legal escalation breaks evidentiary chain." },
+      { "id": "terminate_internal", "correct": false, "points": -20, "text_uk": "Terminate + Internal disciplinary", "text_en": "Terminate + Internal disciplinary",
+        "feedback_uk": "❌ IP theft + фінанси = кримінал, внутрішнього недостатньо.", "feedback_en": "❌ IP theft + finance = criminal, internal insufficient." },
+      { "id": "vendor_audit",       "correct": false, "points": 0,   "text_uk": "Vendor Audit + Monitor 90 days", "text_en": "Vendor Audit + Monitor 90 days",
+        "feedback_uk": "⚠️ Партіально. Audit vendorа корисний, але не адресує IP theft.", "feedback_en": "⚠️ Partial. Vendor audit useful but doesn't address the IP theft." },
+      { "id": "monitor",            "correct": false, "points": -10, "text_uk": "Monitor for 90 days", "text_en": "Monitor for 90 days",
+        "feedback_uk": "❌ Активна крадіжка триває — моніторинг = очікування шкоди.", "feedback_en": "❌ Active theft ongoing — monitoring = waiting for damage." },
+      { "id": "no_action",          "correct": false, "points": -50, "text_uk": "No action — insufficient evidence", "text_en": "No action — insufficient evidence",
+        "feedback_uk": "❌ 7-крокова хронологія + документи + фінанси — цього достатньо для ескалації.", "feedback_en": "❌ 7-step timeline + docs + finances — plenty of evidence to escalate." }
     ]
   },
 
