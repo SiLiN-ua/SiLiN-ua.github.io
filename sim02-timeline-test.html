@@ -304,62 +304,58 @@
 </nav>
 
 <main class="tl-page">
-  <div class="tl-badge">TIMELINE BUILDER · ISOLATED PROTOTYPE · SIM #02</div>
-  <h1 class="tl-title">Побудуй хронологію подій</h1>
-  <p class="tl-lead">Це ізольований прототип нової фази для Sim #02. Тестуємо SortableJS перед інтеграцією у game.js. Кейс — <strong>«The Leaking Engineer»</strong>.</p>
+  <div class="tl-badge" data-i18n="tl.badge">TIMELINE BUILDER · ISOLATED PROTOTYPE · SIM #02</div>
+  <h1 class="tl-title" data-i18n="tl.title">Побудуй хронологію подій</h1>
+  <p class="tl-lead" data-i18n="tl.lead">Це ізольований прототип нової фази для Sim #02. Тестуємо SortableJS перед інтеграцією у game.js. Кейс — «The Leaking Engineer».</p>
 
-  <div class="tl-brief">
-    <strong>Клієнт:</strong> B2B SaaS для банків, 200 співробітників.<br>
-    <strong>Скарга:</strong> senior engineer підозрюється у передачі архітектури продукту конкуренту.<br>
-    <strong>Знахідки:</strong> 7 подій зі слідчого дасьє нижче. <strong>Розстав їх у правильному хронологічному й причинно-наслідковому порядку.</strong>
-  </div>
+  <div class="tl-brief" id="tl-brief-html"></div>
 
   <div class="tl-rules">
-    <div class="tl-rule">Правильна пара сусідніх подій <strong>+5</strong></div>
-    <div class="tl-rule">Помилкова пара <strong>−3</strong></div>
-    <div class="tl-rule">Максимум: <strong>+30 pts</strong> (6 пар)</div>
-    <div class="tl-rule">Мінімум: <strong>−18 pts</strong></div>
+    <div class="tl-rule" id="tl-rule-1"></div>
+    <div class="tl-rule" id="tl-rule-2"></div>
+    <div class="tl-rule" id="tl-rule-3"></div>
+    <div class="tl-rule" id="tl-rule-4"></div>
   </div>
 
   <div class="tl-hud">
     <div class="tl-hud__stat">
-      <div class="tl-hud__lbl">Поточний рахунок</div>
+      <div class="tl-hud__lbl" data-i18n="tl.hud.score">Поточний рахунок</div>
       <div class="tl-hud__val" id="tl-score">—</div>
     </div>
     <div class="tl-hud__stat">
-      <div class="tl-hud__lbl">Правильних пар</div>
+      <div class="tl-hud__lbl" data-i18n="tl.hud.pairs">Правильних пар</div>
       <div class="tl-hud__val" id="tl-pairs-ok">— / 6</div>
     </div>
     <div class="tl-hud__stat">
-      <div class="tl-hud__lbl">Статус</div>
-      <div class="tl-hud__val" id="tl-status">Готовий</div>
+      <div class="tl-hud__lbl" data-i18n="tl.hud.status">Статус</div>
+      <div class="tl-hud__val" id="tl-status" data-i18n="tl.hud.ready">Готовий</div>
     </div>
   </div>
 
   <ol class="tl-list" id="tl-list"></ol>
 
   <div class="tl-actions">
-    <button class="tl-btn" id="tl-shuffle" data-umami-event="tl-shuffle">🔀 Перемішати</button>
-    <button class="tl-btn" id="tl-reset" data-umami-event="tl-reset" disabled>↺ Скинути</button>
-    <button class="tl-btn tl-btn--primary" id="tl-submit" data-umami-event="tl-submit">✓ Підтвердити</button>
+    <button class="tl-btn" id="tl-shuffle" data-umami-event="tl-shuffle" data-i18n="tl.btn.shuffle">🔀 Перемішати</button>
+    <button class="tl-btn" id="tl-reset" data-umami-event="tl-reset" disabled data-i18n="tl.btn.reset">↺ Скинути</button>
+    <button class="tl-btn tl-btn--primary" id="tl-submit" data-umami-event="tl-submit" data-i18n="tl.btn.submit">✓ Підтвердити</button>
   </div>
 
   <div class="tl-review" id="tl-review">
-    <h3 id="tl-review-title">Результат</h3>
+    <h3 id="tl-review-title" data-i18n="tl.review.title">Результат</h3>
     <div class="tl-review__breakdown" id="tl-review-breakdown"></div>
     <div class="tl-review__correct" id="tl-review-correct"></div>
   </div>
 
   <div class="tl-diag">
-    <h4>SortableJS Verification Checklist · ADR-004</h4>
+    <h4 data-i18n="tl.diag.title">SortableJS Verification Checklist · ADR-004</h4>
     <ul class="tl-diag__checks" id="tl-checks">
-      <li id="chk-1">Плавна анімація перестановки</li>
-      <li id="chk-2">Drag на мобільних (touch)</li>
-      <li id="chk-3">Блокування елементів після Submit</li>
-      <li id="chk-4">Мульти-колонки (multi-list drag ready)</li>
-      <li id="chk-5">Події onStart / onEnd / onUpdate</li>
+      <li id="chk-1" data-i18n="tl.chk.1">Плавна анімація перестановки</li>
+      <li id="chk-2" data-i18n="tl.chk.2">Drag на мобільних (touch)</li>
+      <li id="chk-3" data-i18n="tl.chk.3">Блокування елементів після Submit</li>
+      <li id="chk-4" data-i18n="tl.chk.4">Мульти-колонки (multi-list drag ready)</li>
+      <li id="chk-5" data-i18n="tl.chk.5">Події onStart / onEnd / onUpdate</li>
     </ul>
-    <div style="margin-top:.75rem"><strong style="color:var(--sim2-accent)">Event log:</strong></div>
+    <div style="margin-top:.75rem"><strong style="color:var(--sim2-accent)" data-i18n="tl.diag.log_lbl">Event log:</strong></div>
     <div class="tl-diag__log" id="tl-log">Waiting for interaction…</div>
   </div>
 </main>
@@ -370,15 +366,32 @@
 // ==================== SCENARIO DATA ====================
 // The Leaking Engineer — 7 events, chronological order matters
 const EVENTS = [
-  { id: 'e1', date: '2026-01-13', text: 'Найм: senior engineer приєднався до Company A (доступ до архітектури)' },
-  { id: 'e2', date: '2026-02-22', text: 'Реєстрація: ТОВ «TechConsult» створено у ЄДР (засновник — дружина інженера)' },
-  { id: 'e3', date: '2026-02-22', text: 'Директор: дружина інженера призначена директором ТОВ' },
-  { id: 'e4', date: '2026-03-03', text: 'Витік: у чат-каналі команди опубліковано meeting minutes з детальною архітектурою' },
-  { id: 'e5', date: '2026-03-05', text: 'Контракт: конкурент підписує vendor-угоду з ТОВ «TechConsult» на $180K' },
-  { id: 'e6', date: '2026-03-20', text: 'Інвойс: рахунок від ТОВ на $180K затверджений і опрацьований' },
-  { id: 'e7', date: '2026-03-25', text: 'Оплата: $180K перераховано на банківський рахунок ТОВ' }
+  { id: 'e1', date: '2026-01-13',
+    text_uk: 'Найм: senior engineer приєднався до Company A (доступ до архітектури)',
+    text_en: 'Hire: senior engineer joins Company A (gains architecture access)' },
+  { id: 'e2', date: '2026-02-22',
+    text_uk: 'Реєстрація: ТОВ «TechConsult» створено у ЄДР (засновник — дружина інженера)',
+    text_en: 'Registration: LLC «TechConsult» filed with the state registry (founder: engineer\'s wife)' },
+  { id: 'e3', date: '2026-02-22',
+    text_uk: 'Директор: дружина інженера призначена директором ТОВ',
+    text_en: 'Director: engineer\'s wife listed as LLC director' },
+  { id: 'e4', date: '2026-03-03',
+    text_uk: 'Витік: у чат-каналі команди опубліковано meeting minutes з детальною архітектурою',
+    text_en: 'Leak: meeting minutes with detailed architecture posted in team chat' },
+  { id: 'e5', date: '2026-03-05',
+    text_uk: 'Контракт: конкурент підписує vendor-угоду з ТОВ «TechConsult» на $180K',
+    text_en: 'Contract: competitor signs $180K vendor agreement with LLC «TechConsult»' },
+  { id: 'e6', date: '2026-03-20',
+    text_uk: 'Інвойс: рахунок від ТОВ на $180K затверджений і опрацьований',
+    text_en: 'Invoice: $180K invoice from the LLC approved and processed' },
+  { id: 'e7', date: '2026-03-25',
+    text_uk: 'Оплата: $180K перераховано на банківський рахунок ТОВ',
+    text_en: 'Payment: $180K transferred to the LLC\'s bank account' }
 ];
 const CORRECT_ORDER = EVENTS.map(e => e.id);
+function LANG(){ return (document.documentElement.lang || 'uk') === 'en' ? 'en' : 'uk'; }
+function T(key, fallback){ const map = (window.__i18nDict && window.__i18nDict[LANG()]) || {}; return map[key] || fallback; }
+function evText(e){ return LANG() === 'en' ? e.text_en : e.text_uk; }
 
 // ==================== STATE ====================
 let submitted = false;
@@ -410,13 +423,38 @@ function renderList(events) {
       <div class="tl-event__num">${String(i + 1).padStart(2, '0')}</div>
       <div class="tl-event__body">
         <div class="tl-event__date">${e.date}</div>
-        <div class="tl-event__text">${e.text}</div>
+        <div class="tl-event__text">${evText(e)}</div>
       </div>
       <div class="tl-event__grip">⋮⋮</div>
     </li>
   `).join('');
   // Renumber on order change
   renumber();
+  renderStaticI18n();
+}
+
+function renderStaticI18n() {
+  // Brief block (rich HTML — separate from main data-i18n system since it has HTML)
+  const isEn = LANG() === 'en';
+  document.getElementById('tl-brief-html').innerHTML = isEn
+    ? `<strong>Client:</strong> B2B SaaS for banks, 200 employees.<br>
+       <strong>Complaint:</strong> a senior engineer is suspected of leaking product architecture to a competitor.<br>
+       <strong>Findings:</strong> 7 events from the investigator's dossier below. <strong>Arrange them in the correct chronological and causal order.</strong>`
+    : `<strong>Клієнт:</strong> B2B SaaS для банків, 200 співробітників.<br>
+       <strong>Скарга:</strong> senior engineer підозрюється у передачі архітектури продукту конкуренту.<br>
+       <strong>Знахідки:</strong> 7 подій зі слідчого дасьє нижче. <strong>Розстав їх у правильному хронологічному й причинно-наслідковому порядку.</strong>`;
+  // Rules
+  document.getElementById('tl-rule-1').innerHTML = isEn
+    ? 'Correct adjacent pair <strong>+5</strong>'
+    : 'Правильна пара сусідніх подій <strong>+5</strong>';
+  document.getElementById('tl-rule-2').innerHTML = isEn
+    ? 'Wrong pair <strong>−3</strong>'
+    : 'Помилкова пара <strong>−3</strong>';
+  // Rules 3-4 (added below)
+  const r3 = document.getElementById('tl-rule-3');
+  const r4 = document.getElementById('tl-rule-4');
+  if (r3) r3.innerHTML = isEn ? 'Max: <strong>+30 pts</strong> (6 pairs)' : 'Максимум: <strong>+30 pts</strong> (6 пар)';
+  if (r4) r4.innerHTML = isEn ? 'Min: <strong>−18 pts</strong>' : 'Мінімум: <strong>−18 pts</strong>';
 }
 
 function renumber() {
@@ -452,6 +490,22 @@ function updateHud() {
   scoreEl.classList.toggle('tl-hud__val--bad',  score < 0);
   document.getElementById('tl-pairs-ok').textContent = `${pairsOk} / ${total}`;
 }
+// Re-render on language change (main.js dispatches langchange event)
+document.addEventListener('langchange', () => {
+  renderStaticI18n();
+  const list = document.getElementById('tl-list');
+  // Re-render event texts in new language without changing order
+  const currentOrder = [...list.children].map(el => el.dataset.id);
+  const orderedEvents = currentOrder.map(id => EVENTS.find(e => e.id === id));
+  renderList(orderedEvents);
+  initSortable();
+  updateHud();
+  if (submitted) {
+    // Re-lock if user changed lang after submit
+    if (sortableInstance) sortableInstance.option('disabled', true);
+    document.querySelectorAll('#tl-list .tl-event').forEach(el => el.classList.add('tl-event--locked'));
+  }
+});
 
 // ==================== SUBMIT / REVIEW ====================
 function doSubmit() {
@@ -475,32 +529,36 @@ function doSubmit() {
     // Show badge on second element in pair
     const badge = document.createElement('div');
     badge.className = `tl-event__badge tl-event__badge--${pairOk ? 'ok' : 'bad'}`;
-    badge.textContent = pairOk ? `↑ pair +5` : `↑ pair −3`;
+    badge.textContent = pairOk ? `↑ pair +5` : `↑ pair −3`;   // technical label — same in both langs
     const griEl = events[i + 1].querySelector('.tl-event__grip');
-    griEl.replaceWith(badge);
+    if (griEl) griEl.replaceWith(badge);
     events[i + 1].classList.add(pairOk ? 'tl-event--pair-ok' : 'tl-event--pair-bad');
   }
 
-  // Review panel
+  // Review panel — bilingual
+  const isEn = LANG() === 'en';
   document.getElementById('tl-review').classList.add('tl-review--shown');
-  document.getElementById('tl-review-title').textContent =
-    `Результат: ${score > 0 ? '+' : ''}${score} pts (${pairsOk} правильних, ${pairsBad} помилкових пар з ${total})`;
-  document.getElementById('tl-review-breakdown').innerHTML = `
-    <b>Максимум:</b> +30 pts (усі 6 пар правильні)<br>
-    <b>Твій результат:</b> ${score > 0 ? '+' : ''}${score} pts<br>
-    <b>Ефективність:</b> ${((score + 18) / 48 * 100).toFixed(0)}% (від −18 до +30)
-  `;
+  document.getElementById('tl-review-title').textContent = isEn
+    ? `Result: ${score > 0 ? '+' : ''}${score} pts (${pairsOk} correct, ${pairsBad} wrong pairs of ${total})`
+    : `Результат: ${score > 0 ? '+' : ''}${score} pts (${pairsOk} правильних, ${pairsBad} помилкових пар з ${total})`;
+  document.getElementById('tl-review-breakdown').innerHTML = isEn
+    ? `<b>Max:</b> +30 pts (all 6 pairs correct)<br>
+       <b>Your score:</b> ${score > 0 ? '+' : ''}${score} pts<br>
+       <b>Efficiency:</b> ${((score + 18) / 48 * 100).toFixed(0)}% (range −18 to +30)`
+    : `<b>Максимум:</b> +30 pts (усі 6 пар правильні)<br>
+       <b>Твій результат:</b> ${score > 0 ? '+' : ''}${score} pts<br>
+       <b>Ефективність:</b> ${((score + 18) / 48 * 100).toFixed(0)}% (від −18 до +30)`;
   document.getElementById('tl-review-correct').innerHTML =
-    'Правильна послідовність:<br>' +
+    (isEn ? 'Correct order:' : 'Правильна послідовність:') + '<br>' +
     CORRECT_ORDER.map((id, i) => {
       const e = EVENTS.find(x => x.id === id);
-      return `${String(i + 1).padStart(2, '0')} · ${e.date} · ${e.text}`;
+      return `${String(i + 1).padStart(2, '0')} · ${e.date} · ${evText(e)}`;
     }).join('<br>');
 
   document.getElementById('tl-reset').disabled = false;
   document.getElementById('tl-submit').disabled = true;
   document.getElementById('tl-shuffle').disabled = true;
-  document.getElementById('tl-status').textContent = 'Заблоковано';
+  document.getElementById('tl-status').textContent = isEn ? 'Locked' : 'Заблоковано';
   updateHud();
 }
 
@@ -510,7 +568,7 @@ function doReset() {
   document.getElementById('tl-reset').disabled = true;
   document.getElementById('tl-submit').disabled = false;
   document.getElementById('tl-shuffle').disabled = false;
-  document.getElementById('tl-status').textContent = 'Готовий';
+  document.getElementById('tl-status').textContent = LANG() === 'en' ? 'Ready' : 'Готовий';
   renderList(shuffle(EVENTS));
   initSortable();
   updateHud();
