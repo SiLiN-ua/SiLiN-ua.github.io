@@ -438,25 +438,25 @@
       },
       {
         "id": "q3",
-        "text_uk": "Що з знайденого — найсильніший (★★★★★) доказ, який ти б процитував у меморандумі?",
-        "text_en": "What is the strongest (★★★★★) evidence you would cite in the memo?",
+        "text_uk": "З цих чотирьох знахідок — яка DECOY (пастка), яку НЕ можна цитувати у корпоративному меморандумі?",
+        "text_en": "Of these four findings — which one is a DECOY (trap) that MUST NOT be cited in a corporate memorandum?",
         "options": [
           { "text_uk": "Meeting minutes leak (внутрішня архітектура + IT security notice)", "text_en": "Meeting minutes leak (internal architecture + IT security notice)",
-            "points": 15, "correct": true,
-            "feedback_uk": "✓ Один з найсильніших. Це doc + timestamped audit trail — головний матеріал для Legal.",
-            "feedback_en": "✓ One of the strongest. It's the document + timestamped audit trail — the main material for Legal." },
+            "points": -10, "correct": false,
+            "feedback_uk": "❌ Це diagnostic-доказ (★★★★★): doc + timestamped audit trail. Використовуй у меморандумі.",
+            "feedback_en": "❌ This is diagnostic evidence (★★★★★): doc + timestamped audit trail. Cite it in the memo." },
           { "text_uk": "Email chain з конкурентом + attachment", "text_en": "Email chain with competitor + attachment",
-            "points": 15, "correct": true,
-            "feedback_uk": "✓ Прямі цитати V.R. з наміром і attachment з тим самим документом — direct evidence.",
-            "feedback_en": "✓ Direct V.R. quotes with intent and attachment containing the same document — direct evidence." },
+            "points": -10, "correct": false,
+            "feedback_uk": "❌ Це найсильніший доказ (★★★★★): прямі цитати V.R. + attachment з тим самим документом.",
+            "feedback_en": "❌ This is the strongest evidence (★★★★★): direct V.R. quotes + attachment containing the same document." },
+          { "text_uk": "Rumor від HR-колеги («V.R. на кава-брейку скаржився що йому нецікаво»)", "text_en": "HR colleague rumor («V.R. complained at coffee break he's bored»)",
+            "points": 25, "correct": true,
+            "feedback_uk": "✓ Правильно. Anonymous hearsay = 0 evidentiary value + може розвалити довіру у суді. Класична DECOY-пастка для новачків.",
+            "feedback_en": "✓ Correct. Anonymous hearsay = 0 evidentiary value + can destroy credibility in court. Classic DECOY trap for beginners." },
           { "text_uk": "Money flow (competitor → LLC → wife → V.R.)", "text_en": "Money flow (competitor → LLC → wife → V.R.)",
-            "points": 15, "correct": true,
-            "feedback_uk": "✓ Класичний financial trail. Всі три (leak + email + money) — ★★★★★ разом.",
-            "feedback_en": "✓ Classic financial trail. All three (leak + email + money) — ★★★★★ together." },
-          { "text_uk": "Rumor від HR-колеги", "text_en": "HR colleague rumor",
-            "points": -20, "correct": false,
-            "feedback_uk": "❌ Це DECOY. Anonymous hearsay = 0 evidentiary value. НЕ використовуй у меморандумі.",
-            "feedback_en": "❌ This is a DECOY. Anonymous hearsay = 0 evidentiary value. DO NOT use in the memo." }
+            "points": -10, "correct": false,
+            "feedback_uk": "❌ Це financial trail ★★★★★. Прямий доказ передачі коштів. Використовуй у меморандумі.",
+            "feedback_en": "❌ This is a ★★★★★ financial trail. Direct proof of fund transfer. Cite it in the memo." }
         ]
       }
     ]
