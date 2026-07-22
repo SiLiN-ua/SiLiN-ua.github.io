@@ -1,9 +1,11 @@
 {
   "id": "leaking-engineer-mini",
+  "simulator_id": "sim02-test",
   "time_limit_sec": 1800,
   "cooldown_sec": 3600,
-  "title_uk": "Case 1 · The Leaking Engineer (test scenario)",
-  "title_en": "Case 1 · The Leaking Engineer (test scenario)",
+  "max_points": 200,
+  "title_uk": "Case 1 · The Leaking Engineer (test)",
+  "title_en": "Case 1 · The Leaking Engineer (test)",
 
   "briefing": {
     "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
@@ -11,8 +13,8 @@
     "client_en": "SecureBank SaaS",
     "position": "Senior Engineer · investigation",
     "salary": "—",
-    "body_uk": "TEST SCENARIO для перевірки Timeline Phase (Sim #02 integration). Senior engineer підозрюється у передачі архітектури продукту конкуренту через ТОВ, зареєстроване на дружину. Проведи мінімальне розслідування, побудуй хронологію, дай вердикт.",
-    "body_en": "TEST SCENARIO to verify Timeline Phase (Sim #02 integration). A senior engineer is suspected of leaking product architecture to a competitor via an LLC registered under his wife. Run a minimal investigation, build the timeline, deliver the verdict.",
+    "body_uk": "TEST SCENARIO для перевірки Timeline Phase (Sim #02). Senior engineer підозрюється у передачі архітектури продукту конкуренту через ТОВ, зареєстроване на дружину. Пройди мінімальне розслідування: 2 тули → хронологія → 1 питання → вердикт.",
+    "body_en": "TEST SCENARIO to verify Timeline Phase (Sim #02). A senior engineer is suspected of leaking product architecture to a competitor via an LLC registered under his wife. Run a minimal investigation: 2 tools → timeline → 1 question → verdict.",
     "start_btn_uk": "▶ Розпочати",
     "start_btn_en": "▶ Start",
     "candidate": {
@@ -25,50 +27,62 @@
   },
 
   "phase2": {
+    "title_uk": "Розслідування · 2 тули",
+    "title_en": "Investigation · 2 tools",
+    "instruction_uk": "Використай обидва тули щоб зібрати докази для хронології.",
+    "instruction_en": "Use both tools to gather evidence for the timeline.",
+    "next_btn_uk": "Далі → Хронологія",
+    "next_btn_en": "Next → Timeline",
     "min_tools_used": 2,
     "tools": [
       {
         "id": "opencorp",
+        "icon": "🏢",
         "name_uk": "OpenCorporates lookup",
         "name_en": "OpenCorporates lookup",
-        "icon": "🏢",
-        "time_cost_sec": 90,
-        "points": 15,
+        "provider": "OpenCorporates + EDR",
+        "desc_uk": "Пошук ТОВ, засновників, директорів",
+        "desc_en": "Search LLCs, founders, directors",
         "correct": true,
-        "label_uk": "Знайти ТОВ «TechConsult» + засновників",
-        "label_en": "Find LLC «TechConsult» + founders",
-        "result_type": "matches",
+        "points": 15,
+        "time_cost": 90,
+        "weight": "diagnostic",
+        "ui_component": "matches",
+        "clue_uk": "ТОВ «TechConsult» зареєстровано 22.02.2026. Директор — Р*** С. М. (дружина суб'єкта). Адреса реєстрації співпадає з домашньою.",
+        "clue_en": "LLC «TechConsult» registered on 22.02.2026. Director: R*** S. M. (subject's wife). Registration address matches home address.",
         "matches": [
-          { "site": "OpenCorporates",
-            "url": "opencorporates.com/companies/ua/12345678",
-            "note_uk": "ТОВ «TechConsult». Директор: Р*** С. М. (дружина розслідуваного). Дата реєстрації: 2026-02-22.",
-            "note_en": "LLC «TechConsult». Director: R*** S. M. (wife of subject). Registration date: 2026-02-22." }
+          { "site": "OpenCorporates", "url": "opencorporates.com/companies/ua/12345678",
+            "note_uk": "TechConsult LLC · director: R*** S. M. · founded 22.02.2026",
+            "note_en": "TechConsult LLC · director: R*** S. M. · founded 22.02.2026" }
         ]
       },
       {
         "id": "meeting_leak",
-        "name_uk": "Витік meeting minutes",
-        "name_en": "Meeting minutes leak",
         "icon": "📄",
-        "time_cost_sec": 60,
-        "points": 12,
+        "name_uk": "Meeting minutes leak",
+        "name_en": "Meeting minutes leak",
+        "provider": "Internal chat archive",
+        "desc_uk": "Витяг з чату команди — 4000-word специфікація архітектури",
+        "desc_en": "Team chat extract — 4000-word architecture spec",
         "correct": true,
-        "label_uk": "Прочитати витяг чат-каналу з архітектурою",
-        "label_en": "Read chat-channel extract with architecture",
-        "result_type": "matches",
+        "points": 12,
+        "time_cost": 60,
+        "weight": "diagnostic",
+        "ui_component": "matches",
+        "clue_uk": "03.03.2026 акаунт суб'єкта вставив у канал повний витяг з внутрішньої архітектурної специфікації.",
+        "clue_en": "On 03.03.2026 the subject's account pasted the full internal architecture spec into the channel.",
         "matches": [
-          { "site": "Internal chat archive",
-            "url": "—",
-            "note_uk": "03.03.2026 — у канал команди вставлено 4000-word витяг з внутрішньої архітектурою рішення (передано у Slack від акаунту суб'єкта).",
-            "note_en": "03.03.2026 — a 4000-word excerpt from the internal architecture spec was pasted into the team channel by the subject's account." }
+          { "site": "Internal chat archive", "url": "—",
+            "note_uk": "Meeting minutes 03.03.2026 — 4000-word architecture, posted by subject",
+            "note_en": "Meeting minutes 03.03.2026 — 4000-word architecture, posted by subject" }
         ]
       }
     ]
   },
 
   "timeline_phase": {
-    "title_uk": "Побудуй хронологію події «The Leaking Engineer»",
-    "title_en": "Build the timeline of «The Leaking Engineer»",
+    "title_uk": "Побудуй хронологію «The Leaking Engineer»",
+    "title_en": "Build the «Leaking Engineer» timeline",
     "instruction_uk": "Розстав знайдені події у правильному хронологічному й причинно-наслідковому порядку. Правильна пара сусідніх +5, помилкова −3.",
     "instruction_en": "Arrange the discovered events in correct chronological and causal order. Correct adjacent pair +5, wrong pair −3.",
     "submit_btn_uk": "Підтвердити хронологію →",
@@ -100,16 +114,24 @@
   },
 
   "phase3": {
+    "title_uk": "Верифікація · 1 питання",
+    "title_en": "Verification · 1 question",
+    "instruction_uk": "Одне питання по знайдених доказах.",
+    "instruction_en": "One question on your findings.",
+    "next_btn_uk": "Далі → Вердикт",
+    "next_btn_en": "Next → Verdict",
     "questions": [
       {
         "id": "q1",
         "text_uk": "Хто справжній бенефіціар ТОВ «TechConsult»?",
         "text_en": "Who is the true beneficiary of LLC «TechConsult»?",
         "options": [
-          { "text_uk": "Дружина інженера — законний бізнес", "text_en": "Engineer's wife — legitimate business", "points": -10, "correct": false,
-            "feedback_uk": "❌ Формально так, але ланцюжок witnesses пряме залучення інженера.",
-            "feedback_en": "❌ Formally yes, but the chain shows direct involvement by the engineer." },
-          { "text_uk": "Інженер — через дружину як номінала", "text_en": "The engineer — via his wife as a nominee", "points": 20, "correct": true,
+          { "text_uk": "Дружина інженера — законний бізнес", "text_en": "Engineer's wife — legitimate business",
+            "points": -10, "correct": false,
+            "feedback_uk": "❌ Формально так, але хронологія свідчить про пряме залучення інженера.",
+            "feedback_en": "❌ Formally yes, but the timeline shows direct involvement by the engineer." },
+          { "text_uk": "Інженер — через дружину як номінала", "text_en": "The engineer — via his wife as a nominee",
+            "points": 20, "correct": true,
             "feedback_uk": "✓ Правильно. Дружина = nominee director. Реальний контроль = інженер.",
             "feedback_en": "✓ Correct. Wife = nominee director. Real control = engineer." }
         ]
@@ -117,26 +139,28 @@
     ]
   },
 
-  "citation_phase": null,
-
   "phase4": {
+    "title_uk": "Фінальний вердикт",
+    "title_en": "Final verdict",
+    "instruction_uk": "Обери рекомендацію клієнту з урахуванням політики компанії (Legal-ескалація перед термінацією).",
+    "instruction_en": "Choose the client recommendation, considering company policy (Legal escalation before termination).",
     "options": [
       { "id": "escalate_legal", "verdict": "success", "correct": true, "points": 50,
         "label_uk": "Escalate to Legal + Suspend pending investigation",
         "label_en": "Escalate to Legal + Suspend pending investigation",
-        "feedback_uk": "✓ ПРАВИЛЬНО. Політика вимагає Legal-ескалації ДО термінації, щоб зберегти доказовість у суді.",
-        "feedback_en": "✓ CORRECT. Policy requires Legal escalation BEFORE termination to preserve evidentiary chain." },
+        "feedback_uk": "✓ ПРАВИЛЬНО. Політика вимагає Legal-ескалації ДО термінації.",
+        "feedback_en": "✓ CORRECT. Policy requires Legal escalation BEFORE termination." },
       { "id": "terminate_immediate", "verdict": "fail", "correct": false, "points": -30,
         "label_uk": "Terminate immediately + Report",
         "label_en": "Terminate immediately + Report",
         "feedback_uk": "❌ Порушує політику. Термінація ДО Legal-ескалації може розвалити доказовість.",
-        "feedback_en": "❌ Policy breach. Termination BEFORE Legal escalation can break the evidentiary chain." },
+        "feedback_en": "❌ Policy breach. Termination BEFORE Legal escalation can break evidentiary chain." },
       { "id": "no_action", "verdict": "fail", "correct": false, "points": -50,
         "label_uk": "No action — insufficient evidence",
         "label_en": "No action — insufficient evidence",
         "feedback_uk": "❌ 7-крокова хронологія + документи + фінанси — це достатньо для ескалації.",
         "feedback_en": "❌ 7-step timeline + docs + finances — plenty of evidence to escalate." }
-      ]
+    ]
   },
 
   "ranks": {
