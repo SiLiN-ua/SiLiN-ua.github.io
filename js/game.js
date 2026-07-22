@@ -1817,6 +1817,33 @@ async function init() {
       : '🎓 ДЕМО-РЕЖИМ · очки не зберігаються · подвійний час · <a href="simulator.html">вийти</a>');
     document.body.appendChild(ribbon);
   }
+  // Live re-render on language toggle — install BEFORE any early-return
+  // so cooldown/briefing/all phases pick up lang switches.
+  document.addEventListener('langchange', () => {
+    // Re-mount HUD if it's on the page (skipped on cooldown screen where no HUD)
+    const oldHud = document.querySelector('.game-hud');
+    if (oldHud) {
+      oldHud.remove();
+      mountHud();
+      const el = document.getElementById('hud-time');
+      if (el) el.textContent = fmtTime(Math.max(0, State.timeLeft));
+    }
+    // Re-render current phase
+    if (State.phase === 'briefing') renderBriefing();
+    else if (State.phase === 'phase2') renderPhase2();
+    else if (State.phase === 'timeline') renderTimelinePhase();
+    else if (State.phase === 'phase3') renderPhase3();
+    else if (State.phase === 'citation') renderCitationPhase();
+    else if (State.phase === 'phase4') renderPhase4();
+    else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
+    else if (State.phase === 'cooldown') {
+      const cd = getCooldownRemaining(State.scenario.id);
+      renderCooldownScreen(cd);
+    }
+    // Re-render help panel with new lang (if mounted)
+    if (typeof renderHelpPanel === 'function') renderHelpPanel();
+  });
+
   // Cooldown check
   const cd = getCooldownRemaining(State.scenario.id);
   if (cd > 0) {
@@ -1831,31 +1858,6 @@ async function init() {
   renderBriefing();
   renderHelpPanel();
   track('game-briefing-open');
-
-  // Live re-render on language toggle
-  document.addEventListener('langchange', () => {
-    // Re-mount HUD (recreate with new lang labels)
-    const oldHud = document.querySelector('.game-hud');
-    if (oldHud) oldHud.remove();
-    mountHud();
-    // Restart timer display if running
-    const el = document.getElementById('hud-time');
-    if (el) el.textContent = fmtTime(Math.max(0, State.timeLeft));
-    // Re-render current phase
-    if (State.phase === 'briefing') renderBriefing();
-    else if (State.phase === 'phase2') renderPhase2();
-    else if (State.phase === 'timeline') renderTimelinePhase();
-    else if (State.phase === 'phase3') renderPhase3();
-    else if (State.phase === 'citation') renderCitationPhase();
-    else if (State.phase === 'phase4') renderPhase4();
-    else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
-    else if (State.phase === 'cooldown') {
-      const cd = getCooldownRemaining(State.scenario.id);
-      renderCooldownScreen(cd);
-    }
-    // Re-render help panel with new lang
-    renderHelpPanel();
-  });
 }
 init();
 
