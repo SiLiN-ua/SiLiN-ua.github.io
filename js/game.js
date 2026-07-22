@@ -1849,6 +1849,10 @@ async function init() {
     else if (State.phase === 'citation') renderCitationPhase();
     else if (State.phase === 'phase4') renderPhase4();
     else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
+    else if (State.phase === 'cooldown') {
+      const cd = getCooldownRemaining(State.scenario.id);
+      renderCooldownScreen(cd);
+    }
     // Re-render help panel with new lang
     renderHelpPanel();
   });
