@@ -1,0 +1,152 @@
+{
+  "id": "leaking-engineer-mini",
+  "time_limit_sec": 1800,
+  "cooldown_sec": 3600,
+  "title_uk": "Case 1 · The Leaking Engineer (test scenario)",
+  "title_en": "Case 1 · The Leaking Engineer (test scenario)",
+
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "SecureBank SaaS",
+    "client_en": "SecureBank SaaS",
+    "position": "Senior Engineer · investigation",
+    "salary": "—",
+    "body_uk": "TEST SCENARIO для перевірки Timeline Phase (Sim #02 integration). Senior engineer підозрюється у передачі архітектури продукту конкуренту через ТОВ, зареєстроване на дружину. Проведи мінімальне розслідування, побудуй хронологію, дай вердикт.",
+    "body_en": "TEST SCENARIO to verify Timeline Phase (Sim #02 integration). A senior engineer is suspected of leaking product architecture to a competitor via an LLC registered under his wife. Run a minimal investigation, build the timeline, deliver the verdict.",
+    "start_btn_uk": "▶ Розпочати",
+    "start_btn_en": "▶ Start",
+    "candidate": {
+      "name_uk": "Тест: Роман М.",
+      "name_en": "Test: Roman M.",
+      "photo": "img/uploads/simulator/candidate-passport.jpg",
+      "email": "test@example.com",
+      "phone": "+380 XX XXX XX XX"
+    }
+  },
+
+  "phase2": {
+    "min_tools_used": 2,
+    "tools": [
+      {
+        "id": "opencorp",
+        "name_uk": "OpenCorporates lookup",
+        "name_en": "OpenCorporates lookup",
+        "icon": "🏢",
+        "time_cost_sec": 90,
+        "points": 15,
+        "correct": true,
+        "label_uk": "Знайти ТОВ «TechConsult» + засновників",
+        "label_en": "Find LLC «TechConsult» + founders",
+        "result_type": "matches",
+        "matches": [
+          { "site": "OpenCorporates",
+            "url": "opencorporates.com/companies/ua/12345678",
+            "note_uk": "ТОВ «TechConsult». Директор: Р*** С. М. (дружина розслідуваного). Дата реєстрації: 2026-02-22.",
+            "note_en": "LLC «TechConsult». Director: R*** S. M. (wife of subject). Registration date: 2026-02-22." }
+        ]
+      },
+      {
+        "id": "meeting_leak",
+        "name_uk": "Витік meeting minutes",
+        "name_en": "Meeting minutes leak",
+        "icon": "📄",
+        "time_cost_sec": 60,
+        "points": 12,
+        "correct": true,
+        "label_uk": "Прочитати витяг чат-каналу з архітектурою",
+        "label_en": "Read chat-channel extract with architecture",
+        "result_type": "matches",
+        "matches": [
+          { "site": "Internal chat archive",
+            "url": "—",
+            "note_uk": "03.03.2026 — у канал команди вставлено 4000-word витяг з внутрішньої архітектурою рішення (передано у Slack від акаунту суб'єкта).",
+            "note_en": "03.03.2026 — a 4000-word excerpt from the internal architecture spec was pasted into the team channel by the subject's account." }
+        ]
+      }
+    ]
+  },
+
+  "timeline_phase": {
+    "title_uk": "Побудуй хронологію події «The Leaking Engineer»",
+    "title_en": "Build the timeline of «The Leaking Engineer»",
+    "instruction_uk": "Розстав знайдені події у правильному хронологічному й причинно-наслідковому порядку. Правильна пара сусідніх +5, помилкова −3.",
+    "instruction_en": "Arrange the discovered events in correct chronological and causal order. Correct adjacent pair +5, wrong pair −3.",
+    "submit_btn_uk": "Підтвердити хронологію →",
+    "submit_btn_en": "Submit timeline →",
+    "events": [
+      { "id": "e1", "date": "2026-01-13",
+        "text_uk": "Найм: senior engineer приєднався до SecureBank SaaS (доступ до архітектури)",
+        "text_en": "Hire: senior engineer joins SecureBank SaaS (gains architecture access)" },
+      { "id": "e2", "date": "2026-02-22",
+        "text_uk": "Реєстрація: ТОВ «TechConsult» створено у ЄДР (засновник — дружина інженера)",
+        "text_en": "Registration: LLC «TechConsult» filed with the state registry (founder: engineer's wife)" },
+      { "id": "e3", "date": "2026-02-22",
+        "text_uk": "Директор: дружина інженера призначена директором ТОВ",
+        "text_en": "Director: engineer's wife listed as LLC director" },
+      { "id": "e4", "date": "2026-03-03",
+        "text_uk": "Витік: у чат-каналі команди опубліковано meeting minutes з детальною архітектурою",
+        "text_en": "Leak: meeting minutes with detailed architecture posted in team chat" },
+      { "id": "e5", "date": "2026-03-05",
+        "text_uk": "Контракт: конкурент підписує vendor-угоду з ТОВ «TechConsult» на $180K",
+        "text_en": "Contract: competitor signs $180K vendor agreement with LLC «TechConsult»" },
+      { "id": "e6", "date": "2026-03-20",
+        "text_uk": "Інвойс: рахунок від ТОВ на $180K затверджений і опрацьований",
+        "text_en": "Invoice: $180K invoice from the LLC approved and processed" },
+      { "id": "e7", "date": "2026-03-25",
+        "text_uk": "Оплата: $180K перераховано на банківський рахунок ТОВ",
+        "text_en": "Payment: $180K transferred to the LLC's bank account" }
+    ],
+    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+  },
+
+  "phase3": {
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Хто справжній бенефіціар ТОВ «TechConsult»?",
+        "text_en": "Who is the true beneficiary of LLC «TechConsult»?",
+        "options": [
+          { "text_uk": "Дружина інженера — законний бізнес", "text_en": "Engineer's wife — legitimate business", "points": -10, "correct": false,
+            "feedback_uk": "❌ Формально так, але ланцюжок witnesses пряме залучення інженера.",
+            "feedback_en": "❌ Formally yes, but the chain shows direct involvement by the engineer." },
+          { "text_uk": "Інженер — через дружину як номінала", "text_en": "The engineer — via his wife as a nominee", "points": 20, "correct": true,
+            "feedback_uk": "✓ Правильно. Дружина = nominee director. Реальний контроль = інженер.",
+            "feedback_en": "✓ Correct. Wife = nominee director. Real control = engineer." }
+        ]
+      }
+    ]
+  },
+
+  "citation_phase": null,
+
+  "phase4": {
+    "options": [
+      { "id": "escalate_legal", "verdict": "success", "correct": true, "points": 50,
+        "label_uk": "Escalate to Legal + Suspend pending investigation",
+        "label_en": "Escalate to Legal + Suspend pending investigation",
+        "feedback_uk": "✓ ПРАВИЛЬНО. Політика вимагає Legal-ескалації ДО термінації, щоб зберегти доказовість у суді.",
+        "feedback_en": "✓ CORRECT. Policy requires Legal escalation BEFORE termination to preserve evidentiary chain." },
+      { "id": "terminate_immediate", "verdict": "fail", "correct": false, "points": -30,
+        "label_uk": "Terminate immediately + Report",
+        "label_en": "Terminate immediately + Report",
+        "feedback_uk": "❌ Порушує політику. Термінація ДО Legal-ескалації може розвалити доказовість.",
+        "feedback_en": "❌ Policy breach. Termination BEFORE Legal escalation can break the evidentiary chain." },
+      { "id": "no_action", "verdict": "fail", "correct": false, "points": -50,
+        "label_uk": "No action — insufficient evidence",
+        "label_en": "No action — insufficient evidence",
+        "feedback_uk": "❌ 7-крокова хронологія + документи + фінанси — це достатньо для ескалації.",
+        "feedback_en": "❌ 7-step timeline + docs + finances — plenty of evidence to escalate." }
+      ]
+  },
+
+  "ranks": {
+    "master":  { "min": 150, "label_uk": "Master · Timeline Prototype", "label_en": "Master · Timeline Prototype",
+                 "msg_uk": "Тестовий кейс пройдено на 100%.", "msg_en": "Test scenario passed at 100%.", "color": "#dcc382" },
+    "senior":  { "min": 80,  "label_uk": "Senior", "label_en": "Senior",
+                 "msg_uk": "Хороший результат.", "msg_en": "Solid result.", "color": "#c0c8d8" },
+    "junior":  { "min": 40,  "label_uk": "Junior", "label_en": "Junior",
+                 "msg_uk": "Достатньо для тесту.", "msg_en": "Sufficient for the test.", "color": "#a67c52" },
+    "trainee": { "min": 0,   "label_uk": "Trainee", "label_en": "Trainee",
+                 "msg_uk": "Прототип пройдено.", "msg_en": "Prototype completed.", "color": "#8a8a8a" }
+  }
+}

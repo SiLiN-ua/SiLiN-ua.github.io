@@ -93,7 +93,7 @@ async function submitScore(nickname, gamePoints, caseId) {
 const State = {
   scenario: null,
   nickname: '',
-  phase: 'loading',     // loading | cooldown | briefing | phase2 | phase3 | phase4 | result
+  phase: 'loading',     // loading | cooldown | briefing | phase2 | timeline | phase3 | phase4 | result
   points: 0,
   timeLeft: 720,
   timerId: null,
@@ -107,6 +107,10 @@ const State = {
   finalVerdict: null,
   startedAt: 0,
   ended: false,
+  // Sim #02 Timeline Phase (optional; used only when scenario.timeline_phase exists)
+  timelineOrder: [],
+  timelineSubmitted: false,
+  timelinePoints: 0,
 };
 
 // ==================== TIMER ====================
@@ -134,10 +138,17 @@ function forceTimeout() {
 
 // ==================== RENDER: BRIEFING ====================
 function progressBar(current) {
-  const phases = ['briefing', 'phase2', 'phase3', 'phase4'];
-  const labels = LANG()==='en'
-    ? ['Briefing', 'Investigation', 'Verification', 'Verdict']
-    : ['Брифінг', 'Розслідування', 'Верифікація', 'Вердикт'];
+  const hasTimeline = !!State.scenario?.timeline_phase;
+  const phases = hasTimeline
+    ? ['briefing', 'phase2', 'timeline', 'phase3', 'phase4']
+    : ['briefing', 'phase2', 'phase3', 'phase4'];
+  const labels = hasTimeline
+    ? (LANG()==='en'
+        ? ['Briefing', 'Investigation', 'Timeline', 'Verification', 'Verdict']
+        : ['Брифінг', 'Розслідування', 'Хронологія', 'Верифікація', 'Вердикт'])
+    : (LANG()==='en'
+        ? ['Briefing', 'Investigation', 'Verification', 'Verdict']
+        : ['Брифінг', 'Розслідування', 'Верифікація', 'Вердикт']);
   return `<div class="game-progress">${phases.map((p, i) => {
     const cur = phases.indexOf(current);
     const cls = i < cur ? 'game-progress__step--done'
@@ -278,9 +289,13 @@ function renderPhase2() {
   const nextBtn = $('#btn-next');
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.addEventListener('click', () => {
-      State.phase = 'phase3';
-      track('game-phase3', { tools_used: Object.keys(State.toolsUsed).length });
-      renderPhase3();
+      // Route: phase2 → timeline (if scenario defines it) → phase3, else → phase3
+      const hasTimeline = !!State.scenario.timeline_phase;
+      const nextPhase = hasTimeline ? 'timeline' : 'phase3';
+      State.phase = nextPhase;
+      track('game-' + nextPhase, { tools_used: Object.keys(State.toolsUsed).length });
+      if (nextPhase === 'timeline') renderTimelinePhase();
+      else renderPhase3();
       scrollTop();
     });
   }
@@ -1147,6 +1162,154 @@ function renderFakeUI(tool) {
   return `<div class="fake fake--empty">No UI for tool: ${tool.ui_component}</div>`;
 }
 
+// ==================== RENDER: TIMELINE PHASE (Sim #02, optional) ====================
+function computeTimelineScore(order, correctOrder) {
+  let score = 0, pairsOk = 0, pairsBad = 0;
+  const idx = new Map(correctOrder.map((id, i) => [id, i]));
+  for (let i = 0; i < order.length - 1; i++) {
+    const a = idx.get(order[i]);
+    const b = idx.get(order[i + 1]);
+    if (b === a + 1) { score += 5; pairsOk++; }
+    else             { score -= 3; pairsBad++; }
+  }
+  return { score, pairsOk, pairsBad, total: order.length - 1 };
+}
+function renumberTimeline() {
+  document.querySelectorAll('#tl-list .tl-event').forEach((el, i) => {
+    const num = el.querySelector('.tl-event__num');
+    if (num) num.textContent = String(i + 1).padStart(2, '0');
+  });
+}
+function updateTimelineLiveScore() {
+  const tp = State.scenario.timeline_phase;
+  if (!tp) return;
+  const { score, pairsOk, total } = computeTimelineScore(State.timelineOrder, tp.correct_order);
+  const el = document.getElementById('tl-live-val');
+  if (el) el.textContent = `${score > 0 ? '+' : ''}${score} (${pairsOk}/${total})`;
+}
+function renderTimelinePhase() {
+  const tp = State.scenario.timeline_phase;
+  if (!tp || !tp.events || !tp.correct_order) {
+    State.phase = 'phase3'; renderPhase3(); return;
+  }
+  // Initialize shuffled order once per session (deterministic per case+nick)
+  if (!State.timelineOrder.length) {
+    const seed = hashStr(State.scenario.id + '|tl|' + (State.nickname || ''));
+    let shuffled = seededShuffle(tp.events.map(e => e.id), seed);
+    if (shuffled.join() === tp.correct_order.join()) shuffled = shuffled.slice().reverse();
+    State.timelineOrder = shuffled;
+  }
+  const events = State.timelineOrder.map(id => tp.events.find(e => e.id === id));
+  const isEn = LANG() === 'en';
+  const title = tr(tp, 'title') || (isEn ? 'Build the event timeline' : 'Побудуй хронологію подій');
+  const instr = tr(tp, 'instruction') ||
+    (isEn ? 'Arrange the events in the correct chronological and causal order. Each correct adjacent pair +5, wrong pair −3.'
+          : 'Розстав події у правильному хронологічному й причинно-наслідковому порядку. Правильна пара сусідніх +5, помилкова −3.');
+  const submitLbl = tr(tp, 'submit_btn') || (isEn ? 'Submit timeline →' : 'Підтвердити хронологію →');
+
+  const html = `
+    ${progressBar('timeline')}
+    <div class="game-phase game-phase--timeline">
+      <div class="game-phase__head">
+        <div class="game-phase__num">2.5 / 05</div>
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(instr)}</p>
+      </div>
+      <ol class="tl-list" id="tl-list">
+        ${events.map((e, i) => `
+          <li class="tl-event" data-id="${escapeHtml(e.id)}">
+            <div class="tl-event__num">${String(i + 1).padStart(2, '0')}</div>
+            <div class="tl-event__body">
+              <div class="tl-event__date">${escapeHtml(e.date || '')}</div>
+              <div class="tl-event__text">${escapeHtml(tr(e, 'text'))}</div>
+            </div>
+            <div class="tl-event__grip">⋮⋮</div>
+          </li>`).join('')}
+      </ol>
+      <div class="game-phase__foot">
+        <div class="tl-live-score">
+          <span>${isEn ? 'Live score' : 'Поточний рахунок'}:</span>
+          <strong id="tl-live-val">—</strong>
+        </div>
+        <button class="btn btn--filled" id="btn-tl-submit">${escapeHtml(submitLbl)}</button>
+      </div>
+    </div>`;
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
+
+  const listEl = $('#tl-list');
+  if (typeof Sortable === 'undefined') {
+    console.warn('SortableJS not loaded — skipping timeline phase');
+    State.phase = 'phase3'; renderPhase3(); return;
+  }
+  const sortable = Sortable.create(listEl, {
+    animation: 180,
+    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    ghostClass: 'sortable-ghost',
+    chosenClass: 'sortable-chosen',
+    dragClass: 'sortable-drag',
+    touchStartThreshold: 3,
+    swapThreshold: 0.65,
+    group: { name: 'sim-timeline', pull: false, put: false },
+    onEnd: () => {
+      State.timelineOrder = [...listEl.children].map(el => el.dataset.id);
+      renumberTimeline();
+      updateTimelineLiveScore();
+    }
+  });
+  updateTimelineLiveScore();
+
+  $('#btn-tl-submit').addEventListener('click', () => submitTimeline(sortable));
+}
+function submitTimeline(sortable) {
+  if (State.timelineSubmitted) return;
+  State.timelineSubmitted = true;
+  if (sortable) sortable.option('disabled', true);
+  const tp = State.scenario.timeline_phase;
+  const { score, pairsOk, pairsBad, total } = computeTimelineScore(State.timelineOrder, tp.correct_order);
+  State.timelinePoints = score;
+  State.points += score;
+  track('game-timeline-submit', { score, pairs_ok: pairsOk, pairs_bad: pairsBad });
+
+  // Visual feedback: mark each event pair as ok/bad
+  const idx = new Map(tp.correct_order.map((id, i) => [id, i]));
+  const events = [...document.querySelectorAll('#tl-list .tl-event')];
+  events.forEach(el => el.classList.add('tl-event--locked'));
+  for (let i = 0; i < State.timelineOrder.length - 1; i++) {
+    const a = idx.get(State.timelineOrder[i]);
+    const b = idx.get(State.timelineOrder[i + 1]);
+    const pairOk = (b === a + 1);
+    events[i + 1].classList.add(pairOk ? 'tl-event--pair-ok' : 'tl-event--pair-bad');
+    const grip = events[i + 1].querySelector('.tl-event__grip');
+    if (grip) {
+      const badge = document.createElement('div');
+      badge.className = `tl-event__badge tl-event__badge--${pairOk ? 'ok' : 'bad'}`;
+      badge.textContent = pairOk ? '+5' : '−3';
+      grip.replaceWith(badge);
+    }
+  }
+  // Replace footer with results + next button
+  const isEn = LANG() === 'en';
+  const foot = $('#btn-tl-submit')?.parentElement;
+  if (foot) {
+    foot.innerHTML = `
+      <div class="tl-live-score">
+        <span>${isEn ? 'Timeline score' : 'Очки за хронологію'}:</span>
+        <strong>${score > 0 ? '+' : ''}${score}</strong>
+        <span style="margin-left:.4rem">${pairsOk}/${total} ${isEn ? 'correct' : 'правильних'}</span>
+      </div>
+      <button class="btn btn--filled" id="btn-tl-next">${isEn ? 'Next → Verification' : 'Далі → Верифікація'}</button>`;
+    $('#btn-tl-next').addEventListener('click', () => {
+      State.phase = 'phase3';
+      track('game-phase3', { tools_used: Object.keys(State.toolsUsed).length, timeline_score: score });
+      renderPhase3();
+      scrollTop();
+    });
+  }
+  updateHud();
+}
+
 // ==================== RENDER: PHASE 3 (QUESTIONS) ====================
 function renderPhase3() {
   const p = State.scenario.phase3;
@@ -1681,6 +1844,7 @@ async function init() {
     // Re-render current phase
     if (State.phase === 'briefing') renderBriefing();
     else if (State.phase === 'phase2') renderPhase2();
+    else if (State.phase === 'timeline') renderTimelinePhase();
     else if (State.phase === 'phase3') renderPhase3();
     else if (State.phase === 'citation') renderCitationPhase();
     else if (State.phase === 'phase4') renderPhase4();

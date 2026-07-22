@@ -626,6 +626,103 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .sim-banner__terminal { max-width: 100%; }
 }
 
+/* Sim #02 Timeline Phase (game.js + sim02-timeline-test.html) */
+.game-phase--timeline .tl-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+.tl-event {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  margin-bottom: .6rem;
+  background: rgba(20, 28, 48, .7);
+  border: 1px solid rgba(74, 158, 255, .18);
+  border-left: 3px solid #dcc382;
+  border-radius: 4px;
+  cursor: grab;
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+  user-select: none;
+  touch-action: none;
+}
+.tl-event:hover:not(.tl-event--locked) {
+  border-color: #dcc382;
+  box-shadow: 0 4px 20px rgba(220,195,130,.15);
+}
+.tl-event:active { cursor: grabbing; }
+.tl-event.sortable-chosen { background: rgba(35, 50, 80, .9); }
+.tl-event.sortable-ghost {
+  opacity: 0.35;
+  background: rgba(220, 195, 130, .1);
+  border-color: #dcc382;
+}
+.tl-event.sortable-drag {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+  transform: rotate(-1.5deg) scale(1.02);
+  cursor: grabbing;
+}
+.tl-event__num {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: #dcc382;
+  font-weight: 600;
+  text-align: center;
+}
+.tl-event__body { min-width: 0; }
+.tl-event__date {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--text-mute);
+  letter-spacing: .1em;
+  margin-bottom: .2rem;
+}
+.tl-event__text {
+  color: var(--cream);
+  font-size: .95rem;
+  line-height: 1.4;
+}
+.tl-event__grip {
+  color: var(--text-mute);
+  font-size: 1.2rem;
+  padding: 0 .5rem;
+  line-height: 1;
+}
+.tl-event--locked { cursor: default; }
+.tl-event--pair-ok {
+  border-left-color: #7dc98a;
+  background: rgba(30, 60, 40, .35);
+}
+.tl-event--pair-bad {
+  border-left-color: #e97373;
+  background: rgba(80, 30, 30, .35);
+}
+.tl-event__badge {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  padding: .2rem .5rem;
+  border-radius: 2px;
+  letter-spacing: .1em;
+}
+.tl-event__badge--ok { color: #7dc98a; background: rgba(125, 201, 138, .12); border: 1px solid rgba(125, 201, 138, .4); }
+.tl-event__badge--bad { color: #e97373; background: rgba(233, 115, 115, .12); border: 1px solid rgba(233, 115, 115, .4); }
+.tl-live-score {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--text-mute);
+  padding: .5rem 1rem;
+  background: rgba(15, 21, 36, .5);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-right: .75rem;
+}
+.tl-live-score strong { color: #dcc382; font-weight: 600; }
+
 /* Demo ribbon (game.html?demo=1) --------------------------- */
 .demo-ribbon {
   position: fixed;
