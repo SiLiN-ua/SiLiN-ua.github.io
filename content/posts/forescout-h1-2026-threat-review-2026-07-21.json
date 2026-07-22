@@ -1,0 +1,15 @@
+{
+  "title_uk": "Forescout: H1-2026 Threat Review — 37 000+ вразливостей, +25% ransomware",
+  "title_en": "Forescout H1 2026 Threat Review: 37,000+ vulnerabilities, ransomware up 25%",
+  "date": "2026-07-21T00:00:00.000Z",
+  "tag": "OSINT · Розвідка загроз",
+  "tag_en": "OSINT · Threat Intelligence",
+  "source": "Forescout Research — Vedere Labs (via IT Security Guru)",
+  "source_url": "https://www.itsecurityguru.org/2026/07/21/forescout-report-reveals-surge-in-ai-driven-cyber-threats/",
+  "summary_uk": "Vedere Labs опублікували піврічний звіт: 37 000+ вразливостей (+51% р/р), 4 544 ransomware-інциденти (+25%). Майже половина нових записів у CISA KEV — це старі непатчені CVE. Аналіз базується на OSINT-моніторингу 1000+ угруповань.",
+  "summary_en": "Forescout's Vedere Labs published their H1 review: 37,000+ vulnerabilities disclosed (+51% YoY), 4,544 ransomware claims (+25%), and nearly half of new CISA KEV additions were pre-2026 CVEs. The methodology relies on OSINT tracking of 1,000+ threat actors.",
+  "body_uk": "## Масштаб\n\nЗа січень-червень 2026 опубліковано понад 37 000 CVE — на 51% більше, ніж за той самий період торік. Більше половини — high або critical.\n\n## Ransomware\n\nЗафіксовано 4 544 претензії на атаки, +25% р/р, у середньому 25 атак щодня.\n\n## Старі рани\n\nМайже половина нових записів у CISA Known Exploited Vulnerabilities стосується CVE, опублікованих ДО 2026 року — старий непропатчений код лишається головним вектором.\n\n## OSINT-методологія\n\nЗвіт зібраний з відкритого моніторингу 1000+ угруповань, витоків leak-сайтів та телеметрії Vedere Labs — типова OSINT+CTI-збірка.",
+  "body_en": "## The scale\n\nJanuary-June 2026 saw 37,000+ published CVEs — 51% more than the same period last year. Over half are high or critical.\n\n## Ransomware\n\n4,544 attack claims tracked, up 25% YoY, averaging 25 attacks per day.\n\n## Old wounds\n\nNearly half of new CISA Known Exploited Vulnerabilities entries reference CVEs published BEFORE 2026 — unpatched legacy code remains the dominant vector.\n\n## OSINT methodology\n\nThe report is built from open monitoring of 1,000+ threat actors, leak-site scraping, and Vedere Labs telemetry — a textbook OSINT+CTI blend.",
+  "published": true,
+  "cover": "/img/uploads/news/forescout-h1-2026-threat-review-2026-07-21.jpg"
+}

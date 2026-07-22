@@ -1,0 +1,15 @@
+{
+  "title_uk": "LG забороняє резидентні проксі-SDK у застосунках Smart TV",
+  "title_en": "LG to ban residential proxies from Smart TV apps",
+  "date": "2026-07-21T00:00:00.000Z",
+  "tag": "OSINT · Загрози та інструменти",
+  "tag_en": "OSINT · Threats & Tools",
+  "source": "Krebs on Security",
+  "source_url": "https://krebsonsecurity.com/2026/07/lg-to-ban-residential-proxies-from-smart-tv-apps/",
+  "summary_uk": "LG Electronics USA оголосила про призупинення застосунків webOS, які перетворюють телевізори на постійно активні вузли резидентних проксі. Реакція викликана дослідженням Spur, яке зафіксувало SDK проксі у 42% застосунків webOS та 25% Tizen.",
+  "summary_en": "LG Electronics USA announced it will suspend webOS apps that turn smart TVs into always-on residential proxy nodes. The move follows Spur research showing proxy SDKs embedded in 42% of webOS apps and 25% of Samsung Tizen apps.",
+  "body_uk": "## Що сталося\n\nLG Electronics USA заявила, що почне видаляти зі свого магазину webOS застосунки, які використовують SDK резидентних проксі — код, що дозволяє третім сторонам маршрутизувати трафік через домашній інтернет глядача.\n\n## Дані OSINT-розвідки\n\nКомпанія Spur встановила, що понад 42% ігор та застосунків webOS містять такі SDK. У Samsung Tizen показник — понад 25%. Найбільший постачальник проксі — Bright Data.\n\n## Чому це важливо для OSINT\n\nРезидентні IP-адреси часто використовуються для скрапінгу, обходу geoblock та маскування атак. Ідентифікація SDK та постачальників — типова OSINT-задача атрибуції інфраструктури.\n\n## Що далі\n\nДослідник Spur Тревор Саттер підкреслив, що одноразова згода, «захована» в застосунку, не є прозорістю — особливо коли її може дати неповнолітній.",
+  "body_en": "## What happened\n\nLG Electronics USA said it will remove webOS apps that ship residential-proxy SDKs — code that lets third parties route internet traffic through the viewer's home connection.\n\n## The OSINT finding\n\nSecurity firm Spur found more than 42% of webOS games and apps contained such SDKs, and over 25% of Samsung Tizen apps did the same. Bright Data was the dominant proxy vendor found.\n\n## Why it matters for OSINT\n\nResidential IPs power scraping, geo-block evasion and attack laundering. Identifying which SDKs and vendors sit inside consumer hardware is a classic infrastructure-attribution problem for OSINT teams.\n\n## What's next\n\nSpur researcher Trevor Sutter stressed that a one-time consent buried in a TV app is not meaningful transparency, especially when minors in the household may click through.",
+  "published": true,
+  "cover": "/img/uploads/news/krebs-lg-residential-proxies-2026-07-21.jpg"
+}

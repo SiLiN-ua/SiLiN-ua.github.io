@@ -1,0 +1,15 @@
+{
+  "title_uk": "Sherpa Intelligence Basecamp Briefing (21.07.2026): CUI Berегової охорони США, ПЗ РФ у FAA, WindTre GDPR-штраф",
+  "title_en": "Sherpa Intelligence Basecamp Briefing (21 July 2026): US Coast Guard CUI, Russian code in FAA software, WindTre GDPR fine",
+  "date": "2026-07-21T00:00:00.000Z",
+  "tag": "OSINT · Розвідка загроз",
+  "tag_en": "OSINT · Threat Intelligence",
+  "source": "Sherpa Intelligence (Substack)",
+  "source_url": "https://sherpaintelligence.substack.com/p/basecamp-briefing-july-21-2026",
+  "summary_uk": "Черговий випуск фахового брифінгу Tracy Z. Maleeff охоплює нову рамку CUI Береговою охороною США, аудити FAA щодо російського коду в ПЗ, штраф WindTre €1.7M, позов проти Toyota через трекінг-cookies та німецько-французьку співпрацю з AI-безпеки.",
+  "summary_en": "Tracy Z. Maleeff's weekly digest covers a new US Coast Guard CUI framework, an FAA audit revealing Russian-founded vendor code in deployed software, a €1.7M WindTre GDPR fine, Toyota tracking-cookie litigation, and Germany-France AI safety cooperation.",
+  "body_uk": "## Хто пише\n\nTracy Z. Maleeff (Sherpa Intelligence) — відома OSINT-практикиня, щотижня зводить у Basecamp Briefing найважливіші події у сфері розвідки загроз, приватності та регуляцій.\n\n## Держава і кібербезпека\n\nБерегова охорона США прийняла нову рамку Controlled Unclassified Information. IRS отримав зауваження щодо фізичної безпеки. FAA виявила, що розгортала ПЗ із кодом російськозаснованого вендора — класичний supply-chain OSINT-кейс.\n\n## Приватність та штрафи\n\nІталійський регулятор оштрафував WindTre на €1.7 млн за витік 2025 року (365 048 клієнтів). Проти Toyota подано позов через cookies, які нібито дозволяють деанонімізувати відвідувачів сайту.\n\n## Міжнародна політика\n\nНімеччина та Франція розширили співпрацю національних інститутів AI-безпеки. Литва повторно оцінила Росію як стійку регіональну загрозу.",
+  "body_en": "## Who writes it\n\nTracy Z. Maleeff (Sherpa Intelligence) is a well-known OSINT practitioner whose weekly Basecamp Briefing curates threat-intel, privacy and regulatory items.\n\n## Government cyber\n\nThe US Coast Guard rolled out a new Controlled Unclassified Information framework. The IRS drew audit findings for physical-security controls. The FAA discovered it had deployed software containing code from a Russian-founded vendor — a textbook supply-chain OSINT case.\n\n## Privacy and fines\n\nItaly's regulator hit WindTre with a €1.7M penalty for a 2025 breach affecting 365,048 customers. Toyota faces litigation over tracking cookies that plaintiffs say de-anonymise visitors.\n\n## International policy\n\nGermany and France deepened cooperation between their national AI Safety Institutes. Lithuania reassessed Russia as an enduring regional security threat.",
+  "published": true,
+  "cover": "/img/uploads/news/sherpa-basecamp-briefing-2026-07-21.jpg"
+}
