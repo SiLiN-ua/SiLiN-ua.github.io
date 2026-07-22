@@ -1,0 +1,429 @@
+{
+  "id": "insider-trading",
+  "simulator_id": "sim02",
+  "time_limit_sec": 3000,
+  "cooldown_sec": 3600,
+  "max_points": 600,
+  "title_uk": "Sim #02 · Case 5 · Insider Trading Alert (FINAL)",
+  "title_en": "Sim #02 · Case 5 · Insider Trading Alert (FINAL)",
+
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Silvermark Investment Bank (US mid-tier IB, $12B AUM)",
+    "client_en": "Silvermark Investment Bank (US mid-tier IB, $12B AUM)",
+    "position": "M&A Analyst (2 роки у Silvermark)",
+    "salary": "$180K base + bonus",
+    "body_uk": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen мав доступ до NextEra × PowerFlex $2.4B deal у deal room. Через 3 дні до public announcement — незвична покупка PowerFlex акцій на маленькому retail-акаунті... який виявився братом-студентом David-а. Обидва живуть за однією адресою. Через 5 днів після announcement David купує Rolex за $8K.\n\nКлієнт: Head of Compliance + General Counsel + external Special Committee. Політика IB жорстка: всі підозри insider trading = автоматично Suspend pending investigation (НЕ termination) + повідомлення регулятора. IB не приймає self-decisions до вироку регулятора — audit trail критичний.",
+    "body_en": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen had access to the NextEra × PowerFlex $2.4B deal in the deal room. Three days before public announcement — unusual PowerFlex share purchase on a small retail account... which turned out to be David's student brother. Both live at the same address. Five days post-announcement David bought a Rolex for $8K.\n\nClient: Head of Compliance + General Counsel + external Special Committee. IB policy is strict: all insider-trading suspicions = automatic Suspend pending investigation (NOT termination) + regulator notification. IB doesn't self-decide before regulator verdict — audit trail is critical.",
+    "start_btn_uk": "▶ Розпочати compliance investigation",
+    "start_btn_en": "▶ Start compliance investigation",
+    "candidate": {
+      "name_uk": "David Chen (28, M&A Analyst, у Silvermark 2 роки)",
+      "name_en": "David Chen (28, M&A Analyst, at Silvermark 2 years)",
+      "photo": "img/uploads/simulator/candidate-passport.jpg",
+      "email": "d.chen@silvermark.example",
+      "phone": "US +1 (212) XXX-XX-15"
+    }
+  },
+
+  "phase2": {
+    "title_uk": "Compliance investigation · maximum rigor",
+    "title_en": "Compliance investigation · maximum rigor",
+    "instruction_uk": "Мінімум 7 тулів. Insider trading — federal criminal. Кожна помилка — це або wrongful accusation, або дозволити злочинцю втекти. Читай CAREFULLY.",
+    "instruction_en": "Minimum 7 tools. Insider trading — federal criminal. Every mistake — either wrongful accusation, or letting criminal escape. Read CAREFULLY.",
+    "next_btn_uk": "Далі → Хронологія",
+    "next_btn_en": "Next → Timeline",
+    "min_tools_used": 7,
+    "tools": [
+      {
+        "id": "deal_room_access",
+        "icon": "🔐",
+        "name_uk": "Deal room access logs · NextEra × PowerFlex",
+        "name_en": "Deal room access logs · NextEra × PowerFlex",
+        "provider": "Silvermark VDR + IT audit",
+        "desc_uk": "Хто мав доступ до deal room + коли",
+        "desc_en": "Who accessed deal room + when",
+        "correct": true, "points": 22, "time_cost": 100, "weight": "diagnostic",
+        "ui_component": "invoice-analysis",
+        "clue_uk": "David Chen мав повний access з D-42 (тижня перед negotiation phase). Логи показують нічні login'и (00:22, 02:41, 03:18) з personal WiFi — унікальна pattern для junior analyst.",
+        "clue_en": "David Chen had full access from D-42 (week before negotiation phase). Logs show late-night logins (00:22, 02:41, 03:18) from personal WiFi — unusual for junior analyst.",
+        "invoices": [
+          { "number": "LOG-8471", "date": "2026-03-15 09:23", "vendor": "David Chen · access granted deal room NEXTFLEX", "amount": "role: Analyst", "approver": "MD Anderson" },
+          { "number": "LOG-8712", "date": "2026-04-02 00:22", "vendor": "David Chen · viewed 'Valuation_Model_v7_FINAL.xlsx' (48 min)", "amount": "IP: 203.0.113.42 (home)", "approver": "—", "highlight": true },
+          { "number": "LOG-8941", "date": "2026-04-09 02:41", "vendor": "David Chen · downloaded 'Board_Memo_Draft_D-30.pdf'", "amount": "IP: 203.0.113.42 (home)", "approver": "—", "highlight": true },
+          { "number": "LOG-9184", "date": "2026-04-15 03:18", "vendor": "David Chen · viewed 'Announcement_Draft_v3.docx'", "amount": "IP: 203.0.113.42 (home)", "approver": "—", "highlight": true },
+          { "number": "LOG-9412", "date": "2026-04-25 09:15", "vendor": "PUBLIC ANNOUNCEMENT: NextEra × PowerFlex \\$2.4B", "amount": "market response +37% PWRX", "approver": "—" }
+        ],
+        "invoices_note_uk": "🚩 Pattern: David Chen 3 рази читав confidential матеріали з дому пізно вночі за 3 тижні до announcement. Це знання плюс timing = MNPI (material non-public information)."
+      },
+      {
+        "id": "brother_trading",
+        "icon": "📈",
+        "name_uk": "Retail broker · brother's account trades",
+        "name_en": "Retail broker · brother's account trades",
+        "provider": "SEC Form 3/4 + retail broker records",
+        "desc_uk": "Що і коли купував брат-студент",
+        "desc_en": "What and when the student brother bought",
+        "correct": true, "points": 25, "time_cost": 90, "weight": "diagnostic",
+        "ui_component": "invoice-analysis",
+        "clue_uk": "Michael Chen (22, student) відкрив маленький retail-акаунт з $200 initial deposit у березні 2025. Ні одної покупки за рік. Аж 3 днів до announcement — купив 4 200 PowerFlex за $42K (позика від «family friend»). Через день після announcement — продав з $18K прибутком. Це стрибок ~44%.",
+        "clue_en": "Michael Chen (22, student) opened small retail account with $200 initial deposit in March 2025. No purchases for a year. Then 3 days before announcement — bought 4,200 PowerFlex at $42K (loan from «family friend»). One day post-announcement — sold with $18K profit. ~44% jump.",
+        "invoices": [
+          { "number": "TRD-001", "date": "2025-03-15", "vendor": "Michael Chen · account opened, deposit \\$200", "amount": "$200", "approver": "Fidelity retail" },
+          { "number": "TRD-002 through TRD-105", "date": "2025-03-16 to 2026-04-21", "vendor": "Only 3 small trades (< \\$1K total, ETFs)", "amount": "avg $267", "approver": "normal student pattern" },
+          { "number": "TRD-106", "date": "2026-04-22 (D-3)", "vendor": "Michael Chen · BOUGHT 4,200 PWRX @ \\$10.02 = \\$42,084", "amount": "$42,084", "approver": "wire in from personal 'friend' loan", "highlight": true },
+          { "number": "TRD-107", "date": "2026-04-26 (D+1)", "vendor": "Michael Chen · SOLD 4,200 PWRX @ \\$14.34 = \\$60,228", "amount": "$60,228 (+$18K profit)", "approver": "settled", "highlight": true }
+        ],
+        "invoices_note_uk": "🚩 22-річний студент з ЦЕР portfolio-history робить ONE $42K purchase аж перед M&A і продає за 4 дні з $18K прибутком. Ймовірність випадковості = мікроскопічна."
+      },
+      {
+        "id": "address_check",
+        "icon": "🏠",
+        "name_uk": "Address & residence verification",
+        "name_en": "Address & residence verification",
+        "provider": "Public records + utility bills + Fidelity KYC",
+        "desc_uk": "Де живе David + Michael?",
+        "desc_en": "Where does David + Michael live?",
+        "correct": true, "points": 20, "time_cost": 75, "weight": "diagnostic",
+        "ui_component": "matches",
+        "clue_uk": "David Chen registered address = Michael Chen registered address = Silvermark HR record address = 240 W 27th St, Apt 4B, NY. Одна квартира. Fidelity KYC для Michael лyisted той самий phone що David's LinkedIn.",
+        "clue_en": "David Chen registered address = Michael Chen registered address = Silvermark HR record = 240 W 27th St, Apt 4B, NY. Same apartment. Fidelity KYC for Michael listed same phone as David's LinkedIn.",
+        "matches": [
+          { "site": "David Chen · Silvermark HR record", "url": "internal.silvermark.hr", "note_uk": "Address: 240 W 27th St, Apt 4B, NY 10001", "note_en": "Address: 240 W 27th St, Apt 4B, NY 10001" },
+          { "site": "Michael Chen · NYU student record + Fidelity KYC", "url": "public.nyu + fidelity.kyc", "note_uk": "Address (student housing form): 240 W 27th St, Apt 4B, NY 10001 (identical to David's). Phone на KYC: (212) XXX-XX-15 — this is David's phone from LinkedIn.", "note_en": "Address (student housing form): 240 W 27th St, Apt 4B, NY 10001 (identical to David's). Phone on KYC: (212) XXX-XX-15 — this is David's phone from LinkedIn." },
+          { "site": "ConEd utility bill 2025-2026", "url": "coned.public", "note_uk": "Single account, addressee: 'D. Chen'. Michael не мав separate utility account.", "note_en": "Single account, addressee: 'D. Chen'. Michael had no separate utility account." }
+        ]
+      },
+      {
+        "id": "money_flow_full",
+        "icon": "🏦",
+        "name_uk": "Full money flow · profit to Rolex",
+        "name_en": "Full money flow · profit to Rolex",
+        "provider": "Fidelity + Chase + Rolex Boutique NY",
+        "desc_uk": "Куди йшли $18K прибутку?",
+        "desc_en": "Where did $18K profit go?",
+        "correct": true, "points": 22, "time_cost": 90, "weight": "diagnostic",
+        "ui_component": "invoice-analysis",
+        "clue_uk": "$18K вивів Michael → сімейну кредитку → покупка Rolex Datejust на $8K David-ом через 5 днів після announcement (Rolex Boutique receipt public via Instagram). Плюс $10K на Airbnb Bali 2 тижні пізніше.",
+        "clue_en": "$18K withdrew Michael → shared family credit card → David bought Rolex Datejust $8K 5 days post-announcement (Rolex Boutique receipt public via Instagram). Plus $10K on Airbnb Bali 2 weeks later.",
+        "invoices": [
+          { "number": "WD-2026-4211", "date": "2026-04-27", "vendor": "Michael Chen withdrew \\$18K from Fidelity → Chase шarкоd family card XXXX-4287", "amount": "$18,000", "approver": "settled", "highlight": true },
+          { "number": "CC-2026-8371", "date": "2026-04-30 (D+5)", "vendor": "David Chen · Rolex Boutique NY · Rolex Datejust 41", "amount": "$8,200", "approver": "Chase family card XXXX-4287", "highlight": true },
+          { "number": "CC-2026-8412", "date": "2026-05-12", "vendor": "David Chen · Airbnb 14-day villa Bali", "amount": "$4,850", "approver": "Chase family card XXXX-4287" },
+          { "number": "CC-2026-8465", "date": "2026-05-14", "vendor": "David Chen · United BusFirst flights BUS-DPS", "amount": "$5,200", "approver": "Chase family card XXXX-4287" }
+        ],
+        "invoices_note_uk": "Money-flow ланцюжок: brother's trading profit → shared family card → David's premium purchases протягом 2 тижнів. Rolex — icon proof."
+      },
+      {
+        "id": "instagram_rolex",
+        "icon": "📱",
+        "name_uk": "David's Instagram · Rolex + Bali посты",
+        "name_en": "David's Instagram · Rolex + Bali posts",
+        "provider": "Instagram (public account)",
+        "correct": true, "points": 8, "time_cost": 30, "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "David публічно похвалився Rolex-ом 30 квітня («Life is good 💰») + Bali відпочинок травень. Timing очевидний — сам показав compliance.",
+        "clue_en": "David publicly bragged about Rolex Apr 30 («Life is good 💰») + Bali vacation May. Timing obvious — he flagged himself to compliance.",
+        "matches": [
+          { "site": "Instagram · @dchen_nyc (public)", "url": "instagram.com/dchen_nyc/p/CabX1", "note_uk": "30 квітня 2026 · фото Rolex Datejust з підписом «Life is good 💰 #treatyoself»", "note_en": "April 30, 2026 · Rolex Datejust photo captioned «Life is good 💰 #treatyoself»" },
+          { "site": "Instagram · @dchen_nyc", "url": "instagram.com/dchen_nyc/p/CabX2", "note_uk": "15 травня · Bali villa selfie з підписом «Bonus season 🌴»", "note_en": "May 15 · Bali villa selfie captioned «Bonus season 🌴»" }
+        ]
+      },
+      {
+        "id": "michael_socmed",
+        "icon": "🎓",
+        "name_uk": "Michael Chen · social media + student status",
+        "name_en": "Michael Chen · social media + student status",
+        "provider": "LinkedIn + NYU public records",
+        "correct": true, "points": 12, "time_cost": 45, "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "Michael — undergrad Junior у NYU (Communications, GPA 3.1). Немає business background. Never worked у finance. Заявлена «family friend loan» на $42K — highly improbable.",
+        "clue_en": "Michael — undergrad Junior at NYU (Communications, GPA 3.1). No business background. Never worked in finance. Claimed «family friend loan» of $42K — highly improbable.",
+        "matches": [
+          { "site": "NYU public directory · Michael Chen '27", "url": "nyu.edu/students", "note_uk": "Junior · Communications major · no finance coursework", "note_en": "Junior · Communications major · no finance coursework" },
+          { "site": "LinkedIn · Michael Chen", "url": "linkedin.com/in/m-chen-nyu", "note_uk": "«Communications student. Aspiring content creator.» 47 connections total.", "note_en": "«Communications student. Aspiring content creator.» 47 connections total." }
+        ]
+      },
+      {
+        "id": "chinese_wall",
+        "icon": "🧱",
+        "name_uk": "Silvermark Chinese Wall compliance check",
+        "name_en": "Silvermark Chinese Wall compliance check",
+        "provider": "Silvermark compliance + Blue Screen data",
+        "desc_uk": "Чи David на deal room списку restricted trading?",
+        "desc_en": "Was David on deal room restricted trading list?",
+        "correct": true, "points": 18, "time_cost": 60, "weight": "diagnostic",
+        "ui_component": "meeting-minutes",
+        "clue_uk": "David був на restricted list (не міг сам купувати PowerFlex). Але policy включає «immediate family members» — brother, spouse, parents. Michael явно попадає під «immediate family living at same address».",
+        "clue_en": "David was on restricted list (couldn't personally buy PowerFlex). But policy includes «immediate family members» — brother, spouse, parents. Michael clearly falls under «immediate family living at same address».",
+        "doc": {
+          "title": "Silvermark Chinese Wall policy · Restricted Trading List",
+          "date": "2026-03-15 (updated for NextFlex deal)",
+          "attendees_uk": "Silvermark Compliance, IT, Trading Desk",
+          "attendees_en": "Silvermark Compliance, IT, Trading Desk",
+          "classification": "CONFIDENTIAL",
+          "paragraphs": [
+            { "text_uk": "§2.4 Restricted Persons: (a) analyst/associate/VP with deal room access; (b) their spouse; (c) их siblings; (d) their parents; (e) ANY person residing with them; (f) accounts controlled or beneficially owned by (a)-(e).",
+              "text_en": "§2.4 Restricted Persons: (a) analyst/associate/VP with deal room access; (b) their spouse; (c) their siblings; (d) their parents; (e) ANY person residing with them; (f) accounts controlled or beneficially owned by (a)-(e)." },
+            { "text_uk": "David Chen certified у 2026-03-15: «I confirm no immediate family or resident members will trade securities on the NextFlex restricted list.» — Signed under IB Code of Ethics.",
+              "text_en": "David Chen certified on 2026-03-15: «I confirm no immediate family or resident members will trade securities on the NextFlex restricted list.» — Signed under IB Code of Ethics." },
+            { "text_uk": "⚠ Michael Chen (brother, same address) traded PWRX 4 tygenia later. This is direct violation of Chinese Wall + false certification.",
+              "text_en": "⚠ Michael Chen (brother, same address) traded PWRX 4 weeks later. Direct violation of Chinese Wall + false certification." }
+          ]
+        }
+      },
+      {
+        "id": "communication_metadata",
+        "icon": "📞",
+        "name_uk": "Phone / Signal metadata between David-Michael",
+        "name_en": "Phone / Signal metadata between David-Michael",
+        "provider": "Silvermark IT (device management)",
+        "desc_uk": "Спілкування братів навколо key dates?",
+        "desc_en": "Brother communication around key dates?",
+        "correct": true, "points": 15, "time_cost": 60, "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "3-хвилинний call 21 квітня о 23:45 (за 12 годин до brother's PWRX purchase). Плюс 8 Signal messages того ж вечора (contents encrypted, метадані available).",
+        "clue_en": "3-min call April 21 at 23:45 (12 hours before brother's PWRX purchase). Plus 8 Signal messages that same evening (contents encrypted, metadata available).",
+        "matches": [
+          { "site": "Silvermark corporate phone records", "url": "internal.silvermark", "note_uk": "David → Michael call, 21 квітня 23:45, тривалість 3 хв 12 сек. За 12 годин до Michael's PWRX purchase.", "note_en": "David → Michael call, April 21 23:45, duration 3 min 12 sec. 12 hours before Michael's PWRX purchase." },
+          { "site": "Signal metadata (encrypted contents, timestamps available)", "url": "—", "note_uk": "8 messages David ↔ Michael 21-22 квітня. Contents unrecoverable, але pattern чіткий — sudden burst navколо purchase timing.", "note_en": "8 messages David ↔ Michael April 21-22. Contents unrecoverable but pattern clear — sudden burst around purchase timing." }
+        ]
+      },
+      {
+        "id": "hr_history",
+        "icon": "📄",
+        "name_uk": "David Chen HR history · prior compliance flags",
+        "name_en": "David Chen HR history · prior compliance flags",
+        "provider": "Silvermark HR",
+        "correct": true, "points": 8, "time_cost": 45, "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "David — clean record до цього. 2 promotions за 2 роки, отримав offer VP за пів року. Це РОЗУМНИЙ, тому і покарання буде максимальним.",
+        "clue_en": "David — clean record until this. 2 promotions in 2 years, has VP offer for 6 months. He's SMART, so punishment will be maximum.",
+        "matches": [
+          { "site": "Silvermark HR file · David Chen", "url": "internal.hr", "note_uk": "Performance rating: Exceeds Expectations (2024, 2025). No prior compliance incidents. Signed all mandatory Ethics + Chinese Wall trainings.", "note_en": "Performance rating: Exceeds Expectations (2024, 2025). No prior compliance incidents. Signed all mandatory Ethics + Chinese Wall trainings." }
+        ]
+      },
+      {
+        "id": "peer_comparison",
+        "icon": "📊",
+        "name_uk": "Peer trading behavior comparison (same-desk analysts)",
+        "name_en": "Peer trading behavior comparison (same-desk analysts)",
+        "provider": "Silvermark compliance analytics",
+        "correct": true, "points": 6, "time_cost": 45, "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "12 інших analysts на M&A desk мали той самий access до deal room. Жоден з них — і жоден з їхніх immediate family — не traded PWRX у ці 3 дні. Це виняткова аномалія.",
+        "clue_en": "12 other analysts on M&A desk had same deal room access. None of them — and none of their immediate family — traded PWRX in these 3 days. Exceptional anomaly.",
+        "matches": [
+          { "site": "Compliance analytics · restricted trading review", "url": "—", "note_uk": "12 peers × 3 immediate family members each (avg) = 48 accounts scanned. Zero PWRX trades. David's brother = only outlier.", "note_en": "12 peers × 3 immediate family members each (avg) = 48 accounts scanned. Zero PWRX trades. David's brother = only outlier." }
+        ]
+      },
+      {
+        "id": "brother_gossip",
+        "icon": "🗣",
+        "name_uk": "Show гуртожитку roommate testimony (Michael's dorm)",
+        "name_en": "Dorm roommate testimony (Michael's dorm)",
+        "provider": "Informal · anonymous",
+        "tooltip_uk": "DECOY — anonymous student testimony 3rd-hand, легко може бути jealousy.",
+        "tooltip_en": "DECOY — anonymous student testimony 3rd-hand, could easily be jealousy.",
+        "correct": false, "points": -8, "time_cost": 30, "weight": "noise",
+        "ui_component": "matches",
+        "clue_uk": "Roommate каже Michael «хвалився» big trade. Це anonymous student gossip, не evidentiary. Це не додає до legal case.",
+        "clue_en": "Roommate says Michael «bragged» about big trade. Anonymous student gossip, not evidentiary. Doesn't add to legal case.",
+        "matches": [
+          { "site": "Anonymous NYU dorm source", "url": "—", "note_uk": "«Michael після покупки хвалився що «зробив бабки на brother's insider tip». Це може бути braggingом.», лежит на surface.", "note_en": "«Michael after purchase bragged he 'made bank on brother's insider tip'. Could be bragging.» surface-level." }
+        ]
+      },
+      {
+        "id": "media_speculation",
+        "icon": "📰",
+        "name_uk": "Financial press pre-announcement speculation",
+        "name_en": "Financial press pre-announcement speculation",
+        "provider": "Bloomberg + Reuters historical",
+        "tooltip_uk": "Може бути pre-announcement leak legit sourced information для defense?",
+        "tooltip_en": "Could there be a pre-announcement leak that legit-sourced info for defense?",
+        "correct": false, "points": 5, "time_cost": 60, "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "Bloomberg 20 квітня опублікував slight speculation — «NextEra може bo interested у renewable target». Ніщо специфічне про PowerFlex. Це NOT valid defense for Michael's specific $42K PWRX purchase.",
+        "clue_en": "Bloomberg April 20 published slight speculation — «NextEra may be interested in renewable target». Nothing specific about PowerFlex. NOT valid defense for Michael's specific $42K PWRX purchase.",
+        "matches": [
+          { "site": "Bloomberg 20 April 2026", "url": "bloomberg.com/next-target-speculation", "note_uk": "«NextEra CEO hinted at renewable acquisitions». No specific target named. Sector-general.", "note_en": "«NextEra CEO hinted at renewable acquisitions». No specific target named. Sector-general." }
+        ]
+      }
+    ]
+  },
+
+  "timeline_phase": {
+    "title_uk": "Хронологія «Insider Trading»",
+    "title_en": "«Insider Trading» timeline",
+    "instruction_uk": "Розстав всі ключові події від deal-room access до Rolex-покупки. Правильна пара +5, помилкова −3.",
+    "instruction_en": "Arrange all key events from deal room access to Rolex purchase. Correct pair +5, wrong pair −3.",
+    "submit_btn_uk": "Підтвердити хронологію →",
+    "submit_btn_en": "Submit timeline →",
+    "events": [
+      { "id": "e1", "date": "2026-03-15",
+        "text_uk": "David Chen отримує deal room access + certifies Chinese Wall compliance",
+        "text_en": "David Chen gets deal room access + certifies Chinese Wall compliance" },
+      { "id": "e2", "date": "2026-04-02",
+        "text_uk": "David нічний login з дому: переглядає Valuation Model (48 хв)",
+        "text_en": "David late-night login from home: views Valuation Model (48 min)" },
+      { "id": "e3", "date": "2026-04-15",
+        "text_uk": "David нічний login: переглядає Announcement Draft — знає exact timing",
+        "text_en": "David late-night login: views Announcement Draft — knows exact timing" },
+      { "id": "e4", "date": "2026-04-21 23:45",
+        "text_uk": "3-хв дзвінок David → Michael + 8 Signal messages ту саму ніч",
+        "text_en": "3-min call David → Michael + 8 Signal messages that same night" },
+      { "id": "e5", "date": "2026-04-22 (D-3)",
+        "text_uk": "Michael купує 4 200 PWRX на $42K — перша велика покупка у житті",
+        "text_en": "Michael buys 4,200 PWRX for $42K — first large purchase of his life" },
+      { "id": "e6", "date": "2026-04-25 09:15",
+        "text_uk": "PUBLIC: NextEra × PowerFlex $2.4B — PWRX стрибає +37%",
+        "text_en": "PUBLIC: NextEra × PowerFlex $2.4B — PWRX jumps +37%" },
+      { "id": "e7", "date": "2026-04-30 (D+5)",
+        "text_uk": "David купує Rolex Datejust $8K через сімейну credit card — money-trail complete",
+        "text_en": "David buys Rolex Datejust $8K via shared family credit card — money trail complete" }
+    ],
+    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+  },
+
+  "phase3": {
+    "title_uk": "Крос-верифікація · 3 питання",
+    "title_en": "Cross-verification · 3 questions",
+    "instruction_uk": "Питання про insider trading через family proxy.",
+    "instruction_en": "Questions about insider trading via family proxy.",
+    "next_btn_uk": "Далі → Memo Builder",
+    "next_btn_en": "Next → Memo Builder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "David каже: «Я НЕ купував акції. Michael — окрема людина, дорослий, самостійні рішення.» Це рятує його?",
+        "text_en": "David says: «I did NOT buy shares. Michael is a separate person, adult, independent decisions.» Does this save him?",
+        "options": [
+          { "text_uk": "Так — якщо Michael 22 і дорослий, це його decision", "text_en": "Yes — if Michael is 22 and adult, it's his decision",
+            "points": -20, "correct": false,
+            "feedback_uk": "❌ Ні. Tipper-tippee liability (SEC v. Newman, Dirks v. SEC) — прямо покриває цей scenario. David — tipper, Michael — tippee. Обидва liable.",
+            "feedback_en": "❌ No. Tipper-tippee liability (SEC v. Newman, Dirks v. SEC) — directly covers this scenario. David — tipper, Michael — tippee. Both liable." },
+          { "text_uk": "Ні — Tipper-tippee liability + Chinese Wall policy §2.4 (family living together) + false certification", "text_en": "No — Tipper-tippee liability + Chinese Wall policy §2.4 (family living together) + false certification",
+            "points": 30, "correct": true,
+            "feedback_uk": "✓ Правильно. Три layer одночасно: (1) SEC-federal Tipper-tippee doctrine, (2) IB internal Chinese Wall policy explicit clause, (3) sworn false certification March 15. Overwhelming.",
+            "feedback_en": "✓ Correct. Three layers simultaneously: (1) SEC-federal Tipper-tippee doctrine, (2) IB internal Chinese Wall policy explicit clause, (3) sworn false certification March 15. Overwhelming." },
+          { "text_uk": "Можливо — якщо Michael зможе показати independent research", "text_en": "Maybe — if Michael can show independent research",
+            "points": -15, "correct": false,
+            "feedback_uk": "❌ 22-річний Communications студент з $200 typical trading history раптом купує $42K окремої стrategічної позиції за 3 дні до announcement — burden of proof crushed.",
+            "feedback_en": "❌ 22-year-old Communications student with $200 typical trading history suddenly buys $42K single strategic position 3 days before announcement — burden of proof crushed." },
+          { "text_uk": "Тільки якщо David не мав фінансової outgoing benefit", "text_en": "Only if David had no financial outgoing benefit",
+            "points": -10, "correct": false,
+            "feedback_uk": "❌ Rolex + Bali = financial benefit through shared family credit card. Established.", "feedback_en": "❌ Rolex + Bali = financial benefit through shared family credit card. Established." }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Michael — actually 22, юридично responsible for own trading. Кого federal prosecutor буде charge FIRST?",
+        "text_en": "Michael is actually 22, legally responsible for own trading. Whom will federal prosecutor charge FIRST?",
+        "options": [
+          { "text_uk": "Michael — він executed trade, він owns account", "text_en": "Michael — he executed trade, owns account",
+            "points": -15, "correct": false,
+            "feedback_uk": "❌ Prosecutorial strategy — always target tipper first (David) because tipper — джерело MNPI, це стратегічний enforcement priority.",
+            "feedback_en": "❌ Prosecutorial strategy — always target tipper first (David) because tipper is MNPI source, strategic enforcement priority." },
+          { "text_uk": "David — tipper з MNPI access. Michael — tippee, second charge (often gets cooperation deal)", "text_en": "David — tipper with MNPI access. Michael — tippee, second charge (often gets cooperation deal)",
+            "points": 25, "correct": true,
+            "feedback_uk": "✓ Правильно. SEC + DOJ standard playbook: charge tipper primary (David, 10-20 years exposure), pressure tippee (Michael) to cooperate for reduced charges. Michael likely gets plea deal.",
+            "feedback_en": "✓ Correct. SEC + DOJ standard playbook: charge tipper primary (David, 10-20 years exposure), pressure tippee (Michael) to cooperate for reduced charges. Michael likely gets plea deal." },
+          { "text_uk": "Обидвох одночасно з identical charges", "text_en": "Both simultaneously with identical charges",
+            "points": -5, "correct": false,
+            "feedback_uk": "⚠️ Rarely happens — asymmetry між tipper і tippee завжди exists. Prosecutor uses це для leverage.",
+            "feedback_en": "⚠️ Rarely happens — asymmetry between tipper and tippee always exists. Prosecutor uses it for leverage." },
+          { "text_uk": "Silvermark IB — company culpability first", "text_en": "Silvermark IB — company culpability first",
+            "points": -20, "correct": false,
+            "feedback_uk": "❌ Silvermark buta ЖЕРТВОЮ (surveillance flagged issue). IB gets SEC settlement потенційно, але не first-charged.", "feedback_en": "❌ Silvermark was the VICTIM (surveillance flagged issue). IB gets SEC settlement potentially, but not first-charged." }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Ти Compliance Advisor. Що робиш IMMEDIATELY?",
+        "text_en": "You are Compliance Advisor. What do you do IMMEDIATELY?",
+        "options": [
+          { "text_uk": "Terminate David Chen immediately + public statement", "text_en": "Terminate David Chen immediately + public statement",
+            "points": -35, "correct": false,
+            "feedback_uk": "❌ POLICY BREACH + катастрофа. IB policy: Suspend pending investigation, НЕ termination. Termination до regulatory verdict = wrongful termination lawsuit + destroys SEC case + market panic on Silvermark stock.",
+            "feedback_en": "❌ POLICY BREACH + catastrophe. IB policy: Suspend pending investigation, NOT termination. Termination before regulatory verdict = wrongful termination lawsuit + destroys SEC case + market panic on Silvermark stock." },
+          { "text_uk": "Suspend David pending investigation + Notify SEC + Notify FINRA + preserve evidence + external counsel", "text_en": "Suspend David pending investigation + Notify SEC + Notify FINRA + preserve evidence + external counsel",
+            "points": 30, "correct": true,
+            "feedback_uk": "✓ Правильно. Точний IB compliance playbook. Suspend не termination, регулятори повідомлені (bank required by NYSE/FINRA rules), external counsel, evidence preservation під litigation hold.",
+            "feedback_en": "✓ Correct. Exact IB compliance playbook. Suspend not termination, regulators notified (bank required by NYSE/FINRA rules), external counsel, evidence preservation under litigation hold." },
+          { "text_uk": "Internal investigation only + wait for SEC to reach out", "text_en": "Internal investigation only + wait for SEC to reach out",
+            "points": -25, "correct": false,
+            "feedback_uk": "❌ Failure to self-report insider trading = major FINRA violation. Ви обов'язково notification НЕАЙЖЕ як помітили.",
+            "feedback_en": "❌ Failure to self-report insider trading = major FINRA violation. You must notify IMMEDIATELY when identified." },
+          { "text_uk": "Talk with David privately первш чем escalate", "text_en": "Talk with David privately before escalating",
+            "points": -30, "correct": false,
+            "feedback_uk": "❌ Tipping-off suspect = federal obstruction. Ніколи. External counsel handles all subject communication.",
+            "feedback_en": "❌ Tipping-off suspect = federal obstruction. Never. External counsel handles all subject communication." }
+        ]
+      }
+    ]
+  },
+
+  "memo_phase": {
+    "title_uk": "Заповни compliance меморандум",
+    "title_en": "Fill in the compliance memorandum",
+    "instruction_uk": "Заповни Subject / Evidence / Risk / Recommendation. IB policy: суспензія pending investigation + автоматичне повідомлення регуляторів. Ніяких direct actions IB itself до regulator verdict.",
+    "instruction_en": "Fill Subject / Evidence / Risk / Recommendation. IB policy: suspend pending investigation + automatic regulator notification. No direct IB self-actions before regulator verdict.",
+    "submit_btn_uk": "✓ Подати меморандум",
+    "submit_btn_en": "✓ Submit Memo",
+    "min_evidence_slots": 3,
+    "max_evidence_slots": 5,
+    "policy": {
+      "text_uk": "Insider trading suspicion в IB: (1) AUTOMATIC suspend pending investigation (НЕ termination); (2) IMMEDIATE notification SEC + FINRA + NYSE regulator (self-reporting REQUIRED, failure = FINRA fine); (3) EXTERNAL Legal Counsel takes over (IB не робить self-investigations); (4) Litigation hold on ALL evidence. Ніяких direct IB actions по subject до regulator verdict.",
+      "text_en": "Insider trading suspicion at IB: (1) AUTOMATIC suspend pending investigation (NOT termination); (2) IMMEDIATE notification of SEC + FINRA + NYSE regulator (self-reporting REQUIRED, failure = FINRA fine); (3) EXTERNAL Legal Counsel takes over (IB does not self-investigate); (4) Litigation hold on ALL evidence. No direct IB actions on subject before regulator verdict.",
+      "correct_recommendation_id": "suspend_notify_regulators",
+      "breach_penalty": -40
+    },
+    "subjects": [
+      { "id": "insider_trading",   "correct": true,  "points": 30, "text_uk": "Insider trading via family proxy (tipper-tippee scheme)", "text_en": "Insider trading via family proxy (tipper-tippee scheme)" },
+      { "id": "vendor_pay",        "correct": false, "points": -15, "text_uk": "Vendor payment irregularity", "text_en": "Vendor payment irregularity" },
+      { "id": "ip_theft",          "correct": false, "points": -15, "text_uk": "IP theft",                     "text_en": "IP theft" },
+      { "id": "false_positive",    "correct": false, "points": -30, "text_uk": "False positive",              "text_en": "False positive" }
+    ],
+    "evidence_pool": [
+      { "id": "ev_mnpi_access",    "weight": 5, "text_uk": "David Chen мав deal room access + downloaded confidential матеріали з дому 3 рази у нічний час перед announcement — MNPI documented", "text_en": "David Chen had deal room access + downloaded confidential material from home 3 times at night before announcement — MNPI documented" },
+      { "id": "ev_trade_pattern",  "weight": 5, "text_uk": "Michael Chen (22, student, $200 baseline) робить UNIQUE $42K PWRX purchase 3 дні до announcement, продає з $18K profit 1 день після — outlier у сімьорах десятків тисяч retail-акаунтів", "text_en": "Michael Chen (22, student, $200 baseline) makes UNIQUE $42K PWRX purchase 3 days before announcement, sells with $18K profit 1 day after — outlier across tens of thousands retail accounts" },
+      { "id": "ev_address_family", "weight": 5, "text_uk": "David + Michael — брати, живуть за однією адресою (240 W 27th St 4B, NY). Michael's Fidelity KYC — фон David-а. Chinese Wall policy §2.4 explicitly covers this.", "text_en": "David + Michael — brothers, live at same address (240 W 27th St 4B, NY). Michael's Fidelity KYC — David's phone. Chinese Wall policy §2.4 explicitly covers this." },
+      { "id": "ev_false_cert",     "weight": 5, "text_uk": "David 2026-03-15 підписав під присягою false Chinese Wall certification: «no immediate family or residents will trade restricted securities» — direct violation", "text_en": "David 2026-03-15 signed sworn false Chinese Wall certification: «no immediate family or residents will trade restricted securities» — direct violation" },
+      { "id": "ev_money_flow",     "weight": 5, "text_uk": "$18K profit → shared family credit card → David's $8K Rolex + $10K Bali trip — money-flow closes the loop", "text_en": "$18K profit → shared family credit card → David's $8K Rolex + $10K Bali trip — money flow closes the loop" },
+      { "id": "ev_call_timing",    "weight": 4, "text_uk": "3-хв call David → Michael + 8 Signal messages за 12 годин до brother's PWRX purchase", "text_en": "3-min call David → Michael + 8 Signal messages 12 hours before brother's PWRX purchase" },
+      { "id": "ev_ig_bragging",    "weight": 3, "text_uk": "David публічно похвалився Rolex + Bali на Instagram в тих самих датах — self-reported timing", "text_en": "David publicly bragged Rolex + Bali on Instagram at those exact dates — self-reported timing" },
+      { "id": "ev_peer_baseline",  "weight": 3, "text_uk": "48 peer immediate-family accounts scanned — ZERO PWRX trades. David's brother = only outlier у всій IB M&A desk universe", "text_en": "48 peer immediate-family accounts scanned — ZERO PWRX trades. David's brother = only outlier in whole IB M&A desk universe" },
+      { "id": "ev_michael_bg",     "weight": 3, "text_uk": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $42K — highly improbable", "text_en": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $42K — highly improbable" },
+      { "id": "ev_dorm_gossip",    "weight": 1, "text_uk": "Anonymous NYU dorm roommate testimony — «Michael хвалився insider tip»", "text_en": "Anonymous NYU dorm roommate testimony — «Michael bragged about insider tip»" },
+      { "id": "ev_media_leak",     "weight": 1, "text_uk": "Bloomberg 20 April had sector-general speculation про NextEra renewable — NOT specific to PowerFlex", "text_en": "Bloomberg April 20 had sector-general speculation about NextEra renewable — NOT specific to PowerFlex" }
+    ],
+    "risk_correct": "critical",
+    "risk_points": { "low": -30, "medium": -20, "high": 10, "critical": 25 },
+    "weight_points": { "5": 25, "4": 15, "3": 5, "2": -5, "1": -15 },
+    "recommendations": [
+      { "id": "suspend_notify_regulators", "correct": true, "points": 50, "text_uk": "Suspend David pending investigation + Notify SEC + FINRA + NYSE + Preserve evidence (litigation hold) + External Legal Counsel takes over", "text_en": "Suspend David pending investigation + Notify SEC + FINRA + NYSE + Preserve evidence (litigation hold) + External Legal Counsel takes over",
+        "feedback_uk": "✓ Правильно. Це exact IB compliance playbook. Всі 4 pillars: suspension (не termination), regulatory notification (mandatory), external counsel (не self-investigation), evidence preservation (litigation hold).", "feedback_en": "✓ Correct. Exact IB compliance playbook. All 4 pillars: suspension (not termination), regulatory notification (mandatory), external counsel (not self-investigation), evidence preservation (litigation hold)." },
+      { "id": "terminate_immediate",       "correct": false, "points": -45, "policy_breach": true, "text_uk": "Terminate David immediately + Public Announcement", "text_en": "Terminate David immediately + Public Announcement",
+        "feedback_uk": "❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions.", "feedback_en": "❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions." },
+      { "id": "internal_only",             "correct": false, "points": -40, "policy_breach": true, "text_uk": "Internal investigation only (silently) + wait for SEC to reach out", "text_en": "Internal investigation only (silently) + wait for SEC to reach out",
+        "feedback_uk": "❌ POLICY BREACH. Failure to self-report insider trading = major FINRA violation (fines $10M+) + potential criminal obstruction charges для compliance chief.", "feedback_en": "❌ POLICY BREACH. Failure to self-report insider trading = major FINRA violation (fines $10M+) + potential criminal obstruction charges for compliance chief." },
+      { "id": "confront_david",            "correct": false, "points": -50, "policy_breach": true, "text_uk": "Talk with David privately перш чем escalate", "text_en": "Talk with David privately before escalating",
+        "feedback_uk": "❌ POLICY BREACH + FEDERAL CRIME. Tipping-off suspect = obstruction of justice. Не роби ЦЕ ніколи. External counsel handles all subject contact.", "feedback_en": "❌ POLICY BREACH + FEDERAL CRIME. Tipping-off suspect = obstruction of justice. Never do this. External counsel handles all subject contact." },
+      { "id": "monitor_continue",          "correct": false, "points": -35, "text_uk": "Monitor pattern for further trades — no immediate action", "text_en": "Monitor pattern for further trades — no immediate action",
+        "feedback_uk": "❌ Complicity + failure to report — обидві liability.", "feedback_en": "❌ Complicity + failure to report — both are liabilities." },
+      { "id": "audit_first",               "correct": false, "points": -25, "text_uk": "Order forensic audit FIRST, then decide на escalation", "text_en": "Order forensic audit FIRST, then decide on escalation",
+        "feedback_uk": "❌ Regulatory notification cannot wait for internal audit. Deadline immediate. Audit runs у parallel до external.", "feedback_en": "❌ Regulatory notification cannot wait for internal audit. Deadline is immediate. Audit runs in parallel to external." }
+    ]
+  },
+
+  "ranks": {
+    "master":  { "min": 450, "label_uk": "Master · IB Compliance Elite", "label_en": "Master · IB Compliance Elite",
+                 "msg_uk": "Ти повністю впорався з insider-trading case на federal level.", "msg_en": "You fully handled an insider-trading case at federal level.", "color": "#dcc382" },
+    "senior":  { "min": 350, "label_uk": "Senior Compliance Officer", "label_en": "Senior Compliance Officer",
+                 "msg_uk": "Правильно розкрив tipper-tippee scheme.", "msg_en": "Correctly unpacked tipper-tippee scheme.", "color": "#c0c8d8" },
+    "junior":  { "min": 200, "label_uk": "Compliance Officer", "label_en": "Compliance Officer",
+                 "msg_uk": "Основну схему знайшов.", "msg_en": "Core scheme uncovered.", "color": "#a67c52" },
+    "trainee": { "min": 0,   "label_uk": "Junior Compliance", "label_en": "Junior Compliance",
+                 "msg_uk": "Кейс завершено — але політика порушена.", "msg_en": "Case completed — but policy breached.", "color": "#8a8a8a" }
+  }
+}
