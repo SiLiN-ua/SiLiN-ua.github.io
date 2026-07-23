@@ -133,11 +133,20 @@
   </div>
 </section>
 
-<!-- STATS -->
+<!-- STATS (live counters — grow throughout the day based on daily work rate) -->
 <div class="stats">
-  <div class="stat reveal"><div class="stat__num">240+</div><div class="stat__label" data-i18n="stats.socmint">SOCMINT-розслідувань</div></div>
-  <div class="stat reveal delay-1"><div class="stat__num">1 000+</div><div class="stat__label" data-i18n="stats.screening">Перевірок кандидатів</div></div>
-  <div class="stat reveal delay-2"><div class="stat__num">350+</div><div class="stat__label" data-i18n="stats.attribution">Ідентифікацій особистостей</div></div>
+  <div class="stat reveal">
+    <div class="stat__num" data-live-counter data-base="240" data-per-day="13.5" data-since="2026-07-23" data-suffix="+">240+</div>
+    <div class="stat__label" data-i18n="stats.socmint">SOCMINT-розслідувань</div>
+  </div>
+  <div class="stat reveal delay-1">
+    <div class="stat__num" data-live-counter data-base="1000" data-per-day="3.5" data-since="2026-07-23" data-suffix="+" data-thousands=" ">1 000+</div>
+    <div class="stat__label" data-i18n="stats.screening">Перевірок кандидатів</div>
+  </div>
+  <div class="stat reveal delay-2">
+    <div class="stat__num" data-live-counter data-base="350" data-per-day="6.5" data-since="2026-07-23" data-suffix="+">350+</div>
+    <div class="stat__label" data-i18n="stats.attribution">Ідентифікацій особистостей</div>
+  </div>
   <div class="stat reveal delay-3"><div class="stat__num">7</div><div class="stat__label" data-i18n="stats.projects">Open-source проєкти</div></div>
 </div>
 
@@ -209,6 +218,7 @@
 <script src="js/graph.js"></script>
 <script src="js/content.js"></script>
 <script src="js/main.js"></script>
+<script src="js/live-counters.js?v=1"></script>
 <script>
   const rerenderPreview = () => YSContent.renderPreview('cases', '#cases-preview', 3, 'Читати кейс →');
   rerenderPreview();

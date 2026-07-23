@@ -5017,3 +5017,12 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .jargon:hover::after, .jargon:focus::after {
   opacity: 1;
 }
+
+/* ============ Live-counter tick animation ============ */
+.stat__num--tick {
+  animation: statTick 1.6s ease-out;
+}
+@keyframes statTick {
+  0%   { color: var(--ice); text-shadow: 0 0 12px rgba(74,158,255,.55); }
+  100% { color: inherit; text-shadow: none; }
+}
