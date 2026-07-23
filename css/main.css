@@ -723,6 +723,63 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 }
 .tl-live-score strong { color: #dcc382; font-weight: 600; }
 
+/* Sim #02 generic matches list (with optional img) --- */
+.fake--matches .fake__matches-list {
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.fake--matches .fake__match-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: .8rem 1rem;
+  background: rgba(20, 28, 48, .6);
+  border: 1px solid var(--border-hi);
+  border-left: 3px solid #dcc382;
+  border-radius: 0 3px 3px 0;
+  font-family: var(--font-mono);
+  font-size: .84rem;
+  color: var(--cream);
+  line-height: 1.5;
+  align-items: start;
+}
+.fake--matches .fake__match-row:only-child { grid-template-columns: 1fr; }
+.fake--matches .fake__match-img {
+  width: 160px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.3);
+}
+.fake--matches .fake__match-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.fake--matches .fake__match-body { min-width: 0; }
+.fake--matches .fake__match-site {
+  color: var(--cream);
+  margin-bottom: .3rem;
+}
+.fake--matches .fake__match-site strong { color: #dcc382; }
+.fake--matches .fake__match-site code {
+  font-size: .78rem;
+  color: var(--text-mute);
+  word-break: break-all;
+}
+.fake--matches .fake__match-note {
+  color: var(--cream);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .fake--matches .fake__match-row { grid-template-columns: 1fr; }
+  .fake--matches .fake__match-img { width: 100%; max-height: 200px; }
+}
+
 /* Sim #02 corporate fake-UI components ------------------- */
 .fake--opencorp .fake__oc-row {
   display: flex; justify-content: space-between; gap: 1rem;
