@@ -7,10 +7,11 @@
      data-thousands=" "       optional thousands separator (e.g. " " or ",")
 
    Behavior:
-   - On page load: animates count-up from a starting value to the current
-     computed value with a visible per-value flip animation.
-   - After that: re-checks every second; when the number actually changes,
-     flips the new value in with the same animation. */
+   - On page load: count up from 0 to the current computed value with a
+     smooth rAF animation (~2.2s, easeOutQuart). Rapid rolling like an
+     odometer, ending with a brief glow.
+   - After that: polls every 1s; on any real change (natural daily rate),
+     a single-value flip animation plays (visible for the +1 tick). */
 (function(){
   function format(n, sep) {
     var s = String(n);
@@ -27,61 +28,70 @@
     var days = Math.max(0, (now - anchor) / 86400000);
     return Math.floor(base + days * perDay);
   }
-  function setValue(el, n) {
+  function write(el, n) {
     var sep = el.dataset.thousands || '';
     el.textContent = format(n, sep);
+  }
+  function flip(el, n) {
+    write(el, n);
     el.classList.remove('stat__num--flip');
     void el.offsetWidth;
     el.classList.add('stat__num--flip');
   }
-  function countUp(el, from, to, durationMs, done) {
-    var steps = Math.max(1, to - from);
-    // Cap animation frames to keep it snappy and readable
-    var maxSteps = Math.min(steps, 20);
-    var stepValues = [];
-    for (var i = 1; i <= maxSteps; i++) {
-      var v = from + Math.round((to - from) * (i / maxSteps));
-      stepValues.push(v);
+  // easeOutQuart: fast start, gentle finish
+  function easeOutQuart(t){ return 1 - Math.pow(1 - t, 4); }
+  function rollTo(el, from, to, durationMs, done) {
+    var start = performance.now();
+    var range = to - from;
+    function frame(now) {
+      var t = Math.min(1, (now - start) / durationMs);
+      var eased = easeOutQuart(t);
+      var current = Math.round(from + range * eased);
+      write(el, current);
+      if (t < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        write(el, to);
+        // Brief settle glow so the end is felt visually
+        el.classList.remove('stat__num--settle');
+        void el.offsetWidth;
+        el.classList.add('stat__num--settle');
+        if (done) done();
+      }
     }
-    if (stepValues[stepValues.length - 1] !== to) stepValues.push(to);
-    var interval = Math.max(80, Math.floor(durationMs / stepValues.length));
-    var idx = 0;
-    function step() {
-      setValue(el, stepValues[idx]);
-      idx++;
-      if (idx < stepValues.length) setTimeout(step, interval);
-      else if (done) done();
-    }
-    step();
+    requestAnimationFrame(frame);
   }
   function init(el) {
     var target = compute(el);
     if (target == null) return;
-    // Start slightly below the target so users see the flip animation on load.
-    var startDelta = Math.min(15, Math.max(3, Math.floor(target * 0.02)));
-    var from = Math.max(parseFloat(el.dataset.base), target - startDelta);
-    // Cache current shown for later ticks
-    el._liveShown = from;
-    countUp(el, from, target, 2000, function(){
+    el._liveShown = 0;
+    write(el, 0);
+    // Slight stagger per element via delay-N class already present.
+    // Roll takes 2.2s for a fast, readable count-up.
+    rollTo(el, 0, target, 2200, function(){
       el._liveShown = target;
     });
   }
   function tick(el) {
+    if (el._liveShown == null) return;
     var target = compute(el);
     if (target == null) return;
     if (target !== el._liveShown) {
-      // Real tick: flip through any missed numbers (usually just +1)
-      countUp(el, el._liveShown, target, 900, function(){
-        el._liveShown = target;
-      });
+      // Real daily-rate tick (usually +1) — use flip animation
+      flip(el, target);
+      el._liveShown = target;
     }
   }
   function tickAll() {
     document.querySelectorAll('[data-live-counter]').forEach(tick);
   }
-  document.addEventListener('DOMContentLoaded', function(){
+  function boot() {
     document.querySelectorAll('[data-live-counter]').forEach(init);
-    // Check every second for real value changes
     setInterval(tickAll, 1000);
-  });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 })();

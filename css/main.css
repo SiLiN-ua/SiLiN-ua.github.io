@@ -5040,3 +5040,12 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   35%  { transform: translateY(0)     scale(1);  opacity: 1;  filter: blur(0);  color: var(--ice); text-shadow: 0 0 12px rgba(74,158,255,.6); }
   100% { transform: translateY(0)     scale(1);  opacity: 1;  filter: blur(0);  color: inherit; text-shadow: none; }
 }
+
+/* Live-counter settle glow (fires when the count-up finishes on load) */
+.stat__num--settle {
+  animation: statSettle 1s ease-out;
+}
+@keyframes statSettle {
+  0%   { color: var(--ice); text-shadow: 0 0 18px rgba(74,158,255,.75); transform: scale(1.05); }
+  100% { color: inherit; text-shadow: none; transform: scale(1); }
+}
