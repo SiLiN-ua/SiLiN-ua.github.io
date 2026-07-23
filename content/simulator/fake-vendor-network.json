@@ -13,7 +13,7 @@
     "position": "3 new vendors under compliance review",
     "salary": "3 different UAH rates",
     "body_uk": "🚨 УВАГА · ADVERSARIAL. Compliance officer помітив, що 3 нові vendor-и мають підозрілі схожості: одна адреса, одна платіжна платформа, дуже подібні websites. Compliance team вважає це shell-network. Клієнт: Head of Compliance + General Counsel. Твоя задача — розібрати чи це справді схема, чи false-positive. ПАМ'ЯТАЙ: рефлекс сказати «Terminate!» — коштуватиме тобі балів у метриці Judgement Quality. Політика жорстка: vendor termination потребує не менше 3 незалежних джерел підтвердження ризику.",
-    "body_en": "🚨 WARNING · ADVERSARIAL. Compliance officer noticed 3 new vendors share suspicious similarities: same address, same payment platform, very similar websites. Compliance team thinks it's a shell network. Client: Head of Compliance + General Counsel. Your task — determine if this is really a scheme or a false-positive. REMEMBER: the reflex to shout «Terminate!» will cost your Judgement Quality metric. Policy is strict: vendor termination requires no less than 3 independent sources of risk confirmation.",
+    "body_en": "🚨 WARNING · ADVERSARIAL. Compliance officer noticed 3 new vendors share suspicious similarities: same address, same payment platform, very similar websites. Compliance team thinks it's a shell network. Client: Head of Compliance + General Counsel. Your task — determine if this is really a scheme or a false-positive. REMEMBER: the reflex to shout \"Terminate!\" will cost your Judgement Quality metric. Policy is strict: vendor termination requires no less than 3 independent sources of risk confirmation.",
     "start_btn_uk": "▶ Розпочати compliance-review",
     "start_btn_en": "▶ Start compliance review",
     "candidate": {
@@ -41,7 +41,7 @@
         "id": "opencorp_devbox",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #1 «DevBox»",
-        "name_en": "OpenCorporates: Vendor #1 «DevBox»",
+        "name_en": "OpenCorporates: Vendor #1 \"DevBox\"",
         "provider": "OpenCorporates + ФОП (sole trader) registry",
         "desc_uk": "Хто засновник, коли зареєстровано",
         "desc_en": "Who founded, when registered",
@@ -84,7 +84,7 @@
         "id": "opencorp_byteco",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #2 «Byte&Co»",
-        "name_en": "OpenCorporates: Vendor #2 «Byte&Co»",
+        "name_en": "OpenCorporates: Vendor #2 \"Byte&Co\"",
         "provider": "OpenCorporates + ФОП registry",
         "correct": true,
         "points": 15,
@@ -125,7 +125,7 @@
         "id": "opencorp_codecraft",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #3 «CodeCraft»",
-        "name_en": "OpenCorporates: Vendor #3 «CodeCraft»",
+        "name_en": "OpenCorporates: Vendor #3 \"CodeCraft\"",
         "provider": "OpenCorporates + ФОП registry",
         "correct": true,
         "points": 15,
@@ -200,7 +200,7 @@
             "site": "Beehive public info",
             "url": "beehive.kyiv/about",
             "note_uk": "«240+ resident freelancers, 45+ startups mailing address». Юридична адреса реєстрації прописана у ФОП-контрактах.",
-            "note_en": "«240+ resident freelancers, 45+ startups mailing address». Address is designated in sole-trader contracts."
+            "note_en": "\"240+ resident freelancers, 45+ startups mailing address\". Address is designated in sole-trader contracts."
           }
         ]
       },
@@ -259,7 +259,7 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Всі 3 сайти на одному ThemeForest template «Freelancer Pro» ($29). Цей template має 32 000+ покупців. Різні хостинги, різні домени.",
-        "clue_en": "All 3 sites on the same ThemeForest template «Freelancer Pro» ($29). This template has 32,000+ buyers. Different hosting, different domains.",
+        "clue_en": "All 3 sites on the same ThemeForest template \"Freelancer Pro\" ($29). This template has 32,000+ buyers. Different hosting, different domains.",
         "matches": [
           {
             "site": "devbox.com.ua (WordPress + Freelancer Pro theme)",
@@ -301,7 +301,7 @@
             "site": "LinkedIn · Maryna T.",
             "url": "linkedin.com/in/m-tovkach",
             "note_uk": "1300 connections, 87 endorsements «Node.js/React», прошлі роботи: Zalando, N26, Ajax Systems.",
-            "note_en": "1300 connections, 87 endorsements «Node.js/React», past jobs: Zalando, N26, Ajax Systems."
+            "note_en": "1300 connections, 87 endorsements \"Node.js/React\", past jobs: Zalando, N26, Ajax Systems."
           },
           {
             "site": "LinkedIn · Bohdan S.",
@@ -406,13 +406,13 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Реальний coworking з вивіскою «Beehive», скляний фасад, adminka на 1-му поверсі. Не житлова адреса, не fake офіс.",
-        "clue_en": "Real coworking with «Beehive» signage, glass facade, admin desk on ground floor. Not residential, not fake office.",
+        "clue_en": "Real coworking with \"Beehive\" signage, glass facade, admin desk on ground floor. Not residential, not fake office.",
         "matches": [
           {
             "site": "Google Street View · Khoryva 39-A",
             "url": "maps.google.com/street/kyiv/khoryva-39a",
             "note_uk": "Реновований 3-поверховий будинок з великою вивіскою «BEEHIVE». Модерна архітектура. Легальний coworking з publicly available website.",
-            "note_en": "Renovated 3-storey building with large «BEEHIVE» signage. Modern architecture. Legit coworking with publicly available website.",
+            "note_en": "Renovated 3-storey building with large \"BEEHIVE\" signage. Modern architecture. Legit coworking with publicly available website.",
             "img": "/img/uploads/simulator/sim02/case3-street-view-beehive.jpg"
           }
         ]
@@ -460,7 +460,7 @@
         "name_en": "Testimony: ex-DevBox colleague",
         "provider": "Anonymous LinkedIn message",
         "desc_uk": "«DevBox не платив вчасно у 2023»",
-        "desc_en": "«DevBox didn't pay on time in 2023»",
+        "desc_en": "\"DevBox didn't pay on time in 2023\"",
         "tooltip_uk": "DECOY. Одна скарга від однієї особи 3-річної давності. НЕ доказ поточної fraud.",
         "tooltip_en": "DECOY. Single complaint from one person 3 years old. NOT proof of current fraud.",
         "correct": false,
@@ -475,7 +475,7 @@
             "site": "LinkedIn DM (anonymous)",
             "url": "—",
             "note_uk": "«Я працював з Мариною T. у 2023 — вона мені 2 тижні не платила. Ця людина непорядна.»",
-            "note_en": "«I worked with Maryna T. in 2023 — she didn't pay me for 2 weeks. This person is dishonest.»"
+            "note_en": "\"I worked with Maryna T. in 2023 — she didn't pay me for 2 weeks. This person is dishonest.\""
           }
         ]
       }
@@ -483,7 +483,7 @@
   },
   "timeline_phase": {
     "title_uk": "Хронологія «false positive triage»",
-    "title_en": "Timeline of the «false positive triage»",
+    "title_en": "Timeline of the \"false positive triage\"",
     "instruction_uk": "Розстав події compliance-flag + подальшої перевірки у правильному порядку. Правильна пара +5, помилкова −3.",
     "instruction_en": "Arrange the compliance-flag and follow-up verification events in correct order. Correct pair +5, wrong pair −3.",
     "submit_btn_uk": "Підтвердити хронологію →",
@@ -561,7 +561,7 @@
             "points": -25,
             "correct": false,
             "feedback_uk": "❌ Політика вимагає 3 НЕЗАЛЕЖНІ джерела ризику. Тут всі 3 «pattern-и» пояснюються ОДНИМ фактом — coworking. Це convergence bias.",
-            "feedback_en": "❌ Policy requires 3 INDEPENDENT sources of risk. Here all 3 «patterns» explained by ONE fact — coworking. Convergence bias."
+            "feedback_en": "❌ Policy requires 3 INDEPENDENT sources of risk. Here all 3 \"patterns\" explained by ONE fact — coworking. Convergence bias."
           },
           {
             "text_uk": "Ні — кожен pattern окремо має легальне пояснення для фрилансерів (адреса = coworking, Wise = стандарт, шаблон = $29 ThemeForest)",
@@ -569,7 +569,7 @@
             "points": 25,
             "correct": true,
             "feedback_uk": "✓ Правильно. Це convergence bias — 3 факти виглядають як «pattern», але при деконструкції — кожен окремо стандартний.",
-            "feedback_en": "✓ Correct. Convergence bias — 3 facts look like a «pattern», but when deconstructed — each alone is standard."
+            "feedback_en": "✓ Correct. Convergence bias — 3 facts look like a \"pattern\", but when deconstructed — each alone is standard."
           },
           {
             "text_uk": "Ні — але Compliance правий, лише треба формалізувати evidence better",
@@ -600,7 +600,7 @@
             "points": -20,
             "correct": false,
             "feedback_uk": "❌ Це стандарт для UA senior developer'а. Порівняй з Case 2 «Procurement Ghost» де сталь +38% від LME — там pricing overrun був ★★★★. Тут — market.",
-            "feedback_en": "❌ Standard for UA senior developer. Compare with Case 2 «Procurement Ghost» where steel was +38% above LME — that pricing overrun was ★★★★. Here — market."
+            "feedback_en": "❌ Standard for UA senior developer. Compare with Case 2 \"Procurement Ghost\" where steel was +38% above LME — that pricing overrun was ★★★★. Here — market."
           },
           {
             "text_uk": "Ринкова ставка senior UA developer'а = НЕ signal fraud",
@@ -616,7 +616,7 @@
             "points": -15,
             "correct": false,
             "feedback_uk": "❌ Оверthинкінг. «Занадто низько» ≠ fraud. Ринкове.",
-            "feedback_en": "❌ Overthinking. «Too low» ≠ fraud. Market rate."
+            "feedback_en": "❌ Overthinking. \"Too low\" ≠ fraud. Market rate."
           },
           {
             "text_uk": "Неможливо оцінити без більше контексту",
@@ -631,7 +631,7 @@
       {
         "id": "q3",
         "text_uk": "Показання ex-DevBox колеги («Марина не платила у 2023»). Використовувати у меморандумі?",
-        "text_en": "Ex-DevBox colleague testimony («Maryna didn't pay in 2023»). Cite in the memo?",
+        "text_en": "Ex-DevBox colleague testimony (\"Maryna didn't pay in 2023\"). Cite in the memo?",
         "options": [
           {
             "text_uk": "Так — це підтверджує сумніви compliance",
@@ -647,15 +647,15 @@
             "points": 20,
             "correct": true,
             "feedback_uk": "✓ Правильно. Це класична DECOY-пастка — використати як «додатковий доказ» hearsay = меморандум відкидається у суді як biased.",
-            "feedback_en": "✓ Correct. Classic DECOY trap — using hearsay as «additional evidence» = memo gets thrown out in court as biased."
+            "feedback_en": "✓ Correct. Classic DECOY trap — using hearsay as \"additional evidence\" = memo gets thrown out in court as biased."
           },
           {
             "text_uk": "Так, але з приміткою «уточнити»",
-            "text_en": "Yes, but with «to be confirmed» note",
+            "text_en": "Yes, but with \"to be confirmed\" note",
             "points": -10,
             "correct": false,
             "feedback_uk": "❌ Ця «примітка» не рятує — hearsay залишається hearsay-ом.",
-            "feedback_en": "❌ The «note» doesn't save it — hearsay remains hearsay."
+            "feedback_en": "❌ The \"note\" doesn't save it — hearsay remains hearsay."
           },
           {
             "text_uk": "Використовувати як таємне джерело для наступного audit'у",
@@ -799,7 +799,7 @@
         "id": "ev_template_common",
         "weight": 3,
         "text_uk": "ThemeForest «Freelancer Pro» — $29 template з 32 000+ покупців. Шаблоний сайт ≠ shell.",
-        "text_en": "ThemeForest «Freelancer Pro» — $29 template with 32,000+ buyers. Templated site ≠ shell.",
+        "text_en": "ThemeForest \"Freelancer Pro\" — $29 template with 32,000+ buyers. Templated site ≠ shell.",
         "custody": {
           "collected_from_en": "Public marketplace profile (Upwork / Toptal / etc.)",
           "collected_from_uk": "Публічний профіль маркетплейсу (Upwork / Toptal / etc.)",

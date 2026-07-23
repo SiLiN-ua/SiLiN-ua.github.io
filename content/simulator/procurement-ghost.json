@@ -41,7 +41,7 @@
         "id": "opencorp_v1",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #1 «ProTech Parts»",
-        "name_en": "OpenCorporates: Vendor #1 «ProTech Parts»",
+        "name_en": "OpenCorporates: Vendor #1 \"ProTech Parts\"",
         "provider": "OpenCorporates + ЄДР",
         "desc_uk": "Хто засновники першого підозрілого vendor'а",
         "desc_en": "Who founded the first suspicious vendor",
@@ -81,7 +81,7 @@
             }
           ],
           "company_name_uk": "ТОВ «ProTech Parts»",
-          "company_name_en": "LLC «ProTech Parts»",
+          "company_name_en": "LLC \"ProTech Parts\"",
           "entity_type_uk": "LLC (ТОВ)",
           "entity_type_en": "LLC"
         }
@@ -90,7 +90,7 @@
         "id": "opencorp_v2",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #2 «Nova Supply»",
-        "name_en": "OpenCorporates: Vendor #2 «Nova Supply»",
+        "name_en": "OpenCorporates: Vendor #2 \"Nova Supply\"",
         "provider": "OpenCorporates + ЄДР",
         "desc_uk": "Другий підозрілий vendor — засновники, адреса",
         "desc_en": "Second suspicious vendor — founders, address",
@@ -128,7 +128,7 @@
             }
           ],
           "company_name_uk": "ТОВ «Nova Supply»",
-          "company_name_en": "LLC «Nova Supply»",
+          "company_name_en": "LLC \"Nova Supply\"",
           "entity_type_uk": "LLC (ТОВ)",
           "entity_type_en": "LLC"
         }
@@ -137,7 +137,7 @@
         "id": "opencorp_v3",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #3 «IndPart Supply»",
-        "name_en": "OpenCorporates: Vendor #3 «IndPart Supply»",
+        "name_en": "OpenCorporates: Vendor #3 \"IndPart Supply\"",
         "provider": "OpenCorporates + ЄДР",
         "correct": true,
         "points": 15,
@@ -173,7 +173,7 @@
             }
           ],
           "company_name_uk": "ТОВ «IndPart Supply»",
-          "company_name_en": "LLC «IndPart Supply»",
+          "company_name_en": "LLC \"IndPart Supply\"",
           "entity_type_uk": "LLC (ТОВ)",
           "entity_type_en": "LLC"
         }
@@ -182,7 +182,7 @@
         "id": "opencorp_v4",
         "icon": "🏢",
         "name_uk": "OpenCorporates: Vendor #4 «Global Industrial»",
-        "name_en": "OpenCorporates: Vendor #4 «Global Industrial»",
+        "name_en": "OpenCorporates: Vendor #4 \"Global Industrial\"",
         "provider": "OpenCorporates + ЄДР",
         "correct": true,
         "points": 12,
@@ -223,7 +223,7 @@
             }
           ],
           "company_name_uk": "ТОВ «Global Industrial»",
-          "company_name_en": "LLC «Global Industrial»",
+          "company_name_en": "LLC \"Global Industrial\"",
           "entity_type_uk": "LLC (ТОВ)",
           "entity_type_en": "LLC"
         }
@@ -492,7 +492,7 @@
         "name_en": "Ex-procurement employee testimony",
         "provider": "Anonymous whistleblower",
         "desc_uk": "«A.K. завжди сам обирав vendor-ів»",
-        "desc_en": "«A.K. always picked vendors himself»",
+        "desc_en": "\"A.K. always picked vendors himself\"",
         "tooltip_uk": "DECOY. Anonymous verbal, без документів. Не цитуй у меморандумі.",
         "tooltip_en": "DECOY. Anonymous verbal, no documents. Do not cite in memo.",
         "correct": false,
@@ -507,7 +507,7 @@
             "site": "Anonymous testimony",
             "url": "—",
             "note_uk": "Ex-працівник каже, що A.K. відсіював vendor-ів на етапі RFP: «Global Industrial чи інші великі — це для окозамилювання, реально спонсорить малих».",
-            "note_en": "Ex-employee says A.K. filtered vendors at RFP stage: «Global Industrial or other large ones — for the show, really funds the small ones»."
+            "note_en": "Ex-employee says A.K. filtered vendors at RFP stage: \"Global Industrial or other large ones — for the show, really funds the small ones\"."
           }
         ]
       },
@@ -531,7 +531,7 @@
             "site": "Facebook · lifestyle album (Aug–Nov 2025)",
             "url": "facebook.com/artem-k",
             "note_uk": "Один альбом, кілька постів: новий BMW X7 (~$110K) із підписом «Життя стабільне», далі фото з готелю Palm Jumeirah Dubai (~$800/ніч, 5 днів). Разом на зарплату $95K/рік — математично не сходиться.",
-            "note_en": "Single album, several posts: new BMW X7 (~$110K) captioned «Life is stable», then photos from Palm Jumeirah Dubai hotel (~$800/night, 5 days). Combined, on $95K/year salary — math doesn't work.",
+            "note_en": "Single album, several posts: new BMW X7 (~$110K) captioned \"Life is stable\", then photos from Palm Jumeirah Dubai hotel (~$800/night, 5 days). Combined, on $95K/year salary — math doesn't work.",
             "img": "/img/uploads/simulator/sim02/case2-facebook-lifestyle.png"
           }
         ]
@@ -540,7 +540,7 @@
   },
   "timeline_phase": {
     "title_uk": "Побудуй хронологію «Procurement Ghost»",
-    "title_en": "Build the «Procurement Ghost» timeline",
+    "title_en": "Build the \"Procurement Ghost\" timeline",
     "instruction_uk": "Розстав ключові події kickback схеми у правильному порядку. Правильна пара +5, помилкова −3.",
     "instruction_en": "Arrange the key events of the kickback scheme in correct order. Correct pair +5, wrong pair −3.",
     "submit_btn_uk": "Підтвердити хронологію →",
@@ -550,13 +550,13 @@
         "id": "e1",
         "date": "2024-11-08",
         "text_uk": "Реєстрація Shell #1: ТОВ «ProTech Parts» створено (засновник — двоюрідний брат A.K.)",
-        "text_en": "Shell #1 registered: LLC «ProTech Parts» created (founder — A.K.'s cousin)"
+        "text_en": "Shell #1 registered: LLC \"ProTech Parts\" created (founder — A.K.'s cousin)"
       },
       {
         "id": "e2",
         "date": "2025-02-14",
         "text_uk": "Реєстрація Shell #2: ТОВ «Nova Supply» (засновник — однокласник A.K., адреса сусіда)",
-        "text_en": "Shell #2 registered: LLC «Nova Supply» (founder — A.K.'s classmate, neighbor's address)"
+        "text_en": "Shell #2 registered: LLC \"Nova Supply\" (founder — A.K.'s classmate, neighbor's address)"
       },
       {
         "id": "e3",
@@ -568,7 +568,7 @@
         "id": "e4",
         "date": "2025-06-03",
         "text_uk": "Реєстрація Shell #3: ТОВ «IndPart Supply» (засновниця — дочка A.K., 21, та сама адреса що ProTech)",
-        "text_en": "Shell #3 registered: LLC «IndPart Supply» (founder — A.K.'s 21-y.o. daughter, same address as ProTech)"
+        "text_en": "Shell #3 registered: LLC \"IndPart Supply\" (founder — A.K.'s 21-y.o. daughter, same address as ProTech)"
       },
       {
         "id": "e5",
@@ -580,7 +580,7 @@
         "id": "e6",
         "date": "2025-08-15",
         "text_uk": "Lifestyle proof: A.K. придбав BMW X7 ($110K) — Facebook пост «Життя стабільне»",
-        "text_en": "Lifestyle proof: A.K. purchased BMW X7 ($110K) — Facebook post «Life is stable»"
+        "text_en": "Lifestyle proof: A.K. purchased BMW X7 ($110K) — Facebook post \"Life is stable\""
       },
       {
         "id": "e7",
@@ -618,7 +618,7 @@
             "points": 5,
             "correct": false,
             "feedback_uk": "⚠️ Важливо, але сім'я може мати «легальні бізнес-цілі». Слабко без money-trail.",
-            "feedback_en": "⚠️ Important, but family may claim «legitimate business goals». Weak without money-trail."
+            "feedback_en": "⚠️ Important, but family may claim \"legitimate business goals\". Weak without money-trail."
           },
           {
             "text_uk": "Ціни на 35-42% вище ринку (LME benchmark)",
@@ -626,7 +626,7 @@
             "points": 5,
             "correct": false,
             "feedback_uk": "⚠️ Гарний economic indicator, але A.K. може стверджувати про «premium quality».",
-            "feedback_en": "⚠️ Good economic indicator, but A.K. can claim «premium quality»."
+            "feedback_en": "⚠️ Good economic indicator, but A.K. can claim \"premium quality\"."
           },
           {
             "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) у SAP",
@@ -653,11 +653,11 @@
         "options": [
           {
             "text_uk": "A.K. використовує Global як cover — «показує» legit vendor'ів для окозамилювання",
-            "text_en": "A.K. uses Global as cover — «shows» legit vendors to distract",
+            "text_en": "A.K. uses Global as cover — \"shows\" legit vendors to distract",
             "points": 20,
             "correct": true,
             "feedback_uk": "✓ Правильно. Класична схема — 1 legit vendor + 3-4 shell-и. Legit vendor підтримує «нормальний profile» procurement'а і плутає аудитора.",
-            "feedback_en": "✓ Correct. Classic scheme — 1 legit vendor + 3-4 shells. Legit vendor sustains «normal profile» of the procurement and confuses the auditor."
+            "feedback_en": "✓ Correct. Classic scheme — 1 legit vendor + 3-4 shells. Legit vendor sustains \"normal profile\" of the procurement and confuses the auditor."
           },
           {
             "text_uk": "Global — теж shell, просто краще замаскований",
@@ -936,7 +936,7 @@
         "id": "ev_fb_bmw",
         "weight": 1,
         "text_uk": "Facebook пост A.K. з підписом «Життя стабільне» біля BMW",
-        "text_en": "A.K.'s Facebook post captioned «Life is stable» next to BMW",
+        "text_en": "A.K.'s Facebook post captioned \"Life is stable\" next to BMW",
         "custody": {
           "collected_from_en": "Public social-media archive (OSINT scrape)",
           "collected_from_uk": "Публічний архів соцмереж (OSINT-збір)",

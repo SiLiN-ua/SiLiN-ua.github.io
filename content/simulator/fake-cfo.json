@@ -1,13 +1,13 @@
 {
   "id": "fake-cfo",
   "title_uk": "Кейс 1 · «Fake CFO»",
-  "title_en": "Case 1 · «Fake CFO»",
+  "title_en": "Case 1 · \"Fake CFO\"",
   "simulator_id": "candidate-red-flag",
   "time_limit_sec": 780,
   "max_points": 350,
   "briefing": {
     "client_uk": "IT-компанія «TechCorp»",
-    "client_en": "IT company «TechCorp»",
+    "client_en": "IT company \"TechCorp\"",
     "position": "CFO",
     "position_uk": "CFO",
     "position_en": "CFO",
@@ -22,9 +22,20 @@
       "phone": "+380 67 ***-**-45"
     },
     "body_uk": "Компанія розглядає Романа Морозова на позицію CFO. Резюме солідне: 15 років у фінансах, 3 попередні CFO-позиції, MBA. HR-департамент уже провів first-round: враження позитивні, англійська на рівні, референси надіслані окремим листом (додаються нижче). Пропонують $180K/рік з опціонами — це середина ринку для позиції, не overpay. Клієнт просить OSINT-скринінг «для галочки» до кінця дня. Твоє завдання — за 13 ігрових хвилин зібрати достатньо доказів для АРГУМЕНТОВАНОГО вердикту. Не всі сигнали однозначні. Не все, що виглядає підозріло — фрод. Не все, що виглядає чисто — чисто.",
-    "body_en": "The company is considering Roman Morozov for the CFO position. Resume is solid: 15 years in finance, 3 previous CFO positions, MBA. HR already did the first round: positive impressions, English good, references sent separately (attached below). Offering $180K/year with options — mid-market for the position, not overpay. Client requests a quick OSINT screening «for the checkmark» by end of day. Your task — in 13 in-game minutes, gather enough evidence for an ARGUED verdict. Not all signals are unambiguous. Not everything that looks suspicious is fraud. Not everything that looks clean is clean.",
+    "body_en": "The company is considering Roman Morozov for the CFO position. Resume is solid: 15 years in finance, 3 previous CFO positions, MBA. HR already did the first round: positive impressions, English good, references sent separately (attached below). Offering $180K/year with options — mid-market for the position, not overpay. Client requests a quick OSINT screening \"for the checkmark\" by end of day. Your task — in 13 in-game minutes, gather enough evidence for an ARGUED verdict. Not all signals are unambiguous. Not everything that looks suspicious is fraud. Not everything that looks clean is clean.",
     "start_btn_uk": "▶ Розпочати розслідування",
-    "start_btn_en": "▶ Start investigation"
+    "start_btn_en": "▶ Start investigation",
+    "lawful_basis_gate": {
+      "title_uk": "⚖ Правова база (GDPR Art. 6 + UA Data Protection)",
+      "title_en": "⚖ Lawful Basis (GDPR Art. 6 + UA Data Protection)",
+      "body_uk": "Перед скринінгом кандидата на $180K позицію ти маєш підтвердити:\n\n1. Legitimate interest (candidate verification для фінансово-чутливої ролі) documentованo у HR-policy\n2. Candidate notice надано (signed) — розширений screening заявлений в offer letter або окремому DPIA-notice\n3. Data-processing agreement з зовнішніми джерелами (LinkedIn API, background-check vendor)\n4. Right-to-explain процедура готова (candidate matter response ≥ 48h)\n\nПропуск цього кроку = розслідування побудоване на insufficient lawful basis. Пізніше, при найменшому challenge — вся evidence-chain стає inadmissible + risk GDPR-fine 4% turnover.",
+      "body_en": "Before screening a candidate for a $180K position, you must confirm:\n\n1. Legitimate interest (candidate verification for financially-sensitive role) documented in HR-policy\n2. Candidate notice given (signed) — expanded screening disclosed in offer letter or separate DPIA-notice\n3. Data-processing agreement with external sources (LinkedIn API, background-check vendor)\n4. Right-to-explain procedure ready (candidate matter response ≥ 48h)\n\nSkipping this step = investigation built on insufficient lawful basis. Later, on any challenge — the entire evidence-chain becomes inadmissible + GDPR-fine risk 4% turnover.",
+      "checkbox_uk": "✓ Підтверджую всі 4 пункти (Legitimate Interest + Notice + DPA + Right-to-explain)",
+      "checkbox_en": "✓ I confirm all 4 items (Legitimate Interest + Notice + DPA + Right-to-explain)",
+      "skip_penalty": -20,
+      "skip_warning_uk": "⚠ Пропуск GDPR-gate = -20 очок і невизнання evidence-chain при аудиті.",
+      "skip_warning_en": "⚠ Skipping GDPR gate = -20 points and evidence-chain rejection at audit."
+    }
   },
   "phase2": {
     "title_uk": "Фаза 2 · Первинний Pivot",
@@ -51,7 +62,7 @@
         "ui_component": "multi-reverse",
         "weight": "diagnostic",
         "clue_uk": "Multi-engine повернув 4 матчі різних якостей. Тобі вирішувати, чи «інше ім'я на схожому обличчі» = синтетика, чи однофамільці/родичі, чи просто збіг движка. Confidence: твоя відповідальність.",
-        "clue_en": "Multi-engine returned 4 matches of varying quality. It's your call whether «different name on similar face» = synthetic identity, or namesakes/relatives, or just engine noise. Confidence: your responsibility."
+        "clue_en": "Multi-engine returned 4 matches of varying quality. It's your call whether \"different name on similar face\" = synthetic identity, or namesakes/relatives, or just engine noise. Confidence: your responsibility."
       },
       {
         "id": "hibp",
@@ -62,14 +73,14 @@
         "desc_uk": "Перевірка email у витоках",
         "desc_en": "Check email in leaks",
         "tooltip_uk": "Що робить: перевіряє, чи email фігурував у публічних витоках БД. Для чого: топ-менеджер із «чистою» новою поштою для резюме — вже дзвіночок. А email у витоках dating-сайтів — контекст стилю життя.",
-        "tooltip_en": "What it does: checks whether the email appeared in public database leaks. Use it: an executive with a «clean» throwaway email for a resume is already a red signal. Email in dating-site breaches = lifestyle context.",
+        "tooltip_en": "What it does: checks whether the email appeared in public database leaks. Use it: an executive with a \"clean\" throwaway email for a resume is already a red signal. Email in dating-site breaches = lifestyle context.",
         "correct": true,
         "points": 12,
         "time_cost": 45,
         "ui_component": "hibp",
         "weight": "noise",
         "clue_uk": "Email у 3 витоках. Сам факт — не red flag: у 60% дорослих інтернет-користувачів email десь фігурує. Питання не «є витоки?», а «що це говорить про поведінковий профіль?»",
-        "clue_en": "Email in 3 breaches. The fact alone is not a red flag: 60% of adult internet users have an email in some breach. The question is not «are there breaches?», but «what does this say about the behavioral profile?»"
+        "clue_en": "Email in 3 breaches. The fact alone is not a red flag: 60% of adult internet users have an email in some breach. The question is not \"are there breaches?\", but \"what does this say about the behavioral profile?\""
       },
       {
         "id": "getcontact",
@@ -80,14 +91,14 @@
         "desc_uk": "Теги контактів за номером",
         "desc_en": "Contact tags by phone",
         "tooltip_uk": "Що робить: показує, як інші користувачі зберегли цей номер у контактах (краудсорс-теги). Для чого: якщо 50 людей записали номер як «шахрай» — це системна поведінкова оцінка, не випадковість. Не суд, але сильний сигнал.",
-        "tooltip_en": "What it does: shows how other users saved this number in their contacts (crowd-sourced tags). Use it: if 50 people saved the number as «fraud» — it's a systemic behavioural signal, not coincidence. Not a court, but a strong indicator.",
+        "tooltip_en": "What it does: shows how other users saved this number in their contacts (crowd-sourced tags). Use it: if 50 people saved the number as \"fraud\" — it's a systemic behavioural signal, not coincidence. Not a court, but a strong indicator.",
         "correct": true,
         "points": 15,
         "time_cost": 45,
         "ui_component": "getcontact",
         "weight": "supporting",
         "clue_uk": "47 тегів на номер. Серед них — і нейтральні («Рома BMW», «Морозов Р.», «Sales manager»), і різко негативні. Question для тебе: чи це один поведінковий патерн, чи кілька контекстів одного номера за роки?",
-        "clue_en": "47 tags on the number. Some are neutral («Roma BMW», «Morozov R.», «Sales manager»), some sharply negative. Question for you: is this one behavioral pattern, or multiple contexts of one number over years?"
+        "clue_en": "47 tags on the number. Some are neutral (\"Roma BMW\", \"Morozov R.\", \"Sales manager\"), some sharply negative. Question for you: is this one behavioral pattern, or multiple contexts of one number over years?"
       },
       {
         "id": "google-dorks",
@@ -123,7 +134,7 @@
         "ui_component": "linkedin",
         "weight": "supporting",
         "clue_uk": "Профіль існує 8 місяців, 87 зв'язків, кілька старіших знайомих ~2020. Виглядає більш-менш нормально для людини, яка «пізно прийшла» на LinkedIn. Але деякі деталі — читай уважно — не сходяться.",
-        "clue_en": "Profile exists 8 months, 87 connections, several older acquaintances ~2020. Looks more or less normal for someone who «came late» to LinkedIn. But some details — read carefully — don't add up."
+        "clue_en": "Profile exists 8 months, 87 connections, several older acquaintances ~2020. Looks more or less normal for someone who \"came late\" to LinkedIn. But some details — read carefully — don't add up."
       },
       {
         "id": "youcontrol",
@@ -243,7 +254,7 @@
       {
         "id": "q2",
         "text_uk": "GetContact повернув 47 негативних тегів на цей номер («Рома Шахрай», «Кредит-обман»). Твоя інтерпретація?",
-        "text_en": "GetContact returned 47 negative tags on this number («Roma Fraud», «Loan-scam»). Your interpretation?",
+        "text_en": "GetContact returned 47 negative tags on this number (\"Roma Fraud\", \"Loan-scam\"). Your interpretation?",
         "options": [
           {
             "text_uk": "Однофамільці — не наш кандидат",
@@ -290,7 +301,7 @@
             "points": -5,
             "correct": false,
             "feedback_uk": "❌ Можливо, але GetContact-tag «BMW Boryspil sales fraud» на його номер — це підтвердження, що це та ж людина.",
-            "feedback_en": "❌ Possible, but GetContact tag «BMW Boryspil sales fraud» on his number = confirmation same person."
+            "feedback_en": "❌ Possible, but GetContact tag \"BMW Boryspil sales fraud\" on his number = confirmation same person."
           },
           {
             "text_uk": "Матеріальна фальсифікація резюме — CFO-позицій не було",
@@ -298,7 +309,7 @@
             "points": 20,
             "correct": true,
             "feedback_uk": "✓ Правильно. Резюме сфабриковано. GetContact-tag «BMW Boryspil» підтверджує зв'язок з попередньою sales-позицією — легенду підтягли з реальності.",
-            "feedback_en": "✓ Correct. Resume fabricated. GetContact tag «BMW Boryspil» confirms link to previous sales position — the story was borrowed from reality."
+            "feedback_en": "✓ Correct. Resume fabricated. GetContact tag \"BMW Boryspil\" confirms link to previous sales position — the story was borrowed from reality."
           }
         ]
       }
@@ -353,7 +364,34 @@
         "correct": false,
         "verdict": "weak",
         "feedback_uk": "⚠️ Обережно, але безсило. У тебе був face-mismatch + 47 fraud-тегів + фальш-резюме — цього достатньо для red flag. «Недостатньо даних», коли даних достатньо, — це небажання брати відповідальність.",
-        "feedback_en": "⚠️ Cautious but powerless. You had face-mismatch + 47 fraud tags + fake resume — that's enough for a red flag. «Insufficient data» when data is sufficient = refusal to take responsibility."
+        "feedback_en": "⚠️ Cautious but powerless. You had face-mismatch + 47 fraud tags + fake resume — that's enough for a red flag. \"Insufficient data\" when data is sufficient = refusal to take responsibility."
+      },
+      {
+        "id": "request_clarification",
+        "label_uk": "🗣 Дати кандидату можливість пояснити (right-to-explain)",
+        "label_en": "🗣 Give candidate a chance to explain (right-to-explain)",
+        "points": 30,
+        "correct": true,
+        "feedback_uk": "✓ HR best-practice: перед REJECT на $180K позицію — offer candidate 24-48h пояснити конкретні прапорці (2020 CV contradiction, брак recent LinkedIn). У реальній практиці ~20% «fraud flags» виявляються name collisions, поганим OCR, або legitimate gap explanation. Це також захищає компанію від discrimination-claim.",
+        "feedback_en": "✓ HR best-practice: before REJECT on a $180K position — offer candidate 24-48h to address specific flags (2020 CV contradiction, sparse recent LinkedIn). In real practice ~20% of \"fraud flags\" turn out to be name collisions, bad OCR, or legitimate gap explanation. Also protects the company from discrimination claims."
+      },
+      {
+        "id": "proceed_with_conditions",
+        "label_uk": "🔒 Продовжити з умовами (background check gate)",
+        "label_en": "🔒 Proceed with conditions (background check gate)",
+        "points": 15,
+        "correct": false,
+        "feedback_uk": "△ Компромісна відповідь: продовжити onboarding, але з gate — professional background-check firm (Sterling / HireRight), verified references, probation-period. Для явних red-flag профілів цього замало (candidate виграє час і доступ), але прийнятно, якщо evidence все ще ambiguous.",
+        "feedback_en": "△ Compromise answer: proceed with onboarding but gate on professional background-check firm (Sterling / HireRight), verified references, probation period. Insufficient for clear red-flag profiles (candidate gains time and access) but acceptable when evidence remains ambiguous."
+      },
+      {
+        "id": "decline_with_reason",
+        "label_uk": "📝 Відхилити з формальним поясненням причин",
+        "label_en": "📝 Decline with formal written reason",
+        "points": 20,
+        "correct": true,
+        "feedback_uk": "✓ HR-compliant REJECT: письмова відмова з конкретними reasons (не «gut feeling») → знижує ризик discrimination-claim під час арбітражу. У EU/UA context обов'язкова згідно з labour code. NB: reasons мають бути factual, не спекулятивні.",
+        "feedback_en": "✓ HR-compliant REJECT: written decline with specific reasons (not \"gut feeling\") → reduces discrimination-claim risk in arbitration. Mandatory in EU/UA context per labour code. NB: reasons must be factual, not speculative."
       }
     ]
   },

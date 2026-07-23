@@ -108,7 +108,7 @@
         "weight": "diagnostic",
         "ui_component": "invoice-analysis",
         "clue_uk": "Michael Chen (22, student) відкрив маленький retail-акаунт з $200 initial deposit у березні 2025. Ні одної покупки за рік. Аж 3 днів до announcement — купив 4 200 PowerFlex за $30K (позика від «family friend»). Через день після announcement — продав з $85K прибутком. Це стрибок ~44%.",
-        "clue_en": "Michael Chen (22, student) opened small retail account with $200 initial deposit in March 2025. No purchases for a year. Then 3 days before announcement — bought 4,200 PowerFlex at $30K (loan from «family friend»). One day post-announcement — sold with $85K profit. ~44% jump.",
+        "clue_en": "Michael Chen (22, student) opened small retail account with $200 initial deposit in March 2025. No purchases for a year. Then 3 days before announcement — bought 4,200 PowerFlex at $30K (loan from \"family friend\"). One day post-announcement — sold with $85K profit. ~44% jump.",
         "invoices": [
           {
             "number": "TRD-001",
@@ -240,20 +240,20 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "David публічно похвалився Rolex-ом 30 квітня («Life is good 💰») + Bali відпочинок травень. Timing очевидний — сам показав compliance.",
-        "clue_en": "David publicly bragged about Rolex Apr 30 («Life is good 💰») + Bali vacation May. Timing obvious — he flagged himself to compliance.",
+        "clue_en": "David publicly bragged about Rolex Apr 30 (\"Life is good 💰\") + Bali vacation May. Timing obvious — he flagged himself to compliance.",
         "matches": [
           {
             "site": "Instagram · @dchen_nyc (public)",
             "url": "instagram.com/dchen_nyc/p/CabX1",
             "note_uk": "30 квітня 2026 · фото Rolex Datejust з підписом «Life is good 💰 #treatyoself»",
-            "note_en": "April 30, 2026 · Rolex Datejust photo captioned «Life is good 💰 #treatyoself»",
+            "note_en": "April 30, 2026 · Rolex Datejust photo captioned \"Life is good 💰 #treatyoself\"",
             "img": "/img/uploads/simulator/sim02/case5-instagram-rolex.jpg"
           },
           {
             "site": "Instagram · @dchen_nyc",
             "url": "instagram.com/dchen_nyc/p/CabX2",
             "note_uk": "15 травня · Bali villa selfie з підписом «Bonus season 🌴»",
-            "note_en": "May 15 · Bali villa selfie captioned «Bonus season 🌴»"
+            "note_en": "May 15 · Bali villa selfie captioned \"Bonus season 🌴\""
           }
         ]
       },
@@ -269,7 +269,7 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Michael — undergrad Junior у NYU (Communications, GPA 3.1). Немає business background. Never worked у finance. Заявлена «family friend loan» на $30K — highly improbable.",
-        "clue_en": "Michael — undergrad Junior at NYU (Communications, GPA 3.1). No business background. Never worked in finance. Claimed «family friend loan» of $30K — highly improbable.",
+        "clue_en": "Michael — undergrad Junior at NYU (Communications, GPA 3.1). No business background. Never worked in finance. Claimed \"family friend loan\" of $30K — highly improbable.",
         "matches": [
           {
             "site": "NYU public directory · Michael Chen '27",
@@ -281,7 +281,7 @@
             "site": "LinkedIn · Michael Chen",
             "url": "linkedin.com/in/m-chen-nyu",
             "note_uk": "«Communications student. Aspiring content creator.» 47 connections total.",
-            "note_en": "«Communications student. Aspiring content creator.» 47 connections total."
+            "note_en": "\"Communications student. Aspiring content creator.\" 47 connections total."
           }
         ]
       },
@@ -299,7 +299,7 @@
         "weight": "diagnostic",
         "ui_component": "meeting-minutes",
         "clue_uk": "David був на restricted list (не міг сам купувати PowerFlex). Але policy включає «immediate family members» — brother, spouse, parents. Michael явно попадає під «immediate family living at same address».",
-        "clue_en": "David was on restricted list (couldn't personally buy PowerFlex). But policy includes «immediate family members» — brother, spouse, parents. Michael clearly falls under «immediate family living at same address».",
+        "clue_en": "David was on restricted list (couldn't personally buy PowerFlex). But policy includes \"immediate family members\" — brother, spouse, parents. Michael clearly falls under \"immediate family living at same address\".",
         "doc": {
           "title": "Silvermark Chinese Wall policy · Restricted Trading List",
           "date": "2026-03-15 (updated for NextFlex deal)",
@@ -313,7 +313,7 @@
             },
             {
               "text_uk": "David Chen certified у 2026-03-15: «I confirm no immediate family or resident members will trade securities on the NextFlex restricted list.» — Signed under IB Code of Ethics.",
-              "text_en": "David Chen certified on 2026-03-15: «I confirm no immediate family or resident members will trade securities on the NextFlex restricted list.» — Signed under IB Code of Ethics."
+              "text_en": "David Chen certified on 2026-03-15: \"I confirm no immediate family or resident members will trade securities on the NextFlex restricted list.\" — Signed under IB Code of Ethics."
             },
             {
               "text_uk": "⚠ Michael Chen (brother, same address) traded PWRX 4 tygenia later. This is direct violation of Chinese Wall + false certification.",
@@ -410,13 +410,13 @@
         "weight": "noise",
         "ui_component": "matches",
         "clue_uk": "Roommate каже Michael «хвалився» big trade. Це anonymous student gossip, не evidentiary. Це не додає до legal case.",
-        "clue_en": "Roommate says Michael «bragged» about big trade. Anonymous student gossip, not evidentiary. Doesn't add to legal case.",
+        "clue_en": "Roommate says Michael \"bragged\" about big trade. Anonymous student gossip, not evidentiary. Doesn't add to legal case.",
         "matches": [
           {
             "site": "Anonymous NYU dorm source",
             "url": "—",
             "note_uk": "«Michael після покупки хвалився що «зробив бабки на brother's insider tip». Це може бути braggingом.», лежит на surface.",
-            "note_en": "«Michael after purchase bragged he 'made bank on brother's insider tip'. Could be bragging.» surface-level."
+            "note_en": "\"Michael after purchase bragged he 'made bank on brother's insider tip'. Could be bragging.\" surface-level."
           }
         ]
       },
@@ -434,13 +434,13 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Bloomberg 20 квітня опублікував slight speculation — «NextEra може bo interested у renewable target». Ніщо специфічне про PowerFlex. Це NOT valid defense for Michael's specific $30K PWRX purchase.",
-        "clue_en": "Bloomberg April 20 published slight speculation — «NextEra may be interested in renewable target». Nothing specific about PowerFlex. NOT valid defense for Michael's specific $30K PWRX purchase.",
+        "clue_en": "Bloomberg April 20 published slight speculation — \"NextEra may be interested in renewable target\". Nothing specific about PowerFlex. NOT valid defense for Michael's specific $30K PWRX purchase.",
         "matches": [
           {
             "site": "Bloomberg 20 April 2026",
             "url": "bloomberg.com/next-target-speculation",
             "note_uk": "«NextEra CEO hinted at renewable acquisitions». No specific target named. Sector-general.",
-            "note_en": "«NextEra CEO hinted at renewable acquisitions». No specific target named. Sector-general."
+            "note_en": "\"NextEra CEO hinted at renewable acquisitions\". No specific target named. Sector-general."
           }
         ]
       }
@@ -448,7 +448,7 @@
   },
   "timeline_phase": {
     "title_uk": "Хронологія «Insider Trading»",
-    "title_en": "«Insider Trading» timeline",
+    "title_en": "\"Insider Trading\" timeline",
     "instruction_uk": "Розстав всі ключові події від deal-room access до Rolex-покупки. Правильна пара +5, помилкова −3.",
     "instruction_en": "Arrange all key events from deal room access to Rolex purchase. Correct pair +5, wrong pair −3.",
     "submit_btn_uk": "Підтвердити хронологію →",
@@ -518,7 +518,7 @@
       {
         "id": "q1",
         "text_uk": "David каже: «Я НЕ купував акції. Michael — окрема людина, дорослий, самостійні рішення.» Це рятує його?",
-        "text_en": "David says: «I did NOT buy shares. Michael is a separate person, adult, independent decisions.» Does this save him?",
+        "text_en": "David says: \"I did NOT buy shares. Michael is a separate person, adult, independent decisions.\" Does this save him?",
         "options": [
           {
             "text_uk": "Так — якщо Michael 22 і дорослий, це його decision",
@@ -732,7 +732,7 @@
         "id": "ev_false_cert",
         "weight": 5,
         "text_uk": "David 2026-03-15 підписав під присягою false Chinese Wall certification: «no immediate family or residents will trade restricted securities» — direct violation",
-        "text_en": "David 2026-03-15 signed sworn false Chinese Wall certification: «no immediate family or residents will trade restricted securities» — direct violation",
+        "text_en": "David 2026-03-15 signed sworn false Chinese Wall certification: \"no immediate family or residents will trade restricted securities\" — direct violation",
         "custody": {
           "collected_from_en": "Compliance policy handbook (v2025)",
           "collected_from_uk": "Compliance policy handbook (ред. 2025)",
@@ -812,7 +812,7 @@
         "id": "ev_michael_bg",
         "weight": 3,
         "text_uk": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $30K — highly improbable",
-        "text_en": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $30K — highly improbable",
+        "text_en": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed \"friend loan\" $30K — highly improbable",
         "custody": {
           "collected_from_en": "Corporate email server / IT-Security export",
           "collected_from_uk": "Корпоративний email-сервер / IT-Security експорт",
@@ -828,7 +828,7 @@
         "id": "ev_dorm_gossip",
         "weight": 1,
         "text_uk": "Anonymous NYU dorm roommate testimony — «Michael хвалився insider tip»",
-        "text_en": "Anonymous NYU dorm roommate testimony — «Michael bragged about insider tip»",
+        "text_en": "Anonymous NYU dorm roommate testimony — \"Michael bragged about insider tip\"",
         "custody": {
           "collected_from_en": "Interview / anonymous testimony",
           "collected_from_uk": "Інтервʼю / анонімне свідчення",

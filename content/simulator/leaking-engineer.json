@@ -44,7 +44,7 @@
         "name_en": "OpenCorporates: LLC lookup",
         "provider": "OpenCorporates + State Registry (ЄДР)",
         "desc_uk": "Знайти ТОВ «TechConsult» — засновники, директори, адреса",
-        "desc_en": "Find LLC «TechConsult» — founders, directors, address",
+        "desc_en": "Find LLC \"TechConsult\" — founders, directors, address",
         "tooltip_uk": "Що робить: пошук у державному реєстрі юрособи + її директорів/засновників. Для чого: підтвердити зв'язки з підставним vendor.",
         "tooltip_en": "What it does: state registry lookup for the legal entity + its directors/founders. Use it: to confirm ties to a shell vendor.",
         "correct": true,
@@ -53,7 +53,7 @@
         "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "ТОВ «TechConsult» — директор дружина суб'єкта, адреса реєстрації = домашня адреса суб'єкта.",
-        "clue_en": "LLC «TechConsult» — director is subject's wife, registration address = subject's home address.",
+        "clue_en": "LLC \"TechConsult\" — director is subject's wife, registration address = subject's home address.",
         "opencorp": {
           "query": "TechConsult LLC · Ukraine",
           "company_name": "TOB «TechConsult»",
@@ -139,7 +139,7 @@
         "weight": "supporting",
         "ui_component": "invoice-analysis",
         "clue_uk": "Інвойс від «TechConsult» на $180K — вперше з'явився у березні, затверджений V.R.",
-        "clue_en": "Invoice from «TechConsult» for $180K — first appeared in March, approved by V.R.",
+        "clue_en": "Invoice from \"TechConsult\" for $180K — first appeared in March, approved by V.R.",
         "invoices": [
           {
             "number": "INV-2026-01847",
@@ -180,7 +180,7 @@
           }
         ],
         "invoices_note_uk": "🚩 «TechConsult» — vendor який раніше НЕ існував у системі. Обидва інвойси затверджені особисто V.R. (senior engineer, не CFO). Це порушення procurement policy — суми >$50K потребують подвійного затвердження CFO + Head of Engineering.",
-        "invoices_note_en": "🚩 «TechConsult» — vendor that DID NOT exist in the system before. Both invoices approved personally by V.R. (senior engineer, not CFO). This breaches procurement policy — amounts >$50K require dual approval by CFO + Head of Engineering."
+        "invoices_note_en": "🚩 \"TechConsult\" — vendor that DID NOT exist in the system before. Both invoices approved personally by V.R. (senior engineer, not CFO). This breaches procurement policy — amounts >$50K require dual approval by CFO + Head of Engineering."
       },
       {
         "id": "email_chain_leak",
@@ -198,7 +198,7 @@
         "weight": "diagnostic",
         "ui_component": "email-chain",
         "clue_uk": "V.R. напряму спілкується з CTO конкурента про «зовнішнє консультування» через ТОВ «TechConsult».",
-        "clue_en": "V.R. directly communicates with the competitor's CTO about «external consulting» via LLC «TechConsult».",
+        "clue_en": "V.R. directly communicates with the competitor's CTO about \"external consulting\" via LLC \"TechConsult\".",
         "email_chain": {
           "thread_subj": "External architecture consultation — Q1 engagement",
           "messages": [
@@ -285,7 +285,7 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Конкурент раптово в березні опублікував job posting на «Senior Ledger Architect» — раніше такої позиції не було.",
-        "clue_en": "In March the competitor suddenly posted a «Senior Ledger Architect» role — such a position didn't exist before.",
+        "clue_en": "In March the competitor suddenly posted a \"Senior Ledger Architect\" role — such a position didn't exist before.",
         "matches": [
           {
             "site": "web.archive.org (Feb 2026)",
@@ -297,7 +297,7 @@
             "site": "web.archive.org (March 20, 2026)",
             "url": "competitor-corp.example/careers",
             "note_uk": "🚩 Нова вакансія: «Senior Ledger Architect · lead our new event-driven ledger implementation». Опис — 1-в-1 як core-banking у SecureBank.",
-            "note_en": "🚩 New role: «Senior Ledger Architect · lead our new event-driven ledger implementation». Description — 1-to-1 with SecureBank's core-banking."
+            "note_en": "🚩 New role: \"Senior Ledger Architect · lead our new event-driven ledger implementation\". Description — 1-to-1 with SecureBank's core-banking."
           }
         ]
       },
@@ -317,7 +317,7 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "У профілі з'явились нові навички: «Enterprise Architecture Consulting», «External advisory» — вперше додано у лютому 2026.",
-        "clue_en": "New skills appeared: «Enterprise Architecture Consulting», «External advisory» — first added in February 2026.",
+        "clue_en": "New skills appeared: \"Enterprise Architecture Consulting\", \"External advisory\" — first added in February 2026.",
         "matches": [
           {
             "site": "LinkedIn (public)",
@@ -340,7 +340,7 @@
         "name_en": "Bank transfer log (TechConsult account)",
         "provider": "Bank statement · court order",
         "desc_uk": "Рухи по рахунку ТОВ «TechConsult»",
-        "desc_en": "Transactions on LLC «TechConsult» account",
+        "desc_en": "Transactions on LLC \"TechConsult\" account",
         "tooltip_uk": "Що робить: показує вхідні і вихідні платежі. Для чого: побачити куди підуть гроші після оплати.",
         "tooltip_en": "What it does: shows incoming/outgoing payments. Use it: see where money goes after payment.",
         "correct": true,
@@ -412,7 +412,7 @@
         "name_en": "V.R.'s old Facebook",
         "provider": "Facebook (archived posts)",
         "desc_uk": "Пости 2023-2024 про плани «свого бізнесу»",
-        "desc_en": "2023-2024 posts about «own business» plans",
+        "desc_en": "2023-2024 posts about \"own business\" plans",
         "tooltip_uk": "Що робить: показує архівні пости. Для чого: індикатор наміру.",
         "tooltip_en": "What it does: shows archived posts. Use it: intent indicator.",
         "correct": false,
@@ -427,7 +427,7 @@
             "site": "Facebook (2024)",
             "url": "facebook.com/vr-securebank",
             "note_uk": "«Готуюсь запустити власну консалтингову — цінність knowledge справжня.»",
-            "note_en": "«Preparing to launch my own consultancy — knowledge value is real.»",
+            "note_en": "\"Preparing to launch my own consultancy — knowledge value is real.\"",
             "img": "/img/uploads/simulator/sim02/case1-facebook-consulting.png"
           }
         ]
@@ -439,7 +439,7 @@
         "name_en": "HR colleague rumor",
         "provider": "Anonymous testimony · verbal",
         "desc_uk": "«V.R. недавно казав що йому нецікаво тут»",
-        "desc_en": "«V.R. recently said he's bored here»",
+        "desc_en": "\"V.R. recently said he's bored here\"",
         "tooltip_uk": "DECOY. Верхнє посилання анонімне, без доказовості. НЕ цитуй у меморандумі.",
         "tooltip_en": "DECOY. Anonymous hearsay, no evidentiary value. DO NOT cite in the memo.",
         "correct": false,
@@ -454,7 +454,7 @@
             "site": "HR notes (informal)",
             "url": "—",
             "note_uk": "Колега з HR сказав: «V.R. на минулому кава-брейку скаржився що йому нецікаво тут, шукає нове».",
-            "note_en": "HR colleague said: «V.R. at the last coffee break complained he's bored here, looking for something new»."
+            "note_en": "HR colleague said: \"V.R. at the last coffee break complained he's bored here, looking for something new\"."
           }
         ]
       },
@@ -474,7 +474,7 @@
         "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "За адресою — житловий будинок. Ніяких офісних вивісок «TechConsult». Це residence суб'єкта.",
-        "clue_en": "At the address — a residential building. No «TechConsult» office signage. This is subject's residence.",
+        "clue_en": "At the address — a residential building. No \"TechConsult\" office signage. This is subject's residence.",
         "matches": [
           {
             "site": "Google Street View (Jun 2025)",
@@ -488,7 +488,7 @@
   },
   "timeline_phase": {
     "title_uk": "Побудуй хронологію «The Leaking Engineer»",
-    "title_en": "Build the «Leaking Engineer» timeline",
+    "title_en": "Build the \"Leaking Engineer\" timeline",
     "instruction_uk": "Розстав знайдені події у правильному хронологічному й причинно-наслідковому порядку. Правильна пара сусідніх +5, помилкова −3.",
     "instruction_en": "Arrange the discovered events in correct chronological and causal order. Correct adjacent pair +5, wrong pair −3.",
     "submit_btn_uk": "Підтвердити хронологію →",
@@ -510,13 +510,13 @@
         "id": "e3",
         "date": "2026-02-18",
         "text_uk": "Перший email: CTO конкурента запросив engagement + натякнув на «маленьку консалтингову структуру»",
-        "text_en": "First email: competitor's CTO requested an engagement + hinted at «small consulting entity»"
+        "text_en": "First email: competitor's CTO requested an engagement + hinted at \"small consulting entity\""
       },
       {
         "id": "e4",
         "date": "2026-02-22",
         "text_uk": "Реєстрація: ТОВ «TechConsult» створено у ЄДР, дружина суб'єкта — єдиний засновник і директор",
-        "text_en": "Registration: LLC «TechConsult» filed with the state registry, subject's wife — sole founder and director"
+        "text_en": "Registration: LLC \"TechConsult\" filed with the state registry, subject's wife — sole founder and director"
       },
       {
         "id": "e5",
@@ -558,7 +558,7 @@
       {
         "id": "q1",
         "text_uk": "Хто справжній бенефіціар ТОВ «TechConsult»?",
-        "text_en": "Who is the true beneficiary of LLC «TechConsult»?",
+        "text_en": "Who is the true beneficiary of LLC \"TechConsult\"?",
         "options": [
           {
             "text_uk": "Дружина суб'єкта — це її законний бізнес",
@@ -574,7 +574,7 @@
             "points": 25,
             "correct": true,
             "feedback_uk": "✓ Правильно. У листі V.R. сам пише «оформлення на дружину — вона formal owner». Плюс $10K повернулись напряму на його рахунок.",
-            "feedback_en": "✓ Correct. In email V.R. himself writes «registered under my wife — she's the formal owner». Plus $10K flowed back to his personal account."
+            "feedback_en": "✓ Correct. In email V.R. himself writes \"registered under my wife — she's the formal owner\". Plus $10K flowed back to his personal account."
           },
           {
             "text_uk": "Конкурент — це вони фактично контролюють через договір",
@@ -656,7 +656,7 @@
           },
           {
             "text_uk": "Rumor від HR-колеги («V.R. на кава-брейку скаржився що йому нецікаво»)",
-            "text_en": "HR colleague rumor («V.R. complained at coffee break he's bored»)",
+            "text_en": "HR colleague rumor (\"V.R. complained at coffee break he's bored\")",
             "points": 25,
             "correct": true,
             "feedback_uk": "✓ Правильно. Anonymous hearsay = 0 evidentiary value + може розвалити довіру у суді. Класична DECOY-пастка для новачків.",
@@ -724,7 +724,7 @@
         "id": "ev_llc_wife",
         "weight": 5,
         "text_uk": "ТОВ «TechConsult» — директор і 100% засновник = дружина суб'єкта (OpenCorporates + ЄДР)",
-        "text_en": "LLC «TechConsult» — director and 100% founder = subject's wife (OpenCorporates + State Registry)",
+        "text_en": "LLC \"TechConsult\" — director and 100% founder = subject's wife (OpenCorporates + State Registry)",
         "custody": {
           "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
@@ -756,7 +756,7 @@
         "id": "ev_email_leak",
         "weight": 5,
         "text_uk": "Email chain з CTO конкурента — V.R. сам пише «оформлення на дружину», attachment з архітектурою",
-        "text_en": "Email chain with competitor's CTO — V.R. himself writes «registered under my wife», attachment with architecture",
+        "text_en": "Email chain with competitor's CTO — V.R. himself writes \"registered under my wife\", attachment with architecture",
         "custody": {
           "collected_from_en": "Corporate email server / IT-Security export",
           "collected_from_uk": "Корпоративний email-сервер / IT-Security експорт",
@@ -804,7 +804,7 @@
         "id": "ev_competitor_hire",
         "weight": 3,
         "text_uk": "Конкурент раптово (Mar 2026) відкрив вакансію «Senior Ledger Architect» з описом 1-в-1 як core-banking SecureBank",
-        "text_en": "Competitor suddenly (Mar 2026) posted «Senior Ledger Architect» role with 1-to-1 SecureBank core-banking description",
+        "text_en": "Competitor suddenly (Mar 2026) posted \"Senior Ledger Architect\" role with 1-to-1 SecureBank core-banking description",
         "custody": {
           "collected_from_en": "Internal audit archive",
           "collected_from_uk": "Внутрішній архів аудиту",
@@ -852,7 +852,7 @@
         "id": "ev_fb_intent",
         "weight": 2,
         "text_uk": "Facebook-пости V.R. 2024 про наміри «власного консалтингового бізнесу»",
-        "text_en": "V.R.'s 2024 Facebook posts about intent to «own consulting business»",
+        "text_en": "V.R.'s 2024 Facebook posts about intent to \"own consulting business\"",
         "custody": {
           "collected_from_en": "Public social-media archive (OSINT scrape)",
           "collected_from_uk": "Публічний архів соцмереж (OSINT-збір)",
@@ -884,7 +884,7 @@
         "id": "ev_hr_rumor",
         "weight": 1,
         "text_uk": "Чутки HR-колеги: V.R. на кава-брейку скаржився що йому «нецікаво»",
-        "text_en": "HR colleague hearsay: V.R. complained at coffee break he's «bored»",
+        "text_en": "HR colleague hearsay: V.R. complained at coffee break he's \"bored\"",
         "custody": {
           "collected_from_en": "Interview / anonymous testimony",
           "collected_from_uk": "Інтервʼю / анонімне свідчення",
@@ -1013,7 +1013,7 @@
       "target_count": 5,
       "target_max": 5,
       "reason_uk": "Ідеальний вибір: LLC-founder=дружина, invoice+approval V.R., meeting minutes leak, money flow $170K→дружина+$10K→V.R., email chain з CTO конкурента. Найчастіше пропускають email chain — сприймають як «просто розмова», а насправді це прямий доказ наміру.",
-      "reason_en": "Ideal selection: LLC founder=wife, invoice+V.R. approval, meeting minutes leak, money flow $170K→wife+$10K→V.R., email chain with competitor's CTO. Most commonly missed: email chain — perceived as «just a conversation», but it is direct evidence of intent."
+      "reason_en": "Ideal selection: LLC founder=wife, invoice+V.R. approval, meeting minutes leak, money flow $170K→wife+$10K→V.R., email chain with competitor's CTO. Most commonly missed: email chain — perceived as \"just a conversation\", but it is direct evidence of intent."
     },
     "policy": {
       "target_pct": 100,
@@ -1023,7 +1023,7 @@
     "questions": {
       "target_pct": 100,
       "reason_uk": "Всі 3 questions мають один явно правильний варіант при уважному аналізі доказів. Помилки зазвичай на Q2 (роль дружини — між «свідома учасниця» vs «прикриття») — правильна відповідь спирається на bank flow ($170K на її рахунок).",
-      "reason_en": "All 3 questions have one clearly correct option after careful evidence analysis. Mistakes usually on Q2 (wife's role — between «knowing participant» vs «cover») — correct answer relies on bank flow ($170K to her account)."
+      "reason_en": "All 3 questions have one clearly correct option after careful evidence analysis. Mistakes usually on Q2 (wife's role — between \"knowing participant\" vs \"cover\") — correct answer relies on bank flow ($170K to her account)."
     }
   }
 }

@@ -21,14 +21,22 @@ const L = (uk, en) => LANG() === 'en' ? en : uk;
 
 // Chain of Custody plaque — renders provenance metadata for any evidence.
 // Backwards compat: returns '' when custody field is absent.
+// #15: Surface only when there's a reason (unverified/broken OR low/medium confidence).
+//     Verified+high+primary → returns minimal one-liner tag so player learns baseline once
+//     without visual noise on every item.
 function custodyPlaque(obj) {
   const c = obj && obj.custody;
   if (!c) return '';
+  const integrity = c.integrity || 'verified';
+  const confidence = c.confidence || 'high';
+  const cls = c.evidence_class || 'primary';
+  // Baseline (verified + high + primary) — minimal chip only, no full grid
+  if (integrity === 'verified' && confidence === 'high' && cls === 'primary') {
+    return `<div class="custody-tag custody-tag--baseline"><span class="custody-tag__integrity">${L('Підтверджено','Verified')}</span></div>`;
+  }
   const collected = tr(c, 'collected_from');
   const verified  = tr(c, 'verified_by');
   const ts = c.timestamp || '';
-  const integrity = c.integrity || 'verified';
-  const cls = c.evidence_class || 'primary';
   const iLabel = LANG()==='en'
     ? {verified:'Verified', unverified:'Unverified', broken:'Broken chain'}[integrity]
     : {verified:'Підтверджено', unverified:'Не підтверджено', broken:'Ланцюг порушено'}[integrity];
@@ -244,6 +252,17 @@ function renderBriefing() {
               <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>
             </div>
             <p class="game-brief__text">${escapeHtml(tr(br,'body'))}</p>
+            ${br.lawful_basis_gate ? `
+              <div class="lawful-gate">
+                <div class="lawful-gate__title">${escapeHtml(tr(br.lawful_basis_gate,'title'))}</div>
+                <div class="lawful-gate__body">${escapeHtml(tr(br.lawful_basis_gate,'body')).replace(/\n/g,'<br>')}</div>
+                <label class="lawful-gate__check">
+                  <input type="checkbox" id="lawful-gate-cb">
+                  <span>${escapeHtml(tr(br.lawful_basis_gate,'checkbox'))}</span>
+                </label>
+                <div class="lawful-gate__warn">${escapeHtml(tr(br.lawful_basis_gate,'skip_warning'))}</div>
+              </div>
+            ` : ''}
             <div class="game-brief__actions">
               <button class="btn btn--filled" id="btn-start">${escapeHtml(tr(br,'start_btn'))}</button>
             </div>
@@ -256,6 +275,17 @@ function renderBriefing() {
   if (typeof renderHelpPanel === 'function') renderHelpPanel();
   showHelpHint();
   $('#btn-start').addEventListener('click', () => {
+    // #13: GDPR lawful-basis gate — penalize skip if present and unchecked
+    const gate = State.scenario.briefing.lawful_basis_gate;
+    const cb = document.getElementById('lawful-gate-cb');
+    if (gate && cb && !cb.checked) {
+      const penalty = gate.skip_penalty || -20;
+      State.points += penalty;
+      State.lawfulBasisSkipped = true;
+      track('game-lawful-basis-skipped', { penalty });
+    } else if (gate) {
+      State.lawfulBasisConfirmed = true;
+    }
     State.phase = 'phase2';
     State.startedAt = Date.now();
     startTimer();
@@ -1864,6 +1894,49 @@ async function submitMemo(sortableZone, sortablePool) {
     updateMemoHint();
     return;
   }
+
+  // #16: Interactive Chain of Custody gate — warn before submitting weak-source evidence.
+  // Fires only once per submit; player can confirm or return to memo.
+  if (!State._custodyConfirmed) {
+    const pool = mp.evidence_pool || [];
+    const suspect = State.memoEvidence.map(id => {
+      const e = pool.find(x => x.id === id);
+      const integrity = e && e.custody && e.custody.integrity;
+      return (integrity === 'broken' || integrity === 'unverified') ? { e, integrity } : null;
+    }).filter(Boolean);
+    if (suspect.length) {
+      const isEn = LANG() === 'en';
+      const lines = suspect.map(s => `<li><strong>${s.integrity === 'broken' ? '⛔ ' : '⚠ '}${s.integrity.toUpperCase()}</strong> — ${escapeHtml(tr(s.e, 'text'))}</li>`).join('');
+      const html = `
+        <div class="custody-gate">
+          <div class="custody-gate__box">
+            <div class="custody-gate__pre">${isEn ? 'CHAIN-OF-CUSTODY REVIEW' : 'РЕВʼЮ ЛАНЦЮГА ДОКАЗІВ'}</div>
+            <h3>${isEn ? 'Cited evidence has weak provenance' : 'Обрані докази мають слабке походження'}</h3>
+            <p>${isEn
+              ? 'These items may be excluded by SEC/FINRA/court on admissibility grounds. Citing them will cost points (broken −15, unverified −5 per item). Do you want to keep them in the memo?'
+              : 'Ці елементи можуть бути виключені SEC/FINRA/судом за admissibility-підставами. Цитування коштуватиме очок (broken −15, unverified −5 за кожен). Залишити їх у меморандумі?'}</p>
+            <ul class="custody-gate__list">${lines}</ul>
+            <div class="custody-gate__actions">
+              <button class="btn" id="custody-back">← ${isEn ? 'Return to memo' : 'Повернутися до memo'}</button>
+              <button class="btn btn--filled" id="custody-confirm">${isEn ? 'Cite anyway → Submit' : 'Цитувати попри це → Подати'}</button>
+            </div>
+          </div>
+        </div>`;
+      const holder = document.createElement('div');
+      holder.innerHTML = html;
+      document.body.appendChild(holder.firstElementChild);
+      document.getElementById('custody-back').onclick = () => {
+        document.querySelector('.custody-gate').remove();
+      };
+      document.getElementById('custody-confirm').onclick = () => {
+        document.querySelector('.custody-gate').remove();
+        State._custodyConfirmed = true;
+        submitMemo(sortableZone, sortablePool);
+      };
+      return;
+    }
+  }
+
   State.memoSubmitted = true;
   State.ended = true;
   stopTimer();
