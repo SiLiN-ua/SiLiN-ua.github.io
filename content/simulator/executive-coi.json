@@ -6,9 +6,8 @@
   "max_points": 550,
   "title_uk": "Sim #02 · Case 4 · Executive Conflict of Interest",
   "title_en": "Sim #02 · Case 4 · Executive Conflict of Interest",
-
   "briefing": {
-    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "splash": "/img/uploads/simulator/sim02/case4-executive-coi.png",
     "client_uk": "MedNext Corp (NASDAQ: MDNX, cap $2.1B, medtech)",
     "client_en": "MedNext Corp (NASDAQ: MDNX, cap $2.1B, medtech)",
     "position": "CFO (10 років у компанії)",
@@ -20,12 +19,11 @@
     "candidate": {
       "name_uk": "David P. (52, CFO MedNext з 2016)",
       "name_en": "David P. (52, CFO MedNext since 2016)",
-      "photo": "img/uploads/simulator/candidate-passport.jpg",
+      "photo": "/img/uploads/simulator/sim02/case4-candidate.png",
       "email": "d.p@mednext-corp.example",
       "phone": "US +1 (415) XXX-XX-92"
     }
   },
-
   "phase2": {
     "title_uk": "Розслідування · високий ризик · Panama-based structure",
     "title_en": "Investigation · high risk · Panama-based structure",
@@ -43,19 +41,46 @@
         "provider": "ICIJ · offshoreleaks.icij.org",
         "desc_uk": "Пошук CFO у ВСІХ трьох offshore leaks",
         "desc_en": "Search CFO in ALL three offshore leaks",
-        "correct": true, "points": 25, "time_cost": 120, "weight": "diagnostic",
+        "correct": true,
+        "points": 25,
+        "time_cost": 120,
+        "weight": "diagnostic",
         "ui_component": "panama-lookup",
         "clue_uk": "Знайдено: Silverwood Family Trust (Panama, 2018). Trustee: David P. Beneficiaries: подружжя. Через 3 layer'и володіє 4.2% BioLink Systems.",
         "clue_en": "Found: Silverwood Family Trust (Panama, 2018). Trustee: David P. Beneficiaries: spouse. Through 3 layers owns 4.2% of BioLink Systems.",
         "panama": {
           "query": "David P. + MedNext + BioLink beneficial ownership",
           "results": [
-            { "entity": "Silverwood Family Trust", "jurisdiction": "Panama", "role_uk": "Trustee: David P., Beneficiary: Sarah P. (spouse)", "role_en": "Trustee: David P., Beneficiary: Sarah P. (spouse)", "source": "Panama Papers 2018",
-              "note_uk": "Створено 2018-05-14. Public source (leaked): показує ownership structure.", "note_en": "Created 2018-05-14. Public source (leaked): shows ownership structure." },
-            { "entity": "Silverwood Holdings LP", "jurisdiction": "Cayman Islands", "role_uk": "Fund vehicle · owned 100% by Silverwood Trust", "role_en": "Fund vehicle · owned 100% by Silverwood Trust", "source": "Paradise Papers 2017",
-              "note_uk": "Реєстрація Cayman 2019. Holds various positions.", "note_en": "Cayman registered 2019. Holds various positions." },
-            { "entity": "BluePeak Ventures LLC", "jurisdiction": "Delaware, USA", "role_uk": "Delaware LLC · майже повністю (95%) owned by Silverwood Holdings LP", "role_en": "Delaware LLC · almost entirely (95%) owned by Silverwood Holdings LP", "source": "Pandora Papers 2021 + SEC 13F",
-              "note_uk": "Holds 4.2% of BioLink Systems shares according to SEC 13F filing.", "note_en": "Holds 4.2% of BioLink Systems shares per SEC 13F filing." }
+            {
+              "entity": "Silverwood Family Trust",
+              "jurisdiction": "Panama",
+              "role_uk": "Trustee: David P., Beneficiary: Sarah P. (spouse)",
+              "role_en": "Trustee: David P., Beneficiary: Sarah P. (spouse)",
+              "source": "Panama Papers 2018",
+              "note_uk": "Створено 2018-05-14. Public source (leaked): показує ownership structure.",
+              "note_en": "Created 2018-05-14. Public source (leaked): shows ownership structure.",
+              "img": "/img/uploads/simulator/sim02/case4-ownership-graph.jpg"
+            },
+            {
+              "entity": "Silverwood Holdings LP",
+              "jurisdiction": "Cayman Islands",
+              "role_uk": "Fund vehicle · owned 100% by Silverwood Trust",
+              "role_en": "Fund vehicle · owned 100% by Silverwood Trust",
+              "source": "Paradise Papers 2017",
+              "note_uk": "Реєстрація Cayman 2019. Holds various positions.",
+              "note_en": "Cayman registered 2019. Holds various positions.",
+              "img": "/img/uploads/simulator/sim02/case4-ownership-graph.jpg"
+            },
+            {
+              "entity": "BluePeak Ventures LLC",
+              "jurisdiction": "Delaware, USA",
+              "role_uk": "Delaware LLC · майже повністю (95%) owned by Silverwood Holdings LP",
+              "role_en": "Delaware LLC · almost entirely (95%) owned by Silverwood Holdings LP",
+              "source": "Pandora Papers 2021 + SEC 13F",
+              "note_uk": "Holds 4.2% of BioLink Systems shares according to SEC 13F filing.",
+              "note_en": "Holds 4.2% of BioLink Systems shares per SEC 13F filing.",
+              "img": "/img/uploads/simulator/sim02/case4-ownership-graph.jpg"
+            }
           ]
         }
       },
@@ -67,7 +92,10 @@
         "provider": "SEC EDGAR + OpenCorporates cross-reference",
         "desc_uk": "Structure: Silverwood → Cayman → Delaware → BioLink 4.2%",
         "desc_en": "Structure: Silverwood → Cayman → Delaware → BioLink 4.2%",
-        "correct": true, "points": 20, "time_cost": 90, "weight": "diagnostic",
+        "correct": true,
+        "points": 20,
+        "time_cost": 90,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "BluePeak Ventures LLC — на SEC 13F форми показано що володіє 4.2% BioLink ($36M value). Ланцюжок: BluePeak → Cayman → Panama trust → David P.",
         "clue_en": "BluePeak Ventures LLC — SEC 13F filings show 4.2% BioLink stake ($36M value). Chain: BluePeak → Cayman → Panama trust → David P.",
@@ -81,13 +109,28 @@
           "address_uk": "Wilmington, DE (registered agent: CorpDirect Services LLC — nominee for 3400+ Delaware LLCs)",
           "address_en": "Wilmington, DE (registered agent: CorpDirect Services LLC — nominee for 3400+ Delaware LLCs)",
           "officers": [
-            { "name_uk": "Sarah P. (formal 5% ownership)", "name_en": "Sarah P. (formal 5% ownership)", "role_uk": "Manager (nominee)", "role_en": "Manager (nominee)",
-              "note_uk": "формальний director, але beneficial ownership через Silverwood Holdings LP", "note_en": "formal director but beneficial ownership via Silverwood Holdings LP" }
+            {
+              "name_uk": "Sarah P. (formal 5% ownership)",
+              "name_en": "Sarah P. (formal 5% ownership)",
+              "role_uk": "Manager (nominee)",
+              "role_en": "Manager (nominee)",
+              "note_uk": "формальний director, але beneficial ownership через Silverwood Holdings LP",
+              "note_en": "formal director but beneficial ownership via Silverwood Holdings LP"
+            }
           ],
           "founders": [
-            { "name_uk": "Silverwood Holdings LP (Cayman)", "name_en": "Silverwood Holdings LP (Cayman)", "share": "95",
-              "note_uk": "beneficial owner traces back to Silverwood Family Trust (Panama, David P. as trustee)", "note_en": "beneficial owner traces back to Silverwood Family Trust (Panama, David P. as trustee)" },
-            { "name_uk": "Sarah P.", "name_en": "Sarah P.", "share": "5" }
+            {
+              "name_uk": "Silverwood Holdings LP (Cayman)",
+              "name_en": "Silverwood Holdings LP (Cayman)",
+              "share": "95",
+              "note_uk": "beneficial owner traces back to Silverwood Family Trust (Panama, David P. as trustee)",
+              "note_en": "beneficial owner traces back to Silverwood Family Trust (Panama, David P. as trustee)"
+            },
+            {
+              "name_uk": "Sarah P.",
+              "name_en": "Sarah P.",
+              "share": "5"
+            }
           ]
         }
       },
@@ -99,7 +142,10 @@
         "provider": "SEC EDGAR + MedNext 10-K 2025",
         "desc_uk": "Що David P. задекларував у 10-K",
         "desc_en": "What David P. disclosed in 10-K",
-        "correct": true, "points": 25, "time_cost": 90, "weight": "diagnostic",
+        "correct": true,
+        "points": 25,
+        "time_cost": 90,
+        "weight": "diagnostic",
         "ui_component": "meeting-minutes",
         "clue_uk": "У 10-K 2025 David P. підписав щорічну disclosure form: «no material outside interests in target sector companies». ЖОДНОЇ згадки Panama trust чи BluePeak. Це під присягою — Sarbanes-Oxley §302.",
         "clue_en": "In 2025 10-K David P. signed the annual disclosure form: «no material outside interests in target sector companies». ZERO mention of Panama trust or BluePeak. This is under oath — Sarbanes-Oxley §302.",
@@ -110,10 +156,14 @@
           "attendees_en": "David P. (CFO signature), General Counsel counter-sign",
           "classification": "PUBLIC · SEC EDGAR filing",
           "paragraphs": [
-            { "text_uk": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Sarbanes-Oxley §302 that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P.",
-              "text_en": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Sarbanes-Oxley §302 that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P." },
-            { "text_uk": "⚠ Cross-reference з Panama Papers + SEC 13F: 4.2% BioLink через ланцюжок Panama trust → Cayman → Delaware. Це DIRECTLY суперечить (b) declaration. Sarbanes-Oxley §302 порушення = personal criminal liability.",
-              "text_en": "⚠ Cross-reference with Panama Papers + SEC 13F: 4.2% BioLink via Panama trust → Cayman → Delaware chain. This DIRECTLY contradicts (b) declaration. Sarbanes-Oxley §302 breach = personal criminal liability." }
+            {
+              "text_uk": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Sarbanes-Oxley §302 that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P.",
+              "text_en": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Sarbanes-Oxley §302 that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P."
+            },
+            {
+              "text_uk": "⚠ Cross-reference з Panama Papers + SEC 13F: 4.2% BioLink через ланцюжок Panama trust → Cayman → Delaware. Це DIRECTLY суперечить (b) declaration. Sarbanes-Oxley §302 порушення = personal criminal liability.",
+              "text_en": "⚠ Cross-reference with Panama Papers + SEC 13F: 4.2% BioLink via Panama trust → Cayman → Delaware chain. This DIRECTLY contradicts (b) declaration. Sarbanes-Oxley §302 breach = personal criminal liability."
+            }
           ]
         }
       },
@@ -125,7 +175,10 @@
         "provider": "MedNext board documents + investment bank preso",
         "desc_uk": "Хто працював над acquisition BioLink",
         "desc_en": "Who worked on the BioLink acquisition",
-        "correct": true, "points": 20, "time_cost": 75, "weight": "diagnostic",
+        "correct": true,
+        "points": 20,
+        "time_cost": 75,
+        "weight": "diagnostic",
         "ui_component": "meeting-minutes",
         "clue_uk": "David P. був lead architect acquisition proposal. Валуація $850M базувалась на його own analysis. Голосує на раді через 7 днів. Стандартна ціна BioLink shares тепер стрибне ~35% при оголошенні.",
         "clue_en": "David P. was lead architect of the acquisition proposal. $850M valuation based on his own analysis. Board vote in 7 days. Normal BioLink shares will jump ~35% on announcement.",
@@ -136,12 +189,18 @@
           "attendees_en": "David P. (CFO, lead), external IB Goldman, McKinsey advisory",
           "classification": "CONFIDENTIAL · board-only",
           "paragraphs": [
-            { "text_uk": "Proposal: MedNext to acquire 100% of BioLink Systems for $850M cash. Premium: 32% над current share price. Financing: 60% debt (JPM lead) + 40% treasury. Expected close: Q3 2026.",
-              "text_en": "Proposal: MedNext to acquire 100% of BioLink Systems for $850M cash. Premium: 32% over current share price. Financing: 60% debt (JPM lead) + 40% treasury. Expected close: Q3 2026." },
-            { "text_uk": "Lead role: David P., CFO. Він побудував valuation model, negotiated з BioLink CEO, підготував board deck. Board vote scheduled 2026-07-27. Expected: David P. presents і recommend approval.",
-              "text_en": "Lead role: David P., CFO. He built valuation model, negotiated with BioLink CEO, prepared board deck. Board vote scheduled 2026-07-27. Expected: David P. presents and recommends approval." },
-            { "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За SEC Section 10b-5 і Rule 14e-3 це PERFECT case для insider trading + material undisclosed COI.",
-              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under SEC Section 10b-5 and Rule 14e-3 this is a PERFECT case for insider trading + material undisclosed COI." }
+            {
+              "text_uk": "Proposal: MedNext to acquire 100% of BioLink Systems for $850M cash. Premium: 32% над current share price. Financing: 60% debt (JPM lead) + 40% treasury. Expected close: Q3 2026.",
+              "text_en": "Proposal: MedNext to acquire 100% of BioLink Systems for $850M cash. Premium: 32% over current share price. Financing: 60% debt (JPM lead) + 40% treasury. Expected close: Q3 2026."
+            },
+            {
+              "text_uk": "Lead role: David P., CFO. Він побудував valuation model, negotiated з BioLink CEO, підготував board deck. Board vote scheduled 2026-07-27. Expected: David P. presents і recommend approval.",
+              "text_en": "Lead role: David P., CFO. He built valuation model, negotiated with BioLink CEO, prepared board deck. Board vote scheduled 2026-07-27. Expected: David P. presents and recommends approval."
+            },
+            {
+              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За SEC Section 10b-5 і Rule 14e-3 це PERFECT case для insider trading + material undisclosed COI.",
+              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under SEC Section 10b-5 and Rule 14e-3 this is a PERFECT case for insider trading + material undisclosed COI."
+            }
           ]
         }
       },
@@ -153,17 +212,60 @@
         "provider": "MedNext calendar system + expense reports",
         "desc_uk": "Приватні зустрічі з BioLink CEO?",
         "desc_en": "Private meetings with BioLink CEO?",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "supporting",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "supporting",
         "ui_component": "invoice-analysis",
         "clue_uk": "David P. мав 7 приватних зустрічей з BioLink CEO Marcus L. за 6 місяців. Всі поза MedNext offices. Ресторани у SF ($400+ бюджет). Ніякі не логувались як «BioLink acquisition prep».",
         "clue_en": "David P. had 7 private meetings with BioLink CEO Marcus L. over 6 months. All outside MedNext offices. SF restaurants ($400+ budget). None logged as «BioLink acquisition prep».",
         "invoices": [
-          { "number": "EXP-8471", "date": "2026-01-22", "vendor": "Restaurant Gary Danko (SF)",   "amount": "$412", "approver": "David P. (personal card, expensed)", "highlight": true },
-          { "number": "EXP-8792", "date": "2026-02-19", "vendor": "Meet at BioLink offices",       "amount": "$0",   "approver": "logged 'business dev'" },
-          { "number": "EXP-9012", "date": "2026-03-11", "vendor": "Restaurant Nobu (Palo Alto)",   "amount": "$378", "approver": "David P. (personal card, expensed)", "highlight": true },
-          { "number": "EXP-9142", "date": "2026-04-08", "vendor": "Coffee (unlogged)",             "amount": "$18",  "approver": "—", "highlight": true },
-          { "number": "EXP-9287", "date": "2026-05-15", "vendor": "Restaurant Kokkari (SF)",       "amount": "$445", "approver": "David P. (personal card, expensed)", "highlight": true },
-          { "number": "EXP-9412", "date": "2026-06-04", "vendor": "Marcus L. attended MedNext board — logged", "amount": "$0", "approver": "board minutes" }
+          {
+            "number": "EXP-8471",
+            "date": "2026-01-22",
+            "vendor": "Restaurant Gary Danko (SF)",
+            "amount": "$412",
+            "approver": "David P. (personal card, expensed)",
+            "highlight": true
+          },
+          {
+            "number": "EXP-8792",
+            "date": "2026-02-19",
+            "vendor": "Meet at BioLink offices",
+            "amount": "$0",
+            "approver": "logged 'business dev'"
+          },
+          {
+            "number": "EXP-9012",
+            "date": "2026-03-11",
+            "vendor": "Restaurant Nobu (Palo Alto)",
+            "amount": "$378",
+            "approver": "David P. (personal card, expensed)",
+            "highlight": true
+          },
+          {
+            "number": "EXP-9142",
+            "date": "2026-04-08",
+            "vendor": "Coffee (unlogged)",
+            "amount": "$18",
+            "approver": "—",
+            "highlight": true
+          },
+          {
+            "number": "EXP-9287",
+            "date": "2026-05-15",
+            "vendor": "Restaurant Kokkari (SF)",
+            "amount": "$445",
+            "approver": "David P. (personal card, expensed)",
+            "highlight": true
+          },
+          {
+            "number": "EXP-9412",
+            "date": "2026-06-04",
+            "vendor": "Marcus L. attended MedNext board — logged",
+            "amount": "$0",
+            "approver": "board minutes"
+          }
         ],
         "invoices_note_uk": "5 з 7 зустрічей — приватні restaurant meetings, expensed як «business dev» без деталей. Це sistematic pattern coordination BEFORE acquisition announcement.",
         "invoices_note_en": "5 of 7 meetings — private restaurant meetings, expensed as «business dev» without detail. Systematic pattern of coordination BEFORE acquisition announcement."
@@ -174,12 +276,20 @@
         "name_uk": "LinkedIn David P. · connections analysis",
         "name_en": "LinkedIn David P. · connections analysis",
         "provider": "LinkedIn Sales Navigator",
-        "correct": true, "points": 8, "time_cost": 45, "weight": "supporting",
+        "correct": true,
+        "points": 8,
+        "time_cost": 45,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Connect з BioLink CEO datto Jan 2024 (за 2 роки до acquisition). Endorsement patterns показують continuous professional contact.",
         "clue_en": "Connected with BioLink CEO dated Jan 2024 (2 years before acquisition). Endorsement patterns show continuous professional contact.",
         "matches": [
-          { "site": "LinkedIn: David P.", "url": "linkedin.com/in/david-p-mednext", "note_uk": "First-degree з Marcus L. з 2024-01-15. 4 endorsements each other 2024-2025.", "note_en": "First-degree with Marcus L. since 2024-01-15. 4 mutual endorsements 2024-2025." }
+          {
+            "site": "LinkedIn: David P.",
+            "url": "linkedin.com/in/david-p-mednext",
+            "note_uk": "First-degree з Marcus L. з 2024-01-15. 4 endorsements each other 2024-2025.",
+            "note_en": "First-degree with Marcus L. since 2024-01-15. 4 mutual endorsements 2024-2025."
+          }
         ]
       },
       {
@@ -190,13 +300,26 @@
         "provider": "OpenCorporates + LinkedIn + property records",
         "desc_uk": "Що робить дружина CFO?",
         "desc_en": "What does CFO's wife do?",
-        "correct": true, "points": 12, "time_cost": 60, "weight": "supporting",
+        "correct": true,
+        "points": 12,
+        "time_cost": 60,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Sarah P. — colleagues records, formal beneficiary Silverwood. Не має власного business background, is straw / nominee.",
         "clue_en": "Sarah P. — no independent records, formal beneficiary of Silverwood. No business background of her own, is a straw / nominee.",
         "matches": [
-          { "site": "Sarah P. · LinkedIn", "url": "linkedin.com/in/s-p-sf", "note_uk": "Profile only lists volunteer work (2018-present). No business roles. No independent income sources.", "note_en": "Profile only lists volunteer work (2018-present). No business roles. No independent income sources." },
-          { "site": "Silverwood Trust beneficial ownership form (Pandora Papers)", "url": "—", "note_uk": "Sarah P. listed as sole beneficiary of trust that holds 100% of Silverwood Holdings LP.", "note_en": "Sarah P. listed as sole beneficiary of trust that holds 100% of Silverwood Holdings LP." }
+          {
+            "site": "Sarah P. · LinkedIn",
+            "url": "linkedin.com/in/s-p-sf",
+            "note_uk": "Profile only lists volunteer work (2018-present). No business roles. No independent income sources.",
+            "note_en": "Profile only lists volunteer work (2018-present). No business roles. No independent income sources."
+          },
+          {
+            "site": "Silverwood Trust beneficial ownership form (Pandora Papers)",
+            "url": "—",
+            "note_uk": "Sarah P. listed as sole beneficiary of trust that holds 100% of Silverwood Holdings LP.",
+            "note_en": "Sarah P. listed as sole beneficiary of trust that holds 100% of Silverwood Holdings LP."
+          }
         ]
       },
       {
@@ -207,15 +330,44 @@
         "provider": "NASDAQ + SEC Form 4",
         "desc_uk": "Коли BluePeak купував BioLink shares?",
         "desc_en": "When did BluePeak buy BioLink shares?",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "diagnostic",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "diagnostic",
         "ui_component": "invoice-analysis",
         "clue_uk": "BluePeak систематично accumulated BioLink shares protects 8 місяців перед acquisition. Останні покупки — за 3 тижні до board vote (very suspicious timing).",
         "clue_en": "BluePeak systematically accumulated BioLink shares over 8 months before acquisition. Latest purchases — 3 weeks before board vote (very suspicious timing).",
         "invoices": [
-          { "number": "SEC-F4-001", "date": "2025-11-08", "vendor": "BluePeak purchased 12 400 BioLink (start of position)", "amount": "$412K", "approver": "SEC Form 4 filed" },
-          { "number": "SEC-F4-045", "date": "2026-03-15", "vendor": "BluePeak added 18 900 BioLink", "amount": "$672K", "approver": "SEC Form 4 filed" },
-          { "number": "SEC-F4-087", "date": "2026-06-02", "vendor": "BluePeak added 41 200 BioLink (large tranche)", "amount": "$1.6M", "approver": "SEC Form 4 filed", "highlight": true },
-          { "number": "SEC-F4-112", "date": "2026-07-08", "vendor": "BluePeak added 22 800 (3 weeks BEFORE vote)", "amount": "$920K", "approver": "SEC Form 4 filed", "highlight": true }
+          {
+            "number": "SEC-F4-001",
+            "date": "2025-11-08",
+            "vendor": "BluePeak purchased 12 400 BioLink (start of position)",
+            "amount": "$412K",
+            "approver": "SEC Form 4 filed"
+          },
+          {
+            "number": "SEC-F4-045",
+            "date": "2026-03-15",
+            "vendor": "BluePeak added 18 900 BioLink",
+            "amount": "$672K",
+            "approver": "SEC Form 4 filed"
+          },
+          {
+            "number": "SEC-F4-087",
+            "date": "2026-06-02",
+            "vendor": "BluePeak added 41 200 BioLink (large tranche)",
+            "amount": "$1.6M",
+            "approver": "SEC Form 4 filed",
+            "highlight": true
+          },
+          {
+            "number": "SEC-F4-112",
+            "date": "2026-07-08",
+            "vendor": "BluePeak added 22 800 (3 weeks BEFORE vote)",
+            "amount": "$920K",
+            "approver": "SEC Form 4 filed",
+            "highlight": true
+          }
         ],
         "invoices_note_uk": "Timing: last 2 покупки — уже після того як David P. знав про acquisition (M&A proposal датований 15 June). Classic front-running за Section 10b-5.",
         "invoices_note_en": "Timing: last 2 purchases — already after David P. knew about acquisition (M&A proposal dated June 15). Classic front-running under Section 10b-5."
@@ -226,12 +378,20 @@
         "name_uk": "Prior year disclosures (2018-2024)",
         "name_en": "Prior year disclosures (2018-2024)",
         "provider": "SEC EDGAR historical",
-        "correct": true, "points": 6, "time_cost": 45, "weight": "supporting",
+        "correct": true,
+        "points": 6,
+        "time_cost": 45,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Silverwood trust існує з 2018. David P. НЕ декларував його у жодному з 6 попередніх років. Це не одноразова помилка — це sistematic non-disclosure.",
         "clue_en": "Silverwood trust exists since 2018. David P. did NOT disclose in any of the 6 prior years. Not one-off mistake — systematic non-disclosure.",
         "matches": [
-          { "site": "10-K 2018-2024 · Item 15 disclosures", "url": "sec.gov/edgar/mednext", "note_uk": "У всіх 7 роках підряд: «no material outside interests». Silverwood trust існує з 2018-05.", "note_en": "In all 7 years running: «no material outside interests». Silverwood trust exists since 2018-05." }
+          {
+            "site": "10-K 2018-2024 · Item 15 disclosures",
+            "url": "sec.gov/edgar/mednext",
+            "note_uk": "У всіх 7 роках підряд: «no material outside interests». Silverwood trust існує з 2018-05.",
+            "note_en": "In all 7 years running: «no material outside interests». Silverwood trust exists since 2018-05."
+          }
         ]
       },
       {
@@ -242,7 +402,10 @@
         "provider": "SEC WHISTLE-2026-3428",
         "desc_uk": "Що конкретно каже whistleblower",
         "desc_en": "What the whistleblower specifically says",
-        "correct": true, "points": 10, "time_cost": 30, "weight": "supporting",
+        "correct": true,
+        "points": 10,
+        "time_cost": 30,
+        "weight": "supporting",
         "ui_component": "meeting-minutes",
         "clue_uk": "Whistleblower — likely особа з внутрішнього кола MedNext (мали доступ до BioLink presentation). Description accurate — вказали Panama trust name.",
         "clue_en": "Whistleblower — likely inside MedNext (had access to BioLink presentation). Description accurate — named Panama trust.",
@@ -253,10 +416,14 @@
           "attendees_en": "Filer identity protected under Dodd-Frank",
           "classification": "SEC · confidential intake",
           "paragraphs": [
-            { "text_uk": "«CFO of MedNext Corp holds material undisclosed interest in target company BioLink Systems via Panama trust structure (Silverwood Family Trust). Board vote scheduled July 27 will artificially inflate his personal wealth by tens of millions.»",
-              "text_en": "«CFO of MedNext Corp holds material undisclosed interest in target company BioLink Systems via Panama trust structure (Silverwood Family Trust). Board vote scheduled July 27 will artificially inflate his personal wealth by tens of millions.»" },
-            { "text_uk": "SEC intake response: «Preliminary investigation opened. MedNext General Counsel notified 2026-07-02.»",
-              "text_en": "SEC intake response: «Preliminary investigation opened. MedNext General Counsel notified 2026-07-02.»" }
+            {
+              "text_uk": "«CFO of MedNext Corp holds material undisclosed interest in target company BioLink Systems via Panama trust structure (Silverwood Family Trust). Board vote scheduled July 27 will artificially inflate his personal wealth by tens of millions.»",
+              "text_en": "«CFO of MedNext Corp holds material undisclosed interest in target company BioLink Systems via Panama trust structure (Silverwood Family Trust). Board vote scheduled July 27 will artificially inflate his personal wealth by tens of millions.»"
+            },
+            {
+              "text_uk": "SEC intake response: «Preliminary investigation opened. MedNext General Counsel notified 2026-07-02.»",
+              "text_en": "SEC intake response: «Preliminary investigation opened. MedNext General Counsel notified 2026-07-02.»"
+            }
           ]
         }
       },
@@ -268,17 +435,24 @@
         "provider": "Anonymous informal comm",
         "tooltip_uk": "DECOY. Rumor from anonymous board source, no documentary basis.",
         "tooltip_en": "DECOY. Rumor from anonymous board source, no documentary basis.",
-        "correct": false, "points": -8, "time_cost": 30, "weight": "noise",
+        "correct": false,
+        "points": -8,
+        "time_cost": 30,
+        "weight": "noise",
         "ui_component": "matches",
         "clue_uk": "Board rumor каже David P. «завжди був ambitious». Це speculation, не evidence.",
         "clue_en": "Board rumor says David P. «was always ambitious». Speculation, not evidence.",
         "matches": [
-          { "site": "Anonymous board source", "url": "—", "note_uk": "«Ми давно підозрювали David — він завжди був занадто зосереджений на грошах. Було очевидно що щось буде.»", "note_en": "«We long suspected David — he was always too focused on money. It was obvious something would come out.»" }
+          {
+            "site": "Anonymous board source",
+            "url": "—",
+            "note_uk": "«Ми давно підозрювали David — він завжди був занадто зосереджений на грошах. Було очевидно що щось буде.»",
+            "note_en": "«We long suspected David — he was always too focused on money. It was obvious something would come out.»"
+          }
         ]
       }
     ]
   },
-
   "timeline_phase": {
     "title_uk": "Хронологія «Executive COI»",
     "title_en": "«Executive COI» timeline",
@@ -287,31 +461,59 @@
     "submit_btn_uk": "Підтвердити хронологію →",
     "submit_btn_en": "Submit timeline →",
     "events": [
-      { "id": "e1", "date": "2018-05-14",
+      {
+        "id": "e1",
+        "date": "2018-05-14",
         "text_uk": "Створено Silverwood Family Trust (Panama), David P. — trustee, Sarah P. — beneficiary",
-        "text_en": "Silverwood Family Trust created (Panama), David P. — trustee, Sarah P. — beneficiary" },
-      { "id": "e2", "date": "2019-08-04",
+        "text_en": "Silverwood Family Trust created (Panama), David P. — trustee, Sarah P. — beneficiary"
+      },
+      {
+        "id": "e2",
+        "date": "2019-08-04",
         "text_uk": "Silverwood Holdings LP створено у Cayman → holds 95% BluePeak Ventures (Delaware)",
-        "text_en": "Silverwood Holdings LP created in Cayman → holds 95% of BluePeak Ventures (Delaware)" },
-      { "id": "e3", "date": "2025-11-08",
+        "text_en": "Silverwood Holdings LP created in Cayman → holds 95% of BluePeak Ventures (Delaware)"
+      },
+      {
+        "id": "e3",
+        "date": "2025-11-08",
         "text_uk": "BluePeak починає накопичувати BioLink shares (початкова покупка $412K)",
-        "text_en": "BluePeak starts accumulating BioLink shares (initial purchase $412K)" },
-      { "id": "e4", "date": "2026-01-22",
+        "text_en": "BluePeak starts accumulating BioLink shares (initial purchase $412K)"
+      },
+      {
+        "id": "e4",
+        "date": "2026-01-22",
         "text_uk": "David P. + Marcus L. (BioLink CEO) — перша приватна зустріч у ресторані (SF)",
-        "text_en": "David P. + Marcus L. (BioLink CEO) — first private restaurant meeting (SF)" },
-      { "id": "e5", "date": "2026-06-15",
+        "text_en": "David P. + Marcus L. (BioLink CEO) — first private restaurant meeting (SF)"
+      },
+      {
+        "id": "e5",
+        "date": "2026-06-15",
         "text_uk": "David P. представляє $850M acquisition proposal раді директорів",
-        "text_en": "David P. presents $850M acquisition proposal to board" },
-      { "id": "e6", "date": "2026-06-29",
+        "text_en": "David P. presents $850M acquisition proposal to board"
+      },
+      {
+        "id": "e6",
+        "date": "2026-06-29",
         "text_uk": "Anonymous whistleblower подає SEC filing про приховану COI",
-        "text_en": "Anonymous whistleblower files SEC filing about hidden COI" },
-      { "id": "e7", "date": "2026-07-08",
+        "text_en": "Anonymous whistleblower files SEC filing about hidden COI"
+      },
+      {
+        "id": "e7",
+        "date": "2026-07-08",
         "text_uk": "BluePeak робить останню purchase 22 800 shares — за 3 тижні до board vote",
-        "text_en": "BluePeak makes latest purchase of 22,800 shares — 3 weeks before board vote" }
+        "text_en": "BluePeak makes latest purchase of 22,800 shares — 3 weeks before board vote"
+      }
     ],
-    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+    "correct_order": [
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6",
+      "e7"
+    ]
   },
-
   "phase3": {
     "title_uk": "Крос-верифікація · 3 питання",
     "title_en": "Cross-verification · 3 questions",
@@ -325,20 +527,38 @@
         "text_uk": "David P. може захищатися: «Silverwood trust — це spouse's, не mine. Я тільки trustee.» Це рятує його?",
         "text_en": "David P. can defend: «Silverwood trust is spouse's, not mine. I'm only trustee.» Does this save him?",
         "options": [
-          { "text_uk": "Так — якщо beneficial owner дружина, це не CFO's interest", "text_en": "Yes — if beneficial owner is wife, that's not CFO's interest",
-            "points": -15, "correct": false,
+          {
+            "text_uk": "Так — якщо beneficial owner дружина, це не CFO's interest",
+            "text_en": "Yes — if beneficial owner is wife, that's not CFO's interest",
+            "points": -15,
+            "correct": false,
             "feedback_uk": "❌ SEC Rule 16a-1(a)(2) — «beneficial ownership» включає interests spouse's assets. Це не рятує.",
-            "feedback_en": "❌ SEC Rule 16a-1(a)(2) — «beneficial ownership» includes spouse's assets. Doesn't save him." },
-          { "text_uk": "Ні — під SEC Rule 16a-1(a)(2) spouse's assets вважаються beneficial ownership CFO. Плюс він trustee з control.", "text_en": "No — under SEC Rule 16a-1(a)(2) spouse's assets are considered CFO's beneficial ownership. Plus he's trustee with control.",
-            "points": 25, "correct": true,
+            "feedback_en": "❌ SEC Rule 16a-1(a)(2) — «beneficial ownership» includes spouse's assets. Doesn't save him."
+          },
+          {
+            "text_uk": "Ні — під SEC Rule 16a-1(a)(2) spouse's assets вважаються beneficial ownership CFO. Плюс він trustee з control.",
+            "text_en": "No — under SEC Rule 16a-1(a)(2) spouse's assets are considered CFO's beneficial ownership. Plus he's trustee with control.",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Sarbanes-Oxley §302 не має цієї exception.",
-            "feedback_en": "✓ Correct. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Sarbanes-Oxley §302 has no such exception." },
-          { "text_uk": "Можливо — залежить від конкретної formulation trust", "text_en": "Maybe — depends on specific trust formulation",
-            "points": -5, "correct": false,
-            "feedback_uk": "❌ Немає такого «flexibility». SEC rules чіткі.", "feedback_en": "❌ No such «flexibility». SEC rules are clear." },
-          { "text_uk": "Тільки якщо він може довести отсутність benefit", "text_en": "Only if he can prove absence of benefit",
-            "points": -10, "correct": false,
-            "feedback_uk": "❌ Burden of proof лежить на insider, і структура вже показує benefit ($35M+).", "feedback_en": "❌ Burden of proof on insider, and structure already shows benefit ($35M+)." }
+            "feedback_en": "✓ Correct. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Sarbanes-Oxley §302 has no such exception."
+          },
+          {
+            "text_uk": "Можливо — залежить від конкретної formulation trust",
+            "text_en": "Maybe — depends on specific trust formulation",
+            "points": -5,
+            "correct": false,
+            "feedback_uk": "❌ Немає такого «flexibility». SEC rules чіткі.",
+            "feedback_en": "❌ No such «flexibility». SEC rules are clear."
+          },
+          {
+            "text_uk": "Тільки якщо він може довести отсутність benefit",
+            "text_en": "Only if he can prove absence of benefit",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Burden of proof лежить на insider, і структура вже показує benefit ($35M+).",
+            "feedback_en": "❌ Burden of proof on insider, and structure already shows benefit ($35M+)."
+          }
         ]
       },
       {
@@ -346,21 +566,38 @@
         "text_uk": "BluePeak робила покупки BioLink AFTER David P. знав про acquisition. Це:",
         "text_en": "BluePeak made BioLink purchases AFTER David P. knew about acquisition. This is:",
         "options": [
-          { "text_uk": "Legit portfolio adjustment — акції можуть купуватися у будь-який час", "text_en": "Legit portfolio adjustment — shares can be bought anytime",
-            "points": -20, "correct": false,
+          {
+            "text_uk": "Legit portfolio adjustment — акції можуть купуватися у будь-який час",
+            "text_en": "Legit portfolio adjustment — shares can be bought anytime",
+            "points": -20,
+            "correct": false,
             "feedback_uk": "❌ Ні. Section 10b-5 забороняє trading на material non-public information (MNPI). Timing точно з MNPI available = insider trading.",
-            "feedback_en": "❌ No. Section 10b-5 prohibits trading on material non-public information (MNPI). Timing exactly with MNPI available = insider trading." },
-          { "text_uk": "Классическое insider trading за Section 10b-5 + Rule 14e-3", "text_en": "Classic insider trading under Section 10b-5 + Rule 14e-3",
-            "points": 25, "correct": true,
+            "feedback_en": "❌ No. Section 10b-5 prohibits trading on material non-public information (MNPI). Timing exactly with MNPI available = insider trading."
+          },
+          {
+            "text_uk": "Классическое insider trading за Section 10b-5 + Rule 14e-3",
+            "text_en": "Classic insider trading under Section 10b-5 + Rule 14e-3",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Rule 14e-3 — tender-offer-specific. Section 10b-5 covers MNPI. Обидва apply. Це criminal case.",
-            "feedback_en": "✓ Correct. Rule 14e-3 — tender-offer-specific. Section 10b-5 covers MNPI. Both apply. Criminal case." },
-          { "text_uk": "Suspicious але потребує proof of nexus", "text_en": "Suspicious but requires proof of nexus",
-            "points": 5, "correct": false,
+            "feedback_en": "✓ Correct. Rule 14e-3 — tender-offer-specific. Section 10b-5 covers MNPI. Both apply. Criminal case."
+          },
+          {
+            "text_uk": "Suspicious але потребує proof of nexus",
+            "text_en": "Suspicious but requires proof of nexus",
+            "points": 5,
+            "correct": false,
             "feedback_uk": "⚠️ Технічно так, але nexus вже sufficient — SEC Form 4 filings + M&A proposal timestamp + Panama trust structure = closed loop.",
-            "feedback_en": "⚠️ Technically yes, but nexus already sufficient — SEC Form 4 + M&A proposal timestamp + Panama trust structure = closed loop." },
-          { "text_uk": "Depends on whether Sarah P. (owner) knew about MNPI", "text_en": "Depends on whether Sarah P. (owner) knew about MNPI",
-            "points": -10, "correct": false,
-            "feedback_uk": "❌ Tipper-tippee liability покриває це. David P. — джерело tips, sufficient.", "feedback_en": "❌ Tipper-tippee liability covers this. David P. is source of tips, sufficient." }
+            "feedback_en": "⚠️ Technically yes, but nexus already sufficient — SEC Form 4 + M&A proposal timestamp + Panama trust structure = closed loop."
+          },
+          {
+            "text_uk": "Depends on whether Sarah P. (owner) knew about MNPI",
+            "text_en": "Depends on whether Sarah P. (owner) knew about MNPI",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Tipper-tippee liability покриває це. David P. — джерело tips, sufficient.",
+            "feedback_en": "❌ Tipper-tippee liability covers this. David P. is source of tips, sufficient."
+          }
         ]
       },
       {
@@ -368,26 +605,42 @@
         "text_uk": "У тебе доказ material undisclosed COI + insider trading pattern. Що ти РОБИШ як General Counsel Advisor?",
         "text_en": "You have proof of material undisclosed COI + insider trading pattern. What DO you do as General Counsel Advisor?",
         "options": [
-          { "text_uk": "Скликати internal board meeting і представити evidence CEO + Chairman", "text_en": "Convene internal board meeting and present evidence to CEO + Chairman",
-            "points": -25, "correct": false,
+          {
+            "text_uk": "Скликати internal board meeting і представити evidence CEO + Chairman",
+            "text_en": "Convene internal board meeting and present evidence to CEO + Chairman",
+            "points": -25,
+            "correct": false,
             "feedback_uk": "❌ POLICY BREACH + катастрофа. Board self-investigation of executive-level COI = SEC opens tampering case. External counsel MANDATORY.",
-            "feedback_en": "❌ POLICY BREACH + catastrophe. Board self-investigation of executive-level COI = SEC opens tampering case. External counsel MANDATORY." },
-          { "text_uk": "Terminate David P. immediately і повідомити SEC", "text_en": "Terminate David P. immediately and notify SEC",
-            "points": -25, "correct": false,
+            "feedback_en": "❌ POLICY BREACH + catastrophe. Board self-investigation of executive-level COI = SEC opens tampering case. External counsel MANDATORY."
+          },
+          {
+            "text_uk": "Terminate David P. immediately і повідомити SEC",
+            "text_en": "Terminate David P. immediately and notify SEC",
+            "points": -25,
+            "correct": false,
             "feedback_uk": "❌ POLICY BREACH. Termination без external Legal counsel = wrongful termination lawsuit + ускладнення SEC case.",
-            "feedback_en": "❌ POLICY BREACH. Termination without external Legal counsel = wrongful termination lawsuit + complications for SEC case." },
-          { "text_uk": "Escalate to external Legal Counsel + Special Committee + halt board vote pending investigation", "text_en": "Escalate to external Legal Counsel + Special Committee + halt board vote pending investigation",
-            "points": 25, "correct": true,
+            "feedback_en": "❌ POLICY BREACH. Termination without external Legal counsel = wrongful termination lawsuit + complications for SEC case."
+          },
+          {
+            "text_uk": "Escalate to external Legal Counsel + Special Committee + halt board vote pending investigation",
+            "text_en": "Escalate to external Legal Counsel + Special Committee + halt board vote pending investigation",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Політика точно це вимагає: external counsel, ніяких self-investigations. Halt vote зупиняє insider trading exposure.",
-            "feedback_en": "✓ Correct. Policy requires exactly this: external counsel, no self-investigation. Halt vote stops insider trading exposure." },
-          { "text_uk": "Продовжити monitoring без action до board vote", "text_en": "Continue monitoring without action until board vote",
-            "points": -30, "correct": false,
-            "feedback_uk": "❌ Знання без action = complicity. Board повинен halt vote немедленно.", "feedback_en": "❌ Knowledge without action = complicity. Board must halt vote immediately." }
+            "feedback_en": "✓ Correct. Policy requires exactly this: external counsel, no self-investigation. Halt vote stops insider trading exposure."
+          },
+          {
+            "text_uk": "Продовжити monitoring без action до board vote",
+            "text_en": "Continue monitoring without action until board vote",
+            "points": -30,
+            "correct": false,
+            "feedback_uk": "❌ Знання без action = complicity. Board повинен halt vote немедленно.",
+            "feedback_en": "❌ Knowledge without action = complicity. Board must halt vote immediately."
+          }
         ]
       }
     ]
   },
-
   "memo_phase": {
     "title_uk": "Заповни корпоративний меморандум",
     "title_en": "Fill in the corporate memorandum",
@@ -404,51 +657,208 @@
       "breach_penalty": -40
     },
     "subjects": [
-      { "id": "exec_coi",       "correct": true,  "points": 25, "text_uk": "Undisclosed executive conflict of interest + insider trading pattern", "text_en": "Undisclosed executive conflict of interest + insider trading pattern" },
-      { "id": "vendor_pay",     "correct": false, "points": -10, "text_uk": "Vendor payment irregularity",   "text_en": "Vendor payment irregularity" },
-      { "id": "ip_theft",       "correct": false, "points": -10, "text_uk": "IP theft",                       "text_en": "IP theft" },
-      { "id": "false_positive", "correct": false, "points": -20, "text_uk": "False positive (whistleblower error)", "text_en": "False positive (whistleblower error)" }
+      {
+        "id": "exec_coi",
+        "correct": true,
+        "points": 25,
+        "text_uk": "Undisclosed executive conflict of interest + insider trading pattern",
+        "text_en": "Undisclosed executive conflict of interest + insider trading pattern"
+      },
+      {
+        "id": "vendor_pay",
+        "correct": false,
+        "points": -10,
+        "text_uk": "Vendor payment irregularity",
+        "text_en": "Vendor payment irregularity"
+      },
+      {
+        "id": "ip_theft",
+        "correct": false,
+        "points": -10,
+        "text_uk": "IP theft",
+        "text_en": "IP theft"
+      },
+      {
+        "id": "false_positive",
+        "correct": false,
+        "points": -20,
+        "text_uk": "False positive (whistleblower error)",
+        "text_en": "False positive (whistleblower error)"
+      }
     ],
     "evidence_pool": [
-      { "id": "ev_panama_chain",   "weight": 5, "text_uk": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — задокументовано у Panama + Paradise + Pandora Papers + SEC 13F", "text_en": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — documented in Panama + Paradise + Pandora Papers + SEC 13F" },
-      { "id": "ev_10k_lie",        "weight": 5, "text_uk": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction з structure. Sarbanes-Oxley §302 = personal criminal liability", "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Sarbanes-Oxley §302 = personal criminal liability" },
-      { "id": "ev_insider_trading","weight": 5, "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading", "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading" },
-      { "id": "ev_7_year_pattern", "weight": 4, "text_uk": "David P. НЕ декларував Silverwood trust у ВСІХ 7 попередніх 10-K (2018-2024) — sistematic non-disclosure", "text_en": "David P. did NOT disclose Silverwood trust in ALL 7 prior 10-Ks (2018-2024) — systematic non-disclosure" },
-      { "id": "ev_ma_lead",        "weight": 4, "text_uk": "David P. — lead architect $850M acquisition proposal, він presents і recommends approval на голосуванні через 7 днів", "text_en": "David P. — lead architect of $850M acquisition proposal, he presents and recommends approval at vote in 7 days" },
-      { "id": "ev_private_meets",  "weight": 4, "text_uk": "5 приватних restaurant meetings CFO ↔ BioLink CEO за 6 місяців, expensed як «business dev» без деталей", "text_en": "5 private restaurant meetings CFO ↔ BioLink CEO over 6 months, expensed as «business dev» without detail" },
-      { "id": "ev_share_timing",   "weight": 4, "text_uk": "Останні 2 BluePeak purchases — за 3 тижні до board vote, після M&A proposal date", "text_en": "Last 2 BluePeak purchases — 3 weeks before board vote, after M&A proposal date" },
-      { "id": "ev_spouse_straw",   "weight": 3, "text_uk": "Sarah P. formally beneficial owner, але не має independent business background — straw / nominee", "text_en": "Sarah P. formally beneficial owner but has no independent business background — straw / nominee" },
-      { "id": "ev_whistleblower",  "weight": 3, "text_uk": "SEC whistleblower filing (2026-06-29) з accurate description Panama trust — likely insider-source", "text_en": "SEC whistleblower filing (2026-06-29) with accurate Panama trust description — likely insider source" },
-      { "id": "ev_linkedin_conn",  "weight": 2, "text_uk": "LinkedIn: David P. + Marcus L. connected з Jan 2024 (за 2 роки до acquisition)", "text_en": "LinkedIn: David P. + Marcus L. connected since Jan 2024 (2 years before acquisition)" },
-      { "id": "ev_board_rumor",    "weight": 1, "text_uk": "Anonymous board rumor: «David завжди був ambitious»", "text_en": "Anonymous board rumor: «David was always ambitious»" }
+      {
+        "id": "ev_panama_chain",
+        "weight": 5,
+        "text_uk": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — задокументовано у Panama + Paradise + Pandora Papers + SEC 13F",
+        "text_en": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — documented in Panama + Paradise + Pandora Papers + SEC 13F"
+      },
+      {
+        "id": "ev_10k_lie",
+        "weight": 5,
+        "text_uk": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction з structure. Sarbanes-Oxley §302 = personal criminal liability",
+        "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Sarbanes-Oxley §302 = personal criminal liability"
+      },
+      {
+        "id": "ev_insider_trading",
+        "weight": 5,
+        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
+        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading"
+      },
+      {
+        "id": "ev_7_year_pattern",
+        "weight": 4,
+        "text_uk": "David P. НЕ декларував Silverwood trust у ВСІХ 7 попередніх 10-K (2018-2024) — sistematic non-disclosure",
+        "text_en": "David P. did NOT disclose Silverwood trust in ALL 7 prior 10-Ks (2018-2024) — systematic non-disclosure"
+      },
+      {
+        "id": "ev_ma_lead",
+        "weight": 4,
+        "text_uk": "David P. — lead architect $850M acquisition proposal, він presents і recommends approval на голосуванні через 7 днів",
+        "text_en": "David P. — lead architect of $850M acquisition proposal, he presents and recommends approval at vote in 7 days"
+      },
+      {
+        "id": "ev_private_meets",
+        "weight": 4,
+        "text_uk": "5 приватних restaurant meetings CFO ↔ BioLink CEO за 6 місяців, expensed як «business dev» без деталей",
+        "text_en": "5 private restaurant meetings CFO ↔ BioLink CEO over 6 months, expensed as «business dev» without detail"
+      },
+      {
+        "id": "ev_share_timing",
+        "weight": 4,
+        "text_uk": "Останні 2 BluePeak purchases — за 3 тижні до board vote, після M&A proposal date",
+        "text_en": "Last 2 BluePeak purchases — 3 weeks before board vote, after M&A proposal date"
+      },
+      {
+        "id": "ev_spouse_straw",
+        "weight": 3,
+        "text_uk": "Sarah P. formally beneficial owner, але не має independent business background — straw / nominee",
+        "text_en": "Sarah P. formally beneficial owner but has no independent business background — straw / nominee"
+      },
+      {
+        "id": "ev_whistleblower",
+        "weight": 3,
+        "text_uk": "SEC whistleblower filing (2026-06-29) з accurate description Panama trust — likely insider-source",
+        "text_en": "SEC whistleblower filing (2026-06-29) with accurate Panama trust description — likely insider source"
+      },
+      {
+        "id": "ev_linkedin_conn",
+        "weight": 2,
+        "text_uk": "LinkedIn: David P. + Marcus L. connected з Jan 2024 (за 2 роки до acquisition)",
+        "text_en": "LinkedIn: David P. + Marcus L. connected since Jan 2024 (2 years before acquisition)"
+      },
+      {
+        "id": "ev_board_rumor",
+        "weight": 1,
+        "text_uk": "Anonymous board rumor: «David завжди був ambitious»",
+        "text_en": "Anonymous board rumor: «David was always ambitious»"
+      }
     ],
     "risk_correct": "critical",
-    "risk_points": { "low": -30, "medium": -15, "high": 5, "critical": 25 },
-    "weight_points": { "5": 25, "4": 15, "3": 5, "2": -5, "1": -15 },
+    "risk_points": {
+      "low": -30,
+      "medium": -15,
+      "high": 5,
+      "critical": 25
+    },
+    "weight_points": {
+      "5": 25,
+      "4": 15,
+      "3": 5,
+      "2": -5,
+      "1": -15
+    },
     "recommendations": [
-      { "id": "escalate_external",  "correct": true,  "points": 50, "text_uk": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement", "text_en": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
-        "feedback_uk": "✓ Правильно. Політика ЯКРАЗ це вимагає. External counsel = no self-tampering. Halt vote = зупиняє insider trading exposure. SEC notification = protects компанію.", "feedback_en": "✓ Correct. Policy REQUIRES exactly this. External counsel = no self-tampering. Halt vote = stops insider trading exposure. SEC notification = protects the company." },
-      { "id": "terminate_immediate","correct": false, "points": -40, "policy_breach": true, "text_uk": "Terminate David P. immediately + Public Announcement", "text_en": "Terminate David P. immediately + Public Announcement",
-        "feedback_uk": "❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash.", "feedback_en": "❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash." },
-      { "id": "internal_review",    "correct": false, "points": -30, "policy_breach": true, "text_uk": "Internal Board review + Confront David P. privately", "text_en": "Internal Board review + Confront David P. privately",
-        "feedback_uk": "❌ POLICY BREACH. Self-investigation = SEC tampering charges на весь board. Тіло = evidence destruction opportunity for David P.", "feedback_en": "❌ POLICY BREACH. Self-investigation = SEC tampering charges on the whole board. Also = evidence destruction opportunity for David P." },
-      { "id": "audit_first",        "correct": false, "points": -20, "text_uk": "Order forensic audit FIRST, then decide", "text_en": "Order forensic audit FIRST, then decide",
-        "feedback_uk": "❌ Час критичний — board vote через 7 днів. Audit займе тижні. Ти пропустиш window.", "feedback_en": "❌ Time critical — board vote in 7 days. Audit takes weeks. You miss the window." },
-      { "id": "monitor",            "correct": false, "points": -35, "text_uk": "Monitor and let board vote proceed", "text_en": "Monitor and let board vote proceed",
-        "feedback_uk": "❌ Complicity. Ти маєш actionable knowledge — inaction = criminal exposure.", "feedback_en": "❌ Complicity. You have actionable knowledge — inaction = criminal exposure." },
-      { "id": "no_action",          "correct": false, "points": -50, "text_uk": "No action — evidence insufficient", "text_en": "No action — evidence insufficient",
-        "feedback_uk": "❌ Overwhelming evidence з 4 незалежних sources (Panama Papers + SEC filings + expense reports + LinkedIn timing).", "feedback_en": "❌ Overwhelming evidence from 4 independent sources (Panama Papers + SEC filings + expense reports + LinkedIn timing)." }
+      {
+        "id": "escalate_external",
+        "correct": true,
+        "points": 50,
+        "text_uk": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
+        "text_en": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
+        "feedback_uk": "✓ Правильно. Політика ЯКРАЗ це вимагає. External counsel = no self-tampering. Halt vote = зупиняє insider trading exposure. SEC notification = protects компанію.",
+        "feedback_en": "✓ Correct. Policy REQUIRES exactly this. External counsel = no self-tampering. Halt vote = stops insider trading exposure. SEC notification = protects the company."
+      },
+      {
+        "id": "terminate_immediate",
+        "correct": false,
+        "points": -40,
+        "policy_breach": true,
+        "text_uk": "Terminate David P. immediately + Public Announcement",
+        "text_en": "Terminate David P. immediately + Public Announcement",
+        "feedback_uk": "❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash.",
+        "feedback_en": "❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash."
+      },
+      {
+        "id": "internal_review",
+        "correct": false,
+        "points": -30,
+        "policy_breach": true,
+        "text_uk": "Internal Board review + Confront David P. privately",
+        "text_en": "Internal Board review + Confront David P. privately",
+        "feedback_uk": "❌ POLICY BREACH. Self-investigation = SEC tampering charges на весь board. Тіло = evidence destruction opportunity for David P.",
+        "feedback_en": "❌ POLICY BREACH. Self-investigation = SEC tampering charges on the whole board. Also = evidence destruction opportunity for David P."
+      },
+      {
+        "id": "audit_first",
+        "correct": false,
+        "points": -20,
+        "text_uk": "Order forensic audit FIRST, then decide",
+        "text_en": "Order forensic audit FIRST, then decide",
+        "feedback_uk": "❌ Час критичний — board vote через 7 днів. Audit займе тижні. Ти пропустиш window.",
+        "feedback_en": "❌ Time critical — board vote in 7 days. Audit takes weeks. You miss the window."
+      },
+      {
+        "id": "monitor",
+        "correct": false,
+        "points": -35,
+        "text_uk": "Monitor and let board vote proceed",
+        "text_en": "Monitor and let board vote proceed",
+        "feedback_uk": "❌ Complicity. Ти маєш actionable knowledge — inaction = criminal exposure.",
+        "feedback_en": "❌ Complicity. You have actionable knowledge — inaction = criminal exposure."
+      },
+      {
+        "id": "no_action",
+        "correct": false,
+        "points": -50,
+        "text_uk": "No action — evidence insufficient",
+        "text_en": "No action — evidence insufficient",
+        "feedback_uk": "❌ Overwhelming evidence з 4 незалежних sources (Panama Papers + SEC filings + expense reports + LinkedIn timing).",
+        "feedback_en": "❌ Overwhelming evidence from 4 independent sources (Panama Papers + SEC filings + expense reports + LinkedIn timing)."
+      }
     ]
   },
-
   "ranks": {
-    "master":  { "min": 400, "label_uk": "Master · Executive Threat Hunter", "label_en": "Master · Executive Threat Hunter",
-                 "msg_uk": "Ти захистив публічну компанію від SEC-level катастрофи.", "msg_en": "You protected a public company from SEC-level catastrophe.", "color": "#dcc382" },
-    "senior":  { "min": 300, "label_uk": "Senior Investigator", "label_en": "Senior Investigator",
-                 "msg_uk": "Правильно розкрив COI + insider trading.", "msg_en": "Correctly unpacked COI + insider trading.", "color": "#c0c8d8" },
-    "junior":  { "min": 180, "label_uk": "Investigator", "label_en": "Investigator",
-                 "msg_uk": "Основні докази знайдено.", "msg_en": "Core evidence uncovered.", "color": "#a67c52" },
-    "trainee": { "min": 0,   "label_uk": "Junior Auditor", "label_en": "Junior Auditor",
-                 "msg_uk": "Кейс завершено — але політика порушена.", "msg_en": "Case completed — but policy breached.", "color": "#8a8a8a" }
+    "master": {
+      "min": 400,
+      "label_uk": "Master · Executive Threat Hunter",
+      "label_en": "Master · Executive Threat Hunter",
+      "msg_uk": "Ти захистив публічну компанію від SEC-level катастрофи.",
+      "msg_en": "You protected a public company from SEC-level catastrophe.",
+      "color": "#dcc382"
+    },
+    "senior": {
+      "min": 300,
+      "label_uk": "Senior Investigator",
+      "label_en": "Senior Investigator",
+      "msg_uk": "Правильно розкрив COI + insider trading.",
+      "msg_en": "Correctly unpacked COI + insider trading.",
+      "color": "#c0c8d8"
+    },
+    "junior": {
+      "min": 180,
+      "label_uk": "Investigator",
+      "label_en": "Investigator",
+      "msg_uk": "Основні докази знайдено.",
+      "msg_en": "Core evidence uncovered.",
+      "color": "#a67c52"
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Junior Auditor",
+      "label_en": "Junior Auditor",
+      "msg_uk": "Кейс завершено — але політика порушена.",
+      "msg_en": "Case completed — but policy breached.",
+      "color": "#8a8a8a"
+    }
   }
 }

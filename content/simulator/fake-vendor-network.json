@@ -6,9 +6,8 @@
   "max_points": 500,
   "title_uk": "Sim #02 · Case 3 · Fake Vendor Network (adversarial)",
   "title_en": "Sim #02 · Case 3 · Fake Vendor Network (adversarial)",
-
   "briefing": {
-    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "splash": "/img/uploads/simulator/sim02/case3-fake-vendors.png",
     "client_uk": "PayFly Fintech (fast-growing, 80 employees)",
     "client_en": "PayFly Fintech (fast-growing, 80 employees)",
     "position": "3 нових vendor-и на compliance-review",
@@ -20,12 +19,11 @@
     "candidate": {
       "name_uk": "Vendors: DevBox / Byte&Co / CodeCraft (3 fresh)",
       "name_en": "Vendors: DevBox / Byte&Co / CodeCraft (3 fresh)",
-      "photo": "img/uploads/simulator/candidate-passport.jpg",
+      "photo": "/img/uploads/simulator/sim02/case3-vendor-trio.png",
       "email": "3 different @gmail addresses",
       "phone": "3 different Ukrainian numbers"
     }
   },
-
   "phase2": {
     "title_uk": "Compliance-review · зважений аналіз",
     "title_en": "Compliance review · balanced analysis",
@@ -43,7 +41,10 @@
         "provider": "OpenCorporates + ФОП (sole trader) registry",
         "desc_uk": "Хто засновник, коли зареєстровано",
         "desc_en": "Who founded, when registered",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "diagnostic",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "DevBox — ФОП (sole trader), не LLC. Засновниця Марина Т., 34 роки, IT-фрилансерка. Реєстрація 2022 — давно, не свіжа.",
         "clue_en": "DevBox — sole trader, not LLC. Founded by Maryna T., 34, IT freelancer. Registered 2022 — old, not fresh.",
@@ -57,11 +58,21 @@
           "address_uk": "м. Київ, вул. Хорива 39-А (адреса ФОП = адреса coworking Beehive Podil)",
           "address_en": "Kyiv, Khoryva St. 39-A (sole-trader address = Beehive Podil coworking)",
           "officers": [
-            { "name_uk": "Т***** Марина Ігорівна", "name_en": "T***** Maryna I.", "role_uk": "Власниця ФОП", "role_en": "Sole owner",
-              "note_uk": "Публічний LinkedIn: 8 років у backend dev, Top Rated Plus на Upwork, real portfolio", "note_en": "Public LinkedIn: 8 years backend dev, Top Rated Plus on Upwork, real portfolio" }
+            {
+              "name_uk": "Т***** Марина Ігорівна",
+              "name_en": "T***** Maryna I.",
+              "role_uk": "Власниця ФОП",
+              "role_en": "Sole owner",
+              "note_uk": "Публічний LinkedIn: 8 років у backend dev, Top Rated Plus на Upwork, real portfolio",
+              "note_en": "Public LinkedIn: 8 years backend dev, Top Rated Plus on Upwork, real portfolio"
+            }
           ],
           "founders": [
-            { "name_uk": "Т***** Марина Ігорівна", "name_en": "T***** Maryna I.", "share": "100" }
+            {
+              "name_uk": "Т***** Марина Ігорівна",
+              "name_en": "T***** Maryna I.",
+              "share": "100"
+            }
           ]
         }
       },
@@ -71,7 +82,10 @@
         "name_uk": "OpenCorporates: Vendor #2 «Byte&Co»",
         "name_en": "OpenCorporates: Vendor #2 «Byte&Co»",
         "provider": "OpenCorporates + ФОП registry",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "diagnostic",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "Byte&Co — ФОП, засновник Богдан С. Різна людина від Марини, є 6-річна робоча історія.",
         "clue_en": "Byte&Co — sole trader, founded by Bohdan S. Different person from Maryna, 6-year work history.",
@@ -85,11 +99,21 @@
           "address_uk": "м. Київ, вул. Хорива 39-А (та сама адреса Beehive coworking)",
           "address_en": "Kyiv, Khoryva St. 39-A (same Beehive coworking address)",
           "officers": [
-            { "name_uk": "С***** Богдан Олексійович", "name_en": "S***** Bohdan O.", "role_uk": "Власник ФОП", "role_en": "Sole owner",
-              "note_uk": "LinkedIn: 6 років у DevOps + SRE, публічний GitHub з активністю", "note_en": "LinkedIn: 6 years DevOps + SRE, public GitHub with activity" }
+            {
+              "name_uk": "С***** Богдан Олексійович",
+              "name_en": "S***** Bohdan O.",
+              "role_uk": "Власник ФОП",
+              "role_en": "Sole owner",
+              "note_uk": "LinkedIn: 6 років у DevOps + SRE, публічний GitHub з активністю",
+              "note_en": "LinkedIn: 6 years DevOps + SRE, public GitHub with activity"
+            }
           ],
           "founders": [
-            { "name_uk": "С***** Богдан Олексійович", "name_en": "S***** Bohdan O.", "share": "100" }
+            {
+              "name_uk": "С***** Богдан Олексійович",
+              "name_en": "S***** Bohdan O.",
+              "share": "100"
+            }
           ]
         }
       },
@@ -99,7 +123,10 @@
         "name_uk": "OpenCorporates: Vendor #3 «CodeCraft»",
         "name_en": "OpenCorporates: Vendor #3 «CodeCraft»",
         "provider": "OpenCorporates + ФОП registry",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "diagnostic",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "CodeCraft — теж ФОП, засновник Тарас В. Ще одна різна реальна людина з довгою робочою історією.",
         "clue_en": "CodeCraft — also sole trader, founder Taras V. Another different real person with long work history.",
@@ -113,11 +140,21 @@
           "address_uk": "м. Київ, вул. Хорива 39-А (Beehive coworking)",
           "address_en": "Kyiv, Khoryva St. 39-A (Beehive coworking)",
           "officers": [
-            { "name_uk": "В***** Тарас Романович", "name_en": "V***** Taras R.", "role_uk": "Власник ФОП", "role_en": "Sole owner",
-              "note_uk": "9 років у frontend, автор open-source бібліотеки, доповідач на JSConf 2024", "note_en": "9 years frontend, author of open-source library, speaker at JSConf 2024" }
+            {
+              "name_uk": "В***** Тарас Романович",
+              "name_en": "V***** Taras R.",
+              "role_uk": "Власник ФОП",
+              "role_en": "Sole owner",
+              "note_uk": "9 років у frontend, автор open-source бібліотеки, доповідач на JSConf 2024",
+              "note_en": "9 years frontend, author of open-source library, speaker at JSConf 2024"
+            }
           ],
           "founders": [
-            { "name_uk": "В***** Тарас Романович", "name_en": "V***** Taras R.", "share": "100" }
+            {
+              "name_uk": "В***** Тарас Романович",
+              "name_en": "V***** Taras R.",
+              "share": "100"
+            }
           ]
         }
       },
@@ -129,15 +166,38 @@
         "provider": "Beehive coworking (opendata)",
         "desc_uk": "Хто фактично працює за цією адресою",
         "desc_en": "Who actually works at this address",
-        "correct": true, "points": 20, "time_cost": 60, "weight": "diagnostic",
+        "correct": true,
+        "points": 20,
+        "time_cost": 60,
+        "weight": "diagnostic",
         "ui_component": "matches",
         "clue_uk": "Beehive Podil — легальний coworking (з 2018), 240+ активних членів. Всі 3 vendor'и — платні resident-члени з 2022-2024. Це стандартна практика для фрилансерів — використовувати адресу coworking для ФОП.",
         "clue_en": "Beehive Podil — legit coworking (since 2018), 240+ active members. All 3 vendors — paid resident members since 2022-2024. Standard practice for freelancers to use coworking address for sole-trader registration.",
         "matches": [
-          { "site": "Beehive membership · Maryna T.", "url": "beehive.kyiv/members/m-tovkach", "note_uk": "Resident member з квітня 2022, дійсна оплата до грудня 2026.", "note_en": "Resident member since April 2022, paid through December 2026." },
-          { "site": "Beehive membership · Bohdan S.", "url": "beehive.kyiv/members/b-sokolov", "note_uk": "Resident member з серпня 2023, дійсна оплата.", "note_en": "Resident member since August 2023, paid." },
-          { "site": "Beehive membership · Taras V.", "url": "beehive.kyiv/members/t-voznyi",   "note_uk": "Resident member з листопада 2021, дійсна оплата.", "note_en": "Resident member since November 2021, paid." },
-          { "site": "Beehive public info", "url": "beehive.kyiv/about", "note_uk": "«240+ resident freelancers, 45+ startups mailing address». Юридична адреса реєстрації прописана у ФОП-контрактах.", "note_en": "«240+ resident freelancers, 45+ startups mailing address». Address is designated in sole-trader contracts." }
+          {
+            "site": "Beehive membership · Maryna T.",
+            "url": "beehive.kyiv/members/m-tovkach",
+            "note_uk": "Resident member з квітня 2022, дійсна оплата до грудня 2026.",
+            "note_en": "Resident member since April 2022, paid through December 2026."
+          },
+          {
+            "site": "Beehive membership · Bohdan S.",
+            "url": "beehive.kyiv/members/b-sokolov",
+            "note_uk": "Resident member з серпня 2023, дійсна оплата.",
+            "note_en": "Resident member since August 2023, paid."
+          },
+          {
+            "site": "Beehive membership · Taras V.",
+            "url": "beehive.kyiv/members/t-voznyi",
+            "note_uk": "Resident member з листопада 2021, дійсна оплата.",
+            "note_en": "Resident member since November 2021, paid."
+          },
+          {
+            "site": "Beehive public info",
+            "url": "beehive.kyiv/about",
+            "note_uk": "«240+ resident freelancers, 45+ startups mailing address». Юридична адреса реєстрації прописана у ФОП-контрактах.",
+            "note_en": "«240+ resident freelancers, 45+ startups mailing address». Address is designated in sole-trader contracts."
+          }
         ]
       },
       {
@@ -148,14 +208,35 @@
         "provider": "SWIFT + Wise routing logs",
         "desc_uk": "Через яку платіжну платформу отримують гроші",
         "desc_en": "Which payment platform they receive money through",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "supporting",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "supporting",
         "ui_component": "invoice-analysis",
         "clue_uk": "Всі 3 — Wise Business (SWIFT: TRWIBEBB). Але це стандарт для 500K+ фрилансерів світу. Wise — легальна fintech, не Cyprus shell.",
         "clue_en": "All 3 — Wise Business (SWIFT: TRWIBEBB). But this is standard for 500K+ freelancers worldwide. Wise — legit fintech, not Cyprus shell.",
         "invoices": [
-          { "number": "WISE-8471", "date": "2026-01-15", "vendor": "DevBox → Wise (Belgium)",   "amount": "$4,200",  "approver": "BIC: TRWIBEBB" },
-          { "number": "WISE-9012", "date": "2026-02-08", "vendor": "Byte&Co → Wise (Belgium)", "amount": "$3,800",  "approver": "BIC: TRWIBEBB" },
-          { "number": "WISE-9587", "date": "2026-03-01", "vendor": "CodeCraft → Wise (Belgium)","amount": "$5,100", "approver": "BIC: TRWIBEBB" }
+          {
+            "number": "WISE-8471",
+            "date": "2026-01-15",
+            "vendor": "DevBox → Wise (Belgium)",
+            "amount": "$4,200",
+            "approver": "BIC: TRWIBEBB"
+          },
+          {
+            "number": "WISE-9012",
+            "date": "2026-02-08",
+            "vendor": "Byte&Co → Wise (Belgium)",
+            "amount": "$3,800",
+            "approver": "BIC: TRWIBEBB"
+          },
+          {
+            "number": "WISE-9587",
+            "date": "2026-03-01",
+            "vendor": "CodeCraft → Wise (Belgium)",
+            "amount": "$5,100",
+            "approver": "BIC: TRWIBEBB"
+          }
         ],
         "invoices_note_uk": "Suming не тільки НЕ підозріле — це очікуваний норм. Wise — стандарт для міжнародних фрилансерських оплат. 500K+ активних Business-акаунтів по світу. Якщо це шило-на-мило: чому ціни ринкові, а не 30-40% вище?",
         "invoices_note_en": "Not only NOT suspicious — it's expected norm. Wise — standard for international freelance payments. 500K+ active Business accounts worldwide. If this were a scheme: why market prices, not 30-40% above?"
@@ -168,14 +249,32 @@
         "provider": "Wappalyzer + BuiltWith + ThemeForest lookup",
         "desc_uk": "Чому 3 сайти виглядають схоже?",
         "desc_en": "Why do 3 sites look similar?",
-        "correct": true, "points": 12, "time_cost": 45, "weight": "supporting",
+        "correct": true,
+        "points": 12,
+        "time_cost": 45,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Всі 3 сайти на одному ThemeForest template «Freelancer Pro» ($29). Цей template має 32 000+ покупців. Різні хостинги, різні домени.",
         "clue_en": "All 3 sites on the same ThemeForest template «Freelancer Pro» ($29). This template has 32,000+ buyers. Different hosting, different domains.",
         "matches": [
-          { "site": "devbox.com.ua (WordPress + Freelancer Pro theme)", "url": "themeforest.net/theme/freelancer-pro", "note_uk": "$29 template, 32 000+ покупців. DevBox взяв його 2022.", "note_en": "$29 template, 32,000+ buyers. DevBox took it in 2022." },
-          { "site": "byteandco.dev (WordPress + Freelancer Pro theme)", "url": "themeforest.net/theme/freelancer-pro", "note_uk": "Той самий template. Різний хостинг (SiteGround vs. HostGator).", "note_en": "Same template. Different hosting (SiteGround vs. HostGator)." },
-          { "site": "codecraft.pro (WordPress + Freelancer Pro theme)",  "url": "themeforest.net/theme/freelancer-pro", "note_uk": "Той самий template. Стандартна практика — фрилансери купують готовий сайт за $29.", "note_en": "Same template. Standard practice — freelancers buy $29 ready-made site." }
+          {
+            "site": "devbox.com.ua (WordPress + Freelancer Pro theme)",
+            "url": "themeforest.net/theme/freelancer-pro",
+            "note_uk": "$29 template, 32 000+ покупців. DevBox взяв його 2022.",
+            "note_en": "$29 template, 32,000+ buyers. DevBox took it in 2022."
+          },
+          {
+            "site": "byteandco.dev (WordPress + Freelancer Pro theme)",
+            "url": "themeforest.net/theme/freelancer-pro",
+            "note_uk": "Той самий template. Різний хостинг (SiteGround vs. HostGator).",
+            "note_en": "Same template. Different hosting (SiteGround vs. HostGator)."
+          },
+          {
+            "site": "codecraft.pro (WordPress + Freelancer Pro theme)",
+            "url": "themeforest.net/theme/freelancer-pro",
+            "note_uk": "Той самий template. Стандартна практика — фрилансери купують готовий сайт за $29.",
+            "note_en": "Same template. Standard practice — freelancers buy $29 ready-made site."
+          }
         ]
       },
       {
@@ -186,14 +285,32 @@
         "provider": "LinkedIn Sales Navigator",
         "desc_uk": "Чи справжні люди чи fake personas?",
         "desc_en": "Real people or fake personas?",
-        "correct": true, "points": 15, "time_cost": 60, "weight": "diagnostic",
+        "correct": true,
+        "points": 15,
+        "time_cost": 60,
+        "weight": "diagnostic",
         "ui_component": "matches",
         "clue_uk": "Всі троє — реальні люди з 500+ connections, вагомі профілі, реальні colleagues які їх endorse-ять. Fake persona так не побудуєш за 4-9 років.",
         "clue_en": "All three — real people with 500+ connections, substantial profiles, real colleagues endorsing them. You cannot build fake persona like this over 4-9 years.",
         "matches": [
-          { "site": "LinkedIn · Maryna T.", "url": "linkedin.com/in/m-tovkach", "note_uk": "1300 connections, 87 endorsements «Node.js/React», прошлі роботи: Zalando, N26, Ajax Systems.", "note_en": "1300 connections, 87 endorsements «Node.js/React», past jobs: Zalando, N26, Ajax Systems." },
-          { "site": "LinkedIn · Bohdan S.", "url": "linkedin.com/in/b-sokolov", "note_uk": "820 connections, DevOps focus, colleagues з Kyivstar і Grammarly підтверджують.", "note_en": "820 connections, DevOps focus, colleagues from Kyivstar and Grammarly confirming." },
-          { "site": "LinkedIn · Taras V.",  "url": "linkedin.com/in/t-voznyi",  "note_uk": "2100 connections, open-source contribution, 45+ blog posts на dev.to. Реально впізнавана figура у UA dev-community.", "note_en": "2100 connections, open-source contribution, 45+ blog posts on dev.to. Recognizable figure in UA dev community." }
+          {
+            "site": "LinkedIn · Maryna T.",
+            "url": "linkedin.com/in/m-tovkach",
+            "note_uk": "1300 connections, 87 endorsements «Node.js/React», прошлі роботи: Zalando, N26, Ajax Systems.",
+            "note_en": "1300 connections, 87 endorsements «Node.js/React», past jobs: Zalando, N26, Ajax Systems."
+          },
+          {
+            "site": "LinkedIn · Bohdan S.",
+            "url": "linkedin.com/in/b-sokolov",
+            "note_uk": "820 connections, DevOps focus, colleagues з Kyivstar і Grammarly підтверджують.",
+            "note_en": "820 connections, DevOps focus, colleagues from Kyivstar and Grammarly confirming."
+          },
+          {
+            "site": "LinkedIn · Taras V.",
+            "url": "linkedin.com/in/t-voznyi",
+            "note_uk": "2100 connections, open-source contribution, 45+ blog posts на dev.to. Реально впізнавана figура у UA dev-community.",
+            "note_en": "2100 connections, open-source contribution, 45+ blog posts on dev.to. Recognizable figure in UA dev community."
+          }
         ]
       },
       {
@@ -204,14 +321,32 @@
         "provider": "Upwork public profile + Toptal directory",
         "desc_uk": "Публічна історія доходів на freelance-платформах",
         "desc_en": "Public earning history on freelance platforms",
-        "correct": true, "points": 12, "time_cost": 45, "weight": "supporting",
+        "correct": true,
+        "points": 12,
+        "time_cost": 45,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Всі троє — Top Rated Plus (98%+ рейтинг), сумарно $500K+ через Upwork за роки. Це stable багаторічний freelance-бізнес, не свіжа fake schema.",
         "clue_en": "All three — Top Rated Plus (98%+ rating), $500K+ combined through Upwork over years. Stable multi-year freelance business, not a fresh fake scheme.",
         "matches": [
-          { "site": "Upwork · Maryna T. (public profile)", "url": "upwork.com/o/profiles/users/~m-t", "note_uk": "Top Rated Plus, 100% job success, $180K earned since 2020, 47 completed jobs.", "note_en": "Top Rated Plus, 100% job success, $180K earned since 2020, 47 completed jobs." },
-          { "site": "Toptal · Bohdan S. (invitation-only network)", "url": "toptal.com/dev/b-sokolov", "note_uk": "Toptal member (top 3% of applicants). Public projects з Airbnb, Kraken.", "note_en": "Toptal member (top 3% of applicants). Public projects with Airbnb, Kraken." },
-          { "site": "Upwork · Taras V.", "url": "upwork.com/o/profiles/users/~t-v", "note_uk": "$200K+ earned, 91 jobs completed, spec: frontend architecture.", "note_en": "$200K+ earned, 91 jobs completed, spec: frontend architecture." }
+          {
+            "site": "Upwork · Maryna T. (public profile)",
+            "url": "upwork.com/o/profiles/users/~m-t",
+            "note_uk": "Top Rated Plus, 100% job success, $180K earned since 2020, 47 completed jobs.",
+            "note_en": "Top Rated Plus, 100% job success, $180K earned since 2020, 47 completed jobs."
+          },
+          {
+            "site": "Toptal · Bohdan S. (invitation-only network)",
+            "url": "toptal.com/dev/b-sokolov",
+            "note_uk": "Toptal member (top 3% of applicants). Public projects з Airbnb, Kraken.",
+            "note_en": "Toptal member (top 3% of applicants). Public projects with Airbnb, Kraken."
+          },
+          {
+            "site": "Upwork · Taras V.",
+            "url": "upwork.com/o/profiles/users/~t-v",
+            "note_uk": "$200K+ earned, 91 jobs completed, spec: frontend architecture.",
+            "note_en": "$200K+ earned, 91 jobs completed, spec: frontend architecture."
+          }
         ]
       },
       {
@@ -224,7 +359,10 @@
         "desc_en": "Why compliance raised the alarm first",
         "tooltip_uk": "DECOY у певному сенсі — початковий сигнал був поверхневим patternom.",
         "tooltip_en": "DECOY in a way — the initial signal was a surface-level pattern.",
-        "correct": false, "points": 0, "time_cost": 30, "weight": "weak",
+        "correct": false,
+        "points": 0,
+        "time_cost": 30,
+        "weight": "weak",
         "ui_component": "meeting-minutes",
         "clue_uk": "Compliance побачив ТІЛЬКИ: та сама адреса + Wise + схожі сайти. Але кожен фактор окремо — legit для фрилансерів. Це convergence bias.",
         "clue_en": "Compliance saw ONLY: same address + Wise + similar sites. But each factor alone is legit for freelancers. This is convergence bias.",
@@ -235,12 +373,18 @@
           "attendees_en": "M. Kotsiuba (Compliance officer)",
           "classification": "INTERNAL · Advisory",
           "paragraphs": [
-            { "text_uk": "Помітив 3 нові vendor-и: DevBox / Byte&Co / CodeCraft. Всі три мають ту саму адресу (Хорива 39-А), той самий payment routing (Wise Belgium), дуже схожі сайти. Це має ознаки shell-network.",
-              "text_en": "Noticed 3 new vendors: DevBox / Byte&Co / CodeCraft. All three have same address (Khoryva 39-A), same payment routing (Wise Belgium), very similar websites. This has shell-network signs." },
-            { "text_uk": "⚠ Рекомендую негайну термінацію контрактів + audit.",
-              "text_en": "⚠ Recommend immediate contract termination + audit." },
-            { "text_uk": "Примітка ревьювера (додано пізніше): compliance officer не перевірив ЩО таке ця адреса (coworking) чи стандартність Wise для фрилансерів. Це signal без context.",
-              "text_en": "Reviewer note (added later): compliance officer did not verify WHAT the address is (coworking) or Wise's standard use for freelancers. Signal without context." }
+            {
+              "text_uk": "Помітив 3 нові vendor-и: DevBox / Byte&Co / CodeCraft. Всі три мають ту саму адресу (Хорива 39-А), той самий payment routing (Wise Belgium), дуже схожі сайти. Це має ознаки shell-network.",
+              "text_en": "Noticed 3 new vendors: DevBox / Byte&Co / CodeCraft. All three have same address (Khoryva 39-A), same payment routing (Wise Belgium), very similar websites. This has shell-network signs."
+            },
+            {
+              "text_uk": "⚠ Рекомендую негайну термінацію контрактів + audit.",
+              "text_en": "⚠ Recommend immediate contract termination + audit."
+            },
+            {
+              "text_uk": "Примітка ревьювера (додано пізніше): compliance officer не перевірив ЩО таке ця адреса (coworking) чи стандартність Wise для фрилансерів. Це signal без context.",
+              "text_en": "Reviewer note (added later): compliance officer did not verify WHAT the address is (coworking) or Wise's standard use for freelancers. Signal without context."
+            }
           ]
         }
       },
@@ -252,12 +396,21 @@
         "provider": "Google Maps",
         "desc_uk": "Що знаходиться за адресою Хорива 39-А?",
         "desc_en": "What's at Khoryva 39-A?",
-        "correct": true, "points": 10, "time_cost": 30, "weight": "supporting",
+        "correct": true,
+        "points": 10,
+        "time_cost": 30,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Реальний coworking з вивіскою «Beehive», скляний фасад, adminka на 1-му поверсі. Не житлова адреса, не fake офіс.",
         "clue_en": "Real coworking with «Beehive» signage, glass facade, admin desk on ground floor. Not residential, not fake office.",
         "matches": [
-          { "site": "Google Street View · Khoryva 39-A", "url": "maps.google.com/street/kyiv/khoryva-39a", "note_uk": "Реновований 3-поверховий будинок з великою вивіскою «BEEHIVE». Модерна архітектура. Легальний coworking з publicly available website.", "note_en": "Renovated 3-storey building with large «BEEHIVE» signage. Modern architecture. Legit coworking with publicly available website." }
+          {
+            "site": "Google Street View · Khoryva 39-A",
+            "url": "maps.google.com/street/kyiv/khoryva-39a",
+            "note_uk": "Реновований 3-поверховий будинок з великою вивіскою «BEEHIVE». Модерна архітектура. Легальний coworking з publicly available website.",
+            "note_en": "Renovated 3-storey building with large «BEEHIVE» signage. Modern architecture. Legit coworking with publicly available website.",
+            "img": "/img/uploads/simulator/sim02/case3-street-view-beehive.jpg"
+          }
         ]
       },
       {
@@ -268,14 +421,32 @@
         "provider": "PayFly Legal export + industry benchmark",
         "desc_uk": "Порівняння умов з ринковими",
         "desc_en": "Terms comparison vs. market",
-        "correct": true, "points": 8, "time_cost": 30, "weight": "supporting",
+        "correct": true,
+        "points": 8,
+        "time_cost": 30,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "Всі 3 контракти — стандартні hourly rate $40-55/hour (ринково для UA senior). Немає premium 30-40% як у Case 2. Немає sole approver bypass.",
         "clue_en": "All 3 contracts — standard hourly rate $40-55/hour (market for UA senior). No premium 30-40% like Case 2. No sole approver bypass.",
         "matches": [
-          { "site": "DevBox contract", "url": "—", "note_uk": "$45/hour, 20h/week, стандартний UA senior backend rate.", "note_en": "$45/hour, 20h/week, standard UA senior backend rate." },
-          { "site": "Byte&Co contract", "url": "—", "note_uk": "$50/hour, 15h/week, стандартний DevOps rate.", "note_en": "$50/hour, 15h/week, standard DevOps rate." },
-          { "site": "CodeCraft contract", "url": "—", "note_uk": "$55/hour, 25h/week, senior frontend rate. Dual-approved CFO + CTO. Немає signals fraud.", "note_en": "$55/hour, 25h/week, senior frontend rate. Dual-approved by CFO + CTO. No fraud signals." }
+          {
+            "site": "DevBox contract",
+            "url": "—",
+            "note_uk": "$45/hour, 20h/week, стандартний UA senior backend rate.",
+            "note_en": "$45/hour, 20h/week, standard UA senior backend rate."
+          },
+          {
+            "site": "Byte&Co contract",
+            "url": "—",
+            "note_uk": "$50/hour, 15h/week, стандартний DevOps rate.",
+            "note_en": "$50/hour, 15h/week, standard DevOps rate."
+          },
+          {
+            "site": "CodeCraft contract",
+            "url": "—",
+            "note_uk": "$55/hour, 25h/week, senior frontend rate. Dual-approved CFO + CTO. Немає signals fraud.",
+            "note_en": "$55/hour, 25h/week, senior frontend rate. Dual-approved by CFO + CTO. No fraud signals."
+          }
         ]
       },
       {
@@ -288,17 +459,24 @@
         "desc_en": "«DevBox didn't pay on time in 2023»",
         "tooltip_uk": "DECOY. Одна скарга від однієї особи 3-річної давності. НЕ доказ поточної fraud.",
         "tooltip_en": "DECOY. Single complaint from one person 3 years old. NOT proof of current fraud.",
-        "correct": false, "points": -8, "time_cost": 30, "weight": "noise",
+        "correct": false,
+        "points": -8,
+        "time_cost": 30,
+        "weight": "noise",
         "ui_component": "matches",
         "clue_uk": "Одиничний inconsistent payment 3 роки тому — не доказ поточної fake vendor схеми. Це red herring.",
         "clue_en": "Single inconsistent payment 3 years ago — not proof of current fake vendor scheme. Red herring.",
         "matches": [
-          { "site": "LinkedIn DM (anonymous)", "url": "—", "note_uk": "«Я працював з Мариною T. у 2023 — вона мені 2 тижні не платила. Ця людина непорядна.»", "note_en": "«I worked with Maryna T. in 2023 — she didn't pay me for 2 weeks. This person is dishonest.»" }
+          {
+            "site": "LinkedIn DM (anonymous)",
+            "url": "—",
+            "note_uk": "«Я працював з Мариною T. у 2023 — вона мені 2 тижні не платила. Ця людина непорядна.»",
+            "note_en": "«I worked with Maryna T. in 2023 — she didn't pay me for 2 weeks. This person is dishonest.»"
+          }
         ]
       }
     ]
   },
-
   "timeline_phase": {
     "title_uk": "Хронологія «false positive triage»",
     "title_en": "Timeline of the «false positive triage»",
@@ -307,31 +485,59 @@
     "submit_btn_uk": "Підтвердити хронологію →",
     "submit_btn_en": "Submit timeline →",
     "events": [
-      { "id": "e1", "date": "2021-11-03",
+      {
+        "id": "e1",
+        "date": "2021-11-03",
         "text_uk": "CodeCraft (Taras V.) стає ФОП і resident Beehive (задовго до розслідування)",
-        "text_en": "CodeCraft (Taras V.) becomes sole trader and Beehive resident (long before investigation)" },
-      { "id": "e2", "date": "2022-04-11",
+        "text_en": "CodeCraft (Taras V.) becomes sole trader and Beehive resident (long before investigation)"
+      },
+      {
+        "id": "e2",
+        "date": "2022-04-11",
         "text_uk": "DevBox (Maryna T.) також стає ФОП і resident Beehive",
-        "text_en": "DevBox (Maryna T.) also becomes sole trader and Beehive resident" },
-      { "id": "e3", "date": "2023-08-22",
+        "text_en": "DevBox (Maryna T.) also becomes sole trader and Beehive resident"
+      },
+      {
+        "id": "e3",
+        "date": "2023-08-22",
         "text_uk": "Byte&Co (Bohdan S.) третій незалежно стає ФОП і resident Beehive",
-        "text_en": "Byte&Co (Bohdan S.) third independent one becomes sole trader and Beehive resident" },
-      { "id": "e4", "date": "2026-01-15",
+        "text_en": "Byte&Co (Bohdan S.) third independent one becomes sole trader and Beehive resident"
+      },
+      {
+        "id": "e4",
+        "date": "2026-01-15",
         "text_uk": "PayFly підписує перший контракт з DevBox через standard freelance sourcing",
-        "text_en": "PayFly signs first contract with DevBox via standard freelance sourcing" },
-      { "id": "e5", "date": "2026-02-08",
+        "text_en": "PayFly signs first contract with DevBox via standard freelance sourcing"
+      },
+      {
+        "id": "e5",
+        "date": "2026-02-08",
         "text_uk": "PayFly підписує контракт з Byte&Co — окремим sourcing запитом (не звʼязано з DevBox)",
-        "text_en": "PayFly signs contract with Byte&Co — separate sourcing request (unrelated to DevBox)" },
-      { "id": "e6", "date": "2026-03-01",
+        "text_en": "PayFly signs contract with Byte&Co — separate sourcing request (unrelated to DevBox)"
+      },
+      {
+        "id": "e6",
+        "date": "2026-03-01",
         "text_uk": "PayFly підписує контракт з CodeCraft — третій незалежний sourcing",
-        "text_en": "PayFly signs contract with CodeCraft — third independent sourcing" },
-      { "id": "e7", "date": "2026-03-18",
+        "text_en": "PayFly signs contract with CodeCraft — third independent sourcing"
+      },
+      {
+        "id": "e7",
+        "date": "2026-03-18",
         "text_uk": "Compliance officer помічає pattern (адреса+bank+сайти) і піднімає flag — без розуміння що адреса — coworking",
-        "text_en": "Compliance officer notices pattern (address+bank+sites) and raises flag — without knowing address is coworking" }
+        "text_en": "Compliance officer notices pattern (address+bank+sites) and raises flag — without knowing address is coworking"
+      }
     ],
-    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+    "correct_order": [
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6",
+      "e7"
+    ]
   },
-
   "phase3": {
     "title_uk": "Крос-верифікація · 3 питання",
     "title_en": "Cross-verification · 3 questions",
@@ -345,22 +551,38 @@
         "text_uk": "Compliance officer помітив: та сама адреса + Wise + подібні сайти. Це достатньо щоб рекомендувати termination?",
         "text_en": "Compliance officer noticed: same address + Wise + similar websites. Is this enough to recommend termination?",
         "options": [
-          { "text_uk": "Так — 3 pattern-и це вже достатньо для termination", "text_en": "Yes — 3 patterns already justify termination",
-            "points": -25, "correct": false,
+          {
+            "text_uk": "Так — 3 pattern-и це вже достатньо для termination",
+            "text_en": "Yes — 3 patterns already justify termination",
+            "points": -25,
+            "correct": false,
             "feedback_uk": "❌ Політика вимагає 3 НЕЗАЛЕЖНІ джерела ризику. Тут всі 3 «pattern-и» пояснюються ОДНИМ фактом — coworking. Це convergence bias.",
-            "feedback_en": "❌ Policy requires 3 INDEPENDENT sources of risk. Here all 3 «patterns» explained by ONE fact — coworking. Convergence bias." },
-          { "text_uk": "Ні — кожен pattern окремо має легальне пояснення для фрилансерів (адреса = coworking, Wise = стандарт, шаблон = $29 ThemeForest)", "text_en": "No — each pattern alone has legit explanation for freelancers (address = coworking, Wise = standard, template = $29 ThemeForest)",
-            "points": 25, "correct": true,
+            "feedback_en": "❌ Policy requires 3 INDEPENDENT sources of risk. Here all 3 «patterns» explained by ONE fact — coworking. Convergence bias."
+          },
+          {
+            "text_uk": "Ні — кожен pattern окремо має легальне пояснення для фрилансерів (адреса = coworking, Wise = стандарт, шаблон = $29 ThemeForest)",
+            "text_en": "No — each pattern alone has legit explanation for freelancers (address = coworking, Wise = standard, template = $29 ThemeForest)",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Це convergence bias — 3 факти виглядають як «pattern», але при деконструкції — кожен окремо стандартний.",
-            "feedback_en": "✓ Correct. Convergence bias — 3 facts look like a «pattern», but when deconstructed — each alone is standard." },
-          { "text_uk": "Ні — але Compliance правий, лише треба формалізувати evidence better", "text_en": "No — but Compliance is right, just needs to formalise evidence better",
-            "points": -10, "correct": false,
+            "feedback_en": "✓ Correct. Convergence bias — 3 facts look like a «pattern», but when deconstructed — each alone is standard."
+          },
+          {
+            "text_uk": "Ні — але Compliance правий, лише треба формалізувати evidence better",
+            "text_en": "No — but Compliance is right, just needs to formalise evidence better",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Compliance ВЖЕ ne правий по суті — сам pattern хибний. Не формалізація проблема, а неправильна interpretation.",
-            "feedback_en": "❌ Compliance IS already substantively wrong — the pattern itself is false. Not a formatting issue, an interpretation issue." },
-          { "text_uk": "Не знаю", "text_en": "I don't know",
-            "points": -5, "correct": false,
+            "feedback_en": "❌ Compliance IS already substantively wrong — the pattern itself is false. Not a formatting issue, an interpretation issue."
+          },
+          {
+            "text_uk": "Не знаю",
+            "text_en": "I don't know",
+            "points": -5,
+            "correct": false,
             "feedback_uk": "❌ Це case для sim саме про уникнення convergence bias. Читай наступні тули.",
-            "feedback_en": "❌ This case is exactly about avoiding convergence bias. Read next tools." }
+            "feedback_en": "❌ This case is exactly about avoiding convergence bias. Read next tools."
+          }
         ]
       },
       {
@@ -368,21 +590,38 @@
         "text_uk": "Ціни у контрактах — $45-55/hour. Це:",
         "text_en": "Contract prices — $45-55/hour. This is:",
         "options": [
-          { "text_uk": "Підозріло висока ставка = kickback ознака", "text_en": "Suspiciously high rate = kickback sign",
-            "points": -20, "correct": false,
+          {
+            "text_uk": "Підозріло висока ставка = kickback ознака",
+            "text_en": "Suspiciously high rate = kickback sign",
+            "points": -20,
+            "correct": false,
             "feedback_uk": "❌ Це стандарт для UA senior developer'а. Порівняй з Case 2 «Procurement Ghost» де сталь +38% від LME — там pricing overrun був ★★★★. Тут — market.",
-            "feedback_en": "❌ Standard for UA senior developer. Compare with Case 2 «Procurement Ghost» where steel was +38% above LME — that pricing overrun was ★★★★. Here — market." },
-          { "text_uk": "Ринкова ставка senior UA developer'а = НЕ signal fraud", "text_en": "Market rate for senior UA developer = NOT a fraud signal",
-            "points": 20, "correct": true,
+            "feedback_en": "❌ Standard for UA senior developer. Compare with Case 2 «Procurement Ghost» where steel was +38% above LME — that pricing overrun was ★★★★. Here — market."
+          },
+          {
+            "text_uk": "Ринкова ставка senior UA developer'а = НЕ signal fraud",
+            "text_en": "Market rate for senior UA developer = NOT a fraud signal",
+            "points": 20,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Ринкові ціни — сильний контр-доказ проти shell-vendor теорії. Shell-и завжди мають price overrun, тут його немає.",
-            "feedback_en": "✓ Correct. Market prices — strong counter-evidence against shell-vendor theory. Shells always have price overrun, here it's absent." },
-          { "text_uk": "Занадто низько для fake vendor'а — насправді ознака шахрайства", "text_en": "Too low for fake vendor — actually a fraud sign",
-            "points": -15, "correct": false,
-            "feedback_uk": "❌ Оверthинкінг. «Занадто низько» ≠ fraud. Ринкове.", "feedback_en": "❌ Overthinking. «Too low» ≠ fraud. Market rate." },
-          { "text_uk": "Неможливо оцінити без більше контексту", "text_en": "Impossible to evaluate without more context",
-            "points": -5, "correct": false,
+            "feedback_en": "✓ Correct. Market prices — strong counter-evidence against shell-vendor theory. Shells always have price overrun, here it's absent."
+          },
+          {
+            "text_uk": "Занадто низько для fake vendor'а — насправді ознака шахрайства",
+            "text_en": "Too low for fake vendor — actually a fraud sign",
+            "points": -15,
+            "correct": false,
+            "feedback_uk": "❌ Оверthинкінг. «Занадто низько» ≠ fraud. Ринкове.",
+            "feedback_en": "❌ Overthinking. «Too low» ≠ fraud. Market rate."
+          },
+          {
+            "text_uk": "Неможливо оцінити без більше контексту",
+            "text_en": "Impossible to evaluate without more context",
+            "points": -5,
+            "correct": false,
             "feedback_uk": "❌ Ти можеш і повинен звірити з market benchmark. Це базовий compliance-крок.",
-            "feedback_en": "❌ You can and must benchmark against market. Basic compliance step." }
+            "feedback_en": "❌ You can and must benchmark against market. Basic compliance step."
+          }
         ]
       },
       {
@@ -390,27 +629,42 @@
         "text_uk": "Показання ex-DevBox колеги («Марина не платила у 2023»). Використовувати у меморандумі?",
         "text_en": "Ex-DevBox colleague testimony («Maryna didn't pay in 2023»). Cite in the memo?",
         "options": [
-          { "text_uk": "Так — це підтверджує сумніви compliance", "text_en": "Yes — supports compliance doubts",
-            "points": -20, "correct": false,
+          {
+            "text_uk": "Так — це підтверджує сумніви compliance",
+            "text_en": "Yes — supports compliance doubts",
+            "points": -20,
+            "correct": false,
             "feedback_uk": "❌ Anonymous testimony ~3 роки давності про одиничний payment issue — 0 evidentiary value + може розвалити credibility.",
-            "feedback_en": "❌ Anonymous testimony ~3 years old about single payment issue — 0 evidentiary value + can destroy credibility." },
-          { "text_uk": "Ні — anonymous hearsay 3-річної давності не має evidentiary value + може розвалити credibility твого меморандуму", "text_en": "No — anonymous hearsay 3 years old has no evidentiary value + can destroy your memo credibility",
-            "points": 20, "correct": true,
+            "feedback_en": "❌ Anonymous testimony ~3 years old about single payment issue — 0 evidentiary value + can destroy credibility."
+          },
+          {
+            "text_uk": "Ні — anonymous hearsay 3-річної давності не має evidentiary value + може розвалити credibility твого меморандуму",
+            "text_en": "No — anonymous hearsay 3 years old has no evidentiary value + can destroy your memo credibility",
+            "points": 20,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Це класична DECOY-пастка — використати як «додатковий доказ» hearsay = меморандум відкидається у суді як biased.",
-            "feedback_en": "✓ Correct. Classic DECOY trap — using hearsay as «additional evidence» = memo gets thrown out in court as biased." },
-          { "text_uk": "Так, але з приміткою «уточнити»", "text_en": "Yes, but with «to be confirmed» note",
-            "points": -10, "correct": false,
+            "feedback_en": "✓ Correct. Classic DECOY trap — using hearsay as «additional evidence» = memo gets thrown out in court as biased."
+          },
+          {
+            "text_uk": "Так, але з приміткою «уточнити»",
+            "text_en": "Yes, but with «to be confirmed» note",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Ця «примітка» не рятує — hearsay залишається hearsay-ом.",
-            "feedback_en": "❌ The «note» doesn't save it — hearsay remains hearsay." },
-          { "text_uk": "Використовувати як таємне джерело для наступного audit'у", "text_en": "Use as confidential source for future audit",
-            "points": 5, "correct": false,
+            "feedback_en": "❌ The «note» doesn't save it — hearsay remains hearsay."
+          },
+          {
+            "text_uk": "Використовувати як таємне джерело для наступного audit'у",
+            "text_en": "Use as confidential source for future audit",
+            "points": 5,
+            "correct": false,
             "feedback_uk": "⚠️ Прийнятно для операційного tracking, але не для меморандуму.",
-            "feedback_en": "⚠️ Acceptable for operational tracking, but not for the memo." }
+            "feedback_en": "⚠️ Acceptable for operational tracking, but not for the memo."
+          }
         ]
       }
     ]
   },
-
   "memo_phase": {
     "title_uk": "Заповни корпоративний меморандум",
     "title_en": "Fill in the corporate memorandum",
@@ -427,51 +681,207 @@
       "breach_penalty": -30
     },
     "subjects": [
-      { "id": "false_positive", "correct": true,  "points": 20, "text_uk": "Suspicious pattern — false positive risk", "text_en": "Suspicious pattern — false positive risk" },
-      { "id": "shell_network", "correct": false, "points": -20, "text_uk": "Shell-vendor network (kickback)",             "text_en": "Shell-vendor network (kickback)" },
-      { "id": "vendor_pay",   "correct": false, "points": -10, "text_uk": "Аномалія у постачальницьких платежах",           "text_en": "Vendor payment irregularity" },
-      { "id": "ip_theft",     "correct": false, "points": -10, "text_uk": "Крадіжка IP",                                     "text_en": "IP theft" }
+      {
+        "id": "false_positive",
+        "correct": true,
+        "points": 20,
+        "text_uk": "Suspicious pattern — false positive risk",
+        "text_en": "Suspicious pattern — false positive risk"
+      },
+      {
+        "id": "shell_network",
+        "correct": false,
+        "points": -20,
+        "text_uk": "Shell-vendor network (kickback)",
+        "text_en": "Shell-vendor network (kickback)"
+      },
+      {
+        "id": "vendor_pay",
+        "correct": false,
+        "points": -10,
+        "text_uk": "Аномалія у постачальницьких платежах",
+        "text_en": "Vendor payment irregularity"
+      },
+      {
+        "id": "ip_theft",
+        "correct": false,
+        "points": -10,
+        "text_uk": "Крадіжка IP",
+        "text_en": "IP theft"
+      }
     ],
     "evidence_pool": [
-      { "id": "ev_coworking",     "weight": 5, "text_uk": "Beehive Podil — реальний coworking з 240+ resident-фрилансерами. Всі 3 vendor'и — платні members з 2021-2023.", "text_en": "Beehive Podil — real coworking with 240+ resident freelancers. All 3 vendors — paid members since 2021-2023." },
-      { "id": "ev_market_price",  "weight": 5, "text_uk": "Ставки $45-55/hour — стандарт для UA senior developer'а. Немає overrun. Shell-vendor завжди має +30-40%.", "text_en": "Rates $45-55/hour — standard for UA senior developer. No overrun. Shell vendors always have +30-40%." },
-      { "id": "ev_upwork_history","weight": 5, "text_uk": "Всі 3 — Top Rated Plus на Upwork/Toptal з $500K+ combined earnings за 3-6 років. Fake persona не побудуєш.", "text_en": "All 3 — Top Rated Plus on Upwork/Toptal with $500K+ combined earnings over 3-6 years. Fake personas cannot be built." },
-      { "id": "ev_linkedin_real", "weight": 4, "text_uk": "Всі 3 засновники — реальні люди з 800-2100 LinkedIn connections + endorsements від бувших colleagues з Zalando/Grammarly/N26", "text_en": "All 3 founders — real people with 800-2100 LinkedIn connections + endorsements from ex-colleagues at Zalando/Grammarly/N26" },
-      { "id": "ev_wise_standard", "weight": 3, "text_uk": "Wise Business — стандарт для 500K+ фрилансерів світу. Це не Cyprus shell, а regulated fintech.", "text_en": "Wise Business — standard for 500K+ freelancers worldwide. Not Cyprus shell, regulated fintech." },
-      { "id": "ev_template_common","weight": 3, "text_uk": "ThemeForest «Freelancer Pro» — $29 template з 32 000+ покупців. Шаблоний сайт ≠ shell.", "text_en": "ThemeForest «Freelancer Pro» — $29 template with 32,000+ buyers. Templated site ≠ shell." },
-      { "id": "ev_independent_reg","weight": 4, "text_uk": "3 ФОП зареєстровані у різні роки (2021, 2022, 2023) — незалежно, до PayFly engagement. Не свіжі створені для схеми.", "text_en": "3 sole traders registered in different years (2021, 2022, 2023) — independently, before PayFly engagement. Not freshly created for scheme." },
-      { "id": "ev_dual_approval", "weight": 3, "text_uk": "Всі 3 контракти dual-approved CFO + CTO. Немає sole-approver bypass як у Case 2.", "text_en": "All 3 contracts dual-approved by CFO + CTO. No sole-approver bypass like in Case 2." },
-      { "id": "ev_convergence",   "weight": 2, "text_uk": "Compliance officer помітив 3 pattern-и (address + bank + sites) — але ВСІ 3 пояснюються ОДНИМ фактом (coworking + freelance ecosystem). Convergence bias.", "text_en": "Compliance officer noticed 3 patterns (address + bank + sites) — but ALL 3 explained by 1 fact (coworking + freelance ecosystem). Convergence bias." },
-      { "id": "ev_ex_testimony",  "weight": 1, "text_uk": "Anonymous LinkedIn DM про one-off payment issue 3-річної давності", "text_en": "Anonymous LinkedIn DM about one-off payment issue 3 years old" },
-      { "id": "ev_similar_sites", "weight": 1, "text_uk": "3 сайти виглядають подібно (той самий ThemeForest шаблон)", "text_en": "3 websites look similar (same ThemeForest template)" }
+      {
+        "id": "ev_coworking",
+        "weight": 5,
+        "text_uk": "Beehive Podil — реальний coworking з 240+ resident-фрилансерами. Всі 3 vendor'и — платні members з 2021-2023.",
+        "text_en": "Beehive Podil — real coworking with 240+ resident freelancers. All 3 vendors — paid members since 2021-2023."
+      },
+      {
+        "id": "ev_market_price",
+        "weight": 5,
+        "text_uk": "Ставки $45-55/hour — стандарт для UA senior developer'а. Немає overrun. Shell-vendor завжди має +30-40%.",
+        "text_en": "Rates $45-55/hour — standard for UA senior developer. No overrun. Shell vendors always have +30-40%."
+      },
+      {
+        "id": "ev_upwork_history",
+        "weight": 5,
+        "text_uk": "Всі 3 — Top Rated Plus на Upwork/Toptal з $500K+ combined earnings за 3-6 років. Fake persona не побудуєш.",
+        "text_en": "All 3 — Top Rated Plus on Upwork/Toptal with $500K+ combined earnings over 3-6 years. Fake personas cannot be built."
+      },
+      {
+        "id": "ev_linkedin_real",
+        "weight": 4,
+        "text_uk": "Всі 3 засновники — реальні люди з 800-2100 LinkedIn connections + endorsements від бувших colleagues з Zalando/Grammarly/N26",
+        "text_en": "All 3 founders — real people with 800-2100 LinkedIn connections + endorsements from ex-colleagues at Zalando/Grammarly/N26"
+      },
+      {
+        "id": "ev_wise_standard",
+        "weight": 3,
+        "text_uk": "Wise Business — стандарт для 500K+ фрилансерів світу. Це не Cyprus shell, а regulated fintech.",
+        "text_en": "Wise Business — standard for 500K+ freelancers worldwide. Not Cyprus shell, regulated fintech."
+      },
+      {
+        "id": "ev_template_common",
+        "weight": 3,
+        "text_uk": "ThemeForest «Freelancer Pro» — $29 template з 32 000+ покупців. Шаблоний сайт ≠ shell.",
+        "text_en": "ThemeForest «Freelancer Pro» — $29 template with 32,000+ buyers. Templated site ≠ shell."
+      },
+      {
+        "id": "ev_independent_reg",
+        "weight": 4,
+        "text_uk": "3 ФОП зареєстровані у різні роки (2021, 2022, 2023) — незалежно, до PayFly engagement. Не свіжі створені для схеми.",
+        "text_en": "3 sole traders registered in different years (2021, 2022, 2023) — independently, before PayFly engagement. Not freshly created for scheme."
+      },
+      {
+        "id": "ev_dual_approval",
+        "weight": 3,
+        "text_uk": "Всі 3 контракти dual-approved CFO + CTO. Немає sole-approver bypass як у Case 2.",
+        "text_en": "All 3 contracts dual-approved by CFO + CTO. No sole-approver bypass like in Case 2."
+      },
+      {
+        "id": "ev_convergence",
+        "weight": 2,
+        "text_uk": "Compliance officer помітив 3 pattern-и (address + bank + sites) — але ВСІ 3 пояснюються ОДНИМ фактом (coworking + freelance ecosystem). Convergence bias.",
+        "text_en": "Compliance officer noticed 3 patterns (address + bank + sites) — but ALL 3 explained by 1 fact (coworking + freelance ecosystem). Convergence bias."
+      },
+      {
+        "id": "ev_ex_testimony",
+        "weight": 1,
+        "text_uk": "Anonymous LinkedIn DM про one-off payment issue 3-річної давності",
+        "text_en": "Anonymous LinkedIn DM about one-off payment issue 3 years old"
+      },
+      {
+        "id": "ev_similar_sites",
+        "weight": 1,
+        "text_uk": "3 сайти виглядають подібно (той самий ThemeForest шаблон)",
+        "text_en": "3 websites look similar (same ThemeForest template)"
+      }
     ],
     "risk_correct": "low",
-    "risk_points": { "low": 20, "medium": -5, "high": -20, "critical": -30 },
-    "weight_points": { "5": 25, "4": 15, "3": 5, "2": -5, "1": -15 },
+    "risk_points": {
+      "low": 20,
+      "medium": -5,
+      "high": -20,
+      "critical": -30
+    },
+    "weight_points": {
+      "5": 25,
+      "4": 15,
+      "3": 5,
+      "2": -5,
+      "1": -15
+    },
     "recommendations": [
-      { "id": "additional_dd",    "correct": true,  "points": 40, "text_uk": "Additional Due Diligence Required — задокументуй investigation, verify continued market pricing 6 months, no action", "text_en": "Additional Due Diligence Required — document investigation, verify continued market pricing 6 months, no action",
-        "feedback_uk": "✓ Правильно. Політика — точно це: без 3 незалежних джерел ризику нема підстав для termination. Треба закрити case з документованою DD.", "feedback_en": "✓ Correct. Policy is exactly this: without 3 independent risk sources, no basis for termination. Close case with documented DD." },
-      { "id": "terminate_report", "correct": false, "points": -40, "policy_breach": true, "text_uk": "Terminate all 3 + Report to authorities", "text_en": "Terminate all 3 + Report to authorities",
-        "feedback_uk": "❌ POLICY BREACH + катастрофа. Ти щойно засудив 3 legit фрилансерів і зруйнував їх бізнес. Це судові позови до PayFly.", "feedback_en": "❌ POLICY BREACH + catastrophe. You just condemned 3 legit freelancers and destroyed their business. Lawsuits against PayFly incoming." },
-      { "id": "vendor_pause",     "correct": false, "points": -25, "text_uk": "Vendor Pause + деталізований audit", "text_en": "Vendor Pause + detailed audit",
-        "feedback_uk": "❌ Pause — soft form termination. Тобі не потрібен pause, тобі потрібне закриття case з DD.", "feedback_en": "❌ Pause — soft form of termination. You don't need pause, you need to close the case with DD." },
-      { "id": "monitor",          "correct": false, "points": -15, "text_uk": "Monitor 90 days without action", "text_en": "Monitor 90 days without action",
-        "feedback_uk": "⚠️ Пасивно. Активна DD краще ніж пасивний моніторинг.", "feedback_en": "⚠️ Passive. Active DD better than passive monitoring." },
-      { "id": "escalate_legal",   "correct": false, "points": -20, "text_uk": "Escalate to external Legal Counsel", "text_en": "Escalate to external Legal Counsel",
-        "feedback_uk": "❌ Legal не потрібен — тут нема substantive risk. Це overreaction і трата ресурсу.", "feedback_en": "❌ Legal not needed — no substantive risk here. Overreaction, resource waste." },
-      { "id": "no_action",        "correct": false, "points": -30, "text_uk": "No action — false positive", "text_en": "No action — false positive",
-        "feedback_uk": "❌ Правильна ідея, але порушує процес — треба задокументувати DD і закрити case, а не просто ігнорувати flag.", "feedback_en": "❌ Right idea, but breaches process — need to document DD and close case, not just ignore flag." }
+      {
+        "id": "additional_dd",
+        "correct": true,
+        "points": 40,
+        "text_uk": "Additional Due Diligence Required — задокументуй investigation, verify continued market pricing 6 months, no action",
+        "text_en": "Additional Due Diligence Required — document investigation, verify continued market pricing 6 months, no action",
+        "feedback_uk": "✓ Правильно. Політика — точно це: без 3 незалежних джерел ризику нема підстав для termination. Треба закрити case з документованою DD.",
+        "feedback_en": "✓ Correct. Policy is exactly this: without 3 independent risk sources, no basis for termination. Close case with documented DD."
+      },
+      {
+        "id": "terminate_report",
+        "correct": false,
+        "points": -40,
+        "policy_breach": true,
+        "text_uk": "Terminate all 3 + Report to authorities",
+        "text_en": "Terminate all 3 + Report to authorities",
+        "feedback_uk": "❌ POLICY BREACH + катастрофа. Ти щойно засудив 3 legit фрилансерів і зруйнував їх бізнес. Це судові позови до PayFly.",
+        "feedback_en": "❌ POLICY BREACH + catastrophe. You just condemned 3 legit freelancers and destroyed their business. Lawsuits against PayFly incoming."
+      },
+      {
+        "id": "vendor_pause",
+        "correct": false,
+        "points": -25,
+        "text_uk": "Vendor Pause + деталізований audit",
+        "text_en": "Vendor Pause + detailed audit",
+        "feedback_uk": "❌ Pause — soft form termination. Тобі не потрібен pause, тобі потрібне закриття case з DD.",
+        "feedback_en": "❌ Pause — soft form of termination. You don't need pause, you need to close the case with DD."
+      },
+      {
+        "id": "monitor",
+        "correct": false,
+        "points": -15,
+        "text_uk": "Monitor 90 days without action",
+        "text_en": "Monitor 90 days without action",
+        "feedback_uk": "⚠️ Пасивно. Активна DD краще ніж пасивний моніторинг.",
+        "feedback_en": "⚠️ Passive. Active DD better than passive monitoring."
+      },
+      {
+        "id": "escalate_legal",
+        "correct": false,
+        "points": -20,
+        "text_uk": "Escalate to external Legal Counsel",
+        "text_en": "Escalate to external Legal Counsel",
+        "feedback_uk": "❌ Legal не потрібен — тут нема substantive risk. Це overreaction і трата ресурсу.",
+        "feedback_en": "❌ Legal not needed — no substantive risk here. Overreaction, resource waste."
+      },
+      {
+        "id": "no_action",
+        "correct": false,
+        "points": -30,
+        "text_uk": "No action — false positive",
+        "text_en": "No action — false positive",
+        "feedback_uk": "❌ Правильна ідея, але порушує процес — треба задокументувати DD і закрити case, а не просто ігнорувати flag.",
+        "feedback_en": "❌ Right idea, but breaches process — need to document DD and close case, not just ignore flag."
+      }
     ]
   },
-
   "ranks": {
-    "master":  { "min": 350, "label_uk": "Master · Judgement Quality", "label_en": "Master · Judgement Quality",
-                 "msg_uk": "Ти уникнув convergence bias — рідкісний навик.", "msg_en": "You avoided convergence bias — a rare skill.", "color": "#dcc382" },
-    "senior":  { "min": 250, "label_uk": "Senior Investigator", "label_en": "Senior Investigator",
-                 "msg_uk": "Правильно розкрив false positive.", "msg_en": "Correctly unpacked the false positive.", "color": "#c0c8d8" },
-    "junior":  { "min": 150, "label_uk": "Investigator", "label_en": "Investigator",
-                 "msg_uk": "Не термінував — уже добре.", "msg_en": "Didn't terminate — already good.", "color": "#a67c52" },
-    "trainee": { "min": 0,   "label_uk": "Junior Auditor", "label_en": "Junior Auditor",
-                 "msg_uk": "Convergence bias спрацював.", "msg_en": "Convergence bias got you.", "color": "#8a8a8a" }
+    "master": {
+      "min": 350,
+      "label_uk": "Master · Judgement Quality",
+      "label_en": "Master · Judgement Quality",
+      "msg_uk": "Ти уникнув convergence bias — рідкісний навик.",
+      "msg_en": "You avoided convergence bias — a rare skill.",
+      "color": "#dcc382"
+    },
+    "senior": {
+      "min": 250,
+      "label_uk": "Senior Investigator",
+      "label_en": "Senior Investigator",
+      "msg_uk": "Правильно розкрив false positive.",
+      "msg_en": "Correctly unpacked the false positive.",
+      "color": "#c0c8d8"
+    },
+    "junior": {
+      "min": 150,
+      "label_uk": "Investigator",
+      "label_en": "Investigator",
+      "msg_uk": "Не термінував — уже добре.",
+      "msg_en": "Didn't terminate — already good.",
+      "color": "#a67c52"
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Junior Auditor",
+      "label_en": "Junior Auditor",
+      "msg_uk": "Convergence bias спрацював.",
+      "msg_en": "Convergence bias got you.",
+      "color": "#8a8a8a"
+    }
   }
 }

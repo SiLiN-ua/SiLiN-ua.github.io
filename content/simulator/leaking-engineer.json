@@ -6,9 +6,8 @@
   "max_points": 500,
   "title_uk": "Sim #02 · Case 1 · The Leaking Engineer",
   "title_en": "Sim #02 · Case 1 · The Leaking Engineer",
-
   "briefing": {
-    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "splash": "/img/uploads/simulator/sim02/case1-leaking-engineer.png",
     "client_uk": "SecureBank SaaS (200 employees, B2B core-banking)",
     "client_en": "SecureBank SaaS (200 employees, B2B core-banking)",
     "position": "Senior Backend Engineer · $145K",
@@ -20,12 +19,11 @@
     "candidate": {
       "name_uk": "Владислав Р. (36, senior engineer)",
       "name_en": "Vladyslav R. (36, senior engineer)",
-      "photo": "img/uploads/simulator/candidate-passport.jpg",
+      "photo": "/img/uploads/simulator/sim02/case1-candidate.png",
       "email": "v.r@securebank-saas.example",
       "phone": "+380 XX XXX XX 47"
     }
   },
-
   "phase2": {
     "title_uk": "Розслідування · корпоративні тули",
     "title_en": "Investigation · corporate tools",
@@ -62,12 +60,23 @@
           "address_uk": "м. Львів, вул. Стрийська, 128, кв. 47",
           "address_en": "Lviv, Stryiska St. 128, apt. 47",
           "officers": [
-            { "name_uk": "Р***** Софія Миколаївна", "name_en": "R***** Sofia M.", "role_uk": "Директор", "role_en": "Director",
-              "note_uk": "прізвище = прізвище суб'єкта (дружина)", "note_en": "surname = subject's surname (wife)" }
+            {
+              "name_uk": "Р***** Софія Миколаївна",
+              "name_en": "R***** Sofia M.",
+              "role_uk": "Директор",
+              "role_en": "Director",
+              "note_uk": "прізвище = прізвище суб'єкта (дружина)",
+              "note_en": "surname = subject's surname (wife)"
+            }
           ],
           "founders": [
-            { "name_uk": "Р***** Софія Миколаївна", "name_en": "R***** Sofia M.", "share": "100",
-              "note_uk": "єдиний засновник, той самий що директор", "note_en": "sole founder, same as director" }
+            {
+              "name_uk": "Р***** Софія Миколаївна",
+              "name_en": "R***** Sofia M.",
+              "share": "100",
+              "note_uk": "єдиний засновник, той самий що директор",
+              "note_en": "sole founder, same as director"
+            }
           ]
         }
       },
@@ -95,12 +104,18 @@
           "attendees_en": "V.R. (host), 4 backend engineers",
           "classification": "INTERNAL · Confidential",
           "paragraphs": [
-            { "text_uk": "Обговорили нову архітектуру event-driven ledger для клієнта X. V.R. представив 4-layer schema (API gateway → ledger service → settlement worker → audit store) з детальним описом полів кожного message-envelope, latency-цілей і failure modes.",
-              "text_en": "Discussed the new event-driven ledger architecture for client X. V.R. presented the 4-layer schema (API gateway → ledger service → settlement worker → audit store) with detailed message-envelope field specs, latency targets, and failure modes." },
-            { "text_uk": "V.R. надав повну internal specification у формі 40-сторінкового PDF (attached), включаючи схеми БД, algorithm choices для reconciliation, і non-public patents pending на dispute resolution.",
-              "text_en": "V.R. shared the full internal specification as a 40-page PDF (attached), including DB schemas, algorithm choices for reconciliation, and non-public patents pending on dispute resolution." },
-            { "text_uk": "⚠ Notice from IT security (12.03.2026): цей документ був завантажений з shared drive о 03:47 з IP-адреси, зареєстрованої за home-office V.R. Це порушує data-classification policy §4.2.",
-              "text_en": "⚠ Notice from IT security (12.03.2026): this document was downloaded from the shared drive at 03:47 from an IP address registered to V.R.'s home office. This violates data-classification policy §4.2." }
+            {
+              "text_uk": "Обговорили нову архітектуру event-driven ledger для клієнта X. V.R. представив 4-layer schema (API gateway → ledger service → settlement worker → audit store) з детальним описом полів кожного message-envelope, latency-цілей і failure modes.",
+              "text_en": "Discussed the new event-driven ledger architecture for client X. V.R. presented the 4-layer schema (API gateway → ledger service → settlement worker → audit store) with detailed message-envelope field specs, latency targets, and failure modes."
+            },
+            {
+              "text_uk": "V.R. надав повну internal specification у формі 40-сторінкового PDF (attached), включаючи схеми БД, algorithm choices для reconciliation, і non-public patents pending на dispute resolution.",
+              "text_en": "V.R. shared the full internal specification as a 40-page PDF (attached), including DB schemas, algorithm choices for reconciliation, and non-public patents pending on dispute resolution."
+            },
+            {
+              "text_uk": "⚠ Notice from IT security (12.03.2026): цей документ був завантажений з shared drive о 03:47 з IP-адреси, зареєстрованої за home-office V.R. Це порушує data-classification policy §4.2.",
+              "text_en": "⚠ Notice from IT security (12.03.2026): this document was downloaded from the shared drive at 03:47 from an IP address registered to V.R.'s home office. This violates data-classification policy §4.2."
+            }
           ]
         }
       },
@@ -122,11 +137,43 @@
         "clue_uk": "Інвойс від «TechConsult» на $180K — вперше з'явився у березні, затверджений V.R.",
         "clue_en": "Invoice from «TechConsult» for $180K — first appeared in March, approved by V.R.",
         "invoices": [
-          { "number": "INV-2026-01847", "date": "2026-03-05", "vendor": "AWS Ukraine",    "amount": "$12,450", "approver": "N. Petrov (CFO)" },
-          { "number": "INV-2026-01912", "date": "2026-03-08", "vendor": "GitHub Enterprise", "amount": "$4,320",  "approver": "N. Petrov (CFO)" },
-          { "number": "INV-2026-02001", "date": "2026-03-05", "vendor": "TechConsult LLC (new)",  "amount": "$180,000", "approver": "V.R. (Sr Eng)", "highlight": true },
-          { "number": "INV-2026-02045", "date": "2026-03-15", "vendor": "Datadog",         "amount": "$8,900",  "approver": "N. Petrov (CFO)" },
-          { "number": "INV-2026-02089", "date": "2026-03-20", "vendor": "TechConsult LLC",  "amount": "$180,000 (paid)", "approver": "V.R. (Sr Eng)", "highlight": true }
+          {
+            "number": "INV-2026-01847",
+            "date": "2026-03-05",
+            "vendor": "AWS Ukraine",
+            "amount": "$12,450",
+            "approver": "N. Petrov (CFO)"
+          },
+          {
+            "number": "INV-2026-01912",
+            "date": "2026-03-08",
+            "vendor": "GitHub Enterprise",
+            "amount": "$4,320",
+            "approver": "N. Petrov (CFO)"
+          },
+          {
+            "number": "INV-2026-02001",
+            "date": "2026-03-05",
+            "vendor": "TechConsult LLC (new)",
+            "amount": "$180,000",
+            "approver": "V.R. (Sr Eng)",
+            "highlight": true
+          },
+          {
+            "number": "INV-2026-02045",
+            "date": "2026-03-15",
+            "vendor": "Datadog",
+            "amount": "$8,900",
+            "approver": "N. Petrov (CFO)"
+          },
+          {
+            "number": "INV-2026-02089",
+            "date": "2026-03-20",
+            "vendor": "TechConsult LLC",
+            "amount": "$180,000 (paid)",
+            "approver": "V.R. (Sr Eng)",
+            "highlight": true
+          }
         ],
         "invoices_note_uk": "🚩 «TechConsult» — vendor який раніше НЕ існував у системі. Обидва інвойси затверджені особисто V.R. (senior engineer, не CFO). Це порушення procurement policy — суми >$50K потребують подвійного затвердження CFO + Head of Engineering.",
         "invoices_note_en": "🚩 «TechConsult» — vendor that DID NOT exist in the system before. Both invoices approved personally by V.R. (senior engineer, not CFO). This breaches procurement policy — amounts >$50K require dual approval by CFO + Head of Engineering."
@@ -151,19 +198,38 @@
         "email_chain": {
           "thread_subj": "External architecture consultation — Q1 engagement",
           "messages": [
-            { "from": "cto@competitor-corp.example", "to": "v.r@securebank-saas.example", "date": "2026-02-18 09:12",
+            {
+              "from": "cto@competitor-corp.example",
+              "to": "v.r@securebank-saas.example",
+              "date": "2026-02-18 09:12",
               "body_uk": "Владиславе, дякую за розмову вчора. Готові рухатись з engagement — можеш скинути реквізити для оформлення? Ідеально було б через якусь малу консалтингову структуру, щоб не проходити через нашу vendor-review.",
-              "body_en": "Vladyslav, thanks for yesterday's call. Ready to move forward — can you send billing details? Ideally via some small consulting entity, so it doesn't go through our vendor review." },
-            { "from": "v.r@securebank-saas.example", "to": "cto@competitor-corp.example", "date": "2026-02-25 22:48", "highlight": true,
+              "body_en": "Vladyslav, thanks for yesterday's call. Ready to move forward — can you send billing details? Ideally via some small consulting entity, so it doesn't go through our vendor review."
+            },
+            {
+              "from": "v.r@securebank-saas.example",
+              "to": "cto@competitor-corp.example",
+              "date": "2026-02-25 22:48",
+              "highlight": true,
               "body_uk": "Все ок, ТОВ буде готове до кінця тижня. Оформлення на дружину — вона formal owner. Реквізити скину як буде registration certificate.",
               "body_en": "All good, the LLC will be ready by end of the week. Registered under my wife — she's the formal owner. I'll send you the details once the registration certificate is ready.",
-              "attachment": "draft_service_agreement_v2.pdf" },
-            { "from": "cto@competitor-corp.example", "to": "v.r@securebank-saas.example", "date": "2026-03-01 11:03",
+              "attachment": "draft_service_agreement_v2.pdf"
+            },
+            {
+              "from": "cto@competitor-corp.example",
+              "to": "v.r@securebank-saas.example",
+              "date": "2026-03-01 11:03",
               "body_uk": "Ідеально. Хочемо дуже конкретний deliverable — повний технічний огляд вашої core-banking архітектури, включно з реалізацією ledger service. Готові платити premium — $180K за 30 днів.",
-              "body_en": "Perfect. We want a very specific deliverable — a full technical overview of your core-banking architecture, including the ledger service implementation. Ready to pay a premium — $180K for 30 days." },
-            { "from": "v.r@securebank-saas.example", "to": "cto@competitor-corp.example", "date": "2026-03-04 01:22", "highlight": true,
+              "body_en": "Perfect. We want a very specific deliverable — a full technical overview of your core-banking architecture, including the ledger service implementation. Ready to pay a premium — $180K for 30 days."
+            },
+            {
+              "from": "v.r@securebank-saas.example",
+              "to": "cto@competitor-corp.example",
+              "date": "2026-03-04 01:22",
+              "highlight": true,
               "body_uk": "OK, документація буде через кілька днів. Дам знати як забере.",
-              "body_en": "OK, docs will be ready in a few days. Will let you know when to grab it.", "attachment": "core_banking_architecture_v4.pdf" }
+              "body_en": "OK, docs will be ready in a few days. Will let you know when to grab it.",
+              "attachment": "core_banking_architecture_v4.pdf"
+            }
           ]
         }
       },
@@ -187,9 +253,15 @@
         "panama": {
           "query": "V.R. + TechConsult LLC + Ukraine",
           "results": [
-            { "entity": "—", "jurisdiction": "—", "role_uk": "результатів немає", "role_en": "no results", "source": "ICIJ",
+            {
+              "entity": "—",
+              "jurisdiction": "—",
+              "role_uk": "результатів немає",
+              "role_en": "no results",
+              "source": "ICIJ",
               "note_uk": "База містить тільки leaks з 2016 (Panama), 2017 (Paradise), 2020 (Pandora). Свіжі схеми через приватні реєстратори у Cyprus / BVI сюди не потрапляють.",
-              "note_en": "The database only contains leaks from 2016 (Panama), 2017 (Paradise), 2020 (Pandora). Recent schemes via private registrars in Cyprus / BVI do not appear here." }
+              "note_en": "The database only contains leaks from 2016 (Panama), 2017 (Paradise), 2020 (Pandora). Recent schemes via private registrars in Cyprus / BVI do not appear here."
+            }
           ]
         }
       },
@@ -211,8 +283,18 @@
         "clue_uk": "Конкурент раптово в березні опублікував job posting на «Senior Ledger Architect» — раніше такої позиції не було.",
         "clue_en": "In March the competitor suddenly posted a «Senior Ledger Architect» role — such a position didn't exist before.",
         "matches": [
-          { "site": "web.archive.org (Feb 2026)", "url": "competitor-corp.example/careers", "note_uk": "5 звичайних вакансій — Backend, DevOps, PM.", "note_en": "5 regular openings — Backend, DevOps, PM." },
-          { "site": "web.archive.org (March 20, 2026)", "url": "competitor-corp.example/careers", "note_uk": "🚩 Нова вакансія: «Senior Ledger Architect · lead our new event-driven ledger implementation». Опис — 1-в-1 як core-banking у SecureBank.", "note_en": "🚩 New role: «Senior Ledger Architect · lead our new event-driven ledger implementation». Description — 1-to-1 with SecureBank's core-banking." }
+          {
+            "site": "web.archive.org (Feb 2026)",
+            "url": "competitor-corp.example/careers",
+            "note_uk": "5 звичайних вакансій — Backend, DevOps, PM.",
+            "note_en": "5 regular openings — Backend, DevOps, PM."
+          },
+          {
+            "site": "web.archive.org (March 20, 2026)",
+            "url": "competitor-corp.example/careers",
+            "note_uk": "🚩 Нова вакансія: «Senior Ledger Architect · lead our new event-driven ledger implementation». Опис — 1-в-1 як core-banking у SecureBank.",
+            "note_en": "🚩 New role: «Senior Ledger Architect · lead our new event-driven ledger implementation». Description — 1-to-1 with SecureBank's core-banking."
+          }
         ]
       },
       {
@@ -233,8 +315,18 @@
         "clue_uk": "У профілі з'явились нові навички: «Enterprise Architecture Consulting», «External advisory» — вперше додано у лютому 2026.",
         "clue_en": "New skills appeared: «Enterprise Architecture Consulting», «External advisory» — first added in February 2026.",
         "matches": [
-          { "site": "LinkedIn (public)", "url": "linkedin.com/in/v-r-securebank", "note_uk": "Skills додано 22 лютого 2026: Enterprise Architecture Consulting, External Advisory, Freelance.", "note_en": "Skills added Feb 22, 2026: Enterprise Architecture Consulting, External Advisory, Freelance." },
-          { "site": "LinkedIn Connections", "url": "linkedin.com/in/competitor-cto", "note_uk": "Прямий connection з CTO конкурента (додано 14 лютого 2026, за 4 дні до першого емейлу).", "note_en": "Direct connection with competitor's CTO (added Feb 14, 2026 — 4 days before the first email)." }
+          {
+            "site": "LinkedIn (public)",
+            "url": "linkedin.com/in/v-r-securebank",
+            "note_uk": "Skills додано 22 лютого 2026: Enterprise Architecture Consulting, External Advisory, Freelance.",
+            "note_en": "Skills added Feb 22, 2026: Enterprise Architecture Consulting, External Advisory, Freelance."
+          },
+          {
+            "site": "LinkedIn Connections",
+            "url": "linkedin.com/in/competitor-cto",
+            "note_uk": "Прямий connection з CTO конкурента (додано 14 лютого 2026, за 4 дні до першого емейлу).",
+            "note_en": "Direct connection with competitor's CTO (added Feb 14, 2026 — 4 days before the first email)."
+          }
         ]
       },
       {
@@ -255,9 +347,30 @@
         "clue_uk": "$180K зайшли 25.03. Через 2 дні $170K виведено на приватний рахунок дружини + $10K на рахунок V.R.",
         "clue_en": "$180K came in 25.03. Two days later $170K withdrawn to wife's private account + $10K to V.R.'s account.",
         "invoices": [
-          { "number": "IN-2026-0001", "date": "2026-03-25", "vendor": "Competitor Corp (payer)", "amount": "+ $180,000", "approver": "—", "highlight": true },
-          { "number": "OUT-2026-0001", "date": "2026-03-27", "vendor": "R***** S. M. (personal)", "amount": "− $170,000", "approver": "R***** S. M.", "highlight": true },
-          { "number": "OUT-2026-0002", "date": "2026-03-27", "vendor": "R***** V. (personal)", "amount": "− $10,000", "approver": "R***** S. M.", "highlight": true }
+          {
+            "number": "IN-2026-0001",
+            "date": "2026-03-25",
+            "vendor": "Competitor Corp (payer)",
+            "amount": "+ $180,000",
+            "approver": "—",
+            "highlight": true
+          },
+          {
+            "number": "OUT-2026-0001",
+            "date": "2026-03-27",
+            "vendor": "R***** S. M. (personal)",
+            "amount": "− $170,000",
+            "approver": "R***** S. M.",
+            "highlight": true
+          },
+          {
+            "number": "OUT-2026-0002",
+            "date": "2026-03-27",
+            "vendor": "R***** V. (personal)",
+            "amount": "− $10,000",
+            "approver": "R***** S. M.",
+            "highlight": true
+          }
         ],
         "invoices_note_uk": "Money-flow ланцюжок: конкурент → ТОВ → сімейний рахунок → V.R. Класична схема пасіву-нового-vendor'а.",
         "invoices_note_en": "Money-flow chain: competitor → LLC → family account → V.R. Textbook new-vendor pass-through scheme."
@@ -280,7 +393,12 @@
         "clue_uk": "Дружина справді має маленький салон з 2019 (річний оборот ~$8K). Це нічого не спростовує — $180K через ТОВ = окрема схема.",
         "clue_en": "Wife does have a small salon since 2019 (annual revenue ~$8K). This proves nothing — $180K via LLC is a separate scheme.",
         "matches": [
-          { "site": "Public records · Sole trader", "url": "opendatabot.ua/spd/...", "note_uk": "ФОП з 2019, вид діяльності — послуги краси, річний оборот ~$8K.", "note_en": "Sole trader since 2019, activity — beauty services, annual revenue ~$8K." }
+          {
+            "site": "Public records · Sole trader",
+            "url": "opendatabot.ua/spd/...",
+            "note_uk": "ФОП з 2019, вид діяльності — послуги краси, річний оборот ~$8K.",
+            "note_en": "Sole trader since 2019, activity — beauty services, annual revenue ~$8K."
+          }
         ]
       },
       {
@@ -301,7 +419,13 @@
         "clue_uk": "Наміри 2-річної давності — слабкий доказ. Може бути співпадінням.",
         "clue_en": "2-year-old intentions — weak evidence. Could be coincidence.",
         "matches": [
-          { "site": "Facebook (2024)", "url": "facebook.com/vr-securebank", "note_uk": "«Готуюсь запустити власну консалтингову — цінність knowledge справжня.»", "note_en": "«Preparing to launch my own consultancy — knowledge value is real.»" }
+          {
+            "site": "Facebook (2024)",
+            "url": "facebook.com/vr-securebank",
+            "note_uk": "«Готуюсь запустити власну консалтингову — цінність knowledge справжня.»",
+            "note_en": "«Preparing to launch my own consultancy — knowledge value is real.»",
+            "img": "/img/uploads/simulator/sim02/case1-facebook-consulting.png"
+          }
         ]
       },
       {
@@ -322,7 +446,12 @@
         "clue_uk": "Плітки НЕ доказ. Це ловушка — багато скринерів цитують такі речі у меморандумі, а потім втрачають довіру у суді.",
         "clue_en": "Rumors are NOT evidence. This is a trap — many screeners cite such things in memos and then lose credibility in court.",
         "matches": [
-          { "site": "HR notes (informal)", "url": "—", "note_uk": "Колега з HR сказав: «V.R. на минулому кава-брейку скаржився що йому нецікаво тут, шукає нове».", "note_en": "HR colleague said: «V.R. at the last coffee break complained he's bored here, looking for something new»." }
+          {
+            "site": "HR notes (informal)",
+            "url": "—",
+            "note_uk": "Колега з HR сказав: «V.R. на минулому кава-брейку скаржився що йому нецікаво тут, шукає нове».",
+            "note_en": "HR colleague said: «V.R. at the last coffee break complained he's bored here, looking for something new»."
+          }
         ]
       },
       {
@@ -343,12 +472,16 @@
         "clue_uk": "За адресою — житловий будинок. Ніяких офісних вивісок «TechConsult». Це residence суб'єкта.",
         "clue_en": "At the address — a residential building. No «TechConsult» office signage. This is subject's residence.",
         "matches": [
-          { "site": "Google Street View (Jun 2025)", "url": "maps.google.com/street/lviv/stryiska-128", "note_uk": "Житловий 9-поверховий будинок. Ніяких вивісок бізнесу. Стандартний під'їзд.", "note_en": "9-storey residential building. No business signage. Standard entrance." }
+          {
+            "site": "Google Street View (Jun 2025)",
+            "url": "maps.google.com/street/lviv/stryiska-128",
+            "note_uk": "Житловий 9-поверховий будинок. Ніяких вивісок бізнесу. Стандартний під'їзд.",
+            "note_en": "9-storey residential building. No business signage. Standard entrance."
+          }
         ]
       }
     ]
   },
-
   "timeline_phase": {
     "title_uk": "Побудуй хронологію «The Leaking Engineer»",
     "title_en": "Build the «Leaking Engineer» timeline",
@@ -357,31 +490,59 @@
     "submit_btn_uk": "Підтвердити хронологію →",
     "submit_btn_en": "Submit timeline →",
     "events": [
-      { "id": "e1", "date": "2026-01-13",
+      {
+        "id": "e1",
+        "date": "2026-01-13",
         "text_uk": "Найм: V.R. приєднався до SecureBank SaaS як senior backend engineer з доступом до core architecture",
-        "text_en": "Hire: V.R. joins SecureBank SaaS as senior backend engineer with access to core architecture" },
-      { "id": "e2", "date": "2026-02-14",
+        "text_en": "Hire: V.R. joins SecureBank SaaS as senior backend engineer with access to core architecture"
+      },
+      {
+        "id": "e2",
+        "date": "2026-02-14",
         "text_uk": "LinkedIn: V.R. додав прямий connection з CTO конкурента",
-        "text_en": "LinkedIn: V.R. added a direct connection with competitor's CTO" },
-      { "id": "e3", "date": "2026-02-18",
+        "text_en": "LinkedIn: V.R. added a direct connection with competitor's CTO"
+      },
+      {
+        "id": "e3",
+        "date": "2026-02-18",
         "text_uk": "Перший email: CTO конкурента запросив engagement + натякнув на «маленьку консалтингову структуру»",
-        "text_en": "First email: competitor's CTO requested an engagement + hinted at «small consulting entity»" },
-      { "id": "e4", "date": "2026-02-22",
+        "text_en": "First email: competitor's CTO requested an engagement + hinted at «small consulting entity»"
+      },
+      {
+        "id": "e4",
+        "date": "2026-02-22",
         "text_uk": "Реєстрація: ТОВ «TechConsult» створено у ЄДР, дружина суб'єкта — єдиний засновник і директор",
-        "text_en": "Registration: LLC «TechConsult» filed with the state registry, subject's wife — sole founder and director" },
-      { "id": "e5", "date": "2026-03-03",
+        "text_en": "Registration: LLC «TechConsult» filed with the state registry, subject's wife — sole founder and director"
+      },
+      {
+        "id": "e5",
+        "date": "2026-03-03",
         "text_uk": "Витік: у публічному чат-каналі опубліковано 40-сторінковий PDF з архітектурою core-banking (акаунт V.R.)",
-        "text_en": "Leak: a 40-page PDF with core-banking architecture posted to a public chat channel (V.R.'s account)" },
-      { "id": "e6", "date": "2026-03-05",
+        "text_en": "Leak: a 40-page PDF with core-banking architecture posted to a public chat channel (V.R.'s account)"
+      },
+      {
+        "id": "e6",
+        "date": "2026-03-05",
         "text_uk": "Контракт + інвойс: vendor-угода з ТОВ на $180K, перший інвойс затверджений особисто V.R.",
-        "text_en": "Contract + invoice: $180K vendor agreement with the LLC, first invoice approved personally by V.R." },
-      { "id": "e7", "date": "2026-03-27",
+        "text_en": "Contract + invoice: $180K vendor agreement with the LLC, first invoice approved personally by V.R."
+      },
+      {
+        "id": "e7",
+        "date": "2026-03-27",
         "text_uk": "Money flow: $180K → рахунок ТОВ → $170K на приватний рахунок дружини + $10K на приватний рахунок V.R.",
-        "text_en": "Money flow: $180K → LLC account → $170K to wife's private account + $10K to V.R.'s private account" }
+        "text_en": "Money flow: $180K → LLC account → $170K to wife's private account + $10K to V.R.'s private account"
+      }
     ],
-    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+    "correct_order": [
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6",
+      "e7"
+    ]
   },
-
   "phase3": {
     "title_uk": "Крос-верифікація · 3 питання",
     "title_en": "Cross-verification · 3 questions",
@@ -395,22 +556,38 @@
         "text_uk": "Хто справжній бенефіціар ТОВ «TechConsult»?",
         "text_en": "Who is the true beneficiary of LLC «TechConsult»?",
         "options": [
-          { "text_uk": "Дружина суб'єкта — це її законний бізнес", "text_en": "Subject's wife — it's her legitimate business",
-            "points": -15, "correct": false,
+          {
+            "text_uk": "Дружина суб'єкта — це її законний бізнес",
+            "text_en": "Subject's wife — it's her legitimate business",
+            "points": -15,
+            "correct": false,
             "feedback_uk": "❌ Формально так, але money-flow і email chain показують що дружина = nominee director.",
-            "feedback_en": "❌ Formally yes, but money-flow and email chain show wife = nominee director." },
-          { "text_uk": "Суб'єкт V.R. — через дружину як номінала. Money flow і email підтверджують.", "text_en": "The subject V.R. — via his wife as nominee. Money flow and email confirm.",
-            "points": 25, "correct": true,
+            "feedback_en": "❌ Formally yes, but money-flow and email chain show wife = nominee director."
+          },
+          {
+            "text_uk": "Суб'єкт V.R. — через дружину як номінала. Money flow і email підтверджують.",
+            "text_en": "The subject V.R. — via his wife as nominee. Money flow and email confirm.",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. У листі V.R. сам пише «оформлення на дружину — вона formal owner». Плюс $10K повернулись напряму на його рахунок.",
-            "feedback_en": "✓ Correct. In email V.R. himself writes «registered under my wife — she's the formal owner». Plus $10K flowed back to his personal account." },
-          { "text_uk": "Конкурент — це вони фактично контролюють через договір", "text_en": "The competitor — they effectively control via contract",
-            "points": -10, "correct": false,
+            "feedback_en": "✓ Correct. In email V.R. himself writes «registered under my wife — she's the formal owner». Plus $10K flowed back to his personal account."
+          },
+          {
+            "text_uk": "Конкурент — це вони фактично контролюють через договір",
+            "text_en": "The competitor — they effectively control via contract",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Ні. Конкурент — просто платник за послугу. Контроль над ТОВ у сім'ї V.R.",
-            "feedback_en": "❌ No. Competitor is just the payer. LLC control stays in V.R.'s family." },
-          { "text_uk": "Не можливо визначити без офіційного запиту у податкову", "text_en": "Impossible to determine without formal tax authority query",
-            "points": -5, "correct": false,
+            "feedback_en": "❌ No. Competitor is just the payer. LLC control stays in V.R.'s family."
+          },
+          {
+            "text_uk": "Не можливо визначити без офіційного запиту у податкову",
+            "text_en": "Impossible to determine without formal tax authority query",
+            "points": -5,
+            "correct": false,
             "feedback_uk": "❌ Недоречно консервативно. Money flow + email + OpenCorporates дають high-confidence висновок.",
-            "feedback_en": "❌ Overly cautious. Money flow + email + OpenCorporates give a high-confidence conclusion." }
+            "feedback_en": "❌ Overly cautious. Money flow + email + OpenCorporates give a high-confidence conclusion."
+          }
         ]
       },
       {
@@ -418,22 +595,38 @@
         "text_uk": "Яка головна юридична проблема з поточними доказами?",
         "text_en": "What is the main legal issue with the current evidence?",
         "options": [
-          { "text_uk": "Немає прямого свідчення що конкурент отримав саме leaked документ", "text_en": "No direct proof that competitor received the exact leaked document",
-            "points": 20, "correct": true,
+          {
+            "text_uk": "Немає прямого свідчення що конкурент отримав саме leaked документ",
+            "text_en": "No direct proof that competitor received the exact leaked document",
+            "points": 20,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Це найслабкіша ланка. Email містить offer, ТОВ фінансовий слід є — але потрібен forensic chain-of-custody на сам документ. Тому термінувати V.R. ДО Legal-processing нічого не дасть у суді.",
-            "feedback_en": "✓ Correct. This is the weakest link. Email has offer, LLC financial trail exists — but a forensic chain-of-custody on the document itself is needed. That's why terminating V.R. BEFORE Legal-processing yields nothing in court." },
-          { "text_uk": "V.R. — громадянин ЄС, ускладнює extradition", "text_en": "V.R. is EU citizen, complicates extradition",
-            "points": -5, "correct": false,
+            "feedback_en": "✓ Correct. This is the weakest link. Email has offer, LLC financial trail exists — but a forensic chain-of-custody on the document itself is needed. That's why terminating V.R. BEFORE Legal-processing yields nothing in court."
+          },
+          {
+            "text_uk": "V.R. — громадянин ЄС, ускладнює extradition",
+            "text_en": "V.R. is EU citizen, complicates extradition",
+            "points": -5,
+            "correct": false,
             "feedback_uk": "❌ Не релевантно. Це українська компанія + український суб'єкт.",
-            "feedback_en": "❌ Not relevant. Ukrainian company + Ukrainian subject." },
-          { "text_uk": "Meeting minutes формально не classified — компанія не помітила його як trade secret", "text_en": "Meeting minutes not formally classified — company didn't mark it as trade secret",
-            "points": 10, "correct": false,
+            "feedback_en": "❌ Not relevant. Ukrainian company + Ukrainian subject."
+          },
+          {
+            "text_uk": "Meeting minutes формально не classified — компанія не помітила його як trade secret",
+            "text_en": "Meeting minutes not formally classified — company didn't mark it as trade secret",
+            "points": 10,
+            "correct": false,
             "feedback_uk": "⚠️ Частково важливо, але не головна проблема. Класифікація INTERNAL + IT security warning fixes цей брак.",
-            "feedback_en": "⚠️ Partially important, but not the main issue. INTERNAL classification + IT security warning cover this gap." },
-          { "text_uk": "Нема жодних юридичних проблем — докази бездоганні", "text_en": "No legal issues — evidence is airtight",
-            "points": -15, "correct": false,
+            "feedback_en": "⚠️ Partially important, but not the main issue. INTERNAL classification + IT security warning cover this gap."
+          },
+          {
+            "text_uk": "Нема жодних юридичних проблем — докази бездоганні",
+            "text_en": "No legal issues — evidence is airtight",
+            "points": -15,
+            "correct": false,
             "feedback_uk": "❌ Overconfident. Це exactly чому потрібна Legal-ескалація ДО термінації.",
-            "feedback_en": "❌ Overconfident. This is exactly why Legal escalation is needed BEFORE termination." }
+            "feedback_en": "❌ Overconfident. This is exactly why Legal escalation is needed BEFORE termination."
+          }
         ]
       },
       {
@@ -441,27 +634,42 @@
         "text_uk": "З цих чотирьох знахідок — яка DECOY (пастка), яку НЕ можна цитувати у корпоративному меморандумі?",
         "text_en": "Of these four findings — which one is a DECOY (trap) that MUST NOT be cited in a corporate memorandum?",
         "options": [
-          { "text_uk": "Meeting minutes leak (внутрішня архітектура + IT security notice)", "text_en": "Meeting minutes leak (internal architecture + IT security notice)",
-            "points": -10, "correct": false,
+          {
+            "text_uk": "Meeting minutes leak (внутрішня архітектура + IT security notice)",
+            "text_en": "Meeting minutes leak (internal architecture + IT security notice)",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Це diagnostic-доказ (★★★★★): doc + timestamped audit trail. Використовуй у меморандумі.",
-            "feedback_en": "❌ This is diagnostic evidence (★★★★★): doc + timestamped audit trail. Cite it in the memo." },
-          { "text_uk": "Email chain з конкурентом + attachment", "text_en": "Email chain with competitor + attachment",
-            "points": -10, "correct": false,
+            "feedback_en": "❌ This is diagnostic evidence (★★★★★): doc + timestamped audit trail. Cite it in the memo."
+          },
+          {
+            "text_uk": "Email chain з конкурентом + attachment",
+            "text_en": "Email chain with competitor + attachment",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Це найсильніший доказ (★★★★★): прямі цитати V.R. + attachment з тим самим документом.",
-            "feedback_en": "❌ This is the strongest evidence (★★★★★): direct V.R. quotes + attachment containing the same document." },
-          { "text_uk": "Rumor від HR-колеги («V.R. на кава-брейку скаржився що йому нецікаво»)", "text_en": "HR colleague rumor («V.R. complained at coffee break he's bored»)",
-            "points": 25, "correct": true,
+            "feedback_en": "❌ This is the strongest evidence (★★★★★): direct V.R. quotes + attachment containing the same document."
+          },
+          {
+            "text_uk": "Rumor від HR-колеги («V.R. на кава-брейку скаржився що йому нецікаво»)",
+            "text_en": "HR colleague rumor («V.R. complained at coffee break he's bored»)",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Anonymous hearsay = 0 evidentiary value + може розвалити довіру у суді. Класична DECOY-пастка для новачків.",
-            "feedback_en": "✓ Correct. Anonymous hearsay = 0 evidentiary value + can destroy credibility in court. Classic DECOY trap for beginners." },
-          { "text_uk": "Money flow (competitor → LLC → wife → V.R.)", "text_en": "Money flow (competitor → LLC → wife → V.R.)",
-            "points": -10, "correct": false,
+            "feedback_en": "✓ Correct. Anonymous hearsay = 0 evidentiary value + can destroy credibility in court. Classic DECOY trap for beginners."
+          },
+          {
+            "text_uk": "Money flow (competitor → LLC → wife → V.R.)",
+            "text_en": "Money flow (competitor → LLC → wife → V.R.)",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Це financial trail ★★★★★. Прямий доказ передачі коштів. Використовуй у меморандумі.",
-            "feedback_en": "❌ This is a ★★★★★ financial trail. Direct proof of fund transfer. Cite it in the memo." }
+            "feedback_en": "❌ This is a ★★★★★ financial trail. Direct proof of fund transfer. Cite it in the memo."
+          }
         ]
       }
     ]
   },
-
   "memo_phase": {
     "title_uk": "Заповни корпоративний меморандум",
     "title_en": "Fill in the corporate memorandum",
@@ -478,51 +686,207 @@
       "breach_penalty": -30
     },
     "subjects": [
-      { "id": "ip_theft",   "correct": true,  "points": 20, "text_uk": "Підозра у крадіжці IP співробітником", "text_en": "Suspected IP theft by employee" },
-      { "id": "vendor_pay", "correct": false, "points": -5, "text_uk": "Аномалія у постачальницьких платежах", "text_en": "Vendor payment irregularity" },
-      { "id": "kickback",   "correct": false, "points": -5, "text_uk": "Потенційна kickback-схема",              "text_en": "Potential kickback scheme" },
-      { "id": "exec_coi",   "correct": false, "points": -5, "text_uk": "Конфлікт інтересів топ-менеджменту",     "text_en": "Executive conflict of interest" }
+      {
+        "id": "ip_theft",
+        "correct": true,
+        "points": 20,
+        "text_uk": "Підозра у крадіжці IP співробітником",
+        "text_en": "Suspected IP theft by employee"
+      },
+      {
+        "id": "vendor_pay",
+        "correct": false,
+        "points": -5,
+        "text_uk": "Аномалія у постачальницьких платежах",
+        "text_en": "Vendor payment irregularity"
+      },
+      {
+        "id": "kickback",
+        "correct": false,
+        "points": -5,
+        "text_uk": "Потенційна kickback-схема",
+        "text_en": "Potential kickback scheme"
+      },
+      {
+        "id": "exec_coi",
+        "correct": false,
+        "points": -5,
+        "text_uk": "Конфлікт інтересів топ-менеджменту",
+        "text_en": "Executive conflict of interest"
+      }
     ],
     "evidence_pool": [
-      { "id": "ev_llc_wife",       "weight": 5, "text_uk": "ТОВ «TechConsult» — директор і 100% засновник = дружина суб'єкта (OpenCorporates + ЄДР)", "text_en": "LLC «TechConsult» — director and 100% founder = subject's wife (OpenCorporates + State Registry)" },
-      { "id": "ev_meeting_leak",   "weight": 5, "text_uk": "Meeting minutes з 40-сторінковим PDF архітектури — опубліковано акаунтом V.R. (03.03.2026), IT security зафіксувала порушення policy §4.2", "text_en": "Meeting minutes with 40-page architecture PDF — posted by V.R.'s account (03.03.2026), IT security logged policy §4.2 breach" },
-      { "id": "ev_email_leak",     "weight": 5, "text_uk": "Email chain з CTO конкурента — V.R. сам пише «оформлення на дружину», attachment з архітектурою", "text_en": "Email chain with competitor's CTO — V.R. himself writes «registered under my wife», attachment with architecture" },
-      { "id": "ev_money_flow",     "weight": 5, "text_uk": "Money flow: $180K → ТОВ → $170K на рахунок дружини + $10K на рахунок V.R. (25-27.03.2026)", "text_en": "Money flow: $180K → LLC → $170K to wife's account + $10K to V.R.'s account (25-27.03.2026)" },
-      { "id": "ev_vendor_bypass",  "weight": 4, "text_uk": "Обидва інвойси $180K затверджені особисто V.R. — порушення procurement policy (потрібне dual approval CFO)", "text_en": "Both $180K invoices approved personally by V.R. — procurement policy breach (dual CFO approval required)" },
-      { "id": "ev_competitor_hire","weight": 3, "text_uk": "Конкурент раптово (Mar 2026) відкрив вакансію «Senior Ledger Architect» з описом 1-в-1 як core-banking SecureBank", "text_en": "Competitor suddenly (Mar 2026) posted «Senior Ledger Architect» role with 1-to-1 SecureBank core-banking description" },
-      { "id": "ev_linkedin_ties",  "weight": 3, "text_uk": "LinkedIn V.R. — прямий connection з CTO конкурента додано за 4 дні до першого емейлу", "text_en": "V.R.'s LinkedIn — direct connection with competitor's CTO added 4 days before the first email" },
-      { "id": "ev_shell_address",  "weight": 2, "text_uk": "Юридична адреса ТОВ = житлова адреса V.R. (Street View: житловий будинок, без офісних вивісок)", "text_en": "LLC legal address = V.R.'s residence (Street View: residential building, no office signage)" },
-      { "id": "ev_fb_intent",      "weight": 2, "text_uk": "Facebook-пости V.R. 2024 про наміри «власного консалтингового бізнесу»", "text_en": "V.R.'s 2024 Facebook posts about intent to «own consulting business»" },
-      { "id": "ev_wife_salon",     "weight": 1, "text_uk": "Дружина суб'єкта має маленький салон краси (ФОП з 2019, ~$8K/рік)", "text_en": "Subject's wife owns a small beauty salon (sole trader since 2019, ~$8K/year)" },
-      { "id": "ev_hr_rumor",       "weight": 1, "text_uk": "Чутки HR-колеги: V.R. на кава-брейку скаржився що йому «нецікаво»", "text_en": "HR colleague hearsay: V.R. complained at coffee break he's «bored»" }
+      {
+        "id": "ev_llc_wife",
+        "weight": 5,
+        "text_uk": "ТОВ «TechConsult» — директор і 100% засновник = дружина суб'єкта (OpenCorporates + ЄДР)",
+        "text_en": "LLC «TechConsult» — director and 100% founder = subject's wife (OpenCorporates + State Registry)"
+      },
+      {
+        "id": "ev_meeting_leak",
+        "weight": 5,
+        "text_uk": "Meeting minutes з 40-сторінковим PDF архітектури — опубліковано акаунтом V.R. (03.03.2026), IT security зафіксувала порушення policy §4.2",
+        "text_en": "Meeting minutes with 40-page architecture PDF — posted by V.R.'s account (03.03.2026), IT security logged policy §4.2 breach"
+      },
+      {
+        "id": "ev_email_leak",
+        "weight": 5,
+        "text_uk": "Email chain з CTO конкурента — V.R. сам пише «оформлення на дружину», attachment з архітектурою",
+        "text_en": "Email chain with competitor's CTO — V.R. himself writes «registered under my wife», attachment with architecture"
+      },
+      {
+        "id": "ev_money_flow",
+        "weight": 5,
+        "text_uk": "Money flow: $180K → ТОВ → $170K на рахунок дружини + $10K на рахунок V.R. (25-27.03.2026)",
+        "text_en": "Money flow: $180K → LLC → $170K to wife's account + $10K to V.R.'s account (25-27.03.2026)"
+      },
+      {
+        "id": "ev_vendor_bypass",
+        "weight": 4,
+        "text_uk": "Обидва інвойси $180K затверджені особисто V.R. — порушення procurement policy (потрібне dual approval CFO)",
+        "text_en": "Both $180K invoices approved personally by V.R. — procurement policy breach (dual CFO approval required)"
+      },
+      {
+        "id": "ev_competitor_hire",
+        "weight": 3,
+        "text_uk": "Конкурент раптово (Mar 2026) відкрив вакансію «Senior Ledger Architect» з описом 1-в-1 як core-banking SecureBank",
+        "text_en": "Competitor suddenly (Mar 2026) posted «Senior Ledger Architect» role with 1-to-1 SecureBank core-banking description"
+      },
+      {
+        "id": "ev_linkedin_ties",
+        "weight": 3,
+        "text_uk": "LinkedIn V.R. — прямий connection з CTO конкурента додано за 4 дні до першого емейлу",
+        "text_en": "V.R.'s LinkedIn — direct connection with competitor's CTO added 4 days before the first email"
+      },
+      {
+        "id": "ev_shell_address",
+        "weight": 2,
+        "text_uk": "Юридична адреса ТОВ = житлова адреса V.R. (Street View: житловий будинок, без офісних вивісок)",
+        "text_en": "LLC legal address = V.R.'s residence (Street View: residential building, no office signage)"
+      },
+      {
+        "id": "ev_fb_intent",
+        "weight": 2,
+        "text_uk": "Facebook-пости V.R. 2024 про наміри «власного консалтингового бізнесу»",
+        "text_en": "V.R.'s 2024 Facebook posts about intent to «own consulting business»"
+      },
+      {
+        "id": "ev_wife_salon",
+        "weight": 1,
+        "text_uk": "Дружина суб'єкта має маленький салон краси (ФОП з 2019, ~$8K/рік)",
+        "text_en": "Subject's wife owns a small beauty salon (sole trader since 2019, ~$8K/year)"
+      },
+      {
+        "id": "ev_hr_rumor",
+        "weight": 1,
+        "text_uk": "Чутки HR-колеги: V.R. на кава-брейку скаржився що йому «нецікаво»",
+        "text_en": "HR colleague hearsay: V.R. complained at coffee break he's «bored»"
+      }
     ],
     "risk_correct": "high",
-    "risk_points": { "low": -15, "medium": -5, "high": 20, "critical": 10 },
-    "weight_points": { "5": 25, "4": 15, "3": 5, "2": -5, "1": -15 },
+    "risk_points": {
+      "low": -15,
+      "medium": -5,
+      "high": 20,
+      "critical": 10
+    },
+    "weight_points": {
+      "5": 25,
+      "4": 15,
+      "3": 5,
+      "2": -5,
+      "1": -15
+    },
     "recommendations": [
-      { "id": "escalate_legal",     "correct": true,  "points": 40, "text_uk": "Escalate to Legal + Suspend pending investigation", "text_en": "Escalate to Legal + Suspend pending investigation",
-        "feedback_uk": "✓ Правильно. Політика вимагає Legal-ескалації ДО термінації.", "feedback_en": "✓ Correct. Policy requires Legal escalation BEFORE termination." },
-      { "id": "terminate_report",   "correct": false, "points": -30, "policy_breach": true, "text_uk": "Terminate immediately + Report to authorities", "text_en": "Terminate immediately + Report to authorities",
-        "feedback_uk": "❌ POLICY BREACH. Термінація ДО Legal-ескалації ламає ланцюжок доказовості.", "feedback_en": "❌ POLICY BREACH. Termination BEFORE Legal escalation breaks the evidentiary chain." },
-      { "id": "terminate_internal", "correct": false, "points": -20, "text_uk": "Terminate + Internal disciplinary", "text_en": "Terminate + Internal disciplinary",
-        "feedback_uk": "❌ IP theft + фінанси = кримінал. Внутрішнього недостатньо.", "feedback_en": "❌ IP theft + finance = criminal. Internal insufficient." },
-      { "id": "vendor_audit",       "correct": false, "points": 0,   "text_uk": "Vendor Audit + Monitor 90 days", "text_en": "Vendor Audit + Monitor 90 days",
-        "feedback_uk": "⚠️ Партіально. Audit vendorа корисний, але не адресує IP theft.", "feedback_en": "⚠️ Partial. Vendor audit useful but doesn't address the IP theft." },
-      { "id": "monitor",            "correct": false, "points": -10, "text_uk": "Monitor for 90 days", "text_en": "Monitor for 90 days",
-        "feedback_uk": "❌ Активна крадіжка триває — моніторинг = очікування шкоди.", "feedback_en": "❌ Active theft ongoing — monitoring = waiting for damage." },
-      { "id": "no_action",          "correct": false, "points": -50, "text_uk": "No action — insufficient evidence", "text_en": "No action — insufficient evidence",
-        "feedback_uk": "❌ 7-крокова хронологія + docs + email + фінанси — цього достатньо для ескалації.", "feedback_en": "❌ 7-step timeline + docs + email + finances — plenty of evidence to escalate." }
+      {
+        "id": "escalate_legal",
+        "correct": true,
+        "points": 40,
+        "text_uk": "Escalate to Legal + Suspend pending investigation",
+        "text_en": "Escalate to Legal + Suspend pending investigation",
+        "feedback_uk": "✓ Правильно. Політика вимагає Legal-ескалації ДО термінації.",
+        "feedback_en": "✓ Correct. Policy requires Legal escalation BEFORE termination."
+      },
+      {
+        "id": "terminate_report",
+        "correct": false,
+        "points": -30,
+        "policy_breach": true,
+        "text_uk": "Terminate immediately + Report to authorities",
+        "text_en": "Terminate immediately + Report to authorities",
+        "feedback_uk": "❌ POLICY BREACH. Термінація ДО Legal-ескалації ламає ланцюжок доказовості.",
+        "feedback_en": "❌ POLICY BREACH. Termination BEFORE Legal escalation breaks the evidentiary chain."
+      },
+      {
+        "id": "terminate_internal",
+        "correct": false,
+        "points": -20,
+        "text_uk": "Terminate + Internal disciplinary",
+        "text_en": "Terminate + Internal disciplinary",
+        "feedback_uk": "❌ IP theft + фінанси = кримінал. Внутрішнього недостатньо.",
+        "feedback_en": "❌ IP theft + finance = criminal. Internal insufficient."
+      },
+      {
+        "id": "vendor_audit",
+        "correct": false,
+        "points": 0,
+        "text_uk": "Vendor Audit + Monitor 90 days",
+        "text_en": "Vendor Audit + Monitor 90 days",
+        "feedback_uk": "⚠️ Партіально. Audit vendorа корисний, але не адресує IP theft.",
+        "feedback_en": "⚠️ Partial. Vendor audit useful but doesn't address the IP theft."
+      },
+      {
+        "id": "monitor",
+        "correct": false,
+        "points": -10,
+        "text_uk": "Monitor for 90 days",
+        "text_en": "Monitor for 90 days",
+        "feedback_uk": "❌ Активна крадіжка триває — моніторинг = очікування шкоди.",
+        "feedback_en": "❌ Active theft ongoing — monitoring = waiting for damage."
+      },
+      {
+        "id": "no_action",
+        "correct": false,
+        "points": -50,
+        "text_uk": "No action — insufficient evidence",
+        "text_en": "No action — insufficient evidence",
+        "feedback_uk": "❌ 7-крокова хронологія + docs + email + фінанси — цього достатньо для ескалації.",
+        "feedback_en": "❌ 7-step timeline + docs + email + finances — plenty of evidence to escalate."
+      }
     ]
   },
-
   "ranks": {
-    "master":  { "min": 350, "label_uk": "Master · Corporate Threat Hunter", "label_en": "Master · Corporate Threat Hunter",
-                 "msg_uk": "Ідеальне розслідування — ти зробив це як топ-практик.", "msg_en": "A textbook investigation — you nailed it like a top practitioner.", "color": "#dcc382" },
-    "senior":  { "min": 250, "label_uk": "Senior Investigator", "label_en": "Senior Investigator",
-                 "msg_uk": "Сильний результат.", "msg_en": "Strong result.", "color": "#c0c8d8" },
-    "junior":  { "min": 150, "label_uk": "Investigator", "label_en": "Investigator",
-                 "msg_uk": "Основну схему розкрив.", "msg_en": "Core scheme uncovered.", "color": "#a67c52" },
-    "trainee": { "min": 0,   "label_uk": "Junior Auditor", "label_en": "Junior Auditor",
-                 "msg_uk": "Кейс завершено — сертифікат Track II ще не заслуговуєш.", "msg_en": "Case completed — Track II certificate not yet earned.", "color": "#8a8a8a" }
+    "master": {
+      "min": 350,
+      "label_uk": "Master · Corporate Threat Hunter",
+      "label_en": "Master · Corporate Threat Hunter",
+      "msg_uk": "Ідеальне розслідування — ти зробив це як топ-практик.",
+      "msg_en": "A textbook investigation — you nailed it like a top practitioner.",
+      "color": "#dcc382"
+    },
+    "senior": {
+      "min": 250,
+      "label_uk": "Senior Investigator",
+      "label_en": "Senior Investigator",
+      "msg_uk": "Сильний результат.",
+      "msg_en": "Strong result.",
+      "color": "#c0c8d8"
+    },
+    "junior": {
+      "min": 150,
+      "label_uk": "Investigator",
+      "label_en": "Investigator",
+      "msg_uk": "Основну схему розкрив.",
+      "msg_en": "Core scheme uncovered.",
+      "color": "#a67c52"
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Junior Auditor",
+      "label_en": "Junior Auditor",
+      "msg_uk": "Кейс завершено — сертифікат Track II ще не заслуговуєш.",
+      "msg_en": "Case completed — Track II certificate not yet earned.",
+      "color": "#8a8a8a"
+    }
   }
 }

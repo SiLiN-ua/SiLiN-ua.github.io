@@ -6,9 +6,8 @@
   "max_points": 500,
   "title_uk": "Sim #02 · Case 2 · Procurement Ghost",
   "title_en": "Sim #02 · Case 2 · Procurement Ghost",
-
   "briefing": {
-    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "splash": "/img/uploads/simulator/sim02/case2-procurement-ghost.png",
     "client_uk": "MetalCraft Manufacturing (500 employees, промислове обладнання)",
     "client_en": "MetalCraft Manufacturing (500 employees, industrial equipment)",
     "position": "Procurement Manager · $95K",
@@ -20,12 +19,11 @@
     "candidate": {
       "name_uk": "Артем К. (44, procurement manager, 8 років у компанії)",
       "name_en": "Artem K. (44, procurement manager, 8 years at company)",
-      "photo": "img/uploads/simulator/candidate-passport.jpg",
+      "photo": "/img/uploads/simulator/sim02/case2-candidate.png",
       "email": "a.k@metalcraft.example",
       "phone": "+380 XX XXX XX 82"
     }
   },
-
   "phase2": {
     "title_uk": "Аудит · корпоративні тули",
     "title_en": "Audit · corporate tools",
@@ -45,7 +43,10 @@
         "desc_en": "Who founded the first suspicious vendor",
         "tooltip_uk": "Пошук у державному реєстрі — засновники, адреса, дата створення.",
         "tooltip_en": "State registry search — founders, address, founding date.",
-        "correct": true, "points": 18, "time_cost": 90, "weight": "diagnostic",
+        "correct": true,
+        "points": 18,
+        "time_cost": 90,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "ProTech Parts — заснована двоюрідним братом procurement manager'а (те саме прізвище + рід).",
         "clue_en": "ProTech Parts — founded by procurement manager's cousin (same surname + kin).",
@@ -59,11 +60,21 @@
           "address_uk": "м. Київ, вул. Виноградна 12, кв. 41",
           "address_en": "Kyiv, Vynohradna St. 12, apt. 41",
           "officers": [
-            { "name_uk": "К***** Дмитро Ігорович", "name_en": "K***** Dmytro I.", "role_uk": "Директор", "role_en": "Director",
-              "note_uk": "прізвище = прізвище procurement manager'а (двоюрідний брат)", "note_en": "surname = procurement manager's surname (cousin)" }
+            {
+              "name_uk": "К***** Дмитро Ігорович",
+              "name_en": "K***** Dmytro I.",
+              "role_uk": "Директор",
+              "role_en": "Director",
+              "note_uk": "прізвище = прізвище procurement manager'а (двоюрідний брат)",
+              "note_en": "surname = procurement manager's surname (cousin)"
+            }
           ],
           "founders": [
-            { "name_uk": "К***** Дмитро Ігорович", "name_en": "K***** Dmytro I.", "share": "100" }
+            {
+              "name_uk": "К***** Дмитро Ігорович",
+              "name_en": "K***** Dmytro I.",
+              "share": "100"
+            }
           ]
         }
       },
@@ -75,7 +86,10 @@
         "provider": "OpenCorporates + ЄДР",
         "desc_uk": "Другий підозрілий vendor — засновники, адреса",
         "desc_en": "Second suspicious vendor — founders, address",
-        "correct": true, "points": 18, "time_cost": 90, "weight": "diagnostic",
+        "correct": true,
+        "points": 18,
+        "time_cost": 90,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "Nova Supply — адреса реєстрації = адреса сусіда procurement manager'а. Директор — колишній однокласник.",
         "clue_en": "Nova Supply — registration address = procurement manager's neighbor. Director — childhood classmate.",
@@ -89,11 +103,21 @@
           "address_uk": "м. Київ, вул. Виноградна 10, кв. 22 (сусідній під'їзд з manager'ом)",
           "address_en": "Kyiv, Vynohradna St. 10, apt. 22 (neighboring building to manager's)",
           "officers": [
-            { "name_uk": "С***** Олег Петрович", "name_en": "S***** Oleh P.", "role_uk": "Директор", "role_en": "Director",
-              "note_uk": "не родич, але однокласник procurement manager'а (Facebook: спільна школа 2000)", "note_en": "not relative but manager's classmate (Facebook: same school 2000)" }
+            {
+              "name_uk": "С***** Олег Петрович",
+              "name_en": "S***** Oleh P.",
+              "role_uk": "Директор",
+              "role_en": "Director",
+              "note_uk": "не родич, але однокласник procurement manager'а (Facebook: спільна школа 2000)",
+              "note_en": "not relative but manager's classmate (Facebook: same school 2000)"
+            }
           ],
           "founders": [
-            { "name_uk": "С***** Олег Петрович", "name_en": "S***** Oleh P.", "share": "100" }
+            {
+              "name_uk": "С***** Олег Петрович",
+              "name_en": "S***** Oleh P.",
+              "share": "100"
+            }
           ]
         }
       },
@@ -103,7 +127,10 @@
         "name_uk": "OpenCorporates: Vendor #3 «IndPart Supply»",
         "name_en": "OpenCorporates: Vendor #3 «IndPart Supply»",
         "provider": "OpenCorporates + ЄДР",
-        "correct": true, "points": 15, "time_cost": 75, "weight": "diagnostic",
+        "correct": true,
+        "points": 15,
+        "time_cost": 75,
+        "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "Третій vendor — засновниця дочка manager'а (студентка, 21).",
         "clue_en": "Third vendor — founder is manager's daughter (student, 21).",
@@ -117,11 +144,21 @@
           "address_uk": "м. Київ, вул. Виноградна 12, кв. 41 (та сама адреса що ProTech!)",
           "address_en": "Kyiv, Vynohradna St. 12, apt. 41 (same address as ProTech!)",
           "officers": [
-            { "name_uk": "К***** Анастасія Артемівна (21)", "name_en": "K***** Anastasiia A. (21)", "role_uk": "Директор", "role_en": "Director",
-              "note_uk": "дочка procurement manager'а, студентка КНУ", "note_en": "procurement manager's daughter, KNU student" }
+            {
+              "name_uk": "К***** Анастасія Артемівна (21)",
+              "name_en": "K***** Anastasiia A. (21)",
+              "role_uk": "Директор",
+              "role_en": "Director",
+              "note_uk": "дочка procurement manager'а, студентка КНУ",
+              "note_en": "procurement manager's daughter, KNU student"
+            }
           ],
           "founders": [
-            { "name_uk": "К***** Анастасія Артемівна", "name_en": "K***** Anastasiia A.", "share": "100" }
+            {
+              "name_uk": "К***** Анастасія Артемівна",
+              "name_en": "K***** Anastasiia A.",
+              "share": "100"
+            }
           ]
         }
       },
@@ -131,7 +168,10 @@
         "name_uk": "OpenCorporates: Vendor #4 «Global Industrial»",
         "name_en": "OpenCorporates: Vendor #4 «Global Industrial»",
         "provider": "OpenCorporates + ЄДР",
-        "correct": true, "points": 12, "time_cost": 60, "weight": "supporting",
+        "correct": true,
+        "points": 12,
+        "time_cost": 60,
+        "weight": "supporting",
         "ui_component": "opencorp",
         "clue_uk": "Четвертий vendor — legit крупна компанія, ринкові ціни. Це distraction — його інвойси нормальні.",
         "clue_en": "Fourth vendor — legit large company, market prices. This is a distraction — its invoices are normal.",
@@ -145,12 +185,26 @@
           "address_uk": "м. Львів, пр. Свободи 47",
           "address_en": "Lviv, Svobody Ave. 47",
           "officers": [
-            { "name_uk": "Р***** Марк Йосипович", "name_en": "R***** Mark Y.", "role_uk": "CEO", "role_en": "CEO",
-              "note_uk": "публічна особа, статті у Forbes, реальний бізнес з 2018", "note_en": "public figure, Forbes profiles, real business since 2018" }
+            {
+              "name_uk": "Р***** Марк Йосипович",
+              "name_en": "R***** Mark Y.",
+              "role_uk": "CEO",
+              "role_en": "CEO",
+              "note_uk": "публічна особа, статті у Forbes, реальний бізнес з 2018",
+              "note_en": "public figure, Forbes profiles, real business since 2018"
+            }
           ],
           "founders": [
-            { "name_uk": "Р***** Марк Йосипович", "name_en": "R***** Mark Y.", "share": "60" },
-            { "name_uk": "Silverline Capital (fund)", "name_en": "Silverline Capital (fund)", "share": "40" }
+            {
+              "name_uk": "Р***** Марк Йосипович",
+              "name_en": "R***** Mark Y.",
+              "share": "60"
+            },
+            {
+              "name_uk": "Silverline Capital (fund)",
+              "name_en": "Silverline Capital (fund)",
+              "share": "40"
+            }
           ]
         }
       },
@@ -162,16 +216,53 @@
         "provider": "SAP procurement module",
         "desc_uk": "Останні контракти, суми, порівняння з ринком",
         "desc_en": "Recent contracts, amounts, market comparison",
-        "correct": true, "points": 20, "time_cost": 90, "weight": "diagnostic",
+        "correct": true,
+        "points": 20,
+        "time_cost": 90,
+        "weight": "diagnostic",
         "ui_component": "invoice-analysis",
         "clue_uk": "ProTech / Nova / IndPart — сталь на 35-40% дорожче ринку. Global Industrial — ринкові ціни. Патерн ясний.",
         "clue_en": "ProTech / Nova / IndPart — steel 35-40% above market. Global Industrial — market prices. Pattern clear.",
         "invoices": [
-          { "number": "PO-2025-8712", "date": "2025-05-14", "vendor": "ProTech Parts (steel rod, batch 500t)",   "amount": "$680,000 (+38% vs market)", "approver": "A.K. (sole)", "highlight": true },
-          { "number": "PO-2025-9123", "date": "2025-07-22", "vendor": "Nova Supply (bearing set, 12 000 pcs)",   "amount": "$142,000 (+42% vs market)", "approver": "A.K. (sole)", "highlight": true },
-          { "number": "PO-2025-9587", "date": "2025-09-03", "vendor": "IndPart Supply (fasteners, batch 80 000)","amount": "$96,000 (+36% vs market)",  "approver": "A.K. (sole)", "highlight": true },
-          { "number": "PO-2025-9910", "date": "2025-10-18", "vendor": "Global Industrial (industrial pumps)",    "amount": "$220,000 (market)",         "approver": "A.K. + CFO" },
-          { "number": "PO-2025-9987", "date": "2025-11-02", "vendor": "ProTech Parts (steel plate, 200t)",       "amount": "$310,000 (+40% vs market)", "approver": "A.K. (sole)", "highlight": true }
+          {
+            "number": "PO-2025-8712",
+            "date": "2025-05-14",
+            "vendor": "ProTech Parts (steel rod, batch 500t)",
+            "amount": "$680,000 (+38% vs market)",
+            "approver": "A.K. (sole)",
+            "highlight": true
+          },
+          {
+            "number": "PO-2025-9123",
+            "date": "2025-07-22",
+            "vendor": "Nova Supply (bearing set, 12 000 pcs)",
+            "amount": "$142,000 (+42% vs market)",
+            "approver": "A.K. (sole)",
+            "highlight": true
+          },
+          {
+            "number": "PO-2025-9587",
+            "date": "2025-09-03",
+            "vendor": "IndPart Supply (fasteners, batch 80 000)",
+            "amount": "$96,000 (+36% vs market)",
+            "approver": "A.K. (sole)",
+            "highlight": true
+          },
+          {
+            "number": "PO-2025-9910",
+            "date": "2025-10-18",
+            "vendor": "Global Industrial (industrial pumps)",
+            "amount": "$220,000 (market)",
+            "approver": "A.K. + CFO"
+          },
+          {
+            "number": "PO-2025-9987",
+            "date": "2025-11-02",
+            "vendor": "ProTech Parts (steel plate, 200t)",
+            "amount": "$310,000 (+40% vs market)",
+            "approver": "A.K. (sole)",
+            "highlight": true
+          }
         ],
         "invoices_note_uk": "🚩 Всі highlight — тільки A.K. затвердив, ЦІНИ 35-42% вище ринку. Global Industrial — dual-approved з CFO, ринкова ціна. Це PATTERN.",
         "invoices_note_en": "🚩 All highlighted — A.K. sole approver, prices 35-42% above market. Global Industrial — dual-approved with CFO, market price. This is a PATTERN."
@@ -184,15 +275,45 @@
         "provider": "SWIFT logs · корпоративний банк",
         "desc_uk": "Куди йдуть виплати підозрілим vendor-ам",
         "desc_en": "Where payments go to suspicious vendors",
-        "correct": true, "points": 18, "time_cost": 75, "weight": "diagnostic",
+        "correct": true,
+        "points": 18,
+        "time_cost": 75,
+        "weight": "diagnostic",
         "ui_component": "invoice-analysis",
         "clue_uk": "ProTech / Nova / IndPart — всі три через один і той самий банк у Cyprus (Hellenic Bank, BIC HEBACY2N). Global Industrial — український банк.",
         "clue_en": "ProTech / Nova / IndPart — all three via the same Cyprus bank (Hellenic Bank, BIC HEBACY2N). Global Industrial — Ukrainian bank.",
         "invoices": [
-          { "number": "SWIFT-45812", "date": "2025-05-15", "vendor": "ProTech Parts → Hellenic Bank Cyprus", "amount": "$680,000", "approver": "BIC: HEBACY2N", "highlight": true },
-          { "number": "SWIFT-46012", "date": "2025-07-23", "vendor": "Nova Supply → Hellenic Bank Cyprus",   "amount": "$142,000", "approver": "BIC: HEBACY2N", "highlight": true },
-          { "number": "SWIFT-46441", "date": "2025-09-04", "vendor": "IndPart → Hellenic Bank Cyprus",       "amount": "$96,000",  "approver": "BIC: HEBACY2N", "highlight": true },
-          { "number": "SWIFT-46512", "date": "2025-10-19", "vendor": "Global Industrial → Ощадбанк UA",     "amount": "$220,000", "approver": "BIC: COSBUAUK" }
+          {
+            "number": "SWIFT-45812",
+            "date": "2025-05-15",
+            "vendor": "ProTech Parts → Hellenic Bank Cyprus",
+            "amount": "$680,000",
+            "approver": "BIC: HEBACY2N",
+            "highlight": true
+          },
+          {
+            "number": "SWIFT-46012",
+            "date": "2025-07-23",
+            "vendor": "Nova Supply → Hellenic Bank Cyprus",
+            "amount": "$142,000",
+            "approver": "BIC: HEBACY2N",
+            "highlight": true
+          },
+          {
+            "number": "SWIFT-46441",
+            "date": "2025-09-04",
+            "vendor": "IndPart → Hellenic Bank Cyprus",
+            "amount": "$96,000",
+            "approver": "BIC: HEBACY2N",
+            "highlight": true
+          },
+          {
+            "number": "SWIFT-46512",
+            "date": "2025-10-19",
+            "vendor": "Global Industrial → Ощадбанк UA",
+            "amount": "$220,000",
+            "approver": "BIC: COSBUAUK"
+          }
         ],
         "invoices_note_uk": "3 з 4 vendor'ів — один і той самий BIC у Кіпрі. Ймовірність випадкового збігу для реального ринку = ~1 до 40 000.",
         "invoices_note_en": "3 of 4 vendors — the same Cyprus BIC. Probability of random coincidence in a real market = ~1 in 40,000."
@@ -205,14 +326,34 @@
         "provider": "Google Maps",
         "desc_uk": "Чи існують фізично офіси vendor-ів?",
         "desc_en": "Do vendor offices physically exist?",
-        "correct": true, "points": 10, "time_cost": 45, "weight": "supporting",
+        "correct": true,
+        "points": 10,
+        "time_cost": 45,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "ProTech Parts + IndPart — та сама житлова квартира. Nova Supply — сусідній під'їзд. Global Industrial — реальний бізнес-центр.",
         "clue_en": "ProTech Parts + IndPart — the same residential apartment. Nova Supply — neighboring building. Global Industrial — real business center.",
         "matches": [
-          { "site": "Street View · Vynohradna 12 apt 41", "url": "maps.google.com/street/kyiv/vynohradna-12", "note_uk": "Житлова квартира на 4-му поверсі. Жодних бізнес-вивісок. Це адреса ProTech + IndPart.", "note_en": "Residential apartment on 4th floor. No business signage. This is ProTech + IndPart address." },
-          { "site": "Street View · Vynohradna 10 apt 22", "url": "maps.google.com/street/kyiv/vynohradna-10", "note_uk": "Житловий будинок, вхід підозрілий — та сама вулиця. Це Nova Supply.", "note_en": "Residential building, suspicious entry — same street. This is Nova Supply." },
-          { "site": "Street View · Svobody 47 (Lviv)",    "url": "maps.google.com/street/lviv/svobody-47",  "note_uk": "Класний бізнес-центр, скляний фасад, реальні вивіски. Global Industrial — реальний бізнес.", "note_en": "Class-A business center, glass facade, real signage. Global Industrial — real business." }
+          {
+            "site": "Street View · Vynohradna 12 apt 41",
+            "url": "maps.google.com/street/kyiv/vynohradna-12",
+            "note_uk": "Житлова квартира на 4-му поверсі. Жодних бізнес-вивісок. Це адреса ProTech + IndPart.",
+            "note_en": "Residential apartment on 4th floor. No business signage. This is ProTech + IndPart address.",
+            "img": "/img/uploads/simulator/sim02/case2-street-view-residential.jpg"
+          },
+          {
+            "site": "Street View · Vynohradna 10 apt 22",
+            "url": "maps.google.com/street/kyiv/vynohradna-10",
+            "note_uk": "Житловий будинок, вхід підозрілий — та сама вулиця. Це Nova Supply.",
+            "note_en": "Residential building, suspicious entry — same street. This is Nova Supply.",
+            "img": "/img/uploads/simulator/sim02/case2-street-view-residential.jpg"
+          },
+          {
+            "site": "Street View · Svobody 47 (Lviv)",
+            "url": "maps.google.com/street/lviv/svobody-47",
+            "note_uk": "Класний бізнес-центр, скляний фасад, реальні вивіски. Global Industrial — реальний бізнес.",
+            "note_en": "Class-A business center, glass facade, real signage. Global Industrial — real business."
+          }
         ]
       },
       {
@@ -223,14 +364,32 @@
         "provider": "LinkedIn Sales Navigator",
         "desc_uk": "Зв'язки procurement manager'а",
         "desc_en": "Procurement manager's connections",
-        "correct": true, "points": 10, "time_cost": 60, "weight": "supporting",
+        "correct": true,
+        "points": 10,
+        "time_cost": 60,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "У connections: двоюрідний брат (ProTech), однокласник (Nova), дочка (IndPart). Всі три пов'язані.",
         "clue_en": "In connections: cousin (ProTech), classmate (Nova), daughter (IndPart). All three linked.",
         "matches": [
-          { "site": "LinkedIn: K***** Dmytro (ProTech Parts founder)", "url": "linkedin.com/in/k-dmytro-kyiv", "note_uk": "Двоюрідний брат A.K. Facebook: спільні фото з дитинства, той самий teacher tag зі школи 1994.", "note_en": "A.K.'s cousin. Facebook: shared childhood photos, same teacher tag from school 1994." },
-          { "site": "LinkedIn: S***** Oleh (Nova Supply founder)", "url": "linkedin.com/in/s-oleh-kyiv", "note_uk": "Однокласник A.K. (School #142, випуск 2000). Instagram: спільні дорослі фото 2022.", "note_en": "A.K.'s classmate (School #142, class of 2000). Instagram: joint adult photos 2022." },
-          { "site": "LinkedIn: K***** Anastasiia (IndPart founder)", "url": "linkedin.com/in/k-anastasiia-knu", "note_uk": "Дочка A.K. (у профілі: студентка KNU). 21 рік, немає business background.", "note_en": "A.K.'s daughter (profile: KNU student). 21 y.o., no business background." }
+          {
+            "site": "LinkedIn: K***** Dmytro (ProTech Parts founder)",
+            "url": "linkedin.com/in/k-dmytro-kyiv",
+            "note_uk": "Двоюрідний брат A.K. Facebook: спільні фото з дитинства, той самий teacher tag зі школи 1994.",
+            "note_en": "A.K.'s cousin. Facebook: shared childhood photos, same teacher tag from school 1994."
+          },
+          {
+            "site": "LinkedIn: S***** Oleh (Nova Supply founder)",
+            "url": "linkedin.com/in/s-oleh-kyiv",
+            "note_uk": "Однокласник A.K. (School #142, випуск 2000). Instagram: спільні дорослі фото 2022.",
+            "note_en": "A.K.'s classmate (School #142, class of 2000). Instagram: joint adult photos 2022."
+          },
+          {
+            "site": "LinkedIn: K***** Anastasiia (IndPart founder)",
+            "url": "linkedin.com/in/k-anastasiia-knu",
+            "note_uk": "Дочка A.K. (у профілі: студентка KNU). 21 рік, немає business background.",
+            "note_en": "A.K.'s daughter (profile: KNU student). 21 y.o., no business background."
+          }
         ]
       },
       {
@@ -241,7 +400,10 @@
         "provider": "Internal SharePoint",
         "desc_uk": "Як проходили затвердження контрактів",
         "desc_en": "How contracts were being approved",
-        "correct": true, "points": 12, "time_cost": 60, "weight": "supporting",
+        "correct": true,
+        "points": 12,
+        "time_cost": 60,
+        "weight": "supporting",
         "ui_component": "meeting-minutes",
         "clue_uk": "Всі spend >$50K мають бути dual-approved. A.K. сам собі підписував dual-approval лист під різним видом.",
         "clue_en": "All spend >$50K must be dual-approved. A.K. was signing dual-approval forms under different appearance.",
@@ -252,12 +414,18 @@
           "attendees_en": "A.K. (chair), CFO (absent — video), 2 auditors",
           "classification": "INTERNAL",
           "paragraphs": [
-            { "text_uk": "5-й обов'язковий пункт policy: всі spend >$50K потребують dual-approval CFO + Head of Engineering. Виняток можливий тільки при письмовому запиті CFO.",
-              "text_en": "5th mandatory policy item: all spend >$50K requires dual-approval by CFO + Head of Engineering. Exception only via written CFO request." },
-            { "text_uk": "У протоколах Q2-Q4 2025 всі 4 контракти з ProTech / Nova / IndPart мають dual-approval галочку, але підпис CFO — factsimile сканованим, не оригінал. Оригіналів у файлах немає.",
-              "text_en": "In Q2-Q4 2025 minutes all 4 ProTech / Nova / IndPart contracts have dual-approval checkbox, but the CFO signature is a scanned facsimile, not original. Originals not on file." },
-            { "text_uk": "⚠ Internal audit notice (10.11.2025): виявлено 4 випадки коли dual-approval формально є, але CFO у dashboardі не має запису про затвердження. Це вказує на фальсифікацію.",
-              "text_en": "⚠ Internal audit notice (10.11.2025): 4 cases identified where dual-approval formally exists, but CFO dashboard has no approval record. Points to forgery." }
+            {
+              "text_uk": "5-й обов'язковий пункт policy: всі spend >$50K потребують dual-approval CFO + Head of Engineering. Виняток можливий тільки при письмовому запиті CFO.",
+              "text_en": "5th mandatory policy item: all spend >$50K requires dual-approval by CFO + Head of Engineering. Exception only via written CFO request."
+            },
+            {
+              "text_uk": "У протоколах Q2-Q4 2025 всі 4 контракти з ProTech / Nova / IndPart мають dual-approval галочку, але підпис CFO — factsimile сканованим, не оригінал. Оригіналів у файлах немає.",
+              "text_en": "In Q2-Q4 2025 minutes all 4 ProTech / Nova / IndPart contracts have dual-approval checkbox, but the CFO signature is a scanned facsimile, not original. Originals not on file."
+            },
+            {
+              "text_uk": "⚠ Internal audit notice (10.11.2025): виявлено 4 випадки коли dual-approval формально є, але CFO у dashboardі не має запису про затвердження. Це вказує на фальсифікацію.",
+              "text_en": "⚠ Internal audit notice (10.11.2025): 4 cases identified where dual-approval formally exists, but CFO dashboard has no approval record. Points to forgery."
+            }
           ]
         }
       },
@@ -269,14 +437,32 @@
         "provider": "LME London Metal Exchange + market data",
         "desc_uk": "Порівняння цін vendor-ів з ринковими",
         "desc_en": "Compare vendor prices with market",
-        "correct": true, "points": 8, "time_cost": 30, "weight": "supporting",
+        "correct": true,
+        "points": 8,
+        "time_cost": 30,
+        "weight": "supporting",
         "ui_component": "matches",
         "clue_uk": "LME + industry benchmarks — vendor overprice = 35-42%. Це в 3-5 разів вище нормальної торгової націнки.",
         "clue_en": "LME + industry benchmarks — vendor overprice = 35-42%. That's 3-5× normal trading markup.",
         "matches": [
-          { "site": "LME Steel rod (May 2025)", "url": "lme.com/steel/history", "note_uk": "Ринкова ціна: $985/t. ProTech виставили $1360/t (+38%).", "note_en": "Market: $985/t. ProTech charged $1360/t (+38%)." },
-          { "site": "Industry benchmark (bearings)", "url": "industry-benchmarks.example", "note_uk": "$8.30/pc. Nova Supply: $11.80/pc (+42%).", "note_en": "$8.30/pc. Nova Supply: $11.80/pc (+42%)." },
-          { "site": "Fastener market Q3 2025", "url": "—", "note_uk": "$0.88/pc. IndPart: $1.20/pc (+36%).", "note_en": "$0.88/pc. IndPart: $1.20/pc (+36%)." }
+          {
+            "site": "LME Steel rod (May 2025)",
+            "url": "lme.com/steel/history",
+            "note_uk": "Ринкова ціна: $985/t. ProTech виставили $1360/t (+38%).",
+            "note_en": "Market: $985/t. ProTech charged $1360/t (+38%)."
+          },
+          {
+            "site": "Industry benchmark (bearings)",
+            "url": "industry-benchmarks.example",
+            "note_uk": "$8.30/pc. Nova Supply: $11.80/pc (+42%).",
+            "note_en": "$8.30/pc. Nova Supply: $11.80/pc (+42%)."
+          },
+          {
+            "site": "Fastener market Q3 2025",
+            "url": "—",
+            "note_uk": "$0.88/pc. IndPart: $1.20/pc (+36%).",
+            "note_en": "$0.88/pc. IndPart: $1.20/pc (+36%)."
+          }
         ]
       },
       {
@@ -289,12 +475,20 @@
         "desc_en": "«A.K. always picked vendors himself»",
         "tooltip_uk": "DECOY. Anonymous verbal, без документів. Не цитуй у меморандумі.",
         "tooltip_en": "DECOY. Anonymous verbal, no documents. Do not cite in memo.",
-        "correct": false, "points": -5, "time_cost": 30, "weight": "noise",
+        "correct": false,
+        "points": -5,
+        "time_cost": 30,
+        "weight": "noise",
         "ui_component": "matches",
         "clue_uk": "Показання без документів = 0 evidentiary value. Використовуй тільки для орієнтиру, куди копати. НЕ у меморандум.",
         "clue_en": "Testimony without documents = 0 evidentiary value. Use only as pointer where to dig. NOT in memo.",
         "matches": [
-          { "site": "Anonymous testimony", "url": "—", "note_uk": "Ex-працівник каже, що A.K. відсіював vendor-ів на етапі RFP: «Global Industrial чи інші великі — це для окозамилювання, реально спонсорить малих».", "note_en": "Ex-employee says A.K. filtered vendors at RFP stage: «Global Industrial or other large ones — for the show, really funds the small ones»." }
+          {
+            "site": "Anonymous testimony",
+            "url": "—",
+            "note_uk": "Ex-працівник каже, що A.K. відсіював vendor-ів на етапі RFP: «Global Industrial чи інші великі — це для окозамилювання, реально спонсорить малих».",
+            "note_en": "Ex-employee says A.K. filtered vendors at RFP stage: «Global Industrial or other large ones — for the show, really funds the small ones»."
+          }
         ]
       },
       {
@@ -305,18 +499,32 @@
         "provider": "Facebook (public posts)",
         "desc_uk": "Нові машина / поїздки / нерухомість?",
         "desc_en": "New car / trips / real estate?",
-        "correct": false, "points": 3, "time_cost": 30, "weight": "weak",
+        "correct": false,
+        "points": 3,
+        "time_cost": 30,
+        "weight": "weak",
         "ui_component": "matches",
         "clue_uk": "У 2025 з'явився BMW X7 (~$110K), декілька фото з відпочинку у Дубаї. На зарплату $95K неможливо.",
         "clue_en": "In 2025 a BMW X7 (~$110K) appeared, several Dubai vacation photos. On a $95K salary — impossible.",
         "matches": [
-          { "site": "Facebook (Aug 2025)", "url": "facebook.com/artem-k", "note_uk": "Фото нового BMW X7 з підписом «Життя стабільне». Ціна автомобіля ~$110K.", "note_en": "Photo of new BMW X7 with caption «Life is stable». Car price ~$110K." },
-          { "site": "Facebook (Nov 2025)", "url": "facebook.com/artem-k", "note_uk": "Фото з готелю Palm Jumeirah Dubai (~$800/night, 5 днів).", "note_en": "Photo from Palm Jumeirah Dubai hotel (~$800/night, 5 days)." }
+          {
+            "site": "Facebook (Aug 2025)",
+            "url": "facebook.com/artem-k",
+            "note_uk": "Фото нового BMW X7 з підписом «Життя стабільне». Ціна автомобіля ~$110K.",
+            "note_en": "Photo of new BMW X7 with caption «Life is stable». Car price ~$110K.",
+            "img": "/img/uploads/simulator/sim02/case2-facebook-lifestyle.png"
+          },
+          {
+            "site": "Facebook (Nov 2025)",
+            "url": "facebook.com/artem-k",
+            "note_uk": "Фото з готелю Palm Jumeirah Dubai (~$800/night, 5 днів).",
+            "note_en": "Photo from Palm Jumeirah Dubai hotel (~$800/night, 5 days).",
+            "img": "/img/uploads/simulator/sim02/case2-facebook-lifestyle.png"
+          }
         ]
       }
     ]
   },
-
   "timeline_phase": {
     "title_uk": "Побудуй хронологію «Procurement Ghost»",
     "title_en": "Build the «Procurement Ghost» timeline",
@@ -325,31 +533,59 @@
     "submit_btn_uk": "Підтвердити хронологію →",
     "submit_btn_en": "Submit timeline →",
     "events": [
-      { "id": "e1", "date": "2024-11-08",
+      {
+        "id": "e1",
+        "date": "2024-11-08",
         "text_uk": "Реєстрація Shell #1: ТОВ «ProTech Parts» створено (засновник — двоюрідний брат A.K.)",
-        "text_en": "Shell #1 registered: LLC «ProTech Parts» created (founder — A.K.'s cousin)" },
-      { "id": "e2", "date": "2025-02-14",
+        "text_en": "Shell #1 registered: LLC «ProTech Parts» created (founder — A.K.'s cousin)"
+      },
+      {
+        "id": "e2",
+        "date": "2025-02-14",
         "text_uk": "Реєстрація Shell #2: ТОВ «Nova Supply» (засновник — однокласник A.K., адреса сусіда)",
-        "text_en": "Shell #2 registered: LLC «Nova Supply» (founder — A.K.'s classmate, neighbor's address)" },
-      { "id": "e3", "date": "2025-05-14",
+        "text_en": "Shell #2 registered: LLC «Nova Supply» (founder — A.K.'s classmate, neighbor's address)"
+      },
+      {
+        "id": "e3",
+        "date": "2025-05-14",
         "text_uk": "Перший контракт: ProTech Parts, $680K сталі +38% ринку, A.K. одноосібно затвердив (dual-approval факсимільний)",
-        "text_en": "First contract: ProTech Parts, $680K steel +38% market, A.K. solely approved (dual-approval facsimile)" },
-      { "id": "e4", "date": "2025-06-03",
+        "text_en": "First contract: ProTech Parts, $680K steel +38% market, A.K. solely approved (dual-approval facsimile)"
+      },
+      {
+        "id": "e4",
+        "date": "2025-06-03",
         "text_uk": "Реєстрація Shell #3: ТОВ «IndPart Supply» (засновниця — дочка A.K., 21, та сама адреса що ProTech)",
-        "text_en": "Shell #3 registered: LLC «IndPart Supply» (founder — A.K.'s 21-y.o. daughter, same address as ProTech)" },
-      { "id": "e5", "date": "2025-07-22",
+        "text_en": "Shell #3 registered: LLC «IndPart Supply» (founder — A.K.'s 21-y.o. daughter, same address as ProTech)"
+      },
+      {
+        "id": "e5",
+        "date": "2025-07-22",
         "text_uk": "Другий контракт: Nova Supply, $142K bearings +42%",
-        "text_en": "Second contract: Nova Supply, $142K bearings +42%" },
-      { "id": "e6", "date": "2025-08-15",
+        "text_en": "Second contract: Nova Supply, $142K bearings +42%"
+      },
+      {
+        "id": "e6",
+        "date": "2025-08-15",
         "text_uk": "Lifestyle proof: A.K. придбав BMW X7 ($110K) — Facebook пост «Життя стабільне»",
-        "text_en": "Lifestyle proof: A.K. purchased BMW X7 ($110K) — Facebook post «Life is stable»" },
-      { "id": "e7", "date": "2025-11-10",
+        "text_en": "Lifestyle proof: A.K. purchased BMW X7 ($110K) — Facebook post «Life is stable»"
+      },
+      {
+        "id": "e7",
+        "date": "2025-11-10",
         "text_uk": "Виявлення: Internal Audit виявляє, що 4 dual-approval у SAP не мають CFO-запису у dashboardі → forgery flag",
-        "text_en": "Detection: Internal Audit finds 4 dual-approvals in SAP have no CFO dashboard record → forgery flag" }
+        "text_en": "Detection: Internal Audit finds 4 dual-approvals in SAP have no CFO dashboard record → forgery flag"
+      }
     ],
-    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+    "correct_order": [
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6",
+      "e7"
+    ]
   },
-
   "phase3": {
     "title_uk": "Крос-верифікація · 3 питання",
     "title_en": "Cross-verification · 3 questions",
@@ -363,22 +599,38 @@
         "text_uk": "Який доказ найважче спростувати у суді?",
         "text_en": "Which evidence is hardest to disprove in court?",
         "options": [
-          { "text_uk": "Family/friend links (OpenCorporates + LinkedIn)", "text_en": "Family/friend links (OpenCorporates + LinkedIn)",
-            "points": 5, "correct": false,
+          {
+            "text_uk": "Family/friend links (OpenCorporates + LinkedIn)",
+            "text_en": "Family/friend links (OpenCorporates + LinkedIn)",
+            "points": 5,
+            "correct": false,
             "feedback_uk": "⚠️ Важливо, але сім'я може мати «легальні бізнес-цілі». Слабко без money-trail.",
-            "feedback_en": "⚠️ Important, but family may claim «legitimate business goals». Weak without money-trail." },
-          { "text_uk": "Ціни на 35-42% вище ринку (LME benchmark)", "text_en": "Prices 35-42% above market (LME benchmark)",
-            "points": 5, "correct": false,
+            "feedback_en": "⚠️ Important, but family may claim «legitimate business goals». Weak without money-trail."
+          },
+          {
+            "text_uk": "Ціни на 35-42% вище ринку (LME benchmark)",
+            "text_en": "Prices 35-42% above market (LME benchmark)",
+            "points": 5,
+            "correct": false,
             "feedback_uk": "⚠️ Гарний economic indicator, але A.K. може стверджувати про «premium quality».",
-            "feedback_en": "⚠️ Good economic indicator, but A.K. can claim «premium quality»." },
-          { "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + dual-approval forgery у SAP", "text_en": "All 3 shell vendors via same Cyprus BIC + dual-approval forgery in SAP",
-            "points": 25, "correct": true,
+            "feedback_en": "⚠️ Good economic indicator, but A.K. can claim «premium quality»."
+          },
+          {
+            "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + dual-approval forgery у SAP",
+            "text_en": "All 3 shell vendors via same Cyprus BIC + dual-approval forgery in SAP",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Однакова BIC + фальсифікація dual-approval — це два незалежних технічних докази з audit trail. Дуже важко пояснити.",
-            "feedback_en": "✓ Correct. Same BIC + dual-approval forgery — two independent technical proofs with audit trail. Very hard to explain away." },
-          { "text_uk": "Lifestyle proof (BMW X7 + Dubai)", "text_en": "Lifestyle proof (BMW X7 + Dubai)",
-            "points": -5, "correct": false,
+            "feedback_en": "✓ Correct. Same BIC + dual-approval forgery — two independent technical proofs with audit trail. Very hard to explain away."
+          },
+          {
+            "text_uk": "Lifestyle proof (BMW X7 + Dubai)",
+            "text_en": "Lifestyle proof (BMW X7 + Dubai)",
+            "points": -5,
+            "correct": false,
             "feedback_uk": "❌ Слабко — може бути кредит, спадщина, дружина заробляє. Класичний indicator, не proof.",
-            "feedback_en": "❌ Weak — could be loan, inheritance, wife's income. Classic indicator, not proof." }
+            "feedback_en": "❌ Weak — could be loan, inheritance, wife's income. Classic indicator, not proof."
+          }
         ]
       },
       {
@@ -386,22 +638,38 @@
         "text_uk": "Global Industrial LLC — Vendor #4 з нормальними цінами. Що це означає?",
         "text_en": "Global Industrial LLC — Vendor #4 with normal prices. What does this mean?",
         "options": [
-          { "text_uk": "A.K. використовує Global як cover — «показує» legit vendor'ів для окозамилювання", "text_en": "A.K. uses Global as cover — «shows» legit vendors to distract",
-            "points": 20, "correct": true,
+          {
+            "text_uk": "A.K. використовує Global як cover — «показує» legit vendor'ів для окозамилювання",
+            "text_en": "A.K. uses Global as cover — «shows» legit vendors to distract",
+            "points": 20,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Класична схема — 1 legit vendor + 3-4 shell-и. Legit vendor підтримує «нормальний profile» procurement'а і плутає аудитора.",
-            "feedback_en": "✓ Correct. Classic scheme — 1 legit vendor + 3-4 shells. Legit vendor sustains «normal profile» of the procurement and confuses the auditor." },
-          { "text_uk": "Global — теж shell, просто краще замаскований", "text_en": "Global — also shell, just better masked",
-            "points": -15, "correct": false,
+            "feedback_en": "✓ Correct. Classic scheme — 1 legit vendor + 3-4 shells. Legit vendor sustains «normal profile» of the procurement and confuses the auditor."
+          },
+          {
+            "text_uk": "Global — теж shell, просто краще замаскований",
+            "text_en": "Global — also shell, just better masked",
+            "points": -15,
+            "correct": false,
             "feedback_uk": "❌ Ні. Global — публічна компанія з 2018, реальний офіс, dual-approved контракт з CFO. Це відволікання.",
-            "feedback_en": "❌ No. Global — public company since 2018, real office, dual-approved contract with CFO. It's the distraction." },
-          { "text_uk": "Означає що A.K. — не корумпований, це false-positive", "text_en": "Means A.K. is not corrupt, false positive",
-            "points": -25, "correct": false,
+            "feedback_en": "❌ No. Global — public company since 2018, real office, dual-approved contract with CFO. It's the distraction."
+          },
+          {
+            "text_uk": "Означає що A.K. — не корумпований, це false-positive",
+            "text_en": "Means A.K. is not corrupt, false positive",
+            "points": -25,
+            "correct": false,
             "feedback_uk": "❌ Категорично ні. 3 з 4 vendor'ів — shell з тими самими банківськими маршрутами, це overwhelming pattern.",
-            "feedback_en": "❌ Categorically no. 3 of 4 vendors — shell with same banking routes, that's an overwhelming pattern." },
-          { "text_uk": "Global — конкурент A.K., щоб дискредитувати", "text_en": "Global — A.K.'s competitor to discredit him",
-            "points": -10, "correct": false,
+            "feedback_en": "❌ Categorically no. 3 of 4 vendors — shell with same banking routes, that's an overwhelming pattern."
+          },
+          {
+            "text_uk": "Global — конкурент A.K., щоб дискредитувати",
+            "text_en": "Global — A.K.'s competitor to discredit him",
+            "points": -10,
+            "correct": false,
             "feedback_uk": "❌ Занадто складна теорія без доказів. Occam's razor: 1 legit + 3 shell = cover-scheme.",
-            "feedback_en": "❌ Overly complex without evidence. Occam's razor: 1 legit + 3 shell = cover scheme." }
+            "feedback_en": "❌ Overly complex without evidence. Occam's razor: 1 legit + 3 shell = cover scheme."
+          }
         ]
       },
       {
@@ -409,24 +677,42 @@
         "text_uk": "Який з знайдених доказів — DECOY (пастка), яку НЕ можна цитувати у меморандумі?",
         "text_en": "Which evidence is a DECOY (trap) that MUST NOT be cited in the memo?",
         "options": [
-          { "text_uk": "Bank routing (3 shell-и через одну Cyprus BIC)", "text_en": "Bank routing (3 shells via same Cyprus BIC)",
-            "points": -10, "correct": false,
-            "feedback_uk": "❌ Це ★★★★★ технічний доказ.", "feedback_en": "❌ This is ★★★★★ technical evidence." },
-          { "text_uk": "Family / friend links (OpenCorporates + LinkedIn)", "text_en": "Family / friend links (OpenCorporates + LinkedIn)",
-            "points": -10, "correct": false,
-            "feedback_uk": "❌ Це ★★★★ documented links через державні реєстри.", "feedback_en": "❌ This is ★★★★ documented links through state registries." },
-          { "text_uk": "Показання ex-працівника (без документів)", "text_en": "Ex-employee testimony (without documents)",
-            "points": 25, "correct": true,
+          {
+            "text_uk": "Bank routing (3 shell-и через одну Cyprus BIC)",
+            "text_en": "Bank routing (3 shells via same Cyprus BIC)",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Це ★★★★★ технічний доказ.",
+            "feedback_en": "❌ This is ★★★★★ technical evidence."
+          },
+          {
+            "text_uk": "Family / friend links (OpenCorporates + LinkedIn)",
+            "text_en": "Family / friend links (OpenCorporates + LinkedIn)",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Це ★★★★ documented links через державні реєстри.",
+            "feedback_en": "❌ This is ★★★★ documented links through state registries."
+          },
+          {
+            "text_uk": "Показання ex-працівника (без документів)",
+            "text_en": "Ex-employee testimony (without documents)",
+            "points": 25,
+            "correct": true,
             "feedback_uk": "✓ Правильно. Anonymous testimony без документів = 0 evidentiary value + може розвалити довіру у суді. Використовуй тільки для орієнтиру, куди копати.",
-            "feedback_en": "✓ Correct. Anonymous testimony without documents = 0 evidentiary value + can destroy credibility in court. Use only as a pointer for where to dig." },
-          { "text_uk": "Dual-approval forgery у SAP", "text_en": "Dual-approval forgery in SAP",
-            "points": -10, "correct": false,
-            "feedback_uk": "❌ Це ★★★★★ hardcore технічний доказ з audit trail.", "feedback_en": "❌ This is ★★★★★ hardcore technical evidence with audit trail." }
+            "feedback_en": "✓ Correct. Anonymous testimony without documents = 0 evidentiary value + can destroy credibility in court. Use only as a pointer for where to dig."
+          },
+          {
+            "text_uk": "Dual-approval forgery у SAP",
+            "text_en": "Dual-approval forgery in SAP",
+            "points": -10,
+            "correct": false,
+            "feedback_uk": "❌ Це ★★★★★ hardcore технічний доказ з audit trail.",
+            "feedback_en": "❌ This is ★★★★★ hardcore technical evidence with audit trail."
+          }
         ]
       }
     ]
   },
-
   "memo_phase": {
     "title_uk": "Заповни корпоративний меморандум",
     "title_en": "Fill in the corporate memorandum",
@@ -443,51 +729,207 @@
       "breach_penalty": -30
     },
     "subjects": [
-      { "id": "kickback",   "correct": true,  "points": 20, "text_uk": "Kickback-схема через shell-vendor'ів", "text_en": "Kickback scheme via shell vendors" },
-      { "id": "vendor_pay", "correct": false, "points": -5, "text_uk": "Аномалія цінування у постачаннях",     "text_en": "Vendor pricing anomaly" },
-      { "id": "ip_theft",   "correct": false, "points": -5, "text_uk": "Крадіжка IP співробітником",           "text_en": "Employee IP theft" },
-      { "id": "exec_coi",   "correct": false, "points": -5, "text_uk": "Конфлікт інтересів топ-менеджменту",   "text_en": "Executive conflict of interest" }
+      {
+        "id": "kickback",
+        "correct": true,
+        "points": 20,
+        "text_uk": "Kickback-схема через shell-vendor'ів",
+        "text_en": "Kickback scheme via shell vendors"
+      },
+      {
+        "id": "vendor_pay",
+        "correct": false,
+        "points": -5,
+        "text_uk": "Аномалія цінування у постачаннях",
+        "text_en": "Vendor pricing anomaly"
+      },
+      {
+        "id": "ip_theft",
+        "correct": false,
+        "points": -5,
+        "text_uk": "Крадіжка IP співробітником",
+        "text_en": "Employee IP theft"
+      },
+      {
+        "id": "exec_coi",
+        "correct": false,
+        "points": -5,
+        "text_uk": "Конфлікт інтересів топ-менеджменту",
+        "text_en": "Executive conflict of interest"
+      }
     ],
     "evidence_pool": [
-      { "id": "ev_bic_shared",      "weight": 5, "text_uk": "3 з 4 vendor'ів через ту саму Cyprus BIC HEBACY2N — ймовірність збігу ~1:40 000", "text_en": "3 of 4 vendors via same Cyprus BIC HEBACY2N — coincidence probability ~1:40,000" },
-      { "id": "ev_dual_forgery",    "weight": 5, "text_uk": "Dual-approval у SAP підроблений (facsimile CFO signature, немає у CFO dashboard)", "text_en": "SAP dual-approval forged (facsimile CFO signature, absent from CFO dashboard)" },
-      { "id": "ev_family_links",    "weight": 5, "text_uk": "3 shell-vendor'и мають директорами: двоюрідний брат / однокласник / дочка A.K. (OpenCorporates + LinkedIn)", "text_en": "3 shell vendors have directors: A.K.'s cousin / classmate / daughter (OpenCorporates + LinkedIn)" },
-      { "id": "ev_price_overrun",   "weight": 4, "text_uk": "Ціни на 35-42% вище LME/benchmark ринку по всіх 3 shell-vendor'ах, при цьому у Global Industrial — ринкові", "text_en": "Prices 35-42% above LME/benchmark market across all 3 shell vendors, Global Industrial — market" },
-      { "id": "ev_same_address",    "weight": 4, "text_uk": "ProTech + IndPart — та сама житлова адреса (Vynohradna 12, apt 41), Nova — сусідній будинок", "text_en": "ProTech + IndPart — same residential address (Vynohradna 12, apt 41), Nova — neighboring building" },
-      { "id": "ev_sole_approver",   "weight": 4, "text_uk": "Всі проблемні контракти затверджені особисто A.K. (порушення policy — потрібне dual-approval CFO)", "text_en": "All problematic contracts approved personally by A.K. (policy breach — requires dual-approval by CFO)" },
-      { "id": "ev_daughter_shell",  "weight": 3, "text_uk": "IndPart Supply — засновниця 21-річна дочка A.K., студентка КНУ без business background", "text_en": "IndPart Supply — founder is A.K.'s 21-y.o. daughter, KNU student with no business background" },
-      { "id": "ev_lifestyle",       "weight": 2, "text_uk": "Lifestyle proof: BMW X7 ($110K) + Dubai поїздки при зарплаті $95K", "text_en": "Lifestyle proof: BMW X7 ($110K) + Dubai trips on $95K salary" },
-      { "id": "ev_ex_testimony",    "weight": 1, "text_uk": "Показання ex-працівника (anonymous, без документів)", "text_en": "Ex-employee testimony (anonymous, no documents)" },
-      { "id": "ev_global_normal",   "weight": 1, "text_uk": "Global Industrial — legit vendor з ринковими цінами. Це distraction, а не доказ проти A.K.", "text_en": "Global Industrial — legit vendor at market prices. This is a distraction, not evidence against A.K." },
-      { "id": "ev_fb_bmw",          "weight": 1, "text_uk": "Facebook пост A.K. з підписом «Життя стабільне» біля BMW", "text_en": "A.K.'s Facebook post captioned «Life is stable» next to BMW" }
+      {
+        "id": "ev_bic_shared",
+        "weight": 5,
+        "text_uk": "3 з 4 vendor'ів через ту саму Cyprus BIC HEBACY2N — ймовірність збігу ~1:40 000",
+        "text_en": "3 of 4 vendors via same Cyprus BIC HEBACY2N — coincidence probability ~1:40,000"
+      },
+      {
+        "id": "ev_dual_forgery",
+        "weight": 5,
+        "text_uk": "Dual-approval у SAP підроблений (facsimile CFO signature, немає у CFO dashboard)",
+        "text_en": "SAP dual-approval forged (facsimile CFO signature, absent from CFO dashboard)"
+      },
+      {
+        "id": "ev_family_links",
+        "weight": 5,
+        "text_uk": "3 shell-vendor'и мають директорами: двоюрідний брат / однокласник / дочка A.K. (OpenCorporates + LinkedIn)",
+        "text_en": "3 shell vendors have directors: A.K.'s cousin / classmate / daughter (OpenCorporates + LinkedIn)"
+      },
+      {
+        "id": "ev_price_overrun",
+        "weight": 4,
+        "text_uk": "Ціни на 35-42% вище LME/benchmark ринку по всіх 3 shell-vendor'ах, при цьому у Global Industrial — ринкові",
+        "text_en": "Prices 35-42% above LME/benchmark market across all 3 shell vendors, Global Industrial — market"
+      },
+      {
+        "id": "ev_same_address",
+        "weight": 4,
+        "text_uk": "ProTech + IndPart — та сама житлова адреса (Vynohradna 12, apt 41), Nova — сусідній будинок",
+        "text_en": "ProTech + IndPart — same residential address (Vynohradna 12, apt 41), Nova — neighboring building"
+      },
+      {
+        "id": "ev_sole_approver",
+        "weight": 4,
+        "text_uk": "Всі проблемні контракти затверджені особисто A.K. (порушення policy — потрібне dual-approval CFO)",
+        "text_en": "All problematic contracts approved personally by A.K. (policy breach — requires dual-approval by CFO)"
+      },
+      {
+        "id": "ev_daughter_shell",
+        "weight": 3,
+        "text_uk": "IndPart Supply — засновниця 21-річна дочка A.K., студентка КНУ без business background",
+        "text_en": "IndPart Supply — founder is A.K.'s 21-y.o. daughter, KNU student with no business background"
+      },
+      {
+        "id": "ev_lifestyle",
+        "weight": 2,
+        "text_uk": "Lifestyle proof: BMW X7 ($110K) + Dubai поїздки при зарплаті $95K",
+        "text_en": "Lifestyle proof: BMW X7 ($110K) + Dubai trips on $95K salary"
+      },
+      {
+        "id": "ev_ex_testimony",
+        "weight": 1,
+        "text_uk": "Показання ex-працівника (anonymous, без документів)",
+        "text_en": "Ex-employee testimony (anonymous, no documents)"
+      },
+      {
+        "id": "ev_global_normal",
+        "weight": 1,
+        "text_uk": "Global Industrial — legit vendor з ринковими цінами. Це distraction, а не доказ проти A.K.",
+        "text_en": "Global Industrial — legit vendor at market prices. This is a distraction, not evidence against A.K."
+      },
+      {
+        "id": "ev_fb_bmw",
+        "weight": 1,
+        "text_uk": "Facebook пост A.K. з підписом «Життя стабільне» біля BMW",
+        "text_en": "A.K.'s Facebook post captioned «Life is stable» next to BMW"
+      }
     ],
     "risk_correct": "critical",
-    "risk_points": { "low": -20, "medium": -10, "high": 10, "critical": 20 },
-    "weight_points": { "5": 25, "4": 15, "3": 5, "2": -5, "1": -15 },
+    "risk_points": {
+      "low": -20,
+      "medium": -10,
+      "high": 10,
+      "critical": 20
+    },
+    "weight_points": {
+      "5": 25,
+      "4": 15,
+      "3": 5,
+      "2": -5,
+      "1": -15
+    },
     "recommendations": [
-      { "id": "combined_action",   "correct": true,  "points": 40, "text_uk": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities", "text_en": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
-        "feedback_uk": "✓ Правильно. Політика вимагає паралельних дій. Freeze зупиняє поточні виплати, audit оформлює докази, termination + report — юридичний result.", "feedback_en": "✓ Correct. Policy requires parallel actions. Freeze halts current payouts, audit documents evidence, termination + report — legal result." },
-      { "id": "terminate_only",    "correct": false, "points": -30, "policy_breach": true, "text_uk": "Terminate immediately (тільки термінація)", "text_en": "Terminate immediately (only)",
-        "feedback_uk": "❌ POLICY BREACH. Без Vendor Audit + Freeze — shell-vendor'и продовжать виставляти інвойси, гроші продовжать литись.", "feedback_en": "❌ POLICY BREACH. Without Vendor Audit + Freeze — shell vendors keep invoicing, money keeps flowing." },
-      { "id": "audit_only",        "correct": false, "points": -20, "text_uk": "Vendor Audit only (без термінації)", "text_en": "Vendor Audit only (no termination)",
-        "feedback_uk": "❌ Ускладнює доказовість. Поки audit триває, A.K. може знищити evidence або втекти.", "feedback_en": "❌ Complicates evidence. While audit runs, A.K. can destroy evidence or flee." },
-      { "id": "vendor_pause",      "correct": false, "points": -10, "text_uk": "Vendor Pause + Investigate (без termination)", "text_en": "Vendor Pause + Investigate (no termination)",
-        "feedback_uk": "⚠️ Пасивно. Не адресує головного actor'а — самого A.K.", "feedback_en": "⚠️ Passive. Doesn't address the main actor — A.K. himself." },
-      { "id": "monitor",           "correct": false, "points": -15, "text_uk": "Monitor for 90 days", "text_en": "Monitor for 90 days",
-        "feedback_uk": "❌ Активна крадіжка вже підтверджена, моніторинг = очікування ще більшої шкоди.", "feedback_en": "❌ Active theft already confirmed, monitoring = waiting for more damage." },
-      { "id": "no_action",         "correct": false, "points": -50, "text_uk": "No action — недостатньо доказів", "text_en": "No action — insufficient evidence",
-        "feedback_uk": "❌ 3 незалежних технічних докази (BIC, forgery, family links) + LME + $110K BMW. Це overwhelming.", "feedback_en": "❌ 3 independent technical proofs (BIC, forgery, family links) + LME + $110K BMW. Overwhelming." }
+      {
+        "id": "combined_action",
+        "correct": true,
+        "points": 40,
+        "text_uk": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
+        "text_en": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
+        "feedback_uk": "✓ Правильно. Політика вимагає паралельних дій. Freeze зупиняє поточні виплати, audit оформлює докази, termination + report — юридичний result.",
+        "feedback_en": "✓ Correct. Policy requires parallel actions. Freeze halts current payouts, audit documents evidence, termination + report — legal result."
+      },
+      {
+        "id": "terminate_only",
+        "correct": false,
+        "points": -30,
+        "policy_breach": true,
+        "text_uk": "Terminate immediately (тільки термінація)",
+        "text_en": "Terminate immediately (only)",
+        "feedback_uk": "❌ POLICY BREACH. Без Vendor Audit + Freeze — shell-vendor'и продовжать виставляти інвойси, гроші продовжать литись.",
+        "feedback_en": "❌ POLICY BREACH. Without Vendor Audit + Freeze — shell vendors keep invoicing, money keeps flowing."
+      },
+      {
+        "id": "audit_only",
+        "correct": false,
+        "points": -20,
+        "text_uk": "Vendor Audit only (без термінації)",
+        "text_en": "Vendor Audit only (no termination)",
+        "feedback_uk": "❌ Ускладнює доказовість. Поки audit триває, A.K. може знищити evidence або втекти.",
+        "feedback_en": "❌ Complicates evidence. While audit runs, A.K. can destroy evidence or flee."
+      },
+      {
+        "id": "vendor_pause",
+        "correct": false,
+        "points": -10,
+        "text_uk": "Vendor Pause + Investigate (без termination)",
+        "text_en": "Vendor Pause + Investigate (no termination)",
+        "feedback_uk": "⚠️ Пасивно. Не адресує головного actor'а — самого A.K.",
+        "feedback_en": "⚠️ Passive. Doesn't address the main actor — A.K. himself."
+      },
+      {
+        "id": "monitor",
+        "correct": false,
+        "points": -15,
+        "text_uk": "Monitor for 90 days",
+        "text_en": "Monitor for 90 days",
+        "feedback_uk": "❌ Активна крадіжка вже підтверджена, моніторинг = очікування ще більшої шкоди.",
+        "feedback_en": "❌ Active theft already confirmed, monitoring = waiting for more damage."
+      },
+      {
+        "id": "no_action",
+        "correct": false,
+        "points": -50,
+        "text_uk": "No action — недостатньо доказів",
+        "text_en": "No action — insufficient evidence",
+        "feedback_uk": "❌ 3 незалежних технічних докази (BIC, forgery, family links) + LME + $110K BMW. Це overwhelming.",
+        "feedback_en": "❌ 3 independent technical proofs (BIC, forgery, family links) + LME + $110K BMW. Overwhelming."
+      }
     ]
   },
-
   "ranks": {
-    "master":  { "min": 350, "label_uk": "Master · Corporate Threat Hunter", "label_en": "Master · Corporate Threat Hunter",
-                 "msg_uk": "Класичне kickback-розслідування — ідеально.", "msg_en": "Textbook kickback investigation — perfect.", "color": "#dcc382" },
-    "senior":  { "min": 250, "label_uk": "Senior Investigator", "label_en": "Senior Investigator",
-                 "msg_uk": "Сильний результат.", "msg_en": "Strong result.", "color": "#c0c8d8" },
-    "junior":  { "min": 150, "label_uk": "Investigator", "label_en": "Investigator",
-                 "msg_uk": "Схему розкрив.", "msg_en": "Scheme uncovered.", "color": "#a67c52" },
-    "trainee": { "min": 0,   "label_uk": "Junior Auditor", "label_en": "Junior Auditor",
-                 "msg_uk": "Кейс завершено, але деталі впустив.", "msg_en": "Case completed but details missed.", "color": "#8a8a8a" }
+    "master": {
+      "min": 350,
+      "label_uk": "Master · Corporate Threat Hunter",
+      "label_en": "Master · Corporate Threat Hunter",
+      "msg_uk": "Класичне kickback-розслідування — ідеально.",
+      "msg_en": "Textbook kickback investigation — perfect.",
+      "color": "#dcc382"
+    },
+    "senior": {
+      "min": 250,
+      "label_uk": "Senior Investigator",
+      "label_en": "Senior Investigator",
+      "msg_uk": "Сильний результат.",
+      "msg_en": "Strong result.",
+      "color": "#c0c8d8"
+    },
+    "junior": {
+      "min": 150,
+      "label_uk": "Investigator",
+      "label_en": "Investigator",
+      "msg_uk": "Схему розкрив.",
+      "msg_en": "Scheme uncovered.",
+      "color": "#a67c52"
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Junior Auditor",
+      "label_en": "Junior Auditor",
+      "msg_uk": "Кейс завершено, але деталі впустив.",
+      "msg_en": "Case completed but details missed.",
+      "color": "#8a8a8a"
+    }
   }
 }
