@@ -195,7 +195,7 @@ function renderBriefing() {
         <div class="game-brief__grid">
           <div class="game-brief__photo">
             <img src="${cand.photo}" alt="${escapeHtml(tr(cand,'name'))}">
-            <div class="game-brief__photo-label">PASSPORT PHOTO</div>
+            <div class="game-brief__photo-label">${LANG()==='en'?'PASSPORT PHOTO':'ФОТО ДОКУМЕНТА'}</div>
           </div>
           <div class="game-brief__body">
             <h2>${escapeHtml(tr(cand,'name'))}</h2>

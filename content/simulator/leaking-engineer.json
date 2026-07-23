@@ -8,7 +8,7 @@
   "title_en": "Sim #02 · Case 1 · The Leaking Engineer",
   "briefing": {
     "splash": "/img/uploads/simulator/sim02/case1-leaking-engineer.png",
-    "client_uk": "SecureBank SaaS (200 employees, B2B core-banking)",
+    "client_uk": "SecureBank SaaS (200 співробітників, B2B core-banking)",
     "client_en": "SecureBank SaaS (200 employees, B2B core-banking)",
     "position": "Senior Backend Engineer",
     "salary": "$145K/year",
