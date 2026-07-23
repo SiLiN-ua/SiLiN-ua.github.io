@@ -10,7 +10,9 @@
     "splash": "/img/uploads/simulator/sim02/case4-executive-coi.png",
     "client_uk": "MedNext Corp (NASDAQ: MDNX, cap $2.1B, medtech)",
     "client_en": "MedNext Corp (NASDAQ: MDNX, cap $2.1B, medtech)",
-    "position": "CFO (10 років у компанії)",
+    "position_uk": "CFO (10 років у компанії)",
+    "position_en": "CFO (10 years with the company)",
+    "position": "CFO (10 years with the company)",
     "salary": "$680K + equity",
     "body_uk": "🚨 CRITICAL · HIGH-STAKES. MedNext Corp за тиждень від mega-acquisition ($850M) target-компанії BioLink Systems. Whistleblower (anonymous SEC filing) стверджує: CFO має прихований interest у target через Panama-трест. Голосування ради директорів через 7 днів. Клієнт: General Counsel + Chairman + external Special Committee. Політика: недекларований executive COI = ТІЛЬКИ external Legal Counsel може діяти. Ніяких self-investigations правлінням, ніяких direct actions по CFO. Порушення = SEC insider trading exposure.",
     "body_en": "🚨 CRITICAL · HIGH-STAKES. MedNext Corp is 1 week away from mega-acquisition ($850M) of target BioLink Systems. Whistleblower (anonymous SEC filing) claims: CFO has hidden interest in target via Panama trust. Board vote in 7 days. Client: General Counsel + Chairman + external Special Committee. Policy: undisclosed executive COI = ONLY external Legal Counsel can act. No self-investigations by board, no direct actions against CFO. Breach = SEC insider trading exposure.",
@@ -22,13 +24,15 @@
       "photo": "/img/uploads/simulator/sim02/case4-candidate.png",
       "email": "d.p@mednext-corp.example",
       "phone": "US +1 (415) XXX-XX-92"
-    }
+    },
+    "salary_uk": "$680K + equity",
+    "salary_en": "$680K + equity"
   },
   "phase2": {
     "title_uk": "Розслідування · високий ризик · Panama-based structure",
     "title_en": "Investigation · high risk · Panama-based structure",
-    "instruction_uk": "Копай глибоко. Мінімум 6 тулів. CFO публічного компанії — це sanction-level. Помилка = SEC action на PayFly + твоя compliance ліцензія.",
-    "instruction_en": "Dig deep. Minimum 6 tools. Public-company CFO — sanction-level. Mistake = SEC action on PayFly + your compliance license.",
+    "instruction_uk": "Копай глибоко. Мінімум 6 тулів. CFO публічної компанії — це рівень регуляторного enforcement. Помилка = SEC action проти MedNext + втрата твоєї compliance-ліцензії.",
+    "instruction_en": "Dig deep. Minimum 6 tools. A public-company CFO means regulatory-enforcement exposure. A mistake here = SEC enforcement action against MedNext + loss of your compliance license.",
     "next_btn_uk": "Далі → Хронологія",
     "next_btn_en": "Next → Timeline",
     "min_tools_used": 6,

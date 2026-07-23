@@ -201,8 +201,8 @@ function renderBriefing() {
             <h2>${escapeHtml(tr(cand,'name'))}</h2>
             <div class="game-brief__meta">
               <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
-              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(br.position)}</div>
-              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(br.salary)}</div>
+              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(tr(br,'position') || br.position || '')}</div>
+              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(tr(br,'salary') || br.salary || '')}</div>
               <div><span>Email</span><code>${escapeHtml(cand.email)}</code></div>
               <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>
             </div>
@@ -2467,3 +2467,11 @@ document.addEventListener('click', (e) => {
   document.addEventListener('keydown', esc);
   document.body.appendChild(lb);
 });
+
+// TESTAGENT4 HOOKS (temporary)
+window.__t4 = {
+  get State(){return State;},
+  submitMemo, computeMemoScore, renderMemoPhase,
+  gotoMemo: () => { State.phase='memo'; renderMemoPhase(); },
+  LANG
+};

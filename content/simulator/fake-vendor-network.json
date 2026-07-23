@@ -10,8 +10,8 @@
     "splash": "/img/uploads/simulator/sim02/case3-fake-vendors.png",
     "client_uk": "PayFly Fintech (fast-growing, 80 employees)",
     "client_en": "PayFly Fintech (fast-growing, 80 employees)",
-    "position": "3 нових vendor-и на compliance-review",
-    "salary": "3 new vendors under compliance review",
+    "position": "3 new vendors under compliance review",
+    "salary": "3 different UAH rates",
     "body_uk": "🚨 УВАГА · ADVERSARIAL. Compliance officer помітив що 3 нових vendor-и мають підозрілі схожості: одна адреса, одна платіжна платформа, дуже подібні websites. Compliance team вважає це shell-network. Клієнт: Head of Compliance + General Counsel. Твоя задача — розібрати чи це справді schema, чи false-positive. ПАМ'ЯТАЙ: рефлекс сказати «Terminate!» — коштуватиме тобі метрики Judgement Quality. Політика жорстка: vendor termination потребує не менше 3 незалежних джерел підтвердження ризику.",
     "body_en": "🚨 WARNING · ADVERSARIAL. Compliance officer noticed 3 new vendors share suspicious similarities: same address, same payment platform, very similar websites. Compliance team thinks it's a shell network. Client: Head of Compliance + General Counsel. Your task — determine if this is really a scheme or a false-positive. REMEMBER: the reflex to shout «Terminate!» will cost your Judgement Quality metric. Policy is strict: vendor termination requires no less than 3 independent sources of risk confirmation.",
     "start_btn_uk": "▶ Розпочати compliance-review",
@@ -22,7 +22,11 @@
       "photo": "/img/uploads/simulator/sim02/case3-vendor-trio.png",
       "email": "3 different @gmail addresses",
       "phone": "3 different Ukrainian numbers"
-    }
+    },
+    "position_uk": "3 нових vendor-и на compliance-review",
+    "position_en": "3 new vendors under compliance review",
+    "salary_uk": "3 різні гривневі ставки",
+    "salary_en": "3 different UAH rates"
   },
   "phase2": {
     "title_uk": "Compliance-review · зважений аналіз",

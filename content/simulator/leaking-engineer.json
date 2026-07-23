@@ -22,7 +22,11 @@
       "photo": "/img/uploads/simulator/sim02/case1-candidate.png",
       "email": "v.r@securebank-saas.example",
       "phone": "+380 XX XXX XX 47"
-    }
+    },
+    "position_uk": "Senior Backend Engineer · $145K",
+    "position_en": "Senior Backend Engineer · $145K",
+    "salary_uk": "$145K/рік",
+    "salary_en": "$145K/year"
   },
   "phase2": {
     "title_uk": "Розслідування · корпоративні тули",

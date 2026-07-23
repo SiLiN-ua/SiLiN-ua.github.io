@@ -10,7 +10,7 @@
     "splash": "/img/uploads/simulator/sim02/case5-insider-trading.png",
     "client_uk": "Silvermark Investment Bank (US mid-tier IB, $12B AUM)",
     "client_en": "Silvermark Investment Bank (US mid-tier IB, $12B AUM)",
-    "position": "M&A Analyst (2 роки у Silvermark)",
+    "position": "M&A Analyst (2 years at Silvermark)",
     "salary": "$180K base + bonus",
     "body_uk": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen мав доступ до NextEra × PowerFlex $2.4B deal у deal room. Через 3 дні до public announcement — незвична покупка PowerFlex акцій на маленькому retail-акаунті... який виявився братом-студентом David-а. Обидва живуть за однією адресою. Через 5 днів після announcement David купує Rolex за $8K.\n\nКлієнт: Head of Compliance + General Counsel + external Special Committee. Політика IB жорстка: всі підозри insider trading = автоматично Suspend pending investigation (НЕ termination) + повідомлення регулятора. IB не приймає self-decisions до вироку регулятора — audit trail критичний.",
     "body_en": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen had access to the NextEra × PowerFlex $2.4B deal in the deal room. Three days before public announcement — unusual PowerFlex share purchase on a small retail account... which turned out to be David's student brother. Both live at the same address. Five days post-announcement David bought a Rolex for $8K.\n\nClient: Head of Compliance + General Counsel + external Special Committee. IB policy is strict: all insider-trading suspicions = automatic Suspend pending investigation (NOT termination) + regulator notification. IB doesn't self-decide before regulator verdict — audit trail is critical.",
@@ -22,7 +22,11 @@
       "photo": "/img/uploads/simulator/sim02/case5-candidate.png",
       "email": "d.chen@silvermark.example",
       "phone": "US +1 (212) XXX-XX-15"
-    }
+    },
+    "position_uk": "M&A аналітик (2 роки у Silvermark)",
+    "position_en": "M&A Analyst (2 years at Silvermark)",
+    "salary_uk": "$180K base + бонус",
+    "salary_en": "$180K base + bonus"
   },
   "phase2": {
     "title_uk": "Compliance investigation · maximum rigor",

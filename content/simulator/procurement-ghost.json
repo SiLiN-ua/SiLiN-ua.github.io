@@ -22,7 +22,11 @@
       "photo": "/img/uploads/simulator/sim02/case2-candidate.png",
       "email": "a.k@metalcraft.example",
       "phone": "+380 XX XXX XX 82"
-    }
+    },
+    "position_uk": "Procurement Manager · $95K",
+    "position_en": "Procurement Manager · $95K",
+    "salary_uk": "$95K/рік",
+    "salary_en": "$95K/year"
   },
   "phase2": {
     "title_uk": "Аудит · корпоративні тули",
