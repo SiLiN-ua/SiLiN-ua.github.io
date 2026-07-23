@@ -12,7 +12,7 @@
     "client_en": "PayFly Fintech (fast-growing, 80 employees)",
     "position": "3 new vendors under compliance review",
     "salary": "3 different UAH rates",
-    "body_uk": "🚨 УВАГА · ADVERSARIAL. Compliance officer помітив що 3 нових vendor-и мають підозрілі схожості: одна адреса, одна платіжна платформа, дуже подібні websites. Compliance team вважає це shell-network. Клієнт: Head of Compliance + General Counsel. Твоя задача — розібрати чи це справді schema, чи false-positive. ПАМ'ЯТАЙ: рефлекс сказати «Terminate!» — коштуватиме тобі метрики Judgement Quality. Політика жорстка: vendor termination потребує не менше 3 незалежних джерел підтвердження ризику.",
+    "body_uk": "🚨 УВАГА · ADVERSARIAL. Compliance officer помітив, що 3 нові vendor-и мають підозрілі схожості: одна адреса, одна платіжна платформа, дуже подібні websites. Compliance team вважає це shell-network. Клієнт: Head of Compliance + General Counsel. Твоя задача — розібрати чи це справді схема, чи false-positive. ПАМ'ЯТАЙ: рефлекс сказати «Terminate!» — коштуватиме тобі балів у метриці Judgement Quality. Політика жорстка: vendor termination потребує не менше 3 незалежних джерел підтвердження ризику.",
     "body_en": "🚨 WARNING · ADVERSARIAL. Compliance officer noticed 3 new vendors share suspicious similarities: same address, same payment platform, very similar websites. Compliance team thinks it's a shell network. Client: Head of Compliance + General Counsel. Your task — determine if this is really a scheme or a false-positive. REMEMBER: the reflex to shout «Terminate!» will cost your Judgement Quality metric. Policy is strict: vendor termination requires no less than 3 independent sources of risk confirmation.",
     "start_btn_uk": "▶ Розпочати compliance-review",
     "start_btn_en": "▶ Start compliance review",
@@ -31,7 +31,7 @@
   "phase2": {
     "title_uk": "Compliance-review · зважений аналіз",
     "title_en": "Compliance review · balanced analysis",
-    "instruction_uk": "Використай тули. Мінімум 5. Читай уважно — початковий сигнал може бути хибним, а глибший shovel — легальним поясненням.",
+    "instruction_uk": "Використай інструменти. Мінімум 5. Читай уважно — початковий сигнал може бути хибним, а глибший shovel — легальним поясненням.",
     "instruction_en": "Use tools. Minimum 5. Read carefully — the initial signal may be false, deeper digging may reveal legit explanation.",
     "next_btn_uk": "Далі → Хронологія",
     "next_btn_en": "Next → Timeline",
@@ -584,7 +584,7 @@
             "text_en": "I don't know",
             "points": -5,
             "correct": false,
-            "feedback_uk": "❌ Це case для sim саме про уникнення convergence bias. Читай наступні тули.",
+            "feedback_uk": "❌ Це case для sim саме про уникнення convergence bias. Читай наступні інструменти.",
             "feedback_en": "❌ This case is exactly about avoiding convergence bias. Read next tools."
           }
         ]

@@ -29,9 +29,9 @@
     "salary_en": "$95K/year"
   },
   "phase2": {
-    "title_uk": "Аудит · корпоративні тули",
+    "title_uk": "Аудит · корпоративні інструменти",
     "title_en": "Audit · corporate tools",
-    "instruction_uk": "Використай тули щоб зібрати докази kickback схеми. Мінімум 5 тулів. Шукай патерни: адреси, банки, зв'язки.",
+    "instruction_uk": "Використай інструменти, щоб зібрати докази kickback схеми. Мінімум 5 інструментів. Шукай патерни: адреси, банки, зв'язки.",
     "instruction_en": "Use tools to gather evidence of the kickback scheme. Minimum 5 tools. Look for patterns: addresses, banks, links.",
     "next_btn_uk": "Далі → Хронологія",
     "next_btn_en": "Next → Timeline",
@@ -65,7 +65,7 @@
           "address_en": "Kyiv, Vynohradna St. 12, apt. 41",
           "officers": [
             {
-              "name_uk": "К***** Дмитро Ігорович",
+              "name_uk": "Кузнецов Дмитро Ігорович",
               "name_en": "K***** Dmytro I.",
               "role_uk": "Директор",
               "role_en": "Director",
@@ -75,7 +75,7 @@
           ],
           "founders": [
             {
-              "name_uk": "К***** Дмитро Ігорович",
+              "name_uk": "Кузнецов Дмитро Ігорович",
               "name_en": "K***** Dmytro I.",
               "share": "100"
             }
@@ -108,7 +108,7 @@
           "address_en": "Kyiv, Vynohradna St. 10, apt. 22 (neighboring building to manager's)",
           "officers": [
             {
-              "name_uk": "С***** Олег Петрович",
+              "name_uk": "Соколовський Олег Петрович",
               "name_en": "S***** Oleh P.",
               "role_uk": "Директор",
               "role_en": "Director",
@@ -118,7 +118,7 @@
           ],
           "founders": [
             {
-              "name_uk": "С***** Олег Петрович",
+              "name_uk": "Соколовський Олег Петрович",
               "name_en": "S***** Oleh P.",
               "share": "100"
             }
@@ -149,8 +149,8 @@
           "address_en": "Kyiv, Vynohradna St. 12, apt. 41 (same address as ProTech!)",
           "officers": [
             {
-              "name_uk": "К***** Анастасія Артемівна (21)",
-              "name_en": "K***** Anastasiia A. (21)",
+              "name_uk": "Кузнецова Анастасія Артемівна (21)",
+              "name_en": "Kuznetsova Anastasiia A. (21)",
               "role_uk": "Директор",
               "role_en": "Director",
               "note_uk": "дочка procurement manager'а, студентка КНУ",
@@ -159,8 +159,8 @@
           ],
           "founders": [
             {
-              "name_uk": "К***** Анастасія Артемівна",
-              "name_en": "K***** Anastasiia A.",
+              "name_uk": "Кузнецова Анастасія Артемівна",
+              "name_en": "Kuznetsova Anastasiia A.",
               "share": "100"
             }
           ]
@@ -190,8 +190,8 @@
           "address_en": "Lviv, Svobody Ave. 47",
           "officers": [
             {
-              "name_uk": "Р***** Марк Йосипович",
-              "name_en": "R***** Mark Y.",
+              "name_uk": "Розенберг Марк Йосипович",
+              "name_en": "Rosenberg Mark Y.",
               "role_uk": "CEO",
               "role_en": "CEO",
               "note_uk": "публічна особа, статті у Forbes, реальний бізнес з 2018",
@@ -200,8 +200,8 @@
           ],
           "founders": [
             {
-              "name_uk": "Р***** Марк Йосипович",
-              "name_en": "R***** Mark Y.",
+              "name_uk": "Розенберг Марк Йосипович",
+              "name_en": "Rosenberg Mark Y.",
               "share": "60"
             },
             {

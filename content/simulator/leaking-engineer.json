@@ -29,9 +29,9 @@
     "salary_en": "$145K/year"
   },
   "phase2": {
-    "title_uk": "Розслідування · корпоративні тули",
+    "title_uk": "Розслідування · корпоративні інструменти",
     "title_en": "Investigation · corporate tools",
-    "instruction_uk": "Використай тули щоб зібрати докази. Мінімум 5 тулів щоб перейти далі. Кожен клік коштує часу — не витрачай його на dead ends.",
+    "instruction_uk": "Використай інструменти, щоб зібрати докази. Мінімум 5 інструментів, щоб перейти далі. Кожен клік коштує часу — не витрачай його на dead ends.",
     "instruction_en": "Use tools to gather evidence. Minimum 5 tools to proceed. Every click costs time — don't waste it on dead ends.",
     "next_btn_uk": "Далі → Хронологія",
     "next_btn_en": "Next → Timeline",
