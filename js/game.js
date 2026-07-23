@@ -1231,11 +1231,11 @@ function renderFakeUI(tool) {
       <div class="fake fake--opencorp">
         <div class="fake__topbar">🏢 <span>OpenCorporates + ${L('ЄДР', 'State Registry')}</span></div>
         <div class="fake__search-row"><div class="fake__query">${L('Пошук', 'Search')}: <code>${escapeHtml(tool.opencorp.query || '')}</code></div></div>
-        <div class="fake__oc-row"><span>${L('Компанія', 'Company')}</span><strong>${escapeHtml(tool.opencorp.company_name || '')}</strong></div>
+        <div class="fake__oc-row"><span>${L('Компанія', 'Company')}</span><strong>${escapeHtml(tr(tool.opencorp, 'company_name') || tool.opencorp.company_name || '')}</strong></div>
         <div class="fake__oc-row"><span>${L('Реєстраційний №', 'Registration #')}</span><code>${escapeHtml(tool.opencorp.reg_no || '')}</code></div>
         <div class="fake__oc-row"><span>${L('Створено', 'Founded')}</span><strong>${escapeHtml(tool.opencorp.founded || '')}</strong></div>
         <div class="fake__oc-row"><span>${L('Юридична адреса', 'Legal address')}</span><strong>${escapeHtml(tr(tool.opencorp,'address') || tool.opencorp.address || '')}</strong></div>
-        <div class="fake__oc-row"><span>${L('Тип', 'Type')}</span><strong>${escapeHtml(tool.opencorp.entity_type || 'LLC')}</strong></div>
+        <div class="fake__oc-row"><span>${L('Тип', 'Type')}</span><strong>${escapeHtml(tr(tool.opencorp, 'entity_type') || tool.opencorp.entity_type || 'LLC')}</strong></div>
         <div class="fake__oc-row"><span>${L('Статус', 'Status')}</span><strong style="color:#7dc98a">${escapeHtml(tool.opencorp.status || 'Active')}</strong></div>
         <div class="fake__oc-section"><h4>${L('Директори / посадові особи', 'Directors / Officers')}</h4>
           ${(tool.opencorp.officers || []).map(o => `

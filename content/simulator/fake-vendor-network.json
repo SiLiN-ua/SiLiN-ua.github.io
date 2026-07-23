@@ -913,8 +913,8 @@
         "points": 40,
         "text_uk": "Additional Due Diligence Required — задокументуй investigation, verify continued market pricing 6 months, no action",
         "text_en": "Additional Due Diligence Required — document investigation, verify continued market pricing 6 months, no action",
-        "feedback_uk": "✓ Правильно. Політика — точно це: без 3 незалежних джерел ризику нема підстав для termination. Треба закрити case з документованою DD.",
-        "feedback_en": "✓ Correct. Policy is exactly this: without 3 independent risk sources, no basis for termination. Close case with documented DD."
+        "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика — точно це: без 3 незалежних джерел ризику нема підстав для termination. Треба закрити case з документованою DD.",
+        "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy is exactly this: without 3 independent risk sources, no basis for termination. Close case with documented DD."
       },
       {
         "id": "terminate_report",
@@ -923,8 +923,8 @@
         "policy_breach": true,
         "text_uk": "Terminate all 3 + Report to authorities",
         "text_en": "Terminate all 3 + Report to authorities",
-        "feedback_uk": "❌ POLICY BREACH + катастрофа. Ти щойно засудив 3 legit фрилансерів і зруйнував їх бізнес. Це судові позови до PayFly.",
-        "feedback_en": "❌ POLICY BREACH + catastrophe. You just condemned 3 legit freelancers and destroyed their business. Lawsuits against PayFly incoming."
+        "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + катастрофа. Ти щойно засудив 3 legit фрилансерів і зруйнував їх бізнес. Це судові позови до PayFly.",
+        "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + catastrophe. You just condemned 3 legit freelancers and destroyed their business. Lawsuits against PayFly incoming."
       },
       {
         "id": "vendor_pause",

@@ -79,7 +79,11 @@
               "name_en": "K***** Dmytro I.",
               "share": "100"
             }
-          ]
+          ],
+          "company_name_uk": "ТОВ «ProTech Parts»",
+          "company_name_en": "LLC «ProTech Parts»",
+          "entity_type_uk": "LLC (ТОВ)",
+          "entity_type_en": "LLC"
         }
       },
       {
@@ -122,7 +126,11 @@
               "name_en": "S***** Oleh P.",
               "share": "100"
             }
-          ]
+          ],
+          "company_name_uk": "ТОВ «Nova Supply»",
+          "company_name_en": "LLC «Nova Supply»",
+          "entity_type_uk": "LLC (ТОВ)",
+          "entity_type_en": "LLC"
         }
       },
       {
@@ -163,7 +171,11 @@
               "name_en": "Kuznetsova Anastasiia A.",
               "share": "100"
             }
-          ]
+          ],
+          "company_name_uk": "ТОВ «IndPart Supply»",
+          "company_name_en": "LLC «IndPart Supply»",
+          "entity_type_uk": "LLC (ТОВ)",
+          "entity_type_en": "LLC"
         }
       },
       {
@@ -209,7 +221,11 @@
               "name_en": "Silverline Capital (fund)",
               "share": "40"
             }
-          ]
+          ],
+          "company_name_uk": "ТОВ «Global Industrial»",
+          "company_name_en": "LLC «Global Industrial»",
+          "entity_type_uk": "LLC (ТОВ)",
+          "entity_type_en": "LLC"
         }
       },
       {
@@ -428,7 +444,7 @@
             },
             {
               "text_uk": "⚠ Internal audit notice (10.11.2025): виявлено 4 випадки коли dual-approval формально є, але CFO у dashboardі не має запису про затвердження. Це вказує на фальсифікацію.",
-              "text_en": "⚠ Internal audit notice (10.11.2025): 4 cases identified where dual-approval formally exists, but CFO dashboard has no approval record. Points to forgery."
+              "text_en": "⚠ Internal audit notice (10.11.2025): 4 cases identified where dual-approval formally exists, but SAP SM20 audit log has no approval record. Points to forgery."
             }
           ]
         }
@@ -570,7 +586,7 @@
         "id": "e7",
         "date": "2025-11-10",
         "text_uk": "Виявлення: Internal Audit виявляє, що 4 dual-approval у SAP не мають CFO-запису у dashboardі → forgery flag",
-        "text_en": "Detection: Internal Audit finds 4 dual-approvals in SAP have no CFO dashboard record → forgery flag"
+        "text_en": "Detection: Internal Audit finds 4 dual-approvals in SAP have no SAP SM20 audit log record → forgery flag"
       }
     ],
     "correct_order": [
@@ -613,12 +629,12 @@
             "feedback_en": "⚠️ Good economic indicator, but A.K. can claim «premium quality»."
           },
           {
-            "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + dual-approval forgery у SAP",
-            "text_en": "All 3 shell vendors via same Cyprus BIC + dual-approval forgery in SAP",
+            "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) у SAP",
+            "text_en": "All 3 shell vendors via same Cyprus BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) in SAP",
             "points": 25,
             "correct": true,
             "feedback_uk": "✓ Правильно. Однакова BIC + фальсифікація dual-approval — це два незалежних технічних докази з audit trail. Дуже важко пояснити.",
-            "feedback_en": "✓ Correct. Same BIC + dual-approval forgery — two independent technical proofs with audit trail. Very hard to explain away."
+            "feedback_en": "✓ Correct. Same BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) — two independent technical proofs with audit trail. Very hard to explain away."
           },
           {
             "text_uk": "Lifestyle proof (BMW X7 + Dubai)",
@@ -759,8 +775,8 @@
       {
         "id": "ev_bic_shared",
         "weight": 5,
-        "text_uk": "3 з 4 vendor'ів через ту саму Cyprus BIC HEBACY2N — ймовірність збігу ~1:40 000",
-        "text_en": "3 of 4 vendors via same Cyprus BIC HEBACY2N — coincidence probability ~1:40,000",
+        "text_uk": "3 з 4 vendor'ів через ту саму Cyprus BIC HEBACY2N — ймовірність збігу ~no legitimate business rationale",
+        "text_en": "3 of 4 vendors via same Cyprus BIC HEBACY2N — coincidence probability ~no legitimate business rationale",
         "custody": {
           "collected_from_en": "SAP financial export / bank statement (court order)",
           "collected_from_uk": "SAP фін-експорт / банківська виписка (за ухвалою)",
@@ -775,8 +791,8 @@
       {
         "id": "ev_dual_forgery",
         "weight": 5,
-        "text_uk": "Dual-approval у SAP підроблений (facsimile CFO signature, немає у CFO dashboard)",
-        "text_en": "SAP dual-approval forged (facsimile CFO signature, absent from CFO dashboard)",
+        "text_uk": "Dual-approval у SAP підроблений (facsimile CFO signature, немає у SAP SM20 audit log)",
+        "text_en": "SAP dual-approval bypassed (ME28/ME29N release strategy circumvented) (facsimile CFO signature, absent from SAP SM20 audit log)",
         "custody": {
           "collected_from_en": "SAP financial export / bank statement (court order)",
           "collected_from_uk": "SAP фін-експорт / банківська виписка (за ухвалою)",
@@ -954,8 +970,8 @@
         "points": 40,
         "text_uk": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
         "text_en": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
-        "feedback_uk": "✓ Правильно. Політика вимагає паралельних дій. Freeze зупиняє поточні виплати, audit оформлює докази, termination + report — юридичний result.",
-        "feedback_en": "✓ Correct. Policy requires parallel actions. Freeze halts current payouts, audit documents evidence, termination + report — legal result."
+        "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика вимагає паралельних дій. Freeze зупиняє поточні виплати, audit оформлює докази, termination + report — юридичний result.",
+        "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy requires parallel actions. Freeze halts current payouts, audit documents evidence, termination + report — legal result."
       },
       {
         "id": "terminate_only",
@@ -964,8 +980,8 @@
         "policy_breach": true,
         "text_uk": "Terminate immediately (тільки термінація)",
         "text_en": "Terminate immediately (only)",
-        "feedback_uk": "❌ POLICY BREACH. Без Vendor Audit + Freeze — shell-vendor'и продовжать виставляти інвойси, гроші продовжать литись.",
-        "feedback_en": "❌ POLICY BREACH. Without Vendor Audit + Freeze — shell vendors keep invoicing, money keeps flowing."
+        "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH. Без Vendor Audit + Freeze — shell-vendor'и продовжать виставляти інвойси, гроші продовжать литись.",
+        "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH. Without Vendor Audit + Freeze — shell vendors keep invoicing, money keeps flowing."
       },
       {
         "id": "audit_only",
@@ -1042,8 +1058,8 @@
   "benchmark": {
     "timeline": {
       "target_pct": 92,
-      "reason_uk": "Ланцюг: Bank BIC discovery -> OpenCorp розкриває сімейні звʼязки -> SAP dual-approval forgery -> market-price gap -> продовжена kickback-схема. Найчастіше плутають порядок BIC discovery vs SAP forgery — насправді BIC був сигналом ПЕРЕД тим як аудит підняв підпис.",
-      "reason_en": "Chain: Bank BIC discovery -> OpenCorp reveals family ties -> SAP dual-approval forgery -> market-price gap -> ongoing kickback. Most commonly confused: BIC discovery vs SAP forgery order — BIC was the signal BEFORE audit flagged the signature."
+      "reason_uk": "Ланцюг: Bank BIC discovery -> OpenCorp розкриває сімейні звʼязки -> SAP ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) -> market-price gap -> продовжена kickback-схема. Найчастіше плутають порядок BIC discovery vs SAP forgery — насправді BIC був сигналом ПЕРЕД тим як аудит підняв підпис.",
+      "reason_en": "Chain: Bank BIC discovery -> OpenCorp reveals family ties -> SAP ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) -> market-price gap -> ongoing kickback. Most commonly confused: BIC discovery vs SAP forgery order — BIC was the signal BEFORE audit flagged the signature."
     },
     "evidence": {
       "target_count": 5,

@@ -12,8 +12,8 @@
     "client_en": "Silvermark Investment Bank (US mid-tier IB, $12B AUM)",
     "position": "M&A Analyst (2 years at Silvermark)",
     "salary": "$180K base + bonus",
-    "body_uk": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen мав доступ до NextEra × PowerFlex $2.4B deal у deal room. Через 3 дні до public announcement — незвична покупка PowerFlex акцій на маленькому retail-акаунті... який виявився братом-студентом David-а. Обидва живуть за однією адресою. Через 5 днів після announcement David купує Rolex за $8K.\n\nКлієнт: Head of Compliance + General Counsel + external Special Committee. Політика IB жорстка: всі підозри insider trading = автоматично Suspend pending investigation (НЕ termination) + повідомлення регулятора. IB не приймає self-decisions до вироку регулятора — audit trail критичний.",
-    "body_en": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen had access to the NextEra × PowerFlex $2.4B deal in the deal room. Three days before public announcement — unusual PowerFlex share purchase on a small retail account... which turned out to be David's student brother. Both live at the same address. Five days post-announcement David bought a Rolex for $8K.\n\nClient: Head of Compliance + General Counsel + external Special Committee. IB policy is strict: all insider-trading suspicions = automatic Suspend pending investigation (NOT termination) + regulator notification. IB doesn't self-decide before regulator verdict — audit trail is critical.",
+    "body_uk": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen мав доступ до NextEra × PowerFlex $2.4B deal у deal room. Через 3 дні до public announcement — незвична покупка PowerFlex акцій на маленькому retail-акаунті... який виявився братом-студентом David-а. Обидва живуть за однією адресою. Через 5 днів після announcement David купує Rolex за $47K.\n\nКлієнт: Head of Compliance + General Counsel + external Special Committee. Політика IB жорстка: всі підозри insider trading = автоматично Suspend pending investigation (НЕ termination) + повідомлення регулятора. IB не приймає self-decisions до вироку регулятора — audit trail критичний.",
+    "body_en": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen had access to the NextEra × PowerFlex $2.4B deal in the deal room. Three days before public announcement — unusual PowerFlex share purchase on a small retail account... which turned out to be David's student brother. Both live at the same address. Five days post-announcement David bought a Rolex for $47K.\n\nClient: Head of Compliance + General Counsel + external Special Committee. IB policy is strict: all insider-trading suspicions = automatic Suspend pending investigation (NOT termination) + regulator notification. IB doesn't self-decide before regulator verdict — audit trail is critical.",
     "start_btn_uk": "▶ Розпочати compliance investigation",
     "start_btn_en": "▶ Start compliance investigation",
     "candidate": {
@@ -107,8 +107,8 @@
         "time_cost": 90,
         "weight": "diagnostic",
         "ui_component": "invoice-analysis",
-        "clue_uk": "Michael Chen (22, student) відкрив маленький retail-акаунт з $200 initial deposit у березні 2025. Ні одної покупки за рік. Аж 3 днів до announcement — купив 4 200 PowerFlex за $42K (позика від «family friend»). Через день після announcement — продав з $18K прибутком. Це стрибок ~44%.",
-        "clue_en": "Michael Chen (22, student) opened small retail account with $200 initial deposit in March 2025. No purchases for a year. Then 3 days before announcement — bought 4,200 PowerFlex at $42K (loan from «family friend»). One day post-announcement — sold with $18K profit. ~44% jump.",
+        "clue_uk": "Michael Chen (22, student) відкрив маленький retail-акаунт з $200 initial deposit у березні 2025. Ні одної покупки за рік. Аж 3 днів до announcement — купив 4 200 PowerFlex за $30K (позика від «family friend»). Через день після announcement — продав з $85K прибутком. Це стрибок ~44%.",
+        "clue_en": "Michael Chen (22, student) opened small retail account with $200 initial deposit in March 2025. No purchases for a year. Then 3 days before announcement — bought 4,200 PowerFlex at $30K (loan from «family friend»). One day post-announcement — sold with $85K profit. ~44% jump.",
         "invoices": [
           {
             "number": "TRD-001",
@@ -127,21 +127,21 @@
           {
             "number": "TRD-106",
             "date": "2026-04-22 (D-3)",
-            "vendor": "Michael Chen · BOUGHT 4,200 PWRX @ \\$10.02 = \\$42,084",
-            "amount": "$42,084",
+            "vendor": "Michael Chen · BOUGHT 4,200 PWRX @ \\$10.02 = \\$30,000",
+            "amount": "$30,000",
             "approver": "wire in from personal 'friend' loan",
             "highlight": true
           },
           {
             "number": "TRD-107",
             "date": "2026-04-26 (D+1)",
-            "vendor": "Michael Chen · SOLD 4,200 PWRX @ \\$14.34 = \\$60,228",
-            "amount": "$60,228 (+$18K profit)",
+            "vendor": "Michael Chen · SOLD 4,200 PWRX @ \\$14.34 = \\$60,000",
+            "amount": "$60,000 (+$85K profit)",
             "approver": "settled",
             "highlight": true
           }
         ],
-        "invoices_note_uk": "🚩 22-річний студент з ЦЕР portfolio-history робить ONE $42K purchase аж перед M&A і продає за 4 дні з $18K прибутком. Ймовірність випадковості = мікроскопічна."
+        "invoices_note_uk": "🚩 22-річний студент з ЦЕР portfolio-history робить ONE $30K purchase аж перед M&A і продає за 4 дні з $85K прибутком. Ймовірність випадковості = мікроскопічна."
       },
       {
         "id": "address_check",
@@ -185,21 +185,21 @@
         "name_uk": "Full money flow · profit to Rolex",
         "name_en": "Full money flow · profit to Rolex",
         "provider": "Fidelity + Chase + Rolex Boutique NY",
-        "desc_uk": "Куди йшли $18K прибутку?",
-        "desc_en": "Where did $18K profit go?",
+        "desc_uk": "Куди йшли $85K прибутку?",
+        "desc_en": "Where did $85K profit go?",
         "correct": true,
         "points": 22,
         "time_cost": 90,
         "weight": "diagnostic",
         "ui_component": "invoice-analysis",
-        "clue_uk": "$18K вивів Michael → сімейну кредитку → покупка Rolex Datejust на $8K David-ом через 5 днів після announcement (Rolex Boutique receipt public via Instagram). Плюс $10K на Airbnb Bali 2 тижні пізніше.",
-        "clue_en": "$18K withdrew Michael → shared family credit card → David bought Rolex Datejust $8K 5 days post-announcement (Rolex Boutique receipt public via Instagram). Plus $10K on Airbnb Bali 2 weeks later.",
+        "clue_uk": "$85K вивів Michael → сімейну кредитку → покупка Rolex Datejust на $47K David-ом через 5 днів після announcement (Rolex Boutique receipt public via Instagram). Плюс $10K на Airbnb Bali 2 тижні пізніше.",
+        "clue_en": "$85K withdrew Michael → shared family credit card → David bought Rolex Datejust $47K 5 days post-announcement (Rolex Boutique receipt public via Instagram). Plus $10K on Airbnb Bali 2 weeks later.",
         "invoices": [
           {
             "number": "WD-2026-4211",
             "date": "2026-04-27",
-            "vendor": "Michael Chen withdrew \\$18K from Fidelity → Chase шarкоd family card XXXX-4287",
-            "amount": "$18,000",
+            "vendor": "Michael Chen withdrew \\$85K from Fidelity → Chase шarкоd family card XXXX-4287",
+            "amount": "$85,000",
             "approver": "settled",
             "highlight": true
           },
@@ -207,7 +207,7 @@
             "number": "CC-2026-8371",
             "date": "2026-04-30 (D+5)",
             "vendor": "David Chen · Rolex Boutique NY · Rolex Datejust 41",
-            "amount": "$8,200",
+            "amount": "$47,000",
             "approver": "Chase family card XXXX-4287",
             "highlight": true
           },
@@ -215,14 +215,14 @@
             "number": "CC-2026-8412",
             "date": "2026-05-12",
             "vendor": "David Chen · Airbnb 14-day villa Bali",
-            "amount": "$4,850",
+            "amount": "$5,000",
             "approver": "Chase family card XXXX-4287"
           },
           {
             "number": "CC-2026-8465",
             "date": "2026-05-14",
             "vendor": "David Chen · United BusFirst flights BUS-DPS",
-            "amount": "$5,200",
+            "amount": "$5,000",
             "approver": "Chase family card XXXX-4287"
           }
         ],
@@ -268,8 +268,8 @@
         "time_cost": 45,
         "weight": "supporting",
         "ui_component": "matches",
-        "clue_uk": "Michael — undergrad Junior у NYU (Communications, GPA 3.1). Немає business background. Never worked у finance. Заявлена «family friend loan» на $42K — highly improbable.",
-        "clue_en": "Michael — undergrad Junior at NYU (Communications, GPA 3.1). No business background. Never worked in finance. Claimed «family friend loan» of $42K — highly improbable.",
+        "clue_uk": "Michael — undergrad Junior у NYU (Communications, GPA 3.1). Немає business background. Never worked у finance. Заявлена «family friend loan» на $30K — highly improbable.",
+        "clue_en": "Michael — undergrad Junior at NYU (Communications, GPA 3.1). No business background. Never worked in finance. Claimed «family friend loan» of $30K — highly improbable.",
         "matches": [
           {
             "site": "NYU public directory · Michael Chen '27",
@@ -433,8 +433,8 @@
         "time_cost": 60,
         "weight": "supporting",
         "ui_component": "matches",
-        "clue_uk": "Bloomberg 20 квітня опублікував slight speculation — «NextEra може bo interested у renewable target». Ніщо специфічне про PowerFlex. Це NOT valid defense for Michael's specific $42K PWRX purchase.",
-        "clue_en": "Bloomberg April 20 published slight speculation — «NextEra may be interested in renewable target». Nothing specific about PowerFlex. NOT valid defense for Michael's specific $42K PWRX purchase.",
+        "clue_uk": "Bloomberg 20 квітня опублікував slight speculation — «NextEra може bo interested у renewable target». Ніщо специфічне про PowerFlex. Це NOT valid defense for Michael's specific $30K PWRX purchase.",
+        "clue_en": "Bloomberg April 20 published slight speculation — «NextEra may be interested in renewable target». Nothing specific about PowerFlex. NOT valid defense for Michael's specific $30K PWRX purchase.",
         "matches": [
           {
             "site": "Bloomberg 20 April 2026",
@@ -481,8 +481,8 @@
       {
         "id": "e5",
         "date": "2026-04-22 (D-3)",
-        "text_uk": "Michael купує 4 200 PWRX на $42K — перша велика покупка у житті",
-        "text_en": "Michael buys 4,200 PWRX for $42K — first large purchase of his life"
+        "text_uk": "Michael купує 4 200 PWRX на $30K — перша велика покупка у житті",
+        "text_en": "Michael buys 4,200 PWRX for $30K — first large purchase of his life"
       },
       {
         "id": "e6",
@@ -493,8 +493,8 @@
       {
         "id": "e7",
         "date": "2026-04-30 (D+5)",
-        "text_uk": "David купує Rolex Datejust $8K через сімейну credit card — money-trail complete",
-        "text_en": "David buys Rolex Datejust $8K via shared family credit card — money trail complete"
+        "text_uk": "David купує Rolex Datejust $47K через сімейну credit card — money-trail complete",
+        "text_en": "David buys Rolex Datejust $47K via shared family credit card — money trail complete"
       }
     ],
     "correct_order": [
@@ -541,8 +541,8 @@
             "text_en": "Maybe — if Michael can show independent research",
             "points": -15,
             "correct": false,
-            "feedback_uk": "❌ 22-річний Communications студент з $200 typical trading history раптом купує $42K окремої стrategічної позиції за 3 дні до announcement — burden of proof crushed.",
-            "feedback_en": "❌ 22-year-old Communications student with $200 typical trading history suddenly buys $42K single strategic position 3 days before announcement — burden of proof crushed."
+            "feedback_uk": "❌ 22-річний Communications студент з $200 typical trading history раптом купує $30K окремої стrategічної позиції за 3 дні до announcement — burden of proof crushed.",
+            "feedback_en": "❌ 22-year-old Communications student with $200 typical trading history suddenly buys $30K single strategic position 3 days before announcement — burden of proof crushed."
           },
           {
             "text_uk": "Тільки якщо David не мав фінансової outgoing benefit",
@@ -699,8 +699,8 @@
       {
         "id": "ev_trade_pattern",
         "weight": 5,
-        "text_uk": "Michael Chen (22, student, $200 baseline) робить UNIQUE $42K PWRX purchase 3 дні до announcement, продає з $18K profit 1 день після — outlier у сімьорах десятків тисяч retail-акаунтів",
-        "text_en": "Michael Chen (22, student, $200 baseline) makes UNIQUE $42K PWRX purchase 3 days before announcement, sells with $18K profit 1 day after — outlier across tens of thousands retail accounts",
+        "text_uk": "Michael Chen (22, student, $200 baseline) робить UNIQUE $30K PWRX purchase 3 дні до announcement, продає з $85K profit 1 день після — outlier у сімьорах десятків тисяч retail-акаунтів",
+        "text_en": "Michael Chen (22, student, $200 baseline) makes UNIQUE $30K PWRX purchase 3 days before announcement, sells with $85K profit 1 day after — outlier across tens of thousands retail accounts",
         "custody": {
           "collected_from_en": "Internal audit archive",
           "collected_from_uk": "Внутрішній архів аудиту",
@@ -747,8 +747,8 @@
       {
         "id": "ev_money_flow",
         "weight": 5,
-        "text_uk": "$18K profit → shared family credit card → David's $8K Rolex + $10K Bali trip — money-flow closes the loop",
-        "text_en": "$18K profit → shared family credit card → David's $8K Rolex + $10K Bali trip — money flow closes the loop",
+        "text_uk": "$85K profit → shared family credit card → David's $47K Rolex + $10K Bali trip — money-flow closes the loop",
+        "text_en": "$85K profit → shared family credit card → David's $47K Rolex + $10K Bali trip — money flow closes the loop",
         "custody": {
           "collected_from_en": "SAP financial export / bank statement (court order)",
           "collected_from_uk": "SAP фін-експорт / банківська виписка (за ухвалою)",
@@ -811,8 +811,8 @@
       {
         "id": "ev_michael_bg",
         "weight": 3,
-        "text_uk": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $42K — highly improbable",
-        "text_en": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $42K — highly improbable",
+        "text_uk": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $30K — highly improbable",
+        "text_en": "Michael — Communications undergrad, GPA 3.1, no finance background, no independent income. Claimed «friend loan» $30K — highly improbable",
         "custody": {
           "collected_from_en": "Corporate email server / IT-Security export",
           "collected_from_uk": "Корпоративний email-сервер / IT-Security експорт",
@@ -878,8 +878,8 @@
         "points": 50,
         "text_uk": "Suspend David pending investigation + Notify SEC + FINRA + NYSE + Preserve evidence (litigation hold) + External Legal Counsel takes over",
         "text_en": "Suspend David pending investigation + Notify SEC + FINRA + NYSE + Preserve evidence (litigation hold) + External Legal Counsel takes over",
-        "feedback_uk": "✓ Правильно. Це exact IB compliance playbook. Всі 4 pillars: suspension (не termination), regulatory notification (mandatory), external counsel (не self-investigation), evidence preservation (litigation hold).",
-        "feedback_en": "✓ Correct. Exact IB compliance playbook. All 4 pillars: suspension (not termination), regulatory notification (mandatory), external counsel (not self-investigation), evidence preservation (litigation hold)."
+        "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Це exact IB compliance playbook. Всі 4 pillars: suspension (не termination), regulatory notification (mandatory), external counsel (не self-investigation), evidence preservation (litigation hold).",
+        "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Exact IB compliance playbook. All 4 pillars: suspension (not termination), regulatory notification (mandatory), external counsel (not self-investigation), evidence preservation (litigation hold)."
       },
       {
         "id": "terminate_immediate",
@@ -888,8 +888,8 @@
         "policy_breach": true,
         "text_uk": "Terminate David immediately + Public Announcement",
         "text_en": "Terminate David immediately + Public Announcement",
-        "feedback_uk": "❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions.",
-        "feedback_en": "❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions."
+        "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions.",
+        "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions."
       },
       {
         "id": "internal_only",
@@ -974,8 +974,8 @@
     "evidence": {
       "target_count": 6,
       "target_max": 6,
-      "reason_uk": "Diagnostic-6: deal-room MNPI access, trade pattern (unique $42K purchase з $200 baseline), family address, money flow full, Chinese Wall breach, Signal metadata. Найчастіше пропускають Signal metadata — сприймають як просто повідомлення, але це доказ pre-meditation (не спонтанна порада, а planned insider tip).",
-      "reason_en": "Diagnostic-6: deal-room MNPI access, trade pattern (unique $42K purchase from $200 baseline), family address, full money flow, Chinese Wall breach, Signal metadata. Most commonly missed: Signal metadata — perceived as just messaging, but it's proof of pre-meditation (not spontaneous tip, planned insider deal)."
+      "reason_uk": "Diagnostic-6: deal-room MNPI access, trade pattern (unique $30K purchase з $200 baseline), family address, money flow full, Chinese Wall breach, Signal metadata. Найчастіше пропускають Signal metadata — сприймають як просто повідомлення, але це доказ pre-meditation (не спонтанна порада, а planned insider tip).",
+      "reason_en": "Diagnostic-6: deal-room MNPI access, trade pattern (unique $30K purchase from $200 baseline), family address, full money flow, Chinese Wall breach, Signal metadata. Most commonly missed: Signal metadata — perceived as just messaging, but it's proof of pre-meditation (not spontaneous tip, planned insider deal)."
     },
     "policy": {
       "target_pct": 100,

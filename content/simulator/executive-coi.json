@@ -32,7 +32,7 @@
     "title_uk": "Розслідування · високий ризик · Panama-based structure",
     "title_en": "Investigation · high risk · Panama-based structure",
     "instruction_uk": "Копай глибоко. Мінімум 6 інструментів. CFO публічної компанії — це рівень регуляторного enforcement. Помилка = SEC action проти MedNext + втрата твоєї compliance-ліцензії.",
-    "instruction_en": "Dig deep. Minimum 6 tools. A public-company CFO means regulatory-enforcement exposure. A mistake here = SEC enforcement action against MedNext + loss of your compliance license.",
+    "instruction_en": "Dig deep. Minimum 6 tools. A public-company CFO means regulatory-enforcement exposure. A mistake here = SEC enforcement action against MedNext + loss of your individual officer accountability.",
     "next_btn_uk": "Далі → Хронологія",
     "next_btn_en": "Next → Timeline",
     "min_tools_used": 6,
@@ -151,8 +151,8 @@
         "time_cost": 90,
         "weight": "diagnostic",
         "ui_component": "meeting-minutes",
-        "clue_uk": "У 10-K 2025 David P. підписав щорічну disclosure form: «no material outside interests in target sector companies». ЖОДНОЇ згадки Panama trust чи BluePeak. Це під присягою — Sarbanes-Oxley §302.",
-        "clue_en": "In 2025 10-K David P. signed the annual disclosure form: «no material outside interests in target sector companies». ZERO mention of Panama trust or BluePeak. This is under oath — Sarbanes-Oxley §302.",
+        "clue_uk": "У 10-K 2025 David P. підписав щорічну disclosure form: «no material outside interests in target sector companies». ЖОДНОЇ згадки Panama trust чи BluePeak. Це під присягою — Item 404 (related-party disclosure).",
+        "clue_en": "In 2025 10-K David P. signed the annual disclosure form: «no material outside interests in target sector companies». ZERO mention of Panama trust or BluePeak. This is under oath — Item 404 (related-party disclosure).",
         "doc": {
           "title": "MedNext Corp 10-K 2025 · CFO Disclosure Statement (Item 15)",
           "date": "2025-12-31 (fiscal year end)",
@@ -161,12 +161,12 @@
           "classification": "PUBLIC · SEC EDGAR filing",
           "paragraphs": [
             {
-              "text_uk": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Sarbanes-Oxley §302 that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P.",
-              "text_en": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Sarbanes-Oxley §302 that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P."
+              "text_uk": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Item 404 (related-party disclosure) that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P.",
+              "text_en": "Item 15 · Related-Party Transactions and Independent Interests: «The CFO certifies under Item 404 (related-party disclosure) that (a) no material undisclosed compensation arrangements exist; (b) no equity interests exceeding 1% in any competing or target-sector entity are held directly or beneficially; (c) all disclosures required under Section 16 are complete.» — Signed: David P."
             },
             {
-              "text_uk": "⚠ Cross-reference з Panama Papers + SEC 13F: 4.2% BioLink через ланцюжок Panama trust → Cayman → Delaware. Це DIRECTLY суперечить (b) declaration. Sarbanes-Oxley §302 порушення = personal criminal liability.",
-              "text_en": "⚠ Cross-reference with Panama Papers + SEC 13F: 4.2% BioLink via Panama trust → Cayman → Delaware chain. This DIRECTLY contradicts (b) declaration. Sarbanes-Oxley §302 breach = personal criminal liability."
+              "text_uk": "⚠ Cross-reference з Panama Papers + SEC 13F: 4.2% BioLink через ланцюжок Panama trust → Cayman → Delaware. Це DIRECTLY суперечить (b) declaration. Item 404 (related-party disclosure) порушення = personal criminal liability.",
+              "text_en": "⚠ Cross-reference with Panama Papers + SEC 13F: 4.2% BioLink via Panama trust → Cayman → Delaware chain. This DIRECTLY contradicts (b) declaration. Item 404 (related-party disclosure) breach = personal criminal liability."
             }
           ]
         }
@@ -202,8 +202,8 @@
               "text_en": "Lead role: David P., CFO. He built valuation model, negotiated with BioLink CEO, prepared board deck. Board vote scheduled 2026-07-27. Expected: David P. presents and recommends approval."
             },
             {
-              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За SEC Section 10b-5 і Rule 14e-3 це PERFECT case для insider trading + material undisclosed COI.",
-              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under SEC Section 10b-5 and Rule 14e-3 this is a PERFECT case for insider trading + material undisclosed COI."
+              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За SEC Section 10b-5 і Rule 10b-5 + Reg FD + Item 404 це PERFECT case для insider trading + material undisclosed COI.",
+              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under SEC Section 10b-5 and Rule 10b-5 + Reg FD + Item 404 this is a PERFECT case for insider trading + material undisclosed COI."
             }
           ]
         }
@@ -271,7 +271,7 @@
             "approver": "board minutes"
           }
         ],
-        "invoices_note_uk": "5 з 7 зустрічей — приватні restaurant meetings, expensed як «business dev» без деталей. Це sistematic pattern coordination BEFORE acquisition announcement.",
+        "invoices_note_uk": "5 з 7 зустрічей — приватні restaurant meetings, expensed як «business dev» без деталей. Це систематичний pattern coordination BEFORE acquisition announcement.",
         "invoices_note_en": "5 of 7 meetings — private restaurant meetings, expensed as «business dev» without detail. Systematic pattern of coordination BEFORE acquisition announcement."
       },
       {
@@ -285,7 +285,7 @@
         "time_cost": 45,
         "weight": "supporting",
         "ui_component": "matches",
-        "clue_uk": "Connect з BioLink CEO datto Jan 2024 (за 2 роки до acquisition). Endorsement patterns показують continuous professional contact.",
+        "clue_uk": "Connect з BioLink CEO у січні 2024 (за 2 роки до acquisition). Endorsement patterns показують continuous professional contact.",
         "clue_en": "Connected with BioLink CEO dated Jan 2024 (2 years before acquisition). Endorsement patterns show continuous professional contact.",
         "matches": [
           {
@@ -309,7 +309,7 @@
         "time_cost": 60,
         "weight": "supporting",
         "ui_component": "matches",
-        "clue_uk": "Sarah P. — colleagues records, formal beneficiary Silverwood. Не має власного business background, is straw / nominee.",
+        "clue_uk": "Sarah P. — публічними записами, formal beneficiary Silverwood. Не має власного business background — straw / nominee.",
         "clue_en": "Sarah P. — no independent records, formal beneficiary of Silverwood. No business background of her own, is a straw / nominee.",
         "matches": [
           {
@@ -339,7 +339,7 @@
         "time_cost": 60,
         "weight": "diagnostic",
         "ui_component": "invoice-analysis",
-        "clue_uk": "BluePeak систематично accumulated BioLink shares protects 8 місяців перед acquisition. Останні покупки — за 3 тижні до board vote (very suspicious timing).",
+        "clue_uk": "BluePeak систематично накопичував BioLink shares протягом 8 місяців перед acquisition. Останні покупки — за 3 тижні до board vote (very suspicious timing).",
         "clue_en": "BluePeak systematically accumulated BioLink shares over 8 months before acquisition. Latest purchases — 3 weeks before board vote (very suspicious timing).",
         "invoices": [
           {
@@ -387,7 +387,7 @@
         "time_cost": 45,
         "weight": "supporting",
         "ui_component": "matches",
-        "clue_uk": "Silverwood trust існує з 2018. David P. НЕ декларував його у жодному з 6 попередніх років. Це не одноразова помилка — це sistematic non-disclosure.",
+        "clue_uk": "Silverwood trust існує з 2018. David P. НЕ декларував його у жодному з 6 попередніх років. Це не одноразова помилка — це систематичний non-disclosure.",
         "clue_en": "Silverwood trust exists since 2018. David P. did NOT disclose in any of the 6 prior years. Not one-off mistake — systematic non-disclosure.",
         "matches": [
           {
@@ -544,8 +544,8 @@
             "text_en": "No — under SEC Rule 16a-1(a)(2) spouse's assets are considered CFO's beneficial ownership. Plus he's trustee with control.",
             "points": 25,
             "correct": true,
-            "feedback_uk": "✓ Правильно. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Sarbanes-Oxley §302 не має цієї exception.",
-            "feedback_en": "✓ Correct. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Sarbanes-Oxley §302 has no such exception."
+            "feedback_uk": "✓ Правильно. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Item 404 (related-party disclosure) не має цієї exception.",
+            "feedback_en": "✓ Correct. SEC clearly defines beneficial ownership to include spouse + trust interests where insider has control. Item 404 (related-party disclosure) has no such exception."
           },
           {
             "text_uk": "Можливо — залежить від конкретної formulation trust",
@@ -556,7 +556,7 @@
             "feedback_en": "❌ No such «flexibility». SEC rules are clear."
           },
           {
-            "text_uk": "Тільки якщо він може довести отсутність benefit",
+            "text_uk": "Тільки якщо він може довести відсутність benefit",
             "text_en": "Only if he can prove absence of benefit",
             "points": -10,
             "correct": false,
@@ -579,12 +579,12 @@
             "feedback_en": "❌ No. Section 10b-5 prohibits trading on material non-public information (MNPI). Timing exactly with MNPI available = insider trading."
           },
           {
-            "text_uk": "Классическое insider trading за Section 10b-5 + Rule 14e-3",
-            "text_en": "Classic insider trading under Section 10b-5 + Rule 14e-3",
+            "text_uk": "Классическое insider trading за Section 10b-5 + Rule 10b-5 + Reg FD + Item 404",
+            "text_en": "Classic insider trading under Section 10b-5 + Rule 10b-5 + Reg FD + Item 404",
             "points": 25,
             "correct": true,
-            "feedback_uk": "✓ Правильно. Rule 14e-3 — tender-offer-specific. Section 10b-5 covers MNPI. Обидва apply. Це criminal case.",
-            "feedback_en": "✓ Correct. Rule 14e-3 — tender-offer-specific. Section 10b-5 covers MNPI. Both apply. Criminal case."
+            "feedback_uk": "✓ Правильно. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Section 10b-5 covers MNPI. Обидва apply. Це criminal case.",
+            "feedback_en": "✓ Correct. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Section 10b-5 covers MNPI. Both apply. Criminal case."
           },
           {
             "text_uk": "Suspicious але потребує proof of nexus",
@@ -638,7 +638,7 @@
             "text_en": "Continue monitoring without action until board vote",
             "points": -30,
             "correct": false,
-            "feedback_uk": "❌ Знання без action = complicity. Board повинен halt vote немедленно.",
+            "feedback_uk": "❌ Знання без action = complicity. Board повинен зупинити голосування негайно.",
             "feedback_en": "❌ Knowledge without action = complicity. Board must halt vote immediately."
           }
         ]
@@ -713,8 +713,8 @@
       {
         "id": "ev_10k_lie",
         "weight": 5,
-        "text_uk": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction з structure. Sarbanes-Oxley §302 = personal criminal liability",
-        "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Sarbanes-Oxley §302 = personal criminal liability",
+        "text_uk": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction з structure. Item 404 (related-party disclosure) = personal criminal liability",
+        "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Item 404 (related-party disclosure) = personal criminal liability",
         "custody": {
           "collected_from_uk": "SEC EDGAR — офіційне подання MedNext 10-K 2025",
           "collected_from_en": "SEC EDGAR — official MedNext 10-K 2025 filing",
@@ -729,8 +729,8 @@
       {
         "id": "ev_insider_trading",
         "weight": 5,
-        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
-        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
+        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 10b-5 + Reg FD + Item 404 classic insider trading",
+        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 10b-5 + Reg FD + Item 404 classic insider trading",
         "custody": {
           "collected_from_uk": "SEC EDGAR + Bloomberg Terminal (публічні дані)",
           "collected_from_en": "SEC EDGAR + Bloomberg Terminal (public market data)",
@@ -745,7 +745,7 @@
       {
         "id": "ev_7_year_pattern",
         "weight": 4,
-        "text_uk": "David P. НЕ декларував Silverwood trust у ВСІХ 7 попередніх 10-K (2018-2024) — sistematic non-disclosure",
+        "text_uk": "David P. НЕ декларував Silverwood trust у ВСІХ 7 попередніх 10-K (2018-2024) — систематичний non-disclosure",
         "text_en": "David P. did NOT disclose Silverwood trust in ALL 7 prior 10-Ks (2018-2024) — systematic non-disclosure",
         "custody": {
           "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
@@ -870,8 +870,8 @@
           "integrity": "unverified",
           "confidence": "low",
           "evidence_class": "testimony",
-          "warning_uk": "⚠ Off-record, немає запису. Юридично неприйнятне до SEC self-disclosure. Використовуй як pivot-signal, не як докaz.",
-          "warning_en": "⚠ Off-record, no recording. Legally inadmissible for SEC self-disclosure. Use as pivot-signal, not as evidence."
+          "warning_uk": "⚠ Off-record, немає запису. Юридично неприйнятне до external counsel → Seaboard cooperation submission. Використовуй як pivot-signal, не як доказ.",
+          "warning_en": "⚠ Off-record, no recording. Legally inadmissible for external counsel → Seaboard cooperation submission. Use as pivot-signal, not as evidence."
         }
       },
       {
@@ -888,7 +888,7 @@
           "integrity": "broken",
           "confidence": "low",
           "evidence_class": "secondary",
-          "warning_uk": "⛔ BROKEN chain: скриншот без headers, sender ID, DKIM/SPF hash. Може бути легко підробленим. НЕ цитувати у memo — цитування зіпсує кейс у court.",
+          "warning_uk": "⛔ BROKEN chain: скриншот без headers, sender ID, DKIM/SPF hash. Може бути легко підробленим. НЕ цитувати у memo — цитування зіпсує кейс в суді.",
           "warning_en": "⛔ BROKEN chain: screenshot with no headers, sender ID, DKIM/SPF hash. Easily fabricated. DO NOT cite in memo — citing will contaminate the case in court."
         }
       },
@@ -932,8 +932,8 @@
         "points": 50,
         "text_uk": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
         "text_en": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
-        "feedback_uk": "✓ Правильно. Політика ЯКРАЗ це вимагає. External counsel = no self-tampering. Halt vote = зупиняє insider trading exposure. SEC notification = protects компанію.",
-        "feedback_en": "✓ Correct. Policy REQUIRES exactly this. External counsel = no self-tampering. Halt vote = stops insider trading exposure. SEC notification = protects the company."
+        "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика ЯКРАЗ це вимагає. External counsel = no self-tampering. Halt vote = зупиняє insider trading exposure. SEC notification = protects компанію.",
+        "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy REQUIRES exactly this. External counsel = no self-tampering. Halt vote = stops insider trading exposure. SEC notification = protects the company."
       },
       {
         "id": "terminate_immediate",
@@ -942,8 +942,8 @@
         "policy_breach": true,
         "text_uk": "Terminate David P. immediately + Public Announcement",
         "text_en": "Terminate David P. immediately + Public Announcement",
-        "feedback_uk": "❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash.",
-        "feedback_en": "❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash."
+        "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash.",
+        "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash."
       },
       {
         "id": "internal_review",
@@ -952,7 +952,7 @@
         "policy_breach": true,
         "text_uk": "Internal Board review + Confront David P. privately",
         "text_en": "Internal Board review + Confront David P. privately",
-        "feedback_uk": "❌ POLICY BREACH. Self-investigation = SEC tampering charges на весь board. Тіло = evidence destruction opportunity for David P.",
+        "feedback_uk": "❌ POLICY BREACH. Self-investigation = SEC tampering charges на весь board. Затримка = evidence destruction opportunity for David P.",
         "feedback_en": "❌ POLICY BREACH. Self-investigation = SEC tampering charges on the whole board. Also = evidence destruction opportunity for David P."
       },
       {
@@ -1038,8 +1038,8 @@
     },
     "policy": {
       "target_pct": 100,
-      "reason_uk": "MedNext + SEC policy: COI цього масштабу -> ескалація до Board + Legal + SEC self-disclosure (proactive) ПЕРЕД публічним announcement. Просте REJECT/TERMINATE без self-disclosure = policy breach (-40) і збільшує SEC fine 3x за приховування.",
-      "reason_en": "MedNext + SEC policy: COI of this scale -> escalate to Board + Legal + SEC self-disclosure (proactive) BEFORE public announcement. Plain REJECT/TERMINATE without self-disclosure = policy breach (-40) and 3x SEC fine multiplier for concealment."
+      "reason_uk": "MedNext + SEC policy: COI цього масштабу -> ескалація до Board + Legal + external counsel → Seaboard cooperation submission ПЕРЕД публічним announcement. Просте REJECT/TERMINATE без self-disclosure = policy breach (-40) і збільшує SEC fine 3x за приховування.",
+      "reason_en": "MedNext + SEC policy: COI of this scale -> escalate to Board + Legal + external counsel → Seaboard cooperation submission BEFORE public announcement. Plain REJECT/TERMINATE without self-disclosure = policy breach (-40) and 3x SEC fine multiplier for concealment."
     },
     "questions": {
       "target_pct": 100,
@@ -1049,7 +1049,7 @@
     "custody": {
       "broken_cite_target": 0,
       "unverified_cite_target": 1,
-      "reason_uk": "Цей кейс тестує оцінку якості джерел. Broken-chain evidence (leaked screenshot, unsigned draft) НЕ можна цитувати — це руйнує кейс у court. Unverified testimony (whistleblower, board rumor) — 1 максимум і тільки з крос-верифікацією primary-документами.",
+      "reason_uk": "Цей кейс тестує оцінку якості джерел. Broken-chain evidence (leaked screenshot, unsigned draft) НЕ можна цитувати — це руйнує кейс в суді. Unverified testimony (whistleblower, board rumor) — 1 максимум і тільки з крос-верифікацією primary-документами.",
       "reason_en": "This case tests source-quality assessment. Broken-chain evidence (leaked screenshot, unsigned draft) MUST NOT be cited — contaminates the case in court. Unverified testimony (whistleblower, board rumor) — 1 max and only with primary-doc cross-verification."
     }
   }

@@ -918,8 +918,8 @@
         "points": 40,
         "text_uk": "Escalate to Legal + Suspend pending investigation",
         "text_en": "Escalate to Legal + Suspend pending investigation",
-        "feedback_uk": "✓ Правильно. Політика вимагає Legal-ескалації ДО термінації.",
-        "feedback_en": "✓ Correct. Policy requires Legal escalation BEFORE termination."
+        "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика вимагає Legal-ескалації ДО термінації.",
+        "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy requires Legal escalation BEFORE termination."
       },
       {
         "id": "terminate_report",
@@ -928,8 +928,8 @@
         "policy_breach": true,
         "text_uk": "Terminate immediately + Report to authorities",
         "text_en": "Terminate immediately + Report to authorities",
-        "feedback_uk": "❌ POLICY BREACH. Термінація ДО Legal-ескалації ламає ланцюжок доказовості.",
-        "feedback_en": "❌ POLICY BREACH. Termination BEFORE Legal escalation breaks the evidentiary chain."
+        "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH. Термінація ДО Legal-ескалації ламає ланцюжок доказовості.",
+        "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH. Termination BEFORE Legal escalation breaks the evidentiary chain."
       },
       {
         "id": "terminate_internal",
