@@ -3193,7 +3193,9 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 }
 .tool-modal__close {
   background: none; border: none; color: var(--text-mute);
-  font-size: 1.2rem; cursor: pointer; padding: .3rem .6rem;
+  font-size: 1.4rem; cursor: pointer; padding: .5rem .8rem;
+  position: relative; z-index: 3;
+  line-height: 1;
 }
 .tool-modal__close:hover { color: var(--red); }
 .tool-modal__ui { padding: 1.5rem; overflow-y: auto; max-height: 55vh; }

@@ -9,7 +9,11 @@
     "client_uk": "IT-компанія «TechCorp»",
     "client_en": "IT company «TechCorp»",
     "position": "CFO",
+    "position_uk": "CFO",
+    "position_en": "CFO",
     "salary": "$180K/рік · $180K/year",
+    "salary_uk": "$180K/рік",
+    "salary_en": "$180K/year",
     "candidate": {
       "name_uk": "Роман Морозов",
       "name_en": "Roman Morozov",

@@ -201,8 +201,8 @@ function renderBriefing() {
             <h2>${escapeHtml(tr(cand,'name'))}</h2>
             <div class="game-brief__meta">
               <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
-              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(br.position)}</div>
-              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(br.salary)}</div>
+              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(tr(br,'position') || br.position || '')}</div>
+              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(tr(br,'salary') || br.salary || '')}</div>
               <div><span>Email</span><code>${escapeHtml(cand.email)}</code></div>
               <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>
             </div>
@@ -273,7 +273,7 @@ function renderPhase2() {
     ${progressBar('phase2')}
     <div class="game-phase">
       <div class="game-phase__head">
-        <div class="game-phase__num">02 / 04</div>
+        <div class="game-phase__num">02 / ${State.scenario.timeline_phase ? '05' : '04'}</div>
         <h2>${escapeHtml(tr(p,'title'))}</h2>
         <p>${escapeHtml(tr(p,'instruction'))}</p>
       </div>
@@ -1334,7 +1334,7 @@ function renderTimelinePhase() {
     ${progressBar('timeline')}
     <div class="game-phase game-phase--timeline">
       <div class="game-phase__head">
-        <div class="game-phase__num">2.5 / 05</div>
+        <div class="game-phase__num">03 / 05</div>
         <h2>${escapeHtml(title)}</h2>
         <p>${escapeHtml(instr)}</p>
       </div>
@@ -1468,7 +1468,7 @@ function renderPhase3() {
     ${progressBar('phase3')}
     <div class="game-phase">
       <div class="game-phase__head">
-        <div class="game-phase__num">03 / 04</div>
+        <div class="game-phase__num">${State.scenario.timeline_phase ? '04 / 05' : '03 / 04'}</div>
         <h2>${escapeHtml(tr(p,'title'))}</h2>
         <p>${escapeHtml(tr(p,'instruction'))}</p>
       </div>
@@ -1525,7 +1525,7 @@ function renderCitationPhase() {
     ${progressBar('phase3')}
     <div class="game-phase game-phase--cite">
       <div class="game-phase__head">
-        <div class="game-phase__num">3.5 / 04</div>
+        <div class="game-phase__num">${State.scenario.timeline_phase ? '04 / 05' : '03 / 04'}</div>
         <h2>${escapeHtml(tr(cp,'title'))}</h2>
         <p>${escapeHtml(tr(cp,'instruction'))}</p>
         <div class="cite-counter">${LANG()==='en'?'Picked':'Обрано'}: <strong id="cite-count">${picks.size}</strong> / ${max}</div>
@@ -1872,7 +1872,7 @@ function renderPhase4() {
     ${progressBar('phase4')}
     <div class="game-phase game-phase--verdict">
       <div class="game-phase__head">
-        <div class="game-phase__num">04 / 04</div>
+        <div class="game-phase__num">${State.scenario.timeline_phase ? '05 / 05' : '04 / 04'}</div>
         <h2>${escapeHtml(tr(p,'title'))}</h2>
         <p>${escapeHtml(tr(p,'instruction'))}</p>
       </div>

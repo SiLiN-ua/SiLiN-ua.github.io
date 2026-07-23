@@ -51,6 +51,11 @@
     document.querySelectorAll('.nav__lang button').forEach(b => {
       b.classList.toggle('active', b.dataset.lang === lang);
     });
+    const titleEl = document.querySelector('title[data-title-uk],title[data-title-en]');
+    if (titleEl) {
+      const t = titleEl.getAttribute('data-title-' + lang);
+      if (t) { titleEl.textContent = t; document.title = t; }
+    }
     localStorage.setItem(STORAGE, lang);
     document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
   }
