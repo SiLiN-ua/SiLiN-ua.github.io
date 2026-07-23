@@ -10,7 +10,7 @@
     "splash": "/img/uploads/simulator/sim02/case2-procurement-ghost.png",
     "client_uk": "MetalCraft Manufacturing (500 employees, промислове обладнання)",
     "client_en": "MetalCraft Manufacturing (500 employees, industrial equipment)",
-    "position": "Procurement Manager · $95K",
+    "position": "Procurement Manager",
     "salary": "$95K/year",
     "body_uk": "Внутрішній аудитор помітив аномалію: постачання запчастин на 30-40% дорожче ринку. Всі проблемні контракти йдуть через одного procurement manager. Клієнт: CFO + Head of Internal Audit + General Counsel. Підозра — kickback схема з підставними vendor-ами. Твоя задача — виявити shell-мережу, побудувати хронологію, і обрати legally-defensible рекомендацію. Політика жорстка: kickback = Vendor Audit + Procurement Freeze паралельно з термінацією.",
     "body_en": "Internal auditor spotted an anomaly: parts procurement 30-40% above market. All problematic contracts route through one procurement manager. Client: CFO + Head of Internal Audit + General Counsel. Suspicion — kickback scheme with shell vendors. Your task — uncover the shell network, build the timeline, and choose a legally-defensible recommendation. Policy is strict: kickback = Vendor Audit + Procurement Freeze in parallel with termination.",
@@ -23,8 +23,8 @@
       "email": "a.k@metalcraft.example",
       "phone": "+380 XX XXX XX 82"
     },
-    "position_uk": "Procurement Manager · $95K",
-    "position_en": "Procurement Manager · $95K",
+    "position_uk": "Procurement Manager",
+    "position_en": "Procurement Manager",
     "salary_uk": "$95K/рік",
     "salary_en": "$95K/year"
   },

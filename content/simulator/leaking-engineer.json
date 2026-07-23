@@ -10,7 +10,7 @@
     "splash": "/img/uploads/simulator/sim02/case1-leaking-engineer.png",
     "client_uk": "SecureBank SaaS (200 employees, B2B core-banking)",
     "client_en": "SecureBank SaaS (200 employees, B2B core-banking)",
-    "position": "Senior Backend Engineer · $145K",
+    "position": "Senior Backend Engineer",
     "salary": "$145K/year",
     "body_uk": "SecureBank SaaS підозрює senior engineer у передачі архітектури продукту конкуренту через підставне ТОВ. Клієнт: CTO + Head of Legal + Head of Security. Термін — 3 дні до ради директорів. Твоя задача — з'ясувати чи справді відбувається витік IP, побудувати хронологію, обрати legally-defensible рекомендацію. Пам'ятай про політику: Legal-ескалація ДО термінації, інакше докази посипляться у суді.",
     "body_en": "SecureBank SaaS suspects a senior engineer of leaking product architecture to a competitor via a shell LLC. Client: CTO + Head of Legal + Head of Security. Deadline — 3 days before the board meeting. Your task — determine if IP theft is actually occurring, build a timeline, and choose a legally-defensible recommendation. Remember the policy: Legal escalation BEFORE termination, otherwise evidence will collapse in court.",
@@ -23,8 +23,8 @@
       "email": "v.r@securebank-saas.example",
       "phone": "+380 XX XXX XX 47"
     },
-    "position_uk": "Senior Backend Engineer · $145K",
-    "position_en": "Senior Backend Engineer · $145K",
+    "position_uk": "Senior Backend Engineer",
+    "position_en": "Senior Backend Engineer",
     "salary_uk": "$145K/рік",
     "salary_en": "$145K/year"
   },
