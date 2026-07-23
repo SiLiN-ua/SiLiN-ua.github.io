@@ -1172,6 +1172,23 @@ function renderFakeUI(tool) {
       </div>`;
 
     // ============ SIM #02 / CORPORATE INVESTIGATIONS UIs ============
+    case 'matches': if (tool.matches) return `
+      <div class="fake fake--matches">
+        <div class="fake__topbar">${tool.icon || '🔎'} <span>${escapeHtml(tr(tool, 'name') || tool.name || '')}</span></div>
+        <div class="fake__search-row"><div class="fake__query">${escapeHtml(tool.provider || '')}</div></div>
+        <div class="fake__matches-list">
+          ${tool.matches.map(m => `
+            <div class="fake__match-row">
+              ${m.img ? `<div class="fake__match-img"><img src="${escapeHtml(m.img)}" alt="" loading="lazy"></div>` : ''}
+              <div class="fake__match-body">
+                <div class="fake__match-site"><strong>${escapeHtml(m.site || '')}</strong>${m.url && m.url !== '—' ? ` · <code>${escapeHtml(m.url)}</code>` : ''}</div>
+                ${(tr(m, 'note') || m.note) ? `<div class="fake__match-note">${escapeHtml(tr(m, 'note') || m.note)}</div>` : ''}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`;
+      break;
+
     case 'opencorp': if (tool.opencorp) return `
       <div class="fake fake--opencorp">
         <div class="fake__topbar">🏢 <span>OpenCorporates + ${L('ЄДР', 'State Registry')}</span></div>
