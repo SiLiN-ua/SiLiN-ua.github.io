@@ -1654,6 +1654,27 @@ function computeMemoScore() {
     });
     rows.push({ lbl: LANG()==='en'?'Evidence':'Докази', val: `${ids.length} ${LANG()==='en'?'cards':'карток'}`, pts: evPts });
     total += evPts;
+    // Chain of Custody penalties: citing broken/unverified evidence in the memo costs points.
+    const cs = mp.custody_scoring;
+    if (cs) {
+      let brokenCnt = 0, unverCnt = 0;
+      ids.forEach(id => {
+        const e = (mp.evidence_pool || []).find(x => x.id === id);
+        const integrity = e && e.custody && e.custody.integrity;
+        if (integrity === 'broken') brokenCnt++;
+        else if (integrity === 'unverified') unverCnt++;
+      });
+      if (brokenCnt > 0) {
+        const p = brokenCnt * (cs.broken_penalty || -15);
+        rows.push({ lbl: LANG()==='en'?'Broken chain cited':'Цитовано зламаний ланцюг', val: `${brokenCnt}`, pts: p });
+        total += p;
+      }
+      if (unverCnt > 0) {
+        const p = unverCnt * (cs.unverified_penalty || -5);
+        rows.push({ lbl: LANG()==='en'?'Unverified cited':'Цитовано непідтверджене', val: `${unverCnt}`, pts: p });
+        total += p;
+      }
+    }
   }
   // Risk
   const riskPts = mp.risk_points || { low: -15, medium: -5, high: 20, critical: 10 };
@@ -2015,6 +2036,18 @@ function computePlayerMetrics() {
     m.questions = { correct, total, pct: total ? Math.round(100 * correct / total) : 0 };
   }
 
+  // Custody quality — how many broken/unverified sources the player cited
+  if (mp && mp.evidence_pool && State.memoEvidence && State.memoEvidence.length) {
+    let broken = 0, unverified = 0;
+    State.memoEvidence.forEach(id => {
+      const e = mp.evidence_pool.find(x => x.id === id);
+      const integrity = e && e.custody && e.custody.integrity;
+      if (integrity === 'broken') broken++;
+      else if (integrity === 'unverified') unverified++;
+    });
+    m.custody = { broken_cited: broken, unverified_cited: unverified };
+  }
+
   return m;
 }
 
@@ -2060,6 +2093,21 @@ function renderBenchmarkPanel() {
       target: `${b.questions.target_pct}%`,
       ok: m.questions.pct >= b.questions.target_pct,
       reason: tr(b.questions, 'reason')
+    });
+  }
+  if (b.custody && m.custody) {
+    const youStr = isEn
+      ? `${m.custody.broken_cited} broken, ${m.custody.unverified_cited} unverified`
+      : `${m.custody.broken_cited} зламаних, ${m.custody.unverified_cited} непідтверджених`;
+    const tgtStr = isEn
+      ? `≤${b.custody.broken_cite_target} broken, ≤${b.custody.unverified_cite_target} unverified`
+      : `≤${b.custody.broken_cite_target} зламаних, ≤${b.custody.unverified_cite_target} непідтверджених`;
+    rows.push({
+      label: isEn ? 'Source Quality' : 'Якість джерел',
+      you: youStr,
+      target: tgtStr,
+      ok: (m.custody.broken_cited <= b.custody.broken_cite_target) && (m.custody.unverified_cited <= b.custody.unverified_cite_target),
+      reason: tr(b.custody, 'reason')
     });
   }
   if (!rows.length) return '';

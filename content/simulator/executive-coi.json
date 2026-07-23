@@ -658,7 +658,8 @@
       "text_uk": "Undisclosed executive COI (особливо у публічній компанії SEC-registered) МУСИТЬ бути ескальовано ЗОВНІШНЬОМУ Legal Counsel ДО будь-яких внутрішніх дій. Ніяких self-investigations правлінням, ніяких direct actions по CFO самою радою. Порушення = SEC tampering + insider trading exposure на MedNext.",
       "text_en": "Undisclosed executive COI (especially at public SEC-registered company) MUST be escalated to EXTERNAL Legal Counsel BEFORE any internal action. No self-investigations by board, no direct actions against CFO by board itself. Breach = SEC tampering + insider trading exposure on MedNext.",
       "correct_recommendation_id": "escalate_external",
-      "breach_penalty": -40
+      "breach_penalty": -40,
+      "broken_chain_penalty": -15
     },
     "subjects": [
       {
@@ -697,14 +698,16 @@
         "text_uk": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — задокументовано у Panama + Paradise + Pandora Papers + SEC 13F",
         "text_en": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — documented in Panama + Paradise + Pandora Papers + SEC 13F",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
-          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
-          "verified_by_en": "Compliance Team",
-          "verified_by_uk": "Compliance-команда",
+          "collected_from_uk": "ICIJ Offshore Leaks (Panama + Paradise Papers, витік)",
+          "collected_from_en": "ICIJ Offshore Leaks (Panama + Paradise Papers, leaked dataset)",
+          "verified_by_uk": "OSINT-аналітик + ICIJ crosscheck",
+          "verified_by_en": "OSINT Analyst + ICIJ crosscheck",
           "timestamp": "2026-01-14 14:20 UTC",
           "integrity": "verified",
-          "confidence": "high",
-          "evidence_class": "primary"
+          "confidence": "medium",
+          "evidence_class": "primary",
+          "note_uk": "Легально: витік, але кроссверифікований з реєстрами Cayman + Delaware.",
+          "note_en": "Legally admissible: leaked, but cross-verified with Cayman + Delaware registries."
         }
       },
       {
@@ -713,10 +716,10 @@
         "text_uk": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction з structure. Sarbanes-Oxley §302 = personal criminal liability",
         "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Sarbanes-Oxley §302 = personal criminal liability",
         "custody": {
-          "collected_from_en": "SEC EDGAR public filings",
-          "collected_from_uk": "SEC EDGAR — публічні подання",
-          "verified_by_en": "Compliance Team",
-          "verified_by_uk": "Compliance-команда",
+          "collected_from_uk": "SEC EDGAR — офіційне подання MedNext 10-K 2025",
+          "collected_from_en": "SEC EDGAR — official MedNext 10-K 2025 filing",
+          "verified_by_uk": "Compliance-команда + SEC-подання PDF hash",
+          "verified_by_en": "Compliance Team + SEC filing PDF hash",
           "timestamp": "2026-01-20 09:15 UTC",
           "integrity": "verified",
           "confidence": "high",
@@ -729,10 +732,10 @@
         "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
         "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
         "custody": {
-          "collected_from_en": "Internal audit archive",
-          "collected_from_uk": "Внутрішній архів аудиту",
-          "verified_by_en": "Security Team",
-          "verified_by_uk": "Служба безпеки",
+          "collected_from_uk": "SEC EDGAR + Bloomberg Terminal (публічні дані)",
+          "collected_from_en": "SEC EDGAR + Bloomberg Terminal (public market data)",
+          "verified_by_uk": "Finance + Legal (timestamps звірені)",
+          "verified_by_en": "Finance + Legal (timestamps cross-checked)",
           "timestamp": "2026-02-03 17:33 UTC",
           "integrity": "verified",
           "confidence": "high",
@@ -825,14 +828,16 @@
         "text_uk": "SEC whistleblower filing (2026-06-29) з accurate description Panama trust — likely insider-source",
         "text_en": "SEC whistleblower filing (2026-06-29) with accurate Panama trust description — likely insider source",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
-          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
-          "verified_by_en": "Compliance Team",
-          "verified_by_uk": "Compliance-команда",
-          "timestamp": "2026-01-14 14:20 UTC",
-          "integrity": "verified",
-          "confidence": "high",
-          "evidence_class": "primary"
+          "collected_from_uk": "Анонімне SEC whistleblower подання (форма TCR)",
+          "collected_from_en": "Anonymous SEC whistleblower filing (Form TCR)",
+          "verified_by_uk": "SEC Office of the Whistleblower (identity protected)",
+          "verified_by_en": "SEC Office of the Whistleblower (identity protected)",
+          "timestamp": "2026-02-03 17:33 UTC",
+          "integrity": "unverified",
+          "confidence": "medium",
+          "evidence_class": "testimony",
+          "warning_uk": "⚠ Анонімне джерело. Може бути правдиве, але вимагає крос-верифікації з primary-документами (10-K, EDGAR) перед цитуванням у memo.",
+          "warning_en": "⚠ Anonymous source. May be true, but requires cross-verification with primary docs (10-K, EDGAR) before citing in memo."
         }
       },
       {
@@ -857,14 +862,52 @@
         "text_uk": "Anonymous board rumor: «David завжди був ambitious»",
         "text_en": "Anonymous board rumor: «David was always ambitious»",
         "custody": {
-          "collected_from_en": "Interview / anonymous testimony",
-          "collected_from_uk": "Інтервʼю / анонімне свідчення",
-          "verified_by_en": "HR + Interview log",
-          "verified_by_uk": "HR + журнал інтервʼю",
-          "timestamp": "2026-02-03 17:33 UTC",
+          "collected_from_uk": "Розмова з членом правління (кулуарна, off-record)",
+          "collected_from_en": "Conversation with board member (informal, off-record)",
+          "verified_by_uk": "HR (журнал інтервʼю, без запису)",
+          "verified_by_en": "HR (interview log, no recording)",
+          "timestamp": "2026-02-27 10:58 UTC",
           "integrity": "unverified",
           "confidence": "low",
-          "evidence_class": "testimony"
+          "evidence_class": "testimony",
+          "warning_uk": "⚠ Off-record, немає запису. Юридично неприйнятне до SEC self-disclosure. Використовуй як pivot-signal, не як докaz.",
+          "warning_en": "⚠ Off-record, no recording. Legally inadmissible for SEC self-disclosure. Use as pivot-signal, not as evidence."
+        }
+      },
+      {
+        "id": "ev_leaked_screenshot",
+        "weight": 2,
+        "text_uk": "«Внутрішній» скриншот email Sarah P. де вона нібито пише про BluePeak активи (без headers, без DKIM)",
+        "text_en": "«Internal» screenshot of Sarah P. email allegedly discussing BluePeak assets (no headers, no DKIM)",
+        "custody": {
+          "collected_from_uk": "Скриншот email нібито від Sarah P. (переданий third-party)",
+          "collected_from_en": "Screenshot of alleged Sarah P. email (via third-party)",
+          "verified_by_uk": "— (не підтверджено, немає headers)",
+          "verified_by_en": "— (not verified, no headers)",
+          "timestamp": "2026-02-27 10:58 UTC",
+          "integrity": "broken",
+          "confidence": "low",
+          "evidence_class": "secondary",
+          "warning_uk": "⛔ BROKEN chain: скриншот без headers, sender ID, DKIM/SPF hash. Може бути легко підробленим. НЕ цитувати у memo — цитування зіпсує кейс у court.",
+          "warning_en": "⛔ BROKEN chain: screenshot with no headers, sender ID, DKIM/SPF hash. Easily fabricated. DO NOT cite in memo — citing will contaminate the case in court."
+        }
+      },
+      {
+        "id": "ev_unsigned_draft",
+        "weight": 2,
+        "text_uk": "Незасвідчений draft board-proposal з дописаним параграфом про BluePeak (походження невідоме)",
+        "text_en": "Unsigned board-proposal draft with an added paragraph about BluePeak (origin unknown)",
+        "custody": {
+          "collected_from_uk": "Незасвідчений draft board-proposal (без версії, без timestamp)",
+          "collected_from_en": "Unsigned board-proposal draft (no version, no timestamp)",
+          "verified_by_uk": "— (походження невідоме)",
+          "verified_by_en": "— (origin unknown)",
+          "timestamp": "2026-02-27 10:58 UTC",
+          "integrity": "broken",
+          "confidence": "low",
+          "evidence_class": "internal",
+          "warning_uk": "⛔ BROKEN chain: draft без підпису, без version-control, без метаданих. Порівняй з signed-версією у ev_insider_trading перед висновками.",
+          "warning_en": "⛔ BROKEN chain: unsigned draft, no version control, no metadata. Compare with signed version in ev_insider_trading before drawing conclusions."
         }
       }
     ],
@@ -939,7 +982,13 @@
         "feedback_uk": "❌ Overwhelming evidence з 4 незалежних sources (Panama Papers + SEC filings + expense reports + LinkedIn timing).",
         "feedback_en": "❌ Overwhelming evidence from 4 independent sources (Panama Papers + SEC filings + expense reports + LinkedIn timing)."
       }
-    ]
+    ],
+    "custody_scoring": {
+      "broken_penalty": -15,
+      "unverified_penalty": -5,
+      "note_uk": "Цитування evidence зі зламаним ланцюгом = -15; з непідтвердженим = -5. Weigh source quality.",
+      "note_en": "Citing broken-chain evidence = -15; unverified = -5. Weigh source quality."
+    }
   },
   "ranks": {
     "master": {
@@ -973,6 +1022,35 @@
       "msg_uk": "Кейс завершено — але політика порушена.",
       "msg_en": "Case completed — but policy breached.",
       "color": "#8a8a8a"
+    }
+  },
+  "benchmark": {
+    "timeline": {
+      "target_pct": 94,
+      "reason_uk": "Ланцюг COI: Silverwood Trust (Panama 2018) -> BluePeak LP (Cayman) -> BluePeak LLC (Delaware) -> купівля BioLink AFTER David презентував $850M proposal -> пропущена disclosure 2024. Гравці часто плутають порядок BluePeak-purchase vs proposal-presentation — сама послідовність = insider-trading pattern.",
+      "reason_en": "COI chain: Silverwood Trust (Panama 2018) -> BluePeak LP (Cayman) -> BluePeak LLC (Delaware) -> BioLink purchase AFTER David presented $850M proposal -> missed 2024 disclosure. Players often confuse BluePeak-purchase vs proposal-presentation order — the sequence IS the insider-trading pattern."
+    },
+    "evidence": {
+      "target_count": 5,
+      "target_max": 5,
+      "reason_uk": "Diagnostic: Panama Papers chain до Silverwood, 10-K false statement, calendar 6 неlogged BluePeak meetings, prior 2018-2023 disclosures (де саме connection був), insider-trading pattern у датах. Найчастіше пропускають prior-year disclosures — саме контраст між ними і 2024-й лист = smoking gun.",
+      "reason_en": "Diagnostic: Panama Papers chain to Silverwood, 10-K false statement, calendar w/ 6 unlogged BluePeak meetings, prior 2018-2023 disclosures (where the connection was declared), insider-trading pattern in dates. Most commonly missed: prior-year disclosures — the contrast between them and the 2024 filing IS the smoking gun."
+    },
+    "policy": {
+      "target_pct": 100,
+      "reason_uk": "MedNext + SEC policy: COI цього масштабу -> ескалація до Board + Legal + SEC self-disclosure (proactive) ПЕРЕД публічним announcement. Просте REJECT/TERMINATE без self-disclosure = policy breach (-40) і збільшує SEC fine 3x за приховування.",
+      "reason_en": "MedNext + SEC policy: COI of this scale -> escalate to Board + Legal + SEC self-disclosure (proactive) BEFORE public announcement. Plain REJECT/TERMINATE without self-disclosure = policy breach (-40) and 3x SEC fine multiplier for concealment."
+    },
+    "questions": {
+      "target_pct": 100,
+      "reason_uk": "Q3 — розрізнити свідому COI (Sarah P. навмисно володіє BluePeak-related активами через David) від innocent overlap. Правильна відповідь спирається на chain of shells (Panama->Cayman->Delaware — це не спрощена помилка disclosure).",
+      "reason_en": "Q3 — distinguish knowing COI (Sarah P. deliberately holds BluePeak-related assets via David) from innocent overlap. Correct answer relies on chain of shells (Panama->Cayman->Delaware — this is not a simple disclosure mistake)."
+    },
+    "custody": {
+      "broken_cite_target": 0,
+      "unverified_cite_target": 1,
+      "reason_uk": "Цей кейс тестує оцінку якості джерел. Broken-chain evidence (leaked screenshot, unsigned draft) НЕ можна цитувати — це руйнує кейс у court. Unverified testimony (whistleblower, board rumor) — 1 максимум і тільки з крос-верифікацією primary-документами.",
+      "reason_en": "This case tests source-quality assessment. Broken-chain evidence (leaked screenshot, unsigned draft) MUST NOT be cited — contaminates the case in court. Unverified testimony (whistleblower, board rumor) — 1 max and only with primary-doc cross-verification."
     }
   }
 }

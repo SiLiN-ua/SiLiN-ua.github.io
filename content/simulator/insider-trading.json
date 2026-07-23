@@ -964,5 +964,28 @@
       "msg_en": "Case completed — but policy breached.",
       "color": "#8a8a8a"
     }
+  },
+  "benchmark": {
+    "timeline": {
+      "target_pct": 95,
+      "reason_uk": "Ланцюг Rule 10b-5: David deal-room access -> $30K wire до брата -> Michael купує PWRX за $30K -> 24 год після announcement — продано з $85K -> $60K wire назад до David -> $47K Rolex + Балі. Найчастіша помилка — плутати порядок Instagram Rolex vs $60K wire back: wire був ДО покупки, це forensic trail.",
+      "reason_en": "Rule 10b-5 chain: David deal-room access -> $30K wire to brother -> Michael buys PWRX for $30K -> 24h post-announcement — sold w/ $85K profit -> $60K wire back to David -> $47K Rolex + Bali. Most common mistake — confusing Instagram Rolex vs $60K wire back order: wire came BEFORE purchase, it's the forensic trail."
+    },
+    "evidence": {
+      "target_count": 6,
+      "target_max": 6,
+      "reason_uk": "Diagnostic-6: deal-room MNPI access, trade pattern (unique $42K purchase з $200 baseline), family address, money flow full, Chinese Wall breach, Signal metadata. Найчастіше пропускають Signal metadata — сприймають як просто повідомлення, але це доказ pre-meditation (не спонтанна порада, а planned insider tip).",
+      "reason_en": "Diagnostic-6: deal-room MNPI access, trade pattern (unique $42K purchase from $200 baseline), family address, full money flow, Chinese Wall breach, Signal metadata. Most commonly missed: Signal metadata — perceived as just messaging, but it's proof of pre-meditation (not spontaneous tip, planned insider deal)."
+    },
+    "policy": {
+      "target_pct": 100,
+      "reason_uk": "Silvermark Chinese Wall + Rule 10b-5 = мандатна ескалація до Compliance + SEC + FINRA + preservation hold усіх комунікацій. TERMINATE без reporting = криміналізація Silvermark як institutional facilitator (Sarbanes-Oxley §802). Policy breach тут коштує компанії ліцензії.",
+      "reason_en": "Silvermark Chinese Wall + Rule 10b-5 = mandatory escalation to Compliance + SEC + FINRA + preservation hold on all communications. TERMINATE without reporting = criminalizes Silvermark as institutional facilitator (Sarbanes-Oxley §802). Policy breach here costs the firm its license."
+    },
+    "questions": {
+      "target_pct": 100,
+      "reason_uk": "Q2 — критично: чи Michael (student) є свідомим учасником чи pattern-of-use nominee? Bank flow ($30K in, $60K out через 30 днів, sync з David-life-events) — це institutional-nominee pattern. Просто наївний брат відповідь = мінус, тому що це знижує SEC-класифікацію злочину.",
+      "reason_en": "Q2 — critical: is Michael (student) knowing participant or pattern-of-use nominee? Bank flow ($30K in, $60K out in 30 days, synced w/ David life-events) — this is institutional-nominee pattern. Naive brother answer = wrong because it downgrades SEC classification of the crime."
+    }
   }
 }

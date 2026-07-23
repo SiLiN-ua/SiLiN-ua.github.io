@@ -1045,5 +1045,28 @@
       "msg_en": "Case completed but details missed.",
       "color": "#8a8a8a"
     }
+  },
+  "benchmark": {
+    "timeline": {
+      "target_pct": 92,
+      "reason_uk": "Ланцюг: Bank BIC discovery -> OpenCorp розкриває сімейні звʼязки -> SAP dual-approval forgery -> market-price gap -> продовжена kickback-схема. Найчастіше плутають порядок BIC discovery vs SAP forgery — насправді BIC був сигналом ПЕРЕД тим як аудит підняв підпис.",
+      "reason_en": "Chain: Bank BIC discovery -> OpenCorp reveals family ties -> SAP dual-approval forgery -> market-price gap -> ongoing kickback. Most commonly confused: BIC discovery vs SAP forgery order — BIC was the signal BEFORE audit flagged the signature."
+    },
+    "evidence": {
+      "target_count": 5,
+      "target_max": 5,
+      "reason_uk": "Diagnostic-набір: спільний Cyprus BIC у 3 vendor-ів, сімейні звʼязки (кузен/однокласник/донька), SAP forgery, market gap, lifestyle mismatch. Найчастіше пропускають lifestyle-mismatch (Facebook пости про Дубай + BMW при $95K salary) — сприймають як мʼякий доказ, хоча це diagnostic для kickback pattern.",
+      "reason_en": "Diagnostic set: shared Cyprus BIC across 3 vendors, family links (cousin/classmate/daughter), SAP forgery, market gap, lifestyle mismatch. Most commonly missed: lifestyle mismatch (Facebook Dubai + BMW on $95K salary) — perceived as soft, but it's diagnostic for kickback pattern."
+    },
+    "policy": {
+      "target_pct": 100,
+      "reason_uk": "Policy: kickback + fraud -> мандатна ескалація до Internal Audit + General Counsel + Vendor Audit + Procurement Freeze. Просте REJECT/TERMINATE = policy breach (-40), бо не преserveує evidentiary chain для повернення коштів.",
+      "reason_en": "Policy: kickback + fraud -> mandatory escalation to Internal Audit + General Counsel + Vendor Audit + Procurement Freeze. Plain REJECT/TERMINATE = policy breach (-40) — fails to preserve evidentiary chain for asset recovery."
+    },
+    "questions": {
+      "target_pct": 100,
+      "reason_uk": "Q2 — найпоширеніша помилка: чи всі 3 vendor-и співучасники, чи один з них жертва підроблених документів. Правильна відповідь спирається на BIC + сімейні звʼязки (не 4-й vendor Global Industrial, який є контролем).",
+      "reason_en": "Q2 — most common mistake: are all 3 vendors co-conspirators or one is a victim of forged docs. Correct answer relies on BIC + family links (not vendor #4 Global Industrial, which is control)."
+    }
   }
 }

@@ -997,5 +997,28 @@
       "msg_en": "Convergence bias got you.",
       "color": "#8a8a8a"
     }
+  },
+  "benchmark": {
+    "timeline": {
+      "target_pct": 88,
+      "reason_uk": "Adversarial-кейс: timeline тут показує ЛЕГІТИМНИЙ freelance-onboarding (реєстрація ФОП -> Upwork history -> coworking membership -> PayFly contract). Гравці часто читають його як fraud pattern і плутають порядок реєстрації ФОП vs Upwork earnings — насправді earnings з-явились задовго до PayFly.",
+      "reason_en": "Adversarial case: timeline shows LEGITIMATE freelance onboarding (sole-prop registration -> Upwork history -> coworking membership -> PayFly contract). Players often read it as fraud pattern and confuse sole-prop registration vs Upwork earnings order — earnings pre-date PayFly by years."
+    },
+    "evidence": {
+      "target_count": 4,
+      "target_max": 5,
+      "reason_uk": "Diagnostic-докази APPROVE-вердикту: Beehive Podil = реальний coworking з 240+ резидентами, Upwork Top Rated Plus з $500K+ history, market-price alignment, LinkedIn deep-dive показує реальних людей. Найчастіша помилка — вибрати Testimony ex-DevBox колеги як доказ fraud (DECOY -8): gossip не має ланцюга custody.",
+      "reason_en": "Diagnostic evidence for APPROVE verdict: Beehive Podil = real coworking with 240+ residents, Upwork Top Rated Plus w/ $500K+ history, market-price alignment, LinkedIn deep-dive shows real people. Most common mistake — picking ex-DevBox colleague testimony as fraud proof (DECOY -8): gossip has no chain of custody."
+    },
+    "policy": {
+      "target_pct": 100,
+      "reason_uk": "Compliance-policy PayFly дозволяє APPROVE з умовою: стандартний vendor onboarding + перший невеликий контракт як pilot. Просте REJECT на всяк випадок = False Positive -> -100 (руйнує legitimate business), і technically policy breach (over-restrictive block без justified evidence).",
+      "reason_en": "PayFly compliance policy permits APPROVE with condition: standard onboarding + small pilot contract first. Plain REJECT just in case = False Positive -> -100 (destroys legitimate business), and technically policy breach (over-restrictive block without justified evidence)."
+    },
+    "questions": {
+      "target_pct": 100,
+      "reason_uk": "Всі 3 questions тестують False Positive Avoidance: чи вважаєш ти 3 нові ТОВ на одній адресі diagnostic для fraud (ні — coworking), чи сімейний setup diagnostic (ні — freelance норма), чи потрібне більше evidence (ні — вже достатньо legitimate signals).",
+      "reason_en": "All 3 questions test False Positive Avoidance: is 3 new LLCs at one address diagnostic for fraud (no — coworking), is family-style setup diagnostic (no — freelance norm), do you need more evidence (no — already enough legitimate signals)."
+    }
   }
 }
