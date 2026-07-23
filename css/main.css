@@ -4818,3 +4818,40 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .bench { padding: 1.1rem 1.1rem; }
   .bench__cols { grid-template-columns: 1fr; gap: .5rem; }
 }
+
+/* ============ Guide EN-only banner ============ */
+.guide-langbanner {
+  background: rgba(74, 158, 255, .08);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ice);
+  padding: 1.25rem 0;
+  margin: 1.5rem 0 0;
+}
+.guide-langbanner .container {
+  max-width: 900px;
+}
+.guide-langbanner strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--cream);
+  margin-bottom: .4rem;
+}
+.guide-langbanner p {
+  color: var(--text);
+  font-size: .95rem;
+  line-height: 1.6;
+  margin: 0 0 .8rem;
+}
+.guide-langbanner a {
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  color: var(--ice);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s;
+}
+.guide-langbanner a:hover {
+  border-bottom-color: var(--ice);
+}

@@ -121,6 +121,26 @@
   </ul>
 </nav>
 
+
+<div class="guide-langbanner" id="guide-langbanner" hidden>
+  <div class="container">
+    <strong data-i18n="guide.en_only.title">This guide is currently Ukrainian-only</strong>
+    <p data-i18n="guide.en_only.body">The material is oriented to the Ukrainian OSINT market: local certifications, regulators, salary ranges and courses. An English adaptation is planned for later.</p>
+    <a href="blog.html" data-i18n="guide.en_only.link">↗ English OSINT articles in the blog</a>
+  </div>
+</div>
+<script>
+  (function(){
+    function apply(){
+      var b = document.getElementById('guide-langbanner');
+      if (!b) return;
+      b.hidden = (localStorage.getItem('yehor.lang') || 'uk') !== 'en';
+    }
+    document.addEventListener('DOMContentLoaded', apply);
+    document.addEventListener('langchange', apply);
+  })();
+</script>
+
 <section class="guide-hero reveal">
   <div class="container">
     <span class="eyebrow">OSINT · Кар'єрний гайд · Україна · 2026</span>

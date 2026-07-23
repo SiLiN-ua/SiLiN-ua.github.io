@@ -512,17 +512,10 @@
         "clue_en": "In 2025 a BMW X7 (~$110K) appeared, several Dubai vacation photos. On a $95K salary — impossible.",
         "matches": [
           {
-            "site": "Facebook (Aug 2025)",
+            "site": "Facebook · lifestyle album (Aug–Nov 2025)",
             "url": "facebook.com/artem-k",
-            "note_uk": "Фото нового BMW X7 з підписом «Життя стабільне». Ціна автомобіля ~$110K.",
-            "note_en": "Photo of new BMW X7 with caption «Life is stable». Car price ~$110K.",
-            "img": "/img/uploads/simulator/sim02/case2-facebook-lifestyle.png"
-          },
-          {
-            "site": "Facebook (Nov 2025)",
-            "url": "facebook.com/artem-k",
-            "note_uk": "Фото з готелю Palm Jumeirah Dubai (~$800/night, 5 днів).",
-            "note_en": "Photo from Palm Jumeirah Dubai hotel (~$800/night, 5 days).",
+            "note_uk": "Один альбом, кілька постів: новий BMW X7 (~$110K) із підписом «Життя стабільне», далі фото з готелю Palm Jumeirah Dubai (~$800/ніч, 5 днів). Разом на зарплату $95K/рік — математично не сходиться.",
+            "note_en": "Single album, several posts: new BMW X7 (~$110K) captioned «Life is stable», then photos from Palm Jumeirah Dubai hotel (~$800/night, 5 days). Combined, on $95K/year salary — math doesn't work.",
             "img": "/img/uploads/simulator/sim02/case2-facebook-lifestyle.png"
           }
         ]

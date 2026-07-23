@@ -390,7 +390,21 @@
     "ss.tile.cases_lbl": "Кейсів",
     "ss.tile.cert_lbl": "Сертифікат",
     "ss.tile.cert_yes": "так",
-    "common.loading": "Завантаження…"
+    "common.loading": "Завантаження…",
+    "about.award1.title": "🏅 Подяка Національної поліції України",
+    "about.award1.org": "Наказ № 1382 · підпис Івана Виговського (Голова НПУ)",
+    "about.award1.txt": "За вагомий особистий внесок у справу забезпечення охорони прав людини та протидії злочинності",
+    "about.award2.title": "🏅 Подяка Дніпропетровської ОВА",
+    "about.award2.org": "Підпис Сергія Лисака (Голова ОДА)",
+    "about.award2.txt": "За віддане служіння в умовах повномасштабної війни · робота 2-го відділу УСР з протидії транснаціональним ОЗУ",
+    "about.award3.title": "🏅 Подяка Департаменту стратегічних розслідувань",
+    "about.award3.org": "Підпис полковника Валентина Копаєва (Начальник ДСР)",
+    "about.award3.txt": "За сумлінну службу, високий професіоналізм та бездоганне виконання службових обов'язків",
+    "about.award.date1": "Липень 2023",
+    "about.award.date2": "Липень 2022",
+    "guide.en_only.title": "Цей гайд поки що тільки українською",
+    "guide.en_only.body": "Матеріал зорієнтований на український OSINT-ринок: місцеві сертифікації, регулятори, зарплатні вилки та курси. Англомовна адаптація в планах на пізніше.",
+    "guide.en_only.link": "↗ Англомовні OSINT-статті у блозі"
   },
   "en": {
     "brand.first": "Yehor",
@@ -783,6 +797,20 @@
     "ss.tile.cases_lbl": "Cases",
     "ss.tile.cert_lbl": "Certificate",
     "ss.tile.cert_yes": "yes",
-    "common.loading": "Loading…"
+    "common.loading": "Loading…",
+    "about.award1.title": "🏅 Commendation · National Police of Ukraine",
+    "about.award1.org": "Order № 1382 · signed by Ivan Vyhovskyi (Head of National Police)",
+    "about.award1.txt": "For significant personal contribution to protecting human rights and countering crime",
+    "about.award2.title": "🏅 Commendation · Dnipropetrovsk Regional Administration",
+    "about.award2.org": "Signed by Serhiy Lysak (Head of the Regional Administration)",
+    "about.award2.txt": "For dedicated service during the full-scale war · work of the 2nd Unit, Strategic Investigations Directorate, countering transnational organized crime",
+    "about.award3.title": "🏅 Commendation · Strategic Investigations Department",
+    "about.award3.org": "Signed by Colonel Valentyn Kopaev (Head of the SID)",
+    "about.award3.txt": "For diligent service, high professionalism and impeccable performance of duties",
+    "about.award.date1": "July 2023",
+    "about.award.date2": "July 2022",
+    "guide.en_only.title": "This guide is currently Ukrainian-only",
+    "guide.en_only.body": "The material is oriented to the Ukrainian OSINT market: local certifications, regulators, salary ranges and courses. An English adaptation is planned for later.",
+    "guide.en_only.link": "↗ English OSINT articles in the blog"
   }
 }
