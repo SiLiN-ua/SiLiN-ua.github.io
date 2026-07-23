@@ -767,67 +767,177 @@
         "id": "ev_bic_shared",
         "weight": 5,
         "text_uk": "3 з 4 vendor'ів через ту саму Cyprus BIC HEBACY2N — ймовірність збігу ~1:40 000",
-        "text_en": "3 of 4 vendors via same Cyprus BIC HEBACY2N — coincidence probability ~1:40,000"
+        "text_en": "3 of 4 vendors via same Cyprus BIC HEBACY2N — coincidence probability ~1:40,000",
+        "custody": {
+          "collected_from_en": "SAP financial export / bank statement (court order)",
+          "collected_from_uk": "SAP фін-експорт / банківська виписка (за ухвалою)",
+          "verified_by_en": "Finance + Legal",
+          "verified_by_uk": "Фінвідділ + Legal",
+          "timestamp": "2026-02-05 10:22 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_dual_forgery",
         "weight": 5,
         "text_uk": "Dual-approval у SAP підроблений (facsimile CFO signature, немає у CFO dashboard)",
-        "text_en": "SAP dual-approval forged (facsimile CFO signature, absent from CFO dashboard)"
+        "text_en": "SAP dual-approval forged (facsimile CFO signature, absent from CFO dashboard)",
+        "custody": {
+          "collected_from_en": "SAP financial export / bank statement (court order)",
+          "collected_from_uk": "SAP фін-експорт / банківська виписка (за ухвалою)",
+          "verified_by_en": "Finance + Legal",
+          "verified_by_uk": "Фінвідділ + Legal",
+          "timestamp": "2026-02-11 15:41 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_family_links",
         "weight": 5,
         "text_uk": "3 shell-vendor'и мають директорами: двоюрідний брат / однокласник / дочка A.K. (OpenCorporates + LinkedIn)",
-        "text_en": "3 shell vendors have directors: A.K.'s cousin / classmate / daughter (OpenCorporates + LinkedIn)"
+        "text_en": "3 shell vendors have directors: A.K.'s cousin / classmate / daughter (OpenCorporates + LinkedIn)",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-02-18 08:19 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_price_overrun",
         "weight": 4,
         "text_uk": "Ціни на 35-42% вище LME/benchmark ринку по всіх 3 shell-vendor'ах, при цьому у Global Industrial — ринкові",
-        "text_en": "Prices 35-42% above LME/benchmark market across all 3 shell vendors, Global Industrial — market"
+        "text_en": "Prices 35-42% above LME/benchmark market across all 3 shell vendors, Global Industrial — market",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-03-04 13:26 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_same_address",
         "weight": 4,
         "text_uk": "ProTech + IndPart — та сама житлова адреса (Vynohradna 12, apt 41), Nova — сусідній будинок",
-        "text_en": "ProTech + IndPart — same residential address (Vynohradna 12, apt 41), Nova — neighboring building"
+        "text_en": "ProTech + IndPart — same residential address (Vynohradna 12, apt 41), Nova — neighboring building",
+        "custody": {
+          "collected_from_en": "Google Street View / public maps",
+          "collected_from_uk": "Google Street View / публічні мапи",
+          "verified_by_en": "OSINT Analyst",
+          "verified_by_uk": "OSINT-аналітик",
+          "timestamp": "2026-02-05 10:22 UTC",
+          "integrity": "verified",
+          "confidence": "medium",
+          "evidence_class": "osint"
+        }
       },
       {
         "id": "ev_sole_approver",
         "weight": 4,
         "text_uk": "Всі проблемні контракти затверджені особисто A.K. (порушення policy — потрібне dual-approval CFO)",
-        "text_en": "All problematic contracts approved personally by A.K. (policy breach — requires dual-approval by CFO)"
+        "text_en": "All problematic contracts approved personally by A.K. (policy breach — requires dual-approval by CFO)",
+        "custody": {
+          "collected_from_en": "Compliance policy handbook (v2025)",
+          "collected_from_uk": "Compliance policy handbook (ред. 2025)",
+          "verified_by_en": "Legal + Compliance",
+          "verified_by_uk": "Legal + Compliance",
+          "timestamp": "2026-02-11 15:41 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "internal"
+        }
       },
       {
         "id": "ev_daughter_shell",
         "weight": 3,
         "text_uk": "IndPart Supply — засновниця 21-річна дочка A.K., студентка КНУ без business background",
-        "text_en": "IndPart Supply — founder is A.K.'s 21-y.o. daughter, KNU student with no business background"
+        "text_en": "IndPart Supply — founder is A.K.'s 21-y.o. daughter, KNU student with no business background",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-02-18 08:19 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_lifestyle",
         "weight": 2,
         "text_uk": "Lifestyle proof: BMW X7 ($110K) + Dubai поїздки при зарплаті $95K",
-        "text_en": "Lifestyle proof: BMW X7 ($110K) + Dubai trips on $95K salary"
+        "text_en": "Lifestyle proof: BMW X7 ($110K) + Dubai trips on $95K salary",
+        "custody": {
+          "collected_from_en": "SAP financial export / bank statement (court order)",
+          "collected_from_uk": "SAP фін-експорт / банківська виписка (за ухвалою)",
+          "verified_by_en": "Finance + Legal",
+          "verified_by_uk": "Фінвідділ + Legal",
+          "timestamp": "2026-03-04 13:26 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_ex_testimony",
         "weight": 1,
         "text_uk": "Показання ex-працівника (anonymous, без документів)",
-        "text_en": "Ex-employee testimony (anonymous, no documents)"
+        "text_en": "Ex-employee testimony (anonymous, no documents)",
+        "custody": {
+          "collected_from_en": "Interview / anonymous testimony",
+          "collected_from_uk": "Інтервʼю / анонімне свідчення",
+          "verified_by_en": "HR + Interview log",
+          "verified_by_uk": "HR + журнал інтервʼю",
+          "timestamp": "2026-02-05 10:22 UTC",
+          "integrity": "unverified",
+          "confidence": "low",
+          "evidence_class": "testimony"
+        }
       },
       {
         "id": "ev_global_normal",
         "weight": 1,
         "text_uk": "Global Industrial — legit vendor з ринковими цінами. Це distraction, а не доказ проти A.K.",
-        "text_en": "Global Industrial — legit vendor at market prices. This is a distraction, not evidence against A.K."
+        "text_en": "Global Industrial — legit vendor at market prices. This is a distraction, not evidence against A.K.",
+        "custody": {
+          "collected_from_en": "Internal audit archive",
+          "collected_from_uk": "Внутрішній архів аудиту",
+          "verified_by_en": "Security Team",
+          "verified_by_uk": "Служба безпеки",
+          "timestamp": "2026-02-11 15:41 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_fb_bmw",
         "weight": 1,
         "text_uk": "Facebook пост A.K. з підписом «Життя стабільне» біля BMW",
-        "text_en": "A.K.'s Facebook post captioned «Life is stable» next to BMW"
+        "text_en": "A.K.'s Facebook post captioned «Life is stable» next to BMW",
+        "custody": {
+          "collected_from_en": "Public social-media archive (OSINT scrape)",
+          "collected_from_uk": "Публічний архів соцмереж (OSINT-збір)",
+          "verified_by_en": "OSINT Analyst",
+          "verified_by_uk": "OSINT-аналітик",
+          "timestamp": "2026-02-18 08:19 UTC",
+          "integrity": "verified",
+          "confidence": "medium",
+          "evidence_class": "secondary"
+        }
       }
     ],
     "risk_correct": "critical",

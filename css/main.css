@@ -4645,3 +4645,94 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .game-topbar__help { padding: .3rem .55rem; font-size: .72rem; }
   #help-btn-label { display: none; }
 }
+
+/* ============ Chain of Custody plaque ============ */
+.custody-tag {
+  margin-top: .55rem;
+  padding: .55rem .7rem;
+  background: rgba(15, 21, 36, .55);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  color: var(--text-mute);
+  border-radius: 2px;
+}
+.custody-tag__row {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: .5rem;
+  align-items: baseline;
+  padding: .1rem 0;
+}
+.custody-tag__k {
+  text-transform: uppercase;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: var(--text-mute);
+  opacity: .75;
+}
+.custody-tag__v {
+  color: var(--cream);
+  opacity: .85;
+  word-break: break-word;
+}
+.custody-tag__v code {
+  background: none;
+  padding: 0;
+  color: var(--ice);
+  font-size: .66rem;
+}
+.custody-tag__row--foot {
+  grid-template-columns: 1fr auto;
+  margin-top: .35rem;
+  padding-top: .35rem;
+  border-top: 1px dashed rgba(255,255,255,.06);
+}
+.custody-tag__integrity {
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: .8rem;
+}
+.custody-tag__integrity::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #6bff9e;
+}
+.custody-tag--unverified {
+  border-left-color: #d4a34e;
+}
+.custody-tag--unverified .custody-tag__integrity::before {
+  background: #d4a34e;
+}
+.custody-tag--broken {
+  border-left-color: #ff6b6b;
+}
+.custody-tag--broken .custody-tag__integrity::before {
+  background: #ff6b6b;
+}
+.custody-tag__class {
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  opacity: .7;
+  padding: .1rem .45rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+.mb-card__text {
+  margin-bottom: 0;
+}
+@media (max-width: 640px) {
+  .custody-tag { font-size: .62rem; padding: .45rem .55rem; }
+  .custody-tag__row { grid-template-columns: 72px 1fr; }
+}

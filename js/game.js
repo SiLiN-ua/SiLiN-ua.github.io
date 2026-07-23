@@ -18,6 +18,43 @@ const tr = (obj, field) => obj[field + '_' + LANG()] || obj[field + '_uk'] || ob
 const fmtTime = (sec) => `${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
 // Quick bilingual helper: L('укр', 'en')
 const L = (uk, en) => LANG() === 'en' ? en : uk;
+
+// Chain of Custody plaque — renders provenance metadata for any evidence.
+// Backwards compat: returns '' when custody field is absent.
+function custodyPlaque(obj) {
+  const c = obj && obj.custody;
+  if (!c) return '';
+  const collected = tr(c, 'collected_from');
+  const verified  = tr(c, 'verified_by');
+  const ts = c.timestamp || '';
+  const integrity = c.integrity || 'verified';
+  const cls = c.evidence_class || 'primary';
+  const iLabel = LANG()==='en'
+    ? {verified:'Verified', unverified:'Unverified', broken:'Broken chain'}[integrity]
+    : {verified:'Підтверджено', unverified:'Не підтверджено', broken:'Ланцюг порушено'}[integrity];
+  const clsLabel = LANG()==='en'
+    ? {primary:'Primary', secondary:'Secondary', testimony:'Testimony', osint:'OSINT', internal:'Internal'}[cls] || cls
+    : {primary:'Первинний', secondary:'Вторинний', testimony:'Свідчення', osint:'OSINT', internal:'Внутрішній'}[cls] || cls;
+  return `
+    <div class="custody-tag custody-tag--${integrity}">
+      <div class="custody-tag__row">
+        <span class="custody-tag__k">${L('Джерело','Collected from')}</span>
+        <span class="custody-tag__v">${escapeHtml(collected)}</span>
+      </div>
+      <div class="custody-tag__row">
+        <span class="custody-tag__k">${L('Верифікація','Verified by')}</span>
+        <span class="custody-tag__v">${escapeHtml(verified)}</span>
+      </div>
+      <div class="custody-tag__row">
+        <span class="custody-tag__k">${L('Отримано','Timestamp')}</span>
+        <span class="custody-tag__v"><code>${escapeHtml(ts)}</code></span>
+      </div>
+      <div class="custody-tag__row custody-tag__row--foot">
+        <span class="custody-tag__integrity">${iLabel}</span>
+        <span class="custody-tag__class">${clsLabel}</span>
+      </div>
+    </div>`;
+}
 // Deterministic shuffle using Fisher-Yates + seeded PRNG (mulberry32).
 // Same seed → same order across re-renders inside one game session.
 function seededShuffle(arr, seed) {
@@ -1183,6 +1220,7 @@ function renderFakeUI(tool) {
               <div class="fake__match-body">
                 <div class="fake__match-site"><strong>${escapeHtml(m.site || '')}</strong>${m.url && m.url !== '—' ? ` · <code>${escapeHtml(m.url)}</code>` : ''}</div>
                 ${(tr(m, 'note') || m.note) ? `<div class="fake__match-note">${escapeHtml(tr(m, 'note') || m.note)}</div>` : ''}
+                ${custodyPlaque(m)}
               </div>
             </div>`).join('')}
         </div>
@@ -1699,7 +1737,7 @@ function renderMemoPhase() {
           <div class="mb-memo__section">
             <div class="mb-memo__label">${isEn ? `Key Evidence (drag ${minSlots}–${maxSlots} items from the pool)` : `Ключові докази (перетягни ${minSlots}–${maxSlots} карток з пулу)`}</div>
             <div class="mb-dropzone" id="mb-evidence-zone" data-placeholder="${isEn ? 'drag evidence cards here…' : 'перетягни картки-докази сюди…'}">
-              ${zoneCards.map(e => `<div class="mb-card" data-id="${escapeHtml(e.id)}" data-weight="${e.weight}"><div>${escapeHtml(tr(e,'text'))}</div></div>`).join('')}
+              ${zoneCards.map(e => `<div class="mb-card" data-id="${escapeHtml(e.id)}" data-weight="${e.weight}"><div class="mb-card__text">${escapeHtml(tr(e,'text'))}</div>${custodyPlaque(e)}</div>`).join('')}
             </div>
           </div>
 
@@ -1725,7 +1763,7 @@ function renderMemoPhase() {
           <div class="mb-pool">
             <div class="mb-pool__head">${isEn ? 'Evidence pool (drag into Memo)' : 'Пул доказів (перетягуй у меморандум)'}</div>
             <div class="mb-pool__list" id="mb-pool-list">
-              ${poolCards.map(e => `<div class="mb-card" data-id="${escapeHtml(e.id)}" data-weight="${e.weight}"><div>${escapeHtml(tr(e,'text'))}</div></div>`).join('')}
+              ${poolCards.map(e => `<div class="mb-card" data-id="${escapeHtml(e.id)}" data-weight="${e.weight}"><div class="mb-card__text">${escapeHtml(tr(e,'text'))}</div>${custodyPlaque(e)}</div>`).join('')}
             </div>
           </div>
         </div>

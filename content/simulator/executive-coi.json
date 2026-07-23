@@ -695,67 +695,177 @@
         "id": "ev_panama_chain",
         "weight": 5,
         "text_uk": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — задокументовано у Panama + Paradise + Pandora Papers + SEC 13F",
-        "text_en": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — documented in Panama + Paradise + Pandora Papers + SEC 13F"
+        "text_en": "Silverwood Trust (Panama, 2018) → Cayman LP → Delaware BluePeak LLC → 4.2% BioLink ($35.7M) — documented in Panama + Paradise + Pandora Papers + SEC 13F",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-01-14 14:20 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_10k_lie",
         "weight": 5,
         "text_uk": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction з structure. Sarbanes-Oxley §302 = personal criminal liability",
-        "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Sarbanes-Oxley §302 = personal criminal liability"
+        "text_en": "CFO signed 10-K 2025 Item 15: «no material outside interests» — DIRECT contradiction with structure. Sarbanes-Oxley §302 = personal criminal liability",
+        "custody": {
+          "collected_from_en": "SEC EDGAR public filings",
+          "collected_from_uk": "SEC EDGAR — публічні подання",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-01-20 09:15 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_insider_trading",
         "weight": 5,
         "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
-        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading"
+        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 14e-3 classic insider trading",
+        "custody": {
+          "collected_from_en": "Internal audit archive",
+          "collected_from_uk": "Внутрішній архів аудиту",
+          "verified_by_en": "Security Team",
+          "verified_by_uk": "Служба безпеки",
+          "timestamp": "2026-02-03 17:33 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_7_year_pattern",
         "weight": 4,
         "text_uk": "David P. НЕ декларував Silverwood trust у ВСІХ 7 попередніх 10-K (2018-2024) — sistematic non-disclosure",
-        "text_en": "David P. did NOT disclose Silverwood trust in ALL 7 prior 10-Ks (2018-2024) — systematic non-disclosure"
+        "text_en": "David P. did NOT disclose Silverwood trust in ALL 7 prior 10-Ks (2018-2024) — systematic non-disclosure",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-02-27 10:58 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_ma_lead",
         "weight": 4,
         "text_uk": "David P. — lead architect $850M acquisition proposal, він presents і recommends approval на голосуванні через 7 днів",
-        "text_en": "David P. — lead architect of $850M acquisition proposal, he presents and recommends approval at vote in 7 days"
+        "text_en": "David P. — lead architect of $850M acquisition proposal, he presents and recommends approval at vote in 7 days",
+        "custody": {
+          "collected_from_en": "Internal audit archive",
+          "collected_from_uk": "Внутрішній архів аудиту",
+          "verified_by_en": "Security Team",
+          "verified_by_uk": "Служба безпеки",
+          "timestamp": "2026-01-14 14:20 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_private_meets",
         "weight": 4,
         "text_uk": "5 приватних restaurant meetings CFO ↔ BioLink CEO за 6 місяців, expensed як «business dev» без деталей",
-        "text_en": "5 private restaurant meetings CFO ↔ BioLink CEO over 6 months, expensed as «business dev» without detail"
+        "text_en": "5 private restaurant meetings CFO ↔ BioLink CEO over 6 months, expensed as «business dev» without detail",
+        "custody": {
+          "collected_from_en": "Internal audit archive",
+          "collected_from_uk": "Внутрішній архів аудиту",
+          "verified_by_en": "Security Team",
+          "verified_by_uk": "Служба безпеки",
+          "timestamp": "2026-01-20 09:15 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_share_timing",
         "weight": 4,
         "text_uk": "Останні 2 BluePeak purchases — за 3 тижні до board vote, після M&A proposal date",
-        "text_en": "Last 2 BluePeak purchases — 3 weeks before board vote, after M&A proposal date"
+        "text_en": "Last 2 BluePeak purchases — 3 weeks before board vote, after M&A proposal date",
+        "custody": {
+          "collected_from_en": "Internal audit archive",
+          "collected_from_uk": "Внутрішній архів аудиту",
+          "verified_by_en": "Security Team",
+          "verified_by_uk": "Служба безпеки",
+          "timestamp": "2026-02-03 17:33 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_spouse_straw",
         "weight": 3,
         "text_uk": "Sarah P. formally beneficial owner, але не має independent business background — straw / nominee",
-        "text_en": "Sarah P. formally beneficial owner but has no independent business background — straw / nominee"
+        "text_en": "Sarah P. formally beneficial owner but has no independent business background — straw / nominee",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-02-27 10:58 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_whistleblower",
         "weight": 3,
         "text_uk": "SEC whistleblower filing (2026-06-29) з accurate description Panama trust — likely insider-source",
-        "text_en": "SEC whistleblower filing (2026-06-29) with accurate Panama trust description — likely insider source"
+        "text_en": "SEC whistleblower filing (2026-06-29) with accurate Panama trust description — likely insider source",
+        "custody": {
+          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
+          "verified_by_en": "Compliance Team",
+          "verified_by_uk": "Compliance-команда",
+          "timestamp": "2026-01-14 14:20 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
       },
       {
         "id": "ev_linkedin_conn",
         "weight": 2,
         "text_uk": "LinkedIn: David P. + Marcus L. connected з Jan 2024 (за 2 роки до acquisition)",
-        "text_en": "LinkedIn: David P. + Marcus L. connected since Jan 2024 (2 years before acquisition)"
+        "text_en": "LinkedIn: David P. + Marcus L. connected since Jan 2024 (2 years before acquisition)",
+        "custody": {
+          "collected_from_en": "LinkedIn Sales Navigator (public profile)",
+          "collected_from_uk": "LinkedIn Sales Navigator (публічний профіль)",
+          "verified_by_en": "OSINT Analyst",
+          "verified_by_uk": "OSINT-аналітик",
+          "timestamp": "2026-01-20 09:15 UTC",
+          "integrity": "verified",
+          "confidence": "medium",
+          "evidence_class": "osint"
+        }
       },
       {
         "id": "ev_board_rumor",
         "weight": 1,
         "text_uk": "Anonymous board rumor: «David завжди був ambitious»",
-        "text_en": "Anonymous board rumor: «David was always ambitious»"
+        "text_en": "Anonymous board rumor: «David was always ambitious»",
+        "custody": {
+          "collected_from_en": "Interview / anonymous testimony",
+          "collected_from_uk": "Інтервʼю / анонімне свідчення",
+          "verified_by_en": "HR + Interview log",
+          "verified_by_uk": "HR + журнал інтервʼю",
+          "timestamp": "2026-02-03 17:33 UTC",
+          "integrity": "unverified",
+          "confidence": "low",
+          "evidence_class": "testimony"
+        }
       }
     ],
     "risk_correct": "critical",
