@@ -5026,3 +5026,17 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   0%   { color: var(--ice); text-shadow: 0 0 12px rgba(74,158,255,.55); }
   100% { color: inherit; text-shadow: none; }
 }
+
+/* ============ Live-counter flip animation (visible number rollover) ============ */
+.stat__num {
+  display: inline-block;
+  transition: none;
+}
+.stat__num--flip {
+  animation: statFlip .55s cubic-bezier(.22, .61, .36, 1);
+}
+@keyframes statFlip {
+  0%   { transform: translateY(-32%) scale(.92); opacity: .0; filter: blur(2px); color: var(--ice); }
+  35%  { transform: translateY(0)     scale(1);  opacity: 1;  filter: blur(0);  color: var(--ice); text-shadow: 0 0 12px rgba(74,158,255,.6); }
+  100% { transform: translateY(0)     scale(1);  opacity: 1;  filter: blur(0);  color: inherit; text-shadow: none; }
+}
