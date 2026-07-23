@@ -1976,6 +1976,114 @@ function calcRank(points) {
   }
   return { key: 'trainee', ...rs.trainee };
 }
+// Structured metrics — extensible bag of per-category numbers.
+// Add new categories without breaking existing readers.
+function computePlayerMetrics() {
+  const s = State.scenario;
+  const m = { timeline: null, evidence: null, policy: null, questions: null };
+
+  // Timeline
+  const tp = s.timeline_phase;
+  if (tp && tp.correct_order && State.timelineOrder && State.timelineOrder.length) {
+    const { pairsOk, pairsBad, total } = computeTimelineScore(State.timelineOrder, tp.correct_order);
+    m.timeline = { pairsOk, pairsBad, total, pct: total ? Math.round(100 * pairsOk / total) : 0 };
+  }
+
+  // Evidence selection (memo pool)
+  const mp = s.memo_phase;
+  if (mp && mp.evidence_pool && State.memoEvidence) {
+    const pool = mp.evidence_pool;
+    const picked = State.memoEvidence.length;
+    const diagIds = new Set(pool.filter(e => (e.weight || 0) >= 5).map(e => e.id));
+    const pickedDiag = State.memoEvidence.filter(id => diagIds.has(id)).length;
+    const missedDiag = diagIds.size - pickedDiag;
+    m.evidence = { picked, target: diagIds.size, diagnostic_picked: pickedDiag, diagnostic_total: diagIds.size, missed_diag: missedDiag };
+  }
+
+  // Policy
+  if (mp) {
+    const rec = (mp.recommendations || []).find(r => r.id === State.memoRecommendation);
+    const breached = !!(rec && rec.policy_breach);
+    m.policy = { breached, pct: breached ? 0 : 100 };
+  }
+
+  // Questions
+  const p3 = s.phase3;
+  if (p3 && p3.questions) {
+    const total = p3.questions.length;
+    const correct = p3.questions.filter(q => State.q3Answers[q.id] && State.q3Answers[q.id].correct).length;
+    m.questions = { correct, total, pct: total ? Math.round(100 * correct / total) : 0 };
+  }
+
+  return m;
+}
+
+// Reference-benchmark panel: player metrics vs case's target benchmark + coaching reason.
+function renderBenchmarkPanel() {
+  const b = State.scenario.benchmark;
+  if (!b) return '';
+  const m = computePlayerMetrics();
+  const isEn = LANG() === 'en';
+  const rows = [];
+
+  if (b.timeline && m.timeline) {
+    rows.push({
+      label: isEn ? 'Timeline Accuracy' : 'Точність хронології',
+      you: `${m.timeline.pct}%`,
+      target: `${b.timeline.target_pct}%`,
+      ok: m.timeline.pct >= b.timeline.target_pct,
+      reason: tr(b.timeline, 'reason')
+    });
+  }
+  if (b.evidence && m.evidence) {
+    rows.push({
+      label: isEn ? 'Evidence Selection' : 'Вибір доказів',
+      you: `${m.evidence.diagnostic_picked} / ${m.evidence.diagnostic_total}`,
+      target: `${b.evidence.target_count} / ${b.evidence.target_max}`,
+      ok: m.evidence.diagnostic_picked >= b.evidence.target_count,
+      reason: tr(b.evidence, 'reason')
+    });
+  }
+  if (b.policy && m.policy) {
+    rows.push({
+      label: isEn ? 'Policy Compliance' : 'Дотримання політики',
+      you: `${m.policy.pct}%`,
+      target: `${b.policy.target_pct}%`,
+      ok: m.policy.pct >= b.policy.target_pct,
+      reason: tr(b.policy, 'reason')
+    });
+  }
+  if (b.questions && m.questions) {
+    rows.push({
+      label: isEn ? 'Question Accuracy' : 'Точність відповідей',
+      you: `${m.questions.correct} / ${m.questions.total}`,
+      target: `${b.questions.target_pct}%`,
+      ok: m.questions.pct >= b.questions.target_pct,
+      reason: tr(b.questions, 'reason')
+    });
+  }
+  if (!rows.length) return '';
+
+  const rowsHtml = rows.map(r => `
+    <div class="bench__row ${r.ok ? 'bench__row--ok' : 'bench__row--miss'}">
+      <div class="bench__label">${escapeHtml(r.label)}</div>
+      <div class="bench__cols">
+        <div class="bench__col"><span>${isEn?'You':'Ти'}</span><strong>${escapeHtml(r.you)}</strong></div>
+        <div class="bench__col"><span>${isEn?'Target Benchmark':'Еталонний рівень'}</span><strong>${escapeHtml(r.target)}</strong></div>
+      </div>
+      ${r.reason ? `<div class="bench__reason">${escapeHtml(r.reason)}</div>` : ''}
+    </div>`).join('');
+
+  return `
+    <div class="bench">
+      <h3 class="bench__title">${isEn ? '📐 Reference Investigation — how you compare' : '📐 Еталонне розслідування — як ти порівнюєшся'}</h3>
+      <div class="bench__note">${isEn
+        ? 'Compared to the reference solution designed by the case author. Not community data yet — will switch to real player stats once ~100 completions are recorded.'
+        : 'Порівняння з еталонним розвʼязком від автора кейсу. Ще не community-статистика — переключиться на реальні дані гравців, коли накопичиться ~100 проходжень.'}</div>
+      ${rowsHtml}
+    </div>`;
+}
+
 function showResult({ verdict = null, timeBonus = 0, submitted = false, submitResult = null, timedOut = false }) {
   const s = State.scenario;
   const points = Math.max(0, State.points);
@@ -2026,6 +2134,7 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
         <div><span>${LANG()==='en'?'Time bonus':'Бонус за час'}</span><strong>+${timeBonus}</strong></div>
       </div>
       ${cdRow}
+      ${renderBenchmarkPanel()}
       ${pivotChainHtml()}
       ${State.nickname ? submitRow : ''}
       <div class="result__share">

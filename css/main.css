@@ -4736,3 +4736,85 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   .custody-tag { font-size: .62rem; padding: .45rem .55rem; }
   .custody-tag__row { grid-template-columns: 72px 1fr; }
 }
+
+/* ============ Target Benchmark panel ============ */
+.bench {
+  margin-top: 2rem;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, rgba(20,28,48,.65), rgba(10,14,26,.75));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ice);
+  border-radius: 3px;
+}
+.bench__title {
+  margin: 0 0 .3rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--cream);
+}
+.bench__note {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--text-mute);
+  opacity: .8;
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+.bench__row {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.bench__row:first-of-type { border-top: none; padding-top: .4rem; }
+.bench__label {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: .55rem;
+}
+.bench__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: .55rem;
+}
+.bench__col {
+  display: flex;
+  flex-direction: column;
+  padding: .55rem .8rem;
+  background: rgba(15,21,36,.5);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+.bench__col span {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: .2rem;
+}
+.bench__col strong {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--cream);
+  font-weight: 500;
+}
+.bench__row--ok .bench__col:first-child strong { color: #7fd6ff; }
+.bench__row--miss .bench__col:first-child strong { color: #d4a34e; }
+.bench__reason {
+  font-size: .88rem;
+  line-height: 1.6;
+  color: var(--text);
+  padding: .5rem .8rem;
+  background: rgba(74,158,255,.05);
+  border-left: 2px solid rgba(74,158,255,.3);
+  border-radius: 0 2px 2px 0;
+}
+@media (max-width: 640px) {
+  .bench { padding: 1.1rem 1.1rem; }
+  .bench__cols { grid-template-columns: 1fr; gap: .5rem; }
+}

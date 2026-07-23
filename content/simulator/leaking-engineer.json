@@ -1002,5 +1002,28 @@
       "msg_en": "Case completed — Track II certificate not yet earned.",
       "color": "#8a8a8a"
     }
+  },
+  "benchmark": {
+    "timeline": {
+      "target_pct": 96,
+      "reason_uk": "Ключова помилка — плутати дату затвердження інвойсу з датою його оплати. Контракт → інвойс #1 → затвердження V.R. → оплата — цей ланцюг має бути монотонним. Гравці часто ставлять money-flow подію перед офіційним інвойсом.",
+      "reason_en": "The key mistake is confusing invoice approval date with invoice payment date. Contract → invoice #1 → V.R. approval → payment — this chain must be monotone. Players often place money-flow events before the formal invoice."
+    },
+    "evidence": {
+      "target_count": 5,
+      "target_max": 5,
+      "reason_uk": "Ідеальний вибір: LLC-founder=дружина, invoice+approval V.R., meeting minutes leak, money flow $170K→дружина+$10K→V.R., email chain з CTO конкурента. Найчастіше пропускають email chain — сприймають як «просто розмова», а насправді це прямий доказ наміру.",
+      "reason_en": "Ideal selection: LLC founder=wife, invoice+V.R. approval, meeting minutes leak, money flow $170K→wife+$10K→V.R., email chain with competitor's CTO. Most commonly missed: email chain — perceived as «just a conversation», but it is direct evidence of intent."
+    },
+    "policy": {
+      "target_pct": 100,
+      "reason_uk": "Corporate policy вимагає паралельну ескалацію до Legal ПЕРЕД термінацією. Просто REJECT або TERMINATE = policy breach (-40). Правильний шлях — ESCALATE до Legal + Security + preserve evidentiary chain.",
+      "reason_en": "Corporate policy requires parallel Legal escalation BEFORE termination. Plain REJECT or TERMINATE = policy breach (-40). Correct path — ESCALATE to Legal + Security + preserve evidentiary chain."
+    },
+    "questions": {
+      "target_pct": 100,
+      "reason_uk": "Всі 3 questions мають один явно правильний варіант при уважному аналізі доказів. Помилки зазвичай на Q2 (роль дружини — між «свідома учасниця» vs «прикриття») — правильна відповідь спирається на bank flow ($170K на її рахунок).",
+      "reason_en": "All 3 questions have one clearly correct option after careful evidence analysis. Mistakes usually on Q2 (wife's role — between «knowing participant» vs «cover») — correct answer relies on bank flow ($170K to her account)."
+    }
   }
 }
