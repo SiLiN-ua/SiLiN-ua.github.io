@@ -509,7 +509,19 @@ function render(lang) {
   const T = I18N[lang] || I18N.uk;
   const params = new URLSearchParams(location.search);
   const nick = params.get('nick') || localStorage.getItem('ss.nickname') || 'Anonymous';
-  const pts = parseInt(params.get('pts') || localStorage.getItem('ss.total_pts') || '0', 10);
+  // Read total pts from URL, else from Firebase-synced ss.local JSON blob {total, games}
+  let ptsFromLocal = 0;
+  try {
+    const local = JSON.parse(localStorage.getItem('ss.local') || '{}');
+    ptsFromLocal = parseInt(local.total || 0, 10);
+  } catch(e) {}
+  const pts = parseInt(params.get('pts') || String(ptsFromLocal) || '0', 10);
+  // Count completed Sim #01 cases from localStorage
+  const track1Cases = ['fake-cfo','suspicious-consultant','family-chain'];
+  const completedCount = track1Cases.filter(id => localStorage.getItem('ss.completed.' + id) === '1').length;
+  const totalCount = track1Cases.length;
+  const cStatCases = document.getElementById('c-stat-cases');
+  if (cStatCases) cStatCases.textContent = completedCount + ' / ' + totalCount;
   const dateISO = params.get('date') || localStorage.getItem('ss.cert_date') || new Date().toISOString();
   const rank = rankByPts(pts);
 

@@ -401,7 +401,7 @@ html, body {
 
       <div class="cert__stats">
         <div class="cert__stat">
-          <div class="cert__stat-val" id="c-stat-cases">5 / 5</div>
+          <div class="cert__stat-val" id="c-stat-cases">6 / 6</div>
           <div class="cert__stat-lbl" id="c-stat-cases-lbl">Кейсів пройдено</div>
         </div>
         <div class="cert__stat">
@@ -442,7 +442,7 @@ const I18N = {
     title: 'Shadow Certificate',
     subtitle: 'CORPORATE INVESTIGATIONS TRACK',
     preamble: 'Це офіційне свідоцтво про те, що',
-    body: 'успішно завершив/ла Track II — <strong>Corporate Investigations</strong>, продемонструвавши компетенції у розслідуванні витоку IP, kickback-схем, підставних vendor, конфлікту інтересів топ-менеджменту та insider trading. Оволодів методиками Timeline Reconstruction, Memo Drafting та Corporate Policy Compliance.',
+    body: 'успішно завершив/ла Track II — <strong>Corporate Investigations</strong>, продемонструвавши компетенції у розслідуванні витоку IP, kickback-схем, підставних vendor, конфлікту інтересів топ-менеджменту, insider trading та judgment-under-ambiguity (MONITOR-with-tripwires). Оволодів методиками Timeline Reconstruction, Memo Drafting, Chain of Custody, Target Benchmark та Corporate Policy Compliance.',
     cases_lbl: 'Кейсів пройдено',
     pts_lbl: 'Всього очок',
     rank_lbl: 'Ранг',
@@ -466,7 +466,7 @@ const I18N = {
     title: 'Shadow Certificate',
     subtitle: 'CORPORATE INVESTIGATIONS TRACK',
     preamble: 'This is to certify that',
-    body: 'has successfully completed Track II — <strong>Corporate Investigations</strong>, demonstrating competencies across IP theft detection, kickback scheme unravelling, shell-vendor screening, executive conflict-of-interest reviews, and insider trading investigations. Skilled in Timeline Reconstruction, Memo Drafting, and Corporate Policy Compliance.',
+    body: 'has successfully completed Track II — <strong>Corporate Investigations</strong>, demonstrating competencies across IP theft detection, kickback scheme unravelling, shell-vendor screening, executive conflict-of-interest reviews, insider trading investigations, and judgment-under-ambiguity (MONITOR-with-tripwires). Skilled in Timeline Reconstruction, Memo Drafting, Chain of Custody, Target Benchmark, and Corporate Policy Compliance.',
     cases_lbl: 'Cases completed',
     pts_lbl: 'Total points',
     rank_lbl: 'Rank',
@@ -509,7 +509,18 @@ function render(lang) {
   const T = I18N[lang] || I18N.uk;
   const params = new URLSearchParams(location.search);
   const nick = params.get('nick') || localStorage.getItem('ss.nickname') || 'Anonymous';
-  const pts = parseInt(params.get('pts') || localStorage.getItem('ss.total_pts') || '0', 10);
+  // Read total pts from URL, else from Firebase-synced ss.local JSON blob {total, games}
+  let ptsFromLocal = 0;
+  try {
+    const local = JSON.parse(localStorage.getItem('ss.local') || '{}');
+    ptsFromLocal = parseInt(local.total || 0, 10);
+  } catch(e) {}
+  const pts = parseInt(params.get('pts') || String(ptsFromLocal) || '0', 10);
+  // Count completed Sim #02 cases from localStorage
+  const track2Cases = ['leaking-engineer','procurement-ghost','fake-vendor-network','executive-coi','insider-trading','careful-watch'];
+  const completedCount = track2Cases.filter(id => localStorage.getItem('ss.completed.' + id) === '1').length;
+  const totalCount = track2Cases.length;
+  document.getElementById('c-stat-cases').textContent = completedCount + ' / ' + totalCount;
   const dateISO = params.get('date') || localStorage.getItem('ss.cert_date') || new Date().toISOString();
   const rank = rankByPts(pts);
 
