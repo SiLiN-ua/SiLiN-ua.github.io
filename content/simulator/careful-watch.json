@@ -52,8 +52,8 @@
         "time_cost": 90,
         "weight": "diagnostic",
         "ui_component": "opencorp",
-        "clue_uk": "Prometheus Life Sciences — 12 років на ринку. Засновник — Prof. Andriy Kravchuk (професор фармакології КНУ). Компанія — ЄДИНИЙ MAH (marketing-authorization holder) в Україні для 3 рідкісних oncology-препаратів (за Державним реєстром лікарських засобів) (сертифікація МОЗ обмежена). Це legitimacy signal.",
-        "clue_en": "Prometheus Life Sciences — 12 years in market. Founder — Prof. Andriy Kravchuk (KNU pharmacology professor). The company is Ukraine's sole marketing-authorization holder (MAH) for 3 rare oncology drugs (per the Ukrainian State Register of Medicinal Products; MoH certification is restricted). Legitimacy signal.",
+        "clue_uk": "Prometheus Life Sciences — 12 років на ринку. Засновник — Prof. Andriy Kravchuk (професор фармакології КНУ). Компанія — єдиний marketing-authorization holder (MAH) в Україні для 3 рідкісних oncology-препаратів (Directive 2001/83/EC concept, застосований у UA-регуляторному режимі) (за Державним реєстром лікарських засобів) (сертифікація МОЗ обмежена). Це legitimacy signal.",
+        "clue_en": "Prometheus Life Sciences — 12 years in market. Founder — Prof. Andriy Kravchuk (KNU pharmacology professor). The company is Ukraine's sole Marketing Authorization Holder (MAH) for 3 rare oncology drugs (per the Ukrainian State Register of Medicinal Products; MoH certification is restricted). Legitimacy signal.",
         "opencorp": {
           "query": "Prometheus Life Sciences LLC",
           "company_name_uk": "ТОВ «Prometheus Life Sciences»",
@@ -688,8 +688,8 @@
       },
       {
         "id": "monitor_with_tripwires",
-        "text_uk": "MONITOR з tripwires: (1) vendor-rotation KPI Q on Q, (2) spouse arm's-length re-check quarterly, (3) SAP invoice-anomaly threshold. 90-day review + go/no-go decision.",
-        "text_en": "MONITOR with tripwires: (1) vendor-rotation KPI Q on Q, (2) spouse arm's-length re-check quarterly, (3) SAP invoice-anomaly threshold. 90-day review + go/no-go.",
+        "text_uk": "MONITOR з квантифікованими tripwires: (1) vendor-concentration >65% дві квартали поспіль → escalation trigger [Internal Audit]; (2) unit-price drift >5% vs EU benchmark у одному місяці → automatic memo-required [Finance]; (3) spouse-employer contract-flow scan vs AP master щомісяця → policy breach if any match [Compliance]. 90-day formal review з go/no-go decision.",
+        "text_en": "MONITOR with quantified tripwires: (1) vendor-concentration >65% for two consecutive quarters → escalation trigger [Internal Audit]; (2) unit-price drift >5% vs EU benchmark in any single month → automatic memo-required [Finance]; (3) spouse-employer contract-flow scan vs AP master monthly → policy breach if any match [Compliance]. 90-day formal review with go/no-go decision.",
         "points": 50,
         "correct": true,
         "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ ПРАВИЛЬНО. Це і є mature-compliance response. Yellow signals + legitimate explanations = monitor, don't burn. 3 tripwires ловлять degradation, 90-day review дає decision point.",
@@ -777,7 +777,7 @@
     "trigger_recommendation_id": "monitor_with_tripwires",
     "title_uk": "📅 60 днів потому — один з tripwires спрацював",
     "title_en": "📅 60 days later — one of the tripwires fired",
-    "body_uk": "Через 60 днів автоматичний SAP invoice-anomaly alert зловив 12% overage на другій partії Q1 2026 від Prometheus. Serhii M. вчасно (в межах 5 днів) подав memo з поясненням — знову shortage EU-substance + додав invoice від EU-manufacturer як proof. CFO прийняв пояснення, але Audit committee погодився на **early trigger** 90-day review з full pricing audit незалежним експертом. Serhii M. НЕ звільнений. **Це і є mature-compliance response: monitor caught what full termination would've destroyed evidence for.** Через 30 днів audit підтвердив shortage-explanation як legitimate, review закрито, tripwires оновлено.",
-    "body_en": "60 days later, an automatic SAP invoice-anomaly alert caught a 12% overage on the second Q1 2026 batch from Prometheus. Serhii M. filed a memo within 5 days with explanation — again EU-substance shortage + attached EU-manufacturer invoice as proof. CFO accepted the explanation, but the Audit committee agreed on an **early trigger** 90-day review with a full pricing audit by an independent expert. Serhii M. NOT fired. **This is mature-compliance response: monitor caught what full termination would've destroyed the evidence trail for.** 30 days later the audit confirmed shortage-explanation as legitimate, review closed, tripwires updated."
+    "body_uk": "Через 60 днів automatic SAP invoice-anomaly tripwire (unit-price drift >5% vs EU benchmark, Finance-owned) спрацював на другій partії Q1 2026 — 12% overage від Prometheus. Serhii M. вчасно (в межах 5 днів) подав memo з поясненням: знову shortage EU-substance + додав invoice від EU-manufacturer як proof. CFO прийняв пояснення, але Audit committee погодився на **early trigger** 90-day review з full pricing audit незалежним експертом. Serhii M. НЕ звільнений. **Це і є mature-compliance response: monitor caught what full termination would've destroyed evidence for.** Через 30 днів audit підтвердив shortage-explanation як legitimate, review закрито, tripwire threshold залишено (%>5) з added quarterly re-baseline vs EU market.",
+    "body_en": "60 days later, the automatic SAP invoice-anomaly tripwire (unit-price drift >5% vs EU benchmark, Finance-owned) fired on the second Q1 2026 batch — 12% overage from Prometheus. Serhii M. filed a memo within 5 days with explanation: EU-substance shortage again + attached EU-manufacturer invoice as proof. CFO accepted the explanation, but the Audit Committee agreed on an **early trigger** 90-day review with a full pricing audit by an independent expert. Serhii M. NOT fired. **This is mature-compliance response: monitor caught what full termination would've destroyed the evidence trail for.** 30 days later the audit confirmed shortage-explanation as legitimate, review closed, tripwire threshold kept (>5%) with added quarterly re-baseline vs EU market."
   }
 }

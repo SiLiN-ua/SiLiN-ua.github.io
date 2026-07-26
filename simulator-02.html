@@ -8,12 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
 <title data-title-uk="Simulator #02 · Corporate Investigations · Єгор Селін" data-title-en="Simulator #02 · Corporate Investigations · Єгор Селін">Simulator #02 · Corporate Investigations · Єгор Селін</title>
-<meta name="description" content="Симулятор #02 — 5 кейсів корпоративних розслідувань. Timeline Builder, Memo Builder, Corporate Policy. В розробці.">
+<meta name="description" content="Симулятор #02 — 6 кейсів корпоративних розслідувань. Timeline Builder, Memo Builder, Chain of Custody, Target Benchmark. Грати зараз.">
 <link rel="canonical" href="https://yehorselin.com/simulator-02.html">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shadow Simulator #02 · Corporate Investigations">
-<meta property="og:description" content="Наступна серія симулятора: розслідування корпоративних інцидентів. В розробці.">
+<meta property="og:description" content="6 кейсів корпоративних розслідувань. Chain of Custody + Target Benchmark. Грати зараз.">
 <meta property="og:url" content="https://yehorselin.com/simulator-02.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,20 +203,20 @@
 <section class="ss-section">
   <div class="container">
     <div class="ss-secttl">
-      <span class="ss-secttl__pre" data-i18n="sim2.cases.pre">ЗАПЛАНОВАНІ КЕЙСИ</span>
-      <h2 data-i18n="sim2.cases.title">5 корпоративних розслідувань</h2>
-      <p data-i18n="sim2.cases.subtitle">Кейси будуть виходити етапами: перші три одночасно (Launch 1), потім Case 4 і Case 5 з інтервалом 2 тижні для збору фідбеку.</p>
+      <span class="ss-secttl__pre" data-i18n="sim2.cases.pre">ДОСТУПНІ КЕЙСИ</span>
+      <h2 data-i18n="sim2.cases.title">6 корпоративних розслідувань</h2>
+      <p data-i18n="sim2.cases.subtitle">Всі 6 кейсів доступні. Проходь у своєму темпі — sequential unlock відкриває наступний після успішного меморандуму попереднього.</p>
     </div>
 
     <article class="sim-card sim-card--sim2">
       <div class="sim-card__games-head">
-        <span data-i18n="sim2.cases.head">5 кейсів у Track II</span>
+        <span data-i18n="sim2.cases.head">6 кейсів у Track II</span>
       </div>
 
       <div class="sim-games">
 
-        <article class="game-row game-row--dev">
-          <div class="game-row__idx">1 / 5</div>
+        <article class="game-row">
+          <div class="game-row__idx">1 / 6</div>
           <div class="game-row__body">
             <h4 data-i18n="sim2.case1.title">Кейс 1 · «The Leaking Engineer»</h4>
             <p data-i18n="sim2.case1.sub">Senior engineer підозрюється у передачі архітектури продукту конкуренту через підставне ТОВ, зареєстроване на дружину. OpenCorporates + meeting minutes leak + timeline finance. Твоє рішення — не одразу Terminate, а правильна ескалація за політикою.</p>
@@ -228,12 +228,12 @@
             </div>
           </div>
           <div class="game-row__actions">
-            <div class="game-row__status--dev" data-i18n="sim2.status.launch1">⚙ Launch 1</div>
+            <a href="game.html?case=leaking-engineer" class="btn btn--filled game-row__play" data-umami-event="sim2-case-play">▶ Play</a>
           </div>
         </article>
 
-        <article class="game-row game-row--dev">
-          <div class="game-row__idx">2 / 5</div>
+        <article class="game-row">
+          <div class="game-row__idx">2 / 6</div>
           <div class="game-row__body">
             <h4 data-i18n="sim2.case2.title">Кейс 2 · «Procurement Ghost»</h4>
             <p data-i18n="sim2.case2.sub">Аудитор помітив, що постачання запчастин на 30-40% дорожче ринку. Procurement manager і ланцюжок 4 підставних vendor'ів. Однакова адреса будинку сусіда. Однаковий кіпрський банк. Google Street View + LinkedIn cross-check.</p>
@@ -245,12 +245,12 @@
             </div>
           </div>
           <div class="game-row__actions">
-            <div class="game-row__status--dev" data-i18n="sim2.status.launch1">⚙ Launch 1</div>
+            <a href="game.html?case=procurement-ghost" class="btn btn--filled game-row__play" data-umami-event="sim2-case-play">▶ Play</a>
           </div>
         </article>
 
-        <article class="game-row game-row--dev">
-          <div class="game-row__idx">3 / 5</div>
+        <article class="game-row">
+          <div class="game-row__idx">3 / 6</div>
           <div class="game-row__body">
             <h4 data-i18n="sim2.case3.title">Кейс 3 · «Fake Vendor Network» (adversarial)</h4>
             <p data-i18n="sim2.case3.sub">Compliance flag: 3 нових vendor підозріло схожі — та ж адреса, та ж платіжка, схожі websites. Але це просто фрилансери з одного coworking. Пастка: інстинкт кричить «Terminate!», політика вимагає Additional Due Diligence. False Positive Avoidance тренується саме тут.</p>
@@ -261,12 +261,12 @@
             </div>
           </div>
           <div class="game-row__actions">
-            <div class="game-row__status--dev" data-i18n="sim2.status.launch1">⚙ Launch 1</div>
+            <a href="game.html?case=fake-vendor-network" class="btn btn--filled game-row__play" data-umami-event="sim2-case-play">▶ Play</a>
           </div>
         </article>
 
-        <article class="game-row game-row--dev">
-          <div class="game-row__idx">4 / 5</div>
+        <article class="game-row">
+          <div class="game-row__idx">4 / 6</div>
           <div class="game-row__body">
             <h4 data-i18n="sim2.case4.title">Кейс 4 · «Executive Conflict of Interest»</h4>
             <p data-i18n="sim2.case4.sub">Публічна компанія, cap $2B. Правління на порозі mega-acquisition. Whistleblower: CFO має приховану 3%-долю у target через Panama-трест. Голосування через тиждень. Panama Papers + corporate ownership graph + SEC disclosure. Політика: тільки external Legal Counsel, ніяких self-investigations.</p>
@@ -278,12 +278,12 @@
             </div>
           </div>
           <div class="game-row__actions">
-            <div class="game-row__status--dev" data-i18n="sim2.status.launch2">⚙ +2 тижні</div>
+            <a href="game.html?case=executive-coi" class="btn btn--filled game-row__play" data-umami-event="sim2-case-play">▶ Play</a>
           </div>
         </article>
 
-        <article class="game-row game-row--dev">
-          <div class="game-row__idx">5 / 5</div>
+        <article class="game-row">
+          <div class="game-row__idx">5 / 6</div>
           <div class="game-row__body">
             <h4 data-i18n="sim2.case5.title">Кейс 5 · «Insider Trading Alert» (ФІНАЛ)</h4>
             <p data-i18n="sim2.case5.sub">Investment bank compliance. Analyst торгував акціями клієнта за 3 дні до оголошення M&A. Але торгував через рахунок брата-студента, який живе за його адресою. Rolex на $8K як hedge. Найскладніший кейс, який зв'язує всі нові механіки.</p>
@@ -295,15 +295,31 @@
             </div>
           </div>
           <div class="game-row__actions">
-            <div class="game-row__status--dev" data-i18n="sim2.status.launch3">⚙ +4 тижні</div>
+            <a href="game.html?case=insider-trading" class="btn btn--filled game-row__play" data-umami-event="sim2-case-play">▶ Play</a>
+          </div>
+
+        <article class="game-row">
+          <div class="game-row__idx">6 / 6</div>
+          <div class="game-row__body">
+            <h4 data-i18n="sim2.case6.title">Кейс 6 · «The Careful Watch» (judgment-under-ambiguity)</h4>
+            <p data-i18n="sim2.case6.sub">StellarMed Pharmacy Ukraine · Procurement Director з трьома «жовтими» сигналами: 62% vendor-concentration (МОЗ sole-MAH пояснення), 2019 Facebook-коментар (context-clean), spouse у Bio-Wave (health-policy, не distribution). Правильна відповідь = MONITOR з квантифікованими tripwires + 90-day review, а не миттєве ESCALATE. Тренує false-positive-avoidance у ambiguous cases.</p>
+            <div class="game-row__chips">
+              <span class="proj-chip">Judgment Under Ambiguity</span>
+              <span class="proj-chip">MONITOR-with-tripwires</span>
+              <span class="proj-chip">Pharma Sole-MAH</span>
+              <span class="proj-chip">Post-decision Beat</span>
+            </div>
+          </div>
+          <div class="game-row__actions">
+            <a href="game.html?case=careful-watch" class="btn btn--filled game-row__play" data-umami-event="sim2-case-play">▶ Play</a>
           </div>
         </article>
 
       </div>
 
       <div class="sim2-notify">
-        <h3 data-i18n="sim2.notify.title">Хочеш дізнатись коли Case 1 запуститься?</h3>
-        <p data-i18n="sim2.notify.text">Не робимо email-розсилок. Підпишись на LinkedIn — там першим ділом пишу про кожен запуск + розбір нової механіки.</p>
+        <h3 data-i18n="sim2.notify.title">Пройшов кейси — маєш фідбек?</h3>
+        <p data-i18n="sim2.notify.text">Пиши на LinkedIn або в Telegram — читаю кожен message. Кожен раунд фідбеку → нова ітерація кейсів або нова механіка.</p>
         <div class="sim2-notify__cta">
           <a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener" class="btn btn--filled" data-umami-event="sim2-linkedin-follow">💼 Follow on LinkedIn</a>
           <a href="https://t.me/shadowsint0" target="_blank" rel="noopener" class="btn" data-umami-event="sim2-telegram-follow">✈ Telegram</a>
@@ -321,7 +337,7 @@
     <div class="ss-secttl">
       <span class="ss-secttl__pre" data-i18n="ss.lb.pre">ГЛОБАЛЬНИЙ РЕЙТИНГ</span>
       <h2 data-i18n="ss.lb.title">🏆 Leaderboard</h2>
-      <p data-i18n="sim2.lb.subtitle">Спільний leaderboard для всіх треків Shadow Simulator. Track II очки додаватимуться після запуску Case 1.</p>
+      <p data-i18n="sim2.lb.subtitle">Спільний leaderboard для всіх треків Shadow Simulator.</p>
     </div>
     <div id="leaderboard-list"></div>
   </div>
