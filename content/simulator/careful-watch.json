@@ -190,8 +190,8 @@
         "time_cost": 90,
         "weight": "diagnostic",
         "ui_component": "invoice-analysis",
-        "clue_uk": "SAP показує: ціни Prometheus у межах +/-3% від EU-benchmark (MSD Manuals reference price). Дискаунт 12% за 4-річний exclusive-contract — стандартна практика для rare drugs. Немає overpricing patterns.",
-        "clue_en": "SAP shows: Prometheus prices within +/-3% of EU-benchmark (MSD Manuals reference price). 12% discount for 4-year exclusive contract — standard practice for rare drugs. No overpricing patterns."
+        "clue_uk": "SAP показує змішану картину: 2023-2024-H1 ціни Prometheus у межах +/-3% від EU-benchmark. АЛЕ Q4 2024 batch — на 8% вище benchmark ($27K overage у сумі). Prometheus пояснює це шортажем субстанції у постачальника ЄС + rush shipping. Пояснення plausible але не документально закрито. 12% discount за 4-річний exclusive-contract зберігається. Residual uncertainty існує.",
+        "clue_en": "SAP shows a mixed picture: 2023-2024-H1 prices Prometheus within +/-3% of EU-benchmark. BUT Q4 2024 batch was 8% above benchmark ($27K overage total). Prometheus explains this by EU supplier substance shortage + rush shipping. Explanation plausible but not documentarily closed. 12% discount for 4-year exclusive contract preserved. Residual uncertainty exists."
       },
       {
         "id": "vendor_rotation_kpi",
@@ -208,14 +208,14 @@
         "time_cost": 45,
         "weight": "supporting",
         "ui_component": "matches",
-        "clue_uk": "У StellarMed policy vendor-concentration > 50% на категорію ВИМАГАЄ annual justification memo. Сергій М. подавав memo за 2023, 2024, 2025 — усі затверджені CFO. Тобто concentration задекларована і санкціонована.",
-        "clue_en": "StellarMed policy: vendor-concentration > 50% per category REQUIRES annual justification memo. Serhii M. submitted memos for 2023, 2024, 2025 — all approved by CFO. Concentration is declared and sanctioned.",
+        "clue_uk": "У StellarMed policy vendor-concentration > 50% на категорію ВИМАГАЄ annual justification memo. Serhii M. подавав memo за 2023 (on-time), 2024 (submitted 4 місяці LATE — internal audit noted), 2025 (on-time). Всі три memos затверджені CFO. Late 2024 memo = compliance-hygiene issue, not fraud signal — але tripwire-worthy.",
+        "clue_en": "StellarMed policy: vendor-concentration > 50% per category REQUIRES annual justification memo. Serhii M. filed memos for 2023 (on-time), 2024 (submitted 4 months LATE — internal audit noted), 2025 (on-time). All three approved by CFO. Late 2024 memo = compliance-hygiene issue, not fraud signal — but tripwire-worthy.",
         "matches": [
           {
             "site": "Compliance dashboard · vendor-concentration policy",
             "url": "compliance.stellarmed.internal/policy-v2",
             "note_uk": "Policy: >50% concentration на категорію = annual justification memo required + CFO approval. Сергій М. compliant усі 3 роки.",
-            "note_en": "Policy: >50% concentration per category = annual justification memo required + CFO approval. Serhii M. compliant all 3 years."
+            "note_en": "Policy: >50% concentration per category = annual justification memo required + CFO approval. Serhii M.: 2023 on-time, 2024 4 months late (audit noted), 2025 on-time."
           }
         ]
       },
@@ -506,9 +506,9 @@
       },
       {
         "id": "ev_vendor_memo",
-        "weight": 5,
-        "text_uk": "Vendor-concentration задекларована через annual justification memo + CFO approval у 2023/24/25.",
-        "text_en": "Vendor concentration declared via annual justification memo + CFO approval in 2023/24/25.",
+        "weight": 4,
+        "text_uk": "Vendor-concentration задекларована через annual justification memo — 2023 on-time, 2024 late 4 місяці (audit noted), 2025 on-time. Всі CFO approved. Compliance-hygiene attention warranted.",
+        "text_en": "Vendor concentration declared via annual justification memo — 2023 on-time, 2024 4 months late (audit noted), 2025 on-time. All CFO approved. Compliance-hygiene attention warranted.",
         "custody": {
           "collected_from_uk": "Внутрішній архів Compliance dashboard",
           "collected_from_en": "Internal Compliance dashboard",
@@ -522,9 +522,9 @@
       },
       {
         "id": "ev_sap_prices",
-        "weight": 5,
-        "text_uk": "SAP procurement history: ціни Prometheus у межах +/-3% від EU-benchmark. 12% discount за exclusive contract — market-standard.",
-        "text_en": "SAP procurement history: Prometheus prices within +/-3% of EU-benchmark. 12% discount for exclusive contract — market-standard.",
+        "weight": 4,
+        "text_uk": "SAP procurement: 2023-2024-H1 ціни Prometheus у межах +/-3% від EU-benchmark. Q4 2024 anomaly: 8% overage ($27K), пояснено shortage — plausible але не closed.",
+        "text_en": "SAP procurement: 2023-2024-H1 Prometheus prices within +/-3% of EU-benchmark. Q4 2024 anomaly: 8% overage ($27K), explained by shortage — plausible but not closed.",
         "custody": {
           "collected_from_uk": "SAP financial export",
           "collected_from_en": "SAP financial export",
@@ -725,8 +725,8 @@
     "evidence": {
       "target_count": 5,
       "target_max": 5,
-      "reason_uk": "Diagnostic-набір: МОЗ-registry, vendor-memo trail, SAP prices, SAP dual-approval, alternative-supplier gap. Найчастіше пропускають alternative-supplier gap — саме він показує чому concentration = medical necessity, а не choice.",
-      "reason_en": "Diagnostic set: MoH registry, vendor-memo trail, SAP prices, SAP dual-approval, alternative-supplier gap. Most commonly missed: alternative-supplier gap — it shows why concentration = medical necessity, not choice."
+      "reason_uk": "Diagnostic-набір: МОЗ-registry (sole MAH), SAP prices з Q4 2024 8% overage anomaly, vendor-memo trail з 2024 late-filing hygiene issue, SAP dual-approval, alternative-supplier gap. Ключове — не пропустити 2024 late memo + Q4 overage: саме вони роблять кейс справді ambiguous, а не clean-with-monitoring.",
+      "reason_en": "Diagnostic set: MoH registry (sole MAH), SAP prices with Q4 2024 8% overage anomaly, vendor-memo trail with 2024 late-filing hygiene issue, SAP dual-approval, alternative-supplier gap. Key — don't miss the 2024 late memo + Q4 overage: they're what make this genuinely ambiguous, not clean-with-monitoring."
     },
     "policy": {
       "target_pct": 100,
@@ -772,5 +772,12 @@
       "msg_uk": "Спалив Сергій М. на legitimate pattern. Company тепер судиться. Спробуй з MONITOR-first mindset.",
       "msg_en": "Burned Serhii M. on a legitimate pattern. Company now in court. Try again with a MONITOR-first mindset."
     }
-  ]
+  ],
+  "post_decision_beat": {
+    "trigger_recommendation_id": "monitor_with_tripwires",
+    "title_uk": "📅 60 днів потому — один з tripwires спрацював",
+    "title_en": "📅 60 days later — one of the tripwires fired",
+    "body_uk": "Через 60 днів автоматичний SAP invoice-anomaly alert зловив 12% overage на другій partії Q1 2026 від Prometheus. Serhii M. вчасно (в межах 5 днів) подав memo з поясненням — знову shortage EU-substance + додав invoice від EU-manufacturer як proof. CFO прийняв пояснення, але Audit committee погодився на **early trigger** 90-day review з full pricing audit незалежним експертом. Serhii M. НЕ звільнений. **Це і є mature-compliance response: monitor caught what full termination would've destroyed evidence for.** Через 30 днів audit підтвердив shortage-explanation як legitimate, review закрито, tripwires оновлено.",
+    "body_en": "60 days later, an automatic SAP invoice-anomaly alert caught a 12% overage on the second Q1 2026 batch from Prometheus. Serhii M. filed a memo within 5 days with explanation — again EU-substance shortage + attached EU-manufacturer invoice as proof. CFO accepted the explanation, but the Audit committee agreed on an **early trigger** 90-day review with a full pricing audit by an independent expert. Serhii M. NOT fired. **This is mature-compliance response: monitor caught what full termination would've destroyed the evidence trail for.** 30 days later the audit confirmed shortage-explanation as legitimate, review closed, tripwires updated."
+  }
 }

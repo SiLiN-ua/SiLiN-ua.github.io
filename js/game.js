@@ -2139,6 +2139,23 @@ function computePlayerMetrics() {
 }
 
 // Reference-benchmark panel: player metrics vs case's target benchmark + coaching reason.
+// Post-decision beat — fires when the player's chosen verdict matches the scenario's beat trigger.
+// Shows a "60/90 days later" narrative on the result screen — proves that MONITOR/ESCALATE
+// is active oversight, not just a checkbox.
+function renderPostDecisionBeat(verdict) {
+  const beat = State.scenario.post_decision_beat;
+  if (!beat || !verdict) return '';
+  if (beat.trigger_recommendation_id && verdict.id !== beat.trigger_recommendation_id) return '';
+  const title = tr(beat, 'title');
+  const body = tr(beat, 'body');
+  if (!title || !body) return '';
+  return `
+    <div class="post-beat">
+      <div class="post-beat__head">${escapeHtml(title)}</div>
+      <div class="post-beat__body">${escapeHtml(body)}</div>
+    </div>`;
+}
+
 function renderBenchmarkPanel() {
   const b = State.scenario.benchmark;
   if (!b) return '';
@@ -2269,6 +2286,7 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
         <div><span>${LANG()==='en'?'Time bonus':'Бонус за час'}</span><strong>+${timeBonus}</strong></div>
       </div>
       ${cdRow}
+      ${renderPostDecisionBeat(verdict)}
       ${renderBenchmarkPanel()}
       ${pivotChainHtml()}
       ${State.nickname ? submitRow : ''}
