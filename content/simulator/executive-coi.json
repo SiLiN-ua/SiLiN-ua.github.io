@@ -447,7 +447,7 @@
         "name_en": "Board member rumor (informal)",
         "provider": "Anonymous informal comm",
         "tooltip_uk": "Off-record розмова з одним з членів правління.",
-        "tooltip_en": "Off-record розмова з одним з членів правління.",
+        "tooltip_en": "Off-record conversation with one of the board members.",
         "correct": false,
         "points": -8,
         "time_cost": 30,
@@ -1043,7 +1043,7 @@
       "target_count": 5,
       "target_max": 5,
       "reason_uk": "Diagnostic: Panama Papers chain до Silverwood, 10-K false statement, calendar 6 незалоговані BluePeak meetings, prior 2018-2023 disclosures (де саме connection був), insider-trading pattern у датах. Найчастіше пропускають prior-year disclosures — саме контраст між ними і 2024-й лист = smoking gun.",
-      "reason_en": "Diagnostic: Panama Papers chain to Silverwood, 10-K false statement, calendar w/ 6 незалогованих BluePeak meetings, prior 2018-2023 disclosures (where the connection was declared), insider-trading pattern in dates. Most commonly missed: prior-year disclosures — the contrast between them and the 2024 filing IS the smoking gun."
+      "reason_en": "Diagnostic: Panama Papers chain to Silverwood, 10-K false statement, calendar w/ 6 unlogged BluePeak meetings, prior 2018-2023 disclosures (where the connection was declared), insider-trading pattern in dates. Most commonly missed: prior-year disclosures — the contrast between them and the 2024 filing IS the smoking gun."
     },
     "policy": {
       "target_pct": 100,

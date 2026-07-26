@@ -53,7 +53,7 @@
         "weight": "diagnostic",
         "ui_component": "opencorp",
         "clue_uk": "Prometheus Life Sciences — 12 років на ринку. Засновник — Prof. Andriy Kravchuk (професор фармакології КНУ). Компанія — ЄДИНИЙ MAH (marketing-authorization holder) в Україні для 3 рідкісних oncology-препаратів (за Державним реєстром лікарських засобів) (сертифікація МОЗ обмежена). Це legitimacy signal.",
-        "clue_en": "Prometheus Life Sciences — 12 years in market. Founder — Prof. Andriy Kravchuk (KNU pharmacology professor). The company is Ukraine's sole marketing-authorization holder (MAH) for 3 rare oncology drugs (per Державний реєстр лікарських засобів) (MoH certification is restricted). Legitimacy signal.",
+        "clue_en": "Prometheus Life Sciences — 12 years in market. Founder — Prof. Andriy Kravchuk (KNU pharmacology professor). The company is Ukraine's sole marketing-authorization holder (MAH) for 3 rare oncology drugs (per the Ukrainian State Register of Medicinal Products; MoH certification is restricted). Legitimacy signal.",
         "opencorp": {
           "query": "Prometheus Life Sciences LLC",
           "company_name_uk": "ТОВ «Prometheus Life Sciences»",

@@ -631,7 +631,7 @@
             "text_en": "Internal investigation only + wait for SEC to reach out",
             "points": -25,
             "correct": false,
-            "feedback_uk": "❌ Failure to self-report insider trading = major FINRA violation. Ви обов'язково notification НЕАЙЖЕ як помітили.",
+            "feedback_uk": "❌ Failure to self-report insider trading = major FINRA violation. Ви зобов'язані НЕГАЙНО повідомити регулятора, як помітили порушення.",
             "feedback_en": "❌ Failure to self-report insider trading = major FINRA violation. You must notify IMMEDIATELY when identified."
           },
           {

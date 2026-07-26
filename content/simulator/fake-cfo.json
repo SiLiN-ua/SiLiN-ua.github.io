@@ -413,7 +413,7 @@
       "title_en": "🗑 Retention & Deletion (GDPR Art.5(1)(e))",
       "body_uk": "Після завершення розслідування OSINT-dossier має бути знищений за політикою: (a) 30 днів якщо кандидат ВІДХИЛЕНИЙ, (b) додано до personnel file якщо APPROVED, (c) 12 місяців якщо INSUFFICIENT з flag re-review. Пропуск retention-policy = GDPR-fine до 4% turnover.",
       "body_en": "After investigation completes, the OSINT dossier must be destroyed per policy: (a) 30 days if candidate REJECTED, (b) added to personnel file if APPROVED, (c) 12 months if INSUFFICIENT with flag re-review. Skipping retention policy = GDPR fine up to 4% turnover.",
-      "checkbox_uk": "✓ Підтверджую: retention/deletion policy застосовано за policy",
+      "checkbox_uk": "✓ Підтверджую: retention/deletion policy застосовано за політикою",
       "checkbox_en": "✓ Confirmed: retention/deletion policy applied per policy",
       "skip_penalty": -15
     }
