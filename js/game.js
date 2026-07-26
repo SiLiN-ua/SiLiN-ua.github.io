@@ -322,15 +322,29 @@ function renderPhase2() {
   const p = State.scenario.phase2;
   const toolCard = (t) => {
     const used = State.toolsUsed[t.id];
-    const tooltip = tr(t, 'tooltip');
+    // Tool-gating: check unlocks_after prerequisites (list of tool ids)
+    const prereqs = Array.isArray(t.unlocks_after) ? t.unlocks_after : [];
+    const missing = prereqs.filter(id => !State.toolsUsed[id]);
+    const locked = !used && missing.length > 0;
+    const lockedNames = missing.map(id => {
+      const dep = p.tools.find(x => x.id === id);
+      return dep ? tr(dep, 'name') : id;
+    });
+    const lockHint = locked
+      ? (LANG()==='en'
+          ? `🔒 Unlock: use "${lockedNames.join('", "')}" first`
+          : `🔒 Розблокуй: спочатку використай "${lockedNames.join('", "')}"`)
+      : null;
+    const tooltip = locked ? lockHint : tr(t, 'tooltip');
     const tipAttr = tooltip ? `data-tip="${escapeHtml(tooltip)}"` : '';
+    const stateClass = used ? ' tool-btn--used' : (locked ? ' tool-btn--locked' : '');
     return `
-      <button class="tool-btn${used?' tool-btn--used':''}" data-tool="${t.id}" ${used?'disabled':''} ${tipAttr}>
-        <div class="tool-btn__icon">${t.icon}</div>
+      <button class="tool-btn${stateClass}" data-tool="${t.id}" ${used||locked?'disabled':''} ${tipAttr}>
+        <div class="tool-btn__icon">${locked?'🔒':t.icon}</div>
         <div class="tool-btn__body">
           <div class="tool-btn__name">${escapeHtml(tr(t,'name'))}${tooltip?' <span class="tool-btn__info" aria-label="info">ⓘ</span>':''}</div>
           <div class="tool-btn__provider">${escapeHtml(t.provider)}</div>
-          <div class="tool-btn__desc">${escapeHtml(tr(t,'desc'))}</div>
+          <div class="tool-btn__desc">${escapeHtml(locked ? lockHint : tr(t,'desc'))}</div>
         </div>
         <div class="tool-btn__cost">-${t.time_cost}s</div>
       </button>`;

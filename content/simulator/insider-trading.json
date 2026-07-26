@@ -141,7 +141,10 @@
             "highlight": true
           }
         ],
-        "invoices_note_uk": "🚩 22-річний студент з ЦЕР portfolio-history робить ONE $30K purchase аж перед M&A і продає за 4 дні з $85K прибутком. Ймовірність випадковості = мікроскопічна."
+        "invoices_note_uk": "🚩 22-річний студент з ЦЕР portfolio-history робить ONE $30K purchase аж перед M&A і продає за 4 дні з $85K прибутком. Ймовірність випадковості = мікроскопічна.",
+        "unlocks_after": [
+          "deal_room_access"
+        ]
       },
       {
         "id": "address_check",
@@ -177,6 +180,9 @@
             "note_uk": "Single account, addressee: 'D. Chen'. Michael не мав separate utility account.",
             "note_en": "Single account, addressee: 'D. Chen'. Michael had no separate utility account."
           }
+        ],
+        "unlocks_after": [
+          "brother_trading"
         ]
       },
       {
@@ -226,7 +232,10 @@
             "approver": "Chase family card XXXX-4287"
           }
         ],
-        "invoices_note_uk": "Money-flow ланцюжок: brother's trading profit → shared family card → David's premium purchases протягом 2 тижнів. Rolex — icon proof."
+        "invoices_note_uk": "Money-flow ланцюжок: brother's trading profit → shared family card → David's premium purchases протягом 2 тижнів. Rolex — icon proof.",
+        "unlocks_after": [
+          "brother_trading"
+        ]
       },
       {
         "id": "instagram_rolex",
@@ -350,6 +359,9 @@
             "note_uk": "8 messages David ↔ Michael 21-22 квітня. Contents unrecoverable, але pattern чіткий — sudden burst навколо purchase timing.",
             "note_en": "8 messages David ↔ Michael April 21-22. Contents unrecoverable but pattern clear — sudden burst around purchase timing."
           }
+        ],
+        "unlocks_after": [
+          "chinese_wall"
         ]
       },
       {

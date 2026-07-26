@@ -235,7 +235,10 @@
               "attachment": "core_banking_architecture_v4.pdf"
             }
           ]
-        }
+        },
+        "unlocks_after": [
+          "meeting_minutes_leak"
+        ]
       },
       {
         "id": "panama_lookup",
@@ -331,6 +334,9 @@
             "note_uk": "Прямий connection з CTO конкурента (додано 14 лютого 2026, за 4 дні до першого емейлу).",
             "note_en": "Direct connection with competitor's CTO (added Feb 14, 2026 — 4 days before the first email)."
           }
+        ],
+        "unlocks_after": [
+          "email_chain_leak"
         ]
       },
       {
@@ -377,7 +383,10 @@
           }
         ],
         "invoices_note_uk": "Money-flow ланцюжок: конкурент → ТОВ → сімейний рахунок → V.R. Класична схема пасіву-нового-vendor'а.",
-        "invoices_note_en": "Money-flow chain: competitor → LLC → family account → V.R. Textbook new-vendor pass-through scheme."
+        "invoices_note_en": "Money-flow chain: competitor → LLC → family account → V.R. Textbook new-vendor pass-through scheme.",
+        "unlocks_after": [
+          "opencorp_techconsult"
+        ]
       },
       {
         "id": "wife_salon_check",

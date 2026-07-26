@@ -344,7 +344,9 @@
         "correct": false,
         "verdict": "fail",
         "feedback_uk": "💥 КАТАСТРОФА. Ти рекомендував клієнту наймати шахрая на CFO-позицію з доступом до всіх фінансів. У реальності це коштувало б компанії мільйони — і твоєї професійної репутації.",
-        "feedback_en": "💥 CATASTROPHE. You recommended hiring a fraudster to CFO with access to all finances. In reality this would cost the client millions — and your professional reputation."
+        "feedback_en": "💥 CATASTROPHE. You recommended hiring a fraudster to CFO with access to all finances. In reality this would cost the client millions — and your professional reputation.",
+        "handoff_message_uk": "Повідомити hiring manager: «Кандидат пройшов OSINT-скринінг, red flags не виявлено. Продовжуємо onboarding».",
+        "handoff_message_en": "Tell the hiring manager: 'Candidate passed OSINT screening, no red flags found. Proceed with onboarding.'"
       },
       {
         "id": "red_flag",
@@ -354,7 +356,9 @@
         "correct": true,
         "verdict": "success",
         "feedback_uk": "✓ ПРАВИЛЬНО. Ти зупинив прийом шахрая, врятував клієнту потенційно мільйонні збитки. Face-mismatch (84% на VK) + 47 fraud-тегів на GetContact + сфабриковане резюме = однозначний red flag. Клієнт вдячний.",
-        "feedback_en": "✓ CORRECT. You stopped the hiring of a fraudster, saving the client potentially millions. Face-mismatch (84% on VK) + 47 fraud tags on GetContact + fabricated resume = unambiguous red flag. Client is grateful."
+        "feedback_en": "✓ CORRECT. You stopped the hiring of a fraudster, saving the client potentially millions. Face-mismatch (84% on VK) + 47 fraud tags on GetContact + fabricated resume = unambiguous red flag. Client is grateful.",
+        "handoff_message_uk": "Повідомити hiring manager: «Ідентифікація кандидата не пройшла верифікацію проти публічних джерел». НЕ казати «кандидат — шахрай» (defamation risk без остаточного доказу).",
+        "handoff_message_en": "Tell the hiring manager: 'Candidate's identity claims could not be verified against public sources.' DO NOT say 'candidate is a fraud' (defamation risk without final proof)."
       },
       {
         "id": "insufficient",
@@ -364,7 +368,9 @@
         "correct": false,
         "verdict": "weak",
         "feedback_uk": "⚠️ Обережно, але безсило. У тебе був face-mismatch + 47 fraud-тегів + фальш-резюме — цього достатньо для red flag. «Недостатньо даних», коли даних достатньо, — це небажання брати відповідальність.",
-        "feedback_en": "⚠️ Cautious but powerless. You had face-mismatch + 47 fraud tags + fake resume — that's enough for a red flag. \"Insufficient data\" when data is sufficient = refusal to take responsibility."
+        "feedback_en": "⚠️ Cautious but powerless. You had face-mismatch + 47 fraud tags + fake resume — that's enough for a red flag. \"Insufficient data\" when data is sufficient = refusal to take responsibility.",
+        "handoff_message_uk": "Повідомити hiring manager: «Доступних сигналів недостатньо для остаточного вердикту. Рекомендуємо offer з обов'язковим 90-денним probation + secondary background check через Sterling/HireRight».",
+        "handoff_message_en": "Tell the hiring manager: 'Available signals insufficient for a final verdict. Recommend offer with mandatory 90-day probation + secondary background check via Sterling/HireRight.'"
       },
       {
         "id": "request_clarification",
@@ -373,7 +379,9 @@
         "points": 30,
         "correct": true,
         "feedback_uk": "✓ HR best-practice: перед REJECT на $180K позицію — offer candidate 24-48h пояснити конкретні прапорці (2020 CV contradiction, брак recent LinkedIn). У реальній практиці ~20% «fraud flags» виявляються name collisions, поганим OCR, або legitimate gap explanation. Це також захищає компанію від discrimination-claim.",
-        "feedback_en": "✓ HR best-practice: before REJECT on a $180K position — offer candidate 24-48h to address specific flags (2020 CV contradiction, sparse recent LinkedIn). In real practice ~20% of \"fraud flags\" turn out to be name collisions, bad OCR, or legitimate gap explanation. Also protects the company from discrimination claims."
+        "feedback_en": "✓ HR best-practice: before REJECT on a $180K position — offer candidate 24-48h to address specific flags (2020 CV contradiction, sparse recent LinkedIn). In real practice ~20% of \"fraud flags\" turn out to be name collisions, bad OCR, or legitimate gap explanation. Also protects the company from discrimination claims.",
+        "handoff_message_uk": "Повідомити hiring manager: «У кандидата 48 годин на пояснення 2020 CV contradiction. Пауза onboarding до отримання відповіді».",
+        "handoff_message_en": "Tell the hiring manager: 'Candidate has 48h to address the 2020 CV contradiction. Pause onboarding until response received.'"
       },
       {
         "id": "proceed_with_conditions",
@@ -382,7 +390,9 @@
         "points": 15,
         "correct": false,
         "feedback_uk": "△ Компромісна відповідь: продовжити onboarding, але з gate — professional background-check firm (Sterling / HireRight), verified references, probation-period. Для явних red-flag профілів цього замало (candidate виграє час і доступ), але прийнятно, якщо evidence все ще ambiguous.",
-        "feedback_en": "△ Compromise answer: proceed with onboarding but gate on professional background-check firm (Sterling / HireRight), verified references, probation period. Insufficient for clear red-flag profiles (candidate gains time and access) but acceptable when evidence remains ambiguous."
+        "feedback_en": "△ Compromise answer: proceed with onboarding but gate on professional background-check firm (Sterling / HireRight), verified references, probation period. Insufficient for clear red-flag profiles (candidate gains time and access) but acceptable when evidence remains ambiguous.",
+        "handoff_message_uk": "Повідомити hiring manager: «Продовжуємо onboarding з обов'язковим Sterling background-check + 6-місячний probation з переглядом».",
+        "handoff_message_en": "Tell the hiring manager: 'Proceed with onboarding, mandatory Sterling background-check + 6-month probation with review.'"
       },
       {
         "id": "decline_with_reason",
@@ -391,9 +401,22 @@
         "points": 20,
         "correct": true,
         "feedback_uk": "✓ HR-compliant REJECT: письмова відмова з конкретними reasons (не «gut feeling») → знижує ризик discrimination-claim під час арбітражу. У EU/UA context обов'язкова згідно з labour code. NB: reasons мають бути factual, не спекулятивні.",
-        "feedback_en": "✓ HR-compliant REJECT: written decline with specific reasons (not \"gut feeling\") → reduces discrimination-claim risk in arbitration. Mandatory in EU/UA context per labour code. NB: reasons must be factual, not speculative."
+        "feedback_en": "✓ HR-compliant REJECT: written decline with specific reasons (not \"gut feeling\") → reduces discrimination-claim risk in arbitration. Mandatory in EU/UA context per labour code. NB: reasons must be factual, not speculative.",
+        "handoff_message_uk": "Повідомити hiring manager: «Формальна відмова направлена кандидату з переліком конкретних неверифікованих пунктів. Retention: OSINT-dossier знищується через 30 днів (GDPR Art.5(1)(e))».",
+        "handoff_message_en": "Tell the hiring manager: 'Formal decline sent to candidate listing specific unverified items. Retention: OSINT dossier destroyed after 30 days (GDPR Art.5(1)(e)).'"
       }
-    ]
+    ],
+    "candidate_response_uk": "📱 Через 46 годин кандидат надіслав відповідь: пояснює contradictory 2020 CV row тим, що працював у двох компаніях паралельно 3 місяці (після скорочення в першій — консалтинг-контракт з другою). Надає підтвердження від обох роботодавців. Це plausible пояснення, яке знімає ключовий flag. Recommendation: revisit verdict.",
+    "candidate_response_en": "📱 46 hours later the candidate replies: explains the contradictory 2020 CV row by having worked at two companies in parallel for 3 months (after layoff at the first — consulting contract with the second). Provides confirmation from both employers. Plausible explanation that resolves the key flag. Recommendation: revisit verdict.",
+    "retention_gate": {
+      "title_uk": "🗑 Retention & Deletion (GDPR Art.5(1)(e))",
+      "title_en": "🗑 Retention & Deletion (GDPR Art.5(1)(e))",
+      "body_uk": "Після завершення розслідування OSINT-dossier має бути знищений за policy: (a) 30 днів якщо кандидат ВІДХИЛЕНИЙ, (b) додано до personnel file якщо APPROVED, (c) 12 місяців якщо INSUFFICIENT з flag re-review. Пропуск retention-policy = GDPR-fine до 4% turnover.",
+      "body_en": "After investigation completes, the OSINT dossier must be destroyed per policy: (a) 30 days if candidate REJECTED, (b) added to personnel file if APPROVED, (c) 12 months if INSUFFICIENT with flag re-review. Skipping retention policy = GDPR fine up to 4% turnover.",
+      "checkbox_uk": "✓ Підтверджую: retention/deletion policy застосовано за policy",
+      "checkbox_en": "✓ Confirmed: retention/deletion policy applied per policy",
+      "skip_penalty": -15
+    }
   },
   "ranks": {
     "master": {

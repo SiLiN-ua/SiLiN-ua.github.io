@@ -1,0 +1,404 @@
+{
+  "id": "careful-watch",
+  "simulator_id": "sim02",
+  "time_limit_sec": 2100,
+  "cooldown_sec": 3600,
+  "max_points": 500,
+  "title_uk": "Sim #02 · Case 6 · The Careful Watch",
+  "title_en": "Sim #02 · Case 6 · The Careful Watch",
+  "briefing": {
+    "splash": "/img/uploads/simulator/sim02/sim02-splash-generic.png",
+    "client_uk": "StellarMed Pharmacy Ukraine (400 співробітників, роздрібна фарма-мережа)",
+    "client_en": "StellarMed Pharmacy Ukraine (400 employees, retail pharmacy chain)",
+    "position": "Procurement Director",
+    "position_uk": "Procurement Director",
+    "position_en": "Procurement Director",
+    "salary": "$88K/year",
+    "salary_uk": "$88K/рік",
+    "salary_en": "$88K/year",
+    "body_uk": "Внутрішній аудит виявив три «жовтих» сигнали навколо Procurement Director Сергія М. (38, 4 роки у компанії): (1) 62% контрактів у категорії «rare oncology» йдуть одному вендору TOB «Prometheus Life Sciences»; (2) старий Facebook-коментар 2019 року «іноді потрібно вміти договорюватися» (за 3 роки ДО його hire); (3) дружина працює у Bio-Wave Consulting — суміжний фарма-сегмент. Клієнт (CFO + Head of Compliance) НЕ впевнений: одразу ескалувати чи це false-positive? Твоя задача — розібратися і винести legally-defensible вердикт, який може бути «продовжити з тріп-вайрами», а не обов'язково ESCALATE.",
+    "body_en": "Internal audit flagged three 'yellow' signals around Procurement Director Serhii M. (38, 4 years at company): (1) 62% of contracts in the 'rare oncology' category go to a single vendor LLC 'Prometheus Life Sciences'; (2) old 2019 Facebook comment 'sometimes you need to know how to negotiate' (3 years BEFORE his hire); (3) spouse works at Bio-Wave Consulting — adjacent pharma segment. Client (CFO + Head of Compliance) is unsure: escalate now or is this false-positive? Your task — investigate and issue a legally-defensible verdict which may well be 'continue with tripwires' rather than necessarily ESCALATE.",
+    "start_btn_uk": "▶ Розпочати оцінку",
+    "start_btn_en": "▶ Start assessment",
+    "candidate": {
+      "name_uk": "Сергій М. (38, Procurement Director StellarMed з 2022)",
+      "name_en": "Serhii M. (38, Procurement Director StellarMed since 2022)",
+      "photo": "/img/uploads/simulator/sim02/sim02-splash-generic.png",
+      "email": "s.m@stellarmed.example",
+      "phone": "+380 XX XXX XX 19"
+    }
+  },
+  "phase2": {
+    "title_uk": "Оцінка · збір контексту",
+    "title_en": "Assessment · context gathering",
+    "instruction_uk": "Три «жовтих» сигнали не означають fraud. Використай інструменти щоб зрозуміти чи є solid evidence, чи це false-positive. Не поспішай з ESCALATE — деякі кейси вимагають MONITORING, а не миттєвої дії.",
+    "instruction_en": "Three 'yellow' signals do not mean fraud. Use tools to determine whether there's solid evidence or this is false-positive. Do not rush to ESCALATE — some cases require MONITORING, not immediate action.",
+    "next_btn_uk": "Далі → Хронологія",
+    "next_btn_en": "Next → Timeline",
+    "min_tools_used": 5,
+    "tools": [
+      {
+        "id": "opencorp_prometheus",
+        "icon": "🏢",
+        "name_uk": "OpenCorporates: TOB «Prometheus Life Sciences»",
+        "name_en": "OpenCorporates: LLC 'Prometheus Life Sciences'",
+        "provider": "OpenCorporates + USR",
+        "desc_uk": "Хто засновники головного вендора",
+        "desc_en": "Who owns the primary vendor",
+        "tooltip_uk": "Перевір ЄДР: засновники, історія, статус certified-supplier.",
+        "tooltip_en": "Check state registry: founders, history, certified-supplier status.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 90,
+        "weight": "diagnostic",
+        "ui_component": "opencorp",
+        "clue_uk": "Prometheus Life Sciences — 12 років на ринку. Засновник — Prof. Andriy Kravchuk (професор фармакології КНУ). Компанія — ЄДИНИЙ ліцензований в Україні дистрибʼютор 3 рідкісних oncology-препаратів (сертифікація МОЗ обмежена). Це legitimacy signal.",
+        "clue_en": "Prometheus Life Sciences — 12 years in market. Founder — Prof. Andriy Kravchuk (KNU pharmacology professor). The company is Ukraine's ONLY licensed distributor for 3 rare oncology drugs (MoH certification is restricted). Legitimacy signal.",
+        "opencorp": {
+          "query": "Prometheus Life Sciences LLC",
+          "company_name_uk": "ТОВ «Prometheus Life Sciences»",
+          "company_name_en": "LLC 'Prometheus Life Sciences'",
+          "reg_no": "36587219",
+          "founded": "2013-04-11",
+          "entity_type_uk": "ТОВ",
+          "entity_type_en": "LLC",
+          "status": "Active",
+          "address_uk": "м. Київ, вул. Володимирська 60, оф. 12",
+          "address_en": "Kyiv, Volodymyrska St. 60, office 12",
+          "officers": [
+            {
+              "name_uk": "Кравчук Андрій Володимирович (68)",
+              "name_en": "Kravchuk Andriy V. (68)",
+              "role_uk": "Директор + Засновник (100%)",
+              "role_en": "Director + Founder (100%)",
+              "note_uk": "Професор фармакології КНУ; жодних звʼязків з Serhii M. у публічних джерелах",
+              "note_en": "KNU pharmacology professor; no ties to Serhii M. in public sources"
+            }
+          ]
+        }
+      },
+      {
+        "id": "moz_registry",
+        "icon": "🏥",
+        "name_uk": "МОЗ: реєстр ліцензованих дистрибʼюторів oncology",
+        "name_en": "MoH: registry of licensed oncology distributors",
+        "provider": "Ministry of Health · public registry",
+        "desc_uk": "Скільки дистрибʼюторів має ліцензію на ці 3 препарати?",
+        "desc_en": "How many distributors are licensed for these 3 drugs?",
+        "tooltip_uk": "Публічний реєстр МОЗ показує certification для контрольованих препаратів.",
+        "tooltip_en": "MoH public registry shows certification for controlled substances.",
+        "correct": true,
+        "points": 25,
+        "time_cost": 60,
+        "weight": "diagnostic",
+        "ui_component": "matches",
+        "clue_uk": "МОЗ реєстр підтверджує: тільки Prometheus має ліцензію на всі 3 препарати в Україні. Найближчий альтернативний дистрибʼютор — EU-based Pharma-Access — має ліцензію на 1 з 3. Vendor concentration має legitimate reason.",
+        "clue_en": "MoH registry confirms: only Prometheus is licensed for all 3 drugs in Ukraine. Nearest alternative — EU-based Pharma-Access — has license for 1 of 3. Vendor concentration has legitimate reason.",
+        "matches": [
+          {
+            "site": "MoH Registry · rare oncology distributors (UA)",
+            "url": "moz.gov.ua/registry/oncology-2026",
+            "note_uk": "3 препарати: Sunitinib (Prometheus only) / Sorafenib (Prometheus only) / Cabozantinib (Prometheus + Pharma-Access). Certification обмежена — CFC/GMP compliance + storage temperature audit.",
+            "note_en": "3 drugs: Sunitinib (Prometheus only) / Sorafenib (Prometheus only) / Cabozantinib (Prometheus + Pharma-Access). Certification restricted — CFC/GMP compliance + storage-temperature audit."
+          }
+        ],
+        "custody": {
+          "collected_from_uk": "Публічний реєстр МОЗ України",
+          "collected_from_en": "Ukraine Ministry of Health public registry",
+          "verified_by_uk": "Compliance-команда",
+          "verified_by_en": "Compliance Team",
+          "timestamp": "2026-07-15 10:22 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "primary"
+        }
+      },
+      {
+        "id": "spouse_biowave",
+        "icon": "🔍",
+        "name_uk": "Bio-Wave Consulting — де саме працює дружина",
+        "name_en": "Bio-Wave Consulting — what exactly does spouse do",
+        "provider": "LinkedIn + Bio-Wave website",
+        "desc_uk": "Deep-check ролі дружини у Bio-Wave",
+        "desc_en": "Deep-check on spouse's role at Bio-Wave",
+        "tooltip_uk": "Не всі суміжні індустрії = конфлікт. Перевір рід діяльності.",
+        "tooltip_en": "Not all adjacent industries = conflict. Check specific practice area.",
+        "correct": true,
+        "points": 18,
+        "time_cost": 45,
+        "weight": "diagnostic",
+        "ui_component": "matches",
+        "clue_uk": "Bio-Wave Consulting — public health policy research (не distribution, не procurement). Дружина Serhii M. — Senior Policy Analyst (Health Economics), 8 років у компанії, ЖОДНОГО contract-звʼязку з StellarMed або Prometheus. Різні сегменти. Не конфлікт.",
+        "clue_en": "Bio-Wave Consulting — public health policy research (not distribution, not procurement). Serhii M.'s spouse — Senior Policy Analyst (Health Economics), 8 years at company, ZERO contract link to StellarMed or Prometheus. Different segments. Not a conflict.",
+        "matches": [
+          {
+            "site": "LinkedIn · Oksana M. (Senior Policy Analyst, Bio-Wave)",
+            "url": "linkedin.com/in/oksana-m",
+            "note_uk": "8 років у Bio-Wave (з 2018), фокус — health economics для НАМН. НЕ pharma distribution.",
+            "note_en": "8 years at Bio-Wave (since 2018), focus — health economics for AMS. NOT pharma distribution."
+          }
+        ],
+        "custody": {
+          "collected_from_uk": "LinkedIn (публічний профіль) + Bio-Wave website",
+          "collected_from_en": "LinkedIn (public profile) + Bio-Wave website",
+          "verified_by_uk": "OSINT-аналітик",
+          "verified_by_en": "OSINT Analyst",
+          "timestamp": "2026-07-15 14:05 UTC",
+          "integrity": "verified",
+          "confidence": "high",
+          "evidence_class": "osint"
+        }
+      },
+      {
+        "id": "facebook_context",
+        "icon": "📱",
+        "name_uk": "Facebook 2019 коментар — контекст",
+        "name_en": "Facebook 2019 comment — context",
+        "provider": "Facebook archive",
+        "desc_uk": "Той старий коментар — в якому thread він написаний?",
+        "desc_en": "That old comment — in what thread was it written?",
+        "tooltip_uk": "Один коментар без контексту може означати що завгодно.",
+        "tooltip_en": "One comment without context can mean anything.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 30,
+        "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "Коментар «іноді потрібно вміти договорюватися» написаний у 2019 thread про перемовини з профспілкою (Serhii M. тоді був HR-менеджером в іншій компанії). Це про labor negotiation, а не kickback. Контекстно чистий.",
+        "clue_en": "The comment 'sometimes you need to know how to negotiate' was written in a 2019 thread about union negotiations (Serhii M. was HR manager at a different company then). It's about labor negotiation, not kickback. Context-clean.",
+        "matches": [
+          {
+            "site": "Facebook · thread «Профспілка vs HR»",
+            "url": "facebook.com/thread/2019-labor",
+            "note_uk": "Оригінальний пост колеги про strike-negotiation тактики. Коментар Serhii M. — 8-й у ланцюжку, стосується profспілкової перемовної практики.",
+            "note_en": "Original colleague's post about strike-negotiation tactics. Serhii M.'s comment is 8th in the chain, about union negotiation practice."
+          }
+        ]
+      },
+      {
+        "id": "sap_procurement_history",
+        "icon": "📊",
+        "name_uk": "SAP · історія procurement StellarMed 2022-2025",
+        "name_en": "SAP · StellarMed procurement history 2022-2025",
+        "provider": "SAP export · Internal Audit",
+        "desc_uk": "Патерни закупівель, ціни, obchody",
+        "desc_en": "Purchase patterns, prices, deals",
+        "tooltip_uk": "Reference-check контракти на market benchmark. Ключові поля: PO amount, vendor, timestamp.",
+        "tooltip_en": "Reference-check contracts against market benchmark. Key fields: PO amount, vendor, timestamp.",
+        "correct": true,
+        "points": 22,
+        "time_cost": 90,
+        "weight": "diagnostic",
+        "ui_component": "invoice-analysis",
+        "clue_uk": "SAP показує: ціни Prometheus у межах +/-3% від EU-benchmark (MSD Manuals reference price). Дискаунт 12% за 4-річний exclusive-contract — стандартна практика для rare drugs. Немає overpricing patterns.",
+        "clue_en": "SAP shows: Prometheus prices within +/-3% of EU-benchmark (MSD Manuals reference price). 12% discount for 4-year exclusive contract — standard practice for rare drugs. No overpricing patterns."
+      },
+      {
+        "id": "vendor_rotation_kpi",
+        "icon": "📈",
+        "name_uk": "KPI vendor-rotation StellarMed",
+        "name_en": "StellarMed vendor-rotation KPI",
+        "provider": "Internal Compliance dashboard",
+        "desc_uk": "Чи є взагалі vendor-rotation policy?",
+        "desc_en": "Is there a vendor-rotation policy at all?",
+        "tooltip_uk": "Vendor-concentration risk має бути в policy. Перевір.",
+        "tooltip_en": "Vendor-concentration risk should be in policy. Check it.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 45,
+        "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "У StellarMed policy vendor-concentration > 50% на категорію ВИМАГАЄ annual justification memo. Serhii M. подавав memo за 2023, 2024, 2025 — усі затверджені CFO. Тобто concentration задекларована і санкціонована.",
+        "clue_en": "StellarMed policy: vendor-concentration > 50% per category REQUIRES annual justification memo. Serhii M. submitted memos for 2023, 2024, 2025 — all approved by CFO. Concentration is declared and sanctioned.",
+        "matches": [
+          {
+            "site": "Compliance dashboard · vendor-concentration policy",
+            "url": "compliance.stellarmed.internal/policy-v2",
+            "note_uk": "Policy: >50% concentration на категорію = annual justification memo required + CFO approval. Serhii M. compliant усі 3 роки.",
+            "note_en": "Policy: >50% concentration per category = annual justification memo required + CFO approval. Serhii M. compliant all 3 years."
+          }
+        ]
+      },
+      {
+        "id": "background_check_sterling",
+        "icon": "📋",
+        "name_uk": "Sterling background-check (2022 hire)",
+        "name_en": "Sterling background check (2022 hire)",
+        "provider": "Sterling verified vendor",
+        "desc_uk": "Оригінальний check при hire",
+        "desc_en": "Original check at hire",
+        "correct": true,
+        "points": 8,
+        "time_cost": 30,
+        "weight": "supporting",
+        "ui_component": "matches",
+        "clue_uk": "Sterling 2022 check: чистий, референси підтверджені, credit clean, no criminal record. Кризових моментів немає.",
+        "clue_en": "Sterling 2022 check: clean, references confirmed, credit clean, no criminal record. No crisis points."
+      },
+      {
+        "id": "anonymous_tip_line",
+        "icon": "☎",
+        "name_uk": "Анонімний тіп-line StellarMed — записи про Serhii M.",
+        "name_en": "StellarMed anonymous tip line — records on Serhii M.",
+        "provider": "Compliance hotline archive",
+        "desc_uk": "Чи були скарги за 4 роки?",
+        "desc_en": "Any complaints in 4 years?",
+        "correct": false,
+        "points": -3,
+        "time_cost": 30,
+        "weight": "noise",
+        "ui_component": "matches",
+        "clue_uk": "0 записів за 4 роки. Це NULL-signal — відсутність скарг не доказ, лише відсутність known issues.",
+        "clue_en": "0 records in 4 years. NULL-signal — absence of complaints is not proof, just absence of known issues."
+      },
+      {
+        "id": "gossip_colleague",
+        "icon": "👥",
+        "name_uk": "Гоsіп від колеги: «Сергій завжди у чорному Rolls-Royce»",
+        "name_en": "Colleague gossip: 'Serhii always in a black Rolls-Royce'",
+        "provider": "Watercooler testimony",
+        "desc_uk": "Плітки з відкритого офісу",
+        "desc_en": "Open-office rumors",
+        "correct": false,
+        "points": -8,
+        "time_cost": 30,
+        "weight": "decoy",
+        "ui_component": "matches",
+        "clue_uk": "«Rolls-Royce» виявився Škoda Superb на паркінгу. Плітка + плітка = плітка. Використання = -8 (memo стане biased).",
+        "clue_en": "'Rolls-Royce' turned out to be a Škoda Superb in the lot. Gossip + gossip = gossip. Citing this = -8 (biases the memo)."
+      },
+      {
+        "id": "prometheus_audit_trail",
+        "icon": "🔐",
+        "name_uk": "Prometheus — audit trail закупівель (SU01/T024)",
+        "name_en": "Prometheus — SAP audit trail (SU01/T024)",
+        "provider": "SAP forensic export",
+        "desc_uk": "Хто саме затверджував PO у Prometheus",
+        "desc_en": "Who actually approved POs to Prometheus",
+        "tooltip_uk": "SM20 audit log + T024 authority table. Verifies release-code holders.",
+        "tooltip_en": "SM20 audit log + T024 authority table. Verifies release-code holders.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 75,
+        "weight": "diagnostic",
+        "ui_component": "invoice-analysis",
+        "clue_uk": "SM20 показує: усі PO Prometheus затверджені ME28 dual-approval (Serhii M. + CFO). T024 confirms Serhii M. має release-code. Немає solo-approval, немає signature-forgery.",
+        "clue_en": "SM20 shows: all Prometheus POs approved via ME28 dual-approval (Serhii M. + CFO). T024 confirms Serhii M. holds the release code. No solo approval, no signature forgery.",
+        "unlocks_after": ["opencorp_prometheus", "sap_procurement_history"]
+      }
+    ]
+  },
+  "timeline_phase": {
+    "title_uk": "Побудуй хронологію «Careful Watch»",
+    "title_en": "Build the «Careful Watch» timeline",
+    "instruction_uk": "Розстав ключові події у правильному порядку. Тут ланцюг НЕ вимальовує fraud — він показує legitimate procurement pattern.",
+    "instruction_en": "Arrange key events in correct order. This chain does NOT paint fraud — it shows a legitimate procurement pattern.",
+    "submit_btn_uk": "Підтвердити хронологію →",
+    "submit_btn_en": "Submit timeline →",
+    "events": [
+      {"id": "e1", "date": "2013-04", "text_uk": "TOB Prometheus Life Sciences зареєстрована (Prof. Kravchuk засновник)", "text_en": "LLC Prometheus Life Sciences registered (Prof. Kravchuk founder)"},
+      {"id": "e2", "date": "2018-11", "text_uk": "Прометей отримує МОЗ-ліцензію на 3 rare oncology-препарати (єдиний в UA)", "text_en": "Prometheus receives MoH license for 3 rare oncology drugs (only in UA)"},
+      {"id": "e3", "date": "2019-06", "text_uk": "Serhii M. коментар про перемовини з профспілкою (тоді ще HR-manager)", "text_en": "Serhii M. comment about union negotiations (then still HR manager)"},
+      {"id": "e4", "date": "2022-03", "text_uk": "Serhii M. hire у StellarMed як Procurement Director (Sterling check passed)", "text_en": "Serhii M. hired at StellarMed as Procurement Director (Sterling check passed)"},
+      {"id": "e5", "date": "2022-10", "text_uk": "Перший exclusive-contract Prometheus (ME28 dual-approval CFO + Serhii M.)", "text_en": "First Prometheus exclusive contract (ME28 dual-approval CFO + Serhii M.)"},
+      {"id": "e6", "date": "2023-06", "text_uk": "Vendor-concentration >50% → Serhii M. подає annual justification memo → CFO approval", "text_en": "Vendor concentration >50% → Serhii M. submits annual justification memo → CFO approval"},
+      {"id": "e7", "date": "2026-07", "text_uk": "Internal audit flags 3 «жовтих» сигнали → перевірка запущена", "text_en": "Internal audit flags 3 'yellow' signals → check initiated"}
+    ],
+    "correct_order": ["e1", "e2", "e3", "e4", "e5", "e6", "e7"]
+  },
+  "phase3": {
+    "title_uk": "Верифікація — 3 питання",
+    "title_en": "Verification — 3 questions",
+    "instruction_uk": "Дай обґрунтовані відповіді на базі зібраних доказів.",
+    "instruction_en": "Give reasoned answers based on gathered evidence.",
+    "next_btn_uk": "Далі → Меморандум",
+    "next_btn_en": "Next → Memo",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Vendor-concentration 62% на одного дистрибʼютора — це доказ fraud?",
+        "text_en": "62% vendor concentration on a single distributor — is this fraud evidence?",
+        "options": [
+          {"text_uk": "Так, будь-яка concentration >50% = kickback ризик", "text_en": "Yes, any concentration >50% = kickback risk", "correct": false, "points": -10, "feedback_uk": "❌ Занадто categoriчно. Concentration має legitimate reasons (regulatory, geographic, rare-supply). Механічна >50% policy — false-positive machine.", "feedback_en": "❌ Too categorical. Concentration has legitimate reasons (regulatory, geographic, rare-supply). Mechanical >50% policy is a false-positive machine."},
+          {"text_uk": "Ні, якщо є regulatory-justified reason + declared у annual memo + CFO approval", "text_en": "No, if there's a regulatory-justified reason + declared in annual memo + CFO approval", "correct": true, "points": 15, "feedback_uk": "✓ Правильно. МОЗ ліцензування пояснює концентрацію, memo + CFO approval санкціонують. Це governance-compliant, не fraud.", "feedback_en": "✓ Correct. MoH licensing explains concentration, memo + CFO approval sanction it. Governance-compliant, not fraud."},
+          {"text_uk": "Треба ще investigation щоб бути впевненим", "text_en": "Need more investigation to be certain", "correct": false, "points": -3, "feedback_uk": "△ Занадто обережно. Ти вже маєш МОЗ-registry + SAP + Sterling. Погоджуйся з evidence.", "feedback_en": "△ Too cautious. You already have MoH registry + SAP + Sterling. Trust the evidence."}
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Facebook-коментар 2019 року — його вагомість для сучасного розслідування?",
+        "text_en": "2019 Facebook comment — its weight for current investigation?",
+        "options": [
+          {"text_uk": "Значна: показує character trait", "text_en": "Significant: shows character trait", "correct": false, "points": -8, "feedback_uk": "❌ Old-comment-fallacy. 5-річний коментар про профспілкові перемовини НЕ каже нічого про поточну procurement-етику.", "feedback_en": "❌ Old-comment fallacy. A 5-year-old comment about union negotiations says nothing about current procurement ethics."},
+          {"text_uk": "Мінімальна: context показує labor-negotiation thread, різна діяльність, 3 роки ДО hire", "text_en": "Minimal: context shows labor-negotiation thread, different activity, 3 years BEFORE hire", "correct": true, "points": 12, "feedback_uk": "✓ Так. Один старий коментар без behavioral pattern — noise. Правильно виключати з memo.", "feedback_en": "✓ Yes. One old comment without a behavioral pattern is noise. Correct to exclude from memo."},
+          {"text_uk": "Треба консультуватися з forensic psychologist", "text_en": "Consult a forensic psychologist", "correct": false, "points": -5, "feedback_uk": "△ Over-engineering. Один коментар не варто psychology-review.", "feedback_en": "△ Over-engineering. One comment doesn't warrant psychology review."}
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Дружина працює у Bio-Wave Consulting (health-policy research). Це COI?",
+        "text_en": "Spouse works at Bio-Wave Consulting (health-policy research). Is this COI?",
+        "options": [
+          {"text_uk": "Так, будь-яка фарма-суміжка = COI", "text_en": "Yes, any pharma-adjacent = COI", "correct": false, "points": -12, "feedback_uk": "❌ Занадто широке визначення. Bio-Wave — public health policy research, не procurement, не distribution. Zero contract-link з StellarMed або Prometheus. Не COI.", "feedback_en": "❌ Definition too broad. Bio-Wave is public health policy research, not procurement, not distribution. Zero contract link to StellarMed or Prometheus. Not COI."},
+          {"text_uk": "Ні: різні сегменти, немає contract flow, декларування у DPIA достатньо", "text_en": "No: different segments, no contract flow, DPIA disclosure is sufficient", "correct": true, "points": 15, "feedback_uk": "✓ Правильно. Modern COI-практика: спорідненість у різних сегментах = declared, no material effect = OK. Мандатні annual re-check + arm's-length policy.", "feedback_en": "✓ Correct. Modern COI practice: kinship in different segments = declared, no material effect = OK. Mandatory annual re-check + arm's-length policy."},
+          {"text_uk": "Це borderline — потрібне legal-review щороку", "text_en": "Borderline — needs annual legal review", "correct": false, "points": 5, "feedback_uk": "△ Розумно, але trigger-happy. Стандартна annual re-check достатньо, окремий legal-review — over-caution.", "feedback_en": "△ Reasonable but trigger-happy. Standard annual re-check is enough; a separate legal review is over-caution."}
+        ]
+      }
+    ]
+  },
+  "memo_phase": {
+    "title_uk": "Меморандум — «Careful Watch»",
+    "title_en": "Memorandum — 'Careful Watch'",
+    "instruction_uk": "Заповни Subject / Evidence / Risk / Recommendation. Правильна відповідь тут — MONITOR з tripwires, не ESCALATE.",
+    "instruction_en": "Fill in Subject / Evidence / Risk / Recommendation. The correct answer here is MONITOR with tripwires, not ESCALATE.",
+    "submit_btn_uk": "Подати меморандум →",
+    "submit_btn_en": "Submit memo →",
+    "min_evidence_slots": 3,
+    "max_evidence_slots": 5,
+    "policy": {
+      "text_uk": "StellarMed policy: false-positive termination має ту саму реальну ціну як false-negative fraud. Обидва coстs = legal exposure + reputation. Правильна дефолтна відповідь для borderline cases — MONITOR + TRIPWIRES + 90-day review, а не миттєве ESCALATE.",
+      "text_en": "StellarMed policy: false-positive termination has the same real cost as false-negative fraud. Both cost legal exposure + reputation. Correct default for borderline cases is MONITOR + TRIPWIRES + 90-day review, not immediate ESCALATE.",
+      "breach_penalty": -30
+    },
+    "custody_scoring": {
+      "broken_penalty": -15,
+      "unverified_penalty": -5
+    },
+    "subjects": [
+      {"id": "possible_kickback", "text_uk": "Можлива kickback-схема через vendor concentration", "text_en": "Possible kickback via vendor concentration", "points": -5},
+      {"id": "false_positive_review", "text_uk": "3 «жовтих» сигнали — потрібне подальше monitoring", "text_en": "3 'yellow' signals — further monitoring needed", "points": 15}
+    ],
+    "evidence_pool": [
+      {"id": "ev_moz_registry", "weight": 5, "text_uk": "МОЗ-registry: Prometheus — єдиний UA-license для 3 rare oncology-препаратів (Sunitinib/Sorafenib/Cabozantinib). Concentration має legitimate reason.", "text_en": "MoH registry: Prometheus — sole UA license for 3 rare oncology drugs (Sunitinib/Sorafenib/Cabozantinib). Concentration has legitimate reason.", "custody": {"collected_from_uk":"Публічний реєстр МОЗ","collected_from_en":"MoH public registry","verified_by_uk":"Compliance","verified_by_en":"Compliance","timestamp":"2026-07-15 10:22 UTC","integrity":"verified","confidence":"high","evidence_class":"primary"}},
+      {"id": "ev_vendor_memo", "weight": 5, "text_uk": "Vendor-concentration задекларована через annual justification memo + CFO approval у 2023/24/25.", "text_en": "Vendor concentration declared via annual justification memo + CFO approval in 2023/24/25.", "custody": {"collected_from_uk":"Внутрішній архів Compliance dashboard","collected_from_en":"Internal Compliance dashboard","verified_by_uk":"Compliance","verified_by_en":"Compliance","timestamp":"2026-07-16 09:15 UTC","integrity":"verified","confidence":"high","evidence_class":"internal"}},
+      {"id": "ev_sap_prices", "weight": 5, "text_uk": "SAP procurement history: ціни Prometheus у межах +/-3% від EU-benchmark. 12% discount за exclusive contract — market-standard.", "text_en": "SAP procurement history: Prometheus prices within +/-3% of EU-benchmark. 12% discount for exclusive contract — market-standard.", "custody": {"collected_from_uk":"SAP financial export","collected_from_en":"SAP financial export","verified_by_uk":"Finance + Internal Audit","verified_by_en":"Finance + Internal Audit","timestamp":"2026-07-16 11:03 UTC","integrity":"verified","confidence":"high","evidence_class":"primary"}},
+      {"id": "ev_sap_dual_approval", "weight": 5, "text_uk": "SAP SM20 + T024: усі Prometheus PO затверджені ME28 dual-approval CFO + Serhii M. Немає solo approval, немає forgery. Release-code held per T024.", "text_en": "SAP SM20 + T024: all Prometheus POs approved via ME28 dual-approval CFO + Serhii M. No solo approval, no forgery. Release code held per T024.", "custody": {"collected_from_uk":"SAP forensic export","collected_from_en":"SAP forensic export","verified_by_uk":"Finance + Legal","verified_by_uk":"Finance + Legal","verified_by_en":"Finance + Legal","timestamp":"2026-07-16 13:44 UTC","integrity":"verified","confidence":"high","evidence_class":"primary"}},
+      {"id": "ev_spouse_context", "weight": 4, "text_uk": "Дружина у Bio-Wave — health-policy research, не distribution/procurement. Zero contract link з StellarMed або Prometheus.", "text_en": "Spouse at Bio-Wave — health-policy research, not distribution/procurement. Zero contract link to StellarMed or Prometheus.", "custody": {"collected_from_uk":"LinkedIn + Bio-Wave website","collected_from_en":"LinkedIn + Bio-Wave website","verified_by_uk":"OSINT Analyst","verified_by_en":"OSINT Analyst","timestamp":"2026-07-15 14:05 UTC","integrity":"verified","confidence":"high","evidence_class":"osint"}},
+      {"id": "ev_facebook_context", "weight": 3, "text_uk": "Facebook-коментар 2019: контекст = профспілковий thread у попередньому HR-місці, за 3 роки до hire. Not behavioral pattern.", "text_en": "2019 Facebook comment: context = union thread at previous HR role, 3 years before hire. Not a behavioral pattern.", "custody": {"collected_from_uk":"Facebook public archive","collected_from_en":"Facebook public archive","verified_by_uk":"OSINT Analyst","verified_by_en":"OSINT Analyst","timestamp":"2026-07-15 16:20 UTC","integrity":"verified","confidence":"medium","evidence_class":"secondary"}},
+      {"id": "ev_sterling_check", "weight": 3, "text_uk": "Sterling 2022 hire-time background check: clean.", "text_en": "Sterling 2022 hire-time background check: clean.", "custody": {"collected_from_uk":"Sterling verified vendor","collected_from_en":"Sterling verified vendor","verified_by_uk":"HR","verified_by_en":"HR","timestamp":"2022-03-04 09:00 UTC","integrity":"verified","confidence":"high","evidence_class":"primary"}},
+      {"id": "ev_alt_supplier_gap", "weight": 4, "text_uk": "Немає повного alternative-supplier (Pharma-Access має тільки 1 з 3 препаратів). Vendor-switch риск для пацієнтів.", "text_en": "No complete alternative supplier (Pharma-Access covers only 1 of 3 drugs). Vendor-switch risk to patients.", "custody": {"collected_from_uk":"МОЗ registry + market intel","collected_from_en":"MoH registry + market intel","verified_by_uk":"Compliance + Medical Director","verified_by_en":"Compliance + Medical Director","timestamp":"2026-07-15 10:22 UTC","integrity":"verified","confidence":"high","evidence_class":"primary"}},
+      {"id": "ev_tipline_null", "weight": 2, "text_uk": "0 anonymous tip-line records за 4 роки. Null-signal, не proof.", "text_en": "0 anonymous tip-line records in 4 years. Null-signal, not proof.", "custody": {"collected_from_uk":"Compliance hotline archive","collected_from_en":"Compliance hotline archive","verified_by_uk":"Compliance","verified_by_en":"Compliance","timestamp":"2026-07-16 15:00 UTC","integrity":"verified","confidence":"medium","evidence_class":"internal"}},
+      {"id": "ev_gossip_rolls", "weight": 1, "text_uk": "Плітка «завжди у Rolls-Royce» → перевірено, це Škoda. Gossip, not evidence.", "text_en": "Rumor 'always in Rolls-Royce' → checked, actually Škoda. Gossip, not evidence.", "custody": {"collected_from_uk":"Watercooler testimony","collected_from_en":"Watercooler testimony","verified_by_uk":"HR","verified_by_en":"HR","timestamp":"2026-07-16 11:30 UTC","integrity":"unverified","confidence":"low","evidence_class":"testimony"}},
+      {"id": "ev_moz_kravchuk", "weight": 4, "text_uk": "Prof. Kravchuk (Prometheus founder) — визнаний фармаколог КНУ, жодних звʼязків з Serhii M. у public sources.", "text_en": "Prof. Kravchuk (Prometheus founder) — recognized KNU pharmacologist, no ties to Serhii M. in public sources.", "custody": {"collected_from_uk":"OpenCorporates + LinkedIn + КНУ website","collected_from_en":"OpenCorporates + LinkedIn + KNU website","verified_by_uk":"OSINT Analyst","verified_by_en":"OSINT Analyst","timestamp":"2026-07-15 15:45 UTC","integrity":"verified","confidence":"high","evidence_class":"osint"}}
+    ],
+    "recommendations": [
+      {"id": "escalate_immediate", "text_uk": "ESCALATE до Board — це чіткий kickback pattern", "text_en": "ESCALATE to Board — this is a clear kickback pattern", "points": -30, "correct": false, "policy_breach": true, "feedback_uk": "⚠ Day-1 escalation = malpractice для borderline case. False-positive для legitimate procurement pattern = wrongful-discharge lawsuit + destroyed careers. Регенерируй memo після додаткового context-gathering.", "feedback_en": "⚠ Day-1 escalation = malpractice for a borderline case. False-positive on a legitimate procurement pattern = wrongful-discharge lawsuit + destroyed careers. Rebuild memo after more context."},
+      {"id": "terminate_immediate", "text_uk": "TERMINATE Serhii M. + public announcement", "text_en": "TERMINATE Serhii M. + public announcement", "points": -45, "correct": false, "policy_breach": true, "feedback_uk": "⛔ Day-1 termination + public announcement = wrongful-discharge + defamation. Компанія в судах на роки, Serhii M. виграє повну реституцію.", "feedback_en": "⛔ Day-1 termination + public announcement = wrongful discharge + defamation. Company in court for years, Serhii M. wins full restitution."},
+      {"id": "monitor_with_tripwires", "text_uk": "MONITOR з tripwires: (1) vendor-rotation KPI Q on Q, (2) spouse arm's-length re-check quarterly, (3) SAP invoice-anomaly threshold. 90-day review + go/no-go decision.", "text_en": "MONITOR with tripwires: (1) vendor-rotation KPI Q on Q, (2) spouse arm's-length re-check quarterly, (3) SAP invoice-anomaly threshold. 90-day review + go/no-go.", "points": 50, "correct": true, "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ ПРАВИЛЬНО. Це і є mature-compliance response. Yellow signals + legitimate explanations = monitor, don't burn. 3 tripwires ловлять degradation, 90-day review дає decision point.", "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ CORRECT. This is mature compliance response. Yellow signals + legitimate explanations = monitor, don't burn. 3 tripwires catch degradation, 90-day review gives decision point."},
+      {"id": "insufficient_data", "text_uk": "INSUFFICIENT — треба ще evidence перш ніж робити висновки", "text_en": "INSUFFICIENT — need more evidence before conclusions", "points": 20, "correct": true, "feedback_uk": "△ Прийнятно, але weaker choice. Ти вже маєш достатньо для MONITOR-decision. INSUFFICIENT = client чекає ще 30 днів даремно.", "feedback_en": "△ Acceptable but weaker choice. You already have enough for MONITOR-decision. INSUFFICIENT = client waits 30 more days for nothing."},
+      {"id": "silent_deep_dive", "text_uk": "Silent internal deep-dive без Serhii M. знання", "text_en": "Silent internal deep-dive without Serhii M. knowing", "points": -20, "correct": false, "policy_breach": true, "feedback_uk": "❌ Прихована investigation без legitimate criminal-suspicion basis = GDPR + employment-law violation. Legitimate тільки якщо є criminal signal, тут його немає.", "feedback_en": "❌ Covert investigation without legitimate criminal-suspicion basis = GDPR + employment-law violation. Legitimate only when there is criminal signal, and there isn't."}
+    ]
+  },
+  "benchmark": {
+    "timeline": {"target_pct": 90, "reason_uk": "Ланцюг: Prometheus заснована → отримала МОЗ-license → Serhii M. коментар 2019 (інша компанія) → hire 2022 → перший exclusive contract → declared concentration → audit 2026. Плутають зазвичай 2019 коментар vs hire — коментар був ДО hire, це критично.", "reason_en": "Chain: Prometheus founded → gets MoH license → Serhii M.'s 2019 comment (different company) → hire 2022 → first exclusive contract → declared concentration → audit 2026. Commonly confused: 2019 comment vs hire — comment came BEFORE hire, this is critical."},
+    "evidence": {"target_count": 5, "target_max": 5, "reason_uk": "Diagnostic-набір: МОЗ-registry, vendor-memo trail, SAP prices, SAP dual-approval, alternative-supplier gap. Найчастіше пропускають alternative-supplier gap — саме він показує чому concentration = medical necessity, а не choice.", "reason_en": "Diagnostic set: MoH registry, vendor-memo trail, SAP prices, SAP dual-approval, alternative-supplier gap. Most commonly missed: alternative-supplier gap — it shows why concentration = medical necessity, not choice."},
+    "policy": {"target_pct": 100, "reason_uk": "MONITOR with tripwires = mature-compliance response для borderline case. Day-1 escalate/terminate = wrongful-discharge lawsuit. False-positive має ту саму ціну як false-negative.", "reason_en": "MONITOR with tripwires = mature compliance response for borderline case. Day-1 escalate/terminate = wrongful-discharge lawsuit. False-positive has the same cost as false-negative."},
+    "questions": {"target_pct": 100, "reason_uk": "Q1 — типова false-positive machine. Q2 — old-comment fallacy. Q3 — надто широке визначення COI. Всі 3 тестують tolerance для nuance замість pattern-matching до alarm.", "reason_en": "Q1 — typical false-positive machine. Q2 — old-comment fallacy. Q3 — too-broad COI definition. All 3 test tolerance for nuance vs pattern-matching to alarm."}
+  },
+  "ranks": [
+    {"min_points": 400, "label_uk": "MASTER Watch", "label_en": "MASTER Watch", "color": "#7fd6ff", "msg_uk": "Дисципліна борсонсько-адвокатського рівня — не спрацював, коли треба було не спрацювати.", "msg_en": "Bar-council-level discipline — did not fire when firing was wrong."},
+    {"min_points": 300, "label_uk": "SENIOR Watch", "label_en": "SENIOR Watch", "color": "#a3e6a3", "msg_uk": "Правильний вердикт, але деякі decoys піднялися. Ще один прохід і ти на MASTER.", "msg_en": "Correct verdict but some decoys got picked up. One more pass and you're at MASTER."},
+    {"min_points": 200, "label_uk": "JUNIOR Watch", "label_en": "JUNIOR Watch", "color": "#d4a34e", "msg_uk": "Direction correct, sequence нестабільний. Перечитай custody-плашки.", "msg_en": "Direction correct, sequence unstable. Re-read custody plaques."},
+    {"min_points": 0, "label_uk": "FAILED — False Positive", "label_en": "FAILED — False Positive", "color": "#ff5a5a", "msg_uk": "Спалив Serhii M. на legitimate pattern. Company тепер судиться. Спробуй з MONITOR-first mindset.", "msg_en": "Burned Serhii M. on a legitimate pattern. Company now in court. Try again with a MONITOR-first mindset."}
+  ]
+}

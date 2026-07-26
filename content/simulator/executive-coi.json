@@ -86,7 +86,10 @@
               "img": "/img/uploads/simulator/sim02/case4-ownership-graph.jpg"
             }
           ]
-        }
+        },
+        "unlocks_after": [
+          "sec_ownership"
+        ]
       },
       {
         "id": "sec_ownership",
@@ -272,7 +275,10 @@
           }
         ],
         "invoices_note_uk": "5 з 7 зустрічей — приватні restaurant meetings, expensed як «business dev» без деталей. Це систематичний pattern coordination BEFORE acquisition announcement.",
-        "invoices_note_en": "5 of 7 meetings — private restaurant meetings, expensed as \"business dev\" without detail. Systematic pattern of coordination BEFORE acquisition announcement."
+        "invoices_note_en": "5 of 7 meetings — private restaurant meetings, expensed as \"business dev\" without detail. Systematic pattern of coordination BEFORE acquisition announcement.",
+        "unlocks_after": [
+          "panama_papers"
+        ]
       },
       {
         "id": "linkedin_cfo",
@@ -324,6 +330,9 @@
             "note_uk": "Sarah P. listed as sole beneficiary of trust that holds 100% of Silverwood Holdings LP.",
             "note_en": "Sarah P. listed as sole beneficiary of trust that holds 100% of Silverwood Holdings LP."
           }
+        ],
+        "unlocks_after": [
+          "cfo_disclosure"
         ]
       },
       {

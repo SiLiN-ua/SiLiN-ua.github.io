@@ -336,7 +336,10 @@
           }
         ],
         "invoices_note_uk": "3 з 4 vendor'ів — один і той самий BIC у Кіпрі. Немає легітимного бізнес-обґрунтування для трьох нібито незалежних постачальників з Києва конвергувати на єдиному кіпрському correspondent-банку — це diagnostic для kickback pattern.",
-        "invoices_note_en": "3 of 4 vendors — the same Cyprus BIC. No legitimate business rationale for three ostensibly independent Kyiv-based suppliers to converge on a single Cypriot correspondent bank — diagnostic for kickback pattern."
+        "invoices_note_en": "3 of 4 vendors — the same Cyprus BIC. No legitimate business rationale for three ostensibly independent Kyiv-based suppliers to converge on a single Cypriot correspondent bank — diagnostic for kickback pattern.",
+        "unlocks_after": [
+          "opencorp_v1"
+        ]
       },
       {
         "id": "street_view_v2",
@@ -509,6 +512,9 @@
             "note_uk": "Ex-працівник каже, що A.K. відсіював vendor-ів на етапі RFP: «Global Industrial чи інші великі — це для окозамилювання, реально спонсорить малих».",
             "note_en": "Ex-employee says A.K. filtered vendors at RFP stage: \"Global Industrial or other large ones — for the show, really funds the small ones\"."
           }
+        ],
+        "unlocks_after": [
+          "audit_meeting"
         ]
       },
       {
@@ -534,6 +540,9 @@
             "note_en": "Single album, several posts: new BMW X7 (~$110K) captioned \"Life is stable\", then photos from Palm Jumeirah Dubai hotel (~$800/night, 5 days). Combined, on $95K/year salary — math doesn't work.",
             "img": "/img/uploads/simulator/sim02/case2-facebook-lifestyle.png"
           }
+        ],
+        "unlocks_after": [
+          "invoices_procurement"
         ]
       }
     ]

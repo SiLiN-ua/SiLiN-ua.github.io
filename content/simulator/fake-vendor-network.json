@@ -243,7 +243,12 @@
           }
         ],
         "invoices_note_uk": "Це не тільки НЕ підозріло — це очікуваний норм. Wise — стандарт для міжнародних фрилансерських оплат. 500K+ активних Business-акаунтів по світу. Якщо це шило-на-мило: чому ціни ринкові, а не 30-40% вище?",
-        "invoices_note_en": "Not only NOT suspicious — it's expected norm. Wise — standard for international freelance payments. 500K+ active Business accounts worldwide. If this were a scheme: why market prices, not 30-40% above?"
+        "invoices_note_en": "Not only NOT suspicious — it's expected norm. Wise — standard for international freelance payments. 500K+ active Business accounts worldwide. If this were a scheme: why market prices, not 30-40% above?",
+        "unlocks_after": [
+          "opencorp_devbox",
+          "opencorp_byteco",
+          "opencorp_codecraft"
+        ]
       },
       {
         "id": "website_check",
@@ -415,6 +420,9 @@
             "note_en": "Renovated 3-storey building with large \"BEEHIVE\" signage. Modern architecture. Legit coworking with publicly available website.",
             "img": "/img/uploads/simulator/sim02/case3-street-view-beehive.jpg"
           }
+        ],
+        "unlocks_after": [
+          "coworking_records"
         ]
       },
       {
@@ -477,6 +485,9 @@
             "note_uk": "«Я працював з Мариною T. у 2023 — вона мені 2 тижні не платила. Ця людина непорядна.»",
             "note_en": "\"I worked with Maryna T. in 2023 — she didn't pay me for 2 weeks. This person is dishonest.\""
           }
+        ],
+        "unlocks_after": [
+          "linkedin_check"
         ]
       }
     ]
