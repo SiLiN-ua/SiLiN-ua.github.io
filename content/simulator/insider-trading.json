@@ -12,7 +12,7 @@
     "client_en": "Silvermark Investment Bank (US mid-tier IB, $12B AUM)",
     "position": "M&A Analyst (2 years at Silvermark)",
     "salary": "$180K base + bonus",
-    "body_uk": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen мав доступ до NextEra × PowerFlex $2.4B deal у deal room. Через 3 дні до public announcement — незвична покупка PowerFlex акцій на маленькому retail-акаунті... який виявився братом-студентом David-а. Обидва живуть за однією адресою. Через 5 днів після announcement David купує Rolex за $47K.\n\nКлієнт: Head of Compliance + General Counsel + external Special Committee. Політика IB жорстка: всі підозри insider trading = автоматично Suspend pending investigation (НЕ termination) + повідомлення регулятора. IB не приймає self-decisions до вироку регулятора — audit trail критичний.",
+    "body_uk": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen мав доступ до NextEra × PowerFlex $2.4B deal у deal room. Через 3 дні до public announcement — незвична покупка PowerFlex акцій на маленькому retail-акаунті... який виявився братом-студентомдентом David-а. Обидва живуть за однією адресою. Через 5 днів після announcement David купує Rolex за $47K.\n\nКлієнт: Head of Compliance + General Counsel + external Special Committee. Політика IB жорстка: всі підозри insider trading = автоматично Suspend pending investigation (НЕ termination) + повідомлення регулятора. IB не приймає self-decisions до вироку регулятора — audit trail критичний.",
     "body_en": "🚨 FINAL CASE · MAXIMUM COMPLEXITY. Compliance surveillance flagged suspicious trading: M&A analyst David Chen had access to the NextEra × PowerFlex $2.4B deal in the deal room. Three days before public announcement — unusual PowerFlex share purchase on a small retail account... which turned out to be David's student brother. Both live at the same address. Five days post-announcement David bought a Rolex for $47K.\n\nClient: Head of Compliance + General Counsel + external Special Committee. IB policy is strict: all insider-trading suspicions = automatic Suspend pending investigation (NOT termination) + regulator notification. IB doesn't self-decide before regulator verdict — audit trail is critical.",
     "start_btn_uk": "▶ Розпочати compliance investigation",
     "start_btn_en": "▶ Start compliance investigation",
@@ -156,7 +156,7 @@
         "time_cost": 75,
         "weight": "diagnostic",
         "ui_component": "matches",
-        "clue_uk": "David Chen registered address = Michael Chen registered address = Silvermark HR record address = 240 W 27th St, Apt 4B, NY. Одна квартира. Fidelity KYC для Michael лyisted той самий phone що David's LinkedIn.",
+        "clue_uk": "David Chen registered address = Michael Chen registered address = Silvermark HR record address = 240 W 27th St, Apt 4B, NY. Одна квартира. Fidelity KYC для Michael listed той самий phone що David's LinkedIn.",
         "clue_en": "David Chen registered address = Michael Chen registered address = Silvermark HR record = 240 W 27th St, Apt 4B, NY. Same apartment. Fidelity KYC for Michael listed same phone as David's LinkedIn.",
         "matches": [
           {
@@ -198,7 +198,7 @@
           {
             "number": "WD-2026-4211",
             "date": "2026-04-27",
-            "vendor": "Michael Chen withdrew \\$85K from Fidelity → Chase шarкоd family card XXXX-4287",
+            "vendor": "Michael Chen withdrew \\$85K from Fidelity → Chase charged family card XXXX-4287",
             "amount": "$85,000",
             "approver": "settled",
             "highlight": true
@@ -347,7 +347,7 @@
           {
             "site": "Signal metadata (encrypted contents, timestamps available)",
             "url": "—",
-            "note_uk": "8 messages David ↔ Michael 21-22 квітня. Contents unrecoverable, але pattern чіткий — sudden burst navколо purchase timing.",
+            "note_uk": "8 messages David ↔ Michael 21-22 квітня. Contents unrecoverable, але pattern чіткий — sudden burst навколо purchase timing.",
             "note_en": "8 messages David ↔ Michael April 21-22. Contents unrecoverable but pattern clear — sudden burst around purchase timing."
           }
         ]
@@ -415,7 +415,7 @@
           {
             "site": "Anonymous NYU dorm source",
             "url": "—",
-            "note_uk": "«Michael після покупки хвалився що «зробив бабки на brother's insider tip». Це може бути braggingом.», лежит на surface.",
+            "note_uk": "«Michael після покупки хвалився що «зробив бабки на brother's insider tip». Це може бути braggingом.», лежить на поверхні.",
             "note_en": "\"Michael after purchase bragged he 'made bank on brother's insider tip'. Could be bragging.\" surface-level."
           }
         ]
@@ -541,7 +541,7 @@
             "text_en": "Maybe — if Michael can show independent research",
             "points": -15,
             "correct": false,
-            "feedback_uk": "❌ 22-річний Communications студент з $200 typical trading history раптом купує $30K окремої стrategічної позиції за 3 дні до announcement — burden of proof crushed.",
+            "feedback_uk": "❌ 22-річний Communications студент з $200 typical trading history раптом купує $30K окремої стратегічної позиції за 3 дні до announcement — burden of proof crushed.",
             "feedback_en": "❌ 22-year-old Communications student with $200 typical trading history suddenly buys $30K single strategic position 3 days before announcement — burden of proof crushed."
           },
           {
@@ -968,8 +968,8 @@
   "benchmark": {
     "timeline": {
       "target_pct": 95,
-      "reason_uk": "Ланцюг Rule 10b-5: David deal-room access -> $30K wire до брата -> Michael купує PWRX за $30K -> 24 год після announcement — продано з $85K -> $60K wire назад до David -> $47K Rolex + Балі. Найчастіша помилка — плутати порядок Instagram Rolex vs $60K wire back: wire був ДО покупки, це forensic trail.",
-      "reason_en": "Rule 10b-5 chain: David deal-room access -> $30K wire to brother -> Michael buys PWRX for $30K -> 24h post-announcement — sold w/ $85K profit -> $60K wire back to David -> $47K Rolex + Bali. Most common mistake — confusing Instagram Rolex vs $60K wire back order: wire came BEFORE purchase, it's the forensic trail."
+      "reason_uk": "Ланцюг Rule 10b-5: David deal-room access -> $30K wire до брата -> Michael купує PWRX за $30K -> 24 год після announcement — продано з $85K -> $60K wire назад до David -> $47K Rolex + Балі. Найчастіша помилка — плутати порядок Instagram Rolex vs the return-wire from Michael: wire був ДО покупки, це forensic trail.",
+      "reason_en": "Rule 10b-5 chain: David deal-room access -> $30K wire to brother -> Michael buys PWRX for $30K -> 24h post-announcement — sold w/ $85K profit -> $60K wire back to David -> $47K Rolex + Bali. Most common mistake — confusing Instagram Rolex vs the return-wire from Michael order: wire came BEFORE purchase, it's the forensic trail."
     },
     "evidence": {
       "target_count": 6,

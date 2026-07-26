@@ -242,7 +242,7 @@
             "approver": "BIC: TRWIBEBB"
           }
         ],
-        "invoices_note_uk": "Suming не тільки НЕ підозріле — це очікуваний норм. Wise — стандарт для міжнародних фрилансерських оплат. 500K+ активних Business-акаунтів по світу. Якщо це шило-на-мило: чому ціни ринкові, а не 30-40% вище?",
+        "invoices_note_uk": "Це не тільки НЕ підозріло — це очікуваний норм. Wise — стандарт для міжнародних фрилансерських оплат. 500K+ активних Business-акаунтів по світу. Якщо це шило-на-мило: чому ціни ринкові, а не 30-40% вище?",
         "invoices_note_en": "Not only NOT suspicious — it's expected norm. Wise — standard for international freelance payments. 500K+ active Business accounts worldwide. If this were a scheme: why market prices, not 30-40% above?"
       },
       {
@@ -615,7 +615,7 @@
             "text_en": "Too low for fake vendor — actually a fraud sign",
             "points": -15,
             "correct": false,
-            "feedback_uk": "❌ Оверthинкінг. «Занадто низько» ≠ fraud. Ринкове.",
+            "feedback_uk": "❌ Overthinking. «Занадто низько» ≠ fraud. Ринкове.",
             "feedback_en": "❌ Overthinking. \"Too low\" ≠ fraud. Market rate."
           },
           {
@@ -737,7 +737,7 @@
         "text_uk": "Ставки $45-55/hour — стандарт для UA senior developer'а. Немає overrun. Shell-vendor завжди має +30-40%.",
         "text_en": "Rates $45-55/hour — standard for UA senior developer. No overrun. Shell vendors always have +30-40%.",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -769,7 +769,7 @@
         "text_uk": "Всі 3 засновники — реальні люди з 800-2100 LinkedIn connections + endorsements від бувших colleagues з Zalando/Grammarly/N26",
         "text_en": "All 3 founders — real people with 800-2100 LinkedIn connections + endorsements from ex-colleagues at Zalando/Grammarly/N26",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",

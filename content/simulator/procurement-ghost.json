@@ -335,8 +335,8 @@
             "approver": "BIC: COSBUAUK"
           }
         ],
-        "invoices_note_uk": "3 з 4 vendor'ів — один і той самий BIC у Кіпрі. Ймовірність випадкового збігу для реального ринку = ~1 до 40 000.",
-        "invoices_note_en": "3 of 4 vendors — the same Cyprus BIC. Probability of random coincidence in a real market = ~1 in 40,000."
+        "invoices_note_uk": "3 з 4 vendor'ів — один і той самий BIC у Кіпрі. Немає легітимного бізнес-обґрунтування для трьох нібито незалежних постачальників з Києва конвергувати на єдиному кіпрському correspondent-банку — це diagnostic для kickback pattern.",
+        "invoices_note_en": "3 of 4 vendors — the same Cyprus BIC. No legitimate business rationale for three ostensibly independent Kyiv-based suppliers to converge on a single Cypriot correspondent bank — diagnostic for kickback pattern."
       },
       {
         "id": "street_view_v2",
@@ -443,7 +443,7 @@
               "text_en": "In Q2-Q4 2025 minutes all 4 ProTech / Nova / IndPart contracts have dual-approval checkbox, but the CFO signature is a scanned facsimile, not original. Originals not on file."
             },
             {
-              "text_uk": "⚠ Internal audit notice (10.11.2025): виявлено 4 випадки коли dual-approval формально є, але CFO у dashboardі не має запису про затвердження. Це вказує на фальсифікацію.",
+              "text_uk": "⚠ Internal audit notice (10.11.2025): виявлено 4 випадки коли dual-approval формально є, але CFO у dashboard-і не має запису про затвердження. Це вказує на фальсифікацію.",
               "text_en": "⚠ Internal audit notice (10.11.2025): 4 cases identified where dual-approval formally exists, but SAP SM20 audit log has no approval record. Points to forgery."
             }
           ]
@@ -585,7 +585,7 @@
       {
         "id": "e7",
         "date": "2025-11-10",
-        "text_uk": "Виявлення: Internal Audit виявляє, що 4 dual-approval у SAP не мають CFO-запису у dashboardі → forgery flag",
+        "text_uk": "Виявлення: Internal Audit виявляє, що 4 dual-approval у SAP не мають CFO-запису у dashboard-і → forgery flag",
         "text_en": "Detection: Internal Audit finds 4 dual-approvals in SAP have no SAP SM20 audit log record → forgery flag"
       }
     ],
@@ -810,7 +810,7 @@
         "text_uk": "3 shell-vendor'и мають директорами: двоюрідний брат / однокласник / дочка A.K. (OpenCorporates + LinkedIn)",
         "text_en": "3 shell vendors have directors: A.K.'s cousin / classmate / daughter (OpenCorporates + LinkedIn)",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -826,7 +826,7 @@
         "text_uk": "Ціни на 35-42% вище LME/benchmark ринку по всіх 3 shell-vendor'ах, при цьому у Global Industrial — ринкові",
         "text_en": "Prices 35-42% above LME/benchmark market across all 3 shell vendors, Global Industrial — market",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -874,7 +874,7 @@
         "text_uk": "IndPart Supply — засновниця 21-річна дочка A.K., студентка КНУ без business background",
         "text_en": "IndPart Supply — founder is A.K.'s 21-y.o. daughter, KNU student with no business background",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -1069,7 +1069,7 @@
     },
     "policy": {
       "target_pct": 100,
-      "reason_uk": "Policy: kickback + fraud -> мандатна ескалація до Internal Audit + General Counsel + Vendor Audit + Procurement Freeze. Просте REJECT/TERMINATE = policy breach (-40), бо не преserveує evidentiary chain для повернення коштів.",
+      "reason_uk": "Policy: kickback + fraud -> мандатна ескалація до Internal Audit + General Counsel + Vendor Audit + Procurement Freeze. Просте REJECT/TERMINATE = policy breach (-40), бо не зберігає evidentiary chain для повернення коштів.",
       "reason_en": "Policy: kickback + fraud -> mandatory escalation to Internal Audit + General Counsel + Vendor Audit + Procurement Freeze. Plain REJECT/TERMINATE = policy breach (-40) — fails to preserve evidentiary chain for asset recovery."
     },
     "questions": {

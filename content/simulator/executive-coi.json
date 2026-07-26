@@ -32,7 +32,7 @@
     "title_uk": "Розслідування · високий ризик · Panama-based structure",
     "title_en": "Investigation · high risk · Panama-based structure",
     "instruction_uk": "Копай глибоко. Мінімум 6 інструментів. CFO публічної компанії — це рівень регуляторного enforcement. Помилка = SEC action проти MedNext + втрата твоєї compliance-ліцензії.",
-    "instruction_en": "Dig deep. Minimum 6 tools. A public-company CFO means regulatory-enforcement exposure. A mistake here = SEC enforcement action against MedNext + loss of your individual officer accountability.",
+    "instruction_en": "Dig deep. Minimum 6 tools. A public-company CFO means regulatory-enforcement exposure. A mistake here = SEC enforcement action against MedNext + personal officer liability under §304 clawback and potential §1105 officer-and-director bar.",
     "next_btn_uk": "Далі → Хронологія",
     "next_btn_en": "Next → Timeline",
     "min_tools_used": 6,
@@ -202,8 +202,8 @@
               "text_en": "Lead role: David P., CFO. He built valuation model, negotiated with the BioLink CEO, prepared the board deck. Board vote scheduled 2026-07-27. Expected: David P. presents and recommends approval."
             },
             {
-              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За SEC Section 10b-5 і Rule 10b-5 + Reg FD + Item 404 це PERFECT case для insider trading + material undisclosed COI.",
-              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under SEC Section 10b-5 and Rule 10b-5 + Reg FD + Item 404 this is a PERFECT case for insider trading + material undisclosed COI."
+              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За Section 10(b) / Rule 10b-5 + Reg FD + Item 404 це PERFECT case для insider trading + material undisclosed COI.",
+              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under Section 10(b) / Rule 10b-5 + Reg FD + Item 404 this is a PERFECT case for insider trading + material undisclosed COI."
             }
           ]
         }
@@ -373,8 +373,8 @@
             "highlight": true
           }
         ],
-        "invoices_note_uk": "Timing: last 2 покупки — уже після того як David P. знав про acquisition (M&A proposal датований 15 June). Classic front-running за Section 10b-5.",
-        "invoices_note_en": "Timing: last 2 purchases — already after David P. knew about acquisition (M&A proposal dated June 15). Classic front-running under Section 10b-5."
+        "invoices_note_uk": "Timing: last 2 покупки — уже після того як David P. знав про acquisition (M&A proposal датований 15 June). Classic front-running за Section 10(b) / Rule 10b-5.",
+        "invoices_note_en": "Timing: last 2 purchases — already after David P. knew about acquisition (M&A proposal dated June 15). Classic front-running under Section 10(b) / Rule 10b-5."
       },
       {
         "id": "old_disclosure",
@@ -575,16 +575,16 @@
             "text_en": "Legit portfolio adjustment — shares can be bought anytime",
             "points": -20,
             "correct": false,
-            "feedback_uk": "❌ Ні. Section 10b-5 забороняє trading на material non-public information (MNPI). Timing точно з MNPI available = insider trading.",
-            "feedback_en": "❌ No. Section 10b-5 prohibits trading on material non-public information (MNPI). Timing exactly with MNPI available = insider trading."
+            "feedback_uk": "❌ Ні. Rule 10b-5 (under Section 10(b) of the Exchange Act) prohibits trading на material non-public information (MNPI). Timing точно з MNPI available = insider trading.",
+            "feedback_en": "❌ No. Rule 10b-5 (under Section 10(b) of the Exchange Act) prohibits trading on material non-public information (MNPI). Timing exactly with MNPI available = insider trading."
           },
           {
-            "text_uk": "Классическое insider trading за Section 10b-5 + Rule 10b-5 + Reg FD + Item 404",
-            "text_en": "Classic insider trading under Section 10b-5 + Rule 10b-5 + Reg FD + Item 404",
+            "text_uk": "Классическое insider trading за Section 10(b) / Rule 10b-5 + Reg FD + Item 404",
+            "text_en": "Classic insider trading under Section 10(b) / Rule 10b-5 + Reg FD + Item 404",
             "points": 25,
             "correct": true,
-            "feedback_uk": "✓ Правильно. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Section 10b-5 covers MNPI. Обидва apply. Це criminal case.",
-            "feedback_en": "✓ Correct. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Section 10b-5 covers MNPI. Both apply. Criminal case."
+            "feedback_uk": "✓ Правильно. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Rule 10b-5 covers MNPI. Обидва apply. Це criminal case.",
+            "feedback_en": "✓ Correct. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Rule 10b-5 covers MNPI. Both apply. Criminal case."
           },
           {
             "text_uk": "Suspicious але потребує proof of nexus",
@@ -729,8 +729,8 @@
       {
         "id": "ev_insider_trading",
         "weight": 5,
-        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 10b-5 + Reg FD + Item 404 classic insider trading",
-        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10b-5 + Rule 10b-5 + Reg FD + Item 404 classic insider trading",
+        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10(b) / Rule 10b-5 + Reg FD + Item 404 classic insider trading",
+        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10(b) / Rule 10b-5 + Reg FD + Item 404 classic insider trading",
         "custody": {
           "collected_from_uk": "SEC EDGAR + Bloomberg Terminal (публічні дані)",
           "collected_from_en": "SEC EDGAR + Bloomberg Terminal (public market data)",
@@ -748,7 +748,7 @@
         "text_uk": "David P. НЕ декларував Silverwood trust у ВСІХ 7 попередніх 10-K (2018-2024) — систематичний non-disclosure",
         "text_en": "David P. did NOT disclose Silverwood trust in ALL 7 prior 10-Ks (2018-2024) — systematic non-disclosure",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -812,7 +812,7 @@
         "text_uk": "Sarah P. formally beneficial owner, але не має independent business background — straw / nominee",
         "text_en": "Sarah P. formally beneficial owner but has no independent business background — straw / nominee",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -870,7 +870,7 @@
           "integrity": "unverified",
           "confidence": "low",
           "evidence_class": "testimony",
-          "warning_uk": "⚠ Off-record, немає запису. Юридично неприйнятне до external counsel → Seaboard cooperation submission. Використовуй як pivot-signal, не як доказ.",
+          "warning_uk": "⚠ Off-record, немає запису. Legally inadmissible without external counsel review + Seaboard cooperation submission via counsel. Використовуй як pivot-signal, не як доказ.",
           "warning_en": "⚠ Off-record, no recording. Legally inadmissible for external counsel → Seaboard cooperation submission. Use as pivot-signal, not as evidence."
         }
       },
@@ -1033,8 +1033,8 @@
     "evidence": {
       "target_count": 5,
       "target_max": 5,
-      "reason_uk": "Diagnostic: Panama Papers chain до Silverwood, 10-K false statement, calendar 6 неlogged BluePeak meetings, prior 2018-2023 disclosures (де саме connection був), insider-trading pattern у датах. Найчастіше пропускають prior-year disclosures — саме контраст між ними і 2024-й лист = smoking gun.",
-      "reason_en": "Diagnostic: Panama Papers chain to Silverwood, 10-K false statement, calendar w/ 6 unlogged BluePeak meetings, prior 2018-2023 disclosures (where the connection was declared), insider-trading pattern in dates. Most commonly missed: prior-year disclosures — the contrast between them and the 2024 filing IS the smoking gun."
+      "reason_uk": "Diagnostic: Panama Papers chain до Silverwood, 10-K false statement, calendar 6 незалоговані BluePeak meetings, prior 2018-2023 disclosures (де саме connection був), insider-trading pattern у датах. Найчастіше пропускають prior-year disclosures — саме контраст між ними і 2024-й лист = smoking gun.",
+      "reason_en": "Diagnostic: Panama Papers chain to Silverwood, 10-K false statement, calendar w/ 6 незалогованих BluePeak meetings, prior 2018-2023 disclosures (where the connection was declared), insider-trading pattern in dates. Most commonly missed: prior-year disclosures — the contrast between them and the 2024 filing IS the smoking gun."
     },
     "policy": {
       "target_pct": 100,

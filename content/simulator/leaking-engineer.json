@@ -726,7 +726,7 @@
         "text_uk": "ТОВ «TechConsult» — директор і 100% засновник = дружина суб'єкта (OpenCorporates + ЄДР)",
         "text_en": "LLC \"TechConsult\" — director and 100% founder = subject's wife (OpenCorporates + State Registry)",
         "custody": {
-          "collected_from_en": "Public state registry (ЄДР / OpenCorporates / ICIJ)",
+          "collected_from_en": "Public state registry (USR / OpenCorporates / ICIJ)",
           "collected_from_uk": "Публічний реєстр (ЄДР / OpenCorporates / ICIJ)",
           "verified_by_en": "Compliance Team",
           "verified_by_uk": "Compliance-команда",
@@ -946,7 +946,7 @@
         "points": 0,
         "text_uk": "Vendor Audit + Monitor 90 days",
         "text_en": "Vendor Audit + Monitor 90 days",
-        "feedback_uk": "⚠️ Партіально. Audit vendorа корисний, але не адресує IP theft.",
+        "feedback_uk": "⚠️ Партіально. Audit vendor-а корисний, але не адресує IP theft.",
         "feedback_en": "⚠️ Partial. Vendor audit useful but doesn't address the IP theft."
       },
       {
