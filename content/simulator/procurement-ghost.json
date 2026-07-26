@@ -629,12 +629,12 @@
             "feedback_en": "⚠️ Good economic indicator, but A.K. can claim \"premium quality\"."
           },
           {
-            "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) у SAP",
-            "text_en": "All 3 shell vendors via same Cyprus BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) in SAP",
+            "text_uk": "Всі 3 shell-vendor'и через одну Cyprus banking BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20; T024 shows signer lacks release authority) у SAP",
+            "text_en": "All 3 shell vendors via same Cyprus BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20; T024 shows signer lacks release authority) in SAP",
             "points": 25,
             "correct": true,
             "feedback_uk": "✓ Правильно. Однакова BIC + фальсифікація dual-approval — це два незалежних технічних докази з audit trail. Дуже важко пояснити.",
-            "feedback_en": "✓ Correct. Same BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) — two independent technical proofs with audit trail. Very hard to explain away."
+            "feedback_en": "✓ Correct. Same BIC + ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20; T024 shows signer lacks release authority) — two independent technical proofs with audit trail. Very hard to explain away."
           },
           {
             "text_uk": "Lifestyle proof (BMW X7 + Dubai)",
@@ -1058,8 +1058,8 @@
   "benchmark": {
     "timeline": {
       "target_pct": 92,
-      "reason_uk": "Ланцюг: Bank BIC discovery -> OpenCorp розкриває сімейні звʼязки -> SAP ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) -> market-price gap -> продовжена kickback-схема. Найчастіше плутають порядок BIC discovery vs SAP forgery — насправді BIC був сигналом ПЕРЕД тим як аудит підняв підпис.",
-      "reason_en": "Chain: Bank BIC discovery -> OpenCorp reveals family ties -> SAP ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20) -> market-price gap -> ongoing kickback. Most commonly confused: BIC discovery vs SAP forgery order — BIC was the signal BEFORE audit flagged the signature."
+      "reason_uk": "Ланцюг: Bank BIC discovery -> OpenCorp розкриває сімейні звʼязки -> SAP ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20; T024 shows signer lacks release authority) -> market-price gap -> продовжена kickback-схема. Найчастіше плутають порядок BIC discovery vs SAP forgery — насправді BIC був сигналом ПЕРЕД тим як аудит підняв підпис.",
+      "reason_en": "Chain: Bank BIC discovery -> OpenCorp reveals family ties -> SAP ME28/ME29N release strategy bypass + facsimile signature (no matching SU01 login in SM20; T024 shows signer lacks release authority) -> market-price gap -> ongoing kickback. Most commonly confused: BIC discovery vs SAP forgery order — BIC was the signal BEFORE audit flagged the signature."
     },
     "evidence": {
       "target_count": 5,

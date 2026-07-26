@@ -202,8 +202,8 @@
               "text_en": "Lead role: David P., CFO. He built valuation model, negotiated with the BioLink CEO, prepared the board deck. Board vote scheduled 2026-07-27. Expected: David P. presents and recommends approval."
             },
             {
-              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За Section 10(b) / Rule 10b-5 + Reg FD + Item 404 це PERFECT case для insider trading + material undisclosed COI.",
-              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under Section 10(b) / Rule 10b-5 + Reg FD + Item 404 this is a PERFECT case for insider trading + material undisclosed COI."
+              "text_uk": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. За Section 10(b) / Rule 10b-5 + Item 404 (Reg FD attaches only if tipping to analysts/holders — verify tipping evidence before citing) це PERFECT case для insider trading + material undisclosed COI.",
+              "text_en": "⚠ Impact analysis: BluePeak's 4.2% stake in BioLink at $850M valuation = $35.7M unrealized gain for David P. beneficiaries. Under Section 10(b) / Rule 10b-5 + Item 404 (Reg FD attaches only if tipping to analysts/holders — verify tipping evidence before citing) this is a PERFECT case for insider trading + material undisclosed COI."
             }
           ]
         }
@@ -437,8 +437,8 @@
         "name_uk": "Board member rumor (informal)",
         "name_en": "Board member rumor (informal)",
         "provider": "Anonymous informal comm",
-        "tooltip_uk": "DECOY. Rumor from anonymous board source, no documentary basis.",
-        "tooltip_en": "DECOY. Rumor from anonymous board source, no documentary basis.",
+        "tooltip_uk": "Off-record розмова з одним з членів правління. Оціни chain-of-custody та admissibility.",
+        "tooltip_en": "Off-record розмова з одним з членів правління. Оціни chain-of-custody та admissibility.",
         "correct": false,
         "points": -8,
         "time_cost": 30,
@@ -579,12 +579,12 @@
             "feedback_en": "❌ No. Rule 10b-5 (under Section 10(b) of the Exchange Act) prohibits trading on material non-public information (MNPI). Timing exactly with MNPI available = insider trading."
           },
           {
-            "text_uk": "Классическое insider trading за Section 10(b) / Rule 10b-5 + Reg FD + Item 404",
-            "text_en": "Classic insider trading under Section 10(b) / Rule 10b-5 + Reg FD + Item 404",
+            "text_uk": "Классическое insider trading за Section 10(b) / Rule 10b-5 + Item 404 (Reg FD attaches only if tipping to analysts/holders — verify tipping evidence before citing)",
+            "text_en": "Classic insider trading under Section 10(b) / Rule 10b-5 + Item 404 (Reg FD attaches only if tipping to analysts/holders — verify tipping evidence before citing)",
             "points": 25,
             "correct": true,
-            "feedback_uk": "✓ Правильно. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Rule 10b-5 covers MNPI. Обидва apply. Це criminal case.",
-            "feedback_en": "✓ Correct. Rule 10b-5 + Reg FD + Item 404 — tender-offer-specific. Rule 10b-5 covers MNPI. Both apply. Criminal case."
+            "feedback_uk": "✓ Правильно. Rule 10b-5 + Item 404 are the primary hooks. Reg FD polices selective disclosure to analysts/holders — attach only if you have tipping evidence beyond personal trading. Rule 10b-5 covers MNPI. Обидва apply. Це criminal case.",
+            "feedback_en": "✓ Correct. Rule 10b-5 + Item 404 are the primary hooks. Reg FD polices selective disclosure to analysts/holders — attach only if you have tipping evidence beyond personal trading. Rule 10b-5 covers MNPI. Both apply. Criminal case."
           },
           {
             "text_uk": "Suspicious але потребує proof of nexus",
@@ -729,8 +729,8 @@
       {
         "id": "ev_insider_trading",
         "weight": 5,
-        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10(b) / Rule 10b-5 + Reg FD + Item 404 classic insider trading",
-        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10(b) / Rule 10b-5 + Reg FD + Item 404 classic insider trading",
+        "text_uk": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10(b) / Rule 10b-5 + Item 404 (Reg FD attaches only if tipping to analysts/holders — verify tipping evidence before citing) classic insider trading",
+        "text_en": "BluePeak purchases BioLink AFTER David P. presented $850M M&A proposal — Section 10(b) / Rule 10b-5 + Item 404 (Reg FD attaches only if tipping to analysts/holders — verify tipping evidence before citing) classic insider trading",
         "custody": {
           "collected_from_uk": "SEC EDGAR + Bloomberg Terminal (публічні дані)",
           "collected_from_en": "SEC EDGAR + Bloomberg Terminal (public market data)",
