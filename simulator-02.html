@@ -331,13 +331,13 @@
   </div>
 </section>
 
-<!-- LEADERBOARD (shared with Sim #01) -->
+<!-- LEADERBOARD (Track II only) -->
 <section class="ss-section ss-section--alt" id="leaderboard">
   <div class="container">
     <div class="ss-secttl">
-      <span class="ss-secttl__pre" data-i18n="ss.lb.pre">ГЛОБАЛЬНИЙ РЕЙТИНГ</span>
-      <h2 data-i18n="ss.lb.title">🏆 Leaderboard</h2>
-      <p data-i18n="sim2.lb.subtitle">Спільний leaderboard для всіх треків Shadow Simulator.</p>
+      <span class="ss-secttl__pre" data-i18n="sim2.lb.pre">РЕЙТИНГ TRACK II</span>
+      <h2 data-i18n="sim2.lb.title">🏆 Corporate Investigations Leaderboard</h2>
+      <p data-i18n="sim2.lb.subtitle">Окремий leaderboard лише для 6 кейсів Track II. Кожна картка = найкращий результат гравця по цьому кейсу.</p>
     </div>
     <div id="leaderboard-list"></div>
   </div>
@@ -358,11 +358,11 @@
   import { renderLeaderboard } from './js/simulator.js';
   (async () => {
     const nick = localStorage.getItem('ss.nickname') || '';
-    await renderLeaderboard('#leaderboard-list', nick);
+    await renderLeaderboard('#leaderboard-list', nick, 'sim02');
   })();
   document.addEventListener('langchange', async () => {
     const nick = localStorage.getItem('ss.nickname') || '';
-    await renderLeaderboard('#leaderboard-list', nick);
+    await renderLeaderboard('#leaderboard-list', nick, 'sim02');
   });
 </script>
 </body>

@@ -99,7 +99,7 @@
     "sim2.status.launch3": "⚙ +4 тижні",
     "sim2.notify.title": "Пройшов кейси — маєш фідбек?",
     "sim2.notify.text": "Пиши на LinkedIn або в Telegram — читаю кожен message. Кожен раунд фідбеку → нова ітерація кейсів або нова механіка.",
-    "sim2.lb.subtitle": "Спільний leaderboard для всіх треків Shadow Simulator.",
+    "sim2.lb.subtitle": "Окремий leaderboard лише для 6 кейсів Track II. Кожна картка = найкращий результат гравця по цьому кейсу.",
     "tl.badge": "TIMELINE BUILDER · ІЗОЛЬОВАНИЙ ПРОТОТИП · SIM #02",
     "tl.title": "Побудуй хронологію подій",
     "tl.lead": "Це ізольований прототип нової фази для Sim #02. Тестуємо SortableJS перед інтеграцією у game.js. Кейс — «The Leaking Engineer».",
@@ -409,7 +409,12 @@
     "ss.tile.lang_lbl": "Мова",
     "sim2.play_now": "▶ Грати",
     "sim2.case6.title": "Кейс 6 · «The Careful Watch» (judgment-under-ambiguity)",
-    "sim2.case6.sub": "StellarMed Pharmacy Ukraine · Procurement Director з трьома «жовтими» сигналами: 62% vendor-concentration (МОЗ sole-MAH пояснення), 2019 Facebook-коментар (context-clean), spouse у Bio-Wave (health-policy, не distribution). Правильна відповідь = MONITOR з квантифікованими tripwires + 90-day review, а не миттєве ESCALATE. Тренує false-positive-avoidance у ambiguous cases."
+    "sim2.case6.sub": "StellarMed Pharmacy Ukraine · Procurement Director з трьома «жовтими» сигналами: 62% vendor-concentration (МОЗ sole-MAH пояснення), 2019 Facebook-коментар (context-clean), spouse у Bio-Wave (health-policy, не distribution). Правильна відповідь = MONITOR з квантифікованими tripwires + 90-day review, а не миттєве ESCALATE. Тренує false-positive-avoidance у ambiguous cases.",
+    "sim1.lb.pre": "РЕЙТИНГ TRACK I",
+    "sim1.lb.title": "🏆 Candidate Red-Flag Leaderboard",
+    "sim1.lb.subtitle": "Окремий leaderboard лише для 3 кейсів Track I. Сумарний найкращий результат гравця по кейсах цього треку.",
+    "sim2.lb.pre": "РЕЙТИНГ TRACK II",
+    "sim2.lb.title": "🏆 Corporate Investigations Leaderboard"
   },
   "en": {
     "brand.first": "Yehor",
@@ -511,7 +516,7 @@
     "sim2.status.launch3": "⚙ +4 weeks",
     "sim2.notify.title": "Played the cases — got feedback?",
     "sim2.notify.text": "DM on LinkedIn or Telegram — I read every message. Each round of feedback → a new case iteration or a new mechanic.",
-    "sim2.lb.subtitle": "Shared leaderboard for all Shadow Simulator tracks.",
+    "sim2.lb.subtitle": "Separate leaderboard for the 6 Track II cases only. Each row = a player's best score per case.",
     "tl.badge": "TIMELINE BUILDER · ISOLATED PROTOTYPE · SIM #02",
     "tl.title": "Build the event timeline",
     "tl.lead": "This is an isolated prototype of a new phase for Sim #02. Testing SortableJS before integrating into game.js. Case — «The Leaking Engineer».",
@@ -821,6 +826,11 @@
     "ss.tile.lang_lbl": "Language",
     "sim2.play_now": "▶ Play",
     "sim2.case6.title": "Case 6 · \"The Careful Watch\" (judgment under ambiguity)",
-    "sim2.case6.sub": "StellarMed Pharmacy Ukraine · Procurement Director with three \"yellow\" signals: 62% vendor concentration (MoH sole-MAH explanation), 2019 Facebook comment (context-clean), spouse at Bio-Wave (health-policy, not distribution). Correct answer = MONITOR with quantified tripwires + 90-day review, not immediate ESCALATE. Trains false-positive avoidance in ambiguous cases."
+    "sim2.case6.sub": "StellarMed Pharmacy Ukraine · Procurement Director with three \"yellow\" signals: 62% vendor concentration (MoH sole-MAH explanation), 2019 Facebook comment (context-clean), spouse at Bio-Wave (health-policy, not distribution). Correct answer = MONITOR with quantified tripwires + 90-day review, not immediate ESCALATE. Trains false-positive avoidance in ambiguous cases.",
+    "sim1.lb.pre": "TRACK I LEADERBOARD",
+    "sim1.lb.title": "🏆 Candidate Red-Flag Leaderboard",
+    "sim1.lb.subtitle": "Separate leaderboard for the 3 Track I cases only. Best sum of per-case scores across this track.",
+    "sim2.lb.pre": "TRACK II LEADERBOARD",
+    "sim2.lb.title": "🏆 Corporate Investigations Leaderboard"
   }
 }

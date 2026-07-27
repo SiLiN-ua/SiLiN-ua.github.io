@@ -11,6 +11,20 @@ const db = getDatabase(app);
 const NICK_KEY = 'ss.nickname';
 const SCORE_KEY = 'ss.local';
 
+// Case → track membership map (used to compute per-track leaderboard totals from points_by_case).
+// Update this whenever a new case is added.
+export const TRACK_CASES = {
+  sim01: ['fake-cfo', 'suspicious-consultant', 'family-chain'],
+  sim02: ['leaking-engineer', 'procurement-ghost', 'fake-vendor-network',
+          'executive-coi', 'insider-trading', 'careful-watch'],
+};
+export function caseTrack(caseId) {
+  for (const t of Object.keys(TRACK_CASES)) {
+    if (TRACK_CASES[t].includes(caseId)) return t;
+  }
+  return null;
+}
+
 // ==================== NICKNAME ====================
 // Firebase Realtime DB path chars: no . # $ [ ] /
 export function sanitizeNickname(nick) { return String(nick || '').replace(/[.#$\[\]\/]/g, '_'); }
@@ -59,10 +73,15 @@ export async function submitScore(nickname, gamePoints, gameCaseId, correct = fa
     const completed_cases = correct && !priorCompleted.includes(gameCaseId)
       ? [...priorCompleted, gameCaseId]
       : priorCompleted;
+    // Per-case best-score map — enables per-track leaderboard aggregation
+    const priorByCase = (existing.points_by_case && typeof existing.points_by_case === 'object') ? existing.points_by_case : {};
+    const priorCaseBest = priorByCase[gameCaseId] || 0;
+    const points_by_case = { ...priorByCase };
+    if (gamePoints > priorCaseBest) points_by_case[gameCaseId] = gamePoints;
     const payload = {
       total_points: newTotal, games_played: newGames,
       last_case: gameCaseId, last_points: gamePoints, updated: nowIso,
-      completed_cases,
+      completed_cases, points_by_case,
     };
     await set(userRef, payload);
     saveLocalStats({ total: newTotal, games: newGames });
@@ -108,21 +127,46 @@ export async function syncProgressFromFirebase(nickname) {
 // Firebase rules block deletion, so we filter client-side.
 const HIDDEN_NICKS = new Set(['C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test','C4Test','C5Test','C5Wire','C4Wire','C3Test','C3Hard','Case2Vis','LangTest','PhotoTest','CertTest','CertHero','TestGallery','yehor_dev','testnew1','test_991','test_dot413','hc_check_7','mrs_smith']);
 
-export async function fetchLeaderboard(topN = 50) {
+export async function fetchLeaderboard(topN = 50, trackId = null) {
   try {
-    const q = query(ref(db, 'leaderboard'), orderByChild('total_points'), limitToLast(topN + HIDDEN_NICKS.size));
-    const snap = await get(q);
+    // Per-track: pull the full board (no orderByChild — points_by_case aggregation happens client-side)
+    // Global: use indexed order to keep the query cheap.
+    const qRef = trackId
+      ? ref(db, 'leaderboard')
+      : query(ref(db, 'leaderboard'), orderByChild('total_points'), limitToLast(topN + HIDDEN_NICKS.size));
+    const snap = await get(qRef);
     if (!snap.exists()) return [];
     const rows = [];
+    const trackCases = trackId ? (TRACK_CASES[trackId] || []) : null;
     snap.forEach(child => {
       if (HIDDEN_NICKS.has(child.key)) return;
       const v = child.val();
-      rows.push({
-        nickname: child.key,
-        total_points: v.total_points || 0,
-        games_played: v.games_played || 0,
-        updated: v.updated || '',
-      });
+      if (trackId) {
+        // Sum best-per-case for this track only
+        const byCase = (v.points_by_case && typeof v.points_by_case === 'object') ? v.points_by_case : {};
+        let trackPts = 0, trackGames = 0;
+        trackCases.forEach(cid => {
+          if (byCase[cid] != null) { trackPts += byCase[cid]; trackGames++; }
+        });
+        // Legacy fallback: if no points_by_case yet but last_case is in this track, count last_points once
+        if (trackGames === 0 && v.last_case && trackCases.includes(v.last_case) && v.last_points) {
+          trackPts = v.last_points; trackGames = 1;
+        }
+        if (trackPts <= 0) return;
+        rows.push({
+          nickname: child.key,
+          total_points: trackPts,
+          games_played: trackGames,
+          updated: v.updated || '',
+        });
+      } else {
+        rows.push({
+          nickname: child.key,
+          total_points: v.total_points || 0,
+          games_played: v.games_played || 0,
+          updated: v.updated || '',
+        });
+      }
     });
     rows.sort((a, b) => b.total_points - a.total_points);
     return rows.slice(0, topN);
@@ -244,11 +288,11 @@ export function renderAgentPanel(targetSelector, nickname) {
 }
 
 // ==================== LEADERBOARD ====================
-export async function renderLeaderboard(targetSelector, currentNick) {
+export async function renderLeaderboard(targetSelector, currentNick, trackId = null) {
   const target = document.querySelector(targetSelector);
   if (!target) return;
   target.innerHTML = `<div class="lb__loading">${T('ss.lb.loading', 'Завантаження leaderboard…')}</div>`;
-  const rows = await fetchLeaderboard(50);
+  const rows = await fetchLeaderboard(50, trackId);
   const lang = LANG();
   if (rows === null) {
     target.innerHTML = `<div class="lb__err">${T('ss.lb.err', 'Не вдалося завантажити leaderboard. Firebase-помилка (можливо, rules ще не опубліковані).')}</div>`;
