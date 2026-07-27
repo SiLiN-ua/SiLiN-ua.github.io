@@ -939,7 +939,7 @@
         "id": "escalate_external",
         "correct": true,
         "points": 50,
-        "text_uk": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
+        "text_uk": "Ескалація до external Legal Counsel + Independent Special Committee + halt голосування правління до resolution",
         "text_en": "Escalate to External Legal Counsel + Independent Special Committee + halt board vote pending investigation + notify SEC Enforcement",
         "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика ЯКРАЗ це вимагає. External counsel = no self-tampering. Halt vote = зупиняє insider trading exposure. SEC notification = protects компанію.",
         "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy REQUIRES exactly this. External counsel = no self-tampering. Halt vote = stops insider trading exposure. SEC notification = protects the company."
@@ -949,7 +949,7 @@
         "correct": false,
         "points": -40,
         "policy_breach": true,
-        "text_uk": "Terminate David P. immediately + Public Announcement",
+        "text_uk": "Негайне звільнення + публічне оголошення",
         "text_en": "Terminate David P. immediately + Public Announcement",
         "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash.",
         "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + market panic + stock crash."
@@ -959,7 +959,7 @@
         "correct": false,
         "points": -30,
         "policy_breach": true,
-        "text_uk": "Internal Board review + Confront David P. privately",
+        "text_uk": "Внутрішній review правлінням + приватна розмова з фігурантом",
         "text_en": "Internal Board review + Confront David P. privately",
         "feedback_uk": "❌ POLICY BREACH. Self-investigation = SEC tampering charges на весь board. Затримка = evidence destruction opportunity for David P.",
         "feedback_en": "❌ POLICY BREACH. Self-investigation = SEC tampering charges on the whole board. Also = evidence destruction opportunity for David P."
@@ -968,7 +968,7 @@
         "id": "audit_first",
         "correct": false,
         "points": -20,
-        "text_uk": "Order forensic audit FIRST, then decide",
+        "text_uk": "Спочатку forensic audit, потім рішення",
         "text_en": "Order forensic audit FIRST, then decide",
         "feedback_uk": "❌ Час критичний — board vote через 7 днів. Audit займе тижні. Ти пропустиш window.",
         "feedback_en": "❌ Time critical — board vote in 7 days. Audit takes weeks. You miss the window."
@@ -977,7 +977,7 @@
         "id": "monitor",
         "correct": false,
         "points": -35,
-        "text_uk": "Monitor and let board vote proceed",
+        "text_uk": "Моніторинг 90 днів",
         "text_en": "Monitor and let board vote proceed",
         "feedback_uk": "❌ Complicity. Ти маєш actionable knowledge — inaction = criminal exposure.",
         "feedback_en": "❌ Complicity. You have actionable knowledge — inaction = criminal exposure."
@@ -986,7 +986,7 @@
         "id": "no_action",
         "correct": false,
         "points": -50,
-        "text_uk": "No action — evidence insufficient",
+        "text_uk": "Без дій — false positive",
         "text_en": "No action — evidence insufficient",
         "feedback_uk": "❌ Overwhelming evidence з 4 незалежних sources (Panama Papers + SEC filings + expense reports + LinkedIn timing).",
         "feedback_en": "❌ Overwhelming evidence from 4 independent sources (Panama Papers + SEC filings + expense reports + LinkedIn timing)."

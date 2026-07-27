@@ -5087,3 +5087,26 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
   color: var(--text);
   white-space: pre-line;
 }
+
+/* Enlarge cursor hint on tool-modal images (Sim #02 matches renderer) */
+.fake__match-img img, .tool-modal img {
+  cursor: zoom-in;
+  transition: filter .2s;
+}
+.fake__match-img img:hover, .tool-modal img:hover {
+  filter: brightness(1.1);
+}
+
+/* Nick badge in game topbar */
+.game-topbar__nick {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--text-mute);
+  padding: .35rem .7rem;
+  background: rgba(15,21,36,.6);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  letter-spacing: .04em;
+}
+.game-topbar__nick strong { color: var(--cream); font-weight: 500; }
+@media (max-width: 640px) { .game-topbar__nick { display: none; } }

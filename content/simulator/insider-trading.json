@@ -888,7 +888,7 @@
         "id": "suspend_notify_regulators",
         "correct": true,
         "points": 50,
-        "text_uk": "Suspend David pending investigation + Notify SEC + FINRA + NYSE + Preserve evidence (litigation hold) + External Legal Counsel takes over",
+        "text_uk": "Призупинити David до розслідування + повідомити SEC + FINRA + NYSE + preserve evidence",
         "text_en": "Suspend David pending investigation + Notify SEC + FINRA + NYSE + Preserve evidence (litigation hold) + External Legal Counsel takes over",
         "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Це exact IB compliance playbook. Всі 4 pillars: suspension (не termination), regulatory notification (mandatory), external counsel (не self-investigation), evidence preservation (litigation hold).",
         "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Exact IB compliance playbook. All 4 pillars: suspension (not termination), regulatory notification (mandatory), external counsel (not self-investigation), evidence preservation (litigation hold)."
@@ -898,7 +898,7 @@
         "correct": false,
         "points": -45,
         "policy_breach": true,
-        "text_uk": "Terminate David immediately + Public Announcement",
+        "text_uk": "Негайне звільнення + публічне оголошення",
         "text_en": "Terminate David immediately + Public Announcement",
         "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + катастрофа. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions.",
         "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + catastrophe. Wrongful termination lawsuit + destroys SEC case + Silvermark stock crash + FINRA sanctions."
@@ -908,7 +908,7 @@
         "correct": false,
         "points": -40,
         "policy_breach": true,
-        "text_uk": "Internal investigation only (silently) + wait for SEC to reach out",
+        "text_uk": "Внутрішнє розслідування у тиші + чекати SEC-запиту",
         "text_en": "Internal investigation only (silently) + wait for SEC to reach out",
         "feedback_uk": "❌ POLICY BREACH. Failure to self-report insider trading = major FINRA violation (fines $10M+) + potential criminal obstruction charges для compliance chief.",
         "feedback_en": "❌ POLICY BREACH. Failure to self-report insider trading = major FINRA violation (fines $10M+) + potential criminal obstruction charges for compliance chief."
@@ -927,7 +927,7 @@
         "id": "monitor_continue",
         "correct": false,
         "points": -35,
-        "text_uk": "Monitor pattern for further trades — no immediate action",
+        "text_uk": "Моніторинг патерну щодо подальших торгів — без миттєвих дій",
         "text_en": "Monitor pattern for further trades — no immediate action",
         "feedback_uk": "❌ Complicity + failure to report — обидві liability.",
         "feedback_en": "❌ Complicity + failure to report — both are liabilities."

@@ -977,7 +977,7 @@
         "id": "combined_action",
         "correct": true,
         "points": 40,
-        "text_uk": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
+        "text_uk": "Procurement Freeze + аудит вендорів + звільнення + повідомлення регуляторам",
         "text_en": "Procurement Freeze + Vendor Audit + Terminate + Report to authorities",
         "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика вимагає паралельних дій. Freeze зупиняє поточні виплати, audit оформлює докази, termination + report — юридичний result.",
         "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy requires parallel actions. Freeze halts current payouts, audit documents evidence, termination + report — legal result."
@@ -1014,7 +1014,7 @@
         "id": "monitor",
         "correct": false,
         "points": -15,
-        "text_uk": "Monitor for 90 days",
+        "text_uk": "Моніторинг 90 днів",
         "text_en": "Monitor for 90 days",
         "feedback_uk": "❌ Активна крадіжка вже підтверджена, моніторинг = очікування ще більшої шкоди.",
         "feedback_en": "❌ Active theft already confirmed, monitoring = waiting for more damage."

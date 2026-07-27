@@ -932,7 +932,7 @@
         "correct": false,
         "points": -40,
         "policy_breach": true,
-        "text_uk": "Terminate all 3 + Report to authorities",
+        "text_uk": "Розірвати з усіма 3 + повідомити регуляторам",
         "text_en": "Terminate all 3 + Report to authorities",
         "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + катастрофа. Ти щойно засудив 3 legit фрилансерів і зруйнував їх бізнес. Це судові позови до PayFly.",
         "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH + catastrophe. You just condemned 3 legit freelancers and destroyed their business. Lawsuits against PayFly incoming."
@@ -950,7 +950,7 @@
         "id": "monitor",
         "correct": false,
         "points": -15,
-        "text_uk": "Monitor 90 days without action",
+        "text_uk": "Моніторинг 90 днів",
         "text_en": "Monitor 90 days without action",
         "feedback_uk": "⚠️ Пасивно. Активна DD краще ніж пасивний моніторинг.",
         "feedback_en": "⚠️ Passive. Active DD better than passive monitoring."
@@ -959,7 +959,7 @@
         "id": "escalate_legal",
         "correct": false,
         "points": -20,
-        "text_uk": "Escalate to external Legal Counsel",
+        "text_uk": "Ескалація до external Legal Counsel",
         "text_en": "Escalate to external Legal Counsel",
         "feedback_uk": "❌ Legal не потрібен — тут нема substantive risk. Це overreaction і трата ресурсу.",
         "feedback_en": "❌ Legal not needed — no substantive risk here. Overreaction, resource waste."
@@ -968,7 +968,7 @@
         "id": "no_action",
         "correct": false,
         "points": -30,
-        "text_uk": "No action — false positive",
+        "text_uk": "Без дій — false positive",
         "text_en": "No action — false positive",
         "feedback_uk": "❌ Правильна ідея, але порушує процес — треба задокументувати DD і закрити case, а не просто ігнорувати flag.",
         "feedback_en": "❌ Right idea, but breaches process — need to document DD and close case, not just ignore flag."

@@ -927,7 +927,7 @@
         "id": "escalate_legal",
         "correct": true,
         "points": 40,
-        "text_uk": "Escalate to Legal + Suspend pending investigation",
+        "text_uk": "Ескалація до Legal + призупинення на час розслідування",
         "text_en": "Escalate to Legal + Suspend pending investigation",
         "feedback_uk": "✓ Правильна послідовність: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Правильно. Політика вимагає Legal-ескалації ДО термінації.",
         "feedback_en": "✓ Correct sequence: Preservation → Privileged Investigation → External Counsel → Regulatory Referral (Seaboard). ✓ Correct. Policy requires Legal escalation BEFORE termination."
@@ -937,7 +937,7 @@
         "correct": false,
         "points": -30,
         "policy_breach": true,
-        "text_uk": "Terminate immediately + Report to authorities",
+        "text_uk": "Негайне звільнення + повідомлення регуляторам",
         "text_en": "Terminate immediately + Report to authorities",
         "feedback_uk": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH. Термінація ДО Legal-ескалації ламає ланцюжок доказовості.",
         "feedback_en": "⚠ Day-1 termination = malpractice. ❌ POLICY BREACH. Termination BEFORE Legal escalation breaks the evidentiary chain."
@@ -946,7 +946,7 @@
         "id": "terminate_internal",
         "correct": false,
         "points": -20,
-        "text_uk": "Terminate + Internal disciplinary",
+        "text_uk": "Звільнення + внутрішнє дисциплінарне провадження",
         "text_en": "Terminate + Internal disciplinary",
         "feedback_uk": "❌ IP theft + фінанси = кримінал. Внутрішнього недостатньо.",
         "feedback_en": "❌ IP theft + finance = criminal. Internal insufficient."
@@ -955,7 +955,7 @@
         "id": "vendor_audit",
         "correct": false,
         "points": 0,
-        "text_uk": "Vendor Audit + Monitor 90 days",
+        "text_uk": "Аудит вендора + моніторинг 90 днів",
         "text_en": "Vendor Audit + Monitor 90 days",
         "feedback_uk": "⚠️ Партіально. Audit vendor-а корисний, але не адресує IP theft.",
         "feedback_en": "⚠️ Partial. Vendor audit useful but doesn't address the IP theft."
@@ -964,7 +964,7 @@
         "id": "monitor",
         "correct": false,
         "points": -10,
-        "text_uk": "Monitor for 90 days",
+        "text_uk": "Моніторинг 90 днів",
         "text_en": "Monitor for 90 days",
         "feedback_uk": "❌ Активна крадіжка триває — моніторинг = очікування шкоди.",
         "feedback_en": "❌ Active theft ongoing — monitoring = waiting for damage."
@@ -973,7 +973,7 @@
         "id": "no_action",
         "correct": false,
         "points": -50,
-        "text_uk": "No action — insufficient evidence",
+        "text_uk": "Без дій — недостатньо доказів",
         "text_en": "No action — insufficient evidence",
         "feedback_uk": "❌ 7-крокова хронологія + docs + email + фінанси — цього достатньо для ескалації.",
         "feedback_en": "❌ 7-step timeline + docs + email + finances — plenty of evidence to escalate."

@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css?v=12">
+<link rel="stylesheet" href="css/main.css?v=13">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
 </head>
 <body class="game-body">
@@ -22,10 +22,23 @@
 <div class="game-topbar">
   <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
   <div class="game-topbar__right">
+    <div id="nick-badge" class="game-topbar__nick" hidden></div>
     <button id="help-btn" class="game-topbar__help" type="button">❔ <span id="help-btn-label">Як грати</span></button>
     <div class="nav__lang game-topbar__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></div>
     <a href="simulator.html" class="game-exit">✕ <span data-i18n="game.exit">Вийти з симуляції</span></a>
   </div>
+<script>
+  (function(){
+    var nick = localStorage.getItem('ss.nickname');
+    var el = document.getElementById('nick-badge');
+    if (nick && el) {
+      var isEn = (localStorage.getItem('yehor.lang') || 'uk') === 'en';
+      el.innerHTML = (isEn ? '👤 as <strong>' : '👤 як <strong>') + nick + '</strong>';
+      el.hidden = false;
+      el.title = isEn ? 'To change nick: clear localStorage or use different browser' : 'Змінити нік: очистити localStorage або інший браузер';
+    }
+  })();
+</script>
 </div>
 
 <main class="game-main">

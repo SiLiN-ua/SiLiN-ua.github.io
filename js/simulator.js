@@ -129,44 +129,43 @@ const HIDDEN_NICKS = new Set(['C2Test','V5Test','TestAgent','HardTest','V4Test',
 
 export async function fetchLeaderboard(topN = 50, trackId = null) {
   try {
-    // Per-track: pull the full board (no orderByChild — points_by_case aggregation happens client-side)
-    // Global: use indexed order to keep the query cheap.
-    const qRef = trackId
-      ? ref(db, 'leaderboard')
-      : query(ref(db, 'leaderboard'), orderByChild('total_points'), limitToLast(topN + HIDDEN_NICKS.size));
+    // Always pull the full board — we now compute best-per-case sums client-side
+    // (fair play: replay-farming can't inflate score; only your BEST per case counts).
+    const qRef = ref(db, 'leaderboard');
     const snap = await get(qRef);
     if (!snap.exists()) return [];
     const rows = [];
     const trackCases = trackId ? (TRACK_CASES[trackId] || []) : null;
+    // All-tracks case pool for global view
+    const allCases = Object.values(TRACK_CASES).flat();
     snap.forEach(child => {
       if (HIDDEN_NICKS.has(child.key)) return;
       const v = child.val();
-      if (trackId) {
-        // Sum best-per-case for this track only
-        const byCase = (v.points_by_case && typeof v.points_by_case === 'object') ? v.points_by_case : {};
-        let trackPts = 0, trackGames = 0;
-        trackCases.forEach(cid => {
-          if (byCase[cid] != null) { trackPts += byCase[cid]; trackGames++; }
-        });
-        // Legacy fallback: if no points_by_case yet but last_case is in this track, count last_points once
-        if (trackGames === 0 && v.last_case && trackCases.includes(v.last_case) && v.last_points) {
-          trackPts = v.last_points; trackGames = 1;
-        }
-        if (trackPts <= 0) return;
-        rows.push({
-          nickname: child.key,
-          total_points: trackPts,
-          games_played: trackGames,
-          updated: v.updated || '',
-        });
-      } else {
-        rows.push({
-          nickname: child.key,
-          total_points: v.total_points || 0,
-          games_played: v.games_played || 0,
-          updated: v.updated || '',
-        });
+      const byCase = (v.points_by_case && typeof v.points_by_case === 'object') ? v.points_by_case : {};
+      const targetCases = trackId ? trackCases : allCases;
+      let pts = 0, uniqueCases = 0;
+      targetCases.forEach(cid => {
+        if (byCase[cid] != null) { pts += byCase[cid]; uniqueCases++; }
+      });
+      // Legacy fallback for old records without points_by_case
+      if (uniqueCases === 0 && v.last_case && v.last_points && targetCases.includes(v.last_case)) {
+        pts = v.last_points; uniqueCases = 1;
       }
+      // Global view: also honor legacy total_points if truly no per-case data (very old accounts)
+      if (!trackId && uniqueCases === 0 && v.total_points > 0) {
+        pts = v.total_points;
+        uniqueCases = Array.isArray(v.completed_cases) ? v.completed_cases.length : (v.games_played || 0);
+      }
+      if (pts <= 0) return;
+      // Cap unique-cases to total available so replay-farmers don't show "8 / 6"
+      const totalAvail = targetCases.length;
+      const displayCases = Math.min(uniqueCases, totalAvail);
+      rows.push({
+        nickname: child.key,
+        total_points: pts,
+        games_played: displayCases,
+        updated: v.updated || '',
+      });
     });
     rows.sort((a, b) => b.total_points - a.total_points);
     return rows.slice(0, topN);
