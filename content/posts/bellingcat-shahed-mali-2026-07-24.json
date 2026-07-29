@@ -1,0 +1,14 @@
+{
+  "title_uk": "Bellingcat верифікував удари дронів Shahed по селах у Малі",
+  "title_en": "Bellingcat verifies Shahed-type drone strikes on Mali villages",
+  "date": "2026-07-24T00:00:00.000Z",
+  "tag": "OSINT · Геолокація",
+  "tag_en": "OSINT · Geolocation",
+  "source": "Bellingcat",
+  "source_url": "https://www.bellingcat.com/news/2026/07/24/shahed-type-drones-filmed-during-attack-on-mali-villages/",
+  "summary_uk": "Аналітики Bellingcat геолокували відео двох ударів дронів Shahed-136 по селах Інафарак (12 липня) і Талахандак (17 липня) в Малі. Експертиза уламків двигуна MD-550 указала на російське походження та мережу Africa Corps.",
+  "summary_en": "Bellingcat analysts geolocated footage of two Shahed-136 drone strikes on the Malian villages of Inafarak (12 July) and Talahandak (17 July). Analysis of a recovered MD-550 engine pointed to Russian manufacture and the Africa Corps supply network.",
+  "body_uk": "## Що сталося\n\nКоманда Bellingcat (Sebastian Vandermeersch, Youri van der Weide, Chris Dayton) 24 липня 2026 року опублікувала розслідування двох ударів іранських/російських Shahed-136 по селах на півночі Малі. Атаки на Інафарак і Талахандак підтверджено через супутникові знімки та зіставлення відео з місцевістю.\n\n## Технічна експертиза\n\nКлючовим доказом стали фото уламків двигуна MD-550. Його випускає підсанкційна російська фірма, що використовує китайські комплектуючі. Це прив'язує атаки до логістичного ланцюга Africa Corps (колишньої «Вагнер»).\n\n## Чому це важливо для українського OSINT\n\nМетодика ідентифікації двигунів Shahed по фото, відпрацьована на матеріалах з України, тепер валідовано працює й у Сахелі. Публікація також документує, що російські ударні дрони системно виходять за межі українського ТВД — це прямий контекст для санкційних та відкритих розслідувань постачань.",
+  "body_en": "## What happened\n\nOn 24 July 2026 Bellingcat's team (Sebastian Vandermeersch, Youri van der Weide, Chris Dayton) published a verification of two Shahed-136 strikes on villages in northern Mali. Attacks on Inafarak and Talahandak were confirmed via satellite imagery and geolocation of ground video.\n\n## Technical fingerprinting\n\nA recovered MD-550 engine — manufactured by a sanctioned Russian company using Chinese-supplied components — links the drones to the Africa Corps (former Wagner) logistics network.\n\n## Why it matters for Ukrainian OSINT\n\nThe engine-fingerprinting methodology honed on Ukraine footage is now validated in the Sahel. The publication also documents the systemic export of Russian strike-drone capability outside Ukraine — direct context for open-source sanctions and procurement investigations.",
+  "published": true
+}

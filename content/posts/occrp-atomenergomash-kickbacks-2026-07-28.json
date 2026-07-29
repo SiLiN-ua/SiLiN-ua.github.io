@@ -1,0 +1,14 @@
+{
+  "title_uk": "OCCRP: колишня посадовиця «Атоменергомашу» вимагала «15% відкату»",
+  "title_en": "OCCRP: Former Ukrainian nuclear official sent to trial over 15% kickbacks",
+  "date": "2026-07-28T00:00:00.000Z",
+  "tag": "OSINT · Антикорупція",
+  "tag_en": "OSINT · Anti-corruption",
+  "source": "OCCRP",
+  "source_url": "https://www.occrp.org/en/news/demanding-a-15-percent-cut-former-ukrainian-nuclear-official-sent-to-trial-over-bribes",
+  "summary_uk": "Українські антикорупційні органи скерували до суду справу колишньої заступниці директора «Атоменергомашу», яку звинувачують у вимаганні 10–15% від суми контрактів у приватних підрядників. За даними слідства, вона особисто отримала близько $37 200.",
+  "summary_en": "Ukraine's anti-corruption authorities have sent to trial a former deputy director of Atomenergomash accused of demanding 10–15% kickbacks from private contractors, personally pocketing about $37,200.",
+  "body_uk": "## Суть справи\n\n28 липня 2026 OCCRP оприлюднив деталі провадження НАБУ/САП проти колишньої заступниці директора державного «Атоменергомашу» (дочірне підприємство «Енергоатома»). За версією слідства, вона систематично примушувала підрядників сплачувати щомісячні «відкати» — 10–15% від виконаних робіт — в обмін на своєчасні платежі та продовження контрактів.\n\n## Обсяг схеми\n\nЗагальна сума хабарів перевищила $147 000. Окремий епізод — спроба вибити ще $8 700 за допомогу у виграші публічного тендеру. Слідство спирається на прослушку, банківські виписки та комунікацію в месенджерах — класичний набір OSINT + фінансової розвідки.\n\n## Значення для OSINT-спільноти\n\nСправа продовжує серію викриттів в українській енергетиці після «Операції Мідас». Показово: НАБУ дедалі частіше публічно розкриває методику, що дозволяє незалежним журналістам перевіряти та розширювати кейси через відкриті реєстри юросіб і держзакупівель (Prozorro, ЄДР, YouControl).",
+  "body_en": "## Case summary\n\nOn 28 July 2026 OCCRP reported that Ukraine's NABU/SAP have sent to trial a former deputy director of state nuclear subsidiary Atomenergomash. She is accused of systematically forcing private contractors to pay monthly kickbacks of 10–15% of completed work in exchange for timely state payments and contract continuation.\n\n## Scheme scale\n\nTotal bribes exceeded $147,000, with a separate episode involving an alleged $8,700 demand to help a firm win a public tender. The case rests on intercepts, bank records and messenger chats — a familiar OSINT + financial-intelligence toolkit.\n\n## Significance for the OSINT community\n\nThe case extends the wave of Ukrainian energy-sector corruption exposures that followed \"Operation Midas.\" NABU's growing willingness to publish methodology gives independent journalists and OSINT researchers a template to cross-check and extend cases through public procurement and corporate registries (Prozorro, USR, YouControl).",
+  "published": true
+}
