@@ -112,7 +112,7 @@ git push -u origin main
 
 `contact.html` використовує Web3Forms (безкоштовно до 250 листів/місяць, без бекенду):
 
-1. https://web3forms.com → введи `selinegor22@gmail.com` → отримай **access key**.
+1. https://web3forms.com → введи `shadow@yehorselin.com` → отримай **access key**.
 2. У `contact.html` заміни `REPLACE_WITH_WEB3FORMS_KEY` на ключ.
 3. Комміт → push.
 
@@ -147,4 +147,4 @@ python -m http.server 8765
 
 ## Контакти
 
-© 2026 Єгор Селін · [LinkedIn](https://www.linkedin.com/in/yehor-selin) · [GitHub](https://github.com/SiLiN-ua) · [Patreon](https://www.patreon.com/cw/YehorSelin) · selinegor22@gmail.com
+© 2026 Єгор Селін · [LinkedIn](https://www.linkedin.com/in/yehor-selin) · [GitHub](https://github.com/SiLiN-ua) · [Patreon](https://www.patreon.com/cw/YehorSelin) · shadow@yehorselin.com
