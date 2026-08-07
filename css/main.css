@@ -1193,6 +1193,19 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 .prose h2 { margin: 3rem 0 1.25rem; font-size: 2rem; }
 .prose h3 { margin: 2.5rem 0 1rem; font-size: 1.4rem; color: var(--ice); }
 .prose p  { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+.prose a {
+  color: var(--ice-glow);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(74,158,255,.4);
+  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+  padding-bottom: 1px;
+}
+.prose a:hover {
+  color: var(--cream);
+  border-bottom-color: var(--ice-glow);
+  background: rgba(74,158,255,.08);
+}
+.prose li a, .prose td a { word-break: break-word; }
 /* Drop cap disabled — was leaking into blockquotes and emojis */
 .prose ul, .prose ol { margin: 0 0 1.5rem 1.5rem; }
 .prose li { margin-bottom: .5rem; color: var(--text); }
