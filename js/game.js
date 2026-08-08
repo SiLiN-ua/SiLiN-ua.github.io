@@ -146,6 +146,116 @@ const State = {
   memoPolicyBreach: false,
 };
 
+// ==================== AUTOSAVE / RESUME ====================
+// If a player refreshes / navigates away mid-case, we restore their exact
+// State on next entry — no more losing 15 minutes of work to a reload.
+// Saved under ss.gamestate.<caseId>. Cleared on completion (submitScore ok).
+// Only fields we actually need to resume — timerId is derived, scenario is refetched.
+const RESUMABLE_PHASES = new Set(['phase2', 'timeline', 'phase3', 'citation', 'memo', 'phase4']);
+const AUTOSAVE_KEY_PREFIX = 'ss.gamestate.';
+function saveGameState() {
+  try {
+    if (!State.scenario || State.ended || State.isDemo) return;
+    if (!RESUMABLE_PHASES.has(State.phase)) return;
+    const snap = {
+      v: 1,
+      caseId: State.scenario.id,
+      savedAt: Date.now(),
+      phase: State.phase,
+      points: State.points,
+      timeLeft: State.timeLeft,
+      toolsUsed: State.toolsUsed,
+      toolResults: State.toolResults,
+      q3Answers: State.q3Answers,
+      q3Order: State.q3Order,
+      verdictOrder: State.verdictOrder,
+      citations: State.citations,
+      citationScore: State.citationScore,
+      finalVerdict: State.finalVerdict,
+      startedAt: State.startedAt,
+      timelineOrder: State.timelineOrder,
+      timelineSubmitted: State.timelineSubmitted,
+      timelinePoints: State.timelinePoints,
+      memoSubject: State.memoSubject,
+      memoEvidence: State.memoEvidence,
+      memoRisk: State.memoRisk,
+      memoRecommendation: State.memoRecommendation,
+      memoSubmitted: State.memoSubmitted,
+      memoPoints: State.memoPoints,
+      memoPolicyBreach: State.memoPolicyBreach,
+    };
+    localStorage.setItem(AUTOSAVE_KEY_PREFIX + State.scenario.id, JSON.stringify(snap));
+  } catch (_) {}
+}
+function loadGameState(caseId) {
+  try {
+    const raw = localStorage.getItem(AUTOSAVE_KEY_PREFIX + caseId);
+    if (!raw) return null;
+    const snap = JSON.parse(raw);
+    if (!snap || snap.caseId !== caseId || !RESUMABLE_PHASES.has(snap.phase)) return null;
+    // Stale guard — drop saves older than 48h
+    if (snap.savedAt && (Date.now() - snap.savedAt) > 48*60*60*1000) {
+      localStorage.removeItem(AUTOSAVE_KEY_PREFIX + caseId);
+      return null;
+    }
+    return snap;
+  } catch (_) { return null; }
+}
+function clearGameState(caseId) {
+  try { localStorage.removeItem(AUTOSAVE_KEY_PREFIX + caseId); } catch (_) {}
+}
+function applyGameState(snap) {
+  State.phase = snap.phase;
+  State.points = snap.points || 0;
+  State.timeLeft = snap.timeLeft || State.timeLeft;
+  State.toolsUsed = snap.toolsUsed || {};
+  State.toolResults = snap.toolResults || [];
+  State.q3Answers = snap.q3Answers || {};
+  State.q3Order = snap.q3Order || {};
+  State.verdictOrder = snap.verdictOrder || [];
+  State.citations = snap.citations || [];
+  State.citationScore = snap.citationScore || 0;
+  State.finalVerdict = snap.finalVerdict || null;
+  State.startedAt = snap.startedAt || Date.now();
+  State.timelineOrder = snap.timelineOrder || [];
+  State.timelineSubmitted = !!snap.timelineSubmitted;
+  State.timelinePoints = snap.timelinePoints || 0;
+  State.memoSubject = snap.memoSubject || '';
+  State.memoEvidence = snap.memoEvidence || [];
+  State.memoRisk = snap.memoRisk || '';
+  State.memoRecommendation = snap.memoRecommendation || '';
+  State.memoSubmitted = !!snap.memoSubmitted;
+  State.memoPoints = snap.memoPoints || 0;
+  State.memoPolicyBreach = !!snap.memoPolicyBreach;
+}
+function showResumeBanner(snap) {
+  const isEn = LANG() === 'en';
+  const phaseLbl = {
+    phase2:  isEn ? 'Investigation'   : 'Розслідування',
+    timeline:isEn ? 'Timeline'        : 'Таймлайн',
+    phase3:  isEn ? 'Q&A'             : 'Питання',
+    citation:isEn ? 'Key evidence'    : 'Ключові докази',
+    memo:    isEn ? 'Memorandum'      : 'Меморандум',
+    phase4:  isEn ? 'Final verdict'   : 'Фінальний вердикт',
+  }[snap.phase] || snap.phase;
+  const bar = document.createElement('div');
+  bar.className = 'resume-banner';
+  bar.style.cssText = 'position:sticky;top:0;z-index:60;background:linear-gradient(90deg,rgba(74,158,255,.15),rgba(201,162,76,.15));border-bottom:1px solid var(--border-hi);padding:.7rem 1rem;display:flex;align-items:center;justify-content:center;gap:1rem;font:500 .9rem/1.3 var(--font-body,Inter,sans-serif);color:var(--cream)';
+  bar.innerHTML = `
+    <span>${isEn ? '▶ Progress restored — you\'re back at' : '▶ Прогрес відновлено — ти на фазі'} <strong>${escapeHtml(phaseLbl)}</strong> · ${snap.points} pts · ${fmtTime(Math.max(0, snap.timeLeft))}</span>
+    <button type="button" class="btn btn--ghost" style="padding:.35rem .8rem;font-size:.8rem">${isEn ? 'Start over' : 'Почати заново'}</button>
+    <button type="button" class="resume-banner__close" aria-label="close" style="background:transparent;border:0;color:var(--text-mute);font-size:1.1rem;cursor:pointer;padding:0 .4rem">×</button>`;
+  document.body.insertBefore(bar, document.body.firstChild);
+  bar.querySelector('.btn').addEventListener('click', () => {
+    if (!confirm(isEn ? 'Discard your progress and start this case from scratch?' : 'Скинути прогрес і почати кейс заново?')) return;
+    clearGameState(State.scenario.id);
+    location.reload();
+  });
+  bar.querySelector('.resume-banner__close').addEventListener('click', () => bar.remove());
+  // Auto-hide after 10s
+  setTimeout(() => { if (bar.parentNode) bar.style.opacity = '0'; bar.style.transition = 'opacity .5s'; setTimeout(() => bar.remove(), 600); }, 10000);
+}
+
 // ==================== TIMER ====================
 function startTimer() {
   if (State.timerId) clearInterval(State.timerId);
@@ -2218,6 +2328,9 @@ function renderBenchmarkPanel() {
 
 function showResult({ verdict = null, timeBonus = 0, submitted = false, submitResult = null, timedOut = false }) {
   const s = State.scenario;
+  // Case reached its terminal screen — drop the autosave so a future reload
+  // doesn't try to resume a finished case.
+  try { clearGameState(s.id); } catch (_) {}
   const points = Math.max(0, State.points);
   const rank = calcRank(points);
   const timeUsed = s.time_limit_sec - Math.max(0, State.timeLeft);
@@ -2532,13 +2645,44 @@ async function init() {
     renderCooldownScreen(cd);
     return;
   }
+  // Resume from autosave if available (skip in demo — demo doesn't autosave)
+  const saved = !State.isDemo ? loadGameState(State.scenario.id) : null;
+  if (saved) {
+    applyGameState(saved);
+    mountHud();
+    mountHelpPanel();
+    // Route to the exact phase renderer that was active at save time
+    if      (State.phase === 'phase2')   renderPhase2();
+    else if (State.phase === 'timeline') renderTimelinePhase();
+    else if (State.phase === 'phase3')   renderPhase3();
+    else if (State.phase === 'citation') renderCitationPhase();
+    else if (State.phase === 'memo')     renderMemoPhase();
+    else if (State.phase === 'phase4')   renderPhase4();
+    else { State.phase = 'briefing'; renderBriefing(); }
+    renderHelpPanel();
+    startTimer();
+    showResumeBanner(saved);
+    startAutosave();
+    track('game-resumed', { phase: saved.phase, saved_pts: saved.points });
+    return;
+  }
   // Mount HUD + help panel + render briefing
   mountHud();
   mountHelpPanel();
   State.phase = 'briefing';
   renderBriefing();
   renderHelpPanel();
+  startAutosave();
   track('game-briefing-open');
+}
+// Periodic autosave — resilient to tab close, refresh, crash.
+let _autosaveTimer = null;
+function startAutosave() {
+  if (_autosaveTimer) return;
+  _autosaveTimer = setInterval(saveGameState, 3000);
+  // Also save on visibility change and page hide — catches close/refresh
+  document.addEventListener('visibilitychange', () => { if (document.hidden) saveGameState(); });
+  window.addEventListener('pagehide', saveGameState);
 }
 init();
 
