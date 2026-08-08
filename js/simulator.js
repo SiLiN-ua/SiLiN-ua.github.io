@@ -1,7 +1,7 @@
 // Shadow Simulator — engine + Firebase leaderboard
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import {
-  getDatabase, ref, set, get, query, orderByChild, limitToLast
+  getDatabase, ref, set, get, remove, query, orderByChild, limitToLast
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
 import { firebaseConfig } from "./firebase-config.js";
 
@@ -253,6 +253,79 @@ function showRegistrationModal(onDone) {
 }
 
 // ==================== AGENT PROFILE PANEL ====================
+// ==================== CHANGE NICKNAME ====================
+// Prompts the player for a new nickname, validates it, and — if they already
+// have a leaderboard record — migrates all their progress (points, games,
+// per-case bests, completed cases) from the old node to the new one so their
+// stats aren't orphaned. Returns { ok, nick } on success.
+export async function changeNickname() {
+  const isEn = LANG() === 'en';
+  const currentRaw = localStorage.getItem(NICK_KEY) || '';
+  const current = sanitizeNickname(currentRaw);
+  const promptMsg = isEn
+    ? `Enter new nickname (3–16 chars, letters/digits/_-).\nYour progress will move to the new name.`
+    : `Введи новий нікнейм (3–16 символів, літери/цифри/_-).\nТвій прогрес переїде на новий нік.`;
+  const raw = window.prompt(promptMsg, current);
+  if (raw === null) return { ok: false, cancelled: true };
+  const next = sanitizeNickname(raw.trim());
+  if (!validateNickname(next)) {
+    alert(isEn ? 'Invalid nickname. Use 3–16 chars: letters, digits, _ or -.' : 'Невалідний нік. 3–16 символів: літери, цифри, _ або -.');
+    return { ok: false, error: 'invalid' };
+  }
+  if (next === current) return { ok: true, nick: next, noop: true };
+  // Migrate leaderboard record if there is one and the target slot is free
+  // (or, if not free, merge — take max of each numeric field).
+  try {
+    const oldRef = ref(db, `leaderboard/${current}`);
+    const newRef = ref(db, `leaderboard/${next}`);
+    const [oldSnap, newSnap] = await Promise.all([get(oldRef), get(newRef)]);
+    const oldVal = oldSnap.exists() ? oldSnap.val() : null;
+    const newVal = newSnap.exists() ? newSnap.val() : null;
+    if (oldVal) {
+      const merged = mergeLeaderboardEntries(oldVal, newVal);
+      await set(newRef, merged);
+      if (current && current !== next) await remove(oldRef);
+    } else if (!newVal) {
+      // No prior record anywhere — nothing to migrate; new node is created on first submit.
+    }
+    // else: newVal exists but oldVal doesn't — nothing to do, we just adopt the existing slot.
+  } catch (e) {
+    console.error('nickname migration failed', e);
+    alert(isEn ? 'Could not migrate progress. Please try again.' : 'Не вдалося перенести прогрес. Спробуй ще раз.');
+    return { ok: false, error: e.message || String(e) };
+  }
+  saveNickname(next);
+  // Reflect on UI immediately — safest is a reload so leaderboard/agent-panel/HUD all repaint
+  location.reload();
+  return { ok: true, nick: next };
+}
+
+function mergeLeaderboardEntries(a, b) {
+  if (!a) return b || {};
+  if (!b) return a;
+  const out = { ...a, ...b };
+  out.total_points   = Math.max(a.total_points || 0, b.total_points || 0);
+  out.games_played   = Math.max(a.games_played || 0, b.games_played || 0);
+  out.last_points    = (a.last_points || 0) + (b.last_points || 0) > 0
+    ? Math.max(a.last_points || 0, b.last_points || 0) : 0;
+  // last_case: keep whichever record has the newer 'updated' timestamp
+  const aTs = a.updated ? Date.parse(a.updated) : 0;
+  const bTs = b.updated ? Date.parse(b.updated) : 0;
+  if (aTs >= bTs) { out.last_case = a.last_case; out.updated = a.updated; }
+  else            { out.last_case = b.last_case; out.updated = b.updated; }
+  // completed_cases: union
+  const setC = new Set([...(a.completed_cases || []), ...(b.completed_cases || [])]);
+  out.completed_cases = [...setC];
+  // points_by_case: per-case max
+  const pa = a.points_by_case || {}, pb = b.points_by_case || {};
+  const pbc = {};
+  for (const k of new Set([...Object.keys(pa), ...Object.keys(pb)])) {
+    pbc[k] = Math.max(pa[k] || 0, pb[k] || 0);
+  }
+  out.points_by_case = pbc;
+  return out;
+}
+
 export function renderAgentPanel(targetSelector, nickname) {
   const target = document.querySelector(targetSelector);
   if (!target) return;
@@ -270,7 +343,7 @@ export function renderAgentPanel(targetSelector, nickname) {
       <div class="ap__grid">
         <div class="ap__cell">
           <div class="ap__cell-label">${T('ss.ap.nickname', 'Нікнейм')}</div>
-          <div class="ap__nick">${escapeHtml(nickname)}</div>
+          <div class="ap__nick">${escapeHtml(nickname)} <button type="button" class="ap__nick-edit" data-action="change-nick" title="${T('ss.ap.nickname.change', 'Змінити нік')}" aria-label="${T('ss.ap.nickname.change', 'Змінити нік')}" style="margin-left:.4rem;background:transparent;border:1px solid var(--border);color:var(--text-mute);padding:.15rem .45rem;font-size:.75rem;cursor:pointer;border-radius:4px;vertical-align:middle">✎</button></div>
           <div class="ap__rank" style="color:${rank.color}">${rank.icon} ${escapeHtml(rank.label)}</div>
         </div>
         <div class="ap__cell">
@@ -285,6 +358,8 @@ export function renderAgentPanel(targetSelector, nickname) {
         </div>
       </div>
     </div>`;
+  const editBtn = target.querySelector('[data-action="change-nick"]');
+  if (editBtn) editBtn.addEventListener('click', () => { changeNickname(); });
 }
 
 // ==================== LEADERBOARD ====================
