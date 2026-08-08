@@ -427,7 +427,11 @@
     "sim1.lb.title": "🏆 Candidate Red-Flag Leaderboard",
     "sim1.lb.subtitle": "Окремий leaderboard лише для 3 кейсів Track I. Сумарний найкращий результат гравця по кейсах цього треку.",
     "sim2.lb.pre": "РЕЙТИНГ TRACK II",
-    "sim2.lb.title": "🏆 Corporate Investigations Leaderboard"
+    "sim2.lb.title": "🏆 Corporate Investigations Leaderboard",
+    "sim2.lb.subtitle": "Окремий leaderboard лише для 6 кейсів Track II. Кожна картка = найкращий результат гравця по цьому кейсу.",
+    "sim2.cert.pre": "СЕРТИФІКАТ TRACK II",
+    "sim2.cert.title": "🎖 Corporate Investigations Certificate",
+    "sim2.cert.subtitle": "Розблокується після проходження всіх 6 кейсів Track II та досягнення мінімального порогу очок."
   },
   "en": {
     "brand.first": "Yehor",
@@ -857,6 +861,10 @@
     "sim1.lb.title": "🏆 Candidate Red-Flag Leaderboard",
     "sim1.lb.subtitle": "Separate leaderboard for the 3 Track I cases only. Best sum of per-case scores across this track.",
     "sim2.lb.pre": "TRACK II LEADERBOARD",
-    "sim2.lb.title": "🏆 Corporate Investigations Leaderboard"
+    "sim2.lb.title": "🏆 Corporate Investigations Leaderboard",
+    "sim2.lb.subtitle": "Separate leaderboard for the 6 Track II cases. Each card = the player's best score per case.",
+    "sim2.cert.pre": "TRACK II CERTIFICATE",
+    "sim2.cert.title": "🎖 Corporate Investigations Certificate",
+    "sim2.cert.subtitle": "Unlocks after completing all 6 Track II cases and reaching the minimum point threshold."
   }
 }

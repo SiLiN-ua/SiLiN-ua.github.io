@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
 import { firebaseConfig } from "./firebase-config.js";
+import { submitScore as submitScoreCore } from "./simulator.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
@@ -102,36 +103,15 @@ function clearCooldown(caseId) {
 const NO_SUBMIT_NICKS = new Set(['C2Test','V5Test','TestAgent','HardTest','V4Test','V3Test','C4Test','C5Test','C5Wire','C4Wire','C3Test','C3Hard','Case2Vis','LangTest','PhotoTest','CertTest','CertHero','TestGallery']);
 const isTestNick = (n) => NO_SUBMIT_NICKS.has(n);
 
-async function submitScore(nickname, gamePoints, caseId) {
+// Delegate to the canonical submitScore in simulator.js — it preserves
+// points_by_case + completed_cases, which per-track leaderboards need.
+// Local wrapper only adds the test-nick skip guard.
+async function submitScore(nickname, gamePoints, caseId, correct = false) {
   if (isTestNick(nickname)) {
     console.log('[submitScore] skipped for dev/test nickname:', nickname);
     return { ok: true, skipped: true, total: gamePoints, games: 1 };
   }
-  const now = new Date().toISOString();
-  const userRef = ref(db, `leaderboard/${nickname}`);
-  let existing = {};
-  try {
-    const snap = await get(userRef);
-    if (snap.exists()) existing = snap.val();
-  } catch (e) { console.warn('read own record failed', e); }
-  const newTotal = (existing.total_points || 0) + Math.max(0, gamePoints);
-  const newGames = (existing.games_played || 0) + 1;
-  const payload = {
-    total_points: newTotal,
-    games_played: newGames,
-    last_case: caseId,
-    last_points: gamePoints,
-    updated: now
-  };
-  try {
-    await set(userRef, payload);
-    const stats = { total: newTotal, games: newGames };
-    localStorage.setItem(SCORE_KEY, JSON.stringify(stats));
-    return { ok: true, ...stats };
-  } catch (e) {
-    console.error('submitScore failed', e);
-    return { ok: false, error: e.message };
-  }
+  return submitScoreCore(nickname, gamePoints, caseId, correct);
 }
 
 // ==================== GAME STATE ====================

@@ -739,40 +739,40 @@
       "reason_en": "Q1 — typical false-positive machine. Q2 — old-comment fallacy. Q3 — too-broad COI definition. All 3 test tolerance for nuance vs pattern-matching to alarm."
     }
   },
-  "ranks": [
-    {
-      "min_points": 400,
+  "ranks": {
+    "master": {
+      "min": 400,
       "label_uk": "MASTER Watch",
       "label_en": "Master",
       "color": "#7fd6ff",
       "msg_uk": "Дисципліна борсонсько-адвокатського рівня — не спрацював, коли треба було не спрацювати.",
       "msg_en": "Counsel-grade discipline — did not fire when firing was wrong."
     },
-    {
-      "min_points": 300,
+    "senior": {
+      "min": 300,
       "label_uk": "SENIOR Watch",
       "label_en": "Senior",
       "color": "#a3e6a3",
       "msg_uk": "Правильний вердикт, але деякі decoys піднялися. Ще один прохід і ти на MASTER.",
       "msg_en": "Correct verdict but some decoys got picked up. One more pass and you're at MASTER."
     },
-    {
-      "min_points": 200,
+    "junior": {
+      "min": 200,
       "label_uk": "JUNIOR Watch",
       "label_en": "Junior",
       "color": "#d4a34e",
       "msg_uk": "Direction correct, sequence нестабільний. Перечитай custody-плашки.",
       "msg_en": "Direction correct, sequence unstable. Review the custody-of-evidence checklist."
     },
-    {
-      "min_points": 0,
+    "trainee": {
+      "min": 0,
       "label_uk": "FAILED — False Positive",
       "label_en": "FAILED — False Positive",
       "color": "#ff5a5a",
       "msg_uk": "Спалив Сергій М. на legitimate pattern. Company тепер судиться. Спробуй з MONITOR-first mindset.",
       "msg_en": "Burned Serhii M. on a legitimate pattern. Company now in court. Try again with a MONITOR-first mindset."
     }
-  ],
+  },
   "post_decision_beat": {
     "trigger_recommendation_id": "monitor_with_tripwires",
     "title_uk": "📅 60 днів потому — один з tripwires спрацював",

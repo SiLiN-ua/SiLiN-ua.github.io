@@ -14,7 +14,8 @@ const SCORE_KEY = 'ss.local';
 // Case → track membership map (used to compute per-track leaderboard totals from points_by_case).
 // Update this whenever a new case is added.
 export const TRACK_CASES = {
-  sim01: ['fake-cfo', 'suspicious-consultant', 'family-chain'],
+  sim01: ['fake-cfo', 'suspicious-consultant', 'family-chain',
+          'shadow-candidate', 'coordinate-hunter'],
   sim02: ['leaking-engineer', 'procurement-ghost', 'fake-vendor-network',
           'executive-coi', 'insider-trading', 'careful-watch'],
 };
