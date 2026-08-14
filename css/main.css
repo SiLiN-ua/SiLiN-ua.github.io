@@ -1333,6 +1333,8 @@ section    { padding: clamp(4rem, 10vh, 8rem) 0; }
 }
 .article-utils__copy:hover { color: var(--ice); border-color: var(--ice); }
 .article-utils__copy.done { color: var(--bg); background: var(--ice); border-color: var(--ice); }
+a.article-utils__copy { text-decoration: none; display: inline-flex; align-items: center; gap: .45rem; }
+a.article-utils__share:hover { color: #0a66c2; border-color: #0a66c2; }
 
 /* Footer -------------------------------------------------- */
 .footer {
