@@ -85,7 +85,8 @@
     const cover = item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${title}" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
     const links = [];
     if (item.pdf_url_uk) links.push(`<a href="${escapeHtml(item.pdf_url_uk)}" target="_blank" rel="noopener" class="btn" style="padding:.6rem 1rem;font-size:.7rem">📖 Читати українською</a>`);
-    if (item.patreon_url) links.push(`<a href="${escapeHtml(item.patreon_url)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 English on Patreon ↗</a>`);
+    if (item.pdf_url_en) links.push(`<a href="${escapeHtml(item.pdf_url_en)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 Read in English</a>`);
+    else if (item.patreon_url) links.push(`<a href="${escapeHtml(item.patreon_url)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 English on Patreon ↗</a>`);
     if (!links.length && item.buy_url) links.push(`<a href="${escapeHtml(item.buy_url)}" target="_blank" rel="noopener" class="card__link">Читати ↗</a>`);
     return `
       <div class="book">
