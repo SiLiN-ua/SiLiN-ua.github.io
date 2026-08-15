@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/brand/panther-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/brand/panther-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/brand/panther-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
+<title data-title-uk="Підтримка · Єгор Селін" data-title-en="Support · Yehor Selin">Підтримка · Єгор Селін</title>
+<meta name="description" content="Якщо кейси, симулятор або статті допомогли — можна підтримати через Monobank, PayPal або Patreon.">
+<link rel="canonical" href="https://yehorselin.com/support.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="alternate" type="application/rss+xml" title="OSINT-новини" href="/feed.xml">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
+<style>
+  .sup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .sup-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 1.75rem 1.5rem;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--surface), rgba(15,21,36,.6));
+    transition: all .25s var(--ease);
+  }
+  .sup-card:hover { border-color: var(--ice); box-shadow: var(--glow); }
+  .sup-card__badge {
+    font-family: var(--font-mono);
+    font-size: .66rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: .8rem;
+  }
+  .sup-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    color: var(--cream);
+    margin: 0 0 .5rem;
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .sup-card__desc {
+    color: var(--text-mute);
+    font-size: .92rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+  .sup-card__value {
+    font-family: var(--font-mono);
+    font-size: .82rem;
+    color: var(--ice);
+    background: rgba(74,158,255,.06);
+    border: 1px solid rgba(74,158,255,.15);
+    padding: .55rem .75rem;
+    margin-bottom: .9rem;
+    word-break: break-all;
+    display: block;
+  }
+  .sup-card__actions {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+  }
+  .sup-copy {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .55rem .9rem;
+    background: transparent;
+    border: 1px solid var(--border-hi);
+    color: var(--text);
+    cursor: pointer;
+    transition: all .2s var(--ease);
+  }
+  .sup-copy:hover { border-color: var(--ice); color: var(--cream); }
+  .sup-copy.is-copied { border-color: #27c93f; color: #27c93f; }
+  .sup-note {
+    margin-top: 3rem;
+    padding: 1.5rem 1.75rem;
+    border-left: 2px solid var(--ice);
+    background: rgba(74,158,255,.04);
+    color: var(--text-mute);
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
+  <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  <ul class="nav__links">
+    <li><a href="index.html" data-i18n="nav.home">Головна</a></li>
+    <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+    <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+    <li><a href="simulator.html"><img class="nav__ico" src="img/brand/panther-32.png?v=2" alt=""> <span data-i18n="nav.simulator">Симулятор</span></a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+    <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+    <li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li>
+    <li class="nav__more nav__more--active">
+      <button class="nav__more-btn" type="button" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.more">Більше</span> <span class="nav__more-caret">▾</span></button>
+      <ul class="nav__submenu" role="menu">
+        <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+        <li><a href="education.html" data-i18n="nav.education">Освіта</a></li>
+        <li><a href="speaking.html" data-i18n="nav.speaking">Виступи</a></li>
+        <li><a href="certificates.html" data-i18n="nav.certificates">Сертифікати</a></li>
+        <li><a href="awards.html" data-i18n="nav.awards">Відзнаки</a></li>
+        <li><a href="recommendations.html" data-i18n="nav.recommendations">Рекомендації</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Контакти</a></li>
+        <li><a href="support.html" class="active" data-i18n="nav.support">Підтримка</a></li>
+      </ul>
+    </li>
+    <li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li>
+  </ul>
+</nav>
+
+<section style="padding-top:9rem">
+  <div class="narrow">
+    <div class="sec-title sec-title--left reveal">
+      <span class="eyebrow" data-i18n="support.eyebrow">Підтримка</span>
+      <h1 data-i18n="support.title">Якщо матеріали були корисні</h1>
+      <p data-i18n="support.lead">Кейси, симулятор і статті на сайті — вечірня та вихідна робота. Нічого тут не за paywall — усе відкрито. Але якщо щось із цього допомогло у твоїй справі, можна кинути каву. Це прискорює вихід нових кейсів і покриває хостинг.</p>
+    </div>
+
+    <div class="sup-grid reveal">
+
+      <div class="sup-card">
+        <div class="sup-card__badge" data-i18n="support.mono.badge">🇺🇦 Для України</div>
+        <h3 class="sup-card__title" data-i18n="support.mono.title">Monobank</h3>
+        <p class="sup-card__desc" data-i18n="support.mono.desc">Банка «На розвиток блогу». Приймає українські та іноземні карти (Visa/Mastercard, Apple Pay, Google Pay).</p>
+        <span class="sup-card__value" id="sup-mono-card">4874 1000 3211 1836</span>
+        <div class="sup-card__actions">
+          <a href="https://send.monobank.ua/jar/8KyRZh9tTY" target="_blank" rel="noopener" class="btn btn--filled" data-i18n="support.mono.cta">Відкрити банку</a>
+          <button type="button" class="sup-copy" data-copy="4874 1000 3211 1836" data-i18n="support.copy_card">Копіювати номер</button>
+        </div>
+      </div>
+
+      <div class="sup-card">
+        <div class="sup-card__badge" data-i18n="support.paypal.badge">🌍 Міжнародно</div>
+        <h3 class="sup-card__title" data-i18n="support.paypal.title">PayPal</h3>
+        <p class="sup-card__desc" data-i18n="support.paypal.desc">На paypal.com → Send → вкажи email нижче. Разовий переказ у будь-якій валюті.</p>
+        <span class="sup-card__value" id="sup-paypal-email">shadow@yehorselin.com</span>
+        <div class="sup-card__actions">
+          <a href="https://www.paypal.com/myaccount/transfer/homepage/pay" target="_blank" rel="noopener" class="btn btn--filled" data-i18n="support.paypal.cta">Відкрити PayPal</a>
+          <button type="button" class="sup-copy" data-copy="shadow@yehorselin.com" data-i18n="support.copy_email">Копіювати email</button>
+        </div>
+      </div>
+
+      <div class="sup-card">
+        <div class="sup-card__badge" data-i18n="support.patreon.badge">☕ Щомісяця</div>
+        <h3 class="sup-card__title" data-i18n="support.patreon.title">Patreon</h3>
+        <p class="sup-card__desc" data-i18n="support.patreon.desc">Підписка з невеликим щомісячним внеском. Доступ до закритих матеріалів і ранній перегляд кейсів.</p>
+        <span class="sup-card__value">patreon.com/YehorSelin</span>
+        <div class="sup-card__actions">
+          <a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener" class="btn btn--filled" data-i18n="support.patreon.cta">Стати патроном</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sup-note reveal" data-i18n="support.note">Донат не дає жодних привілеїв: доступ до кейсів, симулятора, сертифікатів і гайдів — однаковий для всіх. Це просто спосіб сказати «дякую» тим, кому робота допомогла.</div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div>
+      <p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.nav">Навігація</h4>
+      <ul>
+        <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
+        <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
+        <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
+        <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
+    <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li>
+    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
+    <li><a href="certificates.html" data-i18n="nav.certificates">Сертифікати</a></li>
+    <li><a href="awards.html" data-i18n="nav.awards">Відзнаки</a></li>
+    <li><a href="recommendations.html" data-i18n="nav.recommendations">Рекомендації</a></li>
+    <li><a href="support.html" data-i18n="nav.support">Підтримка</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer.contacts">Контакти</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li>
+        <li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="mailto:shadow@yehorselin.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span data-i18n="footer.rights">© 2026 Єгор Селін</span>
+    <span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.sup-copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const val = btn.dataset.copy;
+      if (!val) return;
+      try {
+        await navigator.clipboard.writeText(val);
+      } catch (e) {
+        const ta = document.createElement('textarea');
+        ta.value = val; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); ta.remove();
+      }
+      const orig = btn.textContent;
+      const lang = document.documentElement.lang || 'uk';
+      btn.textContent = lang === 'en' ? 'Copied ✓' : 'Скопійовано ✓';
+      btn.classList.add('is-copied');
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.remove('is-copied');
+      }, 1600);
+    });
+  });
+</script>
+<script src="js/graph.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
