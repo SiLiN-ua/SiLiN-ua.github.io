@@ -118,7 +118,7 @@ async function submitScore(nickname, gamePoints, caseId, correct = false) {
 const State = {
   scenario: null,
   nickname: '',
-  phase: 'loading',     // loading | cooldown | briefing | phase2 | timeline | phase3 | citation | phase4 | memo | result
+  phase: 'loading',     // loading | cooldown | briefing | phase2 | timeline | phase3 | citation | phase4 | memo | ladder | falsify | sowhat | result
   points: 0,
   timeLeft: 720,
   timerId: null,
@@ -144,6 +144,18 @@ const State = {
   memoSubmitted: false,
   memoPoints: 0,
   memoPolicyBreach: false,
+  // Sim #03 three-phase finale (optional; replaces citation + phase4)
+  ladderAssign: {},          // {slotId: evidenceId}
+  ladderSubmitted: false,
+  ladderPoints: 0,
+  ladderRows: [],            // [{slotId, evidenceId, score, max, feedback}]
+  falsifyAnswers: {},        // {slotId: 'free text'}
+  falsifySubmitted: false,
+  falsifyPoints: 0,
+  falsifyRows: [],           // [{slotId, text, hit, points, expected}]
+  soWhatChoice: '',          // option id
+  soWhatOrder: [],           // shuffled option indices
+  soWhatPoints: 0,
 };
 
 // ==================== AUTOSAVE / RESUME ====================
@@ -151,7 +163,7 @@ const State = {
 // State on next entry — no more losing 15 minutes of work to a reload.
 // Saved under ss.gamestate.<caseId>. Cleared on completion (submitScore ok).
 // Only fields we actually need to resume — timerId is derived, scenario is refetched.
-const RESUMABLE_PHASES = new Set(['phase2', 'timeline', 'phase3', 'citation', 'memo', 'phase4']);
+const RESUMABLE_PHASES = new Set(['phase2', 'timeline', 'phase3', 'citation', 'memo', 'phase4', 'ladder', 'falsify', 'sowhat']);
 const AUTOSAVE_KEY_PREFIX = 'ss.gamestate.';
 function saveGameState() {
   try {
@@ -183,6 +195,17 @@ function saveGameState() {
       memoSubmitted: State.memoSubmitted,
       memoPoints: State.memoPoints,
       memoPolicyBreach: State.memoPolicyBreach,
+      ladderAssign: State.ladderAssign,
+      ladderSubmitted: State.ladderSubmitted,
+      ladderPoints: State.ladderPoints,
+      ladderRows: State.ladderRows,
+      falsifyAnswers: State.falsifyAnswers,
+      falsifySubmitted: State.falsifySubmitted,
+      falsifyPoints: State.falsifyPoints,
+      falsifyRows: State.falsifyRows,
+      soWhatChoice: State.soWhatChoice,
+      soWhatOrder: State.soWhatOrder,
+      soWhatPoints: State.soWhatPoints,
     };
     localStorage.setItem(AUTOSAVE_KEY_PREFIX + State.scenario.id, JSON.stringify(snap));
   } catch (_) {}
@@ -217,6 +240,17 @@ function applyGameState(snap) {
   State.citationScore = snap.citationScore || 0;
   State.finalVerdict = snap.finalVerdict || null;
   State.startedAt = snap.startedAt || Date.now();
+  State.ladderAssign = snap.ladderAssign || {};
+  State.ladderSubmitted = !!snap.ladderSubmitted;
+  State.ladderPoints = snap.ladderPoints || 0;
+  State.ladderRows = snap.ladderRows || [];
+  State.falsifyAnswers = snap.falsifyAnswers || {};
+  State.falsifySubmitted = !!snap.falsifySubmitted;
+  State.falsifyPoints = snap.falsifyPoints || 0;
+  State.falsifyRows = snap.falsifyRows || [];
+  State.soWhatChoice = snap.soWhatChoice || '';
+  State.soWhatOrder = snap.soWhatOrder || [];
+  State.soWhatPoints = snap.soWhatPoints || 0;
   State.timelineOrder = snap.timelineOrder || [];
   State.timelineSubmitted = !!snap.timelineSubmitted;
   State.timelinePoints = snap.timelinePoints || 0;
@@ -284,17 +318,20 @@ function progressBar(current) {
   const s = State.scenario;
   const hasTimeline = !!s?.timeline_phase;
   const hasMemo = !!s?.memo_phase;
-  // Build phase list dynamically. 'memo' replaces 'phase4' when present.
+  const hasLadder = !!s?.ladder_phase;
+  // Build phase list dynamically. Sim #03 ladder→falsify→sowhat replaces phase4;
+  // Sim #02 'memo' replaces 'phase4'.
   const phases = ['briefing', 'phase2'];
   if (hasTimeline) phases.push('timeline');
   phases.push('phase3');
-  phases.push(hasMemo ? 'memo' : 'phase4');
+  if (hasLadder) phases.push('ladder', 'falsify', 'sowhat');
+  else phases.push(hasMemo ? 'memo' : 'phase4');
   const labelMap = LANG()==='en'
-    ? { briefing:'Briefing', phase2:'Investigation', timeline:'Timeline', phase3:'Verification', phase4:'Verdict', memo:'Memo' }
-    : { briefing:'Брифінг', phase2:'Розслідування', timeline:'Хронологія', phase3:'Верифікація', phase4:'Вердикт', memo:'Меморандум' };
+    ? { briefing:'Briefing', phase2:'Investigation', timeline:'Timeline', phase3:'Verification', phase4:'Verdict', memo:'Memo', ladder:'Attribution', falsify:'Falsifiability', sowhat:'So What' }
+    : { briefing:'Брифінг', phase2:'Розслідування', timeline:'Хронологія', phase3:'Верифікація', phase4:'Вердикт', memo:'Меморандум', ladder:'Атрибуція', falsify:'Фальсифікованість', sowhat:'So What' };
   const labels = phases.map(p => labelMap[p]);
   // Normalize 'citation' → same slot as phase4/memo (visual last step)
-  const curNorm = (current === 'citation') ? (hasMemo ? 'memo' : 'phase4') : current;
+  const curNorm = (current === 'citation') ? (hasLadder ? 'ladder' : (hasMemo ? 'memo' : 'phase4')) : current;
   const effectiveCurrent = curNorm;
   return `<div class="game-progress">${phases.map((p, i) => {
     const cur = phases.indexOf(effectiveCurrent);
@@ -316,7 +353,30 @@ function fadeInRoot() {
 function renderBriefing() {
   const s = State.scenario;
   const br = s.briefing;
-  const cand = br.candidate;
+  const cand = br.candidate || null;
+  // Sim #03 opens on an artifact, not a dossier: render an artifact card instead
+  // of the passport-photo grid when `candidate` is absent.
+  const artifact = br.artifact || null;
+  const headline = cand ? tr(cand,'name') : (tr(br,'artifact_title') || tr(State.scenario,'title'));
+  const photoCol = cand ? `
+          <div class="game-brief__photo">
+            <img src="${cand.photo}" alt="${escapeHtml(tr(cand,'name'))}">
+            <div class="game-brief__photo-label">${LANG()==='en'?'PASSPORT PHOTO':'ФОТО ДОКУМЕНТА'}</div>
+          </div>` : (artifact ? `
+          <div class="game-brief__photo game-brief__photo--artifact">
+            ${artifact.image ? `<img src="${artifact.image}" alt="${escapeHtml(tr(artifact,'label'))}">` : `<div class="game-brief__artifact-icon">${escapeHtml(artifact.icon || '🗂')}</div>`}
+            <div class="game-brief__photo-label">${LANG()==='en'?'THE ARTIFACT':'АРТЕФАКТ'}</div>
+          </div>` : '');
+  const metaRows = cand ? `
+              <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
+              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(tr(br,'position') || br.position || '')}</div>
+              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(tr(br,'salary') || br.salary || '')}</div>
+              <div><span>Email</span><code>${escapeHtml(cand.email)}</code></div>
+              <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>` : `
+              <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
+              ${tr(br,'budget') || br.budget ? `<div><span>${LANG()==='en'?'Budget':'Бюджет'}</span>${escapeHtml(tr(br,'budget') || br.budget || '')}</div>` : ''}
+              ${artifact ? `<div><span>${LANG()==='en'?'Input':'Вхід'}</span>${escapeHtml(tr(artifact,'label'))}</div>` : ''}
+              ${artifact && artifact.ref ? `<div><span>${LANG()==='en'?'Reference':'Посилання'}</span><code>${escapeHtml(artifact.ref)}</code></div>` : ''}`;
   const html = `
     ${progressBar('briefing')}
     <div class="game-brief">
@@ -327,19 +387,12 @@ function renderBriefing() {
       <div class="game-brief__reticle game-brief__r-br"></div>
       <div class="game-brief__inner">
         <div class="game-brief__label">📋 ${LANG()==='en' ? 'CLIENT BRIEFING' : 'БРИФ КЛІЄНТА'}</div>
-        <div class="game-brief__grid">
-          <div class="game-brief__photo">
-            <img src="${cand.photo}" alt="${escapeHtml(tr(cand,'name'))}">
-            <div class="game-brief__photo-label">${LANG()==='en'?'PASSPORT PHOTO':'ФОТО ДОКУМЕНТА'}</div>
-          </div>
+        <div class="game-brief__grid${cand ? '' : ' game-brief__grid--artifact'}">
+          ${photoCol}
           <div class="game-brief__body">
-            <h2>${escapeHtml(tr(cand,'name'))}</h2>
+            <h2>${escapeHtml(headline)}</h2>
             <div class="game-brief__meta">
-              <div><span>${LANG()==='en'?'Client':'Клієнт'}</span>${escapeHtml(tr(br,'client'))}</div>
-              <div><span>${LANG()==='en'?'Position':'Позиція'}</span>${escapeHtml(tr(br,'position') || br.position || '')}</div>
-              <div><span>${LANG()==='en'?'Salary':'Оплата'}</span>${escapeHtml(tr(br,'salary') || br.salary || '')}</div>
-              <div><span>Email</span><code>${escapeHtml(cand.email)}</code></div>
-              <div><span>${LANG()==='en'?'Phone':'Телефон'}</span><code>${escapeHtml(cand.phone)}</code></div>
+              ${metaRows}
             </div>
             <p class="game-brief__text">${escapeHtml(tr(br,'body'))}</p>
             ${br.lawful_basis_gate ? `
@@ -1658,12 +1711,14 @@ function renderPhase3() {
   const nextBtn = $('#btn-next');
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.addEventListener('click', () => {
-      // Route: phase3 → memo (Sim #02 replaces citation+phase4) OR → citation (legacy Sim #01)
+      // Route: phase3 → ladder (Sim #03 three-phase finale) OR memo (Sim #02) OR citation (Sim #01)
+      const hasLadder = !!State.scenario.ladder_phase;
       const hasMemo = !!State.scenario.memo_phase;
-      const nextPhase = hasMemo ? 'memo' : 'citation';
+      const nextPhase = hasLadder ? 'ladder' : (hasMemo ? 'memo' : 'citation');
       State.phase = nextPhase;
       track('game-' + nextPhase, { q_answered: Object.keys(State.q3Answers).length });
-      if (nextPhase === 'memo') renderMemoPhase();
+      if (nextPhase === 'ladder') renderLadderPhase();
+      else if (nextPhase === 'memo') renderMemoPhase();
       else renderCitationPhase();
       scrollTop();
     });
@@ -2093,6 +2148,424 @@ async function submitMemo(sortableZone, sortablePool) {
   }
 }
 
+// ==================== SIM #03: THREE-PHASE FINALE ====================
+// Chain: phase3 → ladder → falsify → sowhat (terminal). Replaces citation+phase4.
+// Config lives on scenario.ladder_phase / .falsifiability_phase / .so_what_phase.
+
+function ladderSlots()  { return (State.scenario.ladder_phase?.slots) || []; }
+function ladderPool()   { return (State.scenario.ladder_phase?.evidence_pool) || []; }
+function ladderCard(id) { return ladderPool().find(e => e.id === id) || null; }
+
+// ---------- A. ATTRIBUTION LADDER ----------
+function renderLadderPhase() {
+  const lp = State.scenario.ladder_phase;
+  if (!lp) { State.phase = 'phase4'; renderPhase4(); return; }
+  const isEn = LANG() === 'en';
+  const slots = ladderSlots();
+  const minSlots = lp.min_slots || Math.max(1, slots.length - 1);
+  const title = tr(lp,'title') || (isEn ? 'Attribution ladder' : 'Драбина атрибуції');
+  const instr = tr(lp,'instruction') || (isEn
+    ? `Fill at least ${minSlots} of ${slots.length} rungs by dragging evidence from the pool.`
+    : `Заповни щонайменше ${minSlots} з ${slots.length} щаблів, перетягуючи докази з пулу.`);
+  const submitLbl = tr(lp,'submit_btn') || (isEn ? 'Lock the ladder' : 'Зафіксувати драбину');
+
+  const seed = hashStr(State.scenario.id + '|ladder|' + (State.nickname || ''));
+  const pool = seededShuffle(ladderPool(), seed);
+  const assigned = new Set(Object.values(State.ladderAssign).filter(Boolean));
+  const poolCards = pool.filter(e => !assigned.has(e.id));
+
+  const cardHtml = (e) => `<div class="lad-card" data-id="${escapeHtml(e.id)}"><div class="lad-card__text">${escapeHtml(tr(e,'text'))}</div>${custodyPlaque(e)}</div>`;
+
+  const html = `
+    ${progressBar('ladder')}
+    <div class="game-phase game-phase--ladder">
+      <div class="game-phase__head">
+        <div class="game-phase__num">${isEn ? 'Finale 1 / 3' : 'Фінал 1 / 3'}</div>
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(instr)}</p>
+      </div>
+      <div class="lad-grid">
+        <div class="lad-rungs">
+          ${slots.map((sl, i) => {
+            const cur = State.ladderAssign[sl.id];
+            const card = cur ? ladderCard(cur) : null;
+            return `
+            <div class="lad-rung">
+              <div class="lad-rung__head">
+                <span class="lad-rung__num">${String(i+1).padStart(2,'0')}</span>
+                <span class="lad-rung__label">${escapeHtml(tr(sl,'label'))}</span>
+              </div>
+              ${tr(sl,'hint') ? `<div class="lad-rung__hint">${escapeHtml(tr(sl,'hint'))}</div>` : ''}
+              <div class="lad-drop" data-slot="${escapeHtml(sl.id)}" data-placeholder="${isEn ? 'drop one item here…' : 'перетягни один елемент сюди…'}">
+                ${card ? cardHtml(card) : ''}
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+        <div class="lad-pool">
+          <div class="lad-pool__head">${isEn ? 'Evidence collected' : 'Зібрані докази'}</div>
+          <div class="lad-pool__list" id="lad-pool-list">${poolCards.map(cardHtml).join('')}</div>
+        </div>
+      </div>
+      <div class="game-phase__foot" style="margin-top:1.5rem">
+        <div class="lad-hint" id="lad-hint" style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-mute)"></div>
+        <button class="btn btn--filled" id="btn-ladder-submit">${escapeHtml(submitLbl)}</button>
+      </div>
+    </div>`;
+
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
+
+  if (typeof Sortable === 'undefined') {
+    console.warn('SortableJS not loaded — ladder phase falling back to phase4');
+    State.phase = 'phase4'; renderPhase4(); return;
+  }
+  const syncAssign = () => {
+    const next = {};
+    document.querySelectorAll('.lad-drop').forEach(z => {
+      const c = z.querySelector('.lad-card');
+      if (c) next[z.dataset.slot] = c.dataset.id;
+    });
+    State.ladderAssign = next;
+    updateLadderHint();
+  };
+  const baseOpts = {
+    group: { name: 'ladder-cards', pull: true, put: true },
+    animation: 180,
+    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    ghostClass: 'sortable-ghost',
+    chosenClass: 'sortable-chosen',
+    dragClass: 'sortable-drag',
+    touchStartThreshold: 3,
+    onSort: syncAssign,
+    onAdd: syncAssign,
+    onRemove: syncAssign,
+  };
+  Sortable.create(document.getElementById('lad-pool-list'), baseOpts);
+  document.querySelectorAll('.lad-drop').forEach(z => {
+    // One card per rung: an incoming card evicts the resident back to the pool.
+    Sortable.create(z, Object.assign({}, baseOpts, {
+      onAdd: (evt) => {
+        const zone = evt.to;
+        const cards = [...zone.querySelectorAll('.lad-card')];
+        if (cards.length > 1) {
+          const poolList = document.getElementById('lad-pool-list');
+          cards.filter(c => c !== evt.item).forEach(c => poolList.appendChild(c));
+        }
+        syncAssign();
+      }
+    }));
+  });
+  document.getElementById('btn-ladder-submit').addEventListener('click', submitLadder);
+  updateLadderHint();
+}
+
+function updateLadderHint() {
+  const el = document.getElementById('lad-hint');
+  if (!el) return;
+  const lp = State.scenario.ladder_phase;
+  const slots = ladderSlots();
+  const min = lp.min_slots || Math.max(1, slots.length - 1);
+  const filled = Object.values(State.ladderAssign).filter(Boolean).length;
+  const isEn = LANG() === 'en';
+  if (filled >= min) {
+    el.textContent = isEn ? `✓ ${filled}/${slots.length} rungs filled — you can lock it.` : `✓ Заповнено ${filled}/${slots.length} — можна фіксувати.`;
+    el.style.color = '#7dc98a';
+  } else {
+    el.textContent = isEn ? `${filled}/${slots.length} rungs filled — at least ${min} required.` : `Заповнено ${filled}/${slots.length} — потрібно щонайменше ${min}.`;
+    el.style.color = 'var(--text-mute)';
+  }
+}
+
+function computeLadderScore() {
+  const rows = [];
+  let total = 0;
+  ladderSlots().forEach(sl => {
+    const evId = State.ladderAssign[sl.id];
+    const card = evId ? ladderCard(evId) : null;
+    const per = sl.max_points || 40;
+    let score = 0, feedback = '';
+    if (card) {
+      // A card scores only in the rung it was authored for; anywhere else it is a miss.
+      score = (card.slot === sl.id) ? (typeof card.score === 'number' ? card.score : per) : 0;
+      feedback = tr(card, 'feedback') || '';
+    }
+    total += score;
+    rows.push({ slotId: sl.id, evidenceId: evId || '', score, max: per, feedback,
+                label_uk: sl.label_uk || sl.label || '', label_en: sl.label_en || sl.label || '',
+                text_uk: card ? (card.text_uk || card.text || '') : '', text_en: card ? (card.text_en || card.text || '') : '' });
+  });
+  return { total, rows };
+}
+
+// The reveal screen is not decoration: Track III has deliberately inverted rungs
+// (Case 5 Location, Case 6 Identifier) where the "obvious win" scores zero. Without
+// showing the scale immediately, a correct 0/40 reads as an engine bug.
+function submitLadder() {
+  if (State.ladderSubmitted) return;
+  const lp = State.scenario.ladder_phase;
+  const slots = ladderSlots();
+  const min = lp.min_slots || Math.max(1, slots.length - 1);
+  // Re-read the rungs from the DOM rather than trusting that every drag fired a
+  // callback — a missed onAdd would otherwise silently drop a filled rung.
+  const zones = document.querySelectorAll('.lad-drop');
+  if (zones.length) {
+    const fromDom = {};
+    zones.forEach(z => {
+      const c = z.querySelector('.lad-card');
+      if (c) fromDom[z.dataset.slot] = c.dataset.id;
+    });
+    State.ladderAssign = fromDom;
+  }
+  if (Object.values(State.ladderAssign).filter(Boolean).length < min) { updateLadderHint(); return; }
+
+  State.ladderSubmitted = true;
+  const { total, rows } = computeLadderScore();
+  State.ladderPoints = total;
+  State.ladderRows = rows;
+  State.points += total;
+  track('game-ladder-submit', { total, filled: Object.values(State.ladderAssign).filter(Boolean).length });
+  renderLadderReveal();
+}
+
+function renderLadderReveal() {
+  const lp = State.scenario.ladder_phase;
+  const isEn = LANG() === 'en';
+  const rows = State.ladderRows;
+  const maxTotal = rows.reduce((a, r) => a + r.max, 0);
+  const note = tr(lp, 'reveal') || '';
+  const html = `
+    ${progressBar('ladder')}
+    <div class="game-phase game-phase--ladder-reveal">
+      <div class="game-phase__head">
+        <div class="game-phase__num">${isEn ? 'Finale 1 / 3' : 'Фінал 1 / 3'}</div>
+        <h2>${isEn ? 'How the ladder scored' : 'Як зарахована драбина'}</h2>
+        <p>${isEn ? 'Read this before moving on — some rungs score the opposite of what they look like.' : 'Прочитай, перш ніж іти далі — деякі щаблі зараховуються не так, як виглядають.'}</p>
+      </div>
+      ${note ? `<div class="lad-reveal__note">${escapeHtml(note)}</div>` : ''}
+      <ul class="lad-reveal__list">
+        ${rows.map(r => {
+          const cls = r.score >= r.max ? 'ok' : (r.score > 0 ? 'mid' : 'bad');
+          const text = (isEn ? r.text_en : r.text_uk) || (isEn ? '— not filled —' : '— не заповнено —');
+          return `
+          <li class="lad-reveal lad-reveal--${cls}">
+            <div class="lad-reveal__slot">${escapeHtml(isEn ? r.label_en : r.label_uk)}</div>
+            <div class="lad-reveal__body">
+              <div class="lad-reveal__pick">${escapeHtml(text)}</div>
+              ${r.feedback ? `<div class="lad-reveal__fb">${escapeHtml(r.feedback)}</div>` : ''}
+            </div>
+            <div class="lad-reveal__score">${r.score}/${r.max}</div>
+          </li>`;
+        }).join('')}
+      </ul>
+      <div class="lad-reveal__total">${isEn ? 'Ladder score' : 'Оцінка драбини'}: <strong>${State.ladderPoints}/${maxTotal}</strong></div>
+      <div class="game-phase__foot" style="margin-top:1.5rem">
+        <button class="btn btn--filled" id="btn-ladder-next">${isEn ? 'Continue → Falsifiability' : 'Далі → Фальсифікованість'}</button>
+      </div>
+    </div>`;
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  scrollTop();
+  document.getElementById('btn-ladder-next').addEventListener('click', () => {
+    State.phase = 'falsify';
+    track('game-falsify', { ladder_points: State.ladderPoints });
+    renderFalsifyPhase();
+    scrollTop();
+  });
+}
+
+// ---------- B. FALSIFIABILITY CHECK ----------
+function renderFalsifyPhase() {
+  const fp = State.scenario.falsifiability_phase;
+  if (!fp) { State.phase = 'sowhat'; renderSoWhatPhase(); return; }
+  const isEn = LANG() === 'en';
+  const items = (fp.items || []).filter(it => State.ladderAssign[it.slot_id]);
+  if (!items.length) { State.phase = 'sowhat'; renderSoWhatPhase(); return; }
+  const title = tr(fp,'title') || (isEn ? 'Falsifiability check' : 'Перевірка на фальсифікованість');
+  const instr = tr(fp,'instruction') || (isEn
+    ? 'For each rung you filled, name the one finding that would disprove it. One sentence each.'
+    : 'Для кожного заповненого щабля назви одну знахідку, яка б його спростувала. По одному реченню.');
+  const submitLbl = tr(fp,'submit_btn') || (isEn ? 'Submit falsifiers' : 'Подати спростування');
+  const slotLabel = (id) => {
+    const sl = ladderSlots().find(x => x.id === id);
+    return sl ? tr(sl,'label') : id;
+  };
+  const html = `
+    ${progressBar('falsify')}
+    <div class="game-phase game-phase--falsify">
+      <div class="game-phase__head">
+        <div class="game-phase__num">${isEn ? 'Finale 2 / 3' : 'Фінал 2 / 3'}</div>
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(instr)}</p>
+      </div>
+      <div class="fals-list">
+        ${items.map(it => `
+          <div class="fals-item">
+            <div class="fals-item__slot">${escapeHtml(slotLabel(it.slot_id))}</div>
+            <div class="fals-item__prompt">${escapeHtml(tr(it,'prompt') || (isEn ? 'What would disprove this?' : 'Що це спростувало б?'))}</div>
+            <textarea class="fals-item__input" data-slot="${escapeHtml(it.slot_id)}" rows="3"
+              placeholder="${isEn ? 'One sentence…' : 'Одне речення…'}">${escapeHtml(State.falsifyAnswers[it.slot_id] || '')}</textarea>
+          </div>`).join('')}
+      </div>
+      <div class="game-phase__foot" style="margin-top:1.5rem">
+        <div class="fals-hint" id="fals-hint" style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-mute)"></div>
+        <button class="btn btn--filled" id="btn-fals-submit">${escapeHtml(submitLbl)}</button>
+      </div>
+    </div>`;
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
+  document.querySelectorAll('.fals-item__input').forEach(ta => {
+    ta.addEventListener('input', () => {
+      State.falsifyAnswers[ta.dataset.slot] = ta.value;
+      updateFalsifyHint();
+    });
+  });
+  document.getElementById('btn-fals-submit').addEventListener('click', submitFalsify);
+  updateFalsifyHint();
+}
+
+function updateFalsifyHint() {
+  const el = document.getElementById('fals-hint');
+  if (!el) return;
+  const isEn = LANG() === 'en';
+  const total = document.querySelectorAll('.fals-item__input').length;
+  const done = [...document.querySelectorAll('.fals-item__input')].filter(t => t.value.trim().length >= 12).length;
+  el.textContent = isEn ? `${done}/${total} answered (empty ones simply score zero).`
+                        : `Відповіли на ${done}/${total} (порожні просто не дадуть балів).`;
+  el.style.color = done === total ? '#7dc98a' : 'var(--text-mute)';
+}
+
+// Free text is graded by keyword coverage, not by wording. Each item declares the
+// concepts a valid falsifier has to name; hitting min_hits of them earns the points.
+function computeFalsifyScore() {
+  const fp = State.scenario.falsifiability_phase;
+  const per = fp.points_per_item || 25;
+  const rows = [];
+  let total = 0;
+  (fp.items || []).forEach(it => {
+    if (!State.ladderAssign[it.slot_id]) return;
+    const raw = (State.falsifyAnswers[it.slot_id] || '').toLowerCase().trim();
+    const keys = (LANG() === 'en' ? it.keywords_en : it.keywords_uk) || it.keywords || [];
+    const minHits = it.min_hits || 1;
+    let hits = 0;
+    keys.forEach(group => {
+      // A group may be a single string or an array of synonyms — any member counts once.
+      const variants = Array.isArray(group) ? group : [group];
+      if (variants.some(v => raw.includes(String(v).toLowerCase()))) hits++;
+    });
+    const ok = raw.length >= 12 && hits >= minHits;
+    const pts = ok ? per : 0;
+    total += pts;
+    rows.push({ slotId: it.slot_id, text: State.falsifyAnswers[it.slot_id] || '', hit: ok, hits, needed: minHits,
+                points: pts, model: tr(it, 'model') || '' });
+  });
+  return { total, rows };
+}
+
+function submitFalsify() {
+  if (State.falsifySubmitted) return;
+  State.falsifySubmitted = true;
+  const { total, rows } = computeFalsifyScore();
+  State.falsifyPoints = total;
+  State.falsifyRows = rows;
+  State.points += total;
+  track('game-falsify-submit', { total, answered: rows.filter(r => r.hit).length });
+  State.phase = 'sowhat';
+  track('game-sowhat', { falsify_points: total });
+  renderSoWhatPhase();
+  scrollTop();
+}
+
+// ---------- C. SO WHAT ----------
+function renderSoWhatPhase() {
+  const sw = State.scenario.so_what_phase;
+  if (!sw) { State.phase = 'phase4'; renderPhase4(); return; }
+  const isEn = LANG() === 'en';
+  const opts = sw.options || [];
+  if (!State.soWhatOrder.length) {
+    const seed = hashStr(State.nickname + State.startedAt + 'sowhat');
+    State.soWhatOrder = seededShuffle(opts.map((_, i) => i), seed);
+  }
+  const title = tr(sw,'title') || (isEn ? 'So what?' : 'І що з цього?');
+  const question = tr(sw,'question') || (isEn ? 'Based on the whole attribution — what is this actually?' : 'На основі всієї атрибуції — що це насправді?');
+  const html = `
+    ${progressBar('sowhat')}
+    <div class="game-phase game-phase--sowhat">
+      <div class="game-phase__head">
+        <div class="game-phase__num">${isEn ? 'Finale 3 / 3' : 'Фінал 3 / 3'}</div>
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(question)}</p>
+      </div>
+      <div class="sw-options">
+        ${State.soWhatOrder.map(idx => {
+          const o = opts[idx];
+          return `<button class="sw-opt" data-opt="${escapeHtml(o.id)}"><span class="sw-opt__text">${escapeHtml(tr(o,'text'))}</span></button>`;
+        }).join('')}
+      </div>
+    </div>`;
+  $('#game-root').innerHTML = html;
+  fadeInRoot();
+  if (typeof renderHelpPanel === 'function') renderHelpPanel();
+  document.querySelectorAll('.sw-opt').forEach(b => {
+    b.addEventListener('click', () => chooseSoWhat(b.dataset.opt));
+  });
+}
+
+async function chooseSoWhat(optId) {
+  if (State.ended) return;
+  const sw = State.scenario.so_what_phase;
+  const opt = (sw.options || []).find(o => o.id === optId);
+  if (!opt) return;
+
+  State.soWhatChoice = optId;
+  State.ended = true;
+  stopTimer();
+
+  const pts = typeof opt.points === 'number' ? opt.points : 0;
+  State.soWhatPoints = pts;
+  State.points += pts;
+
+  const isCorrect = !!opt.correct;
+  State.finalVerdict = {
+    id: opt.id,
+    verdict: isCorrect ? 'success' : 'fail',
+    correct: isCorrect,
+    label_uk: opt.text_uk || opt.text || '',
+    label_en: opt.text_en || opt.text || '',
+    feedback_uk: opt.feedback_uk || '',
+    feedback_en: opt.feedback_en || '',
+    points: pts,
+    _sim03: { ladder: State.ladderRows, falsify: State.falsifyRows, ladderPoints: State.ladderPoints, falsifyPoints: State.falsifyPoints }
+  };
+
+  const s = State.scenario;
+  if (!isCorrect || State.points < 100) setCooldown(s.id, s.cooldown_sec);
+  else clearCooldown(s.id);
+  if (isCorrect) localStorage.setItem('ss.completed.' + s.id, '1');
+
+  const timeUsed = s.time_limit_sec - State.timeLeft;
+  const timeFraction = timeUsed / s.time_limit_sec;
+  let timeBonus = 0;
+  if (isCorrect) {
+    if (timeFraction < 0.35) timeBonus = 60;
+    else if (timeFraction < 0.55) timeBonus = 35;
+    else if (timeFraction < 0.75) timeBonus = 15;
+  }
+  State.points += timeBonus;
+
+  track('game-sowhat-submit', { opt: optId, correct: isCorrect, points: pts });
+  track(isCorrect ? 'game-completed' : 'game-failed', { verdict: optId, points: Math.max(0, State.points) });
+
+  showResult({ verdict: State.finalVerdict, timeBonus, submitted: false });
+
+  if (State.nickname && !State.isDemo) {
+    const res = await submitScore(State.nickname, State.points, s.id, isCorrect);
+    showResult({ verdict: State.finalVerdict, timeBonus, submitted: true, submitResult: res });
+  }
+}
+
 // ==================== RENDER: PHASE 4 (VERDICT) ====================
 function renderPhase4() {
   const p = State.scenario.phase4;
@@ -2381,7 +2854,9 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
       ${cdRow}
       ${renderPostDecisionBeat(verdict)}
       ${renderBenchmarkPanel()}
+      ${renderSim03Review()}
       ${pivotChainHtml()}
+      ${debriefCta()}
       ${State.nickname ? submitRow : ''}
       <div class="result__share">
         <button class="btn" id="btn-share">📤 ${LANG()==='en'?'Share result':'Поділитись результатом'}</button>
@@ -2397,6 +2872,8 @@ function showResult({ verdict = null, timeBonus = 0, submitted = false, submitRe
   scrollTop();
   const shareBtn = $('#btn-share');
   if (shareBtn) shareBtn.addEventListener('click', () => shareResult(points, rank, tr(s,'title')));
+  const debriefBtn = $('#btn-debrief');
+  if (debriefBtn) debriefBtn.addEventListener('click', () => openDebrief(!!(verdict && verdict.correct)));
 }
 
 function pivotChainHtml() {
@@ -2448,6 +2925,158 @@ function pivotChainHtml() {
       ${citeRev}
       ${q3Rev}
     </div>`;
+}
+
+// ==================== SIM #03: RESULT REVIEW + DEBRIEF ====================
+const DEBRIEF_SEEN_PREFIX = 'ss.debrief_seen.';
+
+function renderSim03Review() {
+  if (!State.scenario?.ladder_phase) return '';
+  if (!State.ladderRows.length && !State.falsifyRows.length) return '';
+  const isEn = LANG() === 'en';
+  const ladMax = State.ladderRows.reduce((a, r) => a + r.max, 0);
+  const ladRows = State.ladderRows.map(r => {
+    const cls = r.score >= r.max ? 'ok' : (r.score > 0 ? 'mid' : 'bad');
+    const text = (isEn ? r.text_en : r.text_uk) || (isEn ? '— not filled —' : '— не заповнено —');
+    return `
+      <li class="s3rev s3rev--${cls}">
+        <div class="s3rev__slot">${escapeHtml(isEn ? r.label_en : r.label_uk)}</div>
+        <div class="s3rev__body">
+          <div class="s3rev__pick">${escapeHtml(text)}</div>
+          ${r.feedback ? `<div class="s3rev__fb">${escapeHtml(r.feedback)}</div>` : ''}
+        </div>
+        <div class="s3rev__score">${r.score}/${r.max}</div>
+      </li>`;
+  }).join('');
+  const slotLabel = (id) => {
+    const sl = ladderSlots().find(x => x.id === id);
+    return sl ? tr(sl, 'label') : id;
+  };
+  const falsRows = State.falsifyRows.map(r => `
+      <li class="s3rev s3rev--${r.hit ? 'ok' : 'bad'}">
+        <div class="s3rev__slot">${escapeHtml(slotLabel(r.slotId))}</div>
+        <div class="s3rev__body">
+          <div class="s3rev__pick">${escapeHtml(r.text || (isEn ? '— left blank —' : '— не заповнено —'))}</div>
+          ${!r.hit && r.model ? `<div class="s3rev__fb"><strong>${isEn ? 'A valid falsifier would name' : 'Валідне спростування назвало б'}:</strong> ${escapeHtml(r.model)}</div>` : ''}
+        </div>
+        <div class="s3rev__score">${r.points > 0 ? '+' : ''}${r.points}</div>
+      </li>`).join('');
+  return `
+    <div class="pivot">
+      <h3 class="pivot__title">${isEn ? '🪜 Attribution ladder' : '🪜 Драбина атрибуції'}</h3>
+      <ul class="s3rev__list">${ladRows}</ul>
+      <div class="pivot__cite-total">${isEn ? 'Ladder' : 'Драбина'}: <strong>${State.ladderPoints}/${ladMax}</strong></div>
+      ${falsRows ? `
+        <h3 class="pivot__title" style="margin-top:1.4rem">${isEn ? '🔬 Falsifiability' : '🔬 Фальсифікованість'}</h3>
+        <ul class="s3rev__list">${falsRows}</ul>
+        <div class="pivot__cite-total">${isEn ? 'Falsifiers' : 'Спростування'}: <strong>+${State.falsifyPoints}</strong></div>` : ''}
+    </div>`;
+}
+
+function debriefCta() {
+  const d = State.scenario?.debrief;
+  if (!d) return '';
+  const isEn = LANG() === 'en';
+  const seen = localStorage.getItem(DEBRIEF_SEEN_PREFIX + State.scenario.id) === '1';
+  const label = seen
+    ? (isEn ? 'Re-read the case debrief' : 'Перечитати розбір кейсу')
+    : (isEn ? 'Read the full case debrief →' : 'Читати повний розбір кейсу →');
+  return `
+    <div class="debrief-cta${seen ? ' debrief-cta--seen' : ''}">
+      <button class="btn btn--filled" id="btn-debrief">${label}</button>
+      ${seen ? `<span class="debrief-cta__seen">${isEn ? 'already read' : 'уже прочитано'}</span>` : ''}
+    </div>`;
+}
+
+function debriefData(passed) {
+  const d = State.scenario?.debrief;
+  if (!d) return null;
+  const lang = LANG() === 'en' ? 'en' : 'uk';
+  // Fall back to the pass version when a case ships only one variant.
+  return d[(passed ? 'pass_' : 'fail_') + lang] || d['pass_' + lang] || d[(passed ? 'pass_' : 'fail_') + 'uk'] || null;
+}
+
+function openDebrief(passed) {
+  const data = debriefData(passed);
+  if (!data) return;
+  const isEn = LANG() === 'en';
+  const sections = data.sections || [];
+  const html = `
+    <div class="debrief" id="debrief-overlay">
+      <div class="debrief__box" role="dialog" aria-modal="true">
+        <div class="debrief__head">
+          <div>
+            <div class="debrief__pre">${isEn ? 'CASE DEBRIEF' : 'РОЗБІР КЕЙСУ'} · ${passed ? (isEn ? 'passed' : 'пройдено') : (isEn ? 'not passed' : 'не пройдено')}</div>
+            <h3>${escapeHtml(tr(State.scenario, 'title'))}</h3>
+          </div>
+          <button class="debrief__close" id="debrief-close" aria-label="${isEn ? 'Close' : 'Закрити'}">✕</button>
+        </div>
+        <div class="debrief__body">
+          ${sections.map((sec, i) => `
+            <section class="debrief__sec">
+              <h4><span>${String(i+1).padStart(2,'0')}</span> ${escapeHtml(sec.title || '')}</h4>
+              ${(sec.body || '').split('\n').filter(Boolean).map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+            </section>`).join('')}
+        </div>
+        <div class="debrief__foot">
+          <button class="btn" id="debrief-print">${isEn ? '⬇ Save as PDF' : '⬇ Зберегти у PDF'}</button>
+          <button class="btn btn--filled" id="debrief-done">${isEn ? 'Done' : 'Готово'}</button>
+        </div>
+      </div>
+    </div>`;
+  const holder = document.createElement('div');
+  holder.innerHTML = html;
+  document.body.appendChild(holder.firstElementChild);
+  document.body.style.overflow = 'hidden';
+
+  try { localStorage.setItem(DEBRIEF_SEEN_PREFIX + State.scenario.id, '1'); } catch (_) {}
+  track('game-debrief-open', { passed, case: State.scenario.id });
+
+  const close = () => {
+    const el = document.getElementById('debrief-overlay');
+    if (el) el.remove();
+    document.body.style.overflow = '';
+    const cta = document.querySelector('.debrief-cta');
+    if (cta) {
+      cta.classList.add('debrief-cta--seen');
+      if (!cta.querySelector('.debrief-cta__seen')) {
+        const span = document.createElement('span');
+        span.className = 'debrief-cta__seen';
+        span.textContent = isEn ? 'already read' : 'уже прочитано';
+        cta.appendChild(span);
+      }
+      const btn = cta.querySelector('#btn-debrief');
+      if (btn) btn.textContent = isEn ? 'Re-read the case debrief' : 'Перечитати розбір кейсу';
+    }
+  };
+  document.getElementById('debrief-close').addEventListener('click', close);
+  document.getElementById('debrief-done').addEventListener('click', close);
+  document.getElementById('debrief-overlay').addEventListener('click', (e) => {
+    if (e.target.id === 'debrief-overlay') close();
+  });
+  document.addEventListener('keydown', function esc(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); }
+  });
+  document.getElementById('debrief-print').addEventListener('click', printDebrief);
+}
+
+// Export goes through the browser's print pipeline rather than a JS PDF library:
+// jsPDF's standard fonts are WinAnsiEncoding, so Cyrillic comes out as garbage, and
+// fixing that means bundling a base64 Unicode TTF into a repo with no build step.
+// Print renders the same text correctly and still gives the player a real PDF.
+function printDebrief() {
+  const overlay = document.getElementById('debrief-overlay');
+  if (!overlay) return;
+  document.body.classList.add('printing-debrief');
+  const cleanup = () => {
+    document.body.classList.remove('printing-debrief');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  // Safety net for browsers that never fire afterprint.
+  setTimeout(cleanup, 60000);
+  track('game-debrief-print', { case: State.scenario.id });
+  window.print();
 }
 
 function renderCitationReview() {
@@ -2628,6 +3257,9 @@ async function init() {
     else if (State.phase === 'phase3') renderPhase3();
     else if (State.phase === 'citation') renderCitationPhase();
     else if (State.phase === 'memo') renderMemoPhase();
+    else if (State.phase === 'ladder') renderLadderPhase();
+    else if (State.phase === 'falsify') renderFalsifyPhase();
+    else if (State.phase === 'sowhat') renderSoWhatPhase();
     else if (State.phase === 'phase4') renderPhase4();
     else if (State.phase === 'result') showResult({ verdict: State.finalVerdict });
     else if (State.phase === 'cooldown') {
@@ -2657,6 +3289,9 @@ async function init() {
     else if (State.phase === 'phase3')   renderPhase3();
     else if (State.phase === 'citation') renderCitationPhase();
     else if (State.phase === 'memo')     renderMemoPhase();
+    else if (State.phase === 'ladder')   renderLadderPhase();
+    else if (State.phase === 'falsify')  renderFalsifyPhase();
+    else if (State.phase === 'sowhat')   renderSoWhatPhase();
     else if (State.phase === 'phase4')   renderPhase4();
     else { State.phase = 'briefing'; renderBriefing(); }
     renderHelpPanel();
