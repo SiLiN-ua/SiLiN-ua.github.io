@@ -1,0 +1,1768 @@
+{
+  "id": "silent-signal-call",
+  "simulator_id": "sim03",
+  "time_limit_sec": 2400,
+  "cooldown_sec": 3600,
+  "max_points": 785,
+  "title_uk": "Тихий сигнал",
+  "title_en": "The Silent Signal",
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Оксана, 46 · керівниця відділу закупівель, Київ · замовляє для матері",
+    "client_en": "Oksana, 46 · head of procurement, Kyiv · commissioning on her mother's behalf",
+    "budget_uk": "8 годин робочого часу до звіту",
+    "budget_en": "8 working hours until the report is due",
+    "artifact_title_uk": "Один номер. П'ять місяців. Жодного сказаного слова.",
+    "artifact_title_en": "One number. Five months. Not one word spoken.",
+    "artifact": {
+      "icon": "☎",
+      "image": null,
+      "label_uk": "Деталізація за 6 місяців · журнал дзвінків · три аудіозаписи",
+      "label_en": "Six months of call records · the call log · three audio recordings",
+      "ref": "nina_detalizatsiya_2026-08-22.csv"
+    },
+    "body_uk": "Ніні Петрівні сімдесят чотири. Живе сама на Лівому березі, вдова: чоловік помер чотирнадцять місяців тому, інсульт удома, швидка не встигла. Гіпертонія, ішемічна хвороба, торік затяжний напад стенокардії на тлі стресу. Донька возить її на огляди раз на квартал.\n\nП'ятий місяць на її мобільний щодня телефонує один і той самий номер. Два-три дзвінки на день, майже без пропусків. Вона брала слухавку десятки разів — щоразу мовчання. Іноді дихання, іноді побутовий фон, один раз щось схоже на телевізор. Ніхто не каже нічого. Дзвінок обривається за кілька секунд.\n\nДвічі передзвонювала сама — довгі гудки, ніхто не взяв. Жодної SMS за весь час. У месенджери не писали. На стаціонарний не дзвонили жодного разу.\n\nТепер вона не бере слухавку взагалі — ні від доньки, ні з поліклініки. Спить погано, за останній місяць двічі викликала швидку через тиск. Оксана переказує її слова: «перевіряють, чи я вдома, а потім прийдуть».\n\nУ поліції заяву прийняли з другого разу. Дільничний передзвонив за три тижні: за номером нічого немає, найпевніше шахраї, перекажіть мамі не брати слухавку. Оператор відповів шаблоном: дані абонента третім особам не надаються. Номер занесли у чорний список — Ніна Петрівна наступного дня зняла блокування, «а раптом це щось важливе».\n\nОксана думає, що це «прогрів» перед шахрайською схемою. Друга її версія — сусід, з яким у матері тягнеться конфлікт через паркомісце у дворі.\n\nПросить трьох речей: з'ясувати, хто телефонує; зрозуміти, чи є реальна загроза; і отримати щось, з чим можна повернутися до поліції або хоча б показати матері, щоб та перестала боятися.\n\nДві умови вона ставить прямо. Не дзвонити на номер і не писати у месенджери, доки не зрозуміло, з чим маємо справу. І жодних платних «пробивів»: «мені треба те, що я зможу показати юристу, а не скрін із телеграм-бота».",
+    "body_en": "Nina Petrivna is seventy-four. She lives alone on the Left Bank, a widow: her husband died fourteen months ago, a stroke at home, the ambulance did not make it in time. Hypertension, ischaemic heart disease, a prolonged angina attack last year brought on by stress. Her daughter drives her to check-ups once a quarter.\n\nFor five months now the same number has called her mobile every day. Two or three calls a day, almost without a break. She has picked up dozens of times — silence every time. Sometimes breathing, sometimes household sounds, once something like a television. Nobody says anything. The call drops after a few seconds.\n\nShe called back twice — long rings, no answer. Not one SMS in all this time. Nothing in any messenger. Not a single call to her landline.\n\nShe has now stopped answering the phone entirely — not to her daughter, not to the clinic. She sleeps badly; in the past month she has called an ambulance twice over her blood pressure. Oksana relays her words: 'they are checking whether I am home, and then they will come.'\n\nThe police accepted a statement on the second attempt. The district officer called back three weeks later: nothing on the number, most likely fraudsters, tell your mother not to pick up. The operator answered with boilerplate: subscriber data is not released to third parties. The number was blacklisted on the handset — Nina Petrivna removed the block the next day, 'in case it is something important.'\n\nOksana thinks this is the warm-up phase of a fraud scheme. Her second theory is a neighbour her mother has a running dispute with over a parking space in the courtyard.\n\nShe asks for three things: find out who is calling; understand whether there is a real threat; and get something she can take back to the police, or at least show her mother so she stops being afraid.\n\nShe sets two conditions outright. Do not call the number and do not write to it in any messenger until it is clear what this is. And no paid lookups: 'I need something I can show a lawyer, not a screenshot from a Telegram bot.'",
+    "start_btn_uk": "Відкрити артефакт →",
+    "start_btn_en": "Open the artifact →"
+  },
+  "phase2": {
+    "title_uk": "Розслідування",
+    "title_en": "Investigation",
+    "instruction_uk": "Дев'ять інструментів, вісім годин бюджету. Клієнтка заборонила два ходи — прямий контакт і платні «пробиви». Обидві заборони не примха: перший спалює справу, другий робить звіт непридатним. Почни з того, що вже лежить у деталізації.",
+    "instruction_en": "Nine tools, an eight-hour budget. The client ruled out two moves — direct contact and paid lookups. Neither prohibition is a whim: the first burns the case, the second makes the report unusable. Start with what is already in the call records.",
+    "next_btn_uk": "Далі → крос-верифікація",
+    "next_btn_en": "Next → cross-verification",
+    "min_tools_used": 4,
+    "tools": [
+      {
+        "id": "call-signature",
+        "icon": "📈",
+        "name_uk": "Сигнатура дзвінків · 412 контактів за 5 місяців",
+        "name_en": "Call signature · 412 contacts over 5 months",
+        "provider_uk": "деталізація за власним номером · три аудіозаписи",
+        "provider_en": "subscriber's own call records · three audio recordings",
+        "desc_uk": "Що показує форма дзвінків до будь-якої атрибуції",
+        "desc_en": "What the shape of the calls shows before any attribution",
+        "tooltip_uk": "Тип операції видно з форми. Ім'я — це вже наступний крок.",
+        "tooltip_en": "The type of operation is visible in the shape. The name is the next step.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 180,
+        "ui_component": "kv-table",
+        "clue_uk": "Чотириста дванадцять вхідних за п'ять місяців, дев'ять пропущених днів поодинці, без вихідних і свят. Строго денне вікно: жодного дзвінка після 19:40 і жодного до 09:15 за весь період. Медіана тривалості падає монотонно — з двадцяти шести секунд у перший місяць до восьми у п'ятий.\n\nНуль SMS. Нуль спроб у месенджерах. Нуль інших невідомих номерів за всю деталізацію. Один канал, один номер, п'ять місяців — і за жоден із чотирьохсот дванадцяти контактів не прозвучало слова, представлення чи вимоги.",
+        "clue_en": "Four hundred and twelve incoming calls over five months, nine missed days scattered singly, with no regard for weekends or holidays. A strictly daytime window: not one call after 19:40 and not one before 09:15 in the entire period. Median duration falls monotonically — from twenty-six seconds in the first month to eight in the fifth.\n\nZero SMS. Zero messenger attempts. Zero other unknown numbers across the whole record. One channel, one number, five months — and across all four hundred and twelve contacts not one word, introduction or demand was spoken.",
+        "kv": {
+          "query_uk": "деталізація 6 міс · частота, тривалість, добові кластери, канали",
+          "query_en": "6-month records · frequency, duration, daily clusters, channels",
+          "groups": [
+            {
+              "title_uk": "Обсяг і ритм",
+              "title_en": "Volume and rhythm",
+              "rows": [
+                {
+                  "k": "Вхідних з номера",
+                  "v_uk": "412 за 5 місяців",
+                  "v_en": "Incoming from the number · 412 over 5 months"
+                },
+                {
+                  "k": "Днів без дзвінків",
+                  "v_uk": "9 · усі поодинці, без патерну",
+                  "v_en": "Days with no calls · 9 · all isolated, no pattern",
+                  "note_uk": "Ні вихідних, ні свят. Так виглядає не робочий графік, а щоденна звичка з випадковими збоями.",
+                  "note_en": "No weekends, no holidays. That is not a work schedule but a daily habit with random lapses."
+                },
+                {
+                  "k": "Середнє на день",
+                  "v_uk": "2,8",
+                  "v_en": "Average per day · 2.8"
+                },
+                {
+                  "k": "Добові вікна",
+                  "v_uk": "10:30-12:00 і 15:00-16:30",
+                  "v_en": "Daily windows · 10:30-12:00 and 15:00-16:30",
+                  "warn": true,
+                  "note_uk": "Однакові у будні й вихідні. Це не офісний і не змінний графік — це побутовий розпорядок.",
+                  "note_en": "Identical on weekdays and weekends. Neither an office nor a shift schedule — a domestic routine."
+                },
+                {
+                  "k": "Крайні межі",
+                  "v_uk": "нічого після 19:40, нічого до 09:15 — за всі 5 місяців",
+                  "v_en": "Outer bounds · nothing after 19:40, nothing before 09:15 — across all 5 months",
+                  "warn": true
+                }
+              ]
+            },
+            {
+              "title_uk": "Тривалість",
+              "title_en": "Duration",
+              "rows": [
+                {
+                  "k": "Діапазон",
+                  "v_uk": "4-40 секунд",
+                  "v_en": "Range · 4-40 seconds"
+                },
+                {
+                  "k": "Медіана, місяць 1",
+                  "v_uk": "26 сек",
+                  "v_en": "Median, month 1 · 26 sec"
+                },
+                {
+                  "k": "Медіана, місяць 5",
+                  "v_uk": "8 сек",
+                  "v_en": "Median, month 5 · 8 sec",
+                  "warn": true,
+                  "note_uk": "Спадна і монотонна крива. Автообдзвін так не поводиться: у нього тривалість стала.",
+                  "note_en": "A falling, monotonic curve. Auto-dialling does not behave this way: its duration is constant."
+                }
+              ]
+            },
+            {
+              "title_uk": "Канали",
+              "title_en": "Channels",
+              "rows": [
+                {
+                  "k": "SMS",
+                  "v_uk": "0",
+                  "v_en": "SMS · 0",
+                  "warn": true
+                },
+                {
+                  "k": "Месенджери",
+                  "v_uk": "0 спроб",
+                  "v_en": "Messengers · 0 attempts"
+                },
+                {
+                  "k": "Стаціонарний",
+                  "v_uk": "0 дзвінків",
+                  "v_en": "Landline · 0 calls"
+                },
+                {
+                  "k": "Інші невідомі номери",
+                  "v_uk": "0 за всю деталізацію",
+                  "v_en": "Other unknown numbers · 0 across the whole record",
+                  "warn": true,
+                  "note_uk": "Шахрайські схеми майже завжди багатоканальні і майже ніколи не тримаються одного номера п'ять місяців.",
+                  "note_en": "Fraud schemes are almost always multi-channel and almost never stay on one number for five months."
+                },
+                {
+                  "k": "Вихідні від Ніни Петрівни",
+                  "v_uk": "2 · обидва без відповіді",
+                  "v_en": "Outgoing from Nina Petrivna · 2 · both unanswered"
+                }
+              ]
+            },
+            {
+              "title_uk": "Хто кладе слухавку · і звідки це відомо",
+              "title_en": "Who ends the call · and how that is known",
+              "rows": [
+                {
+                  "k": "У деталізації",
+                  "v_uk": "цих даних немає",
+                  "v_en": "In the call records · not present",
+                  "warn": true,
+                  "note_uk": "Виписка абонента містить дату, час, напрямок і тривалість. Сторона роз'єднання живе у внутрішніх записах оператора і абонентові не віддається ніколи. Хто напише «за деталізацією обриває той, хто дзвонить», втратить анкор на першому ж юристі.",
+                  "note_en": "A subscriber's statement holds date, time, direction and duration. Which side released the call lives in the operator's internal records and is never given to the subscriber. Anyone who writes 'the records show the caller hangs up' loses the anchor to the first lawyer who reads it."
+                },
+                {
+                  "k": "Свідчення абонентки",
+                  "v_uk": "тримає слухавку до кінця, чекає, що заговорять; сама клала двічі за 5 місяців",
+                  "v_en": "The subscriber's account · she holds the line waiting for someone to speak; she hung up first twice in five months"
+                },
+                {
+                  "k": "Три аудіозаписи",
+                  "v_uk": "кожен закінчується тоном роз'єднання з віддаленого боку",
+                  "v_en": "Three recordings · each ends with a release tone from the far side"
+                },
+                {
+                  "k": "Як це записати у звіт",
+                  "v_uk": "свідчення плюс аудіо, а не операторські дані",
+                  "v_en": "How to phrase it in the report · testimony plus audio, not operator data"
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Що сигнатура закриває. Шахрайський прогрів, який жодного разу за п'ять місяців не переходить до пітчу, — не прогрів; і жодна економіка обдзвону не витримає чотирьохсот дзвінків на один номер із нульовою конверсією. Автообдзвін відпадає теж: у нього немає ні спадної тривалості, ні пропущених днів врозкид.\n\nЧого сигнатура не закриває, і це треба зафіксувати чесно. Вона знімає переслідування у фазі ескалації — те нарощує частоту, розширює канали і тяжіє до вечора. Але низькорівневе докучання, розраховане на деніабельність, дає майже той самий профіль: денне вікно і короткі дзвінки однаково добре читаються і як безпорадність, і як юридична обережність. Отже, після цього кроку лишається два класи, а не один, і обирати між ними доведеться атрибуцією, а не формою.",
+          "footer_en": "What the signature closes. A fraud warm-up that never once in five months moves to a pitch is not a warm-up; and no dialling economics survives four hundred calls to one number at zero conversion. Auto-dialling drops out too: it has neither the falling duration nor the scattered missed days.\n\nWhat the signature does not close, and this has to be stated honestly. It rules out harassment in an escalation phase — that raises frequency, widens channels and drifts towards the evening. But low-level nuisance built for deniability produces almost the same profile: a daytime window and short calls read equally well as helplessness and as legal caution. So after this step two classes remain, not one, and choosing between them will take attribution rather than shape."
+        }
+      },
+      {
+        "id": "messenger-enum",
+        "icon": "💬",
+        "name_uk": "Присутність номера у месенджерах",
+        "name_en": "The number's presence in messengers",
+        "provider_uk": "чистий дослідницький пристрій · без жодного повідомлення",
+        "provider_en": "clean research device · no message sent",
+        "desc_uk": "Які акаунти видно на цьому номері і що вони показують",
+        "desc_en": "Which accounts are visible on this number and what they show",
+        "tooltip_uk": "Додати у контакти можна. Написати — ні: клієнтка це заборонила, і не дарма.",
+        "tooltip_en": "Adding to contacts is allowed. Writing is not: the client forbade it, and rightly.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 120,
+        "ui_component": "kv-table",
+        "clue_uk": "Viber: акаунт існує, ім'я в профілі — самі ініціали, аватар — фото квітучого куща біля дерев'яного паркана, без обличчя, «був у мережі» сьогодні. Telegram: акаунт є, username немає, фото немає. WhatsApp і Signal — не зареєстровані.\n\nУже сама наявність такого профілю суперечить шахрайській версії: робочі номери колл-центрів не тримають персонального Viber із побутовим аватаром і живою активністю п'ятий місяць поспіль.",
+        "clue_en": "Viber: the account exists, the profile name is initials only, the avatar is a flowering shrub by a wooden fence, no face, last seen today. Telegram: the account exists, no username, no photo. WhatsApp and Signal: not registered.\n\nThe existence of a profile like this already contradicts the fraud reading: call-centre working numbers do not carry a personal Viber with a domestic avatar and live activity five months running.",
+        "kv": {
+          "query_uk": "додати номер у контакти · перевірити видимість акаунтів",
+          "query_en": "add the number to contacts · check account visibility",
+          "groups": [
+            {
+              "title_uk": "Видимі акаунти",
+              "title_en": "Visible accounts",
+              "rows": [
+                {
+                  "k": "Viber",
+                  "v_uk": "є · ім'я «Л. М.» · аватар: квітучий кущ біля паркана · у мережі сьогодні",
+                  "v_en": "Viber · present · name 'L. M.' · avatar: a flowering shrub by a fence · online today",
+                  "warn": true
+                },
+                {
+                  "k": "Telegram",
+                  "v_uk": "є · без username, без фото · «був(ла) нещодавно»",
+                  "v_en": "Telegram · present · no username, no photo · 'last seen recently'"
+                },
+                {
+                  "k": "WhatsApp",
+                  "v_uk": "не зареєстрований",
+                  "v_en": "WhatsApp · not registered"
+                },
+                {
+                  "k": "Signal",
+                  "v_uk": "не зареєстрований",
+                  "v_en": "Signal · not registered"
+                },
+                {
+                  "k": "Спільні публічні групи",
+                  "v_uk": "не видно",
+                  "v_en": "Shared public groups · none visible"
+                }
+              ]
+            },
+            {
+              "title_uk": "Що це означає і чого не означає",
+              "title_en": "What this means and does not mean",
+              "rows": [
+                {
+                  "k": "Проти шахрайської версії",
+                  "v_uk": "персональний профіль із побутовим аватаром і живою активністю",
+                  "v_en": "Against the fraud reading · a personal profile with a domestic avatar and live activity",
+                  "warn": true
+                },
+                {
+                  "k": "Когортний сигнал",
+                  "v_uk": "м'який · зміщує ймовірність, не встановлює факту",
+                  "v_en": "Cohort signal · soft · shifts a probability, establishes no fact"
+                },
+                {
+                  "k": "Що написано у звіті",
+                  "v_uk": "«профіль сумісний зі старшою віковою когортою» — і жодного слова більше",
+                  "v_en": "What goes in the report · 'the profile is consistent with an older age cohort' — and not one word more"
+                },
+                {
+                  "k": "Надіслано повідомлень",
+                  "v_uk": "0",
+                  "v_en": "Messages sent · 0"
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Набір саме такий — живий Viber, порожній Telegram без username, аватар не з обличчям, відсутність WhatsApp — це м'який когортний сигнал. В українському розподілі така комбінація частіше трапляється у старшої аудиторії. Але це сигнал, а не доказ: він змінює апріорну ймовірність і не встановлює нічого. Хто запише тут «літня жінка» як факт, працює на припущенні, а не на знахідці.\n\nОкремо про межу. Номер додано у контакти — це те саме, що робить кожен користувач щодня. Жодного повідомлення не надіслано, і не буде: клієнтка заборонила контакт прямо, і будь-яке «просто спитаю» тут коштує або ескалації, або втрати природної поведінки.",
+          "footer_en": "This particular set — a live Viber, an empty Telegram with no username, an avatar that is not a face, no WhatsApp — is a soft cohort signal. In the Ukrainian distribution the combination occurs more often among older users. But it is a signal, not evidence: it shifts a prior and establishes nothing. Anyone who writes 'an elderly woman' here as a fact is working from an assumption rather than a finding.\n\nSeparately, on the boundary. The number was added to contacts — the same thing every user does daily. No message was sent and none will be: the client forbade contact outright, and any 'I will just ask' costs either escalation or the loss of natural behaviour."
+        }
+      },
+      {
+        "id": "callerid-check",
+        "icon": "🏷",
+        "name_uk": "Агрегатори підписаних імен · перевірка рециклінгу",
+        "name_en": "Caller-ID aggregators · checking for number recycling",
+        "provider_uk": "агрегатори адресних книг · публічний пошук",
+        "provider_en": "address-book aggregators · public search",
+        "desc_uk": "Як номер підписаний у чужих телефонах і чого це варте",
+        "desc_en": "How the number is labelled in other people's phones, and what that is worth",
+        "tooltip_uk": "Найшвидше підтвердження версії клієнтки. І найкрихкіше.",
+        "tooltip_en": "The fastest confirmation of the client's theory. And the most brittle.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 150,
+        "ui_component": "report",
+        "clue_uk": "Агрегатор показує два підписи: «Наталія Банк» і «спам». Обидва без дати. Усього два — при тому, що ці сервіси показують теги без знаменника, тобто невідомо, скільки людей узагалі мають цей номер у книгах.\n\nВиглядає як пряме підтвердження версії клієнтки. Насправді це найкрихкіший артефакт кейсу.",
+        "clue_en": "The aggregator returns two labels: 'Nataliia Bank' and 'spam'. Both undated. Two in total — and these services show tags without a denominator, so there is no telling how many people hold the number in their books at all.\n\nIt looks like direct confirmation of the client's theory. It is in fact the most brittle artefact in the case.",
+        "report": {
+          "query_uk": "номер → агрегатори підписаних імен",
+          "query_en": "number → caller-ID aggregators",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "2 підписи",
+              "text_en": "2 labels"
+            },
+            {
+              "kind": "li",
+              "text_uk": "«Наталія Банк» · без дати",
+              "text_en": "'Nataliia Bank' · undated"
+            },
+            {
+              "kind": "li",
+              "text_uk": "«спам» · без дати",
+              "text_en": "'spam' · undated"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Чому це не доказ",
+              "text_en": "Why this is not evidence"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Підписи не мають часових міток. Агрегатор показує зріз чужих адресних книг без прив'язки до періоду: запис могли внести будь-коли за весь час існування номера, зокрема за кілька років до нинішнього власника.",
+              "text_en": "The labels carry no timestamps. The aggregator shows a slice of other people's address books with no period attached: an entry could have been made at any point in the number's life, including years before its current holder."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Дві мітки без знаменника не мають статистичної ваги ні «за», ні «проти». «Спам» ставлять і за один нав'язливий дзвінок, і за те, що хтось помилився номером.",
+              "text_en": "Two labels without a denominator carry no statistical weight either way. People tag 'spam' for a single intrusive call and for someone dialling the wrong number."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Робоча альтернатива, яку треба перевірити, а не припустити: рециклінг. Українські оператори повертають неактивні номери в обіг, і підпис міг лишитися від попереднього власника. Перевіряється це не тут, а публічними датованими слідами номера: якщо вони шикуються у безперервний ланцюжок із поточною активністю, вікно для перевипуску звужується.",
+              "text_en": "A working alternative that must be checked rather than assumed: recycling. Ukrainian operators return inactive numbers to circulation, and a label may be left over from a previous holder. That is checked not here but through dated public traces of the number: if they line up in an unbroken chain with current activity, the window for reissue narrows."
+            },
+            {
+              "kind": "p",
+              "text_uk": "І чесний третій варіант: якщо рециклінг не підтвердиться, мітки лишаються непоясненими. Непояснений артефакт і спростований артефакт — різні речі, і у звіті вони пишуться по-різному.",
+              "text_en": "And an honest third outcome: if recycling is not confirmed, the labels remain unexplained. An unexplained artefact and a refuted artefact are different things, and they are written up differently."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Побічна знахідка у видачі",
+              "text_en": "A side finding in the results"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Поруч із номером стабільно спливає прес-реліз поліції про накриття колл-центру у Броварському районі три місяці тому. Самого номера у прес-релізі немає — зв'язок існує лише у голові того, хто дивиться на два результати поспіль.",
+              "text_en": "A police press release about a call centre shut down in the Brovary district three months ago keeps surfacing next to the number. The number itself does not appear in the release — the connection exists only in the mind of whoever reads two results in a row."
+            }
+          ],
+          "footer_uk": "Межа цього інструмента, яку фіксують до запуску, а не після: агрегатори підписаних імен двосторонні — у платних тарифах власник номера бачить, що його шукали. Тому перевірка робиться з дослідницького профілю, а не з робочого. І окремо: ці сервіси живуть із масового вивантаження чужих адресних книг без згоди тих, хто у цих книгах записаний. Користуватися ними — компроміс, який варто називати вголос.",
+          "footer_en": "The boundary here is fixed before the run, not after: caller-ID aggregators are two-way — on paid tiers the number's owner can see that someone searched for them. So the check runs from a research profile, not a working one. And separately: these services live off bulk harvesting of other people's address books without the consent of the people recorded in them. Using them is a compromise worth naming aloud."
+        }
+      },
+      {
+        "id": "number-dork",
+        "icon": "🔎",
+        "name_uk": "Публічний слід номера · класифайди і групи",
+        "name_en": "The number's public trail · classifieds and local groups",
+        "provider_uk": "пошук у всіх форматах написання · архівні знімки",
+        "provider_en": "search across every notation · archived snapshots",
+        "desc_uk": "Де цей номер уже публікували і коли саме",
+        "desc_en": "Where this number was already published, and exactly when",
+        "tooltip_uk": "Номер у тексті оголошення переживає саме оголошення.",
+        "tooltip_en": "A number inside an ad's body outlives the ad itself.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Номер у всіх форматах написання дає три датовані попадання. Архівне оголошення на класифайді трирічної давності — номер стоїть у тексті опису. Коментар у відкритій групі «Броварчани» чотирирічної давності: пошиття, підгонка, ремонт одягу, недорого, район Торгмаш — і цей самий номер. І коментар того самого акаунта під оголошенням про ярмарок ужиткових виробів рік і три місяці тому.\n\nРазом це дає ім'я — Людмила, ініціал прізвища М., місто Бровари, рід занять — пошиття на дому, і два незалежні майданчики, які прив'язують номер до цієї особи.",
+        "clue_en": "Searched in every notation, the number returns three dated hits. An archived classifieds listing three years old — the number sits in the body of the description. A comment in the open local group four years old: sewing, alterations, clothing repair, cheap, Torhmash area — and this same number. And a comment from that same account under a post about a craft fair, one year and three months ago.\n\nTogether these give a name — Liudmyla, surname initial M. — a town, Brovary, an occupation, home sewing, and two independent platforms tying the number to that person.",
+        "report": {
+          "query_uk": "«+380…» OR «380…» OR «0XX XXX XX XX» · класифайди, відкриті групи, архіви",
+          "query_en": "'+380…' OR '380…' OR '0XX XXX XX XX' · classifieds, open groups, archives",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Три датовані точки",
+              "text_en": "Three dated points"
+            },
+            {
+              "kind": "li",
+              "text_uk": "4 роки тому · група «Броварчани»: «Пошиття, підгонка, ремонт одягу, недорого, район Торгмаш» + номер. Підпис — акаунт Людмили М.",
+              "text_en": "4 years ago · the local group: 'Sewing, alterations, clothing repair, cheap, Torhmash area' + the number. Signed by Liudmyla M.'s account"
+            },
+            {
+              "kind": "li",
+              "text_uk": "3 роки тому · архівне оголошення на класифайді, номер у тексті опису",
+              "text_en": "3 years ago · an archived classifieds listing, the number in the body of the description"
+            },
+            {
+              "kind": "li",
+              "text_uk": "1 рік 3 місяці тому · той самий акаунт, той самий номер, коментар під оголошенням про ярмарок",
+              "text_en": "1 year 3 months ago · the same account, the same number, a comment under a craft-fair post"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Як дістають архівне оголошення",
+              "text_en": "How the archived listing is retrieved"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Через архівні знімки сторінок: у класифайдів стабільні адреси оголошень, і популярні категорії потрапляють у знімки регулярно. Кеш пошуковика тут ненадійний — його перезаписують. Номер у тексті опису переживає саме оголошення саме тому, що індексується як частина сторінки.",
+              "text_en": "Through archived page snapshots: classifieds keep stable listing URLs and popular categories get captured regularly. The search engine's cache is unreliable here — it gets overwritten. A number in the body of a description outlives the listing precisely because it is indexed as part of the page."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що з цим робити далі",
+              "text_en": "What to do with this next"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Профіль продавця має чотири активні оголошення за останні три місяці — і в жодному з них номера немає. Тобто останній датований слід самого номера — це коментар про ярмарок; далі йде розрив приблизно у п'ятнадцять місяців до нинішньої активності у Viber.",
+              "text_en": "The seller's profile carries four active listings from the past three months — and none of them shows the number. So the last dated trace of the number itself is the fair comment; after it comes a gap of roughly fifteen months up to the current Viber activity."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Цей розрив і є перевіркою гіпотези рециклінгу з попереднього кроку. Чотири роки, три роки, рік і три місяці — ланцюжок щільний; п'ятнадцятимісячне вікно теоретично лишає місце для перевипуску, але оператори повертають в обіг номери після значно довшої неактивності, а не після року з живим Viber на тому самому номері.",
+              "text_en": "That gap is the test of the recycling hypothesis from the previous step. Four years, three years, one year and three months — a dense chain; the fifteen-month window technically leaves room for a reissue, but operators return numbers to circulation after far longer inactivity, not after a year with a live Viber on the same number."
+            }
+          ],
+          "footer_uk": "Інструмент дає ім'я, місто і рід занять із двох незалежних майданчиків. Чого він не дає — жодного зв'язку з Ніною Петрівною і жодної відповіді на питання, звідки у швачки з Броварів київський номер літньої вдови. Це питання доведеться закрити окремо, і поки воно відкрите, атрибуція тримається на самому лише збігу номера.",
+          "footer_en": "The tool yields a name, a town and an occupation from two independent platforms. What it does not yield is any link to Nina Petrivna, and any answer to how a seamstress in Brovary came to have an elderly Kyiv widow's number. That question has to be closed separately, and while it stays open the attribution rests on a number match alone."
+        }
+      },
+      {
+        "id": "husband-archive",
+        "icon": "🖼",
+        "name_uk": "Публічний архів покійного чоловіка",
+        "name_en": "The late husband's public archive",
+        "provider_uk": "неактивний профіль · дев'ять фотографій · порівняння кадрів",
+        "provider_en": "an inactive profile · nine photographs · frame comparison",
+        "desc_uk": "Звідки у сторонньої людини цей номер — і де зроблені фото",
+        "desc_en": "How a stranger came to have this number — and where the photos were taken",
+        "tooltip_uk": "Профіль неактивний, але відкритий. Померлий не закриває приватність.",
+        "tooltip_en": "The profile is inactive but open. The dead do not tighten their privacy settings.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 300,
+        "ui_component": "report",
+        "clue_uk": "Володимир С. до смерті лагодив швейні машини — спершу налагоджувальником на комбінаті, потім приватно за викликами. У 2018 році він публікує у тій самій броварській групі оголошення про ремонт швейних машин, і у ньому — два контактні номери: власний і домашній, тобто номер Ніни Петрівни. Так відкрите питання закривається: номер лежав у публічному доступі вісім років.\n\nВ альбомах 2016-2019 років — дев'ять фотографій. Шість зняті в інтер'єрі житлової квартири. На чотирьох із шести на стіні висить той самий вишитий рушник, що і в кадрі оголошення Людмили М.",
+        "clue_en": "Until his death Volodymyr S. repaired sewing machines — first as a technician at the local plant, later privately on call. In 2018 he posts an ad for sewing-machine repair in that same Brovary group, and it carries two contact numbers: his own and the home line — that is, Nina Petrivna's number. That closes the open question: the number has been publicly available for eight years.\n\nThe 2016-2019 albums hold nine photographs. Six were taken inside a flat. In four of the six the same embroidered towel hangs on the wall as in the frame of Liudmyla M.'s listing.",
+        "report": {
+          "query_uk": "профіль Володимира С. · альбоми 2016-2019 · порівняння з кадром оголошення",
+          "query_en": "Volodymyr S.'s profile · albums 2016-2019 · compared against the listing frame",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Звідки у неї цей номер",
+              "text_en": "Where she got the number"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Оголошення 2018 року у групі «Броварчани»: «Ремонт швейних машин, всі марки, побутові і промислові, виїзд по Броварах і району» — і два контактні номери, власний та домашній. Домашній і є номер Ніни Петрівни.",
+              "text_en": "A 2018 post in the Brovary group: 'Sewing machine repair, all makes, domestic and industrial, call-outs across Brovary and the district' — with two contact numbers, his own and the home line. The home line is Nina Petrivna's number."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Ця знахідка важить більше, ніж здається. Без неї лишається питання, повз яке легко пройти: звідки у сторонньої людини з іншого міста номер літньої вдови. З нею питання зникає — номер вісім років лежить у відкритому дописі, доступному кожному, хто шукав майстра з ремонту машинок.",
+              "text_en": "This finding matters more than it looks. Without it a question remains that is easy to walk past: how a stranger from another town has an elderly widow's number. With it the question disappears — the number has sat for eight years in an open post available to anyone looking for a machine repairman."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Той самий рушник",
+              "text_en": "The same towel"
+            },
+            {
+              "kind": "li",
+              "text_uk": "4 з 6 квартирних фото Володимира С. · той самий вишитий рушник на стіні",
+              "text_en": "4 of 6 of Volodymyr S.'s interior photos · the same embroidered towel on the wall"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Кадр оголошення Людмили М. · той самий рушник на задньому плані",
+              "text_en": "The frame from Liudmyla M.'s listing · the same towel in the background"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Що робить цей збіг доказом, а що ні — порядок тут не декоративний. Первинне: відколотий куточок дерев'яної планки, на якій рушник закріплений, і положення шва відносно краю. Вторинне: сам орнамент. Порівняння за орнаментом самим собою нічого не варте — вишиті рушники виробляли фабрично тисячами.",
+              "text_en": "What makes this a proof and what does not — the order here is not decorative. Primary: the chipped corner of the wooden strip the towel hangs from, and the position of the seam relative to the edge. Secondary: the pattern itself. Comparing patterns alone is worth nothing — embroidered towels were factory-made by the thousand."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Пошук за фрагментом орнаменту у каталогах фабричного текстилю збігів не дав. Це негативний контроль слабкої потужності: збіг у каталозі анкор би вбив, а відсутність збігу його не підтверджує. Записувати це треба саме так.",
+              "text_en": "A search of the pattern fragment against factory-textile catalogues returned no match. That is a negative control of low power: a catalogue match would have killed the anchor, while the absence of one does not confirm it. It has to be written up in exactly those terms."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Пастка у підписах",
+              "text_en": "The trap in the captions"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "На одному з фото 2019 року підпис «З Люсею на дачі». Для пошуку за іменем це виглядає як пряме влучання: Люся — розмовна форма від Людмили. На двох інших фото того ж альбому та сама Люся підписана під собакою: «Люся чекає», «Люся і кабачки». Збіг за іменем тут нульовий, і саме такі знахідки найдорожче обходяться тим, хто шукає підтвердження, а не перевірку.",
+              "text_en": "One 2019 photo is captioned 'With Liusia at the dacha'. To a name search this looks like a direct hit: Liusia is a diminutive of Liudmyla. In two other photos from the same album the same Liusia is captioned under a dog: 'Liusia waiting', 'Liusia and the courgettes'. The name match here is worth nothing, and findings like this cost the most to anyone hunting confirmation rather than a check."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Геолокація",
+              "text_en": "Geolocation"
+            },
+            {
+              "kind": "p",
+              "text_uk": "У вікні на одному з квартирних фото видно фрагмент фасаду навпроти: дев'ятиповерхівка серійної забудови з характерним рядом пофарбованих у синій балконів. За архівними панорамами будинок знаходиться однозначно, а розташування вікна на фасаді дає під'їзд.",
+              "text_en": "Through the window in one of the interior photos, a fragment of the facade opposite is visible: a nine-storey block of standard construction with a distinctive row of balconies painted blue. Archived street panoramas locate the building unambiguously, and the window's position on the facade gives the entrance."
+            }
+          ],
+          "footer_uk": "Що встановлено: знайомство Людмили М. з покійним, задокументоване публічно і датоване 2018 роком, плюс чотири фотографії за три роки, зняті в одному приміщенні з кадром її оголошення. Це анкор спільної присутності, незалежний від імені і від номера.\n\nЧого не встановлено: характеру стосунків. Знімки, спільне приміщення і рід занять, який пояснює візити майстра з ремонту машинок, сумісні з чим завгодно — від робочого знайомства до чогось більшого. Жодне джерело у цій справі не характеризує стосунки, і дописувати сюди нічого не можна.",
+          "footer_en": "What is established: Liudmyla M.'s acquaintance with the deceased, publicly documented and dated to 2018, plus four photographs across three years taken in the same room as the frame of her listing. That is a co-presence anchor, independent of both the name and the number.\n\nWhat is not established: the nature of the relationship. Photographs, a shared room and an occupation that explains a repairman's visits are consistent with anything from a working acquaintance to something more. No source in this case characterises the relationship, and nothing may be written in."
+        }
+      },
+      {
+        "id": "name-search",
+        "icon": "🕯",
+        "name_uk": "Пошук імені у місцевих спільнотах",
+        "name_en": "Searching the name in local communities",
+        "provider_uk": "відкриті групи · майданчики оголошень · публічні сторінки",
+        "provider_en": "open groups · listing platforms · public pages",
+        "desc_uk": "Що сталося з цією людиною за останні півроку",
+        "desc_en": "What has happened to this person over the past six months",
+        "tooltip_uk": "Дані про здоров'я — особлива категорія. Читати можна; переказувати — обережно.",
+        "tooltip_en": "Health data is a special category. Reading is allowed; repeating it is not casual.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Чотири місяці тому у тій самій броварській групі — допис від акаунта, підписаного як племінниця: збір коштів на лікування тітки Людмили, «багато хто знає її по ательє». Діагноз названо у тексті і датовано відносно: «два місяці тому».\n\nПаралельно профіль продавця, який три роки не мав активності, за останні три місяці публікує чотири нові оголошення — швейна машина, оверлок, домашні речі. І шість тижнів тому під дописом сторінки паліативної допомоги — публічний коментар того самого акаунта з питанням про те, як говорити з рідними наприкінці життя.",
+        "clue_en": "Four months ago, in that same Brovary group, a post from an account signed as a niece: a fundraiser for her aunt Liudmyla's treatment, 'many of you know her from the sewing studio'. The diagnosis is named in the text and dated only relatively: 'two months ago'.\n\nIn parallel, the seller's profile — dormant for three years — publishes four new listings in the past three months: a sewing machine, an overlocker, household items. And six weeks ago, under a post from a palliative-care page, a public comment from that same account asking how to speak with family at the end of life.",
+        "report": {
+          "query_uk": "«Людмила М.» · Бровари · відкриті групи, майданчики, публічні сторінки",
+          "query_en": "'Liudmyla M.' · Brovary · open groups, platforms, public pages",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Чотири сигнали",
+              "text_en": "Four signals"
+            },
+            {
+              "kind": "li",
+              "text_uk": "4 місяці тому · збір коштів на лікування, діагноз названо, датовано як «два місяці тому»",
+              "text_en": "4 months ago · a treatment fundraiser, the diagnosis named, dated only as 'two months ago'"
+            },
+            {
+              "kind": "li",
+              "text_uk": "3 місяці тому · профіль після трьох років тиші публікує чотири оголошення на розпродаж майна",
+              "text_en": "3 months ago · after three years of silence the profile posts four listings selling off possessions"
+            },
+            {
+              "kind": "li",
+              "text_uk": "6 тижнів тому · публічний коментар під дописом про розмови з рідними наприкінці життя",
+              "text_en": "6 weeks ago · a public comment under a post about end-of-life conversations with family"
+            },
+            {
+              "kind": "li",
+              "text_uk": "п'ятий місяць поспіль · щоденні дзвінки на номер, який вона знає з 2018 року",
+              "text_en": "for the fifth month running · daily calls to a number she has known since 2018"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Чесна арифметика навколо дати",
+              "text_en": "Honest arithmetic around the date"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Допис датований точно, а діагноз у ньому — ні: «два місяці тому» дає смугу приблизно у місяць, а не день. Перший дзвінок припадає на проміжок від одинадцяти до сорока одного дня після діагнозу, залежно від того, як читати цю фразу. Причинний порядок витримується у всій смузі — але записувати його треба саме як смугу, а не як дату.",
+              "text_en": "The post is precisely dated; the diagnosis inside it is not: 'two months ago' gives a band of roughly a month, not a day. The first call falls between eleven and forty-one days after the diagnosis, depending on how the phrase is read. The causal order holds across the whole band — but it has to be written as a band, not as a date."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що встановлює сукупність",
+              "text_en": "What the set establishes"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Особа з термінальним діагнозом, поставленим у перші тижні перед початком дзвінків, яка паралельно ліквідує майно і публічно шукає поради, як говорити з рідними наприкінці життя. Кожен сигнал окремо побутовий; разом вони описують людину, яка впорядковує справи.",
+              "text_en": "A person with a terminal diagnosis received in the weeks before the calls began, who is simultaneously liquidating possessions and publicly seeking advice on how to speak to family at the end of life. Each signal alone is mundane; together they describe someone putting affairs in order."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Чого сукупність не встановлює: що саме вона намагається сказати. Публічні дані дають існування невисловленого, не його зміст. Це може бути вибачення, зізнання, прохання, борг, спогад — і жодне джерело у цій справі не дає підстав обрати між ними.",
+              "text_en": "What the set does not establish: what she is trying to say. Public data gives the existence of something unsaid, not its content. It could be an apology, a confession, a request, a debt, a memory — and no source in this case gives any basis to choose between them."
+            },
+            {
+              "kind": "quote",
+              "text_uk": "Обережно зі словом «розкриття»: воно вже містить припущення, що йдеться про приховане. Невисловлене і приховуване — не одне й те саме, і різниця тут не термінологічна, а етична.",
+              "text_en": "Be careful with the word 'revelation': it already assumes something was concealed. The unsaid and the hidden are not the same thing, and the difference here is ethical rather than terminological."
+            }
+          ],
+          "footer_uk": "Межа, яку фіксують тут же. Дані про стан здоров'я — особлива категорія персональних даних. Те, що їх опублікувала племінниця у зборі коштів, робить їх доступними для читання і не робить їх вільними для переказу. У звіті клієнтці це формулюють через призначення: обставина, яка пояснює природу дзвінків і знімає загрозу, а не діагноз конкретної людини, переказаний третій стороні.",
+          "footer_en": "The boundary is fixed here and not later. Health data is a special category of personal data. That a niece published it in a fundraiser makes it readable and does not make it free to repeat. In the report to the client it is framed by purpose: a circumstance that explains the nature of the calls and removes the threat, not a named person's diagnosis relayed to a third party."
+        }
+      },
+      {
+        "id": "bot-lookup",
+        "icon": "🤖",
+        "name_uk": "«Пробити» номер через бота з базами",
+        "name_en": "Run the number through a leaked-database bot",
+        "provider_uk": "телеграм-бот · миттєвий результат",
+        "provider_en": "Telegram bot · instant result",
+        "desc_uk": "Отримати ПІБ за тридцять секунд",
+        "desc_en": "Get a full name in thirty seconds",
+        "tooltip_uk": "Найпривабливіший хід кейсу. Клієнтка заборонила його першою фразою.",
+        "tooltip_en": "The most attractive move in the case. The client ruled it out in her first sentence.",
+        "correct": false,
+        "points": -40,
+        "time_cost": 60,
+        "ui_component": "report",
+        "clue_uk": "Бот віддає ПІБ за тридцять секунд. Ім'я не збігається з тим, що дадуть публічні сліди номера, і перевірити, чиє воно, немає способу: бази у таких ботах зібрані з витоків різних років, без версійності і без дат. На номері з можливим перевипуском вони з високою ймовірністю віддадуть попереднього власника.",
+        "clue_en": "The bot returns a full name in thirty seconds. It does not match what the number's public traces will give, and there is no way to check whose name it is: databases in bots like this are stitched together from leaks of different years, with no versioning and no dates. On a number with a possible reissue they will most likely return the previous holder.",
+        "report": {
+          "query_uk": "номер → бот",
+          "query_en": "number → bot",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Результат за 30 секунд",
+              "text_en": "A result in 30 seconds"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Клієнтка виключила цей шлях у брифінгу дослівно: їй потрібне те, що можна показати юристу, а не скрін із бота. Вона працює у закупівлях і знає, чим закінчується для замовника звіт із нелегальною ланкою.",
+              "text_en": "The client ruled this route out in the briefing, in as many words: she needs something she can show a lawyer, not a screenshot from a bot. She works in procurement and knows how a report with an unlawful link ends for the person who commissioned it."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Незаконно: доступ до персональних даних із незаконно сформованих баз",
+              "text_en": "Unlawful: access to personal data from unlawfully assembled databases"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Контамінує весь звіт: одна ланка з такого джерела робить непридатним усе, і робить замовницю співучасницею",
+              "text_en": "Contaminates the whole report: one link from such a source makes all of it unusable, and makes the client a participant"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Ненадійно: без дат і версій, на номері з можливим перевипуском віддасть не того",
+              "text_en": "Unreliable: with no dates or versions, on a possibly reissued number it returns the wrong person"
+            },
+            {
+              "kind": "p",
+              "text_uk": "І найгірше: ти отримав ім'я, і тепер кожна наступна знахідка перевірятиметься на відповідність йому. Хибний анкор, отриманий рано, коштує дорожче за відсутність анкора.",
+              "text_en": "And worst of all: you now have a name, and every subsequent finding will be tested against it. A false anchor acquired early costs more than no anchor at all."
+            }
+          ],
+          "footer_uk": "Той самий результат — ім'я, місто, рід занять — дають публічні датовані сліди номера. Довше, законно і з можливістю показати юристу.",
+          "footer_en": "The same result — name, town, occupation — comes from the number's dated public traces. Slower, lawful, and showable to a lawyer."
+        }
+      },
+      {
+        "id": "direct-contact",
+        "icon": "📞",
+        "name_uk": "Подзвонити на номер або написати у Viber",
+        "name_en": "Call the number or write to it on Viber",
+        "provider_uk": "прямий контакт",
+        "provider_en": "direct contact",
+        "desc_uk": "Спитати навпростець, хто це і чого хоче",
+        "desc_en": "Ask outright who this is and what they want",
+        "tooltip_uk": "Клієнтка заборонила це до класифікації ризику. Причина у двох сценаріях із двох.",
+        "tooltip_en": "The client forbade this until the risk is classified. The reason holds in both scenarios.",
+        "correct": false,
+        "points": -35,
+        "time_cost": 60,
+        "ui_component": "report",
+        "clue_uk": "Дзвінок прийнято і скинуто за дві секунди. Наступного дня — жодного вхідного на номер Ніни Петрівни. Ще за день Viber-акаунт зникає з видимості: профіль закрито. Дзвінки припиняються назавжди.\n\nКлієнтка отримала тишу, якої просила, і не отримала жодної відповіді на питання, чим це було.",
+        "clue_en": "The call is answered and dropped within two seconds. The next day there is not one incoming call to Nina Petrivna's number. A day after that the Viber account disappears from view: the profile is closed. The calls stop for good.\n\nThe client got the silence she asked for and no answer at all to the question of what this was.",
+        "report": {
+          "query_uk": "вихідний дзвінок → номер",
+          "query_en": "outgoing call → the number",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Дзвінки припинилися",
+              "text_en": "The calls stopped"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Це виглядає як розв'язана задача рівно доти, доки не згадаєш, про що просила клієнтка. Вона просила трьох речей, і тиша була третьою, а не першою: спершу з'ясувати, хто це, і чи є загроза. На обидва питання відповіді більше не буде.",
+              "text_en": "This looks like a solved problem right up until you recall what the client asked for. She asked for three things, and silence was the third of them, not the first: find out who this is, and whether there is a threat. Neither question can now be answered."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Провал тут симетричний, і в цьому суть заборони. Якщо це була загроза — прямий контакт до класифікації ризику ескалує її і виводить справу з-під контролю. Якщо це не було загрозою — контакт від невідомої третьої особи повідомляє людині, що її ідентифікують, і завдає шкоди тому, хто не робив нічого злочинного.",
+              "text_en": "The failure here is symmetrical, which is the point of the prohibition. If this was a threat, contact before the risk is classified escalates it and takes the case out of your control. If it was not a threat, contact from an unknown third party tells someone they are being identified, and harms a person who did nothing criminal."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Ніна Петрівна перестане боятися. Вона так і не дізнається, чого від неї хотіли п'ять місяців, — і у цій конкретній справі це має ціну, якої на початку не видно.",
+              "text_en": "Nina Petrivna will stop being afraid. She will never learn what was wanted from her for five months — and in this particular case that carries a price which is not visible at the outset."
+            }
+          ],
+          "footer_uk": "Природну поведінку спостерігають один раз. Після контакту її немає ні у кого.",
+          "footer_en": "Natural behaviour can be observed once. After contact, nobody has it."
+        }
+      },
+      {
+        "id": "cyberpolice-report",
+        "icon": "🚔",
+        "name_uk": "Заява у кіберполіцію про телефонне шахрайство",
+        "name_en": "File with cyber police over phone fraud",
+        "provider_uk": "офіційне звернення · перший крок",
+        "provider_en": "official statement · as a first step",
+        "desc_uk": "Дати справі офіційний хід одразу",
+        "desc_en": "Put the case on an official footing right away",
+        "tooltip_uk": "Заяву напишуть. Питання, що у ній кваліфікувати.",
+        "tooltip_en": "The statement will be written. The question is what it would charge.",
+        "correct": false,
+        "points": -20,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Звернення прийнято, за три тижні відповідь: ознак шахрайства немає — жодної вимоги грошей, жодного представлення банком чи родичем, жодного запиту даних, жодного сказаного слова за п'ять місяців. Матеріали передано за територіальністю, тобто тому самому дільничному, який уже відповів місяць тому.",
+        "clue_en": "The statement is accepted; three weeks later the answer: no indication of fraud — no demand for money, no impersonation of a bank or relative, no request for data, not one word spoken in five months. The materials are forwarded by territory, which is to say to the same district officer who already answered a month ago.",
+        "report": {
+          "query_uk": "офіційне звернення · факт телефонного шахрайства",
+          "query_en": "official statement · alleged phone fraud",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Відмова через 3 тижні",
+              "text_en": "Refused after 3 weeks"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Складу немає, і це не риторика, а стан справи: за 412 контактів не прозвучало нічого, що можна кваліфікувати. Окремої статті про переслідування в українському кодексі теж немає — норма про домашнє насильство охоплює лише пов'язаних осіб, чого тут немає за визначенням.",
+              "text_en": "There are no elements of an offence, and that is not rhetoric but the state of the matter: across 412 contacts nothing was said that could be charged. Nor is there a separate stalking article in the Ukrainian code — the domestic-violence provision covers related persons only, which by definition is not the case here."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Менш очевидний наслідок, і саме він робить цей крок дорогим. Заяву іноді подають заради даних оператора: розкрити абонента можна лише за ухвалою слідчого судді у межах відкритого провадження. Але без складу немає провадження, а без провадження немає ухвали. Тобто заява не лише не допомагає — вона не відкриває той шлях, заради якого її пишуть.",
+              "text_en": "The less obvious consequence is what makes this step expensive. A statement is sometimes filed for the sake of operator data: a subscriber can only be disclosed under an investigating judge's ruling within open proceedings. But with no elements there are no proceedings, and with no proceedings there is no ruling. So the statement not only fails to help — it does not open the route it was written for."
+            },
+            {
+              "kind": "p",
+              "text_uk": "І третє: попереднє звернення вже дало відмашку дільничного. Повторний захід із тим самим набором фактів нічого не змінить. Змінює новий факт, а не новий заявник.",
+              "text_en": "And a third point: the earlier statement already produced a brush-off from the district officer. A second attempt with the same set of facts changes nothing. What changes things is a new fact, not a new complainant."
+            }
+          ],
+          "footer_uk": "Заява має сенс тоді, коли у ній є що кваліфікувати. Спершу класифікація, потім — якщо взагалі знадобиться — офіційний хід.",
+          "footer_en": "A statement makes sense once there is something in it to charge. Classification first; the official route after, if it is needed at all."
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Крос-верифікація",
+    "title_en": "Cross-verification",
+    "instruction_uk": "Три питання по тому, що ти здобув. Останнє з них — не про пошук, а про те, що потрапляє у документ.",
+    "instruction_en": "Three questions about what you obtained. The last one is not about searching but about what goes into the document.",
+    "next_btn_uk": "Далі → драбина атрибуції",
+    "next_btn_en": "Next → attribution ladder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Сигнатура: 412 дзвінків за 5 місяців, строго денне вікно, спадна тривалість, нуль SMS і нуль інших каналів, за жоден контакт не сказано слова. Що це для тебе означає?",
+        "text_en": "The signature: 412 calls over 5 months, a strictly daytime window, falling duration, zero SMS and zero other channels, not a word spoken across any contact. What does that mean to you?",
+        "options": [
+          {
+            "text_uk": "Шахрайство і автообдзвін відпадають. Але лишається два класи, а не один: безпорадність і навмисне докучання дають майже однаковий профіль, і обрати між ними форма не дозволяє — потрібна атрибуція.",
+            "text_en": "Fraud and auto-dialling drop out. But two classes remain, not one: helplessness and deliberate nuisance produce almost the same profile, and shape alone cannot choose between them — that will take attribution.",
+            "correct": true,
+            "points": 45,
+            "feedback_uk": "✓ Саме та чесність, яку кейс перевіряє. Спокусливо прочитати денне вікно і короткі дзвінки як безпорадність — але рівно ті самі ознаки читаються як юридична обережність того, хто докучає навмисно і не хоче складу. Класифікація звузила до двох; вибір між ними — робота наступних кроків.",
+            "feedback_en": "✓ Exactly the honesty this case tests. It is tempting to read the daytime window and short calls as helplessness — but the very same features read as the legal caution of someone being a deliberate nuisance while avoiding an offence. Classification narrowed it to two; choosing between them is the next steps' work."
+          },
+          {
+            "text_uk": "Це шахрайський прогрів перед схемою — класична підготовка літньої людини до дзвінка «від банку».",
+            "text_en": "This is a fraud warm-up before a scheme — the classic preparation of an elderly person for a call 'from the bank'.",
+            "correct": false,
+            "points": -40,
+            "feedback_uk": "✗ Прогрів, який за п'ять місяців і 412 контактів жодного разу не перейшов до пітчу, — не прогрів. Плюс арифметика: жодна економіка обдзвону не витримає такої кількості дзвінків на один номер із нульовою конверсією. Це версія клієнтки, і сигнатура закриває її першою.",
+            "feedback_en": "✗ A warm-up that never once in five months and 412 contacts moved to a pitch is not a warm-up. Plus the arithmetic: no dialling economics survives that many calls to one number at zero conversion. This is the client's theory, and the signature closes it first."
+          },
+          {
+            "text_uk": "Це переслідування. Щоденні дзвінки протягом п'яти місяців — визначення переслідування, і клієнтка має рацію щодо сусіда.",
+            "text_en": "This is stalking. Daily calls over five months are the definition of stalking, and the client is right about the neighbour.",
+            "correct": false,
+            "points": -25,
+            "feedback_uk": "△ Наполовину. Переслідування у фазі ескалації сигнатура якраз виключає: воно нарощує частоту, розширює канали і тяжіє до вечора і ночі, а тут навпаки — тривалість падає, каналів один, після 19:40 тиша. Низькорівневе докучання лишається можливим; але «сусід» — це вже атрибуція, а її ще немає.",
+            "feedback_en": "△ Half right. The signature does rule out stalking in an escalation phase: that raises frequency, widens channels and drifts into the evening and night, whereas here duration falls, there is one channel, and after 19:40 there is silence. Low-level nuisance remains possible; but 'the neighbour' is already attribution, and there is none yet."
+          },
+          {
+            "text_uk": "Форма нічого не дає. Треба одразу встановлювати власника номера, а вже потім розбиратися.",
+            "text_en": "The shape gives nothing. Establish the number's owner first and work it out afterwards.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ І це найдорожча помилка кейсу, бо вона веде у глухий кут. Оператор не розкриє абонента без ухвали слідчого судді, а ухвали не буде без провадження, якого немає без складу. Легального шляху «спочатку ім'я» тут просто не існує — а нелегальний робить звіт непридатним. Деталізація вже містила класифікацію; ти пройшов повз неї.",
+            "feedback_en": "✗ And this is the case's most expensive error, because it leads into a dead end. The operator will not disclose a subscriber without an investigating judge's ruling, and there is no ruling without proceedings, and none of those without an offence. A lawful 'name first' route simply does not exist here — and the unlawful one makes the report unusable. The records already contained the classification; you walked past it."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Агрегатор показує два підписи на цьому номері — «Наталія Банк» і «спам», обидва без дати. Твій наступний крок:",
+        "text_en": "The aggregator shows two labels on this number — 'Nataliia Bank' and 'spam', both undated. Your next step:",
+        "options": [
+          {
+            "text_uk": "Перевіряю гіпотезу перевипуску номера датованими публічними слідами: якщо вони шикуються у щільний ланцюжок із поточною активністю, вікно для перевипуску звужується.",
+            "text_en": "Test the reissue hypothesis against dated public traces: if they line up in a dense chain with current activity, the window for a reissue narrows.",
+            "correct": true,
+            "points": 55,
+            "feedback_uk": "✓ Правильно, і важливо, що ти перевіряєш, а не приймаєш і не відкидаєш. Мітки без дат і без знаменника не мають ваги ні «за», ні «проти» — вони або пояснюються перевипуском, або лишаються непоясненими. Обидва результати чесні; непояснене і спростоване пишуться у звіті по-різному.",
+            "feedback_en": "✓ Correct, and what matters is that you are testing rather than accepting or discarding. Labels with no dates and no denominator carry no weight either way — they are either explained by a reissue or they remain unexplained. Both outcomes are honest; unexplained and refuted are written up differently."
+          },
+          {
+            "text_uk": "Це підтверджує версію клієнтки. Пишу у звіт: номер пов'язаний із шахрайською активністю.",
+            "text_en": "This confirms the client's theory. Into the report it goes: the number is linked to fraudulent activity.",
+            "correct": false,
+            "points": -40,
+            "feedback_uk": "✗ Дві недатовані мітки без знаменника — це не доказ, а шум, який випадково збігся з очікуванням замовниці. «Спам» ставлять і за один нав'язливий дзвінок, і за помилку номером; коли саме внесено підпис, невідомо взагалі. Найдорожче тут те, що знахідка приходить рано і виглядає як зовнішнє підтвердження.",
+            "feedback_en": "✗ Two undated labels without a denominator are not evidence but noise that happened to match the client's expectation. People tag 'spam' for one intrusive call and for a misdial; when the label was entered is entirely unknown. What makes this expensive is that the finding arrives early and looks like outside confirmation."
+          },
+          {
+            "text_uk": "Ігнорую: агрегатори ненадійні, це сміття.",
+            "text_en": "Ignore it: aggregators are unreliable, this is garbage.",
+            "correct": false,
+            "points": -15,
+            "feedback_uk": "△ Висновок майже правильний, шлях — ні. Артефакт, який збігається з версією замовниці, треба знешкодити явно, а не викинути мовчки: у звіті він усе одно спливе, і краще, щоб там уже стояло пояснення, чому дві мітки нічого не важать.",
+            "feedback_en": "△ Nearly the right conclusion by the wrong route. An artefact that matches the client's theory has to be defused explicitly, not discarded in silence: it will surface in the report anyway, and it is better that the explanation of why two labels mean nothing is already sitting there."
+          },
+          {
+            "text_uk": "Поруч у видачі спливає прес-реліз про накриття колл-центру у тому ж районі три місяці тому — беру це як підтвердження.",
+            "text_en": "A press release about a call centre shut down in the same district three months ago surfaces alongside — take that as confirmation.",
+            "correct": false,
+            "points": -35,
+            "feedback_uk": "✗ Номера у тому прес-релізі немає взагалі: зв'язок існує лише у голові того, хто прочитав два результати підряд. Географічна і часова близькість — це властивість пошукової видачі, а не факт про справу. І окремо: колл-центр за визначенням не дзвонить п'ять місяців на один номер мовчки.",
+            "feedback_en": "✗ The number does not appear in that press release at all: the connection exists only in the mind of whoever read two results in a row. Proximity in place and time is a property of search results, not a fact about the case. And separately: a call centre by definition does not spend five months calling one number in silence."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Ти встановив особу, знайомство з покійним і обставини останніх місяців її життя. Геолокація за фото дає не лише місто, а конкретний будинок і під'їзд. Що з цим робити у звіті?",
+        "text_en": "You have established the person, her acquaintance with the deceased, and the circumstances of the past months of her life. Photo geolocation gives not just the town but a specific building and entrance. What goes into the report?",
+        "options": [
+          {
+            "text_uk": "Місто. Точнішу локацію не вношу: вона нічого не додає до відповіді на питання клієнтки і створює ризик для людини, яка не робить нічого злочинного.",
+            "text_en": "The town. I leave the finer location out: it adds nothing to the client's question and creates a risk for a person doing nothing criminal.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Правильно, і це найтонше місце всієї справи. Звуження до під'їзду виконується — питання не в умінні, а в тому, чи вносити у документ те, що знайшов, лише тому, що знайшов. Клієнтка просила зрозуміти, чи є загроза; адреса на це не відповідає, зате дає стривоженій родині можливість приїхати за нею.",
+            "feedback_en": "✓ Correct, and this is the finest point in the whole case. The narrowing to an entrance does work — the question is not one of skill but of whether to put a finding into a document merely because you have it. The client asked whether there is a threat; an address does not answer that, and it does hand an anxious family the means to turn up at the door."
+          },
+          {
+            "text_uk": "Вношу все, що встановлено, включно з будинком і під'їздом: звіт має відображати повноту роботи.",
+            "text_en": "Include everything established, building and entrance among it: the report should reflect the full work done.",
+            "correct": false,
+            "points": -45,
+            "feedback_uk": "✗ Повнота звіту вимірюється відповіддю на питання замовника, а не переліком усього, до чого дотягнувся. Адреса не відповідає на жодне з трьох питань клієнтки, зате створює ризик третій стороні — і саме тому цей рядок у деяких справах коштує дорожче за всю решту документа.",
+            "feedback_en": "✗ A report's completeness is measured by the client's question, not by an inventory of everything you reached. The address answers none of her three questions and creates a risk to a third party — which is why in some cases that one line costs more than the rest of the document."
+          },
+          {
+            "text_uk": "Не вношу навіть міста: людина не робить нічого злочинного, і будь-яка локація зайва.",
+            "text_en": "Leave out even the town: this person is doing nothing criminal and any location is surplus.",
+            "correct": false,
+            "points": 10,
+            "feedback_uk": "△ Обережність у правильний бік, але надто далеко. Місто тут не координата для візиту, а необхідна частина відповіді: воно показує, що дзвонить не сусід із-під під'їзду, і саме це знімає з клієнтки другу її версію. Прибрати треба те, що дозволяє прийти, а не те, що пояснює.",
+            "feedback_en": "△ Caution in the right direction, taken too far. The town here is not a coordinate for a visit but a necessary part of the answer: it shows the caller is not the neighbour from the courtyard, and that is what disposes of the client's second theory. Remove what enables someone to arrive, not what explains."
+          },
+          {
+            "text_uk": "Вношу адресу, але прошу клієнтку не використовувати її без потреби.",
+            "text_en": "Include the address but ask the client not to use it unless necessary.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Прохання не є захистом. Документ, який ти віддаєш, живе далі без тебе: його показують родичам, юристу, дільничному, пересилають у месенджерах. Єдиний надійний спосіб не допустити використання даних — не вносити їх; усе інше перекладає твоє рішення на людину у стані тривоги.",
+            "feedback_en": "✗ A request is not a safeguard. The document you hand over goes on living without you: it gets shown to relatives, lawyers, the district officer, forwarded in messengers. The only reliable way to prevent data being used is not to include it; anything else transfers your decision to someone in a state of alarm."
+          }
+        ]
+      }
+    ]
+  },
+  "ladder_phase": {
+    "title_uk": "Драбина атрибуції",
+    "title_en": "Attribution ladder",
+    "instruction_uk": "П'ять щаблів. На кожен — один доказ із пулу. Заповни щонайменше чотири. Картка нараховує бали лише на своєму щаблі; будь-де ще вона просто не працює.",
+    "instruction_en": "Five rungs. One evidence item per rung, dragged from the pool. Fill at least four. A card scores only on its own rung; anywhere else it simply does not work.",
+    "submit_btn_uk": "Зафіксувати драбину",
+    "submit_btn_en": "Lock the ladder",
+    "reveal_uk": "Локація — єдиний щабель у всьому треку, де точніша відповідь коштує нуль, а не частково. Це не збій нарахування, це і є завдання.\n\nЗвуження до будинку і під'їзду виконується: ряд синіх балконів у вікні знаходиться за архівними панорамами, розташування вікна на фасаді дає під'їзд. Щабель перевіряє не те, чи ти вмієш це зробити, а те, чи внесеш знайдене у документ лише тому, що знайшов. Адреса не відповідає на жодне з питань клієнтки — ні хто дзвонить, ні чи є загроза, ні що показати матері, — зате дає стривоженій родині спосіб приїхати до людини, яка не робить нічого злочинного. Тому: адреса або під'їзд — 0; «Київська область» — 20, напрямок правильний, визначеності бракує; «Бровари» — 40.\n\nМотив. Повний бал дає обставина, а не характер стосунків. Жодне джерело у цій справі не характеризує, ким ці люди були одне одному, і будь-яка картка, що це називає, дає нуль — незалежно від того, наскільки правдоподібно звучить.",
+    "reveal_en": "Location is the only rung in the entire track where the more precise answer scores zero rather than partial. That is not a scoring fault, that is the task.\n\nThe narrowing to a building and entrance does work: the row of blue balconies in the window is located through archived panoramas, and the window's position on the facade gives the entrance. The rung tests not whether you can do it but whether you will put a finding into a document merely because you have it. An address answers none of the client's questions — not who is calling, not whether there is a threat, not what to show her mother — and it does hand an anxious family a way to arrive at the door of someone doing nothing criminal. So: address or entrance — 0; 'Kyiv region' — 20, right direction, insufficient definition; 'Brovary' — 40.\n\nMotive. Full credit goes to a circumstance, not to the nature of a relationship. No source in this case characterises what these people were to each other, and any card that names it scores zero — however plausible it sounds.",
+    "min_slots": 4,
+    "slots": [
+      {
+        "id": "identifier",
+        "max_points": 40,
+        "label_uk": "Ідентифікатор",
+        "label_en": "Identifier",
+        "hint_uk": "Хто це. Назви те, що тримається на незалежних осях, а не на одному збігу номера.",
+        "hint_en": "Who this is. Name what independent axes carry, not what one number match carries."
+      },
+      {
+        "id": "location",
+        "max_points": 40,
+        "label_uk": "Локація",
+        "label_en": "Location",
+        "hint_uk": "Де. Подумай не про те, що ти знайшов, а про те, що має потрапити у документ.",
+        "hint_en": "Where. Think not about what you found but about what belongs in the document."
+      },
+      {
+        "id": "motive",
+        "max_points": 40,
+        "label_uk": "Мотив",
+        "label_en": "Motive",
+        "hint_uk": "Навіщо. Обставина, а не стосунки: стосунків не описує жодне джерело.",
+        "hint_en": "Why. A circumstance, not a relationship: no source describes the relationship."
+      },
+      {
+        "id": "timeline",
+        "max_points": 40,
+        "label_uk": "Хронологія",
+        "label_en": "Timeline",
+        "hint_uk": "Коли і в якому порядку. Одна з дат тут відома лише з точністю до місяця.",
+        "hint_en": "When, and in what order. One of these dates is known only to the month."
+      },
+      {
+        "id": "verification",
+        "max_points": 40,
+        "label_uk": "Верифікація",
+        "label_en": "Verification",
+        "hint_uk": "Чим тримається все вище. Якщо дві осі мають спільну точку, це треба назвати.",
+        "hint_en": "What holds everything above it up. If two axes share a point, say so."
+      }
+    ],
+    "evidence_pool": [
+      {
+        "id": "ev-id-liudmyla",
+        "slot": "identifier",
+        "score": 40,
+        "text_uk": "Людмила М., швачка з Броварів — власниця номера і людина, знайома з покійним чоловіком клієнтки. Три осі: слід номера на двох незалежних майданчиках із трьома датованими точками; оголошення покійного 2018 року, де його домашній номер лежить у відкритому доступі; і збіг приміщення на чотирьох його фотографіях із кадром її оголошення за деталями кріплення, а не за орнаментом.",
+        "text_en": "Liudmyla M., a seamstress in Brovary — the number's holder and a person acquainted with the client's late husband. Three axes: the number's trail across two independent platforms with three dated points; the deceased's 2018 listing, where his home number sits in open access; and the room match between four of his photographs and the frame of her listing, made on mounting details rather than on the pattern.",
+        "feedback_uk": "Той рівень, який витримає перевірку. Названо особу, спосіб, у який номер до неї потрапив, і підстава для знайомства — усе з відкритих датованих джерел, які можна показати юристу.",
+        "feedback_en": "The level that survives scrutiny. It names the person, the route by which the number reached her, and the basis of the acquaintance — all from open dated sources that can be shown to a lawyer."
+      },
+      {
+        "id": "ev-id-number-only",
+        "slot": "identifier",
+        "score": 20,
+        "text_uk": "Власниця номера — Людмила М. з Броварів: номер фігурує у її архівному оголошенні та у двох датованих коментарях під тим самим акаунтом.",
+        "text_en": "The number's holder is Liudmyla M. from Brovary: it appears in her archived listing and in two dated comments under the same account.",
+        "feedback_uk": "Половина. Номер прив'язано до особи, і на цьому все: лишається відкритим питання, звідки у швачки з іншого міста номер київської вдови. Поки воно відкрите, атрибуція тримається на самому лише збігу цифр, і перший же скептик це помітить.",
+        "feedback_en": "Half credit. The number is tied to a person and that is all: the question of how a seamstress from another town has a Kyiv widow's number stays open. While it does, the attribution rests on a match of digits alone, and the first sceptic will notice."
+      },
+      {
+        "id": "ev-id-bot-name",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "ПІБ власника номера, отримане через бота з базами: повне ім'я, рік народження, місто реєстрації.",
+        "text_en": "The holder's full name obtained through a leaked-database bot: full name, year of birth, city of registration.",
+        "feedback_uk": "Нуль, і не лише за походження. Дані у таких базах не мають ні дат, ні версій; на номері з можливим перевипуском вони віддають попереднього власника, і перевірити це немає чим. Плюс одна така ланка робить непридатним увесь звіт — саме те, що клієнтка виключила першою фразою.",
+        "feedback_en": "Zero, and not only for its origin. Data in such databases carries no dates and no versions; on a possibly reissued number it returns the previous holder, with no way to check. And one link like this makes the whole report unusable — precisely what the client ruled out in her first sentence."
+      },
+      {
+        "id": "ev-id-neighbour",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Сусід із конфліктом через паркомісце: конфлікт триває, мотив тиснути очевидний, а денні короткі дзвінки без слів — саме те, що робить людина, яка не хоче складу злочину.",
+        "text_en": "The neighbour from the parking dispute: the conflict is ongoing, the motive to apply pressure is obvious, and short wordless daytime calls are exactly what someone avoiding a criminal offence would do.",
+        "feedback_uk": "Нуль — і зверни увагу, що знімає його не сигнатура. Деніабельне докучання справді дає майже той самий профіль, і за формою цю версію відкинути не можна. Її знімає номер: чотирирічний публічний слід у Броварах із прив'язкою до пошиття на дому і до знайомства з покійним. Це і є різниця між класифікацією і атрибуцією — перша звузила до двох класів, друга обрала.",
+        "feedback_en": "Zero — and note that it is not the signature that eliminates it. Deniable nuisance really does produce almost the same profile, and this reading cannot be dismissed on shape. What eliminates it is the number: a four-year public trail in Brovary tied to home sewing and to an acquaintance with the deceased. That is the difference between classification and attribution — the first narrowed to two classes, the second chose."
+      },
+      {
+        "id": "ev-id-callcentre",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Колл-центр, накритий поліцією у Броварському районі три місяці тому: збігається і географія, і час, а номер має мітку «спам» в агрегаторі.",
+        "text_en": "The call centre shut down by police in the Brovary district three months ago: the geography matches, the timing matches, and the number carries a 'spam' label in the aggregator.",
+        "feedback_uk": "Нуль. Номера у тому прес-релізі немає — зв'язок виник у голові, а не у даних. І класовий аргумент сильніший за географічний: колл-центр не дзвонить п'ять місяців на один номер мовчки, бо це суперечить самому способу, у який він заробляє.",
+        "feedback_en": "Zero. The number does not appear in that press release — the link formed in a head, not in the data. And the class argument is stronger than the geographic one: a call centre does not spend five months calling one number in silence, because that contradicts the very way it makes money."
+      },
+      {
+        "id": "ev-loc-city",
+        "slot": "location",
+        "score": 40,
+        "text_uk": "Бровари, Київська область — на рівні міста. Прив'язку дають два незалежні джерела: локація в архівному оголошенні і чотирирічний слід у місцевій групі з уточненням району. Точніше звуження технічно виконується, але у звіт не вноситься: воно не відповідає на жодне з питань клієнтки і створює ризик для третьої особи.",
+        "text_en": "Brovary, Kyiv region — at town level. Two independent sources give the tie: the location on the archived listing and a four-year trail in the local group naming the district. A finer narrowing is technically achievable but is not entered in the report: it answers none of the client's questions and creates a risk to a third party.",
+        "feedback_uk": "Повний бал, і цей щабель — про професійне рішення, а не про техніку. Ти назвав і те, що встановлено, і те, чому свідомо зупинився раніше, ніж міг. Саме друга частина відрізняє звіт від досьє.",
+        "feedback_en": "Full credit, and this rung is about a professional decision rather than a technique. You stated both what was established and why you deliberately stopped short of what you could reach. It is the second half that separates a report from a dossier."
+      },
+      {
+        "id": "ev-loc-region",
+        "slot": "location",
+        "score": 20,
+        "text_uk": "Київська область: слід номера і активність акаунта вказують на область, точнішого визначення не наводжу.",
+        "text_en": "Kyiv region: the number's trail and the account's activity point to the region; I state nothing more precise.",
+        "feedback_uk": "Половина. Напрямок правильний, визначеності бракує — і бракує саме там, де вона потрібна клієнтці. Область не знімає її другої версії про сусіда з двору, а місто знімає: людина живе за тридцять кілометрів і не має стосунку до паркомісця.",
+        "feedback_en": "Half credit. The direction is right and the definition is short — short exactly where the client needs it. A region does not dispose of her second theory about the neighbour in the courtyard; a town does: the person lives thirty kilometres away and has nothing to do with a parking space."
+      },
+      {
+        "id": "ev-loc-address",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Бровари, конкретний будинок і під'їзд: ряд синіх балконів у вікні одного з фото знайдено за архівними панорамами, розташування вікна на фасаді дає під'їзд.",
+        "text_en": "Brovary, a specific building and entrance: the row of blue balconies in the window of one photo was located through archived panoramas, and the window's position on the facade gives the entrance.",
+        "feedback_uk": "Нуль — і це єдина картка треку, яка дає нуль за правильну знахідку. Звуження виконано бездоганно, і саме тому воно тут лежить: щабель перевіряє, чи внесеш ти у документ те, що знайшов, лише тому, що знайшов. Адреса не відповідає ні на «хто дзвонить», ні на «чи є загроза», ні на «що показати матері». Зате вона дає стривоженій родині спосіб приїхати до вмираючої жінки, яка не зробила нічого злочинного. Документ, який ти віддаєш, живе далі без тебе.",
+        "feedback_en": "Zero — and this is the only card in the track that scores zero for a correct finding. The narrowing was done flawlessly, which is exactly why it sits here: the rung tests whether you will put a finding into a document merely because you have it. An address answers neither 'who is calling', nor 'is there a threat', nor 'what do I show my mother'. What it does is hand an anxious family a way to arrive at the door of a dying woman who has done nothing criminal. The document you hand over goes on living without you."
+      },
+      {
+        "id": "ev-loc-code",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Регіон визначається за префіксом номера: код 063 закріплений за оператором, чия зона покриття дає Київ і область.",
+        "text_en": "The region follows from the number's prefix: the 063 code belongs to an operator whose coverage covers Kyiv and the region.",
+        "feedback_uk": "Нуль. Українські мобільні коди національні — «регіону реєстрації» у них немає взагалі, а з 2019 року працює перенесення номерів, тож код не гарантує навіть поточного оператора. Найгірше у цій картці те, що відповідь випадково потрапляє у правильний бік: підтвердження, якого не існує, тут ще й здається справдженим.",
+        "feedback_en": "Zero. Ukrainian mobile codes are national — they carry no 'region of registration' at all, and since 2019 number portability means the code does not even guarantee the current operator. The worst thing about this card is that the answer accidentally lands in the right direction: a confirmation that does not exist here also appears to come true."
+      },
+      {
+        "id": "ev-motive-unsaid",
+        "slot": "motive",
+        "score": 40,
+        "text_uk": "Спроба сказати те, чого не сказано, на тлі термінального діагнозу. Три опори: діагноз, поставлений у смузі за одинадцять-сорок один день до першого дзвінка; розпродаж майна після трьох років тиші у профілі; публічний коментар про те, як говорити з рідними наприкінці життя. Що саме вона намагається сказати — з наявних даних не встановлюється.",
+        "text_en": "An attempt to say something unsaid, against a terminal diagnosis. Three supports: a diagnosis received in a band eleven to forty-one days before the first call; a sell-off of possessions after three years of silence on the profile; a public comment about how to speak with family at the end of life. What exactly she is trying to say cannot be established from the available data.",
+        "feedback_uk": "Мотив як обставина, а не як стосунки, і остання фраза важить не менше за перші три. Публічні дані дають існування невисловленого, не його зміст — і чесно названа межа тут якраз і робить висновок придатним.",
+        "feedback_en": "A motive as a circumstance rather than a relationship, and the last sentence weighs as much as the first three. Public data gives the existence of something unsaid, not its content — and the honestly named limit is what makes the conclusion usable."
+      },
+      {
+        "id": "ev-motive-diagnosis",
+        "slot": "motive",
+        "score": 20,
+        "text_uk": "Термінальний діагноз: збір коштів у місцевій групі, датований чотирма місяцями тому, називає діагноз і відносить його ще на два місяці назад.",
+        "text_en": "A terminal diagnosis: a fundraiser in the local group, dated four months ago, names the diagnosis and places it two months further back.",
+        "feedback_uk": "Половина. Діагноз сам собою пояснює, чому зараз, і не пояснює, чому саме цей номер і чому мовчки. Дві інші опори — розпродаж і питання про розмову з рідними — перетворюють хворобу на впорядкування справ, а без них лишається просто збіг у часі.",
+        "feedback_en": "Half credit. A diagnosis alone explains why now and does not explain why this number and why in silence. The other two supports — the sell-off and the question about talking to family — turn illness into the settling of affairs; without them it is just a coincidence in time."
+      },
+      {
+        "id": "ev-motive-affair",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Стосунки з покійним: фотографії у квартирі за три роки, спільне приміщення, знайомство, про яке вдова не знала. Вона дзвонить, щоб зізнатися.",
+        "text_en": "A relationship with the deceased: photographs inside the flat across three years, a shared room, an acquaintance the widow knew nothing about. She is calling to confess.",
+        "feedback_uk": "Нуль. Жодне джерело у цій справі не характеризує стосунки: майстер із ремонту швейних машин у домі швачки і фотографії за три роки сумісні з чим завгодно. Це не обережність заради обережності — це те, що перетворює звіт на документ, який можна показати, а не на здогад про чуже життя, підписаний твоїм ім'ям.",
+        "feedback_en": "Zero. No source in this case characterises the relationship: a sewing-machine repairman in a seamstress's home and photographs across three years are consistent with anything. This is not caution for its own sake — it is what makes the report a document you can show rather than a guess about someone's life signed with your name."
+      },
+      {
+        "id": "ev-motive-harassment",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Тиск на вдову: щоденні дзвінки протягом п'яти місяців — це переслідування, а мовчання робить його безкарним.",
+        "text_en": "Pressure on the widow: daily calls over five months are harassment, and the silence keeps it unpunishable.",
+        "feedback_uk": "Нуль. Ця версія не пояснює нічого з того, що встановлено далі: ні спадної тривалості, ні того, чому дзвонять саме на номер із оголошення покійного, ні збігу початку з діагнозом. Мотив, який ігнорує три анкори заради одного враження, — не мотив.",
+        "feedback_en": "Zero. This reading explains nothing that was established afterwards: not the falling duration, not why the calls go to the number from the deceased's listing, not the alignment of the start with a diagnosis. A motive that ignores three anchors in favour of one impression is not a motive."
+      },
+      {
+        "id": "ev-time-band",
+        "slot": "timeline",
+        "score": 40,
+        "text_uk": "Причинний порядок із чесно названою похибкою. Діагноз — смуга шириною близько місяця: збір коштів датований точно, але сам діагноз у ньому названо як «два місяці тому». Перший дзвінок припадає на проміжок від одинадцяти до сорока одного дня після діагнозу. Далі: розпродаж майна через два місяці після першого дзвінка, коментар про розмову з рідними ще через півтора. Порядок витримується у всій смузі.",
+        "text_en": "A causal order with its margin honestly named. The diagnosis is a band roughly a month wide: the fundraiser is precisely dated, but the diagnosis inside it is given as 'two months ago'. The first call falls between eleven and forty-one days after it. Then: the sell-off two months after the first call, the comment about talking to family a month and a half later. The order holds across the whole band.",
+        "feedback_uk": "Хронологія, у якій названо не лише дати, а й точність джерела. Смуга замість дати — це не слабкість: це те, що не дасть протилежній стороні розвалити анкор одним питанням «а звідки саме це число».",
+        "feedback_en": "A timeline that names not only dates but the precision of its source. A band instead of a date is not a weakness: it is what stops anyone taking the anchor apart with a single question about where that number came from."
+      },
+      {
+        "id": "ev-time-exact",
+        "slot": "timeline",
+        "score": 15,
+        "text_uk": "Точна хронологія: діагноз поставлено за 154 дні до сьогодні, перший дзвінок — через кілька днів після нього, розпродаж — ще за два місяці.",
+        "text_en": "A precise timeline: the diagnosis 154 days ago, the first call a few days after it, the sell-off two months later.",
+        "feedback_uk": "Чверть. Порядок правильний, а точність вигадана: джерело дає діагноз із похибкою у місяць, і перетворювати «два місяці тому» на дату означає видати оцінку за факт. У документі, який читатиме юрист, це перше, за що зачепляться.",
+        "feedback_en": "A quarter. The order is right and the precision is invented: the source dates the diagnosis to within a month, and turning 'two months ago' into a date passes an estimate off as a fact. In a document a lawyer will read, that is the first thing to catch on."
+      },
+      {
+        "id": "ev-time-calls",
+        "slot": "timeline",
+        "score": 0,
+        "text_uk": "П'ять місяців дзвінків: 412 контактів, два-три на день, дев'ять пропущених днів, спадна тривалість.",
+        "text_en": "Five months of calls: 412 contacts, two or three a day, nine missed days, falling duration.",
+        "feedback_uk": "Нуль. Це опис сигнатури, а не хронологія: усе перелічене клієнтка принесла сама у першому ж файлі. Щабель питає, що розслідування додало до відомого, а додало воно точку відліку — те, що сталося за кілька тижнів до першого дзвінка.",
+        "feedback_en": "Zero. This describes the signature, not a timeline: everything listed was brought by the client in the first file. The rung asks what the investigation added to what was known, and what it added is a starting point — the thing that happened a few weeks before the first call."
+      },
+      {
+        "id": "ev-ver-declared",
+        "slot": "verification",
+        "score": 40,
+        "text_uk": "Три осі з явно названою залежністю. Вісь 1, телефонно-поведінкова: сигнатура виключає шахрайство і автообдзвін, повністю незалежна від ідентичності. Вісь 2, слід номера: два майданчики, три датовані точки. Вісь 3, спільна присутність: збіг приміщення за деталями кріплення. Осі 2 і 3 мають спільну точку — обидві спираються на кадр із того самого оголошення, тож повністю незалежними не є, і це названо прямо.",
+        "text_en": "Three axes with their dependency named outright. Axis 1, call behaviour: the signature rules out fraud and auto-dialling and is wholly independent of identity. Axis 2, the number's trail: two platforms, three dated points. Axis 3, co-presence: a room match on mounting details. Axes 2 and 3 share a point — both rest on the frame from the same listing, so they are not fully independent, and that is stated plainly.",
+        "feedback_uk": "Зміст цього щабля — саме остання фраза. Назвати спільну точку між власними опорами невигідно і незручно; хто це робить, дає читачеві можливість перевірити висновок, а не повірити у нього.",
+        "feedback_en": "The substance of this rung is that last sentence. Naming a shared point between your own supports is inconvenient and unflattering; whoever does it gives the reader a way to check the conclusion rather than to believe it."
+      },
+      {
+        "id": "ev-ver-three-axis",
+        "slot": "verification",
+        "score": 20,
+        "text_uk": "Три незалежні осі: сигнатура дзвінків, слід номера на двох майданчиках і збіг приміщення на фотографіях. Кожна перевіряється окремо, разом вони дають атрибуцію.",
+        "text_en": "Three independent axes: the call signature, the number's trail across two platforms, and the room match in the photographs. Each is checkable separately; together they give the attribution.",
+        "feedback_uk": "Половина, і бракує саме тієї деталі, заради якої щабель існує. Дві з трьох осей спираються на один і той самий кадр оголошення — отже, вони не є повністю незалежними. Висновок від цього не падає, але заявлена впевненість трохи вища за справжню, і читач має право це знати.",
+        "feedback_en": "Half credit, and what is missing is the very detail the rung exists for. Two of the three axes rest on the same listing frame — so they are not fully independent. The conclusion does not fall because of it, but the confidence claimed is slightly higher than the real one, and the reader is entitled to know."
+      },
+      {
+        "id": "ev-ver-count",
+        "slot": "verification",
+        "score": 0,
+        "text_uk": "Шість збігів: сигнатура, Viber-профіль, мітки агрегатора, слід номера, рушник на фото і збіг за часом із діагнозом. Шість незалежних підтверджень поспіль випадковими не бувають.",
+        "text_en": "Six matches: the signature, the Viber profile, the aggregator labels, the number's trail, the towel in the photos and the timing against the diagnosis. Six independent confirmations in a row do not happen by chance.",
+        "feedback_uk": "Нуль. Мітки агрегатора взагалі не є підтвердженням — вони недатовані і лишилися непоясненими; профіль у Viber — м'який когортний сигнал, а не доказ. Порахувати їх нарівні з датованими анкорами означає підняти власну впевненість за рахунок того, що нічого не важить.",
+        "feedback_en": "Zero. The aggregator labels are not a confirmation at all — undated and left unexplained; the Viber profile is a soft cohort signal, not evidence. Counting them alongside dated anchors raises your own confidence on the strength of things that carry no weight."
+      }
+    ]
+  },
+  "falsifiability_phase": {
+    "title_uk": "Перевірка на фальсифікованість",
+    "title_en": "Falsifiability check",
+    "instruction_uk": "На кожен заповнений щабель — одне речення: яка знахідка, якби вона з'явилась, зруйнувала б цей анкор. Оцінюється те, які поняття ти назвав, а не як ти це сформулював.",
+    "instruction_en": "For each rung you filled, one sentence: what finding, if it turned up, would destroy this anchor. You are graded on which concepts you name, not on how you phrase them.",
+    "submit_btn_uk": "Подати спростування",
+    "submit_btn_en": "Submit falsifiers",
+    "points_per_item": 25,
+    "items": [
+      {
+        "slot_id": "identifier",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про власницю номера?",
+        "prompt_en": "What would destroy the conclusion about the number's holder?",
+        "model_uk": "Наприклад: збільшене порівняння покаже, що відколотий куточок планки і положення шва не збігаються, а тримається лише орнамент — і анкор спільної присутності падає до «схожий виріб»; або архівний знімок покаже, що номер з'явився у тексті оголошення пізнішим редагуванням, а не на дату публікації; або виявиться, що коментарі різних років лишені різними акаунтами з однаковим відображуваним ім'ям.",
+        "model_en": "For example: a magnified comparison shows the chipped corner and the seam position do not match and only the pattern holds — the co-presence anchor drops to 'a similar item'; or an archived snapshot shows the number entered the listing text in a later edit rather than on the publication date; or the comments from different years turn out to have been left by different accounts sharing a display name.",
+        "keywords_uk": [
+          [
+            "рушник",
+            "планк",
+            "куточок",
+            "шов",
+            "орнамент",
+            "порівнянн",
+            "збільшен",
+            "кадр",
+            "фото"
+          ],
+          [
+            "не збіга",
+            "не той",
+            "інший виріб",
+            "схожий",
+            "спростов",
+            "не підтверд",
+            "розход"
+          ],
+          [
+            "оголошенн",
+            "номер у тексті",
+            "редагуванн",
+            "архівн",
+            "знімок",
+            "wayback",
+            "дата публікац"
+          ],
+          [
+            "пізніш",
+            "після",
+            "інша дата",
+            "не на дату",
+            "додан",
+            "змінен"
+          ],
+          [
+            "акаунт",
+            "профіл",
+            "коментар",
+            "різні",
+            "однакове ім",
+            "не той самий",
+            "id"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "towel",
+            "strip",
+            "corner",
+            "seam",
+            "pattern",
+            "compar",
+            "magnif",
+            "frame",
+            "photo"
+          ],
+          [
+            "does not match",
+            "no match",
+            "different item",
+            "similar",
+            "refut",
+            "not confirm",
+            "diverge"
+          ],
+          [
+            "listing",
+            "number in the text",
+            "edit",
+            "archiv",
+            "snapshot",
+            "wayback",
+            "publication date"
+          ],
+          [
+            "later",
+            "after",
+            "different date",
+            "not on the date",
+            "added",
+            "changed"
+          ],
+          [
+            "account",
+            "profile",
+            "comment",
+            "different",
+            "same display name",
+            "not the same",
+            "id"
+          ]
+        ]
+      },
+      {
+        "slot_id": "location",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про місто?",
+        "prompt_en": "What would destroy the town-level conclusion?",
+        "model_uk": "Наприклад: профіль на майданчику покаже історію оголошень із різних міст — і Бровари падають з «місце проживання» до «зона діяльності»; або з'ясується, що коментар із назвою району лишений не тим самим акаунтом, що й коментар чотирирічної давності, і тоді місто тримається лише на одному джерелі.",
+        "model_en": "For example: the platform profile shows a listing history across several towns — and Brovary drops from 'place of residence' to 'area of work'; or the comment naming the district turns out to have been left by a different account than the four-year-old one, leaving the town resting on a single source.",
+        "keywords_uk": [
+          [
+            "оголошенн",
+            "профіл",
+            "історія",
+            "майданчик",
+            "продавц"
+          ],
+          [
+            "різні міст",
+            "інше місто",
+            "кілька міст",
+            "київ",
+            "виїзд",
+            "зона діяльн",
+            "не проживанн"
+          ],
+          [
+            "коментар",
+            "групa",
+            "група",
+            "район",
+            "акаунт",
+            "id профіл"
+          ],
+          [
+            "не той самий",
+            "інший акаунт",
+            "однакове ім",
+            "не збіга",
+            "одне джерел",
+            "лише на одному"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "listing",
+            "profile",
+            "history",
+            "platform",
+            "seller"
+          ],
+          [
+            "different town",
+            "several towns",
+            "other city",
+            "kyiv",
+            "call-out",
+            "area of work",
+            "not residence"
+          ],
+          [
+            "comment",
+            "group",
+            "district",
+            "account",
+            "profile id"
+          ],
+          [
+            "not the same",
+            "different account",
+            "same display name",
+            "does not match",
+            "one source",
+            "single source"
+          ]
+        ]
+      },
+      {
+        "slot_id": "motive",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б мотив?",
+        "prompt_en": "What would destroy the motive?",
+        "model_uk": "Наприклад: виявиться, що збір коштів стосується іншої людини з тим самим іменем у тій самій групі — тоді темпоральний анкор гине повністю; перевіряється це через рід занять і по батькові, які у тексті збору названо. Або розпродаж майна виявиться звичайним для цього профілю — якщо у попередні роки такі серії теж траплялися.",
+        "model_en": "For example: the fundraiser turns out to concern a different person with the same name in the same group — and the temporal anchor dies outright; that is checked against the occupation and patronymic named in the fundraiser text. Or the sell-off turns out to be ordinary for this profile — if similar bursts occurred in earlier years too.",
+        "keywords_uk": [
+          [
+            "збір",
+            "допис",
+            "племінниц",
+            "текст",
+            "діагноз",
+            "хвороб"
+          ],
+          [
+            "інша людин",
+            "інша особа",
+            "той самий ім",
+            "однофамільц",
+            "не та",
+            "не про неї",
+            "збіг імен"
+          ],
+          [
+            "рід занять",
+            "ательє",
+            "по батькові",
+            "звірити",
+            "перевірити",
+            "незалежн джерел"
+          ],
+          [
+            "розпродаж",
+            "оголошенн",
+            "майно",
+            "профіл",
+            "серія"
+          ],
+          [
+            "звичайн",
+            "траплял",
+            "щороку",
+            "і раніше",
+            "нормальн для",
+            "не вперше"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "fundraiser",
+            "post",
+            "niece",
+            "text",
+            "diagnosis",
+            "illness"
+          ],
+          [
+            "different person",
+            "another person",
+            "same name",
+            "namesake",
+            "not her",
+            "not about her",
+            "name coincidence"
+          ],
+          [
+            "occupation",
+            "studio",
+            "patronymic",
+            "cross-check",
+            "verify",
+            "independent source"
+          ],
+          [
+            "sell-off",
+            "listing",
+            "possessions",
+            "profile",
+            "burst"
+          ],
+          [
+            "ordinary",
+            "happened before",
+            "every year",
+            "earlier too",
+            "normal for",
+            "not the first time"
+          ]
+        ]
+      },
+      {
+        "slot_id": "timeline",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б причинний порядок «діагноз → дзвінки»?",
+        "prompt_en": "What would destroy the causal order 'diagnosis then calls'?",
+        "model_uk": "Наприклад: у тексті збору знайдеться уточнення, яке зсуває діагноз після першого дзвінка — скажімо, «два місяці» стосується не діагнозу, а початку паліативної терапії, що почалася пізніше. Тоді порядок перевертається і мотив-анкор розсипається цілком. Це справжня крихкість слоту: не ширина смуги, а те, до чого саме належать ці два місяці.",
+        "model_en": "For example: the fundraiser text contains a clarification that shifts the diagnosis after the first call — say, the 'two months' refers not to the diagnosis but to the start of palliative treatment, which began later. Then the order reverses and the motive anchor collapses entirely. That is the rung's real fragility: not the width of the band but what those two months attach to.",
+        "keywords_uk": [
+          [
+            "діагноз",
+            "два місяці",
+            "дата",
+            "текст збору",
+            "формулюванн",
+            "уточненн"
+          ],
+          [
+            "після",
+            "пізніш",
+            "перевертає",
+            "зсув",
+            "інший порядок",
+            "не до",
+            "навпаки"
+          ],
+          [
+            "терапі",
+            "лікуванн",
+            "паліатив",
+            "госпіталіз",
+            "стосується не",
+            "інша подія"
+          ],
+          [
+            "перший дзвінок",
+            "початок дзвінків",
+            "154",
+            "смуга",
+            "похибк",
+            "точність"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "diagnosis",
+            "two months",
+            "date",
+            "fundraiser text",
+            "wording",
+            "clarification"
+          ],
+          [
+            "after",
+            "later",
+            "reverse",
+            "shift",
+            "different order",
+            "not before",
+            "the other way"
+          ],
+          [
+            "therapy",
+            "treatment",
+            "palliative",
+            "hospitalis",
+            "hospitaliz",
+            "refers to",
+            "different event"
+          ],
+          [
+            "first call",
+            "start of the calls",
+            "band",
+            "margin",
+            "precision"
+          ]
+        ]
+      },
+      {
+        "slot_id": "verification",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б тріангуляцію?",
+        "prompt_en": "What would destroy the triangulation?",
+        "model_uk": "Наприклад: якщо архівний знімок покаже, що номер потрапив у текст оголошення пізнішим редагуванням, спільна точка осей 2 і 3 датується інакше — і ланцюжок володіння номером рветься; або якщо збіг приміщення виявиться лише орнаментним, вісь 3 відпадає і лишаються дві, одна з яких взагалі не про ідентичність.",
+        "model_en": "For example: if an archived snapshot shows the number entered the listing text in a later edit, the point shared by axes 2 and 3 is dated differently — and the chain of ownership breaks; or if the room match turns out to rest on the pattern alone, axis 3 falls away and two remain, one of which is not about identity at all.",
+        "keywords_uk": [
+          [
+            "вісь",
+            "осі",
+            "опор",
+            "тріангуляц",
+            "спільна точк",
+            "залежн"
+          ],
+          [
+            "завал",
+            "розсипл",
+            "відпад",
+            "не підтверд",
+            "спростов",
+            "рветь",
+            "падає"
+          ],
+          [
+            "оголошенн",
+            "редагуванн",
+            "архівн знімок",
+            "дата",
+            "номер у тексті",
+            "рушник",
+            "приміщенн"
+          ],
+          [
+            "незалежн",
+            "корельован",
+            "одне джерел",
+            "той самий кадр",
+            "не окрем",
+            "порахован двічі"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "axis",
+            "axes",
+            "support",
+            "triangulat",
+            "shared point",
+            "dependen"
+          ],
+          [
+            "collapse",
+            "fall apart",
+            "falls away",
+            "not confirm",
+            "refut",
+            "breaks"
+          ],
+          [
+            "listing",
+            "edit",
+            "archived snapshot",
+            "date",
+            "number in the text",
+            "towel",
+            "room"
+          ],
+          [
+            "independen",
+            "correlat",
+            "one source",
+            "same frame",
+            "not separate",
+            "counted twice"
+          ]
+        ]
+      }
+    ]
+  },
+  "so_what_phase": {
+    "title_uk": "Ну і що?",
+    "title_en": "So what?",
+    "question_uk": "Атрибуцію зроблено. Тепер питання, від якого залежить, що клієнтка скаже матері: що це насправді?",
+    "question_en": "The attribution is done. Now the question that decides what the client tells her mother: what is this?",
+    "options": [
+      {
+        "id": "sw1",
+        "correct": false,
+        "points": -40,
+        "text_uk": "Телефонне шахрайство: фаза «прогріву» перед схемою, орієнтованою на літніх людей.",
+        "text_en": "Phone fraud: the warm-up phase before a scheme aimed at elderly people.",
+        "feedback_uk": "✗ Сигнатура закрила це на першому ж інструменті. Прогрів, який за п'ять місяців і 412 контактів жодного разу не перейшов до пітчу, — не прогрів; жодна економіка обдзвону не витримає такої кількості дзвінків на один номер із нульовою конверсією. Це версія клієнтки, і найдешевше було перевірити її, а не успадкувати.",
+        "feedback_en": "✗ The signature closed this on the very first tool. A warm-up that never once in five months and 412 contacts moved to a pitch is not a warm-up; no dialling economics survives that many calls to one number at zero conversion. This is the client's theory, and checking it was cheaper than inheriting it."
+      },
+      {
+        "id": "sw2",
+        "correct": false,
+        "points": -45,
+        "text_uk": "Хибне спрацювання: номер перевипущено, дзвонить хтось інший, а справжня причина лежить деінде.",
+        "text_en": "A false positive: the number was reissued, someone else is calling, and the real cause lies elsewhere.",
+        "feedback_uk": "✗ Найсильніший із хибних, і саме тому найдорожчий. Гіпотезу перевипуску піднімають обґрунтовано — але «перевірена» не означає «підтверджена»: три датовані сліди звужують вікно так, що на перевипуск лишається близько п'ятнадцяти місяців, тоді як оператори повертають номери в обіг після значно довшої тиші. Гіпотезу треба було зняти, а не залишити як висновок.",
+        "feedback_en": "✗ The strongest of the wrong answers and therefore the most expensive. The reissue hypothesis is raised on good grounds — but 'checked' does not mean 'confirmed': three dated traces narrow the window to about fifteen months, whereas operators return numbers to circulation after far longer silence. The hypothesis had to be closed, not left standing as the conclusion."
+      },
+      {
+        "id": "sw3",
+        "correct": true,
+        "points": 150,
+        "text_uk": "Атрибуція правильна, мотив перевернутий: це не шахрайство і не переслідування. Дзвонить людина з термінальним діагнозом, знайома з покійним чоловіком клієнтки, яка п'ятий місяць щодня намагається і не може сказати те, чого досі не сказала. Що саме — з наявних даних не встановлюється. Рекомендація клієнтці: показати матері, що загрози немає, і що номер належить людині з Броварів, яка знала батька; далі — рішення родини, а не розслідувача. Адресу у звіт не вносити.",
+        "text_en": "Correct attribution, inverted motive: this is neither fraud nor harassment. The caller is a person with a terminal diagnosis, acquainted with the client's late husband, who for five months has been trying daily and failing to say something she has never said. What exactly cannot be established from the available data. Recommendation to the client: show her mother there is no threat, and that the number belongs to someone in Brovary who knew her father; what follows is the family's decision, not the investigator's. The address does not go into the report.",
+        "feedback_uk": "✓ Правильно, і цінність тут не в тому, що знайдено того, хто дзвонить. Клієнтка просила трьох речей, і всі три отримано: хто це, чи є загроза, і що показати матері. Найважче було не встановити ім'я, а зупинитися рівно там, де закінчилися дані: не дописати, ким ці двоє були одне одному, і не внести адресу, яку ти справді знайшов.",
+        "feedback_en": "✓ Correct, and the value here is not that the caller was found. The client asked for three things and got all three: who this is, whether there is a threat, and what to show her mother. The hard part was not establishing a name but stopping exactly where the data ran out: not writing in what these two were to each other, and not entering the address you genuinely found."
+      },
+      {
+        "id": "sw4",
+        "correct": false,
+        "points": -15,
+        "text_uk": "Системне: проблема не в цій жінці, а в тому, що паніка навколо телефонного шахрайства перетворює будь-який невідомий номер на загрозу — клієнтка розв'язує не ту задачу.",
+        "text_en": "Systemic: the problem is not this woman but that panic about phone fraud turns any unknown number into a threat — the client is solving the wrong problem.",
+        "feedback_uk": "△ Часткова правда, і саме тому найпривабливіша з хибних. Спостереження справедливе: наратив клієнтки справді сформований загальним фоном. Але Ніна Петрівна не бере слухавку від власної доньки і двічі за місяць викликала швидку — і від висновку «так влаштоване суспільство» їй не легшає. Спершу конкретна відповідь для конкретної родини, потім узагальнення.",
+        "feedback_en": "△ A partial truth, which is what makes it the most attractive of the wrong answers. The observation is fair: the client's narrative really is shaped by the general climate. But Nina Petrivna will not answer her own daughter's calls and has called an ambulance twice in a month — and 'this is how society works' does nothing for her. A concrete answer for a concrete family first; the generalisation after."
+      }
+    ]
+  },
+  "benchmark": {
+    "questions": {
+      "target_pct": 67,
+      "reason_uk": "Еталон — дві правильні з трьох. Останнє питання найважче не технічно: воно про те, що ти впишеш у документ, який житиме далі без тебе.",
+      "reason_en": "The reference is two correct out of three. The last question is the hard one, and not technically: it is about what you put into a document that will go on living without you."
+    }
+  },
+  "ranks": {
+    "master": {
+      "min": 700,
+      "label_uk": "Duty-of-Care Analyst",
+      "label_en": "Duty-of-Care Analyst",
+      "color": "#8f7cff",
+      "msg_uk": "Ти класифікував ситуацію, перш ніж шукати ім'я, і зупинив атрибуцію там, де закінчилися дані, а не там, де закінчилася історія. Звіт зняв загрозу для однієї сторони і не створив її для другої.",
+      "msg_en": "You classified the situation before hunting a name, and stopped attribution where the data ran out rather than where the story did. The report removed a threat from one side without creating one for the other."
+    },
+    "senior": {
+      "min": 600,
+      "label_uk": "Senior Investigation Analyst",
+      "label_en": "Senior Investigation Analyst",
+      "color": "#5ac8fa",
+      "msg_uk": "Атрибуцію витримано, мотив прочитано правильно. Одну-дві осі варто було описати чесніше — наприклад, назвати спільну точку між слідом номера і збігом приміщення.",
+      "msg_en": "The attribution holds and the motive is read correctly. One or two axes deserved a more honest description — naming the point shared by the number's trail and the room match, for instance."
+    },
+    "junior": {
+      "min": 500,
+      "label_uk": "Junior Investigation Analyst",
+      "label_en": "Junior Investigation Analyst",
+      "color": "#34c759",
+      "msg_uk": "Особу встановлено, шахрайську версію знято — а мотив зупинився на здогаді про стосунки замість обставини, яку доводять дані. Різниця між цими двома звітами вимірюється не балами.",
+      "msg_en": "The person was identified and the fraud reading dismissed — but the motive stopped at a guess about a relationship instead of the circumstance the data supports. The difference between those two reports is not measured in points."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Trainee",
+      "label_en": "Trainee",
+      "color": "#ff9500",
+      "msg_uk": "Або лишився на шахрайській версії, або пішов по ім'я в обхід класифікації. Обидва шляхи пропускають головне: відповідь на питання «що це» лежала у деталізації ще до того, як з'явилося перше ім'я.",
+      "msg_en": "You either stayed with the fraud reading or went hunting a name around the classification. Both routes miss the point: the answer to 'what is this' was in the call records before any name appeared."
+    }
+  },
+  "debrief": {
+    "pass_uk": {
+      "sections": [
+        {
+          "title": "Що це було",
+          "body": "Клієнтка принесла дві версії — шахраї або сусід — і просила ім'я. Ім'я знайшлося, але справа виявилася не про нього.\n\nДзвонить жінка з Броварів, швачка, яка знала покійного чоловіка Ніни Петрівни: він ремонтував швейні машини і у 2018 році опублікував оголошення, де серед контактів стояв домашній номер. Чотири місяці тому її племінниця відкрила збір на лікування; діагноз у тексті названо і віднесено ще на два місяці назад. Перший мовчазний дзвінок припадає на кілька тижнів після нього.\n\nЧотириста дванадцять разів вона набирала цей номер і жодного разу не сказала нічого."
+        },
+        {
+          "title": "Правильний ланцюг пивотів",
+          "body": "Крок 1. Класифікація перед атрибуцією. Деталізація вже містила відповідь на питання «що це» — до того, як з'явилося перше ім'я. Строго денне вікно, спадна тривалість, один канал, нуль SMS і жодного сказаного слова за п'ять місяців.\n\nКрок 2. Чесна межа класифікації. Сигнатура закриває шахрайство і автообдзвін, але лишає два класи: безпорадність і навмисне докучання дають майже однаковий профіль. Обрати між ними формою неможливо, і визнати це — частина роботи, а не її провал.\n\nКрок 3. Слід номера, а не запит до оператора. Легального шляху «спочатку ім'я» тут немає: розкриття абонента можливе лише за ухвалою слідчого судді у межах провадження, а провадження немає без складу. Натомість номер сам лежить у публічних датованих джерелах — трьох за чотири роки.\n\nКрок 4. Питання, повз яке легко пройти. Звідки у швачки з іншого міста номер київської вдови. Відповідь у профілі покійного: оголошення 2018 року з домашнім номером у контактах. Без цього кроку атрибуція тримається на самому збігу цифр.\n\nКрок 5. Спільна присутність за деталями, а не за орнаментом. Рушник на стіні збігається не візерунком — візерунок фабричний, — а відколотим куточком планки і положенням шва.\n\nКрок 6. Обставини останніх місяців. Збір коштів, розпродаж майна після трьох років тиші, публічне питання про те, як говорити з рідними наприкінці життя. Кожен сигнал окремо побутовий; разом вони описують людину, яка впорядковує справи."
+        },
+        {
+          "title": "Дві пастки, які приходять рано",
+          "body": "Перша — мітки агрегатора. «Наталія Банк» і «спам», обидві без дати, і обидві точно збігаються з версією клієнтки. Це найкрихкіший артефакт справи: підписи не мають часових міток, дві мітки без знаменника не мають статистичної ваги, а «спам» ставлять і за помилку номером. Їх не спростовують — їх знешкоджують, і чесний результат перевірки може бути «лишилися непоясненими». Непояснене і спростоване пишуться у звіті по-різному.\n\nДруга — прес-реліз про накриття колл-центру у тому ж районі три місяці тому. Він стабільно спливає у видачі поруч із номером, і географія з часом складаються надто зручно. Але номера у релізі немає взагалі: зв'язок виник у голові того, хто прочитав два результати підряд. І класовий аргумент сильніший за географічний — колл-центр не дзвонить п'ять місяців на один номер мовчки."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Тримається на трьох осях, і найважливіша з них — та, що закриває питання про походження номера. Без оголошення покійного лишається збіг цифр, а з ним — пояснений ланцюжок.\n\nЛокація. Єдиний щабель у всьому треку, де точніша відповідь коштує нуль. Звуження до під'їзду виконується, і саме тому картка з адресою лежить у пулі: щабель перевіряє не техніку, а рішення. Адреса не відповідає на жодне з трьох питань клієнтки, зате дає стривоженій родині спосіб приїхати до вмираючої жінки. «Київська область» — 20: напрямок правильний, але область не знімає версії про сусіда з двору, а місто знімає.\n\nМотив. Обставина, а не стосунки. Жодне джерело не характеризує, ким ці двоє були одне одному, і правдоподібність тут не замінює доказу. Найсильніша частина правильної картки — остання фраза: що саме вона намагається сказати, не встановлюється.\n\nХронологія. Смуга замість дати. Джерело дає діагноз із точністю до місяця, і перетворити «два місяці тому» на число означає видати оцінку за факт. Порядок витримується у всій смузі — так це і треба записати.\n\nВерифікація. Дві з трьох осей спираються на один і той самий кадр оголошення. Назвати цю спільну точку невигідно, і саме тому це зміст щабля: висновок від визнання не падає, а заявлена впевненість стає справжньою."
+        },
+        {
+          "title": "«Ну і що?» — і чому це найважче питання треку",
+          "body": "Шахрайська версія закрита сигнатурою. Версія про перевипуск номера — найсильніша з хибних: її піднімають обґрунтовано, але три датовані сліди звужують вікно до п'ятнадцяти місяців, а оператори повертають номери в обіг після значно довшої тиші. Системна відповідь правдива і не є відповіддю: Ніна Петрівна не бере слухавку від власної доньки, і від висновку про суспільний фон їй не легшає.\n\nПравильна відповідь дає клієнтці рівно те, про що вона просила: хто це, чи є загроза, і що показати матері. Але робота тут закінчується не там, де знайдено ім'я, а там, де закінчилися дані. Ким ці двоє були одне одному — не встановлено. Що саме вона хоче сказати — не встановлено. Адреса знайдена і у звіт не внесена.\n\nТри «не» у фінальному документі — це не слабкість роботи. Це те, що відрізняє звіт, який знімає загрозу для однієї сторони, від звіту, який створює її для другої."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Класифікація передує атрибуції. Форма події часто містить відповідь на питання «що це» ще до того, як з'явиться перше ім'я, — і найдешевший крок у справі зазвичай лежить у тому, що клієнт уже приніс.\n\nПравило друге. Чесно називай, чого класифікація не закрила. «Лишається два класи» — це результат, а не поразка; підміна його одним класом заради стрункості коштує потім усього висновку.\n\nПравило третє. Артефакт, який збігається з версією замовника і приходить рано, вимагає окремої перевірки, а не подяки. Непояснений артефакт і спростований артефакт — різні речі.\n\nПравило четверте. Не все знайдене належить документу. Питання не «чи зміг я це встановити», а «чи відповідає це на питання клієнта і чи не створює ризику для третьої особи». Документ, який ти віддаєш, живе далі без тебе."
+        },
+        {
+          "title": "Інструменти",
+          "body": "Деталізація за власним номером — законний канал: абонент має доступ до записів за своїм номером в особистому кабінеті. У ній є дата, час, напрямок і тривалість. Того, хто саме роз'єднав виклик, у ній немає — це живе у внутрішніх записах оператора і абонентові не віддається ніколи.\n\nРозкриття абонента — тільки за ухвалою слідчого судді у межах відкритого провадження. Не «за запитом поліції»: сам по собі запит підставою не є. Це варто знати до того, як обіцяти клієнту ім'я.\n\nЕнумерація у месенджерах — додавання номера у контакти з дослідницького профілю. Показує наявність акаунтів, аватар, приблизну активність. Жодних повідомлень.\n\nАгрегатори підписаних імен — двосторонні: на платних тарифах власник номера бачить, що його шукали. І живуть вони з масового вивантаження чужих адресних книг без згоди тих, хто у них записаний. Компроміс, який варто називати вголос.\n\nПошук номера у всіх форматах написання — з кодом країни і без, з пробілами, дефісами і дужками. Номер у тексті оголошення індексується як частина сторінки і переживає саме оголошення.\n\nАрхівні знімки сторінок — основний шлях до видалених оголошень; кеш пошуковика ненадійний, його перезаписують. Архівні панорами вулиць дають геолокацію за фрагментом фасаду у вікні."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Заборони клієнтки не були примхою. Прямий контакт спалює справу у двох сценаріях із двох: якщо це загроза — ескалує її, якщо ні — завдає шкоди людині, яка не робить нічого злочинного, і назавжди позбавляє клієнтку відповіді. Платний «пробив» контамінує весь звіт однією ланкою і робить замовницю співучасницею.\n\nДані про стан здоров'я — особлива категорія персональних даних. Те, що племінниця опублікувала їх у зборі коштів, робить їх доступними для читання і не робить вільними для переказу. У звіті це формулюють через призначення: обставина, яка пояснює природу дзвінків і знімає загрозу, а не діагноз конкретної людини, переказаний третій стороні.\n\nПро стосунки не пишуть нічого. Не з делікатності, а тому, що жодне джерело у цій справі їх не характеризує. Здогад, підписаний твоїм ім'ям, читатиметься як встановлений факт.\n\nАдреса лишається у робочих нотатках і не потрапляє у документ. Прохання «не використовуйте без потреби» захистом не є: звіт показують родичам, юристу, дільничному, пересилають у месенджерах. Єдиний надійний спосіб не допустити використання даних — не вносити їх.\n\nІ остання межа, найтихіша. У цій справі є друга людина, яка не є ні замовником, ні підозрюваним, і якій лишилося мало часу. Робота вважається зробленою тоді, коли безпека однієї сторони не куплена ціною спокою другої."
+        }
+      ]
+    },
+    "pass_en": {
+      "sections": [
+        {
+          "title": "What this was",
+          "body": "The client brought two theories — fraudsters or the neighbour — and asked for a name. A name was found, but the case turned out not to be about him.\n\nThe caller is a woman from Brovary, a seamstress who knew Nina Petrivna's late husband: he repaired sewing machines and in 2018 posted an ad listing the home number among his contacts. Four months ago her niece opened a fundraiser for treatment; the diagnosis is named in the text and placed two months further back. The first silent call falls a few weeks after it.\n\nFour hundred and twelve times she dialled that number and not once said anything."
+        },
+        {
+          "title": "The correct pivot chain",
+          "body": "Step 1. Classification before attribution. The call records already held the answer to 'what is this' — before any name appeared. A strictly daytime window, falling duration, one channel, zero SMS and not one word spoken in five months.\n\nStep 2. The honest limit of that classification. The signature closes fraud and auto-dialling but leaves two classes: helplessness and deliberate nuisance produce almost the same profile. Shape cannot choose between them, and admitting that is part of the work rather than a failure of it.\n\nStep 3. The number's trail, not a request to the operator. There is no lawful 'name first' route here: disclosing a subscriber requires an investigating judge's ruling within proceedings, and there are no proceedings without an offence. The number, meanwhile, sits in dated public sources — three of them across four years.\n\nStep 4. The question that is easy to walk past. How a seamstress from another town has a Kyiv widow's number. The answer is in the deceased's profile: a 2018 listing with the home number among the contacts. Without that step the attribution rests on a match of digits.\n\nStep 5. Co-presence on details, not on the pattern. The towel on the wall matches not by its design — the design is factory-made — but by the chipped corner of its mounting strip and the position of the seam.\n\nStep 6. The circumstances of the past months. A fundraiser, a sell-off after three years of silence, a public question about how to speak with family at the end of life. Each signal alone is mundane; together they describe someone putting affairs in order."
+        },
+        {
+          "title": "Two traps that arrive early",
+          "body": "The first is the aggregator labels. 'Nataliia Bank' and 'spam', both undated, and both matching the client's theory exactly. This is the most brittle artefact in the case: labels carry no timestamps, two labels without a denominator carry no statistical weight, and people tag 'spam' for a misdial. They are not refuted but defused, and an honest outcome of the check can be 'they remain unexplained'. Unexplained and refuted are written up differently.\n\nThe second is the press release about a call centre shut down in the same district three months ago. It keeps surfacing next to the number, and geography and timing fall together a little too conveniently. But the number does not appear in the release at all: the link formed in the mind of whoever read two results in a row. And the class argument beats the geographic one — a call centre does not spend five months calling one number in silence."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. It rests on three axes, and the most important is the one that closes the question of where the number came from. Without the deceased's listing there is a coincidence of digits; with it, an explained chain.\n\nLocation. The only rung in the whole track where the more precise answer scores zero. The narrowing to an entrance does work, which is exactly why the address card sits in the pool: the rung tests a decision rather than a technique. An address answers none of the client's three questions, and it hands an anxious family a way to arrive at a dying woman's door. 'Kyiv region' scores 20: the direction is right, but a region does not dispose of the neighbour theory, and a town does.\n\nMotive. A circumstance, not a relationship. No source characterises what these two were to each other, and plausibility does not substitute for evidence. The strongest part of the correct card is its last sentence: what exactly she is trying to say cannot be established.\n\nTimeline. A band instead of a date. The source dates the diagnosis to within a month, and turning 'two months ago' into a number passes an estimate off as a fact. The order holds across the whole band — and that is how it goes down.\n\nVerification. Two of the three axes rest on the same listing frame. Naming that shared point is unflattering, which is precisely the substance of the rung: the conclusion does not fall from the admission, and the confidence claimed becomes the real one."
+        },
+        {
+          "title": "'So what?' — and why it is the track's hardest question",
+          "body": "The fraud reading is closed by the signature. The reissue reading is the strongest of the wrong ones: it is raised on good grounds, but three dated traces narrow the window to fifteen months, and operators return numbers to circulation after far longer silence. The systemic answer is true and is not an answer: Nina Petrivna will not take her own daughter's calls, and a conclusion about the social climate does nothing for her.\n\nThe right answer gives the client exactly what she asked for: who this is, whether there is a threat, and what to show her mother. But the work ends not where the name was found — it ends where the data ran out. What these two were to each other is not established. What she wants to say is not established. The address was found and left out of the report.\n\nThree 'not established' lines in a final document are not a weakness in the work. They are what separates a report that removes a threat from one side from a report that creates one for the other."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. Classification precedes attribution. The shape of an event often holds the answer to 'what is this' before any name appears — and the cheapest step in a case usually sits inside what the client already handed over.\n\nRule two. Say plainly what the classification did not close. 'Two classes remain' is a result, not a defeat; replacing it with one class for the sake of a tidy story costs the whole conclusion later.\n\nRule three. An artefact that matches the client's theory and arrives early calls for a separate check, not for gratitude. An unexplained artefact and a refuted artefact are different things.\n\nRule four. Not everything found belongs in the document. The question is not 'was I able to establish this' but 'does it answer the client's question, and does it create a risk to a third party'. The document you hand over goes on living without you."
+        },
+        {
+          "title": "Tools",
+          "body": "Call records for one's own number are a lawful channel: a subscriber can access their own number's records in their account. They hold date, time, direction and duration. Which side released the call is not in them — that lives in the operator's internal records and is never given to the subscriber.\n\nDisclosing a subscriber requires an investigating judge's ruling within open proceedings. Not 'at police request': a request on its own is not grounds. Worth knowing before promising a client a name.\n\nMessenger enumeration — adding the number to contacts from a research profile. It shows which accounts exist, the avatar, rough activity. No messages.\n\nCaller-ID aggregators are two-way: on paid tiers the number's owner sees that someone searched. And they live off bulk harvesting of other people's address books without the consent of those recorded in them. A compromise worth naming aloud.\n\nSearching a number across every notation — with and without country code, with spaces, hyphens and brackets. A number inside a listing's text is indexed as part of the page and outlives the listing.\n\nArchived page snapshots are the main route to deleted listings; a search engine's cache is unreliable and gets overwritten. Archived street panoramas give geolocation from a fragment of facade in a window."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "The client's prohibitions were not whims. Direct contact burns the case in both scenarios: if this is a threat it escalates it; if it is not, it harms a person doing nothing criminal and deprives the client of an answer for good. A paid lookup contaminates the whole report through one link and makes the client a participant.\n\nHealth data is a special category of personal data. That a niece published it in a fundraiser makes it readable and does not make it free to repeat. In the report it is framed by purpose: a circumstance explaining the nature of the calls and removing the threat, not a named person's diagnosis relayed to a third party.\n\nNothing is written about the relationship. Not out of delicacy but because no source in this case characterises it. A guess signed with your name will be read as an established fact.\n\nThe address stays in working notes and never reaches the document. 'Please do not use this unless necessary' is not a safeguard: reports get shown to relatives, lawyers, district officers, forwarded in messengers. The only reliable way to prevent data being used is not to include it.\n\nAnd a last boundary, the quietest. There is a second person in this case who is neither the client nor a suspect, and who has little time left. The work counts as done when one side's safety has not been bought at the price of the other's peace."
+        }
+      ]
+    },
+    "fail_uk": {
+      "sections": [
+        {
+          "title": "Де це розійшлося",
+          "body": "Ця справа має три місця, де можна з'їхати, і всі три лежать у різних площинах.\n\nПерше: залишитися на версії клієнтки про шахраїв — хоча деталізація закриває її на першому ж кроці. Друге: піти по ім'я в обхід класифікації і впертися у глухий кут, з якого є лише незаконний вихід. Третє, найтихіше: усе зробити правильно і внести у звіт адресу, яку справді знайшов.\n\nПодивись на свою драбину і на відповідь у фіналі. Перші два розходження видно одразу; третє помітно лише тому, хто про нього подумав."
+        },
+        {
+          "title": "Три типові розвилки",
+          "body": "Перша. Шахрайська версія. Вона приходить від клієнтки, підтверджується мітками агрегатора і збігається з усім, що людина чула про дзвінки літнім. Але прогрів, який за п'ять місяців і 412 контактів жодного разу не перейшов до пітчу, — не прогрів, і жодна економіка обдзвону такого не витримає. Мітки ж недатовані і нічого не важать.\n\nДруга. Стрибок до ідентичності. «Хто власник номера» — природне перше питання і водночас єдине, на яке тут немає легальної швидкої відповіді: оператор розкриє абонента лише за ухвалою слідчого судді у межах провадження, а провадження немає без складу. Далі або бот із базами — і звіт стає непридатним, — або заява у поліцію, яка з'їдає три тижні і повертається нічим.\n\nТретя. Сусід із паркомісця. Її не знімає сигнатура, і це важливо: деніабельне докучання дає майже той самий профіль. Знімає її слід номера — чотири роки у Броварах, за тридцять кілометрів від того двору. Класифікація звужує до двох класів; обирає між ними атрибуція."
+        },
+        {
+          "title": "Чого коштують швидкі ходи",
+          "body": "Бот із базами. Ім'я за тридцять секунд, і жодного способу перевірити, чиє воно: бази без дат і версій, на номері з можливим перевипуском віддадуть попереднього власника. Гірше за помилку те, що хибний анкор прийшов рано — тепер кожна наступна знахідка перевірятиметься на відповідність йому.\n\nДзвінок або повідомлення на номер. Дзвінки припиняються назавжди, профіль закривається, і клієнтка отримує тишу, якої просила третьою з трьох речей. Перші дві — хто це і чи є загроза — лишаються без відповіді назавжди.\n\nЗаява у кіберполіцію. Три тижні і відмова: кваліфікувати нічим, бо за п'ять місяців не прозвучало нічого. І менш очевидне: без складу немає провадження, а без провадження немає ухвали — тобто заява не відкриває навіть той шлях до даних оператора, заради якого її іноді й пишуть."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Тримається на трьох осях, і найважливіша з них — та, що закриває питання про походження номера. Без оголошення покійного лишається збіг цифр, а з ним — пояснений ланцюжок.\n\nЛокація. Єдиний щабель у всьому треку, де точніша відповідь коштує нуль. Звуження до під'їзду виконується, і саме тому картка з адресою лежить у пулі: щабель перевіряє не техніку, а рішення. Адреса не відповідає на жодне з трьох питань клієнтки, зате дає стривоженій родині спосіб приїхати до вмираючої жінки. «Київська область» — 20: напрямок правильний, але область не знімає версії про сусіда з двору, а місто знімає.\n\nМотив. Обставина, а не стосунки. Жодне джерело не характеризує, ким ці двоє були одне одному, і правдоподібність тут не замінює доказу. Найсильніша частина правильної картки — остання фраза: що саме вона намагається сказати, не встановлюється.\n\nХронологія. Смуга замість дати. Джерело дає діагноз із точністю до місяця, і перетворити «два місяці тому» на число означає видати оцінку за факт. Порядок витримується у всій смузі — так це і треба записати.\n\nВерифікація. Дві з трьох осей спираються на один і той самий кадр оголошення. Назвати цю спільну точку невигідно, і саме тому це зміст щабля: висновок від визнання не падає, а заявлена впевненість стає справжньою."
+        },
+        {
+          "title": "«Ну і що?» — і чому це найважче питання треку",
+          "body": "Шахрайська версія закрита сигнатурою. Версія про перевипуск номера — найсильніша з хибних: її піднімають обґрунтовано, але три датовані сліди звужують вікно до п'ятнадцяти місяців, а оператори повертають номери в обіг після значно довшої тиші. Системна відповідь правдива і не є відповіддю: Ніна Петрівна не бере слухавку від власної доньки, і від висновку про суспільний фон їй не легшає.\n\nПравильна відповідь дає клієнтці рівно те, про що вона просила: хто це, чи є загроза, і що показати матері. Але робота тут закінчується не там, де знайдено ім'я, а там, де закінчилися дані. Ким ці двоє були одне одному — не встановлено. Що саме вона хоче сказати — не встановлено. Адреса знайдена і у звіт не внесена.\n\nТри «не» у фінальному документі — це не слабкість роботи. Це те, що відрізняє звіт, який знімає загрозу для однієї сторони, від звіту, який створює її для другої."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Класифікація передує атрибуції. Форма події часто містить відповідь на питання «що це» ще до того, як з'явиться перше ім'я, — і найдешевший крок у справі зазвичай лежить у тому, що клієнт уже приніс.\n\nПравило друге. Чесно називай, чого класифікація не закрила. «Лишається два класи» — це результат, а не поразка; підміна його одним класом заради стрункості коштує потім усього висновку.\n\nПравило третє. Артефакт, який збігається з версією замовника і приходить рано, вимагає окремої перевірки, а не подяки. Непояснений артефакт і спростований артефакт — різні речі.\n\nПравило четверте. Не все знайдене належить документу. Питання не «чи зміг я це встановити», а «чи відповідає це на питання клієнта і чи не створює ризику для третьої особи». Документ, який ти віддаєш, живе далі без тебе."
+        },
+        {
+          "title": "Інструменти",
+          "body": "Деталізація за власним номером — законний канал: абонент має доступ до записів за своїм номером в особистому кабінеті. У ній є дата, час, напрямок і тривалість. Того, хто саме роз'єднав виклик, у ній немає — це живе у внутрішніх записах оператора і абонентові не віддається ніколи.\n\nРозкриття абонента — тільки за ухвалою слідчого судді у межах відкритого провадження. Не «за запитом поліції»: сам по собі запит підставою не є. Це варто знати до того, як обіцяти клієнту ім'я.\n\nЕнумерація у месенджерах — додавання номера у контакти з дослідницького профілю. Показує наявність акаунтів, аватар, приблизну активність. Жодних повідомлень.\n\nАгрегатори підписаних імен — двосторонні: на платних тарифах власник номера бачить, що його шукали. І живуть вони з масового вивантаження чужих адресних книг без згоди тих, хто у них записаний. Компроміс, який варто називати вголос.\n\nПошук номера у всіх форматах написання — з кодом країни і без, з пробілами, дефісами і дужками. Номер у тексті оголошення індексується як частина сторінки і переживає саме оголошення.\n\nАрхівні знімки сторінок — основний шлях до видалених оголошень; кеш пошуковика ненадійний, його перезаписують. Архівні панорами вулиць дають геолокацію за фрагментом фасаду у вікні."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Заборони клієнтки не були примхою. Прямий контакт спалює справу у двох сценаріях із двох: якщо це загроза — ескалує її, якщо ні — завдає шкоди людині, яка не робить нічого злочинного, і назавжди позбавляє клієнтку відповіді. Платний «пробив» контамінує весь звіт однією ланкою і робить замовницю співучасницею.\n\nДані про стан здоров'я — особлива категорія персональних даних. Те, що племінниця опублікувала їх у зборі коштів, робить їх доступними для читання і не робить вільними для переказу. У звіті це формулюють через призначення: обставина, яка пояснює природу дзвінків і знімає загрозу, а не діагноз конкретної людини, переказаний третій стороні.\n\nПро стосунки не пишуть нічого. Не з делікатності, а тому, що жодне джерело у цій справі їх не характеризує. Здогад, підписаний твоїм ім'ям, читатиметься як встановлений факт.\n\nАдреса лишається у робочих нотатках і не потрапляє у документ. Прохання «не використовуйте без потреби» захистом не є: звіт показують родичам, юристу, дільничному, пересилають у месенджерах. Єдиний надійний спосіб не допустити використання даних — не вносити їх.\n\nІ остання межа, найтихіша. У цій справі є друга людина, яка не є ні замовником, ні підозрюваним, і якій лишилося мало часу. Робота вважається зробленою тоді, коли безпека однієї сторони не куплена ціною спокою другої."
+        }
+      ]
+    },
+    "fail_en": {
+      "sections": [
+        {
+          "title": "Where this diverged",
+          "body": "This case has three places to slip, and all three lie in different planes.\n\nFirst: staying with the client's fraud theory — though the call records close it on the very first step. Second: going after a name around the classification and running into a dead end whose only exit is unlawful. Third, and quietest: doing everything right and putting into the report the address you genuinely found.\n\nLook at your ladder and at your answer in the finale. The first two divergences are visible at once; the third is visible only to someone who thought about it."
+        },
+        {
+          "title": "Three typical forks",
+          "body": "The first. The fraud reading. It comes from the client, is backed by the aggregator labels, and matches everything anyone has heard about calls to the elderly. But a warm-up that never once in five months and 412 contacts moved to a pitch is not a warm-up, and no dialling economics survives it. The labels, meanwhile, are undated and carry no weight.\n\nThe second. Leaping to identity. 'Who owns the number' is the natural first question and the one with no lawful quick answer here: an operator discloses a subscriber only under an investigating judge's ruling within proceedings, and there are no proceedings without an offence. From there it is either a database bot — and the report becomes unusable — or a police statement that eats three weeks and returns nothing.\n\nThe third. The neighbour from the parking dispute. The signature does not eliminate it, and that matters: deniable nuisance produces almost the same profile. What eliminates it is the number's trail — four years in Brovary, thirty kilometres from that courtyard. Classification narrows to two classes; attribution chooses between them."
+        },
+        {
+          "title": "What the quick moves cost",
+          "body": "The database bot. A name in thirty seconds, and no way to check whose it is: databases with no dates or versions will return the previous holder on a possibly reissued number. Worse than the error is that the false anchor arrived early — every subsequent finding will now be tested against it.\n\nA call or message to the number. The calls stop for good, the profile closes, and the client gets the silence she asked for as the third of three things. The first two — who this is and whether there is a threat — stay unanswered permanently.\n\nThe cyber-police statement. Three weeks and a refusal: there is nothing to charge, because nothing was said in five months. And the less obvious part: no offence means no proceedings, and no proceedings means no ruling — so the statement does not even open the route to operator data it is sometimes written for."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. It rests on three axes, and the most important is the one that closes the question of where the number came from. Without the deceased's listing there is a coincidence of digits; with it, an explained chain.\n\nLocation. The only rung in the whole track where the more precise answer scores zero. The narrowing to an entrance does work, which is exactly why the address card sits in the pool: the rung tests a decision rather than a technique. An address answers none of the client's three questions, and it hands an anxious family a way to arrive at a dying woman's door. 'Kyiv region' scores 20: the direction is right, but a region does not dispose of the neighbour theory, and a town does.\n\nMotive. A circumstance, not a relationship. No source characterises what these two were to each other, and plausibility does not substitute for evidence. The strongest part of the correct card is its last sentence: what exactly she is trying to say cannot be established.\n\nTimeline. A band instead of a date. The source dates the diagnosis to within a month, and turning 'two months ago' into a number passes an estimate off as a fact. The order holds across the whole band — and that is how it goes down.\n\nVerification. Two of the three axes rest on the same listing frame. Naming that shared point is unflattering, which is precisely the substance of the rung: the conclusion does not fall from the admission, and the confidence claimed becomes the real one."
+        },
+        {
+          "title": "'So what?' — and why it is the track's hardest question",
+          "body": "The fraud reading is closed by the signature. The reissue reading is the strongest of the wrong ones: it is raised on good grounds, but three dated traces narrow the window to fifteen months, and operators return numbers to circulation after far longer silence. The systemic answer is true and is not an answer: Nina Petrivna will not take her own daughter's calls, and a conclusion about the social climate does nothing for her.\n\nThe right answer gives the client exactly what she asked for: who this is, whether there is a threat, and what to show her mother. But the work ends not where the name was found — it ends where the data ran out. What these two were to each other is not established. What she wants to say is not established. The address was found and left out of the report.\n\nThree 'not established' lines in a final document are not a weakness in the work. They are what separates a report that removes a threat from one side from a report that creates one for the other."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. Classification precedes attribution. The shape of an event often holds the answer to 'what is this' before any name appears — and the cheapest step in a case usually sits inside what the client already handed over.\n\nRule two. Say plainly what the classification did not close. 'Two classes remain' is a result, not a defeat; replacing it with one class for the sake of a tidy story costs the whole conclusion later.\n\nRule three. An artefact that matches the client's theory and arrives early calls for a separate check, not for gratitude. An unexplained artefact and a refuted artefact are different things.\n\nRule four. Not everything found belongs in the document. The question is not 'was I able to establish this' but 'does it answer the client's question, and does it create a risk to a third party'. The document you hand over goes on living without you."
+        },
+        {
+          "title": "Tools",
+          "body": "Call records for one's own number are a lawful channel: a subscriber can access their own number's records in their account. They hold date, time, direction and duration. Which side released the call is not in them — that lives in the operator's internal records and is never given to the subscriber.\n\nDisclosing a subscriber requires an investigating judge's ruling within open proceedings. Not 'at police request': a request on its own is not grounds. Worth knowing before promising a client a name.\n\nMessenger enumeration — adding the number to contacts from a research profile. It shows which accounts exist, the avatar, rough activity. No messages.\n\nCaller-ID aggregators are two-way: on paid tiers the number's owner sees that someone searched. And they live off bulk harvesting of other people's address books without the consent of those recorded in them. A compromise worth naming aloud.\n\nSearching a number across every notation — with and without country code, with spaces, hyphens and brackets. A number inside a listing's text is indexed as part of the page and outlives the listing.\n\nArchived page snapshots are the main route to deleted listings; a search engine's cache is unreliable and gets overwritten. Archived street panoramas give geolocation from a fragment of facade in a window."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "The client's prohibitions were not whims. Direct contact burns the case in both scenarios: if this is a threat it escalates it; if it is not, it harms a person doing nothing criminal and deprives the client of an answer for good. A paid lookup contaminates the whole report through one link and makes the client a participant.\n\nHealth data is a special category of personal data. That a niece published it in a fundraiser makes it readable and does not make it free to repeat. In the report it is framed by purpose: a circumstance explaining the nature of the calls and removing the threat, not a named person's diagnosis relayed to a third party.\n\nNothing is written about the relationship. Not out of delicacy but because no source in this case characterises it. A guess signed with your name will be read as an established fact.\n\nThe address stays in working notes and never reaches the document. 'Please do not use this unless necessary' is not a safeguard: reports get shown to relatives, lawyers, district officers, forwarded in messengers. The only reliable way to prevent data being used is not to include it.\n\nAnd a last boundary, the quietest. There is a second person in this case who is neither the client nor a suspect, and who has little time left. The work counts as done when one side's safety has not been bought at the price of the other's peace."
+        }
+      ]
+    }
+  }
+}
