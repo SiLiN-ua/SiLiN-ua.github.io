@@ -1,0 +1,1764 @@
+{
+  "id": "qr-on-flyer",
+  "simulator_id": "sim03",
+  "time_limit_sec": 2400,
+  "cooldown_sec": 3600,
+  "max_points": 785,
+  "title_uk": "QR у лобі",
+  "title_en": "The QR in the Lobby",
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Ігор, 52 · керуючий бізнес-центром «Атріум», Солом'янка, Київ",
+    "client_en": "Ihor, 52 · property manager of the Atrium business centre, Solomianka, Kyiv",
+    "budget_uk": "8 годин робочого часу до звіту",
+    "budget_en": "8 working hours until the report is due",
+    "artifact_title_uk": "Паперовий флаєр із QR-кодом. Дев'ять разів за чотири тижні.",
+    "artifact_title_en": "A paper flyer with a QR code. Nine times in four weeks.",
+    "artifact": {
+      "icon": "▩",
+      "image": null,
+      "label_uk": "3 фото флаєра · знімок Telegram-каналу · журнали доступу і графіки змін",
+      "label_en": "3 photos of the flyer · a Telegram channel capture · access logs and shift rosters",
+      "ref": "atrium_lobby_flyer_2026-08-21.jpg"
+    },
+    "body_uk": "«Атріум» — шестиповерховий бізнес-центр класу B на Солом'янці: десять орендарів, турнікет, пропускний режим і контрактна охорона цілодобово. Ігор керує будівлею і відповідає за те, щоб орендарі залишалися.\n\nОстанні чотири тижні у лобі першого поверху з'являються паперові флаєри формату A5 з QR-кодом і одним рядком: «Знай правду про свій офіс». Невеликі стосики біля стійки охорони, іноді кілька штук засунуто між кнопками ліфта. За чотири тижні таких підходів дев'ять, по п'ятнадцять-тридцять штук за раз. Охорона щоразу знаходить їх уже на початку ранкової зміни; сторонніх ніхто не бачив.\n\nQR веде на Telegram-канал: сорок із чимось підписників, усі акаунти свіжі й порожні. Одинадцять дописів — розмиті фото того самого лобі з червоними позначками і туманні натяки на «приховані зв'язки одного з орендарів». Без імен. Без дат. Без вимог. Ані слова про політику, війну чи корупцію — і жодної прямої погрози.\n\nПоліція подивилась і сказала, що складу злочину немає: погрози немає, беруть на облік. До СБУ не зверталися — ознак іноземного втручання теж немає.\n\nПроблема в іншому. Два орендарі вже подали письмове попередження про розрив договору: посилаються на неможливість гарантувати конфіденційність клієнтських даних у будівлі з незрозумілим тлом. Ще троє питали Ігоря приватно, чи не час з'їжджати.\n\nСам Ігор упевнений, що ціль — хтось із орендарів: або IT-стартап, що працює з держконтрактами, або юрфірма з кількома гучними справами. Просить встановити, хто за цим стоїть, і дати щось, з чим можна піти до орендарів і до юриста.\n\nПублічного розслідування він не хоче — орендарі побачать і виїдуть швидше. На «репутаційний менеджмент» від сторонніх фірм не погоджується: три пропозиції вже надійшли.",
+    "body_en": "Atrium is a six-storey class-B business centre in Solomianka: ten tenants, a turnstile, a pass regime and contract security around the clock. Ihor runs the building and answers for keeping the tenants in it.\n\nFor the past four weeks A5 paper flyers with a QR code and a single line — 'Know the truth about your office' — have been turning up in the ground-floor lobby. Small stacks by the security desk, sometimes a few tucked between the lift buttons. Nine such drops in four weeks, fifteen to thirty sheets at a time. Security finds them already there at the start of the morning shift; nobody has seen a stranger.\n\nThe QR leads to a Telegram channel: forty-odd subscribers, every account fresh and empty. Eleven posts — blurred photos of that same lobby with red marks, and cryptic hints at 'hidden ties of one of the tenants'. No names. No dates. No demands. Not a word about politics, the war or corruption — and not one direct threat.\n\nThe police looked and said there are no elements of a crime: no threat, they will log it. The SBU was not approached — there are no signs of foreign involvement either.\n\nThe problem is elsewhere. Two tenants have already filed written notice of termination, citing an inability to guarantee client-data confidentiality in a building with an unexplained background. Three more have privately asked Ihor whether it is time to move out.\n\nIhor himself is convinced the target is one of the tenants: either the IT startup working on state contracts or the law firm with several high-profile cases. He wants to know who is behind this, and something he can take to the tenants and to a lawyer.\n\nHe does not want a public investigation — the tenants would see it and leave faster. He will not sign with an outside 'reputation management' firm: three offers have already arrived.",
+    "start_btn_uk": "Відкрити артефакт →",
+    "start_btn_en": "Open the artifact →"
+  },
+  "phase2": {
+    "title_uk": "Розслідування",
+    "title_en": "Investigation",
+    "instruction_uk": "Дев'ять інструментів, вісім годин бюджету. Клієнт упевнений, що ціль — хтось із орендарів. Спершу з'ясуй, який це взагалі тип справи, і лише потім шукай особу.",
+    "instruction_en": "Nine tools, an eight-hour budget. The client is convinced the target is one of the tenants. Establish what kind of case this is first, and only then look for a person.",
+    "next_btn_uk": "Далі → крос-верифікація",
+    "next_btn_en": "Next → cross-verification",
+    "min_tools_used": 4,
+    "tools": [
+      {
+        "id": "qr-telegram",
+        "icon": "▤",
+        "name_uk": "QR і канал за ним",
+        "name_en": "The QR and the channel behind it",
+        "provider_uk": "декодування · публічна сторінка каналу",
+        "provider_en": "decode · public channel page",
+        "desc_uk": "Куди веде код і коли пишуть у той канал",
+        "desc_en": "Where the code leads and when that channel posts",
+        "tooltip_uk": "Найцікавіше у цьому каналі — не тексти, а годинник.",
+        "tooltip_en": "The most interesting thing about this channel is not the texts but the clock.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 120,
+        "ui_component": "kv-table",
+        "clue_uk": "Канал створено за два дні до першого флаєра. Сорок два підписники, усі заведені протягом місяця, усі порожні. Одинадцять дописів — і всі одинадцять опубліковані між 22:15 і 01:40 у будні. Це вікно не збігається ні з робочим днем орендарів, ні з вечірнім піком, коли пише більшість людей.",
+        "clue_en": "The channel was created two days before the first flyer. Forty-two subscribers, all opened within a month, all empty. Eleven posts — and all eleven published between 22:15 and 01:40 on weekdays. That window matches neither the tenants' working day nor the evening peak when most people post.",
+        "kv": {
+          "query_uk": "decode QR → t.me/atr_pravda_kyiv · публічна сторінка",
+          "query_en": "decode QR → t.me/atr_pravda_kyiv · public page",
+          "groups": [
+            {
+              "title_uk": "Канал",
+              "title_en": "The channel",
+              "rows": [
+                {
+                  "k": "Адреса",
+                  "v_uk": "t.me/atr_pravda_kyiv",
+                  "v_en": "Address · t.me/atr_pravda_kyiv"
+                },
+                {
+                  "k": "Створено",
+                  "v_uk": "24.07.2026",
+                  "v_en": "Created · 24.07.2026",
+                  "warn": true,
+                  "note_uk": "За два дні до першого флаєра. Канал готували під кампанію, а не завели після її початку.",
+                  "note_en": "Two days before the first flyer. The channel was prepared for the campaign, not opened after it began."
+                },
+                {
+                  "k": "Підписники",
+                  "v_uk": "42 · усі акаунти заведені за останній місяць",
+                  "v_en": "Subscribers · 42 · every account opened within the past month"
+                },
+                {
+                  "k": "Дописів",
+                  "v_uk": "11",
+                  "v_en": "Posts · 11"
+                }
+              ]
+            },
+            {
+              "title_uk": "Час публікацій",
+              "title_en": "Publication times",
+              "rows": [
+                {
+                  "k": "Вікно",
+                  "v_uk": "22:15 — 01:40 (Київ) · 11 з 11",
+                  "v_en": "Window · 22:15 — 01:40 (Kyiv) · 11 of 11",
+                  "warn": true
+                },
+                {
+                  "k": "Дні",
+                  "v_uk": "будні",
+                  "v_en": "Days · weekdays"
+                },
+                {
+                  "k": "Робочий день орендарів",
+                  "v_uk": "до 18:00",
+                  "v_en": "Tenants' working day · until 18:00",
+                  "note_uk": "Тобто автор пише не з офісу і не у робочий час.",
+                  "note_en": "So the author is not writing from an office, and not during working hours."
+                },
+                {
+                  "k": "Вечірній пік Telegram",
+                  "v_uk": "19:00-22:00",
+                  "v_en": "Telegram evening peak · 19:00-22:00",
+                  "warn": true,
+                  "note_uk": "Публікації починаються там, де загальна активність уже спадає. Це графік однієї людини, а не спроба зловити аудиторію.",
+                  "note_en": "The posts begin where general activity is already falling off. That is one person's schedule, not an attempt to catch an audience."
+                }
+              ]
+            },
+            {
+              "title_uk": "Зміст дописів",
+              "title_en": "What the posts contain",
+              "rows": [
+                {
+                  "k": "Фото лобі",
+                  "v_uk": "7 з 11 · розмиті, з червоними позначками",
+                  "v_en": "Lobby photos · 7 of 11 · blurred, with red marks"
+                },
+                {
+                  "k": "Імена орендарів",
+                  "v_uk": "0",
+                  "v_en": "Tenant names · 0",
+                  "warn": true
+                },
+                {
+                  "k": "Дати, суми, документи",
+                  "v_uk": "0",
+                  "v_en": "Dates, sums, documents · 0"
+                },
+                {
+                  "k": "Фрагменти договорів",
+                  "v_uk": "3 · обрізані, з публічного реєстру закупівель",
+                  "v_en": "Contract fragments · 3 · cropped, from the public procurement registry",
+                  "note_uk": "Ці документи відкриті для будь-кого. Доступ до них нічого не доводить і нікого не звужує.",
+                  "note_en": "These documents are open to anyone. Access to them proves nothing and narrows nobody."
+                },
+                {
+                  "k": "Вимоги, заклики",
+                  "v_uk": "0",
+                  "v_en": "Demands, calls to action · 0",
+                  "warn": true
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Порожні підписники і туманні тексти — очікувані. Незвичне тут інше: години публікацій. Пізній вечір і ніч у будні — це не «коли зручно писати», це «коли автор вільний». Кому у цій будівлі вільно саме тоді і зайнято вдень, стане видно на наступних кроках.",
+          "footer_en": "Empty subscribers and vague texts are what you would expect. The unusual thing is the publication hours. Late evening and night on weekdays is not 'whenever is convenient', it is 'whenever the author is free'. Who in this building is free precisely then and busy by day becomes visible in the next steps."
+        }
+      },
+      {
+        "id": "flyer-forensics",
+        "icon": "📄",
+        "name_uk": "Сам флаєр · папір, друк, мова",
+        "name_en": "The flyer itself · paper, print, language",
+        "provider_uk": "3 фото · збільшення · порівняння з корпусом",
+        "provider_en": "3 photos · magnification · corpus comparison",
+        "desc_uk": "На чому це надруковано і хто так пише",
+        "desc_en": "What this was printed on and who writes like this",
+        "tooltip_uk": "Аркуш паперу знає про свого автора більше, ніж текст на ньому.",
+        "tooltip_en": "A sheet of paper knows more about its author than the text on it does.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 180,
+        "ui_component": "kv-table",
+        "clue_uk": "Звичайний офісний папір 80 г/м² — такий є всюди, і сам собою він нічого не звужує. А от друк дає дві ознаки: слід тонера, характерний для лазерних МФУ середнього класу, і зсув на два міліметри від центру, типовий для апарата з перезаправленим картриджем. Шрифти — Arial і Cambria, тобто типовий документ Word, а не робота дизайнера.\n\nМова окрема історія. Текст український, міський, і в ньому немає жодного маркера, за яким упізнають справжні активістські листівки: ні згадок про забудову чи слухання, ні антикорупційної лексики, ні будь-якої вимоги. Активістський матеріал завжди чогось просить. Цей не просить нічого.",
+        "clue_en": "Ordinary 80 gsm office paper — the kind that is everywhere, and on its own it narrows nothing. The print gives two signals: a toner trace characteristic of mid-range laser MFPs, and a two-millimetre offset from centre typical of a machine running a refilled cartridge. The fonts are Arial and Cambria, which is to say a plain Word document rather than a designer's work.\n\nThe language is a separate story. The text is Ukrainian, urban, and carries not one marker by which genuine activist leaflets are recognised: no mention of construction or hearings, no anti-corruption vocabulary, no demand of any kind. Activist material always asks for something. This asks for nothing.",
+        "kv": {
+          "query_uk": "збільшення 3 фото · порівняння з корпусом київських листівок 2024-2026",
+          "query_en": "magnify 3 photos · compare against a corpus of Kyiv leaflets 2024-2026",
+          "groups": [
+            {
+              "title_uk": "Папір і друк",
+              "title_en": "Paper and print",
+              "rows": [
+                {
+                  "k": "Папір",
+                  "v_uk": "80 г/м², офісний, білість ~96",
+                  "v_en": "Paper · 80 gsm office stock, whiteness ~96",
+                  "note_uk": "Є у друкарні коворкінгу, у копіцентрі за 400 метрів і на стійці охорони. Нікого не звужує.",
+                  "note_en": "Present in the coworking print room, in a copy shop 400 metres away, and at the security desk. Narrows nobody."
+                },
+                {
+                  "k": "Друк",
+                  "v_uk": "монохромний лазер",
+                  "v_en": "Print · monochrome laser"
+                },
+                {
+                  "k": "Слід тонера",
+                  "v_uk": "характерний для лазерних МФУ середнього класу",
+                  "v_en": "Toner trace · characteristic of mid-range laser MFPs",
+                  "warn": true,
+                  "note_uk": "Це клас апаратів, а не модель. Польова форензика друку розрізняє класи, і видавати це за ідентифікацію пристрою не можна.",
+                  "note_en": "This is a class of machine, not a model. Field print forensics distinguishes classes, and passing that off as device identification is not allowed."
+                },
+                {
+                  "k": "Зсув від центру",
+                  "v_uk": "2 мм · типовий для перезаправленого картриджа",
+                  "v_en": "Offset from centre · 2 mm · typical of a refilled cartridge",
+                  "warn": true
+                },
+                {
+                  "k": "МФУ на стійці охорони",
+                  "v_uk": "той самий клас · за рахунками двічі заправлявся замість заміни картриджа",
+                  "v_en": "The MFP at the security desk · same class · billing shows two refills instead of cartridge replacement",
+                  "warn": true,
+                  "note_uk": "Збіг за двома ознаками. Це узгоджується з гіпотезою і не доводить її: такий самий апарат стоїть у коворкінгу поверхом вище.",
+                  "note_en": "A match on two signals. That is consistent with the hypothesis and does not prove it: the same kind of machine sits in the coworking space one floor up."
+                },
+                {
+                  "k": "Шрифти",
+                  "v_uk": "Arial + Cambria, мішані ваги",
+                  "v_en": "Fonts · Arial + Cambria, mixed weights",
+                  "note_uk": "Типовий Word за замовчуванням. Це швидкий документ, а не макет.",
+                  "note_en": "Word defaults. A quick document, not a layout."
+                }
+              ]
+            },
+            {
+              "title_uk": "Мова",
+              "title_en": "Language",
+              "rows": [
+                {
+                  "k": "Реєстр",
+                  "v_uk": "українська, міська, нейтральна",
+                  "v_en": "Register · Ukrainian, urban, neutral"
+                },
+                {
+                  "k": "Маркери забудовних кампаній",
+                  "v_uk": "відсутні",
+                  "v_en": "Construction-campaign markers · none"
+                },
+                {
+                  "k": "Антикорупційна лексика",
+                  "v_uk": "відсутня",
+                  "v_en": "Anti-corruption vocabulary · none"
+                },
+                {
+                  "k": "Політичні й воєнні згадки",
+                  "v_uk": "відсутні",
+                  "v_en": "Political and war references · none"
+                },
+                {
+                  "k": "Вимога або заклик",
+                  "v_uk": "відсутні",
+                  "v_en": "Demand or call to action · none",
+                  "warn": true,
+                  "note_uk": "Справжня листівка просить: підпишіть, прийдіть, зупиніть. Тут — «знай правду» і крапка.",
+                  "note_en": "A real leaflet asks: sign, come, stop. Here it is 'know the truth' and nothing else."
+                },
+                {
+                  "k": "Стилометрична відстань",
+                  "v_uk": "вища за поріг для всіх відомих київських груп 2024-2026",
+                  "v_en": "Stylometric distance · above threshold for every known Kyiv group 2024-2026",
+                  "warn": true
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Друкарські ознаки самі собою нікого не викривають: апаратів такого класу у районі десятки. Вони стануть вагомими лише поруч з іншими осями — і саме так їх треба записати, а не як «доказ друку на конкретному апараті».\n\nМовна частина важливіша. Матеріал без вимоги — це не повідомлення, це ефект: він не переконує, а лякає. Далі варто питати не «хто це думає», а «кому вигідне те, що після цього станеться».",
+          "footer_en": "The print signals expose nobody on their own: there are dozens of machines of that class in the district. They gain weight only alongside other axes — and that is how they should be written down, not as 'proof of printing on a specific machine'.\n\nThe language half matters more. Material with no demand is not a message, it is an effect: it does not persuade, it frightens. The question that follows is not who thinks this but who benefits from what happens next."
+        }
+      },
+      {
+        "id": "cctv-timeline",
+        "icon": "📹",
+        "name_uk": "Записи камер · 9 ночей",
+        "name_en": "Camera footage · 9 nights",
+        "provider_uk": "відеореєстратор лобі · журнал перезавантажень",
+        "provider_en": "lobby recorder · restart log",
+        "desc_uk": "Що є на записах і чому здебільшого їх немає",
+        "desc_en": "What the footage shows and why there mostly is none",
+        "tooltip_uk": "Відсутність запису теж має автора і теж має час.",
+        "tooltip_en": "A missing recording also has an author, and also has a timestamp.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "У восьми ночах із дев'яти реєстратор має провал на три-п'ять годин між другою і шостою ранку. У журналі причина одна й та сама: планове перезавантаження після оновлення. Але сервісний контракт із інсталятором каже, що планове обслуговування щоквартальне і останнє було два місяці тому. Ці перезавантаження ініційовані вручну з панелі на стійці охорони.\n\nДев'ята ніч — та, коли реєстратор працював. О 03:14 із-за стійки виходить постать в охоронній формі, розкладає стос аркушів по трьох точках лобі і повертається за чотири хвилини. Обличчя у кадр не потрапляє.",
+        "clue_en": "On eight nights out of nine the recorder has a three-to-five-hour gap between two and six in the morning. The log gives one reason every time: a scheduled restart after an update. But the service contract with the installer says maintenance is quarterly and the last one was two months ago. These restarts were initiated by hand from the panel at the security desk.\n\nThe ninth night is the one where the recorder stayed up. At 03:14 a figure in a security uniform steps out from behind the desk, lays a stack of sheets across three points of the lobby and returns four minutes later. The face never enters frame.",
+        "report": {
+          "query_uk": "запит запису за 24 години до кожного з 9 підходів",
+          "query_en": "pull footage for the 24 hours before each of the 9 drops",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Вісім ночей із дев'яти",
+              "text_en": "Eight nights out of nine"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Провал запису 3-5 годин, щоразу у вікні 02:00-06:00",
+              "text_en": "A 3-5 hour recording gap, each time inside the 02:00-06:00 window"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Причина у журналі: «планове перезавантаження після оновлення»",
+              "text_en": "Reason in the log: 'scheduled restart after an update'"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Сервісний контракт: обслуговування щоквартальне, останнє — два місяці тому. Жодне з дев'яти перезавантажень не збігається з графіком постачальника, і всі вони запущені вручну з панелі на стійці охорони.",
+              "text_en": "The service contract: maintenance is quarterly, the last one two months ago. Not one of the nine restarts matches the vendor's schedule, and every one of them was launched by hand from the panel at the security desk."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Провали не однакової довжини і не в один і той самий час — але кожен накриває проміжок, за який у лобі з'явилися флаєри. Це не збій обладнання: збій не вміє щоразу влучати у потрібне вікно.",
+              "text_en": "The gaps are not of equal length and not at the same hour — but each one covers the interval in which flyers appeared in the lobby. This is not an equipment fault: a fault does not manage to hit the needed window every time."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Дев'ята ніч · 21.08, запис уцілів",
+              "text_en": "The ninth night · 21.08, footage survived"
+            },
+            {
+              "kind": "li",
+              "text_uk": "03:14 — постать в охоронній формі виходить із-за стійки зі стосом аркушів A5",
+              "text_en": "03:14 — a figure in security uniform steps out from behind the desk with a stack of A5 sheets"
+            },
+            {
+              "kind": "li",
+              "text_uk": "03:14-03:18 — розкладає у трьох точках лобі, зокрема біля ліфта",
+              "text_en": "03:14-03:18 — lays them at three points in the lobby, including by the lift"
+            },
+            {
+              "kind": "li",
+              "text_uk": "03:18 — повертається за стійку",
+              "text_en": "03:18 — returns behind the desk"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Камера купольна, кадр із тилу: обличчя не видно, зріст і статура невизначені. Це доводить, що людина була у формі і мала доступ за стійку, — і не доводить, хто саме з двох охоронців це був.",
+              "text_en": "The camera is a dome unit shooting from behind: no face, no reliable height or build. This proves the person was in uniform and had access behind the desk — and does not prove which of the two guards it was."
+            }
+          ],
+          "footer_uk": "Дві знахідки різної ваги. Провали у записі виключають зовнішнього нічного гостя і вказують на того, хто має доступ до панелі. Кадр дев'ятої ночі звужує до форми, а не до людини; щоб дійти до людини, потрібен журнал перепусток.",
+          "footer_en": "Two findings of different weight. The recording gaps rule out an outside night visitor and point at whoever can reach the panel. The ninth-night frame narrows it to a uniform, not to a person; getting to a person takes the badge log."
+        }
+      },
+      {
+        "id": "access-log",
+        "icon": "🔑",
+        "name_uk": "Журнал перепусток · нічні вікна",
+        "name_en": "Badge log · the night windows",
+        "provider_uk": "система контролю доступу · графік змін",
+        "provider_en": "access control system · shift roster",
+        "desc_uk": "Чия картка працювала тоді, коли з'являлися флаєри",
+        "desc_en": "Whose badge was active while the flyers appeared",
+        "tooltip_uk": "Журнал доступу відповідає на «хто міг», а не на «хто зробив».",
+        "tooltip_en": "A badge log answers who could have, not who did.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 150,
+        "ui_component": "kv-table",
+        "clue_uk": "У всіх дев'яти нічних вікнах жодна стороння картка не спрацювала. Прибиральниці за графіком працюють з 6:30 і ввечері до 21:00 — у ці вікна їх у будівлі немає. Активна лише перепустка охоронця на зміні.\n\nДев'ятої ночі на зміні був Андрій К. Його картка дає послідовність: 03:12 турнікет із-за стійки у лобі, 03:16 виклик ліфта на третьому поверсі, 03:22 повернення у лобі. Це прив'язує форму з відеозапису до конкретної людини у конкретному вікні.",
+        "clue_en": "In all nine night windows not one outside badge fired. The cleaners work from 6:30 and in the evening until 21:00 by roster — during these windows they are not in the building. The only active pass is the guard's on shift.\n\nOn the ninth night the shift belonged to Andrii K. His badge gives a sequence: 03:12 turnstile from behind the desk into the lobby, 03:16 a lift call on the third floor, 03:22 back in the lobby. That ties the uniform on the recording to a specific person in a specific window.",
+        "kv": {
+          "query_uk": "усі свайпи 02:00-06:00 у 9 ночей · звірка з графіком змін",
+          "query_en": "every swipe 02:00-06:00 across the 9 nights · matched to the shift roster",
+          "groups": [
+            {
+              "title_uk": "Дев'ять нічних вікон",
+              "title_en": "The nine night windows",
+              "rows": [
+                {
+                  "k": "Сторонні картки",
+                  "v_uk": "0 з 9 ночей",
+                  "v_en": "Outside badges · 0 across 9 nights",
+                  "warn": true,
+                  "note_uk": "Ніхто не заходив ззовні. Версія про зовнішнього актора закривається саме тут.",
+                  "note_en": "Nobody entered from outside. The outside-actor reading closes right here."
+                },
+                {
+                  "k": "Прибиральниці",
+                  "v_uk": "за графіком 6:30-8:00 і 19:00-21:00",
+                  "v_en": "Cleaners · rostered 6:30-8:00 and 19:00-21:00",
+                  "note_uk": "У вікна 02:00-06:00 не потрапляють жодного разу.",
+                  "note_en": "They never fall inside the 02:00-06:00 windows."
+                },
+                {
+                  "k": "Активні перепустки",
+                  "v_uk": "лише охоронець на зміні",
+                  "v_en": "Active passes · the guard on shift only"
+                },
+                {
+                  "k": "Охоронців у ротації",
+                  "v_uk": "2 · Василь П. і Андрій К., зміни по 12 годин",
+                  "v_en": "Guards in rotation · 2 · Vasyl P. and Andrii K., 12-hour shifts"
+                }
+              ]
+            },
+            {
+              "title_uk": "Дев'ята ніч · 21.08",
+              "title_en": "The ninth night · 21.08",
+              "rows": [
+                {
+                  "k": "На зміні",
+                  "v_uk": "Андрій К.",
+                  "v_en": "On shift · Andrii K.",
+                  "warn": true
+                },
+                {
+                  "k": "03:12",
+                  "v_uk": "турнікет: стійка → лобі",
+                  "v_en": "03:12 · turnstile: desk → lobby"
+                },
+                {
+                  "k": "03:16",
+                  "v_uk": "виклик ліфта, третій поверх",
+                  "v_en": "03:16 · lift call, third floor"
+                },
+                {
+                  "k": "03:22",
+                  "v_uk": "турнікет: повернення у лобі",
+                  "v_en": "03:22 · turnstile: back into the lobby"
+                },
+                {
+                  "k": "Відеозапис",
+                  "v_uk": "03:14-03:18 · постать у формі розкладає аркуші",
+                  "v_en": "Footage · 03:14-03:18 · a figure in uniform lays out sheets",
+                  "warn": true,
+                  "note_uk": "Свайпи обіймають цей проміжок з обох боків. Форма з відео і картка з журналу сходяться на одній людині.",
+                  "note_en": "The swipes bracket that interval on both sides. The uniform on the video and the badge in the log converge on one person."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Разом із записами камер це виключає зовнішнього актора і звужує коло до двох контрактних охоронців. Але дев'ята ніч звужує далі, до одного, і саме на цьому місці варто зупинитись: журнал доводить присутність, а не дію. Твердження «ця людина була у лобі о 03:14» витримає перевірку; твердження «ця людина розклала флаєри в усі дев'ять ночей» потребує третьої осі.",
+          "footer_en": "Together with the camera record this rules out an outside actor and narrows the field to the two contract guards. The ninth night narrows further, to one — and this is the place to stop: the log proves presence, not action. The claim 'this person was in the lobby at 03:14' will survive scrutiny; the claim 'this person laid out the flyers on all nine nights' needs a third axis."
+        }
+      },
+      {
+        "id": "contract-tender",
+        "icon": "📑",
+        "name_uk": "Охоронний контракт · публічні закупівлі",
+        "name_en": "The security contract · public procurement",
+        "provider_uk": "prozorro.gov.ua · відкритий фід за категорією",
+        "provider_en": "prozorro.gov.ua · open category feed",
+        "desc_uk": "Що зараз відбувається з контрактом охоронної фірми",
+        "desc_en": "What is happening to the security firm's contract right now",
+        "tooltip_uk": "Питай не «хто злиться», а «у кого зараз щось під загрозою».",
+        "tooltip_en": "Ask not who is angry but whose position is under threat right now.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 180,
+        "ui_component": "report",
+        "clue_uk": "Контракт «Атріум-Груп» із охоронною фірмою «Щит-Безпека» спливає через два місяці. Сорок два дні тому керуюча компанія опублікувала попередню ринкову консультацію: прямо вказано пошук альтернативного постачальника заради здешевлення, вимоги до послуги — ті самі. За три тижні надійшли чотири пропозиції, найдешевша на тридцять відсотків нижча за поточну ціну.\n\nПублікація лежить у відкритому фіді за категорією охоронних послуг. Її бачить не лише керівництво фірми, а будь-хто, хто цей фід читає, — зокрема охоронці, які тримаються за конкретне місце.",
+        "clue_en": "Atrium-Group's contract with the security firm Shchyt-Bezpeka expires in two months. Forty-two days ago the management company published a preliminary market consultation: it states outright that it is seeking an alternative supplier to cut costs, with the same service requirements. Four offers arrived within three weeks, the cheapest thirty per cent below the current price.\n\nThe posting sits in the open feed for the security-services category. It is visible not only to the firm's management but to anyone reading that feed — including guards holding on to a particular post.",
+        "report": {
+          "query_uk": "prozorro: замовник «Атріум-Груп» · категорія охоронних послуг",
+          "query_en": "prozorro: buyer Atrium-Group · security services category",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Поточний контракт",
+              "text_en": "The current contract"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Виконавець — ТОВ «Щит-Безпека», два контрактні охоронці, зміни по 12 годин",
+              "text_en": "Provider — Shchyt-Bezpeka LLC, two contract guards, 12-hour shifts"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Закінчується 23.10.2026 — через два місяці",
+              "text_en": "Expires 23.10.2026 — in two months"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що змінилося сорок два дні тому",
+              "text_en": "What changed forty-two days ago"
+            },
+            {
+              "kind": "p",
+              "text_uk": "12.07.2026 «Атріум-Груп» публікує попередню ринкову консультацію. У технічному завданні прямо написано: шукають альтернативного постачальника заради здешевлення, обсяг послуги лишається той самий.",
+              "text_en": "On 12.07.2026 Atrium-Group posts a preliminary market consultation. The specification says it plainly: they are looking for an alternative supplier to reduce cost, with the scope of service unchanged."
+            },
+            {
+              "kind": "li",
+              "text_uk": "За три тижні — 4 пропозиції",
+              "text_en": "Four offers within three weeks"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Найдешевша — на 30% нижче поточної ціни",
+              "text_en": "The cheapest is 30% below the current price"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Консультація ще не переросла у формальний тендер. Але для тих, хто цю сферу читає, публікація означає одне: чинний контракт майже напевно не переживе переторжки у нинішній ціні.",
+              "text_en": "The consultation has not yet become a formal tender. But to anyone who follows this field the posting means one thing: the current contract will almost certainly not survive a re-competition at its present price."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Хто це бачить",
+              "text_en": "Who sees this"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Консультації індексуються у публічному фіді за кодом категорії. Це не внутрішня інформація керівництва: фід читає будь-хто, кого цікавить ринок охоронних послуг, — і насамперед ті, чия зайнятість залежить від конкретного об'єкта.",
+              "text_en": "Consultations are indexed in a public feed by category code. This is not management's internal knowledge: the feed is read by anyone following the security-services market — and first of all by those whose employment depends on a particular site."
+            },
+            {
+              "kind": "quote",
+              "text_uk": "Дата публікації — сорок два дні тому. Перший флаєр — двадцять вісім днів тому. Між ними чотирнадцять днів.",
+              "text_en": "The posting is forty-two days old. The first flyer is twenty-eight days old. Fourteen days lie between them."
+            }
+          ],
+          "footer_uk": "Тут кейс повертає у інший бік. Поки шукали, кому з орендарів шкодять, з'ясувалося, що подія, яка передувала кампанії, стосується не орендарів взагалі. Будівля з «незрозумілим тлом» — це будівля, якій важче міняти охорону; а флаєри створюють рівно таке тло.",
+          "footer_en": "This is where the case turns. While the search was for which tenant was being harmed, the event that preceded the campaign turns out to have nothing to do with tenants at all. A building with an 'unexplained background' is a building that finds it harder to change its security provider; and the flyers manufacture exactly that background."
+        }
+      },
+      {
+        "id": "guard-footprint",
+        "icon": "👣",
+        "name_uk": "Публічні профілі двох охоронців",
+        "name_en": "The two guards' public profiles",
+        "provider_uk": "відкриті профілі · зворотний пошук за зображеннями",
+        "provider_en": "open profiles · reverse image search",
+        "desc_uk": "Що вони писали до того, як з'явився перший флаєр",
+        "desc_en": "What they were posting before the first flyer appeared",
+        "tooltip_uk": "Найцінніше тут — не думки, а дати.",
+        "tooltip_en": "What matters here is not the opinions but the dates.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 210,
+        "ui_component": "kv-table",
+        "clue_uk": "Василь П. — звичайний профіль без жодних незвичних сигналів за півроку.\n\nУ Андрія К. за останні три місяці з'являється інше. Скарги на те, що кваліфікованим охоронцям у Києві платять на тридцять відсотків нижче ринку. Чотири репости статей про зростання злочинності у бізнес-центрах, дві з яких при перевірці виявляються вигаданими: стокові фото і свіжий сайт без історії. І вступ у три канали з тематики охорони будівель — за тиждень до першого флаєра.\n\nПорядок тут важливіший за зміст: наратив «у будівлях стало небезпечно» будували до того, як з'явилося те, що цей наратив підтверджує.",
+        "clue_en": "Vasyl P. — an ordinary profile with no unusual signals over six months.\n\nAndrii K.'s past three months look different. Complaints that qualified guards in Kyiv are paid thirty per cent below market. Four reshares of articles about rising crime in business centres, two of which turn out on checking to be fabricated: stock photos and a fresh site with no history. And joining three channels on building security — a week before the first flyer.\n\nThe order matters more than the content: the narrative that buildings have become unsafe was being built before the thing that confirms it appeared.",
+        "kv": {
+          "query_uk": "відкриті профілі 2 охоронців · перевірка репостів зворотним пошуком",
+          "query_en": "open profiles of the 2 guards · reshares checked by reverse image search",
+          "groups": [
+            {
+              "title_uk": "Василь П., 48",
+              "title_en": "Vasyl P., 48",
+              "rows": [
+                {
+                  "k": "Профілі",
+                  "v_uk": "відкриті, звичайні",
+                  "v_en": "Profiles · open, ordinary"
+                },
+                {
+                  "k": "Останні 6 місяців",
+                  "v_uk": "родинні фото, побутові дописи",
+                  "v_en": "Past 6 months · family photos, everyday posts"
+                },
+                {
+                  "k": "Тематика охорони",
+                  "v_uk": "не з'являється",
+                  "v_en": "Security topics · never appear"
+                }
+              ]
+            },
+            {
+              "title_uk": "Андрій К., 39",
+              "title_en": "Andrii K., 39",
+              "rows": [
+                {
+                  "k": "Скарги на оплату",
+                  "v_uk": "з травня 2026 · «платять на 30% нижче ринку»",
+                  "v_en": "Complaints about pay · since May 2026 · 'paid 30% below market'",
+                  "note_uk": "Схильність, не дія. У доказовий пакет це не кладуть.",
+                  "note_en": "A disposition, not an act. This does not belong in an evidence package."
+                },
+                {
+                  "k": "Репости про злочинність у БЦ",
+                  "v_uk": "4 · з них 2 вигадані",
+                  "v_en": "Reshares on crime in business centres · 4 · two of them fabricated",
+                  "warn": true,
+                  "note_uk": "Зворотний пошук: стокові фото, домени зареєстровані цього року, жодної редакції за адресою.",
+                  "note_en": "Reverse search: stock photos, domains registered this year, no editorial team at the address."
+                },
+                {
+                  "k": "Вступ у канали з охорони будівель",
+                  "v_uk": "3 канали · 19.07.2026",
+                  "v_en": "Joined building-security channels · 3 channels · 19.07.2026",
+                  "warn": true,
+                  "note_uk": "За тиждень до першого флаєра і за сім днів після публікації консультації про пошук нового постачальника.",
+                  "note_en": "A week before the first flyer, and seven days after the consultation seeking a new supplier was posted."
+                },
+                {
+                  "k": "Спроби змінити роботу",
+                  "v_uk": "2 у 2025-2026, обидві невдалі",
+                  "v_en": "Attempts to change job · 2 across 2025-2026, both unsuccessful"
+                },
+                {
+                  "k": "Приватні профілі",
+                  "v_uk": "Instagram закритий",
+                  "v_en": "Private profiles · Instagram closed",
+                  "note_uk": "Закритий профіль — межа роботи, а не привід її обходити.",
+                  "note_en": "A closed profile is the boundary of the work, not a reason to go around it."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Розділяй тут дві різні речі. Скарги на зарплату — це схильність: вона нічого не доводить, бо на зарплату скаржаться мільйони. А от підготовка наративу перед подією — це вже операційна ознака: вигадані статті репостять за п'ять тижнів до того, як у лобі з'являється перший флаєр, який їх підтверджує. Перше у доказовий пакет не кладуть, друге кладуть.",
+          "footer_en": "Keep two different things apart here. Complaints about pay are a disposition: they prove nothing, since millions complain about pay. Preparing a narrative ahead of an event is an operational signal: the fabricated articles are reshared five weeks before the first flyer appears in the lobby to confirm them. The first does not go into an evidence package; the second does."
+        }
+      },
+      {
+        "id": "dm-admin",
+        "icon": "💬",
+        "name_uk": "Написати адміну каналу",
+        "name_en": "Message the channel admin",
+        "provider_uk": "приватне повідомлення",
+        "provider_en": "private message",
+        "desc_uk": "Спитати навпростець, чого вони хочуть",
+        "desc_en": "Ask outright what they want",
+        "tooltip_uk": "Автор каналу працює у цій будівлі. Подумай, що він зробить далі.",
+        "tooltip_en": "The channel's author works in this building. Think about what he does next.",
+        "correct": false,
+        "points": -35,
+        "time_cost": 60,
+        "ui_component": "report",
+        "clue_uk": "Повідомлення прочитано вночі. Відповіді немає. Наступного ранку канал видалено разом з усіма одинадцятьма дописами, а з ними — таймстемпи, які вказували на нічне вікно. Флаєри більше не з'являються, і це виглядає як перемога рівно доти, доки клієнт не спитає, кому пред'являти претензію.",
+        "clue_en": "The message is read during the night. No reply. By the next morning the channel is deleted along with all eleven posts, and with them the timestamps that pointed at the night window. The flyers stop appearing, and that looks like a victory right up until the client asks whom he is supposed to hold responsible.",
+        "report": {
+          "query_uk": "DM → адмін t.me/atr_pravda_kyiv",
+          "query_en": "DM → admin of t.me/atr_pravda_kyiv",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Прочитано о 01:12 · без відповіді",
+              "text_en": "Read at 01:12 · no reply"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Втрачено найдешевший доказ у справі: одинадцять таймстемпів, які прив'язували автора до нічних годин. Відновити їх нізвідки — публічних архівів у такого каналу немає.",
+              "text_en": "The cheapest evidence in the case is gone: eleven timestamps tying the author to night hours. There is nowhere to recover them from — a channel like this has no public archive."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Гірше інше. Кампанія припинилася, орендарі заспокоїлися, а причина лишилася всередині будівлі і зі своїм доступом. Наступного разу вона повернеться акуратніше.",
+              "text_en": "Worse than that. The campaign stopped, the tenants calmed down, and the cause remains inside the building with its access intact. Next time it comes back more carefully."
+            }
+          ],
+          "footer_uk": "Зупинити симптом до того, як встановлено причину, — це не результат, а втрачена справа з тихим фіналом.",
+          "footer_en": "Stopping a symptom before the cause is established is not a result; it is a lost case with a quiet ending."
+        }
+      },
+      {
+        "id": "escalate-sbu",
+        "icon": "🏛",
+        "name_uk": "Заява до СБУ про іноземний вплив",
+        "name_en": "File with the SBU as a foreign-influence operation",
+        "provider_uk": "офіційне звернення",
+        "provider_en": "official referral",
+        "desc_uk": "Передати справу тим, у кого більше повноважень",
+        "desc_en": "Hand the case to someone with more powers",
+        "tooltip_uk": "Формально можна. Питання, що у справі є такого, щоб її взяли.",
+        "tooltip_en": "Formally possible. The question is what in the case would make them take it.",
+        "correct": false,
+        "points": -20,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Звернення прийнято. Через сімнадцять днів приходить відповідь: ознак іноземного втручання у матеріалах немає, склад не той, рекомендовано звертатися у поліцію за місцем. Поліція вже дивилася і вже відповіла. За ці сімнадцять днів ще один орендар подав попередження про розрив.",
+        "clue_en": "The referral is accepted. Seventeen days later the answer arrives: the materials show no signs of foreign involvement, this is not their competence, refer to the local police. The police already looked and already answered. Over those seventeen days one more tenant filed notice of termination.",
+        "report": {
+          "query_uk": "офіційне звернення · додано 3 фото і знімок каналу",
+          "query_en": "official referral · 3 photos and a channel capture attached",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Відповідь через 17 днів",
+              "text_en": "Answer after 17 days"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Матеріал не має жодного маркера, за яким такі справи беруть: ні мовних ознак зовнішнього походження, ні політичного змісту, ні згадок про війну, ні координації з відомими мережами. Тул мовного аналізу показав це ще на початку.",
+              "text_en": "The material carries none of the markers that get such cases taken up: no language signs of external origin, no political content, no war references, no coordination with known networks. The language tool showed as much at the outset."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Ціна помилки тут не у відмові, а у сімнадцяти днях. Клієнт втрачає орендарів щотижня, і саме тому «передати тим, у кого більше повноважень» без ознак їхньої юрисдикції — це не обережність, а відкладене нічого.",
+              "text_en": "The cost of this error is not the refusal but the seventeen days. The client loses tenants weekly, which is why handing it to someone with more powers, absent any sign it is their jurisdiction, is not caution but deferred nothing."
+            }
+          ],
+          "footer_uk": "Ескалація має адресу тільки тоді, коли встановлено тип справи. До того це лотерея за рахунок клієнтового часу.",
+          "footer_en": "Escalation has an address only once the type of case is established. Before that it is a lottery paid for with the client's time."
+        }
+      },
+      {
+        "id": "tenant-survey",
+        "icon": "🗣",
+        "name_uk": "Опитати орендарів, у кого могли бути вороги",
+        "name_en": "Ask the tenants who might have enemies",
+        "provider_uk": "особисті розмови · 10 орендарів",
+        "provider_en": "in-person conversations · 10 tenants",
+        "desc_uk": "Піти шляхом, який пропонує клієнт",
+        "desc_en": "Take the route the client suggests",
+        "tooltip_uk": "Питання «у кого вороги» завжди дає відповідь. Найчастіше неправильну.",
+        "tooltip_en": "The question 'who has enemies' always gets an answer. Usually the wrong one.",
+        "correct": false,
+        "points": -25,
+        "time_cost": 300,
+        "ui_component": "report",
+        "clue_uk": "Десять розмов дали шість версій. IT-стартап згадав конкурента, юрфірма — двох відповідачів, нотаріус розповів про скандал зі спадщиною, туристична агенція — про невдоволеного клієнта. Жодна з версій не перевіряється і жодна не пояснює ні нічних вікон, ні провалів у записах.\n\nНатомість до вечора того ж дня по будівлі йде розмова, що керуюча компанія когось шукає. Ще двоє орендарів питають Ігоря, чи не час з'їжджати.",
+        "clue_en": "Ten conversations produced six theories. The IT startup named a competitor, the law firm named two defendants, the notary told a story about an inheritance dispute, the travel agency about an unhappy client. None of the theories is checkable and none explains the night windows or the recording gaps.\n\nWhat it did produce, by that same evening, is talk around the building that the management company is looking for someone. Two more tenants ask Ihor whether it is time to move out.",
+        "report": {
+          "query_uk": "10 розмов · «чи є у вас недоброзичливці»",
+          "query_en": "10 conversations · 'do you have anyone with a grudge'",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "6 версій, жодної перевірюваної",
+              "text_en": "6 theories, none checkable"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Питання поставлене так, що на нього неможливо відповісти «ні»: у кожного бізнесу є хтось невдоволений. Ти отримав шість нових напрямків, жоден із яких не пов'язаний із тим, що насправді відомо про справу.",
+              "text_en": "The question is framed so that 'no' is not an available answer: every business has someone dissatisfied. You have acquired six new directions, not one of them connected to what is actually known about the case."
+            },
+            {
+              "kind": "p",
+              "text_uk": "І це ще не найгірше. Клієнт прямо просив не робити розслідування публічним, бо це прискорить виїзд. Десять розмов і є публічність — у будівлі на десять орендарів новина доходить до всіх за день.",
+              "text_en": "And that is not the worst of it. The client asked outright that the investigation not become public, because that speeds up the exodus. Ten conversations are that publicity — in a building with ten tenants the news reaches everyone in a day."
+            }
+          ],
+          "footer_uk": "Версія замовника вже лежала у брифінгу. Щоб її перевірити, не треба десять розмов — треба журнал доступу.",
+          "footer_en": "The client's theory was already in the briefing. Testing it does not take ten conversations — it takes the badge log."
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Крос-верифікація",
+    "title_en": "Cross-verification",
+    "instruction_uk": "Три питання по тому, що ти здобув. Тут перевіряється не кмітливість, а те, чи відрізняєш «хто міг» від «хто зробив».",
+    "instruction_en": "Three questions about what you obtained. What is tested here is not cleverness but whether you keep 'who could have' apart from 'who did'.",
+    "next_btn_uk": "Далі → драбина атрибуції",
+    "next_btn_en": "Next → attribution ladder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Мовний аналіз показав: розмита мова без ідеологічних маркерів, жодної вимоги, стилометрична відстань від усіх відомих київських груп вища за поріг. Що це для тебе означає?",
+        "text_en": "The language analysis returned: vague wording with no ideological markers, no demand of any kind, stylometric distance above threshold from every known Kyiv group. What does that mean to you?",
+        "options": [
+          {
+            "text_uk": "Зміст написаний не заради повідомлення, а заради ефекту — щоб лякати, не даючи приводу для реакції правоохоронців. Отже, питати треба не «хто це думає», а «кому вигідне те, що станеться після».",
+            "text_en": "The content was written not to communicate but to produce an effect — to frighten without giving law enforcement anything to act on. So the question is not who thinks this but who benefits from what follows.",
+            "correct": true,
+            "points": 45,
+            "feedback_uk": "✓ Правильне зважування. Матеріал без вимоги — це діагностична ознака: ідеологія завжди чогось просить, бо в цьому її сенс. Тут просити нічого не збиралися, отже цінність кампанії у наслідку, а не у змісті. Ця думка перевертає весь напрямок пошуку.",
+            "feedback_en": "✓ Correct weighting. Material without a demand is diagnostic: ideology always asks for something, because that is what it is for. Here nobody intended to ask, so the campaign's value lies in its consequence rather than its content. That thought reverses the whole direction of the search."
+          },
+          {
+            "text_uk": "Це просто нова група, якої ще немає у базах. Треба зібрати ширший стилометричний корпус.",
+            "text_en": "It is simply a new group not yet in the corpora. I need to build a wider stylometric baseline.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "✗ Гіпотеза можлива і найдорожча за часом. Але навіть невідома група мала б чогось вимагати: нові рухи заявляють про себе гучніше за старі, а не тихіше. Відсутність вимоги — не пробіл у твоїй базі, а властивість матеріалу.",
+            "feedback_en": "✗ A possible hypothesis and the most expensive in time. But even an unknown group would demand something: new movements announce themselves more loudly than old ones, not less. The missing demand is not a gap in your corpus, it is a property of the material."
+          },
+          {
+            "text_uk": "Це напад на конкретного орендаря — найімовірніше на IT-стартап із держконтрактами. Треба перевірити його конкурентів.",
+            "text_en": "This is an attack on a specific tenant — most likely the IT startup with state contracts. Time to check its competitors.",
+            "correct": false,
+            "points": -35,
+            "feedback_uk": "✗ У текстах немає жодного орендаря: скрізь «один з орендарів» без імені, галузі й деталі. Ти взяв версію клієнта і дописав її у знахідку. Якби ціллю був конкретний бізнес, кампанія мала б його називати — інакше вона не працює як напад.",
+            "feedback_en": "✗ There is no tenant in the texts: everywhere it is 'one of the tenants', with no name, no sector, no detail. You took the client's theory and wrote it into a finding. If a specific business were the target the campaign would have to name it, or it does not function as an attack."
+          },
+          {
+            "text_uk": "Це підготовка до чогось серйознішого — мінування, вимога викупу. Треба ескалувати до СБУ.",
+            "text_en": "This is preparation for something more serious — a bomb threat, a ransom demand. Time to escalate to the SBU.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Ескалація без ознак. Нагнітання страху саме собою не є передвісником нападу — набагато частіше воно є самоціллю. А ціна помилки тут вимірюється не у репутації, а у тижнях, за які клієнт втрачає ще одного орендаря.",
+            "feedback_en": "✗ Escalation without indicators. Manufacturing fear is not by itself a precursor to an attack — far more often it is the point. And the cost of the error is measured not in reputation but in the weeks during which the client loses another tenant."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Записи камер мають провали у восьми ночах із дев'яти, і в жодну з ночей не спрацювала стороння перепустка. Твій наступний крок:",
+        "text_en": "The camera record has gaps on eight nights out of nine, and on no night did an outside badge fire. Your next step:",
+        "options": [
+          {
+            "text_uk": "Звужую коло до тих, хто фізично міг бути у будівлі у ці вікна, і йду шукати незалежні осі — цього мало для висновку про особу.",
+            "text_en": "Narrow the field to whoever could physically be in the building in those windows, then go looking for independent axes — this is not enough to conclude anything about a person.",
+            "correct": true,
+            "points": 55,
+            "feedback_uk": "✓ Саме та послідовність, яка потім витримає перевірку. Журнал доступу відповідає на «хто міг», і плутати це з «хто зробив» — найпоширеніша помилка у справах з інсайдером. Коло звужено до двох; далі потрібні осі, які не походять із цього ж журналу.",
+            "feedback_en": "✓ Exactly the sequence that survives scrutiny later. A badge log answers who could have, and confusing that with who did is the commonest error in insider cases. The field is down to two; what comes next has to be axes that do not derive from the same log."
+          },
+          {
+            "text_uk": "Пишу клієнту: зовнішнього актора немає, це хтось зсередини.",
+            "text_en": "Write to the client: there is no outside actor, this is someone inside.",
+            "correct": false,
+            "points": -25,
+            "feedback_uk": "✗ Спостереження правильне і зупинятися на ньому рано. «Хтось зсередини» у будівлі з десятьма орендарями, охороною і прибиральницями — це не звужене коло, а нова хвиля підозр у всіх до всіх. Клієнт від такого висновку отримає лише зіпсовані стосунки з орендарями.",
+            "feedback_en": "✗ The observation is right and stopping here is premature. 'Someone inside' in a building with ten tenants, security and cleaners is not a narrowed field, it is a fresh wave of everyone suspecting everyone. All the client gets from that conclusion is damaged relations with his tenants."
+          },
+          {
+            "text_uk": "Одразу пишу, що винен охоронець: тільки його картка активна вночі.",
+            "text_en": "Conclude straight away that the guard did it: his is the only badge active at night.",
+            "correct": false,
+            "points": -40,
+            "feedback_uk": "✗ Стрибок через одну вісь, і саме він розсиплеться першим. Охоронець на нічній зміні і має свайпати картку — це його робота, а не аномалія. Крім того, охоронців двоє, і без дев'ятої ночі ти не відрізниш одного від другого.",
+            "feedback_en": "✗ A leap on a single axis, and the first one to collapse. A guard on a night shift is supposed to swipe his badge — that is the job, not an anomaly. Besides, there are two guards, and without the ninth night you cannot tell one from the other."
+          },
+          {
+            "text_uk": "Питаю у клієнта, кому з орендарів він довіряє найменше — може, у когось є ключ від службового входу.",
+            "text_en": "Ask the client which tenant he trusts least — someone may have a key to the service entrance.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Повернення у ту саму версію, яку журнал доступу щойно закрив. Якби у когось був обхідний шлях, у ці вікна лишився б хоч якийсь слід; сліду немає взагалі, і саме тому версія з орендарями відпадає, а не звужується.",
+            "feedback_en": "✗ A return to the very theory the badge log just closed. If someone had a way around, some trace would remain in those windows; there is no trace at all, which is why the tenant reading is eliminated rather than narrowed."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "У тебе три різні сигнали: доступ звужує коло до охорони; публічні дописи одного з охоронців будували потрібний наратив за тиждень до старту; а за два тижні до старту у публічному реєстрі з'явилося оголошення, що ставить під загрозу його роботу. Кожен окремо схожий на збіг. Як їх скласти?",
+        "text_en": "You have three different signals: access narrows the field to security; one guard's public posts were building the needed narrative a week before the start; and two weeks before the start a public registry posting appeared that puts his job at risk. Each on its own looks like a coincidence. How do you put them together?",
+        "options": [
+          {
+            "text_uk": "Записую їх як три незалежні осі, до кожної окремо формулюю, чим її можна спростувати, і лише потім говорю про спільний висновок.",
+            "text_en": "Log them as three independent axes, state for each separately what would refute it, and only then speak of a combined conclusion.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Різниця між тріангуляцією і сумою підозр саме тут. Три сигнали з одного джерела — це один сигнал; три з різних, кожен зі своїм спростуванням, — це висновок, який не завалиться від того, що одна деталь виявиться інакшою.",
+            "feedback_en": "✓ The difference between triangulation and a pile of suspicions lives right here. Three signals from one source are one signal; three from different sources, each with its own refutation, make a conclusion that does not fall over when one detail turns out otherwise."
+          },
+          {
+            "text_uk": "Трьох сигналів досить — пишу клієнту фінальний висновок.",
+            "text_en": "Three signals are enough — write the client the final conclusion.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Кількість без перевірки незалежності нічого не варта. Поки не сказано, чим кожну вісь можна спростувати, це три враження, а не три опори — і у розмові з юристом охоронної фірми різниця стане очевидною за хвилину.",
+            "feedback_en": "✗ Count without an independence check is worth nothing. Until you have said what would refute each axis, these are three impressions rather than three supports — and in a conversation with the security firm's lawyer the difference becomes obvious within a minute."
+          },
+          {
+            "text_uk": "Прошу клієнта найняти детектива, щоб перевірити банківські рахунки охоронця — раптом там оплата.",
+            "text_en": "Ask the client to hire an investigator to check the guard's bank accounts — there may be a payment there.",
+            "correct": false,
+            "points": -45,
+            "feedback_uk": "✗ Це вихід за межі і водночас непотрібний крок. Рахунки приватної особи не дістають без правових підстав, і у цій справі вони ні для чого: у тебе вже є доступ, відео і хронологія. Найгірше, що такий крок робить із доказами, — робить їх непридатними.",
+            "feedback_en": "✗ Out of bounds and unnecessary at once. A private person's accounts are not reached without legal grounds, and in this case they serve nothing: you already have access, footage and a timeline. The worst thing such a step does to evidence is make it unusable."
+          },
+          {
+            "text_uk": "Кажу клієнту, що трьох осей замало, і збираю ще три-п'ять перед будь-яким висновком.",
+            "text_en": "Tell the client three axes are too few and gather another three to five before any conclusion.",
+            "correct": false,
+            "points": 10,
+            "feedback_uk": "△ Виглядає як обережність, а працює як зволікання. Три незалежні осі з чесно виписаними спростуваннями — це вже той рівень, з яким ідуть до юриста. Клієнт втрачає орендаря щотижня, і відкладене рішення тут коштує дорожче за неідеальне.",
+            "feedback_en": "△ It looks like caution and works like delay. Three independent axes with their refutations honestly written out is already the level you take to a lawyer. The client loses a tenant a week, and a deferred decision costs more here than an imperfect one."
+          }
+        ]
+      }
+    ]
+  },
+  "ladder_phase": {
+    "title_uk": "Драбина атрибуції",
+    "title_en": "Attribution ladder",
+    "instruction_uk": "П'ять щаблів. На кожен — один доказ із пулу. Заповни щонайменше чотири. Картка нараховує бали лише на своєму щаблі; будь-де ще вона просто не працює.",
+    "instruction_en": "Five rungs. One evidence item per rung, dragged from the pool. Fill at least four. A card scores only on its own rung; anywhere else it simply does not work.",
+    "submit_btn_uk": "Зафіксувати драбину",
+    "submit_btn_en": "Lock the ladder",
+    "reveal_uk": "Цей кейс — єдиний у треку, де ідентифікатор доходить до конкретної людини, і саме тому тут легко перебрати з рештою.\n\nІдентифікатор. Повний бал дає названа особа у ролі виконавця — три незалежні осі це витримують. Але картка, яка додає до цього змову з керівництвом охоронної фірми, дає нуль: жоден інструмент не показав нічого про фірму як організацію, а таке твердження перетворює доказовий пакет на позов, який нічим підперти.\n\nЛокація — навпаки, і в цьому відмінність від попередніх кейсів. Тут не треба писати «не встановлюється»: людина працює у цій будівлі, її картка у журналі, її зміна у графіку, а дев'ятої ночі є відеозапис. Це пряме спостереження, а не висновок з інфраструктури. Обережність доречна там, де доказу бракує, і зайва там, де він є.\n\nМотив. Три опори — публічне оголошення про пошук дешевшого постачальника, дата закінчення контракту і побудова наративу до події. Скарги на зарплату сюди не входять: це схильність, а не дія, і будувати на ній мотив означає підмінити доказ здогадом про характер.",
+    "reveal_en": "This is the only case in the track where the identifier reaches a specific person, which is exactly why it is easy to overreach on everything else.\n\nIdentifier. Full credit goes to the named person in the executor's role — three independent axes carry that. The card that adds a conspiracy with the security firm's management scores zero: no tool showed anything about the firm as an organisation, and a claim like that turns an evidence package into an accusation with nothing under it.\n\nLocation works the other way here, unlike the earlier cases. There is no need to write 'cannot be established': the person works in this building, his badge is in the log, his shift is on the roster, and the ninth night has footage. That is direct observation, not an inference from infrastructure. Caution belongs where evidence is missing and is surplus where it exists.\n\nMotive. Three supports — the public posting seeking a cheaper supplier, the contract's expiry date, and the narrative built ahead of the event. Complaints about pay are not among them: that is a disposition rather than an act, and building a motive on it substitutes a guess about character for evidence.",
+    "min_slots": 4,
+    "slots": [
+      {
+        "id": "identifier",
+        "max_points": 40,
+        "label_uk": "Ідентифікатор",
+        "label_en": "Identifier",
+        "hint_uk": "Хто це. Назви рівно стільки, скільки витримують три осі — і жодного слова більше.",
+        "hint_en": "Who this is. Name exactly as much as three axes carry — and not one word more."
+      },
+      {
+        "id": "location",
+        "max_points": 40,
+        "label_uk": "Локація",
+        "label_en": "Location",
+        "hint_uk": "Де. Цього разу обережність може виявитись зайвою.",
+        "hint_en": "Where. This time caution may turn out to be surplus."
+      },
+      {
+        "id": "motive",
+        "max_points": 40,
+        "label_uk": "Мотив",
+        "label_en": "Motive",
+        "hint_uk": "Навіщо. Розрізняй, що людина відчуває, і що людина втрачає.",
+        "hint_en": "Why. Keep apart what the person feels and what the person stands to lose."
+      },
+      {
+        "id": "timeline",
+        "max_points": 40,
+        "label_uk": "Хронологія",
+        "label_en": "Timeline",
+        "hint_uk": "Коли і в якому порядку. Початок відліку лежить раніше за перший флаєр.",
+        "hint_en": "When, and in what order. The clock starts before the first flyer."
+      },
+      {
+        "id": "verification",
+        "max_points": 40,
+        "label_uk": "Верифікація",
+        "label_en": "Verification",
+        "hint_uk": "Чим тримається все вище. Три сигнали з одного джерела — це один сигнал.",
+        "hint_en": "What holds everything above it up. Three signals from one source are one signal."
+      }
+    ],
+    "evidence_pool": [
+      {
+        "id": "ev-id-guard",
+        "slot": "identifier",
+        "score": 40,
+        "text_uk": "Андрій К., 39, контрактний охоронець на нічних змінах у цій будівлі — виконавець. Три осі: доступ (жодної сторонньої картки у дев'яти вікнах, його свайпи обіймають проміжок, коли на записі розкладають флаєри), відеозапис дев'ятої ночі, і публічні дописи, що будували потрібний наратив за тиждень до старту. Чи знало про це керівництво охоронної фірми — з наявних даних не встановлюється.",
+        "text_en": "Andrii K., 39, contract guard on night shifts in this building — the executor. Three axes: access (no outside badge across the nine windows, his swipes bracketing the interval in which the footage shows flyers being laid out), the ninth-night recording, and public posts building the needed narrative a week before the start. Whether the security firm's management knew cannot be established from the available data.",
+        "feedback_uk": "Названо стільки, скільки витримують три осі, і окремо названо межу. Остання фраза не слабкість звіту — вона те, що дозволить клієнтові показати цей пакет юристу фірми без ризику отримати позов про наклеп.",
+        "feedback_en": "It names as much as three axes carry, and names the boundary separately. That last sentence is not a weakness in the report — it is what lets the client show this package to the firm's lawyer without risking a defamation claim."
+      },
+      {
+        "id": "ev-id-insider-generic",
+        "slot": "identifier",
+        "score": 20,
+        "text_uk": "Хтось із персоналу з нічним доступом: зовнішнього актора виключено, у дев'яти вікнах активна лише перепустка охоронця на зміні.",
+        "text_en": "Someone on staff with night access: an outside actor is excluded, and across the nine windows the only active pass is the on-shift guard's.",
+        "feedback_uk": "Половина. Виключити зовнішнього актора — велика робота, і зупинятися тут прикро: дев'ята ніч звужує коло з двох до одного, і саме ця ніч перетворює «хтось із охорони» на щось, з чим можна йти до фірми.",
+        "feedback_en": "Half the work. Excluding an outside actor is real progress, and stopping here is a waste: the ninth night narrows two to one, and that night is what turns 'someone in security' into something you can take to the firm."
+      },
+      {
+        "id": "ev-id-conspiracy",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Охоронна фірма «Щит-Безпека» організувала кампанію, щоб зберегти контракт; охоронець на зміні — лише виконавець наказу керівництва.",
+        "text_en": "The security firm Shchyt-Bezpeka organized the campaign to keep the contract; the guard on shift is merely carrying out management's instruction.",
+        "feedback_uk": "Нуль. Версія правдоподібна і нічим не підперта: жоден інструмент не показав ні листування, ні платежів, ні вказівок. Ціна помилки конкретна — таке твердження у пакеті перетворює розмову з фірмою з тихої на позовну, і клієнт втрачає найкращий доступний йому вихід.",
+        "feedback_en": "Zero. A plausible reading with nothing under it: no tool showed correspondence, payments or instructions. The cost is concrete — a claim like that in the package turns the conversation with the firm from a quiet one into a litigious one, and the client loses the best exit available to him."
+      },
+      {
+        "id": "ev-id-tenant-target",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Мішень — IT-стартап із держконтрактами: в одному з репостів фігурує слово «державний», а співзасновник стартапу публічно писав про держконтракт у березні.",
+        "text_en": "The target is the IT startup with state contracts: one of the reshares contains the word 'state', and the startup's co-founder posted publicly about a state contract in March.",
+        "feedback_uk": "Нуль, і обидва збіги варто розібрати. Слово «державний» стоїть у чужій статті, яку охоронець репостнув, а не у його власному тексті. Березневий допис відстоїть на п'ять місяців — на київській сцені такі збіги трапляються постійно. Ні у флаєрах, ні у каналі жодного орендаря не названо.",
+        "feedback_en": "Zero, and both coincidences deserve unpicking. The word 'state' sits in someone else's article the guard reshared, not in anything he wrote. The March post is five months away — on the Kyiv scene such overlaps happen constantly. Neither the flyers nor the channel names a single tenant."
+      },
+      {
+        "id": "ev-id-lawfirm-target",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Мішень — юрфірма: у відкритому судовому реєстрі є справа її клієнта, де прізвище відповідача починається на «Прав», а у дописах повторюється слово «правду».",
+        "text_en": "The target is the law firm: the open court registry holds a case of its client where the defendant's surname begins with 'Prav', and the posts keep repeating the word 'truth'.",
+        "feedback_uk": "Нуль. Це збіг літер, а не доказ: «правду» вжито як звичайне слово у сталому звороті, з малої літери, без жодного контексту, який вказував би на прізвище. До того ж юрфірма не має нікого з нічним доступом у будівлю — цю версію закриває журнал перепусток, а не тлумачення слів.",
+        "feedback_en": "Zero. A coincidence of letters, not evidence: 'truth' is used as an ordinary word in a set phrase, lowercase, with nothing in the context pointing at a surname. Besides, the law firm has nobody with night access to the building — the badge log closes this reading, not an exercise in wordplay."
+      },
+      {
+        "id": "ev-id-exemployee",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Колишній працівник керуючої компанії, звільнений із конфліктом: знає будівлю, має мотив помститися.",
+        "text_en": "A former employee of the management company dismissed after a conflict: knows the building and has a motive for revenge.",
+        "feedback_uk": "Нуль. Знання будівлі не дає доступу до неї: у дев'яти нічних вікнах не спрацювала жодна стороння картка, а панель відеореєстратора стоїть за стійкою охорони. Мотив без можливості — це не версія.",
+        "feedback_en": "Zero. Knowing a building does not grant access to it: across the nine night windows no outside badge fired, and the recorder's panel sits behind the security desk. A motive without means is not a theory."
+      },
+      {
+        "id": "ev-loc-direct",
+        "slot": "location",
+        "score": 40,
+        "text_uk": "Будівля «Атріум», Солом'янка, Київ — встановлено прямим спостереженням, а не висновком. Виконавець працює у цьому лобі: його зміна у графіку, його картка у журналі о 03:12 і 03:22, відеозапис дев'ятої ночі між цими свайпами. Години дописів у каналі лежать у київському нічному вікні і збігаються з його змінами.",
+        "text_en": "The Atrium building, Solomianka, Kyiv — established by direct observation rather than inference. The executor works in this lobby: his shift on the roster, his badge in the log at 03:12 and 03:22, the ninth-night footage between those swipes. The channel's posting hours fall in the Kyiv night window and line up with his shifts.",
+        "feedback_uk": "Повний бал, і цей щабель відрізняється від решти треку. У попередніх кейсах уся географія була орендованою і чесною відповіддю було «не встановлюється»; тут людина фізично стоїть у кадрі власного робочого місця. Обережність доречна там, де бракує доказу, а не там, де він є.",
+        "feedback_en": "Full credit, and this rung differs from the rest of the track. In the earlier cases all geography was rented and the honest answer was 'cannot be established'; here the person is physically standing in frame at his own workplace. Caution belongs where evidence is missing, not where it exists."
+      },
+      {
+        "id": "ev-loc-timestamps",
+        "slot": "location",
+        "score": 15,
+        "text_uk": "Київський часовий пояс: усі одинадцять дописів у каналі опубліковані між 22:15 і 01:40 за київським часом.",
+        "text_en": "The Kyiv time zone: all eleven channel posts were published between 22:15 and 01:40 Kyiv time.",
+        "feedback_uk": "Чверть картини, і звичка з попередніх кейсів тут працює проти тебе. Часовий пояс — це те, чим задовольняються, коли більшого немає. Тут є більше: журнал перепусток і відеозапис дають не пояс, а конкретне приміщення.",
+        "feedback_en": "A quarter of the picture, and the habit from earlier cases works against you here. A time zone is what you settle for when there is nothing better. Here there is: the badge log and the footage give not a zone but a specific room."
+      },
+      {
+        "id": "ev-loc-unattributable",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Локація не встановлюється: канал анонімний, метаданих у дописах немає, обличчя у кадр не потрапило.",
+        "text_en": "Location cannot be established: the channel is anonymous, the posts carry no metadata, and no face entered the frame.",
+        "feedback_uk": "Нуль, і це найцікавіша помилка кейсу. Кожне слово тут правда, а висновок хибний: локацію дає не канал, а будівля. Людина заходить у лобі за власною перепусткою і виходить за нею ж. Обережність, застосована там, де доказ уже є, — це не дисципліна, а відмова від власної роботи.",
+        "feedback_en": "Zero, and the most interesting error in the case. Every word here is true and the conclusion is wrong: location comes not from the channel but from the building. The person enters the lobby on his own badge and leaves on it. Caution applied where the evidence already exists is not discipline, it is declining to use your own work."
+      },
+      {
+        "id": "ev-motive-contract",
+        "slot": "motive",
+        "score": 40,
+        "text_uk": "Збереження контракту через штучно створене тло. Три опори: сорок два дні тому керуюча компанія публічно оголосила пошук дешевшого постачальника охорони і вже отримала пропозицію на тридцять відсотків нижче; чинний контракт спливає через два місяці; за п'ять тижнів до першого флаєра виконавець почав будувати наратив «у бізнес-центрах стало небезпечно», зокрема двома вигаданими статтями. Будівля з незрозумілим тлом — це будівля, якій важче міняти охорону.",
+        "text_en": "Preserving the contract through a manufactured background. Three supports: forty-two days ago the management company publicly announced a search for a cheaper security provider and already holds an offer thirty per cent below current; the existing contract expires in two months; five weeks before the first flyer the executor began building the narrative that business centres have become unsafe, including two fabricated articles. A building with an unexplained background is a building that finds it harder to change providers.",
+        "feedback_uk": "Мотив, який пояснює найдивнішу рису кампанії — відсутність вимоги. Тому й не вимагали нічого, що потрібен був не результат перемовин, а сам стан тривоги. Кампанія без адресата має сенс лише тоді, коли цінність у наслідку.",
+        "feedback_en": "A motive that explains the campaign's strangest feature — the absence of a demand. Nothing was demanded because what was needed was not an outcome of negotiation but the state of anxiety itself. A campaign with no addressee makes sense only when the value lies in the consequence."
+      },
+      {
+        "id": "ev-motive-narrative",
+        "slot": "motive",
+        "score": 20,
+        "text_uk": "Підготовка наративу до події: за п'ять тижнів до першого флаєра виконавець репостить чотири статті про зростання злочинності у бізнес-центрах, дві з яких вигадані, і вступає у три канали з тематики охорони будівель.",
+        "text_en": "Building a narrative ahead of the event: five weeks before the first flyer the executor reshares four articles about rising crime in business centres, two of them fabricated, and joins three building-security channels.",
+        "feedback_uk": "Половина, і половина сильна: порядок дій тут доводить умисел краще за будь-який текст. Але сам по собі наратив не каже, навіщо його будували. Відповідь лежить у публічному реєстрі закупівель, і без неї мотив читається як дивацтво, а не як розрахунок.",
+        "feedback_en": "Half credit, and a strong half: the order of actions proves intent better than any text could. But the narrative alone does not say what it was built for. The answer sits in the public procurement registry, and without it the motive reads as an oddity rather than a calculation."
+      },
+      {
+        "id": "ev-motive-grievance",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Особисте невдоволення: охоронець кілька місяців скаржився, що кваліфікованим охоронцям недоплачують, і двічі невдало намагався змінити роботу.",
+        "text_en": "Personal grievance: the guard spent months complaining that qualified guards are underpaid and twice failed to change jobs.",
+        "feedback_uk": "Нуль. Це схильність, а не мотив: на оплату скаржаться мільйони людей, і жоден із них через це не розкладає флаєри вночі. Мотив мусить пояснювати, чому саме зараз і саме так; невдоволення не пояснює ні дати початку, ні відсутності вимоги, ні вибору методу.",
+        "feedback_en": "Zero. This is a disposition, not a motive: millions complain about pay and none of them lay out flyers at night because of it. A motive has to explain why now and why this way; grievance explains neither the start date, nor the missing demand, nor the choice of method."
+      },
+      {
+        "id": "ev-motive-ideology",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Ідеологічна кампанія проти бізнес-центру як символу: анонімний канал, туманні натяки на «приховані зв'язки», емоційний тиск на орендарів.",
+        "text_en": "An ideological campaign against the business centre as a symbol: an anonymous channel, cryptic hints at 'hidden ties', emotional pressure on tenants.",
+        "feedback_uk": "Нуль. Ідеологія завжди чогось вимагає — підпису, приходу, зупинки будівництва; у цьому її призначення. Тут немає жодної вимоги, жодного маркера київських груп і стилометрична відстань вища за поріг. Це версія клієнта, а не знахідка.",
+        "feedback_en": "Zero. Ideology always demands something — a signature, an appearance, a halt to construction; that is what it is for. Here there is no demand, no marker of any Kyiv group, and stylometric distance above threshold. This is the client's theory, not a finding."
+      },
+      {
+        "id": "ev-time-campaign",
+        "slot": "timeline",
+        "score": 40,
+        "text_uk": "Підготовлена кампанія на шість тижнів, і відлік починається не з флаєрів. 12.07 — публічне оголошення про пошук дешевшого постачальника охорони. 19.07 — виконавець вступає у три канали з тематики охорони будівель і починає репостити статті про злочинність. 24.07 — створено Telegram-канал. 26.07 — перший флаєр. Далі дев'ять підходів за чотири тижні, кожен у ніч його зміни, вісім із них під провал у записі. 23.10 — спливає контракт.",
+        "text_en": "A prepared six-week campaign, and the clock does not start with the flyers. 12.07 — the public posting seeking a cheaper security provider. 19.07 — the executor joins three building-security channels and starts resharing crime articles. 24.07 — the Telegram channel is created. 26.07 — the first flyer. Then nine drops over four weeks, each on a night of his shift, eight of them under a gap in the recording. 23.10 — the contract expires.",
+        "feedback_uk": "Порядок тут доводить більше за будь-яку окрему дату: спершу загроза роботі, потім наратив, потім інструмент, і лише потім дія. Імпульс так не виглядає — імпульс починається з дії.",
+        "feedback_en": "The order proves more than any single date: first the threat to the job, then the narrative, then the instrument, and only then the act. Impulse does not look like this — impulse starts with the act."
+      },
+      {
+        "id": "ev-time-flyers",
+        "slot": "timeline",
+        "score": 15,
+        "text_uk": "Чотири тижні кампанії: дев'ять підходів по п'ятнадцять-тридцять флаєрів, усі вночі, у восьми випадках із провалом у відеозаписі.",
+        "text_en": "Four weeks of campaign: nine drops of fifteen to thirty flyers, all at night, eight of them with a gap in the footage.",
+        "feedback_uk": "Чверть картини — та, яку клієнт приніс сам. Хронологія розслідування починається раніше за перший флаєр: без дати оголошення про новий тендер немає ні початку відліку, ні пояснення, чому кампанія стартувала саме тоді.",
+        "feedback_en": "A quarter of the picture — the quarter the client brought himself. The investigation's timeline begins before the first flyer: without the date of the new-tender posting there is neither a start of the count nor an explanation of why the campaign began when it did."
+      },
+      {
+        "id": "ev-time-tenants",
+        "slot": "timeline",
+        "score": 0,
+        "text_uk": "Хронологія наслідків: після третього підходу перший орендар подав попередження про розрив, після сьомого — другий, ще троє питали приватно.",
+        "text_en": "A timeline of consequences: after the third drop the first tenant filed notice, after the seventh the second, and three more asked privately.",
+        "feedback_uk": "Нуль. Це наслідки кампанії, а не її хронологія: реакція орендарів нічого не каже ні про підготовку, ні про виконавця, ні про причину. Щабель питає, як розгорталася операція, а не як на неї відповіли.",
+        "feedback_en": "Zero. These are the campaign's consequences, not its timeline: the tenants' reaction says nothing about preparation, executor or cause. The rung asks how the operation unfolded, not how it was answered."
+      },
+      {
+        "id": "ev-ver-three-axis",
+        "slot": "verification",
+        "score": 40,
+        "text_uk": "Три незалежні осі. Фізична: журнал перепусток, провали у записі, ініційовані з панелі за стійкою, і відеозапис дев'ятої ночі. Цифрова: години дописів у каналі, дата створення каналу і підготовка наративу у публічних профілях. Контекстна: оголошення про пошук дешевшого постачальника, дата закінчення контракту і пропозиція на тридцять відсотків нижче. Джерела різні, і спростування однієї осі не спростовує двох інших.",
+        "text_en": "Three independent axes. Physical: the badge log, the recording gaps initiated from the panel behind the desk, and the ninth-night footage. Digital: the channel's posting hours, its creation date and the narrative built in public profiles. Contextual: the posting seeking a cheaper provider, the contract's expiry date and the offer thirty per cent below. The sources differ, and refuting one axis does not refute the other two.",
+        "feedback_uk": "Перевірка на незалежність тут проходить чесно: приберіть відеозапис — лишаться години дописів і контракт; приберіть контракт — лишиться фізичний доступ. Саме це відрізняє висновок від збігу вражень.",
+        "feedback_en": "The independence check passes honestly here: remove the footage and the posting hours and the contract remain; remove the contract and physical access remains. That is what separates a conclusion from a convergence of impressions."
+      },
+      {
+        "id": "ev-ver-two-axis",
+        "slot": "verification",
+        "score": 20,
+        "text_uk": "Дві осі сходяться: фізична (журнал перепусток плюс відеозапис) і цифрова (години дописів, дата створення каналу, підготовка наративу).",
+        "text_en": "Two axes converge: physical (badge log plus footage) and digital (posting hours, channel creation date, narrative preparation).",
+        "feedback_uk": "Половина. Дві осі доводять, хто це зробив, і мовчать про те, навіщо. Без контекстної осі мотив доводиться домислювати — а домисленому мотиву у розмові з юристом фірми ціна невелика.",
+        "feedback_en": "Half credit. Two axes prove who did it and say nothing about why. Without the contextual axis the motive has to be guessed at — and a guessed motive is worth little in a conversation with the firm's lawyer."
+      },
+      {
+        "id": "ev-ver-pile",
+        "slot": "verification",
+        "score": 0,
+        "text_uk": "П'ять сигналів, що вказують на охоронця: скарги на зарплату, невдалі спроби змінити роботу, репости про злочинність, вступ у профільні канали і доступ до панелі відеореєстратора. П'ять збігів поспіль випадковими не бувають.",
+        "text_en": "Five signals pointing at the guard: pay complaints, failed attempts to change jobs, crime reshares, joining topical channels, and access to the recorder panel. Five coincidences in a row do not happen by chance.",
+        "feedback_uk": "Нуль. Чотири з п'яти пунктів походять з одного джерела — його ж публічних профілів, — і описують одну людину з одного боку. Це один сигнал, розписаний на п'ять рядків. Осі рахують за походженням, а не за кількістю речень.",
+        "feedback_en": "Zero. Four of the five items come from one source — his own public profiles — and describe one person from one angle. This is a single signal written out across five lines. Axes are counted by origin, not by the number of sentences."
+      }
+    ]
+  },
+  "falsifiability_phase": {
+    "title_uk": "Перевірка на фальсифікованість",
+    "title_en": "Falsifiability check",
+    "instruction_uk": "На кожен заповнений щабель — одне речення: яка знахідка, якби вона з'явилась, зруйнувала б цей анкор. Оцінюється те, які поняття ти назвав, а не як ти це сформулював.",
+    "instruction_en": "For each rung you filled, one sentence: what finding, if it turned up, would destroy this anchor. You are graded on which concepts you name, not on how you phrase them.",
+    "submit_btn_uk": "Подати спростування",
+    "submit_btn_en": "Submit falsifiers",
+    "points_per_item": 25,
+    "items": [
+      {
+        "slot_id": "identifier",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про цього охоронця як виконавця?",
+        "prompt_en": "What would destroy the conclusion that this guard is the executor?",
+        "model_uk": "Наприклад: повторна звірка журналу покаже свайпи другого охоронця у тих самих вікнах — і коло знову розширюється до двох; або пробний друк із апарата на стійці не збігається зі слідом тонера на флаєрах; або з'ясується, що дописи у профілі публікували не з його пристрою, тобто профіль підроблений чи зламаний.",
+        "model_en": "For example: a re-check of the log shows the second guard's swipes in the same windows and the field widens back to two; or a test print from the desk machine does not match the toner trace on the flyers; or the profile posts turn out not to have come from his device, meaning the profile is faked or compromised.",
+        "keywords_uk": [
+          [
+            "журнал",
+            "перепустк",
+            "картк",
+            "свайп",
+            "доступ",
+            "графік",
+            "змін"
+          ],
+          [
+            "другий охорон",
+            "інший охорон",
+            "василь",
+            "обидв",
+            "розшир",
+            "не лише він",
+            "теж був"
+          ],
+          [
+            "друк",
+            "тонер",
+            "принтер",
+            "мфу",
+            "апарат",
+            "пробн",
+            "зразок"
+          ],
+          [
+            "не збіга",
+            "не відповід",
+            "інший результат",
+            "спростов",
+            "не підтверд",
+            "розход"
+          ],
+          [
+            "профіл",
+            "акаунт",
+            "дописи",
+            "підроб",
+            "зламан",
+            "не з його",
+            "чужий пристрій",
+            "імперсон"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "log",
+            "badge",
+            "card",
+            "swipe",
+            "access",
+            "roster",
+            "shift"
+          ],
+          [
+            "second guard",
+            "other guard",
+            "vasyl",
+            "both",
+            "widen",
+            "not only him",
+            "was there too"
+          ],
+          [
+            "print",
+            "toner",
+            "printer",
+            "mfp",
+            "machine",
+            "test print",
+            "sample"
+          ],
+          [
+            "does not match",
+            "no match",
+            "different result",
+            "refut",
+            "not confirm",
+            "diverge"
+          ],
+          [
+            "profile",
+            "account",
+            "posts",
+            "fake",
+            "compromis",
+            "not from his",
+            "someone else's device",
+            "impersonat"
+          ]
+        ]
+      },
+      {
+        "slot_id": "location",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про локацію?",
+        "prompt_en": "What would destroy the location conclusion?",
+        "model_uk": "Наприклад: з'ясується, що відеозапис дев'ятої ночі підмінений або має інші мітки часу, ніж журнал; або що система доступу і реєстратор працюють за різними годинниками і розходяться на години; або що дописи у каналі публікувалися з іншого поясу, а нічне вікно — просто відкладений постинг.",
+        "model_en": "For example: the ninth-night footage turns out to be substituted or to carry different timestamps than the log; or the access system and the recorder run on different clocks and drift by hours; or the channel posts turn out to have come from another zone and the night window is merely scheduled posting.",
+        "keywords_uk": [
+          [
+            "запис",
+            "відео",
+            "камер",
+            "реєстратор",
+            "кадр",
+            "мітк"
+          ],
+          [
+            "підмін",
+            "змонтован",
+            "інші мітк",
+            "не збіга",
+            "розход",
+            "не той час",
+            "фальсиф"
+          ],
+          [
+            "годинник",
+            "час систем",
+            "синхрон",
+            "зсув",
+            "різний час",
+            "журнал і"
+          ],
+          [
+            "допис",
+            "канал",
+            "постинг",
+            "відкладен",
+            "заплан",
+            "інший пояс",
+            "не з києва"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "footage",
+            "video",
+            "camera",
+            "recorder",
+            "frame",
+            "timestamp"
+          ],
+          [
+            "substitut",
+            "edited",
+            "different timestamp",
+            "does not match",
+            "diverge",
+            "wrong time",
+            "falsif"
+          ],
+          [
+            "clock",
+            "system time",
+            "sync",
+            "drift",
+            "different time",
+            "log and"
+          ],
+          [
+            "post",
+            "channel",
+            "scheduled",
+            "queued",
+            "another zone",
+            "not from kyiv"
+          ]
+        ]
+      },
+      {
+        "slot_id": "motive",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б мотив збереження контракту?",
+        "prompt_en": "What would destroy the contract-preservation motive?",
+        "model_uk": "Наприклад: виявиться, що така консультація — щорічна формальність цієї керуючої компанії, яка ніколи не веде до зміни постачальника; або що вигадані статті прийшли у стрічку рекомендацій, а не були свідомо дібрані; або що контракт із охоронною фірмою вже продовжено і жодної загрози для роботи не існує.",
+        "model_en": "For example: the consultation turns out to be this management company's annual formality that never leads to a change of provider; or the fabricated articles came through a recommendation feed rather than being deliberately chosen; or the contract with the security firm has already been extended and no threat to the job exists.",
+        "keywords_uk": [
+          [
+            "консультац",
+            "оголошенн",
+            "тендер",
+            "закупівл",
+            "prozorro",
+            "прозорро",
+            "реєстр"
+          ],
+          [
+            "щорічн",
+            "формальн",
+            "щоразу",
+            "рутин",
+            "ніколи не вед",
+            "стандартн",
+            "не змінює"
+          ],
+          [
+            "статт",
+            "репост",
+            "вигадан",
+            "фейков",
+            "стрічк",
+            "рекомендац",
+            "алгоритм",
+            "випадков"
+          ],
+          [
+            "контракт",
+            "продовжен",
+            "подовжен",
+            "переможе",
+            "не під загроз",
+            "вже вирішен",
+            "лишаєт"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "consultation",
+            "posting",
+            "tender",
+            "procurement",
+            "prozorro",
+            "registry"
+          ],
+          [
+            "annual",
+            "formality",
+            "every year",
+            "routine",
+            "never leads",
+            "standard",
+            "does not change"
+          ],
+          [
+            "article",
+            "reshare",
+            "fabricat",
+            "fake",
+            "feed",
+            "recommend",
+            "algorithm",
+            "random"
+          ],
+          [
+            "contract",
+            "extended",
+            "renewed",
+            "will win",
+            "not under threat",
+            "already decided",
+            "stays"
+          ]
+        ]
+      },
+      {
+        "slot_id": "timeline",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про підготовлену шеститижневу кампанію?",
+        "prompt_en": "What would destroy the conclusion about a prepared six-week campaign?",
+        "model_uk": "Наприклад: перевірка архівних знімків покаже, що оголошення про пошук постачальника опубліковане вже після першого флаєра — тоді порядок перевертається; або канал виявиться створеним задовго до всього і просто перепрофільованим; або підходи припадатимуть і на зміни другого охоронця, тобто прив'язки до одного графіка немає.",
+        "model_en": "For example: archived snapshots show the supplier posting went up after the first flyer — the order reverses; or the channel turns out to have been created long before everything and merely repurposed; or the drops turn out to fall on the second guard's shifts too, meaning there is no tie to one roster.",
+        "keywords_uk": [
+          [
+            "оголошенн",
+            "консультац",
+            "публікац",
+            "дата",
+            "архів",
+            "wayback",
+            "знімок"
+          ],
+          [
+            "після",
+            "пізніш",
+            "перевертає",
+            "навпаки",
+            "не до",
+            "інший порядок",
+            "спершу флаєр"
+          ],
+          [
+            "канал",
+            "створен",
+            "раніше",
+            "задовго",
+            "перепрофіл",
+            "старий",
+            "вже існував"
+          ],
+          [
+            "зміна",
+            "графік",
+            "другий охорон",
+            "не збіга",
+            "обидв",
+            "будь-як ніч",
+            "не прив'яз"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "posting",
+            "consultation",
+            "publication",
+            "date",
+            "archive",
+            "wayback",
+            "snapshot"
+          ],
+          [
+            "after",
+            "later",
+            "reverse",
+            "the other way",
+            "not before",
+            "different order",
+            "flyer first"
+          ],
+          [
+            "channel",
+            "created",
+            "earlier",
+            "long before",
+            "repurpos",
+            "old",
+            "already existed"
+          ],
+          [
+            "shift",
+            "roster",
+            "second guard",
+            "does not match",
+            "both",
+            "any night",
+            "not tied"
+          ]
+        ]
+      },
+      {
+        "slot_id": "verification",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б тріангуляцію трьома осями?",
+        "prompt_en": "What would destroy the three-axis triangulation?",
+        "model_uk": "Наприклад: фізична вісь завалиться, якщо журнал і запис розійдуться у часі; цифрова — якщо профіль виявиться підробленим третьою стороною; контекстна — якщо оголошення про тендер виявиться рутиною. Або з'ясується, що осі не незалежні: наприклад, і години дописів, і графік змін походять з того самого джерела даних, і тоді це одна опора, а не дві.",
+        "model_en": "For example: the physical axis collapses if the log and the recording diverge in time; the digital one if the profile turns out to be faked by a third party; the contextual one if the tender posting turns out to be routine. Or the axes turn out not to be independent: if the posting hours and the shift roster both come from one data source, that is one support rather than two.",
+        "keywords_uk": [
+          [
+            "вісь",
+            "осі",
+            "опор",
+            "тріангуляц",
+            "сигнал"
+          ],
+          [
+            "завал",
+            "розсипл",
+            "не підтверд",
+            "спростов",
+            "зникн",
+            "розійд",
+            "collapse"
+          ],
+          [
+            "фізичн",
+            "цифров",
+            "контекстн",
+            "журнал",
+            "профіл",
+            "тендер",
+            "запис"
+          ],
+          [
+            "незалежн",
+            "корельован",
+            "одне джерел",
+            "той самий",
+            "не окрем",
+            "порахован двічі",
+            "одна опора"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "axis",
+            "axes",
+            "support",
+            "triangulat",
+            "signal"
+          ],
+          [
+            "collapse",
+            "fall apart",
+            "not confirm",
+            "refut",
+            "disappear",
+            "diverge"
+          ],
+          [
+            "physical",
+            "digital",
+            "contextual",
+            "log",
+            "profile",
+            "tender",
+            "footage"
+          ],
+          [
+            "independen",
+            "correlat",
+            "one source",
+            "same source",
+            "not separate",
+            "counted twice",
+            "one support"
+          ]
+        ]
+      }
+    ]
+  },
+  "so_what_phase": {
+    "title_uk": "Ну і що?",
+    "title_en": "So what?",
+    "question_uk": "Атрибуцію зроблено. Тепер питання, з яким клієнт піде до орендарів і до юриста: що це насправді?",
+    "question_en": "The attribution is done. Now the question the client takes to his tenants and his lawyer: what is this?",
+    "options": [
+      {
+        "id": "sw1",
+        "correct": false,
+        "points": -40,
+        "text_uk": "Ідеологічна кампанія: анонімна група тисне на бізнес-центр, і флаєри — її спосіб говорити.",
+        "text_en": "An ideological campaign: an anonymous group is pressuring the business centre, and the flyers are how it speaks.",
+        "feedback_uk": "✗ Кампанія, яка нічого не вимагає, нічого і не говорить. Немає жодного маркера київських груп, стилометрична відстань вища за поріг, ані слова про політику чи забудову. А головне — ідеологічний актор не має ключа від панелі відеореєстратора за стійкою охорони.",
+        "feedback_en": "✗ A campaign that demands nothing is not speaking. There is no marker of any Kyiv group, stylometric distance is above threshold, not a word about politics or construction. And above all, an ideological actor does not hold the key to the recorder panel behind the security desk."
+      },
+      {
+        "id": "sw2",
+        "correct": false,
+        "points": -45,
+        "text_uk": "Напад на конкретного орендаря: за флаєрами стоїть чийсь конкурент або сторона у судовій справі.",
+        "text_en": "An attack on a specific tenant: a competitor or a litigant is behind the flyers.",
+        "feedback_uk": "✗ Версія клієнта, і вона не витримує двічі. По-перше, у жодному з одинадцяти дописів і на жодному флаєрі не названо орендаря — напад, який не вказує на ціль, не працює як напад. По-друге, у дев'яти нічних вікнах не спрацювала жодна стороння картка: у сторони, яка нападає ззовні, немає способу опинитися у цьому лобі о третій ночі.",
+        "feedback_en": "✗ The client's theory, and it fails twice. First, not one of the eleven posts and not one flyer names a tenant — an attack that does not indicate its target does not function as an attack. Second, across the nine night windows no outside badge fired: a party attacking from outside has no way to be in that lobby at three in the morning."
+      },
+      {
+        "id": "sw3",
+        "correct": true,
+        "points": 150,
+        "text_uk": "Інсценування власним охоронцем заради збереження контракту: тло небезпеки створюють у будівлі, якій за два місяці міняти постачальника охорони. Рекомендація клієнтові: зібрати доказовий пакет для юриста; не розмовляти з виконавцем самому — він працює у будівлі і має доступ; вийти на керівництво охоронної фірми через юриста з готовим пакетом і пропозицією тихого розв'язання, бо фірма зацікавлена не втратити клієнта гучно; і якщо після заміни охоронця флаєри з'являться знову — це вже інша справа, з іншим рівнем атрибуції.",
+        "text_en": "A staging by the building's own guard to preserve a contract: an atmosphere of danger is manufactured in a building that is two months from changing its security provider. Recommendation to the client: assemble an evidence package for his lawyer; do not speak with the executor himself — he works in the building and has access; approach the security firm's management through the lawyer with the package ready and an offer of a quiet resolution, since the firm has an interest in not losing a client loudly; and if the flyers return after the guard is replaced, that is a different case with a different level of attribution.",
+        "feedback_uk": "✓ Правильно, і найважче тут було не знайти виконавця, а не дописати зайвого. Атрибуція зупиняється на конкретній людині у ролі виконавця; чи знала про це фірма — окреме питання, на яке даних немає, і саме ця стриманість дає клієнтові найкращий вихід. Флаєри, до речі, тепер мають строк: до переторжки.",
+        "feedback_en": "✓ Correct, and the hard part was never finding the executor — it was not writing in more than the evidence carries. Attribution stops at one person in the executor's role; whether the firm knew is a separate question with no data behind it, and that restraint is exactly what gives the client his best exit. The flyers, incidentally, now have an end date: the re-competition."
+      },
+      {
+        "id": "sw4",
+        "correct": false,
+        "points": -15,
+        "text_uk": "Системна проблема: короткі охоронні контракти з переторжкою щоразу створюють у охоронців стимул доводити власну потрібність, і цей випадок — лише один із багатьох.",
+        "text_en": "A systemic problem: short security contracts with recurring re-competition give guards an incentive to prove their own necessity, and this case is only one of many.",
+        "feedback_uk": "△ Спостереження слушне, і йому місце у рекомендаціях на майбутнє. Але клієнт питав, що відбувається у його будівлі зараз, і відповідь «так влаштована галузь» не дає йому ні пакета для юриста, ні підстав говорити з фірмою, ні способу зупинити виїзд орендарів. Спершу конкретна атрибуція, потім системний висновок.",
+        "feedback_en": "△ A fair observation, and it belongs in the forward-looking recommendations. But the client asked what is happening in his building now, and the answer 'this is how the industry works' gives him no package for his lawyer, no grounds to speak with the firm, and no way to stop the tenants leaving. Concrete attribution first, systemic conclusion second."
+      }
+    ]
+  },
+  "benchmark": {
+    "questions": {
+      "target_pct": 67,
+      "reason_uk": "Еталон — дві правильні з трьох. Друге питання найдорожче: воно перевіряє, чи не плутаєш ти «хто міг бути у будівлі» з «хто це зробив».",
+      "reason_en": "The reference is two correct out of three. The second question is the expensive one: it tests whether you keep 'who could have been in the building' apart from 'who did it'."
+    }
+  },
+  "ranks": {
+    "master": {
+      "min": 700,
+      "label_uk": "Structural-Fraud Analyst",
+      "label_en": "Structural-Fraud Analyst",
+      "color": "#8f7cff",
+      "msg_uk": "Ти прочитав кампанію не як загрозу ззовні, а як розрахунок зсередини, і зупинив атрибуцію рівно там, де закінчується доказ. Клієнт отримав виконавця, строк і тихий вихід.",
+      "msg_en": "You read the campaign not as a threat from outside but as a calculation from within, and stopped attribution exactly where the evidence ends. The client got an executor, an end date and a quiet exit."
+    },
+    "senior": {
+      "min": 600,
+      "label_uk": "Senior Investigation Analyst",
+      "label_en": "Senior Investigation Analyst",
+      "color": "#5ac8fa",
+      "msg_uk": "Виконавця встановлено, мотив прочитано правильно. Одну-дві осі варто було перевірити на незалежність суворіше, перш ніж класти у пакет.",
+      "msg_en": "The executor was identified and the motive read correctly. One or two axes needed a stricter independence check before going into the package."
+    },
+    "junior": {
+      "min": 500,
+      "label_uk": "Junior Investigation Analyst",
+      "label_en": "Junior Investigation Analyst",
+      "color": "#34c759",
+      "msg_uk": "Виконавця знайдено, а мотив зупинився на образі замість розрахунку. Клієнт отримає ім'я без пояснення, навіщо, — і з таким пакетом до фірми не йдуть.",
+      "msg_en": "The executor was found, but the motive stopped at grievance instead of calculation. The client gets a name with no explanation of what for — and you do not take a package like that to the firm."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Trainee",
+      "label_en": "Trainee",
+      "color": "#ff9500",
+      "msg_uk": "Або лишився у версії про зовнішнього ворога, або пішов шукати, кому з орендарів шкодять. Обидва шляхи закриває журнал перепусток, і розбір показує, де саме.",
+      "msg_en": "You either stayed with the outside-enemy reading or went looking for which tenant was being harmed. The badge log closes both routes, and the debrief shows exactly where."
+    }
+  },
+  "debrief": {
+    "pass_uk": {
+      "sections": [
+        {
+          "title": "Що це було",
+          "body": "Клієнт приніс паперовий флаєр, анонімний канал і впевненість, що ціль — хтось із його орендарів. Ціллю не був ніхто з орендарів.\n\nКампанію робила людина, яка стоїть у цьому лобі щоночі, і робила її не проти будівлі, а заради себе: за два місяці будівля міняє постачальника охорони, і будівля з незрозумілим тлом міняє його важче. Флаєри не передавали повідомлення. Вони створювали обставину."
+        },
+        {
+          "title": "Правильний ланцюг пивотів",
+          "body": "Крок 1. Тип справи перед особою. Поки не встановлено, що це взагалі за операція, будь-який список підозрюваних — це список навмання. Клієнт дав п'ять напрямків; жоден із них не був потрібен.\n\nКрок 2. Матеріал без вимоги. Мовний аналіз дав найдешевшу і найважливішу знахідку кейсу: тут нічого не просять. Ідеологія завжди просить — підпису, приходу, зупинки. Матеріал, який не просить нічого, працює не змістом, а наслідком.\n\nКрок 3. Хто фізично міг. Провали у записі і журнал перепусток разом закривають зовнішнього актора остаточно: у дев'ять нічних вікон у будівлю ніхто не заходив, а панель реєстратора стоїть за стійкою охорони.\n\nКрок 4. Дев'ята ніч. Одна ніч, коли запис уцілів, звужує коло з двох до одного — але лише разом із журналом: відео дає форму, картка дає людину.\n\nКрок 5. Публічний реєстр закупівель. Тут кейс повертає. Подія, що передувала кампанії, стосується не орендарів взагалі: керуюча компанія шукає дешевшу охорону, і оголошення про це лежить у відкритому фіді, який читають самі охоронці.\n\nКрок 6. Порядок дій у профілях. Наратив «у будівлях стало небезпечно» будували за п'ять тижнів до першого флаєра. Не думка важлива, а те, що вона з'явилася раніше за подію, яка її підтверджує."
+        },
+        {
+          "title": "Дві речі, які легко переплутати",
+          "body": "Перша: «хто міг» і «хто зробив». Журнал перепусток відповідає лише на перше. Охоронець на нічній зміні свайпає картку тому, що це його робота, а не тому, що щось приховує. Без дев'ятої ночі у тебе двоє рівноправних кандидатів, і назвати одного означає вгадати.\n\nДруга: схильність і дія. Скарги на зарплату — це схильність; такі скарги є у мільйонів людей, і жодна з них нічого не доводить. А от репост вигаданої статті про злочинність за п'ять тижнів до того, як сам почнеш створювати цю злочинність, — це вже дія у часі. Перше у доказовий пакет не кладуть, друге кладуть, і різниця між ними стане очевидною рівно тоді, коли пакет читатиме чужий юрист."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Це єдиний кейс треку, де атрибуція доходить до конкретної людини, — і саме тому тут найлегше дописати зайве. Виконавець витримується трьома осями. Змова з керівництвом охоронної фірми не витримується нічим: жоден інструмент не показав ні листування, ні платежів, ні вказівки. Ціна цього дописування конкретна — фірма перестає бути стороною, з якою можна домовитись тихо.\n\nЛокація. Тут звичка з попередніх кейсів працює проти тебе. У першому і другому кейсах уся географія була орендованою, і чесною відповіддю було «не встановлюється». Тут людина фізично стоїть у кадрі власного робочого місця, її картка у журналі, її зміна у графіку. Обережність доречна там, де бракує доказу, і перетворюється на відмову від власної роботи там, де доказ є.\n\nМотив. Три опори, і всі три — про обставини, а не про характер: оголошення про пошук дешевшого постачальника, дата закінчення контракту, наратив, побудований до події. Мотив, зведений на невдоволенні, не пояснює ні дати початку, ні відсутності вимоги.\n\nХронологія. Відлік починається за два тижні до першого флаєра — з чужого оголошення у реєстрі. Порядок тут доводить умисел: спершу загроза роботі, потім наратив, потім інструмент, і лише потім дія.\n\nВерифікація. Пастка цього щабля — п'ять пунктів, чотири з яких походять з одного профілю. Осі рахують за походженням: приберіть відео — лишаться години дописів і контракт; приберіть контракт — лишиться фізичний доступ. Саме це і є незалежність."
+        },
+        {
+          "title": "«Ну і що?» — і чому відповідь важливіша за ім'я",
+          "body": "Ідеологічна версія не пояснює головного: чому нічого не вимагають. Версія про напад на орендаря не пояснює, чому жодного орендаря не названо, і розбивається об журнал перепусток. Системна відповідь правдива і не є відповіддю: клієнт питав, що коїться у нього зараз.\n\nПравильний варіант цінний не тим, що називає виконавця, а тим, що дає клієнтові три речі, яких у нього не було. Пакет, з яким можна йти до юриста. Строк — кампанія має сенс лише до переторжки. І тихий вихід: охоронна фірма зацікавлена розв'язати це без розголосу не менше за самого клієнта, і саме тому у пакеті не має бути жодного слова про її причетність, якої ти не довів.\n\nОкремо про те, чого робити не можна: розмовляти з виконавцем самому. Він працює у цій будівлі, має доступ до всіх приміщень і знає, де стоїть панель реєстратора."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Матеріал без вимоги — це не повідомлення, а інструмент. Коли анонімна кампанія нічого не просить, шукай не того, хто щось думає, а того, кому вигідний стан, який після неї настане.\n\nПравило друге. «Хто міг» і «хто зробив» — два різні твердження, і перше ніколи не доводить друге. Журнали доступу звужують коло; людину дає лише незалежна вісь.\n\nПравило третє. Схильність — не доказ. Невдоволення, скарги, погляди у профілі описують людину і не описують подію. Доказом стає те, що має дату і місце у послідовності.\n\nПравило четверте. Обережність — інструмент, а не поза. Писати «не встановлюється» там, де доказ є, так само неправильно, як стверджувати там, де його немає."
+        },
+        {
+          "title": "Інструменти",
+          "body": "Публічні закупівлі — prozorro.gov.ua. Оголошення, консультації і контракти індексуються за категоріями і лежать у відкритому фіді. У цій справі саме реєстр дав мотив; у будь-якій справі, де є юрособа і підрядник, він дає хронологію, якої немає більше ніде.\n\nЖурнали контролю доступу і відеореєстратор — у клієнта. Це його система і його дані, тож питання не в тому, як їх дістати, а в тому, щоб попросити правильний зріз: не «покажіть запис», а «покажіть усі перезавантаження і хто їх ініціював».\n\nЗворотний пошук за зображеннями — для перевірки статей, які репостить фігурант. Дві з чотирьох тут виявилися вигаданими за хвилину: стокові фото і домен, зареєстрований цього року.\n\nФорензика друку — у польових умовах розрізняє класи апаратів, а не моделі. Формулювати треба саме так: «узгоджується з апаратом такого класу», а не «надруковано на цьому пристрої».\n\nСтилометрія — має сенс лише проти корпусу. Сама по собі відстань нічого не означає; значення має те, що текст не лягає у жоден відомий кластер, і що у ньому немає вимоги.\n\nЗбереження доказів — знімки з мітками часу, копії сторінок каналу, витяги з реєстру. Канал видаляється за годину, і те, що не збережено, у пакет не потрапить."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Не контактувати з виконавцем. У цій справі це не лише питання методу: людина працює у будівлі, має доступ у всі приміщення і знає, де стоїть панель реєстратора. Розмова наодинці — це ризик для клієнта, а не тактичний хід.\n\nНе опитувати орендарів. Клієнт прямо просив не робити справу публічною, бо публічність прискорює виїзд. Десять розмов у будівлі на десять орендарів — це і є публічність.\n\nНе лізти у приватне. Закритий Instagram, банківські рахунки, дані про родину — межа роботи, а не перешкода, яку обходять. У цій справі вони й не потрібні: доступ, відео і реєстр дають усе.\n\nАтрибутувати рівно стільки, скільки витримує доказ. Різниця між «виконавець» і «фірма організувала» — це різниця між тихим розв'язанням і позовом про наклеп проти самого клієнта.\n\nПродукт — пакет для юриста, а не звинувачення. Рішення, що з цим робити далі, приймає клієнт разом із правником; роль розслідувача закінчується на встановлених фактах і чесно названих межах."
+        }
+      ]
+    },
+    "pass_en": {
+      "sections": [
+        {
+          "title": "What this was",
+          "body": "The client brought a paper flyer, an anonymous channel and a conviction that the target was one of his tenants. The target was none of the tenants.\n\nThe campaign was run by a person who stands in that lobby every night, and he ran it not against the building but for himself: in two months the building changes its security provider, and a building with an unexplained background changes it with more difficulty. The flyers were not carrying a message. They were manufacturing a circumstance."
+        },
+        {
+          "title": "The correct pivot chain",
+          "body": "Step 1. Type of case before person. Until you know what kind of operation this is, any list of suspects is a list drawn at random. The client offered five directions; not one of them was needed.\n\nStep 2. Material without a demand. The language analysis produced the cheapest and most important finding in the case: nothing is being asked for here. Ideology always asks — for a signature, an appearance, a halt. Material that asks for nothing works through its consequence, not its content.\n\nStep 3. Who could physically be there. The recording gaps and the badge log together close the outside actor for good: across nine night windows nobody entered the building, and the recorder's panel sits behind the security desk.\n\nStep 4. The ninth night. The one night the footage survived narrows two to one — but only together with the log: the video gives a uniform, the badge gives a person.\n\nStep 5. The public procurement registry. This is where the case turns. The event preceding the campaign has nothing to do with tenants at all: the management company is shopping for cheaper security, and the posting sits in an open feed that guards themselves read.\n\nStep 6. The order of actions in the profiles. The narrative that buildings have become unsafe was built five weeks before the first flyer. What matters is not the opinion but that it appeared before the event that confirms it."
+        },
+        {
+          "title": "Two things that are easy to confuse",
+          "body": "First: 'who could have' and 'who did'. A badge log answers only the first. A guard on a night shift swipes his badge because that is the job, not because he is hiding something. Without the ninth night you have two equally placed candidates, and naming one of them is guessing.\n\nSecond: disposition and act. Complaints about pay are a disposition; millions of people have them and none of them prove anything. Resharing a fabricated article about crime five weeks before you start manufacturing that crime yourself is an act located in time. The first does not go into an evidence package, the second does, and the difference becomes obvious the moment someone else's lawyer reads it."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. This is the only case in the track where attribution reaches a specific person — which is exactly why it is easiest here to write in more. The executor is carried by three axes. A conspiracy with the security firm's management is carried by nothing: no tool showed correspondence, payments or instruction. The cost of that addition is concrete — the firm stops being a party you can settle with quietly.\n\nLocation. Here the habit from earlier cases works against you. In the first and second cases all geography was rented and the honest answer was 'cannot be established'. Here the person is physically in frame at his own workplace, his badge in the log, his shift on the roster. Caution belongs where evidence is missing and turns into declining your own work where it exists.\n\nMotive. Three supports, all three about circumstances rather than character: the posting seeking a cheaper provider, the contract's expiry date, the narrative built ahead of the event. A motive assembled out of grievance explains neither the start date nor the missing demand.\n\nTimeline. The clock starts two weeks before the first flyer — with someone else's registry posting. The order proves intent: first the threat to the job, then the narrative, then the instrument, and only then the act.\n\nVerification. The trap on this rung is five items, four of which come from one profile. Axes are counted by origin: remove the video and the posting hours and the contract remain; remove the contract and physical access remains. That is what independence means."
+        },
+        {
+          "title": "'So what?' — and why the answer matters more than a name",
+          "body": "The ideological reading fails to explain the central thing: why nothing is being demanded. The attack-on-a-tenant reading fails to explain why no tenant is ever named, and breaks against the badge log. The systemic answer is true and is not an answer: the client asked what is happening to him now.\n\nThe right option is valuable not because it names an executor but because it hands the client three things he did not have. A package he can take to a lawyer. An end date — the campaign only makes sense until the re-competition. And a quiet exit: the security firm has as much interest in resolving this without noise as the client does, which is precisely why the package must not contain one word about the firm's involvement that you have not proven.\n\nSeparately, on what must not be done: speaking with the executor yourself. He works in this building, has access to every room, and knows where the recorder's panel stands."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. Material without a demand is not a message but an instrument. When an anonymous campaign asks for nothing, look not for who holds an opinion but for who benefits from the state of affairs it leaves behind.\n\nRule two. 'Who could have' and 'who did' are two different claims, and the first never proves the second. Access logs narrow the field; only an independent axis produces a person.\n\nRule three. Disposition is not evidence. Grievances, complaints and opinions in a profile describe a person and do not describe an event. What becomes evidence is what has a date and a place in a sequence.\n\nRule four. Caution is a tool, not a posture. Writing 'cannot be established' where the evidence exists is as wrong as asserting where it does not."
+        },
+        {
+          "title": "Tools",
+          "body": "Public procurement — prozorro.gov.ua. Postings, consultations and contracts are indexed by category and sit in an open feed. In this case the registry supplied the motive; in any case involving a legal entity and a contractor it supplies a timeline available nowhere else.\n\nAccess logs and the video recorder — the client's own. It is his system and his data, so the question is not how to obtain them but how to ask for the right slice: not 'show me the footage' but 'show me every restart and who initiated it'.\n\nReverse image search — for checking the articles a subject reshares. Two of the four here turned out fabricated within a minute: stock photos and a domain registered this year.\n\nPrint forensics — in field conditions it distinguishes classes of machine, not models. Phrase it that way: 'consistent with a machine of this class', not 'printed on this device'.\n\nStylometry — meaningful only against a corpus. Distance on its own says nothing; what says something is that the text fits no known cluster, and that it contains no demand.\n\nEvidence preservation — timestamped captures, copies of the channel's pages, registry extracts. A channel is deleted in an hour, and what was not preserved never reaches the package."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "Do not contact the executor. In this case that is not only a question of method: the person works in the building, has access to every room, and knows where the recorder's panel is. A private conversation is a risk to the client, not a tactical move.\n\nDo not survey the tenants. The client asked outright that the case not become public, because publicity speeds up the exodus. Ten conversations in a building with ten tenants are that publicity.\n\nDo not reach into private space. A closed Instagram, bank accounts, family details — that is the boundary of the work, not an obstacle to be gone around. In this case they are not needed either: access, footage and the registry supply everything.\n\nAttribute exactly as much as the evidence carries. The difference between 'the executor' and 'the firm organized it' is the difference between a quiet resolution and a defamation claim against your own client.\n\nThe product is a package for a lawyer, not an accusation. What to do next is decided by the client together with counsel; the investigator's role ends at established facts and honestly stated limits."
+        }
+      ]
+    },
+    "fail_uk": {
+      "sections": [
+        {
+          "title": "Де це розійшлося",
+          "body": "Цей кейс має дві розвилки, і на кожній легко з'їхати у свій бік.\n\nПерша — на початку: піти за версією клієнта і шукати, кому з орендарів шкодять. Друга — вже наприкінці: знайшовши виконавця, дописати до нього змову охоронної фірми або, навпаки, злякатися і написати «локація не встановлюється» там, де людина стоїть у кадрі власного робочого місця.\n\nПодивись на свою драбину і на відповідь у фіналі — розрив майже напевно на одній із цих двох."
+        },
+        {
+          "title": "Дві типові розвилки",
+          "body": "Перша. Версія клієнта про орендарів. Вона зручна, бо клієнт у неї вірить і навіть приніс список. У пулі лежали дві принади саме для цього шляху: слово «державний» у чужій статті, яку фігурант репостнув, і судова справа, де прізвище відповідача починається з тих самих літер, що й слово «правду» у дописах. Обидва збіги справжні і обидва нічого не важать. А головне — версію про орендарів закриває не тлумачення слів, а журнал перепусток: у дев'ять нічних вікон у будівлю не заходив ніхто.\n\nДруга. Зупинка на «це хтось із охорони». Коло звужене, і робота виглядає зробленою. Але охоронців двоє, і різницю між ними дає лише дев'ята ніч — та, коли реєстратор не вимкнули. Без неї у клієнта на руках підозра проти двох людей, з якою не йдуть ні до фірми, ні до юриста."
+        },
+        {
+          "title": "Три пастки, у які легко впасти",
+          "body": "Пастка перша. Написати адміну каналу. Він працює у цій будівлі і прочитає повідомлення тієї ж ночі; наступного ранку канал зникає разом з одинадцятьма таймстемпами, які прив'язували автора до нічних годин. Флаєри припиняються, і це схоже на перемогу рівно доти, доки клієнт не спитає, кому пред'являти претензію.\n\nПастка друга. Ескалувати до СБУ. Формально можна, фактично — сімнадцять днів очікування і відповідь, що ознак їхньої юрисдикції немає. Мовний аналіз показав це ще на початку: жодних політичних маркерів, жодних ознак зовнішнього походження. За ці сімнадцять днів клієнт втрачає ще одного орендаря.\n\nПастка третя, найтонша. Порахувати п'ять сигналів там, де їх один. Скарги на зарплату, невдалі спроби змінити роботу, репости і вступ у канали — це чотири рядки з одного профілю, тобто одна вісь, розписана докладніше за інші. Осі рахують за походженням, а не за кількістю речень."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Це єдиний кейс треку, де атрибуція доходить до конкретної людини, — і саме тому тут найлегше дописати зайве. Виконавець витримується трьома осями. Змова з керівництвом охоронної фірми не витримується нічим: жоден інструмент не показав ні листування, ні платежів, ні вказівки. Ціна цього дописування конкретна — фірма перестає бути стороною, з якою можна домовитись тихо.\n\nЛокація. Тут звичка з попередніх кейсів працює проти тебе. У першому і другому кейсах уся географія була орендованою, і чесною відповіддю було «не встановлюється». Тут людина фізично стоїть у кадрі власного робочого місця, її картка у журналі, її зміна у графіку. Обережність доречна там, де бракує доказу, і перетворюється на відмову від власної роботи там, де доказ є.\n\nМотив. Три опори, і всі три — про обставини, а не про характер: оголошення про пошук дешевшого постачальника, дата закінчення контракту, наратив, побудований до події. Мотив, зведений на невдоволенні, не пояснює ні дати початку, ні відсутності вимоги.\n\nХронологія. Відлік починається за два тижні до першого флаєра — з чужого оголошення у реєстрі. Порядок тут доводить умисел: спершу загроза роботі, потім наратив, потім інструмент, і лише потім дія.\n\nВерифікація. Пастка цього щабля — п'ять пунктів, чотири з яких походять з одного профілю. Осі рахують за походженням: приберіть відео — лишаться години дописів і контракт; приберіть контракт — лишиться фізичний доступ. Саме це і є незалежність."
+        },
+        {
+          "title": "«Ну і що?» — і чому відповідь важливіша за ім'я",
+          "body": "Ідеологічна версія не пояснює головного: чому нічого не вимагають. Версія про напад на орендаря не пояснює, чому жодного орендаря не названо, і розбивається об журнал перепусток. Системна відповідь правдива і не є відповіддю: клієнт питав, що коїться у нього зараз.\n\nПравильний варіант цінний не тим, що називає виконавця, а тим, що дає клієнтові три речі, яких у нього не було. Пакет, з яким можна йти до юриста. Строк — кампанія має сенс лише до переторжки. І тихий вихід: охоронна фірма зацікавлена розв'язати це без розголосу не менше за самого клієнта, і саме тому у пакеті не має бути жодного слова про її причетність, якої ти не довів.\n\nОкремо про те, чого робити не можна: розмовляти з виконавцем самому. Він працює у цій будівлі, має доступ до всіх приміщень і знає, де стоїть панель реєстратора."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Матеріал без вимоги — це не повідомлення, а інструмент. Коли анонімна кампанія нічого не просить, шукай не того, хто щось думає, а того, кому вигідний стан, який після неї настане.\n\nПравило друге. «Хто міг» і «хто зробив» — два різні твердження, і перше ніколи не доводить друге. Журнали доступу звужують коло; людину дає лише незалежна вісь.\n\nПравило третє. Схильність — не доказ. Невдоволення, скарги, погляди у профілі описують людину і не описують подію. Доказом стає те, що має дату і місце у послідовності.\n\nПравило четверте. Обережність — інструмент, а не поза. Писати «не встановлюється» там, де доказ є, так само неправильно, як стверджувати там, де його немає."
+        },
+        {
+          "title": "Інструменти",
+          "body": "Публічні закупівлі — prozorro.gov.ua. Оголошення, консультації і контракти індексуються за категоріями і лежать у відкритому фіді. У цій справі саме реєстр дав мотив; у будь-якій справі, де є юрособа і підрядник, він дає хронологію, якої немає більше ніде.\n\nЖурнали контролю доступу і відеореєстратор — у клієнта. Це його система і його дані, тож питання не в тому, як їх дістати, а в тому, щоб попросити правильний зріз: не «покажіть запис», а «покажіть усі перезавантаження і хто їх ініціював».\n\nЗворотний пошук за зображеннями — для перевірки статей, які репостить фігурант. Дві з чотирьох тут виявилися вигаданими за хвилину: стокові фото і домен, зареєстрований цього року.\n\nФорензика друку — у польових умовах розрізняє класи апаратів, а не моделі. Формулювати треба саме так: «узгоджується з апаратом такого класу», а не «надруковано на цьому пристрої».\n\nСтилометрія — має сенс лише проти корпусу. Сама по собі відстань нічого не означає; значення має те, що текст не лягає у жоден відомий кластер, і що у ньому немає вимоги.\n\nЗбереження доказів — знімки з мітками часу, копії сторінок каналу, витяги з реєстру. Канал видаляється за годину, і те, що не збережено, у пакет не потрапить."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Не контактувати з виконавцем. У цій справі це не лише питання методу: людина працює у будівлі, має доступ у всі приміщення і знає, де стоїть панель реєстратора. Розмова наодинці — це ризик для клієнта, а не тактичний хід.\n\nНе опитувати орендарів. Клієнт прямо просив не робити справу публічною, бо публічність прискорює виїзд. Десять розмов у будівлі на десять орендарів — це і є публічність.\n\nНе лізти у приватне. Закритий Instagram, банківські рахунки, дані про родину — межа роботи, а не перешкода, яку обходять. У цій справі вони й не потрібні: доступ, відео і реєстр дають усе.\n\nАтрибутувати рівно стільки, скільки витримує доказ. Різниця між «виконавець» і «фірма організувала» — це різниця між тихим розв'язанням і позовом про наклеп проти самого клієнта.\n\nПродукт — пакет для юриста, а не звинувачення. Рішення, що з цим робити далі, приймає клієнт разом із правником; роль розслідувача закінчується на встановлених фактах і чесно названих межах."
+        }
+      ]
+    },
+    "fail_en": {
+      "sections": [
+        {
+          "title": "Where this diverged",
+          "body": "This case has two forks, and each is easy to slide off in its own direction.\n\nThe first is at the start: following the client's theory and looking for which tenant is being harmed. The second comes at the end: having found the executor, writing in a conspiracy with the security firm — or, the opposite, losing nerve and writing 'location cannot be established' about a person standing in frame at his own workplace.\n\nLook at your ladder and at your answer in the finale — the break is almost certainly at one of those two."
+        },
+        {
+          "title": "Two typical forks",
+          "body": "The first. The client's tenant theory. It is convenient, because he believes it and even brought a list. Two lures were placed in the pool for exactly this path: the word 'state' inside someone else's article the subject reshared, and a court case whose defendant's surname starts with the same letters as the word 'truth' in the posts. Both coincidences are real and both are weightless. And crucially, the tenant reading is closed not by wordplay but by the badge log: across nine night windows nobody entered the building.\n\nThe second. Stopping at 'someone in security'. The field is narrowed and the work looks done. But there are two guards, and the only thing that separates them is the ninth night — the one where the recorder was left running. Without it the client holds a suspicion against two people, and you take that neither to the firm nor to a lawyer."
+        },
+        {
+          "title": "Three easy traps",
+          "body": "The first. Messaging the channel admin. He works in this building and will read it that same night; by morning the channel is gone along with eleven timestamps tying the author to night hours. The flyers stop, and that resembles a victory right up until the client asks whom he is supposed to hold responsible.\n\nThe second. Escalating to the SBU. Formally possible; in practice seventeen days of waiting and an answer that there is no sign of their jurisdiction. The language analysis showed this at the outset: no political markers, no signs of external origin. Over those seventeen days the client loses another tenant.\n\nThe third, and the subtlest. Counting five signals where there is one. Pay complaints, failed job attempts, reshares and channel memberships are four lines from a single profile — one axis written out in more detail than the others. Axes are counted by origin, not by sentence count."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. This is the only case in the track where attribution reaches a specific person — which is exactly why it is easiest here to write in more. The executor is carried by three axes. A conspiracy with the security firm's management is carried by nothing: no tool showed correspondence, payments or instruction. The cost of that addition is concrete — the firm stops being a party you can settle with quietly.\n\nLocation. Here the habit from earlier cases works against you. In the first and second cases all geography was rented and the honest answer was 'cannot be established'. Here the person is physically in frame at his own workplace, his badge in the log, his shift on the roster. Caution belongs where evidence is missing and turns into declining your own work where it exists.\n\nMotive. Three supports, all three about circumstances rather than character: the posting seeking a cheaper provider, the contract's expiry date, the narrative built ahead of the event. A motive assembled out of grievance explains neither the start date nor the missing demand.\n\nTimeline. The clock starts two weeks before the first flyer — with someone else's registry posting. The order proves intent: first the threat to the job, then the narrative, then the instrument, and only then the act.\n\nVerification. The trap on this rung is five items, four of which come from one profile. Axes are counted by origin: remove the video and the posting hours and the contract remain; remove the contract and physical access remains. That is what independence means."
+        },
+        {
+          "title": "'So what?' — and why the answer matters more than a name",
+          "body": "The ideological reading fails to explain the central thing: why nothing is being demanded. The attack-on-a-tenant reading fails to explain why no tenant is ever named, and breaks against the badge log. The systemic answer is true and is not an answer: the client asked what is happening to him now.\n\nThe right option is valuable not because it names an executor but because it hands the client three things he did not have. A package he can take to a lawyer. An end date — the campaign only makes sense until the re-competition. And a quiet exit: the security firm has as much interest in resolving this without noise as the client does, which is precisely why the package must not contain one word about the firm's involvement that you have not proven.\n\nSeparately, on what must not be done: speaking with the executor yourself. He works in this building, has access to every room, and knows where the recorder's panel stands."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. Material without a demand is not a message but an instrument. When an anonymous campaign asks for nothing, look not for who holds an opinion but for who benefits from the state of affairs it leaves behind.\n\nRule two. 'Who could have' and 'who did' are two different claims, and the first never proves the second. Access logs narrow the field; only an independent axis produces a person.\n\nRule three. Disposition is not evidence. Grievances, complaints and opinions in a profile describe a person and do not describe an event. What becomes evidence is what has a date and a place in a sequence.\n\nRule four. Caution is a tool, not a posture. Writing 'cannot be established' where the evidence exists is as wrong as asserting where it does not."
+        },
+        {
+          "title": "Tools",
+          "body": "Public procurement — prozorro.gov.ua. Postings, consultations and contracts are indexed by category and sit in an open feed. In this case the registry supplied the motive; in any case involving a legal entity and a contractor it supplies a timeline available nowhere else.\n\nAccess logs and the video recorder — the client's own. It is his system and his data, so the question is not how to obtain them but how to ask for the right slice: not 'show me the footage' but 'show me every restart and who initiated it'.\n\nReverse image search — for checking the articles a subject reshares. Two of the four here turned out fabricated within a minute: stock photos and a domain registered this year.\n\nPrint forensics — in field conditions it distinguishes classes of machine, not models. Phrase it that way: 'consistent with a machine of this class', not 'printed on this device'.\n\nStylometry — meaningful only against a corpus. Distance on its own says nothing; what says something is that the text fits no known cluster, and that it contains no demand.\n\nEvidence preservation — timestamped captures, copies of the channel's pages, registry extracts. A channel is deleted in an hour, and what was not preserved never reaches the package."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "Do not contact the executor. In this case that is not only a question of method: the person works in the building, has access to every room, and knows where the recorder's panel is. A private conversation is a risk to the client, not a tactical move.\n\nDo not survey the tenants. The client asked outright that the case not become public, because publicity speeds up the exodus. Ten conversations in a building with ten tenants are that publicity.\n\nDo not reach into private space. A closed Instagram, bank accounts, family details — that is the boundary of the work, not an obstacle to be gone around. In this case they are not needed either: access, footage and the registry supply everything.\n\nAttribute exactly as much as the evidence carries. The difference between 'the executor' and 'the firm organized it' is the difference between a quiet resolution and a defamation claim against your own client.\n\nThe product is a package for a lawyer, not an accusation. What to do next is decided by the client together with counsel; the investigator's role ends at established facts and honestly stated limits."
+        }
+      ]
+    }
+  }
+}
