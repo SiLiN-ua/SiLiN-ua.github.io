@@ -486,7 +486,7 @@ function renderPhase2() {
         <div class="tool-btn__icon">${locked?'🔒':t.icon}</div>
         <div class="tool-btn__body">
           <div class="tool-btn__name">${escapeHtml(tr(t,'name'))}${tooltip?' <span class="tool-btn__info" aria-label="info">ⓘ</span>':''}</div>
-          <div class="tool-btn__provider">${escapeHtml(t.provider)}</div>
+          <div class="tool-btn__provider">${escapeHtml(tr(t,'provider'))}</div>
           <div class="tool-btn__desc">${escapeHtml(locked ? lockHint : tr(t,'desc'))}</div>
         </div>
         <div class="tool-btn__cost">-${t.time_cost}s</div>
@@ -603,7 +603,7 @@ function showToolModal(tool) {
     <div class="tool-modal__backdrop"></div>
     <div class="tool-modal__box">
       <div class="tool-modal__head">
-        <div class="tool-modal__title">${tool.icon} ${escapeHtml(tr(tool,'name'))} · <span>${escapeHtml(tool.provider)}</span></div>
+        <div class="tool-modal__title">${tool.icon} ${escapeHtml(tr(tool,'name'))} · <span>${escapeHtml(tr(tool,'provider'))}</span></div>
         <button class="tool-modal__close" aria-label="Close">✕</button>
       </div>
       <div class="tool-modal__ui">
@@ -1399,7 +1399,7 @@ function renderFakeUI(tool) {
     case 'matches': if (tool.matches) return `
       <div class="fake fake--matches">
         <div class="fake__topbar">${tool.icon || '🔎'} <span>${escapeHtml(tr(tool, 'name') || tool.name || '')}</span></div>
-        <div class="fake__search-row"><div class="fake__query">${escapeHtml(tool.provider || '')}</div></div>
+        <div class="fake__search-row"><div class="fake__query">${escapeHtml(tr(tool,'provider'))}</div></div>
         <div class="fake__matches-list">
           ${tool.matches.map(m => `
             <div class="fake__match-row">
