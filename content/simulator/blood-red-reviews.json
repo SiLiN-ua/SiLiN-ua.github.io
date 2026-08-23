@@ -1,0 +1,1659 @@
+{
+  "id": "blood-red-reviews",
+  "simulator_id": "sim03",
+  "time_limit_sec": 2400,
+  "cooldown_sec": 3600,
+  "max_points": 785,
+  "title_uk": "Криваво-червоні відгуки",
+  "title_en": "Blood-Red Reviews",
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Олексій, 47 · власник ресторану «Смолоскип», Поділ, Київ",
+    "client_en": "Oleksii, 47 · owner of the Smoloskyp restaurant, Podil, Kyiv",
+    "budget_uk": "6 годин робочого часу до звіту",
+    "budget_en": "6 working hours until the report is due",
+    "artifact_title_uk": "Сімнадцять відгуків на одну зірку за двадцять один день.",
+    "artifact_title_en": "Seventeen one-star reviews in twenty-one days.",
+    "artifact": {
+      "icon": "★",
+      "image": null,
+      "label_uk": "Знімок одного відгуку · таблиця на 17 рядків · сторінка закладу в Google",
+      "label_en": "Screenshot of one review · a 17-row table · the Google business page",
+      "ref": "smoloskyp_reviews_2026-08-22.xlsx"
+    },
+    "body_uk": "«Смолоскип» працює восьмий рік: шістдесят посадкових місць, українська кухня без претензій, понад триста сорок відгуків, накопичених роками, і стабільні 4,6 зірки. Для Подолу це «квартальна класика». Для Олексія це єдиний серйозний актив.\n\nЗа останні три тижні рейтинг просів до 3,8. Причина — сімнадцять нових відгуків на одну зірку за двадцять один день. До того негативу було один-два на місяць, і майже завжди по суті: довге очікування, конкретна страва, конкретний вечір.\n\nЦі сімнадцять інші. Усі короткі, усі про загальне: жахливий сервіс, переоцінена їжа, до нас поставилися зневажливо. Жодної страви, жодної дати візиту, жодного імені офіціанта. Кожен — з окремого акаунта.\n\nОлексій перевірив сам, як умів: більшість акаунтів молоді, у декого є ще три-п'ять відгуків, у декого цей єдиний. Поскаржився в Google на спам — заявку прийняли і попередили, що розгляд триває до тридцяти днів. Рейтинг тим часом падає далі.\n\nВін упевнений, що це конкуренти. Два роки тому за квартал відкрився «Тризуб» — концептуальний, дорожчий; рік тому «Оселя» — сімейного формату. Обидва тягнуть ту саму аудиторію. Олексій просить перевірити насамперед п'ятьох: власників цих двох закладів і трьох колишніх працівників, звільнених у 2024-2025 зі скандалом.\n\nПублічного конфлікту з сусідами він не хоче — ринок вузький, і громада вдарить по обох. На «репутаційний менеджмент» за дві тисячі доларів на місяць не погоджується: таких пропозицій йому вже прислали три.\n\nЗадача: з'ясувати, хто за цим стоїть, і чи є у цих сімнадцяти відгуках закономірність, яка допоможе зняти їх швидше.",
+    "body_en": "Smoloskyp is in its eighth year: sixty seats, unpretentious Ukrainian cooking, more than three hundred and forty reviews accumulated over the years, and a steady 4.6 stars. In Podil that makes it a neighbourhood classic. To Oleksii it is his one serious asset.\n\nOver the past three weeks the rating fell to 3.8. The cause: seventeen new one-star reviews in twenty-one days. Before that, negatives ran one or two a month and almost always had a point to them — a long wait, a particular dish, a particular evening.\n\nThese seventeen are different. All short, all about generalities: terrible service, overpriced food, we were treated with contempt. No dish, no date of visit, no waiter's name. Each from a separate account.\n\nOleksii checked as best he could: most of the accounts are young, some carry another three to five reviews, some only this one. He filed a spam report with Google — the ticket was accepted, with a warning that review takes up to thirty days. The rating keeps falling meanwhile.\n\nHe is convinced it is the competitors. Two years ago Tryzub opened a block away — concept-driven, more expensive; a year ago Oselia, family format. Both pull the same audience. Oleksii asks that five people be checked first: the owners of those two places and three former employees dismissed in 2024-2025 amid conflict.\n\nHe does not want a public feud with the neighbours — the market is small and the community would hit both sides. He will not pay two thousand dollars a month for 'reputation management': three such pitches have already arrived.\n\nThe task: find out who is behind this, and whether these seventeen reviews share a pattern that would get them removed faster.",
+    "start_btn_uk": "Відкрити артефакт →",
+    "start_btn_en": "Open the artifact →"
+  },
+  "phase2": {
+    "title_uk": "Розслідування",
+    "title_en": "Investigation",
+    "instruction_uk": "Дев'ять інструментів, шість годин бюджету. Три з дев'яти лікують симптом. Клієнт приніс свою версію і п'ятьох підозрюваних — перевір спершу самі відгуки, а не список.",
+    "instruction_en": "Nine tools, a six-hour budget. Three of the nine treat the symptom. The client brought his own theory and five suspects — check the reviews themselves first, not the list.",
+    "next_btn_uk": "Далі → крос-верифікація",
+    "next_btn_en": "Next → cross-verification",
+    "min_tools_used": 4,
+    "tools": [
+      {
+        "id": "review-batch",
+        "icon": "📊",
+        "name_uk": "Пакетний аналіз · 17 відгуків",
+        "name_en": "Batch analysis · 17 reviews",
+        "provider_uk": "таблиця клієнта · кластеризація текстів",
+        "provider_en": "client table · text clustering",
+        "desc_uk": "Час, довжина, лексика — усі сімнадцять як один масив",
+        "desc_en": "Timing, length, wording — all seventeen as one array",
+        "tooltip_uk": "Сімнадцять окремих випадків чи один патерн. Це різні справи.",
+        "tooltip_en": "Seventeen separate incidents or one pattern. Those are different cases.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 120,
+        "ui_component": "kv-table",
+        "clue_uk": "Відгуки не розподілені рівно по трьох тижнях: вони йдуть згустками по три-чотири за день з паузами у три-п'ять днів, і кожен згусток лягає у вікно 09:00-11:00 у робочі дні. Довжина всіх сімнадцяти — від 42 до 68 знаків, тоді як справжній негатив на цей заклад за рік має 180±90. Тексти розпадаються на три смислові купки, і в жодній немає ні страви, ні дати, ні імені. Емоції рівні — без крику і капслоку, яких у справжній образі не бракує.",
+        "clue_en": "The reviews are not spread evenly across three weeks: they come in clumps of three or four a day with three-to-five-day pauses, and every clump lands in a 09:00-11:00 window on a weekday. All seventeen run 42 to 68 characters, where genuine negatives on this place over the past year run 180±90. The texts fall into three semantic clumps, and not one contains a dish, a date or a name. The emotion is level — none of the shouting and capitals that real offence never lacks.",
+        "kv": {
+          "query_uk": "load smoloskyp_reviews_2026-08-22.xlsx · 17 rows",
+          "query_en": "load smoloskyp_reviews_2026-08-22.xlsx · 17 rows",
+          "groups": [
+            {
+              "title_uk": "Розподіл у часі",
+              "title_en": "Distribution over time",
+              "rows": [
+                {
+                  "k": "Період",
+                  "v_uk": "02.08 — 22.08.2026 · 21 день",
+                  "v_en": "Period · 02.08 — 22.08.2026 · 21 days"
+                },
+                {
+                  "k": "Форма",
+                  "v_uk": "5 згустків по 3-4 відгуки, паузи 3-5 днів",
+                  "v_en": "Shape · 5 clumps of 3-4 reviews, 3-5 day pauses",
+                  "warn": true,
+                  "note_uk": "Рівномірний потік виглядав би інакше. Паузи такої довжини — типове рознесення, щоб не спрацював спам-фільтр платформи.",
+                  "note_en": "An even stream would look different. Pauses of that length are the usual spacing used to keep a platform's spam filter quiet."
+                },
+                {
+                  "k": "Вікно доби",
+                  "v_uk": "09:00-11:00 (Київ) · 17 з 17",
+                  "v_en": "Time of day · 09:00-11:00 (Kyiv) · 17 of 17",
+                  "warn": true,
+                  "note_uk": "Гості пишуть увечері і на вихідних. Це вікно — початок робочого дня.",
+                  "note_en": "Guests write in the evening and at weekends. This window is the start of a working day."
+                },
+                {
+                  "k": "Дні тижня",
+                  "v_uk": "тільки робочі, жодного відгуку у сб-нд",
+                  "v_en": "Weekdays · working days only, none on Sat-Sun",
+                  "warn": true
+                }
+              ]
+            },
+            {
+              "title_uk": "Тексти",
+              "title_en": "The texts",
+              "rows": [
+                {
+                  "k": "Довжина",
+                  "v_uk": "42-68 знаків (усі 17)",
+                  "v_en": "Length · 42-68 characters (all 17)",
+                  "warn": true,
+                  "note_uk": "Справжній негатив на цей заклад за останній рік: 180±90 знаків. Образа зазвичай багатослівна.",
+                  "note_en": "Genuine negatives on this place over the past year: 180±90 characters. Offence is usually wordy."
+                },
+                {
+                  "k": "Смислові купки",
+                  "v_uk": "3 · сервіс / ціна / ставлення",
+                  "v_en": "Semantic clumps · 3 · service / price / attitude"
+                },
+                {
+                  "k": "Згадки страв",
+                  "v_uk": "0 з 17",
+                  "v_en": "Dishes mentioned · 0 of 17",
+                  "warn": true
+                },
+                {
+                  "k": "Дати візиту",
+                  "v_uk": "0 з 17",
+                  "v_en": "Visit dates · 0 of 17"
+                },
+                {
+                  "k": "Імена персоналу",
+                  "v_uk": "0 з 17",
+                  "v_en": "Staff names · 0 of 17",
+                  "note_uk": "Той, кого справді образили, майже завжди називає, хто саме і коли. Тут не названо нічого, що можна перевірити.",
+                  "note_en": "Someone genuinely wronged almost always names who and when. Here nothing checkable is named at all."
+                },
+                {
+                  "k": "Емоційний регістр",
+                  "v_uk": "рівний, без крику і капслоку",
+                  "v_en": "Emotional register · level, no shouting or capitals",
+                  "warn": true,
+                  "note_uk": "Стриманість тут не ознака вихованості, а ознака того, що текст писали не в стані, який описують.",
+                  "note_en": "The restraint here is not good manners, it is a sign the text was not written in the state it describes."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Кожен показник окремо можна пояснити випадковістю. Разом вони описують не сімнадцять розчарованих гостей, а одну роботу, зроблену за розкладом. Але тип операції — це ще не її замовник і не її причина; поки що встановлено лише, що це керована робота, а не збіг настроїв.",
+          "footer_en": "Any single measure here can be explained away as chance. Together they describe not seventeen disappointed guests but one job done on a schedule. Operation type is not the same as its client or its reason, though: so far all that is established is that this is managed work, not a coincidence of moods."
+        }
+      },
+      {
+        "id": "reviewer-profiles",
+        "icon": "👥",
+        "name_uk": "Профілі рецензентів · 17 акаунтів",
+        "name_en": "Reviewer profiles · 17 accounts",
+        "provider_uk": "публічні сторінки профілів",
+        "provider_en": "public profile pages",
+        "desc_uk": "Скільки їм років, що ще вони оцінювали і де перетинаються",
+        "desc_en": "How old they are, what else they rated, and where they overlap",
+        "tooltip_uk": "Акаунт із історією дорожчий за порожній — і саме тому історію йому роблять.",
+        "tooltip_en": "An account with a history is worth more than an empty one — which is why it gets given one.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 150,
+        "ui_component": "kv-table",
+        "clue_uk": "Дванадцять із сімнадцяти акаунтів заведені у 2024-2026, і майже у всіх є ще від двох до шести відгуків по дрібному бізнесу Києва — кав'ярні, салони, ветклініки, автосервіси. Це не порожні одноденки, їм вирощували правдоподібність. Але у одинадцяти з сімнадцяти на вкладці «Місця» повторюються ті самі чотири заклади, які не мають стосунку ні до «Смолоскипа», ні до його сусідів. Спільний список цілей — це вже не збіг смаків.",
+        "clue_en": "Twelve of the seventeen accounts were created between 2024 and 2026, and nearly all carry another two to six reviews across small Kyiv businesses — cafés, salons, vet clinics, garages. These are not empty throwaways; plausibility was grown into them. But eleven of the seventeen repeat the same four businesses on their Places tab, and those four have nothing to do with Smoloskyp or its neighbours. A shared target list is no longer a coincidence of taste.",
+        "kv": {
+          "query_uk": "17 profile URLs → вік акаунта, кількість відгуків, вкладка «Місця»",
+          "query_en": "17 profile URLs → account age, review count, Places tab",
+          "groups": [
+            {
+              "title_uk": "Вік і наповненість",
+              "title_en": "Age and fill",
+              "rows": [
+                {
+                  "k": "Створені у 2024-2026",
+                  "v_uk": "12 з 17",
+                  "v_en": "Created 2024-2026 · 12 of 17"
+                },
+                {
+                  "k": "Мають інші відгуки",
+                  "v_uk": "15 з 17 · по 2-6 кожен",
+                  "v_en": "Carry other reviews · 15 of 17 · 2-6 each",
+                  "note_uk": "Одноразові акаунти зняли б за день. Ці вирощували під довше життя.",
+                  "note_en": "Single-use accounts would be taken down in a day. These were grown for a longer life."
+                },
+                {
+                  "k": "Тематика інших відгуків",
+                  "v_uk": "дрібний бізнес Києва: кав'ярні, салони, ветклініки, автосервіси",
+                  "v_en": "Subject of other reviews · small Kyiv business: cafés, salons, vet clinics, garages"
+                },
+                {
+                  "k": "Тональність інших відгуків",
+                  "v_uk": "переважно нейтральна і позитивна",
+                  "v_en": "Tone of other reviews · mostly neutral and positive",
+                  "note_uk": "Саме так і будують вагу акаунта: спершу нічого не значущі схвалення, потім один потрібний удар.",
+                  "note_en": "That is exactly how account weight is built: inconsequential approvals first, then the one blow that was paid for."
+                }
+              ]
+            },
+            {
+              "title_uk": "Перетин цілей",
+              "title_en": "Target overlap",
+              "rows": [
+                {
+                  "k": "Спільні заклади",
+                  "v_uk": "4",
+                  "v_en": "Shared venues · 4",
+                  "warn": true
+                },
+                {
+                  "k": "Скільки профілів перетинаються",
+                  "v_uk": "11 з 17",
+                  "v_en": "Profiles overlapping · 11 of 17",
+                  "warn": true
+                },
+                {
+                  "k": "Зв'язок зі «Смолоскипом»",
+                  "v_uk": "відсутній",
+                  "v_en": "Link to Smoloskyp · none"
+                },
+                {
+                  "k": "Зв'язок із «Тризубом» / «Оселею»",
+                  "v_uk": "відсутній",
+                  "v_en": "Link to Tryzub / Oselia · none",
+                  "warn": true,
+                  "note_uk": "Гіпотеза клієнта тут отримує перший удар: жоден із чотирьох спільних закладів не пов'язаний із сусідніми ресторанами.",
+                  "note_en": "The client's hypothesis takes its first hit here: not one of the four shared venues is connected to the neighbouring restaurants."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Один рецензент, що збігся з іншим на якомусь закладі, — випадковість; Київ невеликий. Одинадцять із сімнадцяти на тих самих чотирьох — це керований пул, який працює не лише проти цього клієнта. Питання, яке відкривається з цього місця, важливіше за попереднє: не хто напав на «Смолоскип», а що спільного у тих чотирьох.",
+          "footer_en": "One reviewer overlapping another on some venue is chance; Kyiv is not large. Eleven of seventeen on the same four is a managed pool working against more than this one client. The question that opens here matters more than the previous one: not who attacked Smoloskyp, but what those four have in common."
+        }
+      },
+      {
+        "id": "cluster-map",
+        "icon": "🗺",
+        "name_uk": "Що спільного у чотирьох закладів",
+        "name_en": "What the four venues have in common",
+        "provider_uk": "крос-аналіз цілей пулу",
+        "provider_en": "cross-analysis of the pool's targets",
+        "desc_uk": "Пул б'є не лише по клієнту — подивись, кого ще і за що",
+        "desc_en": "The pool hits more than the client — look at who else, and why",
+        "tooltip_uk": "Спільна риса цілей пояснює операцію краще, ніж будь-який окремий відгук.",
+        "tooltip_en": "What the targets share explains the operation better than any single review does.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 210,
+        "ui_component": "report",
+        "clue_uk": "Ті самі акаунти залишили по три-п'ять однозіркових відгуків ще чотирьом бізнесам протягом 2025-2026. Заклади різні за галуззю, розміром і районом, спільного між ними на перший погляд немає. Спільне з'являється, коли подивитись не на бізнес, а на його власників: кожен із чотирьох на момент кампанії перебував у судовому спорі про поділ активів. Це не ферма проти конкурентів. Це послуга, у якої клієнтура з однією потребою.",
+        "clue_en": "The same accounts left three to five one-star reviews at four more businesses across 2025-2026. The venues differ by sector, size and district, and at first glance share nothing. What they share appears when you look past the business at its owners: every one of the four was in a court dispute over the division of assets at the time of its campaign. This is not a farm aimed at competitors. It is a service whose clientele has one need in common.",
+        "report": {
+          "query_uk": "17 рецензентів → усі оцінені бізнеси → спільна ознака",
+          "query_en": "17 reviewers → every business rated → the shared property",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Чотири інші цілі того самого пулу",
+              "text_en": "Four other targets of the same pool"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Стоматологічна клініка, Солом'янський район · 5 однозіркових · березень 2025",
+              "text_en": "Dental clinic, Solomianskyi district · 5 one-star · March 2025"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Автосервіс, Дарницький район · 4 однозіркових · вересень 2025",
+              "text_en": "Car service, Darnytskyi district · 4 one-star · September 2025"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Мережа з двох кав'ярень, центр · 3 однозіркових · січень 2026",
+              "text_en": "A two-café chain, city centre · 3 one-star · January 2026"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Салон краси, Оболонь · 4 однозіркових · травень 2026",
+              "text_en": "Beauty salon, Obolon · 4 one-star · May 2026"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що між ними спільного",
+              "text_en": "What they share"
+            },
+            {
+              "kind": "p",
+              "text_uk": "За галуззю, розміром і географією — нічого. Спільна ознака лежить не в бізнесі, а у його власниках: у кожному з чотирьох випадків на момент кампанії тривав судовий спір про поділ активів — розлучення з поділом бізнесу, вихід співзасновника, спадковий спір.",
+              "text_en": "By sector, size and geography — nothing. The shared property is not in the business but in its owners: in each of the four cases a court dispute over division of assets was under way at the time of the campaign — a divorce splitting a business, a co-founder exiting, an inheritance fight."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "І у кожному з чотирьох випадків удар припадав на період між поданням позову і призначеною оцінкою майна. Не після рішення, не до подання — саме у вікні, коли рахують, скільки актив коштує.",
+              "text_en": "And in each of the four the blow landed between the filing of the claim and the scheduled valuation of the assets. Not after the ruling, not before the filing — inside the window when someone is counting what the asset is worth."
+            },
+            {
+              "kind": "quote",
+              "text_uk": "Питання «хто напав на клієнта» щойно змінилося на «чия це послуга і кому вона продається». Друге веде до мотиву, перше не веде нікуди.",
+              "text_en": "The question 'who attacked the client' has just turned into 'whose service is this and who buys it'. The second leads to motive; the first leads nowhere."
+            }
+          ],
+          "footer_uk": "Тепер гіпотеза клієнта перевіряється прямо. Сусідній ресторан не пояснює жодної з чотирьох інших цілей — між ними немає ні спільної географії, ні спільного ринку, ні спільного власника. Конкурентна версія пояснює один випадок із п'яти і мовчить про решту; версія про послугу пояснює всі п'ять.",
+          "footer_en": "The client's hypothesis can now be tested directly. A neighbouring restaurant explains none of the four other targets — no shared geography, no shared market, no shared owner between them. The competitor reading explains one case out of five and says nothing about the rest; the service reading explains all five."
+        }
+      },
+      {
+        "id": "registry-trail",
+        "icon": "⚖",
+        "name_uk": "Реєстровий слід · ЄДР і судовий реєстр",
+        "name_en": "Registry trail · state register and court records",
+        "provider": "usr.minjust.gov.ua · reyestr.court.gov.ua",
+        "desc_uk": "Що відбувається з самим бізнесом клієнта, поки падає рейтинг",
+        "desc_en": "What is happening to the client's own business while the rating falls",
+        "tooltip_uk": "Відкриті українські реєстри. Безкоштовно, структуровано, з датами.",
+        "tooltip_en": "Open Ukrainian registers. Free, structured, dated.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 180,
+        "ui_component": "kv-table",
+        "clue_uk": "ТОВ «Смолоскип» зареєстровано у 2016 на двох засновників: Олексій Р. — 60%, Юлія Р. — 40%. Тридцять вісім днів тому подано заяву про вихід Юлії Р. зі складу засновників. Через два тижні після цього — позов про поділ спільно нажитого майна у Подільському райсуді, справа №758/4417/26. В ухвалі про відкриття провадження призначено судову експертизу для оцінки спірного майна, і корпоративні права у ТОВ входять до її предмета. Перший із сімнадцяти відгуків з'явився через три дні після подання позову.",
+        "clue_en": "Smoloskyp LLC was registered in 2016 to two founders: Oleksii R. at 60%, Yuliia R. at 40%. Thirty-eight days ago a filing was submitted for Yuliia R.'s exit from the founders. Two weeks after that came a claim for division of jointly acquired property at the Podil district court, case No. 758/4417/26. The ruling opening the proceedings orders a court valuation of the disputed property, and the corporate rights in the LLC fall within its scope. The first of the seventeen reviews appeared three days after the claim was filed.",
+        "kv": {
+          "query_uk": "ЄДР: ТОВ «Смолоскип» · реєстр судових рішень: прізвища засновників",
+          "query_en": "State register: Smoloskyp LLC · court registry: founders' surnames",
+          "groups": [
+            {
+              "title_uk": "ЄДР · ТОВ «Смолоскип»",
+              "title_en": "State register · Smoloskyp LLC",
+              "rows": [
+                {
+                  "k": "Зареєстровано",
+                  "v_uk": "2016",
+                  "v_en": "Registered · 2016"
+                },
+                {
+                  "k": "Засновники",
+                  "v_uk": "Олексій Р. — 60% · Юлія Р. — 40%",
+                  "v_en": "Founders · Oleksii R. 60% · Yuliia R. 40%",
+                  "note_uk": "Клієнт про співзасновницю у брифінгу не згадав жодного разу.",
+                  "note_en": "The client did not mention the co-founder once in the briefing."
+                },
+                {
+                  "k": "Остання зміна",
+                  "v_uk": "16.07.2026 · заява про вихід Юлії Р. зі складу засновників",
+                  "v_en": "Last change · 16.07.2026 · filing for Yuliia R.'s exit from the founders",
+                  "warn": true
+                }
+              ]
+            },
+            {
+              "title_uk": "Реєстр судових рішень",
+              "title_en": "Court registry",
+              "rows": [
+                {
+                  "k": "Справа",
+                  "v_uk": "№758/4417/26 · Подільський райсуд м. Києва",
+                  "v_en": "Case · No. 758/4417/26 · Podil district court, Kyiv"
+                },
+                {
+                  "k": "Предмет",
+                  "v_uk": "поділ спільно нажитого майна",
+                  "v_en": "Subject · division of jointly acquired property"
+                },
+                {
+                  "k": "Позов подано",
+                  "v_uk": "30.07.2026",
+                  "v_en": "Claim filed · 30.07.2026",
+                  "warn": true
+                },
+                {
+                  "k": "Ухвала",
+                  "v_uk": "призначено судову експертизу для оцінки спірного майна",
+                  "v_en": "Ruling · a court valuation of the disputed property is ordered",
+                  "warn": true,
+                  "note_uk": "До предмета експертизи входять корпоративні права у ТОВ. Тобто ціна закладу — центральна змінна справи.",
+                  "note_en": "The corporate rights in the LLC fall within the valuation's scope. The price of the venue is the case's central variable."
+                },
+                {
+                  "k": "Наступне засідання",
+                  "v_uk": "06.09.2026",
+                  "v_en": "Next hearing · 06.09.2026"
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Рейтинг у Google для локального закладу — не марнославство, а публічна змінна, з якої рахують вартість. Оцінювач бере порівнянні заклади району і коригує на репутацію; 4,6 і 3,8 дають різні цифри у висновку. Кампанія почалася через три дні після позову і, за календарем суду, має всі підстави тривати до наступного засідання. Це кореляція, дуже щільна, — і поки що саме кореляція, а не доведена причина.",
+          "footer_en": "A local venue's Google rating is not vanity, it is a public variable that valuations are built on. An appraiser takes comparable venues in the district and adjusts for reputation; 4.6 and 3.8 produce different figures in the report. The campaign began three days after the claim and, by the court's calendar, has every reason to run until the next hearing. That is a correlation, a very tight one — and so far a correlation is all it is."
+        }
+      },
+      {
+        "id": "timing-overlay",
+        "icon": "📅",
+        "name_uk": "Накладення хронологій",
+        "name_en": "Timeline overlay",
+        "provider_uk": "дати реєстрів × дати відгуків",
+        "provider_en": "register dates × review dates",
+        "desc_uk": "Одна шкала: судові дати і сімнадцять відгуків разом",
+        "desc_en": "One scale: the court dates and the seventeen reviews together",
+        "tooltip_uk": "Збіг у часі — сильний доказ і слабка причина. Різницю треба тримати в голові.",
+        "tooltip_en": "Coincidence in time is strong evidence and a weak cause. Keep the difference in mind.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 120,
+        "ui_component": "report",
+        "clue_uk": "На одній шкалі видно порядок: вихід співзасновниці з ТОВ, за два тижні позов, ще за три дні перший відгук, далі згустки з рівними паузами до сьогодні. Конкуренти, на яких вказує клієнт, відкрилися рік і два роки тому — з цією шкалою вони не корелюють ніяк. Кампанія прив'язана не до появи конкурентів, а до початку процесу.",
+        "clue_en": "On one scale the order is visible: the co-founder's exit from the LLC, the claim two weeks later, the first review three days after that, then clumps at even pauses up to today. The competitors the client points at opened one and two years ago — they do not correlate with this scale at all. The campaign is tied not to the arrival of competitors but to the start of proceedings.",
+        "report": {
+          "query_uk": "overlay: ЄДР + суд + 17 відгуків на одній шкалі",
+          "query_en": "overlay: register + court + 17 reviews on one scale",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Шкала",
+              "text_en": "The scale"
+            },
+            {
+              "kind": "li",
+              "text_uk": "16.07 · день −38 — заява до ЄДР про вихід співзасновниці",
+              "text_en": "16.07 · day −38 — register filing for the co-founder's exit"
+            },
+            {
+              "kind": "li",
+              "text_uk": "30.07 · день −24 — подано позов про поділ майна",
+              "text_en": "30.07 · day −24 — the assets-division claim is filed"
+            },
+            {
+              "kind": "li",
+              "text_uk": "02.08 · день −21 — перший із сімнадцяти відгуків",
+              "text_en": "02.08 · day −21 — the first of the seventeen reviews"
+            },
+            {
+              "kind": "li",
+              "text_uk": "з 02.08 донині — згустки по 3-4 відгуки з паузами 3-5 днів",
+              "text_en": "02.08 to date — clumps of 3-4 reviews at 3-5 day pauses"
+            },
+            {
+              "kind": "li",
+              "text_uk": "06.09 · день +14 — наступне засідання у справі",
+              "text_en": "06.09 · day +14 — the next hearing in the case"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що з цією шкалою не корелює",
+              "text_en": "What does not correlate with this scale"
+            },
+            {
+              "kind": "p",
+              "text_uk": "«Тризуб» відкрився два роки тому, «Оселя» — рік тому. Обидві дати відстоять від початку кампанії на місяці; жодна з них нічого у цій шкалі не пояснює. Троє звільнених працівників пішли у 2024-2025 — те саме.",
+              "text_en": "Tryzub opened two years ago, Oselia a year ago. Both dates sit months away from the start of the campaign; neither explains anything on this scale. The three dismissed employees left in 2024-2025 — the same."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Три дні між позовом і першим відгуком — це щільно. Але щільність збігу не робить його причиною: доти, доки під нею немає другої осі, це доказ на підтримку, а не доведений зв'язок. Так це і треба записати у звіт.",
+              "text_en": "Three days between the claim and the first review is tight. Tightness does not make a coincidence a cause: until a second axis sits under it, this is supporting evidence, not a demonstrated link. That is how it goes into the report."
+            }
+          ],
+          "footer_uk": "Кампанія триватиме доти, доки має сенс, — тобто до оцінки і засідання. Це дає клієнтові не лише пояснення, а й прогноз: ще близько двох тижнів.",
+          "footer_en": "The campaign will run as long as it makes sense to — that is, until the valuation and the hearing. That gives the client not only an explanation but a forecast: roughly two more weeks."
+        }
+      },
+      {
+        "id": "counsel-check",
+        "icon": "🔗",
+        "name_uk": "Звірка з юрфірмами · публічні сліди рецензентів",
+        "name_en": "Law-firm cross-check · reviewers' public traces",
+        "provider_uk": "публічні профілі × 23 київські юрфірми",
+        "provider_en": "public profiles × 23 Kyiv law firms",
+        "desc_uk": "Чи лишив хтось із сімнадцяти слід там, де його не мало бути",
+        "desc_en": "Whether any of the seventeen left a trace where none should be",
+        "tooltip_uk": "Слабкий сигнал, який має сенс лише проти базової лінії.",
+        "tooltip_en": "A weak signal that only means anything against a baseline.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 180,
+        "ui_component": "kv-table",
+        "clue_uk": "Позивачку представляє «Кобра & Партнери» — київська фірма із сімейних і корпоративних спорів. Якщо взяти двадцять три київські фірми тієї самої спеціалізації і перевірити по кожній публічні сліди всіх сімнадцяти рецензентів, вийде рівна порожнеча — нуль або один випадковий збіг на фірму. Крім однієї: на «Кобрі» три збіги з сімнадцяти. Три проти базової лінії у нуль — це вже не шум, але й не доказ.",
+        "clue_en": "The claimant is represented by Kobra & Partners — a Kyiv firm in family and corporate disputes. Take twenty-three Kyiv firms of the same specialisation and check the public traces of all seventeen reviewers against each, and the result is flat emptiness — zero or one incidental hit per firm. Except for one: Kobra shows three hits out of seventeen. Three against a baseline of zero is no longer noise, and is not proof either.",
+        "kv": {
+          "query_uk": "17 профілів × 23 юрфірми (сімейне/корпоративне право, Київ)",
+          "query_en": "17 profiles × 23 law firms (family/corporate, Kyiv)",
+          "groups": [
+            {
+              "title_uk": "Результат звірки",
+              "title_en": "Cross-check result",
+              "rows": [
+                {
+                  "k": "Перевірено фірм",
+                  "v_uk": "23",
+                  "v_en": "Firms checked · 23"
+                },
+                {
+                  "k": "Базова лінія",
+                  "v_uk": "0-1 збіг на фірму",
+                  "v_en": "Baseline · 0-1 hit per firm"
+                },
+                {
+                  "k": "«Кобра & Партнери»",
+                  "v_uk": "3 збіги з 17 рецензентів",
+                  "v_en": "Kobra & Partners · 3 hits of 17 reviewers",
+                  "warn": true,
+                  "note_uk": "Два п'ятизіркові відгуки на фірму у четвертому кварталі 2025 і одна публічна вподобайка під дописом партнера.",
+                  "note_en": "Two five-star reviews of the firm in Q4 2025 and one public like under a partner's post."
+                },
+                {
+                  "k": "Роль фірми у справі",
+                  "v_uk": "представник позивачки",
+                  "v_en": "Role in the case · counsel for the claimant",
+                  "warn": true
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Цей сигнал не тримає жодного щабля самостійно і не має цього робити. Три збіги можна пояснити по-різному: люди справді користуються юридичними послугами, а Київ невеликий. Але базова лінія у нуль на двадцяти двох інших фірмах — це те, що робить трійку помітною. Використовувати його треба як підсилення вже побудованої лінії, а не як її опору.",
+          "footer_en": "This signal holds up no rung on its own and is not meant to. Three hits admit several explanations: people do use lawyers, and Kyiv is not large. But a baseline of zero across the other twenty-two firms is what makes the three visible. It should be used to reinforce a line already built, not as that line's support."
+        }
+      },
+      {
+        "id": "mass-report",
+        "icon": "🚩",
+        "name_uk": "Поскаржитись на всі 17 відгуків окремо",
+        "name_en": "Report all 17 reviews individually",
+        "provider_uk": "Google Business · форма скарги",
+        "provider_en": "Google Business · report form",
+        "desc_uk": "Зробити те, чого клієнт від тебе й чекає",
+        "desc_en": "Do the thing the client expects of you",
+        "tooltip_uk": "Дія не шкідлива і не є розслідуванням.",
+        "tooltip_en": "Not a harmful move, and not an investigation.",
+        "correct": false,
+        "points": -10,
+        "time_cost": 300,
+        "ui_component": "report",
+        "clue_uk": "Сімнадцять окремих скарг подано, сімнадцять тикетів прийнято, у кожному — та сама відповідь про тридцять днів розгляду. Клієнт це вже робив один раз до тебе. Рейтинг за цей час не змінився, а п'ять годин бюджету пішли.",
+        "clue_en": "Seventeen separate reports filed, seventeen tickets accepted, each with the same thirty-day boilerplate. The client already did this once before you. The rating has not moved and five hours of the budget are gone.",
+        "report": {
+          "query_uk": "POST × 17 · support.google.com/business",
+          "query_en": "POST × 17 · support.google.com/business",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "17 тикетів · очікування до 30 днів",
+              "text_en": "17 tickets · up to 30 days"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Проблема не в тому, що скарга марна — вона знадобиться. Проблема у порядку: скарга без доказу патерну розглядається як сімнадцять окремих суперечок «власник проти гостя», і саме тому лежить тридцять днів. Той самий пакет із показаним патерном розглядається як одна справа.",
+              "text_en": "The problem is not that reporting is useless — it will be needed. The problem is the order: a report without a demonstrated pattern is handled as seventeen separate owner-versus-guest disputes, which is exactly why it sits for thirty days. The same package with the pattern shown is handled as one case."
+            },
+            {
+              "kind": "p",
+              "text_uk": "І головне: навіть якщо ці сімнадцять знімуть, наступного тижня з'явиться ще сімнадцять. Знята симптоматика не зупиняє того, хто платить.",
+              "text_en": "And more to the point: even if these seventeen come down, another seventeen arrive next week. Clearing a symptom does not stop whoever is paying."
+            }
+          ],
+          "footer_uk": "Це робота, яку робить клієнт або його юрист після розслідування, а не замість нього.",
+          "footer_en": "This is work the client or their lawyer does after the investigation, not instead of it."
+        }
+      },
+      {
+        "id": "dm-reviewer",
+        "icon": "💬",
+        "name_uk": "Написати одному з рецензентів",
+        "name_en": "Message one of the reviewers",
+        "provider_uk": "приватне повідомлення",
+        "provider_en": "private message",
+        "desc_uk": "Спитати навпростець, платили йому чи він справді там був",
+        "desc_en": "Ask outright whether they were paid or actually ate there",
+        "tooltip_uk": "Найкоротший шлях повідомити операцію, що її помітили.",
+        "tooltip_en": "The shortest way to tell an operation it has been spotted.",
+        "correct": false,
+        "points": -35,
+        "time_cost": 60,
+        "ui_component": "report",
+        "clue_uk": "Відповіді немає. За добу три акаунти з сімнадцяти видалили свої відгуки і закрили вкладку «Місця» — разом із перетином на чотирьох інших закладах, який ти ще не встиг зберегти. Наступний згусток приходить із нових акаунтів, у яких спільної історії вже немає.",
+        "clue_en": "No reply. Within a day three of the seventeen accounts deleted their reviews and closed their Places tab — along with the overlap on the four other businesses that you had not yet preserved. The next clump arrives from new accounts with no shared history left in them.",
+        "report": {
+          "query_uk": "DM → рецензент #6",
+          "query_en": "DM → reviewer #6",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Прочитано · без відповіді",
+              "text_en": "Read · no reply"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Зруйновано не репутацію розслідувача, а доказову базу: перетин цілей був єдиним, що з'єднувало цю кампанію з чотирма іншими. Без нього лишаються сімнадцять відгуків без пояснення, чому вони не про конкурентів.",
+              "text_en": "What was destroyed is not the investigator's standing but the evidence: the target overlap was the only thing connecting this campaign to the four others. Without it, seventeen reviews remain with no way to show they are not about competitors."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Окремо: у справі, яка вже триває у суді, контакт із людиною, пов'язаною з протилежною стороною, може мати наслідки для самого клієнта. Це вже не питання методології.",
+              "text_en": "Separately: in a case already before a court, contact with a person tied to the opposing side can have consequences for the client himself. That is no longer a question of methodology."
+            }
+          ],
+          "footer_uk": "Зберігай спершу, питай ніколи.",
+          "footer_en": "Preserve first, ask never."
+        }
+      },
+      {
+        "id": "reputation-firm",
+        "icon": "💸",
+        "name_uk": "Погодитись на «репутаційний менеджмент»",
+        "name_en": "Take up the 'reputation management' offer",
+        "provider_uk": "$2000/міс · пропозиція №2 з трьох",
+        "provider_en": "$2000/mo · offer 2 of 3",
+        "desc_uk": "Заглушити негатив потоком позитиву",
+        "desc_en": "Drown the negatives under a stream of positives",
+        "tooltip_uk": "Клієнт саме цього і хотів уникнути — і не дарма.",
+        "tooltip_en": "Exactly what the client wanted to avoid — with reason.",
+        "correct": false,
+        "points": -20,
+        "time_cost": 120,
+        "ui_component": "report",
+        "clue_uk": "Фірма пропонує сорок «органічних» позитивних відгуків на місяць. Тобто другу ферму проти першої, за гроші клієнта і від його імені. Рейтинг справді підіймається — разом із часткою куплених відгуків на сторінці закладу.",
+        "clue_en": "The firm offers forty 'organic' positive reviews a month. That is a second farm against the first, on the client's money and in his name. The rating does rise — along with the share of purchased reviews on the venue's page.",
+        "report": {
+          "query_uk": "оферта · 40 відгуків/міс · $2000",
+          "query_en": "offer · 40 reviews/mo · $2000",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Що клієнт отримує за $2000",
+              "text_en": "What the client gets for $2000"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "У справі про поділ майна, де призначено оцінку, сторінка з купленими відгуками — це подарунок протилежній стороні. Рейтинг, піднятий у місяць експертизи, легко показати як маніпуляцію, і тоді під сумнів потрапить уся позиція клієнта, включно з тим, що у ній правда.",
+              "text_en": "In an assets-division case with a valuation ordered, a page full of purchased reviews is a gift to the other side. A rating lifted in the month of the appraisal is easy to present as manipulation, and then the client's whole position comes into question, including the parts of it that are true."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Три такі пропозиції прийшли клієнту одразу після початку кампанії. Вони не її автори — вони помітили падіння рейтингу так само, як помітив би будь-хто, і прийшли продати захист. Це шакали на вже наявній рані, а не рука, що її завдала.",
+              "text_en": "Three such offers reached the client right after the campaign began. They are not its authors — they spotted the rating drop the way anyone would, and came to sell protection. Jackals on an existing wound, not the hand that made it."
+            }
+          ],
+          "footer_uk": "Відповідь на керовану кампанію — не друга керована кампанія.",
+          "footer_en": "The answer to a managed campaign is not a second managed campaign."
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Крос-верифікація",
+    "title_en": "Cross-verification",
+    "instruction_uk": "Три питання по тому, що ти здобув. Клієнт має свою версію — перевіряй її нарівні з рештою, а не замість решти.",
+    "instruction_en": "Three questions about what you obtained. The client has a theory of his own — test it alongside the others, not instead of them.",
+    "next_btn_uk": "Далі → драбина атрибуції",
+    "next_btn_en": "Next → attribution ladder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Пакетний аналіз дав: згустки по 3-4 відгуки, робочі дні 09:00-11:00, довжина 42-68 знаків, жодної страви й дати, рівна тональність. Що це для тебе означає?",
+        "text_en": "The batch analysis returned: clumps of 3-4 reviews, weekdays 09:00-11:00, lengths of 42-68 characters, no dish and no date anywhere, level tone. What does that mean to you?",
+        "options": [
+          {
+            "text_uk": "Це керована робота — час і стилістика виключають випадковість. Але встановлено поки що тип операції, а не її замовник і не причина; далі потрібне розширення на інші цілі пулу.",
+            "text_en": "This is managed work — the timing and the style rule out coincidence. But so far what is established is the type of operation, not its client and not its reason; the next move is expanding to the pool's other targets.",
+            "correct": true,
+            "points": 45,
+            "feedback_uk": "✓ Правильне зважування. Патерн доводить керованість і рівно нічого не каже про те, хто платить. Різниця між «це ферма» і «це ферма, найнята таким-то заради такого-то» — три кроки роботи, і на них ще нічого не витрачено.",
+            "feedback_en": "✓ Correct weighting. The pattern proves management and says exactly nothing about who is paying. The distance between 'this is a farm' and 'this is a farm hired by X for Y' is three steps of work, and none of them has been spent yet."
+          },
+          {
+            "text_uk": "Просто збіг: сімнадцять невдоволених гостей за три тижні буває, ресторан міг просто зіпсувати сервіс.",
+            "text_en": "Just a coincidence: seventeen unhappy guests in three weeks happens, the restaurant may simply have let its service slip.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Тоді довелося б пояснити, чому всі сімнадцять писали у робочі дні до одинадцятої, чому жоден не назвав страви і чому всі вклалися у 42-68 знаків. Зіпсований сервіс дає розкид, а не однорідність.",
+            "feedback_en": "✗ Then you would have to explain why all seventeen wrote on weekdays before eleven, why not one named a dish, and why every text fell between 42 and 68 characters. Slipping service produces scatter, not uniformity."
+          },
+          {
+            "text_uk": "Конкурент найняв ферму. Можна писати клієнту і готувати позов проти обох сусідніх ресторанів.",
+            "text_en": "A competitor hired a farm. Time to tell the client and prepare a claim against both neighbouring restaurants.",
+            "correct": false,
+            "points": -40,
+            "feedback_uk": "✗ Найдорожчий варіант, бо він збігається з тим, у що клієнт уже вірить. Патерн однаково сумісний із конкурентом, кривдником, вимагачем і стороною у судовому спорі. Ти взяв версію замовника і назвав її висновком.",
+            "feedback_en": "✗ The most expensive option, because it matches what the client already believes. The pattern is equally compatible with a competitor, an aggrieved party, an extortionist and a litigant. You took the client's theory and called it a finding."
+          },
+          {
+            "text_uk": "Це помста алгоритму: заклад перестав платити за рекламу, і платформа знизила видачу.",
+            "text_en": "This is algorithmic retaliation: the venue stopped paying for ads and the platform pushed it down.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "✗ Гіпотеза, яка нічого не пояснює: алгоритм не пише текстів із чужих акаунтів у робочі дні до одинадцятої. Перед тим як шукати причину у платформі, треба вичерпати причини, у яких є автор.",
+            "feedback_en": "✗ A hypothesis that explains nothing: an algorithm does not write texts from other people's accounts on weekday mornings. Before looking for a cause in the platform, exhaust the causes that have an author."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Одинадцять із сімнадцяти рецензентів перетинаються на чотирьох закладах, які не пов'язані ні зі «Смолоскипом», ні з його сусідами. Твій наступний крок:",
+        "text_en": "Eleven of the seventeen reviewers overlap on four venues unconnected to Smoloskyp or its neighbours. Your next step:",
+        "options": [
+          {
+            "text_uk": "Досліджую ці чотири заклади і шукаю, що в них спільного — галузь, розмір, район чи щось, чого не видно з самого бізнесу.",
+            "text_en": "Look into those four venues and find what they share — sector, size, district, or something not visible from the business itself.",
+            "correct": true,
+            "points": 55,
+            "feedback_uk": "✓ Це головний крок кейсу. Він переводить питання з «хто напав на мого клієнта» на «як влаштована ця послуга і кому вона потрібна» — а мотив живе у другому питанні, не в першому. Спільна риса чотирьох цілей і дасть відповідь.",
+            "feedback_en": "✓ This is the case's pivotal move. It turns the question from 'who attacked my client' into 'how does this service work and who needs it' — and motive lives in the second question, not the first. What the four targets share is what answers it."
+          },
+          {
+            "text_uk": "Пишу клієнту звіт: працює ферма ботів, сімнадцять фальшивих відгуків, ось докази.",
+            "text_en": "Write the client a report: a bot farm is at work, seventeen fake reviews, here is the evidence.",
+            "correct": false,
+            "points": -25,
+            "feedback_uk": "✗ Спостереження правильне і клієнту від нього нічого. «Ферма існує» не каже ні хто платить, ні коли це скінчиться, ні що робити. А головне — перетин на чотирьох інших закладах щойно повідомив, що це не про «Смолоскип», і ти проходиш повз цю підказку.",
+            "feedback_en": "✗ The observation is right and gives the client nothing. 'A farm exists' says neither who pays, nor when it stops, nor what to do. And crucially, the overlap on four other venues has just told you this is not about Smoloskyp — and you are walking past that."
+          },
+          {
+            "text_uk": "Реєструю фіктивний бізнес і замовляю у цих рецензентів відгуки, щоб задокументувати розцінки і схему.",
+            "text_en": "Register a fake business and order reviews from those reviewers, to document the pricing and the scheme.",
+            "correct": false,
+            "points": -50,
+            "feedback_uk": "✗ Це провокація, а не розслідування. Ти створюєш злочин, щоб його зафіксувати, і зібране таким шляхом не тільки не ляже у справу клієнта — воно стане проблемою для тебе. До того ж операція побачить нового замовника і насторожиться.",
+            "feedback_en": "✗ That is entrapment, not investigation. You create the offence in order to record it, and what you gather that way not only fails to enter the client's case — it becomes your own problem. The operation would also notice a new customer and take note."
+          },
+          {
+            "text_uk": "Пропоную клієнту написати одному з рецензентів приватно — раптом зізнається.",
+            "text_en": "Suggest the client message one of the reviewers privately — perhaps they will admit it.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Той самий провал, що і в попередньому кейсі, тільки дорожчий: у справі, яка вже в суді, контакт клієнта з людиною з боку протилежної сторони може обернутися проти нього самого. Плюс акаунти зачистять перетин раніше, ніж ти встигнеш його зберегти.",
+            "feedback_en": "✗ The same failure as in the previous case, only costlier: in a matter already before a court, the client contacting someone on the other side's payroll can rebound onto him. And the accounts will scrub the overlap before you have preserved it."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Накладення хронологій показало: перший відгук з'явився через три дні після подання позову про поділ майна, і згустки тривають донині. Що робиш із цим?",
+        "text_en": "The timeline overlay shows: the first review appeared three days after the assets-division claim was filed, and the clumps continue to date. What do you do with that?",
+        "options": [
+          {
+            "text_uk": "Фіксую як сильний доказ із прямою міткою «збіг у часі, не доведена причина» — інтерпретація буде на драбині, з опорою на інші осі.",
+            "text_en": "Log it as strong evidence tagged plainly 'coincidence in time, not a demonstrated cause' — interpretation happens on the ladder, anchored to the other axes.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Саме так, і мітка тут не формальність. Цей доказ, найпевніше, піде у судову справу; твердження «збіг у часі» витримає перевірку, а твердження «вона це замовила» вимагатиме доказу, якого у тебе немає, і поставить під сумнів усе інше у пакеті.",
+            "feedback_en": "✓ Exactly, and the tag is not a formality here. This evidence will most likely end up in a court case; the claim 'coincidence in time' will survive scrutiny, while 'she ordered it' demands proof you do not have and puts everything else in the package in doubt."
+          },
+          {
+            "text_uk": "Пишу клієнту, що кампанію замовила сторона, яка подала позов. Збіг надто щільний, щоб бути випадковим.",
+            "text_en": "Tell the client the campaign was ordered by the party that filed the claim. The coincidence is too tight to be chance.",
+            "correct": false,
+            "points": -40,
+            "feedback_uk": "✗ Стрибок від збігу до причини, і найгірше — цей висновок згодом підтвердиться іншими осями. Здогад, що влучив, привчає здогадуватись далі; а у справі, де доказ підуть перевіряти юристи протилежної сторони, така фраза без опори коштує всього пакета.",
+            "feedback_en": "✗ A leap from coincidence to cause — and worse, the conclusion will later be borne out by other axes. A guess that lands teaches you to keep guessing; and in a matter where the other side's lawyers will test your evidence, an unsupported sentence like that costs the whole package."
+          },
+          {
+            "text_uk": "Прошу клієнта дати особисте листування зі співзасновницею — раптом там є пряма вказівка.",
+            "text_en": "Ask the client for his personal correspondence with the co-founder — there may be something direct in it.",
+            "correct": false,
+            "points": -15,
+            "feedback_uk": "△ Не помилка методу, але помилка ролі. Приватне листування сторони у справі, яка триває, — це матеріал для його юриста, а не для тебе; витягнувши його самотужки, ти ризикуєш зіпсувати клієнту процесуальну позицію заради здогаду.",
+            "feedback_en": "△ Not an error of method but an error of role. A litigant's private correspondence in an ongoing matter is material for his lawyer, not for you; pulling it yourself risks damaging his procedural position for the sake of a hunch."
+          },
+          {
+            "text_uk": "Порівнюю розкладку згустків із типовими розкладками рекламних ферм у галузевих звітах.",
+            "text_en": "Compare the clump spacing against typical review-farm spacing from industry reports.",
+            "correct": false,
+            "points": 15,
+            "feedback_uk": "△ Думка розумна, і базову лінію вже дав перший інструмент: паузи по три-п'ять днів — стандартне рознесення. Крок не хибний, просто вже зроблений, а годину він забере.",
+            "feedback_en": "△ A sensible instinct, and the first tool already supplied the baseline: three-to-five-day pauses are the standard spacing. Not a wrong move, just an already-made one, and it will cost an hour."
+          }
+        ]
+      }
+    ]
+  },
+  "ladder_phase": {
+    "title_uk": "Драбина атрибуції",
+    "title_en": "Attribution ladder",
+    "instruction_uk": "П'ять щаблів. На кожен — один доказ із пулу. Заповни щонайменше чотири. Картка нараховує бали лише на своєму щаблі; будь-де ще вона просто не працює.",
+    "instruction_en": "Five rungs. One evidence item per rung, dragged from the pool. Fill at least four. A card scores only on its own rung; anywhere else it simply does not work.",
+    "submit_btn_uk": "Зафіксувати драбину",
+    "submit_btn_en": "Lock the ladder",
+    "reveal_uk": "Цей кейс майже напевно піде у судову справу, і саме тому нарахування тут влаштоване суворіше, ніж здається.\n\nІдентифікатор. Повний бал дає атрибуція до типу операції разом із замовником через посередника — тобто рівно те, що витримає перевірку юристами протилежної сторони. Назвати конкретну людину, яка натискала кнопки у фермі, з наявних даних неможливо; назвати співзасновницю особисто — можливо, але недоказово, і така картка дає нуль не за сміливість, а за те, що вона зруйнує пакет доказів у момент, коли його почнуть перевіряти. Зупинка на «це ферма ботів» — інша крайність: технічно правильно і клієнту марно.\n\nЛокація. Робоче вікно 09:00-11:00 у будні вказує на київський пояс — це спостереження про графік оператора, а не про його адресу. Повний бал дає саме таке формулювання; картка «оператор у Києві» видає розклад за місце і дає нуль.\n\nМотив тримається на трьох опорах реєстрового і цільового походження. Звірка з юрфірмами — сигнал четвертий і додатковий: він підсилює лінію, але не входить у неї, і мотив, побудований на самій цій трійці збігів, не стоїть.",
+    "reveal_en": "This case will most likely end up in a court file, which is why the scoring here is stricter than it looks.\n\nIdentifier. Full credit goes to attribution at the level of operation type plus the client through an intermediary — precisely what will survive examination by the other side's lawyers. Naming the individual who pressed the buttons at the farm is impossible from this data; naming the co-founder personally is possible but unprovable, and that card scores zero not for boldness but because it will destroy the evidence package the moment anyone tests it. Stopping at 'it is a bot farm' is the opposite extreme: technically right and useless to the client.\n\nLocation. A 09:00-11:00 weekday work window points at the Kyiv time zone — an observation about the operator's schedule, not their address. Full credit goes to that phrasing; the card 'the operator is in Kyiv' passes off a timetable as a place and scores zero.\n\nMotive rests on three supports drawn from registers and targeting. The law-firm cross-check is a fourth and supplementary signal: it reinforces the line without belonging to it, and a motive built on those three hits alone does not stand.",
+    "min_slots": 4,
+    "slots": [
+      {
+        "id": "identifier",
+        "max_points": 40,
+        "label_uk": "Ідентифікатор",
+        "label_en": "Identifier",
+        "hint_uk": "Хто це. Пам'ятай, що цей рядок читатимуть юристи протилежної сторони.",
+        "hint_en": "Who this is. Remember that the other side's lawyers will read this line."
+      },
+      {
+        "id": "location",
+        "max_points": 40,
+        "label_uk": "Локація",
+        "label_en": "Location",
+        "hint_uk": "Де. Розклад роботи — не адреса.",
+        "hint_en": "Where. A work schedule is not an address."
+      },
+      {
+        "id": "motive",
+        "max_points": 40,
+        "label_uk": "Мотив",
+        "label_en": "Motive",
+        "hint_uk": "Навіщо. Спитай не «хто злиться», а «що саме зараз рахують».",
+        "hint_en": "Why. Ask not who is angry but what is being counted right now."
+      },
+      {
+        "id": "timeline",
+        "max_points": 40,
+        "label_uk": "Хронологія",
+        "label_en": "Timeline",
+        "hint_uk": "Коли і доки. У цьому кейсі хронологія має ще й майбутнє.",
+        "hint_en": "When, and until when. This case's timeline also has a future."
+      },
+      {
+        "id": "verification",
+        "max_points": 40,
+        "label_uk": "Верифікація",
+        "label_en": "Verification",
+        "hint_uk": "Чим тримається все вище. Слабкий сигнал не стає сильним від того, що він четвертий.",
+        "hint_en": "What holds everything above it up. A weak signal does not become strong by being fourth."
+      }
+    ],
+    "evidence_pool": [
+      {
+        "id": "ev-id-operation",
+        "slot": "identifier",
+        "score": 40,
+        "text_uk": "Керована відгукова ферма, яка обслуговує клієнтів у судових спорах про поділ активів, і замовлення на «Смолоскип», розміщене через представника протилежної сторони у справі. Опори: однорідність текстів і графіка, перетин пулу на чотирьох інших закладах із тією самою ознакою, збіг початку кампанії з поданням позову.",
+        "text_en": "A managed review farm serving clients in asset-division disputes, and an order against Smoloskyp placed through the opposing side's representative in the case. Supports: uniformity of texts and schedule, the pool's overlap on four other venues sharing the same property, and the campaign's start coinciding with the filing.",
+        "feedback_uk": "Той рівень, який витримає перевірку. Названо тип операції і ланку, через яку прийшло замовлення, без жодного твердження, яке довелося б брати назад у суді.",
+        "feedback_en": "The level that will hold under examination. It names the type of operation and the link through which the order arrived, with no claim that would have to be withdrawn in court."
+      },
+      {
+        "id": "ev-id-farm-only",
+        "slot": "identifier",
+        "score": 15,
+        "text_uk": "Відгукова ферма: сімнадцять керованих акаунтів із вирощеною історією, однорідні тексти, робочий графік оператора.",
+        "text_en": "A review farm: seventeen managed accounts with grown-in history, uniform texts, an operator's working schedule.",
+        "feedback_uk": "Технічно правильно і для клієнта майже марно. «Ферма існує» не каже, коли це скінчиться і що робити; ту саму фразу він міг написати сам після перших трьох відгуків.",
+        "feedback_en": "Technically correct and nearly useless to the client. 'A farm exists' says nothing about when it ends or what to do; he could have written that sentence himself after the first three reviews."
+      },
+      {
+        "id": "ev-id-person",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Співзасновниця Юлія Р. особисто організувала і оплатила кампанію проти закладу, щоб збити його оцінку перед поділом.",
+        "text_en": "The co-founder Yuliia R. personally organized and paid for the campaign against the venue in order to lower its valuation before the split.",
+        "feedback_uk": "Нуль, і це найдорожча картка кейсу. Висновок цілком може бути правдою — і саме тому небезпечний: доказу особистої участі немає, а один цей рядок дозволить протилежній стороні відкинути весь пакет разом із тим, що у ньому доведено.",
+        "feedback_en": "Zero, and this is the case's most expensive card. The conclusion may well be true — which is exactly what makes it dangerous: there is no proof of personal involvement, and this one line lets the other side discard the whole package along with everything in it that was proven."
+      },
+      {
+        "id": "ev-id-competitor",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "«Тризуб»: один із сімнадцяти рецензентів торік залишив цьому ресторану п'ять зірок, а власник «Тризуба» має спільне фото з іншим рецензентом у відкритому дописі 2023 року.",
+        "text_en": "Tryzub: one of the seventeen reviewers left that restaurant five stars last year, and Tryzub's owner appears in a public 2023 post together with another of the reviewers.",
+        "feedback_uk": "Нуль. Обидва збіги справжні і обидва нічого не важать: п'ятизірковий відгук стоїть задовго до кампанії, а знайомство однієї людини не пояснює сімнадцяти акаунтів і чотирьох інших цілей. Це версія клієнта, повернута йому ж під виглядом висновку.",
+        "feedback_en": "Zero. Both coincidences are real and both are weightless: the five-star review long predates the campaign, and one person's acquaintance does not explain seventeen accounts and four other targets. This is the client's theory handed back to him dressed as a finding."
+      },
+      {
+        "id": "ev-id-exchef",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Звільнений у 2025 шеф-кухар: конфлікт при звільненні задокументований, мотив особистої образи очевидний.",
+        "text_en": "The chef dismissed in 2025: the conflict at his dismissal is documented and the motive of personal grievance is obvious.",
+        "feedback_uk": "Нуль. Образа пояснює бажання і не пояснює можливості: сімнадцять акаунтів із вирощеною за роки історією і перетином на чотирьох закладах — це послуга, яку купують, а не те, що робить розлючена людина ввечері.",
+        "feedback_en": "Zero. Grievance explains the wish and not the means: seventeen accounts with history grown over years and an overlap on four venues is a service you buy, not something an angry person does in the evening."
+      },
+      {
+        "id": "ev-loc-window",
+        "slot": "location",
+        "score": 40,
+        "text_uk": "Робоче вікно оператора — київський пояс: усі сімнадцять відгуків опубліковані у будні між 09:00 і 11:00, у вихідні жодного. Це спостереження про графік, а не про адресу; місце розташування виконавця з наявних даних не встановлюється.",
+        "text_en": "The operator's work window is the Kyiv time zone: all seventeen reviews were posted on weekdays between 09:00 and 11:00, none at weekends. This is an observation about a schedule, not an address; the executor's location cannot be established from the available data.",
+        "feedback_uk": "Повний бал. Названо і те, що здобуто, і межу, за яку воно не поширюється. У пакеті доказів такий рядок неможливо оскаржити — він не стверджує нічого зайвого.",
+        "feedback_en": "Full credit. It names both what was obtained and the boundary it does not extend past. In an evidence package such a line cannot be challenged — it asserts nothing surplus."
+      },
+      {
+        "id": "ev-loc-kyiv",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Оператор перебуває у Києві: відгуки виходять за київським робочим часом, цілі — київські, мова текстів українська.",
+        "text_en": "The operator is in Kyiv: the reviews go out on Kyiv working hours, the targets are Kyiv businesses, the texts are in Ukrainian.",
+        "feedback_uk": "Нуль. Кожен із трьох доводів пояснюється так само тим, що київські замовники купують послугу під київські цілі, а виконавець може сидіти будь-де у тому самому поясі. Розклад видано за місце.",
+        "feedback_en": "Zero. Each of the three arguments is equally explained by Kyiv clients buying a service aimed at Kyiv targets, while the executor may sit anywhere in the same zone. A timetable has been passed off as a place."
+      },
+      {
+        "id": "ev-loc-none",
+        "slot": "location",
+        "score": 15,
+        "text_uk": "Локація виконавця не встановлюється: уся інфраструктура кампанії — це чужі акаунти на чужій платформі, власних слідів операція не лишає.",
+        "text_en": "The executor's location cannot be established: the campaign's whole infrastructure is other people's accounts on someone else's platform, and the operation leaves no traces of its own.",
+        "feedback_uk": "Частково. Констатація чесна, але порожня: робоче вікно у будні до одинадцятої ти вже здобув, і воно звужує пояс. Щабель питає, що встановлено, а не лише чого встановити не вдалося.",
+        "feedback_en": "Partial. The statement is honest but empty: you already obtained the weekday-before-eleven window, and it narrows the zone. The rung asks what was established, not only what could not be."
+      },
+      {
+        "id": "ev-motive-valuation",
+        "slot": "motive",
+        "score": 40,
+        "text_uk": "Збиття вартості активу перед судовою оцінкою. Три опори: заява до ЄДР про вихід співзасновниці за тридцять вісім днів до сьогодні; ухвала у справі №758/4417/26 із призначенням експертизи, до предмета якої входять корпоративні права у ТОВ; і те, що всі чотири інші цілі пулу зазнали удару саме у вікні між позовом і оцінкою. Рейтинг локального закладу — публічна змінна, з якої рахують ціну.",
+        "text_en": "Driving down the asset's value ahead of a court valuation. Three supports: the register filing for the co-founder's exit thirty-eight days ago; the ruling in case No. 758/4417/26 ordering a valuation whose scope covers the corporate rights in the LLC; and the fact that all four other targets of the pool were struck inside the same window between filing and appraisal. A local venue's rating is a public variable that its price is computed from.",
+        "feedback_uk": "Мотив, який пояснює не лише цей випадок, а й усі п'ять. Саме тому він і тримається: версія, що працює тільки для одного клієнта, слабша за версію, яка пояснює всю клієнтуру послуги.",
+        "feedback_en": "A motive that explains not just this case but all five. That is precisely why it holds: an explanation that works for one client only is weaker than one that accounts for the service's entire clientele."
+      },
+      {
+        "id": "ev-motive-timing-only",
+        "slot": "motive",
+        "score": 20,
+        "text_uk": "Кампанія почалася через три дні після подання позову про поділ майна і триває донині.",
+        "text_en": "The campaign began three days after the assets-division claim was filed and continues to date.",
+        "feedback_uk": "Половина. Збіг у часі показує, коли, і не показує навіщо: щоб з нього виріс мотив, потрібна ухвала про оцінку — саме вона пояснює, чому б'ють по рейтингу, а не по чомусь іншому.",
+        "feedback_en": "Half credit. Coincidence in time shows when and not why: for a motive to grow out of it you need the valuation ruling — that is what explains why the blow lands on the rating rather than on anything else."
+      },
+      {
+        "id": "ev-motive-counsel",
+        "slot": "motive",
+        "score": 15,
+        "text_uk": "Троє з сімнадцяти рецензентів мають публічні сліди взаємодії з юрфірмою, яка представляє позивачку, за нульової базової лінії на двадцяти двох інших фірмах.",
+        "text_en": "Three of the seventeen reviewers show public traces of interaction with the firm representing the claimant, against a zero baseline across twenty-two other firms.",
+        "feedback_uk": "Частково, і саме тут кейс перевіряє обережність. Сигнал справжній і слабкий: він показує ланку, а не причину. Мотив, побудований на трьох вподобайках, розсиплеться від першого питання; той самий сигнал поверх реєстрової лінії — доречне підсилення.",
+        "feedback_en": "Partial, and this is where the case tests caution. The signal is real and weak: it indicates a link, not a reason. A motive built on three likes collapses at the first question; the same signal laid over the register line is a fair reinforcement."
+      },
+      {
+        "id": "ev-motive-revenge",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Особиста помста: конфлікт між подружжям вийшов за межі суду, і кампанія — спосіб зробити боляче.",
+        "text_en": "Personal revenge: the conflict between the spouses spilled past the courtroom, and the campaign is a way to inflict pain.",
+        "feedback_uk": "Нуль. Помста не пояснює ні вибору цілі — б'ють саме по публічній змінній оцінки, — ні того, чому решта чотирьох випадків мають ту саму прив'язку до вікна експертизи. Мотив, який працює лише для одного випадку, не пояснює операції.",
+        "feedback_en": "Zero. Revenge explains neither the choice of target — the blow lands precisely on the public variable in the valuation — nor why the other four cases share the same alignment with the appraisal window. A motive that works for one case does not explain an operation."
+      },
+      {
+        "id": "ev-time-campaign",
+        "slot": "timeline",
+        "score": 40,
+        "text_uk": "Кампанія, прив'язана до процесу, з передбачуваним кінцем. 16.07 — заява про вихід співзасновниці; 30.07 — позов; 02.08 — перший відгук; далі згустки по три-чотири з паузами три-п'ять днів; 06.09 — наступне засідання. Порядок подій і рівність пауз дають керовану роботу, а календар суду — прогноз: тиск триватиме приблизно ще два тижні.",
+        "text_en": "A campaign tied to proceedings, with a predictable end. 16.07 — the co-founder's exit filing; 30.07 — the claim; 02.08 — the first review; then clumps of three or four at three-to-five-day pauses; 06.09 — the next hearing. The order of events and the evenness of the pauses give managed work, and the court calendar gives a forecast: the pressure runs roughly two more weeks.",
+        "feedback_uk": "Єдина хронологія у треку, яка має не лише минуле. Прогноз до засідання — це те, що клієнт може використати одразу: він знає, чого чекати і скільки.",
+        "feedback_en": "The only timeline in the track that has more than a past. The forecast to the hearing is what the client can use immediately: he knows what to expect and for how long."
+      },
+      {
+        "id": "ev-time-burst",
+        "slot": "timeline",
+        "score": 15,
+        "text_uk": "Сімнадцять відгуків за двадцять один день згустками по три-чотири з рівними паузами — розподіл, який не буває випадковим.",
+        "text_en": "Seventeen reviews in twenty-one days, in clumps of three or four at even pauses — a distribution that does not occur by chance.",
+        "feedback_uk": "Чверть картини. Форма розподілу доводить керованість і мовчить про прив'язку: без судових дат це просто дивний сплеск без початку і без кінця.",
+        "feedback_en": "A quarter of the picture. The shape of the distribution proves management and says nothing about what it is tied to: without the court dates it is just an odd burst with no beginning and no end."
+      },
+      {
+        "id": "ev-time-competitors",
+        "slot": "timeline",
+        "score": 0,
+        "text_uk": "Хронологія конкуренції: «Тризуб» відкрився два роки тому, «Оселя» — рік тому, відтоді заклад втрачає аудиторію, і падіння рейтингу — частина цього процесу.",
+        "text_en": "A competitive timeline: Tryzub opened two years ago, Oselia a year ago, the venue has been losing audience since, and the rating drop is part of that process.",
+        "feedback_uk": "Нуль. Обидві дати відстоять від кампанії на місяці і не пояснюють ні того, чому вона почалася саме у серпні, ні згустків, ні робочого вікна. Це хронологія іншої історії.",
+        "feedback_en": "Zero. Both dates sit months away from the campaign and explain neither why it began in August, nor the clumps, nor the work window. This is the timeline of a different story."
+      },
+      {
+        "id": "ev-ver-three-axis",
+        "slot": "verification",
+        "score": 40,
+        "text_uk": "Три незалежні осі. Технічна: однорідність текстів, довжин і графіка публікації. Цільова: перетин пулу на чотирьох інших закладах, у кожного з яких на момент удару тривав спір про поділ активів. Реєстрова: заява до ЄДР, ухвала з призначенням оцінки і збіг початку кампанії з поданням позову. Звірка з юрфірмами у ці три осі не входить — вона підсилює третю, але походить із того самого контексту, а не з незалежного.",
+        "text_en": "Three independent axes. Technical: uniformity of texts, lengths and publication schedule. Targeting: the pool's overlap on four other venues, each in an asset-division dispute at the time it was struck. Register: the state-register filing, the ruling ordering a valuation, and the campaign's start coinciding with the claim. The law-firm cross-check is not one of the three — it reinforces the third but comes from the same context rather than an independent one.",
+        "feedback_uk": "Головне тут — четвертий сигнал, свідомо не зарахований в опори. Спокуса дописати його четвертою віссю велика саме тому, що він виглядає найефектнішим; той, хто цього не робить, рахує чесно.",
+        "feedback_en": "The key move here is the fourth signal, deliberately left out of the supports. The pull to write it in as a fourth axis is strong precisely because it looks the most striking; whoever resists is counting honestly."
+      },
+      {
+        "id": "ev-ver-four-axis",
+        "slot": "verification",
+        "score": 20,
+        "text_uk": "Чотири осі: технічна, цільова, реєстрова і зв'язок із юрфірмою позивачки — три збіги проти нульової базової лінії на двадцяти двох інших фірмах.",
+        "text_en": "Four axes: technical, targeting, register, and the link to the claimant's law firm — three hits against a zero baseline across twenty-two other firms.",
+        "feedback_uk": "Половина, і помилка тут тонка. Четвертий сигнал не незалежний: він походить із того самого судового контексту, що й реєстрова вісь. Порахувати його окремою опорою — це порахувати ту саму опору двічі й отримати впевненість, якої докази не дають.",
+        "feedback_en": "Half credit, and the error is subtle. The fourth signal is not independent: it comes from the same litigation context as the register axis. Counting it as a separate support counts one support twice and yields a confidence the evidence does not provide."
+      },
+      {
+        "id": "ev-ver-pattern-only",
+        "slot": "verification",
+        "score": 0,
+        "text_uk": "Однорідність сімнадцяти відгуків доведена трьома незалежними вимірами: довжина текстів, час публікації і відсутність конкретики. Три збіги поспіль випадковими не бувають.",
+        "text_en": "The uniformity of the seventeen reviews is proven across three independent measures: text length, publication time and absence of specifics. Three coincidences in a row do not happen by chance.",
+        "feedback_uk": "Нуль. Це три вимірювання одного й того самого масиву, а не три осі: усі вони описують ті самі сімнадцять текстів. Вісь стає другою тоді, коли походить з іншого джерела, а не тоді, коли міряє інший параметр.",
+        "feedback_en": "Zero. These are three measurements of one array, not three axes: all of them describe the same seventeen texts. An axis becomes a second axis when it comes from a different source, not when it measures a different parameter."
+      }
+    ]
+  },
+  "falsifiability_phase": {
+    "title_uk": "Перевірка на фальсифікованість",
+    "title_en": "Falsifiability check",
+    "instruction_uk": "На кожен заповнений щабель — одне речення: яка знахідка, якби вона з'явилась, зруйнувала б цей анкор. Оцінюється те, які поняття ти назвав, а не як ти це сформулював.",
+    "instruction_en": "For each rung you filled, one sentence: what finding, if it turned up, would destroy this anchor. You are graded on which concepts you name, not on how you phrase them.",
+    "submit_btn_uk": "Подати спростування",
+    "submit_btn_en": "Submit falsifiers",
+    "points_per_item": 25,
+    "items": [
+      {
+        "slot_id": "identifier",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про керовану ферму, яка обслуговує таких клієнтів?",
+        "prompt_en": "What would destroy the conclusion about a managed farm serving this kind of client?",
+        "model_uk": "Наприклад: повторна кластеризація іншою моделлю покаже, що тексти насправді різнорідні; або графік публікацій виявиться рівномірним після перерахунку і згустки зникнуть; або з'ясується, що акаунти не пов'язані між собою і збіг на чотирьох закладах пояснюється популярністю самих закладів.",
+        "model_en": "For example: re-clustering with a different model shows the texts are in fact heterogeneous; or the publication schedule turns out uniform on recalculation and the clumps vanish; or the accounts turn out to be unrelated and the overlap on four venues is explained by how popular those venues are.",
+        "keywords_uk": [
+          [
+            "текст",
+            "кластер",
+            "однорідн",
+            "різнорідн",
+            "стилістик",
+            "модел",
+            "embedding",
+            "повторн"
+          ],
+          [
+            "різн",
+            "не підтверд",
+            "не однорідн",
+            "розкид",
+            "варіатив",
+            "спростов",
+            "інший результат"
+          ],
+          [
+            "графік",
+            "час",
+            "розподіл",
+            "згустк",
+            "пауз",
+            "рівномірн",
+            "випадков"
+          ],
+          [
+            "акаунт",
+            "профіл",
+            "пул",
+            "перетин",
+            "збіг"
+          ],
+          [
+            "не пов'язан",
+            "не пов'язані",
+            "незалежн",
+            "популярн",
+            "випадков збіг",
+            "органічн"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "text",
+            "cluster",
+            "uniform",
+            "heterogen",
+            "style",
+            "model",
+            "embedding",
+            "re-run",
+            "rerun"
+          ],
+          [
+            "different",
+            "not confirm",
+            "scatter",
+            "variance",
+            "refut",
+            "another result"
+          ],
+          [
+            "schedule",
+            "timing",
+            "distribution",
+            "clump",
+            "burst",
+            "pause",
+            "even",
+            "random"
+          ],
+          [
+            "account",
+            "profile",
+            "pool",
+            "overlap",
+            "coincid"
+          ],
+          [
+            "unrelated",
+            "independent",
+            "popular",
+            "organic",
+            "chance"
+          ]
+        ]
+      },
+      {
+        "slot_id": "location",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про київське робоче вікно і невстановлену локацію?",
+        "prompt_en": "What would destroy the conclusion about a Kyiv work window and an unestablished location?",
+        "model_uk": "Наприклад: у відгуках знайдеться мовний артефакт, не характерний для київського вжитку; або у метаданих аватарки чи профілю виявиться інший часовий пояс; або з'ясується, що частина публікацій виходила вночі за київським часом, і вікно розпадеться.",
+        "model_en": "For example: a language artefact turns up in the reviews that does not fit Kyiv usage; or the metadata of an avatar or profile shows a different time zone; or part of the posts turn out to have gone out at night Kyiv time and the window falls apart.",
+        "keywords_uk": [
+          [
+            "мов",
+            "артефакт",
+            "діалект",
+            "суржик",
+            "калька",
+            "формулюванн",
+            "не характерн",
+            "переклад"
+          ],
+          [
+            "часов пояс",
+            "timezone",
+            "метадан",
+            "exif",
+            "аватар",
+            "профіл",
+            "gmt",
+            "offset"
+          ],
+          [
+            "вікно",
+            "графік",
+            "нічн",
+            "інший час",
+            "розпад",
+            "не збіг",
+            "поза"
+          ],
+          [
+            "інша країн",
+            "не київ",
+            "не україн",
+            "локац",
+            "встановл",
+            "прив'яз",
+            "адрес",
+            "ip"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "language",
+            "artefact",
+            "artifact",
+            "dialect",
+            "phrasing",
+            "not typical",
+            "translation"
+          ],
+          [
+            "time zone",
+            "timezone",
+            "metadata",
+            "exif",
+            "avatar",
+            "profile",
+            "gmt",
+            "offset"
+          ],
+          [
+            "window",
+            "schedule",
+            "night",
+            "different time",
+            "falls apart",
+            "outside",
+            "does not match"
+          ],
+          [
+            "another country",
+            "not kyiv",
+            "not ukrain",
+            "location",
+            "establish",
+            "tie to",
+            "address",
+            "ip"
+          ]
+        ]
+      },
+      {
+        "slot_id": "motive",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б мотив збиття вартості перед оцінкою?",
+        "prompt_en": "What would destroy the motive of driving down value ahead of a valuation?",
+        "model_uk": "Наприклад: перевірка чотирьох інших цілей покаже, що ферма била по бізнесах з обох боків спорів — і тоді це просто послуга без прив'язки до сторони, а не інструмент однієї з них; або з'ясується, що методика експертизи не враховує публічний рейтинг, і бити по ньому не має сенсу; або виявиться, що поділ уже погоджений позасудово і оцінка ні на що не впливає.",
+        "model_en": "For example: checking the four other targets shows the farm struck businesses on both sides of disputes — in which case it is simply a service with no allegiance rather than one side's instrument; or the valuation methodology turns out not to account for the public rating, making it pointless to attack; or the split turns out to be settled out of court already and the appraisal changes nothing.",
+        "keywords_uk": [
+          [
+            "чотир",
+            "інші цілі",
+            "інших бізнес",
+            "перевірк",
+            "клієнт",
+            "замовник"
+          ],
+          [
+            "обидв",
+            "з обох",
+            "будь-як",
+            "без прив'язк",
+            "без сторон",
+            "просто послуг",
+            "не на користь"
+          ],
+          [
+            "оцінк",
+            "експертиз",
+            "методик",
+            "вартіст",
+            "рейтинг",
+            "не врахову",
+            "не вплива"
+          ],
+          [
+            "поділ",
+            "погоджен",
+            "позасудов",
+            "мирова",
+            "врегульован",
+            "закритий",
+            "не актуальн"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "four",
+            "other target",
+            "other business",
+            "check",
+            "client",
+            "customer"
+          ],
+          [
+            "both",
+            "either side",
+            "any side",
+            "no allegiance",
+            "no side",
+            "just a service",
+            "not in favour",
+            "not in favor"
+          ],
+          [
+            "valuation",
+            "apprais",
+            "methodolog",
+            "value",
+            "rating",
+            "does not account",
+            "no effect"
+          ],
+          [
+            "split",
+            "settle",
+            "out of court",
+            "agreed",
+            "resolved",
+            "closed",
+            "moot"
+          ]
+        ]
+      },
+      {
+        "slot_id": "timeline",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про кампанію, прив'язану до процесу?",
+        "prompt_en": "What would destroy the conclusion about a campaign tied to the proceedings?",
+        "model_uk": "Наприклад: виявиться, що перший відгук насправді передував поданню позову — тоді порядок перевертається і прив'язка розсипається; або паузи між згустками виявляться випадковими після перерахунку; або з'ясується, що подібні сплески траплялися у цього закладу і раніше, поза будь-яким процесом.",
+        "model_en": "For example: the first review turns out to predate the filing — the order reverses and the link falls apart; or the pauses between clumps turn out random on recalculation; or similar bursts turn out to have hit this venue before, outside any proceedings.",
+        "keywords_uk": [
+          [
+            "перш відгук",
+            "перший відгук",
+            "позов",
+            "подання",
+            "дата",
+            "порядок",
+            "послідовн"
+          ],
+          [
+            "до",
+            "раніше",
+            "передува",
+            "переверт",
+            "навпаки",
+            "не після",
+            "інша дата"
+          ],
+          [
+            "пауз",
+            "інтервал",
+            "згустк",
+            "розподіл",
+            "випадков",
+            "рівномірн",
+            "перерахун"
+          ],
+          [
+            "раніше трапляв",
+            "було й до",
+            "попередн сплеск",
+            "поза процес",
+            "без суду",
+            "історія закладу"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "first review",
+            "claim",
+            "filing",
+            "date",
+            "order",
+            "sequence"
+          ],
+          [
+            "before",
+            "earlier",
+            "predate",
+            "reverse",
+            "the other way",
+            "not after",
+            "different date"
+          ],
+          [
+            "pause",
+            "interval",
+            "clump",
+            "distribution",
+            "random",
+            "even",
+            "recalculat"
+          ],
+          [
+            "happened before",
+            "earlier burst",
+            "previous burst",
+            "outside proceedings",
+            "without a case",
+            "venue history"
+          ]
+        ]
+      },
+      {
+        "slot_id": "verification",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б тріангуляцію трьома осями?",
+        "prompt_en": "What would destroy the three-axis triangulation?",
+        "model_uk": "Наприклад: цільова вісь завалиться, якщо у чотирьох інших закладів не виявиться спору про поділ; або реєстрова, якщо ухвала не призначає оцінки; або з'ясується, що осі не незалежні — цільовий і реєстровий сигнали походять з одного джерела, і тоді це одна опора, а не дві.",
+        "model_en": "For example: the targeting axis collapses if the four other venues turn out to have no division dispute; or the register axis, if the ruling orders no valuation; or the axes turn out not to be independent — the targeting and register signals come from one source, and then this is one support rather than two.",
+        "keywords_uk": [
+          [
+            "вісь",
+            "осі",
+            "опор",
+            "тріангуляц",
+            "сигнал"
+          ],
+          [
+            "завал",
+            "розсипл",
+            "не підтверд",
+            "зникн",
+            "спростов",
+            "не виявит",
+            "не буде",
+            "collapse"
+          ],
+          [
+            "чотир",
+            "спор",
+            "поділ",
+            "реєстр",
+            "ухвал",
+            "оцінк",
+            "контекст"
+          ],
+          [
+            "незалежн",
+            "корельован",
+            "одне джерел",
+            "той самий контекст",
+            "не окрем",
+            "порахован двічі",
+            "одна опора"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "axis",
+            "axes",
+            "support",
+            "triangulat",
+            "signal"
+          ],
+          [
+            "collapse",
+            "fall apart",
+            "not confirm",
+            "disappear",
+            "refut",
+            "turn out not",
+            "fails"
+          ],
+          [
+            "four",
+            "dispute",
+            "division",
+            "register",
+            "ruling",
+            "valuation",
+            "context"
+          ],
+          [
+            "independen",
+            "correlat",
+            "one source",
+            "same context",
+            "not separate",
+            "counted twice",
+            "one support"
+          ]
+        ]
+      }
+    ]
+  },
+  "so_what_phase": {
+    "title_uk": "Ну і що?",
+    "title_en": "So what?",
+    "question_uk": "Атрибуцію зроблено. Тепер питання, від якого залежить, що клієнт робитиме завтра: що це насправді?",
+    "question_en": "The attribution is done. Now the question that decides what the client does tomorrow: what is this?",
+    "options": [
+      {
+        "id": "sw1",
+        "correct": false,
+        "points": -40,
+        "text_uk": "Напад конкурента. «Тризуб» або «Оселя» найняли ферму, щоб відібрати аудиторію у сусіда.",
+        "text_en": "A competitor attack. Tryzub or Oselia hired a farm to take a neighbour's audience.",
+        "feedback_uk": "✗ Версія клієнта, яка не пояснює чотирьох інших цілей: у них немає ні спільного ринку, ні спільної географії з подільськими ресторанами. Пояснення, яке працює для одного випадку з п'яти і мовчить про решту, — не пояснення, а збіг із очікуванням замовника.",
+        "feedback_en": "✗ The client's theory, and it explains none of the four other targets: they share neither market nor geography with any Podil restaurant. An explanation that works for one case out of five and says nothing about the rest is not an explanation, it is agreement with what the client expected."
+      },
+      {
+        "id": "sw2",
+        "correct": false,
+        "points": -50,
+        "text_uk": "Один розлючений гість. Хтось справді пішов ображеним і завів сімнадцять акаунтів, щоб відігратися.",
+        "text_en": "One angry guest. Someone genuinely left offended and created seventeen accounts to get even.",
+        "feedback_uk": "✗ Сімнадцять акаунтів із відгуками, накопиченими роками, і перетином на чотирьох інших закладах — це не те, що робить людина ввечері після поганої вечері. Ця версія не пояснює ні ресурсу, ні того, чому ті самі акаунти били по чужих бізнесах задовго до цієї історії.",
+        "feedback_en": "✗ Seventeen accounts with reviews accumulated over years and an overlap on four other venues is not what a person does in the evening after a bad dinner. This reading explains neither the resource nor why those same accounts struck other people's businesses long before this story."
+      },
+      {
+        "id": "sw3",
+        "correct": true,
+        "points": 150,
+        "text_uk": "Кампанія, прив'язана до судового процесу: збиття вартості активу перед призначеною оцінкою, замовлене через представника протилежної сторони. Рекомендація клієнтові: зібрати доказовий пакет для свого юриста і ввести його у справу як обставину недобросовісності; подати скаргу платформі не сімнадцятьма окремими зверненнями, а одним пакетом із показаним патерном; і не вступати у жодні позасудові переговори про «врегулювання», доки триває тиск.",
+        "text_en": "A campaign tied to the proceedings: driving down the asset's value ahead of the ordered valuation, commissioned through the opposing side's representative. Recommendation to the client: assemble an evidence package for his own lawyer and enter it into the case as a bad-faith circumstance; file with the platform not as seventeen separate reports but as one package with the pattern shown; and enter no out-of-court settlement conversations while the pressure lasts.",
+        "feedback_uk": "✓ Правильно, і цінність тут не в тому, що знайдено винного, а в тому, що проблема змінила категорію. Клієнт прийшов із репутаційною бідою, у якій можна лише оборонятися, а йде з обставиною у власній справі, де вже він ставить питання. Плюс він тепер знає, коли це скінчиться.",
+        "feedback_en": "✓ Correct, and the value here is not that a culprit was found but that the problem changed category. The client arrived with a reputation problem in which he could only play defence, and leaves with a circumstance in his own case, where he is now the one asking questions. He also knows when it ends."
+      },
+      {
+        "id": "sw4",
+        "correct": false,
+        "points": -30,
+        "text_uk": "Заготовка під вимагання: рейтинг збивають, щоб клієнт погодився на «репутаційний менеджмент» за дві тисячі на місяць — три такі пропозиції вже прийшли.",
+        "text_en": "A setup for extortion: the rating is being driven down so the client will accept 'reputation management' at two thousand a month — three such offers have already arrived.",
+        "feedback_uk": "△ Найправдоподібніша з хибних, і три пропозиції справді виглядають підозріло. Але вони прийшли після початку кампанії, а не разом із нею: падіння рейтингу видно всім, і продавці захисту приходять на нього так само, як приходили б на будь-яке інше. Вимагання не пояснює ні прив'язки до дати позову, ні чотирьох інших цілей у тому самому становищі.",
+        "feedback_en": "△ The most plausible of the wrong answers, and three offers do look suspicious. But they arrived after the campaign began, not with it: a falling rating is visible to everyone, and sellers of protection come to it as they would to any other. Extortion explains neither the alignment with the filing date nor four other targets in the same position."
+      }
+    ]
+  },
+  "benchmark": {
+    "questions": {
+      "target_pct": 67,
+      "reason_uk": "Еталон — дві правильні з трьох. Найдорожче тут друге питання: воно вирішує, чи розслідування залишиться про клієнта, чи розшириться до операції, яка його зачепила.",
+      "reason_en": "The reference is two correct out of three. The second question is the expensive one: it decides whether the investigation stays about the client or widens to the operation that touched him."
+    }
+  },
+  "ranks": {
+    "master": {
+      "min": 700,
+      "label_uk": "Litigation-Ready Analyst",
+      "label_en": "Litigation-Ready Analyst",
+      "color": "#8f7cff",
+      "msg_uk": "Ти прочитав напад як показник чужого процесу, а не як окрему біду. Це той рівень, на якому проблема клієнта перетворюється на його ж перевагу.",
+      "msg_en": "You read the attack as an indicator of someone else's proceedings, not as a standalone misfortune. That is the level at which a client's problem turns into his own leverage."
+    },
+    "senior": {
+      "min": 600,
+      "label_uk": "Senior Investigation Analyst",
+      "label_en": "Senior Investigation Analyst",
+      "color": "#5ac8fa",
+      "msg_uk": "Тип операції встановлено, мотив зведено з трьох опор. Один-два анкори варто було сформулювати обережніше — цей пакет читатимуть юристи.",
+      "msg_en": "Operation type established, motive built on three supports. One or two anchors needed more careful phrasing — lawyers will be reading this package."
+    },
+    "junior": {
+      "min": 500,
+      "label_uk": "Junior Investigation Analyst",
+      "label_en": "Junior Investigation Analyst",
+      "color": "#34c759",
+      "msg_uk": "Ферму знайдено, мотив — на межі. Розбір саме про цю межу: де закінчується доведене і починається правдоподібне.",
+      "msg_en": "The farm was found, the motive is borderline. The debrief is about exactly that border: where the proven ends and the plausible begins."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Trainee",
+      "label_en": "Trainee",
+      "color": "#ff9500",
+      "msg_uk": "Або зупинився на «це ферма», або пішов за версією клієнта про конкурентів. Обидва — типові помилки цього кейсу, і обидва починаються з того, що пул не розширили.",
+      "msg_en": "You either stopped at 'it is a farm' or followed the client's competitor theory. Both are typical here, and both start with not widening the pool."
+    }
+  },
+  "debrief": {
+    "pass_uk": {
+      "sections": [
+        {
+          "title": "Що це було",
+          "body": "Тобі дали знімок одного відгуку і таблицю на сімнадцять рядків. Клієнт разом із ними дав власну версію і список із п'яти імен — і саме цей список був головною пасткою кейсу.\n\nНасправді сімнадцять відгуків виявилися не подією у житті ресторану, а показником події у чужому документі: у справі про поділ майна, де призначено оцінку активу. Рейтинг закладу — публічна змінна, з якої цю оцінку рахують, і бити по ньому у місяць експертизи має цілком практичний сенс."
+        },
+        {
+          "title": "Правильний ланцюг пивотів",
+          "body": "Крок 1. Патерн перед атрибуцією. Сімнадцять відгуків — це не сімнадцять випадків, це один масив. Довжина, час доби, день тижня, відсутність конкретики — усе це міряється до того, як прозвучить будь-яке ім'я.\n\nКрок 2. Від відгуків до акаунтів. Ті, хто написав, важливіші за те, що написано: вік профілів, накопичена історія і — головне — вкладка «Місця».\n\nКрок 3. Розширення пулу. Це поворотний крок усього кейсу. Одинадцять із сімнадцяти перетинаються на чотирьох закладах, які не мають стосунку ні до клієнта, ні до його сусідів. З цієї хвилини питання вже не про «Смолоскип».\n\nКрок 4. Спільна ознака цілей. Чотири заклади різні за галуззю і районом; спільне у них не в бізнесі, а у власниках — кожен у спорі про поділ активів, і кожен отримав удар у вікні між позовом і оцінкою.\n\nКрок 5. Українські відкриті реєстри. ЄДР і реєстр судових рішень доступні, безкоштовні і структуровані. Саме вони перетворюють гіпотезу на анкор: заява про вихід співзасновниці, позов, ухвала з призначенням експертизи.\n\nКрок 6. Накладення хронологій. Три дні між позовом і першим відгуком — і жодного зв'язку з датами відкриття конкурентів. Календар суду дає ще й прогноз до наступного засідання."
+        },
+        {
+          "title": "Чому версія клієнта не витримала",
+          "body": "Вона не була дурною. Конкуренти справді існують, справді поруч і справді тягнуть ту саму аудиторію. Але конкурентна версія пояснює один випадок із п'яти і мовчить про чотири інші цілі, у яких немає ні спільного ринку з Подолом, ні спільної географії, ні спільного власника.\n\nУ пулі до того ж лежали дві принади для тих, хто дуже хотів підтвердити версію замовника: один із рецензентів торік поставив «Тризубу» п'ять зірок, а власник «Тризуба» опинився на спільному фото з іншим рецензентом у відкритому дописі 2023 року. Обидва збіги справжні. Перший стоїть задовго до кампанії, другий пояснює одну людину з сімнадцяти. Ні той, ні той не пояснює операції.\n\nЗагальне правило: версія замовника — це дані про замовника, а не про справу. Перевіряти її треба нарівні з рештою, а не замість решти."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Тут два способи промахнутися у різні боки. Зупинка на «це ферма ботів» технічно правильна і клієнту марна. Стрибок до «співзасновниця замовила особисто» цілком може бути правдою — і саме тому небезпечний: доказу особистої участі немає, а один такий рядок дозволяє протилежній стороні відкинути весь пакет разом із доведеним. Витримує середнє: тип операції плюс ланка, через яку прийшло замовлення.\n\nЛокація. Робоче вікно у будні до одинадцятої вказує на пояс і не вказує на адресу. Різниця здається формальною рівно доти, доки рядок не читає юрист протилежної сторони.\n\nМотив. Три опори: заява до ЄДР, ухвала з призначенням оцінки і те, що всі чотири інші цілі били у тому самому вікні. Звірка з юрфірмами — четвертий сигнал, який підсилює, але не тримає: мотив, побудований на трьох вподобайках, розсиплеться від першого питання.\n\nХронологія. Єдина у треку, що має майбутнє: календар суду дає прогноз, скільки ще триватиме тиск. Клієнт отримує не лише пояснення, а й строк.\n\nВерифікація. Тут перевіряється вміння не рахувати ту саму опору двічі. Звірка з юрфірмами походить із того самого судового контексту, що й реєстрова вісь, тому четвертою віссю вона не стає — хоч і виглядає найефектнішою зі знахідок."
+        },
+        {
+          "title": "«Ну і що?» — і чому це важливіше за ім'я",
+          "body": "Три хибні варіанти хибні по-різному, і корисно бачити як саме.\n\nКонкурент не пояснює чотирьох інших цілей. Розлючений гість не пояснює ресурсу: сімнадцять акаунтів із історією, накопиченою роками, — це послуга, а не порив. Вимагання виглядає найправдоподібніше і розсипається на хронології: три пропозиції «репутаційного менеджменту» прийшли після початку кампанії, бо падіння рейтингу видно всім.\n\nПравильна відповідь важлива не тим, що називає винного, а тим, що змінює категорію проблеми. Поки це «репутаційна атака», клієнт може лише оборонятися — знімати відгуки, купувати позитив, чекати тридцять днів. Щойно це «обставина у справі, яка вже триває», у нього з'являється хід: доказовий пакет для власного юриста, одна скарга платформі замість сімнадцяти і чітка вказівка не вести позасудових розмов про врегулювання, поки триває тиск."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Коли бачиш керовану кампанію проти бізнесу, спитай не «хто злиться», а «що саме зараз рахують». Поділ майна, рефінансування, оцінка перед продажем, страхова суперечка, перевірка перед угодою — усе це дати, до яких прив'язується тиск. Мотив живе у календарі, а не в емоціях.\n\nПравило друге. Українські відкриті реєстри — найсильніший і найдешевший анкор у місцевій роботі. ЄДР і реєстр судових рішень безкоштовні, структуровані і датовані. Розслідувач, який шукає у соцмережах і не заходить у реєстри, залишає на столі найдоступніший доказ.\n\nПравило третє. Версія замовника — дані про замовника. Її треба перевіряти нарівні з іншими, і саме тому розширення пулу цінніше за поглиблення у список підозрюваних.\n\nПравило четверте. Опори рахують за походженням, а не за яскравістю. Сигнал із того самого контексту, що й уже врахований, — це підсилення, а не нова вісь."
+        },
+        {
+          "title": "Інструменти",
+          "body": "ЄДР — usr.minjust.gov.ua. Безкоштовний пошук по юрособах: засновники, частки, дати змін. Перша зупинка у будь-якій справі, де є український бізнес.\n\nРеєстр судових рішень — reyestr.court.gov.ua. Безкоштовний, індексований з 2006 року, шукає за прізвищами і номерами справ. Рішення й ухвали публікуються з затримкою у кілька днів після винесення — це варто враховувати, коли рахуєш хронологію.\n\nКластеризація текстів — будь-яка локальна модель речень із відкритих наборів. Для сімнадцяти коротких текстів вистачить найпростішої: тут важлива не точність моделі, а розкид, який вона показує.\n\nПрофілі рецензентів — вручну, у звичайній сесії браузера. Сімнадцять профілів по кілька хвилин — це людський масштаб роботи, автоматизація тут не потрібна і порушує правила платформи.\n\nЗбереження доказів — Wayback Machine або локальний архів із мітками часу. Профілі й відгуки зникають за добу після необережного руху, і те, що не збережено, не існує.\n\nСкарга платформі — support.google.com/business. Розгляд до тридцяти днів; пакет із показаним патерном розглядають як одну справу, сімнадцять окремих звернень — як сімнадцять суперечок із гостями."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Ця справа стоїть на межі трьох ремесел — розслідування, приватного розшуку і збору доказів для суду. Межі тут проходять інакше, ніж у звичайному кейсі.\n\nРецензенти — приватні особи. Крос-платформенний пошук за відкритими профілями законний. Спроба зняти маску з псевдоніма через витоки баз, телефонні бази чи будь-яку деанонімізацію — ні, і у цій справі вона не потрібна: перетин цілей доводить операцію без жодного справжнього імені.\n\nЖодних контактів. Ні з рецензентами, ні з юрфірмою, ні зі співзасновницею. У справі, яка вже триває, це не тільки насторожить операцію, а й може обернутися проти самого клієнта.\n\nВідгуки на власній сторінці клієнт має право витягати як власник профілю. Профілі рецензентів переглядаються вручну — так само, як це робить будь-який користувач, що клікнув на аватарку.\n\nТвій продукт — доказовий пакет для юриста клієнта, а не звинувачувальний звіт про конкретну людину. Роль тут — встановлювати факти, а не представляти сторону; і найкорисніше, що можна зробити для клієнта, — дати йому те, що витримає перевірку."
+        }
+      ]
+    },
+    "pass_en": {
+      "sections": [
+        {
+          "title": "What this was",
+          "body": "You were given a screenshot of one review and a seventeen-row table. The client supplied his own theory along with them, and a list of five names — and that list was the case's main trap.\n\nThe seventeen reviews turned out not to be an event in the life of a restaurant but an indicator of an event in someone else's document: an assets-division case with a valuation ordered. The venue's rating is a public variable that valuation is computed from, and striking it in the month of the appraisal makes entirely practical sense."
+        },
+        {
+          "title": "The correct pivot chain",
+          "body": "Step 1. Pattern before attribution. Seventeen reviews are not seventeen incidents, they are one array. Length, time of day, day of week, absence of specifics — all of it gets measured before any name is spoken.\n\nStep 2. From reviews to accounts. Who wrote matters more than what was written: profile age, accumulated history and, above all, the Places tab.\n\nStep 3. Widening the pool. This is the case's pivotal step. Eleven of seventeen overlap on four venues with no relation to the client or his neighbours. From this moment the question is no longer about Smoloskyp.\n\nStep 4. What the targets share. The four venues differ by sector and district; what they share is not in the business but in the owners — each in an asset-division dispute, each struck inside the window between the claim and the valuation.\n\nStep 5. Ukraine's open registers. The state business register and the court registry are accessible, free and structured. They are what turns a hypothesis into an anchor: the co-founder's exit filing, the claim, the ruling ordering a valuation.\n\nStep 6. Overlaying the timelines. Three days between the claim and the first review — and no relation at all to the competitors' opening dates. The court calendar throws in a forecast to the next hearing."
+        },
+        {
+          "title": "Why the client's theory did not hold",
+          "body": "It was not a stupid theory. The competitors do exist, are genuinely next door and genuinely pull the same audience. But the competitor reading explains one case out of five and says nothing about the four other targets, which share neither a market with Podil, nor geography, nor an owner.\n\nThe pool also held two lures for anyone eager to confirm what the client believed: one reviewer gave Tryzub five stars last year, and Tryzub's owner turned up in a public 2023 post alongside another reviewer. Both coincidences are real. The first long predates the campaign; the second accounts for one person out of seventeen. Neither explains an operation.\n\nThe general rule: a client's theory is data about the client, not about the case. Test it alongside the others, never instead of them."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. There are two ways to miss here, in opposite directions. Stopping at 'it is a bot farm' is technically right and useless to the client. Leaping to 'the co-founder ordered it personally' may well be true — which is exactly what makes it dangerous: there is no proof of personal involvement, and one such line lets the other side discard the whole package along with what was proven. The middle holds: operation type plus the link through which the order arrived.\n\nLocation. A weekday-before-eleven work window indicates a time zone and does not indicate an address. The distinction seems pedantic right up until the other side's lawyer reads the line.\n\nMotive. Three supports: the register filing, the ruling ordering a valuation, and the fact that all four other targets were struck in the same window. The law-firm cross-check is a fourth signal that reinforces without holding: a motive built on three likes collapses at the first question.\n\nTimeline. The only one in the track with a future: the court calendar forecasts how much longer the pressure runs. The client gets not just an explanation but a deadline.\n\nVerification. This rung tests the ability not to count one support twice. The law-firm cross-check comes from the same litigation context as the register axis, so it does not become a fourth axis — however much it looks like the most striking find."
+        },
+        {
+          "title": "'So what?' — and why it matters more than a name",
+          "body": "The three wrong options are wrong in different ways, and it is worth seeing how.\n\nThe competitor does not explain the four other targets. The angry guest does not explain the resource: seventeen accounts with history accumulated over years is a service, not an impulse. Extortion looks the most plausible and falls apart on the timeline: the three 'reputation management' offers arrived after the campaign began, because a falling rating is visible to everyone.\n\nThe right answer matters not because it names a culprit but because it changes the category of the problem. While this is a 'reputation attack', the client can only play defence — get reviews removed, buy positives, wait thirty days. The moment it becomes 'a circumstance in a case already under way', he has a move: an evidence package for his own lawyer, one platform report instead of seventeen, and a clear instruction to hold no out-of-court settlement conversations while the pressure lasts."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. When you see a managed campaign against a business, ask not who is angry but what is being counted right now. An assets division, a refinancing, a pre-sale valuation, an insurance dispute, diligence before a deal — these are the dates pressure attaches to. Motive lives in the calendar, not in the emotions.\n\nRule two. Ukraine's open registers are the strongest and cheapest anchor in local work. The business register and the court registry are free, structured and dated. An investigator who searches social media and never opens the registers leaves the most accessible evidence on the table.\n\nRule three. A client's theory is data about the client. Test it alongside the others, which is exactly why widening the pool is worth more than digging into the suspect list.\n\nRule four. Supports are counted by origin, not by brightness. A signal from the same context as one already counted is reinforcement, not a new axis."
+        },
+        {
+          "title": "Tools",
+          "body": "The state business register — usr.minjust.gov.ua. Free search over legal entities: founders, shares, dates of change. First stop in any case involving a Ukrainian business.\n\nThe court registry — reyestr.court.gov.ua. Free, indexed since 2006, searchable by surname and case number. Rulings publish a few days after they are issued — worth accounting for when you build a timeline.\n\nText clustering — any local sentence model from the open sets. For seventeen short texts the simplest will do: what matters here is not the model's accuracy but the spread it reveals.\n\nReviewer profiles — by hand, in an ordinary browser session. Seventeen profiles at a few minutes each is human-scale work; automation is unnecessary and breaks the platform's rules.\n\nEvidence preservation — the Wayback Machine or a local archive with timestamps. Profiles and reviews vanish within a day of a careless move, and what was not preserved does not exist.\n\nPlatform reporting — support.google.com/business. Up to thirty days; a package with the pattern shown is handled as one case, seventeen separate reports as seventeen disputes with guests."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "This case sits at the meeting point of three trades — investigation, private inquiry, and gathering evidence for a court. The boundaries run differently here than in an ordinary case.\n\nThe reviewers are private individuals. Cross-platform search over open profiles is lawful. Trying to strip the mask off a pseudonym through breach dumps, phone databases or any form of deanonymisation is not — and in this case it is unnecessary: the target overlap proves the operation without a single real name.\n\nNo contact of any kind. Not with reviewers, not with the law firm, not with the co-founder. In a matter already under way this does more than alert the operation; it can rebound onto the client.\n\nThe client may pull the reviews on his own page as the profile's owner. Reviewer profiles are viewed by hand — the same way any user does when they click an avatar.\n\nYour product is an evidence package for the client's lawyer, not an accusatory report about a named person. The role here is to establish facts, not to argue a side; and the most useful thing you can hand the client is something that will survive being tested."
+        }
+      ]
+    },
+    "fail_uk": {
+      "sections": [
+        {
+          "title": "Де це розійшлося",
+          "body": "Патерн у цій справі бачать майже всі: сімнадцять однакових текстів у робочі дні до одинадцятої важко прийняти за випадковість. Розходиться пізніше — на тому, чи розширили пул за межі клієнта.\n\nПодивись на свою драбину і на відповідь у фіналі. Якщо там сусідній ресторан або «це ферма ботів» — розрив стався на одному й тому самому кроці, просто в різні боки."
+        },
+        {
+          "title": "Дві типові розвилки",
+          "body": "Перша — піти за версією клієнта. Вона зручна: він у неї вірить, він приніс список імен, конкуренти справді поруч. Але у пулі лежали дві принади саме для цього шляху — п'ятизірковий відгук одного з рецензентів «Тризубу» рік тому і спільне фото власника «Тризуба» з іншим рецензентом. Обидва справжні, обидва нічого не важать: перший стоїть задовго до кампанії, другий пояснює одну людину з сімнадцяти. Версія замовника — це дані про замовника, і перевіряти її треба нарівні з рештою.\n\nДруга — зупинитись на «це керована ферма». Технічно правильно і клієнту майже марно: він і сам це підозрював після третього відгуку. «Ферма існує» не каже ні хто платить, ні коли це скінчиться, ні що робити завтра. Відповідь на всі три питання лежала на один крок далі — у тому, кого ще били ті самі акаунти."
+        },
+        {
+          "title": "Три пастки, у які легко впасти",
+          "body": "Пастка перша, найдорожча за часом. Кинутись подавати сімнадцять скарг платформі. Дія не шкідлива і колись знадобиться, але у неправильному порядку вона з'їдає бюджет: без показаного патерну сімнадцять звернень розглядають як сімнадцять суперечок із гостями, і саме тому вони лежать тридцять днів.\n\nПастка друга. Написати рецензенту. Той самий провал, що і в попередньому кейсі, тільки наслідки інші: акаунти зачищають вкладку «Місця», і зникає перетин на чотирьох закладах — єдине, що зв'язувало цю кампанію з рештою. Плюс у справі, яка вже в суді, такий контакт може обернутися проти клієнта.\n\nПастка третя, найтонша. Дописати звірку з юрфірмами четвертою віссю. Три збіги проти нульової базової лінії виглядають найефектнішою знахідкою кейсу, але походять вони з того самого судового контексту, що й реєстрова вісь. Порахувати їх окремо — це порахувати одну опору двічі й отримати впевненість, якої докази не дають."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Тут два способи промахнутися у різні боки. Зупинка на «це ферма ботів» технічно правильна і клієнту марна. Стрибок до «співзасновниця замовила особисто» цілком може бути правдою — і саме тому небезпечний: доказу особистої участі немає, а один такий рядок дозволяє протилежній стороні відкинути весь пакет разом із доведеним. Витримує середнє: тип операції плюс ланка, через яку прийшло замовлення.\n\nЛокація. Робоче вікно у будні до одинадцятої вказує на пояс і не вказує на адресу. Різниця здається формальною рівно доти, доки рядок не читає юрист протилежної сторони.\n\nМотив. Три опори: заява до ЄДР, ухвала з призначенням оцінки і те, що всі чотири інші цілі били у тому самому вікні. Звірка з юрфірмами — четвертий сигнал, який підсилює, але не тримає: мотив, побудований на трьох вподобайках, розсиплеться від першого питання.\n\nХронологія. Єдина у треку, що має майбутнє: календар суду дає прогноз, скільки ще триватиме тиск. Клієнт отримує не лише пояснення, а й строк.\n\nВерифікація. Тут перевіряється вміння не рахувати ту саму опору двічі. Звірка з юрфірмами походить із того самого судового контексту, що й реєстрова вісь, тому четвертою віссю вона не стає — хоч і виглядає найефектнішою зі знахідок."
+        },
+        {
+          "title": "«Ну і що?» — і чому це важливіше за ім'я",
+          "body": "Три хибні варіанти хибні по-різному, і корисно бачити як саме.\n\nКонкурент не пояснює чотирьох інших цілей. Розлючений гість не пояснює ресурсу: сімнадцять акаунтів із історією, накопиченою роками, — це послуга, а не порив. Вимагання виглядає найправдоподібніше і розсипається на хронології: три пропозиції «репутаційного менеджменту» прийшли після початку кампанії, бо падіння рейтингу видно всім.\n\nПравильна відповідь важлива не тим, що називає винного, а тим, що змінює категорію проблеми. Поки це «репутаційна атака», клієнт може лише оборонятися — знімати відгуки, купувати позитив, чекати тридцять днів. Щойно це «обставина у справі, яка вже триває», у нього з'являється хід: доказовий пакет для власного юриста, одна скарга платформі замість сімнадцяти і чітка вказівка не вести позасудових розмов про врегулювання, поки триває тиск."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Коли бачиш керовану кампанію проти бізнесу, спитай не «хто злиться», а «що саме зараз рахують». Поділ майна, рефінансування, оцінка перед продажем, страхова суперечка, перевірка перед угодою — усе це дати, до яких прив'язується тиск. Мотив живе у календарі, а не в емоціях.\n\nПравило друге. Українські відкриті реєстри — найсильніший і найдешевший анкор у місцевій роботі. ЄДР і реєстр судових рішень безкоштовні, структуровані і датовані. Розслідувач, який шукає у соцмережах і не заходить у реєстри, залишає на столі найдоступніший доказ.\n\nПравило третє. Версія замовника — дані про замовника. Її треба перевіряти нарівні з іншими, і саме тому розширення пулу цінніше за поглиблення у список підозрюваних.\n\nПравило четверте. Опори рахують за походженням, а не за яскравістю. Сигнал із того самого контексту, що й уже врахований, — це підсилення, а не нова вісь."
+        },
+        {
+          "title": "Інструменти",
+          "body": "ЄДР — usr.minjust.gov.ua. Безкоштовний пошук по юрособах: засновники, частки, дати змін. Перша зупинка у будь-якій справі, де є український бізнес.\n\nРеєстр судових рішень — reyestr.court.gov.ua. Безкоштовний, індексований з 2006 року, шукає за прізвищами і номерами справ. Рішення й ухвали публікуються з затримкою у кілька днів після винесення — це варто враховувати, коли рахуєш хронологію.\n\nКластеризація текстів — будь-яка локальна модель речень із відкритих наборів. Для сімнадцяти коротких текстів вистачить найпростішої: тут важлива не точність моделі, а розкид, який вона показує.\n\nПрофілі рецензентів — вручну, у звичайній сесії браузера. Сімнадцять профілів по кілька хвилин — це людський масштаб роботи, автоматизація тут не потрібна і порушує правила платформи.\n\nЗбереження доказів — Wayback Machine або локальний архів із мітками часу. Профілі й відгуки зникають за добу після необережного руху, і те, що не збережено, не існує.\n\nСкарга платформі — support.google.com/business. Розгляд до тридцяти днів; пакет із показаним патерном розглядають як одну справу, сімнадцять окремих звернень — як сімнадцять суперечок із гостями."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Ця справа стоїть на межі трьох ремесел — розслідування, приватного розшуку і збору доказів для суду. Межі тут проходять інакше, ніж у звичайному кейсі.\n\nРецензенти — приватні особи. Крос-платформенний пошук за відкритими профілями законний. Спроба зняти маску з псевдоніма через витоки баз, телефонні бази чи будь-яку деанонімізацію — ні, і у цій справі вона не потрібна: перетин цілей доводить операцію без жодного справжнього імені.\n\nЖодних контактів. Ні з рецензентами, ні з юрфірмою, ні зі співзасновницею. У справі, яка вже триває, це не тільки насторожить операцію, а й може обернутися проти самого клієнта.\n\nВідгуки на власній сторінці клієнт має право витягати як власник профілю. Профілі рецензентів переглядаються вручну — так само, як це робить будь-який користувач, що клікнув на аватарку.\n\nТвій продукт — доказовий пакет для юриста клієнта, а не звинувачувальний звіт про конкретну людину. Роль тут — встановлювати факти, а не представляти сторону; і найкорисніше, що можна зробити для клієнта, — дати йому те, що витримає перевірку."
+        }
+      ]
+    },
+    "fail_en": {
+      "sections": [
+        {
+          "title": "Where this diverged",
+          "body": "Almost everyone sees the pattern in this case: seventeen near-identical texts on weekday mornings are hard to take for chance. The divergence comes later — at whether the pool was widened past the client.\n\nLook at your ladder and at your answer in the finale. If either holds a neighbouring restaurant or 'it is a bot farm', the break happened at the same single step, just in opposite directions."
+        },
+        {
+          "title": "Two typical forks",
+          "body": "The first is following the client's theory. It is convenient: he believes it, he brought a list of names, the competitors really are next door. But the pool held two lures placed for exactly this path — one reviewer's five-star review of Tryzub a year ago, and a public photo of Tryzub's owner with another reviewer. Both are real, both are weightless: the first long predates the campaign, the second accounts for one person out of seventeen. A client's theory is data about the client, and it gets tested alongside the others.\n\nThe second is stopping at 'this is a managed farm'. Technically right and nearly useless to the client: he suspected as much himself after the third review. 'A farm exists' says neither who pays, nor when it ends, nor what to do tomorrow. The answer to all three lay one step further out — in who else those same accounts had struck."
+        },
+        {
+          "title": "Three easy traps",
+          "body": "The first, and the costliest in time. Rushing to file seventeen platform reports. The move is not harmful and will be needed eventually, but in the wrong order it eats the budget: without a demonstrated pattern, seventeen reports are handled as seventeen disputes with guests, which is exactly why they sit for thirty days.\n\nThe second. Messaging a reviewer. The same failure as in the previous case, with different consequences: the accounts scrub their Places tab and the overlap on four venues disappears — the only thing tying this campaign to the rest. And in a matter already before a court, that contact can rebound onto the client.\n\nThe third, and the subtlest. Writing the law-firm cross-check in as a fourth axis. Three hits against a zero baseline look like the case's most striking find, but they come from the same litigation context as the register axis. Counting them separately counts one support twice and yields a confidence the evidence does not provide."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. There are two ways to miss here, in opposite directions. Stopping at 'it is a bot farm' is technically right and useless to the client. Leaping to 'the co-founder ordered it personally' may well be true — which is exactly what makes it dangerous: there is no proof of personal involvement, and one such line lets the other side discard the whole package along with what was proven. The middle holds: operation type plus the link through which the order arrived.\n\nLocation. A weekday-before-eleven work window indicates a time zone and does not indicate an address. The distinction seems pedantic right up until the other side's lawyer reads the line.\n\nMotive. Three supports: the register filing, the ruling ordering a valuation, and the fact that all four other targets were struck in the same window. The law-firm cross-check is a fourth signal that reinforces without holding: a motive built on three likes collapses at the first question.\n\nTimeline. The only one in the track with a future: the court calendar forecasts how much longer the pressure runs. The client gets not just an explanation but a deadline.\n\nVerification. This rung tests the ability not to count one support twice. The law-firm cross-check comes from the same litigation context as the register axis, so it does not become a fourth axis — however much it looks like the most striking find."
+        },
+        {
+          "title": "'So what?' — and why it matters more than a name",
+          "body": "The three wrong options are wrong in different ways, and it is worth seeing how.\n\nThe competitor does not explain the four other targets. The angry guest does not explain the resource: seventeen accounts with history accumulated over years is a service, not an impulse. Extortion looks the most plausible and falls apart on the timeline: the three 'reputation management' offers arrived after the campaign began, because a falling rating is visible to everyone.\n\nThe right answer matters not because it names a culprit but because it changes the category of the problem. While this is a 'reputation attack', the client can only play defence — get reviews removed, buy positives, wait thirty days. The moment it becomes 'a circumstance in a case already under way', he has a move: an evidence package for his own lawyer, one platform report instead of seventeen, and a clear instruction to hold no out-of-court settlement conversations while the pressure lasts."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. When you see a managed campaign against a business, ask not who is angry but what is being counted right now. An assets division, a refinancing, a pre-sale valuation, an insurance dispute, diligence before a deal — these are the dates pressure attaches to. Motive lives in the calendar, not in the emotions.\n\nRule two. Ukraine's open registers are the strongest and cheapest anchor in local work. The business register and the court registry are free, structured and dated. An investigator who searches social media and never opens the registers leaves the most accessible evidence on the table.\n\nRule three. A client's theory is data about the client. Test it alongside the others, which is exactly why widening the pool is worth more than digging into the suspect list.\n\nRule four. Supports are counted by origin, not by brightness. A signal from the same context as one already counted is reinforcement, not a new axis."
+        },
+        {
+          "title": "Tools",
+          "body": "The state business register — usr.minjust.gov.ua. Free search over legal entities: founders, shares, dates of change. First stop in any case involving a Ukrainian business.\n\nThe court registry — reyestr.court.gov.ua. Free, indexed since 2006, searchable by surname and case number. Rulings publish a few days after they are issued — worth accounting for when you build a timeline.\n\nText clustering — any local sentence model from the open sets. For seventeen short texts the simplest will do: what matters here is not the model's accuracy but the spread it reveals.\n\nReviewer profiles — by hand, in an ordinary browser session. Seventeen profiles at a few minutes each is human-scale work; automation is unnecessary and breaks the platform's rules.\n\nEvidence preservation — the Wayback Machine or a local archive with timestamps. Profiles and reviews vanish within a day of a careless move, and what was not preserved does not exist.\n\nPlatform reporting — support.google.com/business. Up to thirty days; a package with the pattern shown is handled as one case, seventeen separate reports as seventeen disputes with guests."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "This case sits at the meeting point of three trades — investigation, private inquiry, and gathering evidence for a court. The boundaries run differently here than in an ordinary case.\n\nThe reviewers are private individuals. Cross-platform search over open profiles is lawful. Trying to strip the mask off a pseudonym through breach dumps, phone databases or any form of deanonymisation is not — and in this case it is unnecessary: the target overlap proves the operation without a single real name.\n\nNo contact of any kind. Not with reviewers, not with the law firm, not with the co-founder. In a matter already under way this does more than alert the operation; it can rebound onto the client.\n\nThe client may pull the reviews on his own page as the profile's owner. Reviewer profiles are viewed by hand — the same way any user does when they click an avatar.\n\nYour product is an evidence package for the client's lawyer, not an accusatory report about a named person. The role here is to establish facts, not to argue a side; and the most useful thing you can hand the client is something that will survive being tested."
+        }
+      ]
+    }
+  }
+}
