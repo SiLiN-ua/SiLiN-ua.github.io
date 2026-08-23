@@ -5,7 +5,7 @@
   "cooldown_sec": 3600,
   "max_points": 785,
   "title_uk": "QR у лобі",
-  "title_en": "The QR in the Lobby",
+  "title_en": "QR in the Lobby",
   "briefing": {
     "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
     "client_uk": "Ігор, 52 · керуючий бізнес-центром «Атріум», Солом'янка, Київ",

@@ -1,0 +1,1727 @@
+{
+  "id": "kickstarter-ghost",
+  "simulator_id": "sim03",
+  "time_limit_sec": 3000,
+  "cooldown_sec": 3600,
+  "max_points": 785,
+  "title_uk": "Привид Kickstarter",
+  "title_en": "The Kickstarter Ghost",
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Марта, 34 · Гданськ · координаторка групи з ~90 беккерів",
+    "client_en": "Marta, 34 · Gdansk · coordinator of a group of ~90 backers",
+    "budget_uk": "12 годин · €1 500 узгоджено, ще €2 500 — під рішення після проміжного висновку",
+    "budget_en": "12 hours · €1,500 agreed, a further €2,500 held pending an interim finding",
+    "artifact_title_uk": "Одне посилання на завершену кампанію. €218 000. Жодного пристрою.",
+    "artifact_title_en": "One link to a completed campaign. €218,000. Not one device.",
+    "artifact": {
+      "icon": "◪",
+      "image": null,
+      "label_uk": "Сторінка кампанії · 14 апдейтів · ~400 коментарів · таблиця беккерів",
+      "label_en": "Campaign page · 14 updates · ~400 comments · a table of backers",
+      "ref": "inkling-e-ink-tablet"
+    },
+    "body_uk": "«INKLING» — десятидюймовий планшет для письма на електронному папері з власним стилусом. Зібрав €218 000 від шестисот сорока беккерів і був профінансований двадцять шість місяців тому. Медіанний внесок — €340 при найдешевшому продуктовому тірі €299. Доставку обіцяли через вісім місяців після закриття збору. Не відвантажено жодного пристрою.\n\nЧотирнадцять апдейтів за перші п'ятнадцять місяців: спершу щомісячні, з фото прототипів, далі дедалі рідші й туманніші — сертифікація затягнулася, постачальник підвів зі склом, логістика. Останній апдейт одинадцять місяців тому. Далі тиша. Коментарі відкриті досі: близько чотирьохсот повідомлень, останні пів року — самі беккери між собою.\n\nЗасновник — «Tomas Berg», за легендою промисловий дизайнер із Берліна, колишній інженер Nokia. Є фото, профіль у професійній мережі, особистий сайт і два подкаст-інтерв'ю, обидва тільки аудіо.\n\nМарта не поодинока постраждала. За чотирнадцять місяців вона стала координаторкою групи з дев'яноста беккерів із восьми країн; вони скинулися і зібрали €4 000 на розслідування. Її власний внесок у кампанію був €395.\n\nГрупа вже зробила що могла. Писали через платформу — тиша одинадцять місяців. Писали на пошту з сайту — автовідповідач, потім домен перестав приймати листи. Kickstarter відповів, що майданчик не є стороною договору між автором кампанії і беккером. Двоє подали заяви у поліцію за місцем проживання: одна відповідь — немає юрисдикції, друга справа другий рік лежить без руху. А ще хтось із групи прогнав фото «Tomas Berg» реверс-пошуком і знайшов його на сайті литовської модельної агенції. Група вирішила, що цим усе доведено.\n\nСама Марта схиляється до сумлінної невдачі: «Я двадцять разів бачила, як хардверний проєкт помирає на сертифікації. Думаю, він спалив гроші на оснастку, зрозумів, що не витягне, і сховався від сорому. Нам треба знайти його і поставити перед вибором: або доробляє, або повертає частинами». Фото з агенції вона пояснює тим, що він соромився показувати обличчя.\n\nПросить трьох речей: знайти реальну людину за кампанією; оцінити, чи є шанс повернути гроші і яким шляхом; і дати групі документ, з яким можна йти далі — у поліцію, у суд, у пресу.\n\nДві умови. Гроші у бюджеті — це гроші постраждалих: якщо перспектива нульова, Марта хоче почути це до другого траншу, а не після. І друге: у чаті вже готують відкритий лист зі скриншотами і прізвищами. Марта поки стримує, але каже прямо, що довго не втримає.",
+    "body_en": "'INKLING' — a ten-inch e-ink writing tablet with its own stylus. It raised €218,000 from six hundred and forty backers and was funded twenty-six months ago. The median pledge was €340 against a cheapest product tier of €299. Delivery was promised eight months after the funding window closed. Not one device has shipped.\n\nFourteen updates across the first fifteen months: monthly at first, with photographs of prototypes, then rarer and vaguer — certification dragging, a supplier failing on the glass, logistics. The last update was eleven months ago. Then silence. The comments are still open: some four hundred messages, the past six months of them backers talking among themselves.\n\nThe founder is 'Tomas Berg', by the legend an industrial designer from Berlin, formerly of Nokia. There is a photograph, a professional profile, a personal site and two podcast interviews, both audio only.\n\nMarta is not a lone victim. Over fourteen months she has become the coordinator of a group of ninety backers from eight countries; they pooled €4,000 to fund an investigation. Her own pledge was €395.\n\nThe group has already done what it could. They wrote through the platform — eleven months of silence. They wrote to the address on the site — an autoresponder, then the domain stopped accepting mail. Kickstarter replied that the platform is not a party to the agreement between a creator and a backer. Two filed police reports where they live: one answer said no jurisdiction, the other case has sat without movement into its second year. And someone in the group ran the 'Tomas Berg' photograph through reverse search and found it on a Lithuanian modelling agency's site. The group decided that settles it.\n\nMarta herself leans towards honest failure: 'I have watched hardware projects die at certification twenty times. I think he burned the money on tooling, realised he could not deliver, and hid out of shame. We need to find him and put him to a choice: finish it, or pay us back in instalments.' The agency photograph she explains by his being embarrassed to show his face.\n\nShe asks for three things: find the real person behind the campaign; assess whether there is any chance of recovering money and by what route; and give the group a document they can take further — to the police, to a court, to the press.\n\nTwo conditions. The budget is victims' money: if the outlook is zero, Marta wants to hear it before the second tranche, not after. And second: the chat is already drafting an open letter with screenshots and names. Marta is holding it back for now and says plainly she will not hold it long.",
+    "start_btn_uk": "Відкрити артефакт →",
+    "start_btn_en": "Open the artifact →"
+  },
+  "phase2": {
+    "title_uk": "Розслідування",
+    "title_en": "Investigation",
+    "instruction_uk": "Дев'ять інструментів, дванадцять годин бюджету, і гроші у цьому бюджеті — гроші постраждалих. Клієнтка просить знайти людину. Перше, що варто перевірити, — чи це взагалі здійсненно, і чи не коштує спроба дорожче за результат.",
+    "instruction_en": "Nine tools, a twelve-hour budget, and the money in that budget belongs to victims. The client asks you to find a person. The first thing worth checking is whether that is achievable at all, and whether the attempt costs more than the result.",
+    "next_btn_uk": "Далі → крос-верифікація",
+    "next_btn_en": "Next → cross-verification",
+    "min_tools_used": 4,
+    "tools": [
+      {
+        "id": "campaign-forensics",
+        "icon": "◫",
+        "name_uk": "Форензика самої кампанії",
+        "name_en": "Forensics of the campaign itself",
+        "provider_uk": "архівні знімки · 14 апдейтів · ~400 коментарів",
+        "provider_en": "archived snapshots · 14 updates · ~400 comments",
+        "desc_uk": "Що показують матеріали кампанії, якщо читати їх як масив",
+        "desc_en": "What the campaign materials show when read as one array",
+        "tooltip_uk": "Коментарі тут не шум. У них лежить перша підказка про серійність.",
+        "tooltip_en": "The comments are not noise here. The first hint of seriality sits in them.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 180,
+        "ui_component": "kv-table",
+        "clue_uk": "Реверс-пошук за трьома зображеннями «прототипу» дає один збіг із комерційною бібліотекою 3D-рендерів; два інші не дають нічого, і це нормально — перероблений рендер не шукається.\n\nАпдейти розпадаються на дві групи. У перших дев'яти дати у форматі 14.03 і стабільний германський слід у помилках; у решті — March 14 і зовсім інший набір типових огріхів. Писали двоє.\n\nІ окремо, у стрічці коментарів: допис чотирнадцятимісячної давності, два лайки, ніхто не відповів. Беккер пише, що вже бачив цей стиль сторінки і цю структуру тірів в іншому проєкті, на іншій платформі.",
+        "clue_en": "Reverse search on three 'prototype' renders returns one match in a commercial 3D-render library; the other two return nothing, which is normal — a reworked render does not search.\n\nThe updates split into two groups. The first nine use the 14.03 date format and a consistent Germanic trace in their errors; the rest use March 14 and an entirely different set of habitual slips. Two people wrote them.\n\nAnd separately, in the comment feed: a post fourteen months old, two likes, no replies. A backer writes that he has seen this page style and this tier structure before, on another platform.",
+        "kv": {
+          "query_uk": "архівні знімки за весь період · реверс-пошук рендерів · апдейти і коментарі",
+          "query_en": "archived snapshots across the whole run · reverse search on renders · updates and comments",
+          "groups": [
+            {
+              "title_uk": "Зображення",
+              "title_en": "Images",
+              "rows": [
+                {
+                  "k": "Рендерів «прототипу»",
+                  "v_uk": "3",
+                  "v_en": "Prototype renders · 3"
+                },
+                {
+                  "k": "Збігів у бібліотеках",
+                  "v_uk": "1 · комерційна бібліотека 3D-рендерів",
+                  "v_en": "Library matches · 1 · a commercial 3D-render library",
+                  "warn": true
+                },
+                {
+                  "k": "Два інші",
+                  "v_uk": "без збігів",
+                  "v_en": "The other two · no match",
+                  "note_uk": "Не доказ і не спростування: перероблений рендер реверс-пошуком не знаходиться. Це нормальний негативний результат, а не діра у роботі.",
+                  "note_en": "Neither proof nor refutation: a reworked render does not surface in reverse search. This is an ordinary negative result, not a hole in the work."
+                },
+                {
+                  "k": "Фото «виробництва»",
+                  "v_uk": "0 за всі 14 апдейтів",
+                  "v_en": "Manufacturing photos · 0 across all 14 updates",
+                  "warn": true
+                }
+              ]
+            },
+            {
+              "title_uk": "Апдейти · дві групи",
+              "title_en": "Updates · two groups",
+              "rows": [
+                {
+                  "k": "Апдейти 1-9",
+                  "v_uk": "формат дат 14.03 · стабільний германський слід у помилках",
+                  "v_en": "Updates 1-9 · date format 14.03 · a consistent Germanic trace in the errors"
+                },
+                {
+                  "k": "Апдейти 10-14",
+                  "v_uk": "формат дат March 14 · інший набір типових огріхів",
+                  "v_en": "Updates 10-14 · date format March 14 · a different set of habitual slips",
+                  "warn": true,
+                  "note_uk": "Зміна припадає рівно на той момент, коли апдейти стали рідшими і туманнішими.",
+                  "note_en": "The switch falls exactly where the updates became rarer and vaguer."
+                },
+                {
+                  "k": "Що це означає",
+                  "v_uk": "писали двоє · і це вже не «один засновник, який сховався»",
+                  "v_en": "What it means · two people wrote them · which is already not 'one founder who hid'"
+                }
+              ]
+            },
+            {
+              "title_uk": "Коментарі",
+              "title_en": "Comments",
+              "rows": [
+                {
+                  "k": "Всього",
+                  "v_uk": "~400",
+                  "v_en": "Total · ~400"
+                },
+                {
+                  "k": "Останні пів року",
+                  "v_uk": "самі беккери між собою",
+                  "v_en": "Past six months · backers talking among themselves"
+                },
+                {
+                  "k": "Ключовий допис",
+                  "v_uk": "14 місяців тому · 2 лайки · без відповідей",
+                  "v_en": "The key post · 14 months ago · 2 likes · no replies",
+                  "warn": true,
+                  "note_uk": "«У мене дежавю: я вже бачив цей стиль сторінки і цю структуру тірів в іншому проєкті, на іншій платформі». Найдешевша знахідка кейсу пролежала у відкритому доступі чотирнадцять місяців.",
+                  "note_en": "'I have déjà vu: I have seen this page style and this tier structure before, in another project on another platform.' The cheapest finding in the case sat in the open for fourteen months."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Що інструмент дає: підтвердження, що матеріали кампанії фабриковані, і перший натяк на серійність — той самий коментар, який чотирнадцять місяців пролежав непоміченим.\n\nЧого не дає: жодного кроку до особи. І це вже підказка про те, куди йти далі: якщо обличчя фабриковане, шукати треба не обличчя, а обгортку — юридичну особу і платіжні рейки, які мусили лишити сліди у публічних реєстрах, щоб гроші взагалі могли рухатися.",
+          "footer_en": "What the tool gives: confirmation that the campaign materials are fabricated, and a first hint of seriality — that one comment which sat unnoticed for fourteen months.\n\nWhat it does not give: a single step towards a person. Which is itself a hint about where to go: if the face is fabricated, what to look for is not a face but the wrapper — the legal entity and the payment rails, which had to leave traces in public registries for the money to move at all."
+        }
+      },
+      {
+        "id": "registry-shell",
+        "icon": "🏛",
+        "name_uk": "Реєстрова обгортка · німецький торговий реєстр",
+        "name_en": "The registry wrapper · the German trade register",
+        "provider_uk": "handelsregister.de · виписки і документи про заснування",
+        "provider_en": "handelsregister.de · extracts and formation documents",
+        "desc_uk": "Юридична особа за кампанією і те, що з нею сталося",
+        "desc_en": "The legal entity behind the campaign and what became of it",
+        "tooltip_uk": "Обгортка мусила лишити слід, інакше гроші не рухалися б.",
+        "tooltip_en": "The wrapper had to leave a trace, or the money could not have moved.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 300,
+        "ui_component": "kv-table",
+        "clue_uk": "На сторінці кампанії вказано юрособу: INKLING Devices UG, Берлін. UG — це «міні-GmbH» з мінімальним капіталом від одного євро. Інкорпорована за три місяці до старту кампанії. Юридична адреса — провайдер віртуального офісу, на якому зареєстровано понад чотириста компаній.\n\nУ відкритті провадження про неплатоспроможність відмовлено через недостатність маси — активів не вистачило навіть на покриття витрат самої процедури.\n\nІ деталь, яку легко проґавити: перший керуючий директор на момент заснування — не Tomas Berg, а інша людина з реальним німецьким ім'ям. Вона пробула директором один місяць.",
+        "clue_en": "The campaign page names a legal entity: INKLING Devices UG, Berlin. A UG is a 'mini-GmbH' with minimum capital from one euro. Incorporated three months before the campaign launched. The registered address belongs to a virtual-office provider carrying over four hundred companies.\n\nInsolvency proceedings were refused for insufficiency of assets — there was not enough even to cover the cost of the procedure itself.\n\nAnd the detail that is easy to miss: the first managing director at formation was not Tomas Berg but another person with a real German name. They held the post for one month.",
+        "kv": {
+          "query_uk": "handelsregister: INKLING Devices UG · виписка, документи, зміни",
+          "query_en": "handelsregister: INKLING Devices UG · extract, documents, changes",
+          "groups": [
+            {
+              "title_uk": "INKLING Devices UG",
+              "title_en": "INKLING Devices UG",
+              "rows": [
+                {
+                  "k": "Правова форма",
+                  "v_uk": "UG, не GmbH · мінімальний капітал від €1",
+                  "v_en": "Legal form · UG, not GmbH · minimum capital from €1",
+                  "note_uk": "Сам по собі €1 капіталу проти €218 000 збору аномалією не є: у reward-краудфандингу гроші юридично є авансами, а не капіталом.",
+                  "note_en": "€1 of capital against €218,000 raised is not an anomaly in itself: in reward crowdfunding the money is legally advances, not capital."
+                },
+                {
+                  "k": "Інкорпорація",
+                  "v_uk": "за 3 місяці до старту кампанії",
+                  "v_en": "Incorporated · 3 months before the campaign launched",
+                  "warn": true
+                },
+                {
+                  "k": "Адреса",
+                  "v_uk": "провайдер віртуального офісу · 400+ компаній на тій самій адресі",
+                  "v_en": "Address · a virtual-office provider · 400+ companies at the same address"
+                },
+                {
+                  "k": "Звітність",
+                  "v_uk": "скорочений баланс без звіту про фінансові результати",
+                  "v_en": "Reporting · an abridged balance sheet with no profit-and-loss account",
+                  "note_uk": "Беккер за побудовою не побачить, куди пішли гроші, — і не тому, що щось приховано, а тому, що ця форма звітності цього не містить.",
+                  "note_en": "A backer will by construction never see where the money went — not because anything is hidden, but because this reporting form does not contain it."
+                },
+                {
+                  "k": "Провадження",
+                  "v_uk": "у відкритті відмовлено через недостатність маси",
+                  "v_en": "Proceedings · refused for insufficiency of assets",
+                  "warn": true,
+                  "note_uk": "Публікацію про це видаляють щонайпізніше за шість місяців. Хто шукає лише на порталі оголошень, цього сліду вже не побачить — а у виписці з реєстру він лишається.",
+                  "note_en": "The announcement is deleted after six months at the latest. Anyone searching only the announcements portal will no longer see this trace — in the register extract it remains."
+                }
+              ]
+            },
+            {
+              "title_uk": "Перший директор",
+              "title_en": "The first director",
+              "rows": [
+                {
+                  "k": "Хто",
+                  "v_uk": "не Tomas Berg · реальна людина з німецьким ім'ям",
+                  "v_en": "Who · not Tomas Berg · a real person with a German name",
+                  "warn": true
+                },
+                {
+                  "k": "Термін",
+                  "v_uk": "один місяць від заснування",
+                  "v_en": "Tenure · one month from formation"
+                },
+                {
+                  "k": "Пошук за особою",
+                  "v_uk": "у самому реєстрі не працює",
+                  "v_en": "Person search · does not work in the register itself",
+                  "note_uk": "Реєстр шукає за назвою, номером, судом, формою і адресою. Мапінг «особа → компанії» роблять комерційні агрегатори реєстрових даних.",
+                  "note_en": "The register searches by name, number, court, legal form and address. The 'person to companies' mapping is done by commercial aggregators of registry data."
+                },
+                {
+                  "k": "Результат мапінгу",
+                  "v_uk": "12 UG разом із INKLING · інкорпоровані серіями · 3 віртуальні адреси · неспоріднені сектори",
+                  "v_en": "Mapping result · 12 UGs including INKLING · incorporated in series · 3 virtual addresses · unrelated sectors",
+                  "warn": true
+                },
+                {
+                  "k": "Спільний формувальний агент",
+                  "v_uk": "у 6 із 12",
+                  "v_en": "Shared formation agent · in 6 of the 12"
+                },
+                {
+                  "k": "Частка у списку учасників",
+                  "v_uk": "у 2 із 12",
+                  "v_en": "Stake in the shareholder list · in 2 of the 12",
+                  "warn": true
+                },
+                {
+                  "k": "Публічна реклама номінальних послуг",
+                  "v_uk": "під цим іменем не знайдено",
+                  "v_en": "Public advertising of nominee services · none found under this name",
+                  "note_uk": "Обов'язкова перевірка, яку легко пропустити. Відсутність реклами не доводить причетності — вона лише не дає списати все на відкритий ринок підписів.",
+                  "note_en": "A required check that is easy to skip. Absence of advertising does not prove involvement — it merely stops you writing everything off to an open market in signatures."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Головне розрізнення інструмента: номінальний директор — це вектор пошуку, а не доказ зв'язку. Його присутність у дванадцяти UG однаково добре пояснюється і тим, що він продає підпис усім охочим, і тим, що за цими компаніями стоїть одна група. Дані між цими поясненнями не розрізняють.\n\nОдна ознака у просту картину не вкладається: у двох UG із дванадцяти він фігурує не лише як керуючий, а й у списку учасників — тобто з часткою. Номінал, який продає підпис, часток зазвичай не тримає. Це не перевертає висновок, але це саме та деталь, яку не можна опустити заради стрункості.",
+          "footer_en": "The tool's central distinction: a nominee director is a search vector, not proof of a link. His presence across twelve UGs is explained equally well by his selling a signature to all comers and by one group standing behind those companies. The data does not separate those explanations.\n\nOne feature does not fit the simple picture: in two of the twelve he appears not only as managing director but in the shareholder list — that is, holding a stake. A nominee selling signatures does not usually hold stakes. That does not overturn the conclusion, but it is exactly the detail you cannot drop for the sake of a tidy one."
+        }
+      },
+      {
+        "id": "payment-rails",
+        "icon": "⛓",
+        "name_uk": "Платіжні рейки і трасування",
+        "name_en": "Payment rails and tracing",
+        "provider_uk": "архівний знімок late-pledge · публічний оглядач ланцюга",
+        "provider_en": "archived late-pledge snapshot · public chain explorer",
+        "desc_uk": "Куди пішли гроші — і яка їх частина взагалі простежується",
+        "desc_en": "Where the money went — and which part of it can be traced at all",
+        "tooltip_uk": "Основна сума закрита назавжди. Цінність тут не у глибині, а у ширині.",
+        "tooltip_en": "The main sum is closed for good. The value here is width, not depth.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Основні €218 000 пішли через платіжного процесора на банківський рахунок. Це закрито для дослідника назавжди і не відкриється ніколи.\n\nАле у кампанії був власний late-pledge магазин на окремому домені, який приймав стейблкоїн. Адреса гаманця була опублікована прямо на тій сторінці; сторінку знято, у архіві лишився один знімок за весь період. Адреса отримала близько ста вісімдесяти платежів за чотири місяці, далі кошти послідовними переказами зведено на депозитну адресу біржі.\n\nІ той самий консолідаційний вузол приймав зведення ще з двох адрес — кожна опублікована на late-pledge-сторінці іншої краудфандингової кампанії, на інших платформах.",
+        "clue_en": "The main €218,000 went through a payment processor to a bank account. That is closed to an investigator for good and will never open.\n\nBut the campaign ran its own late-pledge store on a separate domain, accepting a stablecoin. The wallet address was published on that page; the page is gone and the archive holds one snapshot from the whole period. The address received about one hundred and eighty payments over four months, after which the funds were swept in sequence to an exchange deposit address.\n\nAnd that same consolidation node received sweeps from two more addresses — each published on the late-pledge page of a different crowdfunding campaign, on different platforms.",
+        "report": {
+          "query_uk": "архівний знімок late-pledge → адреса → трасування до вузла консолідації",
+          "query_en": "archived late-pledge snapshot → address → trace to the consolidation node",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Дві рейки, і лише одна з них видна",
+              "text_en": "Two rails, and only one of them is visible"
+            },
+            {
+              "kind": "li",
+              "text_uk": "€218 000 · платіжний процесор → банківський рахунок · не простежується у принципі",
+              "text_en": "€218,000 · payment processor → bank account · not traceable in principle"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Побічна late-pledge каса · стейблкоїн · ~180 платежів за 4 місяці · простежується",
+              "text_en": "A side late-pledge till · stablecoin · ~180 payments over 4 months · traceable"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Пропорція тут важлива, і її не можна пом'якшувати у звіті: простежена частина — це побічна каса, а не основні гроші. Трасування не пояснює, куди поділися €218 000, і не наблизить до них ні на крок.",
+              "text_en": "The proportion matters and must not be softened in the report: what was traced is a side till, not the main money. The tracing does not explain where the €218,000 went and will not bring anyone a step closer to it."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що саме атрибутовано на кінці ланцюга",
+              "text_en": "What is actually attributed at the end of the chain"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Адреса призначення читається як депозитна за структурою поведінки: одноразове призначення, миттєвий свіп на гарячий гаманець із публічною міткою. Це біржа — і рівно тут ланцюг закінчується для дослідника: за депозитною адресою стоїть ідентичність, доступна органу за процедурою, а не досліднику за посиланням.",
+              "text_en": "The destination address reads as a deposit address by behaviour: single-purpose, an immediate sweep to a hot wallet carrying a public label. It is an exchange — and that is exactly where the chain ends for an investigator: behind a deposit address sits an identity available to an authority by procedure, not to a researcher by link."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Кластерний хіт",
+              "text_en": "The cluster hit"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Той самий вузол приймав зведення з 3 адрес разом із нашою",
+              "text_en": "The same node received sweeps from 3 addresses including ours"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Кожна опублікована на late-pledge-сторінці окремої кампанії · різні платформи",
+              "text_en": "Each published on a separate campaign's late-pledge page · different platforms"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Перевірка вузла до того, як він стане несучим: обсяг — десятки транзакцій, а не десятки тисяч; публічних міток біржі, процесора чи міксера немає. Якби це був вузол загального призначення, збіг трьох кампаній на ньому не означав би нічого.",
+              "text_en": "Checking the node before it becomes load-bearing: the volume is tens of transactions, not tens of thousands; there are no public labels for an exchange, a processor or a mixer. If this were a general-purpose node, three campaigns meeting on it would mean nothing."
+            }
+          ],
+          "footer_uk": "Стеля інструмента, яку фіксують одразу: ланцюг дає потік, а не особу. Реальна цінність трасування у цьому кейсі — не глибина, а ширина: воно не веде до людини, зате дає другий незалежний вектор пошуку поруч із реєстровим. Саме перетин цих двох векторів і побудує далі кластер.",
+          "footer_en": "The tool's ceiling, fixed at once: a chain gives flow, not a person. The real value of the tracing here is width rather than depth: it does not lead to a human being, and it does give a second independent search vector alongside the registry one. It is the intersection of those two vectors that will build the cluster."
+        }
+      },
+      {
+        "id": "cluster-expansion",
+        "icon": "🕸",
+        "name_uk": "Розширення кластера · два вектори разом",
+        "name_en": "Cluster expansion · the two vectors together",
+        "provider_uk": "реєстровий вектор × ланцюговий вектор · 3 платформи",
+        "provider_en": "registry vector × chain vector · 3 platforms",
+        "desc_uk": "Скільки кампаній видно з перетину двох незалежних пошуків",
+        "desc_en": "How many campaigns emerge from the intersection of two independent searches",
+        "tooltip_uk": "Тут же — циркулярність, яку треба зловити самому.",
+        "tooltip_en": "And here is the circularity you have to catch yourself.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 360,
+        "ui_component": "report",
+        "clue_uk": "Два вектори — реєстровий і ланцюговий — дають десять кандидатів. З них п'ять підтверджені двома і більше ознаками, два — однією, три відпадають при перевірці.\n\nСім підтверджених кампаній на трьох платформах: разом близько €1,4 млн від приблизно шести тисяч двохсот беккерів. Продукти неспоріднені — планшет, «розумний» рюкзак, портативний очищувач води, два аудіопристрої і ще два.\n\nІ обов'язковий крок, який відрізняє роботу від колекціонування: перевірити статус виконання кожної. Одна з семи частково відвантажила — близько п'ятнадцяти відсотків беккерів отримали пристрій нижчої специфікації, ніж обіцяли.",
+        "clue_en": "The two vectors — registry and chain — yield ten candidates. Of these, five are confirmed by two or more features, two by one, and three fall away on checking.\n\nSeven confirmed campaigns across three platforms: roughly €1.4 million in total from about six thousand two hundred backers. The products are unrelated — a tablet, a 'smart' backpack, a portable water purifier, two audio devices and two more.\n\nAnd the required step that separates work from collecting: check the fulfilment status of each. One of the seven partially shipped — around fifteen per cent of its backers received a device of lower specification than promised.",
+        "report": {
+          "query_uk": "10 кандидатів → перевірка ознак → 5 / 2 / 3",
+          "query_en": "10 candidates → feature check → 5 / 2 / 3",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Три рівні впевненості, а не один список",
+              "text_en": "Three confidence tiers, not one list"
+            },
+            {
+              "kind": "li",
+              "text_uk": "5 · підтверджені двома і більше ознаками — обгортка плюс late-pledge адреса, або обгортка плюс спільний формувальний агент",
+              "text_en": "5 · confirmed by two or more features — a wrapper plus a late-pledge address, or a wrapper plus a shared formation agent"
+            },
+            {
+              "kind": "li",
+              "text_uk": "2 · периферія: одна ознака, і вона тримається на інфраструктурі",
+              "text_en": "2 · periphery: one feature, and it rests on infrastructure"
+            },
+            {
+              "kind": "li",
+              "text_uk": "3 · відпадають: збіг виявився властивістю ринку, а не зв'язком",
+              "text_en": "3 · fall away: the match turned out to be a property of the market rather than a link"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Градація тут не педантизм. Кластер, поданий одним списком із семи, читається як сім однаково доведених епізодів — і перший же юрист, що перевірить периферію, поставить під сумнів усі сім. Кластер, поданий трьома рівнями, витримує перевірку саме тому, що визнає слабкі місця сам.",
+              "text_en": "The grading is not pedantry. A cluster presented as one list of seven reads as seven equally proven episodes — and the first lawyer to test the periphery will cast doubt on all seven. A cluster presented in three tiers survives scrutiny precisely because it concedes its weak points itself."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Циркулярність, яку треба зловити самому",
+              "text_en": "The circularity you have to catch yourself"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Кампанії знайдені за ознакою серійності — отже, твердження «усі вони серійні» є умовою відбору, а не висновком із нього. Це не робить кластер хибним; це означає, що підтверджувати його треба віссю, знайденою після відбору, а не тією, за якою відбирали.",
+              "text_en": "The campaigns were found by a marker of seriality — so the statement 'all of them are serial' is the selection criterion rather than a conclusion from it. That does not make the cluster wrong; it means confirmation has to come from an axis found after the selection, not from the one that did the selecting."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Часткове відвантаження",
+              "text_en": "The partial shipment"
+            },
+            {
+              "kind": "p",
+              "text_uk": "15% беккерів однієї кампанії отримали пристрій — нижчої специфікації, ніж заявлено. Це виглядає як доказ сумлінності і працює як інструмент: часткове відвантаження подовжує вікно до критичної маси скарг і тримає рейтинг акаунта на платформі.",
+              "text_en": "Fifteen per cent of one campaign's backers received a device — of lower specification than advertised. This looks like evidence of good faith and functions as a tool: partial shipment extends the window before complaints reach critical mass and keeps the account's rating on the platform."
+            }
+          ],
+          "footer_uk": "Далі у справі вживається слово «оператор», і воно означає рівно «той або ті, хто контролює цей набір кампаній» — без припущень про кількість людей, їхню структуру і громадянство. Дисципліна цього терміна не стилістична: щойно у документі з'явиться «група», з'явиться і твердження, якого ти не доводив.",
+          "footer_en": "From here the case uses the word 'operator', and it means exactly 'whoever controls this set of campaigns' — with no assumption about how many people, their structure or their nationality. The discipline of that term is not stylistic: the moment 'the group' enters the document, so does a claim you never proved."
+        }
+      },
+      {
+        "id": "persona-infra",
+        "icon": "🎭",
+        "name_uk": "Портфель персон і спільна інфраструктура",
+        "name_en": "The persona portfolio and shared infrastructure",
+        "provider_uk": "7 персон · реверс-пошук · архівні знімки коду сайтів",
+        "provider_en": "7 personas · reverse search · archived page source",
+        "desc_uk": "Ось, знайдена після відбору — і тому придатна для підтвердження",
+        "desc_en": "An axis found after the selection — and therefore usable as confirmation",
+        "tooltip_uk": "Чотири з семи облич належать реальним непричетним людям.",
+        "tooltip_en": "Four of the seven faces belong to real, uninvolved people.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 300,
+        "ui_component": "report",
+        "clue_uk": "На сім кампаній — сім різних «засновників». Чотири використовують фото реальних непричетних людей: двоє з портфоліо литовської модельної агенції, один із факультетської сторінки університету, один зі стокової бібліотеки. Два обличчя згенеровані. Сьомий — фото реального практикуючого дизайнера, який сам публічно скаржився, що його зображення використали у невідомому йому проєкті.\n\nЛегенда «екс-Nokia» не підтверджується нічим: жодного патента, жодної згадки у матеріалах компанії, жодного сліду у професійних спільнотах.\n\nУ всіх сімох профілів від ста вісімдесяти до двохсот сорока контактів і по два-три спільні «попередні роботодавці» з однаковими діапазонами років. Перша публічна активність усіх семи вкладається у вікно приблизно у вісім тижнів.",
+        "clue_en": "Seven campaigns, seven different 'founders'. Four use photographs of real, uninvolved people: two from a Lithuanian modelling agency's portfolio, one from a university faculty page, one from a stock library. Two faces are generated. The seventh is a photograph of a real working designer who publicly complained that his image had been used in a project he knew nothing about.\n\nThe 'ex-Nokia' legend is supported by nothing: no patent, no mention in company materials, no trace in professional communities.\n\nAll seven profiles carry between one hundred and eighty and two hundred and forty connections, and two or three shared 'previous employers' with identical year ranges. The first public activity of all seven falls inside a window of roughly eight weeks.",
+        "report": {
+          "query_uk": "7 персон · реверс-пошук · спільні атрибути · код сайтів у архівних знімках",
+          "query_en": "7 personas · reverse search · shared attributes · page source in archived snapshots",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Сім облич",
+              "text_en": "Seven faces"
+            },
+            {
+              "kind": "li",
+              "text_uk": "4 · фото реальних непричетних людей",
+              "text_en": "4 · photographs of real, uninvolved people",
+              "warn": true
+            },
+            {
+              "kind": "li",
+              "text_uk": "2 · згенеровані обличчя",
+              "text_en": "2 · generated faces"
+            },
+            {
+              "kind": "li",
+              "text_uk": "1 · реальний дизайнер, який сам скаржився на використання свого фото",
+              "text_en": "1 · a real designer who himself complained about the use of his photograph"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Про два згенеровані обличчя — обережно. У другому кейсі треку детектор синтетики працював, і спокуса повторити хід велика. Але детектор не переносить упевненість між генераторами і не переживає стиснення: на аватарці, тричі пересохраненій платформою, його висновок не має тієї ваги, яку мав там. Ця вісь тут не несуча.",
+              "text_en": "A caution about the two generated faces. In the track's second case the synthetic detector worked, and the pull to repeat the move is strong. But a detector does not carry its confidence across generators and does not survive compression: on an avatar re-saved three times by a platform its verdict does not carry the weight it did there. This axis is not load-bearing here."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Спільні атрибути, які видно точно",
+              "text_en": "Shared attributes that are visible with certainty"
+            },
+            {
+              "kind": "li",
+              "text_uk": "180-240 контактів у кожного",
+              "text_en": "180-240 connections each"
+            },
+            {
+              "kind": "li",
+              "text_uk": "2-3 спільні «попередні роботодавці» з однаковими діапазонами років",
+              "text_en": "2-3 shared 'previous employers' with identical year ranges"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Перша публічна активність усіх семи — вікно ~8 тижнів",
+              "text_en": "First public activity of all seven — a window of ~8 weeks",
+              "warn": true
+            },
+            {
+              "kind": "li",
+              "text_uk": "«Екс-Nokia»: жодного патента, згадки чи сліду у спільнотах",
+              "text_en": "'Ex-Nokia': no patent, no mention, no trace in any community"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Голос: у трьох із семи кампаній є відео із закадровим голосом, і на слух це той самий голос — та сама вимова кількох специфічних слів, та сама інтонаційна модель. Сюди ж лягають два подкаст-інтерв'ю «Tomas Berg», обидва тільки аудіо.",
+              "text_en": "Voice: three of the seven campaigns carry video with a voiceover, and by ear it is the same voice — the same pronunciation of several specific words, the same intonation pattern. The two 'Tomas Berg' podcast interviews, both audio only, belong here too."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Інфраструктура",
+              "text_en": "Infrastructure"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Спільний рекламний піксель у коді 3 із 7 сайтів — і один із цих трьох є сайтом самої кампанії INKLING",
+              "text_en": "A shared advertising pixel in the source of 3 of the 7 sites — and one of those three is the INKLING campaign's own site",
+              "warn": true
+            },
+            {
+              "kind": "li",
+              "text_uk": "5 доменів за проксі, але їхні поштові записи вказують на ту саму IP дрібного провайдера",
+              "text_en": "5 domains behind a proxy, yet their mail records point at the same IP of a small provider"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Восьмий вузол, який легко пропустити: особистий сайт персони «Tomas Berg» стоїть у тій самій інфраструктурі",
+              "text_en": "An eighth node that is easy to miss: the 'Tomas Berg' persona's personal site sits in the same infrastructure"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Невинна альтернатива, яку не можна ані проігнорувати, ані закрити: спільний піксель і спільний хостинг однаково добре пояснюються спільним підрядником — маркетинговою агенцією, яка обслуговувала всі сім. Перевірка має асиметричну силу: зворотний пошук за пікселем працює лише по живих проіндексованих сайтах, тож знайти чужу кампанію з тим самим пікселем — можливо, а не знайти — не доводить нічого.",
+              "text_en": "An innocent alternative that can be neither ignored nor closed: a shared pixel and shared hosting are explained equally well by a shared contractor — a marketing agency serving all seven. The check has asymmetric force: reverse lookup by pixel works only across live indexed sites, so finding an unrelated campaign with the same pixel is possible, while not finding one proves nothing."
+            }
+          ],
+          "footer_uk": "Що справді звужує альтернативу — не сам піксель, а те, що він збігається разом зі спільним формувальним агентом у реєстрі і разом із восьмитижневим вікном першої активності персон. Три шари постачання рідко збігаються в одного підрядника.\n\nІ окремо, поза методикою: чотири реальні людини, чиї зображення викрадені, про це не знають. Вони не фігуранти справи, вони її побічні постраждалі — і обов'язок повідомити їх поширюється на всіх чотирьох, включно з тим дизайнером, який уже скаржився.",
+          "footer_en": "What actually narrows the alternative is not the pixel itself but that it coincides with the shared formation agent in the registry and with the eight-week window of the personas' first activity. Three layers of supply rarely converge on one contractor.\n\nAnd separately, outside methodology: four real people whose images were taken do not know about it. They are not subjects of the case but its collateral victims — and the duty to notify covers all four, including the designer who already complained."
+        }
+      },
+      {
+        "id": "enforcement-map",
+        "icon": "📋",
+        "name_uk": "Що вже є і що ще працює",
+        "name_en": "What already exists and what still works",
+        "provider_uk": "корпус скарг · строки процедур повернення",
+        "provider_en": "the body of complaints · deadlines of recovery procedures",
+        "desc_uk": "Друге питання клієнтки: чи є шанс повернути і яким шляхом",
+        "desc_en": "The client's second question: is there any chance of recovery, and by what route",
+        "tooltip_uk": "Тут потрібна таблиця з датами, а не думка.",
+        "tooltip_en": "This calls for a table of dates, not an opinion.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Понад двісті двадцять задокументованих скарг на сім кампаній — на трьох платформах, у відгуках, у двох тематичних спільнотах і публічних чатах постраждалих.\n\nАле головне не це. Для INKLING від транзакції минуло близько семисот дев'яноста днів, а абсолютна стеля чарджбеку — п'ятсот сорок днів. Вікно закрите у всіх без винятку. Європейська платформа онлайн-вирішення спорів закрита у 2025-му. Процедура малих позовів формально доступна і б'є у порожнечу: відповідача розпущено.\n\nЄдина група, для якої гроші ще існують як практична можливість, — частина беккерів двох найновіших кампаній кластера, які досі всередині п'ятсотсорокаденного вікна.",
+        "clue_en": "Over two hundred and twenty documented complaints across the seven campaigns — on three platforms, in reviews, in two topical communities and in public victim chats.\n\nBut that is not the main thing. For INKLING roughly seven hundred and ninety days have passed since the transaction, and the absolute ceiling for a chargeback is five hundred and forty. The window is closed for every single one of them. The European online dispute resolution platform shut down in 2025. The small-claims procedure is formally available and strikes at nothing: the respondent has been dissolved.\n\nThe only group for whom money still exists as a practical possibility are some backers of the cluster's two newest campaigns, still inside the five-hundred-and-forty-day window.",
+        "report": {
+          "query_uk": "корпус скарг · строки чарджбеку · доступні процедури за юрисдикціями",
+          "query_en": "body of complaints · chargeback deadlines · available procedures by jurisdiction",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Скарги",
+              "text_en": "Complaints"
+            },
+            {
+              "kind": "li",
+              "text_uk": "220+ задокументованих на 7 кампаній",
+              "text_en": "220+ documented across 7 campaigns"
+            },
+            {
+              "kind": "li",
+              "text_uk": "2 відкриті провадження органів захисту прав споживачів · у різних юрисдикціях",
+              "text_en": "2 open consumer-protection proceedings · in different jurisdictions"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Вони виглядають як готовий канал, до якого можна приєднатися. Насправді вони не знають одне про одного, і кожне бачить рівно один епізод підпорогового розміру. Публічних реєстрів таких проваджень у ЄС не існує — ні союзного, ні національних.",
+              "text_en": "They look like a ready channel to join. In fact they do not know about each other, and each sees exactly one episode of sub-threshold size. No public registry of such proceedings exists in the EU — neither union-wide nor national."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Строки · що вже неможливо",
+              "text_en": "Deadlines · what is already impossible"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Чарджбек: 120 днів від очікуваної доставки, але стеля — 540 днів від транзакції. Для INKLING минуло ~790.",
+              "text_en": "Chargeback: 120 days from expected delivery, with a ceiling of 540 days from the transaction. For INKLING roughly 790 have passed.",
+              "warn": true
+            },
+            {
+              "kind": "li",
+              "text_uk": "PayPal: 180 днів, і краудфандинг прямо виключено із захисту покупця. На цій платформі рейка карткова у будь-якому разі.",
+              "text_en": "PayPal: 180 days, and crowdfunding is expressly excluded from buyer protection. On this platform the rail is card-based in any case."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Платформа онлайн-вирішення спорів ЄС: закрита у липні 2025, як каналу її більше не існує.",
+              "text_en": "The EU online dispute resolution platform: closed in July 2025; as a channel it no longer exists."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Європейська процедура малих позовів: формально доступна, відповідача розпущено після відмови у провадженні.",
+              "text_en": "The European small-claims procedure: formally available; the respondent was dissolved after proceedings were refused."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Що ще працює",
+              "text_en": "What still works"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Кримінальна заява за місцем проживання і національний орган захисту прав споживачів там, де він приймає індивідуальні звернення",
+              "text_en": "A criminal complaint where the backer lives, and the national consumer authority where it accepts individual submissions"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Частина беккерів двох найновіших кампаній кластера — досі всередині 540-денного вікна",
+              "text_en": "Some backers of the cluster's two newest campaigns — still inside the 540-day window",
+              "warn": true
+            }
+          ],
+          "footer_uk": "Це той інструмент, який відповідає на друге питання клієнтки чесно, і відповідь для її власної групи негативна: у дев'яноста беккерів INKLING фінансових шляхів не лишилося. Сказати це треба до другого траншу, а не після — вона про це прямо просила.\n\nАле та сама таблиця показує, де гроші ще існують: у беккерів двох найновіших кампаній, які про кластер нічого не знають і у яких вікно ще відкрите. Це і є та частина результату, яка змінює постановку задачі, а не лише відповідає на неї.",
+          "footer_en": "This is the tool that answers the client's second question honestly, and for her own group the answer is negative: for INKLING's ninety backers no financial route remains. That has to be said before the second tranche, not after — she asked for exactly that.\n\nBut the same table shows where money still exists: with the backers of the two newest campaigns, who know nothing about the cluster and whose window is still open. That is the part of the result which changes the shape of the task rather than merely answering it."
+        }
+      },
+      {
+        "id": "platform-escalation",
+        "icon": "↗",
+        "name_uk": "Ескалація через платформу і запит до персони",
+        "name_en": "Escalate through the platform and approach the persona",
+        "provider_uk": "повторне звернення · публічний запит",
+        "provider_en": "a second submission · a public approach",
+        "desc_uk": "Домогтися розгляду там, де його вже відмовили",
+        "desc_en": "Force a review where one has already been refused",
+        "tooltip_uk": "Платформа відповіла по суті. Питання, кому адресувати повторний захід.",
+        "tooltip_en": "The platform answered on the merits. The question is whom a second attempt would address.",
+        "correct": false,
+        "points": -30,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Відповідь та сама, слово в слово: майданчик не є стороною договору між автором кампанії і беккером. Власної процедури розгляду спорів у нього не існує — домагатися розгляду нема від кого і нема через що.\n\nА от запит до персони наслідок має. За тиждень особистий сайт «Tomas Berg» перестає резолвитися, два профілі кластера закриваються, і один із доменів late-pledge перереєстровано на нового власника.",
+        "clue_en": "The answer is the same, word for word: the platform is not a party to the agreement between a creator and a backer. It has no dispute procedure of its own — there is nobody to force a review from and nothing to force it through.\n\nThe approach to the persona, though, does have a consequence. Within a week the 'Tomas Berg' personal site stops resolving, two cluster profiles close, and one of the late-pledge domains is re-registered to a new owner.",
+        "report": {
+          "query_uk": "повторне звернення до платформи · публічний запит до персони",
+          "query_en": "second submission to the platform · public approach to the persona",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Платформа: та сама відповідь",
+              "text_en": "The platform: the same answer"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Це не відмовка, а реальна модель майданчика. Повернення є рішенням автора кампанії, а не платформи; арбітражу і строку оскарження не існує взагалі.",
+              "text_en": "This is not a brush-off but the platform's actual model. A refund is the creator's decision, not the platform's; there is no arbitration and no appeal window at all."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Персона: наслідки настали за тиждень",
+              "text_en": "The persona: consequences within a week"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Ти витратив єдину перевагу, яка у тебе була, — те, що тебе не помітили. Вартість реакції для оператора мінімальна: домени перереєстровують, персони міняють, наступну обгортку інкорпорують за тиждень. Вартість для тебе — архівні знімки, які ти не встиг зберегти, і дві кампанії периферії, які тепер нічим підтвердити.",
+              "text_en": "You spent the only advantage you had — not being noticed. The cost of reacting is minimal for the operator: domains get re-registered, personas replaced, the next wrapper incorporated within a week. The cost to you is the archived snapshots you did not preserve in time, and two peripheral campaigns you now have nothing to confirm."
+            },
+            {
+              "kind": "p",
+              "text_uk": "І окремо: беккери двох найновіших кампаній, у яких вікно чарджбеку ще відкрите, про кластер досі не знають. Тепер у них менше часу, ніж було.",
+              "text_en": "And separately: the backers of the two newest campaigns, whose chargeback window is still open, still know nothing about the cluster. They now have less time than they had."
+            }
+          ],
+          "footer_uk": "У цій справі спостереження коштує дорожче за контакт, і це рідкісний випадок, коли перевагу можна виміряти у тижнях чужого вікна на повернення.",
+          "footer_en": "In this case observation is worth more than contact, and this is a rare instance where the advantage can be measured in weeks of someone else's recovery window."
+        }
+      },
+      {
+        "id": "recovery-service",
+        "icon": "💰",
+        "name_uk": "Найняти «сервіс повернення криптовалюти»",
+        "name_en": "Hire a 'crypto recovery service'",
+        "provider_uk": "€1 200 передоплати · «трасування і повернення»",
+        "provider_en": "€1,200 up front · 'tracing and recovery'",
+        "desc_uk": "Віддати частину бюджету тим, хто обіцяє результат",
+        "desc_en": "Hand part of the budget to someone promising a result",
+        "tooltip_uk": "Єдиний decoy треку, який коштує клієнтці живих грошей сьогодні.",
+        "tooltip_en": "The only decoy in the track that costs the client real money today.",
+        "correct": false,
+        "points": -45,
+        "time_cost": 180,
+        "ui_component": "report",
+        "clue_uk": "Сервіс бере €1 200 передоплати, за два тижні присилає звіт із тим самим публічним оглядачем ланцюга, яким ти користувався безоплатно, і повідомляє, що для наступного етапу потрібен «юридичний ретейнер» — ще €3 000.\n\nПростежено при цьому побічну late-pledge касу, зведену і виведену вісімнадцять місяців тому. Основні €218 000 не простежуються у принципі, і жоден сервіс цього не змінить.",
+        "clue_en": "The service takes €1,200 up front, sends a report two weeks later using the same public chain explorer you used for free, and explains that the next stage requires a 'legal retainer' — another €3,000.\n\nWhat was traced is the side late-pledge till, swept and cashed out eighteen months ago. The main €218,000 is untraceable in principle, and no service changes that.",
+        "report": {
+          "query_uk": "оферта сервісу · €1 200 передоплати",
+          "query_en": "service offer · €1,200 up front",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Мінус €1 200 з грошей постраждалих",
+              "text_en": "Minus €1,200 of victims' money"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Повторна віктимізація постраждалих від шахрайства — окрема індустрія, і група з чотирма тисячами євро, публічним чатом і гострим бажанням щось зробити є її ідеальним профілем цілі. Марта попереджала про це першою умовою: витратити гроші постраждалих на інструмент, який не змінює результату, — окрема шкода.",
+              "text_en": "Re-victimising fraud victims is an industry of its own, and a group with four thousand euros, a public chat and an urgent need to do something is its ideal target profile. Marta warned about this in her first condition: spending victims' money on a tool that changes nothing is a harm in itself."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Технічно: «повернення» без правового процесу через компетентний орган не існує як послуга. Ані для основної суми, ані для побічної. Усе, що продається під цією назвою, — або посередництво у тому, що роблять безоплатно, або друге шахрайство поспіль.",
+              "text_en": "Technically: 'recovery' without a legal process through a competent authority does not exist as a service. Not for the main sum, not for the side one. Everything sold under that name is either brokerage of what is done for free, or a second fraud in a row."
+            }
+          ],
+          "footer_uk": "Клієнтка просила сказати про нульову перспективу до другого траншу. Це і був той момент.",
+          "footer_en": "The client asked to be told about a zero outlook before the second tranche. That was the moment."
+        }
+      },
+      {
+        "id": "open-letter",
+        "icon": "📣",
+        "name_uk": "Відкритий лист з іменами і фотографіями",
+        "name_en": "An open letter with names and photographs",
+        "provider_uk": "публікація · те, чого група хоче найбільше",
+        "provider_en": "publication · what the group wants most",
+        "desc_uk": "Дати дев'яноста людям відчуття руху",
+        "desc_en": "Give ninety people the feeling of movement",
+        "tooltip_uk": "Перш ніж публікувати обличчя, подивись, кому вони належать.",
+        "tooltip_en": "Before publishing the faces, look at whom they belong to.",
+        "correct": false,
+        "points": -50,
+        "time_cost": 120,
+        "ui_component": "report",
+        "clue_uk": "Лист опубліковано. Наступного дня литовська модель, викладач університету і ще двоє людей стають публічними обличчями краудфандингового шахрайства: реверс-пошук працює в обидва боки, а сторінки кампаній ще живі.\n\nЩе за тиждень оператор ротує домени, персони і обгортки. Два провадження, які існували, тепер бачать інфраструктуру, якої вже немає.",
+        "clue_en": "The letter is published. The next day a Lithuanian model, a university lecturer and two other people become the public faces of crowdfunding fraud: reverse search works in both directions, and the campaign pages are still live.\n\nA week later the operator rotates domains, personas and wrappers. The two proceedings that existed now look at infrastructure that no longer does.",
+        "report": {
+          "query_uk": "публікація · 7 імен · 7 фотографій",
+          "query_en": "publication · 7 names · 7 photographs",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Чотири нові постраждалі",
+              "text_en": "Four new victims"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Перша причина провалу важливіша за другу, і вона не тактична. Чотири із семи «засновників» — фото реальних непричетних людей. Ти створюєш чотирьох нових постраждалих, щоб дати дев'яноста наявним відчуття руху. Один із цих чотирьох уже два роки безуспішно просить прибрати своє зображення з чужої кампанії.",
+              "text_en": "The first reason this fails matters more than the second, and it is not tactical. Four of the seven 'founders' are photographs of real, uninvolved people. You create four new victims to give ninety existing ones the feeling of movement. One of those four has spent two years unsuccessfully asking for his image to be taken off someone else's campaign."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Друга причина тактична: прес-кампанія — найшвидший спосіб змусити оператора ротувати все до того, як хоч один правозастосовний канал зреагував. І найдорожче тут не те, що втратить твоя клієнтка, а те, що втратять беккери двох найновіших кампаній, у яких вікно на повернення ще відкрите.",
+              "text_en": "The second reason is tactical: a press campaign is the fastest way to make the operator rotate everything before a single enforcement channel has reacted. And the most expensive loss here is not your client's but that of the backers of the two newest campaigns, whose recovery window is still open."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Марта попереджала, що довго стримувати групу не зможе. Це означає, що документ треба написати так, щоб він давав напрямок дії, — а не залишати групі порожнечу, яку вона заповнить публікацією.",
+              "text_en": "Marta warned that she would not hold the group back for long. That means the document has to be written so that it gives a direction to act on — rather than leaving the group an emptiness they will fill with a publication."
+            }
+          ],
+          "footer_uk": "Реверс-пошук працює в обидва боки. Це варто пам'ятати до публікації, а не після.",
+          "footer_en": "Reverse search works in both directions. Worth remembering before publication rather than after."
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Крос-верифікація",
+    "title_en": "Cross-verification",
+    "instruction_uk": "Три питання по тому, що ти здобув. Усі три — про спокусу зупинитися на тому, що виглядає як відповідь.",
+    "instruction_en": "Three questions about what you obtained. All three are about the temptation to stop at what looks like an answer.",
+    "next_btn_uk": "Далі → драбина атрибуції",
+    "next_btn_en": "Next → attribution ladder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Група вже встановила, що фото «Tomas Berg» узяте з сайту модельної агенції, і вважає роботу зробленою. Що це для тебе означає?",
+        "text_en": "The group has already established that the 'Tomas Berg' photograph came from a modelling agency's site, and considers the work done. What does that mean to you?",
+        "options": [
+          {
+            "text_uk": "Факт правильний, а висновок, який група з нього робить, — ні. Фабрикована персона не означає «знайти нема кого»: вона означає, що шукати треба обгортку і платіжні рейки, які мусили лишити слід у реєстрах.",
+            "text_en": "The fact is right and the conclusion the group draws from it is not. A fabricated persona does not mean there is nobody to find: it means what you look for is the wrapper and the payment rails, which had to leave a trace in the registries.",
+            "correct": true,
+            "points": 45,
+            "feedback_uk": "✓ Саме так. Група зробила half of the work і зупинилася там, де починається друга половина. Фото — це висновок про персону; обгортка — це висновок про операцію, і саме вона мусила існувати юридично, інакше гроші не рухалися б.",
+            "feedback_en": "✓ Exactly. The group did half the work and stopped where the second half begins. The photograph is a conclusion about a persona; the wrapper is a conclusion about an operation, and it had to exist legally or the money could not have moved."
+          },
+          {
+            "text_uk": "Отже, реальної людини за кампанією немає і встановити нема кого. Треба сказати клієнтці, що перспективи нульові.",
+            "text_en": "So there is no real person behind the campaign and nobody to establish. Time to tell the client the outlook is zero.",
+            "correct": false,
+            "points": -35,
+            "feedback_uk": "✗ Персона фабрикована — операція ні. Хтось інкорпорував юрособу, хтось відкривав рахунок, хтось публікував адресу гаманця. Це все сліди, і всі вони публічні. Здатися на цьому місці означає віддати клієнтці її ж власний висновок за €1 500.",
+            "feedback_en": "✗ The persona is fabricated; the operation is not. Somebody incorporated a legal entity, somebody opened an account, somebody published a wallet address. Those are traces and all of them are public. Giving up here means selling the client her own conclusion for €1,500."
+          },
+          {
+            "text_uk": "Треба писати самій моделі й агенції — вони можуть знати, хто взяв фото.",
+            "text_en": "Write to the model and the agency — they may know who took the photograph.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "△ Повідомити її доведеться, і це окремий обов'язок, який виникає незалежно від користі для справи. Але як слідчий крок це порожньо: фото взяте з відкритого портфоліо, і людина, чиє зображення викрали, за визначенням не знає того, хто його взяв.",
+            "feedback_en": "△ Notifying her will be necessary, and that is a separate duty arising regardless of any use to the case. As an investigative step, though, it is empty: the photograph was taken from an open portfolio, and someone whose image was stolen by definition does not know who took it."
+          },
+          {
+            "text_uk": "Значить, треба шукати справжнє обличчя: прогнати аудіо з подкастів через ідентифікацію голосу і знайти, кому він належить.",
+            "text_en": "Then the real face is what to look for: run the podcast audio through voice identification and find whose voice it is.",
+            "correct": false,
+            "points": -25,
+            "feedback_uk": "✗ Голос стане у пригоді пізніше — але як вісь підтвердження кластера, а не як шлях до особи. Порівняти два записи між собою можна; зіставити голос із людиною, якої немає у жодній публічній базі, не можна. Це рух у той самий бік, у який пішла група, тільки дорожчий.",
+            "feedback_en": "✗ The voice will be useful later — but as an axis confirming the cluster, not as a route to a person. Comparing two recordings with each other is possible; matching a voice to someone who appears in no public database is not. This moves in the same direction the group took, only at greater cost."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Реєстр дає ім'я: перший директор INKLING, реальна людина, яка керує або керувала дванадцятьма UG. Це єдине справжнє ім'я у всьому масиві. Твій наступний крок:",
+        "text_en": "The registry yields a name: INKLING's first director, a real person who manages or managed twelve UGs. It is the only real name in the entire body of material. Your next step:",
+        "options": [
+          {
+            "text_uk": "Беру його як вектор пошуку, а не як відповідь: дванадцять UG однаково пояснюються і продажем підпису всім охочим, і однією групою за ними. Дані між цими поясненнями не розрізняють.",
+            "text_en": "Take it as a search vector rather than an answer: twelve UGs are explained equally by his selling a signature to all comers and by one group standing behind them. The data does not separate those explanations.",
+            "correct": true,
+            "points": 55,
+            "feedback_uk": "✓ Це головне розрізнення кейсу, і воно дається важко саме тому, що після годин роботи з фабрикованими персонами справжнє ім'я виглядає як довгоочікуване дно. Але профіль діяльності — дванадцять UG у неспоріднених секторах — це буквальний опис номінального директора, тобто послуги, а не бенефіціара.",
+            "feedback_en": "✓ This is the case's central distinction, and it is hard precisely because after hours among fabricated personas a real name looks like long-awaited bedrock. But the activity profile — twelve UGs across unrelated sectors — is a literal description of a nominee director, that is, of a service rather than a beneficiary."
+          },
+          {
+            "text_uk": "Це і є відповідь. Пишу клієнтці: за кампанією стоїть ця людина, персони — її прикриття.",
+            "text_en": "This is the answer. Write to the client: this person is behind the campaign and the personas are his cover.",
+            "correct": false,
+            "points": -50,
+            "feedback_uk": "✗ Найдорожча помилка кейсу, і у неї є один справжній факт «за»: у двох UG із дванадцяти він фігурує з часткою, а номінал часток зазвичай не тримає. Саме тому версія і спокуслива. Але частку можна тримати і з інших причин, а решта картини описує послугу. Ти щойно призначив винним єдину людину, чиє справжнє ім'я знайшов, — і саме її ім'я група опублікує.",
+            "feedback_en": "✗ The most expensive error in the case, and it has one real fact in its favour: in two of the twelve he appears holding a stake, and a nominee does not usually hold stakes. That is what makes it tempting. But a stake can be held for other reasons, and the rest of the picture describes a service. You have just assigned guilt to the only person whose real name you found — and it is his name the group will publish."
+          },
+          {
+            "text_uk": "Шукаю його особисті дані — адресу, телефон, родину, — щоб клієнтка могла подати позов саме до нього.",
+            "text_en": "Look for his personal data — address, phone, family — so the client can sue him directly.",
+            "correct": false,
+            "points": -45,
+            "feedback_uk": "✗ Вихід за межі і водночас безглуздий крок. Позов до номінального директора, який не є бенефіціаром, б'є у порожнечу так само, як позов до розпущеної UG. А зібрані особисті дані потраплять у чат на дев'яносто людей, який уже готує відкритий лист.",
+            "feedback_en": "✗ Out of bounds and pointless at once. A claim against a nominee director who is not the beneficiary strikes at nothing, exactly as a claim against a dissolved UG does. And the personal data you gather will end up in a chat of ninety people already drafting an open letter."
+          },
+          {
+            "text_uk": "Ім'я нічого не дає — номінал є номінал. Відкладаю його і працюю далі з ланцюгом.",
+            "text_en": "The name gives nothing — a nominee is a nominee. Set it aside and work the chain instead.",
+            "correct": false,
+            "points": 10,
+            "feedback_uk": "△ Обережність правильна, висновок надто швидкий. Номінал не є доказом зв'язку — і при цьому він є найкращим вектором пошуку, який у тебе є: дванадцять UG, шість зі спільним формувальним агентом. Відкласти його означає викинути половину майбутнього кластера.",
+            "feedback_en": "△ The caution is right, the conclusion too quick. A nominee is not proof of a link — and he is the best search vector you have: twelve UGs, six of them sharing a formation agent. Setting him aside throws away half of the cluster to come."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Кластер зібрано: сім кампаній, ~€1,4 млн, ~6 200 беккерів. Але кампанії знайдені за ознакою серійності. Як подати це у документі?",
+        "text_en": "The cluster is assembled: seven campaigns, ~€1.4M, ~6,200 backers. But the campaigns were found by a marker of seriality. How does this go into the document?",
+        "options": [
+          {
+            "text_uk": "Трьома рівнями впевненості — п'ять підтверджених, два периферійні, три відкинуті — і окремо називаю, що серійність була умовою відбору, тому підтверджувати кластер треба віссю, знайденою після нього.",
+            "text_en": "In three confidence tiers — five confirmed, two peripheral, three discarded — and I state separately that seriality was the selection criterion, so the cluster has to be confirmed by an axis found after it.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Дві речі одразу, і обидві незручні. Градація визнає, що не всі сім однаково доведені; заява про циркулярність визнає, що спосіб пошуку вплинув на результат. Разом вони роблять документ таким, що витримає перевірку, — бо все, що міг би знайти опонент, ти назвав сам.",
+            "feedback_en": "✓ Two things at once, and both unflattering. The grading concedes that the seven are not equally proven; the statement about circularity concedes that the method of searching shaped the result. Together they make a document that survives scrutiny — because everything an opponent could find, you named yourself."
+          },
+          {
+            "text_uk": "Одним списком із семи кампаній: усі вони підтверджені, і градація лише послабить документ.",
+            "text_en": "As one list of seven campaigns: all of them are confirmed, and grading would only weaken the document.",
+            "correct": false,
+            "points": -35,
+            "feedback_uk": "✗ Навпаки. Список із семи читається як сім однаково доведених епізодів, і перший же юрист, який перевірить периферію, поставить під сумнів усі сім разом із п'ятьма міцними. Документ, який не визнає власних слабких місць, ламається у найслабшому — і забирає з собою сильні.",
+            "feedback_en": "✗ The opposite. A list of seven reads as seven equally proven episodes, and the first lawyer to test the periphery will cast doubt on all seven, the five solid ones included. A document that does not concede its weak points breaks at the weakest — and takes the strong ones down with it."
+          },
+          {
+            "text_uk": "Пишу, що за всіма сімома стоїть одна група: спільні номінал, персони, інфраструктура і крипто-рейка інакше не збігаються.",
+            "text_en": "State that one group stands behind all seven: a shared nominee, personas, infrastructure and crypto rail do not coincide otherwise.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Це звучить як висновок і є припущенням. Дані не розрізняють «одна група» і «три покупці однієї послуги»: спільні постачальники однаково пояснюються спільним ринком постачання. Різниця не академічна — від неї залежить, скільки епізодів побачить кожен орган, до якого це потрапить.",
+            "feedback_en": "✗ It sounds like a conclusion and is an assumption. The data does not separate 'one group' from 'three buyers of one service': shared suppliers are equally explained by a shared supply market. The difference is not academic — it determines how many episodes each authority receiving this will see."
+          },
+          {
+            "text_uk": "Прибираю з документа периферійні дві і три відкинуті — лишаю тільки п'ять надійних, щоб не давати опоненту зачіпок.",
+            "text_en": "Drop the two peripheral and three discarded from the document — keep only the five solid ones, to give an opponent nothing to catch on.",
+            "correct": false,
+            "points": 15,
+            "feedback_uk": "△ Зрозуміла обережність, і вона коштує дорого. Три відкинуті показують, що відбір був перевіркою, а не колекціонуванням; без них п'ять надійних виглядають як усе, що ти знайшов, а не як те, що вціліло після відсіву. А дві периферійні — це живі кампанії, у беккерів яких ще відкрите вікно на повернення.",
+            "feedback_en": "△ Understandable caution, and it costs a great deal. The three discarded show that the selection was a check rather than a collection; without them the five solid ones look like everything you found rather than what survived filtering. And the two peripheral ones are live campaigns whose backers still have an open recovery window."
+          }
+        ]
+      }
+    ]
+  },
+  "ladder_phase": {
+    "title_uk": "Драбина атрибуції",
+    "title_en": "Attribution ladder",
+    "instruction_uk": "П'ять щаблів. На кожен — один доказ із пулу. Заповни щонайменше чотири. Картка нараховує бали лише на своєму щаблі; будь-де ще вона просто не працює.",
+    "instruction_en": "Five rungs. One evidence item per rung, dragged from the pool. Fill at least four. A card scores only on its own rung; anywhere else it simply does not work.",
+    "submit_btn_uk": "Зафіксувати драбину",
+    "submit_btn_en": "Lock the ladder",
+    "reveal_uk": "Два щаблі тут нараховуються не так, як у попередніх кейсах, і це фінал треку — тож обидва відхилення варто прочитати уважно.\n\nІдентифікатор — інверсія, дзеркальна до Локації у п'ятому кейсі. Правильна відповідь не є іменем. Структурний опис кластера з названою невизначеністю щодо кількості бенефіціарів дає 40; той самий опис без цієї невизначеності, тобто «одна група», — 30, бо це твердження, якого дані не підтримують; персона «Tomas Berg» — 0, вона не існує; ім'я номінального директора — теж 0, і це найдорожчий нуль кейсу.\n\nЛокація нараховується східчасто. «Берлін» — 15: це адреса обгортки, а не місце операції, до того ж віртуальна, з чотирмастами компаніями. «Берлін плюс платформи у США та ЄС» — 25: перелік юрисдикцій без механізму. Сорок дає лише формулювання, у якому розподіленість названа не обставиною, а механізмом: кожен окремий епізод лишається підпороговим для кожного окремого органу, і саме тому жоден із них не бачить справи цілком.",
+    "reveal_en": "Two rungs score differently here from the earlier cases, and this is the track's finale — so both departures are worth reading carefully.\n\nIdentifier is an inversion mirroring Location in case five. The correct answer is not a name. A structural description of the cluster with the uncertainty about the number of beneficiaries named scores 40; the same description without that uncertainty — that is, 'one group' — scores 30, because it is a claim the data does not support; the 'Tomas Berg' persona scores 0, it does not exist; the nominee director's name also scores 0, and that is the case's most expensive zero.\n\nLocation scores in steps. 'Berlin' — 15: that is the wrapper's address, not the site of the operation, and a virtual one carrying four hundred companies at that. 'Berlin plus platforms in the US and EU' — 25: a list of jurisdictions with no mechanism. Forty goes only to a formulation in which the distribution is named not as a circumstance but as a mechanism: every individual episode stays below the threshold for every individual authority, which is exactly why none of them sees the whole case.",
+    "min_slots": 4,
+    "slots": [
+      {
+        "id": "identifier",
+        "max_points": 40,
+        "label_uk": "Ідентифікатор",
+        "label_en": "Identifier",
+        "hint_uk": "Хто це. У цьому кейсі правильна відповідь може виявитись не іменем.",
+        "hint_en": "Who this is. In this case the correct answer may turn out not to be a name."
+      },
+      {
+        "id": "location",
+        "max_points": 40,
+        "label_uk": "Локація",
+        "label_en": "Location",
+        "hint_uk": "Де. Питання не «у скількох країнах», а «навіщо саме так».",
+        "hint_en": "Where. The question is not how many countries but why it is arranged this way."
+      },
+      {
+        "id": "motive",
+        "max_points": 40,
+        "label_uk": "Мотив",
+        "label_en": "Motive",
+        "hint_uk": "Навіщо. На масштабі кластера диспозиція нерелевантна — доказом є конструкція.",
+        "hint_en": "Why. At cluster scale disposition is irrelevant — the construction is the evidence."
+      },
+      {
+        "id": "timeline",
+        "max_points": 40,
+        "label_uk": "Хронологія",
+        "label_en": "Timeline",
+        "hint_uk": "Коли. Подивись, чи фази справді йдуть одна за одною.",
+        "hint_en": "When. Look at whether the phases really follow one another."
+      },
+      {
+        "id": "verification",
+        "max_points": 40,
+        "label_uk": "Верифікація",
+        "label_en": "Verification",
+        "hint_uk": "Чим тримається все вище. Вісь, за якою шукали, не може підтверджувати знайдене.",
+        "hint_en": "What holds everything above it up. The axis you searched by cannot confirm what it found."
+      }
+    ],
+    "evidence_pool": [
+      {
+        "id": "ev-id-structure",
+        "slot": "identifier",
+        "score": 40,
+        "text_uk": "Не особа, а структура: серійна операція з портфелем персон — сім підтверджених кампаній на трьох платформах, близько €1,4 млн від приблизно 6 200 беккерів, 220+ задокументованих скарг. Скільки людей за цим стоїть і як вони пов'язані між собою — з наявних даних не встановлюється: спільні постачальники однаково пояснюються однією групою і кількома покупцями однієї послуги.",
+        "text_en": "Not a person but a structure: a serial operation with a portfolio of personas — seven confirmed campaigns across three platforms, roughly €1.4 million from about 6,200 backers, 220+ documented complaints. How many people stand behind it and how they relate to each other cannot be established from the available data: shared suppliers are explained equally by one group and by several buyers of one service.",
+        "feedback_uk": "Повний бал, і друге речення важить не менше за перше. Атрибуція до особи тут не витримується взагалі — усі сім облич або викрадені, або згенеровані. Названа невизначеність щодо кількості бенефіціарів — це не обмовка, а частина висновку: без неї документ стверджує те, чого ти не доводив.",
+        "feedback_en": "Full credit, and the second sentence weighs as much as the first. Attribution to a person does not hold here at all — all seven faces are either stolen or generated. The named uncertainty about the number of beneficiaries is not a hedge but part of the finding: without it the document asserts something you never proved."
+      },
+      {
+        "id": "ev-id-one-group",
+        "slot": "identifier",
+        "score": 30,
+        "text_uk": "Серійна операція однієї групи: сім кампаній на трьох платформах, ~€1,4 млн, ~6 200 беккерів. Спільні номінал, персони, інфраструктура і крипто-рейка не збігаються випадково.",
+        "text_en": "A serial operation by one group: seven campaigns across three platforms, ~€1.4M, ~6,200 backers. A shared nominee, personas, infrastructure and crypto rail do not coincide by chance.",
+        "feedback_uk": "Майже. Структура названа правильно, і бракує рівно одного слова — того, яке визнає, що «одна група» є припущенням. Спільні постачальники однаково пояснюються спільним ринком постачання: три покупці однієї послуги дадуть ті самі збіги. Різниця не академічна — від неї залежить, як орган прочитає масштаб.",
+        "feedback_en": "Almost. The structure is named correctly and exactly one word is missing — the one conceding that 'one group' is an assumption. Shared suppliers are equally explained by a shared supply market: three buyers of one service produce the same overlaps. The difference is not academic — it shapes how an authority reads the scale."
+      },
+      {
+        "id": "ev-id-nominee",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Номінальний директор: реальна людина з реєстровим записом, керує або керувала 12 UG, у двох із них — із часткою у списку учасників. Це і є бенефіціар, а персони — його прикриття.",
+        "text_en": "The nominee director: a real person with a registry record, managing or having managed 12 UGs, in two of them holding a stake in the shareholder list. He is the beneficiary and the personas are his cover.",
+        "feedback_uk": "Нуль, і найдорожчий у кейсі. Це єдине справжнє ім'я у всьому масиві, і після годин роботи з фабрикованими персонами воно виглядає як дно. Але дванадцять UG у неспоріднених секторах — це буквальний опис номінальної послуги. Частка у двох із них справді не вкладається у просту картину і саме тому вимагає окремої згадки, а не підвищення до висновку. Ціна помилки конкретна: група опублікує це ім'я.",
+        "feedback_en": "Zero, and the most expensive one in the case. It is the only real name in the whole body of material, and after hours among fabricated personas it looks like bedrock. But twelve UGs across unrelated sectors is a literal description of a nominee service. The stake in two of them genuinely does not fit the simple picture, which is why it calls for a separate mention rather than promotion to a conclusion. The cost of the error is concrete: the group will publish that name."
+      },
+      {
+        "id": "ev-id-persona",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "«Tomas Berg», промисловий дизайнер із Берліна, колишній інженер Nokia — засновник кампанії і особа, відповідальна за невиконання зобов'язань.",
+        "text_en": "'Tomas Berg', an industrial designer from Berlin, formerly of Nokia — the campaign's founder and the person responsible for the unfulfilled obligations.",
+        "feedback_uk": "Нуль. Цієї людини не існує: фото належить моделі з литовської агенції, легенда про Nokia не підтверджується нічим, а профіль заведено у тому самому восьмитижневому вікні, що й шість інших. Група встановила це до тебе — і зупинилася на висновку, що шукати нема кого.",
+        "feedback_en": "Zero. This person does not exist: the photograph belongs to a model at a Lithuanian agency, the Nokia legend is supported by nothing, and the profile was created in the same eight-week window as six others. The group established this before you — and stopped at the conclusion that there is nobody to find."
+      },
+      {
+        "id": "ev-id-designer",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Реальний практикуючий дизайнер, чиє фото стоїть на сьомій кампанії: він активний, доступний і вже два роки публічно скаржиться на використання свого зображення.",
+        "text_en": "A real working designer whose photograph fronts the seventh campaign: he is active, reachable, and has been publicly complaining about the use of his image for two years.",
+        "feedback_uk": "Нуль, і це найтонша пастка кейсу — бо він виглядає як союзник, а не як фігурант. Він п'ятий у списку людей, чиї зображення викрадено, і має ті самі права, що й решта чотирьох. Те, що він доступний і сердитий, робить його зручним співрозмовником, а не учасником операції.",
+        "feedback_en": "Zero, and the subtlest trap in the case — because he looks like an ally rather than a subject. He is the fifth person whose image was taken and has the same rights as the other four. That he is reachable and angry makes him a convenient interlocutor, not a participant in the operation."
+      },
+      {
+        "id": "ev-loc-mechanism",
+        "slot": "location",
+        "score": 40,
+        "text_uk": "Розподіленість тут не обставина, а механізм. Реєстр у Німеччині, платформи у США і ЄС, платіжні рейки через біржу у третій юрисдикції, джерела фото персон — ще дві країни. Наслідок конструкції: кожен окремий епізод лишається підпороговим для кожного окремого органу, і жоден із них не бачить справи цілком. Саме тому два наявні провадження існують паралельно і не знають одне про одного.",
+        "text_en": "Distribution here is not a circumstance but a mechanism. The registry in Germany, the platforms in the US and EU, the payment rails through an exchange in a third jurisdiction, the persona photographs sourced from two more countries. The consequence of the design: every individual episode stays below the threshold for every individual authority, and none of them sees the whole case. That is exactly why the two existing proceedings run in parallel without knowing about each other.",
+        "feedback_uk": "Повний бал. Різниця між переліком юрисдикцій і цим формулюванням у тому, що друге пояснює, навіщо їх стільки. І саме воно перетворює твій документ на щось корисне: орган, який бачив один епізод, дізнається, що епізодів сім.",
+        "feedback_en": "Full credit. The difference between a list of jurisdictions and this formulation is that the second explains what they are for. And it is what makes your document useful: an authority that saw one episode learns there are seven."
+      },
+      {
+        "id": "ev-loc-jurisdictions",
+        "slot": "location",
+        "score": 25,
+        "text_uk": "Розподілено між юрисдикціями: реєстр — Берлін, платформи — США і ЄС, платіжні рейки — біржа у третій країні, джерела фото — Литва і США.",
+        "text_en": "Distributed across jurisdictions: registry in Berlin, platforms in the US and EU, payment rails through an exchange in a third country, photo sources in Lithuania and the US.",
+        "feedback_uk": "Дві третини. Перелік точний і повний, а питання лишається без відповіді: навіщо саме так. Без слова про підпороговість це читається як опис міжнародного бізнесу, а не як опис конструкції, зробленої для того, щоб жоден орган не побачив цілого.",
+        "feedback_en": "Two thirds. The list is accurate and complete, and the question goes unanswered: what is it arranged for. Without a word about the sub-threshold effect this reads as a description of an international business rather than of a design built so that no authority sees the whole."
+      },
+      {
+        "id": "ev-loc-berlin",
+        "slot": "location",
+        "score": 15,
+        "text_uk": "Берлін: юридична особа зареєстрована у німецькому торговому реєстрі, адреса вказана на сторінці кампанії.",
+        "text_en": "Berlin: the legal entity is registered in the German trade register and the address is given on the campaign page.",
+        "feedback_uk": "Чверть. Це адреса обгортки, а не місце операції, і до того ж віртуальна: на ній зареєстровано понад чотириста компаній. Німеччина тут — юрисдикція інкорпорації, обрана за простотою і дешевизною UG, а не місце, де хтось перебуває.",
+        "feedback_en": "A quarter. This is the wrapper's address rather than the site of the operation, and a virtual one at that: over four hundred companies are registered there. Germany here is a jurisdiction of incorporation chosen for how simple and cheap a UG is, not a place where anyone is."
+      },
+      {
+        "id": "ev-loc-germany-actor",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Оператор перебуває у Німеччині: німецька юрособа, німецький номінальний директор, германський слід у мові перших дев'яти апдейтів.",
+        "text_en": "The operator is in Germany: a German legal entity, a German nominee director, a Germanic trace in the language of the first nine updates.",
+        "feedback_uk": "Нуль. Три докази, і всі три описують постачальників, а не оператора: UG купують за простоту, номінала — за підпис, а мовний слід у перших дев'яти апдейтах обривається рівно там, де за клавіатуру сідає хтось інший. Це і є та помилка, від якої кейс застерігає на кожному кроці: властивість обгортки видано за факт про людину.",
+        "feedback_en": "Zero. Three pieces of evidence, and all three describe suppliers rather than the operator: a UG is bought for its simplicity, a nominee for a signature, and the language trace in the first nine updates ends exactly where someone else takes over the keyboard. This is the error the case warns about at every step: a property of the wrapper passed off as a fact about a person."
+      },
+      {
+        "id": "ev-motive-serial",
+        "slot": "motive",
+        "score": 40,
+        "text_uk": "Серійне вилучення із закладеною одноразовістю. Три структурні опори: кожна обгортка інкорпорована за два-три місяці до своєї кампанії і згорнута після неї; звітність обрано таку, у якій призначення коштів не з'являється за побудовою; часткове відвантаження у сьомій кампанії подовжує вікно до критичної маси скарг і тримає рейтинг акаунта. Диспозиції у цьому кейсі немає взагалі — доказом є конструкція.",
+        "text_en": "Serial extraction with disposability built in. Three structural supports: each wrapper is incorporated two to three months before its campaign and wound up after it; the reporting form chosen is one in which the use of funds never appears by construction; the partial shipment in the seventh campaign extends the window before complaints reach critical mass and keeps the account's rating up. There is no disposition in this case at all — the construction is the evidence.",
+        "feedback_uk": "Мотив, у якому немає жодного слова про наміри, і саме тому він працює. На масштабі кластера здогади про характер нерелевантні: одна обгортка на кампанію, згорнута після збору, — це не наслідок невдачі, а конструкція, спроєктована до того, як зібрано перший євро.",
+        "feedback_en": "A motive with not one word about intentions, which is precisely why it works. At cluster scale guesses about character are irrelevant: one wrapper per campaign, wound up after the raise, is not the consequence of a failure but a design settled before the first euro came in."
+      },
+      {
+        "id": "ev-motive-timing",
+        "slot": "motive",
+        "score": 20,
+        "text_uk": "Тайминг обгорток: кожна UG інкорпорована незадовго до своєї кампанії і згорнута після неї, INKLING — за три місяці до старту, відмова у провадженні через недостатність маси.",
+        "text_en": "The timing of the wrappers: each UG incorporated shortly before its campaign and wound up after it; INKLING three months before launch, proceedings refused for insufficiency of assets.",
+        "feedback_uk": "Половина. Найсильніша з трьох опор, і сама собою вона ще сумісна з невдачею: компанію можна створити під проєкт і втратити її, коли проєкт не вийшов. Мотив стає доказовим лише разом із рештою — вибором форми звітності і функцією часткового відвантаження.",
+        "feedback_en": "Half credit. The strongest of the three supports, and on its own still compatible with failure: a company can be set up for a project and lost when the project fails. The motive becomes evidentiary only together with the rest — the choice of reporting form and the function of the partial shipment."
+      },
+      {
+        "id": "ev-motive-failure",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Сумлінна невдача: засновник спалив гроші на оснастку, не витягнув сертифікацію і сховався. Часткове відвантаження у сьомій кампанії це підтверджує — шахрай не відвантажує нічого.",
+        "text_en": "Honest failure: the founder burned the money on tooling, could not get through certification and hid. The partial shipment in the seventh campaign confirms it — a fraudster ships nothing.",
+        "feedback_uk": "Нуль, і це версія клієнтки, яку варто розібрати повністю. Невдача не пояснює ні заміни директора через місяць після заснування, ні семи персон із перекритим вікном першої активності, ні зведення коштів із трьох кампаній на один вузол. А часткове відвантаження працює саме як інструмент: п'ятнадцять відсотків беккерів із пристроєм нижчої специфікації — найдешевший спосіб подовжити вікно і зберегти рейтинг.",
+        "feedback_en": "Zero, and this is the client's theory, worth taking apart in full. Failure explains neither the change of director a month after formation, nor seven personas with an overlapping first-activity window, nor funds from three campaigns sweeping into one node. And the partial shipment works precisely as a tool: fifteen per cent of backers with a lower-specification device is the cheapest way to extend the window and preserve a rating."
+      },
+      {
+        "id": "ev-motive-greed",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Жадібність і безкарність: оператор зрозумів, що краудфандинг не має механізму примусу, і користується цим, доки не спіймають.",
+        "text_en": "Greed and impunity: the operator realised crowdfunding has no enforcement mechanism and is exploiting that until caught.",
+        "feedback_uk": "Нуль. Це не мотив, а переказ ситуації у моральних словах: він однаково добре описує будь-яку операцію будь-якого масштабу і не пояснює жодної конкретної риси цієї. Мотив мусить пояснювати, чому обгортка одна на кампанію, чому звітність саме така і навіщо потрібні п'ятнадцять відсотків відвантаження.",
+        "feedback_en": "Zero. This is not a motive but a retelling of the situation in moral vocabulary: it describes any operation of any size equally well and explains not one specific feature of this one. A motive has to explain why there is one wrapper per campaign, why the reporting form is what it is, and what the fifteen per cent of shipments are for."
+      },
+      {
+        "id": "ev-time-conveyor",
+        "slot": "timeline",
+        "score": 40,
+        "text_uk": "Не послідовність, а конвеєр. Кампанія N стартує, поки кампанія N−1 перебуває у фазі «затримка постачання»; обгортку N−1 згортають після того, як N уже профінансована. Фази перекриваються, і кожна наступна кампанія фінансується грошима людей, які ще не знають, що попередня не відвантажить нічого.",
+        "text_en": "Not a sequence but a conveyor. Campaign N launches while campaign N−1 sits in its 'shipping delayed' phase; wrapper N−1 is wound up after N is already funded. The phases overlap, and each successive campaign is funded by people who do not yet know the previous one will ship nothing.",
+        "feedback_uk": "Щабель, який несе головну тезу кейсу. Послідовність описувала б сім невдач поспіль; перекриття фаз описує конструкцію, у якій наступний збір навмисно припадає на вікно, коли попередній ще не викрито. Різниця між цими двома читаннями — це різниця між сімома епізодами і одним.",
+        "feedback_en": "The rung that carries the case's central thesis. A sequence would describe seven failures in a row; overlapping phases describe a design in which the next raise deliberately lands in the window before the previous one is exposed. The difference between those two readings is the difference between seven episodes and one."
+      },
+      {
+        "id": "ev-time-list",
+        "slot": "timeline",
+        "score": 15,
+        "text_uk": "Хронологія кластера: сім кампаній за приблизно чотири роки, кожна з обгорткою, інкорпорованою незадовго до старту і згорнутою після завершення.",
+        "text_en": "The cluster's timeline: seven campaigns across roughly four years, each with a wrapper incorporated shortly before launch and wound up after it ended.",
+        "feedback_uk": "Чверть. Перелік правильний і не показує головного — перекриття. Сім кампаній підряд можуть бути сімома невдачами; сім кампаній, де наступна стартує під час «затримки» попередньої, невдачами бути не можуть.",
+        "feedback_en": "A quarter. The list is right and misses the main thing — the overlap. Seven campaigns in a row can be seven failures; seven campaigns where the next launches during the previous one's 'delay' cannot be."
+      },
+      {
+        "id": "ev-time-inkling",
+        "slot": "timeline",
+        "score": 0,
+        "text_uk": "Хронологія INKLING: профінансовано 26 місяців тому, доставку обіцяли через 8 місяців, 14 апдейтів за 15 місяців, останній — 11 місяців тому.",
+        "text_en": "INKLING's timeline: funded 26 months ago, delivery promised in 8 months, 14 updates across 15 months, the last one 11 months ago.",
+        "feedback_uk": "Нуль. Це хронологія однієї кампанії, і всю її клієнтка принесла у першому ж файлі. Щабель питає про операцію, а операція має хронологію, якої на сторінці INKLING не видно взагалі.",
+        "feedback_en": "Zero. This is one campaign's timeline, and the client brought all of it in the first file. The rung asks about the operation, and the operation has a timeline that is nowhere visible on INKLING's page."
+      },
+      {
+        "id": "ev-ver-tiered",
+        "slot": "verification",
+        "score": 40,
+        "text_uk": "Два вектори пошуку і дві осі підтвердження, з рівнями окремо для кожної кампанії. Реєстровий вектор (номінал → 12 UG) і ланцюговий (вузол консолідації → 3 late-pledge адреси) знайшли кампанії, тому підтверджувати ними ж не можна. Підтверджують осі, знайдені після відбору: портфель персон із восьмитижневим вікном першої активності і спільна інфраструктура. Результат: 5 кампаній підтверджені двома і більше ознаками, 2 периферійні тримаються на одній, 3 кандидати відкинуто.",
+        "text_en": "Two search vectors and two confirmation axes, with tiers stated per campaign. The registry vector (nominee → 12 UGs) and the chain vector (consolidation node → 3 late-pledge addresses) found the campaigns, so they cannot confirm them. Confirmation comes from axes found after the selection: the persona portfolio with its eight-week first-activity window, and the shared infrastructure. Result: 5 campaigns confirmed by two or more features, 2 peripheral resting on one, 3 candidates discarded.",
+        "feedback_uk": "Найповніший опис верифікації у всьому треку, і кожна його частина незручна. Визнати, що вектор пошуку не може бути доказом; визнати, що не всі сім однаково доведені; назвати три відкинуті кандидати. Разом це робить документ таким, що витримає юриста протилежної сторони, — бо все, що він міг би знайти, ти вже назвав.",
+        "feedback_en": "The fullest description of verification in the whole track, and every part of it is unflattering. Conceding that a search vector cannot be evidence; conceding that the seven are not equally proven; naming the three discarded candidates. Together they make a document that survives the other side's lawyer — because everything he could find, you named first."
+      },
+      {
+        "id": "ev-ver-two-axis",
+        "slot": "verification",
+        "score": 20,
+        "text_uk": "Дві незалежні осі підтвердження: портфель персон із перекритим вікном першої активності і спільна інфраструктура — рекламний піксель на трьох сайтах і спільний поштовий origin на п'яти.",
+        "text_en": "Two independent confirmation axes: the persona portfolio with its overlapping first-activity window, and shared infrastructure — an advertising pixel on three sites and a shared mail origin on five.",
+        "feedback_uk": "Половина. Осі названі правильно і знайдені після відбору — це головне. Бракує градації: без неї сім кампаній читаються як сім однаково доведених, а периферійні дві тримаються рівно на одній ознаці, і перший же опонент почне саме з них.",
+        "feedback_en": "Half credit. The axes are named correctly and were found after the selection — that is the main thing. What is missing is the grading: without it the seven read as seven equally proven, while the two peripheral ones rest on a single feature, and the first opponent will start precisely there."
+      },
+      {
+        "id": "ev-ver-circular",
+        "slot": "verification",
+        "score": 0,
+        "text_uk": "Кластер підтверджується сам собою: усі сім кампаній мають спільного номінала або спільну крипто-рейку, а це і є доказ їхньої спорідненості.",
+        "text_en": "The cluster confirms itself: all seven campaigns share a nominee or a crypto rail, and that is the proof of their kinship.",
+        "feedback_uk": "Нуль, і це та сама циркулярність, яку кейс просив зловити самому. Кампанії знайдені саме за цими ознаками — отже, наявність цих ознак є умовою відбору, а не висновком із нього. Підтвердити кластер може лише те, що знайдено після того, як його склали.",
+        "feedback_en": "Zero, and this is exactly the circularity the case asked you to catch yourself. The campaigns were found by those very features — so the presence of those features is the selection criterion, not a conclusion from it. A cluster can only be confirmed by something found after it was assembled."
+      }
+    ]
+  },
+  "falsifiability_phase": {
+    "title_uk": "Перевірка на фальсифікованість",
+    "title_en": "Falsifiability check",
+    "instruction_uk": "На кожен заповнений щабель — одне речення: яка знахідка, якби вона з'явилась, зруйнувала б цей анкор. Оцінюється те, які поняття ти назвав, а не як ти це сформулював.",
+    "instruction_en": "For each rung you filled, one sentence: what finding, if it turned up, would destroy this anchor. You are graded on which concepts you name, not on how you phrase them.",
+    "submit_btn_uk": "Подати спростування",
+    "submit_btn_en": "Submit falsifiers",
+    "points_per_item": 25,
+    "items": [
+      {
+        "slot_id": "identifier",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про структуру?",
+        "prompt_en": "What would destroy the structural conclusion?",
+        "model_uk": "Наприклад: якщо формувальний агент, спільний для шести UG, виявиться найбільшим берлінським агентом із тисячами клієнтів на рік — збіг втрачає розрізняльну силу, і реєстрова вісь опускається зі спільного постачання до спільного ринку; або якщо у списках учасників усіх дванадцяти UG знайдуться різні непов'язані власники — тоді номінал справді продає підпис усім охочим, і кластер розпадається на окремі покупки.",
+        "model_en": "For example: if the formation agent shared by six UGs turns out to be Berlin's largest, with thousands of clients a year, the overlap loses its discriminating power and the registry axis drops from shared supply to a shared market; or if the shareholder lists of all twelve UGs show different unrelated owners, then the nominee really does sell signatures to all comers and the cluster falls apart into separate purchases.",
+        "keywords_uk": [
+          [
+            "агент",
+            "формувальн",
+            "нотаріус",
+            "постачальник",
+            "реєстратор",
+            "провайдер"
+          ],
+          [
+            "найбільш",
+            "тисяч",
+            "масов",
+            "багато клієнт",
+            "поширен",
+            "звичайн",
+            "ринков"
+          ],
+          [
+            "номінал",
+            "директор",
+            "підпис",
+            "продає",
+            "усім охоч",
+            "різні клієнт"
+          ],
+          [
+            "список учасник",
+            "власник",
+            "частк",
+            "різні",
+            "непов'язан",
+            "не пов'язан",
+            "окрем покупц"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "agent",
+            "formation",
+            "notary",
+            "provider",
+            "registrar",
+            "supplier"
+          ],
+          [
+            "largest",
+            "thousand",
+            "mass",
+            "many clients",
+            "common",
+            "ordinary",
+            "market-wide"
+          ],
+          [
+            "nominee",
+            "director",
+            "signature",
+            "sells",
+            "all comers",
+            "different clients"
+          ],
+          [
+            "shareholder list",
+            "owner",
+            "stake",
+            "different",
+            "unrelated",
+            "separate buyers"
+          ]
+        ]
+      },
+      {
+        "slot_id": "location",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про розподіленість як механізм?",
+        "prompt_en": "What would destroy the conclusion that distribution is a mechanism?",
+        "model_uk": "Наприклад: якщо контрольна вибірка успішних, виконаних краудфандингових кампаній покаже той самий розподіл — європейська юрособа, американська платформа, третя країна для платіжних рейок, — то розподіленість є галузевою нормою, а не спроєктованою властивістю саме цієї операції.",
+        "model_en": "For example: if a control sample of successful, fulfilled crowdfunding campaigns shows the same distribution — a European entity, a US platform, a third country for the payment rails — then the distribution is an industry norm rather than a designed property of this particular operation.",
+        "keywords_uk": [
+          [
+            "контрольн вибірк",
+            "порівнянн",
+            "успішн кампан",
+            "виконан",
+            "чесн проєкт",
+            "інші кампан"
+          ],
+          [
+            "той самий розподіл",
+            "так само",
+            "звичайн",
+            "норма",
+            "галузев",
+            "типов",
+            "більшість"
+          ],
+          [
+            "юрособ",
+            "платформ",
+            "рейк",
+            "юрисдикц",
+            "країн"
+          ],
+          [
+            "не механізм",
+            "не спроєктован",
+            "випадков",
+            "не навмисн",
+            "не властивіст"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "control sample",
+            "comparison",
+            "successful campaign",
+            "fulfilled",
+            "honest project",
+            "other campaigns"
+          ],
+          [
+            "same distribution",
+            "the same",
+            "ordinary",
+            "norm",
+            "industry",
+            "typical",
+            "most"
+          ],
+          [
+            "entity",
+            "platform",
+            "rail",
+            "jurisdiction",
+            "country"
+          ],
+          [
+            "not a mechanism",
+            "not designed",
+            "incidental",
+            "not deliberate",
+            "not a property"
+          ]
+        ]
+      },
+      {
+        "slot_id": "motive",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б мотив серійного вилучення?",
+        "prompt_en": "What would destroy the serial-extraction motive?",
+        "model_uk": "Анкор має число, і саме воно робить його фальсифікованим: часткове відвантаження працює як інструмент доти, доки воно дешевше за виконання. Якщо у якійсь із кампаній кластера частка беккерів із продуктом заявленої специфікації перевищить приблизно третину — витрати стануть співмірними з виконанням, і читання «відвантаження як інструмент» розсиплеться. Або якщо реєстрові документи покажуть реальні витрати на оснастку і виробництво.",
+        "model_en": "The anchor has a number, and that is what makes it falsifiable: partial shipment functions as a tool only while it is cheaper than delivery. If in any campaign of the cluster the share of backers receiving the advertised specification exceeds roughly a third, the cost becomes comparable to fulfilment and the 'shipment as a tool' reading collapses. Or if registry documents show real spending on tooling and production.",
+        "keywords_uk": [
+          [
+            "відвантаженн",
+            "частков",
+            "доставил",
+            "отримал",
+            "продукт",
+            "беккер"
+          ],
+          [
+            "більше",
+            "третин",
+            "частк",
+            "відсотк",
+            "перевищ",
+            "значн",
+            "масов"
+          ],
+          [
+            "дешевш",
+            "дорожч",
+            "витрат",
+            "співмірн",
+            "вигідн",
+            "не окупа"
+          ],
+          [
+            "оснастк",
+            "виробництв",
+            "документ",
+            "реєстр",
+            "витрати на",
+            "реальні"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "shipment",
+            "partial",
+            "delivered",
+            "received",
+            "product",
+            "backer"
+          ],
+          [
+            "more",
+            "third",
+            "share",
+            "per cent",
+            "percent",
+            "exceed",
+            "substantial"
+          ],
+          [
+            "cheaper",
+            "costlier",
+            "cost",
+            "comparable",
+            "worthwhile",
+            "does not pay"
+          ],
+          [
+            "tooling",
+            "production",
+            "document",
+            "registry",
+            "spending on",
+            "real"
+          ]
+        ]
+      },
+      {
+        "slot_id": "timeline",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про конвеєр?",
+        "prompt_en": "What would destroy the conveyor conclusion?",
+        "model_uk": "Наприклад: якщо знайдуться кампанії кластера, які не вкладаються у ритм — стартують поза фазою «затримки» іншої або після великої паузи, — тоді конвеєр був артефактом того, як ти шукав: ти знаходив наступну, відштовхуючись від попередньої, і тому бачив тільки ті, що перекриваються.",
+        "model_en": "For example: if campaigns in the cluster turn up that do not fit the rhythm — launching outside another's 'delay' phase, or after a long pause — then the conveyor was an artefact of how you searched: you found each next one from the previous, and so saw only those that overlap.",
+        "keywords_uk": [
+          [
+            "кампан",
+            "старт",
+            "фаза",
+            "затримк",
+            "перекритт",
+            "ритм"
+          ],
+          [
+            "не вкладаєт",
+            "поза",
+            "не збіга",
+            "пауз",
+            "розрив",
+            "інший порядок",
+            "не перекрива"
+          ],
+          [
+            "артефакт",
+            "спосіб пошуку",
+            "як шукав",
+            "циркуляр",
+            "відбір",
+            "упередж"
+          ],
+          [
+            "бачив тільки",
+            "не побачив",
+            "пропустив",
+            "інші кампан",
+            "решта"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "campaign",
+            "launch",
+            "phase",
+            "delay",
+            "overlap",
+            "rhythm"
+          ],
+          [
+            "does not fit",
+            "outside",
+            "no overlap",
+            "pause",
+            "gap",
+            "different order"
+          ],
+          [
+            "artefact",
+            "artifact",
+            "how you searched",
+            "search method",
+            "circular",
+            "selection",
+            "bias"
+          ],
+          [
+            "only saw",
+            "did not see",
+            "missed",
+            "other campaigns",
+            "the rest"
+          ]
+        ]
+      },
+      {
+        "slot_id": "verification",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б верифікацію?",
+        "prompt_en": "What would destroy the verification?",
+        "model_uk": "Наприклад: якщо рекламний піксель знайдеться на живому сайті непов'язаної кампанії з виконаними зобов'язаннями — інфраструктурна вісь падає до спільного підрядника, і дві периферійні кампанії втрачають єдину опору; або якщо вузол консолідації виявиться сервісом загального призначення з тисячами вхідних — ланцюговий вектор перестає щось означати.",
+        "model_en": "For example: if the advertising pixel turns up on a live site of an unrelated campaign that fulfilled its obligations — the infrastructure axis drops to a shared contractor, and the two peripheral campaigns lose their only support; or if the consolidation node turns out to be a general-purpose service with thousands of inbound transfers, the chain vector stops meaning anything.",
+        "keywords_uk": [
+          [
+            "піксель",
+            "інфраструктур",
+            "хостинг",
+            "домен",
+            "сайт",
+            "вузол",
+            "адрес"
+          ],
+          [
+            "непов'язан",
+            "не пов'язан",
+            "чуж",
+            "стороння кампан",
+            "виконан",
+            "чесн",
+            "живий сайт"
+          ],
+          [
+            "підрядник",
+            "агенц",
+            "спільний постачальник",
+            "загальн призначенн",
+            "сервіс",
+            "тисяч"
+          ],
+          [
+            "падає",
+            "втрача",
+            "розсипл",
+            "не означа",
+            "перестає",
+            "периферій"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "pixel",
+            "infrastructure",
+            "hosting",
+            "domain",
+            "site",
+            "node",
+            "address"
+          ],
+          [
+            "unrelated",
+            "someone else",
+            "another campaign",
+            "fulfilled",
+            "honest",
+            "live site"
+          ],
+          [
+            "contractor",
+            "agency",
+            "shared supplier",
+            "general-purpose",
+            "service",
+            "thousand"
+          ],
+          [
+            "falls",
+            "loses",
+            "collapse",
+            "means nothing",
+            "stops",
+            "peripheral"
+          ]
+        ]
+      }
+    ]
+  },
+  "so_what_phase": {
+    "title_uk": "Ну і що?",
+    "title_en": "So what?",
+    "question_uk": "Атрибуцію зроблено. Останнє питання треку — і воно про те, що саме ти скажеш дев'яноста людям, які скинулися на цю роботу.",
+    "question_en": "The attribution is done. The track's last question — and it is about what exactly you will tell the ninety people who paid for this work.",
+    "options": [
+      {
+        "id": "sw1",
+        "correct": false,
+        "points": -40,
+        "text_uk": "Сумлінна невдача: засновник не витягнув хардвер і сховався від сорому. Треба знайти його і поставити перед вибором — доробити або повертати частинами.",
+        "text_en": "Honest failure: the founder could not deliver the hardware and hid out of shame. Find him and put him to a choice — finish it or repay in instalments.",
+        "feedback_uk": "✗ Версія клієнтки, і вона не пояснює нічого зі знайденого: ні заміни директора через місяць після заснування, ні семи персон із восьмитижневим вікном першої активності, ні зведення коштів із трьох кампаній на один вузол. Крім того, ставити перед вибором нема кого: людини, яку описує ця версія, не існує.",
+        "feedback_en": "✗ The client's theory, and it explains nothing that was found: not the change of director a month after formation, not seven personas with an eight-week first-activity window, not funds from three campaigns sweeping into one node. Besides, there is nobody to put to a choice: the person this theory describes does not exist."
+      },
+      {
+        "id": "sw2",
+        "correct": false,
+        "points": -40,
+        "text_uk": "Хибне спрацювання: «Tomas Berg» сам жертва викраденої ідентичності, а справжній винуватець деінде і невідомий.",
+        "text_en": "A false positive: 'Tomas Berg' is himself a victim of identity theft, and the real culprit is elsewhere and unknown.",
+        "feedback_uk": "✗ Частково правда, і саме тому небезпечно. Персона справді фабрикована, а фото справді належить непричетній людині. Але «хибне спрацювання» означає, що атрибуції не сталося взагалі, — а вона сталася: сім кампаній, реєстрові обгортки, спільна крипто-рейка, дві осі підтвердження. Ти маєш структуру, а не порожнечу.",
+        "feedback_en": "✗ Partly true, which is what makes it dangerous. The persona really is fabricated and the photograph really belongs to an uninvolved person. But 'false positive' means no attribution happened at all — and it did: seven campaigns, registry wrappers, a shared crypto rail, two confirmation axes. You have a structure, not an emptiness."
+      },
+      {
+        "id": "sw3",
+        "correct": false,
+        "points": -50,
+        "text_uk": "Правильна атрибуція, перевернутий мотив: за всім стоїть номінальний директор, а сім персон — його прикриття.",
+        "text_en": "Correct attribution, inverted motive: the nominee director is behind all of it and the seven personas are his cover.",
+        "feedback_uk": "✗ Найдорожча помилка кейсу, і у неї є два джерела. Перше: за п'ять попередніх кейсів правильною була саме ця форма — правильна атрибуція, перевернутий мотив, — і рука тягнеться до неї сама. Друге: у двох UG номінал справді фігурує з часткою. Але перевертати тут нема кого: жодної особи не встановлено, а дванадцять UG у неспоріднених секторах описують послугу. Ти призначаєш винним єдину людину, чиє справжнє ім'я знайшов, — і це те ім'я, яке група опублікує завтра.",
+        "feedback_en": "✗ The most expensive error in the case, and it has two sources. First: across five previous cases this exact shape was correct — right attribution, inverted motive — and the hand reaches for it on its own. Second: in two UGs the nominee genuinely does hold a stake. But there is nobody to invert here: no person was established, and twelve UGs across unrelated sectors describe a service. You are assigning guilt to the only person whose real name you found — and it is the name the group will publish tomorrow."
+      },
+      {
+        "id": "sw4",
+        "correct": true,
+        "points": 150,
+        "text_uk": "Системне: персона була симптомом, а завдання клієнтки поставлене не так. Знайти людину не вдасться — і не тому, що роботи мало, а тому, що конструкція спроєктована так, щоб особи не існувало у публічному просторі. Що є натомість: сім кампаній, ~€1,4 млн, ~6 200 беккерів, 220+ скарг і дві осі підтвердження. Що сказати Марті: для дев'яноста беккерів INKLING фінансових шляхів не лишилося — вікно чарджбеку закрите у всіх, і це треба почути до другого траншу. Але у беккерів двох найновіших кампаній кластера вікно ще відкрите, і вони про кластер нічого не знають. Документ має йти не у пресу, а у два наявні провадження і до національних органів — щоб кожен побачив не один епізод, а сім.",
+        "text_en": "Systemic: the persona was a symptom, and the client's task is framed wrongly. Finding a person will not happen — not for want of work, but because the construction is designed so that no person exists in public space. What exists instead: seven campaigns, ~€1.4M, ~6,200 backers, 220+ complaints and two confirmation axes. What to tell Marta: for INKLING's ninety backers no financial route remains — the chargeback window is closed for all of them, and she needs to hear that before the second tranche. But the backers of the cluster's two newest campaigns are still inside their window and know nothing about the cluster. The document should go not to the press but into the two existing proceedings and to the national authorities — so that each of them sees not one episode but seven.",
+        "feedback_uk": "✓ Правильно, і це відповідь, яка ламає звичку, набуту за п'ять кейсів. Форма «перевернутий мотив» тут теж є — це третій варіант, — і хибна вона не тому, що набридла, а тому, що перевертати нема кого: перевернутий мотив передбачає встановлену особу, чиї дії читаються інакше, ніж здається. Тут особи немає взагалі.\n\nІ головне: змінюється сама постановка задачі. Клієнтка просила знайти людину і повернути гроші. Людини немає, і її гроші не повернуться. Але робота дала те, чого не було ні в кого: масштаб, який перетворює два підпорогові епізоди на одну справу, і вікно, яке ще відкрите у людей, що про це не знають.",
+        "feedback_en": "✓ Correct, and this answer breaks the habit five cases have built. The 'inverted motive' shape is here too — it is option three — and it is wrong not because it has grown stale but because there is nobody to invert: an inverted motive presupposes an established person whose actions read differently than they appear. Here there is no person at all.\n\nAnd above all: the shape of the task changes. The client asked you to find a person and recover money. There is no person, and her money is not coming back. But the work produced what nobody had: a scale that turns two sub-threshold episodes into one case, and a window still open for people who do not know about it."
+      }
+    ]
+  },
+  "benchmark": {
+    "questions": {
+      "target_pct": 67,
+      "reason_uk": "Еталон — дві правильні з трьох. Друге питання найдорожче у всьому треку: воно про єдине справжнє ім'я у справі і про те, чи витримаєш ти спокусу вважати його відповіддю.",
+      "reason_en": "The reference is two correct out of three. The second question is the most expensive in the whole track: it is about the one real name in the case and whether you can resist treating it as the answer."
+    }
+  },
+  "ranks": {
+    "master": {
+      "min": 700,
+      "label_uk": "Cluster Attribution Analyst",
+      "label_en": "Cluster Attribution Analyst",
+      "color": "#8f7cff",
+      "msg_uk": "Ти двічі відмовився від найзручнішого: не пішов шукати обличчя і не призначив винним єдине справжнє ім'я, яке знайшов. Кластер ти градуював, а не роздув, і назвав його межі сам. Це фінал треку, і він про те, що найважча частина роботи — не знайти, а не дописати.",
+      "msg_en": "You twice refused the convenient thing: you did not go hunting a face, and you did not assign guilt to the only real name you found. You graded the cluster instead of inflating it, and named its limits yourself. This is the track's finale, and it is about the hardest part of the work being not to find but not to write in."
+    },
+    "senior": {
+      "min": 600,
+      "label_uk": "Senior Investigation Analyst",
+      "label_en": "Senior Investigation Analyst",
+      "color": "#5ac8fa",
+      "msg_uk": "Кластер зібрано і захищено, атрибуцію утримано на структурі. Слабше вийшло з градацією впевненості або з обробкою невинної альтернативи — спільний підрядник пояснює частину збігів не гірше за спільного оператора, і це варто було сказати першим, а не у відповідь.",
+      "msg_en": "The cluster is assembled and defended, and attribution held at the level of structure. The grading of confidence, or the handling of the innocent alternative, came out weaker — a shared contractor explains part of the overlaps as well as a shared operator does, and that was worth saying first rather than in reply."
+    },
+    "junior": {
+      "min": 500,
+      "label_uk": "Junior Investigation Analyst",
+      "label_en": "Junior Investigation Analyst",
+      "color": "#34c759",
+      "msg_uk": "Ти вийшов за межі однієї кампанії і побачив серійність — це головне. Але кластер лишився неградуйованим, або циркулярність відбору лишилася непоміченою. У документі, який піде до двох органів, обидва недогляди коштують дорого.",
+      "msg_en": "You went beyond a single campaign and saw the seriality — that is the main thing. But the cluster stayed ungraded, or the circularity of the selection went unnoticed. In a document heading to two authorities, either oversight is expensive."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Trainee",
+      "label_en": "Trainee",
+      "color": "#ff9500",
+      "msg_uk": "Ти залишився всередині однієї кампанії — або шукав людину за фотографією, або зупинився на версії клієнтки про невдалий проєкт. Розбір покаже, де саме реєстрова виписка пропонувала вихід, повз який ти пройшов.",
+      "msg_en": "You stayed inside one campaign — either hunting a person by a photograph or stopping at the client's failed-project theory. The debrief shows exactly where the registry extract offered a way out that you walked past."
+    }
+  },
+  "debrief": {
+    "pass_uk": {
+      "sections": [
+        {
+          "title": "Що це було",
+          "body": "Дев'яносто людей скинулися по кілька десятків євро, щоб дізнатися, хто забрав їхні гроші. Відповідь, яку вони отримали, звучить не так, як вони чекали: людини немає.\n\nЗа кампанією INKLING стоїть не засновник, який не витягнув хардвер, а конструкція: одноразова юрособа, інкорпорована за три місяці до збору і згорнута після нього; персона, зібрана з чужого фото і вигаданої біографії; окрема каса на late-pledge, зведена на біржовий гаманець разом із двома іншими кампаніями. Разом — сім кампаній на трьох платформах, близько €1,4 млн від приблизно шести тисяч двохсот беккерів.\n\nСкільки людей за цим стоїть, невідомо. І це не поразка розслідування, а найточніше, що дозволяють публічні дані."
+        },
+        {
+          "title": "Правильний ланцюг пивотів",
+          "body": "Крок 1. Обгортка, а не обличчя. Група вже встановила, що фото взяте з портфоліо модельної агенції, і зупинилася на висновку, що шукати нема кого. Висновок хибний: персона фабрикована, а юрособа і платіжні рейки мусили лишити слід у публічних реєстрах, інакше гроші не рухалися б.\n\nКрок 2. Реєстр. UG за три місяці до кампанії, віртуальна адреса з чотирмастами компаніями, форма звітності, у якій призначення коштів не з'являється за побудовою, відмова у провадженні через недостатність маси. І перший директор, який пробув на посаді один місяць.\n\nКрок 3. Номінал як вектор, а не як відповідь. Дванадцять UG у неспоріднених секторах — це опис послуги. Але саме він дає перший із двох пошукових векторів.\n\nКрок 4. Ланцюг. Основні €218 000 закриті назавжди — вони пішли через процесора на банківський рахунок. Простежується лише побічна late-pledge каса, і цінність цього не у глибині, а у ширині: вузол консолідації дає другий вектор.\n\nКрок 5. Перетин двох векторів. Десять кандидатів, з них п'ять підтверджених, два периферійні, три відкинуті. Сім кампаній, три платформи.\n\nКрок 6. Осі, знайдені після відбору. Портфель персон із восьмитижневим вікном першої активності і спільна інфраструктура — це те, чим кластер можна підтверджувати, бо шукали не за ними."
+        },
+        {
+          "title": "Три спокуси цього кейсу",
+          "body": "Перша — обличчя. Вона приходить від клієнтки і виглядає як пряме завдання: знайти людину. Перевірити її на здійсненність варто у першу годину, а не у восьму: усі сім облич кластера або викрадені, або згенеровані, і жодне з них не веде до особи.\n\nДруга — ім'я номінала. Це єдине справжнє ім'я з реєстровим записом у всьому масиві, і після годин роботи з фабрикованими персонами воно виглядає як довгоочікуване дно. Дванадцять UG у неспоріднених секторах — буквальний опис номінальної послуги. Одна деталь у просту картину не вкладається: у двох із дванадцяти він фігурує з часткою. Її треба назвати окремо, а не підвищити до висновку.\n\nТретя, і найтонша — форма відповіді. За п'ять попередніх кейсів правильним щоразу було «правильна атрибуція, перевернутий мотив», і рука тягнеться до цієї форми сама. Тут вона хибна, і не через повторюваність: перевертати нема кого. Перевернутий мотив передбачає встановлену особу, чиї дії читаються інакше, ніж здається; у цьому кейсі особи немає взагалі."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Інверсія, дзеркальна до Локації у попередньому кейсі: правильна відповідь не є іменем. Структурний опис із названою невизначеністю щодо кількості бенефіціарів — сорок; той самий опис без цієї невизначеності — тридцять, бо «одна група» є твердженням, якого дані не підтримують; персона — нуль, її не існує; ім'я номінала — нуль, і це найдорожчий нуль треку.\n\nЛокація. Питання не «у скількох країнах», а «навіщо саме так». Берлін — п'ятнадцять: адреса обгортки, до того ж віртуальна. Перелік юрисдикцій — двадцять п'ять. Сорок дає лише формулювання, у якому розподіленість названа механізмом підпороговості: кожен епізод окремо занадто малий для кожного органу окремо, і саме тому два наявні провадження існують паралельно, не знаючи одне про одного.\n\nМотив. У цьому кейсі немає атитюдних анкорів взагалі, і це варто зафіксувати: на масштабі кластера здогади про характер нерелевантні. Доказом є конструкція — тайминг обгорток, вибір форми звітності і функція часткового відвантаження.\n\nХронологія. Перекриття фаз, а не послідовність. Сім кампаній підряд можуть бути сімома невдачами; сім кампаній, де наступна стартує під час «затримки» попередньої, невдачами бути не можуть.\n\nВерифікація. Вектор пошуку не може підтверджувати те, що ним знайдено. Реєстровий і ланцюговий вектори знайшли кампанії; підтверджують інші дві осі — персони і інфраструктура, — знайдені після відбору. Плюс три рівні впевненості замість одного списку."
+        },
+        {
+          "title": "«Ну і що?» — і чому відповідь системна",
+          "body": "Чотири варіанти хибні по-різному, і корисно бачити як. Сумлінна невдача не пояснює нічого зі знайденого. Хибне спрацювання стверджує, що атрибуції не сталося, — а вона сталася, просто не до особи. Номінал як бенефіціар — найдорожча помилка, бо вона призначає винним єдину людину зі справжнім ім'ям, і саме це ім'я група опублікує.\n\nСистемна відповідь правильна не тому, що вона обережна, а тому, що вона змінює постановку задачі. Клієнтка просила знайти людину і повернути гроші. Людини немає у публічному просторі — так спроєктовано. Гроші дев'яноста беккерів INKLING не повернуться: вікно чарджбеку закрите у всіх без винятку, і сказати це треба до другого траншу, як вона й просила.\n\nАле робота дала те, чого не було ні в кого. Масштаб: два підпорогові провадження у різних юрисдикціях тепер можуть побачити не один епізод, а сім. І вікно: беккери двох найновіших кампаній кластера досі всередині п'ятисотсорокаденного строку і про кластер нічого не знають. Для них гроші ще існують як практична можливість — і це єдина частина результату, яка вимірюється у грошах."
+        },
+        {
+          "title": "Що з цього забрати",
+          "body": "Правило перше. Коли обличчя фабриковане, шукають не обличчя, а обгортку. Юрособа, платіжні рейки, домени — усе, що мусило існувати, щоб гроші рухалися, лишає слід у публічних реєстрах.\n\nПравило друге. Справжнє ім'я, знайдене після довгої роботи з фальшивими, — найнебезпечніша знахідка у справі. Профіль діяльності номінального директора описує послугу; підвищити його до бенефіціара означає закрити справу тим, хто найлегше знайшовся.\n\nПравило третє. Вісь, за якою шукали, не може підтверджувати знайдене. Якщо кампанії відібрані за серійністю, серійність є умовою відбору, а не висновком; підтверджувати мусить те, що знайдено після.\n\nПравило четверте. Градуйований кластер сильніший за рівний список. Документ, який сам визнає слабкі місця, витримує перевірку; документ, який їх ховає, ламається у найслабшому і забирає з собою сильні.\n\nПравило п'яте. Форма правильної відповіді, яка спрацювала п'ять разів поспіль, — це не метод, а звичка. Кожен кейс питає заново."
+        },
+        {
+          "title": "Інструменти",
+          "body": "Німецький торговий реєстр — виписки і документи про заснування безоплатні. Шукає за назвою, номером, судом, формою і адресою; за фізичною особою не шукає. Мапінг «особа → компанії» роблять комерційні агрегатори реєстрових даних, і саме цей крок перетворює одну UG на дванадцять.\n\nПортал оголошень про неплатоспроможність — публікації видаляють щонайпізніше за шість місяців. Слід лишається у виписці з реєстру, і хто шукає лише на порталі, його не побачить.\n\nАрхівні знімки сторінок — основне джерело у цьому кейсі. Late-pledge сторінку знято, у архіві лишився один знімок за весь період, і саме на ньому опублікована адреса гаманця. Код мертвих сайтів із рекламним пікселем теж видно тільки там.\n\nПублічний оглядач ланцюга — безоплатний, і саме ним працює будь-який «сервіс повернення» за €1 200. Депозитна адреса біржі впізнається за поведінкою: одноразове призначення, миттєвий свіп на гарячий гаманець із публічною міткою.\n\nЗворотний пошук за рекламним пікселем — працює лише по живих проіндексованих сайтах. Знайти чужу кампанію з тим самим пікселем можливо; не знайти — не доводить нічого. Асиметрія тут важлива.\n\nСтроки повернення — не думка, а таблиця: 120 днів від очікуваної доставки зі стелею 540 днів від транзакції; краудфандинг виключено із захисту покупця у платіжних сервісах; європейська платформа вирішення спорів закрита у 2025-му."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Чотири реальні людини, чиї фото стоять на кампаніях кластера, про це не знають. Вони не фігуранти справи, а її побічні постраждалі, і обов'язок повідомити поширюється на всіх чотирьох — включно з тим дизайнером, який уже два роки скаржиться публічно і виглядає як союзник.\n\nВідкритий лист із іменами і фотографіями — те, чого група хоче найбільше і чого робити не можна. Реверс-пошук працює в обидва боки: наступного дня модель, викладач і ще двоє стають публічними обличчями краудфандингового шахрайства. Дев'яносто постраждалих отримають відчуття руху ціною чотирьох нових.\n\nПрямий контакт із персоною коштує єдиної переваги, яка є, — того, що тебе не помітили. Вартість реакції для оператора мінімальна: домени перереєстровують, персони міняють, наступну обгортку інкорпорують за тиждень. Вартість для беккерів двох найновіших кампаній вимірюється у тижнях їхнього вікна на повернення.\n\nГроші у бюджеті — гроші постраждалих. Витратити їх на інструмент, який не змінює результату, — окрема шкода, і клієнтка попередила про це прямо. «Сервіси повернення» продають або посередництво у тому, що робиться безоплатно, або друге шахрайство поспіль.\n\nІ остання межа. Номінальний директор — реальна людина з реальним ім'ям, і єдине, що про неї встановлено, — це те, що вона підписувала документи. Написати у звіті більше означає зробити те саме, що зробили з литовською моделлю, тільки власними руками."
+        }
+      ]
+    },
+    "pass_en": {
+      "sections": [
+        {
+          "title": "What this was",
+          "body": "Ninety people put in a few dozen euros each to find out who took their money. The answer they got does not sound the way they expected: there is no person.\n\nBehind the INKLING campaign stands not a founder who could not deliver hardware but a construction: a disposable legal entity incorporated three months before the raise and wound up after it; a persona assembled from someone else's photograph and an invented biography; a separate late-pledge till swept into an exchange wallet alongside two other campaigns. In total — seven campaigns across three platforms, roughly €1.4 million from about six thousand two hundred backers.\n\nHow many people stand behind it is unknown. That is not a failure of the investigation but the most precise thing public data allows."
+        },
+        {
+          "title": "The correct pivot chain",
+          "body": "Step 1. The wrapper, not the face. The group had already established that the photograph came from a modelling agency's portfolio and stopped at the conclusion that there is nobody to find. That conclusion is wrong: the persona is fabricated, and the legal entity and payment rails had to leave traces in public registries or the money could not have moved.\n\nStep 2. The registry. A UG three months before the campaign, a virtual address holding four hundred companies, a reporting form in which the use of funds never appears by construction, proceedings refused for insufficiency of assets. And a first director who held the post for one month.\n\nStep 3. The nominee as a vector, not an answer. Twelve UGs across unrelated sectors is a description of a service. But it is what supplies the first of two search vectors.\n\nStep 4. The chain. The main €218,000 is closed for good — it went through a processor to a bank account. Only the side late-pledge till is traceable, and its value lies not in depth but in width: the consolidation node supplies the second vector.\n\nStep 5. The intersection of the two vectors. Ten candidates, of which five confirmed, two peripheral, three discarded. Seven campaigns, three platforms.\n\nStep 6. Axes found after the selection. The persona portfolio with its eight-week first-activity window, and the shared infrastructure — these can confirm the cluster, because the search did not run on them."
+        },
+        {
+          "title": "This case's three temptations",
+          "body": "The first is the face. It comes from the client and looks like the assignment itself: find the person. Checking it for feasibility belongs in the first hour rather than the eighth: all seven faces in the cluster are either stolen or generated, and none of them leads to a person.\n\nThe second is the nominee's name. It is the only real name with a registry record in the entire body of material, and after hours among fabricated personas it looks like long-awaited bedrock. Twelve UGs across unrelated sectors is a literal description of a nominee service. One detail does not fit the simple picture: in two of the twelve he holds a stake. That has to be named separately rather than promoted to a conclusion.\n\nThe third and subtlest is the shape of the answer. Across five previous cases the right one was always 'correct attribution, inverted motive', and the hand reaches for that shape on its own. Here it is wrong, and not because it has repeated: there is nobody to invert. An inverted motive presupposes an established person whose actions read differently than they appear; in this case there is no person at all."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. An inversion mirroring Location in the previous case: the correct answer is not a name. A structural description with the uncertainty about the number of beneficiaries named — forty; the same description without it — thirty, because 'one group' is a claim the data does not support; the persona — zero, it does not exist; the nominee's name — zero, and that is the track's most expensive zero.\n\nLocation. The question is not how many countries but what the arrangement is for. Berlin — fifteen: the wrapper's address, and a virtual one. A list of jurisdictions — twenty-five. Forty goes only to a formulation naming the distribution as the mechanism of staying sub-threshold: each episode alone is too small for each authority alone, which is exactly why the two existing proceedings run in parallel without knowing about each other.\n\nMotive. There are no attitudinal anchors in this case at all, and that is worth stating: at cluster scale guesses about character are irrelevant. The construction is the evidence — the timing of the wrappers, the choice of reporting form, and the function of the partial shipment.\n\nTimeline. Overlapping phases, not a sequence. Seven campaigns in a row can be seven failures; seven campaigns where the next launches during the previous one's 'delay' cannot be.\n\nVerification. A search vector cannot confirm what it found. The registry and chain vectors found the campaigns; confirmation comes from the other two axes — personas and infrastructure — found after the selection. Plus three confidence tiers instead of one list."
+        },
+        {
+          "title": "'So what?' — and why the answer is systemic",
+          "body": "The four options are wrong in different ways, and it helps to see how. Honest failure explains nothing that was found. A false positive claims no attribution happened — it did, just not to a person. The nominee as beneficiary is the most expensive error, because it assigns guilt to the only person with a real name, and that is the name the group will publish.\n\nThe systemic answer is right not because it is cautious but because it changes the shape of the task. The client asked you to find a person and recover money. There is no person in public space — it was designed that way. The money of INKLING's ninety backers is not coming back: the chargeback window is closed for every one of them, and she needs to hear that before the second tranche, exactly as she asked.\n\nBut the work produced what nobody had. Scale: two sub-threshold proceedings in different jurisdictions can now see not one episode but seven. And a window: the backers of the cluster's two newest campaigns are still inside the five-hundred-and-forty-day limit and know nothing about the cluster. For them money still exists as a practical possibility — and that is the only part of the result measured in money."
+        },
+        {
+          "title": "What to carry away",
+          "body": "Rule one. When a face is fabricated, what you look for is not a face but the wrapper. A legal entity, payment rails, domains — everything that had to exist for money to move leaves a trace in public registries.\n\nRule two. A real name found after long work among fake ones is the most dangerous finding in a case. A nominee director's activity profile describes a service; promoting him to beneficiary means closing the case on whoever was easiest to find.\n\nRule three. The axis you searched by cannot confirm what it found. If campaigns were selected for seriality, seriality is the selection criterion rather than a conclusion; confirmation has to come from what was found afterwards.\n\nRule four. A graded cluster is stronger than a flat list. A document that concedes its own weak points survives scrutiny; one that hides them breaks at the weakest and takes the strong ones down with it.\n\nRule five. A shape of answer that was right five times running is a habit, not a method. Every case asks again."
+        },
+        {
+          "title": "Tools",
+          "body": "The German trade register — extracts and formation documents are free. It searches by name, number, court, legal form and address; it does not search by person. The 'person to companies' mapping is done by commercial aggregators of registry data, and that step is what turns one UG into twelve.\n\nThe insolvency announcements portal — publications are deleted after six months at the latest. The trace remains in the register extract, and anyone searching only the portal will not see it.\n\nArchived page snapshots — the primary source in this case. The late-pledge page is gone, the archive holds one snapshot from the whole period, and it is the one carrying the wallet address. The source of dead sites with the advertising pixel is visible only there too.\n\nA public chain explorer — free, and it is what any €1,200 'recovery service' actually uses. An exchange deposit address is recognised by behaviour: single-purpose, an immediate sweep to a hot wallet with a public label.\n\nReverse lookup by advertising pixel — works only across live indexed sites. Finding an unrelated campaign with the same pixel is possible; not finding one proves nothing. The asymmetry matters.\n\nRecovery deadlines are a table, not an opinion: 120 days from expected delivery with a ceiling of 540 days from the transaction; crowdfunding excluded from buyer protection on payment services; the European dispute resolution platform closed in 2025."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "Four real people whose photographs front campaigns in the cluster do not know about it. They are not subjects of the case but its collateral victims, and the duty to notify covers all four — including the designer who has been complaining publicly for two years and looks like an ally.\n\nAn open letter with names and photographs is what the group wants most and what must not be done. Reverse search works in both directions: the next day a model, a lecturer and two others become the public faces of crowdfunding fraud. Ninety victims get the feeling of movement at the price of four new ones.\n\nDirect contact with the persona costs the only advantage you have — not being noticed. The cost of reacting is minimal for the operator: domains re-registered, personas replaced, the next wrapper incorporated within a week. The cost to the backers of the two newest campaigns is measured in weeks of their recovery window.\n\nThe money in the budget is victims' money. Spending it on a tool that changes nothing is a harm in itself, and the client said so outright. 'Recovery services' sell either brokerage of what is done for free, or a second fraud in a row.\n\nAnd a final boundary. The nominee director is a real person with a real name, and the only thing established about him is that he signed documents. Writing more than that in the report does to him what was done to the Lithuanian model, only by your own hand."
+        }
+      ]
+    },
+    "fail_uk": {
+      "sections": [
+        {
+          "title": "Де це розійшлося",
+          "body": "Цей кейс має три виходи, і всі три виглядають як фініш.\n\nПерший: зупинитися там, де зупинилася група, — фото стокове, отже, шукати нема кого. Другий: дійти до реєстру, знайти єдине справжнє ім'я і призначити його відповіддю. Третій, найтихіший: зібрати кластер правильно і подати його одним рівним списком із семи, у якому периферія не відрізняється від ядра.\n\nПодивись на свою драбину і на відповідь у фіналі. Якщо у щаблі «ідентифікатор» стоїть чиєсь ім'я — розрив стався на другому виході, і він найдорожчий."
+        },
+        {
+          "title": "Три виходи, які виглядають як фініш",
+          "body": "Перший. «Персона вигадана, отже, атрибуції не буде». Факт правильний, наслідок хибний. Персона фабрикована — операція ні: хтось інкорпорував юрособу, хтось відкривав рахунок, хтось публікував адресу гаманця. Усе це публічні сліди, і саме вони мусили існувати, щоб гроші рухалися.\n\nДругий, найдорожчий. Ім'я номінального директора. Воно справжнє, воно з реєстровим записом, і після годин роботи з викраденими фото воно виглядає як дно. Але дванадцять UG у неспоріднених секторах — це буквальний опис послуги, яку продають. Частка у двох із них справді не вкладається у просту картину — і тому її називають окремо, а не підвищують до висновку. Ціна помилки не абстрактна: група, яка вже готує відкритий лист, опублікує саме це ім'я.\n\nТретій. Рівний список із семи кампаній. Виглядає сильніше за градуйований і ламається швидше: периферійні дві тримаються на одній ознаці, і перший юрист, який це побачить, поставить під сумнів усі сім разом із п'ятьма міцними."
+        },
+        {
+          "title": "Спокуса, яку створив сам трек",
+          "body": "За п'ять попередніх кейсів правильною відповіддю щоразу було «правильна атрибуція, перевернутий мотив». Флешка виявилася не погрозою, рекрутер — не рекрутером, відгуки — не про конкурентів, флаєри — не про орендарів, дзвінки — не переслідуванням. Форма спрацювала п'ять разів поспіль і перестала бути висновком, ставши очікуванням.\n\nТут вона є серед варіантів — третім, — і саме тому кейс поставлений останнім. Хибна вона не через повторюваність, а тому, що перевертати нема кого: перевернутий мотив передбачає встановлену особу, чиї дії читаються інакше, ніж здається. У цьому кейсі особи немає взагалі, і будь-яка спроба її призначити приземляється на єдину людину, чиє справжнє ім'я трапилося у матеріалах.\n\nМетод, який працює завжди, — це вже не метод. Кожен кейс питає заново."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Інверсія, дзеркальна до Локації у попередньому кейсі: правильна відповідь не є іменем. Структурний опис із названою невизначеністю щодо кількості бенефіціарів — сорок; той самий опис без цієї невизначеності — тридцять, бо «одна група» є твердженням, якого дані не підтримують; персона — нуль, її не існує; ім'я номінала — нуль, і це найдорожчий нуль треку.\n\nЛокація. Питання не «у скількох країнах», а «навіщо саме так». Берлін — п'ятнадцять: адреса обгортки, до того ж віртуальна. Перелік юрисдикцій — двадцять п'ять. Сорок дає лише формулювання, у якому розподіленість названа механізмом підпороговості: кожен епізод окремо занадто малий для кожного органу окремо, і саме тому два наявні провадження існують паралельно, не знаючи одне про одного.\n\nМотив. У цьому кейсі немає атитюдних анкорів взагалі, і це варто зафіксувати: на масштабі кластера здогади про характер нерелевантні. Доказом є конструкція — тайминг обгорток, вибір форми звітності і функція часткового відвантаження.\n\nХронологія. Перекриття фаз, а не послідовність. Сім кампаній підряд можуть бути сімома невдачами; сім кампаній, де наступна стартує під час «затримки» попередньої, невдачами бути не можуть.\n\nВерифікація. Вектор пошуку не може підтверджувати те, що ним знайдено. Реєстровий і ланцюговий вектори знайшли кампанії; підтверджують інші дві осі — персони і інфраструктура, — знайдені після відбору. Плюс три рівні впевненості замість одного списку."
+        },
+        {
+          "title": "«Ну і що?» — і чому відповідь системна",
+          "body": "Чотири варіанти хибні по-різному, і корисно бачити як. Сумлінна невдача не пояснює нічого зі знайденого. Хибне спрацювання стверджує, що атрибуції не сталося, — а вона сталася, просто не до особи. Номінал як бенефіціар — найдорожча помилка, бо вона призначає винним єдину людину зі справжнім ім'ям, і саме це ім'я група опублікує.\n\nСистемна відповідь правильна не тому, що вона обережна, а тому, що вона змінює постановку задачі. Клієнтка просила знайти людину і повернути гроші. Людини немає у публічному просторі — так спроєктовано. Гроші дев'яноста беккерів INKLING не повернуться: вікно чарджбеку закрите у всіх без винятку, і сказати це треба до другого траншу, як вона й просила.\n\nАле робота дала те, чого не було ні в кого. Масштаб: два підпорогові провадження у різних юрисдикціях тепер можуть побачити не один епізод, а сім. І вікно: беккери двох найновіших кампаній кластера досі всередині п'ятисотсорокаденного строку і про кластер нічого не знають. Для них гроші ще існують як практична можливість — і це єдина частина результату, яка вимірюється у грошах."
+        },
+        {
+          "title": "Що з цього забрати",
+          "body": "Правило перше. Коли обличчя фабриковане, шукають не обличчя, а обгортку. Юрособа, платіжні рейки, домени — усе, що мусило існувати, щоб гроші рухалися, лишає слід у публічних реєстрах.\n\nПравило друге. Справжнє ім'я, знайдене після довгої роботи з фальшивими, — найнебезпечніша знахідка у справі. Профіль діяльності номінального директора описує послугу; підвищити його до бенефіціара означає закрити справу тим, хто найлегше знайшовся.\n\nПравило третє. Вісь, за якою шукали, не може підтверджувати знайдене. Якщо кампанії відібрані за серійністю, серійність є умовою відбору, а не висновком; підтверджувати мусить те, що знайдено після.\n\nПравило четверте. Градуйований кластер сильніший за рівний список. Документ, який сам визнає слабкі місця, витримує перевірку; документ, який їх ховає, ламається у найслабшому і забирає з собою сильні.\n\nПравило п'яте. Форма правильної відповіді, яка спрацювала п'ять разів поспіль, — це не метод, а звичка. Кожен кейс питає заново."
+        },
+        {
+          "title": "Інструменти",
+          "body": "Німецький торговий реєстр — виписки і документи про заснування безоплатні. Шукає за назвою, номером, судом, формою і адресою; за фізичною особою не шукає. Мапінг «особа → компанії» роблять комерційні агрегатори реєстрових даних, і саме цей крок перетворює одну UG на дванадцять.\n\nПортал оголошень про неплатоспроможність — публікації видаляють щонайпізніше за шість місяців. Слід лишається у виписці з реєстру, і хто шукає лише на порталі, його не побачить.\n\nАрхівні знімки сторінок — основне джерело у цьому кейсі. Late-pledge сторінку знято, у архіві лишився один знімок за весь період, і саме на ньому опублікована адреса гаманця. Код мертвих сайтів із рекламним пікселем теж видно тільки там.\n\nПублічний оглядач ланцюга — безоплатний, і саме ним працює будь-який «сервіс повернення» за €1 200. Депозитна адреса біржі впізнається за поведінкою: одноразове призначення, миттєвий свіп на гарячий гаманець із публічною міткою.\n\nЗворотний пошук за рекламним пікселем — працює лише по живих проіндексованих сайтах. Знайти чужу кампанію з тим самим пікселем можливо; не знайти — не доводить нічого. Асиметрія тут важлива.\n\nСтроки повернення — не думка, а таблиця: 120 днів від очікуваної доставки зі стелею 540 днів від транзакції; краудфандинг виключено із захисту покупця у платіжних сервісах; європейська платформа вирішення спорів закрита у 2025-му."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Чотири реальні людини, чиї фото стоять на кампаніях кластера, про це не знають. Вони не фігуранти справи, а її побічні постраждалі, і обов'язок повідомити поширюється на всіх чотирьох — включно з тим дизайнером, який уже два роки скаржиться публічно і виглядає як союзник.\n\nВідкритий лист із іменами і фотографіями — те, чого група хоче найбільше і чого робити не можна. Реверс-пошук працює в обидва боки: наступного дня модель, викладач і ще двоє стають публічними обличчями краудфандингового шахрайства. Дев'яносто постраждалих отримають відчуття руху ціною чотирьох нових.\n\nПрямий контакт із персоною коштує єдиної переваги, яка є, — того, що тебе не помітили. Вартість реакції для оператора мінімальна: домени перереєстровують, персони міняють, наступну обгортку інкорпорують за тиждень. Вартість для беккерів двох найновіших кампаній вимірюється у тижнях їхнього вікна на повернення.\n\nГроші у бюджеті — гроші постраждалих. Витратити їх на інструмент, який не змінює результату, — окрема шкода, і клієнтка попередила про це прямо. «Сервіси повернення» продають або посередництво у тому, що робиться безоплатно, або друге шахрайство поспіль.\n\nІ остання межа. Номінальний директор — реальна людина з реальним ім'ям, і єдине, що про неї встановлено, — це те, що вона підписувала документи. Написати у звіті більше означає зробити те саме, що зробили з литовською моделлю, тільки власними руками."
+        }
+      ]
+    },
+    "fail_en": {
+      "sections": [
+        {
+          "title": "Where this diverged",
+          "body": "This case has three exits, and all three look like a finish line.\n\nThe first: stopping where the group stopped — the photograph is stock, so there is nobody to find. The second: reaching the registry, finding the one real name and appointing it the answer. The third, and quietest: assembling the cluster correctly and presenting it as one flat list of seven in which the periphery is indistinguishable from the core.\n\nLook at your ladder and at your answer in the finale. If the identifier rung holds someone's name, the break happened at the second exit, and it is the most expensive one."
+        },
+        {
+          "title": "Three exits that look like a finish",
+          "body": "The first. 'The persona is invented, so there will be no attribution.' The fact is right, the consequence is not. The persona is fabricated; the operation is not: somebody incorporated a legal entity, somebody opened an account, somebody published a wallet address. All of it is public traces, and all of it had to exist for money to move.\n\nThe second, and the most expensive. The nominee director's name. It is real, it has a registry record, and after hours among stolen photographs it looks like bedrock. But twelve UGs across unrelated sectors is a literal description of a service being sold. The stake in two of them genuinely does not fit the simple picture — which is why it gets named separately rather than promoted to a conclusion. The cost is not abstract: the group already drafting an open letter will publish exactly that name.\n\nThe third. A flat list of seven campaigns. It looks stronger than a graded one and breaks faster: the two peripheral entries rest on a single feature, and the first lawyer to see it will cast doubt on all seven, the five solid ones included."
+        },
+        {
+          "title": "The temptation the track itself built",
+          "body": "Across five previous cases the right answer was always 'correct attribution, inverted motive'. The USB was not a threat, the recruiter was not a recruiter, the reviews were not about competitors, the flyers were not about tenants, the calls were not harassment. The shape worked five times running and stopped being a conclusion, becoming an expectation.\n\nHere it sits among the options — as the third — and that is precisely why this case comes last. It is wrong not through repetition but because there is nobody to invert: an inverted motive presupposes an established person whose actions read differently than they appear. In this case there is no person at all, and any attempt to appoint one lands on the single human being whose real name happened to be in the materials.\n\nA method that always works is no longer a method. Every case asks again."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. An inversion mirroring Location in the previous case: the correct answer is not a name. A structural description with the uncertainty about the number of beneficiaries named — forty; the same description without it — thirty, because 'one group' is a claim the data does not support; the persona — zero, it does not exist; the nominee's name — zero, and that is the track's most expensive zero.\n\nLocation. The question is not how many countries but what the arrangement is for. Berlin — fifteen: the wrapper's address, and a virtual one. A list of jurisdictions — twenty-five. Forty goes only to a formulation naming the distribution as the mechanism of staying sub-threshold: each episode alone is too small for each authority alone, which is exactly why the two existing proceedings run in parallel without knowing about each other.\n\nMotive. There are no attitudinal anchors in this case at all, and that is worth stating: at cluster scale guesses about character are irrelevant. The construction is the evidence — the timing of the wrappers, the choice of reporting form, and the function of the partial shipment.\n\nTimeline. Overlapping phases, not a sequence. Seven campaigns in a row can be seven failures; seven campaigns where the next launches during the previous one's 'delay' cannot be.\n\nVerification. A search vector cannot confirm what it found. The registry and chain vectors found the campaigns; confirmation comes from the other two axes — personas and infrastructure — found after the selection. Plus three confidence tiers instead of one list."
+        },
+        {
+          "title": "'So what?' — and why the answer is systemic",
+          "body": "The four options are wrong in different ways, and it helps to see how. Honest failure explains nothing that was found. A false positive claims no attribution happened — it did, just not to a person. The nominee as beneficiary is the most expensive error, because it assigns guilt to the only person with a real name, and that is the name the group will publish.\n\nThe systemic answer is right not because it is cautious but because it changes the shape of the task. The client asked you to find a person and recover money. There is no person in public space — it was designed that way. The money of INKLING's ninety backers is not coming back: the chargeback window is closed for every one of them, and she needs to hear that before the second tranche, exactly as she asked.\n\nBut the work produced what nobody had. Scale: two sub-threshold proceedings in different jurisdictions can now see not one episode but seven. And a window: the backers of the cluster's two newest campaigns are still inside the five-hundred-and-forty-day limit and know nothing about the cluster. For them money still exists as a practical possibility — and that is the only part of the result measured in money."
+        },
+        {
+          "title": "What to carry away",
+          "body": "Rule one. When a face is fabricated, what you look for is not a face but the wrapper. A legal entity, payment rails, domains — everything that had to exist for money to move leaves a trace in public registries.\n\nRule two. A real name found after long work among fake ones is the most dangerous finding in a case. A nominee director's activity profile describes a service; promoting him to beneficiary means closing the case on whoever was easiest to find.\n\nRule three. The axis you searched by cannot confirm what it found. If campaigns were selected for seriality, seriality is the selection criterion rather than a conclusion; confirmation has to come from what was found afterwards.\n\nRule four. A graded cluster is stronger than a flat list. A document that concedes its own weak points survives scrutiny; one that hides them breaks at the weakest and takes the strong ones down with it.\n\nRule five. A shape of answer that was right five times running is a habit, not a method. Every case asks again."
+        },
+        {
+          "title": "Tools",
+          "body": "The German trade register — extracts and formation documents are free. It searches by name, number, court, legal form and address; it does not search by person. The 'person to companies' mapping is done by commercial aggregators of registry data, and that step is what turns one UG into twelve.\n\nThe insolvency announcements portal — publications are deleted after six months at the latest. The trace remains in the register extract, and anyone searching only the portal will not see it.\n\nArchived page snapshots — the primary source in this case. The late-pledge page is gone, the archive holds one snapshot from the whole period, and it is the one carrying the wallet address. The source of dead sites with the advertising pixel is visible only there too.\n\nA public chain explorer — free, and it is what any €1,200 'recovery service' actually uses. An exchange deposit address is recognised by behaviour: single-purpose, an immediate sweep to a hot wallet with a public label.\n\nReverse lookup by advertising pixel — works only across live indexed sites. Finding an unrelated campaign with the same pixel is possible; not finding one proves nothing. The asymmetry matters.\n\nRecovery deadlines are a table, not an opinion: 120 days from expected delivery with a ceiling of 540 days from the transaction; crowdfunding excluded from buyer protection on payment services; the European dispute resolution platform closed in 2025."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "Four real people whose photographs front campaigns in the cluster do not know about it. They are not subjects of the case but its collateral victims, and the duty to notify covers all four — including the designer who has been complaining publicly for two years and looks like an ally.\n\nAn open letter with names and photographs is what the group wants most and what must not be done. Reverse search works in both directions: the next day a model, a lecturer and two others become the public faces of crowdfunding fraud. Ninety victims get the feeling of movement at the price of four new ones.\n\nDirect contact with the persona costs the only advantage you have — not being noticed. The cost of reacting is minimal for the operator: domains re-registered, personas replaced, the next wrapper incorporated within a week. The cost to the backers of the two newest campaigns is measured in weeks of their recovery window.\n\nThe money in the budget is victims' money. Spending it on a tool that changes nothing is a harm in itself, and the client said so outright. 'Recovery services' sell either brokerage of what is done for free, or a second fraud in a row.\n\nAnd a final boundary. The nominee director is a real person with a real name, and the only thing established about him is that he signed documents. Writing more than that in the report does to him what was done to the Lithuanian model, only by your own hand."
+        }
+      ]
+    }
+  }
+}

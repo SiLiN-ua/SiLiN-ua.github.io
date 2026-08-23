@@ -5,7 +5,7 @@
   "cooldown_sec": 3600,
   "max_points": 785,
   "title_uk": "Рекрутер, якого не існує",
-  "title_en": "The Recruiter Who Does Not Exist",
+  "title_en": "The Recruiter Who Doesn't Exist",
   "briefing": {
     "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
     "client_uk": "Наталя, 39 · CTO Elytron Robotics, Київ",
