@@ -5485,3 +5485,140 @@ a.article-utils__share:hover { color: #0a66c2; border-color: #0a66c2; }
   body.printing-debrief .debrief__sec p { color: #111 !important; font-size: 10.5pt !important; line-height: 1.6 !important; }
   @page { margin: 1.6cm 1.5cm; }
 }
+
+
+/* Sim #03 data-driven fake-tool UIs (kv-table / grid / report) ---------- */
+/* Accent matches the Track III finale (#8f7cff), not the Sim #02 bronze. */
+.fake--kv .fake__search-row,
+.fake--grid .fake__search-row,
+.fake--report .fake__search-row {
+  padding: .7rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--text-dim);
+}
+.fake--kv .fake__kv-group + .fake__kv-group { margin-top: 1.1rem; }
+.fake__kv-title {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #8f7cff;
+  padding-bottom: .4rem;
+  border-bottom: 1px dashed rgba(143,124,255,.3);
+  margin-bottom: .5rem;
+}
+.fake__kv-table { width: 100%; border-collapse: collapse; }
+.fake__kv-table th,
+.fake__kv-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: .45rem .7rem;
+  border-bottom: 1px solid rgba(74,158,255,.08);
+}
+.fake__kv-table th {
+  width: 34%;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+.fake__kv-table td code {
+  font-family: var(--font-mono);
+  font-size: .84rem;
+  color: var(--cream);
+  word-break: break-word;
+}
+.fake__kv-note {
+  display: block;
+  margin-top: .25rem;
+  font-size: .78rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+.fake__kv-row--warn td code { color: #f0c674; }
+.fake__kv-row--warn th { color: #f0c674; }
+.fake__kv-footer {
+  margin-top: 1rem;
+  padding: .7rem .9rem;
+  background: rgba(143,124,255,.07);
+  border-left: 3px solid #8f7cff;
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.fake__grid-cells {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: .8rem;
+}
+.fake__grid-cell {
+  margin: 0;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.fake__grid-cell--warn { border-color: rgba(143,124,255,.6); box-shadow: 0 0 0 1px rgba(143,124,255,.25) inset; }
+.fake__grid-cell img { width: 100%; height: 120px; object-fit: cover; display: block; }
+.fake__grid-ph {
+  height: 120px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  color: var(--text-mute);
+  background: rgba(10,14,26,.6);
+}
+.fake__grid-cell figcaption { padding: .5rem .6rem; }
+.fake__grid-cell figcaption strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  color: var(--cream);
+  margin-bottom: .2rem;
+}
+.fake__grid-cell figcaption span {
+  display: block;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.fake--report .fake__report-img img { width: 100%; height: auto; display: block; margin-bottom: 1rem; border: 1px solid var(--border); }
+.fake__report-body { color: var(--cream); font-size: .88rem; line-height: 1.7; }
+.fake__report-body p { margin-bottom: .7rem; }
+.fake__report-h {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #8f7cff;
+  margin: 1rem 0 .5rem;
+}
+.fake__report-li { position: relative; padding-left: 1.1rem; margin-bottom: .45rem; }
+.fake__report-li::before { content: '\2014'; position: absolute; left: 0; color: #8f7cff; }
+.fake__report-warn {
+  padding: .6rem .9rem;
+  margin: .6rem 0;
+  background: rgba(240,198,116,.08);
+  border-left: 3px solid #f0c674;
+  color: #f0c674;
+  font-size: .84rem;
+  line-height: 1.6;
+}
+.fake__report-quote {
+  margin: .6rem 0;
+  padding: .6rem .9rem;
+  border-left: 3px solid var(--border-hi);
+  color: var(--text-dim);
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .fake__kv-table th { width: 42%; font-size: .68rem; }
+  .fake__grid-cells { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}

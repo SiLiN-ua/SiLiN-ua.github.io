@@ -328,7 +328,7 @@ function progressBar(current) {
   else phases.push(hasMemo ? 'memo' : 'phase4');
   const labelMap = LANG()==='en'
     ? { briefing:'Briefing', phase2:'Investigation', timeline:'Timeline', phase3:'Verification', phase4:'Verdict', memo:'Memo', ladder:'Attribution', falsify:'Falsifiability', sowhat:'So What' }
-    : { briefing:'Брифінг', phase2:'Розслідування', timeline:'Хронологія', phase3:'Верифікація', phase4:'Вердикт', memo:'Меморандум', ladder:'Атрибуція', falsify:'Фальсифікованість', sowhat:'So What' };
+    : { briefing:'Брифінг', phase2:'Розслідування', timeline:'Хронологія', phase3:'Верифікація', phase4:'Вердикт', memo:'Меморандум', ladder:'Атрибуція', falsify:'Фальсифікованість', sowhat:'Ну і що?' };
   const labels = phases.map(p => labelMap[p]);
   // Normalize 'citation' → same slot as phase4/memo (visual last step)
   const curNorm = (current === 'citation') ? (hasLadder ? 'ladder' : (hasMemo ? 'memo' : 'phase4')) : current;
@@ -394,7 +394,7 @@ function renderBriefing() {
             <div class="game-brief__meta">
               ${metaRows}
             </div>
-            <p class="game-brief__text">${escapeHtml(tr(br,'body'))}</p>
+            <p class="game-brief__text">${escapeHtml(tr(br,'body')).replace(/\n/g,'<br>')}</p>
             ${br.lawful_basis_gate ? `
               <div class="lawful-gate">
                 <div class="lawful-gate__title">${escapeHtml(tr(br.lawful_basis_gate,'title'))}</div>
@@ -497,7 +497,7 @@ function renderPhase2() {
     ${progressBar('phase2')}
     <div class="game-phase">
       <div class="game-phase__head">
-        <div class="game-phase__num">02 / ${State.scenario.timeline_phase ? '05' : '04'}</div>
+        <div class="game-phase__num">02 / ${State.scenario.ladder_phase ? '06' : (State.scenario.timeline_phase ? '05' : '04')}</div>
         <h2>${escapeHtml(tr(p,'title'))}</h2>
         <p>${escapeHtml(tr(p,'instruction'))}</p>
       </div>
@@ -1506,6 +1506,69 @@ function renderFakeUI(tool) {
         <div class="fake__doc-body">${(tool.doc.paragraphs || []).map(p => `<p>${escapeHtml(tr({ text_uk: p.text_uk, text_en: p.text_en }, 'text') || p.text || '')}</p>`).join('')}</div>
       </div>`;
       break;
+
+    // ============ SIM #03 / DEANON UIs ============
+    // Track III opens on an artifact, not a dossier, so its tools cannot reuse the
+    // candidate-bound components above. These three are fully data-driven: every
+    // string comes off the tool object, which keeps new cases JSON-only work.
+    case 'kv-table': if (tool.kv) return `
+      <div class="fake fake--kv">
+        <div class="fake__topbar">${tool.icon || '🧾'} <span>${escapeHtml(tr(tool, 'name') || '')}</span></div>
+        ${tr(tool.kv, 'query') ? `<div class="fake__search-row"><div class="fake__query">${escapeHtml(tr(tool.kv, 'query'))}</div></div>` : ''}
+        ${(tool.kv.groups || []).map(g => `
+          <div class="fake__kv-group">
+            ${tr(g, 'title') ? `<div class="fake__kv-title">${escapeHtml(tr(g, 'title'))}</div>` : ''}
+            <table class="fake__kv-table">
+              <tbody>
+              ${(g.rows || []).map(r => `
+                <tr${r.warn ? ' class="fake__kv-row--warn"' : ''}>
+                  <th>${escapeHtml(tr(r, 'k') || r.k || '')}</th>
+                  <td><code>${escapeHtml(tr(r, 'v') || '')}</code>${tr(r, 'note') ? `<span class="fake__kv-note">${escapeHtml(tr(r, 'note'))}</span>` : ''}</td>
+                </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>`).join('')}
+        ${tr(tool.kv, 'footer') ? `<div class="fake__kv-footer">${escapeHtml(tr(tool.kv, 'footer'))}</div>` : ''}
+      </div>`;
+      break;
+
+    case 'grid': if (tool.grid) return `
+      <div class="fake fake--grid">
+        <div class="fake__topbar">${tool.icon || '🖼'} <span>${escapeHtml(tr(tool, 'name') || '')}</span></div>
+        ${tr(tool.grid, 'query') ? `<div class="fake__search-row"><div class="fake__query">${escapeHtml(tr(tool.grid, 'query'))}</div></div>` : ''}
+        <div class="fake__grid-cells">
+          ${(tool.grid.cells || []).map(c => `
+            <figure class="fake__grid-cell${c.warn ? ' fake__grid-cell--warn' : ''}">
+              ${c.img ? `<img src="${escapeHtml(c.img)}" alt="${escapeHtml(tr(c, 'label'))}" loading="lazy">` : `<div class="fake__grid-ph">${escapeHtml(c.icon || '▦')}</div>`}
+              <figcaption>
+                <strong>${escapeHtml(tr(c, 'label'))}</strong>
+                ${tr(c, 'note') ? `<span>${escapeHtml(tr(c, 'note'))}</span>` : ''}
+              </figcaption>
+            </figure>`).join('')}
+        </div>
+        ${tr(tool.grid, 'footer') ? `<div class="fake__kv-footer">${escapeHtml(tr(tool.grid, 'footer'))}</div>` : ''}
+      </div>`;
+      break;
+
+    case 'report': if (tool.report) return `
+      <div class="fake fake--report">
+        <div class="fake__topbar">${tool.icon || '📑'} <span>${escapeHtml(tr(tool, 'name') || '')}</span></div>
+        ${tr(tool.report, 'query') ? `<div class="fake__search-row"><div class="fake__query">${escapeHtml(tr(tool.report, 'query'))}</div></div>` : ''}
+        ${tool.report.image ? `<div class="fake__report-img"><img src="${escapeHtml(tool.report.image)}" alt="" loading="lazy"></div>` : ''}
+        <div class="fake__report-body">
+          ${(tool.report.lines || []).map(l => {
+            const kind = l.kind || 'p';
+            const text = escapeHtml(tr(l, 'text'));
+            if (kind === 'h') return `<div class="fake__report-h">${text}</div>`;
+            if (kind === 'li') return `<div class="fake__report-li">${text}</div>`;
+            if (kind === 'warn') return `<div class="fake__report-warn">${text}</div>`;
+            if (kind === 'quote') return `<blockquote class="fake__report-quote">${text}</blockquote>`;
+            return `<p>${text}</p>`;
+          }).join('')}
+        </div>
+        ${tr(tool.report, 'footer') ? `<div class="fake__kv-footer">${escapeHtml(tr(tool.report, 'footer'))}</div>` : ''}
+      </div>`;
+      break;
   }
   return `<div class="fake fake--empty">No UI for tool: ${tool.ui_component}</div>`;
 }
@@ -1693,7 +1756,7 @@ function renderPhase3() {
     ${progressBar('phase3')}
     <div class="game-phase">
       <div class="game-phase__head">
-        <div class="game-phase__num">${State.scenario.timeline_phase ? '04 / 05' : '03 / 04'}</div>
+        <div class="game-phase__num">${State.scenario.ladder_phase ? '03 / 06' : (State.scenario.timeline_phase ? '04 / 05' : '03 / 04')}</div>
         <h2>${escapeHtml(tr(p,'title'))}</h2>
         <p>${escapeHtml(tr(p,'instruction'))}</p>
       </div>
@@ -1752,7 +1815,7 @@ function renderCitationPhase() {
     ${progressBar('phase3')}
     <div class="game-phase game-phase--cite">
       <div class="game-phase__head">
-        <div class="game-phase__num">${State.scenario.timeline_phase ? '04 / 05' : '03 / 04'}</div>
+        <div class="game-phase__num">${State.scenario.ladder_phase ? '03 / 06' : (State.scenario.timeline_phase ? '04 / 05' : '03 / 04')}</div>
         <h2>${escapeHtml(tr(cp,'title'))}</h2>
         <p>${escapeHtml(tr(cp,'instruction'))}</p>
         <div class="cite-counter">${LANG()==='en'?'Picked':'Обрано'}: <strong id="cite-count">${picks.size}</strong> / ${max}</div>

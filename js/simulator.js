@@ -18,6 +18,8 @@ export const TRACK_CASES = {
           'shadow-candidate', 'coordinate-hunter'],
   sim02: ['leaking-engineer', 'procurement-ghost', 'fake-vendor-network',
           'executive-coi', 'insider-trading', 'careful-watch'],
+  sim03: ['dead-drop-usb', 'ghost-recruiter', 'blood-red-reviews',
+          'qr-on-flyer', 'silent-signal-call', 'kickstarter-ghost'],
 };
 export function caseTrack(caseId) {
   for (const t of Object.keys(TRACK_CASES)) {
