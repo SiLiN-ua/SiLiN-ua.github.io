@@ -74,6 +74,17 @@
     onScroll();
   }
 
+  function initMobileLangClone() {
+    const lang = document.querySelector('.nav__lang');
+    const burger = document.querySelector('.nav__burger');
+    const nav = document.querySelector('.nav');
+    if (!lang || !burger || !nav) return;
+    if (nav.querySelector('.nav__lang--mobile')) return;
+    const clone = lang.cloneNode(true);
+    clone.classList.add('nav__lang--mobile');
+    nav.insertBefore(clone, burger);
+  }
+
   function initBurger() {
     const burger = document.querySelector('.nav__burger');
     const links = document.querySelector('.nav__links');
@@ -192,6 +203,7 @@
   async function init() {
     await loadDict();
     applyLang(currentLang());
+    initMobileLangClone();
     initLangSwitcher();
     initNavScroll();
     initBurger();
