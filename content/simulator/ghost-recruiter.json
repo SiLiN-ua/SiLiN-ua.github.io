@@ -1,0 +1,1903 @@
+{
+  "id": "ghost-recruiter",
+  "simulator_id": "sim03",
+  "time_limit_sec": 2400,
+  "cooldown_sec": 3600,
+  "max_points": 785,
+  "title_uk": "Рекрутер, якого не існує",
+  "title_en": "The Recruiter Who Does Not Exist",
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Наталя, 39 · CTO Elytron Robotics, Київ",
+    "client_en": "Natalia, 39 · CTO of Elytron Robotics, Kyiv",
+    "budget_uk": "6 годин робочого часу до звіту",
+    "budget_en": "6 working hours until the report is due",
+    "artifact_title_uk": "Одне посилання на LinkedIn. Три листи. Дванадцять питань.",
+    "artifact_title_en": "One LinkedIn URL. Three emails. Twelve questions.",
+    "artifact": {
+      "icon": "🎭",
+      "image": null,
+      "label_uk": "Профіль LinkedIn · 3 листи з повними заголовками · анкета на 12 питань",
+      "label_en": "LinkedIn profile · 3 emails with full headers · a 12-question questionnaire",
+      "ref": "linkedin.com/in/sonia-alvarez-meridian"
+    },
+    "body_uk": "Наталя керує технічною частиною Elytron Robotics — київського hardware-стартапу на 22 інженери. Компанія робить автономні дрони для інспекції нафтогазової інфраструктури, і все її IP тримається на власному computer-vision-стеку, який знаходить дефекти труби за температурними патернами. Series A закрито у січні 2026 — $8M від європейського фонду. Публічний профіль компанія тримає навмисно низьким: LinkedIn є, згадок про технологію немає, доповідей і технічних інтерв'ю немає.\n\nТри тижні тому їй прийшов InMail від «Sonia Alvarez, Principal Talent Partner» з «Meridian Executive Search». Пропозиція — «highly confidential CTO-level opportunity» у stealth-fintech із європейським Series B, який будує computer-vision-конвеєр для fraud detection. $340k база плюс частка.\n\nРоботи Наталя не шукає. Але лист був написаний грамотно і конкретно, без звичних маркерів рекрутерського спаму, і вона погодилась на тридцятихвилинний дзвінок. Google Meet вийшов голосовий — нібито у hiring manager зламалась камера.\n\nПитання поїхали дивно. Почалося з «your journey and current role». За двадцять хвилин дійшло до того, як саме Elytron обробляє хибнопозитивні спрацювання на теплових аномаліях за поганої видимості і як у команді дивляться на компроміс між обчисленням на пристрої та у хмарі для edge-розгортання. Це вже не скринінг. Це конкретні деталі її нинішнього стеку.\n\nНаталя ввічливо згорнула розмову і сказала, що подумає. Наступного дня прийшов лист із «technical questionnaire» — дванадцять питань, і кожне влучає у конкретну архітектурну особливість Elytron.\n\nКомпанія саме заходить на другий раунд переговорів із великим замовником з ЄС, тож публічний скандал зі «шпигунством» коштуватиме дорого. У СБУ клієнтка йти не хоче, поки не розуміє, з чим має справу: цілком можливо, це просто агресивний хантинг від конкурента.\n\nЗадача: з'ясувати, хто це насправді і що їм треба, перш ніж вона вирішить, відповідати на анкету чи ні.",
+    "body_en": "Natalia runs engineering at Elytron Robotics — a Kyiv hardware startup of 22 engineers. The company builds autonomous drones for oil and gas infrastructure inspection, and all of its IP rests on a proprietary computer-vision stack that finds pipeline defects from thermal patterns. Series A closed in January 2026 — $8M from a European fund. The public profile is deliberately low: there is a LinkedIn page, no mention of the technology, no talks, no technical interviews.\n\nThree weeks ago an InMail arrived from 'Sonia Alvarez, Principal Talent Partner' at 'Meridian Executive Search'. The pitch: a 'highly confidential CTO-level opportunity' at a stealth fintech with European Series B funding, building a computer-vision pipeline for fraud detection. $340k base plus equity.\n\nNatalia is not job-hunting. But the letter was literate and specific, free of the usual recruiter-spam markers, and she agreed to a thirty-minute call. The Google Meet turned out to be voice-only — the hiring manager's camera was supposedly broken.\n\nThe questions drifted strangely. It opened with 'your journey and current role'. Twenty minutes in it had reached exactly how Elytron handles thermal-anomaly false positives in poor visibility, and how the team weighs on-device against cloud inference for edge deployment. That is not screening. Those are specific details of her current stack.\n\nNatalia closed the conversation politely and said she would think about it. The next day an email arrived with a 'technical questionnaire' — twelve questions, every one of them landing on a specific architectural feature of Elytron.\n\nThe company is entering a second round of talks with a large EU customer, so a public 'espionage' scandal would be expensive. The client does not want to go to the SBU until she understands what she is dealing with: this may genuinely be nothing more than aggressive competitor headhunting.\n\nThe task: find out who this actually is and what they want, before she decides whether to answer the questionnaire.",
+    "start_btn_uk": "Відкрити артефакт →",
+    "start_btn_en": "Open the artifact →"
+  },
+  "phase2": {
+    "title_uk": "Розслідування",
+    "title_en": "Investigation",
+    "instruction_uk": "Дев'ять інструментів, шість годин бюджету. Три з дев'яти коштують більше, ніж дають. Порядок обираєш сам — але почни з того, що можна перевірити, а не з того, що виглядає найочевидніше.",
+    "instruction_en": "Nine tools, a six-hour budget. Three of the nine cost more than they return. The order is yours — but start with what can be verified, not with what looks most obvious.",
+    "next_btn_uk": "Далі → крос-верифікація",
+    "next_btn_en": "Next → cross-verification",
+    "min_tools_used": 4,
+    "tools": [
+      {
+        "id": "persona-teardown",
+        "icon": "🪪",
+        "name_uk": "Розбір персони · профіль і обличчя",
+        "name_en": "Persona teardown · profile and face",
+        "provider": "Sales Navigator · FaceCheck.id · PimEyes · Sensity.ai",
+        "desc_uk": "Що профіль Sonia Alvarez показує сам про себе — і що показує її фото",
+        "desc_en": "What Sonia Alvarez's profile says about itself — and what her photo says",
+        "tooltip_uk": "Досвід, схвалення, стрічка активності, три перевірки обличчя в одному прогоні.",
+        "tooltip_en": "Experience, endorsements, activity feed, three face checks in one pass.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 150,
+        "ui_component": "kv-table",
+        "clue_uk": "Профіль виглядає повним і при цьому порожній усередині: вісім років досвіду без жодного оригінального допису, 47 схвалень виключно від інших рекрутерських профілів, замкнутих одне на одного. Дата реєстрації — 2024, перша активність — лютий 2026; між ними півтора року тиші. Обличчя: два реверс-пошуки дають нуль збігів, детектор синтетики — 88%. Ключове тут не нуль, а 88.",
+        "clue_en": "The profile looks complete and is hollow inside: eight years of experience without a single original post, 47 endorsements exclusively from other recruiter profiles closed on one another. Registered in 2024, first activity February 2026 — a year and a half of silence in between. The face: two reverse searches return zero matches, the synthetic detector returns 88%. The number that matters is 88, not zero.",
+        "kv": {
+          "query_uk": "profile: /in/sonia-alvarez-meridian · face: 3 engines",
+          "query_en": "profile: /in/sonia-alvarez-meridian · face: 3 engines",
+          "groups": [
+            {
+              "title_uk": "Профіль",
+              "title_en": "Profile",
+              "rows": [
+                {
+                  "k": "Headline",
+                  "v_uk": "Principal Talent Partner · Meridian Executive Search",
+                  "v_en": "Principal Talent Partner · Meridian Executive Search"
+                },
+                {
+                  "k": "Location",
+                  "v_uk": "London, UK",
+                  "v_en": "London, UK"
+                },
+                {
+                  "k": "Connections",
+                  "v_uk": "847",
+                  "v_en": "847"
+                },
+                {
+                  "k": "Joined",
+                  "v_uk": "2024",
+                  "v_en": "2024"
+                },
+                {
+                  "k": "Experience",
+                  "v_uk": "3 позиції за 8 років, усі — Executive Search",
+                  "v_en": "3 positions across 8 years, all Executive Search",
+                  "note_uk": "Жодного роботодавця, який існував би поза цим самим кластером доменів.",
+                  "note_en": "Not one employer that exists outside this same cluster of domains."
+                }
+              ]
+            },
+            {
+              "title_uk": "Активність і схвалення",
+              "title_en": "Activity and endorsements",
+              "rows": [
+                {
+                  "k": "Original posts",
+                  "v_uk": "0",
+                  "v_en": "0",
+                  "warn": true,
+                  "note_uk": "Тільки репости. Вісім років у публічній професії без жодного власного рядка.",
+                  "note_en": "Reshares only. Eight years in a public-facing profession without one line of her own."
+                },
+                {
+                  "k": "Feed starts",
+                  "v_uk": "2026-02",
+                  "v_en": "2026-02",
+                  "warn": true,
+                  "note_uk": "Розрив із датою реєстрації — 17 місяців. Акаунт завели заздалегідь, увімкнули пізніше.",
+                  "note_en": "A 17-month gap against the join date. The account was created early and switched on later."
+                },
+                {
+                  "k": "Endorsements",
+                  "v_uk": "47, усі від рекрутерських профілів",
+                  "v_en": "47, all from recruiter profiles",
+                  "warn": true,
+                  "note_uk": "Циркулярний патерн: ті самі акаунти схвалюють одне одного по колу.",
+                  "note_en": "A circular pattern: the same accounts endorse each other in a ring."
+                },
+                {
+                  "k": "Network",
+                  "v_uk": "60% рекрутери · 30% інженерне керівництво hardware/CV-стартапів · 10% порожні профілі",
+                  "v_en": "60% recruiters · 30% engineering leadership at hardware/CV startups · 10% empty profiles",
+                  "note_uk": "Ті 30% читаються як список цілей, а не як професійне коло.",
+                  "note_en": "That 30% reads as a target list, not as a professional circle."
+                }
+              ]
+            },
+            {
+              "title_uk": "Перевірка обличчя",
+              "title_en": "Face verification",
+              "rows": [
+                {
+                  "k": "FaceCheck.id",
+                  "v_uk": "0 збігів",
+                  "v_en": "0 matches"
+                },
+                {
+                  "k": "PimEyes",
+                  "v_uk": "0 збігів",
+                  "v_en": "0 matches",
+                  "note_uk": "Індекси FaceCheck і PimEyes значною мірою перекриваються — це один сигнал, а не два.",
+                  "note_en": "FaceCheck and PimEyes indexes overlap substantially — this is one signal, not two."
+                },
+                {
+                  "k": "Sensity.ai",
+                  "v_uk": "88% синтетики (composite)",
+                  "v_en": "88% synthetic (composite)",
+                  "warn": true,
+                  "note_uk": "Позначені артефакти: неприродні відблиски, розбіжність вух на субпіксельному рівні, різний напрямок відблиску в зіницях.",
+                  "note_en": "Flagged artefacts: unnatural specular highlights, sub-pixel ear misalignment, mismatched catchlight direction between irises."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Нуль збігів у реверс-пошуку — це відсутність доказу, а не доказ відсутності. Справжня людина з відкритим профілем зазвичай десь та й засвітилась; але й свіжа персона теж не засвітиться. Єдиний позитивний сигнал на цій осі — детектор синтетики, і саме він, а не два нулі, тримає висновок.",
+          "footer_en": "Zero reverse-search matches is an absence of proof, not proof of absence. A real person with an open profile usually surfaces somewhere; but neither does a freshly minted persona. The only positive signal on this axis is the synthetic detector, and it — not the two zeros — is what holds the conclusion up."
+        }
+      },
+      {
+        "id": "email-headers",
+        "icon": "📨",
+        "name_uk": "Форензика заголовків листів",
+        "name_en": "Email header forensics",
+        "provider": "raw headers · 3 листи",
+        "desc_uk": "Куди насправді ходили ці листи і о котрій їх писали",
+        "desc_en": "Where these emails actually travelled and what hour they were written",
+        "tooltip_uk": "From — це декларація. Received — це маршрут.",
+        "tooltip_en": "From is a declaration. Received is an itinerary.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 120,
+        "ui_component": "kv-table",
+        "clue_uk": "DKIM підписаний доменом відправника — тобто підробки адреси немає, домен справді контролюють. Але Return-Path веде на mailhog-svc.io, публічний рекрутерський SaaS за $49 на місяць, а маршрут іде через орендовані VPS у Амстердамі, Франкфурті і Молдові. Три листи відправлені о 09:47, 09:52 і 09:58 у три різні дні — те саме вікно за київським часом. У Лондоні, де нібито сидить відправниця, це 07:47.",
+        "clue_en": "DKIM is signed by the sender's own domain — so nothing is spoofed, the domain really is under their control. But Return-Path leads to mailhog-svc.io, a public recruiting SaaS at $49 a month, and the route runs through rented VPS boxes in Amsterdam, Frankfurt and Moldova. The three emails went out at 09:47, 09:52 and 09:58 on three different days — the same window in Kyiv time. In London, where the sender supposedly sits, that is 07:47.",
+        "kv": {
+          "query_uk": "показати повний Received-ланцюг · 3 листи",
+          "query_en": "show full Received chain · 3 messages",
+          "groups": [
+            {
+              "title_uk": "Автентифікація",
+              "title_en": "Authentication",
+              "rows": [
+                {
+                  "k": "From",
+                  "v_uk": "sonia.alvarez@meridian-exec.com",
+                  "v_en": "sonia.alvarez@meridian-exec.com"
+                },
+                {
+                  "k": "DKIM",
+                  "v_uk": "pass · d=meridian-exec.com",
+                  "v_en": "pass · d=meridian-exec.com",
+                  "note_uk": "Підпис справжній. Це не спуфінг чужого домену — домен їхній власний, і це важливо: підробку викривають, а власний домен доводиться купувати й тримати.",
+                  "note_en": "The signature is genuine. This is not a spoof of someone else's domain — the domain is theirs, and that matters: a spoof gets exposed, a domain of your own has to be bought and maintained."
+                },
+                {
+                  "k": "SPF",
+                  "v_uk": "pass",
+                  "v_en": "pass"
+                },
+                {
+                  "k": "Return-Path",
+                  "v_uk": "bounce@mailhog-svc.io",
+                  "v_en": "bounce@mailhog-svc.io",
+                  "warn": true,
+                  "note_uk": "Розсильний SaaS «рекрутинг з коробки». Публічний прайс $49/міс, оплата карткою, жодної корпоративної пошти.",
+                  "note_en": "A recruit-in-a-box mailing SaaS. Public pricing at $49/mo, card payment, no corporate mail anywhere."
+                }
+              ]
+            },
+            {
+              "title_uk": "Маршрут",
+              "title_en": "Route",
+              "rows": [
+                {
+                  "k": "hop 1",
+                  "v_uk": "mail-forwarder-42.protonmail-relay.net",
+                  "v_en": "mail-forwarder-42.protonmail-relay.net"
+                },
+                {
+                  "k": "hop 2",
+                  "v_uk": "mx.mail-tester-gateway.io",
+                  "v_en": "mx.mail-tester-gateway.io"
+                },
+                {
+                  "k": "hop 3",
+                  "v_uk": "Hetzner · Франкфурт",
+                  "v_en": "Hetzner · Frankfurt"
+                },
+                {
+                  "k": "hop 4",
+                  "v_uk": "Contabo · Амстердам",
+                  "v_en": "Contabo · Amsterdam"
+                },
+                {
+                  "k": "hop 5",
+                  "v_uk": "Kamatera · Молдова",
+                  "v_en": "Kamatera · Moldova",
+                  "warn": true,
+                  "note_uk": "Виглядає найзловіснішим із п'яти й означає найменше: дешевий комерційний хостинг, який роками перепродають шахрайським розсилкам.",
+                  "note_en": "The most sinister-looking of the five and the least meaningful: cheap commercial hosting that has been resold to fraud mailers for years."
+                }
+              ]
+            },
+            {
+              "title_uk": "Час відправлення",
+              "title_en": "Send times",
+              "rows": [
+                {
+                  "k": "InMail",
+                  "v_uk": "09:47 (GMT+3)",
+                  "v_en": "09:47 (GMT+3)"
+                },
+                {
+                  "k": "Follow-up",
+                  "v_uk": "09:52 (GMT+3) · +1 день",
+                  "v_en": "09:52 (GMT+3) · +1 day"
+                },
+                {
+                  "k": "Анкета",
+                  "v_uk": "09:58 (GMT+3) · +2 дні",
+                  "v_en": "Questionnaire · 09:58 (GMT+3) · +2 days",
+                  "warn": true,
+                  "note_uk": "Три дні, одне й те саме одинадцятихвилинне вікно. Це початок робочого дня — але не лондонського.",
+                  "note_en": "Three days, the same eleven-minute window. That is the start of a working day — just not London's."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Спокуса тут — прочитати молдовський hop як слід держави. Насправді весь маршрут читається в інший бік: орендовані за картку VPS і публічний розсильний сервіс — це інфраструктура, яку купують, а не будують. Робочий час дає окрему, слабшу зачіпку: відправник живе не там, де написано у профілі. Куди саме — з цього ще не випливає.",
+          "footer_en": "The temptation here is to read the Moldovan hop as a state fingerprint. The route as a whole reads the other way: card-rented VPS boxes and a public mailing service are infrastructure you buy, not infrastructure you build. The working hours give a separate, weaker handle: the sender does not live where the profile says. Where they do live does not follow from this."
+        }
+      },
+      {
+        "id": "domain-intel",
+        "icon": "🌐",
+        "name_uk": "Розвідка домену · meridian-exec.com",
+        "name_en": "Domain intelligence · meridian-exec.com",
+        "provider": "WHOIS · Wayback · dig · ViewDNS reverse",
+        "desc_uk": "Скільки років «компанії» і хто ще живе на тому самому блоці",
+        "desc_en": "How old the 'company' is and who else lives on the same block",
+        "tooltip_uk": "Реєстрація, історія знімків, MX, сусіди по IP.",
+        "tooltip_en": "Registration, snapshot history, MX, IP neighbours.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 180,
+        "ui_component": "kv-table",
+        "clue_uk": "Домен зареєстровано у листопаді 2025, приватність увімкнена, перший знімок Wayback — 1 грудня, і відтоді сторінка не змінилась жодного разу. У футері HTML лежить коментар із ліцензією комерційного шаблону. MX веде на той самий mailhog-svc.io, що й Return-Path листів. А на тому самому хостинговому блоці — ще вісім доменів із тим самим шаблоном, різними назвами і однією датою: четвертий квартал 2025.",
+        "clue_en": "The domain was registered in November 2025, privacy on, first Wayback snapshot 1 December, and the page has not changed once since. The HTML footer carries a commercial template's license comment. MX points at the same mailhog-svc.io as the emails' Return-Path. And on that same hosting block sit eight more domains with the same template, different names and one shared date: Q4 2025.",
+        "kv": {
+          "query_uk": "whois meridian-exec.com · dig MX · viewdns reverse-ip",
+          "query_en": "whois meridian-exec.com · dig MX · viewdns reverse-ip",
+          "groups": [
+            {
+              "title_uk": "Реєстрація",
+              "title_en": "Registration",
+              "rows": [
+                {
+                  "k": "Created",
+                  "v_uk": "2025-11-14",
+                  "v_en": "2025-11-14",
+                  "warn": true,
+                  "note_uk": "Дев'ять місяців. «Executive search» із восьмирічним досвідом у профілі рекрутера.",
+                  "note_en": "Nine months old. An 'executive search' firm whose recruiter's profile claims eight years."
+                },
+                {
+                  "k": "Registrar",
+                  "v_uk": "Namecheap",
+                  "v_en": "Namecheap"
+                },
+                {
+                  "k": "WHOIS",
+                  "v_uk": "privacy-guarded (WhoisGuard)",
+                  "v_en": "privacy-guarded (WhoisGuard)",
+                  "note_uk": "Саме собою нічого не означає — приватність вмикає більшість власників доменів.",
+                  "note_en": "Meaningless on its own — most domain owners turn privacy on."
+                }
+              ]
+            },
+            {
+              "title_uk": "Сайт",
+              "title_en": "The site",
+              "rows": [
+                {
+                  "k": "Перший знімок",
+                  "v_uk": "2025-12-01",
+                  "v_en": "First snapshot · 2025-12-01"
+                },
+                {
+                  "k": "Змін відтоді",
+                  "v_uk": "жодної",
+                  "v_en": "Changes since · none",
+                  "warn": true,
+                  "note_uk": "Дев'ять місяців роботи «фірми» не залишили на її сайті жодного сліду: ні вакансій, ні новин, ні імен.",
+                  "note_en": "Nine months of the 'firm' operating left no trace on its own site: no openings, no news, no names."
+                },
+                {
+                  "k": "Сторінка Team",
+                  "v_uk": "2 стокових фото, без імен",
+                  "v_en": "Team page · 2 stock photos, no names"
+                },
+                {
+                  "k": "HTML footer",
+                  "v_uk": "ThemeForest license #TF-4419: SoniaRecruiter-Pro v2.1",
+                  "v_en": "ThemeForest license #TF-4419: SoniaRecruiter-Pro v2.1",
+                  "warn": true,
+                  "note_uk": "Комерційний шаблон із полиці, 400+ живих сайтів із тим самим підписом.",
+                  "note_en": "An off-the-shelf commercial template, 400+ live sites carry the same signature."
+                },
+                {
+                  "k": "MX",
+                  "v_uk": "mailhog-svc.io",
+                  "v_en": "mailhog-svc.io",
+                  "note_uk": "Той самий сервіс, що у Return-Path листів. Дві незалежні знахідки зійшлись на одній точці.",
+                  "note_en": "The same service as the emails' Return-Path. Two independent findings converged on one point."
+                }
+              ]
+            },
+            {
+              "title_uk": "Сусіди по хостинговому блоку",
+              "title_en": "Hosting-block neighbours",
+              "rows": [
+                {
+                  "k": "Доменів",
+                  "v_uk": "8",
+                  "v_en": "Domains · 8",
+                  "warn": true
+                },
+                {
+                  "k": "Приклади",
+                  "v_uk": "Apex Talent Partners · Northstar Exec Search · Cardinal Global Recruiters",
+                  "v_en": "Examples · Apex Talent Partners · Northstar Exec Search · Cardinal Global Recruiters"
+                },
+                {
+                  "k": "Шаблон",
+                  "v_uk": "той самий на всіх восьми",
+                  "v_en": "Template · identical across all eight"
+                },
+                {
+                  "k": "Реєстрація",
+                  "v_uk": "усі — 2025-Q4",
+                  "v_en": "Registered · all in 2025-Q4",
+                  "warn": true,
+                  "note_uk": "Один квартал на дев'ять доменів. Це не збіг ринку, це одна закупівля.",
+                  "note_en": "One quarter for nine domains. That is not a market coincidence, that is one purchase."
+                },
+                {
+                  "k": "MX",
+                  "v_uk": "mailhog-svc.io на всіх восьми",
+                  "v_en": "mailhog-svc.io on all eight"
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Дев'ять доменів на одному блоці, один шаблон, один квартал реєстрації і один розсильний сервіс — це вже не «підозрілий сайт», а ферма. Але ферма доменів сама собою ще не доводить, що за нею стоять рекрутерські персони: домени можна купити оптом і не використати жодного. Наступний крок — перевірити, чи живуть на цих восьми назвах люди.",
+          "footer_en": "Nine domains on one block, one template, one registration quarter and one mailing service — that is no longer a suspicious site, it is a farm. But a domain farm does not by itself prove there are recruiter personas behind it: domains can be bought in bulk and never used. The next move is to check whether anyone lives at those eight names."
+        }
+      },
+      {
+        "id": "cluster-sweep",
+        "icon": "🕸",
+        "name_uk": "Прочісування кластера · 8 доменів як місце роботи",
+        "name_en": "Cross-cluster sweep · 8 domains as employer",
+        "provider": "LinkedIn search · Sensity batch",
+        "desc_uk": "Чи живуть на сусідніх доменах люди — і чи справжні вони",
+        "desc_en": "Whether anyone lives at the neighbouring domains — and whether they are real",
+        "tooltip_uk": "Це крок, який перетворює «одна фальшива персона» на «операція».",
+        "tooltip_en": "This is the step that turns 'one fake persona' into 'an operation'.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 240,
+        "ui_component": "grid",
+        "clue_uk": "Вісім доменів дають чотирнадцять профілів рівня Principal / Managing Partner. Усі чотирнадцять зареєстровані у 2024, усі почали писати у лютому 2026, усі схвалення замкнуті на одні й ті самі 60-80 акаунтів. Пакетна перевірка облич: дванадцять із чотирнадцяти вище 85% синтетики. Два — нижче порогу, і це нормально: детектор не є оракулом, а операція не зобов'язана бути однорідною.",
+        "clue_en": "Eight domains yield fourteen profiles at Principal / Managing Partner level. All fourteen registered in 2024, all started posting in February 2026, all endorsements closed on the same 60-80 accounts. Batch face check: twelve of fourteen above 85% synthetic. Two fall below the threshold, and that is fine: the detector is not an oracle, and an operation is not obliged to be uniform.",
+        "grid": {
+          "query_uk": "site:linkedin.com/in «Meridian Executive Search» OR (8 доменів-сусідів) · Sensity batch",
+          "query_en": "site:linkedin.com/in 'Meridian Executive Search' OR (8 neighbour domains) · Sensity batch",
+          "cells": [
+            {
+              "icon": "👤",
+              "label_uk": "Sonia Alvarez · 88%",
+              "label_en": "Sonia Alvarez · 88%",
+              "warn": true,
+              "note_uk": "Meridian Executive Search · персона, з якої почався кейс",
+              "note_en": "Meridian Executive Search · the persona the case started from"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Rachel Okonkwo · 94%",
+              "label_en": "Rachel Okonkwo · 94%",
+              "warn": true,
+              "note_uk": "Apex Talent Partners · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Apex Talent Partners · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Marc Delacroix · 91%",
+              "label_en": "Marc Delacroix · 91%",
+              "warn": true,
+              "note_uk": "Northstar Exec Search · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Northstar Exec Search · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Priya Raghunathan · 93%",
+              "label_en": "Priya Raghunathan · 93%",
+              "warn": true,
+              "note_uk": "Cardinal Global Recruiters · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Cardinal Global Recruiters · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Tomas Lindqvist · 89%",
+              "label_en": "Tomas Lindqvist · 89%",
+              "warn": true,
+              "note_uk": "Meridian Executive Search · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Meridian Executive Search · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Elena Vasquez · 87%",
+              "label_en": "Elena Vasquez · 87%",
+              "warn": true,
+              "note_uk": "Apex Talent Partners · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Apex Talent Partners · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Daniel Whitfield · 92%",
+              "label_en": "Daniel Whitfield · 92%",
+              "warn": true,
+              "note_uk": "Halcyon Search Group · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Halcyon Search Group · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Aiko Tanaka · 90%",
+              "label_en": "Aiko Tanaka · 90%",
+              "warn": true,
+              "note_uk": "Northstar Exec Search · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Northstar Exec Search · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Peter Brandt · 86%",
+              "label_en": "Peter Brandt · 86%",
+              "warn": true,
+              "note_uk": "Vantage Executive · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Vantage Executive · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Nadia Haddad · 95%",
+              "label_en": "Nadia Haddad · 95%",
+              "warn": true,
+              "note_uk": "Cardinal Global Recruiters · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Cardinal Global Recruiters · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "James Okoro · 88%",
+              "label_en": "James Okoro · 88%",
+              "warn": true,
+              "note_uk": "Halcyon Search Group · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Halcyon Search Group · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Clara Sandoval · 91%",
+              "label_en": "Clara Sandoval · 91%",
+              "warn": true,
+              "note_uk": "Vantage Executive · реєстрація 2024, перший допис 2026-02",
+              "note_en": "Vantage Executive · registered 2024, first post 2026-02"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Viktor Ilic · 62%",
+              "label_en": "Viktor Ilic · 62%",
+              "warn": false,
+              "note_uk": "Meridian Executive Search · нижче порогу — або справжня людина у ролі прикриття, або слабший генератор",
+              "note_en": "Meridian Executive Search · below threshold — either a real person used as cover, or a weaker generator"
+            },
+            {
+              "icon": "👤",
+              "label_uk": "Hannah Mbeki · 41%",
+              "label_en": "Hannah Mbeki · 41%",
+              "warn": false,
+              "note_uk": "Apex Talent Partners · нижче порогу — або справжня людина у ролі прикриття, або слабший генератор",
+              "note_en": "Apex Talent Partners · below threshold — either a real person used as cover, or a weaker generator"
+            }
+          ],
+          "footer_uk": "Чотирнадцять персон, один часовий профіль створення, одне коло схвалень, дванадцять синтетичних облич. Тепер кластер — це не тільки домени, а й люди, яких немає. Зверни увагу на два профілі нижче порогу: саме вони показують, що детектор працює як детектор, а не як штамп. Атрибутувати треба операцію, а не «Sonia Alvarez» — імені за цією персоною просто немає.",
+          "footer_en": "Fourteen personas, one creation-time profile, one endorsement ring, twelve synthetic faces. The cluster is now not only domains but people who do not exist. Note the two profiles below threshold: they are what shows the detector working as a detector rather than as a rubber stamp. What gets attributed here is the operation, not 'Sonia Alvarez' — there is no name behind that persona to find."
+        }
+      },
+      {
+        "id": "question-pattern",
+        "icon": "📋",
+        "name_uk": "Аналіз патерну питань · анкета на 12 пунктів",
+        "name_en": "Question pattern analysis · the 12-item questionnaire",
+        "provider": "класифікатор · публічний baseline",
+        "desc_uk": "Про що насправді питає ця анкета і чим вона відрізняється від скринінгу",
+        "desc_en": "What this questionnaire actually asks and how it differs from screening",
+        "tooltip_uk": "Тул класифікує і порівнює з базовою лінією. Інтерпретацію не дає.",
+        "tooltip_en": "The tool classifies and compares against a baseline. It offers no interpretation.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 150,
+        "ui_component": "kv-table",
+        "clue_uk": "Із дванадцяти питань загальних — два. Чотири влучають напряму у ті вузли Elytron, яких немає у публічному профілі компанії. Базова лінія за відкритим датасетом реальних CTO-скринінгів: 78±6% загальних питань у першій розмові. Тут — 17%. Окремо варто помітити, чого в анкеті немає: жодного питання про бюджет, ліцензування, вартість чи процедуру закупівель — тобто саме тих, якими наймач звіряє рамку компенсації.",
+        "clue_en": "Of twelve questions, two are generic. Four land directly on Elytron nodes that appear nowhere in the company's public profile. Baseline from an open dataset of real CTO screenings: 78±6% generic questions in a first call. Here: 17%. Worth noticing separately is what the questionnaire does not contain: not one question about budget, licensing, cost or procurement — precisely the ones a hiring side uses to line up a compensation frame.",
+        "kv": {
+          "query_uk": "класифікувати 12 питань · порівняти з baseline публічних CTO-скринінгів",
+          "query_en": "classify 12 questions · compare against the public CTO-screening baseline",
+          "groups": [
+            {
+              "title_uk": "Класифікація · 12 питань",
+              "title_en": "Classification · 12 questions",
+              "rows": [
+                {
+                  "k": "Загальний скринінг",
+                  "v_uk": "2 · розмір команди, структура підпорядкування",
+                  "v_en": "Generic screening · 2 · team size, reporting structure"
+                },
+                {
+                  "k": "Інструментарій",
+                  "v_uk": "3 · версія компілятора, вбудована ОС, стек CI/CD",
+                  "v_en": "Tooling · 3 · compiler version, embedded OS, CI/CD stack"
+                },
+                {
+                  "k": "Операційні",
+                  "v_uk": "3 · частота розгортань, тестова інфраструктура, реагування на інциденти",
+                  "v_en": "Operational · 3 · deployment cadence, test infrastructure, incident response"
+                },
+                {
+                  "k": "Дотичні до IP",
+                  "v_uk": "4 · хибнопозитивні на теплових аномаліях, компроміс edge/хмара, злиття даних із сенсорів, цикл перенавчання моделі",
+                  "v_en": "IP-touching · 4 · thermal-anomaly false positives, edge/cloud tradeoff, sensor fusion, model retraining cycle",
+                  "warn": true,
+                  "note_uk": "Жодного з цих чотирьох вузлів немає у публічному профілі Elytron. Питання можна поставити тільки тому, хто вже знає, що там шукати.",
+                  "note_en": "None of those four nodes appear in Elytron's public profile. These are questions you can only ask if you already know what to look for."
+                }
+              ]
+            },
+            {
+              "title_uk": "Порівняння з базовою лінією",
+              "title_en": "Baseline comparison",
+              "rows": [
+                {
+                  "k": "Baseline",
+                  "v_uk": "78±6% загальних питань у першій розмові",
+                  "v_en": "78±6% generic questions in a first call",
+                  "note_uk": "Відкритий датасет розшифровок реальних CTO-скринінгів за 2025 рік.",
+                  "note_en": "An open dataset of real 2025 CTO-screening transcripts."
+                },
+                {
+                  "k": "Ця анкета",
+                  "v_uk": "17% загальних",
+                  "v_en": "This questionnaire · 17% generic",
+                  "warn": true
+                },
+                {
+                  "k": "Розрив",
+                  "v_uk": "−61 п.п.",
+                  "v_en": "Gap · −61 pp",
+                  "warn": true
+                }
+              ]
+            },
+            {
+              "title_uk": "Чого в анкеті немає",
+              "title_en": "What the questionnaire omits",
+              "rows": [
+                {
+                  "k": "Бюджет / вилка",
+                  "v_uk": "0 питань",
+                  "v_en": "Budget / range · 0 questions",
+                  "warn": true
+                },
+                {
+                  "k": "Ліцензування",
+                  "v_uk": "0 питань",
+                  "v_en": "Licensing · 0 questions"
+                },
+                {
+                  "k": "Собівартість",
+                  "v_uk": "0 питань",
+                  "v_en": "Cost of goods · 0 questions"
+                },
+                {
+                  "k": "Закупівлі / юридичне",
+                  "v_uk": "0 питань",
+                  "v_en": "Procurement / legal · 0 questions",
+                  "warn": true,
+                  "note_uk": "Наймач, який справді веде на посаду, рано чи пізно звіряє рамку компенсації. Тут цієї рамки немає взагалі — розмова не про наймання.",
+                  "note_en": "A hiring side that is actually filling a role eventually lines up a compensation frame. Here there is no frame at all — this conversation is not about hiring."
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Тул не інтерпретує. Він каже: розподіл такий, базова лінія така, розрив такий. Що це означає — конкурентний хантинг, збір розвідданих, державне сканування чи просто поганий рекрутер — вирішується не тут, а на драбині атрибуції, і не з цієї осі окремо, а з трьох разом.",
+          "footer_en": "The tool does not interpret. It says: here is the distribution, here is the baseline, here is the gap. What it means — competitive headhunting, intelligence collection, state scanning or simply a bad recruiter — gets decided not here but on the attribution ladder, and not from this axis alone but from three together."
+        }
+      },
+      {
+        "id": "sector-context",
+        "icon": "🏭",
+        "name_uk": "Контекст сектора · хто ще полює на цей стек",
+        "name_en": "Sector context · who else hunts this stack",
+        "provider": "відкриті джерела · галузеві звіти",
+        "desc_uk": "Конкурентне поле Elytron і відомі прецеденти того самого сценарію",
+        "desc_en": "Elytron's competitive field and known precedents of the same scenario",
+        "tooltip_uk": "Контекст — це рамка для гіпотези. Доказом він не стає.",
+        "tooltip_en": "Context frames a hypothesis. It never becomes evidence.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 120,
+        "ui_component": "report",
+        "clue_uk": "Прямих конкурентів у цій ніші шестеро: троє в ЄС і Британії, один в Ізраїлі, двоє в Азії. Сценарій «фальшивий рекрутер → конфіденційна вакансія → технічна анкета» задокументований публічно щонайменше двічі за 2024-2025 у суміжних секторах. Це робить гіпотезу про промислову розвідку правдоподібною — і рівно нічого не доводить про цей конкретний кластер.",
+        "clue_en": "There are six direct competitors in this niche: three in the EU and UK, one in Israel, two in Asia. The 'fake recruiter → confidential opening → technical questionnaire' scenario is publicly documented at least twice across 2024-2025 in adjacent sectors. That makes the industrial-reconnaissance hypothesis plausible — and proves exactly nothing about this particular cluster.",
+        "report": {
+          "query_uk": "конкурентне поле · прецеденти сценарію · профіль інфраструктури",
+          "query_en": "competitive field · scenario precedents · infrastructure profile",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Конкурентне поле",
+              "text_en": "Competitive field"
+            },
+            {
+              "kind": "li",
+              "text_uk": "ЄС і Британія — 3 гравці, усі публічні, усі з відкритими технічними блогами",
+              "text_en": "EU and UK — 3 players, all public, all with open engineering blogs"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Ізраїль — 1 гравець, суміжна ніша (інспекція, але не нафтогаз)",
+              "text_en": "Israel — 1 player, adjacent niche (inspection, but not oil and gas)"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Азія — 2 гравці, один із них афілійований із державним дослідним інститутом",
+              "text_en": "Asia — 2 players, one of them affiliated with a state research institute"
+            },
+            {
+              "kind": "h",
+              "text_uk": "Прецеденти сценарію",
+              "text_en": "Scenario precedents"
+            },
+            {
+              "kind": "p",
+              "text_uk": "За 2024-2025 у відкритих джерелах задокументовано щонайменше два випадки викрадення технологій через фальшивий рекрутинг у суміжних секторах — один у ЄС, один в Ізраїлі. Схема в обох однакова: кластер вигаданих рекрутерів, «конфіденційна можливість», технічна анкета замість співбесіди.",
+              "text_en": "Across 2024-2025, open sources document at least two technology-theft cases run through fake recruiting in adjacent sectors — one in the EU, one in Israel. The pattern is identical in both: a cluster of invented recruiters, a 'confidential opportunity', a technical questionnaire in place of an interview."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Жоден із цих прецедентів не пов'язаний із кластером, який ти зараз розслідуєш. Однаковий сценарій — це не спільне авторство: схема дешева і повторюється тому, що працює.",
+              "text_en": "Neither precedent is connected to the cluster you are investigating. An identical scenario is not shared authorship: the pattern is cheap and recurs because it works."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Профіль інфраструктури проти гіпотези про державу",
+              "text_en": "Infrastructure profile against the state hypothesis"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Шаблон сайту — комерційний, із полиці, 400+ однакових",
+              "text_en": "Site template — commercial, off the shelf, 400+ identical"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Пошта — публічний SaaS із відкритим прайсом і оплатою карткою",
+              "text_en": "Mail — public SaaS with open pricing and card payment"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Хостинг — бюджетні VPS-провайдери, ті самі, що у масових розсилках",
+              "text_en": "Hosting — budget VPS providers, the same ones used by bulk mailers"
+            },
+            {
+              "kind": "quote",
+              "text_uk": "Слід держави впізнають не за зловісністю юрисдикції, а за вартістю інфраструктури. Цю купили вроздріб.",
+              "text_en": "A state fingerprint is recognized not by how sinister the jurisdiction looks but by what the infrastructure cost. This one was bought retail."
+            }
+          ],
+          "footer_uk": "Тут кейс ставить пастку, і вона коштує дорожче за всі попередні. Прецеденти спокушають дописати атрибуцію на рівень, якого дані не витримують. Але подивись на інфраструктуру: шаблон із полиці, публічний розсильний сервіс за $49, орендовані за картку VPS. Той, хто має ресурс державного рівня, будує власне або заходить через зламану легальну компанію. Тут усе куплено вроздріб.",
+          "footer_en": "This is where the case sets its trap, and it costs more than all the earlier ones. The precedents tempt you to write attribution one level higher than the data can hold. But look at the infrastructure: an off-the-shelf template, a public $49 mailing service, card-rented VPS boxes. Anyone operating with state-level resources builds their own or comes in through a compromised legitimate company. Everything here was bought retail."
+        }
+      },
+      {
+        "id": "reverse-image",
+        "icon": "🔍",
+        "name_uk": "Зворотний пошук за фото · Google, Yandex, Bing",
+        "name_en": "Reverse image search · Google, Yandex, Bing",
+        "provider": "три пошукові двигуни",
+        "desc_uk": "Найочевидніший перший хід у справі про фальшивий профіль",
+        "desc_en": "The most obvious first move in a fake-profile case",
+        "tooltip_uk": "Дешево, швидко і у цьому кейсі не додає нічого понад те, що вже є.",
+        "tooltip_en": "Cheap, fast, and in this case it adds nothing you do not already have.",
+        "correct": false,
+        "points": -10,
+        "time_cost": 90,
+        "ui_component": "report",
+        "clue_uk": "Нуль збігів на всіх трьох двигунах. Той самий нуль, який уже показала перевірка обличчя — і той самий нуль, який покаже будь-яка щойно згенерована персона. Час витрачено, нової осі не з'явилось.",
+        "clue_en": "Zero matches on all three engines. The same zero the face check already returned — and the same zero any freshly generated persona will return. Time spent, no new axis gained.",
+        "report": {
+          "query_uk": "reverse image: profile photo · 3 двигуни",
+          "query_en": "reverse image: profile photo · 3 engines",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "0 збігів",
+              "text_en": "0 matches"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Google Images — 0. Yandex — 0. Bing Visual Search — 0. Жодного схожого обличчя, жодного стокового джерела, жодного профілю в іншій соцмережі.",
+              "text_en": "Google Images — 0. Yandex — 0. Bing Visual Search — 0. No similar face, no stock source, no profile on another network."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Пастка цього кейсу у тому, як читати цей нуль. «Збігів немає, отже людина справжня» — інверсія: згенерованому обличчю нічим і збігатися. Нуль тут не свідчить ні за, ні проти; свідчить детектор синтетики, який ти вже запускав.",
+              "text_en": "The trap in this case is how you read that zero. 'No matches, so the person is real' is an inversion: a generated face has nothing to match against. The zero argues neither way; what argues is the synthetic detector you already ran."
+            },
+            {
+              "kind": "p",
+              "text_uk": "Як самостійний хід — не помилка. Як хід, після якого зупиняються, — найдорожча помилка кейсу.",
+              "text_en": "As a move in itself, not a mistake. As the move you stop at, the most expensive mistake in the case."
+            }
+          ],
+          "footer_uk": "Три двигуни на одному фото — це три погляди в один і той самий індексований веб. Незалежність тут уявна.",
+          "footer_en": "Three engines on one photo is three looks into the same indexed web. The independence here is imaginary."
+        }
+      },
+      {
+        "id": "inmail-probe",
+        "icon": "✉",
+        "name_uk": "Написати Sonia напряму · «ви справжня людина?»",
+        "name_en": "Message Sonia directly · 'are you a real person?'",
+        "provider": "LinkedIn Premium InMail",
+        "desc_uk": "Спитати у джерела навпростець",
+        "desc_en": "Ask the source point-blank",
+        "tooltip_uk": "Один клік — і об'єкт розслідування дізнається, що його розслідують.",
+        "tooltip_en": "One click and the subject of the investigation learns they are under investigation.",
+        "correct": false,
+        "points": -30,
+        "time_cost": 60,
+        "ui_component": "report",
+        "clue_uk": "Повідомлення доставлено і прочитано за чотири хвилини. Відповіді немає. За добу профіль Sonia Alvarez переведено у приватний режим, ще три профілі з кластера зникли з пошуку, а на meridian-exec.com з'явився перший за дев'ять місяців коміт: сторінку Team прибрано.",
+        "clue_en": "The message is delivered and read within four minutes. No reply. Within a day Sonia Alvarez's profile goes private, three more cluster profiles drop out of search, and meridian-exec.com receives its first change in nine months: the Team page is gone.",
+        "report": {
+          "query_uk": "InMail → /in/sonia-alvarez-meridian",
+          "query_en": "InMail → /in/sonia-alvarez-meridian",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Доставлено · прочитано · без відповіді",
+              "text_en": "Delivered · read · no reply"
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Наслідки настали не для тебе, а для справи. Кластер, який ти щойно почав описувати, отримав сигнал і почав згортатися. Знімки, які ти не встиг зберегти, більше не існують.",
+              "text_en": "The consequences did not land on you, they landed on the case. The cluster you had just begun to map got the signal and started folding. Whatever you had not yet captured no longer exists."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Профіль цілі — приватний",
+              "text_en": "Target profile — private"
+            },
+            {
+              "kind": "li",
+              "text_uk": "3 з 14 профілів кластера — зникли",
+              "text_en": "3 of 14 cluster profiles — gone"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Сторінка Team на домені — прибрана",
+              "text_en": "Team page on the domain — removed"
+            },
+            {
+              "kind": "quote",
+              "text_uk": "Пасивне спостереження — не обережність заради обережності. Це єдиний режим, у якому докази доживають до звіту.",
+              "text_en": "Passive observation is not caution for caution's sake. It is the only mode in which evidence survives long enough to reach the report."
+            }
+          ],
+          "footer_uk": "Якщо колись і доведеться контактувати — це рішення клієнта разом із юристом і після того, як усе зафіксовано, а не хід розслідувача посеред роботи.",
+          "footer_en": "If contact ever has to happen, it is the client's decision with a lawyer, after everything is preserved — not an investigator's move mid-case."
+        }
+      },
+      {
+        "id": "contact-form",
+        "icon": "📮",
+        "name_uk": "Форма зворотного зв'язку на meridian-exec.com",
+        "name_en": "Contact form on meridian-exec.com",
+        "provider": "веб-форма",
+        "desc_uk": "Написати «компанії» як звичайний кандидат",
+        "desc_en": "Write to the 'company' as an ordinary candidate",
+        "tooltip_uk": "Виглядає як безпечний спосіб перевірити, чи там хтось є.",
+        "tooltip_en": "Looks like a safe way to check whether anyone is home.",
+        "correct": false,
+        "points": -15,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "Форма приймає повідомлення і показує стандартне «дякуємо». Через три дні приходить автовідповідь із того самого mailhog-svc.io — шаблонний текст без жодної згадки про те, що було у зверненні. Нового не з'явилось нічого; з бюджету пішли чотири хвилини і три дні очікування.",
+        "clue_en": "The form accepts the message and shows a standard thank-you. Three days later an autoreply arrives from the same mailhog-svc.io — boilerplate with no reference to anything that was written. Nothing new surfaced; the budget lost four minutes and three days of waiting.",
+        "report": {
+          "query_uk": "POST /contact · meridian-exec.com",
+          "query_en": "POST /contact · meridian-exec.com",
+          "image": null,
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "Автовідповідь через 3 дні",
+              "text_en": "Autoreply after 3 days"
+            },
+            {
+              "kind": "p",
+              "text_uk": "Відправник — no-reply@mailhog-svc.io. Той самий сервіс, який ти вже бачив у Return-Path і в MX. Підтвердження того, що вже підтверджено двічі.",
+              "text_en": "Sender — no-reply@mailhog-svc.io. The same service already seen in Return-Path and in MX. Confirmation of something already confirmed twice."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Шкода тут не в самому кроці, а в тому, куди пішов час: три доби очікування у шестигодинному бюджеті — це очікування, яке не могло нічого повернути.",
+              "text_en": "The harm is not in the step itself but in where the time went: three days of waiting inside a six-hour budget is waiting that could never have returned anything."
+            }
+          ],
+          "footer_uk": "Активний контакт із інфраструктурою цілі дає рівно те, що вона налаштована віддавати. Тут вона налаштована віддавати шаблон.",
+          "footer_en": "Active contact with the target's infrastructure returns exactly what it is configured to return. Here it is configured to return boilerplate."
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Крос-верифікація",
+    "title_en": "Cross-verification",
+    "instruction_uk": "Три питання по тому, що ти справді здобув. Правильна відповідь тут — не найсміливіша, а та, яку витримає доказ.",
+    "instruction_en": "Three questions about what you actually obtained. The right answer here is not the boldest one, it is the one the evidence can hold.",
+    "next_btn_uk": "Далі → драбина атрибуції",
+    "next_btn_en": "Next → attribution ladder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "FaceCheck.id і PimEyes повертають «немає збігів». Sensity дає 88% синтетики з переліком артефактів. Що це для тебе означає?",
+        "text_en": "FaceCheck.id and PimEyes both return 'no match'. Sensity gives 88% synthetic with a list of artefacts. What does that mean to you?",
+        "options": [
+          {
+            "text_uk": "Обличчя, найпевніше, згенероване. Позитивний сигнал тут один — детектор; два нулі з реверс-пошуку його підпирають, але окремою віссю не є, бо індекси двигунів перекриваються. Перш ніж говорити про масштаб операції, потрібні інші осі.",
+            "text_en": "The face is most likely generated. There is one positive signal here — the detector; the two reverse-search zeros support it but are not a separate axis, since the engines' indexes overlap. Before saying anything about the scale of the operation, I need other axes.",
+            "correct": true,
+            "points": 45,
+            "feedback_uk": "✓ Правильне зважування. Різниця між «трьома сигналами» і «одним сигналом плюс двома його тінями» — це і є різниця між звітом, який витримає заперечення, і звітом, який розсиплеться від першого питання «а звідки ви це взяли?».",
+            "feedback_en": "✓ Correct weighting. The difference between 'three signals' and 'one signal plus two of its shadows' is the difference between a report that survives challenge and one that collapses at the first 'and how do you know that?'"
+          },
+          {
+            "text_uk": "Однозначно підробка. Можна писати клієнтці, що проти неї працює шпигунська операція.",
+            "text_en": "Definitely fake. I can write to the client that a spy operation is working against her.",
+            "correct": false,
+            "points": -25,
+            "feedback_uk": "✗ Передчасна атрибуція, і стрибок тут не через одну сходинку, а через три. Згенероване обличчя не каже нічого ні про масштаб, ні про мету, ні про замовника. Поки що доведено рівно одне: цієї жінки не існує.",
+            "feedback_en": "✗ Premature attribution, and the leap here is not one rung but three. A generated face says nothing about scale, purpose or client. So far exactly one thing is established: this woman does not exist."
+          },
+          {
+            "text_uk": "Детектори синтетики часто помиляються. Ігнорую цей сигнал і працюю з рештою.",
+            "text_en": "Synthetic detectors often get it wrong. I ignore this signal and work with the rest.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "✗ Частота хибних спрацювань одного детектора — привід перевірити його іншим детектором, а не привід викинути єдиний позитивний сигнал, який у тебе є на цій осі. Відкидати дані дешевше, ніж їх перевіряти, і саме тому це погана звичка.",
+            "feedback_en": "✗ One detector's false-positive rate is a reason to cross-check it with a different detector, not a reason to discard the only positive signal you have on this axis. Discarding data is cheaper than checking it, which is exactly why it is a bad habit."
+          },
+          {
+            "text_uk": "Треба прогнати фото ще через два реверс-пошуки, щоб бути впевненим.",
+            "text_en": "I should run the photo through two more reverse searches to be sure.",
+            "correct": false,
+            "points": 5,
+            "feedback_uk": "△ Не шкідливо, але й не додає нічого: четвертий і п'ятий двигуни дивляться у той самий індексований веб. Якщо хочеш підсилити цю вісь — бери інший детектор синтетики, а не ще один пошук за зображенням.",
+            "feedback_en": "△ Harmless but additive of nothing: a fourth and fifth engine look into the same indexed web. If you want to strengthen this axis, take a different synthetic detector, not another image search."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "Зворотний WHOIS показує вісім доменів-сусідів на тому самому блоці: однаковий шаблон, реєстрація 2025-Q4, MX на mailhog-svc.io. Твій наступний крок:",
+        "text_en": "Reverse WHOIS shows eight neighbouring domains on the same block: identical template, registered 2025-Q4, MX on mailhog-svc.io. Your next step:",
+        "options": [
+          {
+            "text_uk": "Прочісую LinkedIn по кожному з восьми доменів як місцю роботи і перевіряю, чи там теж згенеровані персони.",
+            "text_en": "Sweep LinkedIn for each of the eight domains as an employer and check whether those profiles are generated personas too.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Це і є той крок, який переводить справу з «одна фальшива персона» у «операція». Домени доводять закупівлю; персони доводять роботу. Без другого перше лишається інвентарем, а не діяльністю.",
+            "feedback_en": "✓ This is the step that moves the case from 'one fake persona' to 'an operation'. Domains prove a purchase; personas prove work. Without the second, the first is inventory, not activity."
+          },
+          {
+            "text_uk": "Пишу клієнтці звіт: кластерна операція фальшивих рекрутерів, вісім підставних компаній.",
+            "text_en": "Write the client a report: a cluster operation of fake recruiters, eight shell companies.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "✗ Спостереження правильне, твердження випередило доказ на один крок. Вісім доменів на одному блоці — це поки ферма доменів. Що за ними стоїть рекрутерська операція, ти ще не перевіряв: домени купують оптом і часто не використовують.",
+            "feedback_en": "✗ The observation is right, the claim outran the evidence by one step. Eight domains on one block is so far a domain farm. That a recruiting operation stands behind them is something you have not checked: domains get bought in bulk and often never used."
+          },
+          {
+            "text_uk": "Реєструю один із доменів на себе, щойно він звільниться, щоб перехопити листування.",
+            "text_en": "Register one of the domains in my own name the moment it expires, to intercept the correspondence.",
+            "correct": false,
+            "points": -40,
+            "feedback_uk": "✗ Це вже не розслідування, а участь. Перехоплення чужої пошти виводить тебе з ролі спостерігача і робить твої докази непридатними рівно тоді, коли вони знадобляться — у правовому полі. Плюс кластер побачить зміну і згорнеться.",
+            "feedback_en": "✗ That is no longer investigation, it is participation. Intercepting someone else's mail moves you out of the observer role and makes your evidence unusable at exactly the moment it would matter — in a legal setting. Plus the cluster will see the change and fold."
+          },
+          {
+            "text_uk": "Шукаю домен у витоках баз даних — можливо, там є акаунти співробітників.",
+            "text_en": "Search breach dumps for the domain — there may be employee accounts in there.",
+            "correct": false,
+            "points": 10,
+            "feedback_uk": "△ Нормальний побічний хід, але не зараз і майже напевно порожній: домени зареєстровані наприкінці 2025, а витоки такої свіжості до публічних агрегаторів ще не дійшли.",
+            "feedback_en": "△ A reasonable side-check, but not now and almost certainly empty: the domains were registered in late 2025, and breaches that fresh have not reached public aggregators yet."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Аналіз анкети повернув: десять із дванадцяти питань — конкретика по техніці, чотири напряму про вузли Elytron, загальних 17% проти базових 78%. Твоя дія:",
+        "text_en": "The questionnaire analysis returned: ten of twelve questions are technical specifics, four land directly on Elytron nodes, 17% generic against a 78% baseline. Your move:",
+        "options": [
+          {
+            "text_uk": "Фіксую як окремий доказ із міткою «не інтерпретовано» і несу у фінал — що це означає, вирішиться на драбині, з опорою на інші осі.",
+            "text_en": "Log it as a separate evidence item marked 'not interpreted' and carry it into the finale — what it means gets decided on the ladder, anchored to the other axes.",
+            "correct": true,
+            "points": 55,
+            "feedback_uk": "✓ Патерн сильний, але сам собою він не розрізняє агресивний хантинг, збір розвідданих і некомпетентного рекрутера. Мітка «не інтерпретовано» — це не обережність заради обережності, це спосіб донести спостереження до фази, де його є з чим звірити.",
+            "feedback_en": "✓ The pattern is strong, but on its own it does not separate aggressive headhunting from intelligence collection from an incompetent recruiter. The 'not interpreted' tag is not caution for its own sake — it is how an observation reaches the phase where there is something to check it against."
+          },
+          {
+            "text_uk": "Одразу пишу клієнтці, що це цілеспрямований збір розвідданих, не чекаючи решти.",
+            "text_en": "Write to the client right away that this is targeted intelligence collection, without waiting for the rest.",
+            "correct": false,
+            "points": -35,
+            "feedback_uk": "✗ Передчасна інтерпретація. Висновок, до речі, згодом підтвердиться — і це найнебезпечніший різновид помилки: вгадана відповідь без доказової опори привчає вгадувати далі, а наступного разу здогад не влучить.",
+            "feedback_en": "✗ Premature interpretation. The conclusion will in fact hold up later — and that is the most dangerous kind of error: an answer guessed without evidentiary support teaches you to keep guessing, and next time the guess misses."
+          },
+          {
+            "text_uk": "Прошу клієнтку відповісти на анкету вигаданими технічними деталями і подивитись на реакцію.",
+            "text_en": "Ask the client to answer the questionnaire with invented technical details and watch the reaction.",
+            "correct": false,
+            "points": -50,
+            "feedback_uk": "✗ Найдорожчий варіант. По-перше, це активна операція, а клієнтка не її оператор — ризик лягає на неї, а не на тебе. По-друге, у матеріалах справи з'являється завідомо неправдивий документ за її підписом, і будь-який подальший правовий хід починатиметься з пояснень, навіщо він там.",
+            "feedback_en": "✗ The most expensive option. First, this is an active operation and the client is not its operator — the risk lands on her, not on you. Second, the case file now contains a knowingly false document over her signature, and any later legal step starts with explaining why it is there."
+          },
+          {
+            "text_uk": "Порівнюю з питаннями у власних вакансіях Elytron — раптом це звичайний галузевий стандарт.",
+            "text_en": "Compare against the questions in Elytron's own job postings — perhaps this is an ordinary industry standard.",
+            "correct": false,
+            "points": 15,
+            "feedback_uk": "△ Думка правильна, і саме її вже закриває базова лінія у самому тулі: 78±6% на відкритому датасеті реальних скринінгів — це ширша і чесніша опора, ніж вакансії однієї компанії. Крок не помилковий, просто вже зроблений.",
+            "feedback_en": "△ The instinct is right, and the tool's own baseline already covers it: 78±6% across an open dataset of real screenings is a broader and more honest reference than one company's postings. Not a wrong move, just an already-made one."
+          }
+        ]
+      }
+    ]
+  },
+  "ladder_phase": {
+    "title_uk": "Драбина атрибуції",
+    "title_en": "Attribution ladder",
+    "instruction_uk": "П'ять щаблів. На кожен — один доказ із пулу. Заповни щонайменше чотири. Картка нараховує бали лише на своєму щаблі; будь-де ще вона просто не працює.",
+    "instruction_en": "Five rungs. One evidence item per rung, dragged from the pool. Fill at least four. A card scores only on its own rung; anywhere else it simply does not work.",
+    "submit_btn_uk": "Зафіксувати драбину",
+    "submit_btn_en": "Lock the ladder",
+    "reveal_uk": "У цьому кейсі два щаблі нараховуються не так, як підказує інстинкт.\n\nІдентифікатор. Тут немає імені, яке можна здобути: за персоною Sonia Alvarez не стоїть людина, а стоїть операція. Тому повний бал дає атрибуція до кластера з чотирнадцяти персон із доказовою основою, а картка «Sonia Alvarez, справжня людина» дає нуль — не тому, що вона смілива, а тому, що вона вказує на об'єкт, якого не існує.\n\nЛокація — інверсія. Найточніша на вигляд відповідь коштує найдешевше. Амстердам, Франкфурт і Молдова — це місця, де стоять орендовані сервери, а не де сидить актор; назвати їх локацією означає видати за висновок те, що є властивістю хостингу. Повний бал дає зафіксована неможливість атрибуції з наявних даних, доповнена тим слабким, що справді здобуто: робочі години вказують на київський пояс, і це звужує, але не називає. Порожній щабель і щабель із чесним «не встановлено» — різні речі: перший нічого не каже, другий каже, що питання перевірено.",
+    "reveal_en": "Two rungs in this case score against instinct.\n\nIdentifier. There is no name to be had here: behind the Sonia Alvarez persona stands not a person but an operation. Full credit therefore goes to attribution at the level of the fourteen-persona cluster with its evidentiary basis, while the card 'Sonia Alvarez, a real person' scores zero — not for being bold, but for pointing at an object that does not exist.\n\nLocation is the inversion. The answer that looks most precise is worth the least. Amsterdam, Frankfurt and Moldova are where rented servers stand, not where the actor sits; naming them as location passes off a property of the hosting as a conclusion. Full credit goes to a documented impossibility of attribution from the available data, together with the weak thing that genuinely was obtained: the working hours point at the Kyiv time zone, which narrows without naming. An empty rung and a rung holding an honest 'not established' are different things: the first says nothing, the second says the question was checked.",
+    "min_slots": 4,
+    "slots": [
+      {
+        "id": "identifier",
+        "max_points": 40,
+        "label_uk": "Ідентифікатор",
+        "label_en": "Identifier",
+        "hint_uk": "Хто це. Уважно: рівень атрибуції тут може виявитись не тим, якого ти очікуєш.",
+        "hint_en": "Who this is. Careful: the level of attribution here may not be the one you expect."
+      },
+      {
+        "id": "location",
+        "max_points": 40,
+        "label_uk": "Локація",
+        "label_en": "Location",
+        "hint_uk": "Де. Точність, яку не витримує доказ, — це не точність.",
+        "hint_en": "Where. Precision the evidence cannot hold is not precision."
+      },
+      {
+        "id": "motive",
+        "max_points": 40,
+        "label_uk": "Мотив",
+        "label_en": "Motive",
+        "hint_uk": "Навіщо. Мотив, підпертий трьома осями, а не мотив, який добре звучить.",
+        "hint_en": "Why. A motive backed by three axes, not a motive that sounds good."
+      },
+      {
+        "id": "timeline",
+        "max_points": 40,
+        "label_uk": "Хронологія",
+        "label_en": "Timeline",
+        "hint_uk": "Коли і в якому порядку. Підготовка тут говорить більше за дати.",
+        "hint_en": "When, and in what order. The preparation says more than the dates."
+      },
+      {
+        "id": "verification",
+        "max_points": 40,
+        "label_uk": "Верифікація",
+        "label_en": "Verification",
+        "hint_uk": "Чим тримається все вище. Незалежність осей важить більше за їхню кількість.",
+        "hint_en": "What holds everything above it up. The independence of the axes matters more than their number."
+      }
+    ],
+    "evidence_pool": [
+      {
+        "id": "ev-id-cluster",
+        "slot": "identifier",
+        "score": 40,
+        "text_uk": "Не особа, а операція: кластер із 14 персон, керований однією групою. Дванадцять із чотирнадцяти облич детектор позначає як синтетичні, усі профілі заведені у 2024 і ввімкнені у лютому 2026, схвалення замкнуті на одні й ті самі 60-80 акаунтів.",
+        "text_en": "Not a person but an operation: a cluster of 14 personas run by a single group. Twelve of fourteen faces are flagged synthetic, every profile was created in 2024 and switched on in February 2026, endorsements closed on the same 60-80 accounts.",
+        "feedback_uk": "Правильний рівень атрибуції. Імені за цією персоною немає — і це не поразка розслідування, а його результат: ідентифіковано те, що справді існує.",
+        "feedback_en": "The correct level of attribution. There is no name behind this persona — and that is not a failure of the investigation but its result: what exists is what got identified."
+      },
+      {
+        "id": "ev-id-persona-fake",
+        "slot": "identifier",
+        "score": 15,
+        "text_uk": "Sonia Alvarez — вигадана персона: обличчя синтетичне на 88%, реверс-пошук порожній, у стрічці жодного власного допису за вісім заявлених років досвіду.",
+        "text_en": "Sonia Alvarez is an invented persona: the face is 88% synthetic, reverse search is empty, and the feed holds not one original post across eight claimed years of experience.",
+        "feedback_uk": "Половина роботи. Це дискваліфікація персони, а не ідентифікація актора: сказано, кого немає, і не сказано, хто є. Кластер лишився за кадром.",
+        "feedback_en": "Half the work. This disqualifies the persona rather than identifying the actor: it says who is absent and not who is present. The cluster stayed out of frame."
+      },
+      {
+        "id": "ev-id-real-person",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Sonia Alvarez, Principal Talent Partner у Meridian Executive Search, Лондон — 8 років у виконавчому пошуку, 847 контактів, 47 схвалень.",
+        "text_en": "Sonia Alvarez, Principal Talent Partner at Meridian Executive Search, London — 8 years in executive search, 847 connections, 47 endorsements.",
+        "feedback_uk": "Нуль. Це не ідентифікація, а переказ анкети, яку персона написала про себе сама. Кожен рядок тут спростований власними ж тулами кейсу.",
+        "feedback_en": "Zero. This is not identification, it is a retelling of the profile the persona wrote about itself. Every line here is refuted by the case's own tools."
+      },
+      {
+        "id": "ev-id-history",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Трудова історія Sonia за попередні вісім років: три позиції, усі у виконавчому пошуку, послідовне зростання до Principal.",
+        "text_en": "Sonia's employment history over the previous eight years: three positions, all in executive search, a steady climb to Principal.",
+        "feedback_uk": "Нуль. Це та частина персони, яку вигадали разом з обличчям: жоден із трьох роботодавців не існує поза цим самим кластером доменів. Вигадка не стає доказом від того, що вона докладна.",
+        "feedback_en": "Zero. This is the part of the persona invented alongside the face: not one of the three employers exists outside this same cluster of domains. An invention does not become evidence by being detailed."
+      },
+      {
+        "id": "ev-loc-unattributable",
+        "slot": "location",
+        "score": 40,
+        "text_uk": "Юрисдикція актора з наявних даних не встановлюється. Уся географія у справі — орендована: Hetzner, Contabo, Kamatera. Єдине, що вдалося здобути про самого відправника, — робочі години: три листи о 09:47-09:58 за київським часом у три різні дні, що не збігається з лондонським робочим ритмом заявленої локації.",
+        "text_en": "The actor's jurisdiction cannot be established from the available data. All geography in this case is rented: Hetzner, Contabo, Kamatera. The one thing genuinely obtained about the sender is working hours: three emails at 09:47-09:58 Kyiv time on three different days, which does not match the London working rhythm of the claimed location.",
+        "feedback_uk": "Повний бал, і саме він відрізняє звіт від здогаду. Ти назвав межу власного знання і поруч поклав те слабке, що справді здобуто. Це не порожній щабель — це перевірений щабель із чесним результатом.",
+        "feedback_en": "Full credit, and this is what separates a report from a guess. You named the boundary of your own knowledge and set beside it the weak thing genuinely obtained. This is not an empty rung — it is a checked rung with an honest result."
+      },
+      {
+        "id": "ev-loc-hours-only",
+        "slot": "location",
+        "score": 20,
+        "text_uk": "Відправник працює у поясі GMT+3: три листи вислані у вікні 09:47-09:58 у три різні дні, тоді як у заявленому Лондоні це 07:47.",
+        "text_en": "The sender works in GMT+3: three emails went out in a 09:47-09:58 window on three different days, whereas in the claimed London that is 07:47.",
+        "feedback_uk": "Половина. Спостереження точне і корисне, але сказане без другої половини воно звучить як атрибуція до пояса — а пояс GMT+3 це від Мінська до Найробі. Бракує прямої констатації, що юрисдикція не встановлена.",
+        "feedback_en": "Half credit. The observation is accurate and useful, but stated without its other half it reads as attribution to a time zone — and GMT+3 runs from Minsk to Nairobi. What is missing is the plain statement that the jurisdiction is not established."
+      },
+      {
+        "id": "ev-loc-vps",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Операція базується в Амстердамі і Франкфурті: маршрут листів проходить через VPS Hetzner і Contabo, там же стоїть хостинг усіх дев'яти доменів кластера.",
+        "text_en": "The operation is based in Amsterdam and Frankfurt: the mail route runs through Hetzner and Contabo VPS boxes, and the hosting for all nine cluster domains sits there too.",
+        "feedback_uk": "Нуль. Амстердам тут — це властивість дата-центру, а не факт про людей. Орендована за картку машина стоїть там, де дешевше, і не повідомляє нічого про того, хто по ній стукає.",
+        "feedback_en": "Zero. Amsterdam here is a property of a data centre, not a fact about people. A card-rented machine sits wherever it is cheapest and reports nothing about whoever types into it."
+      },
+      {
+        "id": "ev-loc-moldova",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Молдова: один із hop-ів у заголовках проходить через VPS Kamatera — найнезвичніша точка маршруту і найімовірніша база операції.",
+        "text_en": "Moldova: one of the hops in the headers runs through a Kamatera VPS — the most unusual point on the route and the likeliest base of the operation.",
+        "feedback_uk": "Нуль, і це найдорожча картка пулу за ціною помилки. «Найзловісніша точка маршруту» — це естетичний критерій, а не доказовий. Дешевий молдовський VPS роками перепродають шахрайським розсилкам саме тому, що він дешевий.",
+        "feedback_en": "Zero, and this is the pool's most expensive card in terms of the error it encodes. 'The most sinister point on the route' is an aesthetic criterion, not an evidentiary one. Cheap Moldovan VPS has been resold to fraud mailers for years precisely because it is cheap."
+      },
+      {
+        "id": "ev-motive-ip",
+        "slot": "motive",
+        "score": 40,
+        "text_uk": "Здобуття технології Elytron комерційним актором. Три опори: чотири з дванадцяти питань анкети влучають у вузли, яких немає у публічному профілі компанії (17% загальних проти базових 78%); у жодному з дванадцяти немає бюджету, ліцензування чи закупівель — рамки, без якої наймання не буває; інфраструктура куплена вроздріб, що вказує на комерційний, а не державний рівень.",
+        "text_en": "Acquisition of Elytron's technology by a commercial actor. Three supports: four of twelve questionnaire items land on nodes absent from the company's public profile (17% generic against a 78% baseline); not one of the twelve touches budget, licensing or procurement — the frame without which hiring does not happen; and the infrastructure was bought retail, which points at a commercial rather than a state level.",
+        "feedback_uk": "Мотив на трьох опорах, дві з яких — про те, чого немає. Відсутність рамки наймання доводить більше, ніж будь-яке окреме питання анкети: підробити можна зміст розмови, але не її призначення.",
+        "feedback_en": "A motive on three supports, two of which are about absences. The missing hiring frame proves more than any single questionnaire item: the content of a conversation can be faked, its purpose cannot."
+      },
+      {
+        "id": "ev-motive-questions",
+        "slot": "motive",
+        "score": 20,
+        "text_uk": "Анкета зібрана під технічну розвідку: десять із дванадцяти питань — конкретика по стеку, чотири напряму про вузли Elytron, загальних 17% проти базових 78%.",
+        "text_en": "The questionnaire is built for technical reconnaissance: ten of twelve items are stack specifics, four land directly on Elytron nodes, 17% generic against a 78% baseline.",
+        "feedback_uk": "Одна вісь із трьох. Сильна, але сама собою вона не відрізняє розвідку від агресивного, погано вихованого хантингу — а це різні висновки з різними наслідками для клієнтки.",
+        "feedback_en": "One axis of three. A strong one, but on its own it does not separate reconnaissance from aggressive, badly mannered headhunting — and those are different conclusions with different consequences for the client."
+      },
+      {
+        "id": "ev-motive-cv-farm",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Збір резюме на продаж: кластер працює як звичайна ферма з торгівлі кандидатськими даними, а Наталя — одна з багатьох цілей у розсилці.",
+        "text_en": "CV harvesting for resale: the cluster works as an ordinary farm trading candidate data, and Natalia is one of many targets in a mailing.",
+        "feedback_uk": "Нуль. Торгівля даними живе з обсягу і не витрачає три місяці на вирощування персон заради однієї цілі. І головне: анкета не питає нічого, що продається на ринку кандидатських даних, — вона питає про конкретну технологію конкретної компанії.",
+        "feedback_en": "Zero. Data trading lives on volume and does not spend three months incubating personas for a single target. And crucially: the questionnaire asks for nothing that sells on the candidate-data market — it asks about one specific company's technology."
+      },
+      {
+        "id": "ev-motive-state",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Державна розвідка: сектор інспекційних дронів для нафтогазу становить стратегічний інтерес, а серед конкурентів Elytron є гравець, афілійований із державним дослідним інститутом.",
+        "text_en": "State intelligence: the oil-and-gas inspection drone sector is of strategic interest, and among Elytron's competitors is a player affiliated with a state research institute.",
+        "feedback_uk": "Нуль, і саме на цій картці кейс перевіряє дисципліну. Афілійований конкурент існує — але його зв'язок із цим кластером не показав жоден тул. Натомість інфраструктура активно свідчить проти: шаблон із полиці, SaaS за $49, орендовані VPS. Ресурс державного рівня так не працює.",
+        "feedback_en": "Zero, and this is the card on which the case tests discipline. The affiliated competitor exists — but no tool showed any link between it and this cluster. The infrastructure meanwhile argues actively against: an off-the-shelf template, a $49 SaaS, rented VPS. State-level resources do not operate this way."
+      },
+      {
+        "id": "ev-time-campaign",
+        "slot": "timeline",
+        "score": 40,
+        "text_uk": "Кампанія з підготовкою, а не випадковий контакт. Дев'ять доменів зареєстровано одним кварталом наприкінці 2025; профілі заведено ще у 2024 і ввімкнено у лютому 2026 — тримісячне вирощування перед першим листом; InMail Наталі пішов три тижні тому, вже після того, як Elytron публічно закрила Series A у січні.",
+        "text_en": "A campaign with preparation, not a chance contact. Nine domains registered inside one quarter in late 2025; profiles created back in 2024 and switched on in February 2026 — three months of incubation before the first letter; the InMail to Natalia went out three weeks ago, after Elytron publicly closed its Series A in January.",
+        "feedback_uk": "Порядок тут важить більше за дати: спершу інфраструктура, потім персони, потім ціль. Це послідовність підготовки. Опортуніст діє у зворотному порядку — спершу помічає ціль, потім імпровізує підхід.",
+        "feedback_en": "The order matters more than the dates: infrastructure first, then personas, then the target. That is a preparation sequence. An opportunist works in reverse — spots the target first, then improvises an approach."
+      },
+      {
+        "id": "ev-time-domains",
+        "slot": "timeline",
+        "score": 15,
+        "text_uk": "Усі дев'ять доменів кластера зареєстровані у четвертому кварталі 2025 року.",
+        "text_en": "All nine cluster domains were registered in the fourth quarter of 2025.",
+        "feedback_uk": "Чверть картини. Дати реєстрації самі собою кажуть лише, коли щось купили; вони не показують ні вирощування персон, ні прив'язки до публічного раунду клієнтки. Без цього кампанія не відрізняється від запасу доменів на полиці.",
+        "feedback_en": "A quarter of the picture. Registration dates alone say only when something was bought; they show neither the persona incubation nor the tie to the client's public funding round. Without those, a campaign is indistinguishable from domains sitting on a shelf."
+      },
+      {
+        "id": "ev-time-inmail",
+        "slot": "timeline",
+        "score": 0,
+        "text_uk": "Хронологія справи: три тижні тому прийшов InMail, наступного дня — лист із анкетою, ще за день — нагадування.",
+        "text_en": "The case timeline: the InMail arrived three weeks ago, the questionnaire email the next day, a reminder the day after.",
+        "feedback_uk": "Нуль. Це переказ брифінгу, а не здобута хронологія: усі три дати клієнтка принесла сама. Щабель питає, що додало розслідування, а воно додало підготовчий період, якого у брифінгу не було.",
+        "feedback_en": "Zero. This is a retelling of the briefing, not an obtained timeline: the client brought all three dates herself. The rung asks what the investigation added, and what it added is the preparation period the briefing never contained."
+      },
+      {
+        "id": "ev-ver-three-axis",
+        "slot": "verification",
+        "score": 40,
+        "text_uk": "Тріангуляція трьома незалежними осями. Технічна: детектор синтетики на 12 із 14 облич плюс замкнуте коло схвалень плюс однаковий розрив між реєстрацією і активністю. Інфраструктурна: зворотний WHOIS, спільний MX, один хостинговий блок, той самий комерційний шаблон. Поведінкова: 14 персон із однаковим сценарієм плюс розподіл питань 17% проти 78% плюс відсутність рамки наймання. Нулі реверс-пошуку до осей не зараховані — вони корельовані з перевіркою обличчя. Жодна вісь окремо не достатня; три разом — достатні.",
+        "text_en": "Triangulation across three independent axes. Technical: the synthetic detector on 12 of 14 faces plus the closed endorsement ring plus the identical gap between registration and activity. Infrastructural: reverse WHOIS, shared MX, one hosting block, the same commercial template. Behavioural: 14 personas running one scenario plus the 17%-against-78% question split plus the missing hiring frame. The reverse-search zeros are not counted as an axis — they correlate with the face check. No axis alone is sufficient; the three together are.",
+        "feedback_uk": "Це методологічний щабель, і він показує, чому висновок тримається. Головне тут — свідомо не зарахований доказ: той, хто вміє відняти корельований сигнал зі списку власних опор, рахує чесно.",
+        "feedback_en": "This is the methodological rung, and it shows why the conclusion holds. The key move is the deliberately uncounted item: anyone who can subtract a correlated signal from their own list of supports is counting honestly."
+      },
+      {
+        "id": "ev-ver-two-axis",
+        "slot": "verification",
+        "score": 20,
+        "text_uk": "Дві осі сходяться: технічна (синтетичні обличчя, коло схвалень) та інфраструктурна (спільний блок, MX, шаблон, дати реєстрації).",
+        "text_en": "Two axes converge: technical (synthetic faces, endorsement ring) and infrastructural (shared block, MX, template, registration dates).",
+        "feedback_uk": "Половина. Дві осі доводять, що кластер існує і зроблений однією рукою, — але не показують, чим він займається. Поведінкова вісь — та єдина, що з'єднує ферму з мотивом.",
+        "feedback_en": "Half credit. Two axes prove the cluster exists and was built by one hand — but not what it does. The behavioural axis is the only one that connects the farm to the motive."
+      },
+      {
+        "id": "ev-ver-reverse-zero",
+        "slot": "verification",
+        "score": 0,
+        "text_uk": "Три незалежні реверс-пошуки за фото (Google, Yandex, Bing) плюс FaceCheck і PimEyes — п'ять джерел, і жодне не знайшло цієї людини.",
+        "text_en": "Three independent reverse image searches (Google, Yandex, Bing) plus FaceCheck and PimEyes — five sources, and not one found this person.",
+        "feedback_uk": "Нуль. П'ять поглядів в один і той самий індексований веб — це одне джерело, повторене п'ять разів. Ще гірше: жоден із цих нулів не є позитивним свідченням, бо згенерованому обличчю нічим збігатися. Порахувати відсутність доказу за п'ять доказів — найтонша помилка кейсу.",
+        "feedback_en": "Zero. Five looks into the same indexed web is one source repeated five times. Worse: none of those zeros is positive evidence, because a generated face has nothing to match. Counting an absence of proof as five proofs is the subtlest error in the case."
+      }
+    ]
+  },
+  "falsifiability_phase": {
+    "title_uk": "Перевірка на фальсифікованість",
+    "title_en": "Falsifiability check",
+    "instruction_uk": "На кожен заповнений щабель — одне речення: яка знахідка, якби вона з'явилась, зруйнувала б цей анкор. Оцінюється те, які поняття ти назвав, а не як ти це сформулював.",
+    "instruction_en": "For each rung you filled, one sentence: what finding, if it turned up, would destroy this anchor. You are graded on which concepts you name, not on how you phrase them.",
+    "submit_btn_uk": "Подати спростування",
+    "submit_btn_en": "Submit falsifiers",
+    "points_per_item": 25,
+    "items": [
+      {
+        "slot_id": "identifier",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про кластер керованих персон?",
+        "prompt_en": "What would destroy the conclusion about a cluster of run personas?",
+        "model_uk": "Наприклад: інший детектор синтетики на тих самих обличчях дасть низьку впевненість — тоді технічна вісь розсипається; або кола схвалень виявляться звичайною поведінкою рекрутерської ніші, якщо взяти контрольну вибірку інших агенцій; або знайдеться підтвердження, що за частиною профілів стоять живі люди.",
+        "model_en": "For example: a different synthetic detector run on the same faces returns low confidence — then the technical axis falls apart; or the endorsement rings turn out to be ordinary behaviour in the recruiting niche once you take a control sample of other agencies; or some of the profiles turn out to have living people behind them.",
+        "keywords_uk": [
+          [
+            "детектор",
+            "sensity",
+            "модел",
+            "інший інструмент",
+            "перевірк обличч",
+            "розпізнава"
+          ],
+          [
+            "низьк",
+            "не підтверд",
+            "спростов",
+            "суперечн",
+            "розійд",
+            "інший результат",
+            "менше",
+            "хибнопозитив",
+            "помилк"
+          ],
+          [
+            "схвал",
+            "endorsement",
+            "коло",
+            "мереж",
+            "зв'язк",
+            "контакт"
+          ],
+          [
+            "звичайн",
+            "норм",
+            "органічн",
+            "типов",
+            "контрольн вибірк",
+            "інші агенц",
+            "той самий патерн"
+          ],
+          [
+            "справжн",
+            "жив",
+            "реальн люд",
+            "існує",
+            "підтверд особ",
+            "документ"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "detector",
+            "sensity",
+            "model",
+            "another tool",
+            "face check",
+            "recogni"
+          ],
+          [
+            "low",
+            "not confirm",
+            "refut",
+            "contradict",
+            "disagree",
+            "different result",
+            "false positive",
+            "error"
+          ],
+          [
+            "endorsement",
+            "ring",
+            "network",
+            "connection",
+            "circle"
+          ],
+          [
+            "ordinary",
+            "normal",
+            "organic",
+            "typical",
+            "control sample",
+            "other agenc",
+            "same pattern"
+          ],
+          [
+            "real",
+            "living",
+            "actual person",
+            "exists",
+            "verified identity",
+            "document"
+          ]
+        ]
+      },
+      {
+        "slot_id": "location",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок «юрисдикція не встановлюється»?",
+        "prompt_en": "What would destroy the conclusion 'the jurisdiction cannot be established'?",
+        "model_uk": "Для «не встановлено» спростуванням є поява того, що встановлює: адреса без релею у заголовках, витік часового поясу у метаданих зустрічі, мовний артефакт у тексті анкети, платіжний або реєстраційний слід, який веде до конкретної країни.",
+        "model_en": "For a 'not established' the falsifier is the appearance of something that establishes: an address without a relay in the headers, a time-zone leak in the meeting metadata, a language artefact in the questionnaire text, a payment or registration trace leading to a specific country.",
+        "keywords_uk": [
+          [
+            "ip",
+            "адрес",
+            "заголов",
+            "header",
+            "без реле",
+            "прям",
+            "витік"
+          ],
+          [
+            "часов пояс",
+            "timezone",
+            "метадан",
+            "календар",
+            "запрошенн",
+            "meet",
+            "ics"
+          ],
+          [
+            "мов",
+            "артефакт",
+            "переклад",
+            "розкладк",
+            "формулюванн",
+            "текст анкет"
+          ],
+          [
+            "плат",
+            "реєстрац",
+            "рахунок",
+            "картк",
+            "оплат",
+            "білінг"
+          ],
+          [
+            "конкретн країн",
+            "юрисдикц",
+            "встановл",
+            "атрибут",
+            "з'явиться доказ",
+            "прив'яз"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "ip",
+            "address",
+            "header",
+            "without relay",
+            "direct",
+            "leak"
+          ],
+          [
+            "time zone",
+            "timezone",
+            "metadata",
+            "calendar",
+            "invite",
+            "meet",
+            "ics"
+          ],
+          [
+            "language",
+            "artefact",
+            "artifact",
+            "translation",
+            "keyboard",
+            "phrasing",
+            "questionnaire text"
+          ],
+          [
+            "payment",
+            "registration",
+            "invoice",
+            "card",
+            "billing"
+          ],
+          [
+            "specific country",
+            "jurisdiction",
+            "establish",
+            "attributab",
+            "evidence appear",
+            "tie to"
+          ]
+        ]
+      },
+      {
+        "slot_id": "motive",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б мотив здобуття технології?",
+        "prompt_en": "What would destroy the technology-acquisition motive?",
+        "model_uk": "Наприклад: ті самі дванадцять питань виявляться стандартним набором, якщо звірити їх із відкритими матеріалами реальних технічних співбесід — тоді це просто незграбний рекрутер; або з'ясується, що вузли, які здавалися закритими, Elytron сама публікувала у доповіді чи вакансії; або у листуванні знайдеться обговорення вилки і умов, тобто рамка наймання таки є.",
+        "model_en": "For example: those same twelve questions turn out to be a standard set once checked against open materials from real technical interviews — then this is just a clumsy recruiter; or the nodes that looked closed turn out to have been published by Elytron itself in a talk or a job posting; or the correspondence contains a discussion of range and terms, meaning the hiring frame does exist after all.",
+        "keywords_uk": [
+          [
+            "питанн",
+            "анкет",
+            "questionnaire",
+            "формулюванн",
+            "набір"
+          ],
+          [
+            "стандартн",
+            "типов",
+            "звичайн",
+            "галузев",
+            "baseline",
+            "базов лін",
+            "не відрізня",
+            "такі сам"
+          ],
+          [
+            "публічн",
+            "відкрит",
+            "сама публікувал",
+            "вакансі",
+            "доповід",
+            "блог",
+            "вже було"
+          ],
+          [
+            "вилк",
+            "компенсац",
+            "зарплат",
+            "умов",
+            "бюджет",
+            "закупівл",
+            "юридичн",
+            "рамк найманн"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "question",
+            "questionnaire",
+            "phrasing",
+            "set of"
+          ],
+          [
+            "standard",
+            "typical",
+            "ordinary",
+            "industry",
+            "baseline",
+            "no different",
+            "same as"
+          ],
+          [
+            "public",
+            "open",
+            "published",
+            "job posting",
+            "talk",
+            "blog",
+            "already out"
+          ],
+          [
+            "range",
+            "compensation",
+            "salary",
+            "terms",
+            "budget",
+            "procurement",
+            "legal",
+            "hiring frame"
+          ]
+        ]
+      },
+      {
+        "slot_id": "timeline",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про підготовлену кампанію?",
+        "prompt_en": "What would destroy the conclusion about a prepared campaign?",
+        "model_uk": "Наприклад: домени виявляться старшими, з багаторічною історією перепродажів, — тоді це не одна закупівля кварталом, а перевикористана інфраструктура; або розрив між реєстрацією профілів і початком активності виявиться звичайною поведінкою платформи, а не вирощуванням; або з'ясується, що ті самі персони писали десяткам компаній до Series A клієнтки, тобто ціль не обирали.",
+        "model_en": "For example: the domains turn out to be older, with years of resale history — then this is not one purchase in one quarter but reused infrastructure; or the gap between profile registration and first activity turns out to be ordinary platform behaviour rather than incubation; or those same personas turn out to have written to dozens of companies before the client's Series A, meaning the target was never selected.",
+        "keywords_uk": [
+          [
+            "домен",
+            "реєстрац",
+            "whois",
+            "історі",
+            "інфраструктур"
+          ],
+          [
+            "старш",
+            "давн",
+            "багаторічн",
+            "перепрода",
+            "вже використ",
+            "legacy",
+            "не один квартал",
+            "інша дат"
+          ],
+          [
+            "розрив",
+            "пауз",
+            "активн",
+            "профіл",
+            "затримк",
+            "вирощуванн"
+          ],
+          [
+            "звичайн",
+            "норм",
+            "типов поведінк",
+            "платформ",
+            "не означа",
+            "масов",
+            "десятк компан",
+            "розсилк",
+            "не обирал"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "domain",
+            "registrat",
+            "whois",
+            "history",
+            "infrastructure"
+          ],
+          [
+            "older",
+            "multi-year",
+            "resale",
+            "reused",
+            "legacy",
+            "not one quarter",
+            "different date"
+          ],
+          [
+            "gap",
+            "pause",
+            "activity",
+            "profile",
+            "delay",
+            "incubation"
+          ],
+          [
+            "ordinary",
+            "normal",
+            "typical behaviour",
+            "typical behavior",
+            "platform",
+            "does not mean",
+            "mass",
+            "dozens of compan",
+            "bulk",
+            "not selected"
+          ]
+        ]
+      },
+      {
+        "slot_id": "verification",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б тріангуляцію трьома осями?",
+        "prompt_en": "What would destroy the three-axis triangulation?",
+        "model_uk": "Наприклад: одна з осей завалиться при повторній перевірці — детектор на повторному прогоні дасть низьку впевненість, і технічної осі більше немає; або виявиться, що осі не незалежні: спільний хостинг і спільне коло схвалень походять з одного джерела даних, і тоді це один сигнал, а не два.",
+        "model_en": "For example: one axis collapses on re-check — the detector returns low confidence on a re-run and the technical axis is gone; or the axes turn out not to be independent: the shared hosting and the shared endorsement ring come from one data source, and then this is one signal rather than two.",
+        "keywords_uk": [
+          [
+            "вісь",
+            "осі",
+            "axis",
+            "опор",
+            "сигнал",
+            "тріангуляц"
+          ],
+          [
+            "завал",
+            "розсипл",
+            "не підтверд",
+            "повторн",
+            "re-run",
+            "перевірк",
+            "зникн",
+            "спростов",
+            "низьк"
+          ],
+          [
+            "незалежн",
+            "корельован",
+            "перекрива",
+            "одне джерел",
+            "той самий індекс",
+            "не окрем",
+            "залежн"
+          ],
+          [
+            "один сигнал",
+            "не два",
+            "не три",
+            "порахован двічі",
+            "дублю",
+            "той самий доказ"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "axis",
+            "axes",
+            "support",
+            "signal",
+            "triangulat"
+          ],
+          [
+            "collapse",
+            "fall apart",
+            "not confirm",
+            "re-run",
+            "recheck",
+            "re-check",
+            "disappear",
+            "refut",
+            "low"
+          ],
+          [
+            "independen",
+            "correlat",
+            "overlap",
+            "one source",
+            "same index",
+            "not separate",
+            "dependen"
+          ],
+          [
+            "one signal",
+            "not two",
+            "not three",
+            "counted twice",
+            "duplicat",
+            "same evidence"
+          ]
+        ]
+      }
+    ]
+  },
+  "so_what_phase": {
+    "title_uk": "Ну і що?",
+    "title_en": "So what?",
+    "question_uk": "Атрибуцію зроблено. Тепер питання, заради якого клієнтка й прийшла: що це насправді?",
+    "question_en": "The attribution is done. Now the question the client actually came with: what is this?",
+    "options": [
+      {
+        "id": "sw1",
+        "correct": false,
+        "points": -40,
+        "text_uk": "Шахрайство на вакансіях. Кластер збирає резюме і продає їх брокерам даних, а Наталя просто потрапила у розсилку.",
+        "text_en": "A job scam. The cluster harvests CVs and sells them to data brokers, and Natalia simply landed in a mailing.",
+        "feedback_uk": "✗ Не сходиться з витратами. Торгівля даними живе з обсягу: чим дешевший контакт, тим краще. Тут — дев'ять доменів, три місяці вирощування персон і анкета, зроблена під одну компанію. Ніхто не будує таке заради резюме, яке коштує кілька доларів.",
+        "feedback_en": "✗ It does not add up against the costs. Data trading lives on volume: the cheaper the contact, the better. Here we have nine domains, three months of persona incubation and a questionnaire built for one company. Nobody builds that for a CV worth a few dollars."
+      },
+      {
+        "id": "sw2",
+        "correct": false,
+        "points": -60,
+        "text_uk": "Легальна, але погано керована агенція. Недосвідчений рекрутер із надмірним ентузіазмом, який не вміє вести перший дзвінок.",
+        "text_en": "A legitimate but badly run agency. An inexperienced, over-eager recruiter who does not know how to run a first call.",
+        "feedback_uk": "✗ Найдешевша з чотирьох гіпотез і найдорожча за наслідками, бо веде клієнтку відповісти на анкету. Некомпетентність пояснює незграбні питання. Вона не пояснює дванадцять синтетичних облич, дев'ять доменів одним кварталом і замкнуте коло схвалень: щоб виглядати так, треба працювати навмисно.",
+        "feedback_en": "✗ The cheapest of the four hypotheses and the most expensive in consequences, because it leads the client to answer the questionnaire. Incompetence explains clumsy questions. It does not explain twelve synthetic faces, nine domains in one quarter and a closed endorsement ring: looking like that takes deliberate work."
+      },
+      {
+        "id": "sw3",
+        "correct": true,
+        "points": 150,
+        "text_uk": "Організована операція зі здобуття технології, націлена на computer-vision-стек Elytron. Атрибуція — до операції, а не до особи; рівень — комерційний, не державний. Рекомендація клієнтці: припинити листування без розголосу, зберегти всі листи з повними заголовками, попередити інженерну команду про ймовірні наступні спроби через пошту, і лише після цього — юридична консультація про звернення до СБУ.",
+        "text_en": "An organized technology-acquisition operation targeting Elytron's computer-vision stack. Attribution is to the operation, not to a person; the level is commercial, not state. Recommendation to the client: stop the correspondence without going public, preserve every email with full headers, warn the engineering team about likely follow-up attempts by mail, and only then take legal advice on approaching the SBU.",
+        "feedback_uk": "✓ Правильно, і найважче тут було втриматись на цьому рівні, маючи спокусу піднятись на щабель вище. Ще одне: рекрутерська операція зазвичай не фінал, а розвідка перед чимось адреснішим — тому попередження команди коштує більше, ніж сам звіт про Sonia.",
+        "feedback_en": "✓ Correct, and the hard part was holding this level with the temptation to climb one rung higher. One more thing: a recruiter operation is usually not the endgame but reconnaissance ahead of something more targeted — which is why warning the team is worth more than the report on Sonia itself."
+      },
+      {
+        "id": "sw4",
+        "correct": false,
+        "points": -30,
+        "text_uk": "Державна розвідка під виглядом хантингу: сектор стратегічний, серед конкурентів є гравець при державному інституті, а прецеденти такої схеми вже задокументовані.",
+        "text_en": "State intelligence in the guise of headhunting: the sector is strategic, one competitor sits at a state institute, and precedents for this scheme are already documented.",
+        "feedback_uk": "△ Не виключено — і саме тому небезпечно. Кожен окремий аргумент тут правдивий, а зв'язку з цим кластером не показав жоден тул; інфраструктура ж свідчить проти. Ціна помилки не академічна: звинувачення у державному шпигунстві без доказів робить справу клієнтки вразливою рівно тоді, коли її доведеться захищати.",
+        "feedback_en": "△ Not impossible — which is exactly what makes it dangerous. Every individual argument here is true, no tool showed any link to this cluster, and the infrastructure argues the other way. The cost of the error is not academic: an accusation of state espionage without proof makes the client's case vulnerable at precisely the moment it has to be defended."
+      }
+    ]
+  },
+  "benchmark": {
+    "questions": {
+      "target_pct": 67,
+      "reason_uk": "Еталон — дві правильні з трьох. Усі три перевіряють одне й те саме вміння у різних декораціях: не піднімати рівень твердження вище за рівень доказу.",
+      "reason_en": "The reference is two correct out of three. All three test the same skill in different costumes: not raising the level of the claim above the level of the evidence."
+    }
+  },
+  "ranks": {
+    "master": {
+      "min": 700,
+      "label_uk": "Ghost Hunter",
+      "label_en": "Ghost Hunter",
+      "color": "#8f7cff",
+      "msg_uk": "Ти утримав атрибуцію на рівні, який витримує доказ. Ні вище, ні нижче. Це та частина роботи, якої не робить жоден інструмент.",
+      "msg_en": "You held attribution at the level the evidence supports. No higher, no lower. That is the part of the work no tool does for you."
+    },
+    "senior": {
+      "min": 600,
+      "label_uk": "Senior Attribution Analyst",
+      "label_en": "Senior Attribution Analyst",
+      "color": "#5ac8fa",
+      "msg_uk": "Кластер знайдено, мотив прочитано правильно. Один-два анкори варто було підперти жорсткішим спростуванням.",
+      "msg_en": "Cluster found, motive read correctly. One or two anchors needed a harder falsifier under them."
+    },
+    "junior": {
+      "min": 500,
+      "label_uk": "Junior Attribution Analyst",
+      "label_en": "Junior Attribution Analyst",
+      "color": "#34c759",
+      "msg_uk": "Кластер знайдено, рівень атрибуції — на межі. Розбір саме про цю межу, прочитай уважно.",
+      "msg_en": "Cluster found, attribution level borderline. The debrief is about exactly that border — read it carefully."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Trainee",
+      "label_en": "Trainee",
+      "color": "#ff9500",
+      "msg_uk": "Або зупинився на «Sonia не існує», або стрибнув до «це держава». Обидві помилки типові для цього кейсу, і обидві — про рівень твердження.",
+      "msg_en": "You either stopped at 'Sonia does not exist' or leapt to 'this is a state'. Both are typical on this case, and both are about the level of the claim."
+    }
+  },
+  "debrief": {
+    "pass_uk": {
+      "sections": [
+        {
+          "title": "Що це було",
+          "body": "Тобі дали одне посилання і три листи. За кілька годин з цього виросла операція на чотирнадцять персон і дев'ять доменів, зібрана за один квартал і ввімкнена за три місяці до першого контакту з клієнткою.\n\nАле головне у цьому кейсі — не масштаб знахідки, а рівень, на якому ти зупинився. Нижче за нього лежить «просто поганий рекрутер», вище — «державна розвідка». Обидва варіанти виглядають переконливо і обидва коштують клієнтці дорого: перший веде її відповісти на анкету, другий — зробити заяву, яку вона не зможе підтвердити."
+        },
+        {
+          "title": "Правильний ланцюг пивотів",
+          "body": "Крок 1. Не починати з пошуку за зображенням. Хід очевидний, дешевий і у справі про згенеровану персону нічого не додає: нуль збігів — це рівно те, що поверне будь-яке синтетичне обличчя.\n\nКрок 2. Почати з того, що перевіряється. Детектор синтетики дає позитивний сигнал, домен дає дату реєстрації, заголовки дають маршрут. Три перевірювані речі проти однієї неперевірюваної.\n\nКрок 3. Розширити з домену на блок. Один підозрілий домен — це спостереження. Дев'ять доменів одним кварталом на одному блоці з одним MX — це вже закупівля, у якої був кошторис.\n\nКрок 4. Розширити з доменів на людей. Ферма доменів доводить намір, але не діяльність. Прочісування LinkedIn по восьми назвах перетворює інвентар на операцію.\n\nКрок 5. Прочитати анкету як документ, а не як розмову. Дванадцять питань кажуть багато змістом і ще більше — відсутностями: у них немає нічого про гроші, умови і закупівлі."
+        },
+        {
+          "title": "Три осі і чому їх саме три",
+          "body": "Технічна вісь: синтетичні обличчя, замкнуте коло схвалень, однаковий розрив між реєстрацією і першою активністю. Інфраструктурна: спільний хостинговий блок, спільний MX, той самий комерційний шаблон, один квартал реєстрації. Поведінкова: чотирнадцять персон з одним сценарієм, розподіл питань 17% проти 78%, відсутня рамка наймання.\n\nКожна окремо має чим заперечити. Синтетичні обличчя? Детектори помиляються. Спільний хостинг? Дешевий провайдер, там усі. Дивні питання? Буває незграбний рекрутер. Разом ці заперечення не працюють: щоб зберегти невинне пояснення, довелося б припустити три незалежні збіги одразу.\n\nІ окремо про те, що у ці осі не увійшло. П'ять реверс-пошуків, які нічого не знайшли, — це не п'ять доказів і навіть не один: усі вони дивляться в один індексований веб, а згенерованому обличчю нічим збігатися. Вміння відняти корельований сигнал з власного списку опор коштує дорожче, ніж вміння його додати."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Імені тут немає і не буде: за персоною стоїть операція. Це не поразка розслідування — це його результат. Слабший варіант «Sonia — фальшивка» дискваліфікує персону, але не називає актора; варіант «Sonia, Principal Talent Partner» просто переказує анкету, яку персона написала про себе сама.\n\nЛокація — інверсія кейсу. Найточніша на вигляд відповідь коштує нуль: Амстердам і Франкфурт — це властивість дата-центру, а Молдова у маршруті виглядає зловісно рівно настільки, наскільки дешево коштує. Повний бал дає зафіксована межа знання плюс те слабке, що справді здобуто: робочі години вказують на GMT+3. Це звужує і не називає — і саме так це треба записати.\n\nМотив. Тримається на трьох осях, і дві з них — про відсутності. Немає питань про гроші й умови, немає нічого, що продавалося б на ринку кандидатських даних. Відсутність доводить тут більше за присутність: зміст розмови можна підробити, її призначення — ні.\n\nХронологія. Порядок важить більше за дати: спершу домени, потім персони, потім ціль. Опортуніст ходить у зворотному порядку — спершу бачить ціль, потім імпровізує.\n\nВерифікація. Методологічний щабель: він не додає фактів, він показує, чому попередні чотири тримаються."
+        },
+        {
+          "title": "«Ну і що?» — чому саме третій варіант",
+          "body": "Шахрайство на резюме не сходиться з витратами: торгівля даними живе з обсягу, а тут дев'ять доменів і три місяці підготовки заради однієї компанії.\n\nПогана агенція не сходиться з навмисністю: некомпетентність пояснює незграбні питання, але не пояснює дванадцять синтетичних облич і коло схвалень. Так не виходить випадково.\n\nДержавна розвідка не сходиться з кошторисом. Кожен окремий аргумент за неї правдивий: сектор стратегічний, конкурент при державному інституті існує, прецеденти схеми задокументовані. Але жоден тул не показав зв'язку між цими фактами і цим кластером, а інфраструктура свідчить проти: шаблон із полиці, розсилка за $49, орендовані за картку VPS. Слід держави впізнають за вартістю інфраструктури, а не за зловісністю юрисдикції.\n\nЛишається третій. Комерційна операція зі здобуття технології, атрибутована до операції, а не до особи."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Рівень твердження не може бути вищим за рівень доказу. Перебільшення руйнує справу не тоді, коли його роблять, а тоді, коли її доводиться захищати: один суперечний факт знімає все разом із тією частиною, що була правдою.\n\nПравило друге. Відсутність доказу — не доказ відсутності. Порожній результат пошуку не свідчить ні за, ні проти; свідчить інструмент, який дає позитивний сигнал.\n\nПравило третє. Осі важать не кількістю, а незалежністю. П'ять поглядів в один індекс — це один погляд. Перш ніж рахувати опори, перевір, чи не походять вони з одного джерела.\n\nПравило четверте. Дивись на те, чого немає. Відсутність рамки наймання у листуванні про наймання сказала у цій справі більше, ніж будь-яке окреме питання анкети."
+        },
+        {
+          "title": "Інструменти",
+          "body": "LinkedIn Sales Navigator — платний, дає глибокий розбір профілю без сповіщення цілі. Для справ про персони у 2026 це базовий інструмент, а не розкіш.\n\nSensity.ai — окремий детектор синтетичних облич, безкоштовний рівень дає кілька перевірок на добу. Це той рідкісний інструмент, який повертає позитивний сигнал там, де решта повертає порожнечу.\n\nFaceCheck.id і PimEyes — зворотний пошук за обличчям. Знаходять повторне використання справжніх фото. Індекси значною мірою перекриваються, тому рахувати їх за два незалежні джерела не можна.\n\nViewDNS.info і DomainTools — зворотний WHOIS і зворотний IP. Саме вони перетворюють один домен на блок.\n\nWayback Machine — історія знімків. Сайт, який не змінювався дев'ять місяців, розповідає про компанію більше, ніж її сторінка «Про нас».\n\nПовні заголовки листа — Received-ланцюг, Return-Path, DKIM. Безкоштовно, доступно завжди і регулярно дає більше за всі платні підписки разом."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Не писати цілі. Питання «ви справжня людина?» коштує не репутації, а справи: кластер отримує сигнал і згортається разом із доказами, які ти не встиг зберегти. Пасивне спостереження тут не обережність, а єдиний режим, у якому докази доживають до звіту.\n\nНе перехоплювати чужу інфраструктуру. Реєстрація домену кластера «щоб подивитись» виводить із ролі спостерігача і робить зібране непридатним рівно тоді, коли воно знадобиться.\n\nНе радити клієнтові активних дій. Відповідь на анкету вигаданими даними — це операція, у якій ризикує клієнт, а у матеріалах справи з'являється завідомо неправдивий документ за його підписом.\n\nЗберігати ланцюг доказів. Сирі листи з повними заголовками, знімки профілів із мітками часу, копії WHOIS-виводів. Профілі зникають за добу після першого необережного руху.\n\nФормулювати обережно. Звинувачення у державному шпигунстві без доказів — це не тільки методологічна помилка, а й ризик для клієнта у правовій площині."
+        }
+      ]
+    },
+    "pass_en": {
+      "sections": [
+        {
+          "title": "What this was",
+          "body": "You were given one URL and three emails. Within a few hours that grew into an operation of fourteen personas and nine domains, assembled inside one quarter and switched on three months before the first contact with the client.\n\nBut the point of this case is not the size of the find — it is the level you stopped at. Below it lies 'just a bad recruiter', above it 'state intelligence'. Both look convincing and both cost the client dearly: the first leads her to answer the questionnaire, the second to make a claim she cannot support."
+        },
+        {
+          "title": "The correct pivot chain",
+          "body": "Step 1. Do not open with image search. The move is obvious, cheap, and in a case about a generated persona it adds nothing: zero matches is exactly what any synthetic face returns.\n\nStep 2. Start with what can be checked. The synthetic detector gives a positive signal, the domain gives a registration date, the headers give a route. Three checkable things against one uncheckable one.\n\nStep 3. Expand from the domain to the block. One suspicious domain is an observation. Nine domains in one quarter on one block with one MX is a purchase, and a purchase had a budget.\n\nStep 4. Expand from domains to people. A domain farm proves intent but not activity. Sweeping LinkedIn across the eight names turns inventory into an operation.\n\nStep 5. Read the questionnaire as a document, not as a conversation. Twelve questions say a great deal through their content and more through their absences: nothing about money, terms or procurement."
+        },
+        {
+          "title": "Three axes, and why exactly three",
+          "body": "Technical axis: synthetic faces, a closed endorsement ring, an identical gap between registration and first activity. Infrastructural: a shared hosting block, a shared MX, the same commercial template, one registration quarter. Behavioural: fourteen personas running one scenario, a 17%-against-78% question split, a missing hiring frame.\n\nEach one alone has an answer waiting. Synthetic faces? Detectors get it wrong. Shared hosting? Cheap provider, everyone is there. Strange questions? Clumsy recruiters exist. Together those answers stop working: to keep the innocent explanation you would have to assume three independent coincidences at once.\n\nAnd separately, about what did not make it into those axes. Five reverse searches that found nothing are not five pieces of evidence and not even one: they all look into the same indexed web, and a generated face has nothing to match. Being able to subtract a correlated signal from your own list of supports is worth more than being able to add one."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. There is no name here and there will not be one: an operation stands behind the persona. That is not a failure of the investigation, it is its result. The weaker card 'Sonia is fake' disqualifies the persona without naming the actor; the card 'Sonia, Principal Talent Partner' merely retells the profile the persona wrote about itself.\n\nLocation is this case's inversion. The answer that looks most precise scores zero: Amsterdam and Frankfurt are a property of a data centre, and Moldova on the route looks sinister exactly in proportion to how cheap it is. Full credit goes to a documented boundary of knowledge plus the weak thing genuinely obtained: the working hours point at GMT+3. That narrows without naming — and that is how it should be written down.\n\nMotive. It rests on three axes, two of which are about absences. No questions about money or terms, nothing that would sell on the candidate-data market. Absence proves more here than presence: the content of a conversation can be faked, its purpose cannot.\n\nTimeline. The order matters more than the dates: domains first, then personas, then the target. An opportunist runs the sequence backwards — sees the target first, then improvises.\n\nVerification. The methodological rung: it adds no facts, it shows why the other four hold."
+        },
+        {
+          "title": "'So what?' — why the third option",
+          "body": "The CV scam does not add up against the costs: data trading lives on volume, and here we have nine domains and three months of preparation for one company.\n\nThe bad agency does not add up against the deliberateness: incompetence explains clumsy questions, but not twelve synthetic faces and an endorsement ring. That does not happen by accident.\n\nState intelligence does not add up against the budget. Every individual argument for it is true: the sector is strategic, the competitor at a state institute exists, precedents for the scheme are documented. But no tool showed a link between those facts and this cluster, and the infrastructure argues the other way: an off-the-shelf template, a $49 mailer, card-rented VPS. A state fingerprint is recognized by what the infrastructure cost, not by how sinister the jurisdiction looks.\n\nThe third option remains. A commercial technology-acquisition operation, attributed to the operation rather than to a person."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. The level of the claim cannot exceed the level of the evidence. Overreach destroys a case not when it is made but when the case has to be defended: one contradictory fact takes down everything, including the part that was true.\n\nRule two. Absence of proof is not proof of absence. An empty search result argues neither way; what argues is the tool that returns a positive signal.\n\nRule three. Axes count by independence, not by number. Five looks into one index is one look. Before counting your supports, check whether they come from the same source.\n\nRule four. Look at what is not there. The missing hiring frame in correspondence about hiring said more in this case than any individual questionnaire item."
+        },
+        {
+          "title": "Tools",
+          "body": "LinkedIn Sales Navigator — paid, gives deep profile analysis without notifying the target. For persona work in 2026 this is baseline equipment, not a luxury.\n\nSensity.ai — a standalone synthetic-face detector, free tier gives a few checks a day. It is that rare tool which returns a positive signal where everything else returns emptiness.\n\nFaceCheck.id and PimEyes — reverse face search. They find reuse of real photographs. Their indexes overlap substantially, so they cannot be counted as two independent sources.\n\nViewDNS.info and DomainTools — reverse WHOIS and reverse IP. These are what turn one domain into a block.\n\nWayback Machine — snapshot history. A site that has not changed in nine months says more about a company than its About page does.\n\nFull email headers — the Received chain, Return-Path, DKIM. Free, always available, and regularly worth more than every paid subscription combined."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "Do not write to the target. The question 'are you a real person?' costs you not reputation but the case: the cluster gets the signal and folds, taking with it the evidence you had not yet preserved. Passive observation here is not caution, it is the only mode in which evidence survives to the report.\n\nDo not seize the target's infrastructure. Registering a cluster domain 'just to see' moves you out of the observer role and makes what you have collected unusable at exactly the moment it matters.\n\nDo not advise the client to act. Answering the questionnaire with invented data is an operation in which the client carries the risk, and it puts a knowingly false document over their signature into the case file.\n\nPreserve the evidence chain. Raw emails with full headers, timestamped profile captures, saved WHOIS output. Profiles disappear within a day of the first careless move.\n\nPhrase carefully. An accusation of state espionage without proof is not only a methodological error but a legal exposure for the client."
+        }
+      ]
+    },
+    "fail_uk": {
+      "sections": [
+        {
+          "title": "Де це розійшлося",
+          "body": "Кластер у цій справі знаходять майже всі. Розходиться не на пошуку, а на двох питаннях: до кого саме відноситься атрибуція і на якому рівні її треба зупинити.\n\nПодивись на свою драбину і на відповідь у фіналі — розрив майже напевно там. Далі у цьому розборі те, що мало статися на кожному щаблі, і чому саме так."
+        },
+        {
+          "title": "Дві типові розвилки",
+          "body": "Перша — зупинка на «Sonia не існує». Це правда, це доведено, і цього мало: дискваліфікація персони каже, кого немає, і не каже, хто є. Клієнтці від висновку «рекрутерка фальшива» не легшає — питання було, хто за нею стоїть і чого хоче. Відповідь лежала на один крок далі: вісім сусідніх доменів як місце роботи, чотирнадцять профілів, один сценарій.\n\nДруга — стрибок до державної розвідки. Спокуса тут сильна, бо кожен окремий аргумент правдивий: сектор стратегічний, конкурент при державному інституті існує, прецеденти схеми задокументовані. Але контекст галузі — це рамка для гіпотези, а не ланка доказу; зв'язку між прецедентами і цим кластером не показав жоден інструмент. А інфраструктура свідчить прямо проти: шаблон із полиці, розсилка за $49, орендовані за картку VPS. Той, у кого є ресурс держави, будує своє."
+        },
+        {
+          "title": "Три пастки, у які легко впасти",
+          "body": "Пастка перша, найтихіша. Порожній зворотний пошук прочитано як свідчення на користь справжності. Насправді згенерованому обличчю нічим збігатися: нуль тут не каже нічого. Свідчить детектор синтетики — єдиний інструмент, який на цій осі повертає позитивний сигнал, а не порожнечу.\n\nПастка друга. Локацію взято з інфраструктури. Амстердам, Франкфурт і особливо Молдова виглядають як відповідь, а є властивістю дешевого хостингу. Чесне «юрисдикція не встановлюється» плюс робочі години у GMT+3 — це сильніший результат, ніж упевнено названа неправильна країна.\n\nПастка третя. Активні дії: написати цілі, зареєструвати домен, попросити клієнтку відповісти вигаданими даними. Усі три виводять з ролі спостерігача, і всі три коштують не тобі, а справі — кластер згортається за добу, а у матеріалах з'являється те, що потім доведеться пояснювати."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Імені тут немає і не буде: за персоною стоїть операція. Це не поразка розслідування — це його результат. Слабший варіант «Sonia — фальшивка» дискваліфікує персону, але не називає актора; варіант «Sonia, Principal Talent Partner» просто переказує анкету, яку персона написала про себе сама.\n\nЛокація — інверсія кейсу. Найточніша на вигляд відповідь коштує нуль: Амстердам і Франкфурт — це властивість дата-центру, а Молдова у маршруті виглядає зловісно рівно настільки, наскільки дешево коштує. Повний бал дає зафіксована межа знання плюс те слабке, що справді здобуто: робочі години вказують на GMT+3. Це звужує і не називає — і саме так це треба записати.\n\nМотив. Тримається на трьох осях, і дві з них — про відсутності. Немає питань про гроші й умови, немає нічого, що продавалося б на ринку кандидатських даних. Відсутність доводить тут більше за присутність: зміст розмови можна підробити, її призначення — ні.\n\nХронологія. Порядок важить більше за дати: спершу домени, потім персони, потім ціль. Опортуніст ходить у зворотному порядку — спершу бачить ціль, потім імпровізує.\n\nВерифікація. Методологічний щабель: він не додає фактів, він показує, чому попередні чотири тримаються."
+        },
+        {
+          "title": "«Ну і що?» — чому саме третій варіант",
+          "body": "Шахрайство на резюме не сходиться з витратами: торгівля даними живе з обсягу, а тут дев'ять доменів і три місяці підготовки заради однієї компанії.\n\nПогана агенція не сходиться з навмисністю: некомпетентність пояснює незграбні питання, але не пояснює дванадцять синтетичних облич і коло схвалень. Так не виходить випадково.\n\nДержавна розвідка не сходиться з кошторисом. Кожен окремий аргумент за неї правдивий: сектор стратегічний, конкурент при державному інституті існує, прецеденти схеми задокументовані. Але жоден тул не показав зв'язку між цими фактами і цим кластером, а інфраструктура свідчить проти: шаблон із полиці, розсилка за $49, орендовані за картку VPS. Слід держави впізнають за вартістю інфраструктури, а не за зловісністю юрисдикції.\n\nЛишається третій. Комерційна операція зі здобуття технології, атрибутована до операції, а не до особи."
+        },
+        {
+          "title": "Що з цього забрати у наступну справу",
+          "body": "Правило перше. Рівень твердження не може бути вищим за рівень доказу. Перебільшення руйнує справу не тоді, коли його роблять, а тоді, коли її доводиться захищати: один суперечний факт знімає все разом із тією частиною, що була правдою.\n\nПравило друге. Відсутність доказу — не доказ відсутності. Порожній результат пошуку не свідчить ні за, ні проти; свідчить інструмент, який дає позитивний сигнал.\n\nПравило третє. Осі важать не кількістю, а незалежністю. П'ять поглядів в один індекс — це один погляд. Перш ніж рахувати опори, перевір, чи не походять вони з одного джерела.\n\nПравило четверте. Дивись на те, чого немає. Відсутність рамки наймання у листуванні про наймання сказала у цій справі більше, ніж будь-яке окреме питання анкети."
+        },
+        {
+          "title": "Інструменти",
+          "body": "LinkedIn Sales Navigator — платний, дає глибокий розбір профілю без сповіщення цілі. Для справ про персони у 2026 це базовий інструмент, а не розкіш.\n\nSensity.ai — окремий детектор синтетичних облич, безкоштовний рівень дає кілька перевірок на добу. Це той рідкісний інструмент, який повертає позитивний сигнал там, де решта повертає порожнечу.\n\nFaceCheck.id і PimEyes — зворотний пошук за обличчям. Знаходять повторне використання справжніх фото. Індекси значною мірою перекриваються, тому рахувати їх за два незалежні джерела не можна.\n\nViewDNS.info і DomainTools — зворотний WHOIS і зворотний IP. Саме вони перетворюють один домен на блок.\n\nWayback Machine — історія знімків. Сайт, який не змінювався дев'ять місяців, розповідає про компанію більше, ніж її сторінка «Про нас».\n\nПовні заголовки листа — Received-ланцюг, Return-Path, DKIM. Безкоштовно, доступно завжди і регулярно дає більше за всі платні підписки разом."
+        },
+        {
+          "title": "Межі й етика",
+          "body": "Не писати цілі. Питання «ви справжня людина?» коштує не репутації, а справи: кластер отримує сигнал і згортається разом із доказами, які ти не встиг зберегти. Пасивне спостереження тут не обережність, а єдиний режим, у якому докази доживають до звіту.\n\nНе перехоплювати чужу інфраструктуру. Реєстрація домену кластера «щоб подивитись» виводить із ролі спостерігача і робить зібране непридатним рівно тоді, коли воно знадобиться.\n\nНе радити клієнтові активних дій. Відповідь на анкету вигаданими даними — це операція, у якій ризикує клієнт, а у матеріалах справи з'являється завідомо неправдивий документ за його підписом.\n\nЗберігати ланцюг доказів. Сирі листи з повними заголовками, знімки профілів із мітками часу, копії WHOIS-виводів. Профілі зникають за добу після першого необережного руху.\n\nФормулювати обережно. Звинувачення у державному шпигунстві без доказів — це не тільки методологічна помилка, а й ризик для клієнта у правовій площині."
+        }
+      ]
+    },
+    "fail_en": {
+      "sections": [
+        {
+          "title": "Where this diverged",
+          "body": "Almost everyone finds the cluster in this case. The divergence is not in the search but in two questions: who exactly the attribution applies to, and at what level it has to stop.\n\nLook at your ladder and at your answer in the finale — the gap is almost certainly there. What follows is what should have happened on each rung, and why."
+        },
+        {
+          "title": "Two typical forks",
+          "body": "The first is stopping at 'Sonia does not exist'. It is true, it is proven, and it is not enough: disqualifying the persona says who is absent, not who is present. The client gains nothing from 'the recruiter is fake' — the question was who stands behind her and what they want. The answer was one step further out: eight neighbouring domains as employer, fourteen profiles, one scenario.\n\nThe second is the leap to state intelligence. The pull here is strong because every individual argument is true: the sector is strategic, the competitor at a state institute exists, precedents for the scheme are documented. But sector context is a frame for a hypothesis, not a link in a chain of evidence; no tool showed any connection between those precedents and this cluster. And the infrastructure argues directly against it: an off-the-shelf template, a $49 mailer, card-rented VPS. Anyone with a state's resources builds their own."
+        },
+        {
+          "title": "Three easy traps",
+          "body": "The first and quietest. An empty reverse search read as testimony in favour of authenticity. In reality a generated face has nothing to match: the zero says nothing at all. What testifies is the synthetic detector — the only tool on this axis that returns a positive signal rather than emptiness.\n\nThe second. Location taken from infrastructure. Amsterdam, Frankfurt and especially Moldova look like an answer and are a property of cheap hosting. An honest 'the jurisdiction cannot be established' plus working hours in GMT+3 is a stronger result than a confidently named wrong country.\n\nThe third. Active moves: writing to the target, registering a domain, asking the client to answer with invented data. All three move you out of the observer role, and all three cost the case rather than you — the cluster folds within a day, and the file acquires something that later has to be explained."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. There is no name here and there will not be one: an operation stands behind the persona. That is not a failure of the investigation, it is its result. The weaker card 'Sonia is fake' disqualifies the persona without naming the actor; the card 'Sonia, Principal Talent Partner' merely retells the profile the persona wrote about itself.\n\nLocation is this case's inversion. The answer that looks most precise scores zero: Amsterdam and Frankfurt are a property of a data centre, and Moldova on the route looks sinister exactly in proportion to how cheap it is. Full credit goes to a documented boundary of knowledge plus the weak thing genuinely obtained: the working hours point at GMT+3. That narrows without naming — and that is how it should be written down.\n\nMotive. It rests on three axes, two of which are about absences. No questions about money or terms, nothing that would sell on the candidate-data market. Absence proves more here than presence: the content of a conversation can be faked, its purpose cannot.\n\nTimeline. The order matters more than the dates: domains first, then personas, then the target. An opportunist runs the sequence backwards — sees the target first, then improvises.\n\nVerification. The methodological rung: it adds no facts, it shows why the other four hold."
+        },
+        {
+          "title": "'So what?' — why the third option",
+          "body": "The CV scam does not add up against the costs: data trading lives on volume, and here we have nine domains and three months of preparation for one company.\n\nThe bad agency does not add up against the deliberateness: incompetence explains clumsy questions, but not twelve synthetic faces and an endorsement ring. That does not happen by accident.\n\nState intelligence does not add up against the budget. Every individual argument for it is true: the sector is strategic, the competitor at a state institute exists, precedents for the scheme are documented. But no tool showed a link between those facts and this cluster, and the infrastructure argues the other way: an off-the-shelf template, a $49 mailer, card-rented VPS. A state fingerprint is recognized by what the infrastructure cost, not by how sinister the jurisdiction looks.\n\nThe third option remains. A commercial technology-acquisition operation, attributed to the operation rather than to a person."
+        },
+        {
+          "title": "What to carry into the next case",
+          "body": "Rule one. The level of the claim cannot exceed the level of the evidence. Overreach destroys a case not when it is made but when the case has to be defended: one contradictory fact takes down everything, including the part that was true.\n\nRule two. Absence of proof is not proof of absence. An empty search result argues neither way; what argues is the tool that returns a positive signal.\n\nRule three. Axes count by independence, not by number. Five looks into one index is one look. Before counting your supports, check whether they come from the same source.\n\nRule four. Look at what is not there. The missing hiring frame in correspondence about hiring said more in this case than any individual questionnaire item."
+        },
+        {
+          "title": "Tools",
+          "body": "LinkedIn Sales Navigator — paid, gives deep profile analysis without notifying the target. For persona work in 2026 this is baseline equipment, not a luxury.\n\nSensity.ai — a standalone synthetic-face detector, free tier gives a few checks a day. It is that rare tool which returns a positive signal where everything else returns emptiness.\n\nFaceCheck.id and PimEyes — reverse face search. They find reuse of real photographs. Their indexes overlap substantially, so they cannot be counted as two independent sources.\n\nViewDNS.info and DomainTools — reverse WHOIS and reverse IP. These are what turn one domain into a block.\n\nWayback Machine — snapshot history. A site that has not changed in nine months says more about a company than its About page does.\n\nFull email headers — the Received chain, Return-Path, DKIM. Free, always available, and regularly worth more than every paid subscription combined."
+        },
+        {
+          "title": "Boundaries and ethics",
+          "body": "Do not write to the target. The question 'are you a real person?' costs you not reputation but the case: the cluster gets the signal and folds, taking with it the evidence you had not yet preserved. Passive observation here is not caution, it is the only mode in which evidence survives to the report.\n\nDo not seize the target's infrastructure. Registering a cluster domain 'just to see' moves you out of the observer role and makes what you have collected unusable at exactly the moment it matters.\n\nDo not advise the client to act. Answering the questionnaire with invented data is an operation in which the client carries the risk, and it puts a knowingly false document over their signature into the case file.\n\nPreserve the evidence chain. Raw emails with full headers, timestamped profile captures, saved WHOIS output. Profiles disappear within a day of the first careless move.\n\nPhrase carefully. An accusation of state espionage without proof is not only a methodological error but a legal exposure for the client."
+        }
+      ]
+    }
+  }
+}
