@@ -1,0 +1,1648 @@
+{
+  "id": "dead-drop-usb",
+  "simulator_id": "sim03",
+  "time_limit_sec": 2100,
+  "cooldown_sec": 3600,
+  "max_points": 775,
+  "title_uk": "Флешка у поштовій скриньці",
+  "title_en": "USB in the Mailbox",
+  "briefing": {
+    "splash": "img/uploads/simulator/shadow-simulator-splash.jpg",
+    "client_uk": "Володимир, 43 · CTO fintech-стартапу, Київ",
+    "client_en": "Volodymyr, 43 · CTO of a fintech startup, Kyiv",
+    "budget_uk": "4 години робочого часу до звіту",
+    "budget_en": "4 working hours until the report is due",
+    "artifact_title_uk": "Одна флешка. Один PDF. Вісім фотографій.",
+    "artifact_title_en": "One USB stick. One PDF. Eight photographs.",
+    "artifact": {
+      "icon": "💾",
+      "image": null,
+      "label_uk": "USB-накопичувач із поштової скриньки · 1 файл, PDF, 8 сторінок",
+      "label_en": "USB stick from the mailbox · 1 file, PDF, 8 pages",
+      "ref": "mailbox-drop_2026-08-20.pdf"
+    },
+    "body_uk": "Три дні тому Володимир повернувся ввечері додому і знайшов у своїй особистій поштовій скриньці — не в корпоративній, не в електронній, а у фізичній, у під'їзді — одну USB-флешку. Без записки. Без конверта. Нічого, крім самої флешки.\n\nВін параноїчний CTO: у шухляді лежать три write-blocker-и і air-gapped ноутбук саме для таких випадків. Флешку перевірено ізольовано. Malware немає. На ній один файл — PDF на 8 сторінок.\n\nНа кожній сторінці одна фотографія його дітей біля приватної школи «Оберіг» у Печерському районі: син (11) заходить у школу вранці; син на перерві у дворі; донька (8) біля шкільного автобуса; донька і бабуся виходять зі школи; син грає у футбол на стадіоні; донька у вікні класу; обоє йдуть до батькової машини на паркінгу; син сидить на лавці біля входу. Дати EXIF припадають на останні чотири тижні. Хтось спостерігав систематично.\n\nНіякого тексту. Ніяких вимог. Ніякого повідомлення. Просто вісім фото.\n\nКлієнт не хоче йти в поліцію: складу злочину ще немає, а публічність зашкодить стартапу. Він приніс список із п'яти імен і просить перевірити їх у першу чергу — Олег Ткачук (звільнений head of engineering, судиться з компанією), Дмитро Луценко (конкурент, публічно критикував його на DOU у березні, живе у Печерську, діти у сусідній школі), Ігор Матвієнко (колишній партнер, взаємні позови з 2019), Артем Соловйов (звільнений на випробувальному у 2025), Валентина Ш. (з батьківського чату школи, публічний конфлікт через шкільний збір).\n\nЗадача: знайти, хто це і що йому треба.",
+    "body_en": "Three days ago Volodymyr came home in the evening and found a single USB stick in his personal mailbox — not the corporate one, not email, the physical mailbox in his building's entryway. No note. No envelope. Nothing except the stick itself.\n\nHe is a paranoid CTO: three write-blockers and an air-gapped laptop live in a drawer for exactly this kind of thing. The stick was examined in isolation. No malware. On it, a single file — an 8-page PDF.\n\nEach page holds one photograph of his children near the private Oberih school in the Pechersk district: son (11) walking into school in the morning; son during recess in the yard; daughter (8) by the school bus; daughter and her grandmother leaving the school; son playing football on the school field; daughter at a classroom window; both children walking toward their father's car in the parking lot; son sitting on a bench by the entrance. The EXIF dates fall within the last four weeks. Someone was watching systematically.\n\nNo text. No demands. No message. Just eight photos.\n\nThe client does not want to go to the police: there is no criminal case yet, and going public would hurt the startup. He brought a list of five names and asks that they be checked first — Oleh Tkachuk (dismissed head of engineering, currently suing the company), Dmytro Lutsenko (a competitor who criticized him publicly at DOU in March, lives in Pechersk, children at a neighboring school), Ihor Matviienko (a former business partner, mutual lawsuits since 2019), Artem Solovyov (dismissed during probation in 2025), Valentyna Sh. (from the school parents' chat, a public dispute over a school fundraiser).\n\nThe task: find out who this is and what they want.",
+    "start_btn_uk": "Відкрити артефакт →",
+    "start_btn_en": "Open the artifact →"
+  },
+  "phase2": {
+    "title_uk": "Розслідування",
+    "title_en": "Investigation",
+    "instruction_uk": "Дев'ять інструментів, чотири години. Кожен запуск коштує часу, і не кожен щось дає. Мінімум чотири інструменти, щоб іти далі.",
+    "instruction_en": "Nine tools, four hours. Every run costs time, and not every run gives you something. At least four tools before you can move on.",
+    "next_btn_uk": "Далі → крос-верифікація",
+    "next_btn_en": "Next → cross-verification",
+    "min_tools_used": 4,
+    "tools": [
+      {
+        "id": "pdf-metadata",
+        "icon": "🧾",
+        "name_uk": "PDF Metadata Extractor",
+        "name_en": "PDF Metadata Extractor",
+        "provider": "exiftool / pdfinfo",
+        "desc_uk": "Що PDF розповідає про того, хто його зібрав",
+        "desc_en": "What the PDF says about whoever assembled it",
+        "tooltip_uk": "Author, Producer, XMP. Почни з артефакту, а не зі списку клієнта.",
+        "tooltip_en": "Author, Producer, XMP. Start with the artifact, not the client's list.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 90,
+        "ui_component": "kv-table",
+        "clue_uk": "Author: «Марта» — саме ім'я, без прізвища, як дефолтний display name Adobe ID. Producer: Adobe Acrobat Reader Mobile 24.3.1 (Android). ModDate дорівнює CreationDate — файл не редагувався після збірки. XMP CreatorTool разом із версією Producer дає device fingerprint: Xiaomi Redmi Note 12, Android 13.",
+        "clue_en": "Author: 'Марта' — a given name only, no surname, the way a default Adobe ID display name looks. Producer: Adobe Acrobat Reader Mobile 24.3.1 (Android). ModDate equals CreationDate — the file was not edited after assembly. XMP CreatorTool plus the Producer version yields a device fingerprint: Xiaomi Redmi Note 12, Android 13.",
+        "kv": {
+          "query_uk": "exiftool -a -G1 mailbox-drop_2026-08-20.pdf",
+          "query_en": "exiftool -a -G1 mailbox-drop_2026-08-20.pdf",
+          "groups": [
+            {
+              "title_uk": "Document info",
+              "title_en": "Document info",
+              "rows": [
+                {
+                  "k": "Author",
+                  "v_uk": "Марта",
+                  "v_en": "Марта",
+                  "warn": true,
+                  "note_uk": "Тільки ім'я. Так виглядає дефолтний display name Adobe ID, коли акаунт заводили з української розкладки.",
+                  "note_en": "Given name only. This is what a default Adobe ID display name looks like when the account was created on a Ukrainian keyboard layout."
+                },
+                {
+                  "k": "Title",
+                  "v_uk": "(порожньо)",
+                  "v_en": "(empty)"
+                },
+                {
+                  "k": "Subject",
+                  "v_uk": "(порожньо)",
+                  "v_en": "(empty)"
+                },
+                {
+                  "k": "Keywords",
+                  "v_uk": "(порожньо)",
+                  "v_en": "(empty)"
+                },
+                {
+                  "k": "PageCount",
+                  "v_uk": "8",
+                  "v_en": "8"
+                }
+              ]
+            },
+            {
+              "title_uk": "Producer / timestamps",
+              "title_en": "Producer / timestamps",
+              "rows": [
+                {
+                  "k": "Producer",
+                  "v_uk": "Adobe Acrobat Reader Mobile 24.3.1 (Android)",
+                  "v_en": "Adobe Acrobat Reader Mobile 24.3.1 (Android)",
+                  "warn": true,
+                  "note_uk": "Мобільна збірка. Не десктоп, не онлайн-конвертер.",
+                  "note_en": "A mobile build. Not desktop, not an online converter."
+                },
+                {
+                  "k": "CreationDate",
+                  "v_uk": "2026-08-11 14:32:07+02:00",
+                  "v_en": "2026-08-11 14:32:07+02:00"
+                },
+                {
+                  "k": "ModDate",
+                  "v_uk": "2026-08-11 14:32:07+02:00",
+                  "v_en": "2026-08-11 14:32:07+02:00",
+                  "note_uk": "Збігається з CreationDate — після збірки файл не відкривали на редагування.",
+                  "note_en": "Identical to CreationDate — the file was never reopened for editing."
+                },
+                {
+                  "k": "Linearized",
+                  "v_uk": "No",
+                  "v_en": "No"
+                }
+              ]
+            },
+            {
+              "title_uk": "XMP",
+              "title_en": "XMP",
+              "rows": [
+                {
+                  "k": "xmp:CreatorTool",
+                  "v_uk": "Adobe Acrobat Reader Mobile 24.3.1",
+                  "v_en": "Adobe Acrobat Reader Mobile 24.3.1"
+                },
+                {
+                  "k": "xmpMM:DocumentID",
+                  "v_uk": "uuid:9f2c41ae-5b70-4d18-a1c6-77e0f3b21d44",
+                  "v_en": "uuid:9f2c41ae-5b70-4d18-a1c6-77e0f3b21d44"
+                },
+                {
+                  "k": "tiff:Make",
+                  "v_uk": "Xiaomi",
+                  "v_en": "Xiaomi",
+                  "warn": true
+                },
+                {
+                  "k": "tiff:Model",
+                  "v_uk": "Redmi Note 12",
+                  "v_en": "Redmi Note 12",
+                  "warn": true
+                },
+                {
+                  "k": "xmp:CreateDate",
+                  "v_uk": "2026-08-11T14:32:07+02:00",
+                  "v_en": "2026-08-11T14:32:07+02:00"
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Ім'я «Марта» саме собою — це не ідентичність, а анкор рівня «жіноче ім'я, українська розкладка». Прізвище доведеться здобути іншими кроками. Пара Producer + XMP дає другу, значно точнішу ознаку — і саме її варто тримати відкритою.",
+          "footer_en": "The name 'Марта' on its own is not an identity — it is an anchor at the level of 'female given name, Ukrainian keyboard layout.' The surname has to be earned by other steps. The Producer + XMP pair gives a second, far sharper signal — and that is the one worth keeping open."
+        }
+      },
+      {
+        "id": "exif-batch",
+        "icon": "📷",
+        "name_uk": "EXIF batch viewer · 8 фотографій",
+        "name_en": "EXIF batch viewer · 8 photographs",
+        "provider": "exiftool -csv",
+        "desc_uk": "Камера, час і геомітки по всіх восьми кадрах",
+        "desc_en": "Camera, time and geotags across all eight frames",
+        "tooltip_uk": "Один прогін по всіх фото одразу — патерн видно тільки в купі.",
+        "tooltip_en": "One pass over all photos at once — the pattern only shows in aggregate.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 120,
+        "ui_component": "kv-table",
+        "clue_uk": "Усі вісім кадрів зняті однією камерою — Xiaomi Redmi Note 12. GPS присутній на п'яти з восьми, усі точки лежать у радіусі 300 метрів від школи. Час зйомки розкиданий на чотири тижні, але завжди 07:45-08:30 або 15:00-16:30: початок і кінець шкільного дня. Це не випадкові кадри перехожого, це системна робота однієї людини за розкладом. Модель камери — та сама ознака, що вже була у метаданих PDF.",
+        "clue_en": "All eight frames come from one camera — a Xiaomi Redmi Note 12. GPS is present on five of eight, every point inside a 300-meter radius of the school. Capture times are spread across four weeks but always 07:45-08:30 or 15:00-16:30: the start and the end of the school day. These are not a passerby's stray shots, this is systematic work by one person on a schedule. The camera model is the same signal that already showed up in the PDF metadata.",
+        "kv": {
+          "query_uk": "exiftool -csv -Model -DateTimeOriginal -GPSPosition page_01..page_08",
+          "query_en": "exiftool -csv -Model -DateTimeOriginal -GPSPosition page_01..page_08",
+          "groups": [
+            {
+              "title_uk": "Спільне для всіх 8 кадрів",
+              "title_en": "Common across all 8 frames",
+              "rows": [
+                {
+                  "k": "Make / Model",
+                  "v_uk": "Xiaomi · Redmi Note 12",
+                  "v_en": "Xiaomi · Redmi Note 12",
+                  "warn": true,
+                  "note_uk": "Та сама модель, що у XMP-блоці PDF. Друге явище того самого відбитка пристрою.",
+                  "note_en": "The same model as in the PDF's XMP block. A second surfacing of the same device fingerprint."
+                },
+                {
+                  "k": "Software",
+                  "v_uk": "MIUI Camera 4.5.001",
+                  "v_en": "MIUI Camera 4.5.001"
+                },
+                {
+                  "k": "Orientation",
+                  "v_uk": "Horizontal (8/8)",
+                  "v_en": "Horizontal (8/8)"
+                },
+                {
+                  "k": "GPS present",
+                  "v_uk": "5 / 8",
+                  "v_en": "5 / 8",
+                  "note_uk": "Три кадри без геоміток — не приховування, а звичайна поведінка камери у приміщенні й під час слабкого сигналу.",
+                  "note_en": "Three frames without geotags — not concealment, just ordinary camera behavior indoors and on a weak signal."
+                }
+              ]
+            },
+            {
+              "title_uk": "Покадрово",
+              "title_en": "Frame by frame",
+              "rows": [
+                {
+                  "k": "page_01",
+                  "v_uk": "2026-07-16 07:52 · 50.4257 N, 30.5411 E",
+                  "v_en": "2026-07-16 07:52 · 50.4257 N, 30.5411 E",
+                  "note_uk": "≈120 м від входу до школи «Оберіг»",
+                  "note_en": "≈120 m from the Oberih school entrance"
+                },
+                {
+                  "k": "page_02",
+                  "v_uk": "2026-07-21 15:14 · GPS відсутній",
+                  "v_en": "2026-07-21 15:14 · no GPS"
+                },
+                {
+                  "k": "page_03",
+                  "v_uk": "2026-07-24 08:06 · 50.4261 N, 30.5403 E",
+                  "v_en": "2026-07-24 08:06 · 50.4261 N, 30.5403 E"
+                },
+                {
+                  "k": "page_04",
+                  "v_uk": "2026-07-29 16:02 · 50.4254 N, 30.5418 E",
+                  "v_en": "2026-07-29 16:02 · 50.4254 N, 30.5418 E"
+                },
+                {
+                  "k": "page_05",
+                  "v_uk": "2026-08-03 15:41 · GPS відсутній",
+                  "v_en": "2026-08-03 15:41 · no GPS"
+                },
+                {
+                  "k": "page_06",
+                  "v_uk": "2026-08-05 08:22 · GPS відсутній",
+                  "v_en": "2026-08-05 08:22 · no GPS"
+                },
+                {
+                  "k": "page_07",
+                  "v_uk": "2026-08-07 16:18 · 50.4259 N, 30.5399 E",
+                  "v_en": "2026-08-07 16:18 · 50.4259 N, 30.5399 E"
+                },
+                {
+                  "k": "page_08",
+                  "v_uk": "2026-08-10 07:48 · 50.4256 N, 30.5414 E",
+                  "v_en": "2026-08-10 07:48 · 50.4256 N, 30.5414 E"
+                }
+              ]
+            }
+          ],
+          "footer_uk": "Розкид дат — чотири тижні. Розкид часу — дві вузькі смуги на добу. Радіус — 300 метрів. Три незалежні виміри сходяться на одному: хтось приходив до школи за розкладом дітей, а не натрапив на них випадково.",
+          "footer_en": "Four weeks of dates. Two narrow windows per day. A 300-meter radius. Three independent measurements converge on one thing: someone came to the school on the children's schedule rather than running into them by chance."
+        }
+      },
+      {
+        "id": "telegram-community",
+        "icon": "✈",
+        "name_uk": "Пошук по районних Telegram-каналах",
+        "name_en": "District Telegram community search",
+        "provider": "@tgscanrobot · публічні канали",
+        "desc_uk": "Хто в Печерську вже писав про школу «Оберіг»",
+        "desc_en": "Who in Pechersk has already posted about the Oberih school",
+        "tooltip_uk": "У 2026 батьки району живуть у Telegram і Viber, а не у Facebook.",
+        "tooltip_en": "In 2026 district parents live on Telegram and Viber, not Facebook.",
+        "correct": true,
+        "points": 20,
+        "time_cost": 150,
+        "ui_component": "matches",
+        "clue_uk": "У каналі @bezpeka_pechersk за останні три місяці — чотири дописи про підозрілого дорослого біля школи «Оберіг», усі від одного акаунта: display name «Марта К.», handle @marta_kr_ua. В одному з дописів вона між іншим згадує, що знімок «зроблено з Xiaomi Redmi Note». Це збіг із відбитком пристрою з метаданих PDF — і другий незалежний анкор поверх імені.",
+        "clue_en": "In @bezpeka_pechersk over the last three months there are four posts about a suspicious adult near the Oberih school, all from one account: display name 'Марта К.', handle @marta_kr_ua. In one of them she mentions in passing that the shot was 'taken with a Xiaomi Redmi Note.' That matches the device fingerprint from the PDF metadata — a second independent anchor on top of the name.",
+        "matches": [
+          {
+            "site": "@bezpeka_pechersk",
+            "url": "t.me/bezpeka_pechersk/2841",
+            "note_uk": "17.05.2026 · «Марта К.» (@marta_kr_ua): «Другий тиждень бачу біля «Оберега» одного й того самого чоловіка на початку і в кінці уроків. Ні дитини, ні собаки, нічого. Хтось іще помітив?» · 3 реакції, 1 коментар",
+            "note_en": "17.05.2026 · 'Марта К.' (@marta_kr_ua): 'Second week running I keep seeing the same man near Oberih at drop-off and pick-up. No child, no dog, nothing. Has anyone else noticed?' · 3 reactions, 1 comment"
+          },
+          {
+            "site": "@bezpeka_pechersk",
+            "url": "t.me/bezpeka_pechersk/2907",
+            "note_uk": "02.06.2026 · «Марта К.»: «Написала адміністрації школи. Коментар видалили за пів години. Питання відкрите.» · 1 реакція",
+            "note_en": "02.06.2026 · 'Марта К.': 'I wrote to the school administration. The comment was deleted within half an hour. The question stands.' · 1 reaction"
+          },
+          {
+            "site": "@bezpeka_pechersk",
+            "url": "t.me/bezpeka_pechersk/3024",
+            "note_uk": "28.06.2026 · «Марта К.»: «Знято з Xiaomi Redmi Note, вибачте за якість — знімала здалеку, щоб не наближатись до дітей.» · без реакцій",
+            "note_en": "28.06.2026 · 'Марта К.': 'Taken with a Xiaomi Redmi Note, sorry about the quality — I shot from a distance so as not to go near the children.' · no reactions"
+          },
+          {
+            "site": "@bezpeka_pechersk",
+            "url": "t.me/bezpeka_pechersk/3190",
+            "note_uk": "24.07.2026 · «Марта К.»: «Він досі там. Я більше не знаю, до кого йти.» · 2 реакції",
+            "note_en": "24.07.2026 · 'Марта К.': 'He is still there. I no longer know who to turn to.' · 2 reactions"
+          },
+          {
+            "site": "@pechersk_live",
+            "url": "t.me/pechersk_live",
+            "note_uk": "14 тис. підписників, побутовий флуд. Жодної згадки школи «Оберіг» за пів року. Канал перевірено, порожньо.",
+            "note_en": "14k subscribers, everyday chatter. No mention of the Oberih school in six months. Channel checked, nothing there."
+          }
+        ]
+      },
+      {
+        "id": "fb-groups",
+        "icon": "📘",
+        "name_uk": "Facebook Groups search · Sowdust",
+        "name_en": "Facebook Groups search · Sowdust",
+        "provider": "Sowdust extension (Graph Search alternative)",
+        "desc_uk": "Крос-платформне підтвердження handle",
+        "desc_en": "Cross-platform confirmation of the handle",
+        "tooltip_uk": "Meta Graph Search мертвий з 2019 — але групи все ще індексуються.",
+        "tooltip_en": "Meta Graph Search has been dead since 2019 — but groups are still indexed.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 90,
+        "ui_component": "matches",
+        "clue_uk": "У напівзакинутій публічній групі «Оберіг — новини» лежать два репости її ж Telegram-дописів, обидва старші за пів року. Display name у Facebook — «Марта Кравченко», vanity URL /marta.kravchenko.ua. Це та ланка, що закриває handle на прізвище. Сам по собі Facebook тут слабший анкор: група напівмертва, профіль можна видавати за чужий. Як підтвердження поверх Telegram — працює.",
+        "clue_en": "In the half-abandoned public group 'Oberih — News' sit two reposts of her own Telegram posts, both older than six months. The Facebook display name is 'Марта Кравченко', vanity URL /marta.kravchenko.ua. This is the link that closes handle to surname. On its own Facebook is the weaker anchor here: the group is half-dead and a profile can be impersonated. As confirmation layered on top of Telegram, it works.",
+        "matches": [
+          {
+            "site": "facebook.com/groups/oberih.news",
+            "url": "/posts/1184920",
+            "note_uk": "Репост допису з @bezpeka_pechersk, автор — «Марта Кравченко», vanity /marta.kravchenko.ua. Дата репосту: 19.05.2026.",
+            "note_en": "Repost of a @bezpeka_pechersk post, author 'Марта Кравченко', vanity /marta.kravchenko.ua. Repost date: 19.05.2026."
+          },
+          {
+            "site": "facebook.com/groups/oberih.news",
+            "url": "/posts/1201338",
+            "note_uk": "Другий репост, 05.06.2026. У коментарях — один батько: «не роздувайте», далі гілка мертва.",
+            "note_en": "Second repost, 05.06.2026. One parent in the comments: 'don't blow this up,' then the thread dies."
+          },
+          {
+            "site": "facebook.com/marta.kravchenko.ua",
+            "url": "—",
+            "note_uk": "Профіль закритий. Публічно видно: фото профілю, місто «Київ», дата приєднання — 2014. Тобто акаунт існує щонайменше дванадцять років, а не заведений під цю історію.",
+            "note_en": "Profile is locked down. Publicly visible: profile photo, city 'Kyiv', joined 2014. Meaning the account has existed for at least twelve years and was not spun up for this story."
+          },
+          {
+            "site": "facebook.com/oberih.school",
+            "url": "/posts/—",
+            "note_uk": "Офіційна сторінка школи. Коментарів під публікаціями за травень немає взагалі — модерація чистить гілки. Живої копії видаленого коментаря тут не лишилось.",
+            "note_en": "The school's official page. There are no comments at all under the May posts — moderation clears threads. No live copy of the deleted comment survives here."
+          }
+        ]
+      },
+      {
+        "id": "whatsmyname",
+        "icon": "🔎",
+        "name_uk": "WhatsMyName · sweep по handle і vanity",
+        "name_en": "WhatsMyName · handle and vanity sweep",
+        "provider": "WhatsMyName · 640+ платформ",
+        "desc_uk": "Де ще існує той самий нік",
+        "desc_en": "Where else the same handle exists",
+        "tooltip_uk": "Має сенс тільки після того, як handle зв'язано з прізвищем.",
+        "tooltip_en": "Only worth running once the handle is tied to a surname.",
+        "correct": true,
+        "points": 15,
+        "time_cost": 75,
+        "ui_component": "matches",
+        "clue_uk": "Sweep по @marta_kr_ua і marta.kravchenko.ua дає три живі платформи і один архів: LinkedIn із публічним заголовком про дитячу безпеку та аудит освітніх закладів, Instagram на дванадцять підписників, WordPress-блог 2019-2022, який зараз віддає 404, але лежить у Wayback. Чотири платформи, один ланцюг — це вже не збіг імені.",
+        "clue_en": "A sweep on @marta_kr_ua and marta.kravchenko.ua returns three live platforms and one archive: LinkedIn with a public headline about child safety and audits of educational institutions, an Instagram with twelve followers, and a 2019-2022 WordPress blog that now returns 404 but sits in Wayback. Four platforms, one chain — this is no longer a name coincidence.",
+        "matches": [
+          {
+            "site": "linkedin.com/in/marta-kravchenko-ua",
+            "url": "—",
+            "note_uk": "Профіль частково закритий. Публічний headline: «дитяча безпека · аудит освітніх закладів». Досвід і дати приховані.",
+            "note_en": "Partially locked down. Public headline: 'child safety · audits of educational institutions.' Experience and dates hidden."
+          },
+          {
+            "site": "instagram.com/marta_kr_ua",
+            "url": "—",
+            "note_uk": "12 підписників, 3 дописи за два роки, усі три — про безпеку дітей у місті. Останній: березень 2026.",
+            "note_en": "12 followers, 3 posts in two years, all three about child safety in the city. Last one: March 2026."
+          },
+          {
+            "site": "martakravchenko.wordpress.com",
+            "url": "web.archive.org/web/*/martakravchenko.wordpress.com",
+            "note_uk": "Живий сайт віддає 404. У Wayback — 47 знімків між 2019 і 2022, останній краул 11.2022.",
+            "note_en": "The live site returns 404. Wayback holds 47 snapshots between 2019 and 2022, last crawl 11.2022."
+          },
+          {
+            "site": "change.org",
+            "url": "/p/marta-kravchenko",
+            "note_uk": "Профіль автора петиції. Одна петиція: «Безпека біля школи «Оберіг»», грудень 2025, 23 підписи, статус — закрита без відповіді адресата.",
+            "note_en": "Petition author profile. One petition: 'Safety around the Oberih school,' December 2025, 23 signatures, status: closed with no response from the addressee."
+          },
+          {
+            "site": "github.com / x.com / reddit",
+            "url": "—",
+            "note_uk": "Збігів немає. Handle не використовується у технічних спільнотах.",
+            "note_en": "No hits. The handle is not used in technical communities."
+          }
+        ]
+      },
+      {
+        "id": "photo-review",
+        "icon": "🖼",
+        "name_uk": "Ручний side-by-side огляд восьми кадрів",
+        "name_en": "Manual side-by-side review of the eight frames",
+        "provider": "локальний перегляд · сітка 4×2 + лупа",
+        "desc_uk": "Порівняння кадрів по зонах: передній план, середина, фон, кути",
+        "desc_en": "Frame comparison by zone: foreground, midground, background, corners",
+        "tooltip_uk": "Найкорисніший після метаданих і EXIF — коли вже ясно, що це системна зйомка.",
+        "tooltip_en": "Most useful after metadata and EXIF — once it is clear this is systematic shooting.",
+        "correct": true,
+        "points": 10,
+        "time_cost": 180,
+        "ui_component": "grid",
+        "clue_uk": "Крос-порівняння зафіксувало повторюваний елемент фону у шести кадрах із восьми: той самий дорослий чоловік, різний одяг, різні ракурси, жодної прямої взаємодії з дітьми. Інтерпретації тул не дає — це фіксація повторення, не висновок. Що воно означає, вирішувати тобі, і не в цій фазі.",
+        "clue_en": "Cross-comparison logged a recurring background element in six frames out of eight: the same adult male, different clothing, different angles, no direct interaction with the children. The tool offers no interpretation — this is a record of recurrence, not a conclusion. What it means is yours to decide, and not in this phase.",
+        "grid": {
+          "query_uk": "8 кадрів · зони: FG / MG / BG / кути · обличчя дітей пікселізовано на етапі прийому артефакту",
+          "query_en": "8 frames · zones: FG / MG / BG / corners · children's faces pixelated at artifact intake",
+          "cells": [
+            {
+              "icon": "▦",
+              "label_uk": "page_01 · вхід, ранок",
+              "label_en": "page_01 · entrance, morning",
+              "note_uk": "BG: дорослий чоловік, темна куртка, ліворуч від воріт",
+              "note_en": "BG: adult male, dark jacket, left of the gate",
+              "warn": true
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_02 · двір, перерва",
+              "label_en": "page_02 · yard, recess",
+              "note_uk": "BG: та сама фігура, світла сорочка, біля огорожі",
+              "note_en": "BG: same figure, light shirt, by the fence",
+              "warn": true
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_03 · шкільний автобус",
+              "label_en": "page_03 · school bus",
+              "note_uk": "BG: збігів не зафіксовано",
+              "note_en": "BG: no match logged"
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_04 · вихід зі школи",
+              "label_en": "page_04 · leaving the school",
+              "note_uk": "BG: та сама фігура, у профіль, через дорогу",
+              "note_en": "BG: same figure, in profile, across the street",
+              "warn": true
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_05 · стадіон",
+              "label_en": "page_05 · school field",
+              "note_uk": "BG: та сама фігура, за сіткою",
+              "note_en": "BG: same figure, behind the netting",
+              "warn": true
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_06 · вікно класу",
+              "label_en": "page_06 · classroom window",
+              "note_uk": "BG: збігів не зафіксовано",
+              "note_en": "BG: no match logged"
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_07 · паркінг",
+              "label_en": "page_07 · parking lot",
+              "note_uk": "BG: та сама фігура, спиною, біля припаркованих авто",
+              "note_en": "BG: same figure, back turned, by the parked cars",
+              "warn": true
+            },
+            {
+              "icon": "▦",
+              "label_uk": "page_08 · лавка біля входу",
+              "label_en": "page_08 · bench by the entrance",
+              "note_uk": "BG: та сама фігура, темна куртка, у куті кадру",
+              "note_en": "BG: same figure, dark jacket, in the corner of the frame",
+              "warn": true
+            }
+          ],
+          "footer_uk": "Cross-reference detected a recurring background element in 6 of 8 frames — same adult male figure, different clothing, different angles, no direct interaction with children. Інтерпретація не надана.",
+          "footer_en": "Cross-reference detected a recurring background element in 6 of 8 frames — same adult male figure, different clothing, different angles, no direct interaction with children. No interpretation provided."
+        }
+      },
+      {
+        "id": "cve-lookup",
+        "icon": "🐞",
+        "name_uk": "CVE lookup на модель камери",
+        "name_en": "CVE lookup on the camera model",
+        "provider": "NVD · MITRE",
+        "desc_uk": "Чи є у Redmi Note 12 витік метаданих",
+        "desc_en": "Whether the Redmi Note 12 leaks metadata",
+        "tooltip_uk": "Технічно виглядає солідно. Подумай, що саме воно дасть по цьому кейсу.",
+        "tooltip_en": "Technically it looks solid. Think about what it actually gives you here.",
+        "correct": false,
+        "points": -10,
+        "time_cost": 120,
+        "ui_component": "report",
+        "clue_uk": "CVE існує і навіть підтверджений, але у цьому кейсі неактивний: знімки зроблені застосунком, який стирає чутливу телеметрію. І головне — модель пристрою не є ідентифікатором. Redmi Note 12 продано понад сорок мільйонів одиниць.",
+        "clue_en": "The CVE exists and is even confirmed, but it is inert here: the shots were taken with an app that strips sensitive telemetry. And more to the point — a device model is not an identifier. Over forty million Redmi Note 12 units have shipped.",
+        "report": {
+          "query_uk": "search: Xiaomi Redmi Note 12 · metadata leak",
+          "query_en": "search: Xiaomi Redmi Note 12 · metadata leak",
+          "lines": [
+            {
+              "kind": "h",
+              "text_uk": "1 збіг",
+              "text_en": "1 hit"
+            },
+            {
+              "kind": "p",
+              "text_uk": "CVE-2024-21193 · Xiaomi MIUI Gallery · витік залишкової телеметрії у EXIF при експорті через системний share-sheet. CVSS 4.3, low. Виправлено у MIUI 14.0.6.",
+              "text_en": "CVE-2024-21193 · Xiaomi MIUI Gallery · residual telemetry leaked into EXIF when exporting via the system share sheet. CVSS 4.3, low. Fixed in MIUI 14.0.6."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "У наявних кадрах вразливість не спрацювала: поля залишкової телеметрії порожні, застосунок зйомки їх стирає. Витягти звідси нічого.",
+              "text_en": "The vulnerability did not fire in these frames: the residual telemetry fields are empty, the capture app strips them. Nothing to extract."
+            },
+            {
+              "kind": "h",
+              "text_uk": "Розмір популяції пристрою",
+              "text_en": "Device population size"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Redmi Note 12 · понад 40 млн одиниць продано у 2023-2025",
+              "text_en": "Redmi Note 12 · over 40M units shipped 2023-2025"
+            },
+            {
+              "kind": "li",
+              "text_uk": "Модель пристрою звужує коло до десятків мільйонів. Це не ідентифікатор — це ознака, яка працює тільки у парі з чимось іншим.",
+              "text_en": "A device model narrows the field to tens of millions. That is not an identifier — it is a signal that only works paired with something else."
+            }
+          ],
+          "footer_uk": "Витрачено двадцять хвилин. Отримано підтвердження того, що вже було відомо: пристрій — Xiaomi. Ознака корисна, але вона вже була у тебе після першого туру.",
+          "footer_en": "Twenty minutes spent. What you got is confirmation of something already known: the device is a Xiaomi. The signal is useful, but you already had it after the first pass."
+        }
+      },
+      {
+        "id": "reverse-children",
+        "icon": "⛔",
+        "name_uk": "Реверс-пошук по обличчях дітей",
+        "name_en": "Reverse image search on the children's faces",
+        "provider": "PimEyes / FaceCheck.ID",
+        "desc_uk": "Прогнати вісім облич через рушії пошуку облич",
+        "desc_en": "Run the eight faces through face-search engines",
+        "tooltip_uk": "Перед запуском прочитай попередження.",
+        "tooltip_en": "Read the warning before running this.",
+        "warning_uk": "Ти збираєшся завантажити фотографії неповнолітніх у комерційні рушії пошуку облич. Це біометричне оброблення даних дитини без правової підстави: зображення осідають у сторонніх індексах, а суб'єкти оброблення — діти клієнта, а не об'єкт розслідування. У Track III це не «сірий» хід, а мінусова дія. Крім того, воно не веде до відправника: діти — не автор артефакта.",
+        "warning_en": "You are about to upload photographs of minors into commercial face-search engines. That is biometric processing of a child's data with no lawful basis: the images settle into third-party indexes, and the data subjects are the client's children, not the target of the investigation. In Track III this is not a gray move, it is a scoring penalty. It also does not lead to the sender: the children are not the artifact's author.",
+        "correct": false,
+        "points": -25,
+        "time_cost": 90,
+        "ui_component": "report",
+        "clue_uk": "Дія виконана і зафіксована. Результат: нуль збігів — обличчя дітей не індексовані, і це нормально. Ціна дії: біометрія неповнолітніх пішла у сторонні індекси без правової підстави, а сам крок не наближає до автора артефакта ані на крок.",
+        "clue_en": "The action was executed and logged. Result: zero matches — the children's faces are not indexed, which is as it should be. The cost: minors' biometrics went into third-party indexes with no lawful basis, and the step brings you not one inch closer to the artifact's author.",
+        "report": {
+          "query_uk": "upload: 8 crops · faces of minors",
+          "query_en": "upload: 8 crops · faces of minors",
+          "lines": [
+            {
+              "kind": "p",
+              "text_uk": "PimEyes: 0 збігів. FaceCheck.ID: 0 збігів.",
+              "text_en": "PimEyes: 0 matches. FaceCheck.ID: 0 matches."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Завантажені зображення залишаються у чергах індексації обох сервісів. Видалення потребує окремого запиту і не гарантується.",
+              "text_en": "The uploaded images remain in both services' indexing queues. Deletion requires a separate request and is not guaranteed."
+            },
+            {
+              "kind": "quote",
+              "text_uk": "Об'єкт розслідування — той, хто зробив і доставив фотографії. Не ті, кого на них зняли.",
+              "text_en": "The subject of the investigation is whoever took and delivered the photographs. Not the people photographed."
+            }
+          ],
+          "footer_uk": "Технічно ефективно у деяких інших задачах. Тут — юридично і етично неприпустимо, і методологічно безрезультатно.",
+          "footer_en": "Technically effective in some other tasks. Here it is legally and ethically off-limits, and methodologically fruitless."
+        }
+      },
+      {
+        "id": "suspects-enrichment",
+        "icon": "📇",
+        "name_uk": "Перевірка п'яти підозрюваних клієнта",
+        "name_en": "Run the client's five suspects",
+        "provider": "OSINT Industries",
+        "desc_uk": "Прогнати список клієнта по enrichment-платформі",
+        "desc_en": "Run the client's list through an enrichment platform",
+        "tooltip_uk": "Список клієнта — це вже інтерпретація подій, а не дані про них.",
+        "tooltip_en": "The client's list is already an interpretation of events, not data about them.",
+        "correct": false,
+        "points": -15,
+        "time_cost": 240,
+        "ui_component": "report",
+        "clue_uk": "П'ять профілів збагачено. Жоден не зчіплюється з артефактом: у чотирьох немає нічого, що перетиналося б із метаданими чи геометрією кадрів, у п'ятого (Луценко) збігається лише район проживання — а у Печерську живе понад сто тисяч людей. Витрачено сорок хвилин на чужу версію подій.",
+        "clue_en": "Five profiles enriched. None of them latches onto the artifact: four have nothing that intersects with the metadata or the geometry of the frames, and the fifth (Lutsenko) matches only on district of residence — and over a hundred thousand people live in Pechersk. Forty minutes spent on somebody else's version of events.",
+        "report": {
+          "query_uk": "batch enrichment · 5 subjects · без попереднього sourcing",
+          "query_en": "batch enrichment · 5 subjects · no prior sourcing",
+          "lines": [
+            {
+              "kind": "li",
+              "text_uk": "Олег Ткачук — корпоративні сліди, судова справа проти компанії клієнта. Жодного перетину з метаданими артефакта.",
+              "text_en": "Oleh Tkachuk — corporate footprint, litigation against the client's company. No intersection with the artifact's metadata."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Дмитро Луценко — Печерськ, двоє дітей у сусідній школі. Єдиний збіг — район. Пристрій: iPhone 15 (з публічних дописів). Не збігається з відбитком.",
+              "text_en": "Dmytro Lutsenko — Pechersk, two children at a neighboring school. The only match is the district. Device: iPhone 15 (from public posts). Does not match the fingerprint."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Ігор Матвієнко — зареєстрований у Львові з 2021. Поза геометрією кадрів.",
+              "text_en": "Ihor Matviienko — registered in Lviv since 2021. Outside the geometry of the frames."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Артем Соловйов — 24 роки, виїхав до Польщі у 2025, активний у польському сегменті.",
+              "text_en": "Artem Solovyov — 24, moved to Poland in 2025, active in the Polish segment."
+            },
+            {
+              "kind": "li",
+              "text_uk": "Валентина Ш. — батьківський чат школи, конфлікт із клієнтом підтверджено. Пристрій: Samsung. Дописів про сторонніх біля школи немає.",
+              "text_en": "Valentyna Sh. — school parents' chat, the conflict with the client is confirmed. Device: Samsung. No posts about outsiders near the school."
+            },
+            {
+              "kind": "warn",
+              "text_uk": "Клієнт знає своє коло. Клієнт не знає, хто за ним спостерігав. Це різні множини.",
+              "text_en": "The client knows his own circle. The client does not know who was watching him. Those are different sets."
+            }
+          ],
+          "footer_uk": "Список підозрюваних корисний як перевірка гіпотези наприкінці, а не як точка входу на початку.",
+          "footer_en": "A suspect list is useful as a hypothesis check at the end, not as an entry point at the start."
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "title_uk": "Крос-верифікація",
+    "title_en": "Cross-verification",
+    "instruction_uk": "Три питання по тому, що ти справді здобув. Читай усі варіанти — правильний тут не найгучніший.",
+    "instruction_en": "Three questions about what you actually obtained. Read every option — the right one is not the loudest.",
+    "next_btn_uk": "Далі → драбина атрибуції",
+    "next_btn_en": "Next → attribution ladder",
+    "questions": [
+      {
+        "id": "q1",
+        "text_uk": "Поле Author у PDF — «Марта», без прізвища. Producer — Adobe Acrobat Reader Mobile 24.3.1 (Android). Що це тобі дає?",
+        "text_en": "The PDF Author field is 'Марта', no surname. Producer is Adobe Acrobat Reader Mobile 24.3.1 (Android). What does this give you?",
+        "options": [
+          {
+            "text_uk": "Ім'я відправника. Можна одразу шукати «Марту» у печерських спільнотах.",
+            "text_en": "The sender's name. I can go straight to searching for 'Марта' in Pechersk communities.",
+            "correct": false,
+            "points": -15,
+            "feedback_uk": "✗ «Марта» плюс Печерськ — це сотні профілів. Це не пошук за ідентифікатором, це просіювання наосліп, і саме на ньому згорає час.",
+            "feedback_en": "✗ 'Марта' plus Pechersk is hundreds of profiles. That is not an identifier lookup, it is blind sifting — and that is exactly where the hours go."
+          },
+          {
+            "text_uk": "Слабкий анкор — жіноче ім'я з української розкладки — плюс сильний відбиток пристрою (Xiaomi/Android + білд Adobe Reader). Фіксую обидва і чекаю другого джерела, де вони зійдуться.",
+            "text_en": "A weak anchor — a female given name from a Ukrainian layout — plus a strong device fingerprint (Xiaomi/Android + the Adobe Reader build). I log both and wait for a second source where they converge.",
+            "correct": true,
+            "points": 40,
+            "feedback_uk": "✓ Саме так. Ім'я тут не ідентифікує, а звужує; відбиток пристрою не ідентифікує, але перевіряється. Разом вони працюють як фільтр на наступному джерелі — і саме це станеться у Telegram.",
+            "feedback_en": "✓ Exactly. The name does not identify, it narrows; the fingerprint does not identify, but it is checkable. Together they work as a filter on the next source — which is precisely what happens on Telegram."
+          },
+          {
+            "text_uk": "Автоматично згенероване поле. Ігнорую.",
+            "text_en": "An auto-generated field. I ignore it.",
+            "correct": false,
+            "points": -10,
+            "feedback_uk": "✗ Надмірне відкидання. Поле справді автоматичне — але автоматичність і є причина довіряти йому більше, а не менше: його ніхто не редагував. Плюс Producer із XMP дають перевірювану ознаку.",
+            "feedback_en": "✗ Over-dismissal. The field is indeed automatic — and being automatic is a reason to trust it more, not less: nobody edited it. Plus Producer and XMP yield a checkable signal."
+          },
+          {
+            "text_uk": "Псевдонім, яким намагаються сплутати сліди.",
+            "text_en": "A pseudonym meant to muddy the trail.",
+            "correct": false,
+            "points": -5,
+            "feedback_uk": "△ Можливо, але це найдорожча гіпотеза з наявних: вона вимагає припустити навмисне маскування там, де все інше вказує на людину, яка про метадані просто не думала.",
+            "feedback_en": "△ Possible, but it is the most expensive hypothesis on the table: it requires assuming deliberate masking where everything else points to someone who simply never thought about metadata."
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_uk": "У каналі @bezpeka_pechersk один акаунт (display name «Марта К.», handle @marta_kr_ua) опублікував за три місяці чотири дописи про підозрілого дорослого біля школи «Оберіг». В одному з них — репліка «зроблено з Xiaomi Redmi Note». Ти:",
+        "text_en": "In @bezpeka_pechersk, one account (display name 'Марта К.', handle @marta_kr_ua) has published four posts over three months about a suspicious adult near the Oberih school. In one of them, an aside: 'taken with a Xiaomi Redmi Note.' You:",
+        "options": [
+          {
+            "text_uk": "Ігноруєш — швидше за все, це стривожений батько без причини. Повертаєшся до п'ятьох підозрюваних клієнта.",
+            "text_en": "Ignore it — most likely an anxious parent with no cause. Back to the client's five suspects.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "✗ Це найсильніший сигнал у кейсі, і ти щойно пройшов повз нього. Збіг моделі пристрою з метаданими PDF — це вже крос-підтвердження, а не просто збіг настрою.",
+            "feedback_en": "✗ That is the strongest signal in the case and you just walked past it. The device-model match against the PDF metadata is already cross-confirmation, not a coincidence of mood."
+          },
+          {
+            "text_uk": "Помічаєш два незалежних збіги — хронологія дописів накладається на EXIF-дати, а згадана модель камери збігається з відбитком пристрою з метаданих — і береш цей профіль як пріоритет номер один.",
+            "text_en": "Notice two independent overlaps — the post timeline overlaps the EXIF dates, and the camera model mentioned matches the device fingerprint from the metadata — and take that profile as priority number one.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Два анкори з різних джерел зійшлися на одній особі. Жоден із них окремо нічого не доводить; разом вони дають підставу витратити наступну годину саме тут, а не деінде.",
+            "feedback_en": "✓ Two anchors from different sources converge on one person. Neither proves anything alone; together they justify spending the next hour here rather than anywhere else."
+          },
+          {
+            "text_uk": "Пишеш клієнту, що відправника встановлено — це вона.",
+            "text_en": "Tell the client the sender is identified — it is her.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Передчасна атрибуція. Handle — це не ім'я, а display name — не документ. До прізвища ще одна ланка, і без неї звіт клієнту тримається на нічому.",
+            "feedback_en": "✗ Premature attribution. A handle is not a name and a display name is not a document. The surname is one link away, and without it the client report rests on nothing."
+          },
+          {
+            "text_uk": "Аналізуєш стилістику дописів, щоб зібрати психолінгвістичний профіль.",
+            "text_en": "Analyze the writing style to build a psycholinguistic profile.",
+            "correct": false,
+            "points": 5,
+            "feedback_uk": "△ Не помилка, але не зараз. У тебе на руках перевірювана ознака пристрою і відкритий handle — це дешевші й точніші ходи, ніж стилометрія на чотирьох коротких дописах.",
+            "feedback_en": "△ Not a mistake, but not now. You are holding a checkable device signal and an open handle — cheaper and sharper moves than stylometry on four short posts."
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_uk": "Ручний side-by-side огляд повернув фіксацію: у шести кадрах із восьми на задньому плані повторюється один дорослий чоловік. Інтерпретації тул не дав. Що робиш із цим спостереженням далі?",
+        "text_en": "The manual side-by-side review returned a finding: in six frames of eight, the same adult male recurs in the background. The tool gave no interpretation. What do you do with this observation next?",
+        "options": [
+          {
+            "text_uk": "Одразу вношу у звіт клієнту: справжня ціль зйомки — не діти, а хтось інший у кадрі.",
+            "text_en": "Put it straight into the client report: the real subject of the surveillance is not the children but someone else in the frame.",
+            "correct": false,
+            "points": -30,
+            "feedback_uk": "✗ Передчасна інтерпретація без драбини — та сама помилка, що й «одразу перевірити п'ятьох підозрюваних», тільки з іншого боку. Спостереження ще не має ні мотиву, ні верифікації під собою.",
+            "feedback_en": "✗ Premature interpretation with no ladder under it — the same mistake as 'check the five suspects first,' just from the other side. The observation has neither motive nor verification supporting it yet."
+          },
+          {
+            "text_uk": "Відкидаю. Це може бути шум, а неперевірена гіпотеза у звіті коштує довіри клієнта.",
+            "text_en": "Discard it. It could be noise, and an unverified hypothesis in the report costs client trust.",
+            "correct": false,
+            "points": -20,
+            "feedback_uk": "✗ Надмірна обережність. Відтворюваний патерн у шести кадрах із восьми — це не шум, це дані. Обережність полягає у мітці «не інтерпретовано», а не у видаленні спостереження.",
+            "feedback_en": "✗ Over-caution. A reproducible pattern in six frames of eight is not noise, it is data. Caution means the label 'not interpreted,' not deleting the observation."
+          },
+          {
+            "text_uk": "Фіксую окремим доказом із міткою «не інтерпретовано» і несу у фінальні фази — драбина і «ну і що?» вирішать, що це означає.",
+            "text_en": "Log it as a separate evidence item marked 'not interpreted' and carry it into the finale — the ladder and the 'so what' will decide what it means.",
+            "correct": true,
+            "points": 50,
+            "feedback_uk": "✓ Це і є дисципліна: помітив патерн, зафіксував, не поспішив із висновком. Мітка «не інтерпретовано» — не слабкість звіту, а його чесність.",
+            "feedback_en": "✓ That is the discipline: you spotted a pattern, logged it, and did not rush the conclusion. The 'not interpreted' label is not a weakness in the report, it is its honesty."
+          },
+          {
+            "text_uk": "Прошу клієнта подивитись і сказати, чи він упізнає цю людину.",
+            "text_en": "Ask the client to look and say whether he recognizes this person.",
+            "correct": false,
+            "points": 10,
+            "feedback_uk": "△ Не помилка, і колись це доведеться зробити. Але не замість власної атрибуції: клієнт, який шукає винного у своєму колі, «упізнає» когось із п'яти — і ти отримаєш анкор, створений його ж очікуванням.",
+            "feedback_en": "△ Not a mistake, and at some point it will have to happen. But not instead of your own attribution: a client looking for a culprit inside his own circle will 'recognize' one of the five — and you inherit an anchor built out of his expectation."
+          }
+        ]
+      }
+    ]
+  },
+  "ladder_phase": {
+    "title_uk": "Драбина атрибуції",
+    "title_en": "Attribution ladder",
+    "instruction_uk": "П'ять щаблів. На кожен — один доказ із пулу. Заповни щонайменше чотири. Картка нараховує бали лише на своєму щаблі; будь-де ще вона просто не працює.",
+    "instruction_en": "Five rungs. One evidence item per rung, dragged from the pool. Fill at least four. A card scores only on its own rung; anywhere else it simply does not work.",
+    "submit_btn_uk": "Зафіксувати драбину",
+    "submit_btn_en": "Lock the ladder",
+    "reveal_uk": "Правило нарахування одне на весь трек: картка дає бали тільки на тому щаблі, під який вона написана. Частковий бал — це не «майже правильно», а реальна вага доказу: один профіль замість чотирьох платформ, одне джерело мотиву замість трьох. Нуль — це не покарання за сміливість, а констатація, що доказ не тримає цей щабель. У цьому кейсі інверсій немає: усі п'ять щаблів нараховуються прямо. Далі у треку будуть кейси, де точніша відповідь коштує дешевше за стриманішу.",
+    "reveal_en": "One scoring rule runs through the whole track: a card pays out only on the rung it was written for. A partial score is not 'almost right' — it is the real weight of the evidence: one profile instead of four platforms, one motive source instead of three. A zero is not punishment for boldness, it is a statement that the item does not hold up that rung. This case has no inversions: all five rungs score straight. Later in the track there are cases where the more precise answer is worth less than the more restrained one.",
+    "min_slots": 4,
+    "slots": [
+      {
+        "id": "identifier",
+        "max_points": 40,
+        "label_uk": "Ідентифікатор",
+        "label_en": "Identifier",
+        "hint_uk": "Хто це. Не handle і не display name — особа, яку можна назвати і за яку можна відповідати.",
+        "hint_en": "Who this is. Not a handle and not a display name — a person you can name and stand behind."
+      },
+      {
+        "id": "location",
+        "max_points": 40,
+        "label_uk": "Локація",
+        "label_en": "Location",
+        "hint_uk": "Де. Рівень точності обираєш сам — і за нього відповідаєш.",
+        "hint_en": "Where. You choose the level of precision — and you answer for it."
+      },
+      {
+        "id": "motive",
+        "max_points": 40,
+        "label_uk": "Мотив",
+        "label_en": "Motive",
+        "hint_uk": "Навіщо. Мотив, підпертий записами, а не мотив, який добре звучить.",
+        "hint_en": "Why. A motive backed by records, not a motive that sounds good."
+      },
+      {
+        "id": "timeline",
+        "max_points": 40,
+        "label_uk": "Хронологія",
+        "label_en": "Timeline",
+        "hint_uk": "Коли і в якому порядку. Порядок тут важливіший за дати.",
+        "hint_en": "When, and in what order. The order matters more than the dates here."
+      },
+      {
+        "id": "verification",
+        "max_points": 40,
+        "label_uk": "Верифікація",
+        "label_en": "Verification",
+        "hint_uk": "Незалежний якір, який тримає все попереднє, коли з нього забрати самовпевненість.",
+        "hint_en": "The independent anchor that holds everything above once you take the confidence out of it."
+      }
+    ],
+    "evidence_pool": [
+      {
+        "id": "ev-id-chain",
+        "slot": "identifier",
+        "score": 40,
+        "text_uk": "Марта Кравченко. Ланцюг: handle @marta_kr_ua у Telegram → репости тих самих дописів у FB-групі під ім'ям «Марта Кравченко» з vanity /marta.kravchenko.ua → WhatsMyName підтверджує LinkedIn, Instagram і Wayback-блог на тому самому ніку.",
+        "text_en": "Marta Kravchenko. The chain: handle @marta_kr_ua on Telegram → reposts of the same posts in the FB group under the name 'Марта Кравченко' with vanity /marta.kravchenko.ua → WhatsMyName confirms LinkedIn, Instagram and the Wayback blog on the same handle.",
+        "feedback_uk": "Чотири платформи, один ланцюг, кожна ланка перевіряється окремо. Це і є ідентифікація, а не збіг імені.",
+        "feedback_en": "Four platforms, one chain, every link independently checkable. That is identification, not a name coincidence."
+      },
+      {
+        "id": "ev-id-fb-only",
+        "slot": "identifier",
+        "score": 15,
+        "text_uk": "Профіль «Марта Кравченко» у публічній групі «Оберіг — новини» (vanity /marta.kravchenko.ua).",
+        "text_en": "The profile 'Марта Кравченко' in the public group 'Oberih — News' (vanity /marta.kravchenko.ua).",
+        "feedback_uk": "Частковий залік. Один профіль на одній платформі — це те, що можна видати за чуже. Без ланцюга з Telegram і WhatsMyName це гіпотеза, а не ідентичність.",
+        "feedback_en": "Partial credit. One profile on one platform is exactly what can be impersonated. Without the chain through Telegram and WhatsMyName this is a hypothesis, not an identity."
+      },
+      {
+        "id": "ev-id-author-field",
+        "slot": "identifier",
+        "score": 10,
+        "text_uk": "Поле Author у метаданих PDF: «Марта».",
+        "text_en": "The Author field in the PDF metadata: 'Марта'.",
+        "feedback_uk": "Мінімальний залік. Це анкор рівня «жіноче ім'я, українська розкладка». Він звужує коло, але сам нікого не називає.",
+        "feedback_en": "Minimal credit. This is an anchor at the level of 'female given name, Ukrainian layout.' It narrows the field but names nobody."
+      },
+      {
+        "id": "ev-id-lutsenko",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Дмитро Луценко — конкурент клієнта, живе у Печерську, двоє дітей у сусідній школі, публічний конфлікт із клієнтом у березні 2026.",
+        "text_en": "Dmytro Lutsenko — a competitor of the client, lives in Pechersk, two children at a neighboring school, a public conflict with the client in March 2026.",
+        "feedback_uk": "Нуль. Найпривабливіша пастка кейсу: збігається район, є пояснення присутності біля школи, є свіжий мотив. Не збігається нічого з артефакта — ні пристрій, ні авторство, ні жоден слід у спільнотах.",
+        "feedback_en": "Zero. The most attractive trap in the case: the district matches, presence near the school is explainable, the grievance is fresh. Nothing from the artifact matches — not the device, not the authorship, not a single trace in the communities."
+      },
+      {
+        "id": "ev-id-valentyna",
+        "slot": "identifier",
+        "score": 0,
+        "text_uk": "Валентина Ш. — з батьківського чату школи «Оберіг», має доступ до розкладу дітей, публічний конфлікт із клієнтом через шкільний збір.",
+        "text_en": "Valentyna Sh. — from the Oberih parents' chat, has access to the children's schedule, a public conflict with the client over a school fundraiser.",
+        "feedback_uk": "Нуль. Доступ до розкладу пояснює можливість, але не пояснює чотири тижні зйомки чужих дітей і жодного сліду у районних каналах. Можливість — не атрибуція.",
+        "feedback_en": "Zero. Access to the schedule explains opportunity but not four weeks of photographing other people's children with no trace in the district channels. Opportunity is not attribution."
+      },
+      {
+        "id": "ev-loc-triangulated",
+        "slot": "location",
+        "score": 40,
+        "text_uk": "Печерський район, Київ. GPS на п'яти з восьми кадрів лежить у радіусі 300 м від школи «Оберіг»; районний Telegram-канал і районна FB-група — та сама географія; місто «Київ» відкрито у профілі з 2014 року.",
+        "text_en": "Pechersk district, Kyiv. GPS on five of eight frames sits within 300 m of the Oberih school; the district Telegram channel and the district FB group share the same geography; the city 'Kyiv' has been public on the profile since 2014.",
+        "feedback_uk": "Три незалежні джерела, один рівень точності. Район — рівно та гранулярність, яку дані витримують.",
+        "feedback_en": "Three independent sources, one level of precision. The district is exactly the granularity the data supports."
+      },
+      {
+        "id": "ev-loc-gps-only",
+        "slot": "location",
+        "score": 15,
+        "text_uk": "GPS-мітки EXIF на п'яти кадрах із восьми.",
+        "text_en": "EXIF GPS tags on five frames out of eight.",
+        "feedback_uk": "Частковий залік. Геомітки кажуть, де знімали, а не де живе автор — і редагуються тривіально. Самі по собі вони закривають місце зйомки, не локацію особи.",
+        "feedback_en": "Partial credit. Geotags say where the shooting happened, not where the author lives — and they are trivially editable. On their own they pin the scene, not the person."
+      },
+      {
+        "id": "ev-loc-device",
+        "slot": "location",
+        "score": 0,
+        "text_uk": "Xiaomi Redmi Note 12 як унікальний ідентифікатор пристрою.",
+        "text_en": "The Xiaomi Redmi Note 12 as a unique device identifier.",
+        "feedback_uk": "Нуль, і двічі. Модель — не локація, і модель — не унікальна: понад сорок мільйонів одиниць. Ознака корисна лише як фільтр поверх іншого джерела.",
+        "feedback_en": "Zero, twice over. A model is not a location, and a model is not unique: over forty million units. The signal is useful only as a filter layered on another source."
+      },
+      {
+        "id": "ev-mot-escalation",
+        "slot": "motive",
+        "score": 40,
+        "text_uk": "Сигнал тривоги, а не погроза. Мотив тримається на трьох задокументованих спробах ескалації: петиція на change.org «Безпека біля школи «Оберіг»» (грудень 2025, 23 підписи, закрита без відповіді) → коментар на офіційній FB-сторінці школи, видалений адміністрацією і збережений у Wayback → чотири дописи у районному каналі. Флешка — останній ресурс після того, як усі три канали заглухли.",
+        "text_en": "A distress signal, not a threat. The motive rests on three documented escalation attempts: a change.org petition 'Safety around the Oberih school' (December 2025, 23 signatures, closed with no response) → a comment on the school's official FB page, deleted by administration and preserved in Wayback → four posts in the district channel. The USB is the last resort after all three channels went silent.",
+        "feedback_uk": "Три незалежні записи, вибудувані у сходинки, кожна з яких датована і перевіряється. Мотив тут не вгаданий за характером, а зчитаний із документів.",
+        "feedback_en": "Three independent records arranged as steps, each dated and checkable. This motive is not guessed from character, it is read off documents."
+      },
+      {
+        "id": "ev-mot-photo-pattern",
+        "slot": "motive",
+        "score": 20,
+        "text_uk": "Композиційний патерн кадрів: у шести з восьми на задньому плані повторюється один дорослий чоловік, фіксація без інтерпретації.",
+        "text_en": "The compositional pattern of the frames: in six of eight, the same adult male recurs in the background, logged without interpretation.",
+        "feedback_uk": "Частковий залік. Патерн справді підпирає перевернутий мотив — але сам по собі він лишається висновком із композиції, а не записом про намір. Без ескалаційної драбини це сильна здогадка, не доказ.",
+        "feedback_en": "Partial credit. The pattern does support the inverted motive — but on its own it stays an inference from composition rather than a record of intent. Without the escalation ladder it is a strong hunch, not evidence."
+      },
+      {
+        "id": "ev-mot-telegram-only",
+        "slot": "motive",
+        "score": 15,
+        "text_uk": "Чотири дописи у @bezpeka_pechersk про підозрілого дорослого біля школи.",
+        "text_en": "Four posts in @bezpeka_pechersk about a suspicious adult near the school.",
+        "feedback_uk": "Частковий залік. Ті самі дописи однаково добре читаються як підготовка до нападу — «створити легенду про стороннього, а потім діяти». Одне джерело мотиву не розрізняє ці дві версії.",
+        "feedback_en": "Partial credit. The same posts read equally well as preparation for an attack — 'build a story about an outsider, then act.' A single motive source does not separate those two readings."
+      },
+      {
+        "id": "ev-mot-revenge",
+        "slot": "motive",
+        "score": 0,
+        "text_uk": "Особиста ворожість до клієнта: флешка як тиск і попередження перед ескалацією.",
+        "text_en": "Personal hostility toward the client: the USB as pressure and a warning before escalation.",
+        "feedback_uk": "Нуль. Жодного задокументованого перетину між нею і клієнтом не знайдено — ані спільної історії, ані конфлікту, ані згадки одне про одного. Мотив без запису під ним — це те, у чому впевнений клієнт, а не те, що встановлено.",
+        "feedback_en": "Zero. No documented intersection between her and the client turned up — no shared history, no conflict, no mention of each other. A motive with no record under it is what the client is sure of, not what was established."
+      },
+      {
+        "id": "ev-tl-full",
+        "slot": "timeline",
+        "score": 40,
+        "text_uk": "Петиція — вісім місяців тому; видалений коментар школі — п'ять місяців; перший допис у каналі — три місяці; кадри за EXIF — останні чотири тижні; флешка у скриньці — три дні тому. Порядок витриманий на всій ширині: попередження передують зйомці, зйомка передує доставці.",
+        "text_en": "The petition — eight months ago; the deleted comment to the school — five months; the first channel post — three months; the frames by EXIF — the last four weeks; the USB in the mailbox — three days ago. The order holds across the whole span: the warnings precede the shooting, the shooting precedes the delivery.",
+        "feedback_uk": "Головне тут не дати, а напрямок. Фотографії — доказова база, зібрана під уже висловлені попередження, а не матеріал, під який попередження вигадали заднім числом.",
+        "feedback_en": "What matters here is not the dates but the direction. The photographs are an evidence base gathered to support warnings already voiced, not material for which warnings were invented after the fact."
+      },
+      {
+        "id": "ev-tl-exif-only",
+        "slot": "timeline",
+        "score": 15,
+        "text_uk": "Розкид EXIF-дат: чотири тижні, дві вузькі часові смуги на добу.",
+        "text_en": "The EXIF date spread: four weeks, two narrow time windows per day.",
+        "feedback_uk": "Частковий залік. Це доводить систематичність зйомки і нічого не каже про порядок подій навколо неї. Хронологія кейсу починається на пів року раніше за перший кадр.",
+        "feedback_en": "Partial credit. It proves the shooting was systematic and says nothing about the order of events around it. This case's timeline starts six months before the first frame."
+      },
+      {
+        "id": "ev-ver-wayback-device",
+        "slot": "verification",
+        "score": 40,
+        "text_uk": "Wayback-архів блогу 2019-2022: колишня аудиторка з дитячої безпеки, яка пішла з фірми, що перевіряла школи, після конфлікту через «надмірну ретельність». Плюс крос-платформний збіг пристрою: у дописі згадано Xiaomi Redmi Note, у метаданих PDF — Xiaomi/Android.",
+        "text_en": "The 2019-2022 Wayback archive of the blog: a former child-safety auditor who left a firm that inspected schools after a conflict over 'excess zeal.' Plus the cross-platform device match: the post mentions a Xiaomi Redmi Note, the PDF metadata says Xiaomi/Android.",
+        "feedback_uk": "Два різні типи якоря в одному: біографічний пояснює, чому саме ця людина взагалі так поводиться, технічний прив'язує її до конкретного артефакта. Жоден із них не походить із того джерела, яке перевіряє.",
+        "feedback_en": "Two different anchor types in one: the biographical explains why this particular person behaves this way at all, the technical ties her to the specific artifact. Neither comes from the source it is verifying."
+      },
+      {
+        "id": "ev-ver-wayback-only",
+        "slot": "verification",
+        "score": 20,
+        "text_uk": "Wayback-архів блогу 2019-2022 — біографічний контекст без технічної прив'язки до артефакта.",
+        "text_en": "The 2019-2022 Wayback blog archive — biographical context with no technical tie to the artifact.",
+        "feedback_uk": "Частковий залік. Біографія пояснює схильність, але не з'єднує людину з цим конкретним PDF. Без збігу пристрою верифікація тримається на правдоподібності характеру.",
+        "feedback_en": "Partial credit. A biography explains propensity but does not connect the person to this particular PDF. Without the device match, verification rests on plausibility of character."
+      },
+      {
+        "id": "ev-ver-client-recognition",
+        "slot": "verification",
+        "score": 0,
+        "text_uk": "Показати клієнту вісім кадрів і спитати, чи впізнає він когось із них.",
+        "text_en": "Show the client the eight frames and ask whether he recognizes anyone in them.",
+        "feedback_uk": "Нуль. Клієнт прийшов зі списком із п'яти імен — він упізнає когось із п'яти, бо саме їх і шукає. Це не верифікація, це виробництво анкора з чужого очікування.",
+        "feedback_en": "Zero. The client arrived with a list of five names — he will recognize one of the five, because those are the ones he is looking for. That is not verification, it is manufacturing an anchor out of someone else's expectation."
+      }
+    ]
+  },
+  "falsifiability_phase": {
+    "title_uk": "Перевірка на фальсифікованість",
+    "title_en": "Falsifiability check",
+    "instruction_uk": "На кожен заповнений щабель — одне речення: яка знахідка, якби вона з'явилась, зруйнувала б цей анкор. Оцінюється те, які поняття ти назвав, а не як ти це сформулював.",
+    "instruction_en": "For each rung you filled, one sentence: what finding, if it turned up, would destroy this anchor. You are graded on which concepts you name, not on how you phrase them.",
+    "submit_btn_uk": "Подати спростування",
+    "submit_btn_en": "Submit falsifiers",
+    "points_per_item": 25,
+    "items": [
+      {
+        "slot_id": "identifier",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б ідентифікацію особи?",
+        "prompt_en": "What would destroy the identification of the person?",
+        "model_uk": "Наприклад: акаунт у Facebook створено вже після доставки флешки; або профіль виявиться імперсонацією — хтось інший узяв те саме ім'я і нік; або геодані Wayback-знімків блогу не збігаються з Києвом.",
+        "model_en": "For example: the Facebook account was created after the USB was delivered; or the profile turns out to be an impersonation — someone else took the same name and handle; or the geodata of the Wayback blog snapshots does not match Kyiv.",
+        "keywords_uk": [
+          [
+            "акаунт",
+            "аккаунт",
+            "профіл",
+            "сторінк",
+            "нік",
+            "handle",
+            "хендл"
+          ],
+          [
+            "створ",
+            "зареєстр",
+            "з'яв",
+            "зʼяв",
+            "заведен",
+            "новий",
+            "нова",
+            "датою",
+            "дата реєстр"
+          ],
+          [
+            "після",
+            "пізніш",
+            "post-dat",
+            "постдат",
+            "заднім числом"
+          ],
+          [
+            "підробк",
+            "імперсон",
+            "impersonat",
+            "підмін",
+            "фейк",
+            "чуже ім",
+            "інша людина",
+            "не та людина",
+            "видава"
+          ],
+          [
+            "блог",
+            "wayback",
+            "архів",
+            "геодан",
+            "геолокац",
+            "ip",
+            "київ"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "account",
+            "profile",
+            "page",
+            "handle",
+            "nickname"
+          ],
+          [
+            "creat",
+            "registr",
+            "opened",
+            "set up",
+            "dated",
+            "new"
+          ],
+          [
+            "after",
+            "later",
+            "post-dat",
+            "postdat"
+          ],
+          [
+            "impersonat",
+            "fake",
+            "spoof",
+            "someone else",
+            "not the same person",
+            "different person"
+          ],
+          [
+            "blog",
+            "wayback",
+            "archive",
+            "geo",
+            "ip",
+            "kyiv",
+            "kiev"
+          ]
+        ]
+      },
+      {
+        "slot_id": "location",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б висновок про локацію?",
+        "prompt_en": "What would destroy the location conclusion?",
+        "model_uk": "Наприклад: GPS-точки EXIF вказують на іншу школу або інший район; або геомітки виявляться дописаними після зйомки; або районна група і канал прив'язані не до Печерська.",
+        "model_en": "For example: the EXIF GPS points to a different school or a different district; or the geotags turn out to have been written in after the fact; or the district group and channel are tied to somewhere other than Pechersk.",
+        "keywords_uk": [
+          [
+            "gps",
+            "гпс",
+            "exif",
+            "екзиф",
+            "координат",
+            "геомітк",
+            "геотег",
+            "геодан"
+          ],
+          [
+            "інш",
+            "не збіг",
+            "не відповід",
+            "розход",
+            "розбіж",
+            "не та"
+          ],
+          [
+            "школ",
+            "район",
+            "печерськ",
+            "адрес",
+            "місц",
+            "локац"
+          ],
+          [
+            "підроб",
+            "підмін",
+            "дописан",
+            "редагован",
+            "змінен",
+            "fake",
+            "спуф"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "gps",
+            "exif",
+            "coordinate",
+            "geotag",
+            "geo-tag",
+            "geodata"
+          ],
+          [
+            "different",
+            "does not match",
+            "doesn't match",
+            "mismatch",
+            "elsewhere",
+            "another",
+            "wrong"
+          ],
+          [
+            "school",
+            "district",
+            "pechersk",
+            "address",
+            "location"
+          ],
+          [
+            "fak",
+            "spoof",
+            "edited",
+            "altered",
+            "forged",
+            "written in",
+            "injected"
+          ]
+        ]
+      },
+      {
+        "slot_id": "motive",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б мотив?",
+        "prompt_en": "What would destroy the motive?",
+        "model_uk": "Наприклад: петиція і коментар школі виявляться створеними вже після доставки флешки — тоді це виправдання заднім числом, а не сходинки ескалації; або знайдеться задокументований особистий конфлікт із клієнтом — тоді це тиск, а не попередження; або композиція кадрів виявиться повністю зосередженою на дітях — тоді дорослий на задньому плані випадковий.",
+        "model_en": "For example: the petition and the school comment turn out to have been created after the USB was delivered — then it is retroactive justification, not escalation steps; or a documented personal conflict with the client surfaces — then it is pressure, not a warning; or the composition of the frames turns out to be entirely centered on the children — then the adult in the background is incidental.",
+        "keywords_uk": [
+          [
+            "петиц",
+            "change.org",
+            "change org",
+            "коментар",
+            "звернен",
+            "скарг",
+            "допис"
+          ],
+          [
+            "після",
+            "пізніш",
+            "датован",
+            "заднім числом",
+            "ретро",
+            "виправдан"
+          ],
+          [
+            "конфлікт",
+            "особист",
+            "помст",
+            "сварк",
+            "позов",
+            "претенз",
+            "ворожн"
+          ],
+          [
+            "композиц",
+            "кадр",
+            "фокус",
+            "crop",
+            "кроп",
+            "фон",
+            "задній план",
+            "на дітях",
+            "дітей"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "petition",
+            "change.org",
+            "comment",
+            "complaint",
+            "appeal",
+            "post"
+          ],
+          [
+            "after",
+            "later",
+            "post-dat",
+            "backdat",
+            "retro",
+            "justif"
+          ],
+          [
+            "conflict",
+            "personal",
+            "revenge",
+            "grudge",
+            "lawsuit",
+            "dispute",
+            "hostil"
+          ],
+          [
+            "composition",
+            "frame",
+            "focus",
+            "crop",
+            "background",
+            "children",
+            "kids"
+          ]
+        ]
+      },
+      {
+        "slot_id": "timeline",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б хронологію?",
+        "prompt_en": "What would destroy the timeline?",
+        "model_uk": "Наприклад: перші дописи про стороннього дорослого виявляться опублікованими вже після доставки флешки або після перших EXIF-міток — тоді напрямок причинності перевертається і попередження перетворюються на виправдання.",
+        "model_en": "For example: the first posts about an outside adult turn out to have been published after the USB delivery or after the first EXIF timestamps — then the direction of causation flips and the warnings become justifications.",
+        "keywords_uk": [
+          [
+            "допис",
+            "пост",
+            "петиц",
+            "коментар",
+            "публікац"
+          ],
+          [
+            "після",
+            "пізніш",
+            "post-dat",
+            "заднім числом",
+            "ретро",
+            "переверт"
+          ],
+          [
+            "exif",
+            "дат",
+            "хронолог",
+            "порядок",
+            "послідовн",
+            "timestamp",
+            "час зйомк",
+            "мітк"
+          ],
+          [
+            "флешк",
+            "usb",
+            "доставк",
+            "скриньц",
+            "скринь",
+            "drop"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "post",
+            "petition",
+            "comment",
+            "publication"
+          ],
+          [
+            "after",
+            "later",
+            "post-dat",
+            "backdat",
+            "retro",
+            "revers",
+            "flip"
+          ],
+          [
+            "exif",
+            "date",
+            "chronolog",
+            "order",
+            "sequence",
+            "timestamp"
+          ],
+          [
+            "usb",
+            "drive",
+            "delivery",
+            "mailbox",
+            "drop"
+          ]
+        ]
+      },
+      {
+        "slot_id": "verification",
+        "min_hits": 2,
+        "prompt_uk": "Що зруйнувало б верифікацію?",
+        "prompt_en": "What would destroy the verification?",
+        "model_uk": "Наприклад: блог виявиться зібраним постфактум — дати знімків Wayback не витримають перевірки на індексацію; або збіг моделі пристрою виявиться саме тим, чим і виглядає — збігом на популяції у сорок мільйонів апаратів.",
+        "model_en": "For example: the blog turns out to have been assembled after the fact — the Wayback snapshot dates fail an indexing check; or the device-model match turns out to be exactly what it looks like — a coincidence across a population of forty million handsets.",
+        "keywords_uk": [
+          [
+            "блог",
+            "wayback",
+            "архів",
+            "wordpress",
+            "снапшот",
+            "знімок",
+            "знімк"
+          ],
+          [
+            "підробк",
+            "фальсиф",
+            "постфактум",
+            "пост-фактум",
+            "заднім числом",
+            "створен",
+            "зібран",
+            "підмін"
+          ],
+          [
+            "дат",
+            "індексац",
+            "краул",
+            "timestamp",
+            "часов"
+          ],
+          [
+            "пристр",
+            "xiaomi",
+            "redmi",
+            "модель",
+            "device",
+            "відбит",
+            "fingerprint"
+          ],
+          [
+            "збіг",
+            "випадков",
+            "мільйон",
+            "не унікал",
+            "поширен"
+          ]
+        ],
+        "keywords_en": [
+          [
+            "blog",
+            "wayback",
+            "archive",
+            "wordpress",
+            "snapshot"
+          ],
+          [
+            "fabricat",
+            "forged",
+            "backdat",
+            "after the fact",
+            "planted",
+            "fak",
+            "assembled"
+          ],
+          [
+            "date",
+            "index",
+            "crawl",
+            "timestamp"
+          ],
+          [
+            "device",
+            "xiaomi",
+            "redmi",
+            "model",
+            "fingerprint"
+          ],
+          [
+            "coincidence",
+            "million",
+            "not unique",
+            "common"
+          ]
+        ]
+      }
+    ]
+  },
+  "so_what_phase": {
+    "title_uk": "Ну і що?",
+    "title_en": "So what?",
+    "question_uk": "Атрибуцію зроблено. Тепер найдорожче питання кейсу: що це насправді?",
+    "question_en": "The attribution is done. Now the most expensive question in the case: what is this actually?",
+    "options": [
+      {
+        "id": "sw1",
+        "correct": false,
+        "points": -50,
+        "text_uk": "Пряма загроза. Марта Кравченко переслідує сім'ю клієнта, а флешка — попередження перед ескалацією.",
+        "text_en": "A direct threat. Marta Kravchenko is stalking the client's family, and the USB is a warning ahead of escalation.",
+        "feedback_uk": "✗ Хибне прочитання патерну. Загроза за визначенням хоче бути зрозумілою: вона несе payload — записку, вимогу, умову, обіцянку наступного кроку. Тут payload нульовий, а витрати відправника чотиритижневі. Це не модель загрози, це модель документування.",
+        "feedback_en": "✗ A misreading of the pattern. A threat by definition wants to be understood: it carries a payload — a note, a demand, a condition, a promise of a next step. Here the payload is zero and the sender's effort ran four weeks. That is not a threat model, it is a documentation model."
+      },
+      {
+        "id": "sw2",
+        "correct": false,
+        "points": -80,
+        "text_uk": "Хибна атрибуція. Марта Кравченко ні до чого, а справжній відправник — хтось із п'ятьох підозрюваних клієнта.",
+        "text_en": "Wrong attribution. Marta Kravchenko has nothing to do with it, and the real sender is one of the client's five suspects.",
+        "feedback_uk": "✗ Провал перевірки на фальсифікованість, і найдорожчий варіант тут саме тому. Щоб атрибуція виявилась хибною, мали б випадково збігтися ім'я у метаданих, модель пристрою, географія, тематика дописів і їхня хронологія — п'ять незалежних величин одразу. А жоден із п'яти підозрюваних не зчепився з артефактом взагалі.",
+        "feedback_en": "✗ A falsifiability failure, and the most expensive option here precisely for that reason. For the attribution to be wrong, the name in the metadata, the device model, the geography, the subject of the posts and their chronology would all have to coincide by accident — five independent quantities at once. And not one of the five suspects latched onto the artifact at all."
+      },
+      {
+        "id": "sw3",
+        "correct": true,
+        "points": 150,
+        "text_uk": "Атрибуція правильна, мотив перевернутий. Марта Кравченко встановлена коректно, але це не погроза. Вона документує реального стороннього дорослого — того самого, що на задньому плані шести кадрів із восьми, — після того, як школа й петиція нічого не дали, і вибрала клієнта як людину з ресурсами. Флешка — це передача розслідування, а не попередження перед ударом.",
+        "text_en": "Correct attribution, inverted motive. Marta Kravchenko is identified correctly, but this is not a threat. She is documenting a real outside adult — the same one in the background of six frames out of eight — after the school and the petition led nowhere, and she picked the client as someone with resources. The USB is an investigation handoff, not a warning shot.",
+        "feedback_uk": "✓ Правильно, і найважче тут було не знайти її, а не зупинитися на цьому. Правильний наступний хід клієнта — не позов проти Марти, а перегляд тих самих восьми фотографій із фокусом на задньому плані і власна атрибуція дорослого у кадрі. Кейс закінчується там, де починається справжня робота, — і це нормально.",
+        "feedback_en": "✓ Correct, and the hard part was never finding her — it was not stopping there. The client's right next move is not a lawsuit against Marta but a review of those same eight photographs with the focus on the background, and his own attribution of the adult in the frame. The case ends where the real work starts, and that is as it should be."
+      },
+      {
+        "id": "sw4",
+        "correct": false,
+        "points": -20,
+        "text_uk": "Системна проблема. Атрибуція коректна, але клієнт розв'язує не ту задачу: справжня проблема — у школі «Оберіг» немає системи реагування на такі попередження.",
+        "text_en": "A systemic problem. The attribution is correct, but the client is solving the wrong problem: the real issue is that the Oberih school has no system for responding to warnings like this.",
+        "feedback_uk": "△ Часткова правда, і саме тому вона небезпечна. Так, реакція школи — це поламаний процес, і його доведеться лагодити. Але поки ти пишеш про процес, дорослий чоловік із задніх планів шести кадрів усе ще приходить до школи двічі на день. Спершу конкретна загроза, потім системна реформа.",
+        "feedback_en": "△ A partial truth, which is exactly what makes it dangerous. Yes, the school's response is a broken process and it will have to be fixed. But while you are writing about process, the adult male from the background of six frames is still showing up at that school twice a day. Concrete threat first, systemic reform second."
+      }
+    ]
+  },
+  "benchmark": {
+    "questions": {
+      "target_pct": 67,
+      "reason_uk": "Еталон — дві правильні відповіді з трьох. Третє питання найдорожче не тому, що складне, а тому, що перевіряє витримку: помітив патерн, зафіксував, не поспішив із висновком.",
+      "reason_en": "The reference is two correct out of three. The third question is the most expensive not because it is hard but because it tests restraint: you spotted the pattern, logged it, and did not rush the conclusion."
+    }
+  },
+  "ranks": {
+    "master": {
+      "min": 700,
+      "label_uk": "Attribution Master",
+      "label_en": "Attribution Master",
+      "color": "#8f7cff",
+      "msg_uk": "Ти зробив те, що відрізняє ідентифікацію від розуміння. Флешка — не погроза. Ти це побачив.",
+      "msg_en": "You did the thing that separates identification from understanding. The USB is not a threat. You saw it."
+    },
+    "senior": {
+      "min": 600,
+      "label_uk": "Senior Attribution Analyst",
+      "label_en": "Senior Attribution Analyst",
+      "color": "#5ac8fa",
+      "msg_uk": "Впевнена атрибуція, мотив прочитано правильно. Один-два якорі можна було затягнути тугіше.",
+      "msg_en": "Solid attribution, motive read correctly. One or two anchors could have been pulled tighter."
+    },
+    "junior": {
+      "min": 500,
+      "label_uk": "Junior Attribution Analyst",
+      "label_en": "Junior Attribution Analyst",
+      "color": "#34c759",
+      "msg_uk": "Атрибуція коректна, інтерпретація — на межі. Прочитай розбір уважно, там усе про цю межу.",
+      "msg_en": "Attribution correct, interpretation borderline. Read the debrief carefully — it is all about that border."
+    },
+    "trainee": {
+      "min": 0,
+      "label_uk": "Trainee",
+      "label_en": "Trainee",
+      "color": "#ff9500",
+      "msg_uk": "Атрибуція є, мотив ти пропустив. Це найпоширеніша помилка у цьому кейсі. Розбір покаже, де саме ти звернув не туди.",
+      "msg_en": "You got the attribution but missed the motive. That is the most common mistake on this case. The debrief will show exactly where you turned off-path."
+    }
+  },
+  "debrief": {
+    "pass_uk": {
+      "sections": [
+        {
+          "title": "Про що був кейс",
+          "body": "Тобі дали одну флешку і вісім фотографій дітей клієнта. За півгодини ти пройшов повний цикл: метадані PDF → півот у районну спільноту → справжнє ім'я → правильна інтерпретація.\nКлючовий момент був не в тому, що ти назвав ім'я. Він був у тому, що ти вловив повторюваного дорослого на задньому плані шести кадрів із восьми — і це переорієнтувало весь кейс із «хто нам погрожує» на «нам намагаються щось показати»."
+        },
+        {
+          "title": "Правильний ланцюг півотів",
+          "body": "Крок 1. Метадані PDF, а не список підозрюваних. Author «Марта» сам собою слабкий: жіноче ім'я плюс українська Adobe ID — це сотні профілів. Але Producer із XMP дають відбиток пристрою (Xiaomi Redmi Note, Android, білд Adobe Reader), і саме його треба тримати відкритим для звіряння з іншими джерелами.\nКрок 2. Пакетний EXIF. Вісім кадрів з однієї камери, GPS в одному радіусі, стабільні вікна зйомки на початку і в кінці шкільного дня — це системна робота однієї людини за розкладом, а не випадкова загроза. Модель камери тут з'являється вдруге.\nКрок 3. Півот у районну спільноту через Telegram. У 2026 батьки району живуть у Telegram і Viber, а не у Facebook. Канал @bezpeka_pechersk дає акаунт @marta_kr_ua із чотирма дописами і випадковою згадкою моделі камери. Тут сходяться два незалежних анкори з різних джерел.\nКрок 4. Вторинне підтвердження у Facebook через Sowdust. Репости її ж дописів у групі «Оберіг — новини» закривають ланку handle ↔ прізвище. Це необхідний крок перед sweep-ом, а не окрема перемога.\nКрок 5. WhatsMyName по ніку і по vanity → Instagram, LinkedIn із публічним заголовком про дитячу безпеку, Wayback-архів блогу.\nКрок 6. Тріангуляція мотиву більш ніж з одного джерела. Петиція → видалений коментар школі → районний канал → флешка. Блог додає біографічний контекст, але вже не несе мотив сам.\nКрок 7. Ручний огляд кадрів. Тул повернув нейтральну фіксацію повторюваного елемента фону. Це дані, не висновок. Ти позначив їх «не інтерпретовано» і поніс далі.\nКрок 8. Стрибок у фінальній фазі. «Повторюваний дорослий → справжня ціль зйомки» не було у виводі жодного інструмента. Це твоя власна робота з атрибуції."
+        },
+        {
+          "title": "Куди тут звертають не туди",
+          "body": "Пастка перша: почати з п'ятьох підозрюваних клієнта. З'їдає до сорока відсотків часу і веде у глухі кути. Клієнт знає своє коло — але клієнт не знає, хто за ним спостерігав, інакше він би не прийшов.\nПастка друга: CVE-lookup на модель камери. Виглядає технічно солідно, не дає нічого: сорок мільйонів пристроїв цієї моделі — це не ідентифікатор.\nПастка третя: реверс-пошук по обличчях дітей. Технічно ефективно у деяких інших задачах, юридично й етично неприпустимо тут, і методологічно безрезультатно: діти не є автором артефакта.\nПастка четверта, найпоширеніша: зупинитись на атрибуції Марти і надіслати клієнту звіт «переслідування, готуйтеся до позову». Правильна деанонімізація з неправильною інтерпретацією — це не половина роботи, це гірше за її відсутність, бо клієнт діятиме."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Правильно: тріангуляція через Telegram, Facebook, WhatsMyName і Wayback. Слабша альтернатива — тільки профіль у Facebook, який можна видати за чужий. Спростування: акаунт створено після доставки флешки.\nЛокація. Правильно: район, підпертий GPS-мітками, географією каналу і групи та відкритим містом у профілі з 2014 року. Слабша альтернатива — тільки GPS, який редагується тривіально і вказує на місце зйомки, а не на локацію особи. Спростування: точки не збігаються з розташуванням школи.\nМотив. Найтонший щабель у кейсі. Тримається на трьох незалежних записах: петиція на change.org, видалений коментар на сторінці школи у Wayback, дописи в районному каналі. Плюс композиційний патерн кадрів. Блог тут більше не соло-якір. Слабша альтернатива — тільки дописи у Telegram, які однаково добре читаються як підготовка до нападу. Спростування: петиція і коментар виявляться створеними після доставки.\nХронологія. Правильно: зіставлення її публічної хронології з датами EXIF. Її попередження передували зйомці — отже, фотографії є доказовою базою під уже висловлену тривогу, а не матеріалом, під який тривогу придумали. Спростування: перші дописи виявляться пізнішими за перший кадр.\nВерифікація. Wayback-архів блогу — ключовий незалежний якір: він відповідає на питання «чому саме ця людина взагалі так поводиться». Плюс крос-платформний збіг пристрою. Без них атрибуція мотиву була б спекуляцією."
+        },
+        {
+          "title": "«Ну і що?» — чому саме так",
+          "body": "Варіант «пряма загроза» — хибне прочитання патерну. Загроза несе payload: записку, вимогу, умову. Тут payload нульовий при чотиритижневих витратах відправника. Це не модель загрози.\nВаріант «хибна атрибуція» — провал перевірки на фальсифікованість. Щоб він був правдою, мали б випадково збігтися п'ять незалежних величин одразу.\nВаріант «системна проблема» — часткова правда, якої недостатньо. Так, у школи поламаний процес реагування. Але фокус на процесі саме зараз означає, що конкретний дорослий із задніх планів шести кадрів лишається поза увагою. Спершу конкретна загроза, потім реформа.\nПравильний варіант — атрибуція коректна, мотив перевернутий. Марта Кравченко не переслідує клієнта. Вона намагається показати клієнту, що його дітей переслідує хтось інший. Правильний наступний хід — власна атрибуція того дорослого, а не позов."
+        },
+        {
+          "title": "Правило, яке варто забрати з собою",
+          "body": "Артефакт спостереження без payload — це найчастіше не загроза, а сигнал. Загроза хоче, щоб її помітили і зрозуміли, тому вона несе повідомлення. Спостереження без вимоги — це або попередження від когось третього, або підготовка, і різницю визначає контекст, а не сам артефакт.\nУ реальній роботі це означає одне: перш ніж кваліфікувати артефакт як загрозу, пошукай зустрічне попередження. Сигнали тривоги часто виглядають як погрози — бо ті, хто їх надсилає, не професіонали і не знають, як це має виглядати."
+        },
+        {
+          "title": "Інструменти",
+          "body": "exiftool — CLI для метаданих PDF і зображень. Безкоштовний.\npdfinfo та pdf-parser.py — структурний аналіз PDF. Безкоштовні.\nПошук по групах Facebook і альтернативи Graph Search (у 2026 — розширення Sowdust). Безкоштовно, потребує доступу до акаунта.\nПошук по публічних Telegram-каналах — @tgscanrobot і ручний перегляд каналів району.\nWhatsMyName — понад 640 платформ, веб і CLI. Безкоштовний.\nWayback Machine — доступ до архівованих блогів. З 2025 ускладнений через блокування краулера великими медіа, частина доменів випадає з індексу.\nOSINT Industries — платний, від $79 на місяць. Має сенс для збагачення вже після ідентифікації, а не замість неї."
+        },
+        {
+          "title": "Етика і право",
+          "body": "Цей кейс стоїть на межі, і межа тут проходить не там, де здається. Реверс-пошук по обличчях дітей — категорично ні, у будь-якій юрисдикції і за будь-якої терміновості. Атрибуція автора флешки — так, коли є легітимний інтерес клієнта, а безпека його сім'ї таким інтересом є.\nПублікація атрибуції — тільки за згодою клієнта і тільки після оцінки, чи не поставить вона під удар саму Марту або дорослого з фотографій, про якого ще нічого не встановлено.\nВ українській юрисдикції OSINT-звіт клієнту про приватну особу є законним на підставі легітимного інтересу. Публікація тієї самої інформації у відкритих медіа — вже інша дія, і вона потребує окремої юридичної консультації, а не сміливості."
+        }
+      ]
+    },
+    "pass_en": {
+      "sections": [
+        {
+          "title": "What this case was",
+          "body": "You were handed a single USB stick and eight photographs of the client's children. In half an hour you ran the full cycle: PDF metadata → pivot into the district community → real name → correct interpretation.\nThe key moment was not that you produced a name. It was that you caught the recurring adult in the background of six frames out of eight — and that reoriented the whole case from 'who is threatening us' to 'someone is trying to show us something.'"
+        },
+        {
+          "title": "The correct pivot chain",
+          "body": "Step 1. PDF metadata, not the suspect list. Author 'Марта' is weak on its own: a female given name plus a Ukrainian Adobe ID is hundreds of profiles. But Producer and XMP yield a device fingerprint (Xiaomi Redmi Note, Android, the Adobe Reader build), and that is what you keep open for matching against other sources.\nStep 2. Batch EXIF. Eight frames from one camera, GPS in a single radius, consistent capture windows at the start and end of the school day — this is systematic work by one person on a schedule, not a random threat. The camera model surfaces here for the second time.\nStep 3. Pivot into the district community via Telegram. In 2026 district parents live on Telegram and Viber, not Facebook. The @bezpeka_pechersk channel yields the account @marta_kr_ua with four posts and an incidental mention of the camera model. Two independent anchors from different sources converge here.\nStep 4. Secondary confirmation on Facebook via Sowdust. Reposts of her own posts in the 'Oberih — News' group close the handle ↔ surname link. That is a necessary step before the sweep, not a separate victory.\nStep 5. WhatsMyName on the handle and the vanity → Instagram, LinkedIn with a public headline about child safety, the Wayback archive of the blog.\nStep 6. Motive triangulation from more than one source. Petition → deleted comment to the school → district channel → USB. The blog adds biographical context but no longer carries the motive alone.\nStep 7. Manual review of the frames. The tool returned a neutral record of a recurring background element. That is data, not a conclusion. You marked it 'not interpreted' and carried it forward.\nStep 8. The leap in the final phase. 'Recurring adult → the actual subject of the surveillance' was in no tool's output. That is your own attribution work."
+        },
+        {
+          "title": "Where people turn the wrong way",
+          "body": "Trap one: starting with the client's five suspects. It eats up to forty percent of the clock and leads into dead ends. The client knows his own circle — but the client does not know who was watching him, or he would not have come.\nTrap two: a CVE lookup on the camera model. It looks technically solid and delivers nothing: forty million devices of that model is not an identifier.\nTrap three: reverse image search on the children's faces. Technically effective in some other tasks, legally and ethically off-limits here, and methodologically fruitless: the children are not the artifact's author.\nTrap four, the most common: stopping at Marta's attribution and sending the client a report titled 'stalking, prepare a lawsuit.' Correct deanonymization with a wrong interpretation is not half the job — it is worse than none, because the client will act on it."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. Correct: triangulation across Telegram, Facebook, WhatsMyName and Wayback. The weaker alternative is the Facebook profile alone, which is exactly what can be impersonated. Falsifier: the account was created after the USB delivery.\nLocation. Correct: the district, supported by GPS tags, the geography of the channel and group, and the city publicly on the profile since 2014. The weaker alternative is GPS alone, trivially editable and pointing at the scene rather than the person. Falsifier: the points do not match the school's location.\nMotive. The most delicate rung in the case. It rests on three independent records: the change.org petition, the deleted comment on the school page preserved in Wayback, and the posts in the district channel. Plus the compositional pattern of the frames. The blog is no longer a solo anchor here. The weaker alternative is the Telegram posts alone, which read equally well as preparation for an attack. Falsifier: the petition and the comment turn out to post-date the delivery.\nTimeline. Correct: lining her public chronology up against the EXIF dates. Her warnings preceded the shooting — so the photographs are an evidence base under an already voiced alarm, not material the alarm was invented for. Falsifier: the first posts turn out to be later than the first frame.\nVerification. The Wayback blog archive is the key independent anchor: it answers 'why would this particular person behave this way at all.' Plus the cross-platform device match. Without them the motive attribution would be speculation."
+        },
+        {
+          "title": "'So what' — why this reading",
+          "body": "'A direct threat' is a misreading of the pattern. A threat carries a payload: a note, a demand, a condition. Here the payload is zero against four weeks of sender effort. That is not a threat model.\n'Wrong attribution' is a falsifiability failure. For it to be true, five independent quantities would have to coincide by accident at once.\n'A systemic problem' is a partial truth that is not enough. Yes, the school's response process is broken. But focusing on process right now means the specific adult from the background of six frames stays unattended. Concrete threat first, reform second.\nThe correct reading — attribution correct, motive inverted. Marta Kravchenko is not stalking the client. She is trying to show the client that someone else is stalking his children. The right next move is his own attribution of that adult, not a lawsuit."
+        },
+        {
+          "title": "The rule worth taking with you",
+          "body": "A surveillance artifact without a payload is more often a signal than a threat. A threat wants to be noticed and understood, so it carries a message. Surveillance without a demand is either a warning from a third party or preparation, and the difference is decided by context, not by the artifact itself.\nIn real work that means one thing: before classifying an artifact as a threat, go looking for a matching warning. Distress signals often look like threats — because the people sending them are not professionals and do not know what one is supposed to look like."
+        },
+        {
+          "title": "Tools",
+          "body": "exiftool — CLI for PDF and image metadata. Free.\npdfinfo and pdf-parser.py — structural analysis of PDFs. Free.\nFacebook Groups search and Graph Search alternatives (in 2026, the Sowdust extension). Free, requires account access.\nPublic Telegram channel search — @tgscanrobot plus manual review of the district's channels.\nWhatsMyName — 640+ platforms, web and CLI. Free.\nWayback Machine — access to archived blogs. Harder since 2025 because large media outlets block the crawler, and some domains drop out of the index.\nOSINT Industries — paid, from $79/month. Worth it for enrichment after identification, not instead of it."
+        },
+        {
+          "title": "Ethics and law",
+          "body": "This case sits on an edge, and the edge is not where it looks. Reverse image search on children's faces is a categorical no, in any jurisdiction and under any urgency. Attribution of the USB's author is a yes, when the client has a legitimate interest — and the safety of his family is one.\nPublishing the attribution is a different act: only with the client's consent, and only after weighing whether it puts Marta herself, or the adult from the photographs about whom nothing is yet established, at risk.\nUnder Ukrainian jurisdiction, an OSINT report to a client about a private individual is lawful on legitimate-interest grounds. Publishing that same information in open media requires separate legal counsel, not courage."
+        }
+      ]
+    },
+    "fail_uk": {
+      "sections": [
+        {
+          "title": "Про що був кейс",
+          "body": "Тобі дали одну флешку і вісім фотографій дітей клієнта. Кейс має два рівні, і провалюють майже завжди другий, а не перший.\nПерший рівень — встановити, хто зібрав і доставив PDF. Другий — зрозуміти, навіщо. Ім'я тут не фініш: у цьому кейсі можна назвати особу правильно і при цьому здати клієнту висновок, який штовхне його судитися з людиною, що намагалась його попередити."
+        },
+        {
+          "title": "Де саме ланцюг розійшовся",
+          "body": "Порівняй свою драбину і відповідь у фінальній фазі з еталонною послідовністю нижче — розбіжність майже завжди в одній конкретній точці, і вона видна одразу.\nМетадані PDF дають два різні за силою анкори: слабке ім'я і перевірюваний відбиток пристрою. Пакетний EXIF показує систематичність: одна камера, один радіус, дві часові смуги на добу, чотири тижні. Районний Telegram-канал зводить обидва анкори на одному акаунті. Facebook через Sowdust закриває ланку нік ↔ прізвище. WhatsMyName розкриває решту платформ і виводить на Wayback-архів блогу. Мотив збирається з трьох незалежних записів, а не з одного. Ручний огляд кадрів дає фіксацію без інтерпретації, і цю фіксацію треба донести до фіналу нерозтлумаченою.\nЯкщо ти почав із п'ятьох підозрюваних клієнта — розійшлося на першому ж кроці, і далі кожен наступний інструмент шукав підтвердження чужій версії. Якщо ти дійшов до Марти, але обрав «пряму загрозу» — розійшлося на самому кінці, і це дорожча помилка, ніж здається."
+        },
+        {
+          "title": "Три способи провалити саме цей кейс",
+          "body": "Перший: почати з імен, які приніс клієнт. Список підозрюваних — це його інтерпретація подій, а не дані про них. Він знає своє коло і не знає, хто за ним спостерігав, — інакше не прийшов би. Кожна хвилина, витрачена на перевірку його версії до того, як ти прочитав артефакт, працює на закріплення чужого упередження.\nДругий: зупинитись на атрибуції. Ім'я, район, чотири платформи — і звіт «переслідування, готуйтеся до позову». Це найпоширеніший провал у кейсі, і найгірший, бо він виглядає як успіх: усі поля заповнені, клієнт задоволений, робота здана. А потім клієнт подає позов проти єдиної людини, яка помітила справжню проблему.\nТретій: побачити повторюваного дорослого і не донести його до фіналу. Або відкинути як шум, або одразу вписати у звіт готовим висновком. Відтворюваний патерн у шести кадрах із восьми — це дані. Дані треба фіксувати з міткою «не інтерпретовано» і нести далі, а не викидати і не дотлумачувати на місці."
+        },
+        {
+          "title": "Драбина — розбір щаблів",
+          "body": "Ідентифікатор. Правильно: тріангуляція через Telegram, Facebook, WhatsMyName і Wayback. Слабша альтернатива — тільки профіль у Facebook, який можна видати за чужий. Нуль — будь-хто з п'ятьох підозрюваних: жоден із них не зчіплюється з артефактом.\nЛокація. Правильно: район, підпертий GPS-мітками, географією каналу і групи та відкритим містом у профілі. Слабша альтернатива — тільки GPS. Нуль — модель пристрою: це не локація і не унікальна ознака.\nМотив. Тримається на трьох незалежних записах: петиція, видалений коментар школі у Wayback, дописи в районному каналі. Композиційний патерн кадрів підпирає, але сам не тримає. Нуль — особиста ворожість: жодного задокументованого перетину між нею і клієнтом не існує.\nХронологія. Правильно: її попередження передували зйомці. Порядок тут важливіший за самі дати. Слабша альтернатива — тільки розкид EXIF, який доводить систематичність і мовчить про причинність.\nВерифікація. Wayback-архів блогу плюс крос-платформний збіг пристрою. Нуль — попросити клієнта впізнати когось на фото: він упізнає когось із власного списку, бо саме його і шукає."
+        },
+        {
+          "title": "«Ну і що?» — чому саме так",
+          "body": "Варіант «пряма загроза» — хибне прочитання патерну. Загроза несе payload: записку, вимогу, умову. Тут payload нульовий при чотиритижневих витратах відправника. Це не модель загрози, це модель документування.\nВаріант «хибна атрибуція» — провал перевірки на фальсифікованість. Щоб він був правдою, мали б випадково збігтися ім'я у метаданих, модель пристрою, географія, тематика дописів і їхня хронологія одразу.\nВаріант «системна проблема» — часткова правда, якої недостатньо. Поламаний процес у школі реальний, але поки ти пишеш про процес, конкретний дорослий усе ще приходить туди двічі на день.\nПравильний варіант — атрибуція коректна, мотив перевернутий. Флешка не погроза, а передача розслідування."
+        },
+        {
+          "title": "Правило, яке варто забрати з собою",
+          "body": "Артефакт спостереження без payload — це найчастіше не загроза, а сигнал. Загроза хоче, щоб її помітили і зрозуміли, тому вона несе повідомлення. Спостереження без вимоги — це або попередження від когось третього, або підготовка, і різницю визначає контекст, а не сам артефакт.\nПерш ніж кваліфікувати артефакт як загрозу, пошукай зустрічне попередження. Сигнали тривоги часто виглядають як погрози — бо ті, хто їх надсилає, не професіонали."
+        },
+        {
+          "title": "Інструменти",
+          "body": "exiftool — CLI для метаданих PDF і зображень. Безкоштовний.\npdfinfo та pdf-parser.py — структурний аналіз PDF. Безкоштовні.\nПошук по групах Facebook і альтернативи Graph Search (у 2026 — розширення Sowdust). Безкоштовно, потребує доступу до акаунта.\nПошук по публічних Telegram-каналах — @tgscanrobot і ручний перегляд каналів району.\nWhatsMyName — понад 640 платформ, веб і CLI. Безкоштовний.\nWayback Machine — доступ до архівованих блогів. З 2025 ускладнений через блокування краулера великими медіа.\nOSINT Industries — платний, від $79 на місяць. Має сенс після ідентифікації, а не замість неї."
+        },
+        {
+          "title": "Етика і право",
+          "body": "Реверс-пошук по обличчях дітей — категорично ні, у будь-якій юрисдикції і за будь-якої терміновості. Це біометричне оброблення даних дитини без правової підстави, і воно до того ж не веде до автора артефакта.\nАтрибуція автора флешки — так, коли є легітимний інтерес клієнта, а безпека його сім'ї таким інтересом є. Публікація атрибуції — тільки за згодою клієнта і після оцінки ризику для самої Марти та для дорослого з фотографій, про якого поки не встановлено нічого.\nІ окремо: висновок, який ти здаєш клієнту, — це дія, а не текст. Якщо він хибний, діяти за ним буде клієнт, а наслідки понесе людина, яку ти назвав."
+        }
+      ]
+    },
+    "fail_en": {
+      "sections": [
+        {
+          "title": "What this case was",
+          "body": "You were handed a single USB stick and eight photographs of the client's children. The case has two levels, and what almost always fails is the second, not the first.\nLevel one is establishing who assembled and delivered the PDF. Level two is understanding why. A name is not the finish line here: in this case you can identify the person correctly and still hand the client a conclusion that pushes him to sue the one person who was trying to warn him."
+        },
+        {
+          "title": "Where the chain came apart",
+          "body": "Compare your ladder and your final-phase answer against the reference sequence below — the divergence is almost always at one specific point, and it shows up immediately.\nThe PDF metadata gives two anchors of very different strength: a weak name and a checkable device fingerprint. Batch EXIF shows the system: one camera, one radius, two time windows a day, four weeks. The district Telegram channel brings both anchors onto one account. Facebook via Sowdust closes the handle ↔ surname link. WhatsMyName opens the remaining platforms and leads to the Wayback blog archive. The motive is assembled from three independent records, not one. The manual frame review returns a record without interpretation, and that record has to reach the finale still uninterpreted.\nIf you started with the client's five suspects, it came apart at the very first step, and every tool after that was looking for confirmation of somebody else's version. If you reached Marta and then chose 'a direct threat,' it came apart at the very end — and that is the more expensive of the two."
+        },
+        {
+          "title": "Three ways to fail this particular case",
+          "body": "First: starting from the names the client brought. A suspect list is his interpretation of events, not data about them. He knows his own circle and does not know who was watching him — otherwise he would not have come. Every minute spent checking his version before you have read the artifact works to entrench somebody else's bias.\nSecond: stopping at attribution. A name, a district, four platforms — and a report saying 'stalking, prepare a lawsuit.' This is the most common failure on the case and the worst one, because it looks like success: every field filled, client satisfied, work delivered. And then the client sues the only person who noticed the actual problem.\nThird: seeing the recurring adult and not carrying it to the finale. Either discarding it as noise or writing it straight into the report as a finished conclusion. A reproducible pattern in six frames of eight is data. Data gets logged with the label 'not interpreted' and carried forward — not thrown away, and not over-read on the spot."
+        },
+        {
+          "title": "The ladder, rung by rung",
+          "body": "Identifier. Correct: triangulation across Telegram, Facebook, WhatsMyName and Wayback. The weaker alternative is the Facebook profile alone, which is exactly what can be impersonated. Zero: any of the five suspects — none of them latches onto the artifact.\nLocation. Correct: the district, supported by GPS tags, the geography of the channel and group, and the city public on the profile. The weaker alternative is GPS alone. Zero: the device model — it is neither a location nor a unique signal.\nMotive. It rests on three independent records: the petition, the deleted comment to the school preserved in Wayback, and the district channel posts. The compositional pattern supports it but does not hold it alone. Zero: personal hostility — no documented intersection between her and the client exists.\nTimeline. Correct: her warnings preceded the shooting. The order matters more than the dates. The weaker alternative is the EXIF spread alone, which proves system and says nothing about causation.\nVerification. The Wayback blog archive plus the cross-platform device match. Zero: asking the client to recognize someone in the photos — he will recognize someone from his own list, because that is who he is looking for."
+        },
+        {
+          "title": "'So what' — why this reading",
+          "body": "'A direct threat' is a misreading of the pattern. A threat carries a payload: a note, a demand, a condition. Here the payload is zero against four weeks of sender effort. That is not a threat model, it is a documentation model.\n'Wrong attribution' is a falsifiability failure. For it to be true, the name in the metadata, the device model, the geography, the subject of the posts and their chronology would all have to coincide by accident at once.\n'A systemic problem' is a partial truth that is not enough. The broken process at the school is real, but while you are writing about process, the specific adult is still showing up there twice a day.\nThe correct reading — attribution correct, motive inverted. The USB is not a threat, it is an investigation handoff."
+        },
+        {
+          "title": "The rule worth taking with you",
+          "body": "A surveillance artifact without a payload is more often a signal than a threat. A threat wants to be noticed and understood, so it carries a message. Surveillance without a demand is either a warning from a third party or preparation, and the difference is decided by context, not by the artifact itself.\nBefore classifying an artifact as a threat, go looking for a matching warning. Distress signals often look like threats — because the people sending them are not professionals."
+        },
+        {
+          "title": "Tools",
+          "body": "exiftool — CLI for PDF and image metadata. Free.\npdfinfo and pdf-parser.py — structural analysis of PDFs. Free.\nFacebook Groups search and Graph Search alternatives (in 2026, the Sowdust extension). Free, requires account access.\nPublic Telegram channel search — @tgscanrobot plus manual review of the district's channels.\nWhatsMyName — 640+ platforms, web and CLI. Free.\nWayback Machine — access to archived blogs. Harder since 2025 because large media outlets block the crawler.\nOSINT Industries — paid, from $79/month. Worth it after identification, not instead of it."
+        },
+        {
+          "title": "Ethics and law",
+          "body": "Reverse image search on children's faces is a categorical no, in any jurisdiction and under any urgency. It is biometric processing of a child's data with no lawful basis, and on top of that it does not lead to the artifact's author.\nAttribution of the USB's author is a yes, when the client has a legitimate interest — and the safety of his family is one. Publishing the attribution: only with the client's consent, and after weighing the risk to Marta herself and to the adult in the photographs, about whom nothing is yet established.\nAnd separately: the conclusion you hand the client is an action, not a text. If it is wrong, the client is the one who acts on it — and the consequences land on the person you named."
+        }
+      ]
+    }
+  }
+}
