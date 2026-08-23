@@ -439,5 +439,42 @@
     await renderLeaderboard('#leaderboard-list', nick, 'sim03');
   });
 </script>
+<script>
+/* Track III is finished but not yet reviewed by hand. The track stays visible and
+   readable; starting a case is disabled for everyone except a preview link.
+   To review: open simulator-03.html?preview=1 — the flag is remembered for the
+   session, so Play works from there on. Remove this whole block to open the track. */
+(function () {
+  var KEY = 'ss.sim3_preview';
+  try {
+    if (new URLSearchParams(location.search).get('preview') === '1') sessionStorage.setItem(KEY, '1');
+    if (sessionStorage.getItem(KEY) === '1') return;
+  } catch (e) { /* storage blocked — fall through and lock */ }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var isEn = (document.documentElement.lang || 'uk') === 'en';
+    var note = isEn
+      ? 'The track is complete but still under review. You can read the cases here; starting one is temporarily disabled.'
+      : 'Трек готовий, але ще проходить перевірку. Кейси можна почитати; запуск тимчасово вимкнено.';
+
+    var bar = document.createElement('div');
+    bar.setAttribute('data-sim3-gate', '');
+    bar.style.cssText = 'max-width:1100px;margin:1.5rem auto 0;padding:.85rem 1.1rem;border:1px solid rgba(220,195,130,.4);' +
+      'background:rgba(220,195,130,.10);color:#dcc382;border-radius:10px;font-family:var(--font-mono);' +
+      'font-size:.85rem;line-height:1.5;text-align:center';
+    bar.textContent = '⚙ ' + note;
+    var main = document.querySelector('main') || document.body;
+    main.insertBefore(bar, main.firstChild);
+
+    document.querySelectorAll('a[href^="game.html?case="]').forEach(function (a) {
+      a.removeAttribute('href');
+      a.setAttribute('aria-disabled', 'true');
+      a.style.opacity = '.45';
+      a.style.pointerEvents = 'none';
+      a.style.cursor = 'not-allowed';
+    });
+  });
+})();
+</script>
 </body>
 </html>
