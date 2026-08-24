@@ -177,10 +177,16 @@ export function evaluateReport(caseData) {
       bySection.set(section, []);
       sectionOrder.push(section);
     }
+    const baseLabel = c.label || c.label_en || c.label_uk || c.id;
+    const baseMissing = c.missing_label || c.missing_label_en || c.missing_label_uk || (baseLabel.toUpperCase() + ' — MISSING');
     bySection.get(section).push({
       id: c.id,
-      label: c.label || c.id,
-      missing_label: c.missing_label || (c.label || c.id).toUpperCase() + ' — MISSING',
+      label: baseLabel,
+      label_en: c.label_en,
+      label_uk: c.label_uk,
+      missing_label: baseMissing,
+      missing_label_en: c.missing_label_en,
+      missing_label_uk: c.missing_label_uk,
       met: isCriterionMet(c, ids),
       optional: c.type === 'optional',
     });
