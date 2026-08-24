@@ -9,7 +9,8 @@
     "chat":    { "requires_evidence": ["candidate_001"] },
     "atlas":   { "requires_evidence": ["candidate_001"] },
     "archive": { "requires_evidence": ["candidate_001"] },
-    "notes":   { "requires_evidence": ["profile_001"] }
+    "notes":   { "requires_evidence": ["profile_001"] },
+    "analyst": { "requires_submission": true }
   },
 
   "final_answer": {
@@ -422,6 +423,93 @@
         { "name": "Studio directories",            "result": "one listing at cited address" }
       ],
       "note": "Subject's professional presence in the stated location is independently corroborated by more than one record."
+    }
+  },
+
+  "analyst_mode": {
+    "intro": "You filed your report. Below is what your investigation actually did — one OSINT concept at a time. This is not a scorecard. It is a walk-through of the techniques this case relied on and how each one showed up in your evidence.",
+    "concepts": [
+      {
+        "id": "attribution_ne_identification",
+        "title": "Attribution ≠ Identification",
+        "why_it_mattered": "The photograph is of a real person. That doesn't make the real person the operator of the account. Attribution is about who controls a profile. Identification is about who is in an image. Different questions, different evidence, different sources.",
+        "player_observations": [
+          {
+            "when": { "requires_all": ["profile_001", "candidate_001"] },
+            "text": "You examined the account under investigation and separately examined a real person whose photographs matched the account's content."
+          },
+          {
+            "when": { "requires_all": ["candidate_001", "chat_profile_dcole_shoots"] },
+            "text": "Your evidence contains two distinct individuals: the person whose photographs the account uses, and a separate person tied to the operator handle."
+          }
+        ],
+        "real_world_reference": "Attribution / image research — reverse-image services such as Google Lens or Yandex Images can surface possible sources for a photograph. A face match remains a lead about who is in the image, not proof of who controls the account."
+      },
+      {
+        "id": "content_overlap",
+        "title": "Content overlap as evidence",
+        "why_it_mattered": "When the same images and near-identical captions appear on two different accounts, the overlap itself is data. The direction of the copy is decided by other evidence — timing, ownership, provenance — not by the overlap alone.",
+        "player_observations": [
+          {
+            "when": { "requires_all": ["profile_001", "candidate_001"] },
+            "text": "You collected both accounts that carry the same imagery, keeping them alongside each other in your evidence."
+          }
+        ],
+        "real_world_reference": "Content forensics — visual comparison, EXIF inspection and reverse-image lookups are the standard tools for establishing that two posts share source material."
+      },
+      {
+        "id": "temporal_precedence",
+        "title": "Temporal precedence",
+        "why_it_mattered": "If a photograph is documented in a public archive at date A, and another account carrying that same photograph is documented no earlier than date B, and A predates B, then the later account cannot be the origin of the material. Temporal precedence turns a plausible story into a supported one.",
+        "player_observations": [
+          {
+            "when": { "requires_any": ["archive_snapshot_alex_miller_2024_03"] },
+            "text": "You pulled the earliest indexed capture available for the account under investigation."
+          },
+          {
+            "when": { "requires_any": ["archive_snapshot_alex_miller_uk_2023_05", "archive_snapshot_alex_miller_uk_2019_02"] },
+            "text": "You pulled an archived capture that shows the source material existed on the other account before that."
+          }
+        ],
+        "real_world_reference": "Temporal proof — The Internet Archive's Wayback Machine, archive.today and site-specific archives can establish that a page or a post existed at a specific point in time."
+      },
+      {
+        "id": "handle_to_identity",
+        "title": "Handle-to-identity leak",
+        "why_it_mattered": "The same handle can be registered on multiple platforms under different display metadata. When a public-metadata lookup on one platform returns a different real name than the persona presented on another, the mismatch is a lead about the operator — not a conclusion, but a lead worth following.",
+        "player_observations": [
+          {
+            "when": { "requires_any": ["chat_profile_alex_miller_handle"] },
+            "text": "You looked up the account's handle on a separate platform and captured the display name that came back with it."
+          },
+          {
+            "when": { "requires_any": ["chat_profile_dcole_shoots"] },
+            "text": "You then searched that display name and captured a second, long-standing handle attached to the same name."
+          }
+        ],
+        "real_world_reference": "Username discovery — tools such as Maigret and Sherlock enumerate reused usernames across public services. A shared handle is a lead; a real name binding two handles is stronger."
+      },
+      {
+        "id": "independent_corroboration",
+        "title": "Independent corroboration",
+        "why_it_mattered": "A subject's own bio is a claim. A record in an unrelated public database — a guild registry, a business directory, a professional certification — is corroboration. The distinction is about the source of the assertion, not about how confident the assertion sounds.",
+        "player_observations": [
+          {
+            "when": { "requires_any": ["atlas_claim_alex_miller_uk_manchester"] },
+            "text": "You obtained a public-record match that corroborates one subject's stated professional location through more than one independent register."
+          },
+          {
+            "when": { "requires_any": ["atlas_claim_dcole_prague"] },
+            "text": "You checked another subject's stated location against public records and captured the result even though nothing corroborated the claim."
+          }
+        ],
+        "real_world_reference": "Independent corroboration — public registries, professional guilds, licensing bodies and organizational directories can independently support (or fail to support) a self-claimed presence. Absence of a record is not proof of a false claim, only absence of corroboration."
+      }
+    ],
+    "hook": {
+      "text": "This case was inspired by real OSINT investigations into identity fabrication on public platforms.",
+      "cta": "Read a real case study →",
+      "url": "/cases.html?slug=instagram-teen-fake-attribution"
     }
   }
 }

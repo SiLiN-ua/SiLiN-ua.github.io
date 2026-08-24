@@ -91,15 +91,23 @@ export function isInEvidence(artifactId) {
 }
 
 // Derived: whether a tool is currently available to the player.
-// Rules live in case.json → unlock_rules[toolId] = { requires_evidence: [...] }.
-// A tool with no rule is always available. A rule is satisfied when every
-// listed artifact id is present in the collected evidence.
+// Rules live in case.json → unlock_rules[toolId] = { ... }.
+// A tool with no rule is always available. Supported keys inside a rule:
+//   requires_evidence:    [id, ...]   — every listed id must be in evidence
+//   requires_submission:  true        — state.finalSubmission must be set
+// A rule with multiple keys must satisfy ALL of them.
 export function isToolAvailable(toolId, caseData) {
   const rules = caseData && caseData.unlock_rules;
   const rule = rules && rules[toolId];
   if (!rule) return true;
-  const required = rule.requires_evidence || [];
-  return required.every(id => isInEvidence(id));
+
+  if (rule.requires_evidence && rule.requires_evidence.length) {
+    if (!rule.requires_evidence.every(id => isInEvidence(id))) return false;
+  }
+  if (rule.requires_submission === true) {
+    if (!state || !state.finalSubmission) return false;
+  }
+  return true;
 }
 
 export function resetAll() {
