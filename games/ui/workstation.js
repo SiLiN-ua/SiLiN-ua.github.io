@@ -1,26 +1,43 @@
 // ui/workstation.js
 // Case Zero — WORKSTATION shell. Wires welcome → sidebar → tool panes → evidence.
 
-import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll } from '../engine/state.js';
+import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable } from '../engine/state.js';
 import { loadCase } from '../engine/case-loader.js';
 import { renderFrameProfile } from '../tools/frame/frame.js';
+import { renderTrace } from '../tools/trace/trace.js';
 import { renderEvidencePane } from './evidence-pane.js';
 
+// Lock status is derived per-render from case.json → unlock_rules, NOT hardcoded here.
+// A tool with no rule in case.json is always available.
 const TOOLS = [
-  { id: 'frame',    label: 'FRAME',    group: 'sources',  locked: false },
-  { id: 'trace',    label: 'TRACE',    group: 'sources',  locked: true },
-  { id: 'chat',     label: 'CHAT',     group: 'sources',  locked: true },
-  { id: 'atlas',    label: 'ATLAS',    group: 'sources',  locked: true },
-  { id: 'archive',  label: 'ARCHIVE',  group: 'sources',  locked: true },
-  { id: 'evidence', label: 'EVIDENCE', group: 'case',     locked: false },
-  { id: 'notes',    label: 'NOTES',    group: 'case',     locked: true },
+  { id: 'frame',    label: 'FRAME',    group: 'sources' },
+  { id: 'trace',    label: 'TRACE',    group: 'sources' },
+  { id: 'chat',     label: 'CHAT',     group: 'sources' },
+  { id: 'atlas',    label: 'ATLAS',    group: 'sources' },
+  { id: 'archive',  label: 'ARCHIVE',  group: 'sources' },
+  { id: 'evidence', label: 'EVIDENCE', group: 'case'    },
+  { id: 'notes',    label: 'NOTES',    group: 'case'    },
 ];
+
+// Tools that have a concrete implementation in Session 2. Anything not in this set
+// still shows in the sidebar but renders the "available later" placeholder pane —
+// even after unlock — until its Session lands.
+const IMPLEMENTED = new Set(['frame', 'trace', 'evidence']);
 
 let caseData = null;
 let toastTimer = null;
+let prevAvailability = new Set();
 
 function $(sel, root = document) { return root.querySelector(sel); }
 function $$(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
+
+function currentAvailability() {
+  const avail = new Set();
+  for (const t of TOOLS) {
+    if (isToolAvailable(t.id, caseData)) avail.add(t.id);
+  }
+  return avail;
+}
 
 function renderSidebar() {
   const sourcesEl = $('[data-sidebar-group="sources"]');
@@ -28,23 +45,32 @@ function renderSidebar() {
   sourcesEl.innerHTML = '';
   caseEl.innerHTML = '';
 
+  const state = getState();
+  const avail = currentAvailability();
+
   TOOLS.forEach(t => {
+    const isAvail = avail.has(t.id);
     const btn = document.createElement('button');
-    btn.className = 'tool-btn' + (t.locked ? ' is-locked' : '');
+    btn.className = 'tool-btn'
+      + (isAvail ? '' : ' is-locked')
+      + (state.activeTool === t.id ? ' is-active' : '');
     btn.dataset.tool = t.id;
     btn.innerHTML = `
       <span>${t.label}</span>
-      ${t.locked
-        ? `<span class="tool-btn__lock">LOCKED</span>`
-        : `<span class="tool-btn__badge" data-badge="${t.id}"></span>`}
+      ${isAvail
+        ? `<span class="tool-btn__badge" data-badge="${t.id}"></span>`
+        : `<span class="tool-btn__lock">LOCKED</span>`}
     `;
-    if (!t.locked) {
+    if (isAvail) {
       btn.addEventListener('click', () => setActiveTool(t.id));
     } else {
-      btn.title = 'Available later';
+      btn.title = 'Unlocks as the investigation progresses';
     }
     (t.group === 'sources' ? sourcesEl : caseEl).appendChild(btn);
   });
+
+  prevAvailability = avail;
+  updateBadges();
 }
 
 function renderPane() {
@@ -58,25 +84,35 @@ function renderPane() {
   if (!paneEl) return;
 
   const tool = TOOLS.find(t => t.id === active);
-  if (tool.locked) {
-    renderLocked(paneEl, tool);
+  const isAvail = isToolAvailable(active, caseData);
+  if (!isAvail || !IMPLEMENTED.has(active)) {
+    renderLocked(paneEl, tool, isAvail);
     return;
   }
+
+  const ctx = {
+    onEvidenceAdded: e => showToast(`EVIDENCE SAVED · ${e.evidenceId}`),
+  };
+
   if (active === 'frame') {
-    renderFrameProfile(paneEl, caseData, caseData.artifacts.profile_001, {
-      onEvidenceAdded: e => showToast(`EVIDENCE SAVED · ${e.evidenceId}`),
-    });
+    renderFrameProfile(paneEl, caseData, caseData.artifacts.profile_001, ctx);
+  } else if (active === 'trace') {
+    renderTrace(paneEl, caseData, ctx);
   } else if (active === 'evidence') {
     renderEvidencePane(paneEl, caseData);
   }
 }
 
-function renderLocked(paneEl, tool) {
+function renderLocked(paneEl, tool, isAvail) {
   paneEl.innerHTML = `
     <div class="locked-pane">
       <div class="locked-pane__tag">${tool.label}</div>
-      <div class="locked-pane__title">Available later</div>
-      <div class="locked-pane__note">This tool unlocks as the investigation progresses.</div>
+      <div class="locked-pane__title">${isAvail ? 'Coming soon' : 'Not yet available'}</div>
+      <div class="locked-pane__note">
+        ${isAvail
+          ? 'This tool is unlocked but not implemented in this build.'
+          : 'This tool unlocks as the investigation progresses.'}
+      </div>
     </div>
   `;
 }
@@ -105,8 +141,8 @@ function updateTopbar() {
 
 function startWorkstation() {
   document.querySelector('.game-root').classList.add('is-playing');
+  renderSidebar();
   renderPane();
-  updateBadges();
   updateTopbar();
 }
 
@@ -134,6 +170,20 @@ function wireReset() {
   });
 }
 
+function onEvidenceAdded() {
+  updateTopbar();
+  const nextAvail = currentAvailability();
+  // Detect a newly-unlocked tool → surface it via toast so the player notices.
+  for (const id of nextAvail) {
+    if (!prevAvailability.has(id) && IMPLEMENTED.has(id)) {
+      const label = TOOLS.find(t => t.id === id)?.label || id;
+      showToast(`${label} UNLOCKED`);
+    }
+  }
+  renderSidebar();
+  if (getState().activeTool === 'evidence') renderPane();
+}
+
 async function boot() {
   try {
     caseData = await loadCase('case-001');
@@ -143,16 +193,12 @@ async function boot() {
   }
 
   initState(caseData.id);
+  prevAvailability = currentAvailability();
 
   subscribe(evt => {
     if (evt.type === 'tool_changed') renderPane();
-    if (evt.type === 'evidence_added') {
-      updateBadges();
-      updateTopbar();
-      // If evidence pane is open, re-render it to reflect the new item.
-      if (getState().activeTool === 'evidence') renderPane();
-    }
-    if (evt.type === 'reset') { updateBadges(); updateTopbar(); }
+    if (evt.type === 'evidence_added') onEvidenceAdded();
+    if (evt.type === 'reset') { renderSidebar(); updateTopbar(); }
   });
 
   renderSidebar();

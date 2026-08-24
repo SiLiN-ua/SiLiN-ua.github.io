@@ -3,6 +3,15 @@
   "slug": "stolen-face",
   "title": "STOLEN FACE",
   "client_brief": "I found an Instagram profile using my photos. I want to understand who is behind it.",
+
+  "unlock_rules": {
+    "trace":   { "requires_evidence": ["profile_001"] },
+    "chat":    { "requires_evidence": ["candidate_001"] },
+    "atlas":   { "requires_evidence": ["candidate_001"] },
+    "archive": { "requires_evidence": ["candidate_001"] },
+    "notes":   { "requires_evidence": ["profile_001"] }
+  },
+
   "artifacts": {
     "profile_001": {
       "id": "profile_001",
@@ -15,33 +24,106 @@
       "bio": "Traveler. Coffee. Slow mornings.\nPrague based ☕",
       "location": "Prague, CZ",
       "joined": "March 2024",
-      "stats": {
-        "posts": 24,
-        "followers": 1847,
-        "following": 312
-      },
+      "stats": { "posts": 24, "followers": 1847, "following": 312 },
       "posts": [
+        { "id": "p1", "cover": "assets/post-01.svg", "caption": "Morning in Prague ☕️", "date": "2 days ago", "likes": 142 },
+        { "id": "p2", "cover": "assets/post-02.svg", "caption": "Old town light.",       "date": "5 days ago", "likes": 98 },
+        { "id": "p3", "cover": "assets/post-03.svg", "caption": "Long walk. No plan.",   "date": "1 week ago", "likes": 211 }
+      ]
+    },
+
+    "trace_search_alex_miller": {
+      "id": "trace_search_alex_miller",
+      "type": "trace_search",
+      "tool": "trace",
+      "query": "alex_miller",
+      "engine_note": "TRACE · username search across public social platforms",
+      "results": [
         {
-          "id": "p1",
-          "cover": "assets/post-01.svg",
-          "caption": "Morning in Prague ☕️",
-          "date": "2 days ago",
-          "likes": 142
+          "id": "candidate_001",
+          "url": "frame.social/alex.miller.uk",
+          "username": "alex.miller.uk",
+          "display_name": "Alex Miller",
+          "avatar": "assets/avatar-candidate-001.svg",
+          "snippet": "Photographer · Manchester. Landscape / portrait. Available for hire.",
+          "signal": "Same name. Long-standing account. Photographer."
         },
         {
-          "id": "p2",
-          "cover": "assets/post-02.svg",
-          "caption": "Old town light.",
-          "date": "5 days ago",
-          "likes": 98
+          "id": "candidate_002",
+          "url": "frame.social/alexm_travel",
+          "username": "alexm_travel",
+          "display_name": "Alex M.",
+          "avatar": "assets/avatar-candidate-002.svg",
+          "snippet": "Traveler ☕ Coffee & long trains. Berlin-based.",
+          "signal": "Similar bio. Different first name spelling."
         },
         {
-          "id": "p3",
-          "cover": "assets/post-03.svg",
-          "caption": "Long walk. No plan.",
-          "date": "1 week ago",
-          "likes": 211
+          "id": "candidate_003",
+          "url": "frame.social/alex_miller_music",
+          "username": "alex_miller_music",
+          "display_name": "Alex Miller",
+          "avatar": "assets/avatar-candidate-003.svg",
+          "snippet": "Guitar / synths / voice. New EP out this fall.",
+          "signal": "Same name. Unrelated context."
         }
+      ]
+    },
+
+    "candidate_001": {
+      "id": "candidate_001",
+      "type": "frame_profile",
+      "tool": "trace",
+      "source": "trace_search_alex_miller",
+      "url": "frame.social/alex.miller.uk",
+      "username": "alex.miller.uk",
+      "display_name": "Alex Miller",
+      "avatar": "assets/avatar-candidate-001.svg",
+      "bio": "Photographer. Manchester, UK.\nLandscape · portrait · slow travel.\nAvailable for hire → DM.",
+      "location": "Manchester, UK",
+      "joined": "August 2018",
+      "stats": { "posts": 342, "followers": 12480, "following": 187 },
+      "posts": [
+        { "id": "c1p1", "cover": "assets/post-01.svg", "caption": "Prague, spring 2023. Reprint available.", "date": "1 year ago", "likes": 1290 },
+        { "id": "c1p2", "cover": "assets/post-02.svg", "caption": "Old town — early light.",                  "date": "1 year ago", "likes": 812 },
+        { "id": "c1p3", "cover": "assets/post-03.svg", "caption": "No plan, no map. Just walking.",           "date": "1 year ago", "likes": 1521 }
+      ]
+    },
+
+    "candidate_002": {
+      "id": "candidate_002",
+      "type": "frame_profile",
+      "tool": "trace",
+      "source": "trace_search_alex_miller",
+      "url": "frame.social/alexm_travel",
+      "username": "alexm_travel",
+      "display_name": "Alex M.",
+      "avatar": "assets/avatar-candidate-002.svg",
+      "bio": "Traveler ☕ Coffee & long trains.\nBerlin-based. She/her.",
+      "location": "Berlin, DE",
+      "joined": "May 2020",
+      "stats": { "posts": 118, "followers": 4310, "following": 502 },
+      "posts": [
+        { "id": "c2p1", "cover": "assets/post-02.svg", "caption": "Sunday market. Kreuzberg.", "date": "3 days ago",  "likes": 78 },
+        { "id": "c2p2", "cover": "assets/post-03.svg", "caption": "Train to Leipzig.",         "date": "2 weeks ago", "likes": 122 }
+      ]
+    },
+
+    "candidate_003": {
+      "id": "candidate_003",
+      "type": "frame_profile",
+      "tool": "trace",
+      "source": "trace_search_alex_miller",
+      "url": "frame.social/alex_miller_music",
+      "username": "alex_miller_music",
+      "display_name": "Alex Miller",
+      "avatar": "assets/avatar-candidate-003.svg",
+      "bio": "Guitar / synths / voice.\nNew EP out this fall.\nBookings: hello@amiller.music",
+      "location": "Nashville, TN",
+      "joined": "January 2019",
+      "stats": { "posts": 61, "followers": 2890, "following": 133 },
+      "posts": [
+        { "id": "c3p1", "cover": "assets/post-01.svg", "caption": "Studio night.",       "date": "1 week ago",  "likes": 214 },
+        { "id": "c3p2", "cover": "assets/post-02.svg", "caption": "Rehearsal, take 4.",  "date": "3 weeks ago", "likes": 98 }
       ]
     }
   }

@@ -30,7 +30,8 @@ function cardHtml(evidence, caseData) {
     ? resolveAsset(caseData, snap.avatar)
     : (snap.cover ? resolveAsset(caseData, snap.cover) : '');
   const title = snap.display_name || snap.username || snap.title || snap.id;
-  const meta = [snap.url, snap.location].filter(Boolean).join(' · ');
+  const handle = snap.username ? `@${snap.username}` : '';
+  const meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
   return `
     <div class="evidence-card">
       <div class="evidence-card__thumb">
