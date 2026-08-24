@@ -193,6 +193,68 @@
       "preview": "assets/post-01.svg",
       "caption": "Prague, spring 2023. Reprint available.",
       "note": "Post containing the Prague photograph is present in this snapshot."
+    },
+
+    "chat_search_alex_miller": {
+      "id": "chat_search_alex_miller",
+      "type": "chat_search",
+      "tool": "chat",
+      "query": "alex_miller",
+      "engine_note": "CHAT · public handle lookup",
+      "results": [
+        {
+          "id": "chat_profile_alex_miller_handle",
+          "handle": "alex_miller",
+          "display_name": "Daniel Cole",
+          "joined": "Feb 2024"
+        }
+      ]
+    },
+
+    "chat_search_daniel_cole": {
+      "id": "chat_search_daniel_cole",
+      "type": "chat_search",
+      "tool": "chat",
+      "query": "daniel cole",
+      "engine_note": "CHAT · public handle lookup",
+      "results": [
+        {
+          "id": "chat_profile_dcole_shoots",
+          "handle": "dcole_shoots",
+          "display_name": "Daniel Cole",
+          "joined": "2019"
+        }
+      ]
+    },
+
+    "chat_profile_alex_miller_handle": {
+      "id": "chat_profile_alex_miller_handle",
+      "type": "chat_profile",
+      "tool": "chat",
+      "source": "chat_search_alex_miller",
+      "url": "chat.im/@alex_miller",
+      "handle": "alex_miller",
+      "display_name": "Daniel Cole",
+      "bio": "",
+      "location": "",
+      "joined": "Feb 2024",
+      "last_seen": "recently",
+      "signal_note": "Handle registered under a different display name."
+    },
+
+    "chat_profile_dcole_shoots": {
+      "id": "chat_profile_dcole_shoots",
+      "type": "chat_profile",
+      "tool": "chat",
+      "source": "chat_search_daniel_cole",
+      "url": "chat.im/@dcole_shoots",
+      "handle": "dcole_shoots",
+      "display_name": "Daniel Cole",
+      "bio": "Freelance photo. Prague. Studio work.",
+      "location": "Prague",
+      "joined": "2019",
+      "last_seen": "recently",
+      "signal_note": "Long-standing account. Prague-based photographer."
     }
   }
 }

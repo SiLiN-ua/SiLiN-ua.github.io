@@ -6,6 +6,7 @@ import { loadCase } from '../engine/case-loader.js';
 import { renderFrameProfile } from '../tools/frame/frame.js';
 import { renderTrace } from '../tools/trace/trace.js';
 import { renderArchive } from '../tools/archive/archive.js';
+import { renderChat } from '../tools/chat/chat.js';
 import { renderEvidencePane } from './evidence-pane.js';
 
 // Lock status is derived per-render from case.json → unlock_rules, NOT hardcoded here.
@@ -23,7 +24,7 @@ const TOOLS = [
 // Tools that have a concrete implementation in Session 2. Anything not in this set
 // still shows in the sidebar but renders the "available later" placeholder pane —
 // even after unlock — until its Session lands.
-const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'evidence']);
+const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'evidence']);
 
 let caseData = null;
 let toastTimer = null;
@@ -101,6 +102,8 @@ function renderPane() {
     renderTrace(paneEl, caseData, ctx);
   } else if (active === 'archive') {
     renderArchive(paneEl, caseData, ctx);
+  } else if (active === 'chat') {
+    renderChat(paneEl, caseData, ctx);
   } else if (active === 'evidence') {
     renderEvidencePane(paneEl, caseData);
   }

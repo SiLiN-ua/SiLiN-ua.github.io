@@ -36,6 +36,10 @@ function cardHtml(evidence, caseData) {
   if (snap.type === 'archive_snapshot') {
     title = snap.kind_label || 'ARCHIVE SNAPSHOT';
     meta = [snap.captured_at, snap.source_url].filter(Boolean).join(' · ');
+  } else if (snap.type === 'chat_profile') {
+    title = snap.display_name || snap.handle || snap.id;
+    const handle = snap.handle ? `@${snap.handle}` : '';
+    meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
   } else {
     title = snap.display_name || snap.username || snap.title || snap.id;
     const handle = snap.username ? `@${snap.username}` : '';
