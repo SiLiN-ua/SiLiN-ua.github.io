@@ -12,6 +12,61 @@
     "notes":   { "requires_evidence": ["profile_001"] }
   },
 
+  "report_criteria": [
+    {
+      "id": "identity_fake",
+      "section": "IDENTITY",
+      "label": "Fake profile identified",
+      "missing_label": "NO SUSPECT PROFILE IDENTIFIED",
+      "requires_any": ["profile_001"]
+    },
+    {
+      "id": "identity_source",
+      "section": "IDENTITY",
+      "label": "Original photo source identified",
+      "missing_label": "SOURCE OF THE IMAGES NOT IDENTIFIED",
+      "requires_any": ["candidate_001"]
+    },
+    {
+      "id": "content_overlap",
+      "section": "CONTENT",
+      "label": "Content overlap established",
+      "missing_label": "OVERLAP BETWEEN FAKE AND SOURCE NOT ESTABLISHED",
+      "requires_all": ["profile_001", "candidate_001"]
+    },
+    {
+      "id": "temporal_fake",
+      "section": "TEMPORAL PROOF",
+      "label": "Fake profile captured",
+      "missing_label": "NO ARCHIVE CAPTURE OF THE FAKE PROFILE",
+      "requires_any": ["archive_snapshot_alex_miller_2024_03"]
+    },
+    {
+      "id": "temporal_source",
+      "section": "TEMPORAL PROOF",
+      "label": "Source ownership predates fake",
+      "missing_label": "INDEPENDENT ARCHIVE SNAPSHOT MISSING",
+      "requires_any": [
+        "archive_snapshot_alex_miller_uk_2023_05",
+        "archive_snapshot_alex_miller_uk_2019_02"
+      ]
+    },
+    {
+      "id": "operator_lead",
+      "section": "OPERATOR",
+      "label": "Handle linked to real identity",
+      "missing_label": "NO OPERATOR IDENTITY LEAD",
+      "requires_any": ["chat_profile_alex_miller_handle"]
+    },
+    {
+      "id": "operator_verified",
+      "section": "OPERATOR",
+      "label": "Real identity independently corroborated",
+      "missing_label": "UNVERIFIED",
+      "requires_any": ["chat_profile_dcole_shoots"]
+    }
+  ],
+
   "artifacts": {
     "profile_001": {
       "id": "profile_001",

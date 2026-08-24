@@ -1015,3 +1015,91 @@ body::before, body::after { display: none; }
   color: var(--cream);
   word-break: break-word;
 }
+
+/* ==========================================================
+   REPORT — evidence audit (derived, no state)
+   ========================================================== */
+.report { max-width: 640px; margin: 0 auto; }
+.report__title {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .28em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.report-section { margin-bottom: 1.4rem; }
+.report-section__title {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .22em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: .6rem;
+}
+.report-section__items {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.report-item {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: .5rem;
+  padding: .35rem 0;
+  align-items: baseline;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.report-item__mark {
+  font-family: var(--font-mono);
+  font-size: .95rem;
+  line-height: 1;
+}
+.report-item.is-met .report-item__mark {
+  color: var(--steel-hi);
+}
+.report-item.is-met .report-item__label {
+  color: var(--text);
+}
+.report-item.is-missing .report-item__mark {
+  color: var(--ice);
+}
+.report-item.is-missing .report-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+.report-item.is-missing .report-item__label {
+  color: var(--text);
+}
+.report-item__missing {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .12em;
+  color: var(--ice);
+  text-transform: uppercase;
+}
+
+.report__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.5rem 0 1.25rem;
+}
+.report__verdict {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--cream);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.report__verdict.is-complete {
+  color: var(--steel-hi);
+}
+.report__actions {
+  display: flex;
+  gap: .6rem;
+}

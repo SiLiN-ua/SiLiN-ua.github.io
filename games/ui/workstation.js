@@ -8,6 +8,7 @@ import { renderTrace } from '../tools/trace/trace.js';
 import { renderArchive } from '../tools/archive/archive.js';
 import { renderChat } from '../tools/chat/chat.js';
 import { renderEvidencePane } from './evidence-pane.js';
+import { renderReportPane } from './report-pane.js';
 
 // Lock status is derived per-render from case.json → unlock_rules, NOT hardcoded here.
 // A tool with no rule in case.json is always available.
@@ -18,13 +19,14 @@ const TOOLS = [
   { id: 'atlas',    label: 'ATLAS',    group: 'sources' },
   { id: 'archive',  label: 'ARCHIVE',  group: 'sources' },
   { id: 'evidence', label: 'EVIDENCE', group: 'case'    },
+  { id: 'report',   label: 'REPORT',   group: 'case'    },
   { id: 'notes',    label: 'NOTES',    group: 'case'    },
 ];
 
 // Tools that have a concrete implementation in Session 2. Anything not in this set
 // still shows in the sidebar but renders the "available later" placeholder pane —
 // even after unlock — until its Session lands.
-const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'evidence']);
+const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'evidence', 'report']);
 
 let caseData = null;
 let toastTimer = null;
@@ -106,6 +108,8 @@ function renderPane() {
     renderChat(paneEl, caseData, ctx);
   } else if (active === 'evidence') {
     renderEvidencePane(paneEl, caseData);
+  } else if (active === 'report') {
+    renderReportPane(paneEl, caseData);
   }
 }
 
@@ -187,7 +191,8 @@ function onEvidenceAdded() {
     }
   }
   renderSidebar();
-  if (getState().activeTool === 'evidence') renderPane();
+  const active = getState().activeTool;
+  if (active === 'evidence' || active === 'report') renderPane();
 }
 
 async function boot() {
