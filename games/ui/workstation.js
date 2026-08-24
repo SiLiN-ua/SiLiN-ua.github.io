@@ -212,6 +212,7 @@ async function boot() {
   subscribe(evt => {
     if (evt.type === 'tool_changed') renderPane();
     if (evt.type === 'evidence_added') onEvidenceAdded();
+    if (evt.type === 'submission_updated' && getState().activeTool === 'report') renderPane();
     if (evt.type === 'reset') { renderSidebar(); updateTopbar(); }
   });
 

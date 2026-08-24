@@ -1,17 +1,20 @@
 // engine/report.js
-// Derived evaluator for the mini Final Report checkpoint.
-// Pure function of (caseData.report_criteria, state.evidence). No state of its own.
+// Derived evaluator for REPORT (evidence audit) and FINAL REPORT (analyst filing).
+// Pure function of (caseData, state.evidence, state.finalSubmission). No state of
+// its own. Every field returned is derived — nothing here is persisted.
 //
-// A criterion is "met" when its requirement is satisfied by the collected evidence:
-//   - requires_any: at least one listed evidence id is present
-//   - requires_all: every listed evidence id is present
-// A criterion with neither requirement is considered met (author authored it "always ok").
+// Three orthogonal questions this module answers:
 //
-// A criterion with type: "optional" is an independent finding, NOT part of the
-// authored chain. It shows up in its own section but is excluded from the
-// completion verdict — its absence never turns the chain into "incomplete".
-// The rule REPORT answers is "is the authored chain closed?", not "has the
-// investigation been exhausted?" — optional criteria preserve that distinction.
+//   VERDICT     — "Is the authored evidence chain complete?"
+//                 (sections + allMet + missing)
+//   QUALITY     — "How thoroughly was the investigation conducted?"
+//                 (quality.* dimensions + composite overall 0..100)
+//   SUBMISSION  — "What conclusion did the analyst formally file?"
+//                 (submission — mirrors state.finalSubmission)
+//
+// Three different questions. Three different states. They are ALLOWED to
+// diverge: the same verdict can carry different quality; a filed conclusion
+// can exist regardless of quality.
 
 import { getState } from './state.js';
 
@@ -30,8 +33,126 @@ function isCriterionMet(criterion, ids) {
   return true;
 }
 
-// Returns [{ section, items: [{ id, label, missing_label, met, optional }, ...] }, ...]
-// in declaration order. Sections are grouped in the order they first appear.
+// -------- QUALITY --------
+
+// Discover all artifact ids that can potentially become evidence, and index
+// them by their `tool` field and by their `type` field. This is what "available
+// snapshots" and "total tools" refer to.
+function surveyCase(caseData) {
+  const arts = caseData?.artifacts || {};
+  const allTools = new Set();
+  let availableSnapshots = 0;
+  for (const id of Object.keys(arts)) {
+    const a = arts[id];
+    if (a && a.tool) allTools.add(a.tool);
+    if (a && a.type === 'archive_snapshot') availableSnapshots += 1;
+  }
+  return { allTools, availableSnapshots };
+}
+
+function computeQuality(caseData, ids, requiredFlat, missingRequired) {
+  const state = getState();
+  const collectedItems = (state && state.evidence) || [];
+  const { allTools, availableSnapshots } = surveyCase(caseData);
+
+  // Chain
+  let chainRequired;
+  if (!ids.size) chainRequired = 'EMPTY';
+  else if (missingRequired === 0 && requiredFlat.length > 0) chainRequired = 'COMPLETE';
+  else chainRequired = 'INCOMPLETE';
+
+  // Independent findings (optional criteria met / total)
+  const optionalCriteria = (caseData?.report_criteria || []).filter(c => c.type === 'optional');
+  const optionalMet = optionalCriteria.filter(c => isCriterionMet(c, ids)).length;
+  const independentFindings = { met: optionalMet, total: optionalCriteria.length };
+
+  // Source diversity — tools present in evidence, in order of first appearance
+  const seenTools = [];
+  const seenToolsSet = new Set();
+  for (const e of collectedItems) {
+    const t = e && e.tool;
+    if (t && !seenToolsSet.has(t)) {
+      seenToolsSet.add(t);
+      seenTools.push(t);
+    }
+  }
+  const sourceDiversity = { toolsUsed: seenTools, total: allTools.size };
+
+  // Temporal depth — archive snapshots collected / available
+  const collectedSnapshots = collectedItems.filter(
+    e => e && e.type === 'archive_snapshot'
+  ).length;
+  const temporalDepth = { collectedSnapshots, availableSnapshots };
+
+  // Composite: hardcoded weights for MVP1 (per session-8 spec).
+  //   50 chain COMPLETE
+  //   20 independent findings ratio
+  //   15 source diversity ratio
+  //   15 temporal depth ratio
+  const chainScore = chainRequired === 'COMPLETE' ? 50 : 0;
+  const indScore = independentFindings.total > 0
+    ? 20 * (independentFindings.met / independentFindings.total) : 0;
+  const divScore = sourceDiversity.total > 0
+    ? 15 * (Math.min(sourceDiversity.toolsUsed.length, sourceDiversity.total) / sourceDiversity.total) : 0;
+  const tempScore = temporalDepth.availableSnapshots > 0
+    ? 15 * (Math.min(temporalDepth.collectedSnapshots, temporalDepth.availableSnapshots) / temporalDepth.availableSnapshots) : 0;
+  const overall = Math.round(chainScore + indScore + divScore + tempScore);
+
+  return {
+    chainRequired,
+    independentFindings,
+    sourceDiversity,
+    temporalDepth,
+    overall,
+  };
+}
+
+// -------- SUBMISSION EVALUATOR --------
+
+function matchAttribution(answer, finalAnswer) {
+  if (!finalAnswer || !finalAnswer.attribution_expected) return true;
+  const mode = finalAnswer.attribution_match || 'substring_ci';
+  const a = String(answer || '');
+  const e = String(finalAnswer.attribution_expected);
+  switch (mode) {
+    case 'substring_ci': return a.toLowerCase().includes(e.toLowerCase());
+    case 'exact_ci':     return a.trim().toLowerCase() === e.trim().toLowerCase();
+    case 'exact':        return a === e;
+    default:             return a.toLowerCase().includes(e.toLowerCase());
+  }
+}
+
+// Evaluate a candidate submission against final_answer + current evidence.
+// Pure — does not persist anything.
+export function evaluateSubmission(caseData, candidate) {
+  const finalAnswer = caseData?.final_answer;
+  if (!finalAnswer) {
+    return { outcome: 'CLOSED', reason: 'no_final_answer_defined' };
+  }
+  const ids = evidenceIdSet();
+  const required = new Set(finalAnswer.supporting_evidence_required || []);
+  const minCount = finalAnswer.supporting_evidence_min_count || 1;
+
+  const selectedInEvidence = (candidate.supportingEvidenceIds || [])
+    .filter(id => ids.has(id));
+  const requiredMatches = selectedInEvidence.filter(id => required.has(id));
+
+  const attributionOk = matchAttribution(candidate.attribution, finalAnswer);
+  const evidenceOk = requiredMatches.length >= minCount;
+
+  const outcome = (attributionOk && evidenceOk) ? 'SOLVED' : 'CLOSED';
+  return {
+    outcome,
+    attributionOk,
+    evidenceOk,
+    selectedCount: selectedInEvidence.length,
+    requiredMatchesCount: requiredMatches.length,
+    minCount,
+  };
+}
+
+// -------- TOP-LEVEL EVALUATION --------
+
 export function evaluateReport(caseData) {
   const criteria = (caseData && caseData.report_criteria) || [];
   const ids = evidenceIdSet();
@@ -54,14 +175,17 @@ export function evaluateReport(caseData) {
     });
   }
 
-  // Verdict is derived from REQUIRED criteria only.
-  const requiredFlat = sectionOrder
-    .flatMap(s => bySection.get(s))
-    .filter(item => !item.optional);
+  const flat = sectionOrder.flatMap(s => bySection.get(s));
+  const requiredFlat = flat.filter(item => !item.optional);
   const totalRequired = requiredFlat.length;
   const missingRequired = requiredFlat.filter(c => !c.met).length;
   const allMet = totalRequired > 0 && missingRequired === 0;
   const nothingCollected = ids.size === 0;
+
+  const quality = computeQuality(caseData, ids, requiredFlat, missingRequired);
+
+  const state = getState();
+  const submission = (state && state.finalSubmission) || null;
 
   return {
     sections: sectionOrder.map(name => ({ name, items: bySection.get(name) })),
@@ -69,5 +193,7 @@ export function evaluateReport(caseData) {
     missing: missingRequired,
     allMet,
     nothingCollected,
+    quality,
+    submission,
   };
 }

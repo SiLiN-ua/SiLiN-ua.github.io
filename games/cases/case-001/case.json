@@ -12,6 +12,17 @@
     "notes":   { "requires_evidence": ["profile_001"] }
   },
 
+  "final_answer": {
+    "question": "Who is behind the account?",
+    "attribution_expected": "Daniel Cole",
+    "attribution_match": "substring_ci",
+    "supporting_evidence_required": [
+      "chat_profile_alex_miller_handle",
+      "chat_profile_dcole_shoots"
+    ],
+    "supporting_evidence_min_count": 2
+  },
+
   "report_criteria": [
     {
       "id": "identity_fake",

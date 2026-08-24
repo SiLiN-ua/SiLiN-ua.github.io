@@ -13,8 +13,9 @@ function defaultState(caseId) {
     caseId,
     startedAt: Date.now(),
     lastActivity: Date.now(),
-    evidence: [],       // array of immutable snapshots
+    evidence: [],           // array of immutable snapshots
     activeTool: 'frame',
+    finalSubmission: null,  // { attribution, supportingEvidenceIds, submittedAt, outcome }
   };
 }
 
@@ -107,4 +108,20 @@ export function resetAll() {
   state = defaultState(caseId);
   persist();
   emit({ type: 'reset' });
+}
+
+// Persist the analyst's filed conclusion. Latest submission replaces any prior
+// one (unlimited retries — see session-8 spec). This function does NOT decide
+// SOLVED / CLOSED — that verdict lives in engine/report.js evaluateSubmission
+// and is passed in as `outcome`.
+export function submitFinalReport({ attribution, supportingEvidenceIds, outcome }) {
+  state.finalSubmission = {
+    attribution: String(attribution || '').trim(),
+    supportingEvidenceIds: Array.isArray(supportingEvidenceIds) ? [...supportingEvidenceIds] : [],
+    submittedAt: Date.now(),
+    outcome: outcome === 'SOLVED' ? 'SOLVED' : 'CLOSED',
+  };
+  persist();
+  emit({ type: 'submission_updated', submission: state.finalSubmission });
+  return state.finalSubmission;
 }
