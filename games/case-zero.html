@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Zero — OSINT Investigation</title>
+  <meta name="description" content="Case Zero — a free OSINT investigation game by Yehor Selin. You don't play at OSINT. You investigate.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="ui/workstation.css">
+</head>
+<body>
+  <div class="game-root">
+
+    <!-- WELCOME -->
+    <section class="welcome">
+      <div class="welcome__eyebrow">CASE ZERO · 001</div>
+      <h1 class="welcome__title">STOLEN FACE</h1>
+      <p class="welcome__sub">
+        A client sent a message. Someone is using their photos on Instagram.<br>
+        Find out who is behind the account.
+      </p>
+      <button class="welcome__cta" data-action="play">Play Case 001 →</button>
+      <div class="welcome__resume"></div>
+    </section>
+
+    <!-- WORKSTATION -->
+    <section class="workstation">
+      <header class="ws-topbar">
+        <div class="ws-topbar__title">
+          <span>CASE 001</span><b>STOLEN FACE</b>
+        </div>
+        <div class="ws-topbar__meta">EVIDENCE 0</div>
+      </header>
+
+      <div class="ws-body">
+        <aside class="ws-sidebar">
+          <div class="ws-sidebar__group">
+            <div class="ws-sidebar__label">Sources</div>
+            <div data-sidebar-group="sources"></div>
+          </div>
+          <div class="ws-sidebar__group">
+            <div class="ws-sidebar__label">Case</div>
+            <div data-sidebar-group="case"></div>
+          </div>
+        </aside>
+
+        <main class="ws-main">
+          <div class="pane" data-pane="frame"></div>
+          <div class="pane" data-pane="trace"></div>
+          <div class="pane" data-pane="chat"></div>
+          <div class="pane" data-pane="atlas"></div>
+          <div class="pane" data-pane="archive"></div>
+          <div class="pane" data-pane="evidence"></div>
+          <div class="pane" data-pane="notes"></div>
+        </main>
+      </div>
+    </section>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <div class="reset-hint">
+      <button data-action="reset" title="Wipe local save">reset investigation</button>
+    </div>
+  </div>
+
+  <script type="module" src="ui/workstation.js"></script>
+</body>
+</html>

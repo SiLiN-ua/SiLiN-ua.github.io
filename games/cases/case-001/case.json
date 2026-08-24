@@ -1,0 +1,48 @@
+{
+  "id": "case-001",
+  "slug": "stolen-face",
+  "title": "STOLEN FACE",
+  "client_brief": "I found an Instagram profile using my photos. I want to understand who is behind it.",
+  "artifacts": {
+    "profile_001": {
+      "id": "profile_001",
+      "type": "frame_profile",
+      "tool": "frame",
+      "url": "frame.social/alex_miller",
+      "username": "alex_miller",
+      "display_name": "Alex Miller",
+      "avatar": "assets/avatar-alex-miller.svg",
+      "bio": "Traveler. Coffee. Slow mornings.\nPrague based ☕",
+      "location": "Prague, CZ",
+      "joined": "March 2024",
+      "stats": {
+        "posts": 24,
+        "followers": 1847,
+        "following": 312
+      },
+      "posts": [
+        {
+          "id": "p1",
+          "cover": "assets/post-01.svg",
+          "caption": "Morning in Prague ☕️",
+          "date": "2 days ago",
+          "likes": 142
+        },
+        {
+          "id": "p2",
+          "cover": "assets/post-02.svg",
+          "caption": "Old town light.",
+          "date": "5 days ago",
+          "likes": 98
+        },
+        {
+          "id": "p3",
+          "cover": "assets/post-03.svg",
+          "caption": "Long walk. No plan.",
+          "date": "1 week ago",
+          "likes": 211
+        }
+      ]
+    }
+  }
+}
