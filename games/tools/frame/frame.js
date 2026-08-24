@@ -47,7 +47,7 @@ export function renderFrameProfile(paneEl, caseData, profile, { onEvidenceAdded 
             <span><b>${fmtNum(profile.stats.following)}</b>${t('frame.stats.following')}</span>
           </div>
           <div class="frame-bio">${esc(bio)}</div>
-          <div class="frame-meta">${esc(profile.location)} · ${t('frame.meta.joined')} ${esc(profile.joined)}</div>
+          <div class="frame-meta">${esc(pick(profile, 'location'))} · ${t('frame.meta.joined')} ${esc(profile.joined)}</div>
         </div>
       </div>
       <div class="frame-actions">

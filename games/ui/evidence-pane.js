@@ -41,14 +41,14 @@ function cardHtml(evidence, caseData) {
   } else if (snap.type === 'chat_profile') {
     title = snap.display_name || snap.handle || snap.id;
     const handle = snap.handle ? `@${snap.handle}` : '';
-    meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
+    meta = [handle, snap.url, pick(snap, 'location')].filter(Boolean).join(' · ');
   } else if (snap.type === 'atlas_location_claim') {
     title = snap.status || t('atlas.claim.title');
     meta = [snap.subject, pick(snap, 'location_claimed')].filter(Boolean).join(' · ');
   } else {
     title = snap.display_name || snap.username || snap.title || snap.id;
     const handle = snap.username ? `@${snap.username}` : '';
-    meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
+    meta = [handle, snap.url, pick(snap, 'location')].filter(Boolean).join(' · ');
   }
 
   return `
