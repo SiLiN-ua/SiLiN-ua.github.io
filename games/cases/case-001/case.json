@@ -125,6 +125,74 @@
         { "id": "c3p1", "cover": "assets/post-01.svg", "caption": "Studio night.",       "date": "1 week ago",  "likes": 214 },
         { "id": "c3p2", "cover": "assets/post-02.svg", "caption": "Rehearsal, take 4.",  "date": "3 weeks ago", "likes": 98 }
       ]
+    },
+
+    "archive_search_alex_miller": {
+      "id": "archive_search_alex_miller",
+      "type": "archive_search",
+      "tool": "archive",
+      "query": "alex_miller",
+      "source_url": "frame.social/alex_miller",
+      "engine_note": "ARCHIVE · public historical snapshots. Not a live view — captures only.",
+      "snapshots": [
+        { "id": "archive_snapshot_alex_miller_2024_03", "captured_at": "15 MAR 2024", "captured_at_iso": "2024-03-15T09:12:00Z", "note": "Earliest indexed snapshot. Profile exists. No posts indexed." }
+      ]
+    },
+
+    "archive_search_alex_miller_uk": {
+      "id": "archive_search_alex_miller_uk",
+      "type": "archive_search",
+      "tool": "archive",
+      "query": "alex.miller.uk",
+      "source_url": "frame.social/alex.miller.uk",
+      "engine_note": "ARCHIVE · public historical snapshots. Not a live view — captures only.",
+      "snapshots": [
+        { "id": "archive_snapshot_alex_miller_uk_2019_02", "captured_at": "02 FEB 2019", "captured_at_iso": "2019-02-02T14:03:00Z", "note": "Account already exists at this capture. Portfolio-style bio." },
+        { "id": "archive_snapshot_alex_miller_uk_2023_05", "captured_at": "14 MAY 2023", "captured_at_iso": "2023-05-14T18:42:00Z", "note": "Post containing the Prague photograph is present in this snapshot." }
+      ]
+    },
+
+    "archive_snapshot_alex_miller_2024_03": {
+      "id": "archive_snapshot_alex_miller_2024_03",
+      "type": "archive_snapshot",
+      "tool": "archive",
+      "source": "archive_search_alex_miller",
+      "source_url": "frame.social/alex_miller",
+      "captured_at": "15 MAR 2024",
+      "captured_at_iso": "2024-03-15T09:12:00Z",
+      "kind": "earliest_indexed",
+      "kind_label": "EARLIEST INDEXED SNAPSHOT",
+      "preview": "assets/snapshot-empty-profile.svg",
+      "note": "Profile exists. No posts indexed.\nEarliest snapshot currently retrievable for this handle."
+    },
+
+    "archive_snapshot_alex_miller_uk_2019_02": {
+      "id": "archive_snapshot_alex_miller_uk_2019_02",
+      "type": "archive_snapshot",
+      "tool": "archive",
+      "source": "archive_search_alex_miller_uk",
+      "source_url": "frame.social/alex.miller.uk",
+      "captured_at": "02 FEB 2019",
+      "captured_at_iso": "2019-02-02T14:03:00Z",
+      "kind": "account_exists",
+      "kind_label": "ARCHIVED PROFILE",
+      "preview": "assets/snapshot-account-exists.svg",
+      "note": "Account already exists at this capture.\nPortfolio-style bio, hire enquiries welcome."
+    },
+
+    "archive_snapshot_alex_miller_uk_2023_05": {
+      "id": "archive_snapshot_alex_miller_uk_2023_05",
+      "type": "archive_snapshot",
+      "tool": "archive",
+      "source": "archive_search_alex_miller_uk",
+      "source_url": "frame.social/alex.miller.uk",
+      "captured_at": "14 MAY 2023",
+      "captured_at_iso": "2023-05-14T18:42:00Z",
+      "kind": "archived_post",
+      "kind_label": "ARCHIVED POST",
+      "preview": "assets/post-01.svg",
+      "caption": "Prague, spring 2023. Reprint available.",
+      "note": "Post containing the Prague photograph is present in this snapshot."
     }
   }
 }

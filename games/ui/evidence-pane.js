@@ -28,10 +28,20 @@ function cardHtml(evidence, caseData) {
   const snap = evidence.snapshot;
   const thumbSrc = snap.avatar
     ? resolveAsset(caseData, snap.avatar)
-    : (snap.cover ? resolveAsset(caseData, snap.cover) : '');
-  const title = snap.display_name || snap.username || snap.title || snap.id;
-  const handle = snap.username ? `@${snap.username}` : '';
-  const meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
+    : (snap.preview
+        ? resolveAsset(caseData, snap.preview)
+        : (snap.cover ? resolveAsset(caseData, snap.cover) : ''));
+
+  let title, meta;
+  if (snap.type === 'archive_snapshot') {
+    title = snap.kind_label || 'ARCHIVE SNAPSHOT';
+    meta = [snap.captured_at, snap.source_url].filter(Boolean).join(' · ');
+  } else {
+    title = snap.display_name || snap.username || snap.title || snap.id;
+    const handle = snap.username ? `@${snap.username}` : '';
+    meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
+  }
+
   return `
     <div class="evidence-card">
       <div class="evidence-card__thumb">
