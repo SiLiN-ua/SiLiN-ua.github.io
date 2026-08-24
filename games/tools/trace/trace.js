@@ -1,7 +1,8 @@
 // tools/trace/trace.js
 // TRACE — username / image search across the fake digital world.
 
-import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { isInEvidence } from '../../engine/state.js';
+import { emit as emitAction } from '../../engine/actions.js';
 import { resolveAsset } from '../../engine/case-loader.js';
 import { t, pick, getLang } from '../../engine/i18n.js';
 import { formatJoined } from '../../engine/dates.js';
@@ -183,11 +184,11 @@ function renderCandidate(paneEl, caseData, ctx) {
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   addBtn.addEventListener('click', () => {
     if (addBtn.disabled) return;
-    const ev = addEvidence(artifact);
-    if (ev) {
+    emitAction('add_to_case', { artifactId: artifact.id, tool: 'trace' });
+    if (isInEvidence(artifact.id)) {
       addBtn.disabled = true;
       addBtn.textContent = t('frame.actions.saved');
-      ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
+      ctx.onEvidenceAdded && ctx.onEvidenceAdded();
     }
   });
 }

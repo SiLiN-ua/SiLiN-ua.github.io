@@ -1,7 +1,8 @@
 // tools/frame/frame.js
 // Renders a FRAME (social) profile artifact into the work-area pane.
 
-import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { isInEvidence } from '../../engine/state.js';
+import { emit as emitAction } from '../../engine/actions.js';
 import { resolveAsset } from '../../engine/case-loader.js';
 import { t, pick, getLang } from '../../engine/i18n.js';
 import { formatJoined } from '../../engine/dates.js';
@@ -64,11 +65,14 @@ export function renderFrameProfile(paneEl, caseData, profile, { onEvidenceAdded 
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   addBtn.addEventListener('click', () => {
     if (addBtn.disabled) return;
-    const evidence = addEvidence(profile);
-    if (evidence) {
+    // Single entry point per ACTION_BUS_CONTRACT §3.1: UI emits intent,
+    // state handler mutates. Emit is synchronous, so by the next line the
+    // mutation has already happened (or was deduped as already-in-evidence).
+    emitAction('add_to_case', { artifactId: profile.id, tool: 'frame' });
+    if (isInEvidence(profile.id)) {
       addBtn.disabled = true;
       addBtn.textContent = t('frame.actions.saved');
-      onEvidenceAdded && onEvidenceAdded(evidence);
+      onEvidenceAdded && onEvidenceAdded();
     }
   });
 

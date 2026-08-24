@@ -1,7 +1,8 @@
 // tools/chat/chat.js
 // CHAT — messenger handle lookup surface. Public-metadata document view.
 
-import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { isInEvidence } from '../../engine/state.js';
+import { emit as emitAction } from '../../engine/actions.js';
 import { t, pick, getLang } from '../../engine/i18n.js';
 import { formatJoined } from '../../engine/dates.js';
 
@@ -167,11 +168,11 @@ function renderProfileDetail(paneEl, caseData, ctx) {
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   addBtn.addEventListener('click', () => {
     if (addBtn.disabled) return;
-    const ev = addEvidence(p);
-    if (ev) {
+    emitAction('add_to_case', { artifactId: p.id, tool: 'chat' });
+    if (isInEvidence(p.id)) {
       addBtn.disabled = true;
       addBtn.textContent = t('frame.actions.saved');
-      ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
+      ctx.onEvidenceAdded && ctx.onEvidenceAdded();
     }
   });
 }

@@ -6,7 +6,8 @@
 // (Deliberately not reusing FRAME / CHAT / ARCHIVE renderers; each surface has
 //  its own field set and the difference is part of what the player is learning.)
 
-import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { isInEvidence } from '../../engine/state.js';
+import { emit as emitAction } from '../../engine/actions.js';
 import { t, pick } from '../../engine/i18n.js';
 
 function esc(str) {
@@ -192,11 +193,11 @@ function renderClaimDetail(paneEl, caseData, ctx) {
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   addBtn.addEventListener('click', () => {
     if (addBtn.disabled) return;
-    const ev = addEvidence(claim);
-    if (ev) {
+    emitAction('add_to_case', { artifactId: claim.id, tool: 'atlas' });
+    if (isInEvidence(claim.id)) {
       addBtn.disabled = true;
       addBtn.textContent = t('frame.actions.saved');
-      ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
+      ctx.onEvidenceAdded && ctx.onEvidenceAdded();
     }
   });
 }

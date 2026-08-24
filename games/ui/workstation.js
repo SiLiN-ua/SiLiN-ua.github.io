@@ -1,7 +1,7 @@
 // ui/workstation.js
 // Case Zero — WORKSTATION shell. Wires welcome → sidebar → tool panes → evidence.
 
-import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable } from '../engine/state.js';
+import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable, configureActionBus, registerActionHandlers, setActionResumeMode } from '../engine/state.js';
 import { loadCase } from '../engine/case-loader.js';
 import { initI18n, t, setLang, getLang, subscribeLang } from '../engine/i18n.js';
 import { renderFrameProfile } from '../tools/frame/frame.js';
@@ -313,7 +313,15 @@ async function boot() {
     return;
   }
 
-  initState(caseData.id);
+  // Boot sequence per ACTION_BUS_CONTRACT §4:
+  //   initState → configureActionBus → registerActionHandlers → setActionResumeMode(false) → render
+  // Between configure and setActionResumeMode(false), any emit would carry
+  // fromResume:true — but no emit happens in that window (UI is not yet
+  // interactive). The flip is a guardrail against future hydration replays.
+  const { wasResume } = initState(caseData.id);
+  configureActionBus({ fromResume: wasResume });
+  registerActionHandlers(caseData);
+  setActionResumeMode(false);
   prevAvailability = currentAvailability();
   // Sync counter baselines so the first render after a resume does not
   // fire pulse animations for evidence that already existed on disk.

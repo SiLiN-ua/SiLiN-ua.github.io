@@ -2,7 +2,8 @@
 // ARCHIVE — historical snapshots of a public URL / handle.
 // Snapshots are presented as historical documents — NOT live profiles.
 
-import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { isInEvidence } from '../../engine/state.js';
+import { emit as emitAction } from '../../engine/actions.js';
 import { resolveAsset } from '../../engine/case-loader.js';
 import { t, pick } from '../../engine/i18n.js';
 
@@ -184,11 +185,11 @@ function renderSnapshotDetail(paneEl, caseData, ctx) {
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   addBtn.addEventListener('click', () => {
     if (addBtn.disabled) return;
-    const ev = addEvidence(snap);
-    if (ev) {
+    emitAction('add_to_case', { artifactId: snap.id, tool: 'archive' });
+    if (isInEvidence(snap.id)) {
       addBtn.disabled = true;
       addBtn.textContent = t('frame.actions.saved');
-      ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
+      ctx.onEvidenceAdded && ctx.onEvidenceAdded();
     }
   });
 }

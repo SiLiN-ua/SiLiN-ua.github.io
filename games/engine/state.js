@@ -1,34 +1,117 @@
 // engine/state.js
 // In-memory investigation state + evidence store.
 // Emits change events so UI panes can re-render without direct coupling.
+//
+// V2-S1.2: schema v2 with 11 new fields, migration v1→v2 (idempotent, no data
+// loss), integration with action bus (§14.2 / ACTION_BUS_CONTRACT.md).
+//
+// Two buses live here:
+//   - Existing state bus (subscribe/emit) — state-change facts, UI panes
+//     subscribe to it. Unchanged contract.
+//   - Action bus (engine/actions.js) — player-intent events. state.js is a
+//     CONSUMER: it registers mutation handlers that turn actions into state
+//     mutations, which in turn fire state-bus events. state.js does NOT
+//     import actions runtime context — actions.js is configured externally
+//     via configureActionBus(...) below.
 
 import { loadState, saveState, clearState, migrateLegacyKey } from './save.js';
+import * as actions from './actions.js';
+
+const SCHEMA_VERSION = 2;
 
 const listeners = new Set();
 let state = null;
+let unregisterActionHandlers = null;  // returned by registerActionHandlers
 
 function defaultState(caseId) {
   return {
-    version: 1,
+    version: SCHEMA_VERSION,
     caseId,
     startedAt: Date.now(),
     lastActivity: Date.now(),
-    evidence: [],           // array of immutable snapshots
+
+    // v1 core (unchanged contract)
+    evidence: [],
     activeTool: 'frame',
-    finalSubmission: null,  // { attribution, supportingEvidenceIds, submittedAt, outcome }
+    finalSubmission: null,
+
+    // v2 additions — every field has a safe default so a missing key never
+    // crashes a reader.
+    viewed: [],                    // Array<artifactId>
+    clipboard: null,               // {value, ts} | null
+    searches: [],                  // Array<{tool, query, ts}>
+    splitView: {},                 // {[tool]: {a, b}}
+    comparisons: [],               // Array<{aId, bId, aDate, bDate, ts}>
+    videoBookmarks: {},            // {[videoId]: [{timestamp, label?, ts}]}
+    links: [],                     // Array<{from, to, reason, ts}>
+    picks: {},                     // {[criterionId]: evidenceId}
+    cinematic: { firedOnce: [] },  // Array<beatId>
+    timeline: [],                  // Array<envelope>
+    sessionSeq: 0,                 // last action seq — actions.js resumes from here
+    visits: 1,
+    elapsedMsFromPriorVisits: 0,
   };
 }
 
+// v2 field defaults, used by migration. Keep in sync with defaultState().
+// A separate map so migration only adds missing keys — never overwrites.
+const V2_FIELD_DEFAULTS = {
+  viewed: () => [],
+  clipboard: () => null,
+  searches: () => [],
+  splitView: () => ({}),
+  comparisons: () => [],
+  videoBookmarks: () => ({}),
+  links: () => [],
+  picks: () => ({}),
+  cinematic: () => ({ firedOnce: [] }),
+  timeline: () => [],
+  sessionSeq: () => 0,
+  visits: () => 1,
+  elapsedMsFromPriorVisits: () => 0,
+};
+
+// Idempotent v1 → v2 migration. Called on every load — a v2 save re-enters
+// this and no-ops for present fields. Never overwrites existing values,
+// never drops evidence / finalSubmission / activeTool.
+export function migrateToV2(raw) {
+  if (!raw || typeof raw !== 'object') return raw;
+  const out = { ...raw };
+  for (const [key, mk] of Object.entries(V2_FIELD_DEFAULTS)) {
+    if (!(key in out) || out[key] === undefined) {
+      out[key] = mk();
+    }
+  }
+  // cinematic could exist but be malformed (e.g. missing firedOnce)
+  if (!out.cinematic || typeof out.cinematic !== 'object') {
+    out.cinematic = { firedOnce: [] };
+  } else if (!Array.isArray(out.cinematic.firedOnce)) {
+    out.cinematic.firedOnce = [];
+  }
+  out.version = SCHEMA_VERSION;
+  return out;
+}
+
+// Returns {wasResume, state}. wasResume=true when a persisted state was
+// found for this caseId with any evidence collected. Boot layer uses this
+// to seed actions.configure({fromResume}).
 export function initState(caseId) {
   migrateLegacyKey();
   const persisted = loadState(caseId);
+  let wasResume = false;
   if (persisted && persisted.caseId === caseId) {
-    state = persisted;
+    state = migrateToV2(persisted);
+    // "resume" means the player has actually done something before —
+    // an empty state carried across a page reload is not a resume for
+    // cinematic-gating purposes.
+    wasResume = Array.isArray(state.evidence) && state.evidence.length > 0;
+    if (wasResume) state.visits = (state.visits || 1) + 1;
+    persist();
   } else {
     state = defaultState(caseId);
     persist();
   }
-  return state;
+  return { state, wasResume };
 }
 
 export function getState() {
@@ -53,6 +136,13 @@ function emit(event) {
 
 function persist() {
   state.lastActivity = Date.now();
+  // Snapshot the action-bus seq so it resumes cleanly on reload. Only
+  // when the bus has actually been configured — otherwise `getSeq()`
+  // would return the freshly-reset 0 and clobber the seq loaded from
+  // disk (persist runs from inside initState, before configureActionBus).
+  if (actions.isConfigured()) {
+    state.sessionSeq = actions.getSeq();
+  }
   saveState(state);
 }
 
@@ -132,4 +222,54 @@ export function submitFinalReport({ attribution, supportingEvidenceIds, outcome 
   persist();
   emit({ type: 'submission_updated', submission: state.finalSubmission });
   return state.finalSubmission;
+}
+
+// ---- Action bus wiring ----
+
+// Configure the action bus at boot. Boot layer calls this AFTER initState,
+// then registerActionHandlers, then setActionResumeMode(false).
+export function configureActionBus({ fromResume }) {
+  actions.configure({
+    caseId: state.caseId,
+    fromResume: !!fromResume,
+    initialSeq: state.sessionSeq || 0,
+  });
+}
+
+export function setActionResumeMode(flag) {
+  actions.setResumeMode(!!flag);
+}
+
+// Register V2-S1.2 mutation handler(s). Only `add_to_case` in S1.2 as proof
+// of the vertical pipe. Other 11 actions from §2.2 wire up in later S-sessions.
+//
+// Returns an unregister function (useful for tests).
+export function registerActionHandlers(caseData) {
+  if (!caseData || !caseData.artifacts) {
+    console.warn('[state] registerActionHandlers: caseData.artifacts required');
+    return () => {};
+  }
+  if (unregisterActionHandlers) {
+    // Defensive: replace any prior registration (e.g. hot-reload).
+    unregisterActionHandlers();
+    unregisterActionHandlers = null;
+  }
+
+  const offs = [];
+
+  offs.push(actions.on('add_to_case', ({ artifactId, tool }) => {
+    const artifact = caseData.artifacts[artifactId];
+    if (!artifact) {
+      console.warn(`[state] add_to_case: unknown artifactId "${artifactId}"`);
+      return;
+    }
+    // Preserve the id + tool hint from the action payload — matches how
+    // tools historically called addEvidence directly.
+    addEvidence({ ...artifact, id: artifactId, tool: artifact.tool || tool });
+  }));
+
+  unregisterActionHandlers = () => {
+    for (const off of offs) off();
+  };
+  return unregisterActionHandlers;
 }
