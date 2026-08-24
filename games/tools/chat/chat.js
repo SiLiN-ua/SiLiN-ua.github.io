@@ -1,11 +1,8 @@
 // tools/chat/chat.js
-// CHAT — messenger handle lookup surface.
-// Session 4 scope: two hard-coded queries, results list, compact profile detail.
-// CHAT profile is presented as a public-metadata document — NOT a full messenger UI.
-// (Deliberately not reusing renderFrameProfile or the archive snapshot layout:
-//  each surface has its own field set and the difference is part of the learning.)
+// CHAT — messenger handle lookup surface. Public-metadata document view.
 
 import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { t, pick } from '../../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -15,16 +12,13 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
-// Per-tool navigation state. Runtime only — not persisted across reloads.
 const view = {
   query: '',
   submitted: false,
   activeProfileId: null,
 };
 
-function normalize(s) {
-  return String(s || '').trim().toLowerCase();
-}
+function normalize(s) { return String(s || '').trim().toLowerCase(); }
 
 function findSearchByQuery(caseData, q) {
   const needle = normalize(q);
@@ -51,15 +45,15 @@ function renderSearch(paneEl, caseData, ctx) {
   paneEl.innerHTML = `
     <div class="chat">
       <div class="chat__header">
-        <div class="chat__label">CHAT · public handle lookup</div>
+        <div class="chat__label">${t('chat.label')}</div>
         <form class="chat__form" data-form="chat-search" autocomplete="off">
           <input class="chat__input" type="text" name="q"
-                 placeholder="Search a handle or a name…"
+                 placeholder="${esc(t('chat.placeholder'))}"
                  value="${esc(view.query)}">
-          <button class="btn-primary" type="submit">Search</button>
+          <button class="btn-primary" type="submit">${t('chat.button.search')}</button>
         </form>
         <div class="chat__hint">
-          Public profile only — no messages, no phone numbers.
+          ${t('chat.hint')}
         </div>
       </div>
 
@@ -91,24 +85,26 @@ function renderResultList(search) {
   if (!search) {
     return `
       <div class="chat__empty">
-        <div class="chat__empty-title">No profiles</div>
-        <div class="chat__empty-note">Nothing indexed for this query. Try a handle or a name exactly as you saw it.</div>
+        <div class="chat__empty-title">${t('chat.empty.title')}</div>
+        <div class="chat__empty-note">${t('chat.empty.note')}</div>
       </div>
     `;
   }
   const results = search.results || [];
+  const metaKey = results.length === 1 ? 'chat.meta.one' : 'chat.meta.many';
+  const meta = t(metaKey, { n: results.length, query: esc(search.query) });
   return `
-    <div class="chat__meta">${results.length} profile${results.length === 1 ? '' : 's'} for <b>"${esc(search.query)}"</b></div>
+    <div class="chat__meta">${meta}</div>
     <ul class="chat__list">
       ${results.map(r => `
         <li class="chat-result">
           <div class="chat-result__handle">@${esc(r.handle)}</div>
           <div class="chat-result__body">
             <div class="chat-result__name">${esc(r.display_name)}</div>
-            <div class="chat-result__joined">Joined ${esc(r.joined)}</div>
+            <div class="chat-result__joined">${t('chat.results.joined', { when: esc(r.joined) })}</div>
           </div>
           <div class="chat-result__action">
-            <button class="btn-ghost" data-open-profile="${esc(r.id)}">Inspect →</button>
+            <button class="btn-ghost" data-open-profile="${esc(r.id)}">${t('chat.results.inspect')}</button>
           </div>
         </li>
       `).join('')}
@@ -135,27 +131,27 @@ function renderProfileDetail(paneEl, caseData, ctx) {
   paneEl.innerHTML = `
     <div class="chat-profile">
       <div class="trace__breadcrumb">
-        <button class="link-back" data-action="back-to-search">← CHAT results</button>
+        <button class="link-back" data-action="back-to-search">← ${t('chat.breadcrumb')}</button>
         <span class="trace__breadcrumb-sep">/</span>
         <span>${esc(p.url)}</span>
       </div>
 
-      <div class="chat-profile__title">CHAT PROFILE</div>
+      <div class="chat-profile__title">${t('chat.profile.title')}</div>
 
       <div class="chat-profile__fields">
-        ${field('HANDLE',       '@' + p.handle)}
-        ${field('DISPLAY NAME', p.display_name)}
-        ${field('BIO',          p.bio)}
-        ${field('LOCATION',     p.location)}
-        ${field('JOINED',       p.joined)}
-        ${field('LAST SEEN',    p.last_seen)}
+        ${field(t('chat.profile.field.handle'),       '@' + p.handle)}
+        ${field(t('chat.profile.field.display_name'), p.display_name)}
+        ${field(t('chat.profile.field.bio'),          pick(p, 'bio'))}
+        ${field(t('chat.profile.field.location'),     pick(p, 'location'))}
+        ${field(t('chat.profile.field.joined'),       p.joined)}
+        ${field(t('chat.profile.field.last_seen'),    pick(p, 'last_seen'))}
       </div>
 
       <div class="frame-actions">
         <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
-          ${already ? '✓ In evidence' : '+ Add to evidence'}
+          ${already ? t('frame.actions.saved') : t('chat.actions.add')}
         </button>
-        <button class="btn-ghost" data-action="back-to-search">← Back to search</button>
+        <button class="btn-ghost" data-action="back-to-search">${t('chat.actions.back')}</button>
       </div>
     </div>
   `;
@@ -173,7 +169,7 @@ function renderProfileDetail(paneEl, caseData, ctx) {
     const ev = addEvidence(p);
     if (ev) {
       addBtn.disabled = true;
-      addBtn.textContent = '✓ In evidence';
+      addBtn.textContent = t('frame.actions.saved');
       ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
     }
   });

@@ -3,6 +3,7 @@
 
 import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable } from '../engine/state.js';
 import { loadCase } from '../engine/case-loader.js';
+import { initI18n, t, setLang, getLang, subscribeLang } from '../engine/i18n.js';
 import { renderFrameProfile } from '../tools/frame/frame.js';
 import { renderTrace } from '../tools/trace/trace.js';
 import { renderArchive } from '../tools/archive/archive.js';
@@ -12,8 +13,8 @@ import { renderEvidencePane } from './evidence-pane.js';
 import { renderReportPane } from './report-pane.js';
 import { renderAnalystPane } from './analyst-pane.js';
 
-// Lock status is derived per-render from case.json → unlock_rules, NOT hardcoded here.
-// A tool with no rule in case.json is always available.
+// Sidebar tool labels are ORIGINAL names (PRD §14) — never localized.
+// Only their LOCKED / COMING-SOON status text is localized.
 const TOOLS = [
   { id: 'frame',    label: 'FRAME',    group: 'sources' },
   { id: 'trace',    label: 'TRACE',    group: 'sources' },
@@ -26,9 +27,6 @@ const TOOLS = [
   { id: 'notes',    label: 'NOTES',    group: 'case'    },
 ];
 
-// Tools that have a concrete implementation in Session 2. Anything not in this set
-// still shows in the sidebar but renders the "available later" placeholder pane —
-// even after unlock — until its Session lands.
 const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'atlas', 'evidence', 'report', 'analyst']);
 
 let caseData = null;
@@ -40,10 +38,24 @@ function $$(sel, root = document) { return Array.from(root.querySelectorAll(sel)
 
 function currentAvailability() {
   const avail = new Set();
-  for (const t of TOOLS) {
-    if (isToolAvailable(t.id, caseData)) avail.add(t.id);
+  for (const tool of TOOLS) {
+    if (isToolAvailable(tool.id, caseData)) avail.add(tool.id);
   }
   return avail;
+}
+
+// Fill any [data-i18n] element in static markup. Optional data-i18n-html
+// switches innerHTML (used only where markup like <br> is intentional).
+function applyStaticI18n() {
+  $$('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const value = t(key);
+    if (el.hasAttribute('data-i18n-html')) {
+      el.innerHTML = value.replace(/\n/g, '<br>');
+    } else {
+      el.textContent = value;
+    }
+  });
 }
 
 function renderSidebar() {
@@ -55,25 +67,25 @@ function renderSidebar() {
   const state = getState();
   const avail = currentAvailability();
 
-  TOOLS.forEach(t => {
-    const isAvail = avail.has(t.id);
+  TOOLS.forEach(tool => {
+    const isAvail = avail.has(tool.id);
     const btn = document.createElement('button');
     btn.className = 'tool-btn'
       + (isAvail ? '' : ' is-locked')
-      + (state.activeTool === t.id ? ' is-active' : '');
-    btn.dataset.tool = t.id;
+      + (state.activeTool === tool.id ? ' is-active' : '');
+    btn.dataset.tool = tool.id;
     btn.innerHTML = `
-      <span>${t.label}</span>
+      <span>${tool.label}</span>
       ${isAvail
-        ? `<span class="tool-btn__badge" data-badge="${t.id}"></span>`
-        : `<span class="tool-btn__lock">LOCKED</span>`}
+        ? `<span class="tool-btn__badge" data-badge="${tool.id}"></span>`
+        : `<span class="tool-btn__lock">${t('sidebar.status.locked')}</span>`}
     `;
     if (isAvail) {
-      btn.addEventListener('click', () => setActiveTool(t.id));
+      btn.addEventListener('click', () => setActiveTool(tool.id));
     } else {
-      btn.title = 'Unlocks as the investigation progresses';
+      btn.title = t('sidebar.title.locked');
     }
-    (t.group === 'sources' ? sourcesEl : caseEl).appendChild(btn);
+    (tool.group === 'sources' ? sourcesEl : caseEl).appendChild(btn);
   });
 
   prevAvailability = avail;
@@ -98,7 +110,7 @@ function renderPane() {
   }
 
   const ctx = {
-    onEvidenceAdded: e => showToast(`EVIDENCE SAVED · ${e.evidenceId}`),
+    onEvidenceAdded: e => showToast(t('toast.evidence_saved', { id: e.evidenceId })),
   };
 
   if (active === 'frame') {
@@ -121,15 +133,13 @@ function renderPane() {
 }
 
 function renderLocked(paneEl, tool, isAvail) {
+  const titleKey = isAvail ? 'lockedpane.title.coming_soon' : 'lockedpane.title.not_available';
+  const noteKey  = isAvail ? 'lockedpane.note.coming_soon'  : 'lockedpane.note.not_available';
   paneEl.innerHTML = `
     <div class="locked-pane">
       <div class="locked-pane__tag">${tool.label}</div>
-      <div class="locked-pane__title">${isAvail ? 'Coming soon' : 'Not yet available'}</div>
-      <div class="locked-pane__note">
-        ${isAvail
-          ? 'This tool is unlocked but not implemented in this build.'
-          : 'This tool unlocks as the investigation progresses.'}
-      </div>
+      <div class="locked-pane__title">${t(titleKey)}</div>
+      <div class="locked-pane__note">${t(noteKey)}</div>
     </div>
   `;
 }
@@ -153,7 +163,7 @@ function showToast(msg) {
 
 function updateTopbar() {
   const state = getState();
-  $('.ws-topbar__meta').textContent = `EVIDENCE ${state.evidence.length}`;
+  $('.ws-topbar__meta').textContent = t('topbar.evidence', { n: state.evidence.length });
 }
 
 function startWorkstation() {
@@ -163,38 +173,69 @@ function startWorkstation() {
   updateTopbar();
 }
 
-function wireWelcome() {
+function updateWelcome() {
   const playBtn = $('[data-action="play"]');
   const resumeLine = $('.welcome__resume');
   const state = getState();
   if (hasSavedState(caseData.id) && state.evidence.length > 0) {
     const n = state.evidence.length;
+    const key = n === 1 ? 'welcome.resume.one' : 'welcome.resume.many';
     resumeLine.style.display = 'block';
-    resumeLine.innerHTML = `Continue investigation · <b>${n}</b> evidence item${n === 1 ? '' : 's'}`;
-    playBtn.innerHTML = 'Continue investigation →';
+    resumeLine.innerHTML = t(key, { n: `<b>${n}</b>` });
+    playBtn.textContent = t('welcome.cta.continue');
   } else {
     resumeLine.style.display = 'none';
-    playBtn.innerHTML = 'Play Case 001 →';
+    playBtn.textContent = t('welcome.cta.play');
   }
+}
+
+function wireWelcome() {
+  const playBtn = $('[data-action="play"]');
+  updateWelcome();
   playBtn.addEventListener('click', startWorkstation);
 }
 
 function wireReset() {
   $('[data-action="reset"]').addEventListener('click', () => {
-    if (!confirm('Reset investigation? All evidence will be discarded.')) return;
+    if (!confirm(t('reset.confirm'))) return;
     resetAll();
     location.reload();
   });
 }
 
+function wireLangSwitch() {
+  const buttons = $$('.lang-switch__btn');
+  const sync = () => {
+    const lang = getLang();
+    buttons.forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
+    document.documentElement.setAttribute('lang', lang);
+  };
+  buttons.forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.lang));
+  });
+  sync();
+  subscribeLang(sync);
+}
+
+function onLangChange() {
+  applyStaticI18n();
+  updateTopbar();
+  updateWelcome();
+  renderSidebar();
+  renderPane();
+}
+
 function onEvidenceAdded() {
   updateTopbar();
   const nextAvail = currentAvailability();
-  // Detect a newly-unlocked tool → surface it via toast so the player notices.
   for (const id of nextAvail) {
     if (!prevAvailability.has(id) && IMPLEMENTED.has(id)) {
-      const label = TOOLS.find(t => t.id === id)?.label || id;
-      showToast(`${label} UNLOCKED`);
+      const label = TOOLS.find(x => x.id === id)?.label || id;
+      showToast(t('toast.tool_unlocked', { tool: label }));
     }
   }
   renderSidebar();
@@ -204,6 +245,7 @@ function onEvidenceAdded() {
 
 async function boot() {
   try {
+    await initI18n();
     caseData = await loadCase('case-001');
   } catch (err) {
     document.body.innerHTML = `<pre style="color:#ff5c6c;padding:2rem;font-family:monospace">Failed to load case: ${err.message}\n\nRun via a local server (fetch of file:// is blocked).</pre>`;
@@ -212,6 +254,9 @@ async function boot() {
 
   initState(caseData.id);
   prevAvailability = currentAvailability();
+
+  // First static-i18n pass (welcome/topbar/sidebar labels).
+  applyStaticI18n();
 
   subscribe(evt => {
     if (evt.type === 'tool_changed') renderPane();
@@ -223,9 +268,12 @@ async function boot() {
     if (evt.type === 'reset') { renderSidebar(); updateTopbar(); }
   });
 
+  subscribeLang(onLangChange);
+
   renderSidebar();
   wireWelcome();
   wireReset();
+  wireLangSwitch();
 }
 
 boot();

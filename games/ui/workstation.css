@@ -1638,3 +1638,42 @@ body::before, body::after { display: none; }
   background: var(--ice);
   color: var(--bg);
 }
+
+/* ==========================================================
+   Language switcher — global, always visible
+   ========================================================== */
+.lang-switch {
+  position: fixed;
+  top: .8rem;
+  right: 1rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .3rem .6rem;
+  background: rgba(15, 21, 36, .8);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+.lang-switch__btn {
+  background: none;
+  border: none;
+  padding: .1rem .25rem;
+  cursor: pointer;
+  color: var(--text-mute);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  transition: color .15s var(--ease);
+}
+.lang-switch__btn:hover { color: var(--cream); }
+.lang-switch__btn.is-active { color: var(--ice); }
+.lang-switch__sep { color: var(--text-mute); }
+
+@media (max-width: 720px) {
+  .lang-switch { top: .5rem; right: .5rem; font-size: .62rem; }
+}

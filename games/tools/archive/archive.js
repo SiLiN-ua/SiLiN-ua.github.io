@@ -1,11 +1,10 @@
 // tools/archive/archive.js
 // ARCHIVE — historical snapshots of a public URL / handle.
-// Session 3 scope: two hard-coded queries, snapshot list, snapshot detail view.
 // Snapshots are presented as historical documents — NOT live profiles.
-// (Deliberately not reusing renderFrameProfile: current source ≠ historical capture.)
 
 import { addEvidence, isInEvidence } from '../../engine/state.js';
 import { resolveAsset } from '../../engine/case-loader.js';
+import { t, pick } from '../../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -15,7 +14,6 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
-// Per-tool navigation state. Not persisted across reloads — runtime only.
 const view = {
   query: '',
   submitted: false,
@@ -49,15 +47,15 @@ function renderSearch(paneEl, caseData, ctx) {
   paneEl.innerHTML = `
     <div class="archive">
       <div class="archive__header">
-        <div class="archive__label">ARCHIVE · historical snapshots</div>
+        <div class="archive__label">${t('archive.label')}</div>
         <form class="archive__form" data-form="archive-search" autocomplete="off">
           <input class="archive__input" type="text" name="q"
-                 placeholder="Search a handle or a URL (e.g. alex_miller)…"
+                 placeholder="${esc(t('archive.placeholder'))}"
                  value="${esc(view.query)}">
-          <button class="btn-primary" type="submit">Search</button>
+          <button class="btn-primary" type="submit">${t('archive.button.search')}</button>
         </form>
         <div class="archive__hint">
-          ARCHIVE holds captures of a page at specific moments — not the live page.
+          ${t('archive.hint')}
         </div>
       </div>
 
@@ -89,27 +87,27 @@ function renderSnapshotList(search) {
   if (!search) {
     return `
       <div class="archive__empty">
-        <div class="archive__empty-title">No snapshots</div>
-        <div class="archive__empty-note">Nothing archived for this handle. Try a URL exactly as you saw it.</div>
+        <div class="archive__empty-title">${t('archive.empty.title')}</div>
+        <div class="archive__empty-note">${t('archive.empty.note')}</div>
       </div>
     `;
   }
   const snaps = search.snapshots || [];
+  const source = search.source_url || search.query;
+  const metaKey = snaps.length === 1 ? 'archive.meta.one' : 'archive.meta.many';
+  const meta = t(metaKey, { n: snaps.length, source: `<b>${esc(source)}</b>` });
   return `
-    <div class="archive__meta">
-      ${snaps.length} snapshot${snaps.length === 1 ? '' : 's'} for
-      <b>${esc(search.source_url || search.query)}</b>
-    </div>
+    <div class="archive__meta">${meta}</div>
     <ul class="archive__list">
       ${snaps.map(s => `
         <li class="archive-item">
           <div class="archive-item__date">${esc(s.captured_at)}</div>
           <div class="archive-item__body">
-            <div class="archive-item__url">${esc(search.source_url || search.query)}</div>
-            <div class="archive-item__note">${esc(s.note || '')}</div>
+            <div class="archive-item__url">${esc(source)}</div>
+            <div class="archive-item__note">${esc(pick(s, 'note'))}</div>
           </div>
           <div class="archive-item__action">
-            <button class="btn-ghost" data-open-snapshot="${esc(s.id)}">Inspect →</button>
+            <button class="btn-ghost" data-open-snapshot="${esc(s.id)}">${t('archive.results.inspect')}</button>
           </div>
         </li>
       `).join('')}
@@ -126,49 +124,52 @@ function renderSnapshotDetail(paneEl, caseData, ctx) {
   }
   const already = isInEvidence(snap.id);
   const previewSrc = snap.preview ? resolveAsset(caseData, snap.preview) : '';
+  const kindLabel = pick(snap, 'kind_label') || snap.kind || '—';
+  const note = pick(snap, 'note');
+  const caption = pick(snap, 'caption');
 
   paneEl.innerHTML = `
     <div class="snapshot">
       <div class="trace__breadcrumb">
-        <button class="link-back" data-action="back-to-snapshots">← ARCHIVE results</button>
+        <button class="link-back" data-action="back-to-snapshots">← ${t('archive.breadcrumb')}</button>
         <span class="trace__breadcrumb-sep">/</span>
         <span>${esc(snap.captured_at)}</span>
       </div>
 
-      <div class="snapshot__title">ARCHIVE SNAPSHOT</div>
+      <div class="snapshot__title">${t('archive.snapshot.title')}</div>
 
       <div class="snapshot__grid">
         <div class="snapshot__field">
-          <div class="snapshot__field-label">CAPTURED</div>
+          <div class="snapshot__field-label">${t('archive.snapshot.field.captured')}</div>
           <div class="snapshot__field-value">${esc(snap.captured_at)}</div>
         </div>
         <div class="snapshot__field">
-          <div class="snapshot__field-label">SOURCE</div>
+          <div class="snapshot__field-label">${t('archive.snapshot.field.source')}</div>
           <div class="snapshot__field-value snapshot__field-value--mono">${esc(snap.source_url)}</div>
         </div>
         <div class="snapshot__field">
-          <div class="snapshot__field-label">KIND</div>
-          <div class="snapshot__field-value">${esc(snap.kind_label || snap.kind || '—')}</div>
+          <div class="snapshot__field-label">${t('archive.snapshot.field.kind')}</div>
+          <div class="snapshot__field-value">${esc(kindLabel)}</div>
         </div>
       </div>
 
       ${previewSrc ? `
         <div class="snapshot__preview">
           <img src="${esc(previewSrc)}" alt="archive snapshot preview">
-          ${snap.caption ? `<div class="snapshot__preview-caption">${esc(snap.caption)}</div>` : ''}
+          ${caption ? `<div class="snapshot__preview-caption">${esc(caption)}</div>` : ''}
         </div>
       ` : ''}
 
       <div class="snapshot__note">
-        <div class="snapshot__field-label">ARCHIVE NOTE</div>
-        <div class="snapshot__note-body">${esc(snap.note || '')}</div>
+        <div class="snapshot__field-label">${t('archive.snapshot.field.note')}</div>
+        <div class="snapshot__note-body">${esc(note)}</div>
       </div>
 
       <div class="frame-actions">
         <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
-          ${already ? '✓ In evidence' : '+ Add to evidence'}
+          ${already ? t('frame.actions.saved') : t('archive.actions.add')}
         </button>
-        <button class="btn-ghost" data-action="back-to-snapshots">← Back to snapshots</button>
+        <button class="btn-ghost" data-action="back-to-snapshots">${t('archive.actions.back')}</button>
       </div>
     </div>
   `;
@@ -186,7 +187,7 @@ function renderSnapshotDetail(paneEl, caseData, ctx) {
     const ev = addEvidence(snap);
     if (ev) {
       addBtn.disabled = true;
-      addBtn.textContent = '✓ In evidence';
+      addBtn.textContent = t('frame.actions.saved');
       ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
     }
   });

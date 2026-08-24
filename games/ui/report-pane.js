@@ -1,18 +1,10 @@
 // ui/report-pane.js
 // Renders CASE REPORT / FINAL REPORT. Fully derived from evidence state +
-// persisted finalSubmission. UI reflects three orthogonal states:
-//
-//   PHASE 1 — chain incomplete
-//     required checklist + verdict + Review-evidence + INDEPENDENT FINDINGS
-//   PHASE 2 — chain complete, no submission yet
-//     everything from PHASE 1 + INVESTIGATION QUALITY dimensions (no composite)
-//     + FINAL REPORT form (attribution + evidence multi-select + Submit)
-//   PHASE 3 — after submission
-//     everything from PHASE 2 + OUTCOME block (SOLVED / CLOSED + composite
-//     quality score + Revise). Composite score is only shown AFTER submit.
+// persisted finalSubmission.
 
 import { evaluateReport, evaluateSubmission } from '../engine/report.js';
 import { setActiveTool, getState, submitFinalReport } from '../engine/state.js';
+import { t, pick } from '../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -23,30 +15,48 @@ function esc(str) {
 }
 
 function verdictText(evalResult) {
-  if (evalResult.nothingCollected) {
-    return "Nothing to report yet. Start with the client's message in FRAME.";
-  }
-  if (evalResult.allMet) return 'Evidence chain complete.';
-  return 'Your conclusion is plausible. Your evidence chain is incomplete.';
+  if (evalResult.nothingCollected) return t('report.verdict.empty');
+  if (evalResult.allMet) return t('report.verdict.complete');
+  return t('report.verdict.incomplete');
+}
+
+// Map author-facing section names (from case.json) to i18n keys. Case files may
+// eventually declare their own `section_uk`; if they don't, this table takes
+// over. Adding a new section only requires either adding a key here OR adding
+// `section_uk` / `section_en` fields in case.json.
+const SECTION_KEY_BY_NAME = {
+  'IDENTITY':                              'report.section.identity',
+  'CONTENT':                               'report.section.content',
+  'TEMPORAL PROOF':                        'report.section.temporal',
+  'OPERATOR':                              'report.section.operator',
+  'CORROBORATION':                         'report.section.corroboration',
+  'CORROBORATION · INDEPENDENT FINDINGS':  'report.section.corroboration',
+};
+
+function localizedSectionName(name) {
+  const key = SECTION_KEY_BY_NAME[String(name || '').toUpperCase()];
+  return key ? t(key) : name;
 }
 
 // ---- Required checklist ----
 
 function requiredItemHtml(item) {
+  const label = pick(item, 'label') || item.label;
   if (item.met) {
     return `
       <li class="report-item is-met">
         <span class="report-item__mark">✓</span>
-        <span class="report-item__label">${esc(item.label)}</span>
+        <span class="report-item__label">${esc(label)}</span>
       </li>
     `;
   }
+  const missing = pick(item, 'missing_label') || item.missing_label;
   return `
     <li class="report-item is-missing">
       <span class="report-item__mark">⚠</span>
       <span class="report-item__body">
-        <span class="report-item__label">${esc(item.label)}:</span>
-        <span class="report-item__missing">${esc(item.missing_label)}</span>
+        <span class="report-item__label">${esc(label)}:</span>
+        <span class="report-item__missing">${esc(missing)}</span>
       </span>
     </li>
   `;
@@ -55,7 +65,7 @@ function requiredItemHtml(item) {
 function requiredSectionHtml(section) {
   return `
     <section class="report-section">
-      <div class="report-section__title">${esc(section.name)}</div>
+      <div class="report-section__title">${esc(localizedSectionName(section.name))}</div>
       <ul class="report-section__items">
         ${section.items.map(requiredItemHtml).join('')}
       </ul>
@@ -66,10 +76,11 @@ function requiredSectionHtml(section) {
 // ---- Independent findings (deliberately not a checklist) ----
 
 function optionalItemHtml(item) {
+  const label = pick(item, 'label') || item.label;
   return `
     <li class="report-finding${item.met ? ' is-collected' : ''}">
-      <span class="report-finding__label">${esc(item.label)}</span>
-      ${item.met ? '<span class="report-finding__status">collected</span>' : ''}
+      <span class="report-finding__label">${esc(label)}</span>
+      ${item.met ? `<span class="report-finding__status">${t('report.corroboration.status_collected')}</span>` : ''}
     </li>
   `;
 }
@@ -78,8 +89,8 @@ function optionalPanelHtml(optionalItems) {
   if (!optionalItems.length) return '';
   return `
     <section class="report-findings">
-      <div class="report-findings__title">CORROBORATION · INDEPENDENT FINDINGS</div>
-      <div class="report-findings__note">These findings do not affect the verdict.</div>
+      <div class="report-findings__title">${t('report.section.corroboration')}</div>
+      <div class="report-findings__note">${t('report.corroboration.note')}</div>
       <ul class="report-findings__items">
         ${optionalItems.map(optionalItemHtml).join('')}
       </ul>
@@ -87,7 +98,7 @@ function optionalPanelHtml(optionalItems) {
   `;
 }
 
-// ---- Investigation quality dimensions (PHASE 2 & 3) ----
+// ---- Investigation quality dimensions ----
 
 function qualityRow(label, value) {
   return `
@@ -98,61 +109,75 @@ function qualityRow(label, value) {
   `;
 }
 
+function localizedChainStatus(status) {
+  if (status === 'COMPLETE')   return t('report.quality.chain.complete');
+  if (status === 'INCOMPLETE') return t('report.quality.chain.incomplete');
+  return t('report.quality.chain.empty');
+}
+
 function qualityPanelHtml(quality, showComposite) {
   const q = quality;
   const evidenceCount = (getState().evidence || []).length;
   return `
     <section class="quality">
-      <div class="quality__title">INVESTIGATION QUALITY</div>
+      <div class="quality__title">${t('report.quality.title')}</div>
       <div class="quality__rows">
-        ${qualityRow('Evidence coverage', `${evidenceCount} collected`)}
-        ${qualityRow('Required chain',    q.chainRequired)}
-        ${qualityRow('Independent corroboration', `${q.independentFindings.met} / ${q.independentFindings.total}`)}
-        ${qualityRow('Source diversity',  `${q.sourceDiversity.toolsUsed.length} / ${q.sourceDiversity.total}`)}
-        ${qualityRow('Temporal depth',    `${q.temporalDepth.collectedSnapshots} / ${q.temporalDepth.availableSnapshots}`)}
-        ${showComposite ? qualityRow('Composite', `${q.overall} / 100`) : ''}
+        ${qualityRow(t('report.quality.evidence_coverage'), t('report.quality.evidence_count', { n: evidenceCount }))}
+        ${qualityRow(t('report.quality.required_chain'),    localizedChainStatus(q.chainRequired))}
+        ${qualityRow(t('report.quality.independent'),       `${q.independentFindings.met} / ${q.independentFindings.total}`)}
+        ${qualityRow(t('report.quality.diversity'),         `${q.sourceDiversity.toolsUsed.length} / ${q.sourceDiversity.total}`)}
+        ${qualityRow(t('report.quality.temporal'),          `${q.temporalDepth.collectedSnapshots} / ${q.temporalDepth.availableSnapshots}`)}
+        ${showComposite ? qualityRow(t('report.quality.composite'), `${q.overall} / 100`) : ''}
       </div>
     </section>
   `;
 }
 
-// ---- Final Report form (PHASE 2 & 3) ----
+// ---- Final Report form ----
+
+function evidenceOptionLabel(e) {
+  const snap = e.snapshot;
+  let label = e.evidenceId + ' · ';
+  if (snap.type === 'chat_profile') {
+    label += (snap.handle ? '@' + snap.handle : snap.display_name);
+  } else if (snap.type === 'archive_snapshot') {
+    const kind = pick(snap, 'kind_label') || 'archive';
+    label += kind + ' · ' + snap.captured_at;
+  } else if (snap.type === 'atlas_location_claim') {
+    label += snap.subject + ' — ' + snap.status;
+  } else {
+    label += (snap.username ? '@' + snap.username : (snap.display_name || snap.id));
+  }
+  return label;
+}
 
 function evidenceOptionsHtml(caseData, selectedIds) {
   const items = getState().evidence || [];
-  if (!items.length) return '<div class="finalform__no-evidence">No evidence to attach.</div>';
+  if (!items.length) return `<div class="finalform__no-evidence">${t('report.finalform.no_evidence')}</div>`;
   const sel = new Set(selectedIds || []);
-  return items.map(e => {
-    const snap = e.snapshot;
-    let label = e.evidenceId + ' · ';
-    if (snap.type === 'chat_profile') label += (snap.handle ? '@' + snap.handle : snap.display_name);
-    else if (snap.type === 'archive_snapshot') label += (snap.kind_label || 'archive') + ' · ' + snap.captured_at;
-    else if (snap.type === 'atlas_location_claim') label += snap.subject + ' — ' + snap.status;
-    else label += (snap.username ? '@' + snap.username : (snap.display_name || snap.id));
-    return `
-      <label class="finalform__option${sel.has(e.sourceId) ? ' is-selected' : ''}">
-        <input type="checkbox" name="supporting" value="${esc(e.sourceId)}" ${sel.has(e.sourceId) ? 'checked' : ''}>
-        <span>${esc(label)}</span>
-      </label>
-    `;
-  }).join('');
+  return items.map(e => `
+    <label class="finalform__option${sel.has(e.sourceId) ? ' is-selected' : ''}">
+      <input type="checkbox" name="supporting" value="${esc(e.sourceId)}" ${sel.has(e.sourceId) ? 'checked' : ''}>
+      <span>${esc(evidenceOptionLabel(e))}</span>
+    </label>
+  `).join('');
 }
 
 function finalFormHtml(caseData, prefill, submitEnabled) {
-  const q = caseData.final_answer?.question || 'Who is behind the account?';
+  const q = pick(caseData.final_answer || {}, 'question') || 'Who is behind the account?';
   return `
     <section class="finalform">
-      <div class="finalform__title">FINAL REPORT</div>
+      <div class="finalform__title">${t('report.finalform.title')}</div>
 
       <div class="finalform__field">
         <label class="finalform__label" for="attribution-input">${esc(q)}</label>
         <input id="attribution-input" class="finalform__input" type="text"
-               placeholder="Your attribution…"
+               placeholder="${esc(t('report.finalform.attribution_placeholder'))}"
                value="${esc(prefill.attribution || '')}">
       </div>
 
       <div class="finalform__field">
-        <div class="finalform__label">Which evidence supports your attribution?</div>
+        <div class="finalform__label">${t('report.finalform.evidence_prompt')}</div>
         <div class="finalform__options">
           ${evidenceOptionsHtml(caseData, prefill.supportingEvidenceIds || [])}
         </div>
@@ -160,14 +185,14 @@ function finalFormHtml(caseData, prefill, submitEnabled) {
 
       <div class="finalform__actions">
         <button class="btn-primary" data-action="submit-report" ${submitEnabled ? '' : 'disabled'}>
-          ${prefill.submittedOnce ? 'Revise submission' : 'Submit report'}
+          ${prefill.submittedOnce ? t('report.finalform.revise') : t('report.finalform.submit')}
         </button>
       </div>
     </section>
   `;
 }
 
-// ---- Outcome block (PHASE 3) ----
+// ---- Outcome block ----
 
 function outcomeBlockHtml(caseData, submission, quality) {
   const sol = submission.outcome === 'SOLVED';
@@ -175,30 +200,32 @@ function outcomeBlockHtml(caseData, submission, quality) {
     attribution: submission.attribution,
     supportingEvidenceIds: submission.supportingEvidenceIds,
   });
-  const attrLine = evaluation.attributionOk
-    ? `${esc(submission.attribution)} · match`
-    : `${esc(submission.attribution || '—')} · no match`;
-  const evLine = `${evaluation.selectedCount} selected · ${evaluation.requiredMatchesCount} of ${evaluation.minCount} required matches`;
-  const headline = sol
-    ? 'Your attribution is supported by the evidence you selected.'
-    : 'Your attribution is filed with the evidence you selected.';
+  const attrTag = evaluation.attributionOk ? t('report.outcome.attr.match') : t('report.outcome.attr.no_match');
+  const attrLine = `${esc(submission.attribution || '—')} · ${attrTag}`;
+  const evLine = t('report.outcome.support', {
+    selected: evaluation.selectedCount,
+    matches: evaluation.requiredMatchesCount,
+    required: evaluation.minCount,
+  });
+  const headline = sol ? t('report.outcome.headline.solved') : t('report.outcome.headline.closed');
+  const verdictLabel = sol ? t('report.outcome.solved') : t('report.outcome.closed');
 
   return `
     <section class="outcome ${sol ? 'is-solved' : 'is-closed'}">
-      <div class="outcome__label">OUTCOME</div>
-      <div class="outcome__verdict">CASE ${sol ? 'SOLVED' : 'CLOSED'}</div>
+      <div class="outcome__label">${t('report.outcome.label')}</div>
+      <div class="outcome__verdict">${esc(verdictLabel)}</div>
       <div class="outcome__headline">${esc(headline)}</div>
       <div class="outcome__grid">
         <div class="outcome__row">
-          <div class="outcome__key">Investigation quality</div>
+          <div class="outcome__key">${t('report.outcome.key.quality')}</div>
           <div class="outcome__value">${quality.overall} / 100</div>
         </div>
         <div class="outcome__row">
-          <div class="outcome__key">Attribution</div>
+          <div class="outcome__key">${t('report.outcome.key.attribution')}</div>
           <div class="outcome__value">${attrLine}</div>
         </div>
         <div class="outcome__row">
-          <div class="outcome__key">Supporting evidence</div>
+          <div class="outcome__key">${t('report.outcome.key.supporting')}</div>
           <div class="outcome__value">${evLine}</div>
         </div>
       </div>
@@ -212,9 +239,7 @@ let formState = { attribution: '', supportingEvidenceIds: [] };
 
 export function renderReportPane(paneEl, caseData) {
   const result = evaluateReport(caseData);
-  const state = getState();
 
-  // Split required vs optional sections
   const requiredSections = [];
   const optionalItems = [];
   for (const s of result.sections) {
@@ -225,12 +250,7 @@ export function renderReportPane(paneEl, caseData) {
 
   const chainComplete = result.allMet;
   const submitted = !!result.submission;
-  const showQuality = chainComplete;                     // PHASE 2 or 3
-  const showComposite = submitted;                       // PHASE 3 only
-  const showForm = chainComplete;                        // PHASE 2 or 3
-  const showOutcome = submitted;                         // PHASE 3
 
-  // Prefill form: latest submission or in-memory formState
   const prefill = submitted
     ? {
         attribution: result.submission.attribution,
@@ -245,7 +265,7 @@ export function renderReportPane(paneEl, caseData) {
 
   paneEl.innerHTML = `
     <div class="report">
-      <div class="report__title">CASE REPORT</div>
+      <div class="report__title">${t('report.title')}</div>
 
       ${requiredSections.map(requiredSectionHtml).join('')}
 
@@ -256,20 +276,20 @@ export function renderReportPane(paneEl, caseData) {
       </div>
 
       <div class="report__actions">
-        <button class="btn-ghost" data-action="review-evidence">Review evidence →</button>
+        <button class="btn-ghost" data-action="review-evidence">${t('report.actions.review')}</button>
       </div>
 
       ${optionalItems.length ? `<div class="report__divider report__divider--wide"></div>` : ''}
       ${optionalPanelHtml(optionalItems)}
 
-      ${showQuality ? `<div class="report__divider report__divider--wide"></div>` : ''}
-      ${showQuality ? qualityPanelHtml(result.quality, showComposite) : ''}
+      ${chainComplete ? `<div class="report__divider report__divider--wide"></div>` : ''}
+      ${chainComplete ? qualityPanelHtml(result.quality, submitted) : ''}
 
-      ${showForm ? `<div class="report__divider report__divider--wide"></div>` : ''}
-      ${showForm ? finalFormHtml(caseData, prefill, chainComplete) : ''}
+      ${chainComplete ? `<div class="report__divider report__divider--wide"></div>` : ''}
+      ${chainComplete ? finalFormHtml(caseData, prefill, chainComplete) : ''}
 
-      ${showOutcome ? `<div class="report__divider report__divider--wide"></div>` : ''}
-      ${showOutcome ? outcomeBlockHtml(caseData, result.submission, result.quality) : ''}
+      ${submitted ? `<div class="report__divider report__divider--wide"></div>` : ''}
+      ${submitted ? outcomeBlockHtml(caseData, result.submission, result.quality) : ''}
     </div>
   `;
 
@@ -277,7 +297,6 @@ export function renderReportPane(paneEl, caseData) {
     setActiveTool('evidence');
   });
 
-  // Wire form (only if rendered)
   const input = paneEl.querySelector('#attribution-input');
   if (input) {
     input.addEventListener('input', () => { formState.attribution = input.value; });
@@ -287,7 +306,6 @@ export function renderReportPane(paneEl, caseData) {
       const sel = new Set(formState.supportingEvidenceIds);
       if (cb.checked) sel.add(cb.value); else sel.delete(cb.value);
       formState.supportingEvidenceIds = Array.from(sel);
-      // Toggle visual selected class inline (avoid full re-render)
       cb.closest('.finalform__option').classList.toggle('is-selected', cb.checked);
     });
   });
@@ -310,10 +328,8 @@ export function renderReportPane(paneEl, caseData) {
         supportingEvidenceIds: selected,
         outcome: evalRes.outcome,
       });
-      // Sync in-memory form to submitted values
       formState.attribution = attribution;
       formState.supportingEvidenceIds = selected;
-      // Re-render (submission_updated event also triggers workstation re-render)
       renderReportPane(paneEl, caseData);
     });
   }

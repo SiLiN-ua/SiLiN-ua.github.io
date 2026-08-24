@@ -110,15 +110,26 @@ function computeQuality(caseData, ids, requiredFlat, missingRequired) {
 // -------- SUBMISSION EVALUATOR --------
 
 function matchAttribution(answer, finalAnswer) {
-  if (!finalAnswer || !finalAnswer.attribution_expected) return true;
+  if (!finalAnswer || finalAnswer.attribution_expected == null) return true;
   const mode = finalAnswer.attribution_match || 'substring_ci';
   const a = String(answer || '');
-  const e = String(finalAnswer.attribution_expected);
+  const expected = finalAnswer.attribution_expected;
+  const expArr = Array.isArray(expected) ? expected : [String(expected)];
+  const aLower = a.toLowerCase();
+  const aTrimLower = a.trim().toLowerCase();
   switch (mode) {
-    case 'substring_ci': return a.toLowerCase().includes(e.toLowerCase());
-    case 'exact_ci':     return a.trim().toLowerCase() === e.trim().toLowerCase();
-    case 'exact':        return a === e;
-    default:             return a.toLowerCase().includes(e.toLowerCase());
+    case 'substring_ci':
+      return aLower.includes(String(expArr[0]).toLowerCase());
+    case 'substring_ci_any':
+      return expArr.some(e => aLower.includes(String(e).toLowerCase()));
+    case 'exact_ci':
+      return aTrimLower === String(expArr[0]).trim().toLowerCase();
+    case 'exact_ci_any':
+      return expArr.some(e => aTrimLower === String(e).trim().toLowerCase());
+    case 'exact':
+      return a === String(expArr[0]);
+    default:
+      return aLower.includes(String(expArr[0]).toLowerCase());
   }
 }
 

@@ -3,6 +3,7 @@
 
 import { getState } from '../engine/state.js';
 import { resolveAsset } from '../engine/case-loader.js';
+import { t, pick } from '../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -15,13 +16,14 @@ function esc(str) {
 function relTime(ts) {
   const diff = Math.max(0, Date.now() - ts);
   const s = Math.floor(diff / 1000);
-  if (s < 60) return `${s}s ago`;
+  if (s < 10) return t('reltime.now');
+  if (s < 60) return t('reltime.seconds', { n: s });
   const m = Math.floor(s / 60);
-  if (m < 60) return `${m}m ago`;
+  if (m < 60) return t('reltime.minutes', { n: m });
   const h = Math.floor(m / 60);
-  if (h < 24) return `${h}h ago`;
+  if (h < 24) return t('reltime.hours', { n: h });
   const d = Math.floor(h / 24);
-  return `${d}d ago`;
+  return t('reltime.days', { n: d });
 }
 
 function cardHtml(evidence, caseData) {
@@ -34,15 +36,15 @@ function cardHtml(evidence, caseData) {
 
   let title, meta;
   if (snap.type === 'archive_snapshot') {
-    title = snap.kind_label || 'ARCHIVE SNAPSHOT';
+    title = pick(snap, 'kind_label') || t('archive.snapshot.title');
     meta = [snap.captured_at, snap.source_url].filter(Boolean).join(' · ');
   } else if (snap.type === 'chat_profile') {
     title = snap.display_name || snap.handle || snap.id;
     const handle = snap.handle ? `@${snap.handle}` : '';
     meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
   } else if (snap.type === 'atlas_location_claim') {
-    title = snap.status || 'ATLAS RECORD';
-    meta = [snap.subject, snap.location_claimed].filter(Boolean).join(' · ');
+    title = snap.status || t('atlas.claim.title');
+    meta = [snap.subject, pick(snap, 'location_claimed')].filter(Boolean).join(' · ');
   } else {
     title = snap.display_name || snap.username || snap.title || snap.id;
     const handle = snap.username ? `@${snap.username}` : '';
@@ -67,13 +69,14 @@ function cardHtml(evidence, caseData) {
 export function renderEvidencePane(paneEl, caseData) {
   const state = getState();
   const items = state.evidence;
+  const countKey = items.length === 1 ? 'evidence.count.one' : 'evidence.count.many';
   paneEl.innerHTML = `
     <div class="evidence-pane__header">
-      <div class="evidence-pane__title">Evidence</div>
-      <div class="evidence-pane__count">${items.length} item${items.length === 1 ? '' : 's'}</div>
+      <div class="evidence-pane__title">${t('evidence.title')}</div>
+      <div class="evidence-pane__count">${t(countKey, { n: items.length })}</div>
     </div>
     ${items.length === 0
-      ? `<div class="evidence-empty">No evidence yet. Open a source, inspect, then <b>+ Add to case</b>.</div>`
+      ? `<div class="evidence-empty">${t('evidence.empty')}</div>`
       : `<div class="evidence-list">${items.map(e => cardHtml(e, caseData)).join('')}</div>`
     }
   `;

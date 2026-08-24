@@ -7,6 +7,7 @@
 //  its own field set and the difference is part of what the player is learning.)
 
 import { addEvidence, isInEvidence } from '../../engine/state.js';
+import { t, pick } from '../../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -52,15 +53,15 @@ function renderSearch(paneEl, caseData, ctx) {
   paneEl.innerHTML = `
     <div class="atlas">
       <div class="atlas__header">
-        <div class="atlas__label">ATLAS · location &amp; professional record lookup</div>
+        <div class="atlas__label">${t('atlas.label')}</div>
         <form class="atlas__form" data-form="atlas-search" autocomplete="off">
           <input class="atlas__input" type="text" name="q"
-                 placeholder="Search a city (e.g. Prague, Manchester)…"
+                 placeholder="${esc(t('atlas.placeholder'))}"
                  value="${esc(view.query)}">
-          <button class="btn-primary" type="submit">Search</button>
+          <button class="btn-primary" type="submit">${t('atlas.button.search')}</button>
         </form>
         <div class="atlas__hint">
-          Public records only. Absence of a record is not proof of a false claim.
+          ${t('atlas.hint')}
         </div>
       </div>
 
@@ -92,27 +93,26 @@ function renderResultList(search) {
   if (!search) {
     return `
       <div class="atlas__empty">
-        <div class="atlas__empty-title">No results</div>
-        <div class="atlas__empty-note">No public record indexed for this location.</div>
+        <div class="atlas__empty-title">${t('atlas.empty.title')}</div>
+        <div class="atlas__empty-note">${t('atlas.empty.note')}</div>
       </div>
     `;
   }
   const results = search.results || [];
+  const metaKey = results.length === 1 ? 'atlas.meta.one' : 'atlas.meta.many';
+  const meta = t(metaKey, { n: results.length, location: `<b>${esc(search.query)}</b>` });
   return `
-    <div class="atlas__meta">
-      ${results.length} subject${results.length === 1 ? '' : 's'} associated with
-      <b>${esc(search.query)}</b>
-    </div>
+    <div class="atlas__meta">${meta}</div>
     <ul class="atlas__list">
       ${results.map(r => `
         <li class="atlas-result">
           <div class="atlas-result__body">
             <div class="atlas-result__subject">${esc(r.subject)}</div>
             <div class="atlas-result__status">${esc(r.status)}</div>
-            <div class="atlas-result__line">${esc(r.line)}</div>
+            <div class="atlas-result__line">${esc(pick(r, 'line'))}</div>
           </div>
           <div class="atlas-result__action">
-            <button class="btn-ghost" data-open-claim="${esc(r.id)}">Inspect →</button>
+            <button class="btn-ghost" data-open-claim="${esc(r.id)}">${t('atlas.results.inspect')}</button>
           </div>
         </li>
       `).join('')}
@@ -128,54 +128,56 @@ function renderClaimDetail(paneEl, caseData, ctx) {
     return;
   }
   const already = isInEvidence(claim.id);
+  const locationClaimed = pick(claim, 'location_claimed');
+  const note = pick(claim, 'note');
 
   const recordsHtml = (claim.records_searched || []).map(r => `
     <li class="atlas-record">
-      <span class="atlas-record__name">${esc(r.name)}</span>
-      <span class="atlas-record__result">${esc(r.result)}</span>
+      <span class="atlas-record__name">${esc(pick(r, 'name'))}</span>
+      <span class="atlas-record__result">${esc(pick(r, 'result'))}</span>
     </li>
   `).join('');
 
   paneEl.innerHTML = `
     <div class="atlas-claim">
       <div class="trace__breadcrumb">
-        <button class="link-back" data-action="back-to-search">← ATLAS results</button>
+        <button class="link-back" data-action="back-to-search">← ${t('atlas.breadcrumb')}</button>
         <span class="trace__breadcrumb-sep">/</span>
-        <span>${esc(claim.subject)} · ${esc(claim.location_claimed)}</span>
+        <span>${esc(claim.subject)} · ${esc(locationClaimed)}</span>
       </div>
 
-      <div class="atlas-claim__title">ATLAS RECORD</div>
+      <div class="atlas-claim__title">${t('atlas.claim.title')}</div>
 
       <div class="atlas-claim__grid">
         <div class="atlas-claim__field">
-          <div class="atlas-claim__label">SUBJECT</div>
+          <div class="atlas-claim__label">${t('atlas.claim.field.subject')}</div>
           <div class="atlas-claim__value">${esc(claim.subject)}</div>
         </div>
         <div class="atlas-claim__field">
-          <div class="atlas-claim__label">LOCATION CLAIMED</div>
-          <div class="atlas-claim__value">${esc(claim.location_claimed)}</div>
+          <div class="atlas-claim__label">${t('atlas.claim.field.location_claimed')}</div>
+          <div class="atlas-claim__value">${esc(locationClaimed)}</div>
         </div>
         <div class="atlas-claim__field">
-          <div class="atlas-claim__label">STATUS</div>
+          <div class="atlas-claim__label">${t('atlas.claim.field.status')}</div>
           <div class="atlas-claim__value atlas-claim__status">${esc(claim.status)}</div>
         </div>
       </div>
 
       <div class="atlas-claim__records">
-        <div class="atlas-claim__label">RECORDS SEARCHED</div>
+        <div class="atlas-claim__label">${t('atlas.claim.field.records')}</div>
         <ul class="atlas-records">${recordsHtml}</ul>
       </div>
 
       <div class="atlas-claim__note">
-        <div class="atlas-claim__label">NOTE</div>
-        <div class="atlas-claim__note-body">${esc(claim.note || '')}</div>
+        <div class="atlas-claim__label">${t('atlas.claim.field.note')}</div>
+        <div class="atlas-claim__note-body">${esc(note)}</div>
       </div>
 
       <div class="frame-actions">
         <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
-          ${already ? '✓ In evidence' : '+ Add to evidence'}
+          ${already ? t('frame.actions.saved') : t('atlas.actions.add')}
         </button>
-        <button class="btn-ghost" data-action="back-to-search">← Back to search</button>
+        <button class="btn-ghost" data-action="back-to-search">${t('atlas.actions.back')}</button>
       </div>
     </div>
   `;
@@ -193,7 +195,7 @@ function renderClaimDetail(paneEl, caseData, ctx) {
     const ev = addEvidence(claim);
     if (ev) {
       addBtn.disabled = true;
-      addBtn.textContent = '✓ In evidence';
+      addBtn.textContent = t('frame.actions.saved');
       ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
     }
   });

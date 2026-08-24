@@ -1,10 +1,9 @@
 // tools/trace/trace.js
 // TRACE — username / image search across the fake digital world.
-// Session 2 scope: one hard-coded query ("alex_miller") that surfaces 3 candidates.
-// The player can inspect each result and add it to the case.
 
 import { addEvidence, isInEvidence } from '../../engine/state.js';
 import { resolveAsset } from '../../engine/case-loader.js';
+import { t, pick } from '../../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -18,7 +17,6 @@ function fmtNum(n) {
   return String(n);
 }
 
-// Per-tool view state. Not persisted (Session 2). Cleared on reload.
 const view = {
   query: '',
   submitted: false,
@@ -51,13 +49,13 @@ function renderSearch(paneEl, caseData, ctx) {
   paneEl.innerHTML = `
     <div class="trace">
       <div class="trace__header">
-        <div class="trace__label">TRACE · username & image search</div>
+        <div class="trace__label">${t('trace.label')}</div>
         <form class="trace__form" data-form="trace-search" autocomplete="off">
-          <input class="trace__input" type="text" name="q" placeholder="Search a username, handle or phrase…" value="${esc(view.query)}">
-          <button class="btn-primary" type="submit">Search</button>
+          <input class="trace__input" type="text" name="q" placeholder="${esc(t('trace.placeholder'))}" value="${esc(view.query)}">
+          <button class="btn-primary" type="submit">${t('trace.button.search')}</button>
         </form>
         <div class="trace__hint">
-          Try what you already know. Copy a handle from FRAME and paste it here.
+          ${t('trace.hint')}
         </div>
       </div>
 
@@ -89,14 +87,16 @@ function renderResultsBlock(search, caseData) {
   if (!search) {
     return `
       <div class="trace__empty">
-        <div class="trace__empty-title">No results</div>
-        <div class="trace__empty-note">Nothing indexed for this query. Check the handle exactly as you saw it.</div>
+        <div class="trace__empty-title">${t('trace.empty.title')}</div>
+        <div class="trace__empty-note">${t('trace.empty.note')}</div>
       </div>
     `;
   }
   const results = search.results || [];
+  const metaKey = results.length === 1 ? 'trace.meta.one' : 'trace.meta.many';
+  const meta = t(metaKey, { n: results.length, query: esc(search.query) });
   return `
-    <div class="trace__meta">${results.length} result${results.length === 1 ? '' : 's'} for <b>"${esc(search.query)}"</b></div>
+    <div class="trace__meta">${meta}</div>
     <ul class="trace__list">
       ${results.map(r => `
         <li class="trace-result">
@@ -109,11 +109,11 @@ function renderResultsBlock(search, caseData) {
               <b>@${esc(r.username)}</b>
               <span class="trace-result__name">${esc(r.display_name)}</span>
             </div>
-            <div class="trace-result__snippet">${esc(r.snippet)}</div>
-            ${r.signal ? `<div class="trace-result__signal">${esc(r.signal)}</div>` : ''}
+            <div class="trace-result__snippet">${esc(pick(r, 'snippet'))}</div>
+            ${pick(r, 'signal') ? `<div class="trace-result__signal">${esc(pick(r, 'signal'))}</div>` : ''}
           </div>
           <div class="trace-result__action">
-            <button class="btn-ghost" data-open-candidate="${esc(r.id)}">Inspect →</button>
+            <button class="btn-ghost" data-open-candidate="${esc(r.id)}">${t('trace.results.inspect')}</button>
           </div>
         </li>
       `).join('')}
@@ -129,17 +129,21 @@ function renderCandidate(paneEl, caseData, ctx) {
     return;
   }
   const already = isInEvidence(artifact.id);
-  const postsHtml = (artifact.posts || []).map(p => `
-    <div class="frame-post">
-      <img src="${esc(resolveAsset(caseData, p.cover))}" alt="${esc(p.caption)}">
-      <div class="frame-post__caption">${esc(p.caption)}</div>
-    </div>
-  `).join('');
+  const bio = pick(artifact, 'bio');
+  const postsHtml = (artifact.posts || []).map(p => {
+    const caption = pick(p, 'caption');
+    return `
+      <div class="frame-post">
+        <img src="${esc(resolveAsset(caseData, p.cover))}" alt="${esc(caption)}">
+        <div class="frame-post__caption">${esc(caption)}</div>
+      </div>
+    `;
+  }).join('');
 
   paneEl.innerHTML = `
     <div class="frame-profile">
       <div class="trace__breadcrumb">
-        <button class="link-back" data-action="back-to-results">← TRACE results</button>
+        <button class="link-back" data-action="back-to-results">← ${t('trace.breadcrumb')}</button>
         <span class="trace__breadcrumb-sep">/</span>
         <span>${esc(artifact.url)}</span>
       </div>
@@ -150,19 +154,19 @@ function renderCandidate(paneEl, caseData, ctx) {
           <div class="frame-username">@${esc(artifact.username)}</div>
           <div class="frame-name">${esc(artifact.display_name)}</div>
           <div class="frame-stats">
-            <span><b>${fmtNum(artifact.stats.posts)}</b>posts</span>
-            <span><b>${fmtNum(artifact.stats.followers)}</b>followers</span>
-            <span><b>${fmtNum(artifact.stats.following)}</b>following</span>
+            <span><b>${fmtNum(artifact.stats.posts)}</b>${t('frame.stats.posts')}</span>
+            <span><b>${fmtNum(artifact.stats.followers)}</b>${t('frame.stats.followers')}</span>
+            <span><b>${fmtNum(artifact.stats.following)}</b>${t('frame.stats.following')}</span>
           </div>
-          <div class="frame-bio">${esc(artifact.bio)}</div>
-          <div class="frame-meta">${esc(artifact.location)} · Joined ${esc(artifact.joined)}</div>
+          <div class="frame-bio">${esc(bio)}</div>
+          <div class="frame-meta">${esc(artifact.location)} · ${t('frame.meta.joined')} ${esc(artifact.joined)}</div>
         </div>
       </div>
       <div class="frame-actions">
         <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
-          ${already ? '✓ In evidence' : '+ Add to case'}
+          ${already ? t('frame.actions.saved') : t('frame.actions.add')}
         </button>
-        <button class="btn-ghost" data-action="back-to-results">← Back to results</button>
+        <button class="btn-ghost" data-action="back-to-results">${t('frame.actions.back')}</button>
       </div>
       <div class="frame-grid">${postsHtml}</div>
     </div>
@@ -181,7 +185,7 @@ function renderCandidate(paneEl, caseData, ctx) {
     const ev = addEvidence(artifact);
     if (ev) {
       addBtn.disabled = true;
-      addBtn.textContent = '✓ In evidence';
+      addBtn.textContent = t('frame.actions.saved');
       ctx.onEvidenceAdded && ctx.onEvidenceAdded(ev);
     }
   });

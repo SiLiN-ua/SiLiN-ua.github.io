@@ -3,16 +3,9 @@
 //
 // Iron rule for this pane, encoded in the render logic:
 //   Analyst Mode explains techniques, not the player's performance.
-//
-// - Read-only: never adds evidence, never opens tools, never touches
-//   submission, quality, notes or links.
-// - Personalisation is evidence-conditional only: observations state facts
-//   about what evidence was collected, never grade whether the player was
-//   "right" or "wrong" to collect it.
-// - Missing observations are silently omitted — no ⚠, no "you didn't", no
-//   "missing". If nothing matched for a concept, a neutral fallback is shown.
 
 import { getState } from '../engine/state.js';
+import { t, pick } from '../engine/i18n.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -27,8 +20,6 @@ function evidenceIdSet() {
   return new Set((state && state.evidence || []).map(e => e.sourceId));
 }
 
-// Same semantics as engine/report.js.isCriterionMet (kept local to avoid a
-// circular import — this pane never imports report evaluation).
 function conditionMet(when, ids) {
   if (!when) return true;
   if (when.requires_all && when.requires_all.length) {
@@ -46,7 +37,7 @@ function observationsHtml(concept, ids) {
   if (!active.length) {
     return `
       <div class="analyst-obs analyst-obs--empty">
-        This case contained several signals that can be combined using this technique.
+        ${t('analyst.empty_obs')}
       </div>
     `;
   }
@@ -55,7 +46,7 @@ function observationsHtml(concept, ids) {
       ${active.map(o => `
         <li class="analyst-obs__item">
           <span class="analyst-obs__mark">✓</span>
-          <span class="analyst-obs__text">${esc(o.text)}</span>
+          <span class="analyst-obs__text">${esc(pick(o, 'text'))}</span>
         </li>
       `).join('')}
     </ul>
@@ -63,25 +54,28 @@ function observationsHtml(concept, ids) {
 }
 
 function conceptHtml(concept, ids) {
+  const title = pick(concept, 'title');
+  const why = pick(concept, 'why_it_mattered');
+  const ref = pick(concept, 'real_world_reference');
   return `
     <section class="analyst-concept">
-      <div class="analyst-concept__eyebrow">CONCEPT</div>
-      <h3 class="analyst-concept__title">${esc(concept.title)}</h3>
+      <div class="analyst-concept__eyebrow">${t('analyst.block.concept')}</div>
+      <h3 class="analyst-concept__title">${esc(title)}</h3>
 
       <div class="analyst-block">
-        <div class="analyst-block__label">WHY IT MATTERED</div>
-        <p class="analyst-block__body">${esc(concept.why_it_mattered)}</p>
+        <div class="analyst-block__label">${t('analyst.block.why')}</div>
+        <p class="analyst-block__body">${esc(why)}</p>
       </div>
 
       <div class="analyst-block">
-        <div class="analyst-block__label">WHAT YOUR CASE LOOKS LIKE</div>
+        <div class="analyst-block__label">${t('analyst.block.your_case')}</div>
         ${observationsHtml(concept, ids)}
       </div>
 
-      ${concept.real_world_reference ? `
+      ${ref ? `
         <div class="analyst-block analyst-block--ref">
-          <div class="analyst-block__label">REAL-WORLD REFERENCE</div>
-          <p class="analyst-block__body">${esc(concept.real_world_reference)}</p>
+          <div class="analyst-block__label">${t('analyst.block.reference')}</div>
+          <p class="analyst-block__body">${esc(ref)}</p>
         </div>
       ` : ''}
     </section>
@@ -91,10 +85,12 @@ function conceptHtml(concept, ids) {
 function hookHtml(hook) {
   if (!hook) return '';
   const url = hook.url || '';
+  const text = pick(hook, 'text');
+  const cta = pick(hook, 'cta') || t('analyst.hook.default_cta');
   return `
     <section class="analyst-hook">
-      ${hook.text ? `<p class="analyst-hook__text">${esc(hook.text)}</p>` : ''}
-      ${url ? `<a class="analyst-hook__cta" href="${esc(url)}" target="_blank" rel="noopener">${esc(hook.cta || 'Read more →')}</a>` : ''}
+      ${text ? `<p class="analyst-hook__text">${esc(text)}</p>` : ''}
+      ${url ? `<a class="analyst-hook__cta" href="${esc(url)}" target="_blank" rel="noopener">${esc(cta)}</a>` : ''}
     </section>
   `;
 }
@@ -103,18 +99,19 @@ export function renderAnalystPane(paneEl, caseData) {
   const analyst = caseData && caseData.analyst_mode;
   if (!analyst) {
     paneEl.innerHTML = `
-      <div class="analyst"><div class="analyst__empty">No analyst content for this case.</div></div>
+      <div class="analyst"><div class="analyst__empty">${t('analyst.empty')}</div></div>
     `;
     return;
   }
 
   const ids = evidenceIdSet();
   const concepts = analyst.concepts || [];
+  const intro = pick(analyst, 'intro');
 
   paneEl.innerHTML = `
     <div class="analyst">
-      <div class="analyst__title">CASE 001 · ANALYST MODE</div>
-      ${analyst.intro ? `<p class="analyst__intro">${esc(analyst.intro)}</p>` : ''}
+      <div class="analyst__title">${t('analyst.title')}</div>
+      ${intro ? `<p class="analyst__intro">${esc(intro)}</p>` : ''}
       <div class="analyst__divider"></div>
       ${concepts.map(c => conceptHtml(c, ids)).join('<div class="analyst__divider"></div>')}
       ${analyst.hook ? '<div class="analyst__divider analyst__divider--wide"></div>' : ''}
