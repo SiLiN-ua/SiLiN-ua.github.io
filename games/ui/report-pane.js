@@ -1,7 +1,18 @@
 // ui/report-pane.js
 // Renders the mini Final Report checkpoint. Fully derived from evidence state.
 // Never persists anything of its own. Never says "search X" or "add Y" — only
-// reports which criteria are met and which are not.
+// reports which required criteria are met and which are not, and separately
+// lists independent findings (optional) that do not affect the verdict.
+//
+// Layout order (deliberate — playtest #5 showed that a single mixed list was
+// read as one to-do, even with different markers):
+//   1. Required sections
+//   2. Divider
+//   3. Verdict
+//   4. Divider
+//   5. Optional section titled "CORROBORATION · INDEPENDENT FINDINGS"
+//      with an explicit note that these do not affect the verdict, rendered
+//      without checklist-style markers.
 
 import { evaluateReport } from '../engine/report.js';
 import { setActiveTool } from '../engine/state.js';
@@ -24,23 +35,9 @@ function verdictText(evalResult) {
   return 'Your conclusion is plausible. Your evidence chain is incomplete.';
 }
 
-function itemHtml(item) {
-  if (item.optional) {
-    if (item.met) {
-      return `
-        <li class="report-item is-met is-optional">
-          <span class="report-item__mark">✓</span>
-          <span class="report-item__label">${esc(item.label)}</span>
-        </li>
-      `;
-    }
-    return `
-      <li class="report-item is-optional is-open">
-        <span class="report-item__mark">·</span>
-        <span class="report-item__label">${esc(item.label)}</span>
-      </li>
-    `;
-  }
+// ---- Required items (checklist-style) ----
+
+function requiredItemHtml(item) {
   if (item.met) {
     return `
       <li class="report-item is-met">
@@ -60,15 +57,36 @@ function itemHtml(item) {
   `;
 }
 
-function sectionHtml(section) {
-  const isOptionalSection = section.items.every(i => i.optional);
+function requiredSectionHtml(section) {
   return `
-    <section class="report-section${isOptionalSection ? ' is-optional-section' : ''}">
-      <div class="report-section__title">
-        ${esc(section.name)}${isOptionalSection ? ' <span class="report-section__note">· optional</span>' : ''}
-      </div>
+    <section class="report-section">
+      <div class="report-section__title">${esc(section.name)}</div>
       <ul class="report-section__items">
-        ${section.items.map(itemHtml).join('')}
+        ${section.items.map(requiredItemHtml).join('')}
+      </ul>
+    </section>
+  `;
+}
+
+// ---- Optional items (independent findings — deliberately NOT a checklist) ----
+
+function optionalItemHtml(item) {
+  return `
+    <li class="report-finding${item.met ? ' is-collected' : ''}">
+      <span class="report-finding__label">${esc(item.label)}</span>
+      ${item.met ? '<span class="report-finding__status">collected</span>' : ''}
+    </li>
+  `;
+}
+
+function optionalPanelHtml(optionalItems) {
+  if (!optionalItems.length) return '';
+  return `
+    <section class="report-findings">
+      <div class="report-findings__title">CORROBORATION · INDEPENDENT FINDINGS</div>
+      <div class="report-findings__note">These findings do not affect the verdict.</div>
+      <ul class="report-findings__items">
+        ${optionalItems.map(optionalItemHtml).join('')}
       </ul>
     </section>
   `;
@@ -77,11 +95,24 @@ function sectionHtml(section) {
 export function renderReportPane(paneEl, caseData) {
   const result = evaluateReport(caseData);
 
+  // Split sections into required and optional. A section counts as optional
+  // if every item inside is optional (mirrors the case-authoring convention).
+  const requiredSections = [];
+  const optionalItems = [];
+  for (const s of result.sections) {
+    const allOptional = s.items.every(i => i.optional);
+    if (allOptional) {
+      optionalItems.push(...s.items);
+    } else {
+      requiredSections.push(s);
+    }
+  }
+
   paneEl.innerHTML = `
     <div class="report">
       <div class="report__title">CASE REPORT</div>
 
-      ${result.sections.map(sectionHtml).join('')}
+      ${requiredSections.map(requiredSectionHtml).join('')}
 
       <div class="report__divider"></div>
 
@@ -92,6 +123,9 @@ export function renderReportPane(paneEl, caseData) {
       <div class="report__actions">
         <button class="btn-ghost" data-action="review-evidence">Review evidence →</button>
       </div>
+
+      ${optionalItems.length ? `<div class="report__divider report__divider--wide"></div>` : ''}
+      ${optionalPanelHtml(optionalItems)}
     </div>
   `;
 
