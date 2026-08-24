@@ -3,7 +3,8 @@
 
 import { addEvidence, isInEvidence } from '../../engine/state.js';
 import { resolveAsset } from '../../engine/case-loader.js';
-import { t, pick } from '../../engine/i18n.js';
+import { t, pick, getLang } from '../../engine/i18n.js';
+import { formatJoined } from '../../engine/dates.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -47,7 +48,7 @@ export function renderFrameProfile(paneEl, caseData, profile, { onEvidenceAdded 
             <span><b>${fmtNum(profile.stats.following)}</b>${t('frame.stats.following')}</span>
           </div>
           <div class="frame-bio">${esc(bio)}</div>
-          <div class="frame-meta">${esc(pick(profile, 'location'))} · ${t('frame.meta.joined')} ${esc(profile.joined)}</div>
+          <div class="frame-meta">${esc(pick(profile, 'location'))} · ${t('frame.meta.joined')} ${esc(formatJoined(profile.joined, getLang()))}</div>
         </div>
       </div>
       <div class="frame-actions">

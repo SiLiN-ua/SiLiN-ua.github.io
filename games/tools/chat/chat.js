@@ -2,7 +2,8 @@
 // CHAT — messenger handle lookup surface. Public-metadata document view.
 
 import { addEvidence, isInEvidence } from '../../engine/state.js';
-import { t, pick } from '../../engine/i18n.js';
+import { t, pick, getLang } from '../../engine/i18n.js';
+import { formatJoined } from '../../engine/dates.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -101,7 +102,7 @@ function renderResultList(search) {
           <div class="chat-result__handle">@${esc(r.handle)}</div>
           <div class="chat-result__body">
             <div class="chat-result__name">${esc(r.display_name)}</div>
-            <div class="chat-result__joined">${t('chat.results.joined', { when: esc(r.joined) })}</div>
+            <div class="chat-result__joined">${t('chat.results.joined', { when: esc(formatJoined(r.joined, getLang())) })}</div>
           </div>
           <div class="chat-result__action">
             <button class="btn-ghost" data-open-profile="${esc(r.id)}">${t('chat.results.inspect')}</button>
@@ -143,7 +144,7 @@ function renderProfileDetail(paneEl, caseData, ctx) {
         ${field(t('chat.profile.field.display_name'), p.display_name)}
         ${field(t('chat.profile.field.bio'),          pick(p, 'bio'))}
         ${field(t('chat.profile.field.location'),     pick(p, 'location'))}
-        ${field(t('chat.profile.field.joined'),       p.joined)}
+        ${field(t('chat.profile.field.joined'),       formatJoined(p.joined, getLang()))}
         ${field(t('chat.profile.field.last_seen'),    pick(p, 'last_seen'))}
       </div>
 
