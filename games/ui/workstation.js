@@ -7,6 +7,7 @@ import { renderFrameProfile } from '../tools/frame/frame.js';
 import { renderTrace } from '../tools/trace/trace.js';
 import { renderArchive } from '../tools/archive/archive.js';
 import { renderChat } from '../tools/chat/chat.js';
+import { renderAtlas } from '../tools/atlas/atlas.js';
 import { renderEvidencePane } from './evidence-pane.js';
 import { renderReportPane } from './report-pane.js';
 
@@ -26,7 +27,7 @@ const TOOLS = [
 // Tools that have a concrete implementation in Session 2. Anything not in this set
 // still shows in the sidebar but renders the "available later" placeholder pane —
 // even after unlock — until its Session lands.
-const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'evidence', 'report']);
+const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'atlas', 'evidence', 'report']);
 
 let caseData = null;
 let toastTimer = null;
@@ -106,6 +107,8 @@ function renderPane() {
     renderArchive(paneEl, caseData, ctx);
   } else if (active === 'chat') {
     renderChat(paneEl, caseData, ctx);
+  } else if (active === 'atlas') {
+    renderAtlas(paneEl, caseData, ctx);
   } else if (active === 'evidence') {
     renderEvidencePane(paneEl, caseData);
   } else if (active === 'report') {

@@ -25,6 +25,22 @@ function verdictText(evalResult) {
 }
 
 function itemHtml(item) {
+  if (item.optional) {
+    if (item.met) {
+      return `
+        <li class="report-item is-met is-optional">
+          <span class="report-item__mark">✓</span>
+          <span class="report-item__label">${esc(item.label)}</span>
+        </li>
+      `;
+    }
+    return `
+      <li class="report-item is-optional is-open">
+        <span class="report-item__mark">·</span>
+        <span class="report-item__label">${esc(item.label)}</span>
+      </li>
+    `;
+  }
   if (item.met) {
     return `
       <li class="report-item is-met">
@@ -45,9 +61,12 @@ function itemHtml(item) {
 }
 
 function sectionHtml(section) {
+  const isOptionalSection = section.items.every(i => i.optional);
   return `
-    <section class="report-section">
-      <div class="report-section__title">${esc(section.name)}</div>
+    <section class="report-section${isOptionalSection ? ' is-optional-section' : ''}">
+      <div class="report-section__title">
+        ${esc(section.name)}${isOptionalSection ? ' <span class="report-section__note">· optional</span>' : ''}
+      </div>
       <ul class="report-section__items">
         ${section.items.map(itemHtml).join('')}
       </ul>

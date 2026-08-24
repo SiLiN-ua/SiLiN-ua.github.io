@@ -6,6 +6,12 @@
 //   - requires_any: at least one listed evidence id is present
 //   - requires_all: every listed evidence id is present
 // A criterion with neither requirement is considered met (author authored it "always ok").
+//
+// A criterion with type: "optional" is an independent finding, NOT part of the
+// authored chain. It shows up in its own section but is excluded from the
+// completion verdict — its absence never turns the chain into "incomplete".
+// The rule REPORT answers is "is the authored chain closed?", not "has the
+// investigation been exhausted?" — optional criteria preserve that distinction.
 
 import { getState } from './state.js';
 
@@ -24,8 +30,8 @@ function isCriterionMet(criterion, ids) {
   return true;
 }
 
-// Returns [{ section, items: [{ id, label, missing_label, met }, ...] }, ...] in
-// declaration order. Sections are grouped in the order they first appear.
+// Returns [{ section, items: [{ id, label, missing_label, met, optional }, ...] }, ...]
+// in declaration order. Sections are grouped in the order they first appear.
 export function evaluateReport(caseData) {
   const criteria = (caseData && caseData.report_criteria) || [];
   const ids = evidenceIdSet();
@@ -44,19 +50,23 @@ export function evaluateReport(caseData) {
       label: c.label || c.id,
       missing_label: c.missing_label || (c.label || c.id).toUpperCase() + ' — MISSING',
       met: isCriterionMet(c, ids),
+      optional: c.type === 'optional',
     });
   }
 
-  const flat = sectionOrder.flatMap(s => bySection.get(s));
-  const total = flat.length;
-  const missing = flat.filter(c => !c.met).length;
-  const allMet = total > 0 && missing === 0;
+  // Verdict is derived from REQUIRED criteria only.
+  const requiredFlat = sectionOrder
+    .flatMap(s => bySection.get(s))
+    .filter(item => !item.optional);
+  const totalRequired = requiredFlat.length;
+  const missingRequired = requiredFlat.filter(c => !c.met).length;
+  const allMet = totalRequired > 0 && missingRequired === 0;
   const nothingCollected = ids.size === 0;
 
   return {
     sections: sectionOrder.map(name => ({ name, items: bySection.get(name) })),
-    total,
-    missing,
+    total: totalRequired,
+    missing: missingRequired,
     allMet,
     nothingCollected,
   };

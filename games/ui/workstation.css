@@ -1103,3 +1103,222 @@ body::before, body::after { display: none; }
   display: flex;
   gap: .6rem;
 }
+
+/* ==========================================================
+   ATLAS — location & professional-record lookup
+   ========================================================== */
+.atlas { max-width: 720px; margin: 0 auto; }
+.atlas__header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.atlas__label {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .22em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-bottom: .8rem;
+}
+.atlas__form { display: flex; gap: .5rem; }
+.atlas__input {
+  flex: 1;
+  padding: .75rem .9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: .92rem;
+  outline: none;
+  transition: border-color .15s var(--ease);
+}
+.atlas__input:focus {
+  border-color: var(--ice);
+  box-shadow: 0 0 0 1px var(--ice);
+}
+.atlas__input::placeholder { color: var(--text-mute); }
+.atlas__hint {
+  margin-top: .7rem;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--text-mute);
+}
+.atlas__meta {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .1em;
+  color: var(--text-dim);
+  margin-bottom: .8rem;
+}
+.atlas__meta b { color: var(--cream); font-weight: 500; }
+.atlas__empty {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+}
+.atlas__empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--steel);
+  margin-bottom: .3rem;
+}
+.atlas__empty-note {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  color: var(--text-mute);
+  letter-spacing: .06em;
+}
+.atlas__list {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.atlas-result {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color .15s var(--ease), background .15s var(--ease);
+}
+.atlas-result:hover {
+  border-color: var(--border-hi);
+  background: var(--surface-2);
+}
+.atlas-result__subject {
+  font-family: var(--font-mono);
+  font-size: .92rem;
+  color: var(--ice);
+  margin-bottom: .2rem;
+}
+.atlas-result__status {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--cream);
+  margin-bottom: .3rem;
+}
+.atlas-result__line {
+  font-family: var(--font-serif);
+  font-size: .92rem;
+  color: var(--text-dim);
+}
+
+/* ---------- Claim detail (document view) ---------- */
+.atlas-claim { max-width: 620px; margin: 0 auto; }
+.atlas-claim__title {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .28em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.atlas-claim__grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 1.25rem;
+}
+.atlas-claim__field {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: .85rem 1.15rem;
+  border-bottom: 1px solid var(--border);
+}
+.atlas-claim__field:last-child { border-bottom: none; }
+.atlas-claim__label {
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  letter-spacing: .2em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+.atlas-claim__value {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  color: var(--cream);
+}
+.atlas-claim__status {
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  letter-spacing: .12em;
+  color: var(--ice);
+  text-transform: uppercase;
+}
+
+.atlas-claim__records {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 1.25rem;
+}
+.atlas-claim__records .atlas-claim__label { margin-bottom: .6rem; }
+.atlas-records {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.atlas-record {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: .8rem;
+  padding: .3rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+}
+.atlas-record:last-child { border-bottom: none; }
+.atlas-record__name { color: var(--text); }
+.atlas-record__result { color: var(--text-mute); }
+
+.atlas-claim__note {
+  padding: 1rem 1.15rem;
+  border-left: 2px solid var(--border-hi);
+  background: var(--surface);
+  margin-bottom: 1.25rem;
+}
+.atlas-claim__note-body {
+  font-family: var(--font-serif);
+  color: var(--text);
+  font-size: .95rem;
+  line-height: 1.55;
+  white-space: pre-line;
+  margin-top: .35rem;
+}
+
+/* ---------- REPORT optional markers ---------- */
+.report-section.is-optional-section .report-section__title {
+  color: var(--text-mute);
+}
+.report-section__note {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  color: var(--text-mute);
+  margin-left: .35rem;
+  text-transform: uppercase;
+}
+.report-item.is-optional .report-item__mark {
+  color: var(--text-mute);
+  font-size: 1.1rem;
+  line-height: .8;
+}
+.report-item.is-optional .report-item__label {
+  color: var(--text-dim);
+}
+.report-item.is-optional.is-met .report-item__mark {
+  color: var(--steel-hi);
+  font-size: .95rem;
+  line-height: 1;
+}
+.report-item.is-optional.is-met .report-item__label {
+  color: var(--text);
+}

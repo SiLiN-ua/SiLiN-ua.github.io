@@ -64,6 +64,20 @@
       "label": "Real identity independently corroborated",
       "missing_label": "UNVERIFIED",
       "requires_any": ["chat_profile_dcole_shoots"]
+    },
+    {
+      "id": "corroboration_operator_location",
+      "section": "CORROBORATION",
+      "type": "optional",
+      "label": "Operator's location claim independently checked",
+      "requires_any": ["atlas_claim_dcole_prague"]
+    },
+    {
+      "id": "corroboration_source_presence",
+      "section": "CORROBORATION",
+      "type": "optional",
+      "label": "Source's professional presence independently verified",
+      "requires_any": ["atlas_claim_alex_miller_uk_manchester"]
     }
   ],
 
@@ -310,6 +324,93 @@
       "joined": "2019",
       "last_seen": "recently",
       "signal_note": "Long-standing account. Prague-based photographer."
+    },
+
+    "atlas_search_prague": {
+      "id": "atlas_search_prague",
+      "type": "atlas_search",
+      "tool": "atlas",
+      "query": "Prague",
+      "engine_note": "ATLAS · location & professional record lookup",
+      "results": [
+        {
+          "id": "atlas_claim_dcole_prague",
+          "subject": "@dcole_shoots",
+          "status": "CLAIM ONLY",
+          "line": "No independent record found"
+        },
+        {
+          "id": "atlas_claim_alex_miller_uk_prague",
+          "subject": "@alex.miller.uk",
+          "status": "VISITED · DATED POST",
+          "line": "Not a professional-location verification"
+        }
+      ]
+    },
+
+    "atlas_search_manchester": {
+      "id": "atlas_search_manchester",
+      "type": "atlas_search",
+      "tool": "atlas",
+      "query": "Manchester",
+      "engine_note": "ATLAS · location & professional record lookup",
+      "results": [
+        {
+          "id": "atlas_claim_alex_miller_uk_manchester",
+          "subject": "@alex.miller.uk",
+          "status": "VERIFIED",
+          "line": "Manchester Photographer Guild · active since 2019"
+        }
+      ]
+    },
+
+    "atlas_claim_dcole_prague": {
+      "id": "atlas_claim_dcole_prague",
+      "type": "atlas_location_claim",
+      "tool": "atlas",
+      "source": "atlas_search_prague",
+      "subject": "@dcole_shoots",
+      "location_claimed": "Prague, CZ",
+      "status": "CLAIM ONLY",
+      "records_searched": [
+        { "name": "Business registry",       "result": "no match" },
+        { "name": "Photographer guilds",     "result": "no match" },
+        { "name": "Studio directories",      "result": "no match" },
+        { "name": "Public venue index",      "result": "no match" }
+      ],
+      "note": "Subject asserts a Prague-based professional presence,\nbut no independent record corroborates this at this time.\n\nAbsence of a record is not proof of a false claim."
+    },
+
+    "atlas_claim_alex_miller_uk_prague": {
+      "id": "atlas_claim_alex_miller_uk_prague",
+      "type": "atlas_location_claim",
+      "tool": "atlas",
+      "source": "atlas_search_prague",
+      "subject": "@alex.miller.uk",
+      "location_claimed": "Prague, CZ (referenced in one dated post)",
+      "status": "VISITED · DATED POST",
+      "records_searched": [
+        { "name": "Business registry",       "result": "no match" },
+        { "name": "Photographer guilds",     "result": "no match (subject registered elsewhere)" },
+        { "name": "Studio directories",      "result": "no match" }
+      ],
+      "note": "Subject visited or referenced Prague in a dated post.\nThis is presence in a location, not a professional-location verification."
+    },
+
+    "atlas_claim_alex_miller_uk_manchester": {
+      "id": "atlas_claim_alex_miller_uk_manchester",
+      "type": "atlas_location_claim",
+      "tool": "atlas",
+      "source": "atlas_search_manchester",
+      "subject": "@alex.miller.uk",
+      "location_claimed": "Manchester, UK",
+      "status": "VERIFIED",
+      "records_searched": [
+        { "name": "Manchester Photographer Guild", "result": "active member since 2019" },
+        { "name": "Business registry",             "result": "listed as sole trader" },
+        { "name": "Studio directories",            "result": "one listing at cited address" }
+      ],
+      "note": "Subject's professional presence in the stated location is independently corroborated by more than one record."
     }
   }
 }

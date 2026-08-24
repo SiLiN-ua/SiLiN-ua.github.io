@@ -40,6 +40,9 @@ function cardHtml(evidence, caseData) {
     title = snap.display_name || snap.handle || snap.id;
     const handle = snap.handle ? `@${snap.handle}` : '';
     meta = [handle, snap.url, snap.location].filter(Boolean).join(' · ');
+  } else if (snap.type === 'atlas_location_claim') {
+    title = snap.status || 'ATLAS RECORD';
+    meta = [snap.subject, snap.location_claimed].filter(Boolean).join(' · ');
   } else {
     title = snap.display_name || snap.username || snap.title || snap.id;
     const handle = snap.username ? `@${snap.username}` : '';
