@@ -4,7 +4,7 @@
   "title": "STOLEN FACE",
   "client_brief":    "I found an Instagram profile using my photos. I want to understand who is behind it.",
   "client_brief_en": "I found an Instagram profile using my photos. I want to understand who is behind it.",
-  "client_brief_uk": "Я знайшов профіль в Instagram, який використовує мої фотографії. Хочу зрозуміти, хто за ним стоїть.",
+  "client_brief_uk": "Я натрапив на профіль в Instagram, який використовує мої фотографії. Хочу зрозуміти, хто за ним стоїть.",
 
   "unlock_rules": {
     "trace":   { "requires_evidence": ["profile_001"] },
@@ -554,7 +554,7 @@
   "analyst_mode": {
     "intro":    "You filed your report. Below is what your investigation actually did — one OSINT concept at a time. This is not a scorecard. It is a walk-through of the techniques this case relied on and how each one showed up in your evidence.",
     "intro_en": "You filed your report. Below is what your investigation actually did — one OSINT concept at a time. This is not a scorecard. It is a walk-through of the techniques this case relied on and how each one showed up in your evidence.",
-    "intro_uk": "Ти подав звіт. Нижче — що саме зробило твоє розслідування, по одній OSINT-концепції за раз. Це не оцінка. Це розбір технік, на які спиралася ця справа, і того, як кожна з них проявилася в твоїх доказах.",
+    "intro_uk": "Ти подав звіт. Нижче — що саме зробило твоє розслідування, розібране за однією OSINT-концепцією за раз. Це не оцінка. Це розбір технік, на які спиралася ця справа, і того, як кожна з них проявилася у твоїх доказах.",
     "concepts": [
       {
         "id": "attribution_ne_identification",
@@ -563,24 +563,24 @@
         "title_uk": "Атрибуція ≠ Ідентифікація",
         "why_it_mattered":    "The photograph is of a real person. That doesn't make the real person the operator of the account. Attribution is about who controls a profile. Identification is about who is in an image. Different questions, different evidence, different sources.",
         "why_it_mattered_en": "The photograph is of a real person. That doesn't make the real person the operator of the account. Attribution is about who controls a profile. Identification is about who is in an image. Different questions, different evidence, different sources.",
-        "why_it_mattered_uk": "На фотографії — реальна людина. Це ще не означає, що саме вона керує акаунтом. Атрибуція — про те, хто контролює профіль. Ідентифікація — про те, хто зображений. Різні питання, різні докази, різні джерела.",
+        "why_it_mattered_uk": "На фотографії — реальна людина. Це ще не означає, що саме вона керує акаунтом. Атрибуція — про те, хто контролює профіль. Ідентифікація — про те, хто зображений на знімку. Це різні питання, різні докази, різні джерела.",
         "player_observations": [
           {
             "when": { "requires_all": ["profile_001", "candidate_001"] },
             "text":    "You examined the account under investigation and separately examined a real person whose photographs matched the account's content.",
             "text_en": "You examined the account under investigation and separately examined a real person whose photographs matched the account's content.",
-            "text_uk": "Ти оглянув акаунт під розслідуванням і окремо — реальну людину, чиї фотографії збігаються з контентом акаунту."
+            "text_uk": "Ти оглянув акаунт, який розслідуєш, і окремо — реальну людину, чиї фотографії збігаються з контентом цього акаунту."
           },
           {
             "when": { "requires_all": ["candidate_001", "chat_profile_dcole_shoots"] },
             "text":    "Your evidence contains two distinct individuals: the person whose photographs the account uses, and a separate person tied to the operator handle.",
             "text_en": "Your evidence contains two distinct individuals: the person whose photographs the account uses, and a separate person tied to the operator handle.",
-            "text_uk": "Твої докази містять двох різних людей: того, чиї фотографії використовує акаунт, і окрему особу, пов'язану з хендлом оператора."
+            "text_uk": "У твоїх доказах — двоє різних людей: той, чиї фотографії використовує акаунт, і окрема особа, прив'язана до хендла оператора."
           }
         ],
         "real_world_reference":    "Attribution / image research — reverse-image services such as Google Lens or Yandex Images can surface possible sources for a photograph. A face match remains a lead about who is in the image, not proof of who controls the account.",
         "real_world_reference_en": "Attribution / image research — reverse-image services such as Google Lens or Yandex Images can surface possible sources for a photograph. A face match remains a lead about who is in the image, not proof of who controls the account.",
-        "real_world_reference_uk": "Атрибуція / робота зі зображеннями — сервіси зворотного пошуку зображень на кшталт Google Lens чи Yandex Images можуть показати можливі джерела фотографії. Збіг обличчя — це зачіпка про те, хто зображений, а не доказ того, хто керує акаунтом."
+        "real_world_reference_uk": "Атрибуція та робота із зображеннями — сервіси зворотного пошуку картинок на кшталт Google Lens чи Yandex Images здатні показати можливі джерела фотографії. Збіг облич — це зачіпка про те, хто на знімку, а не доказ того, хто керує акаунтом."
       },
       {
         "id": "content_overlap",
@@ -589,18 +589,18 @@
         "title_uk": "Збіг контенту як доказ",
         "why_it_mattered":    "When the same images and near-identical captions appear on two different accounts, the overlap itself is data. The direction of the copy is decided by other evidence — timing, ownership, provenance — not by the overlap alone.",
         "why_it_mattered_en": "When the same images and near-identical captions appear on two different accounts, the overlap itself is data. The direction of the copy is decided by other evidence — timing, ownership, provenance — not by the overlap alone.",
-        "why_it_mattered_uk": "Коли одні й ті самі зображення та майже ідентичні підписи з'являються на двох різних акаунтах, сам факт збігу — це вже дані. Напрямок копіювання визначається іншими доказами — часом, правом власності, походженням — а не одним лише збігом.",
+        "why_it_mattered_uk": "Коли ті самі зображення й майже ідентичні підписи з'являються на двох різних акаунтах, сам факт збігу — це вже дані. Напрямок копіювання визначають інші докази — час, право власності, походження — а не лише сам збіг.",
         "player_observations": [
           {
             "when": { "requires_all": ["profile_001", "candidate_001"] },
             "text":    "You collected both accounts that carry the same imagery, keeping them alongside each other in your evidence.",
             "text_en": "You collected both accounts that carry the same imagery, keeping them alongside each other in your evidence.",
-            "text_uk": "Ти зібрав обидва акаунти з однаковими зображеннями, тримаючи їх поряд у своїх доказах."
+            "text_uk": "Ти зібрав обидва акаунти з тими самими зображеннями і поклав їх поруч у своїх доказах."
           }
         ],
         "real_world_reference":    "Content forensics — visual comparison, EXIF inspection and reverse-image lookups are the standard tools for establishing that two posts share source material.",
         "real_world_reference_en": "Content forensics — visual comparison, EXIF inspection and reverse-image lookups are the standard tools for establishing that two posts share source material.",
-        "real_world_reference_uk": "Контент-форензика — візуальне порівняння, огляд EXIF та зворотний пошук зображень є стандартними інструментами, щоб встановити, що два пости мають спільний вихідний матеріал."
+        "real_world_reference_uk": "Контент-форензика — візуальне порівняння, огляд EXIF та зворотний пошук зображень: стандартний набір, щоб довести, що два пости мають спільне джерело матеріалу."
       },
       {
         "id": "temporal_precedence",
@@ -609,24 +609,24 @@
         "title_uk": "Часова пріоритетність",
         "why_it_mattered":    "If a photograph is documented in a public archive at date A, and another account carrying that same photograph is documented no earlier than date B, and A predates B, then the later account cannot be the origin of the material. Temporal precedence turns a plausible story into a supported one.",
         "why_it_mattered_en": "If a photograph is documented in a public archive at date A, and another account carrying that same photograph is documented no earlier than date B, and A predates B, then the later account cannot be the origin of the material. Temporal precedence turns a plausible story into a supported one.",
-        "why_it_mattered_uk": "Якщо фотографія задокументована в публічному архіві на дату А, а інший акаунт із тією ж фотографією задокументовано не раніше дати B, і А передує B, то пізніший акаунт не може бути джерелом матеріалу. Часова пріоритетність перетворює правдоподібну історію на підтверджену.",
+        "why_it_mattered_uk": "Якщо фотографія зафіксована у публічному архіві на дату A, а інший акаунт із тією самою фотографією зафіксований не раніше дати B, і A передує B, — пізніший акаунт не може бути джерелом матеріалу. Саме часова пріоритетність перетворює правдоподібну версію на підтверджену.",
         "player_observations": [
           {
             "when": { "requires_any": ["archive_snapshot_alex_miller_2024_03"] },
             "text":    "You pulled the earliest indexed capture available for the account under investigation.",
             "text_en": "You pulled the earliest indexed capture available for the account under investigation.",
-            "text_uk": "Ти взяв найраніший доступний архівний знімок для акаунту під розслідуванням."
+            "text_uk": "Ти витягнув найраніший доступний архівний знімок акаунту, який розслідуєш."
           },
           {
             "when": { "requires_any": ["archive_snapshot_alex_miller_uk_2023_05", "archive_snapshot_alex_miller_uk_2019_02"] },
             "text":    "You pulled an archived capture that shows the source material existed on the other account before that.",
             "text_en": "You pulled an archived capture that shows the source material existed on the other account before that.",
-            "text_uk": "Ти взяв архівний знімок, який показує, що вихідний матеріал існував на іншому акаунті ще до того."
+            "text_uk": "Ти витягнув архівний знімок, який показує: вихідний матеріал існував на іншому акаунті ще раніше."
           }
         ],
         "real_world_reference":    "Temporal proof — The Internet Archive's Wayback Machine, archive.today and site-specific archives can establish that a page or a post existed at a specific point in time.",
         "real_world_reference_en": "Temporal proof — The Internet Archive's Wayback Machine, archive.today and site-specific archives can establish that a page or a post existed at a specific point in time.",
-        "real_world_reference_uk": "Часовий доказ — Wayback Machine від Internet Archive, archive.today та архіви окремих сайтів дають змогу встановити, що сторінка чи пост існували у конкретний момент часу."
+        "real_world_reference_uk": "Часовий доказ — Wayback Machine від Internet Archive, archive.today та архіви окремих сайтів дозволяють показати, що сторінка чи пост існували у конкретний момент часу."
       },
       {
         "id": "handle_to_identity",
@@ -635,24 +635,24 @@
         "title_uk": "Витік реального імені через хендл",
         "why_it_mattered":    "The same handle can be registered on multiple platforms under different display metadata. When a public-metadata lookup on one platform returns a different real name than the persona presented on another, the mismatch is a lead about the operator — not a conclusion, but a lead worth following.",
         "why_it_mattered_en": "The same handle can be registered on multiple platforms under different display metadata. When a public-metadata lookup on one platform returns a different real name than the persona presented on another, the mismatch is a lead about the operator — not a conclusion, but a lead worth following.",
-        "why_it_mattered_uk": "Один і той самий хендл може бути зареєстрований на різних платформах із різними публічними метаданими. Коли пошук за публічними метаданими на одній платформі повертає інше реальне ім'я, ніж персона, представлена на іншій, невідповідність — це зачіпка про оператора: не висновок, але зачіпка, яку варто розкрутити.",
+        "why_it_mattered_uk": "Один і той самий хендл може бути зареєстрований на різних платформах із різними публічними метаданими. Коли пошук за публічними метаданими на одній платформі повертає інше реальне ім'я, ніж персона, яку показує інша, — цей розлад є зачіпкою про оператора акаунта: не висновком, а зачіпкою, яку варто перевіряти далі.",
         "player_observations": [
           {
             "when": { "requires_any": ["chat_profile_alex_miller_handle"] },
             "text":    "You looked up the account's handle on a separate platform and captured the display name that came back with it.",
             "text_en": "You looked up the account's handle on a separate platform and captured the display name that came back with it.",
-            "text_uk": "Ти шукав хендл акаунту на окремій платформі та зафіксував відображуване ім'я, яке з ним прийшло."
+            "text_uk": "Ти пошукав хендл акаунту на окремій платформі та зафіксував відображуване ім'я, яке з цим хендлом пов'язане."
           },
           {
             "when": { "requires_any": ["chat_profile_dcole_shoots"] },
             "text":    "You then searched that display name and captured a second, long-standing handle attached to the same name.",
             "text_en": "You then searched that display name and captured a second, long-standing handle attached to the same name.",
-            "text_uk": "Потім ти шукав це відображуване ім'я та зафіксував другий, давній хендл, прив'язаний до того самого імені."
+            "text_uk": "Потім ти пошукав це відображуване ім'я та зафіксував другий, давній хендл, прив'язаний до того самого імені."
           }
         ],
         "real_world_reference":    "Username discovery — tools such as Maigret and Sherlock enumerate reused usernames across public services. A shared handle is a lead; a real name binding two handles is stronger.",
         "real_world_reference_en": "Username discovery — tools such as Maigret and Sherlock enumerate reused usernames across public services. A shared handle is a lead; a real name binding two handles is stronger.",
-        "real_world_reference_uk": "Пошук нікнеймів — інструменти на кшталт Maigret і Sherlock перебирають використання одного нікнейма на різних публічних сервісах. Спільний хендл — це зачіпка; спільне реальне ім'я, що зв'язує два хендли, — сильніший сигнал."
+        "real_world_reference_uk": "Пошук за хендлом — інструменти на кшталт Maigret і Sherlock перевіряють, де один і той самий хендл використано на різних публічних сервісах. Спільний хендл — це зачіпка; спільне реальне ім'я, що зв'язує два хендли, — значно сильніший сигнал."
       },
       {
         "id": "independent_corroboration",
@@ -661,33 +661,33 @@
         "title_uk": "Незалежне підтвердження",
         "why_it_mattered":    "A subject's own bio is a claim. A record in an unrelated public database — a guild registry, a business directory, a professional certification — is corroboration. The distinction is about the source of the assertion, not about how confident the assertion sounds.",
         "why_it_mattered_en": "A subject's own bio is a claim. A record in an unrelated public database — a guild registry, a business directory, a professional certification — is corroboration. The distinction is about the source of the assertion, not about how confident the assertion sounds.",
-        "why_it_mattered_uk": "Власне біо суб'єкта — це твердження. Запис у не пов'язаній публічній базі — реєстрі гільдії, діловому каталозі, професійному сертифікаті — це підтвердження. Різниця в тому, хто робить заяву, а не в тому, наскільки впевнено вона звучить.",
+        "why_it_mattered_uk": "Власне біо суб'єкта — це твердження. Запис у непов'язаній публічній базі — реєстрі гільдії, бізнес-каталозі, професійному сертифікаті — це вже підтвердження. Різниця не в тому, наскільки впевнено звучить заява, а в тому, хто саме її робить.",
         "player_observations": [
           {
             "when": { "requires_any": ["atlas_claim_alex_miller_uk_manchester"] },
             "text":    "You obtained a public-record match that corroborates one subject's stated professional location through more than one independent register.",
             "text_en": "You obtained a public-record match that corroborates one subject's stated professional location through more than one independent register.",
-            "text_uk": "Ти отримав збіг у публічних записах, який підтверджує заявлену професійну локацію одного суб'єкта одразу в кількох незалежних реєстрах."
+            "text_uk": "Ти отримав збіг у публічних записах, який підтверджує заявлену професійну локацію одного суб'єкта одразу у кількох незалежних реєстрах."
           },
           {
             "when": { "requires_any": ["atlas_claim_dcole_prague"] },
             "text":    "You checked another subject's stated location against public records and captured the result even though nothing corroborated the claim.",
             "text_en": "You checked another subject's stated location against public records and captured the result even though nothing corroborated the claim.",
-            "text_uk": "Ти звірив заявлену локацію іншого суб'єкта з публічними записами й зафіксував результат, навіть попри те, що жоден запис не підтвердив це твердження."
+            "text_uk": "Ти звірив заявлену локацію іншого суб'єкта з публічними записами й зафіксував результат — навіть попри те, що жоден запис це твердження не підтвердив."
           }
         ],
         "real_world_reference":    "Independent corroboration — public registries, professional guilds, licensing bodies and organizational directories can independently support (or fail to support) a self-claimed presence. Absence of a record is not proof of a false claim, only absence of corroboration.",
         "real_world_reference_en": "Independent corroboration — public registries, professional guilds, licensing bodies and organizational directories can independently support (or fail to support) a self-claimed presence. Absence of a record is not proof of a false claim, only absence of corroboration.",
-        "real_world_reference_uk": "Незалежне підтвердження — публічні реєстри, професійні гільдії, ліцензійні органи та галузеві каталоги можуть незалежно підтвердити (або не підтвердити) заявлену присутність. Відсутність запису — не доказ хибності твердження, а лише відсутність підтвердження."
+        "real_world_reference_uk": "Незалежне підтвердження — публічні реєстри, професійні гільдії, ліцензійні органи та галузеві каталоги можуть незалежно підтвердити (або не підтвердити) заявлену присутність. Відсутність запису — це не доказ того, що твердження хибне, а лише відсутність підтвердження."
       }
     ],
     "hook": {
       "text":    "This case was inspired by real OSINT investigations into identity fabrication on public platforms.",
       "text_en": "This case was inspired by real OSINT investigations into identity fabrication on public platforms.",
-      "text_uk": "Цей кейс натхненний реальними OSINT-розслідуваннями фабрикації цифрових особистостей на публічних платформах.",
+      "text_uk": "Цей кейс створений на основі реальних OSINT-розслідувань фабрикації цифрових особистостей на публічних платформах.",
       "cta":    "Read a real case study →",
       "cta_en": "Read a real case study →",
-      "cta_uk": "Прочитати реальний кейс-стаді →",
+      "cta_uk": "Читати справжній кейс →",
       "url": "/cases.html?slug=instagram-teen-fake-attribution"
     }
   }
