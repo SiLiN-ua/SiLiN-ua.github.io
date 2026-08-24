@@ -29,6 +29,7 @@
 
     "toast.evidence_saved":       "EVIDENCE SAVED · {id}",
     "toast.tool_unlocked":        "{tool} UNLOCKED",
+    "toast.tools_unlocked":       "UNLOCKED · {tools}",
 
     "frame.stats.posts":          "posts",
     "frame.stats.followers":      "followers",
@@ -145,6 +146,8 @@
     "report.finalform.attribution_placeholder":   "Your attribution…",
     "report.finalform.submit":                    "Submit report",
     "report.finalform.revise":                    "Revise submission",
+    "report.finalform.needs_attribution":         "Name a person or entity",
+    "report.finalform.needs_support":             "Select at least one supporting item",
 
     "report.outcome.label":              "OUTCOME",
     "report.outcome.solved":             "CASE SOLVED",
@@ -204,6 +207,7 @@
 
     "toast.evidence_saved":       "ДОКАЗ ЗБЕРЕЖЕНО · {id}",
     "toast.tool_unlocked":        "{tool} ВІДКРИТО",
+    "toast.tools_unlocked":       "ВІДКРИТО · {tools}",
 
     "frame.stats.posts":          "постів",
     "frame.stats.followers":      "підписників",
@@ -320,6 +324,8 @@
     "report.finalform.attribution_placeholder":   "Твоя атрибуція…",
     "report.finalform.submit":                    "Подати звіт",
     "report.finalform.revise":                    "Змінити подання",
+    "report.finalform.needs_attribution":         "Вкажи ім'я особи або організації",
+    "report.finalform.needs_support":             "Обери хоча б один підтверджувальний елемент",
 
     "report.outcome.label":              "РЕЗУЛЬТАТ",
     "report.outcome.solved":             "СПРАВУ РОЗКРИТО",

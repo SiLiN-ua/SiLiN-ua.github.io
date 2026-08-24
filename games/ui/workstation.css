@@ -1754,3 +1754,28 @@ body::before, body::after { display: none; }
 .outcome.is-appearing .outcome__verdict {
   animation: outcome-verdict-land 700ms 120ms var(--ease-out) backwards;
 }
+
+/* Submit gating helper — neutral, not error styling */
+.finalform__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.finalform__helper {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--text-mute);
+  font-style: italic;
+}
+
+/* --- P1 · sidebar unlock pulse ---------------------------- */
+@keyframes sidebar-unlock {
+  0%   { background: transparent; border-left-color: transparent; }
+  25%  { background: rgba(74,158,255,.14); border-left-color: var(--ice); }
+  100% { background: transparent; border-left-color: transparent; }
+}
+.tool-btn.is-just-unlocked {
+  animation: sidebar-unlock 1400ms var(--ease-out);
+}

@@ -163,8 +163,17 @@ function evidenceOptionsHtml(caseData, selectedIds) {
   `).join('');
 }
 
+function submitReadiness(prefill) {
+  const attributionOk = (prefill.attribution || '').trim().length >= 2;
+  const supportOk = (prefill.supportingEvidenceIds || []).length >= 1;
+  return { attributionOk, supportOk, ready: attributionOk && supportOk };
+}
+
 function finalFormHtml(caseData, prefill, submitEnabled) {
   const q = pick(caseData.final_answer || {}, 'question') || 'Who is behind the account?';
+  const r = submitReadiness(prefill);
+  const disabled = !submitEnabled || !r.ready;
+  const helperVisible = submitEnabled && !r.ready;
   return `
     <section class="finalform">
       <div class="finalform__title">${t('report.finalform.title')}</div>
@@ -184,9 +193,14 @@ function finalFormHtml(caseData, prefill, submitEnabled) {
       </div>
 
       <div class="finalform__actions">
-        <button class="btn-primary" data-action="submit-report" ${submitEnabled ? '' : 'disabled'}>
+        <button class="btn-primary" data-action="submit-report" ${disabled ? 'disabled' : ''}>
           ${prefill.submittedOnce ? t('report.finalform.revise') : t('report.finalform.submit')}
         </button>
+        <div class="finalform__helper" data-helper style="display:${helperVisible ? 'block' : 'none'}">
+          <span data-helper-attribution style="display:${r.attributionOk ? 'none' : 'inline'}">${t('report.finalform.needs_attribution')}</span>
+          <span data-helper-sep style="display:${(!r.attributionOk && !r.supportOk) ? 'inline' : 'none'}"> · </span>
+          <span data-helper-support style="display:${r.supportOk ? 'none' : 'inline'}">${t('report.finalform.needs_support')}</span>
+        </div>
       </div>
     </section>
   `;
@@ -340,9 +354,35 @@ export function renderReportPane(paneEl, caseData) {
     setActiveTool('evidence');
   });
 
+  // Live gating: submit disabled until attribution ≥ 2 chars AND ≥ 1
+  // supporting evidence checked. Helper text tells the player which
+  // condition is still missing — neutral copy, no red-error styling.
+  function syncSubmitGate() {
+    const attribution = (paneEl.querySelector('#attribution-input')?.value || '').trim();
+    const selected = paneEl.querySelectorAll('.finalform__option input[type=checkbox]:checked').length;
+    const attributionOk = attribution.length >= 2;
+    const supportOk = selected >= 1;
+    const ready = attributionOk && supportOk;
+    const btn = paneEl.querySelector('[data-action="submit-report"]');
+    if (btn) btn.disabled = !ready;
+    const helper = paneEl.querySelector('[data-helper]');
+    if (helper) {
+      helper.style.display = ready ? 'none' : 'block';
+      const ha = paneEl.querySelector('[data-helper-attribution]');
+      const hs = paneEl.querySelector('[data-helper-support]');
+      const sep = paneEl.querySelector('[data-helper-sep]');
+      if (ha) ha.style.display = attributionOk ? 'none' : 'inline';
+      if (hs) hs.style.display = supportOk ? 'none' : 'inline';
+      if (sep) sep.style.display = (!attributionOk && !supportOk) ? 'inline' : 'none';
+    }
+  }
+
   const input = paneEl.querySelector('#attribution-input');
   if (input) {
-    input.addEventListener('input', () => { formState.attribution = input.value; });
+    input.addEventListener('input', () => {
+      formState.attribution = input.value;
+      syncSubmitGate();
+    });
   }
   paneEl.querySelectorAll('.finalform__option input[type=checkbox]').forEach(cb => {
     cb.addEventListener('change', () => {
@@ -350,6 +390,7 @@ export function renderReportPane(paneEl, caseData) {
       if (cb.checked) sel.add(cb.value); else sel.delete(cb.value);
       formState.supportingEvidenceIds = Array.from(sel);
       cb.closest('.finalform__option').classList.toggle('is-selected', cb.checked);
+      syncSubmitGate();
     });
   });
 

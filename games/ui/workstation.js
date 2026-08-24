@@ -276,14 +276,30 @@ function onLangChange() {
 
 function onEvidenceAdded() {
   updateTopbar();
+  // Detect newly-unlocked implemented tools since the last evidence event.
   const nextAvail = currentAvailability();
+  const newlyUnlocked = [];
   for (const id of nextAvail) {
-    if (!prevAvailability.has(id) && IMPLEMENTED.has(id)) {
-      const label = TOOLS.find(x => x.id === id)?.label || id;
-      showToast(t('toast.tool_unlocked', { tool: label }));
-    }
+    if (!prevAvailability.has(id) && IMPLEMENTED.has(id)) newlyUnlocked.push(id);
   }
-  renderSidebar();
+  renderSidebar();  // baseline re-render first — new sidebar buttons exist now
+  // ONE consolidated toast per event, even when several tools unlock at
+  // once (candidate_001 opens CHAT + ATLAS + ARCHIVE in the same beat).
+  if (newlyUnlocked.length === 1) {
+    const label = TOOLS.find(x => x.id === newlyUnlocked[0])?.label || newlyUnlocked[0];
+    showToast(t('toast.tool_unlocked', { tool: label }));
+  } else if (newlyUnlocked.length > 1) {
+    const labels = newlyUnlocked
+      .map(id => TOOLS.find(x => x.id === id)?.label || id)
+      .join(' · ');
+    showToast(t('toast.tools_unlocked', { tools: labels }));
+  }
+  // Sidebar-side "the workstation grew" — a soft pulse on each newly-open row
+  // so a player whose attention is on the main pane still catches it.
+  for (const id of newlyUnlocked) {
+    const btn = document.querySelector(`.tool-btn[data-tool="${id}"]`);
+    if (btn) pulseElement(btn, 'is-just-unlocked', 1500);
+  }
   const active = getState().activeTool;
   if (active === 'evidence' || active === 'report') renderPane();
 }
