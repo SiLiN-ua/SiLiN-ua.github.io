@@ -1677,3 +1677,80 @@ body::before, body::after { display: none; }
 @media (max-width: 720px) {
   .lang-switch { top: .5rem; right: .5rem; font-size: .62rem; }
 }
+
+/* ==========================================================
+   Game Feel — state-transition animations
+   Principle: every animation marks a state change; nothing decorates.
+   Durations: 150–250ms for UI micro, 400–700ms for evidence/verdict/outcome.
+   ========================================================== */
+
+/* --- P0.2 · locked tools actually read as locked ---------- */
+.tool-btn.is-locked {
+  opacity: .5;
+  filter: grayscale(.6);
+}
+.tool-btn.is-locked .tool-btn__lock {
+  color: var(--text-mute);
+}
+
+/* --- P1.2 · evidence counter — badge pulse on change ------ */
+@keyframes badge-pulse {
+  0%   { transform: scale(1);   background: var(--ice); }
+  35%  { transform: scale(1.35); background: var(--ice-glow); }
+  100% { transform: scale(1);   background: var(--ice); }
+}
+.tool-btn__badge.is-changing {
+  animation: badge-pulse 420ms var(--ease-out);
+}
+@keyframes topbar-count-pulse {
+  0%   { color: var(--text-mute); }
+  40%  { color: var(--ice-glow); }
+  100% { color: var(--text-mute); }
+}
+.ws-topbar__meta.is-changing {
+  animation: topbar-count-pulse 500ms var(--ease-out);
+}
+
+/* --- P1.1 · Add-to-case button reaction ------------------- */
+@keyframes btn-commit {
+  0%   { transform: scale(1);    }
+  35%  { transform: scale(.94);  }
+  100% { transform: scale(1);    }
+}
+.btn-primary.is-committing {
+  animation: btn-commit 260ms var(--ease-out);
+}
+
+/* --- P1.3 · verdict flip ⚠ → ✓ ---------------------------- */
+@keyframes item-flip {
+  0%   { background: transparent; }
+  30%  { background: rgba(74,158,255,.16); box-shadow: inset 3px 0 0 var(--ice); }
+  100% { background: transparent; box-shadow: inset 3px 0 0 transparent; }
+}
+.report-item.is-just-met {
+  animation: item-flip 700ms var(--ease-out);
+}
+.report-item.is-just-met .report-item__mark {
+  animation: mark-flip 520ms var(--ease-out);
+}
+@keyframes mark-flip {
+  0%   { transform: scale(.6); color: var(--ice); }
+  55%  { transform: scale(1.35); color: var(--ice-glow); }
+  100% { transform: scale(1); color: var(--steel-hi); }
+}
+
+/* --- P1.4 · outcome reveal (CASE SOLVED / CLOSED) --------- */
+@keyframes outcome-land {
+  0%   { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes outcome-verdict-land {
+  0%   { opacity: 0; transform: translateY(4px); letter-spacing: .04em; }
+  100% { opacity: 1; transform: translateY(0);   letter-spacing: -.01em; }
+}
+.outcome.is-appearing {
+  animation: outcome-land 520ms var(--ease-out);
+}
+.outcome.is-appearing .outcome__verdict {
+  animation: outcome-verdict-land 700ms 120ms var(--ease-out) backwards;
+}

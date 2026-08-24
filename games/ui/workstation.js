@@ -30,8 +30,19 @@ const TOOLS = [
 const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'atlas', 'evidence', 'report', 'analyst']);
 
 let caseData = null;
-let toastTimer = null;
 let prevAvailability = new Set();
+
+// Toast queue — showing one message at a time. Previously two same-click
+// events (evidence saved + tool unlocked) collided in the same DOM slot and
+// the second stomped the first mid-animation.
+const TOAST_HOLD_MS = 1800;
+const TOAST_GAP_MS = 220;
+const toastQueue = [];
+let toastPlaying = false;
+
+// Track previous counter values so we can flash on change.
+let prevBadgeCount = 0;
+let prevTopbarCount = 0;
 
 function $(sel, root = document) { return root.querySelector(sel); }
 function $$(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
@@ -109,9 +120,10 @@ function renderPane() {
     return;
   }
 
-  const ctx = {
-    onEvidenceAdded: e => showToast(t('toast.evidence_saved', { id: e.evidenceId })),
-  };
+  // Tools no longer show the "EVIDENCE SAVED" toast themselves — that fires
+  // from the subscribe('evidence_added') handler below, in strict order:
+  // (1) evidence-saved toast → (2) any newly-unlocked-tool toast.
+  const ctx = {};
 
   if (active === 'frame') {
     renderFrameProfile(paneEl, caseData, caseData.artifacts.profile_001, ctx);
@@ -149,21 +161,54 @@ function updateBadges() {
   const badge = $(`[data-badge="evidence"]`);
   if (!badge) return;
   const n = state.evidence.length;
+  const changed = n !== prevBadgeCount && n > 0;
   if (n > 0) { badge.textContent = n; badge.classList.add('is-visible'); }
   else { badge.textContent = ''; badge.classList.remove('is-visible'); }
+  if (changed) pulseElement(badge, 'is-changing', 450);
+  prevBadgeCount = n;
 }
 
-function showToast(msg) {
+// Play the next queued toast, if any. One at a time; each holds for
+// TOAST_HOLD_MS visible, then TOAST_GAP_MS gap before the next.
+function pumpToastQueue() {
+  if (toastPlaying) return;
+  const msg = toastQueue.shift();
+  if (!msg) return;
   const toast = $('.toast');
   toast.textContent = msg;
   toast.classList.add('is-visible');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 1800);
+  toastPlaying = true;
+  setTimeout(() => {
+    toast.classList.remove('is-visible');
+    setTimeout(() => { toastPlaying = false; pumpToastQueue(); }, TOAST_GAP_MS);
+  }, TOAST_HOLD_MS);
+}
+
+function showToast(msg) {
+  if (!msg) return;
+  toastQueue.push(msg);
+  pumpToastQueue();
+}
+
+// Add a temporary class to an element to fire a CSS animation, then remove
+// it so the animation can fire again on the next change.
+function pulseElement(el, className, ms) {
+  if (!el) return;
+  el.classList.remove(className);
+  // eslint-disable-next-line no-unused-expressions
+  el.offsetWidth;  // force reflow so removing → adding restarts the anim
+  el.classList.add(className);
+  setTimeout(() => el.classList.remove(className), ms);
 }
 
 function updateTopbar() {
   const state = getState();
-  $('.ws-topbar__meta').textContent = t('topbar.evidence', { n: state.evidence.length });
+  const meta = $('.ws-topbar__meta');
+  if (!meta) return;
+  const n = state.evidence.length;
+  meta.textContent = t('topbar.evidence', { n });
+  if (n !== prevTopbarCount && n > 0) pulseElement(meta, 'is-changing', 520);
+  prevTopbarCount = n;
 }
 
 function startWorkstation() {
@@ -254,18 +299,32 @@ async function boot() {
 
   initState(caseData.id);
   prevAvailability = currentAvailability();
+  // Sync counter baselines so the first render after a resume does not
+  // fire pulse animations for evidence that already existed on disk.
+  prevBadgeCount = getState().evidence.length;
+  prevTopbarCount = getState().evidence.length;
 
   // First static-i18n pass (welcome/topbar/sidebar labels).
   applyStaticI18n();
 
   subscribe(evt => {
     if (evt.type === 'tool_changed') renderPane();
-    if (evt.type === 'evidence_added') onEvidenceAdded();
+    if (evt.type === 'evidence_added') {
+      // First: acknowledge the action the player took.
+      if (evt.evidence) showToast(t('toast.evidence_saved', { id: evt.evidence.evidenceId }));
+      // Then: any consequences (unlocks, sidebar re-render).
+      onEvidenceAdded();
+    }
     if (evt.type === 'submission_updated') {
       renderSidebar();  // ANALYST may have just unlocked
       if (getState().activeTool === 'report') renderPane();
     }
-    if (evt.type === 'reset') { renderSidebar(); updateTopbar(); }
+    if (evt.type === 'reset') {
+      prevBadgeCount = 0;
+      prevTopbarCount = 0;
+      renderSidebar();
+      updateTopbar();
+    }
   });
 
   subscribeLang(onLangChange);
@@ -274,6 +333,14 @@ async function boot() {
   wireWelcome();
   wireReset();
   wireLangSwitch();
+
+  // Delegated commit animation on any add-to-case button, no matter
+  // which tool rendered it. The button becomes disabled + relabels
+  // synchronously in its own handler; the pulse coexists.
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('[data-action="add-to-case"]');
+    if (btn && !btn.disabled) pulseElement(btn, 'is-committing', 300);
+  }, true);
 }
 
 boot();

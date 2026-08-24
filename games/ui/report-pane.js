@@ -44,7 +44,7 @@ function requiredItemHtml(item) {
   const label = pick(item, 'label') || item.label;
   if (item.met) {
     return `
-      <li class="report-item is-met">
+      <li class="report-item is-met" data-criterion="${esc(item.id)}">
         <span class="report-item__mark">✓</span>
         <span class="report-item__label">${esc(label)}</span>
       </li>
@@ -237,6 +237,12 @@ function outcomeBlockHtml(caseData, submission, quality) {
 
 let formState = { attribution: '', supportingEvidenceIds: [] };
 
+// Track which required criterion ids were "met" on the last render so we can
+// mark the ones that just flipped false→true and let CSS animate the transition.
+let prevMetIds = new Set();
+let prevSubmissionAt = null;
+let hasEverRendered = false;
+
 export function renderReportPane(paneEl, caseData) {
   const result = evaluateReport(caseData);
 
@@ -250,6 +256,23 @@ export function renderReportPane(paneEl, caseData) {
 
   const chainComplete = result.allMet;
   const submitted = !!result.submission;
+
+  // Detect items that just flipped miss→met since the last render.
+  // Suppress on the very first render (post-reload restore is not a flip).
+  const currentMetIds = new Set();
+  for (const s of requiredSections) {
+    for (const it of s.items) if (it.met) currentMetIds.add(it.id);
+  }
+  const flippedIds = new Set();
+  if (hasEverRendered) {
+    for (const id of currentMetIds) if (!prevMetIds.has(id)) flippedIds.add(id);
+  }
+
+  // Detect a brand-new submission this render (same suppression rule).
+  const currentSubmissionAt = submitted ? result.submission.submittedAt : null;
+  const outcomeAppearing = hasEverRendered
+    && submitted
+    && currentSubmissionAt !== prevSubmissionAt;
 
   const prefill = submitted
     ? {
@@ -293,6 +316,26 @@ export function renderReportPane(paneEl, caseData) {
     </div>
   `;
 
+  // Mark just-flipped criteria for the CSS anim, then persist current
+  // state as the new baseline for the next render.
+  for (const id of flippedIds) {
+    const el = paneEl.querySelector(`.report-item[data-criterion="${id}"]`);
+    if (el) {
+      el.classList.add('is-just-met');
+      setTimeout(() => el.classList.remove('is-just-met'), 800);
+    }
+  }
+  if (outcomeAppearing) {
+    const el = paneEl.querySelector('.outcome');
+    if (el) {
+      el.classList.add('is-appearing');
+      setTimeout(() => el.classList.remove('is-appearing'), 900);
+    }
+  }
+  prevMetIds = currentMetIds;
+  prevSubmissionAt = currentSubmissionAt;
+  hasEverRendered = true;
+
   paneEl.querySelector('[data-action="review-evidence"]').addEventListener('click', () => {
     setActiveTool('evidence');
   });
@@ -323,14 +366,17 @@ export function renderReportPane(paneEl, caseData) {
         attribution,
         supportingEvidenceIds: selected,
       });
+      formState.attribution = attribution;
+      formState.supportingEvidenceIds = selected;
+      // submitFinalReport emits submission_updated → workstation subscribes
+      // and re-renders REPORT once. Avoid a second inline render — a double
+      // render would overwrite the .outcome element that just got the
+      // is-appearing animation class.
       submitFinalReport({
         attribution,
         supportingEvidenceIds: selected,
         outcome: evalRes.outcome,
       });
-      formState.attribution = attribution;
-      formState.supportingEvidenceIds = selected;
-      renderReportPane(paneEl, caseData);
     });
   }
 }
