@@ -1,10 +1,15 @@
 // tools/chat/chat.js
-// CHAT — messenger handle lookup surface. Public-metadata document view.
+// CHAT — messaging-app public profile lookup.
+// Search results: [avatar | name/handle/snippet | Inspect]
+// Profile detail: messaging-app public profile card
+// (avatar circle, display name, @handle, bio, meta, concrete last-seen,
+// decorative message glyph). NOT an Instagram appbar, NOT a field ledger.
 
 import { isInEvidence } from '../../engine/state.js';
 import { emit as emitAction } from '../../engine/actions.js';
 import { t, pick, getLang } from '../../engine/i18n.js';
 import { formatJoined } from '../../engine/dates.js';
+import { resolveAsset } from '../../engine/case-loader.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -31,6 +36,16 @@ function findSearchByQuery(caseData, q) {
     if (normalize(art.query) === needle) return art;
   }
   return null;
+}
+
+// Case-consistent ISO → "YYYY-MM-DD HH:MM" (UTC parts, mono display).
+function formatLastSeen(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return String(iso);
+  const pad = n => String(n).padStart(2, '0');
+  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ` +
+         `${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`;
 }
 
 export function renderChat(paneEl, caseData, ctx) {
@@ -60,7 +75,7 @@ function renderSearch(paneEl, caseData, ctx) {
       </div>
 
       <div class="chat__results">
-        ${view.submitted ? renderResultList(search) : ''}
+        ${view.submitted ? renderResultList(caseData, search) : ''}
       </div>
     </div>
   `;
@@ -85,7 +100,7 @@ function renderSearch(paneEl, caseData, ctx) {
   });
 }
 
-function renderResultList(search) {
+function renderResultList(caseData, search) {
   if (!search) {
     return `
       <div class="chat__empty">
@@ -100,18 +115,26 @@ function renderResultList(search) {
   return `
     <div class="chat__meta">${meta}</div>
     <ul class="chat__list">
-      ${results.map(r => `
+      ${results.map(r => {
+        const snippet = pick(r, 'snippet');
+        const avatarSrc = r.avatar ? resolveAsset(caseData, r.avatar) : '';
+        const alt = t('chat.results.avatar_alt', { handle: esc(r.handle) });
+        return `
         <li class="chat-result">
-          <div class="chat-result__handle">@${esc(r.handle)}</div>
+          <div class="chat-avatar chat-avatar--sm" aria-hidden="${avatarSrc ? 'false' : 'true'}">
+            ${avatarSrc ? `<img src="${esc(avatarSrc)}" alt="${esc(alt)}">` : ''}
+          </div>
           <div class="chat-result__body">
             <div class="chat-result__name">${esc(r.display_name)}</div>
-            <div class="chat-result__joined">${t('chat.results.joined', { when: esc(formatJoined(r.joined, getLang())) })}</div>
+            <div class="chat-result__handle">@${esc(r.handle)}</div>
+            ${snippet ? `<div class="chat-result__snippet">${esc(snippet)}</div>` : ''}
           </div>
           <div class="chat-result__action">
             <button class="btn-ghost" data-open-profile="${esc(r.id)}">${t('chat.results.inspect')}</button>
           </div>
         </li>
-      `).join('')}
+        `;
+      }).join('')}
     </ul>
   `;
 }
@@ -124,32 +147,36 @@ function renderProfileDetail(paneEl, caseData, ctx) {
     return;
   }
   const already = isInEvidence(p.id);
+  const avatarSrc = p.avatar ? resolveAsset(caseData, p.avatar) : '';
+  const alt = t('chat.results.avatar_alt', { handle: esc(p.handle) });
 
-  const field = (label, value) => `
-    <div class="chat-field">
-      <div class="chat-field__label">${esc(label)}</div>
-      <div class="chat-field__value">${value && String(value).length ? esc(value) : '—'}</div>
-    </div>
-  `;
+  const bio       = pick(p, 'bio');
+  const location  = pick(p, 'location');
+  const joined    = formatJoined(p.joined, getLang());
+  const lastSeen  = formatLastSeen(p.last_seen_iso);
+  const metaLine  = location
+    ? t('chat.profile.meta', { location: esc(location), joined: esc(joined) })
+    : t('chat.profile.meta.no_location', { joined: esc(joined) });
 
   paneEl.innerHTML = `
     <div class="chat-profile">
-      <div class="trace__breadcrumb">
+      <div class="chat-profile__topbar">
         <button class="link-back" data-action="back-to-search">← ${t('chat.breadcrumb')}</button>
-        <span class="trace__breadcrumb-sep">/</span>
-        <span>${esc(p.url)}</span>
       </div>
 
-      <div class="chat-profile__title">${t('chat.profile.title')}</div>
-
-      <div class="chat-profile__fields">
-        ${field(t('chat.profile.field.handle'),       '@' + p.handle)}
-        ${field(t('chat.profile.field.display_name'), p.display_name)}
-        ${field(t('chat.profile.field.bio'),          pick(p, 'bio'))}
-        ${field(t('chat.profile.field.location'),     pick(p, 'location'))}
-        ${field(t('chat.profile.field.joined'),       formatJoined(p.joined, getLang()))}
-        ${field(t('chat.profile.field.last_seen'),    pick(p, 'last_seen'))}
-      </div>
+      <article class="chat-profile__card" role="group">
+        <div class="chat-avatar chat-avatar--lg" aria-hidden="${avatarSrc ? 'false' : 'true'}">
+          ${avatarSrc ? `<img src="${esc(avatarSrc)}" alt="${esc(alt)}">` : ''}
+        </div>
+        <div class="chat-profile__name">${esc(p.display_name)}</div>
+        <div class="chat-profile__handle">@${esc(p.handle)}</div>
+        ${bio ? `<div class="chat-profile__bio">${esc(bio)}</div>` : ''}
+        <div class="chat-profile__meta">${metaLine}</div>
+        ${lastSeen ? `<div class="chat-last-seen">${t('chat.profile.last_seen', { when: esc(lastSeen) })}</div>` : ''}
+        <div class="chat-message-glyph" aria-label="${esc(t('chat.profile.message'))}">
+          <span aria-hidden="true">⌇</span>
+        </div>
+      </article>
 
       <div class="frame-actions">
         <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(p.id)}" ${already ? 'disabled' : ''}>

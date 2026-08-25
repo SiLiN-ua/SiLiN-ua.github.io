@@ -2087,75 +2087,123 @@ body::before, body::after { display: none; }
 }
 .chat-result {
   display: grid;
-  grid-template-columns: 180px 1fr auto;
+  grid-template-columns: 56px 1fr auto;
   gap: 1rem;
   align-items: center;
   padding: 1rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  transition: border-color .15s var(--ease), background .15s var(--ease);
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  transition: background .15s var(--ease);
 }
 .chat-result:hover {
-  border-color: var(--border-hi);
   background: var(--surface-2);
 }
 .chat-result__handle {
   font-family: var(--font-mono);
-  font-size: .92rem;
-  color: var(--ice);
+  font-size: .82rem;
+  color: var(--text-dim);
   letter-spacing: .04em;
+  margin-top: .1rem;
 }
 .chat-result__name {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   color: var(--cream);
-  margin-bottom: .2rem;
+  line-height: 1.15;
 }
-.chat-result__joined {
-  font-family: var(--font-mono);
-  font-size: .7rem;
-  letter-spacing: .08em;
-  color: var(--text-mute);
-}
-
-/* ---------- CHAT profile detail (compact document view) ---------- */
-.chat-profile { max-width: 560px; margin: 0 auto; }
-.chat-profile__title {
+.chat-result__snippet {
   font-family: var(--font-mono);
   font-size: .72rem;
-  letter-spacing: .28em;
+  letter-spacing: .04em;
   color: var(--text-mute);
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
+  margin-top: .35rem;
 }
-.chat-profile__fields {
+
+/* ---------- Avatar circles used by CHAT (both results row + profile) ---------- */
+.chat-avatar {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.chat-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chat-avatar--sm { width: 48px; height: 48px; }
+.chat-avatar--lg { width: 112px; height: 112px; margin: 0 auto; }
+
+/* ---------- CHAT profile detail (messaging-app public profile) ---------- */
+.chat-profile { max-width: 560px; margin: 0 auto; }
+.chat-profile__topbar {
+  margin-bottom: 1.5rem;
+}
+.chat-profile__card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: .55rem;
+  padding: 2.2rem 1.5rem 1.6rem;
   border: 1px solid var(--border);
   background: var(--surface);
+  text-align: center;
   margin-bottom: 1.25rem;
 }
-.chat-field {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1rem;
-  align-items: baseline;
-  padding: .85rem 1.15rem;
-  border-bottom: 1px solid var(--border);
+.chat-profile__card .chat-avatar--lg {
+  margin-bottom: .5rem;
 }
-.chat-field:last-child { border-bottom: none; }
-.chat-field__label {
+.chat-profile__name {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  color: var(--cream);
+  line-height: 1.15;
+}
+.chat-profile__handle {
   font-family: var(--font-mono);
-  font-size: .64rem;
-  letter-spacing: .2em;
+  font-size: .88rem;
+  letter-spacing: .04em;
+  color: var(--text-dim);
+}
+.chat-profile__bio {
+  font-family: var(--font-sans, var(--font-serif));
+  font-size: .96rem;
+  color: var(--cream);
+  max-width: 40ch;
+  line-height: 1.45;
+  margin-top: .35rem;
+}
+.chat-profile__meta {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
   color: var(--text-mute);
   text-transform: uppercase;
+  margin-top: .4rem;
 }
-.chat-field__value {
-  font-family: var(--font-serif);
-  font-size: 1.02rem;
-  color: var(--cream);
-  word-break: break-word;
+.chat-last-seen {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--text-mute);
+}
+.chat-message-glyph {
+  margin-top: .9rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  line-height: 1;
+  user-select: none;
 }
 
 /* ==========================================================

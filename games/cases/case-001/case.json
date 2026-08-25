@@ -391,6 +391,9 @@
           "id": "chat_profile_alex_miller_handle",
           "handle": "alex_miller",
           "display_name": "Daniel Cole",
+          "avatar": "assets/daniel-cole-portrait.jpg",
+          "snippet_en": "Prague · new account · handle joined recently",
+          "snippet_uk": "Прага · новий акаунт · хендл зареєстровано нещодавно",
           "joined": "Feb 2024"
         }
       ]
@@ -407,6 +410,9 @@
           "id": "chat_profile_dcole_shoots",
           "handle": "dcole_shoots",
           "display_name": "Daniel Cole",
+          "avatar": "assets/daniel-cole-portrait.jpg",
+          "snippet_en": "Freelance photographer · Prague · studio work",
+          "snippet_uk": "Фрилансер-фотограф · Прага · студійна зйомка",
           "joined": "2019"
         }
       ]
@@ -420,13 +426,13 @@
       "url": "chat.im/@alex_miller",
       "handle": "alex_miller",
       "display_name": "Daniel Cole",
+      "avatar": "assets/daniel-cole-portrait.jpg",
       "bio_en": "",
       "bio_uk": "",
       "location_en": "",
       "location_uk": "",
       "joined": "Feb 2024",
-      "last_seen_en": "recently",
-      "last_seen_uk": "нещодавно",
+      "last_seen_iso": "2024-03-19T22:07:00Z",
       "signal_note": "Handle registered under a different display name."
     },
 
@@ -438,13 +444,13 @@
       "url": "chat.im/@dcole_shoots",
       "handle": "dcole_shoots",
       "display_name": "Daniel Cole",
-      "bio_en": "Freelance photo. Prague. Studio work.",
-      "bio_uk": "Фрилансер-фотограф. Прага. Студійна зйомка.",
-      "location_en": "Prague",
-      "location_uk": "Прага",
-      "joined": "2019",
-      "last_seen_en": "recently",
-      "last_seen_uk": "нещодавно",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "bio_en": "Freelance photographer. Studio + location work.",
+      "bio_uk": "Фрилансер-фотограф. Студійна та виїзна зйомка.",
+      "location_en": "Prague, CZ",
+      "location_uk": "Прага, Чехія",
+      "joined": "Jan 2019",
+      "last_seen_iso": "2024-03-18T21:14:00Z",
       "signal_note": "Long-standing account. Prague-based photographer."
     },
 

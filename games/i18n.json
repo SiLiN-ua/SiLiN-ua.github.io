@@ -89,6 +89,11 @@
     "chat.profile.field.location":     "LOCATION",
     "chat.profile.field.joined":       "JOINED",
     "chat.profile.field.last_seen":    "LAST SEEN",
+    "chat.profile.last_seen":     "last seen · {when}",
+    "chat.profile.meta":          "{location} · joined {joined}",
+    "chat.profile.meta.no_location": "joined {joined}",
+    "chat.profile.message":       "Message",
+    "chat.results.avatar_alt":    "Avatar for @{handle}",
     "chat.actions.add":           "+ Add to evidence",
     "chat.actions.back":          "← Back to search",
 
@@ -305,6 +310,11 @@
     "chat.profile.field.location":     "МІСЦЕ",
     "chat.profile.field.joined":       "НА ПЛАТФОРМІ З",
     "chat.profile.field.last_seen":    "ОСТАННЯ АКТИВНІСТЬ",
+    "chat.profile.last_seen":     "остання активність · {when}",
+    "chat.profile.meta":          "{location} · на платформі з {joined}",
+    "chat.profile.meta.no_location": "на платформі з {joined}",
+    "chat.profile.message":       "Написати",
+    "chat.results.avatar_alt":    "Аватар @{handle}",
     "chat.actions.add":           "+ Додати до доказів",
     "chat.actions.back":          "← Назад до пошуку",
 
