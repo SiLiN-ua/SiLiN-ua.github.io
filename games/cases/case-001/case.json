@@ -192,9 +192,9 @@
       "joined": "August 2018",
       "stats": { "posts": 342, "followers": 12480, "following": 187 },
       "posts": [
-        { "id": "c1p1", "cover": "assets/post-01.svg", "caption_en": "Prague, spring 2023. Reprint available.", "caption_uk": "Прага, весна 2023. Доступний передрук.", "date": "1 year ago", "likes": 1290 },
-        { "id": "c1p2", "cover": "assets/post-02.svg", "caption_en": "Old town — early light.",                  "caption_uk": "Старе місто — раннє світло.",         "date": "1 year ago", "likes": 812 },
-        { "id": "c1p3", "cover": "assets/post-03.svg", "caption_en": "No plan, no map. Just walking.",           "caption_uk": "Без плану, без карти. Просто йдеш.",   "date": "1 year ago", "likes": 1521 }
+        { "id": "c1p1", "cover": "assets/post-01.jpg", "caption_en": "Prague, spring 2023. Reprint available.", "caption_uk": "Прага, весна 2023. Доступний передрук.", "date": "1 year ago", "likes": 1290 },
+        { "id": "c1p2", "cover": "assets/post-02.jpg", "caption_en": "Old town — early light.",                  "caption_uk": "Старе місто — раннє світло.",         "date": "1 year ago", "likes": 812 },
+        { "id": "c1p3", "cover": "assets/post-03.jpg", "caption_en": "No plan, no map. Just walking.",           "caption_uk": "Без плану, без карти. Просто йдеш.",   "date": "1 year ago", "likes": 1521 }
       ]
     },
 

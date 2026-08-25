@@ -65,6 +65,11 @@
     "trace.detail.source":        "SOURCE / CONTEXT",
     "trace.detail.location":      "Location",
     "trace.detail.url":           "URL",
+    "trace.detail.compare":       "Compare with @{handle}",
+
+    "split.close":                "close",
+    "split.close_aria":           "Close split view",
+    "split.caption.same_frame":   "SAME FRAME",
 
     "chat.breadcrumb":            "CHAT results",
     "chat.label":                 "CHAT · public handle lookup",
@@ -257,6 +262,11 @@
     "trace.detail.source":        "ДЖЕРЕЛО / КОНТЕКСТ",
     "trace.detail.location":      "Локація",
     "trace.detail.url":           "URL",
+    "trace.detail.compare":       "Порівняти з @{handle}",
+
+    "split.close":                "закрити",
+    "split.close_aria":           "Закрити split view",
+    "split.caption.same_frame":   "SAME FRAME",
 
     "chat.breadcrumb":            "Результати CHAT",
     "chat.label":                 "CHAT · публічний пошук за хендлом",

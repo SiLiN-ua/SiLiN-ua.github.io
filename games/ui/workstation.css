@@ -251,14 +251,14 @@
    shimmering bars. Only visible for the sliver of time before FRAME
    renders profile_001. Hierarchy shows through: avatar circle,
    serif name line, mono handle line, three grid tiles. */
-.pane[data-pane="frame"]:empty {
+.pane[data-pane="frame"].is-active:empty {
   display: block;
   max-width: 780px;
   margin: 0 auto;
   padding: 0;
   opacity: .55;
 }
-.pane[data-pane="frame"]:empty::before {
+.pane[data-pane="frame"].is-active:empty::before {
   content: "";
   display: block;
   height: 148px;
@@ -269,7 +269,7 @@
     linear-gradient(var(--surface) 0 0) no-repeat 160px 84px / 120px 10px,
     linear-gradient(var(--surface) 0 0) no-repeat 160px 108px / 220px 8px;
 }
-.pane[data-pane="frame"]:empty::after {
+.pane[data-pane="frame"].is-active:empty::after {
   content: "";
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -573,6 +573,101 @@ body::before, body::after { display: none; }
 }
 .pane { display: none; }
 .pane.is-active { display: block; }
+
+/* ---------- Split view (S3 SAME FRAME host, workstation-level) ----------
+   Static composition only — no transitions, no fades. When mounted, the
+   normal .pane children are hidden (host adds .is-split to .ws-main) and
+   two side-by-side .split-view__pane children take their place. */
+.ws-main.is-split { padding-top: 0; padding-bottom: 0; }
+.split-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+.split-view__appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .55rem .25rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+}
+.split-view__label {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+.split-view__close {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .3rem .65rem;
+  cursor: pointer;
+}
+.split-view__close:hover {
+  color: var(--text);
+  border-color: var(--border-hi);
+}
+.split-view__close-label { margin-left: .35rem; }
+.split-view__panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  flex: 1;
+  min-height: 0;
+  padding: .8rem 0 .6rem;
+}
+.split-view__pane {
+  min-width: 0;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 1rem 1rem 1.25rem;
+}
+/* Compact FRAME inside a split pane: strip the app-bar and the social
+   button row (Follow / Message / …) — those are chrome, not document. */
+.split-view__pane .frame-profile { max-width: none; }
+.split-view__pane .frame-appbar,
+.frame-profile--compact .frame-appbar,
+.split-view__pane .frame-social-btn,
+.frame-profile--compact .frame-social-btn {
+  display: none !important;
+}
+.split-view__caption {
+  padding: .9rem 0 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-mute);
+  letter-spacing: .04em;
+}
+.split-view__fallback {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+}
+.split-view__fallback-label {
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+.split-view__fallback-id { font-size: .8rem; }
 
 /* ---------- Locked pane ---------- */
 .locked-pane {

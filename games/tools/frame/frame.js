@@ -47,11 +47,15 @@ function attachAvatarFallback(imgEl, initial) {
 }
 
 export function renderFrameProfile(paneEl, caseData, profile, opts = {}) {
-  const { onEvidenceAdded } = opts;
-  const openId = openedPost.get(profile.id) || null;
+  const { onEvidenceAdded, compact } = opts;
+  const openId = compact ? null : (openedPost.get(profile.id) || null);
 
   // Auto-open the profile artifact on activation (unchanged behavior).
-  emitAction('open_artifact', { artifactId: profile.id, tool: 'frame' });
+  // In compact/split mode, skip the open_artifact emission for the secondary
+  // pane so a paired display does not spuriously mark viewed.
+  if (!compact) {
+    emitAction('open_artifact', { artifactId: profile.id, tool: 'frame' });
+  }
 
   if (openId) {
     const post = (profile.posts || []).find(p => p.id === openId);
@@ -69,7 +73,7 @@ export function renderFrameProfile(paneEl, caseData, profile, opts = {}) {
 // ------------------------------------------------------------------
 // State A — profile view (grid)
 // ------------------------------------------------------------------
-function renderProfileState(paneEl, caseData, profile, { onEvidenceAdded }) {
+function renderProfileState(paneEl, caseData, profile, { onEvidenceAdded, compact = false }) {
   const avatar = esc(resolveAsset(caseData, profile.avatar));
   const alreadySaved = isInEvidence(profile.id);
   const bio = pick(profile, 'bio');
@@ -97,7 +101,7 @@ function renderProfileState(paneEl, caseData, profile, { onEvidenceAdded }) {
   `).join('');
 
   paneEl.innerHTML = `
-    <div class="frame-profile">
+    <div class="frame-profile${compact ? ' frame-profile--compact' : ''}">
       <!-- App-chrome header: reads as an Instagram-analog top bar -->
       <div class="frame-appbar">
         <div class="frame-appbar__brand">

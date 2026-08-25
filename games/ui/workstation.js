@@ -9,7 +9,7 @@
 //   - A3 commit animation rewired to `evidence_added` state event
 //     (CR-4: no click-driven anim; button located via data-artifact-id).
 
-import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable, configureActionBus, registerActionHandlers, setActionResumeMode, announceWorkstationStarted, hasCinematicFired, markCinematicFired } from '../engine/state.js';
+import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable, configureActionBus, registerActionHandlers, setActionResumeMode, announceWorkstationStarted, hasCinematicFired, markCinematicFired, clearSplitView } from '../engine/state.js';
 import { loadCase } from '../engine/case-loader.js';
 import { initI18n, t, setLang, getLang, subscribeLang } from '../engine/i18n.js';
 import { renderFrameProfile } from '../tools/frame/frame.js';
@@ -131,7 +131,11 @@ function renderSidebar() {
       ${hasDot ? '<span class="tool-btn__dot" aria-hidden="true"></span>' : ''}
     `;
     if (isAvail) {
-      btn.addEventListener('click', () => setActiveTool(tool.id));
+      btn.addEventListener('click', () => {
+        // Split is a moment, not a mode — switching tools closes it. Q2.
+        if (firstSplitEntry()) clearSplitView(null);
+        setActiveTool(tool.id);
+      });
     } else {
       btn.title = t('sidebar.title.locked');
     }
@@ -142,11 +146,36 @@ function renderSidebar() {
   updateBadges();
 }
 
+function firstSplitEntry() {
+  const sv = getState().splitView || {};
+  const keys = Object.keys(sv);
+  if (keys.length === 0) return null;
+  const tool = keys[0];
+  const pair = sv[tool];
+  if (!pair || !pair.a || !pair.b) return null;
+  return { tool, a: pair.a, b: pair.b };
+}
+
 function renderPane() {
   const state = getState();
   const active = state.activeTool;
 
   $$('.tool-btn').forEach(b => b.classList.toggle('is-active', b.dataset.tool === active));
+
+  const wsMain = $('.ws-main');
+  const split = firstSplitEntry();
+
+  if (split) {
+    $$('.pane').forEach(p => p.classList.remove('is-active'));
+    wsMain?.classList.add('is-split');
+    renderSplit(wsMain, split);
+    return;
+  }
+  // No split → tear down the split host if present.
+  wsMain?.classList.remove('is-split');
+  const existing = wsMain?.querySelector('.split-view');
+  if (existing) existing.remove();
+
   $$('.pane').forEach(p => p.classList.toggle('is-active', p.dataset.pane === active));
 
   const paneEl = $(`.pane[data-pane="${active}"]`);
@@ -178,6 +207,87 @@ function renderPane() {
   } else if (active === 'analyst') {
     renderAnalystPane(paneEl, caseData);
   }
+}
+
+// SAME FRAME sameness derivation — spec §7. Two artifacts count as "same
+// frame" when they point to the same underlying image asset. Case Zero
+// currently exercises this via daniel-cole-portrait.jpg being both
+// avatars (posts[0].cover paths diverge between .jpg and .svg placeholders).
+// Match on either channel to survive both current data and future when
+// post covers align.
+function sameFrame(a, b) {
+  if (!a || !b) return false;
+  const aPost = a.posts?.[0]?.cover;
+  const bPost = b.posts?.[0]?.cover;
+  if (aPost && bPost && aPost === bPost) return true;
+  if (a.avatar && b.avatar && a.avatar === b.avatar) return true;
+  return false;
+}
+
+function renderSplit(wsMain, split) {
+  if (!wsMain) return;
+  const a = caseData.artifacts[split.a];
+  const b = caseData.artifacts[split.b];
+  if (!a || !b) {
+    // Stale split reference — drop it and re-render normally.
+    clearSplitView(split.tool);
+    return;
+  }
+
+  let host = wsMain.querySelector('.split-view');
+  if (!host) {
+    host = document.createElement('div');
+    host.className = 'split-view';
+    wsMain.appendChild(host);
+  }
+
+  const showCaption = sameFrame(a, b);
+  const labelLeft  = String(split.tool || '').toUpperCase();
+  const labelRight = String(a.tool && b.tool && a.tool !== b.tool ? b.tool : (a.tool || b.tool || '')).toUpperCase();
+  const bannerLabel = labelRight && labelLeft !== labelRight
+    ? `SPLIT · ${labelLeft} ↔ ${labelRight}`
+    : `SPLIT · ${labelLeft}`;
+
+  host.innerHTML = `
+    <div class="split-view__appbar">
+      <div class="split-view__label">${bannerLabel}</div>
+      <button type="button" class="split-view__close" data-action="split-close" aria-label="${t('split.close_aria')}">
+        <span aria-hidden="true">×</span> <span class="split-view__close-label">${t('split.close')}</span>
+      </button>
+    </div>
+    <div class="split-view__panes">
+      <div class="split-view__pane" data-split-side="a"></div>
+      <div class="split-view__pane" data-split-side="b"></div>
+    </div>
+    ${showCaption ? `<div class="split-view__caption"><span>${t('split.caption.same_frame')}</span></div>` : ''}
+  `;
+
+  const paneA = host.querySelector('[data-split-side="a"]');
+  const paneB = host.querySelector('[data-split-side="b"]');
+  renderSplitPane(paneA, a);
+  renderSplitPane(paneB, b);
+
+  host.querySelector('[data-action="split-close"]').addEventListener('click', () => {
+    clearSplitView(split.tool);
+  });
+}
+
+// Render one artifact into a split pane. FRAME-style artifacts get the
+// Instagram-analog document treatment via renderFrameProfile compact mode.
+// Any other artifact type falls back to a plain document block for now —
+// no other split-eligible pairs exist in Case Zero.
+function renderSplitPane(paneEl, artifact) {
+  if (!paneEl || !artifact) return;
+  if (artifact.type === 'frame_profile') {
+    renderFrameProfile(paneEl, caseData, artifact, { compact: true });
+    return;
+  }
+  paneEl.innerHTML = `
+    <div class="split-view__fallback">
+      <div class="split-view__fallback-label">${(artifact.tool || 'artifact').toUpperCase()}</div>
+      <div class="split-view__fallback-id">${String(artifact.id || '')}</div>
+    </div>
+  `;
 }
 
 function renderLocked(paneEl, tool, isAvail) {
@@ -261,6 +371,16 @@ function updateTopbar() {
 function updateBreadcrumb() {
   const el = $('.ws-topbar__breadcrumb');
   if (!el) return;
+  const split = firstSplitEntry();
+  if (split) {
+    // Mirror the split app-bar label at the topbar level (§4).
+    const primary = caseData?.artifacts?.[split.a];
+    const secondary = caseData?.artifacts?.[split.b];
+    const left = (primary?.tool || split.tool || '').toUpperCase();
+    const right = (secondary?.tool || '').toUpperCase();
+    el.textContent = right && left !== right ? `SPLIT · ${left} ↔ ${right}` : `SPLIT · ${left}`;
+    return;
+  }
   const active = getState().activeTool;
   const tool = TOOLS.find(t => t.id === active);
   el.textContent = tool ? tool.label : '';
@@ -557,6 +677,10 @@ async function boot() {
     if (evt.type === 'report_all_required_met') {
       showNotification(t('notif.gate_ready'), { variant: 'gate-ready' });
     }
+    if (evt.type === 'split_view_changed') {
+      renderPane();
+      updateBreadcrumb();
+    }
     if (evt.type === 'reset') {
       prevBadgeCount = 0;
       prevTopbarCount = 0;
@@ -567,6 +691,14 @@ async function boot() {
   });
 
   subscribeLang(onLangChange);
+
+  // Q3 — ESC dismisses split. Attach once at boot; a no-op when no split.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && firstSplitEntry()) {
+      e.preventDefault();
+      clearSplitView(null);
+    }
+  });
 
   renderSidebar();
   wireWelcome();

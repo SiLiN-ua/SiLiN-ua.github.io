@@ -194,6 +194,15 @@ function renderCandidate(paneEl, caseData, ctx) {
         <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(artifact.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('frame.actions.add')}
         </button>
+        ${(() => {
+          // Compare affordance — surfaced only when there IS a comparable
+          // FRAME-side profile in artifacts (§3 spec: no greyed-out button
+          // when nothing to compare with). Label is a neutral action, not
+          // a result — per §8 anti-tell rules.
+          const framePrimary = caseData.artifacts.profile_001;
+          if (!framePrimary || framePrimary.id === artifact.id) return '';
+          return `<button class="btn-ghost" data-action="compare-with-frame" data-primary-id="${esc(framePrimary.id)}" data-secondary-id="${esc(artifact.id)}">${t('trace.detail.compare', { handle: esc(framePrimary.username) })}</button>`;
+        })()}
         <button class="btn-ghost" data-action="back-to-results">${t('frame.actions.back')}</button>
       </div>
     </div>
@@ -205,6 +214,17 @@ function renderCandidate(paneEl, caseData, ctx) {
       renderTrace(paneEl, caseData, ctx);
     });
   });
+
+  const compareBtn = paneEl.querySelector('[data-action="compare-with-frame"]');
+  if (compareBtn) {
+    compareBtn.addEventListener('click', () => {
+      emitAction('split_view', {
+        tool: 'frame',
+        primaryId: compareBtn.dataset.primaryId,
+        secondaryId: compareBtn.dataset.secondaryId,
+      });
+    });
+  }
 
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   if (addBtn) {

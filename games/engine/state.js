@@ -253,6 +253,23 @@ export function submitFinalReport({ attribution, supportingEvidenceIds, outcome 
   return state.finalSubmission;
 }
 
+// Dismissal path for the workstation host — close/ESC/tool-switch clear the
+// split without going through the action bus (dismissal is a UI-local
+// concern; the bus opens the split, the host closes it). Emits the same
+// state event so subscribers can react uniformly.
+export function clearSplitView(tool) {
+  if (!state.splitView) return;
+  if (tool == null) {
+    if (Object.keys(state.splitView).length === 0) return;
+    state.splitView = {};
+  } else {
+    if (!(tool in state.splitView)) return;
+    delete state.splitView[tool];
+  }
+  persist();
+  emit({ type: 'split_view_changed', tool: tool || null, splitView: state.splitView });
+}
+
 // ---- Action bus wiring ----
 
 // Configure the action bus at boot. Boot layer calls this AFTER initState,
@@ -323,6 +340,20 @@ export function registerActionHandlers(caseData) {
     // Preserve the id + tool hint from the action payload — matches how
     // tools historically called addEvidence directly.
     addEvidence({ ...artifact, id: artifactId, tool: artifact.tool || tool });
+  }));
+
+  offs.push(actions.on('split_view', ({ tool, primaryId, secondaryId }) => {
+    // Q5 dismissal via null payload is spec'd; today the action-bus
+    // validator requires string secondaryId, so nulls never arrive here.
+    // Kept defensively so a future validator loosening does not silently
+    // insert `null` into state.
+    if (secondaryId == null) {
+      delete state.splitView[tool];
+    } else {
+      state.splitView[tool] = { a: primaryId, b: secondaryId };
+    }
+    persist();
+    emit({ type: 'split_view_changed', tool, splitView: state.splitView });
   }));
 
   offs.push(actions.on('open_artifact', ({ artifactId }) => {
