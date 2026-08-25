@@ -157,6 +157,8 @@ const VALIDATORS = {
     if (!isStr(p.fromId)) return 'fromId: string required';
     if (!isStr(p.toId)) return 'toId: string required';
     if (p.fromId === p.toId) return 'fromId and toId must differ';
+    // Q1 dismissal: `{fromId, toId, remove: true}` — no reason required.
+    if (p.remove === true) return null;
     if (!isStr(p.reason)) return 'reason: string required (controlled value per §18.10)';
     return null;
   },

@@ -18,7 +18,7 @@ import { loadState, saveState, clearState, migrateLegacyKey } from './save.js';
 import * as actions from './actions.js';
 // report.js also imports getState from this file. ESM handles this cycle
 // because evaluateReport is called at runtime, not at module init.
-import { evaluateReport } from './report.js';
+import { evaluateReport, evaluateSubmission } from './report.js';
 
 const SCHEMA_VERSION = 2;
 
@@ -354,6 +354,68 @@ export function registerActionHandlers(caseData) {
     }
     persist();
     emit({ type: 'split_view_changed', tool, splitView: state.splitView });
+  }));
+
+  // link_evidence — add or remove an edge in state.links.
+  // Payload `{fromId, toId, reason}` adds an edge; `{fromId, toId, remove: true}`
+  // removes any matching edge (unordered pair). §4.1 + §12 Q1.
+  // On removal, silently unpick any state.picks[criterionId] whose value is
+  // one of the participants — §12 Q6. Player can re-pick without a link.
+  offs.push(actions.on('link_evidence', ({ fromId, toId, reason, remove }) => {
+    const matches = (e) =>
+      (e.from === fromId && e.to === toId) ||
+      (e.from === toId && e.to === fromId);
+    if (remove) {
+      const before = state.links.length;
+      state.links = state.links.filter(e => !matches(e));
+      if (state.links.length === before) return;  // no-op
+      // Auto-unpick — §12 Q6.
+      let picksChanged = false;
+      const nextPicks = {};
+      for (const [cid, evId] of Object.entries(state.picks || {})) {
+        if (evId === fromId || evId === toId) {
+          picksChanged = true;
+          continue;
+        }
+        nextPicks[cid] = evId;
+      }
+      if (picksChanged) state.picks = nextPicks;
+      persist();
+      emit({ type: 'link_removed', fromId, toId });
+      return;
+    }
+    // Add — dedup on unordered pair.
+    if (state.links.some(matches)) return;
+    state.links.push({ from: fromId, to: toId, reason, ts: Date.now() });
+    persist();
+    emit({ type: 'link_added', fromId, toId, reason });
+  }));
+
+  // pick_evidence_for_criterion — records the analyst's choice of which
+  // collected evidence stands for a given report criterion. Pure write; the
+  // report evaluator remains derived from state.evidence (unchanged).
+  offs.push(actions.on('pick_evidence_for_criterion', ({ criterionId, evidenceId }) => {
+    if (!state.picks) state.picks = {};
+    if (state.picks[criterionId] === evidenceId) return;
+    state.picks[criterionId] = evidenceId;
+    persist();
+    emit({ type: 'pick_updated', criterionId, evidenceId });
+  }));
+
+  // submit_report — CR-1: verdict is derived here in the state handler,
+  // never taken from the UI's payload. UI emits {attribution,
+  // supportingEvidenceIds}; the outcome is computed via evaluateSubmission
+  // against caseData.final_answer, then persisted through submitFinalReport.
+  offs.push(actions.on('submit_report', ({ attribution, supportingEvidenceIds }) => {
+    const evalRes = evaluateSubmission(caseData, {
+      attribution,
+      supportingEvidenceIds,
+    });
+    submitFinalReport({
+      attribution,
+      supportingEvidenceIds,
+      outcome: evalRes.outcome,
+    });
   }));
 
   offs.push(actions.on('open_artifact', ({ artifactId }) => {

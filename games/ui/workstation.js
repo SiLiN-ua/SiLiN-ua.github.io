@@ -681,6 +681,11 @@ async function boot() {
       renderPane();
       updateBreadcrumb();
     }
+    // S4: link add/remove and pick updates re-render EVIDENCE and REPORT.
+    if (evt.type === 'link_added' || evt.type === 'link_removed' || evt.type === 'pick_updated') {
+      const a = getState().activeTool;
+      if (a === 'evidence' || a === 'report') renderPane();
+    }
     if (evt.type === 'reset') {
       prevBadgeCount = 0;
       prevTopbarCount = 0;
