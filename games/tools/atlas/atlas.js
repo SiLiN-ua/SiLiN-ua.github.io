@@ -1,14 +1,13 @@
 // tools/atlas/atlas.js
 // ATLAS — location & professional-record lookup surface.
-// Session 5 scope: two authored queries, results list, claim detail view.
-// This is a corroboration layer, not a map. Absence of a record is not proof
-// of a false claim — the copy in each detail makes that explicit.
-// (Deliberately not reusing FRAME / CHAT / ARCHIVE renderers; each surface has
-//  its own field set and the difference is part of what the player is learning.)
+// Session 5.4 scope: geographic evidence exhibit for claim detail.
+// This is a corroboration layer, not a map app. Absence of a record is not
+// proof of a false claim — the note copy in each detail makes that explicit.
 
 import { isInEvidence } from '../../engine/state.js';
 import { emit as emitAction } from '../../engine/actions.js';
 import { t, pick } from '../../engine/i18n.js';
+import { resolveAsset } from '../../engine/case-loader.js';
 
 function esc(str) {
   return String(str ?? '')
@@ -67,7 +66,7 @@ function renderSearch(paneEl, caseData, ctx) {
       </div>
 
       <div class="atlas__results">
-        ${view.submitted ? renderResultList(search) : ''}
+        ${view.submitted ? renderResultList(search, caseData) : ''}
       </div>
     </div>
   `;
@@ -92,7 +91,7 @@ function renderSearch(paneEl, caseData, ctx) {
   });
 }
 
-function renderResultList(search) {
+function renderResultList(search, caseData) {
   if (!search) {
     return `
       <div class="atlas__empty">
@@ -107,18 +106,31 @@ function renderResultList(search) {
   return `
     <div class="atlas__meta">${meta}</div>
     <ul class="atlas__list">
-      ${results.map(r => `
-        <li class="atlas-result">
+      ${results.map(r => {
+        // Hydrate row with subject-name/avatar from the target claim artifact
+        // so the results list reads like TRACE (face + name + handle).
+        const claim = caseData.artifacts[r.id] || {};
+        const avatarSrc = claim.avatar ? resolveAsset(caseData, claim.avatar) : '';
+        const subjectName = pick(claim, 'subject_name') || claim.subject || r.subject;
+        return `
+        <li class="atlas-result" data-open-claim="${esc(r.id)}" role="button" tabindex="0">
+          <div class="atlas-result__face">
+            ${avatarSrc ? `<img src="${esc(avatarSrc)}" alt="">` : ''}
+          </div>
           <div class="atlas-result__body">
-            <div class="atlas-result__subject">${esc(r.subject)}</div>
+            <div class="atlas-result__title">
+              <span class="atlas-result__name">${esc(subjectName)}</span>
+              <span class="atlas-result__handle">${esc(r.subject)}</span>
+            </div>
             <div class="atlas-result__status">${esc(r.status)}</div>
             <div class="atlas-result__line">${esc(pick(r, 'line'))}</div>
           </div>
           <div class="atlas-result__action">
-            <button class="btn-ghost" data-open-claim="${esc(r.id)}">${t('atlas.results.inspect')}</button>
+            <span class="atlas-inspect" aria-hidden="true">${t('atlas.results.inspect')}</span>
           </div>
         </li>
-      `).join('')}
+      `;
+      }).join('')}
     </ul>
   `;
 }
@@ -133,6 +145,12 @@ function renderClaimDetail(paneEl, caseData, ctx) {
   const already = isInEvidence(claim.id);
   const locationClaimed = pick(claim, 'location_claimed');
   const note = pick(claim, 'note');
+  const subjectName = pick(claim, 'subject_name') || claim.subject;
+  const avatarSrc = claim.avatar ? resolveAsset(caseData, claim.avatar) : '';
+  const mapSrc = claim.map_source ? resolveAsset(caseData, claim.map_source) : '';
+  const insetSrc = claim.inset ? resolveAsset(caseData, claim.inset) : '';
+  const insetCaption = pick(claim, 'inset_caption') || '';
+  const pin = claim.map_pin || null;
 
   const recordsHtml = (claim.records_searched || []).map(r => `
     <li class="atlas-record">
@@ -141,40 +159,64 @@ function renderClaimDetail(paneEl, caseData, ctx) {
     </li>
   `).join('');
 
+  // LEFT column: map (or nothing if not authored).
+  const mapHtml = mapSrc ? `
+    <div class="atlas-map" style="background-image:url('${esc(mapSrc)}')">
+      ${pin ? `<div class="atlas-map__pin" style="left:${(pin.x * 100).toFixed(2)}%;top:${(pin.y * 100).toFixed(2)}%"></div>` : ''}
+    </div>
+  ` : '';
+
+  // RIGHT column: face + subject + status + records + note.
+  const factsHtml = `
+    <div class="atlas-facts">
+      <div class="atlas-facts__head">
+        ${avatarSrc ? `<div class="atlas-facts__avatar"><img src="${esc(avatarSrc)}" alt=""></div>` : ''}
+        <div class="atlas-facts__head-text">
+          <div class="atlas-facts__name">${esc(subjectName)}</div>
+          <div class="atlas-facts__location">${esc(locationClaimed)}</div>
+        </div>
+      </div>
+      <div class="atlas-facts__status-row">
+        <span class="atlas-facts__k">${t('atlas.claim.field.status')}</span>
+        <span class="atlas-facts__status">${esc(claim.status)}</span>
+      </div>
+      <div class="atlas-facts__records">
+        <div class="atlas-facts__k">${t('atlas.claim.field.records')}</div>
+        <ul class="atlas-records">${recordsHtml}</ul>
+      </div>
+      ${note ? `<div class="atlas-facts__note">${esc(note)}</div>` : ''}
+    </div>
+  `;
+
+  // Inset — small facade card below map/facts. No explanatory copy about
+  // continuity with post_01. Composition is the argument.
+  const insetHtml = insetSrc ? `
+    <div class="atlas-claim__inset-row">
+      <div class="atlas-inset">
+        <div class="tx-letterbox tx-letterbox--doc">
+          <img src="${esc(insetSrc)}" alt="">
+        </div>
+        ${insetCaption ? `<div class="atlas-inset__caption">${esc(insetCaption)}</div>` : ''}
+      </div>
+    </div>
+  ` : '';
+
   paneEl.innerHTML = `
-    <div class="atlas-claim">
+    <div class="atlas-claim atlas-claim--exhibit">
       <div class="trace__breadcrumb">
         <button class="link-back" data-action="back-to-search">← ${t('atlas.breadcrumb')}</button>
         <span class="trace__breadcrumb-sep">/</span>
-        <span>${esc(claim.subject)} · ${esc(locationClaimed)}</span>
+        <span>${esc(subjectName)} · ${esc(locationClaimed)}</span>
       </div>
 
       <div class="atlas-claim__title">${t('atlas.claim.title')}</div>
 
-      <div class="atlas-claim__grid">
-        <div class="atlas-claim__field">
-          <div class="atlas-claim__label">${t('atlas.claim.field.subject')}</div>
-          <div class="atlas-claim__value">${esc(claim.subject)}</div>
-        </div>
-        <div class="atlas-claim__field">
-          <div class="atlas-claim__label">${t('atlas.claim.field.location_claimed')}</div>
-          <div class="atlas-claim__value">${esc(locationClaimed)}</div>
-        </div>
-        <div class="atlas-claim__field">
-          <div class="atlas-claim__label">${t('atlas.claim.field.status')}</div>
-          <div class="atlas-claim__value atlas-claim__status">${esc(claim.status)}</div>
-        </div>
+      <div class="atlas-claim__exhibit">
+        ${mapHtml ? `<div class="atlas-claim__map-col">${mapHtml}</div>` : ''}
+        <div class="atlas-claim__facts-col">${factsHtml}</div>
       </div>
 
-      <div class="atlas-claim__records">
-        <div class="atlas-claim__label">${t('atlas.claim.field.records')}</div>
-        <ul class="atlas-records">${recordsHtml}</ul>
-      </div>
-
-      <div class="atlas-claim__note">
-        <div class="atlas-claim__label">${t('atlas.claim.field.note')}</div>
-        <div class="atlas-claim__note-body">${esc(note)}</div>
-      </div>
+      ${insetHtml}
 
       <div class="frame-actions">
         <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(claim.id)}" ${already ? 'disabled' : ''}>
