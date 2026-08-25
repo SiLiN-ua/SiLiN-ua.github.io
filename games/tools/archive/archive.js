@@ -78,7 +78,9 @@ function renderSearch(paneEl, caseData, ctx) {
 
   paneEl.querySelectorAll('[data-open-snapshot]').forEach(btn => {
     btn.addEventListener('click', () => {
-      view.activeSnapshotId = btn.dataset.openSnapshot;
+      const id = btn.dataset.openSnapshot;
+      view.activeSnapshotId = id;
+      emitAction('open_artifact', { artifactId: id, tool: 'archive' });
       renderArchive(paneEl, caseData, ctx);
     });
   });
@@ -167,7 +169,7 @@ function renderSnapshotDetail(paneEl, caseData, ctx) {
       </div>
 
       <div class="frame-actions">
-        <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
+        <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(snap.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('archive.actions.add')}
         </button>
         <button class="btn-ghost" data-action="back-to-snapshots">${t('archive.actions.back')}</button>

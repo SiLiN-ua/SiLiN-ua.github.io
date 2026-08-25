@@ -77,7 +77,9 @@ function renderSearch(paneEl, caseData, ctx) {
 
   paneEl.querySelectorAll('[data-open-profile]').forEach(btn => {
     btn.addEventListener('click', () => {
-      view.activeProfileId = btn.dataset.openProfile;
+      const id = btn.dataset.openProfile;
+      view.activeProfileId = id;
+      emitAction('open_artifact', { artifactId: id, tool: 'chat' });
       renderChat(paneEl, caseData, ctx);
     });
   });
@@ -150,7 +152,7 @@ function renderProfileDetail(paneEl, caseData, ctx) {
       </div>
 
       <div class="frame-actions">
-        <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
+        <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(p.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('chat.actions.add')}
         </button>
         <button class="btn-ghost" data-action="back-to-search">${t('chat.actions.back')}</button>

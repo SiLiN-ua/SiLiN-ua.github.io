@@ -16,6 +16,9 @@
 
 import { loadState, saveState, clearState, migrateLegacyKey } from './save.js';
 import * as actions from './actions.js';
+// report.js also imports getState from this file. ESM handles this cycle
+// because evaluateReport is called at runtime, not at module init.
+import { evaluateReport } from './report.js';
 
 const SCHEMA_VERSION = 2;
 
@@ -92,11 +95,28 @@ export function migrateToV2(raw) {
   return out;
 }
 
+// Accumulate the prior visit's *active* time before overwriting startedAt.
+// CR-2 semantics: only count time between startedAt and lastActivity of the
+// prior session (i.e., time actually spent in the workstation). Never count
+// the gap while the tab was closed — the timer is an investigation diary,
+// not calendar time. Skip silently on invalid / missing timestamps.
+function accumulatePriorVisit(prior) {
+  const s = Number(prior.startedAt);
+  const l = Number(prior.lastActivity);
+  if (Number.isFinite(s) && Number.isFinite(l) && l >= s) {
+    return Math.max(0, l - s);
+  }
+  return 0;
+}
+
 // Returns {wasResume, state}. wasResume=true when a persisted state was
 // found for this caseId with any evidence collected. Boot layer uses this
-// to seed actions.configure({fromResume}).
+// to seed actions.configure({fromResume}). Emits lifecycle event
+// (case_opened / case_resumed) after the state is ready so that any
+// subscriber attached before initState sees a coherent world.
 export function initState(caseId) {
   migrateLegacyKey();
+  workstationStartedFired = false;  // fresh init = fresh lifecycle window
   const persisted = loadState(caseId);
   let wasResume = false;
   if (persisted && persisted.caseId === caseId) {
@@ -105,12 +125,21 @@ export function initState(caseId) {
     // an empty state carried across a page reload is not a resume for
     // cinematic-gating purposes.
     wasResume = Array.isArray(state.evidence) && state.evidence.length > 0;
-    if (wasResume) state.visits = (state.visits || 1) + 1;
+    if (wasResume) {
+      state.elapsedMsFromPriorVisits = (Number(state.elapsedMsFromPriorVisits) || 0)
+        + accumulatePriorVisit(state);
+      state.visits = (state.visits || 1) + 1;
+      state.startedAt = Date.now();
+    }
     persist();
   } else {
     state = defaultState(caseId);
     persist();
   }
+  emit(wasResume
+    ? { type: 'case_resumed', caseId, visits: state.visits,
+        elapsedMsFromPriorVisits: state.elapsedMsFromPriorVisits }
+    : { type: 'case_opened', caseId });
   return { state, wasResume };
 }
 
@@ -240,8 +269,36 @@ export function setActionResumeMode(flag) {
   actions.setResumeMode(!!flag);
 }
 
-// Register V2-S1.2 mutation handler(s). Only `add_to_case` in S1.2 as proof
-// of the vertical pipe. Other 11 actions from §2.2 wire up in later S-sessions.
+// Emit workstation_started once per session, from the boot layer after Play/
+// Continue is clicked. Idempotent per S2_ACCEPTANCE.md §11.5 — subsequent
+// calls in the same session are no-ops.
+let workstationStartedFired = false;
+export function announceWorkstationStarted({ fromResume } = {}) {
+  if (workstationStartedFired) return;
+  workstationStartedFired = true;
+  emit({ type: 'workstation_started', fromResume: !!fromResume });
+}
+
+// Cinematic beat once-flags — persisted through state.cinematic.firedOnce
+// so a beat does not replay on resume (per ACTION_BUS_CONTRACT §3.3 and
+// S2_ACCEPTANCE §7). Beats do not affect gameplay — pure UI gating.
+export function hasCinematicFired(beatId) {
+  const list = state?.cinematic?.firedOnce;
+  return Array.isArray(list) && list.includes(beatId);
+}
+export function markCinematicFired(beatId) {
+  if (!state.cinematic) state.cinematic = { firedOnce: [] };
+  if (!Array.isArray(state.cinematic.firedOnce)) state.cinematic.firedOnce = [];
+  if (state.cinematic.firedOnce.includes(beatId)) return;
+  state.cinematic.firedOnce.push(beatId);
+  persist();
+}
+
+// Register S1.2 + S2.1 mutation handler(s). S1.2 added add_to_case; S2.1
+// adds open_artifact for the sidebar HAS UPDATES dot invariant.
+// Additionally wires a report-gate diff subscriber so subscribers see
+// report_all_required_met / _lost as crossing events, not every-mutation
+// notifications.
 //
 // Returns an unregister function (useful for tests).
 export function registerActionHandlers(caseData) {
@@ -267,6 +324,37 @@ export function registerActionHandlers(caseData) {
     // tools historically called addEvidence directly.
     addEvidence({ ...artifact, id: artifactId, tool: artifact.tool || tool });
   }));
+
+  offs.push(actions.on('open_artifact', ({ artifactId }) => {
+    // Set semantics — dedup a repeat click on the same card. The action
+    // envelope still fires (per §2.2 idempotency: "Ні — кожен click"),
+    // but state.viewed only grows on the first view.
+    if (!state.viewed.includes(artifactId)) {
+      state.viewed.push(artifactId);
+      persist();
+      emit({ type: 'viewed_added', artifactId });
+    }
+  }));
+
+  // Report-gate diff: after any mutation that could change allMet, run
+  // evaluateReport() and emit a crossing event only when the flag flips.
+  // Seed lastAllMet from the current state so a resume that arrives with
+  // criteria already satisfied does not immediately re-emit the crossing.
+  let lastAllMet = !!evaluateReport(caseData).allMet;
+  const RECOMPUTE_ON = new Set(['evidence_added', 'submission_updated', 'reset']);
+  const gateListener = (evt) => {
+    if (!RECOMPUTE_ON.has(evt.type)) return;
+    const r = evaluateReport(caseData);
+    const now = !!r.allMet;
+    if (now !== lastAllMet) {
+      lastAllMet = now;
+      emit(now
+        ? { type: 'report_all_required_met', quality: r.quality?.overall }
+        : { type: 'report_all_required_lost' });
+    }
+  };
+  const offGate = subscribe(gateListener);
+  offs.push(offGate);
 
   unregisterActionHandlers = () => {
     for (const off of offs) off();

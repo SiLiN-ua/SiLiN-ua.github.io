@@ -79,7 +79,9 @@ function renderSearch(paneEl, caseData, ctx) {
 
   paneEl.querySelectorAll('[data-open-candidate]').forEach(btn => {
     btn.addEventListener('click', () => {
-      view.activeCandidateId = btn.dataset.openCandidate;
+      const id = btn.dataset.openCandidate;
+      view.activeCandidateId = id;
+      emitAction('open_artifact', { artifactId: id, tool: 'trace' });
       renderTrace(paneEl, caseData, ctx);
     });
   });
@@ -165,7 +167,7 @@ function renderCandidate(paneEl, caseData, ctx) {
         </div>
       </div>
       <div class="frame-actions">
-        <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
+        <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(artifact.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('frame.actions.add')}
         </button>
         <button class="btn-ghost" data-action="back-to-results">${t('frame.actions.back')}</button>

@@ -84,7 +84,9 @@ function renderSearch(paneEl, caseData, ctx) {
 
   paneEl.querySelectorAll('[data-open-claim]').forEach(btn => {
     btn.addEventListener('click', () => {
-      view.activeClaimId = btn.dataset.openClaim;
+      const id = btn.dataset.openClaim;
+      view.activeClaimId = id;
+      emitAction('open_artifact', { artifactId: id, tool: 'atlas' });
       renderAtlas(paneEl, caseData, ctx);
     });
   });
@@ -175,7 +177,7 @@ function renderClaimDetail(paneEl, caseData, ctx) {
       </div>
 
       <div class="frame-actions">
-        <button class="btn-primary" data-action="add-to-case" ${already ? 'disabled' : ''}>
+        <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(claim.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('atlas.actions.add')}
         </button>
         <button class="btn-ghost" data-action="back-to-search">${t('atlas.actions.back')}</button>
