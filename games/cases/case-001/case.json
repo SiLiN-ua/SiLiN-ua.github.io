@@ -127,7 +127,7 @@
       "joined": "March 2024",
       "stats": { "posts": 24, "followers": 1847, "following": 312 },
       "posts": [
-        { "id": "p1", "cover": "assets/post-01.jpg", "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
+        { "id": "p1", "cover": "assets/post-01.jpg", "video_still": "assets/video_still_post_01.jpg", "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
         { "id": "p2", "cover": "assets/post-02.jpg", "caption_en": "Old town light.",       "caption_uk": "Світло старого міста.", "date": "5 days ago", "likes": 98 },
         { "id": "p3", "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.",   "caption_uk": "Довга прогулянка. Без плану.", "date": "1 week ago", "likes": 211 }
       ]
@@ -530,7 +530,7 @@
       "subject": "@alex.miller.uk",
       "subject_name_en": "Alex Miller",
       "subject_name_uk": "Алекс Міллер",
-      "avatar": "assets/avatar-alex-miller.svg",
+      "avatar": "assets/daniel-cole-portrait.jpg",
       "location_claimed_en": "Prague, CZ (referenced in one dated post)",
       "location_claimed_uk": "Прага, Чехія (згадана в одному датованому пості)",
       "status": "VISITED · DATED POST",
@@ -551,7 +551,7 @@
       "subject": "@alex.miller.uk",
       "subject_name_en": "Alex Miller",
       "subject_name_uk": "Алекс Міллер",
-      "avatar": "assets/avatar-alex-miller.svg",
+      "avatar": "assets/daniel-cole-portrait.jpg",
       "location_claimed_en": "Manchester, United Kingdom",
       "location_claimed_uk": "Манчестер, Велика Британія",
       "status": "VERIFIED",

@@ -15,6 +15,11 @@ import { formatJoined } from '../../engine/dates.js';
 // (activeTool switch away and back) returns FRAME to state A, which is
 // the correct behavior: FRAME is a workspace, not a browser history.
 const openedPost = new Map(); // profileId -> postId
+// Local video-reveal state, per opened post. Not persisted — closing the
+// post or switching tools resets to photo-first. This is the "evidence-
+// extract moment" from S5 §4.5: player clicks the affordance to reveal
+// the video still on top of the pane.
+const videoOpen = new Set(); // "profileId#postId"
 
 function esc(str) {
   return String(str ?? '')
@@ -226,7 +231,9 @@ function renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded }) 
   const postArtifactId = `${profile.id}#${post.id}`;
   emitAction('open_artifact', { artifactId: postArtifactId, tool: 'frame' });
 
+  const showVideo = !!post.video_still && videoOpen.has(postArtifactId);
   const src = esc(resolveAsset(caseData, post.cover));
+  const videoSrc = post.video_still ? esc(resolveAsset(caseData, post.video_still)) : '';
   const avatar = esc(resolveAsset(caseData, profile.avatar));
   const caption = pick(post, 'caption');
   const location = pick(profile, 'location');
@@ -259,15 +266,29 @@ function renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded }) 
           <button type="button" class="frame-opened__close" data-action="close" aria-label="${t('frame.opened.close')}">×</button>
         </header>
 
-        <div class="tx-letterbox frame-post-card__photo" style="--tx-ratio: 2 / 3;">
-          <img src="${src}" alt="${esc(caption)}">
-        </div>
+        ${showVideo ? `
+          <div class="frame-opened__video-still">
+            <div class="tx-letterbox" style="--tx-ratio: 9 / 16;">
+              <img src="${videoSrc}" alt="">
+            </div>
+            <button type="button" class="frame-opened__video-close" data-action="close-video">${t('frame.video.close')}</button>
+          </div>
+        ` : `
+          <div class="tx-letterbox frame-post-card__photo" style="--tx-ratio: 2 / 3;">
+            <img src="${src}" alt="${esc(caption)}">
+          </div>
+        `}
 
         <div class="frame-post-card__body">
           ${likesLine ? `<div class="frame-post-card__likes">${likesLine}</div>` : ''}
           <div class="frame-post-card__caption"><b>@${esc(profile.username)}</b> ${esc(caption)}</div>
           ${post.date ? `<div class="frame-post-card__date">${esc(post.date)}</div>` : ''}
         </div>
+        ${(post.video_still && !showVideo) ? `
+          <div class="frame-opened__video-slot">
+            <button type="button" class="frame-opened__video-load" data-action="load-video">${t('frame.video.load')}</button>
+          </div>
+        ` : ''}
       </article>
 
       <section class="frame-opened__forensic" aria-label="metadata">
@@ -292,9 +313,25 @@ function renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded }) 
 
   const goBack = () => {
     openedPost.delete(profile.id);
+    videoOpen.delete(postArtifactId);
     renderFrameProfile(paneEl, caseData, profile, { onEvidenceAdded });
   };
   paneEl.querySelector('[data-action="close"]').addEventListener('click', goBack);
+
+  const loadVideoBtn = paneEl.querySelector('[data-action="load-video"]');
+  if (loadVideoBtn) {
+    loadVideoBtn.addEventListener('click', () => {
+      videoOpen.add(postArtifactId);
+      renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded });
+    });
+  }
+  const closeVideoBtn = paneEl.querySelector('[data-action="close-video"]');
+  if (closeVideoBtn) {
+    closeVideoBtn.addEventListener('click', () => {
+      videoOpen.delete(postArtifactId);
+      renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded });
+    });
+  }
 
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
   addBtn.addEventListener('click', () => {
