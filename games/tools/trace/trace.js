@@ -1,5 +1,8 @@
 // tools/trace/trace.js
-// TRACE — username / image search across the fake digital world.
+// TRACE — face-search / reverse-image lookup surface.
+// Editorial-forensic composition: real portraits command the eye,
+// results read as documents in an index (hairline-separated bands),
+// not cards in a grid.
 
 import { isInEvidence } from '../../engine/state.js';
 import { emit as emitAction } from '../../engine/actions.js';
@@ -13,10 +16,6 @@ function esc(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
-}
-function fmtNum(n) {
-  if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k';
-  return String(n);
 }
 
 const view = {
@@ -33,6 +32,16 @@ function findSearchByQuery(caseData, q) {
     if (art.type === 'trace_search' && String(art.query).toLowerCase() === normalized) {
       return art;
     }
+  }
+  return null;
+}
+
+function findSearchByCandidate(caseData, candidateId) {
+  for (const key of Object.keys(caseData.artifacts)) {
+    const art = caseData.artifacts[key];
+    if (art.type !== 'trace_search') continue;
+    const hit = (art.results || []).find(r => r.id === candidateId);
+    if (hit) return { search: art, result: hit };
   }
   return null;
 }
@@ -56,9 +65,7 @@ function renderSearch(paneEl, caseData, ctx) {
           <input class="trace__input" type="text" name="q" placeholder="${esc(t('trace.placeholder'))}" value="${esc(view.query)}">
           <button class="btn-primary" type="submit">${t('trace.button.search')}</button>
         </form>
-        <div class="trace__hint">
-          ${t('trace.hint')}
-        </div>
+        <div class="trace__hint">${t('trace.hint')}</div>
       </div>
 
       <div class="trace__results">
@@ -77,12 +84,16 @@ function renderSearch(paneEl, caseData, ctx) {
     renderTrace(paneEl, caseData, ctx);
   });
 
-  paneEl.querySelectorAll('[data-open-candidate]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.openCandidate;
+  paneEl.querySelectorAll('[data-open-candidate]').forEach(row => {
+    const openIt = () => {
+      const id = row.dataset.openCandidate;
       view.activeCandidateId = id;
       emitAction('open_artifact', { artifactId: id, tool: 'trace' });
       renderTrace(paneEl, caseData, ctx);
+    };
+    row.addEventListener('click', openIt);
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openIt(); }
     });
   });
 }
@@ -102,26 +113,34 @@ function renderResultsBlock(search, caseData) {
   return `
     <div class="trace__meta">${meta}</div>
     <ul class="trace__list">
-      ${results.map(r => `
-        <li class="trace-result">
-          <div class="trace-result__avatar">
-            <img src="${esc(resolveAsset(caseData, r.avatar))}" alt="">
-          </div>
-          <div class="trace-result__body">
-            <div class="trace-result__url">${esc(r.url)}</div>
-            <div class="trace-result__title">
-              <b>@${esc(r.username)}</b>
-              <span class="trace-result__name">${esc(r.display_name)}</span>
-            </div>
-            <div class="trace-result__snippet">${esc(pick(r, 'snippet'))}</div>
-            ${pick(r, 'signal') ? `<div class="trace-result__signal">${esc(pick(r, 'signal'))}</div>` : ''}
-          </div>
-          <div class="trace-result__action">
-            <button class="btn-ghost" data-open-candidate="${esc(r.id)}">${t('trace.results.inspect')}</button>
-          </div>
-        </li>
-      `).join('')}
+      ${results.map(r => renderResultRow(r, caseData)).join('')}
     </ul>
+  `;
+}
+
+function renderResultRow(r, caseData) {
+  const snippet = pick(r, 'snippet');
+  const signal = pick(r, 'signal');
+  return `
+    <li class="trace-result" data-open-candidate="${esc(r.id)}" role="button" tabindex="0">
+      <div class="trace-result__face">
+        <img src="${esc(resolveAsset(caseData, r.avatar))}" alt="">
+      </div>
+      <div class="trace-result__body">
+        <div class="trace-result__title">
+          <span class="trace-result__name">${esc(r.display_name)}</span>
+          <span class="trace-result__handle">@${esc(r.username)}</span>
+        </div>
+        <div class="trace-result__snippet">${esc(snippet)}</div>
+        <div class="trace-result__signal">
+          <span class="trace-result__source">${esc(r.url)}</span>
+          ${signal ? `<span class="trace-result__sep">·</span><span>${esc(signal)}</span>` : ''}
+        </div>
+      </div>
+      <div class="trace-result__action">
+        <span class="trace-inspect" aria-hidden="true">${t('trace.results.inspect')}</span>
+      </div>
+    </li>
   `;
 }
 
@@ -134,45 +153,49 @@ function renderCandidate(paneEl, caseData, ctx) {
   }
   const already = isInEvidence(artifact.id);
   const bio = pick(artifact, 'bio');
-  const postsHtml = (artifact.posts || []).map(p => {
-    const caption = pick(p, 'caption');
-    return `
-      <div class="frame-post">
-        <img src="${esc(resolveAsset(caseData, p.cover))}" alt="${esc(caption)}">
-        <div class="frame-post__caption">${esc(caption)}</div>
-      </div>
-    `;
-  }).join('');
+  const location = pick(artifact, 'location');
+  const context = findSearchByCandidate(caseData, artifact.id);
+  const contextSignal = context ? pick(context.result, 'signal') : '';
+  const contextQuery = context ? context.search.query : '';
 
   paneEl.innerHTML = `
-    <div class="frame-profile">
-      <div class="trace__breadcrumb">
-        <button class="link-back" data-action="back-to-results">← ${t('trace.breadcrumb')}</button>
-        <span class="trace__breadcrumb-sep">/</span>
-        <span>${esc(artifact.url)}</span>
-      </div>
-      <div class="frame-url">${esc(artifact.url)}</div>
-      <div class="frame-header">
-        <div class="frame-avatar"><img src="${esc(resolveAsset(caseData, artifact.avatar))}" alt=""></div>
-        <div>
-          <div class="frame-username">@${esc(artifact.username)}</div>
-          <div class="frame-name">${esc(artifact.display_name)}</div>
-          <div class="frame-stats">
-            <span><b>${fmtNum(artifact.stats.posts)}</b>${t('frame.stats.posts')}</span>
-            <span><b>${fmtNum(artifact.stats.followers)}</b>${t('frame.stats.followers')}</span>
-            <span><b>${fmtNum(artifact.stats.following)}</b>${t('frame.stats.following')}</span>
+    <div class="trace-detail">
+      <button class="trace-detail__back link-back" data-action="back-to-results">← ${t('trace.breadcrumb')}</button>
+
+      <div class="trace-detail__body">
+        <div class="trace-detail__portrait">
+          <div class="tx-letterbox tx-letterbox--square">
+            <img src="${esc(resolveAsset(caseData, artifact.avatar))}" alt="">
           </div>
-          <div class="frame-bio">${esc(bio)}</div>
-          <div class="frame-meta">${esc(pick(artifact, 'location'))} · ${t('frame.meta.joined')} ${esc(formatJoined(artifact.joined, getLang()))}</div>
+        </div>
+        <div class="trace-detail__meta">
+          <div class="trace-detail__handle">@${esc(artifact.username)}</div>
+          <div class="trace-detail__name">${esc(artifact.display_name)}</div>
+          <div class="trace-detail__facts">
+            <div><span class="trace-detail__k">${t('frame.meta.joined')}</span> ${esc(formatJoined(artifact.joined, getLang()))}</div>
+            ${location ? `<div><span class="trace-detail__k">${t('trace.detail.location')}</span> ${esc(location)}</div>` : ''}
+            <div><span class="trace-detail__k">${t('trace.detail.url')}</span> ${esc(artifact.url)}</div>
+          </div>
+          ${bio ? `<div class="trace-detail__bio">${esc(bio)}</div>` : ''}
         </div>
       </div>
-      <div class="frame-actions">
+
+      ${context ? `
+        <div class="trace-detail__source">
+          <div class="trace-detail__source-label">${t('trace.detail.source')}</div>
+          <div class="trace-detail__source-line">
+            <span>trace.dev/reverse?q=${esc(contextQuery)}</span>
+            ${contextSignal ? `<span class="trace-result__sep">·</span><span>${esc(contextSignal)}</span>` : ''}
+          </div>
+        </div>
+      ` : ''}
+
+      <div class="trace-detail__actions">
         <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(artifact.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('frame.actions.add')}
         </button>
         <button class="btn-ghost" data-action="back-to-results">${t('frame.actions.back')}</button>
       </div>
-      <div class="frame-grid">${postsHtml}</div>
     </div>
   `;
 
@@ -184,13 +207,15 @@ function renderCandidate(paneEl, caseData, ctx) {
   });
 
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');
-  addBtn.addEventListener('click', () => {
-    if (addBtn.disabled) return;
-    emitAction('add_to_case', { artifactId: artifact.id, tool: 'trace' });
-    if (isInEvidence(artifact.id)) {
-      addBtn.disabled = true;
-      addBtn.textContent = t('frame.actions.saved');
-      ctx.onEvidenceAdded && ctx.onEvidenceAdded();
-    }
-  });
+  if (addBtn) {
+    addBtn.addEventListener('click', () => {
+      if (addBtn.disabled) return;
+      emitAction('add_to_case', { artifactId: artifact.id, tool: 'trace' });
+      if (isInEvidence(artifact.id)) {
+        addBtn.disabled = true;
+        addBtn.textContent = t('frame.actions.saved');
+        ctx.onEvidenceAdded && ctx.onEvidenceAdded();
+      }
+    });
+  }
 }

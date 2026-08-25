@@ -62,6 +62,9 @@
     "trace.meta.one":             "{n} result for \"{query}\"",
     "trace.meta.many":            "{n} results for \"{query}\"",
     "trace.results.inspect":      "Inspect →",
+    "trace.detail.source":        "SOURCE / CONTEXT",
+    "trace.detail.location":      "Location",
+    "trace.detail.url":           "URL",
 
     "chat.breadcrumb":            "CHAT results",
     "chat.label":                 "CHAT · public handle lookup",
@@ -251,6 +254,9 @@
     "trace.meta.one":             "Результатів за «{query}»: {n}",
     "trace.meta.many":            "Результатів за «{query}»: {n}",
     "trace.results.inspect":      "Оглянути →",
+    "trace.detail.source":        "ДЖЕРЕЛО / КОНТЕКСТ",
+    "trace.detail.location":      "Локація",
+    "trace.detail.url":           "URL",
 
     "chat.breadcrumb":            "Результати CHAT",
     "chat.label":                 "CHAT · публічний пошук за хендлом",
