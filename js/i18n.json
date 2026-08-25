@@ -389,7 +389,6 @@
     "ss.game.locked_status": "🔒 ЗАБЛОКОВАНО",
     "ss.game.tbd_title": "Кейс · TBD",
     "ss.game.tbd_sub": "Розблокується після виходу playable-версії Кейса 1.",
-    "nav.more": "Більше",
     "ss.game.status_live": "✓ Playable",
     "ss.game.play_now": "▶ Грати",
     "game.exit": "Вийти з симуляції",
@@ -446,7 +445,6 @@
     "sim1.lb.subtitle": "Окремий leaderboard лише для 3 кейсів Track I. Сумарний найкращий результат гравця по кейсах цього треку.",
     "sim2.lb.pre": "РЕЙТИНГ TRACK II",
     "sim2.lb.title": "🏆 Corporate Investigations Leaderboard",
-    "sim2.lb.subtitle": "Окремий leaderboard лише для 6 кейсів Track II. Кожна картка = найкращий результат гравця по цьому кейсу.",
     "sim2.cert.pre": "СЕРТИФІКАТ TRACK II",
     "sim2.cert.title": "🎖 Corporate Investigations Certificate",
     "sim2.cert.subtitle": "Розблокується після проходження всіх 6 кейсів Track II та досягнення мінімального порогу очок.",
@@ -500,7 +498,8 @@
     "sim3.cert.subtitle": "Розблокується після проходження всіх 6 кейсів Track III та досягнення мінімального порогу очок.",
     "sim3.lb.pre": "РЕЙТИНГ TRACK III",
     "sim3.lb.title": "🏆 Deanon Leaderboard",
-    "sim3.lb.subtitle": "Окремий leaderboard лише для 6 кейсів Track III. Кожна картка = найкращий результат гравця по цьому кейсу."
+    "sim3.lb.subtitle": "Окремий leaderboard лише для 6 кейсів Track III. Кожна картка = найкращий результат гравця по цьому кейсу.",
+    "books.download": "Завантажити"
   },
   "en": {
     "brand.first": "Yehor",
@@ -631,7 +630,7 @@
     "sim2.status.launch3": "⚙ +4 weeks",
     "sim2.notify.title": "Played the cases — got feedback?",
     "sim2.notify.text": "DM on LinkedIn or Telegram — I read every message. Each round of feedback → a new case iteration or a new mechanic.",
-    "sim2.lb.subtitle": "Separate leaderboard for the 6 Track II cases only. Each row = a player's best score per case.",
+    "sim2.lb.subtitle": "Separate leaderboard for the 6 Track II cases. Each card = the player's best score per case.",
     "tl.badge": "TIMELINE BUILDER · ISOLATED PROTOTYPE · SIM #02",
     "tl.title": "Build the event timeline",
     "tl.lead": "This is an isolated prototype of a new phase for Sim #02. Testing SortableJS before integrating into game.js. Case — «The Leaking Engineer».",
@@ -892,7 +891,6 @@
     "ss.game.locked_status": "🔒 LOCKED",
     "ss.game.tbd_title": "Case · TBD",
     "ss.game.tbd_sub": "Unlocks after the playable version of Case 1 ships.",
-    "nav.more": "More",
     "ss.game.status_live": "✓ Playable",
     "ss.game.play_now": "▶ Play",
     "game.exit": "Exit simulation",
@@ -949,7 +947,6 @@
     "sim1.lb.subtitle": "Separate leaderboard for the 3 Track I cases only. Best sum of per-case scores across this track.",
     "sim2.lb.pre": "TRACK II LEADERBOARD",
     "sim2.lb.title": "🏆 Corporate Investigations Leaderboard",
-    "sim2.lb.subtitle": "Separate leaderboard for the 6 Track II cases. Each card = the player's best score per case.",
     "sim2.cert.pre": "TRACK II CERTIFICATE",
     "sim2.cert.title": "🎖 Corporate Investigations Certificate",
     "sim2.cert.subtitle": "Unlocks after completing all 6 Track II cases and reaching the minimum point threshold.",
@@ -1003,6 +1000,7 @@
     "sim3.cert.subtitle": "Unlocks after completing all 6 Track III cases and reaching the minimum point threshold.",
     "sim3.lb.pre": "TRACK III RANKING",
     "sim3.lb.title": "🏆 Deanon Leaderboard",
-    "sim3.lb.subtitle": "Separate leaderboard for the 6 Track III cases only. Each card = the player's best score per case."
+    "sim3.lb.subtitle": "Separate leaderboard for the 6 Track III cases only. Each card = the player's best score per case.",
+    "books.download": "Download"
   }
 }

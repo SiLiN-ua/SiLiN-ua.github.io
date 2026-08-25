@@ -10,5 +10,9 @@
   "pdf_url_uk": "/content/books/pdfs/Everything_Is_Fine_UK.pdf",
   "order": 10,
   "published": true,
-  "pdf_url_en": "/content/books/pdfs/Everything_Is_Fine_EN.pdf"
+  "pdf_url_en": "/content/books/pdfs/Everything_Is_Fine_EN.pdf",
+  "epub_url_uk": "/content/books/ebooks/Everything_Is_Fine_UK.epub",
+  "fb2_url_uk": "/content/books/ebooks/Everything_Is_Fine_UK.fb2",
+  "epub_url_en": "/content/books/ebooks/Everything_Is_Fine_EN.epub",
+  "fb2_url_en": "/content/books/ebooks/Everything_Is_Fine_EN.fb2"
 }

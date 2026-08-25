@@ -10,5 +10,9 @@
   "pdf_url_uk": "/content/books/pdfs/The_Snow_Room_UK.pdf",
   "pdf_url_en": "/content/books/pdfs/The_Snow_Room_EN.pdf",
   "order": 15,
-  "published": true
+  "published": true,
+  "epub_url_uk": "/content/books/ebooks/The_Snow_Room_UK.epub",
+  "fb2_url_uk": "/content/books/ebooks/The_Snow_Room_UK.fb2",
+  "epub_url_en": "/content/books/ebooks/The_Snow_Room_EN.epub",
+  "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2"
 }

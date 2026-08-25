@@ -12,5 +12,9 @@
   "pdf_url_uk": "/content/books/pdfs/Behind_the_Digital_Trace_UK.pdf",
   "order": 5,
   "published": true,
-  "pdf_url_en": "/content/books/pdfs/Behind_the_Digital_Trace_EN.pdf"
+  "pdf_url_en": "/content/books/pdfs/Behind_the_Digital_Trace_EN.pdf",
+  "epub_url_uk": "/content/books/ebooks/Behind_the_Digital_Trace_UK.epub",
+  "fb2_url_uk": "/content/books/ebooks/Behind_the_Digital_Trace_UK.fb2",
+  "epub_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.epub",
+  "fb2_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.fb2"
 }

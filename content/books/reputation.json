@@ -10,5 +10,9 @@
   "pdf_url_uk": "/content/books/pdfs/REPUTATION_UK.pdf",
   "order": 20,
   "published": true,
-  "pdf_url_en": "/content/books/pdfs/REPUTATION_EN.pdf"
+  "pdf_url_en": "/content/books/pdfs/REPUTATION_EN.pdf",
+  "epub_url_uk": "/content/books/ebooks/REPUTATION_UK.epub",
+  "fb2_url_uk": "/content/books/ebooks/REPUTATION_UK.fb2",
+  "epub_url_en": "/content/books/ebooks/REPUTATION_EN.epub",
+  "fb2_url_en": "/content/books/ebooks/REPUTATION_EN.fb2"
 }

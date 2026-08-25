@@ -78,6 +78,7 @@
   }
 
   function renderBookCard(item) {
+    const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const title = escapeHtml(tr(item, 'title'));
     const desc  = escapeHtml(tr(item, 'description'));
     const year  = escapeHtml(item.year || '');
@@ -88,6 +89,19 @@
     if (item.pdf_url_en) links.push(`<a href="${escapeHtml(item.pdf_url_en)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 Read in English</a>`);
     else if (item.patreon_url) links.push(`<a href="${escapeHtml(item.patreon_url)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 English on Patreon ↗</a>`);
     if (!links.length && item.buy_url) links.push(`<a href="${escapeHtml(item.buy_url)}" target="_blank" rel="noopener" class="card__link">Читати ↗</a>`);
+
+    // EPUB / FB2 for e-ink readers and apps like FBReader
+    const dl = [];
+    [['uk', 'UA'], ['en', 'EN']].forEach(([code, badge]) => {
+      const fmts = ['epub', 'fb2']
+        .filter(f => item[f + '_url_' + code])
+        .map(f => `<a href="${escapeHtml(item[f + '_url_' + code])}" download class="book__dl">${f.toUpperCase()}</a>`);
+      if (fmts.length) dl.push(`<span class="book__dl-lang">${badge}</span>${fmts.join('')}`);
+    });
+    const dlRow = dl.length
+      ? `<div class="book__dls"><span class="book__dl-label">${escapeHtml(dict['books.download'] || 'Завантажити')}</span>${dl.join('')}</div>`
+      : '';
+
     return `
       <div class="book">
         <div class="book__cover">${cover}</div>
@@ -96,6 +110,7 @@
           <h4>${title}</h4>
           <p>${desc}</p>
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem">${links.join('')}</div>
+          ${dlRow}
         </div>
       </div>`;
   }

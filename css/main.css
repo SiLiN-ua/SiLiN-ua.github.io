@@ -1613,6 +1613,29 @@ a.article-utils__share:hover { color: #0a66c2; border-color: #0a66c2; }
 .book h4 { margin-bottom: .5rem; }
 .book p  { color: var(--text-dim); font-size: .95rem; }
 
+.book__dls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  margin-top: .85rem;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.book__dl-label { color: var(--text-mute); }
+.book__dl-lang  { color: var(--text-mute); margin-left: .3rem; }
+.book__dl {
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .22rem .5rem;
+  text-decoration: none;
+  transition: color .2s, border-color .2s;
+}
+.book__dl:hover { color: var(--cream); border-color: var(--border-hi); }
+
 /* Contact list -------------------------------------------- */
 .contact-list {
   display: grid;

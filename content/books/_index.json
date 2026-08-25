@@ -12,7 +12,11 @@
     "order": 1,
     "published": true,
     "__slug": "the-shadow-files-vol-1-foundations",
-    "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol1_EN.pdf"
+    "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol1_EN.pdf",
+    "epub_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol1_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol1_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/The_Shadow_Files_Vol1_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol1_EN.fb2"
   },
   {
     "title_uk": "The Shadow Files · Том II: Крос-платформна атрибуція",
@@ -27,7 +31,11 @@
     "order": 2,
     "published": true,
     "__slug": "the-shadow-files-vol-2-cross-platform-attribution",
-    "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol2_EN.pdf"
+    "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol2_EN.pdf",
+    "epub_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol2_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol2_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/The_Shadow_Files_Vol2_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol2_EN.fb2"
   },
   {
     "title_uk": "За цифровим слідом",
@@ -44,7 +52,11 @@
     "order": 5,
     "published": true,
     "__slug": "behind-the-digital-trace",
-    "pdf_url_en": "/content/books/pdfs/Behind_the_Digital_Trace_EN.pdf"
+    "pdf_url_en": "/content/books/pdfs/Behind_the_Digital_Trace_EN.pdf",
+    "epub_url_uk": "/content/books/ebooks/Behind_the_Digital_Trace_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/Behind_the_Digital_Trace_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.fb2"
   },
   {
     "title_uk": "Все добре",
@@ -59,7 +71,11 @@
     "order": 10,
     "published": true,
     "__slug": "vse-dobre",
-    "pdf_url_en": "/content/books/pdfs/Everything_Is_Fine_EN.pdf"
+    "pdf_url_en": "/content/books/pdfs/Everything_Is_Fine_EN.pdf",
+    "epub_url_uk": "/content/books/ebooks/Everything_Is_Fine_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/Everything_Is_Fine_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/Everything_Is_Fine_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/Everything_Is_Fine_EN.fb2"
   },
   {
     "title_uk": "Снігова кімната",
@@ -73,7 +89,11 @@
     "pdf_url_uk": "/content/books/pdfs/The_Snow_Room_UK.pdf",
     "pdf_url_en": "/content/books/pdfs/The_Snow_Room_EN.pdf",
     "order": 15,
-    "published": true
+    "published": true,
+    "epub_url_uk": "/content/books/ebooks/The_Snow_Room_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/The_Snow_Room_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/The_Snow_Room_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2"
   },
   {
     "title_uk": "REPUTATION",
@@ -88,6 +108,10 @@
     "order": 20,
     "published": true,
     "__slug": "reputation",
-    "pdf_url_en": "/content/books/pdfs/REPUTATION_EN.pdf"
+    "pdf_url_en": "/content/books/pdfs/REPUTATION_EN.pdf",
+    "epub_url_uk": "/content/books/ebooks/REPUTATION_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/REPUTATION_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/REPUTATION_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/REPUTATION_EN.fb2"
   }
 ]

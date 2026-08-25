@@ -10,5 +10,9 @@
   "pdf_url_uk": "/content/books/pdfs/The_Shadow_Files_Vol2_UK.pdf",
   "order": 2,
   "published": true,
-  "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol2_EN.pdf"
+  "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol2_EN.pdf",
+  "epub_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol2_UK.epub",
+  "fb2_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol2_UK.fb2",
+  "epub_url_en": "/content/books/ebooks/The_Shadow_Files_Vol2_EN.epub",
+  "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol2_EN.fb2"
 }

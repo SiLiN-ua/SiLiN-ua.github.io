@@ -5,3 +5,5 @@
 *.webp binary
 *.gif binary
 *.ico binary
+*.epub binary
+*.fb2 binary
