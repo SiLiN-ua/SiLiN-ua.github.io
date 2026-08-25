@@ -6,6 +6,9 @@
   <title>Case Zero — OSINT Investigation</title>
   <meta name="description" content="Case Zero — a free OSINT investigation game by Yehor Selin. You don't play at OSINT. You investigate.">
   <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ui/workstation.css">
 </head>
 <body>
@@ -20,11 +23,14 @@
 
     <!-- WELCOME -->
     <section class="welcome">
-      <div class="welcome__eyebrow" data-i18n="welcome.eyebrow"></div>
-      <h1 class="welcome__title" data-i18n="welcome.title"></h1>
-      <p class="welcome__sub" data-i18n="welcome.sub" data-i18n-html></p>
-      <button class="welcome__cta" data-action="play"></button>
-      <div class="welcome__resume"></div>
+      <div class="welcome__sheet">
+        <div class="welcome__eyebrow" data-i18n="welcome.eyebrow"></div>
+        <h1 class="welcome__title" data-i18n="welcome.title"></h1>
+        <p class="welcome__sub" data-i18n="welcome.sub" data-i18n-html></p>
+        <button class="welcome__cta" data-action="play"></button>
+        <div class="welcome__resume"></div>
+      </div>
+      <div class="welcome__watermark" aria-hidden="true"></div>
     </section>
 
     <!-- WORKSTATION -->
@@ -33,7 +39,11 @@
         <div class="ws-topbar__title">
           <span data-i18n="topbar.case_prefix"></span><b data-i18n="topbar.case_title"></b>
         </div>
-        <div class="ws-topbar__meta"></div>
+        <div class="ws-topbar__breadcrumb" aria-live="polite"></div>
+        <div class="ws-topbar__right">
+          <div class="ws-topbar__timer" aria-live="off"></div>
+          <div class="ws-topbar__meta"></div>
+        </div>
       </header>
 
       <div class="ws-body">
@@ -62,7 +72,7 @@
       </div>
     </section>
 
-    <div class="toast" role="status" aria-live="polite"></div>
+    <div class="notif-stack" role="status" aria-live="polite"></div>
     <div class="reset-hint">
       <button data-action="reset" data-i18n="reset.button"></button>
     </div>

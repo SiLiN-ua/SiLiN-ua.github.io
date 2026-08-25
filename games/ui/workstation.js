@@ -1,7 +1,15 @@
 // ui/workstation.js
 // Case Zero — WORKSTATION shell. Wires welcome → sidebar → tool panes → evidence.
+//
+// V2-S2.2 additions:
+//   - Sidebar order per §18.7: FRAME → TRACE → ARCHIVE → CHAT → ATLAS.
+//   - HAS UPDATES dot on sidebar rows (derived from viewed + evidence tools).
+//   - Topbar breadcrumb (tool-level; artifact-level = deferred).
+//   - Notification stack (max 3, no error styling, gate-ready variant).
+//   - A3 commit animation rewired to `evidence_added` state event
+//     (CR-4: no click-driven anim; button located via data-artifact-id).
 
-import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable, configureActionBus, registerActionHandlers, setActionResumeMode } from '../engine/state.js';
+import { initState, subscribe, setActiveTool, getState, hasSavedState, resetAll, isToolAvailable, configureActionBus, registerActionHandlers, setActionResumeMode, announceWorkstationStarted, hasCinematicFired, markCinematicFired } from '../engine/state.js';
 import { loadCase } from '../engine/case-loader.js';
 import { initI18n, t, setLang, getLang, subscribeLang } from '../engine/i18n.js';
 import { renderFrameProfile } from '../tools/frame/frame.js';
@@ -15,12 +23,14 @@ import { renderAnalystPane } from './analyst-pane.js';
 
 // Sidebar tool labels are ORIGINAL names (PRD §14) — never localized.
 // Only their LOCKED / COMING-SOON status text is localized.
+// §18.7 order: FRAME (what) → TRACE (who else) → ARCHIVE (when) →
+// CHAT (where else) → ATLAS (verify).
 const TOOLS = [
   { id: 'frame',    label: 'FRAME',    group: 'sources' },
   { id: 'trace',    label: 'TRACE',    group: 'sources' },
+  { id: 'archive',  label: 'ARCHIVE',  group: 'sources' },
   { id: 'chat',     label: 'CHAT',     group: 'sources' },
   { id: 'atlas',    label: 'ATLAS',    group: 'sources' },
-  { id: 'archive',  label: 'ARCHIVE',  group: 'sources' },
   { id: 'evidence', label: 'EVIDENCE', group: 'case'    },
   { id: 'report',   label: 'REPORT',   group: 'case'    },
   { id: 'analyst',  label: 'ANALYST',  group: 'case'    },
@@ -32,13 +42,21 @@ const IMPLEMENTED = new Set(['frame', 'trace', 'archive', 'chat', 'atlas', 'evid
 let caseData = null;
 let prevAvailability = new Set();
 
-// Toast queue — showing one message at a time. Previously two same-click
-// events (evidence saved + tool unlocked) collided in the same DOM slot and
-// the second stomped the first mid-animation.
-const TOAST_HOLD_MS = 1800;
-const TOAST_GAP_MS = 220;
-const toastQueue = [];
-let toastPlaying = false;
+// Notification stack — max 3 visible, FIFO removal, per §7.2. No error/warning
+// variants. Two variants: default (1500ms neutral) and gate-ready (3000ms gold).
+const NOTIF_MAX = 3;
+const NOTIF_HOLD_DEFAULT = 1500;
+const NOTIF_HOLD_GATE = 3000;
+
+// Reduced-motion honors §8.3 + S2_ACCEPTANCE §11.6: collapse animations to
+// instant state changes. Read once at boot — the OS-level toggle changing
+// mid-session is a rare enough case that we accept a reload for it.
+const REDUCED_MOTION = typeof window !== 'undefined'
+  && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+// Timer tick — singleton owned by boot(). Ticks every 1000ms once
+// workstation is playing; renders session · MM:SS (across N visits).
+let timerHandle = null;
 
 // Track previous counter values so we can flash on change.
 let prevBadgeCount = 0;
@@ -53,6 +71,24 @@ function currentAvailability() {
     if (isToolAvailable(tool.id, caseData)) avail.add(tool.id);
   }
   return avail;
+}
+
+// Derived: does this tool have unopened artifacts? Dot iff tool is available,
+// has any artifacts in caseData, and none of them are in state.viewed yet.
+// Result feeds the sidebar HAS UPDATES dot per §3.2. Pure derivation — no
+// separate persistence needed.
+function toolHasUpdates(toolId) {
+  if (!isToolAvailable(toolId, caseData)) return false;
+  const viewed = getState().viewed || [];
+  const arts = caseData?.artifacts || {};
+  let toolArts = 0;
+  for (const id of Object.keys(arts)) {
+    const a = arts[id];
+    if (!a || a.tool !== toolId) continue;
+    toolArts++;
+    if (viewed.includes(id)) return false;  // any viewed → no dot
+  }
+  return toolArts > 0;
 }
 
 // Fill any [data-i18n] element in static markup. Optional data-i18n-html
@@ -80,16 +116,19 @@ function renderSidebar() {
 
   TOOLS.forEach(tool => {
     const isAvail = avail.has(tool.id);
+    const hasDot = isAvail && toolHasUpdates(tool.id);
     const btn = document.createElement('button');
     btn.className = 'tool-btn'
       + (isAvail ? '' : ' is-locked')
-      + (state.activeTool === tool.id ? ' is-active' : '');
+      + (state.activeTool === tool.id ? ' is-active' : '')
+      + (hasDot ? ' has-updates' : '');
     btn.dataset.tool = tool.id;
     btn.innerHTML = `
       <span>${tool.label}</span>
       ${isAvail
         ? `<span class="tool-btn__badge" data-badge="${tool.id}"></span>`
         : `<span class="tool-btn__lock">${t('sidebar.status.locked')}</span>`}
+      ${hasDot ? '<span class="tool-btn__dot" aria-hidden="true"></span>' : ''}
     `;
     if (isAvail) {
       btn.addEventListener('click', () => setActiveTool(tool.id));
@@ -120,9 +159,6 @@ function renderPane() {
     return;
   }
 
-  // Tools no longer show the "EVIDENCE SAVED" toast themselves — that fires
-  // from the subscribe('evidence_added') handler below, in strict order:
-  // (1) evidence-saved toast → (2) any newly-unlocked-tool toast.
   const ctx = {};
 
   if (active === 'frame') {
@@ -168,26 +204,34 @@ function updateBadges() {
   prevBadgeCount = n;
 }
 
-// Play the next queued toast, if any. One at a time; each holds for
-// TOAST_HOLD_MS visible, then TOAST_GAP_MS gap before the next.
-function pumpToastQueue() {
-  if (toastPlaying) return;
-  const msg = toastQueue.shift();
-  if (!msg) return;
-  const toast = $('.toast');
-  toast.textContent = msg;
-  toast.classList.add('is-visible');
-  toastPlaying = true;
-  setTimeout(() => {
-    toast.classList.remove('is-visible');
-    setTimeout(() => { toastPlaying = false; pumpToastQueue(); }, TOAST_GAP_MS);
-  }, TOAST_HOLD_MS);
-}
+// Notification stack per §7.2. Adds a new notif at the top; if already at
+// NOTIF_MAX visible, drop the oldest (FIFO). Each notif auto-removes after
+// its own hold duration. Neutral visual by default; `variant: 'gate-ready'`
+// paints the gold-left accent for submit-gate-ready.
+function showNotification(text, { variant, hold } = {}) {
+  if (!text) return;
+  const stack = $('.notif-stack');
+  if (!stack) return;
 
-function showToast(msg) {
-  if (!msg) return;
-  toastQueue.push(msg);
-  pumpToastQueue();
+  const holdMs = hold != null ? hold : (variant === 'gate-ready' ? NOTIF_HOLD_GATE : NOTIF_HOLD_DEFAULT);
+
+  const el = document.createElement('div');
+  el.className = 'notif' + (variant ? ` notif--${variant}` : '');
+  el.textContent = text;
+
+  stack.appendChild(el);
+  // FIFO drop: if we now exceed the cap, remove the oldest immediately.
+  while (stack.children.length > NOTIF_MAX) {
+    stack.firstElementChild?.remove();
+  }
+  // Trigger the enter transition next frame so opacity/transform animate.
+  requestAnimationFrame(() => el.classList.add('is-visible'));
+
+  setTimeout(() => {
+    el.classList.remove('is-visible');
+    // Give the leave transition a moment before removal from DOM.
+    setTimeout(() => el.remove(), 220);
+  }, holdMs);
 }
 
 // Add a temporary class to an element to fire a CSS animation, then remove
@@ -211,11 +255,151 @@ function updateTopbar() {
   prevTopbarCount = n;
 }
 
+// Breadcrumb — tool-level in S2.2. Level-2 (artifact-level) reserved for a
+// later session per §3.1. Cleared before workstation is playing so the
+// welcome screen stays clean.
+function updateBreadcrumb() {
+  const el = $('.ws-topbar__breadcrumb');
+  if (!el) return;
+  const active = getState().activeTool;
+  const tool = TOOLS.find(t => t.id === active);
+  el.textContent = tool ? tool.label : '';
+}
+
+// Session timer — investigation diary, not real-time between visits.
+// Formula (§4): elapsedMsFromPriorVisits + (Date.now() - startedAt).
+// No animation, no color transitions, no digit-flip effects (§4).
+function fmtDuration(ms) {
+  const s = Math.max(0, Math.floor(ms / 1000));
+  const mm = Math.floor(s / 60);
+  const ss = String(s % 60).padStart(2, '0');
+  return `${String(mm).padStart(2, '0')}:${ss}`;
+}
+function updateTimer() {
+  const el = $('.ws-topbar__timer');
+  if (!el) return;
+  const s = getState();
+  const now = Date.now();
+  const active = Math.max(0, now - (Number(s.startedAt) || now));
+  const total = (Number(s.elapsedMsFromPriorVisits) || 0) + active;
+  const suffix = (s.visits && s.visits > 1) ? ` (${t('timer.across', { n: s.visits })})` : '';
+  el.textContent = `${t('timer.prefix')} · ${fmtDuration(total)}${suffix}`;
+}
+function startTimerTick() {
+  if (timerHandle) return;
+  updateTimer();
+  timerHandle = setInterval(updateTimer, 1000);
+}
+
+// -------- Cinematic beats (S2.3, per S2_ACCEPTANCE §7) --------
+// B1, B2, B4 only. Full scheduler and B3/B5-B12 belong to S7.
+
+// Typewriter — types text char-by-char at cps chars/sec. Skips typing when
+// reduced-motion is on (renders full text immediately).
+function typewriter(el, text, cps = 40) {
+  return new Promise(resolve => {
+    if (REDUCED_MOTION || !text) { el.textContent = text || ''; resolve(); return; }
+    el.textContent = '';
+    let i = 0;
+    const stepMs = Math.max(15, Math.round(1000 / cps));
+    const step = () => {
+      if (i >= text.length) { resolve(); return; }
+      el.textContent += text[i++];
+      setTimeout(step, stepMs);
+    };
+    step();
+  });
+}
+
+// B1 — client-brief typewriter on first 3 "lines" (eyebrow, title, first
+// line of sub). Fires on case_opened only. On case_resumed or if B1 already
+// in firedOnce, the welcome renders statically via applyStaticI18n.
+async function playB1() {
+  if (hasCinematicFired('B1')) return;
+  const eyebrow = $('.welcome__eyebrow');
+  const title = $('.welcome__title');
+  const sub = $('.welcome__sub');
+  if (!eyebrow || !title || !sub) return;
+  const eyebrowText = t('welcome.eyebrow');
+  const titleText = t('welcome.title');
+  const subText = t('welcome.sub');
+  const subLines = subText.split('\n');
+  const subFirst = subLines[0];
+  const subRest = subLines.slice(1).join('\n');
+
+  eyebrow.textContent = '';
+  title.textContent = '';
+  sub.textContent = '';
+  document.querySelector('.game-root')?.classList.add('b1-active');
+  // Cadence normalized to ~38 cps across all three lines (S2_ACCEPTANCE §7
+  // CR-1: one cinematic voice, not three mechanisms). Reduced-motion path
+  // in typewriter() still renders instantly.
+  await typewriter(eyebrow, eyebrowText, 38);
+  await typewriter(title, titleText, 38);
+  await typewriter(sub, subFirst, 38);
+  if (subRest) sub.innerHTML = escapeHtml(subFirst) + '<br>' + escapeHtml(subRest);
+  document.querySelector('.game-root')?.classList.remove('b1-active');
+  markCinematicFired('B1');
+}
+
+function escapeHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// B2 — sidebar tools fade-in staggered 40ms each. Uses a CSS class +
+// per-btn animation-delay set from JS. Reduced-motion: skip (class not
+// applied, tools appear instantly via their normal render).
+function playB2() {
+  if (hasCinematicFired('B2') || REDUCED_MOTION) { markCinematicFired('B2'); return; }
+  const btns = $$('.ws-sidebar .tool-btn');
+  btns.forEach((btn, i) => {
+    btn.classList.add('is-arriving');
+    btn.style.setProperty('--b2-delay', `${i * 40}ms`);
+    setTimeout(() => {
+      btn.classList.remove('is-arriving');
+      btn.style.removeProperty('--b2-delay');
+    }, 40 * btns.length + 260);
+  });
+  markCinematicFired('B2');
+}
+
+// B4 — first-ever add_to_case. Sidebar unlock pulse is already fired by
+// onEvidenceAdded via `.is-just-unlocked`. B4 adds a drawer-close-style
+// reaction on the source card (the tool card whose ADD button was
+// clicked) — a subtle fade+shrink to hint the artifact is now in evidence.
+function playB4(sourceId) {
+  if (hasCinematicFired('B4')) return;
+  const btn = document.querySelector(`[data-action="add-to-case"][data-artifact-id="${sourceId}"]`);
+  const card = btn && (btn.closest('.frame-profile, .trace-candidate, .archive-snapshot, .chat-profile, .atlas-claim') || btn.parentElement);
+  if (card && !REDUCED_MOTION) {
+    pulseElement(card, 'b4-drawer', 380);
+  }
+  markCinematicFired('B4');
+}
+
 function startWorkstation() {
-  document.querySelector('.game-root').classList.add('is-playing');
-  renderSidebar();
+  const root = document.querySelector('.game-root');
+  // Idempotency guard (S2_ACCEPTANCE §11.5): double-click on Play must not
+  // re-fire the lifecycle event or re-render the whole workstation.
+  if (root.classList.contains('is-playing')) return;
+  root.classList.add('is-playing');
+  const s = getState();
+  announceWorkstationStarted({
+    fromResume: Array.isArray(s.evidence) && s.evidence.length > 0,
+  });
+  // renderPane FIRST — activating the default tool fires open_artifact,
+  // which grows state.viewed. Sidebar rendered AFTER sees the correct
+  // dot state (no flash on FRAME's row from the auto-opened profile).
   renderPane();
+  renderSidebar();
   updateTopbar();
+  updateBreadcrumb();
+  startTimerTick();
+  // B2 fires after workstation is visible so the stagger targets the
+  // freshly-rendered tool buttons. `workstation_started` state event
+  // subscribers can react in parallel; B2 itself is idempotent.
+  playB2();
 }
 
 function updateWelcome() {
@@ -269,13 +453,27 @@ function wireLangSwitch() {
 function onLangChange() {
   applyStaticI18n();
   updateTopbar();
+  updateBreadcrumb();
   updateWelcome();
   renderSidebar();
   renderPane();
 }
 
-function onEvidenceAdded() {
+function onEvidenceAdded(evt) {
   updateTopbar();
+  // CR-4: pulse the specific ADD button that produced this evidence, using
+  // data-artifact-id set at render time by each tool. Downstream of the
+  // state event — if the tool has been re-rendered mid-flight and the
+  // button is gone, the pulse silently no-ops.
+  const sourceId = evt?.evidence?.sourceId;
+  if (sourceId) {
+    const btn = document.querySelector(`[data-action="add-to-case"][data-artifact-id="${sourceId}"]`);
+    if (btn) pulseElement(btn, 'is-committing', 300);
+  }
+  // B4 — fires on the very first evidence added, only once per case.
+  if (sourceId && getState().evidence.length === 1) {
+    playB4(sourceId);
+  }
   // Detect newly-unlocked implemented tools since the last evidence event.
   const nextAvail = currentAvailability();
   const newlyUnlocked = [];
@@ -283,16 +481,14 @@ function onEvidenceAdded() {
     if (!prevAvailability.has(id) && IMPLEMENTED.has(id)) newlyUnlocked.push(id);
   }
   renderSidebar();  // baseline re-render first — new sidebar buttons exist now
-  // ONE consolidated toast per event, even when several tools unlock at
-  // once (candidate_001 opens CHAT + ATLAS + ARCHIVE in the same beat).
   if (newlyUnlocked.length === 1) {
     const label = TOOLS.find(x => x.id === newlyUnlocked[0])?.label || newlyUnlocked[0];
-    showToast(t('toast.tool_unlocked', { tool: label }));
+    showNotification(t('toast.tool_unlocked', { tool: label }));
   } else if (newlyUnlocked.length > 1) {
     const labels = newlyUnlocked
       .map(id => TOOLS.find(x => x.id === id)?.label || id)
       .join(' · ');
-    showToast(t('toast.tools_unlocked', { tools: labels }));
+    showNotification(t('toast.tools_unlocked', { tools: labels }));
   }
   // Sidebar-side "the workstation grew" — a soft pulse on each newly-open row
   // so a player whose attention is on the main pane still catches it.
@@ -315,9 +511,6 @@ async function boot() {
 
   // Boot sequence per ACTION_BUS_CONTRACT §4:
   //   initState → configureActionBus → registerActionHandlers → setActionResumeMode(false) → render
-  // Between configure and setActionResumeMode(false), any emit would carry
-  // fromResume:true — but no emit happens in that window (UI is not yet
-  // interactive). The flip is a guardrail against future hydration replays.
   const { wasResume } = initState(caseData.id);
   configureActionBus({ fromResume: wasResume });
   registerActionHandlers(caseData);
@@ -331,23 +524,45 @@ async function boot() {
   // First static-i18n pass (welcome/topbar/sidebar labels).
   applyStaticI18n();
 
+  // B1 — on fresh case (case_opened), play the typewriter over the welcome
+  // content. On resume, applyStaticI18n has already rendered the text
+  // statically; nothing more to do. Timing note: fire immediately after
+  // static i18n so the DOM elements exist; skip if firedOnce already
+  // recorded B1 in a prior session save.
+  if (!hasCinematicFired('B1')) {
+    playB1();
+  }
+
   subscribe(evt => {
-    if (evt.type === 'tool_changed') renderPane();
+    if (evt.type === 'tool_changed') {
+      renderPane();
+      updateBreadcrumb();
+    }
     if (evt.type === 'evidence_added') {
-      // First: acknowledge the action the player took.
-      if (evt.evidence) showToast(t('toast.evidence_saved', { id: evt.evidence.evidenceId }));
-      // Then: any consequences (unlocks, sidebar re-render).
-      onEvidenceAdded();
+      // Acknowledge the action the player took.
+      if (evt.evidence) {
+        showNotification(t('toast.evidence_saved', { id: evt.evidence.evidenceId }));
+      }
+      // Then: any consequences (commit-pulse, unlocks, sidebar re-render).
+      onEvidenceAdded(evt);
+    }
+    if (evt.type === 'viewed_added') {
+      // A newly-viewed artifact may clear a HAS UPDATES dot on its tool row.
+      renderSidebar();
     }
     if (evt.type === 'submission_updated') {
       renderSidebar();  // ANALYST may have just unlocked
       if (getState().activeTool === 'report') renderPane();
+    }
+    if (evt.type === 'report_all_required_met') {
+      showNotification(t('notif.gate_ready'), { variant: 'gate-ready' });
     }
     if (evt.type === 'reset') {
       prevBadgeCount = 0;
       prevTopbarCount = 0;
       renderSidebar();
       updateTopbar();
+      updateBreadcrumb();
     }
   });
 
@@ -357,14 +572,6 @@ async function boot() {
   wireWelcome();
   wireReset();
   wireLangSwitch();
-
-  // Delegated commit animation on any add-to-case button, no matter
-  // which tool rendered it. The button becomes disabled + relabels
-  // synchronously in its own handler; the pulse coexists.
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest && e.target.closest('[data-action="add-to-case"]');
-    if (btn && !btn.disabled) pulseElement(btn, 'is-committing', 300);
-  }, true);
 }
 
 boot();

@@ -119,7 +119,7 @@
       "url": "frame.social/alex_miller",
       "username": "alex_miller",
       "display_name": "Alex Miller",
-      "avatar": "assets/avatar-alex-miller.svg",
+      "avatar": "assets/daniel-cole-portrait.jpg",
       "bio_en": "Traveler. Coffee. Slow mornings.\nPrague based ☕",
       "bio_uk": "Мандрівник. Кава. Повільні ранки.\nЖиву у Празі ☕",
       "location_en": "Prague, CZ",
@@ -127,9 +127,9 @@
       "joined": "March 2024",
       "stats": { "posts": 24, "followers": 1847, "following": 312 },
       "posts": [
-        { "id": "p1", "cover": "assets/post-01.svg", "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
-        { "id": "p2", "cover": "assets/post-02.svg", "caption_en": "Old town light.",       "caption_uk": "Світло старого міста.", "date": "5 days ago", "likes": 98 },
-        { "id": "p3", "cover": "assets/post-03.svg", "caption_en": "Long walk. No plan.",   "caption_uk": "Довга прогулянка. Без плану.", "date": "1 week ago", "likes": 211 }
+        { "id": "p1", "cover": "assets/post-01.jpg", "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
+        { "id": "p2", "cover": "assets/post-02.jpg", "caption_en": "Old town light.",       "caption_uk": "Світло старого міста.", "date": "5 days ago", "likes": 98 },
+        { "id": "p3", "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.",   "caption_uk": "Довга прогулянка. Без плану.", "date": "1 week ago", "likes": 211 }
       ]
     },
 
