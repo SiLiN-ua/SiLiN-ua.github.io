@@ -1,6 +1,6 @@
 // tools/archive/archive.js
 // ARCHIVE — historical snapshots of a public URL / handle.
-// Snapshots are presented as historical documents — NOT live profiles.
+// Snapshots render as reconstructed cached web pages (S5.2), not ledger cards.
 
 import { isInEvidence } from '../../engine/state.js';
 import { emit as emitAction } from '../../engine/actions.js';
@@ -13,6 +13,20 @@ function esc(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function fmtCapturedUtc(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '';
+  const pad = n => String(n).padStart(2, '0');
+  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
+}
+
+function fmtNumber(n) {
+  const v = Number(n) || 0;
+  if (v >= 1000) return v.toLocaleString('en-US').replace(/,/g, ' ');
+  return String(v);
 }
 
 const view = {
@@ -95,16 +109,20 @@ function renderSnapshotList(search) {
       </div>
     `;
   }
-  const snaps = search.snapshots || [];
+  const snaps = (search.snapshots || []).slice();
   const source = search.source_url || search.query;
   const metaKey = snaps.length === 1 ? 'archive.meta.one' : 'archive.meta.many';
   const meta = t(metaKey, { n: snaps.length, source: `<b>${esc(source)}</b>` });
+  const capturedLabel = t('archive.snapshot.captured');
   return `
     <div class="archive__meta">${meta}</div>
     <ul class="archive__list">
       ${snaps.map(s => `
         <li class="archive-item">
-          <div class="archive-item__date">${esc(s.captured_at)}</div>
+          <div class="archive-item__date">
+            <span class="archive-item__captured">${esc(capturedLabel)}</span>
+            <span class="archive-item__stamp">${esc(fmtCapturedUtc(s.captured_at_iso) || s.captured_at)}</span>
+          </div>
           <div class="archive-item__body">
             <div class="archive-item__url">${esc(source)}</div>
             <div class="archive-item__note">${esc(pick(s, 'note'))}</div>
@@ -126,49 +144,37 @@ function renderSnapshotDetail(paneEl, caseData, ctx) {
     return;
   }
   const already = isInEvidence(snap.id);
-  const previewSrc = snap.preview ? resolveAsset(caseData, snap.preview) : '';
-  const kindLabel = pick(snap, 'kind_label') || snap.kind || '—';
-  const note = pick(snap, 'note');
-  const caption = pick(snap, 'caption');
+  const capturedUtc = fmtCapturedUtc(snap.captured_at_iso) || snap.captured_at || '';
+  const url = snap.source_url || '';
+  const prof = snap.profile_snapshot || null;
+
+  const bodyHtml = prof
+    ? renderProfileBody(caseData, prof, capturedUtc)
+    : renderLegacyBody(caseData, snap);
 
   paneEl.innerHTML = `
     <div class="snapshot">
       <div class="trace__breadcrumb">
         <button class="link-back" data-action="back-to-snapshots">← ${t('archive.breadcrumb')}</button>
         <span class="trace__breadcrumb-sep">/</span>
-        <span>${esc(snap.captured_at)}</span>
+        <span>${esc(capturedUtc)}</span>
       </div>
 
-      <div class="snapshot__title">${t('archive.snapshot.title')}</div>
-
-      <div class="snapshot__grid">
-        <div class="snapshot__field">
-          <div class="snapshot__field-label">${t('archive.snapshot.field.captured')}</div>
-          <div class="snapshot__field-value">${esc(snap.captured_at)}</div>
+      <div class="tx-browser-chrome archive-chrome">
+        <div class="tx-browser-chrome__bar">
+          <span class="tx-browser-chrome__nav" aria-hidden="true">&lsaquo;&nbsp;&rsaquo;</span>
+          <span class="tx-browser-chrome__dots"><i></i></span>
+          <span class="tx-browser-chrome__url">${esc(url)}</span>
+          <span class="tx-browser-chrome__tag archive-cached-tag">
+            ${t('archive.detail.chrome_tag')} · ${esc(capturedUtc)}
+          </span>
         </div>
-        <div class="snapshot__field">
-          <div class="snapshot__field-label">${t('archive.snapshot.field.source')}</div>
-          <div class="snapshot__field-value snapshot__field-value--mono">${esc(snap.source_url)}</div>
-        </div>
-        <div class="snapshot__field">
-          <div class="snapshot__field-label">${t('archive.snapshot.field.kind')}</div>
-          <div class="snapshot__field-value">${esc(kindLabel)}</div>
+        <div class="tx-browser-chrome__body archive-body">
+          ${bodyHtml}
         </div>
       </div>
 
-      ${previewSrc ? `
-        <div class="snapshot__preview">
-          <img src="${esc(previewSrc)}" alt="archive snapshot preview">
-          ${caption ? `<div class="snapshot__preview-caption">${esc(caption)}</div>` : ''}
-        </div>
-      ` : ''}
-
-      <div class="snapshot__note">
-        <div class="snapshot__field-label">${t('archive.snapshot.field.note')}</div>
-        <div class="snapshot__note-body">${esc(note)}</div>
-      </div>
-
-      <div class="frame-actions">
+      <div class="frame-actions archive-actions">
         <button class="btn-primary" data-action="add-to-case" data-artifact-id="${esc(snap.id)}" ${already ? 'disabled' : ''}>
           ${already ? t('frame.actions.saved') : t('archive.actions.add')}
         </button>
@@ -194,4 +200,76 @@ function renderSnapshotDetail(paneEl, caseData, ctx) {
       ctx.onEvidenceAdded && ctx.onEvidenceAdded();
     }
   });
+}
+
+function renderProfileBody(caseData, prof, capturedUtc) {
+  const avatarSrc = prof.avatar ? resolveAsset(caseData, prof.avatar) : '';
+  const bio = pick(prof, 'bio') || '';
+  const joined = pick(prof, 'joined') || '';
+  const location = pick(prof, 'location') || '';
+  const posts = Array.isArray(prof.posts) ? prof.posts : [];
+
+  const stats = `
+    <ul class="archive-body__stats">
+      <li><b>${fmtNumber(prof.posts_count)}</b> <span>${t('frame.stats.posts')}</span></li>
+      <li><b>${fmtNumber(prof.followers_count)}</b> <span>${t('frame.stats.followers')}</span></li>
+      <li><b>${fmtNumber(prof.following_count)}</b> <span>${t('frame.stats.following')}</span></li>
+    </ul>
+  `;
+
+  const postsHtml = posts.length
+    ? `<div class="archive-body__grid">
+         ${posts.map(p => {
+           const src = p.cover ? resolveAsset(caseData, p.cover) : '';
+           const cap = pick(p, 'caption') || '';
+           return `<figure class="archive-body__tile">
+             <div class="tx-letterbox tx-letterbox--square">
+               ${src ? `<img src="${esc(src)}" alt="${esc(cap)}" loading="lazy">` : ''}
+             </div>
+           </figure>`;
+         }).join('')}
+       </div>`
+    : `<div class="archive-body__empty">${t('archive.snapshot.no_posts')}</div>`;
+
+  return `
+    <div class="archive-body__stamp">${esc(capturedUtc)}</div>
+
+    <header class="archive-body__header">
+      <div class="archive-body__avatar tx-letterbox tx-letterbox--square">
+        ${avatarSrc ? `<img src="${esc(avatarSrc)}" alt="">` : ''}
+      </div>
+      <div class="archive-body__meta">
+        <div class="archive-body__handle">@${esc(prof.username || '')}</div>
+        <div class="archive-body__name">${esc(prof.display_name || '')}</div>
+        ${bio ? `<div class="archive-body__bio">${esc(bio).replace(/\n/g,'<br>')}</div>` : ''}
+        <div class="archive-body__footer">
+          ${location ? `<span>${esc(location)}</span>` : ''}
+          ${joined ? `<span>${esc(joined)}</span>` : ''}
+        </div>
+      </div>
+    </header>
+
+    ${stats}
+
+    <section class="archive-body__posts">
+      ${postsHtml}
+    </section>
+  `;
+}
+
+function renderLegacyBody(caseData, snap) {
+  const previewSrc = snap.preview ? resolveAsset(caseData, snap.preview) : '';
+  const note = pick(snap, 'note');
+  const caption = pick(snap, 'caption');
+  return `
+    <div class="archive-body__legacy">
+      ${previewSrc ? `<div class="snapshot__preview">
+        <img src="${esc(previewSrc)}" alt="archive snapshot preview">
+        ${caption ? `<div class="snapshot__preview-caption">${esc(caption)}</div>` : ''}
+      </div>` : ''}
+      <div class="snapshot__note">
+        <div class="snapshot__note-body">${esc(note)}</div>
+      </div>
+    </div>
+  `;
 }

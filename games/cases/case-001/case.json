@@ -250,10 +250,10 @@
       "snapshots": [
         {
           "id": "archive_snapshot_alex_miller_2024_03",
-          "captured_at": "15 MAR 2024",
-          "captured_at_iso": "2024-03-15T09:12:00Z",
-          "note_en": "Earliest indexed snapshot. Profile exists. No posts indexed.",
-          "note_uk": "Найраніший проіндексований знімок. Профіль існує. Постів не проіндексовано."
+          "captured_at": "19 MAR 2024",
+          "captured_at_iso": "2024-03-19T22:07:00Z",
+          "note_en": "Populated profile. Three posts visible.",
+          "note_uk": "Заповнений профіль. Видно три пости."
         }
       ]
     },
@@ -267,18 +267,18 @@
       "engine_note": "ARCHIVE · public historical snapshots. Not a live view — captures only.",
       "snapshots": [
         {
-          "id": "archive_snapshot_alex_miller_uk_2019_02",
-          "captured_at": "02 FEB 2019",
-          "captured_at_iso": "2019-02-02T14:03:00Z",
-          "note_en": "Account already exists at this capture. Portfolio-style bio.",
-          "note_uk": "На момент знімка акаунт уже існує. Біо у стилі портфоліо."
-        },
-        {
           "id": "archive_snapshot_alex_miller_uk_2023_05",
           "captured_at": "14 MAY 2023",
-          "captured_at_iso": "2023-05-14T18:42:00Z",
+          "captured_at_iso": "2023-05-14T09:41:00Z",
           "note_en": "Post containing the Prague photograph is present in this snapshot.",
           "note_uk": "На цьому знімку вже присутній пост із празькою фотографією."
+        },
+        {
+          "id": "archive_snapshot_alex_miller_uk_2019_02",
+          "captured_at": "08 NOV 2019",
+          "captured_at_iso": "2019-11-08T03:12:00Z",
+          "note_en": "Account already exists at this capture. Portfolio-style bio, no posts yet.",
+          "note_uk": "На момент знімка акаунт уже існує. Біо у стилі портфоліо, постів ще немає."
         }
       ]
     },
@@ -289,14 +289,32 @@
       "tool": "archive",
       "source": "archive_search_alex_miller",
       "source_url": "frame.social/alex_miller",
-      "captured_at": "15 MAR 2024",
-      "captured_at_iso": "2024-03-15T09:12:00Z",
-      "kind": "earliest_indexed",
-      "kind_label_en": "EARLIEST INDEXED SNAPSHOT",
-      "kind_label_uk": "НАЙРАНІШИЙ ПРОІНДЕКСОВАНИЙ ЗНІМОК",
-      "preview": "assets/snapshot-empty-profile.svg",
-      "note_en": "Profile exists. No posts indexed.\nEarliest snapshot currently retrievable for this handle.",
-      "note_uk": "Профіль існує. Постів не проіндексовано.\nЦе найраніший доступний знімок для цього хендла."
+      "captured_at": "19 MAR 2024",
+      "captured_at_iso": "2024-03-19T22:07:00Z",
+      "kind": "populated_profile",
+      "kind_label_en": "ARCHIVED PROFILE — POPULATED",
+      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ — ЗАПОВНЕНИЙ",
+      "note_en": "Profile is fully populated at this capture.\nThree posts visible — same source material as archived under a different handle before.",
+      "note_uk": "На момент знімка профіль повністю заповнений.\nВидно три пости — той самий вихідний матеріал, що раніше зафіксовано під іншим хендлом.",
+      "profile_snapshot": {
+        "username": "alex_miller",
+        "display_name": "Alex Miller",
+        "avatar": "assets/daniel-cole-portrait.jpg",
+        "bio_en": "Traveler. Coffee. Slow mornings.\nPrague based",
+        "bio_uk": "Мандрівник. Кава. Повільні ранки.\nЖиву у Празі",
+        "location_en": "Prague, CZ",
+        "location_uk": "Прага, Чехія",
+        "joined_en": "Joined March 2024",
+        "joined_uk": "Приєднався у березні 2024",
+        "posts_count": 24,
+        "followers_count": 1817,
+        "following_count": 312,
+        "posts": [
+          { "cover": "assets/post-01.jpg", "caption_en": "Morning in Prague", "caption_uk": "Ранок у Празі" },
+          { "cover": "assets/post-02.jpg", "caption_en": "Old town light.",   "caption_uk": "Світло старого міста." },
+          { "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.","caption_uk": "Довга прогулянка. Без плану." }
+        ]
+      }
     },
 
     "archive_snapshot_alex_miller_uk_2019_02": {
@@ -305,14 +323,28 @@
       "tool": "archive",
       "source": "archive_search_alex_miller_uk",
       "source_url": "frame.social/alex.miller.uk",
-      "captured_at": "02 FEB 2019",
-      "captured_at_iso": "2019-02-02T14:03:00Z",
-      "kind": "account_exists",
-      "kind_label_en": "ARCHIVED PROFILE",
-      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ",
-      "preview": "assets/snapshot-account-exists.svg",
-      "note_en": "Account already exists at this capture.\nPortfolio-style bio, hire enquiries welcome.",
-      "note_uk": "На момент знімка акаунт уже існує.\nБіо у стилі портфоліо, автор відкритий до замовлень."
+      "captured_at": "08 NOV 2019",
+      "captured_at_iso": "2019-11-08T03:12:00Z",
+      "kind": "account_exists_empty",
+      "kind_label_en": "ARCHIVED PROFILE — EMPTY",
+      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ — ПОРОЖНІЙ",
+      "note_en": "Account already exists at this capture.\nPortfolio-style bio, no posts yet.",
+      "note_uk": "На момент знімка акаунт уже існує.\nБіо у стилі портфоліо, постів ще немає.",
+      "profile_snapshot": {
+        "username": "alex.miller.uk",
+        "display_name": "Alex Miller",
+        "avatar": "assets/daniel-cole-portrait.jpg",
+        "bio_en": "Photographer. Manchester, UK.\nLandscape · portrait · slow travel.",
+        "bio_uk": "Фотограф. Манчестер, Велика Британія.\nПейзаж · портрет · повільні подорожі.",
+        "location_en": "Manchester, UK",
+        "location_uk": "Манчестер, Велика Британія",
+        "joined_en": "Joined August 2018",
+        "joined_uk": "Приєднався у серпні 2018",
+        "posts_count": 0,
+        "followers_count": 118,
+        "following_count": 47,
+        "posts": []
+      }
     },
 
     "archive_snapshot_alex_miller_uk_2023_05": {
@@ -322,15 +354,30 @@
       "source": "archive_search_alex_miller_uk",
       "source_url": "frame.social/alex.miller.uk",
       "captured_at": "14 MAY 2023",
-      "captured_at_iso": "2023-05-14T18:42:00Z",
+      "captured_at_iso": "2023-05-14T09:41:00Z",
       "kind": "archived_post",
-      "kind_label_en": "ARCHIVED POST",
-      "kind_label_uk": "АРХІВНИЙ ПОСТ",
-      "preview": "assets/post-01.svg",
-      "caption_en": "Prague, spring 2023. Reprint available.",
-      "caption_uk": "Прага, весна 2023. Доступний передрук.",
+      "kind_label_en": "ARCHIVED PROFILE — INTERMEDIATE",
+      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ — ПРОМІЖНИЙ",
       "note_en": "Post containing the Prague photograph is present in this snapshot.",
-      "note_uk": "На цьому знімку вже присутній пост із празькою фотографією."
+      "note_uk": "На цьому знімку вже присутній пост із празькою фотографією.",
+      "profile_snapshot": {
+        "username": "alex.miller.uk",
+        "display_name": "Alex Miller",
+        "avatar": "assets/daniel-cole-portrait.jpg",
+        "bio_en": "Photographer. Manchester, UK.\nLandscape · portrait · slow travel.\nAvailable for hire → DM.",
+        "bio_uk": "Фотограф. Манчестер, Велика Британія.\nПейзаж · портрет · повільні подорожі.\nПриймаю замовлення → в директ.",
+        "location_en": "Manchester, UK",
+        "location_uk": "Манчестер, Велика Британія",
+        "joined_en": "Joined August 2018",
+        "joined_uk": "Приєднався у серпні 2018",
+        "posts_count": 214,
+        "followers_count": 8340,
+        "following_count": 176,
+        "posts": [
+          { "cover": "assets/post-01.jpg", "caption_en": "Prague, spring 2023. Reprint available.", "caption_uk": "Прага, весна 2023. Доступний передрук." },
+          { "cover": "assets/post-02.jpg", "caption_en": "Old town — early light.",                  "caption_uk": "Старе місто — раннє світло." }
+        ]
+      }
     },
 
     "chat_search_alex_miller": {

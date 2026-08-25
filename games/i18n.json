@@ -109,6 +109,9 @@
     "archive.snapshot.field.note":     "ARCHIVE NOTE",
     "archive.actions.add":        "+ Add to evidence",
     "archive.actions.back":       "← Back to snapshots",
+    "archive.snapshot.captured":  "captured",
+    "archive.snapshot.no_posts":  "No posts at this capture",
+    "archive.detail.chrome_tag":  "CACHED",
 
     "atlas.breadcrumb":           "ATLAS results",
     "atlas.label":                "ATLAS · location & professional record lookup",
@@ -322,6 +325,9 @@
     "archive.snapshot.field.note":     "ПРИМІТКА АРХІВУ",
     "archive.actions.add":        "+ Додати до доказів",
     "archive.actions.back":       "← Назад до знімків",
+    "archive.snapshot.captured":  "зафіксовано",
+    "archive.snapshot.no_posts":  "На цьому знімку постів немає",
+    "archive.detail.chrome_tag":  "КЕШ",
 
     "atlas.breadcrumb":           "Результати ATLAS",
     "atlas.label":                "ATLAS · пошук за локацією та професійним реєстром",

@@ -1869,6 +1869,151 @@ body::before, body::after { display: none; }
   white-space: pre-line;
 }
 
+/* ---------- S5.2 · Cached-page snapshot detail ---------- */
+.archive-chrome { max-width: 780px; margin: 0 auto 1.25rem; }
+.archive-cached-tag { white-space: nowrap; }
+.archive-actions { max-width: 780px; margin: 0 auto; }
+
+.archive-item__captured {
+  display: block;
+  font-size: .58rem;
+  letter-spacing: .22em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-bottom: .2rem;
+}
+.archive-item__stamp {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  color: var(--ice);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scoped desaturation — reads as a mildly aged capture. Overrides ONLY
+   inside this container; global tokens untouched. */
+.archive-body {
+  --ice: #6b7ea3;
+  --ice-glow: #8391ad;
+  --cream: #d3d9e6;
+  --text: #a9b1c2;
+  --text-dim: #7a8298;
+  --text-mute: #5b6377;
+  background: #eef1f5;
+  color: #2a3040;
+  padding: 1.75rem 1.6rem 1.6rem;
+  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  position: relative;
+}
+.archive-body__stamp {
+  position: absolute;
+  top: .55rem;
+  right: .75rem;
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .12em;
+  color: #7a8298;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+.archive-body__header {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #cfd6df;
+  margin-bottom: 1.1rem;
+}
+.archive-body__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d6dae2;
+  border: 1px solid #b9c0cb;
+  box-shadow: none;
+}
+.archive-body__avatar > img { filter: saturate(.75) contrast(.95); }
+.archive-body__handle {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .05em;
+  color: #5b6377;
+  margin-bottom: .15rem;
+}
+.archive-body__name {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: #1a2030;
+  margin-bottom: .55rem;
+}
+.archive-body__bio {
+  font-size: .92rem;
+  line-height: 1.5;
+  color: #3a4256;
+  margin-bottom: .55rem;
+  max-width: 46ch;
+}
+.archive-body__footer {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  color: #6b7387;
+  text-transform: uppercase;
+}
+.archive-body__stats {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0 0 1.1rem;
+  padding: 0 0 1.1rem;
+  border-bottom: 1px solid #cfd6df;
+}
+.archive-body__stats li {
+  display: flex;
+  align-items: baseline;
+  gap: .35rem;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: #6b7387;
+  letter-spacing: .06em;
+}
+.archive-body__stats b {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: #1a2030;
+  font-variant-numeric: tabular-nums;
+}
+.archive-body__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .35rem;
+}
+.archive-body__tile { margin: 0; }
+.archive-body__tile .tx-letterbox {
+  background: #cfd6df;
+  border: 1px solid #b9c0cb;
+  box-shadow: none;
+}
+.archive-body__tile img { filter: saturate(.72) contrast(.95); }
+.archive-body__empty {
+  padding: 2.2rem 1rem;
+  text-align: center;
+  border: 1px dashed #b9c0cb;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  color: #6b7387;
+  text-transform: uppercase;
+}
+.archive-body__legacy { padding: 1.25rem; }
+
 /* ==========================================================
    CHAT — messenger handle lookup
    ========================================================== */
