@@ -96,6 +96,28 @@
     "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2"
   },
   {
+    "title_uk": "Дев'ять кімнат",
+    "title_en": "Nine Rooms",
+    "category": "fiction",
+    "year": 2026,
+    "languages": "UA · EN · RU",
+    "cover": "/img/uploads/Cover_NineRooms_UK.png",
+    "description_uk": "Художній трилер. Друга книга серії «Файли Ляльковика», продовження «Снігової кімнати». Саппоро, два місяці по тому. Ідзакая «Кінґьо» в Сусукіно стоїть зачинена: її господаря, Сато Ейджі, забрали тієї ночі, якою скінчилася перша книга, і орендодавець уже розриває договір. Інспектор Юкіо Куросава розбиває вітрину власного улюбленого бару і заходить усередину — бо офіційно шукати нема чого. Далі — те, що він уміє найкраще: закриті японські цифрові простори, реєстри рьоканів, чотири фірми з одним поштовим ящиком на всіх. У відділі з'являється Кендзі Ямада, двадцятип'ятирічний OSINT-технар, який читає мережу швидше за Куросаву й обережніше за нього ж. Тоші Накамура сидить в ізоляторі й дає свідчення рівно настільки, наскільки йому вигідно. А сам Ляльковик уперше звертається до Куросави особисто. Двадцять п'ять розділів. Серія завершиться третьою книгою.",
+    "description_en": "A fiction thriller. Book two of The Doll Maker Files, following The Snow Room. Sapporo, two months later. The Kingyo izakaya in Susukino stands shuttered: its owner, Eiji Sato, was taken on the night book one ended, and the landlord is already terminating the lease. Inspector Yukio Kurosawa breaks the window of his own favourite bar and lets himself in — because officially there is nothing left to investigate. What follows is what he does best: closed Japanese digital spaces, ryokan registries, four companies sharing a single post box. The department gains Kenji Yamada, a twenty-five-year-old OSINT technician who reads the network faster than Kurosawa and more carefully than he does. Toshi Nakamura sits in a detention center, giving up exactly as much as serves him. And the Doll Maker addresses Kurosawa personally for the first time. Twenty-five chapters. The series concludes in book three.",
+    "pdf_url_uk": "/content/books/pdfs/Nine_Rooms_UK.pdf",
+    "pdf_url_en": "/content/books/pdfs/Nine_Rooms_EN.pdf",
+    "pdf_url_ru": "/content/books/pdfs/Nine_Rooms_RU.pdf",
+    "epub_url_uk": "/content/books/ebooks/Nine_Rooms_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/Nine_Rooms_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/Nine_Rooms_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/Nine_Rooms_EN.fb2",
+    "epub_url_ru": "/content/books/ebooks/Nine_Rooms_RU.epub",
+    "fb2_url_ru": "/content/books/ebooks/Nine_Rooms_RU.fb2",
+    "order": 16,
+    "published": true,
+    "__slug": "nine-rooms"
+  },
+  {
     "title_uk": "REPUTATION",
     "title_en": "REPUTATION",
     "category": "fiction",
