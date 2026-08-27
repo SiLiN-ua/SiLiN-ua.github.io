@@ -91,17 +91,26 @@
     if (!links.length && item.buy_url) links.push(`<a href="${escapeHtml(item.buy_url)}" target="_blank" rel="noopener" class="card__link">Читати ↗</a>`);
 
     // Files to keep: PDF plus EPUB / FB2 for e-ink readers and apps like FBReader.
-    // A language shows up only when its files exist, so RU appears on the books
-    // that have it without touching the rest.
+    // One row per language, formats in fixed columns — a language shows up only
+    // when its files exist, so RU appears without disturbing the other rows.
+    const FORMATS = ['pdf', 'epub', 'fb2'];
     const dl = [];
     [['uk', 'UA'], ['en', 'EN'], ['ru', 'RU']].forEach(([code, badge]) => {
-      const fmts = ['pdf', 'epub', 'fb2']
-        .filter(f => item[f + '_url_' + code])
-        .map(f => `<a href="${escapeHtml(item[f + '_url_' + code])}" download class="book__dl">${f.toUpperCase()}</a>`);
-      if (fmts.length) dl.push(`<span class="book__dl-lang">${badge}</span>${fmts.join('')}`);
+      const cells = FORMATS.map(f => {
+        const url = item[f + '_url_' + code];
+        return url
+          ? `<a href="${escapeHtml(url)}" download class="book__dl">${f.toUpperCase()}</a>`
+          : '<span class="book__dl book__dl--none"></span>';
+      });
+      if (cells.some(c => c[1] === 'a')) {
+        dl.push(`<span class="book__dl-lang">${badge}</span>${cells.join('')}`);
+      }
     });
     const dlRow = dl.length
-      ? `<div class="book__dls"><span class="book__dl-label">${escapeHtml(dict['books.download'] || 'Завантажити')}</span>${dl.join('')}</div>`
+      ? `<div class="book__dls">
+           <div class="book__dl-label">${escapeHtml(dict['books.download'] || 'Завантажити')}</div>
+           <div class="book__dl-grid">${dl.join('')}</div>
+         </div>`
       : '';
 
     return `
