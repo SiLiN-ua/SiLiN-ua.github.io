@@ -1,0 +1,21 @@
+{
+  "title_uk": "The Shadow Files · Том III: Важкі цілі",
+  "title_en": "The Shadow Files · Vol III: Hard Targets",
+  "category": "educational",
+  "year": 2026,
+  "languages": "UA · EN · RU",
+  "cover": "/img/uploads/Cover_ShadowFiles_Vol3_UK.png",
+  "description_uk": "Третій том курсу — про випадки, коли цілі просто немає там, де її шукав би звичайний пошук. Акаунт видалили три роки тому. У фотографії немає ні підпису, ні метаданих, ні очевидного орієнтира. Домен захований за приватним проксі. Операція взагалі не в соцмережах — вона на сервері у стійці, і єдине, що на неї вказує, це сертифікат, виданий машиною о третій ночі. Нічого з цього не зникло — воно зміщене на іншу поверхню: в архів, у тінь на землі, в лог прозорості сертифікатів, у геш фавікону. Дев'ять розділів: реконструкція видаленого акаунта, прив'язка фото до місця за тінями і до часу за погодою й сонцем, історія реєстрації доменів, Certificate Transparency, пасивний DNS і відбитки, шлях від інфраструктури назад до людини. Плюс чотири додатки й глосарій. Ніщо тут не потребує логіну, пароля чи обходу замка — тільки вміння правильно прочитати те, що світ уже зробив публічним.",
+  "description_en": "The third volume is about the cases where the target is not where a normal search would look. The account was deleted three years ago. The photograph has no caption, no metadata, no obvious landmark. The domain sits behind a privacy proxy. The operation is not on social media at all — it is on a server in a rack, and the only thing pointing at it is a certificate a machine issued at three in the morning. None of it is really gone: it has been displaced onto a different surface — an archive, a shadow on the ground, a certificate log, a favicon hash. Nine chapters: reconstructing a deleted account, placing a photo on the map by its shadows and in time by weather and sun, domain registration history, Certificate Transparency, passive DNS and fingerprints, and the road from infrastructure back to a person. Plus four appendices and a glossary. Nothing here needs a login, a password or a lock picked — only the skill to read correctly what the world has already made public.",
+  "pdf_url_uk": "/content/books/pdfs/The_Shadow_Files_Vol3_UK.pdf",
+  "pdf_url_en": "/content/books/pdfs/The_Shadow_Files_Vol3_EN.pdf",
+  "pdf_url_ru": "/content/books/pdfs/The_Shadow_Files_Vol3_RU.pdf",
+  "epub_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol3_UK.epub",
+  "fb2_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol3_UK.fb2",
+  "epub_url_en": "/content/books/ebooks/The_Shadow_Files_Vol3_EN.epub",
+  "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol3_EN.fb2",
+  "epub_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol3_RU.epub",
+  "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol3_RU.fb2",
+  "order": 3,
+  "published": true
+}
