@@ -106,11 +106,14 @@
         dl.push(`<span class="book__dl-lang">${badge}</span>${cells.join('')}`);
       }
     });
+    // Folded away behind one button: nine links is a lot of card to spend on
+    // something most visitors read past. <details> keeps it keyboard-usable
+    // and working with no JS of ours.
     const dlRow = dl.length
-      ? `<div class="book__dls">
-           <div class="book__dl-label">${escapeHtml(dict['books.download'] || 'Завантажити')}</div>
+      ? `<details class="book__dls">
+           <summary class="book__dl-toggle"><span class="book__dl-toggle-text">${escapeHtml(dict['books.download'] || 'Завантажити')}</span><span class="book__dl-arrow" aria-hidden="true">▾</span></summary>
            <div class="book__dl-grid">${dl.join('')}</div>
-         </div>`
+         </details>`
       : '';
 
     return `
