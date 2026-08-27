@@ -5,7 +5,7 @@
   "subtitle_en": "A memoir of attention",
   "category": "memoir",
   "year": 2026,
-  "languages": "UA · EN",
+  "languages": "UA · EN · RU",
   "cover": "/img/uploads/Cover_BehindDigitalTrace_UK.png",
   "description_uk": "Це не посібник. Це не довідник з інструментів. Це — історія про те, як робота з відкритими джерелами змінює того, хто нею займається. П'ятнадцять розділів і епілог — від того першого тижня, коли світ уперше «повернувся іншим боком», до нинішньої щоденної практики жити з цим натренованим OSINT-поглядом. Про моменти зламу, реальні розслідування, помилки, які довелося визнати, і про те, як інакше починаєш дивитися на людей, на інформацію та, зрештою, на самого себе.",
   "description_en": "Not a manual. Not a technique guide. A story of how open-source intelligence work changes the person who does it. Fifteen chapters and an epilogue — from that first week when the world «turned to its other side», to the current daily practice of living with this trained OSINT gaze. About breaking points, real investigations, the mistakes I had to acknowledge, and how you start seeing people, information, and eventually yourself differently.",
@@ -16,5 +16,8 @@
   "epub_url_uk": "/content/books/ebooks/Behind_the_Digital_Trace_UK.epub",
   "fb2_url_uk": "/content/books/ebooks/Behind_the_Digital_Trace_UK.fb2",
   "epub_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.epub",
-  "fb2_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.fb2"
+  "fb2_url_en": "/content/books/ebooks/Behind_the_Digital_Trace_EN.fb2",
+  "pdf_url_ru": "/content/books/pdfs/Behind_the_Digital_Trace_RU.pdf",
+  "epub_url_ru": "/content/books/ebooks/Behind_the_Digital_Trace_RU.epub",
+  "fb2_url_ru": "/content/books/ebooks/Behind_the_Digital_Trace_RU.fb2"
 }

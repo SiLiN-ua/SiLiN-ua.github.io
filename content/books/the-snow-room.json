@@ -3,7 +3,7 @@
   "title_en": "The Snow Room",
   "category": "fiction",
   "year": 2026,
-  "languages": "UA · EN",
+  "languages": "UA · EN · RU",
   "cover": "/img/uploads/Cover_TheSnowRoom_UK.png",
   "description_uk": "Художній трилер. Перша книга серії «Файли Ляльковика». Зима, Саппоро. Інспектор Юкіо Куросава з відділу зниклих безвісти читає закриті японські цифрові простори — 5channel, LINE, pixiv, бронювання рьокан — так, як інші читають газети. Три роки тому його племінниця Аяно зникла в Сірєтоко; офіційно — «ведмідь». Ту справу він не закрив. Тепер до нього приходять родичі трьох людей, яких начебто відпустили — але «повернулися» вони чужими: змінилася мова, старі спогади не збігаються. Слід веде до старої гірської рьокан, де хтось не вбиває жертв, а переписує їх — по одному спогаду за раз. Двадцять чотири розділи. Standalone-фінал, серія на трьох книгах.",
   "description_en": "A fiction thriller. Book one of The Doll Maker Files. Winter, Sapporo. Inspector Yukio Kurosawa of the Missing Persons unit reads the closed Japanese digital spaces — 5channel, LINE, pixiv, ryokan bookings — the way others read the news. Three years ago his niece Ayano vanished in Shiretoko; officially, a bear. He never closed the case. Now the families of three people who were 'let go' come to him — their loved ones returned strangers: their speech has changed, their old memories no longer line up. The trail leads to an abandoned mountain ryokan where someone does not kill his victims, but rewrites them — one memory at a time. Twenty-four chapters. Standalone finale, series planned in three books.",
@@ -14,5 +14,8 @@
   "epub_url_uk": "/content/books/ebooks/The_Snow_Room_UK.epub",
   "fb2_url_uk": "/content/books/ebooks/The_Snow_Room_UK.fb2",
   "epub_url_en": "/content/books/ebooks/The_Snow_Room_EN.epub",
-  "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2"
+  "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2",
+  "pdf_url_ru": "/content/books/pdfs/The_Snow_Room_RU.pdf",
+  "epub_url_ru": "/content/books/ebooks/The_Snow_Room_RU.epub",
+  "fb2_url_ru": "/content/books/ebooks/The_Snow_Room_RU.fb2"
 }

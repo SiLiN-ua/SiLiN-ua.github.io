@@ -3,7 +3,7 @@
   "title_en": "The Shadow Files · Vol I: Foundations",
   "category": "educational",
   "year": 2026,
-  "languages": "UA · EN",
+  "languages": "UA · EN · RU",
   "cover": "/img/uploads/Cover_ShadowFiles_Vol1_UK.png",
   "description_uk": "Перший том авторського курсу з OSINT — для тих, хто робить перші кроки у сфері відкритих джерел. Основи галузі, юридичні та етичні рамки, OPSEC-мислення, побудова аналітичної логіки та перші робочі техніки: пошук за ім'ям користувача, email, телефоном. Кожен розділ — не лекція, а тренування: реальні кейси, вправи, розбір помилок. Мета книги — не перерахувати інструменти, а навчити думати як слідчий.",
   "description_en": "The first volume of the author's OSINT course — for those taking their first steps into open-source intelligence. Foundations of the field, legal and ethical frameworks, an OPSEC mindset, analytical reasoning, and the first working techniques: username, email, and phone-based searches. Each chapter is training, not a lecture — real cases, exercises, breakdowns of mistakes. The goal is not to list tools, but to teach how to think like an investigator.",
@@ -14,5 +14,8 @@
   "epub_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol1_UK.epub",
   "fb2_url_uk": "/content/books/ebooks/The_Shadow_Files_Vol1_UK.fb2",
   "epub_url_en": "/content/books/ebooks/The_Shadow_Files_Vol1_EN.epub",
-  "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol1_EN.fb2"
+  "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol1_EN.fb2",
+  "pdf_url_ru": "/content/books/pdfs/The_Shadow_Files_Vol1_RU.pdf",
+  "epub_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol1_RU.epub",
+  "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol1_RU.fb2"
 }
