@@ -80,14 +80,16 @@
   function renderBookCard(item) {
     const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
     const title = escapeHtml(tr(item, 'title'));
-    const desc  = escapeHtml(tr(item, 'description'));
     const year  = escapeHtml(item.year || '');
     const langs = escapeHtml(item.languages || '');
     // Blurbs run long. Show the opening and let the rest wait behind a toggle,
     // so the shelf stays scannable. Some books open with a label — "Художній
     // трилер." — so keep taking sentences until the preview actually says
     // something.
-    const sentences = desc.match(/[^.!?…]+[.!?…]+|[^.!?…]+$/g) || [desc];
+    // Measure the plain text: escaping first would make an apostrophe cost
+    // five characters of the budget and cut the lead short.
+    const plain = tr(item, 'description') || '';
+    const sentences = plain.match(/[^.!?…]+[.!?…]+|[^.!?…]+$/g) || [plain];
     let lead = '', taken = 0;
     while (taken < sentences.length) {
       const next = sentences[taken];
@@ -95,12 +97,12 @@
       lead += next;
       taken++;
     }
-    lead = lead.trim();
-    const rest = sentences.slice(taken).join('').trim();
+    lead = escapeHtml(lead.trim());
+    const rest = escapeHtml(sentences.slice(taken).join('').trim());
     // Covers carry their own typography, so the card shows the one that
     // matches the interface language and falls back to the Ukrainian art.
     const coverSrc = tr(item, 'cover');
-    const cover = coverSrc ? `<img src="${escapeHtml(coverSrc)}" alt="${title}" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
+    const cover = coverSrc ? `<img src="${escapeHtml(coverSrc)}" alt="${title}" loading="lazy" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
     const links = [];
     if (item.pdf_url_uk) links.push(`<a href="${escapeHtml(item.pdf_url_uk)}" target="_blank" rel="noopener" class="btn" style="padding:.6rem 1rem;font-size:.7rem">📖 Читати українською</a>`);
     if (item.pdf_url_en) links.push(`<a href="${escapeHtml(item.pdf_url_en)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 Read in English</a>`);
@@ -119,7 +121,7 @@
           ? `<a href="${escapeHtml(url)}" download class="book__dl">${f.toUpperCase()}</a>`
           : '<span class="book__dl book__dl--none"></span>';
       });
-      if (cells.some(c => c[1] === 'a')) {
+      if (FORMATS.some(f => item[f + '_url_' + code])) {
         dl.push(`<span class="book__dl-lang">${badge}</span>${cells.join('')}`);
       }
     });
