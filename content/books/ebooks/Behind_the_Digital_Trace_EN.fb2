@@ -12,7 +12,7 @@
 <document-info>
 <author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>5feab461-c7b5-4072-9ffd-2cb6d3359778</id>
+<id>6f405030-a910-4c12-8199-c52885c6abcd</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
@@ -47,7 +47,7 @@
 <p>I was the newest person in the room. I had no seniority, no history, no established track record. But I had found something useful through a route nobody else in that unit was using. And that changed how I was seen — not because of rank, but because of the result and the method behind it.</p>
 <p>From that point, there were moments when colleagues came to me not for official analytical support but for something off the formal channels. Information needed quickly, without creating a paper trail, without the machinery of a formal request. I was not senior. I was simply the person who had found a different path.</p>
 <p>I didn't call it OSINT then. I didn't know the word. I just called it what it was: looking more carefully at what was already there.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Most people, when they enter investigative work, are handed tools and taught to use them. The tools define the approach. The approach shapes what you find. And what you find gradually defines what you believe is possible.</p>
 <p>The restriction placed on me that week — no internal databases, no colleagues, no official channels — removed the entire standard toolkit at once. What remained was only me and whatever existed in publicly accessible space. It should have been a severe limitation. Instead, it functioned as a different kind of training.</p>
 <p>When you remove familiar instruments, you are forced to think about the problem differently. Not: what tools do I have? But: what is actually there? What exists that I haven't considered yet? Where does this person leave marks without knowing they're leaving them?</p>
@@ -62,7 +62,7 @@
 <p>I had looked at the information, I had formed a picture, and I had moved toward a conclusion without verifying whether the conclusion was the only one the evidence could support. Not because I was careless — because everything I saw pointed in one direction, and I stopped questioning whether the direction was correct before committing to it.</p>
 <p>The person was not responsible for what I attributed to them. By the time I understood this, the conclusion had already been stated.</p>
 <p>I don't describe the case in detail. What I describe is what the mistake taught me, because the teaching has lasted longer than the case itself.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Speed is seductive in this work.</p>
 <p>When everything aligns — when the data is consistent, when the pattern holds, when each new piece confirms what you already see — there is a feeling that is almost physical. The uncertainty lifts. The tension of not knowing resolves into the clarity of knowing. It feels like arrival.</p>
 <p>That feeling is the most dangerous moment in any investigation.</p>
@@ -81,7 +81,7 @@
 <p>There was no single incident. No breaking point I can point to and say — there, that was it. The decision formed slowly, over months, as a gradual recognition that what I was building inside the institution had grown past what the institution was structured to hold. The work I cared about most was pulling in a direction the system wasn't designed to follow.</p>
 <p>I gave up the uniform. The rank. The identity that came with both, which in Ukraine — in the context of law enforcement, in the context of what the country had been through and was still going through — carried a specific weight.</p>
 <p>What I got in return was time. Direction. And a name for the thing I had been doing for years without knowing what to call it.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Since February 24, 2022, I have lived in Ukraine at war.</p>
 <p>I say this plainly because it is plain. It is not dramatic — in the sense that drama requires contrast, and what I'm describing has long since become the baseline. You adapt. Everyone adapts. The adaptations accumulate until the thing you have adapted to simply becomes the condition of life.</p>
 <p>But adaptation is not indifference.</p>
@@ -94,7 +94,7 @@
 <p>This is not heroism. It is simply what it is to be here, doing this work, inside this reality. The tools I have built, the cases I have worked, the thinking I have developed — all of it exists inside a country where what is at stake is not abstract.</p>
 <p>I don't say this to explain the work. The work stands independently of the context.</p>
 <p>I say it because the context is real, and leaving it out would make this book less honest than it should be.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>OSINT is not a widely understood profession in Ukraine.</p>
 <p>I say this not as a complaint but as a fact that has shaped everything about how I have worked since leaving law enforcement. When I explain what I do, I watch people process it. Some understand immediately. Others hear "open sources" and think: you search Google. You look at social media. Anyone can do that.</p>
 <p>I've stopped arguing with this framing. What I do instead is show results.</p>
@@ -108,14 +108,14 @@
 <p>Not as an officer. Not with a badge or a warrant. As a civilian — someone who had made contact through the right channels and been perceived as a potential recruit. Someone who might, theoretically, learn the system and become part of it.</p>
 <p>I had two days before I needed to leave without raising questions.</p>
 <p>I used them to watch.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>The desk looked like every other desk.</p>
 <p>A screen, a headset, a database. People sitting nearby, doing work. The rhythm of an office — start time, end time, breaks, a manager who moved between stations, performance being tracked. If you had seen it from outside, through a window, you would have assumed it was an ordinary call center. Customer service. Insurance. Something organized, professional, and completely mundane.</p>
 <p>It was organized and professional. It was defrauding people across three countries.</p>
 <p>What struck me was not the malice of it. What struck me was the normality. The operators were not performing cruelty. They were doing a job they had been trained to do, with the professionalism that comes from repetition and refinement. The scripts had been tested over hundreds of calls and adjusted based on what worked. The escalation structure was designed with the logic of any sales organization, applied to the specific task of manufacturing trust in strangers. The system had learned what worked the way any system learns: by running the process, tracking outcomes, and eliminating what failed. What remained was efficient.</p>
 <p>I have told this story many times since those two days. I tell it not because fraud is unusual but because the form of it reveals something about how manipulation functions. It does not rely on stupidity. It relies on the same mechanisms that make all genuine human connection possible: trust, recognition, the experience of being understood. The only difference between manipulation and connection is the intent behind the behavior. The behavior itself is identical.</p>
 <p>This is the thing that most people miss when they say "I would never fall for that." The confidence in that statement assumes that falling requires a failure of intelligence. It doesn't. The system is designed to work on people as they actually are — precisely for people who trust carefully, who think critically, who would reject an obvious approach — because only those people have the kind of trust that is worth engineering over weeks.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Sitting inside that operation changed how I see systems.</p>
 <p>After those two days, I understood the escalation in a way that diagrams cannot convey. I understood the psychological sequence — not as an abstract model but as something I had watched applied to real people, in real time, with real effect. And I understood something that became one of the most important principles in my work afterward:</p>
 <p>By the time a victim transfers money, the decision has already been made. Not at the moment of transfer. Weeks earlier. At the point when a relationship became real to them, when the voice on the other end of the phone became someone they trusted, when the investment opportunity ceased to feel like a risk. The transfer is not the vulnerable moment. The vulnerable moment is earlier, subtler, and invisible to the person inside it.</p>
@@ -126,7 +126,7 @@
 <p>The operation we were building against was large. Transnational. Multi-layered. The people at the center were careful. The structure was designed to survive partial disruption — remove one element and the rest continues.</p>
 <p>We worked it for two years.</p>
 <p>During that time I was not working toward an endpoint. I was building a picture, incrementally, in conditions where most of what I needed didn't exist yet and some of what I found I couldn't immediately use. You learn, in work like that, to hold partial structures in your mind without forcing them to close.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I have been asked what that kind of sustained work does to a person. The honest answer is: it builds a specific kind of patience that cannot be developed any other way.</p>
 <p>There is a version of patience that is passive — tolerating delay, waiting for something to happen, enduring the space between events. That is not what I mean.</p>
 <p>The patience that long investigations develop is active. It is the ability to work productively inside incompleteness. To continue building without requiring the building to resolve. To maintain equal seriousness toward a fragment that might matter and a fragment that might not — because you cannot always know in advance which is which.</p>
@@ -141,7 +141,7 @@
 <p>As if that were a complete description.</p>
 <p>I didn't argue. The gap between that sentence and what OSINT actually is cannot be closed in a casual conversation.</p>
 <p>But I think about that sentence. Because even in its inadequacy, it contains something that points toward a real question. OSINT does involve finding things. The question is what finding actually means.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I have had a conversation many times, in various forms, with people who learn what I do professionally.</p>
 <p>They nod when I explain it. They ask some questions. And then, at some point, they say something like: but anyone could do that, couldn't they? If the information is out there publicly, it's just a matter of looking it up.</p>
 <p>My response, when I'm trying to make them understand rather than simply argue, goes something like this:</p>
@@ -150,7 +150,7 @@
 <p>What would I be able to do with what I just told you I already know?</p>
 <p>People become quiet when I say this. Not because the information itself is alarming — but because the implication is. Because they realize, often for the first time, that the question is not whether the information exists. It does. The question is who is looking at it and what they intend to do with it.</p>
 <p>And then they stop laughing about the idea that this is "just Googling."</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>What OSINT actually involves is layered in a way that the word "finding" obscures.</p>
 <p>It involves understanding that deleted does not mean gone. It involves understanding that renamed does not mean changed. It involves understanding that private does not mean protected.</p>
 <p>A candidate's Instagram is locked. Their wife's is not. Their wife's sister's is not. And in 2019, the wife's sister posted a family photo with a caption that identified everyone in it — including the candidate, under a secondary username they had never mentioned to anyone professional.</p>
@@ -162,7 +162,7 @@
 <section><title><p>HOW AN INVESTIGATION ACTUALLY BEGINS</p></title><subtitle>CHAPTER 7</subtitle>
 <p>People assume investigation begins with a search.</p>
 <p>It doesn't. It begins with a question. And before the question, there is something more basic: the problem of knowing which question to ask.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Every case starts with what I have. The inputs. A name, a username, a number, an email, a photograph, a single Telegram contact from which everything else will need to be built. Sometimes the input is rich. Sometimes it is one line of text and nothing else.</p>
 <p>The inputs determine what is possible. But they do not determine where to start. Where to start is determined by the task.</p>
 <p>This distinction matters more than it might appear. Because an investigation without a clear task is not an investigation — it is data collection. And data collection without a task has no natural stopping point, no criterion for relevance, no way to distinguish what matters from what is simply present.</p>
@@ -170,7 +170,7 @@
 <p>The task defines the boundaries. It tells me which direction to go and — equally importantly — which directions not to. A client needs to know whether a counterparty is who they claim to be. That is a different investigation than: tell me everything about this person. The first has a clear criterion for completion. The second doesn't.</p>
 <p>I spend time at the beginning of every case being precise about what is actually being asked. What the client needs. What they will do with the information. What level of confidence is required and what constitutes sufficient evidence for the purpose at hand.</p>
 <p>This is not bureaucratic due diligence. It is the most intellectually important part of the process.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Once the task is clear, I look at the inputs again — differently now, through the lens of what I'm trying to answer.</p>
 <p>A single selector — a phone number, an email address, a username — is never just what it appears to be on the surface. It is an entry point into a network of associations that the person built over time, usually without thinking about how those associations connect.</p>
 <p>The same email address appears in a breach from 2019, in a registration on a freelance platform from 2021, linked to a Google account whose location data shows consistent activity in a city different from the one declared in the case file. Three data points, three different systems, one picture.</p>
@@ -182,7 +182,7 @@
 <p>Every investigation has them.</p>
 <p>The moment when the path stops. When the last identifier leads to nothing, when the usual tools return empty, when the person simply does not appear to exist in the places you are looking.</p>
 <p>Most people, when they encounter a dead end, experience it as failure. I experience dead ends differently. Not as absence but as redirection. Not as the end of a path but as information about where the path actually is.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>The subject was a candidate for a position with access to sensitive data. On every direct search: nothing that raised concern. On the surface, an ideal candidate.</p>
 <p>What this looked like to me: a profile assembled with awareness. The absence of natural irregularity. Surfaces that were too smooth.</p>
 <p>I ran the email and phone through breach databases. The results returned a Telegram link that led, initially, to nothing useful.</p>
@@ -193,14 +193,14 @@
 <p>The secondary account contained what the primary had been built to hide: documentation of high-risk financial activity, posts about transactions through unregulated channels. And in one comment: "everything is fine at work. No one will dig this deep."</p>
 <p>Total investigation time: two hours and ten minutes.</p>
 <p>The direct approach produced nothing. The indirect approach — through the family environment the candidate had no control over — produced everything.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>The dead end was not the end. It was a sign that the subject had thought about the direct approach. Which meant the information existed somewhere else.</p>
 <p>When I hit a wall, I stop looking at the wall. I look at what is connected to it.</p>
 </section>
 <section><title><p>THE PASSWORD THAT OPENED EVERYTHING</p></title><subtitle>CHAPTER 9</subtitle>
 <p>Not every breakthrough looks like a breakthrough when it happens.</p>
 <p>Sometimes it is a single line in a database. A partial hash. A word that was someone's password in 2019 and, in the logic of human consistency, became something else entirely.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>The subject had been unusually careful. No obvious social media presence under their real name. The questionnaire was notably sparse. The profile of someone who had thought about what they were being asked and given the minimum required.</p>
 <p>I ran the phone number through an aggregation bot. An old email address surfaced from a breach from years earlier.</p>
 <p>I ran the email through breach databases: three hits. Then through BreachDirectory, which returned partial hashed passwords from one of the breached datasets.</p>
@@ -210,7 +210,7 @@
 <p>The results were immediate and substantial.</p>
 <p>Platform after platform, a consistent identity built around that string. Social media profiles the candidate had not mentioned. Activity that directly contradicted the questionnaire — family members listed nowhere in the official submission, associations that raised serious concerns.</p>
 <p>In old comments, under the handle built on the password: observations about the workplace, about management, about what it was possible to get away with undetected.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>A password is not just a password. It is a choice made by a person at a specific moment, reflecting something about how they think, what they value, what they wanted to remember. That choice, made once, leaves residue in systems across years and platforms. And the residue, read correctly, is not just evidence of past behavior. It is a map to present identity.</p>
 <p>When the direct approach fails, ask: what else did this person choose? What other decisions did they make, elsewhere, that might have come from the same place?</p>
 <p>The answer is usually there. You just have to follow it far enough.</p>
@@ -218,12 +218,12 @@
 <section><title><p>THE MOMENTS I WANTED TO STOP</p></title><subtitle>CHAPTER 10</subtitle>
 <p>There were many.</p>
 <p>I say this directly because this book is supposed to be honest, and the honest version of this work does not look like continuous forward momentum. It looks like periods of genuine difficulty interrupted by results that make the difficulty worthwhile. And then more difficulty.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>When I left law enforcement and moved into OSINT as a profession, I was not stepping into an established field in my country. I was stepping into a space that most people around me did not recognize as a space.</p>
 <p>The conversations were difficult. Not hostile — just uncomprehending. You do what? You find information about people using open sources? And this is a profession?</p>
 <p>I brought proposals. Ideas for systems that didn't exist — tools that could be built, workflows that could be automated. I made cases. I explained the methodology. I showed results.</p>
 <p>The consistent experience, for a long time, was that the people in a position to fund or implement new approaches preferred to pay for established names, familiar frameworks, things that had visible institutional backing. Not because what I was offering was worse. But because novelty is a harder sell than familiarity, and in Ukraine, in the field I was working in, I did not yet have a name that made the novelty easier to accept. Most people didn't know the field existed. I wasn't competing with established practitioners. I was competing with the assumption that what I was describing wasn't a thing.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>What kept me going during the difficult periods was not an inspiring story I told myself about perseverance. It was simpler and less flattering than that: I did not have anything else I wanted to do.</p>
 <p>The work was frustrating. The environment was frustrating. The gap between what I could see was possible and what the market around me recognized as valuable was real and sometimes painful.</p>
 <p>But the alternative was returning to something that felt less true. Less connected to what I was actually capable of and actually interested in. And that felt worse than the frustration of the situation I was already in.</p>
@@ -235,7 +235,7 @@
 <p>He mentioned the investment almost as an aside — something good that was happening, something he was looking forward to. The tone was the tone of a person who has already made a decision and is sharing it, not asking for input. My friend is an economist. He is careful with money. He is not naive or impulsive.</p>
 <p>I asked a few questions. He answered them. With each answer, something I recognized from years of working organized fraud became more visible.</p>
 <p>I didn't tell him what I was seeing. I needed to know first.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>The investigation that followed was not technically complex. By the time I had what I needed, the picture was clear. The person he had been speaking with for weeks was an operator in a structured fraud system. The account, the platform, the relationship — all of it had been constructed with a specific purpose.</p>
 <p>But the investigation was not the hard part.</p>
 <p>The hard part was the conversation I had with him afterward. Because by the time I called him back, he had already decided. Not legally — the transfer hadn't happened. Not financially — the money was still in his account. But psychologically. He had invested weeks in a relationship that had felt real, that had provided support during a difficult period.</p>
@@ -244,7 +244,7 @@
 <p>He listened. He asked questions. Eventually he understood. Not with relief — with something closer to grief.</p>
 <p>The thirty thousand dollars stayed in his account.</p>
 <p>That outcome is not guaranteed. I was present. I recognized what I was looking at. I moved while there was still time. Another week and the decision would have been made in ways that could not be undone.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I think often about what would have changed if I hadn't been available, hadn't recognized the signs, hadn't pushed past his resistance. The answer is obvious and I don't dwell on it. But I do think about the cases that don't have someone available. The people who are inside the same architecture with no one who knows what they're looking at.</p>
 <p>The system does not distinguish. It runs on everyone who enters it.</p>
 </section>
@@ -254,11 +254,11 @@
 <p>I don't do this deliberately. It happens before I make any decision to do it. The work has trained a layer of perception that operates independently of my intentions, in contexts where it has no professional purpose whatsoever.</p>
 <p>This is useful when I'm working.</p>
 <p>It is, sometimes, exhausting when I'm not.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>There is a version of this that sounds like an asset. Heightened perceptiveness. A sharpened sense of inconsistency that functions automatically.</p>
 <p>But there is another version of it that is simply a cost. The tendency to over-interpret silence. To assign meaning to patterns that are not patterns. To find structure in data that has no structure, because the mind has been trained to find structure and does not always know when to stop.</p>
 <p>I have learned to recognize when this is happening. The recognition came from noticing a specific quality of certainty that precedes being wrong — a particular feeling of everything fitting together that should, by now, trigger slowdown rather than acceleration. When I feel that certainty, I have learned to treat it as a signal to check, not to conclude. The work does not make you more certain. Done correctly, it makes you less certain — but more precise about the distinction between what you know and what you are inferring. That distinction, maintained carefully, is what separates useful analysis from convincing noise.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>There is something else the work does, more subtle and harder to articulate.</p>
 <p>It changes how you experience uncertainty in the rest of your life.</p>
 <p>I live in a country at war. Uncertainty about what will happen is not an occasional condition. It is the background against which everything else occurs.</p>
@@ -271,14 +271,14 @@
 <p>I build tools because they don't exist.</p>
 <p>This is the simple version. The longer version is: I reach a point in an investigation or a monitoring task where something that should be automatable is being done manually, and I think — there should be a way to do this better. I check whether it exists. It often doesn't. So I build it.</p>
 <p>This is not a statement about ambition. It is a statement about necessity. The tools I have created were not conceived as products or platforms. They were conceived as solutions to specific problems I was encountering in actual work.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>KagamiID was the first. Built from a recurring pattern in my investigative work: the early stage of almost every investigation involves checking a username or an ID across multiple platforms. I was doing this manually, platform by platform, every time. After doing it enough times, I automated it.</p>
 <p>ThunderTrace came from the same logic, scaled up. Three hundred and fifty platforms. Social, gaming, developer communities, dating services, CIS-specific platforms, services that standard Western-built tools often miss because they were built for Western investigative contexts.</p>
 <p>MooN Attacks is different.</p>
 <p>I built a platform to monitor military events in real time — tracking what was happening in and around the war, through Telegram channels, geolocating events, generating structured intelligence reports. I built it while living in Dnipro. I built it while the events I was monitoring were sometimes audible through my window. There is something specific about building a tool that processes information about missiles and drones and explosions when you can hear confirmation of that information in real time. It changes the relationship between the work and its subject matter. The information is not abstract. The stakes are not professional abstractions.</p>
 <p>I think this has shaped how the tool was built — not technically, but in terms of what it prioritizes. Accuracy over speed. Contextual reliability over volume. The understanding that the person reading the report may be making decisions based on it that are not theoretical.</p>
 <p>The work and the life, in this tool more than any other, are not separate.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I am sometimes asked: why build tools when there are tools that already exist?</p>
 <p>The answer is that the tools that already exist were built for different contexts, different workflows, different investigative environments. Building from operational experience produces something that analysis of requirements cannot produce. The tool knows what the work actually involves, not just what someone described the work as involving.</p>
 <p>This is true of every tool I have built. Not conceived first and then used — used first, in real cases, until the absence of the tool became frustrating enough to motivate building it.</p>
@@ -287,18 +287,18 @@
 <p>Every investigation has a boundary.</p>
 <p>The boundary is not always where the law places it. The law defines what is prohibited. Ethics defines what should not be done even when it is technically permitted.</p>
 <p>In OSINT, the distinction matters more than in fields where the scope of access is more naturally constrained. Open sources are, by definition, open. What is technically accessible is a much larger set than what is appropriate to use for any given purpose.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I think about this in the terms of the task.</p>
 <p>The task defines what is relevant. What is relevant defines what should be collected. What should be collected defines what should be reported.</p>
 <p>If I am conducting a background check on a candidate for a sensitive position, my task is to assess risk relevant to that position. Not to compile an exhaustive dossier. Not to expose aspects of their life that have no bearing on the question being asked.</p>
 <p>People leave more than they realize in digital space. Much of it is personal, irrelevant to professional contexts, and was never intended for professional scrutiny. The fact that it is technically accessible does not make it appropriate to collect and report.</p>
 <p>The boundary, for me, is drawn at relevance. Everything beyond relevance is noise at best and a privacy violation at worst, regardless of technical accessibility.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>There is also the question of what to do with what you find.</p>
 <p>Information collected in an investigation belongs, in some sense, to the investigation. It was assembled for a specific purpose. The purpose defines the context in which it has meaning and legitimacy.</p>
 <p>I have found things in investigations that were alarming in ways that went beyond the original scope. Information that pointed toward something larger — potential criminal activity, risk to third parties. These situations require judgment that rules cannot fully replace.</p>
 <p>The principle I try to apply: the more serious the potential harm, and the more clearly the information points toward preventing it, the stronger the case for doing something with it beyond the original scope.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>There is a final dimension to the ethics of this work that I find harder to articulate but that I think is real.</p>
 <p>The act of investigation — of looking carefully at someone's digital presence, reconstructing their identity from fragments — is not neutral with respect to the person being investigated. Even when it is entirely legitimate, entirely lawful, entirely within appropriate scope.</p>
 <p>The person being investigated is a human being. Their data is, in some meaningful sense, a representation of their life.</p>
@@ -311,7 +311,7 @@
 <p>I told him that was because he hadn't. He had trusted someone. The trust had been manufactured for him, specifically and deliberately, over weeks of careful work. There was no version of that story in which he should have known better. There was only the version in which I happened to be there, happened to recognize what I was looking at, and happened to move at the right moment.</p>
 <p>He was quiet. Then he said: I know. But still.</p>
 <p>I understood the still.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I have been doing this work long enough to know what it produces in a person, because I can see it in myself.</p>
 <p>It produces precision — not certainty, but precision. The ability to separate what you know from what you are inferring from what you are assuming, and to hold all three categories distinct even when the mind wants to collapse them.</p>
 <p>It produces patience of a specific kind. Not passive tolerance of delay but active comfort with incompleteness. The ability to keep building when the picture has not yet resolved. It produces, sometimes, a particular loneliness. The loneliness of working in a field that most people around you do not recognize as a field. Of seeing things that other people are not looking for. Of bringing something new into a room and watching it receive the polite acknowledgment that means no one will act on it.</p>
@@ -331,31 +331,31 @@
 <p>I don't know who you are.</p>
 <p>Maybe you are someone who works in this field and recognizes what I've described from the inside. Maybe you are someone who is just starting and is trying to understand what this work actually is, beneath the surface of tools and techniques. Maybe you are someone who has never heard the word OSINT and found this book by accident and is now trying to decide what to make of it.</p>
 <p>Whoever you are — this last part is for you.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>I want to say something that I didn't say clearly enough in the chapters before this.</p>
 <p>Believe in what you are building. Even when no one around you understands it yet. Even when the environment doesn't recognize its value. Even when the only evidence you have that it matters is your own conviction that it does.</p>
 <p>This is not abstract advice. I lived it for years before the conviction was confirmed by anything external. There were long periods when the work was invisible to everyone except me. When the proposals went nowhere. When the explanations didn't land.</p>
 <p>I kept going anyway. Not because I was certain I was right. Because I was certain I couldn't return to something that felt less true.</p>
 <p>That is the only version of persistence that I trust: not the kind built on confidence, but the kind built on the absence of a better alternative. The kind that says — I don't know if this will work, but I know this is the direction. If you are in that place right now — where the work is real to you and invisible to everyone else — I want you to know that this is not evidence of failure. It is often evidence of being early.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Don't stop.</p>
 <p>Not because stopping is weak. Stopping to rest is necessary. Stopping to question your direction is necessary. But stopping because the environment doesn't yet understand you — that is the one form of stopping that costs the most, and gives the least in return.</p>
 <p>The environment catches up. It doesn't always happen quickly. But the work you are building now — the cases you are working, the thinking you are developing, the discipline you are building one decision at a time — that becomes the foundation for everything that follows.</p>
 <p>You will not see the full shape of what you are building while you are building it. You see it later, looking back, when the pattern is complete enough to recognize.</p>
 <p>Keep building.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Don't rush to conclusions.</p>
 <p>I have said this many times in this book, in different forms. I say it here one more time because it is the thing I forget most easily under pressure and remember most painfully after mistakes.</p>
 <p>The mind wants resolution. When you are under pressure — when time is short, when the evidence looks almost complete — the pull toward premature closure is at its strongest.</p>
 <p>Resist it. The conclusions that survive are the ones that earned themselves against resistance. The ones you tested, challenged, tried to break.</p>
 <p>Conclusions should be uncomfortable to reach. If they come too easily, that is the first sign they need to be checked.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>Trust the process more than the result.</p>
 <p>The result tells you what happened this time. The process tells you what you are becoming. Over time, the process is what matters. It is what allows you to face the next case, the next problem, the next moment of uncertainty with something real.</p>
 <p>This is what I have tried to describe in this book. Not what I found. The way of thinking that makes finding possible. The discipline that keeps thinking honest. The patience that allows structure to emerge rather than imposing it.</p>
 <p>This is what I am still building. Every case, every mistake, every moment of uncertainty that I sit inside rather than escape from — it is all part of building something I cannot fully see yet.</p>
 <p>I trust that. I hope you do too.</p>
-<subtitle>• • •</subtitle>
+<empty-line/><p>✦</p><empty-line/>
 <p>One last thing.</p>
 <p>I started this book by saying I didn't know OSINT was a profession. That I had been doing it for years without a word for it.</p>
 <p>I know the word now. I have the community, the field, the recognition.</p>
