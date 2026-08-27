@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>nonf_biography</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <book-title>Всё хорошо</book-title>
 <annotation><p>Мемуары.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>ru</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>8f8bd7fb-9fee-4c72-b83a-efb9399ad975</id>
+<id>f4b2424f-4ddc-4acf-8b82-0364d1559dcb</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

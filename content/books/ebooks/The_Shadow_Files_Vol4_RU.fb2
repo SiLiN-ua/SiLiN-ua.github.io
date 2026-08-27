@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>comp_www</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <book-title>The Shadow Files · Том IV</book-title>
 <annotation><p>Четвёртый том курса OSINT.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>ru</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>81a52b54-cf99-4113-97fc-eb24b8eb055a</id>
+<id>dae6015e-680c-4da6-80e6-cfabaf2803a7</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

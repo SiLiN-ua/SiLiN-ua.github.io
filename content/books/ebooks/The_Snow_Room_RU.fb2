@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>det_classic</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <book-title>Снежная комната</book-title>
 <annotation><p>Doll Maker Files, книга первая.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>ru</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>16f2189d-a203-4d85-9887-61267f41d32a</id>
+<id>8451ffbc-9487-4514-a6ce-5a3e6849d976</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

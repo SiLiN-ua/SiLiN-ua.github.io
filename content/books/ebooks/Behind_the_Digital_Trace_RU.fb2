@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>nonf_biography</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <book-title>По цифровому следу</book-title>
 <annotation><p>Мемуары.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>ru</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>d3938887-d78d-45c7-b7dd-6243c12b6844</id>
+<id>876f9eff-e21d-4a67-94c9-f92417fa5032</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

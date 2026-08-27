@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>comp_www</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <book-title>The Shadow Files · Том I: Фундамент</book-title>
 <annotation><p>Практичний курс OSINT для початківців: слід, півот, атрибуція.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>uk</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>149161af-abc6-4f9c-a1df-1103fff1e55e</id>
+<id>40c01d02-2fc4-4efa-885e-0dc648840d49</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

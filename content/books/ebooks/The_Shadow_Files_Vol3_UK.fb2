@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>comp_www</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <book-title>The Shadow Files · Том III</book-title>
 <annotation><p>Третій том курсу OSINT.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>uk</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>1543a998-5e0f-4d3c-99f8-747f3797b347</id>
+<id>58fb4d4f-6a05-4985-91be-ec5523811ce6</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

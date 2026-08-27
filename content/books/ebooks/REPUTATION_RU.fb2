@@ -3,23 +3,23 @@
 <description>
 <title-info>
 <genre>prose_contemporary</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <book-title>РЕПУТАЦИЯ</book-title>
 <annotation><p>Роман.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>ru</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Егор</first-name><last-name>Селин</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>d12ed5bb-60d3-41c6-9ef1-8af0e81b5c5d</id>
+<id>675afde3-a51b-49db-ab65-b942a4daa129</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
 </description>
 <body>
 <title><p>РЕПУТАЦИЯ</p></title>
-<section><title><p>Пролог</p></title><epigraph><p>За восемь месяцев до.</p></epigraph>
+<epigraph><p>У каждой тени есть имя. Беда в том, что теперь имя тебе может дать кто угодно.</p></epigraph><section><title><p>Пролог</p></title><epigraph><p>За восемь месяцев до.</p></epigraph>
 <p>Детектив Сэм Рейес повидал сотню самоубийств, и вот что он усвоил: они никогда не бывают аккуратными. Люди уходят из жизни не так, как в кино. Они уходят на полуслове, посреди ссоры, с немытой посудой и одной снятой туфлей.</p>
 <p>Поэтому первое, что зацепило его в Грегоре Холте, — это какая аккуратная была картина.</p>
 <p>Вода в ванне остыла. Бритва лежала на плитке — положенная, а не оброненная. Записка на зеркале была выведена помадой, которой в квартире не было ни у кого, почерком, похожим на почерк Холта только если не вглядываться: <emphasis>Простите. Я не могу бороться с тем, чего не вижу.</emphasis></p>

@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>det_classic</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <book-title>Дев&#x27;ять кімнат</book-title>
 <annotation><p>Doll Maker Files, книга друга.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>uk</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>d05ff410-3fcd-4956-b913-d4fc5b9cd6d6</id>
+<id>10543210-4ea2-42a2-af0b-8f7e27d72002</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

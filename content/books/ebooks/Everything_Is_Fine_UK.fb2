@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>nonf_biography</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <book-title>Все добре</book-title>
 <annotation><p>Мемуари.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>uk</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>4d757b53-d262-406b-97da-6a2aaa398655</id>
+<id>71157941-634b-48ee-bad7-0cf7bf5a4778</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>

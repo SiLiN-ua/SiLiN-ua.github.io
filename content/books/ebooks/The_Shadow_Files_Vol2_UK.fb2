@@ -3,16 +3,16 @@
 <description>
 <title-info>
 <genre>comp_www</genre>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <book-title>The Shadow Files · Том II: Крос-платформна атрибуція</book-title>
 <annotation><p>Другий том курсу OSINT.</p></annotation>
 <coverpage><image l:href="#cover.jpg"/></coverpage>
 <lang>uk</lang>
 </title-info>
 <document-info>
-<author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
+<author><first-name>Єгор</first-name><last-name>Селін</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>be40c6c8-66bd-4e6d-a750-0d718508b4a2</id>
+<id>13e06000-5712-4fc6-bae0-034b40489346</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
