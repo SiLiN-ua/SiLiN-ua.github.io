@@ -1613,6 +1613,31 @@ a.article-utils__share:hover { color: #0a66c2; border-color: #0a66c2; }
 .book h4 { margin-bottom: .5rem; }
 .book p  { color: var(--text-dim); font-size: .95rem; }
 
+.book__more { margin-top: .35rem; }
+.book__more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  cursor: pointer;
+  list-style: none;
+  transition: color .2s var(--ease);
+}
+.book__more-toggle::-webkit-details-marker { display: none; }
+.book__more-toggle:hover { color: var(--cream); }
+.book__more[open] .book__more-text { color: var(--cream); }
+.book__more-body {
+  display: none;
+  margin-top: .5rem;
+  color: var(--text-dim);
+  font-size: .95rem;
+}
+.book__more[open] .book__more-body { display: block; }
+
 .book__dls { margin-top: .6rem; }
 .book__dl-toggle {
   display: inline-flex;
@@ -1633,16 +1658,22 @@ a.article-utils__share:hover { color: #0a66c2; border-color: #0a66c2; }
 .book__dl-toggle::-webkit-details-marker { display: none; }
 /* The open state is carried by these spans rather than by the summary itself:
    some engines skip restyling a summary when its details toggles. */
-.book__dl-arrow {
-  display: inline-block;   /* inline boxes ignore transform */
+/* The caret is a swapped glyph rather than a rotation: transforms inside a
+   <summary> are not honoured everywhere, a swapped ::before always is. */
+.book__arrow {
   font-size: .8em;
   color: var(--text-mute);
-  transition: transform .2s var(--ease), color .2s var(--ease);
+  transition: color .2s var(--ease);
 }
+.book__arrow::before { content: '▾'; }
+.book__dls[open] .book__arrow::before,
+.book__more[open] .book__arrow::before { content: '▴'; }
 .book__dls[open] .book__dl-toggle-text { color: var(--cream); }
-.book__dls[open] .book__dl-arrow { transform: rotate(180deg); color: var(--cream); }
+.book__dls[open] .book__arrow,
+.book__more[open] .book__arrow { color: var(--cream); }
 .book__dl-toggle:hover { color: var(--cream); border-color: var(--border-hi); }
-.book__dl-toggle:hover .book__dl-arrow { color: var(--cream); }
+.book__dl-toggle:hover .book__arrow,
+.book__more-toggle:hover .book__arrow { color: var(--cream); }
 .book__dl-grid {
   /* the panel's visibility is stated outright rather than left to the
      browser's own <details> handling, which not every engine applies */

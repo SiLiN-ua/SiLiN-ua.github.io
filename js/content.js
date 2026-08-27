@@ -83,6 +83,20 @@
     const desc  = escapeHtml(tr(item, 'description'));
     const year  = escapeHtml(item.year || '');
     const langs = escapeHtml(item.languages || '');
+    // Blurbs run long. Show the opening and let the rest wait behind a toggle,
+    // so the shelf stays scannable. Some books open with a label — "Художній
+    // трилер." — so keep taking sentences until the preview actually says
+    // something.
+    const sentences = desc.match(/[^.!?…]+[.!?…]+|[^.!?…]+$/g) || [desc];
+    let lead = '', taken = 0;
+    while (taken < sentences.length) {
+      const next = sentences[taken];
+      if (taken > 0 && (lead.length >= 110 || lead.length + next.length > 220)) break;
+      lead += next;
+      taken++;
+    }
+    lead = lead.trim();
+    const rest = sentences.slice(taken).join('').trim();
     const cover = item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${title}" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
     const links = [];
     if (item.pdf_url_uk) links.push(`<a href="${escapeHtml(item.pdf_url_uk)}" target="_blank" rel="noopener" class="btn" style="padding:.6rem 1rem;font-size:.7rem">📖 Читати українською</a>`);
@@ -111,7 +125,7 @@
     // and working with no JS of ours.
     const dlRow = dl.length
       ? `<details class="book__dls">
-           <summary class="book__dl-toggle"><span class="book__dl-toggle-text">${escapeHtml(dict['books.download'] || 'Завантажити')}</span><span class="book__dl-arrow" aria-hidden="true">▾</span></summary>
+           <summary class="book__dl-toggle"><span class="book__dl-toggle-text">${escapeHtml(dict['books.download'] || 'Завантажити')}</span><span class="book__arrow" aria-hidden="true"></span></summary>
            <div class="book__dl-grid">${dl.join('')}</div>
          </details>`
       : '';
@@ -122,7 +136,11 @@
         <div>
           <div class="book__meta">${year}${langs ? ' · ' + langs : ''}</div>
           <h4>${title}</h4>
-          <p>${desc}</p>
+          <p>${lead}</p>
+          ${rest ? `<details class="book__more">
+              <summary class="book__more-toggle"><span class="book__more-text">${escapeHtml(dict['books.more'] || 'Детальніше')}</span><span class="book__arrow" aria-hidden="true"></span></summary>
+              <p class="book__more-body">${rest}</p>
+            </details>` : ''}
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem">${links.join('')}</div>
           ${dlRow}
         </div>

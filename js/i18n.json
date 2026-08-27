@@ -499,7 +499,8 @@
     "sim3.lb.pre": "РЕЙТИНГ TRACK III",
     "sim3.lb.title": "🏆 Deanon Leaderboard",
     "sim3.lb.subtitle": "Окремий leaderboard лише для 6 кейсів Track III. Кожна картка = найкращий результат гравця по цьому кейсу.",
-    "books.download": "Завантажити"
+    "books.download": "Завантажити",
+    "books.more": "Детальніше"
   },
   "en": {
     "brand.first": "Yehor",
@@ -1001,6 +1002,7 @@
     "sim3.lb.pre": "TRACK III RANKING",
     "sim3.lb.title": "🏆 Deanon Leaderboard",
     "sim3.lb.subtitle": "Separate leaderboard for the 6 Track III cases only. Each card = the player's best score per case.",
-    "books.download": "Download"
+    "books.download": "Download",
+    "books.more": "Read more"
   }
 }
