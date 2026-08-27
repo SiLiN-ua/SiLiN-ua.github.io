@@ -12,7 +12,7 @@
 <document-info>
 <author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>11e913a5-83ba-4a27-a46b-0bf7edc26ae7</id>
+<id>68703f46-1718-44ef-8f46-b2e6c6dd6bce</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
@@ -26,22 +26,19 @@
 <p>Because every detail is invented, the examples are shown in full — complete, ordinary-looking data instead of blanked-out symbols — so you see exactly how a real trail behaves across platforms without any of it touching a real person.</p>
 <subtitle>The rules, in one line</subtitle>
 <p>Open sources only. Nothing that needs a login or a password. Respect people's privacy and the law. That is the whole frame, and it does not loosen as your skill grows. Two things worth keeping in mind. Know the law where you work — a client hiring you to investigate someone is not the same as the law allowing you to collect everything about everyone near them. And most of the damage in this craft is done to people who were never the subject, so take only what answers your question and stop there.</p>
-<cite><p>A professional is not the person who can find the most. It<emphasis> </emphasis>is the person who knows where to stop.</p></cite>
+<cite><p><emphasis>A professional is not the person who can find the most. It</emphasis> <emphasis>is the person who knows where to stop.</emphasis></p></cite>
 </section>
 <section><title><p>One Clue Was Never the Point</p></title><epigraph><p>What changes in Volume Two</p></epigraph>
 <p>In Volume 1 you learned to pull one thread. You took a single clue — a username, an email, a number — and, step by step, followed it to a person. That is the foundation, and everything here stands on it.</p>
 <p>But real people do not live on one platform. They live scattered — a photo here, a comment there, an old account they forgot, a relative who tags them, a leaked email that ties two names together. One thread is where you <emphasis>start.</emphasis> It is almost never where you <emphasis>finish.</emphasis></p>
 <p>Volume 2 is about the finish. It is about taking threads from many places and weaving them into one confident identity — and doing it under real pressure: private profiles, look-alikes, deleted content, and your own eagerness to be right.</p>
 <subtitle>Who this book is for</subtitle>
-<p>You, if you have the foundations and want to go from <emphasis>finding a</emphasis></p>
-<cite><p>clue<emphasis> to </emphasis>building a case.* You do not need to be technical. You</p></cite>
-<p>need the mindset from Volume 1 and the patience to work a person across half a dozen platforms without losing your discipline. And if a technical word ever trips you up, there is a glossary at the back — flip to it any time.</p>
+<p>You, if you have the foundations and want to go from <emphasis>finding a</emphasis> <emphasis>clue</emphasis> to <emphasis>building a case.</emphasis> You do not need to be technical. You need the mindset from Volume 1 and the patience to work a person across half a dozen platforms without losing your discipline. And if a technical word ever trips you up, there is a glossary at the back — flip to it any time.</p>
 <subtitle>What you will be able to do by the end</subtitle>
-<p>Follow one person across social networks and messengers. Read what a photo and a face can and cannot tell you. Use leaked data to connect identifiers — never to break in. Draw a relationship map and let it lead you. And, hardest of all, judge <emphasis>how sure you</emphasis></p>
-<cite><p>are.</p></cite>
+<p>Follow one person across social networks and messengers. Read what a photo and a face can and cannot tell you. Use leaked data to connect identifiers — never to break in. Draw a relationship map and let it lead you. And, hardest of all, judge <emphasis>how sure you</emphasis> <emphasis>are.</emphasis></p>
 <subtitle>What this volume is not</subtitle>
 <p>It is not a tool manual, and it is not the whole craft. Deleted-account reconstruction, geolocation, and infrastructure wait for Volume 3; the professional's world of automation, due diligence, and counter-investigation waits its turn after that. Here we master one thing well: attribution across platforms.</p>
-<cite><p>One clue opens a door. This book is about the rooms<emphasis> </emphasis>behind it.</p></cite>
+<cite><p><emphasis>One clue opens a door. This book is about the rooms</emphasis> <emphasis>behind it.</emphasis></p></cite>
 </section>
 <section><title><p>How Volume Two Works</p></title><epigraph><p>The series, this book, and how each chapter is built.</p></epigraph>
 <p>The Shadow Files is a series of four volumes. Each one takes you a level higher, and each assumes only what the last one taught.</p>
@@ -71,8 +68,7 @@
 <p>• Exposure</p>
 <p>• Pivot Attribution</p>
 <p>• one clue, run in a circle until it points at a person</p>
-<cite><p>The three moves run as a cycle — attribution feeds the next<emphasis> </emphasis>exposure.</p></cite>
-<p>Exposure is a trace a person left in the open. Pivot is turning that trace into the next one. Attribution is when enough traces line up to point at one real identity. You start from one clue and run the loop until the picture is clear. Volume 2 does not replace this loop. It runs it across many platforms at once.</p>
+<p><emphasis>The three moves run as a cycle — attribution feeds the next</emphasis> <emphasis>exposure.</emphasis> Exposure is a trace a person left in the open. Pivot is turning that trace into the next one. Attribution is when enough traces line up to point at one real identity. You start from one clue and run the loop until the picture is clear. Volume 2 does not replace this loop. It runs it across many platforms at once.</p>
 <subtitle>The confidence ladder</subtitle>
 <p>Because a match is not a fact, we always say <emphasis>how sure</emphasis> we are, in four fixed words:</p>
 <p>• weak — one unconfirmed clue. A lead, never a conclusion.</p>
@@ -80,10 +76,8 @@
 <p>• strong — several independent signals that are, together, hard to explain by any rival hypothesis. Usually that means three or more. But two heavy, diagnostic ones (say a byte-identical avatar file plus a verified self-link) can reach strong, and three weak, common ones may fall short. Count is a rule of thumb; how hard the agreement is to explain away is the real test.</p>
 <p>• confirmed — a hard unique identifier or a genuine self-link, independently nailed down so anyone could re-check it. THE CONFIDENCE LADDER</p>
 <p>• weak one unconfirmed clue moderate two independent clues agree strong three or more agree confirmed hard identifier / self-link</p>
-<cite><p>Four rungs you climb only on independent signals: weak,<emphasis> </emphasis>moderate, strong, confirmed.</p></cite>
-<p>You will meet these four words in two places: grading a <emphasis>single</emphasis></p>
-<cite><p>signal's<emphasis> strength, and grading your </emphasis>overall conclusion*. Same</p></cite>
-<p>words, linked by the rule above — a lone strong signal is not yet a strong conclusion.</p>
+<p><emphasis>Four rungs you climb only on independent signals: weak,</emphasis> <emphasis>moderate, strong, confirmed.</emphasis></p>
+<p>You will meet these four words in two places: grading a <emphasis>single</emphasis> <emphasis>signal's</emphasis> strength, and grading your <emphasis>overall conclusion</emphasis>. Same words, linked by the rule above — a lone strong signal is not yet a strong conclusion.</p>
 <p>You will use this ladder harder in Volume 2 than anywhere, because attribution across platforms is exactly the place where eager beginners turn a pile of <emphasis>weak</emphasis> into a false <emphasis>confirmed.</emphasis></p>
 <subtitle>Same handle is not same person</subtitle>
 <p>The single sentence to carry out of Volume 1: a matching name, handle, or face is a lead, not proof. Two strangers can share a username. A common face can mislead. You confirm with independent signals — content, dates, connections — not with the match itself.</p>
@@ -94,7 +88,7 @@
 <section><title><p>Private Is Not Closed</p></title><epigraph><p>A locked profile is a wall you walk around, not a door you force.</p></epigraph><image l:href="#illo005.jpg"/><subtitle>CHAPTER ONE</subtitle>
 <p>You click the profile. The avatar loads. The name loads. Then nothing — no posts, no friends, no photos. A padlock where the life should be. Most people stop here. They write "private, dead end" in their notes and move on.</p>
 <p>I understand why. A locked profile feels like a closed door, and closed doors are meant to be respected. The person behind it is someone — a mother, an engineer, a widower, a kid trying to grow up in peace — who reached for a setting and thought that was the end of it. Hold onto that as you read this chapter. The work below is not about defeating them; it's about noticing what the world around them already said out loud.</p>
-<cite><p>Private controls what they publish. It almost never<emphasis> </emphasis>controls what everyone else did.</p></cite>
+<cite><p><emphasis>Private controls what they publish. It almost never</emphasis> <emphasis>controls what everyone else did.</emphasis></p></cite>
 <p>A locked account restricts your direct view of one page. It does not restrict the friend who tagged them at a wedding. It does not restrict the group they joined in 2019 that still lists members. It does not restrict the archive that snapshotted the page before it went private. And often — though no longer always — it does not hide the profile picture, which many platforms keep visible so the account stays findable at all.</p>
 <p>One thing to fix in your head before we start. This chapter's job is narrow: you already <emphasis>suspect</emphasis> an identity — a name, a face, a claim — and you want to know whether a locked profile belongs to that person. You are here to confirm a match, using the open people and records around the target — not to discover an identity you do not yet have. Finding a hidden <emphasis>second</emphasis> person — an unknown relative, an alias no one handed you — is the work of Chapter Six, which walks the family ring rather than the friend ring.</p>
 <subtitle>The idea: enumerate the open ring, not the closed centre</subtitle>
@@ -102,7 +96,7 @@
 <p>• ACCESS LAYERS</p>
 <p>• leaks &amp; breaches friends / FOAF public traces</p>
 <p>• TARGET locked the centre is shut — the rings around it are wide open. Work inward from what others left public.</p>
-<cite><p>The locked centre, ringed by the layers that stay open: public posts,<emphasis> </emphasis>friends-of-friends, caches and archives, and old leaked copies. You<emphasis> </emphasis>read the rings, not the centre.</p></cite>
+<p><emphasis>The locked centre, ringed by the layers that stay open: public posts,</emphasis> <emphasis>friends-of-friends, caches and archives, and old leaked copies. You</emphasis> <emphasis>read the rings, not the centre.</emphasis></p>
 <p>Your job is not to break into the centre. Your job is to walk the ring and read everything the ring left facing outward, then assemble those fragments into a picture of the centre.</p>
 <p>This reframes "private" completely. A private profile is not an absence of information. It is information that has been <emphasis>displaced</emphasis> — pushed off the target's own page and onto other people's pages, into archives, into caches. You just collect it from a different address.</p>
 <p>There are seven common leak layers. Learn them as a checklist — but read the next section first: some of these have decayed hard since the mid-2010s, and you need to know which moves are still live before you reach for one.</p>
@@ -121,18 +115,13 @@
 <p>• The two-numeric-ID mutual-friends URL. There used to be a URL you could hand two numeric IDs and get back the people they share. Facebook Graph Search, which powered much of this, was removed in 2019, and that mutual-friends endpoint went with it on the major platforms. The principle holds: shared connections still map a hidden graph, and some platforms still show mutuals in the interface. But the tidy paste-two-IDs URL is gone — do not teach it or lean on it as a live step.</p>
 <p>• Scraping and intersecting friend lists (FOAF). The classic move was to pull several friends' full friend lists automatically and intersect them. Two problems in 2026. First, friends lists are hideable by default now and frequently hidden, so there is often nothing to pull. Second — and this matters everywhere else in this book — automated friend-list scraping breaches the platform's Terms of Service. We do not do it. The principle holds: the target reappears inside a known cluster of open people. But you reach it by <emphasis>manual, open review</emphasis> of the lists people have chosen to leave public, not by scripting a harvest.</p>
 <subtitle>Before you look: don't light yourself up</subtitle>
-<p>Here is a mistake that even experienced people make, and it is new enough to Volume 2 that it deserves its own stop sign. When you view a target while logged in to a research or "sock" account — a clean, separate identity you keep only for investigating, never your real profile — you are not invisible. The platform's "people you may know" machinery is bidirectional — the same signals that surface the target to you can surface <emphasis>your sock account to the target</emphasis>. Repeatedly opening someone's profile, letting the app read your contacts, or sharing a network with them can push your investigative account into</p>
-<cite><p>their* suggestions. That tips them off, burns the account, and in</p></cite>
-<p>a sensitive matter can compromise the whole engagement.</p>
+<p>Here is a mistake that even experienced people make, and it is new enough to Volume 2 that it deserves its own stop sign. When you view a target while logged in to a research or "sock" account — a clean, separate identity you keep only for investigating, never your real profile — you are not invisible. The platform's "people you may know" machinery is bidirectional — the same signals that surface the target to you can surface <emphasis>your sock account to the target</emphasis>. Repeatedly opening someone's profile, letting the app read your contacts, or sharing a network with them can push your investigative account into <emphasis>their</emphasis> suggestions. That tips them off, burns the account, and in a sensitive matter can compromise the whole engagement.</p>
 <p>So set up before you look. Use a clean, well-worn research identity that is not linked to your contacts, your phone's address book, or your real accounts. Disable contact syncing. Prefer logged-out and archived views wherever they still return what you need. Assume that anything you do while logged in can echo back to the person you are watching, and act like it.</p>
 <subtitle>The method, step by step</subtitle>
 <p>Step 1 — Lock the anchor. Before anything, resolve the one thing that does not change: the stable numeric ID behind the vanity name. Vanity handles change; numeric IDs are permanent, and every technique that follows pivots off that anchor. Reach it through whatever the platform exposes today, and write it down. It survives the target renaming themselves next week.</p>
 <p>Try it (2026). Pick one concrete route to turn the name into the number. On Telegram, forward one of the account's messages to an ID bot (a @username_to_id-style resolver — e.g. @username_to_id_bot or @usinfobot) and read back the numeric user ID. On Instagram, open a logged-out share-link like instagram.com/&lt;handle&gt;/ in a clean browser and read the numeric id out of the page URL or a shared post's URL; on Facebook or X, an embed of one of the profile's posts exposes the same number the same way. On most platforms, a public "username to ID" web lookup does the same job from logged-out. Whichever you use, you are looking for the same thing: the number that lives under the name. Caveat: the specific bot, endpoint, or lookup site named above may well be dead by the time you read this — the shape lasts (find the number under the name), the exact door does not.</p>
-<p>Step 2 — Harvest the picture. If the avatar is public, pull the full-resolution version — many platforms still serve a large image even when the wall is closed. Save it. You will reverse-search it later, because the same face under a different,</p>
-<cite><p>unlocked* handle is one of the most common ways a private</p></cite>
-<p>profile falls open. If the picture is gated or blurred, note that and move on; do not treat a missing avatar as a missing case.</p>
-<p>Step 3 — Map shared connections. If you already have one known associate — an "orbit" profile such as a spouse, a colleague, a sibling — look for connections they share with your target. Some platforms still surface mutuals in the interface; the old paste-two-IDs URL does not. Do this from a properly prepared research account (see the warning above), and remember what a shared connection proves: a <emphasis>link</emphasis>, not an</p>
-<cite><p>identity*. You still have to look at the human on the other end.</p></cite>
+<p>Step 2 — Harvest the picture. If the avatar is public, pull the full-resolution version — many platforms still serve a large image even when the wall is closed. Save it. You will reverse-search it later, because the same face under a different, <emphasis>unlocked</emphasis> handle is one of the most common ways a private profile falls open. If the picture is gated or blurred, note that and move on; do not treat a missing avatar as a missing case.</p>
+<p>Step 3 — Map shared connections. If you already have one known associate — an "orbit" profile such as a spouse, a colleague, a sibling — look for connections they share with your target. Some platforms still surface mutuals in the interface; the old paste-two-IDs URL does not. Do this from a properly prepared research account (see the warning above), and remember what a shared connection proves: a <emphasis>link</emphasis>, not an <emphasis>identity</emphasis>. You still have to look at the human on the other end.</p>
 <p>Step 4 — Search <emphasis>around</emphasis> the target, not <emphasis>on</emphasis> them. Use the platform's own search box with the target's name plus context words: a surname, an employer, a town, "birthday." This surfaces content on <emphasis>other people's</emphasis> pages that the target's own timeline suppresses. Then leave the platform entirely and dork the open web — site:platform.com "their name", the numeric ID, any unique phrase from the bio.</p>
 <p>Step 5 — Walk the archives. Feed the profile URL to a web archive and a search-engine cache. If the page was ever public, a snapshot may exist. Walk the calendar backwards — <emphasis>older</emphasis> snapshots are often richer, taken before the person tightened up. Check what the snapshot actually captured, though: a snapshot taken <emphasis>after</emphasis> the lock preserves only the wall.</p>
 <p>Step 6 — Review the open cluster (FOAF, by hand). Take three or four confirmed friends whose own friend lists they have left public. Read those lists yourself and note who recurs. A person who appears across several of your target's friends, and who matches the avatar and name, is very likely inside your target's cluster. Manual review only — no automated pulling, no scripted intersection.</p>
@@ -148,7 +137,7 @@
 <p><code>page is a JS shell, no id in HTML</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>2026: this grab is closed here</code></p>
-<cite><p>The old numeric-ID trick, dead on arrival.</p></cite>
+<p><emphasis>The old numeric-ID trick, dead on arrival.</emphasis></p>
 <p>So I did what the principle demands: I stopped mourning the trick and reached the stable ID through a share-link redirect instead. Anchor secured, just by a different door.</p>
 <p>The avatar. The picture was public, so I pulled the full-res site photo and ran it through two reverse-image engines and one face engine.</p>
 <p><code>Reverse image + face search</code></p>
@@ -161,7 +150,7 @@
 <p><code>  - linkedin "Rui Costa", builder</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>stock hit = generic, drop it</code></p>
-<cite><p>One stock trap, one thin face lead.</p></cite>
+<p><emphasis>One stock trap, one thin face lead.</emphasis></p>
 <p>The stock-photo match was a generic "man at a job site" image re-used everywhere — a shared stock picture links nobody. Weak, rejected. The face-engine candidate, a LinkedIn "Rui Costa" listed as a builder, was thin but real — a 68% face score, face only, no identical-file match. I parked it.</p>
 <p>The archive dead end. The private profile had a clean vanity URL, so I checked a web archive for an older, public version. Two snapshots existed — promising, until I opened them.</p>
 <p><code>Web archive lookup</code></p>
@@ -176,7 +165,7 @@
 <p><code>  login wall preserved</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>both = platform login gate</code></p>
-<cite><p>Two snapshots, both walls. Nothing.</p></cite>
+<p><emphasis>Two snapshots, both walls. Nothing.</emphasis></p>
 <p>Both snapshots had captured only the platform's login gate, not a public version of the page. An archive keeps what was visible at capture time — here that was a wall. Dead end. Note it and move on; not every layer pays out, and a run where every layer pays out is usually one you should distrust.</p>
 <p>What actually held. Two threads survived. First, the LinkedIn "Rui Costa" — same face as the avatar to the eye, 68% by the engine — listed the exact contractor the quote had named as his employer. Second, searching the target's name plus that employer surfaced a public Facebook post by a friend, "Tiago M.," who had tagged a Rui Costa at a job site in 2023 on the same project the story described — content displaced clean off the private profile and onto a friend's page.</p>
 <p>Where that leaves the ladder. Line them up honestly. The face link is moderate — a decent likeness, face-only, 68%, no identical-file match to nail it. The public tag is moderate too: it ties <emphasis>a</emphasis> Rui Costa to the project, but not conclusively to <emphasis>this</emphasis> private Instagram. Two moderate threads pointing the same way is a real signal, but two moderates are not a strong one, and stacking them does not promote them.</p>
@@ -206,20 +195,18 @@
 <section><title><p>The Username Web</p></title><epigraph><p>One handle is a thread. At this level you weave the whole web.</p></epigraph><image l:href="#illo006.jpg"/><subtitle>CHAPTER TWO</subtitle>
 <p>In Volume 1 you learned to take a handle and check whether it exists on other sites. That is the base move — namechecking. Useful, and not enough. It hands you a list of URLs that responded, and a list of URLs is not an identity.</p>
 <p>This chapter is about the next altitude. Not "does this string exist elsewhere" but "which of these hits are the <emphasis>same human</emphasis>, how does this particular person <emphasis>mutate</emphasis> their handles, and where does the whole web of them collapse into one defensible identity."</p>
-<cite><p>A handle is a lead. A person is a conclusion. The work is<emphasis> </emphasis>the distance between them.</p></cite>
+<cite><p><emphasis>A handle is a lead. A person is a conclusion. The work is</emphasis> <emphasis>the distance between them.</emphasis></p></cite>
 <subtitle>The idea: strings are cheap, people are expensive</subtitle>
 <p>Enumeration is cheap. You can run one handle against seven hundred sites in a minute and get forty green ticks. That feels like progress. It is not — it is forty <emphasis>hypotheses</emphasis>, most of them wrong. Some are reserved-name placeholders. Some are unrelated humans who happened to like the same word. A few are your target.</p>
 <p>At this level you invert the effort. Enumeration is the cheap base of the pyramid; the expensive top is confirming that a specific hit is a specific person by their <emphasis>content, dates, and photos</emphasis> — never by the string alone.</p>
 <p>Three ideas do the heavy lifting here.</p>
 <p>• Naming grammar. This is the chapter's core idea, so slow down on it. A person does not pick handles at random. They mutate them in a consistent, personal way — always an underscore, always a trailing birth year, always the same lucky number, always the same leetspeak swaps, the same beloved stem recombined. That habit is a <emphasis>fingerprint made of choices</emphasis>. Two people can share a string by accident; almost no two people share a whole grammar by accident. So the payoff runs in two directions. Backward, a matching grammar corroborates that scattered accounts share one author. Forward — and this is the part namechecking never gives you — once you have read the grammar you can <emphasis>generate handles</emphasis></p>
-<cite><p>the person has not shown you and go find them*, predicting</p></cite>
+<cite><p><emphasis>the person has not shown you and go find them</emphasis>, predicting</p></cite>
 <p>• where the target lives instead of reacting to a tool's green ticks.</p>
 <p>• The homonym trap at scale. A common handle is many humans. shadowwolf is not a person; it is a demographic. The rarer the string, the higher the odds that two hits share an owner. Rarity is your friend; commonness is a swamp.</p>
 <p>• Confirmation by convergence. One green tick is weak. A green tick <emphasis>plus</emphasis> the same rare avatar <emphasis>plus</emphasis> a bio phrase reused verbatim <emphasis>plus</emphasis> creation dates that fit one life <emphasis>plus</emphasis> the same social graph — that is how a string becomes a person. Volume 1's ladder, applied at scale.</p>
 <subtitle>The method, step by step</subtitle>
-<p>Step 1 — Enumerate wide, with more than one tool. Run the seed handle through at least two enumerators. Each ships a</p>
-<cite><p>different* site list, so their results diverge — one finds a forum the</p></cite>
-<p>other never checks. Two tools, more coverage, and disagreement between them is itself information.</p>
+<p>Step 1 — Enumerate wide, with more than one tool. Run the seed handle through at least two enumerators. Each ships a <emphasis>different</emphasis> site list, so their results diverge — one finds a forum the other never checks. Two tools, more coverage, and disagreement between them is itself information.</p>
 <p>Here is what a real run looks like — messy, not clean:</p>
 <p><code>SEED  nyx_falken</code></p>
 <p><code>--------------------------------</code></p>
@@ -236,24 +223,18 @@
 <p><code>9 checked  5 live  2 404  2 unknown</code></p>
 <p><code>NOTE: pinterest = placeholder, not</code></p>
 <p><code>      a real profile. verify by eye.</code></p>
-<cite><p>What a username enumerator prints</p></cite>
+<p><emphasis>What a username enumerator prints</emphasis></p>
 <p>Read that box the way a professional does. Five live hits — but the Pinterest "hit" is a reserved-name placeholder, a false positive the tool cannot tell from a real profile. The TikTok timeout and the Mastodon rate-limit are <emphasis>unknowns</emphasis>, not "no" — a failed check usually means the network blocked you, not that the account is absent. Re-run those later from a different address before you write them off. The tool tells you a URL responded — never who is behind it.</p>
-<p>Step 2 — Triage every hit by eye. Open each live profile. Is it your subject, an unrelated human, or a squatter? Harvest pivot material from the real ones: display name, bio, linked URLs, other handles they mention, avatar. Every new handle they</p>
-<cite><p>declare themselves* is gold — a self-declared link between two</p></cite>
-<p>accounts is near-confirmation, far stronger than any string match you inferred.</p>
+<p>Step 2 — Triage every hit by eye. Open each live profile. Is it your subject, an unrelated human, or a squatter? Harvest pivot material from the real ones: display name, bio, linked URLs, other handles they mention, avatar. Every new handle they <emphasis>declare themselves</emphasis> is gold — a self-declared link between two accounts is near-confirmation, far stronger than any string match you inferred.</p>
 <p>Step 3 — Read the naming grammar. Lay the confirmed handles side by side and find the pattern. Does this person always append a birth year? Always swap a for 4? Always run first-name-underscore-noun? Once you see the grammar, generate the variants they <emphasis>haven't</emphasis> used yet and test those. You stop guessing randomly and start predicting.</p>
 <p>Step 4 — Weight by rarity. Before you trust any cross-platform match, ask how rare the string is. A distinctive coined word — nyx_falken — carried across four platforms is a strong prior. A dictionary word — nightowl — carried across four platforms is almost meaningless, because thousands of unrelated people picked it independently. Adjust your confidence to the string's rarity <emphasis>before</emphasis> you look at anything else.</p>
-<p>Step 5 — Confirm on content, not the string. This is the step amateurs skip. For each candidate, line up the <emphasis>evidence that</emphasis></p>
-<cite><p>survives a name*: the avatar (same file, or same face under</p></cite>
-<p>different photos), bio phrasing reused word-for-word, creation dates that fit one plausible timeline, the same friends appearing across accounts, the same writing tics. When several of these converge on one person, you have an identity. When the <emphasis>only</emphasis> thing shared is the handle, you have a coincidence.</p>
+<p>Step 5 — Confirm on content, not the string. This is the step amateurs skip. For each candidate, line up the <emphasis>evidence that</emphasis> <emphasis>survives a name</emphasis>: the avatar (same file, or same face under different photos), bio phrasing reused word-for-word, creation dates that fit one plausible timeline, the same friends appearing across accounts, the same writing tics. When several of these converge on one person, you have an identity. When the <emphasis>only</emphasis> thing shared is the handle, you have a coincidence.</p>
 <p>Step 6 — Place it on the ladder and stop at the honest rung. Report what you actually reached — not the rung you wish you had.</p>
 <p>Try it (2026). Run one handle through Sherlock or Maigret — or a WhatsMyName-style web checker — to get a live cross-platform hit list, then open each hit and verify it by content, never by the green tick alone. Site lists and detection rules rot, so treat any single tool's output as a starting point and re-check misses from a fresh address.</p>
 <subtitle>A worked case, with a look-alike rejected</subtitle>
 <p>The seed was one handle from a marketplace scam report: nyx_falken. Fictional throughout, real method. The client wanted a single identity behind it, or an honest "cannot get there."</p>
 <p>Wide enumeration gave me the run in the box above — GitHub, Reddit, Steam, Twitter/X live; Instagram and Twitch absent; TikTok and Mastodon unknown; Pinterest a placeholder. Five real doors, and nyx_falken is a coined word, not a dictionary term. Good rarity prior. I started hopeful but disciplined.</p>
-<p>Triage. GitHub was the richest. The profile bio read: <emphasis>"code by</emphasis></p>
-<cite><p>night, ramen by day — falkennest.dev."* It self-declared a</p></cite>
-<p>personal domain. The Reddit account posted heavily in a mechanical-keyboards subreddit. Steam showed a public profile, cyberpunk avatar. Twitter/X: same coined handle, an art-focused account. The naming grammar. GitHub, Reddit, Steam, and the personal domain all used nyx_falken or falken. The domain — falkennest.dev — added a new stem, falkennest. I re-enumerated that new stem on a fresh pass — the earlier run had only ever tested nyx_falken, never falkennest — and it turned up a Mastodon account @falkennest@fosstodon.org. The grammar was now legible: nyx prefix or falken(nest) stem, lowercase, occasional underscore. That let me predict and confirm the Mastodon account rather than stumble on it.</p>
+<p>Triage. GitHub was the richest. The profile bio read: <emphasis>"code by</emphasis> <emphasis>night, ramen by day — falkennest.dev."</emphasis> It self-declared a personal domain. The Reddit account posted heavily in a mechanical-keyboards subreddit. Steam showed a public profile, cyberpunk avatar. Twitter/X: same coined handle, an art-focused account. The naming grammar. GitHub, Reddit, Steam, and the personal domain all used nyx_falken or falken. The domain — falkennest.dev — added a new stem, falkennest. I re-enumerated that new stem on a fresh pass — the earlier run had only ever tested nyx_falken, never falkennest — and it turned up a Mastodon account @falkennest@fosstodon.org. The grammar was now legible: nyx prefix or falken(nest) stem, lowercase, occasional underscore. That let me predict and confirm the Mastodon account rather than stumble on it.</p>
 <p>The look-alike. The Twitter/X nyx_falken looked like an easy fifth platform. I nearly logged it as a match on the handle alone. Then I checked content instead of string.</p>
 <p><code>HANDLE  nyx_falken  (twitter/x)</code></p>
 <p><code>--------------------------------</code></p>
@@ -268,12 +249,10 @@
 <p><code>  domain  falkennest.dev  (unlinked)</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>VERDICT  same string, different human</code></p>
-<cite><p>What a cross-platform check surfaces</p></cite>
+<p><emphasis>What a cross-platform check surfaces</emphasis></p>
 <p>Everything diverged. Different pronouns, different self-description, an account created <emphasis>three years earlier</emphasis> than the GitHub one — and note the two dates come from different sources: the Twitter/X date is decoded from the account's snowflake ID — a number with the account's creation time mathematically baked into it, so it decodes to an exact date — while the GitHub date is just the "Joined" line printed on the public profile page, not decoded from any ID — an original avatar with no shared file, and no link back to falkennest.dev. Same rare string, two unrelated humans — the homonym trap at scale, which strikes even coined words because a second person can independently coin the same thing or grab a freed handle. Rejected as the target. I logged the Twitter/X account as a separate person and struck it from the identity.</p>
 <p>Confirmation by convergence. What actually held together: GitHub, Reddit, Steam, the falkennest.dev domain, and the Mastodon account. I wanted a hard identifier off that domain — an email, a registrant name — and I did not get one, and it is worth saying why, because a lot of older tutorials will lie to you here. In 2026 a .dev WHOIS record is privacy-redacted by default. The registrant name and email are hidden behind the registrar; there is no public page with an email local-part to read off. That easy trick is gone for most modern TLDs. Two narrow avenues remain, both with caveats. <emphasis>Historical</emphasis> WHOIS — snapshots archived before privacy became the norm — sometimes preserves a raw registrant, but this domain was far too young to have any. <emphasis>Certificate-transparency logs</emphasis> record every TLS certificate issued for a domain and occasionally leak a subdomain or a contact address; here they showed only the registrar's own. So the domain earned its weight the honest way — as a link the subject <emphasis>declared themselves</emphasis> in the GitHub bio, not as a secret email I decoded.</p>
-<p>The rest of the set held on evidence that survives a rename. The Mastodon bio reused a verbatim phrase from GitHub — <emphasis>"code</emphasis></p>
-<cite><p>by night, ramen by day"* — word for word, an unusual line</p></cite>
-<p>unlikely to be coincidence. Steam and Reddit shared the same cyberpunk avatar file (identical asset, not a look-alike). Creation dates lined up into one plausible 2021–2022 arc.</p>
+<p>The rest of the set held on evidence that survives a rename. The Mastodon bio reused a verbatim phrase from GitHub — <emphasis>"code</emphasis> <emphasis>by night, ramen by day"</emphasis> — word for word, an unusual line unlikely to be coincidence. Steam and Reddit shared the same cyberpunk avatar file (identical asset, not a look-alike). Creation dates lined up into one plausible 2021–2022 arc.</p>
 <p>Signals converging: verbatim bio phrase across two platforms (strong), identical avatar file across two more (strong), self-declared personal domain linking the set (strong), consistent naming grammar (moderate). Five platforms, one person — and crucially, <emphasis>not</emphasis> the Twitter/X account that shared the handle.</p>
 <p>I reported strong — one identity across GitHub, Reddit, Steam, Mastodon, and the personal site — and named the rejected Twitter/X look-alike explicitly so nobody downstream re-added it. I did not claim confirmed: the subject never self-linked every account in one place, and no single hard identifier resolved the whole set uniquely. Strong was the honest rung.</p>
 <p>• THE USERNAME WEB</p>
@@ -281,7 +260,7 @@
 <p>• Reddit</p>
 <p>• Steam X (snowflake) Mastodon look-alike</p>
 <p>• one habit reused across platforms — verify each by content</p>
-<cite><p>One seed handle fans out to many hits; content and grammar<emphasis> </emphasis>pull the real ones into one identity while a same-string look-alike<emphasis> </emphasis>is cut loose.</p></cite>
+<p><emphasis>One seed handle fans out to many hits; content and grammar</emphasis> <emphasis>pull the real ones into one identity while a same-string look-alike</emphasis> <emphasis>is cut loose.</emphasis></p>
 <subtitle>A note on the traps you will meet</subtitle>
 <p>Recycled handles are the classic snare. Someone abandons nyx_falken; a year later a different person grabs the freed name. Now the string spans two humans across <emphasis>time</emphasis>, not just space. Creation dates are your defence — a handle that "predates" the person's known activity is a rename or a recycle, not a time machine.</p>
 <p>Generational nicks and leetspeak widen the grammar. A person who was xX_dragon_Xx at fourteen may be dragon.eth at twenty-eight — same human, evolved naming. Read the drift, don't be fooled by it. And remember the LLM-era wrinkle: writing style, once a reliable tie-breaker, is being flattened by AI-assisted composition. Lean harder on hard invariants — creation dates, shared image files, self-declared links — when the prose gets suspiciously smooth.</p>
@@ -305,24 +284,22 @@
 <p>People treat Telegram as a private room. It is not. It is a glass box they mistake for a wall.</p>
 <p>They lock down their profile, hide their phone number, pick an anonymous handle — and then they go and <emphasis>post</emphasis> in a dozen public groups, forward each other's messages, and log in at the same hour every night. Every one of those is a trace left in the open. None of it needs a warrant, a login to their account, or a single message sent to them. This chapter is about reading those traces well. Here we go deep on one platform, and on the one fact that makes Telegram attribution durable.</p>
 <p>One 2026 note before we start, because it changed the stakes. After Telegram's September 2024 policy shift — the one that followed its founder's arrest in France — Telegram will now disclose a user's IP address and phone number to authorities under a valid legal request in a criminal case. That is real, and it matters. But it is a lever for law enforcement with a court order behind them, not a tool for you, and nothing in this chapter touches it. What the shift confirms from the outside is exactly the lesson we build on: the account's numeric ID is the durable spine of the identity, the thing every system keys off. Usernames went the other way — they are now openly traded as assets on Telegram's own Fragment marketplace, bought and sold and re-registered to strangers. The costume has a resale value; the number does not change hands.</p>
-<cite><p>The handle is a costume. The number underneath it is<emphasis> </emphasis>the person.</p></cite>
+<cite><p><emphasis>The handle is a costume. The number underneath it is</emphasis> <emphasis>the person.</emphasis></p></cite>
 <subtitle>The one thing everything hangs on: ID, not username</subtitle>
 <p>Every Telegram account carries a permanent numeric ID, handed out at registration and never changed. The @username sitting on top of it is mutable — it can be renamed, dropped, sold, or claimed later by a total stranger.</p>
 <p>That gap is the whole game.</p>
 <p>• The numeric ID is a positive integer, assigned roughly in order over time. Older accounts have lower numbers. It is the anchor.</p>
 <p>• A group or channel ID is negative — a supergroup shows as -100 glued to its internal number, while a plain (non-super) group is just a negative number with no -100 prefix (e.g. -4829103), a small tell that the chat is older or simpler.</p>
 <p>• The @handle is a snapshot. It tells you who holds that name</p>
-<cite><p>today*. Tomorrow is not promised.</p></cite>
-<p>So the first move in any Telegram case is the same, every time: resolve the handle to its numeric ID, and from then on treat the</p>
-<cite><p>ID* as your subject. Everything durable — account age, past</p></cite>
-<p>names, group history — keys off the number.</p>
+<cite><p><emphasis>today</emphasis>. Tomorrow is not promised.</p></cite>
+<p>So the first move in any Telegram case is the same, every time: resolve the handle to its numeric ID, and from then on treat the <emphasis>ID</emphasis> as your subject. Everything durable — account age, past names, group history — keys off the number.</p>
 <p>A resolver does the conversion. Some are bots (@username_to_id-style), some are no-login web tools. For a contact of your own, forwarding one of their messages to an info-bot returns the sender's ID — but only if they haven't set forwarded messages to unlink from their account, in which case you get a name and no clickable profile at all. That is your first dead end, and it will not be your last.</p>
 <p><code>resolve @nightferry_kv</code></p>
 <p><code>  id:        512883471</code></p>
 <p><code>  username:  @nightferry_kv</code></p>
 <p><code>  name:      "kv"</code></p>
 <p><code>  status:    ok</code></p>
-<cite><p>A username-to-ID resolver in action</p></cite>
+<p><emphasis>A username-to-ID resolver in action</emphasis></p>
 <p>Write the ID down. It is the case anchor now.</p>
 <p>Try it (2026). Take a @handle and resolve it to its numeric user ID: forward one of the account's messages to a @username_to_id-style ID bot — e.g. @username_to_id_bot or @usinfobot; try one, and if it errors or is gone, try another — or paste the handle into a no-login username-to-ID web tool, and read the number back. That number is permanent. But do it carefully: any third-party resolver or ID bot <emphasis>sees your query</emphasis> — your account, the time, and the exact ID you asked about — so run it only from a clean research account, never against the rare centre-of-case ID you most want to protect. A cheerful "helpful" bot is exactly what a honeypot looks like.</p>
 <subtitle>The tools, in plain words</subtitle>
@@ -338,13 +315,9 @@
 <p>Name and username history. Telegram publishes no history API. But observer bots have sat inside millions of public groups for years, quietly logging every name and handle change of accounts they shared a room with. Query one by ID and it reports the transitions it personally witnessed — the old personas, the rebrand from a dirtier handle to a clean one.</p>
 <p>The hard caveat, and say it out loud: you only see what the observer observed. A rename that happened before that bot ever shared a group with the account was recorded by no one. Its absence from the report is not evidence it never happened. This is observation-bound intelligence — leads, not a complete ledger.</p>
 <subtitle>Finding a person through the groups they post in</subtitle>
-<p>Here is the move most beginners miss. You rarely need to break into anything. You need to find <emphasis>where the person already speaks</emphasis></p>
-<cite><p>in public*, and read it.</p></cite>
+<p>Here is the move most beginners miss. You rarely need to break into anything. You need to find <emphasis>where the person already speaks</emphasis> <emphasis>in public</emphasis>, and read it.</p>
 <p>Two directions:</p>
-<p>Top-down — you have the person, you want their rooms. Membership-index bots claim to list the public groups an ID is or was in. They work by having crawled public groups at scale, recording "(this ID) seen in (this chat)" tuples. You are querying</p>
-<cite><p>their* log, not Telegram. So: massive undercount, private groups</p></cite>
-<p>never appear, "last seen" dates are lower bounds, and some of these bots are fed by scraped or breach data — stale, wrong, and sometimes unlawful to lean on. Use the output as a list of <emphasis>places</emphasis></p>
-<cite><p>to go look by hand*, nothing more.</p></cite>
+<p>Top-down — you have the person, you want their rooms. Membership-index bots claim to list the public groups an ID is or was in. They work by having crawled public groups at scale, recording "(this ID) seen in (this chat)" tuples. You are querying <emphasis>their</emphasis> log, not Telegram. So: massive undercount, private groups never appear, "last seen" dates are lower bounds, and some of these bots are fed by scraped or breach data — stale, wrong, and sometimes unlawful to lean on. Use the output as a list of <emphasis>places</emphasis> <emphasis>to go look by hand</emphasis>, nothing more.</p>
 <p>Bottom-up — you have the rooms, you want the person. If you already know several groups of interest, pull each member roster and intersect them. The account that shows up in <emphasis>all</emphasis> of them is your coordinating core — and you found it without trusting a single membership bot. A roster pull off a large supergroup caps at a few thousand names, so you get a sample, not the whole room; absence from your export never proves non-membership. Admins can also hide the member list entirely, and broadcast channels usually don't expose subscribers at all — you only see the people who comment. Either way, the payoff is the same: once you're in a public group the target posts in, you read what they <emphasis>say</emphasis>, and saying reveals far more than membership.</p>
 <subtitle>Reading activity: routine as a fingerprint</subtitle>
 <p>A person's posting timestamps, gathered over a couple of weeks, draw a shape. Cluster them and the quiet stretch — the hours with no activity — is roughly when they sleep. That gap approximates their timezone, and timezone narrows region, even for an account with a fake name and no photo.</p>
@@ -358,7 +331,7 @@
 <p>• Assume every third-party bot logs you. Query only from a clean research account that never links back to you or your client, never your real one.</p>
 <p>• Don't feed the operator the story. Resolve an ID if you must, but avoid handing one bot the <emphasis>whole</emphasis> pattern of rare queries that would tell the person running it which case you are on.</p>
 <p>• Against organized targets, treat resolver and lookup bots as burned by default. The convenience is never worth getting made.</p>
-<cite><p>Never run the ID-anchor or a cross-platform resolve to<emphasis> </emphasis>unmask someone who is anonymous for their safety.</p></cite>
+<cite><p><emphasis>Never run the ID-anchor or a cross-platform resolve to</emphasis> <emphasis>unmask someone who is anonymous for their safety.</emphasis></p></cite>
 <p>An anti-corruption source, a protester under an authoritarian government, a whistleblower — the same handle-to-durable-number move that catches a harassment account is exactly what a hostile client will pay to point at them. A commission whose interest in unmasking that person is retaliation, not accountability, is a red flag to decline, not a brief to fulfil. The tools in this chapter do not know the difference. You do.</p>
 <subtitle>The lookup bots: passive is not undetectable</subtitle>
 <p>You will be tempted by the phone-and-username lookup bots — feed a number, get a name; feed a handle, get a "who is this". Use them with your eyes open, because they carry four honest problems.</p>
@@ -375,7 +348,7 @@
 <p><code>512 883 471</code></p>
 <p>• the person</p>
 <p>• permanent — the real anchor resolve</p>
-<cite><p>The mutable handle sits on top; the permanent numeric ID<emphasis> </emphasis>underneath is what account age, name history, and group traces<emphasis> </emphasis>all key off.</p></cite>
+<p><emphasis>The mutable handle sits on top; the permanent numeric ID</emphasis> <emphasis>underneath is what account age, name history, and group traces</emphasis> <emphasis>all key off.</emphasis></p>
 <p>Age check. The creation estimate puts the account at roughly four years old. Not a fresh sock — an established identity. That is useful; it means there may be years of public trace behind it.</p>
 <p>The first dead end. The profile itself is clean. No photo, name just "kv", bio empty, forwarded-message linking switched off. The account gives me nothing directly, and a lookup bot on the handle returns:</p>
 <p><code>query: @nightferry_kv</code></p>
@@ -383,16 +356,13 @@
 <p><code>  phone:         not available</code></p>
 <p><code>  confidence:    low / unverified</code></p>
 <p><code>  note: crowd label, source unknown</code></p>
-<cite><p>What a username lookup bot returns</p></cite>
-<p>A name. Tempting. And I <emphasis>reject it</emphasis> — for now. "Crowd label, source unknown" is exactly the caller-ID-style residue that names an old owner or a stranger's guess. It goes in the file as</p>
-<cite><p>unconfirmed, low confidence*, nothing more.</p></cite>
+<p><emphasis>What a username lookup bot returns</emphasis></p>
+<p>A name. Tempting. And I <emphasis>reject it</emphasis> — for now. "Crowd label, source unknown" is exactly the caller-ID-style residue that names an old owner or a stranger's guess. It goes in the file as <emphasis>unconfirmed, low confidence</emphasis>, nothing more.</p>
 <p>Pivot to the ID's history. I query a name-history observer by the numeric ID. It reports a former username the account cycled through two years back: @k_veranko. The current account is scrubbed; the <emphasis>old</emphasis> handle was not built to be.</p>
 <p>Cross-platform on the old handle. I run @k_veranko — not the current one, the discarded one — through username enumeration. It surfaces a years-old, still-public account on another platform: same handle, an avatar, a bio linking a personal blog, and a first name plus initial: "Kateryna V."</p>
 <p>Now the "Andriy Petrenko" from the crowd bot doesn't just look unconfirmed — it looks <emphasis>wrong</emphasis>. Two independent, self-published signals point to a different person entirely. The crowd label is discarded outright.</p>
 <p>Corroborate on the group content. Back in the community chat, I read the target's public posts over two weeks. Quiet hours line up with a local sleep schedule — right region. Repeated references to a specific tram route and a named workplace. The old blog from the cross-platform hit mentions the same workplace. That is two axes pointing the same way: a discarded handle traced across platforms to a blog persona, and public group content placing that persona in the same city and workplace. The avatar on the old account matches the blog; the workplace is named in two places she published herself.</p>
-<p>Now look hard at what I actually hold, because this is where beginners over-claim. The name is a first name and an initial — "Kateryna V." — not a full identity. The blog could belong to a namesake. The shared workplace is suggestive, not decisive, in a city of that size. The numeric ID is a <emphasis>confirmed</emphasis> anchor for the</p>
-<cite><p>account* — but the jump from account to a specific named</p></cite>
-<p>human still rests on soft, self-published matches and one recycled handle. Every link in that second chain is plausible. None of it is hard.</p>
+<p>Now look hard at what I actually hold, because this is where beginners over-claim. The name is a first name and an initial — "Kateryna V." — not a full identity. The blog could belong to a namesake. The shared workplace is suggestive, not decisive, in a city of that size. The numeric ID is a <emphasis>confirmed</emphasis> anchor for the <emphasis>account</emphasis> — but the jump from account to a specific named human still rests on soft, self-published matches and one recycled handle. Every link in that second chain is plausible. None of it is hard.</p>
 <p>Verdict: I attribute to "Kateryna V." at moderate confidence — a solid, named lead, not a locked identity. To climb to strong I would want one more independent axis: a second platform tying the same face to the same full name, or a document. I have neither, and I will not manufacture them. So I report moderate, name the two supporting axes, flag the rejected crowd-name so the client sees the fork I chose, and write down plainly what would move the needle. The dead-end clean account was never the obstacle; the <emphasis>old</emphasis> handle it forgot to bury was the way in — it just did not carry me all the way home. Stopping at moderate, and saying so, is the finding. Note what I never did: no private group under a false story, no message to the target, no logging link — every step read a public surface.</p>
 <subtitle>Exercise</subtitle>
 <p>Safe drill (your own account). Resolve your own handle to your numeric ID with any resolver. Then run the ID through a creation-date estimator and compare the result to the month you actually joined. Notice the error margin — that gap is exactly the uncertainty you must carry into every age claim you make about a <emphasis>stranger's</emphasis> account. Do not query other people's numbers for practice; use only yourself.</p>
@@ -412,7 +382,7 @@
 <p>Two clues in one frame. First, everything <emphasis>in</emphasis> the picture: the metadata baked into the file, the shop sign over the shoulder, the reflection in the sunglasses. Second, the face itself — a key that can, sometimes, open other doors across other platforms.</p>
 <p>We treat both. The frame here is the <emphasis>light</emphasis> version — enough to read a photo for leads. Deep geolocation, the art of pinning a picture to a rooftop from a chimney and a shadow, is Volume 3. Here we stay at the level of "what does this photo tell me about who and where, and which of those threads can I pull."</p>
 <p>And before any of it, one hard line. Face search is the most intrusive tool in this book. Nothing else you'll learn comes close.</p>
-<cite><p>A face template is sensitive personal data, and<emphasis> </emphasis>face-search tools sit in a legal grey zone that varies<emphasis> </emphasis>sharply by country. A client hiring you is not the law<emphasis> </emphasis>giving you permission. Check what's allowed where you<emphasis> </emphasis>work before you run one.</p></cite>
+<cite><p><emphasis>A face template is sensitive personal data, and</emphasis> <emphasis>face-search tools sit in a legal grey zone that varies</emphasis> <emphasis>sharply by country. A client hiring you is not the law</emphasis> <emphasis>giving you permission. Check what's allowed where you</emphasis> <emphasis>work before you run one.</emphasis></p></cite>
 <subtitle>The frame: what's in the picture</subtitle>
 <p>Start with the file before you start with the face. Two reasons. It's less intrusive, and it often works better.</p>
 <p>Every original photo can carry EXIF — a block of data the camera writes at capture. GPS coordinates. A timestamp. The phone's make and model. The editing app that last touched it. On an <emphasis>original</emphasis> file this is a gift.</p>
@@ -433,7 +403,7 @@
 <p><code>  DateTime    : —</code></p>
 <p><code>  GPS         : (none)</code></p>
 <p><code>  Note: EXIF stripped on upload</code></p>
-<cite><p>Metadata reader — original vs platform-stripped</p></cite>
+<p><emphasis>Metadata reader — original vs platform-stripped</emphasis></p>
 <p>When GPS <emphasis>is</emphasis> present, treat the number as a claim, not a fact. GPS can be edited or spoofed. So you confirm it: drop the coordinate into satellite or street view and check the background matches — buildings, terrain, signage. If the metadata says Phoenix and the frame shows snowy peaks, believe the peaks, not the number.</p>
 <p>The rest of the frame is read by eye and by reverse search. A badge with a name. A watermark username in the corner. A logo on a hoodie. A street sign. These "environmental anchors" are gold precisely because they often survive when the face fails — and they're far less intrusive to chase.</p>
 <subtitle>Reverse image search, done properly</subtitle>
@@ -443,9 +413,7 @@
 <p>• Google Lens — the scene reader. Objects, landmarks, storefronts, text in the image. Weak on faces by design (it suppresses identity matches), strong on everything around the person.</p>
 <p>• TinEye — the origin tracker. Finds exact and near-exact copies, and crucially can sort by <emphasis>oldest</emphasis>, surfacing where a picture first surfaced. No face recognition at all.</p>
 <p>• Bing Visual Search — the extra pass. Different coverage, catches things the others miss. Commerce-heavy.</p>
-<p>Try it (2026). Crop tight to the face, then run that crop through several engines that each do a different job (see the division of labour above). Then do the real work: open the <emphasis>pages</emphasis></p>
-<cite><p>the hits live on* and read the usernames, captions, and comments</p></cite>
-<p>— never conclude on an engine's similarity score, which is a lead, not an identification.</p>
+<p>Try it (2026). Crop tight to the face, then run that crop through several engines that each do a different job (see the division of labour above). Then do the real work: open the <emphasis>pages</emphasis> <emphasis>the hits live on</emphasis> and read the usernames, captions, and comments — never conclude on an engine's similarity score, which is a lead, not an identification.</p>
 <p>Crop to the subject. This is the multiplier that turns a null into a hit. Most engines lock onto the biggest face or object in the frame. If your subject stands next to two other people and a large dog, the engine may cheerfully go and identify the dog. Crop tight to one face, one sign, one tattoo. Search each separately.</p>
 <p>Search the face versus the whole image — deliberately, as two different questions. The whole image finds <emphasis>this exact picture</emphasis> elsewhere: reposts, the original source, catfish reuse. A tight face crop asks a different question: <emphasis>where else does this person appear</emphasis>, in other photos, other clothes, other years. You want both answers.</p>
 <p>The flip trick. Scammers and repost accounts often mirror an image horizontally to dodge exact-match detection. Upload a flipped copy yourself as a second pass — new hits appear. Use flipping to <emphasis>find reposts</emphasis>, never to <emphasis>compare a face</emphasis>, because mirroring distorts the asymmetric features that matter.</p>
@@ -455,12 +423,12 @@
 <p>Understand the mechanism, because it explains the failure modes. The engine detects a face, turns it into a numeric embedding — a vector of a few hundred numbers describing the geometry — and finds the nearest neighbours to that vector in its index. A "match" is a near neighbour in vector space. It is not a fingerprint. False-positive rates swing hard with pose, lighting, image quality, and demographic. The engine's own confidence score is not an identification.</p>
 <p>Coverage differs by engine, the same way it does for reverse search. Some index the open web — news, blogs, personal sites — and deliberately skip the big social platforms. Others lean into social and grey-area directories. Others specialise in regional networks. If your subject is Eastern European, a general engine may be thin where a regional one is rich.</p>
 <p>Here is the rule that governs the whole discipline, and it is the throughline of this book:</p>
-<cite><p>A face hit is a <emphasis>lead</emphasis>. It stays a lead until content confirms<emphasis> </emphasis>it — never a rung higher on the strength of the match<emphasis> </emphasis>alone.</p></cite>
+<cite><p><emphasis>A face hit is a </emphasis>lead<emphasis>. It stays a lead until content confirms</emphasis> <emphasis>it — never a rung higher on the strength of the match</emphasis> <emphasis>alone.</emphasis></p></cite>
 <p>The identification doesn't come from the engine. It comes from the <emphasis>second pivot</emphasis> — moving from the face hit to the page it lives on, and reading it. The username. The captions. The comments. Who's tagged. A background you've seen in another photo of your subject. That's where a lead becomes a finding.</p>
 <p>• A FACE IS ONLY A LEAD</p>
 <p>• face hit weak 2nd pivot the page it lives on content identity</p>
 <p>• the engine finds a neighbour; the pivot makes the finding</p>
-<cite><p>A face hit only opens a door. The first pivot lands you on a page;<emphasis> </emphasis>the second pivot — reading the content on that page — is what<emphasis> </emphasis>actually identifies. The match score never climbs the ladder on its<emphasis> </emphasis>own.</p></cite>
+<p><emphasis>A face hit only opens a door. The first pivot lands you on a page;</emphasis> <emphasis>the second pivot — reading the content on that page — is what</emphasis> <emphasis>actually identifies. The match score never climbs the ladder on its</emphasis> <emphasis>own.</emphasis></p>
 <subtitle>One face, four doors, two of them wrong</subtitle>
 <p>Let me walk a case. Fictional throughout, but the shape is real — including the parts where it goes wrong, which is most of them.</p>
 <p>A client engages me to vet a business contact before a deal. I have written authorisation, but the client's mandate is not the subject's consent — so before I run anything I confirm the work is defensible where I operate, the contact is a public-facing principal named in the deal's paperwork rather than a private individual surveilled for sport, and I lean on open sources only. I have one thing to work from: a profile photo from a company "About" page. A man, call him Marco Feldt, mid-forties, plain headshot.</p>
@@ -477,7 +445,7 @@
 <p><code>    -&gt; flagged: possible reuse</code></p>
 <p><code>  -------------------------------</code></p>
 <p><code>  4 hits. 1 flagged low-confidence.</code></p>
-<cite><p>Open-web face engine — ranked hits</p></cite>
+<p><emphasis>Open-web face engine — ranked hits</emphasis></p>
 <p>The top three cluster on one news site and a conference page, all naming M. Feldt at an industry event. That's coherent. The fourth, at 71%, points to a stock-photo library — I park it as suspicious and come back to it.</p>
 <p>Engine two, with social coverage, gives me a fourth door:</p>
 <p><code>        FACE SEARCH — ENGINE B</code></p>
@@ -492,24 +460,22 @@
 <p><code>  -------------------------------</code></p>
 <p><code>  Too few faces on Hit 3 to rank.</code></p>
 <p><code>  3 hits. 1 ambiguous.</code></p>
-<cite><p>Social-coverage face engine — ranked hits</p></cite>
+<p><emphasis>Social-coverage face engine — ranked hits</emphasis></p>
 <p>Now I have three candidate accounts and two loose ends. Time to do the actual work — the pivots. Door one, the doppelgänger. Hit 3 on engine B, "Marc, 41", on a dating profile in a different city. The face score is a plausible 68%. My gut, if I let it, would file this as "same guy, secret life." So I read the <emphasis>content</emphasis>. The dating profile's photos include a graduation shot dated years before Marco's known career, in a university Marco never mentions, in a country his verified LinkedIn history never touches. The dates don't line up. The place doesn't line up. I reject it. This is a doppelgänger — a real, different human who happens to sit near Marco in vector space. The face engine did exactly what it does: found a near neighbour. It was my job, not the engine's, to notice they can't be the same person.</p>
-<cite><p>A high match score with a broken timeline isn't a secret.<emphasis> </emphasis>It's a stranger.</p></cite>
+<cite><p><emphasis>A high match score with a broken timeline isn't a secret.</emphasis> <emphasis>It's a stranger.</emphasis></p></cite>
 <p>Door two, the dead end. Back to that 71% stock-photo hit. I open it. Marco's face, on a royalty-free image titled "confident businessman in office." Uh-oh — does this mean <emphasis>Marco's</emphasis> photo is fake, a stock image dressed up as a CEO? I run the flip trick and a couple more reverse-search passes on the stock image itself. TinEye, sorted oldest. The stock library's copy is old, but Marco's conference photos, from a named event with a dated programme, predate it — and show him live on a stage with other identifiable, verifiable people. What actually happened is dull: the stock library scraped or re-listed a real photo. The stock hit <emphasis>links to nobody</emphasis>. It's a repost with no new person behind it. A reverse search that finds only reposts of a picture you already have has found you nothing. I close the door. No rung gained, no rung lost.</p>
 <p>Doors three and four, the real ones. The X handle @m_feldt_biz and the LinkedIn "Marco Feldt — CEO". Here the pivots pay off. The LinkedIn lists the same company as the "About" page I started from. The X account, over months of posts, references the same conference from Marco's news hits — posts a photo <emphasis>from</emphasis> the event, the same stage, timestamped that week. Two independent threads — the professional page and the social account — now agree on employer, event, and timeline. I take the recovered handle and run it through a username tool to see where else m_feldt_biz lives, which turns up a matching profile on one more platform, self-authored, same bio.</p>
 <p>Where does that leave me? The face alone was weak. Face plus one corroborating account would have been moderate. Face plus two independent accounts agreeing on employer, event, and dates, plus a consistent handle across platforms, is strong. Not confirmed — confirmed would want something harder, a direct statement, a document, the subject's own acknowledgement. I stop at strong and I write it down as strong, with the chain that got me there. I do not let the vivid 94% top hit tempt me into calling it confirmed.</p>
 <subtitle>An exercise you can run safely</subtitle>
 <p>Do not practise this on a stranger. The whole point of the chapter is that you don't. Practise on a <emphasis>safe</emphasis> subject, one of these three:</p>
 <p>1. Yourself. Crop a photo of your own face and run it through a couple of reverse-image and face engines. See what the open web holds on you. Uncomfortable, instructive, and entirely consented. 2. A willing friend who says yes, in words, first. 3. A public figure with a genuine reason — a politician, a chief executive whose public role you're legitimately checking.</p>
-<p>The task: take one photo. Read its frame first — is there EXIF, or was it stripped? Any anchors in the background? Then run it through at least two different reverse-search engines and, for a consenting or public subject, a face engine. For every hit, force yourself to write one line: <emphasis>is this a real new signal, a repost of the</emphasis></p>
-<cite><p>same image, or a doppelgänger?* Chase one recovered username</p></cite>
-<p>to a second account. Then place your conclusion on the ladder — weak, moderate, strong — and write the chain that justifies the rung.</p>
+<p>The task: take one photo. Read its frame first — is there EXIF, or was it stripped? Any anchors in the background? Then run it through at least two different reverse-search engines and, for a consenting or public subject, a face engine. For every hit, force yourself to write one line: <emphasis>is this a real new signal, a repost of the</emphasis> <emphasis>same image, or a doppelgänger?</emphasis> Chase one recovered username to a second account. Then place your conclusion on the ladder — weak, moderate, strong — and write the chain that justifies the rung.</p>
 <p>If your honest answer is "weak," stop there and say so. Learning to stop at weak is the skill.</p>
 <subtitle>Recap</subtitle>
 <p>• A photo is two clues: the frame (metadata, background, anchors) and the face (a cross-platform key). Read the frame first — it's often more productive.</p>
 <p>• EXIF is a gift on original files and usually stripped by social platforms. Absent GPS proves nothing. Present GPS is a claim to verify against the background, not a fact.</p>
 <p>• Reverse search properly: several engines, crop to the subject, search the face and the whole image as <emphasis>two different</emphasis></p>
-<cite><p>questions<emphasis>, use the flip trick for reposts. Every engine returns </emphasis>similarity, never identity*.</p></cite>
+<cite><p><emphasis>questions</emphasis>, use the flip trick for reposts. Every engine returns <emphasis>similarity, never identity</emphasis>.</p></cite>
 <p>• A face hit is a lead, downgraded until content confirms it. The identification comes from the second pivot — the page, not the engine.</p>
 <p>• Expect dead ends: doppelgängers rejected by broken timelines, stock or AI avatars that link to nobody, reverse searches that find only reposts. Rejecting these cleanly is the job.</p>
 <p>• Land on a defensible rung and write the chain. Strong is a fine, honest place to stop. Confirmed needs more than a face.</p>
@@ -518,18 +484,16 @@
 <section><title><p>Leaks, Handled Cleanly</p></title><epigraph><p>Breach data as a bridge between identities — never a key</p></epigraph><image l:href="#illo009.jpg"/><subtitle>CHAPTER FIVE</subtitle>
 <p>A leak is not a shortcut. That is the first thing to unlearn.</p>
 <p>Most people, when they first hear that a target's email and password are floating around in some dump, feel a little thrill of access. <emphasis>I could get in.</emphasis> Put that down. You never will, not as part of this work. What a leak gives you is far more useful and far less exciting: it gives you a <emphasis>thread</emphasis>. The same email in two breaches. The same rare password on two accounts. A username that shows up beside an address you already had. Threads that tie one identity to another. You follow them. You never pull them to open a door.</p>
-<cite><p>You may check whether a door was left open. You may<emphasis> </emphasis>never walk through it.</p></cite>
+<cite><p><emphasis>You may check whether a door was left open. You may</emphasis> <emphasis>never walk through it.</emphasis></p></cite>
 <p>You already know that zero breach hits does not mean safe, only unindexed. Here we go deeper: what a breach checker actually tells you, how an email becomes a cross-platform connector, why a shared password can <emphasis>fingerprint</emphasis> a person, and the hard limits on every one of those moves.</p>
 <subtitle>The idea: leaks connect, they never enter</subtitle>
-<p>Think about what a breach dataset really is. A service got compromised, and its user records spilled — emails, sometimes usernames, sometimes passwords or password hashes, sometimes phone numbers and addresses. A <emphasis>stealer log</emphasis> is different again: it is the output of malware on someone's own machine, recording every site they logged into while infected. Two different things, and you must keep them separate in your notes, because they mean different things about the person. The 2026 shift worth naming: classic combolists are increasingly being crowded out by fresh stealer logs — Redline, Lumma, MetaStealer — traded on Telegram channels that parse them on the fly. The password-fingerprint method below does not change because of this; it still links accounts the same way, only the <emphasis>source</emphasis> has shifted. But for attribution — for the work of proving that two accounts belong to one human — the content matters less than the</p>
-<cite><p>co-occurrence*. When dmitri.works@gmail.com shows up in a</p></cite>
-<p>2019 forum breach alongside the username nightferry, you now have a link between an email and a handle. When that same nightferry appears on a games platform and a photo-sharing site, the email you started with has quietly become a map of a person's footprint.</p>
+<p>Think about what a breach dataset really is. A service got compromised, and its user records spilled — emails, sometimes usernames, sometimes passwords or password hashes, sometimes phone numbers and addresses. A <emphasis>stealer log</emphasis> is different again: it is the output of malware on someone's own machine, recording every site they logged into while infected. Two different things, and you must keep them separate in your notes, because they mean different things about the person. The 2026 shift worth naming: classic combolists are increasingly being crowded out by fresh stealer logs — Redline, Lumma, MetaStealer — traded on Telegram channels that parse them on the fly. The password-fingerprint method below does not change because of this; it still links accounts the same way, only the <emphasis>source</emphasis> has shifted. But for attribution — for the work of proving that two accounts belong to one human — the content matters less than the <emphasis>co-occurrence</emphasis>. When dmitri.works@gmail.com shows up in a 2019 forum breach alongside the username nightferry, you now have a link between an email and a handle. When that same nightferry appears on a games platform and a photo-sharing site, the email you started with has quietly become a map of a person's footprint.</p>
 <p>• A LEAK IS A BRIDGE, NOT A KEY</p>
 <p>• account A account B</p>
 <p><code>shared email</code></p>
 <p>• co-occurrence links them</p>
 <p>• you connect the dots — you never unlock the door</p>
-<cite><p>An email, a handle, or a password is a bridge between two<emphasis> </emphasis>identities — it lets you cross from one record to another. It is never<emphasis> </emphasis>a key: it does not, and must not, open the account at the far end.</p></cite>
+<p><emphasis>An email, a handle, or a password is a bridge between two</emphasis> <emphasis>identities — it lets you cross from one record to another. It is never</emphasis> <emphasis>a key: it does not, and must not, open the account at the far end.</emphasis></p>
 <p>None of this requires a password. And when a password <emphasis>does</emphasis> enter the picture, it enters as a <emphasis>fingerprint</emphasis>, never as a credential. I will come back to that, loudly.</p>
 <subtitle>Method: what a breach checker gives you, and what it hides</subtitle>
 <p>Start with the plainest tool. A breach-membership checker — Have I Been Pwned is the reference — takes an email and tells you which known breaches it appears in, when they happened, and what <emphasis>classes</emphasis> of data each one exposed. Passwords, dates of birth, addresses, phone numbers: it names the categories, not the values. HIBP will never hand you a password. That is by design, and the design is what keeps it lawful.</p>
@@ -541,15 +505,13 @@
 <p><code>  Exposed: Emails, Usernames, IP addresses</code></p>
 <p><code>- MyFitDiary (2018-03)</code></p>
 <p><code>  Exposed: Emails, Passwords, Names, DOB</code></p>
-<cite><p>What a breach-membership check returns</p></cite>
+<p><emphasis>What a breach-membership check returns</emphasis></p>
 <p>Read that carefully, because it is already telling you a lot without a single password. Three breaches across three years. One of them, ForumRunner, exposed a <emphasis>username</emphasis> — that is a pivot. Another exposed a <emphasis>name and date of birth</emphasis> — those corroborate an identity you may already suspect. The email is registered on at least three services, one of them a fitness diary, which places the person on that platform in 2018. Now the part beginners skip. Run the same check on a slightly different address and you may get this.</p>
 <p><code>Account: d.works1990@outlook.com</code></p>
 <p><code>Breaches found: 0</code></p>
 <p><code>No pastes found.</code></p>
-<cite><p>What a breach-membership check returns (empty)</p></cite>
-<p>Zero. What does zero mean? It does not mean the account is clean, safe, or fake. It means <emphasis>the checker has not indexed a breach</emphasis></p>
-<cite><p>containing it.* The address may be pristine. It may be sitting in a</p></cite>
-<p>dump nobody has parsed and loaded yet. It may be brand new. A blank result is a fact about the <emphasis>index</emphasis>, not about the <emphasis>person</emphasis> — data, not a verdict. Write it down as "unindexed," never as "no exposure."</p>
+<p><emphasis>What a breach-membership check returns (empty)</emphasis></p>
+<p>Zero. What does zero mean? It does not mean the account is clean, safe, or fake. It means <emphasis>the checker has not indexed a breach</emphasis> <emphasis>containing it.</emphasis> The address may be pristine. It may be sitting in a dump nobody has parsed and loaded yet. It may be brand new. A blank result is a fact about the <emphasis>index</emphasis>, not about the <emphasis>person</emphasis> — data, not a verdict. Write it down as "unindexed," never as "no exposure."</p>
 <p>There is one more thing these tools surface: <emphasis>pastes</emphasis>. A paste is a chunk of text someone dropped on a paste site — Pastebin and its cousins — often a raw list of leaked credentials or a combolist. When a breach checker says your email appeared in a paste, it is telling you the address was circulating in some dump that got copied into the open. Useful as a circulation signal. But pastes are messy, frequently duplicated, and often mislabelled with the wrong "source." Treat a paste hit as <emphasis>moderate</emphasis> evidence of exposure at best, and go read the paste's date and context before you lean on it. One 2026 caveat: paste ingestion has been largely frozen since paste sites tightened access, so this feed is stale and thin now — a blank "no pastes" line reflects a checker that mostly stopped listening, not a clean subject.</p>
 <p>Try it (2026). For a breach-membership check, go to Have I Been Pwned, enter an address you own, and read the returned breach list with its dates and exposed data classes. For password rarity, use the same site's Pwned Passwords range check, which returns how often a string has appeared without ever seeing your full password or hash. Services and interfaces shift, so confirm the current tool before you rely on it.</p>
 <subtitle>Method: the email as a cross-platform connector</subtitle>
@@ -559,24 +521,16 @@
 <p>Notice what you did <emphasis>not</emphasis> do. You did not log into the photo account. You did not test a password anywhere. You read exposure and co-occurrence, and let the facts stack up.</p>
 <subtitle>Method: the password as a fingerprint (and only that)</subtitle>
 <p>This is the technique people most often get wrong, so I am going to be careful.</p>
-<p>Some datasets expose passwords — as plaintext, or as hashes. Suppose two accounts, on two unrelated services, both used the password Tramline!7743xQ. That is not a common password. It is long, it is odd, it has no dictionary shape. If the same rare string protects two accounts, the most likely explanation is that</p>
-<cite><p>the same person set both*. People reuse their weird passwords.</p></cite>
-<p>That reuse is a fingerprint.</p>
+<p>Some datasets expose passwords — as plaintext, or as hashes. Suppose two accounts, on two unrelated services, both used the password Tramline!7743xQ. That is not a common password. It is long, it is odd, it has no dictionary shape. If the same rare string protects two accounts, the most likely explanation is that <emphasis>the same person set both</emphasis>. People reuse their weird passwords. That reuse is a fingerprint.</p>
 <p>You can use that. If dmitri.works@gmail.com used Tramline!7743xQ in one breach, and an account under a totally different email, zorin.market@proton.me, used the identical string in another, you now have moderate-to-strong evidence that both emails belong to one person. The password did the linking.</p>
 <p>It did not open anything. And this is the line:</p>
-<cite><p>You may use a leaked password to link two identities.<emphasis> </emphasis>You may never type one into a login. Doing so is<emphasis> </emphasis>unauthorised access — a crime, not OSINT.</p></cite>
+<cite><p><emphasis>You may use a leaked password to link two identities.</emphasis> <emphasis>You may never type one into a login. Doing so is</emphasis> <emphasis>unauthorised access — a crime, not OSINT.</emphasis></p></cite>
 <p>Now the limits, because the fingerprint has three sharp ones.</p>
 <p>First: common passwords fingerprint nothing. If two accounts share Password123 or liverpool or qwerty2020, that is not a link — millions of people used those. A password only fingerprints when it is <emphasis>rare enough that coincidence is implausible</emphasis>. You can sanity-check rarity with a k-anonymity password checker, which tells you how many times a password string has appeared in breaches without you ever sending the password — or even its full hash — anywhere: you send only a short <emphasis>prefix</emphasis> of its hash as a range query and finish the match on your own machine. A password seen four million times is worthless. A password seen twice is a strong fingerprint.</p>
 <p>Second: breach data is old and dirty. A password from a 2016 dump tells you about 2016. People rotate passwords. Combolists recycle and re-attribute records, so the "same" credential can appear across a dozen dumps with the wrong service attached — and in 2026 the stealer-log and combolist markets are bigger and more heavily re-attributed than ever.</p>
 <p>Third, and the subtlest — this one has burned careful analysts, so I am naming it outright. A shared rare password does not by itself prove a shared <emphasis>owner</emphasis>. It can equally mean a shared <emphasis>victim</emphasis>. Call it the shared-victim trap.</p>
-<p>Picture it. Tramline!7743xQ shows up protecting dmitri.works@gmail.com in a 2019 dump, and then again on a crypto-exchange account in a 2023 dump. The tempting read is "same person, two accounts." But a second story fits the exact same facts: an attacker harvested Dmitri's rare password from the 2019 combolist and credential-stuffed it — tried that leaked email-and-password pair against sites Dmitri never used, the exchange among them. If it landed, the exchange account was</p>
-<cite><p>compromised*. It belongs to whoever Dmitri's credential was</p></cite>
-<p>stuffed against, or to the attacker who opened it — not to Dmitri. Either way, the second account is a <emphasis>victim of Dmitri's</emphasis></p>
-<cite><p>leak<emphasis>, not a second identity </emphasis>of* Dmitri. The password links two</p></cite>
-<p>records; it does not tell you whether they share an owner or share an attacker.</p>
-<p>So you break the tie before you conclude, never after. Check the order of events: if the second account was created or breached</p>
-<cite><p>after* Dmitri's password was already circulating in combolists,</p></cite>
-<p>stuffing is live on the table and single-owner is unproven. Then look for ownership signals a stolen password cannot fake — does the second account carry its own recovery email, its own consistent handle, its own IP that overlaps the first? One password and nothing else, on an account that surfaced after the leak went public, is not a single-owner finding. It is a lead with two live explanations, and you hold both until something independent kills one.</p>
+<p>Picture it. Tramline!7743xQ shows up protecting dmitri.works@gmail.com in a 2019 dump, and then again on a crypto-exchange account in a 2023 dump. The tempting read is "same person, two accounts." But a second story fits the exact same facts: an attacker harvested Dmitri's rare password from the 2019 combolist and credential-stuffed it — tried that leaked email-and-password pair against sites Dmitri never used, the exchange among them. If it landed, the exchange account was <emphasis>compromised</emphasis>. It belongs to whoever Dmitri's credential was stuffed against, or to the attacker who opened it — not to Dmitri. Either way, the second account is a <emphasis>victim of Dmitri's</emphasis> <emphasis>leak</emphasis>, not a second identity <emphasis>of</emphasis> Dmitri. The password links two records; it does not tell you whether they share an owner or share an attacker.</p>
+<p>So you break the tie before you conclude, never after. Check the order of events: if the second account was created or breached <emphasis>after</emphasis> Dmitri's password was already circulating in combolists, stuffing is live on the table and single-owner is unproven. Then look for ownership signals a stolen password cannot fake — does the second account carry its own recovery email, its own consistent handle, its own IP that overlaps the first? One password and nothing else, on an account that surfaced after the leak went public, is not a single-owner finding. It is a lead with two live explanations, and you hold both until something independent kills one.</p>
 <subtitle>One worked case: from an email to a second handle</subtitle>
 <p>Let me walk a real-shaped case, dead ends included.</p>
 <p>The seed. A client engagement — authorised, documented — hands me one email: info@meridian-imports.co. The question is who runs a particular anonymous marketplace account, merid_trade, that the client believes is connected to this small import firm.</p>
@@ -587,19 +541,15 @@
 <p><code>  Exposed: Emails, Company names</code></p>
 <p><code>- ForumRunner (2016-08)</code></p>
 <p><code>  Exposed: Emails, Usernames, IP addresses</code></p>
-<cite><p>What a breach-membership check returns</p></cite>
+<p><emphasis>What a breach-membership check returns</emphasis></p>
 <p>ForumRunner exposed a username. Promising. I pull the associated record and it gives me the handle merid_trade tied to info@meridian-imports.co. For a moment this looks finished — the marketplace handle, right there beside the company email.</p>
-<p>The dead end. It is not finished, and here is why. info@ is a <emphasis>role</emphasis></p>
-<cite><p>mailbox*. It is not a person; it is a shared inbox that several staff at</p></cite>
-<p>Meridian Imports can read and send from. Anyone in that office could have registered merid_trade using the shared address. Linking merid_trade to info@meridian-imports.co does not attribute it to a <emphasis>human</emphasis> — it attributes it to a <emphasis>company inbox</emphasis>. That is a real finding, but it answers the wrong question. The client wants a person. A role mailbox maps to no one person, and I mark this branch dead.</p>
+<p>The dead end. It is not finished, and here is why. info@ is a <emphasis>role</emphasis> <emphasis>mailbox</emphasis>. It is not a person; it is a shared inbox that several staff at Meridian Imports can read and send from. Anyone in that office could have registered merid_trade using the shared address. Linking merid_trade to info@meridian-imports.co does not attribute it to a <emphasis>human</emphasis> — it attributes it to a <emphasis>company inbox</emphasis>. That is a real finding, but it answers the wrong question. The client wants a person. A role mailbox maps to no one person, and I mark this branch dead.</p>
 <p>Step two — find a personal address. I need a human email. The ForumRunner IP-address field and the breach's timestamps let me see that the merid_trade account was most active from one IP, and that same IP appears in the breach tied to a <emphasis>second</emphasis>, personal-looking email: dana.rurik88@gmail.com. Now I have a candidate human.</p>
 <p>Step three — corroborate with a second source. I breach-check dana.rurik88@gmail.com. It appears in a paste and in one other breach that exposed a password <emphasis>hash</emphasis>. Separately, I find a dana.rurik on a photo platform. Weak so far — a name overlap and an IP. I need something firmer.</p>
 <p>Step four — the fingerprint, and a rejected coincidence. The breach tied to dana.rurik88@gmail.com exposed a password. So did an old account I found under the marketplace handle's recovery email. Both passwords: summer2019. My pulse jumps — then I stop. I run summer2019 through the k-anonymity checker. It has appeared in breaches over sixty thousand times. It fingerprints <emphasis>nothing</emphasis>. Half the internet used summer2019. I reject the match outright. It is a coincidence, not a link, and if I had reported it as evidence I would have been wrong and reckless.</p>
 <p>Back to slower, better proof. I keep reading. A different breach exposes, for dana.rurik88@gmail.com, the password Rurik_kite#4402. And the marketplace handle's associated email, in yet another dump, used the identical string. <emphasis>That</emphasis> password, checked for rarity, appears exactly once besides these two accounts. That is a real fingerprint — and before I lean on it, I clear the shared-victim trap: both accounts predate the dumps that leaked the string, both carry their own overlapping IP, and neither surfaced <emphasis>after</emphasis> the other's password went public. This is reuse by one hand, not stuffing by an attacker.</p>
 <p>Step five — the hard identifier. Strong is not where this one ends, because a strand outside the leak layer finishes it. The photo-platform account, dana.rurik, is self-authored and public. Its bio links out to a small personal blog, and on that blog — in the author's own words, under the full name Dana Rurik — sits a post announcing the launch of the merid_trade marketplace shop, with a link straight to it. But a blog is a <emphasis>self-set</emphasis> surface: anyone can stand up a page under any name, so before I credit it I verify the blog's origin is independently hers. It is: the blog is linked from the dana.rurik photo account I already tied to her by the IP and the rare-password fingerprint, and its domain registration and inbound links trace back to that same account — so this is a genuine self-link, not a namesake's page or one planted to mislead me. Only now does it count. That is not breach co-occurrence. That is the subject, in public, tying her own name to the very account I was asked about. A self-authored public statement, once its origin is confirmed as the target's own, is a hard identifier.</p>
-<p>The landing. So where am I, honestly? The leak layer carried me a long way: an IP linking the marketplace handle to a personal email; a rare shared password, cleared of the shared-victim trap, linking that email to the handle's recovery address; a name overlap on a photo platform. Independent, stacked, none of them a login — and on breach data <emphasis>alone</emphasis> I would have stopped at strong, because stale, criminal-sourced records never earn</p>
-<cite><p>confirmed* by themselves. What lifts this to confirmed is the</p></cite>
-<p>self-link that sits outside the leaks entirely: Dana Rurik, in public, under her own name, claiming the account. I write the report at confirmed, I name the hard identifier that earned the rung, I list every dump and date that got me to strong, and I flag the info@ dead end so the next analyst does not repeat my afternoon.</p>
+<p>The landing. So where am I, honestly? The leak layer carried me a long way: an IP linking the marketplace handle to a personal email; a rare shared password, cleared of the shared-victim trap, linking that email to the handle's recovery address; a name overlap on a photo platform. Independent, stacked, none of them a login — and on breach data <emphasis>alone</emphasis> I would have stopped at strong, because stale, criminal-sourced records never earn <emphasis>confirmed</emphasis> by themselves. What lifts this to confirmed is the self-link that sits outside the leaks entirely: Dana Rurik, in public, under her own name, claiming the account. I write the report at confirmed, I name the hard identifier that earned the rung, I list every dump and date that got me to strong, and I flag the info@ dead end so the next analyst does not repeat my afternoon.</p>
 <subtitle>Exercise: check your own exposure, safely</subtitle>
 <p>This one you run entirely on yourself. No targets, no third parties.</p>
 <p>• Take one of <emphasis>your own</emphasis> email addresses. Run it through a breach-membership checker (HIBP or equivalent). Write down each breach, its date, and the data classes exposed. Notice how much a stranger could infer just from the <emphasis>list</emphasis> — which services you used, roughly when.</p>
@@ -611,7 +561,7 @@
 <p>• Leaks are bridges, not keys. They connect identities; they never open accounts. The bright line is looking versus touching, and it does not move.</p>
 <p>• A breach checker tells you membership, dates, and data classes — never the password values. It reads exposure. That is what keeps it lawful.</p>
 <p>• A blank result is data, not a verdict. Zero hits means</p>
-<cite><p>unindexed<emphasis>, not </emphasis>safe<emphasis>, not </emphasis>clean*.</p></cite>
+<cite><p><emphasis>unindexed</emphasis>, not <emphasis>safe</emphasis>, not <emphasis>clean</emphasis>.</p></cite>
 <p>• An email is a cross-platform connector. Breach co-occurrence turns one address into usernames, IPs, and alternate emails you can fan out and corroborate.</p>
 <p>• A rare shared password fingerprints a person. A common one fingerprints no one. Check rarity before you trust it, and reject coincidences without mercy.</p>
 <p>• A shared password can mean a shared victim, not a shared owner. Credential-stuffing can plant one person's leaked password on another's account. Clear the shared-victim trap — order of events, independent ownership signals — before you conclude single-owner.</p>
@@ -624,7 +574,7 @@
 <p>Most people stop here. They write "no online presence" and move on. That is a mistake. Because the person did not disappear. They only locked their own front door.</p>
 <p>One chapter back, you used a ring of connections to <emphasis>confirm</emphasis> an identity you already suspected — you had a name in mind and the network told you whether it fit. This chapter runs the other direction. Here you start with a person who has deliberately hidden themselves, and you <emphasis>discover</emphasis> an identity you did not know existed. Same graph of people; opposite job.</p>
 <p>The move I reach for when the direct search dies is one I call the Family Chain. The idea is simple, and once you see it you cannot unsee it. You do not attack the wall. You walk around it, through the people standing beside it.</p>
-<cite><p>Never run the Family Chain to find someone who has<emphasis> </emphasis>gone dark for their own safety.</p></cite>
+<cite><p><emphasis>Never run the Family Chain to find someone who has</emphasis> <emphasis>gone dark for their own safety.</emphasis></p></cite>
 <p>A domestic-abuse survivor or anyone hiding from the very person who wants them found is not a brief to fulfil — that "client" is a red flag to decline before you draw the first node. The full version of this limit is at the end of the chapter; it comes first here because a stop-sign is no use if you only meet it after the method.</p>
 <subtitle>The one thing they forget to hide</subtitle>
 <p>A careful person can lock down everything they own. Every profile, every post, every setting. It takes effort, but it can be done.</p>
@@ -638,13 +588,9 @@
 <p>I just told you a story, so distrust it a little. A story hands you one lucky ending and hides the ten steps that could have gone wrong. Let me strip it down to the repeatable method underneath: five steps you can run on anyone, without needing my luck.</p>
 <p>Step 1 — Map the immediate circle. Before you pivot anywhere, draw the people. The target is the centre node. Around them go the nodes you can name or guess: partner, parents, siblings, children, close friends, business partners. You do not need proof yet. You need candidates. A name from a wedding announcement, a "brother" in an old tagged comment, a shared surname — all of it goes on the map as a node.</p>
 <p>Step 2 — Find which nodes are open. Now test each node for a pulse. Which of these people has a public profile? Relatives usually do. Older relatives especially — a mother's Facebook from 2013, wide open, is a goldmine. You are not reading them yet. You are just marking each node open or closed.</p>
-<p>Step 3 — Pivot into the target through an open node. This is the move. You go into the open relative's account and you look</p>
-<cite><p>for the target inside it* — their tags, their photos, their mentions,</p></cite>
-<p>the comments they left. You are not there to study the relative. You are there to find where they point back at your locked-down person.</p>
+<p>Step 3 — Pivot into the target through an open node. This is the move. You go into the open relative's account and you look <emphasis>for the target inside it</emphasis> — their tags, their photos, their mentions, the comments they left. You are not there to study the relative. You are there to find where they point back at your locked-down person.</p>
 <p>Step 4 — Confirm by cross-links. One mention is a lead, not a fact. Stack independent links: same face across two photos, same event on the same date, the same handle in two unrelated places. Each match lifts you a rung.</p>
-<p>Step 5 — Stop when the work question is answered. The moment you have what the job actually needed, you stop. You do not keep pulling the relatives apart for sport. More on this below, because it matters more than the technique. Try it (2026). Pick a public figure with a locked-down personal presence — or, better, a consenting friend who has agreed to be your practice target. Write down three or four named relatives you can identify from public sources: a spouse, a sibling, a parent, an in-law, a cousin. Check each one's account for a pulse — mark them open or closed — and pick the most open relative. Now step <emphasis>into</emphasis> that relative's account and look only <emphasis>for</emphasis></p>
-<cite><p>the target inside it*: tags, family photos, mentions, comments the</p></cite>
-<p>target left. The moment you have your answer to the one work question you set, stop — do not record anything about the relative that isn't the answer, and do not read further "just to see." Caveat: this whole drill lives inside the safety carve-out at the end of the chapter — never run it against someone hiding for their own protection, no matter how neat the practice case looks.</p>
+<p>Step 5 — Stop when the work question is answered. The moment you have what the job actually needed, you stop. You do not keep pulling the relatives apart for sport. More on this below, because it matters more than the technique. Try it (2026). Pick a public figure with a locked-down personal presence — or, better, a consenting friend who has agreed to be your practice target. Write down three or four named relatives you can identify from public sources: a spouse, a sibling, a parent, an in-law, a cousin. Check each one's account for a pulse — mark them open or closed — and pick the most open relative. Now step <emphasis>into</emphasis> that relative's account and look only <emphasis>for</emphasis> <emphasis>the target inside it</emphasis>: tags, family photos, mentions, comments the target left. The moment you have your answer to the one work question you set, stop — do not record anything about the relative that isn't the answer, and do not read further "just to see." Caveat: this whole drill lives inside the safety carve-out at the end of the chapter — never run it against someone hiding for their own protection, no matter how neat the practice case looks.</p>
 <subtitle>Drawing the graph</subtitle>
 <p>Put it on paper. A crude diagram beats a clever memory.</p>
 <p><code>identity-graph.txt</code></p>
@@ -665,7 +611,7 @@
 <p>• wall wife (open) sister (open)</p>
 <p>• tagged holiday photo 2nd handle</p>
 <p>• you don't climb the wall — you walk around it</p>
-<cite><p>The locked target sits behind a wall the frontal search cannot cross.<emphasis> </emphasis>The relatives stand out in the open around it. The path does not go<emphasis> </emphasis>through the wall — it runs sideways, from an open wife to an open<emphasis> </emphasis>sister to a tagged photo, and reaches the target from behind.</p></cite>
+<p><emphasis>The locked target sits behind a wall the frontal search cannot cross.</emphasis> <emphasis>The relatives stand out in the open around it. The path does not go</emphasis> <emphasis>through the wall — it runs sideways, from an open wife to an open</emphasis> <emphasis>sister to a tagged photo, and reaches the target from behind.</emphasis></p>
 <subtitle>A worked case, with the wrong turns left in</subtitle>
 <p>Let me run it properly. Everything here is invented, but the friction is real — the dead ends, the look-alikes, the false link I had to throw away. Those are the parts most write-ups delete. They are the parts that teach.</p>
 <p>The brief. A client is owed a large, court-recognised debt by a man named Marat Devlin. Marat swears his small logistics firm collapsed, that he is broke, and that there is nothing to recover. The client's lawyer suspects otherwise — that Marat quietly kept trading under a different name to put the business beyond reach. My question — the <emphasis>only</emphasis> question I am paid to answer — is: is Marat still operating a hidden business identity? There is an active, lawful dispute and a real debt behind the question — a genuine reason to look into Marat. Hold on to that, because the chain is about to run through his family, who are owed no such scrutiny.</p>
@@ -690,16 +636,12 @@
 <p>• @md_offgrid's few public posts show a van with a company logo. The logo is the same mark — same wordmark, same colours — as the logistics firm on Marat's old LinkedIn. This one I did not set and neither did he; it is a specific, checkable artefact from a different source than the face. That lifts me to moderate.</p>
 <p>• The holiday's location and date match a "van's out west, back next week" note posted on the firm's public page in the same week. A third independent thread — timing, from yet another source — landing on the same person. That takes me to strong: @md_offgrid is very probably Marat Devlin's hidden, still-active account.</p>
 <p>Notice where the weight came from. Not the face — the face never rose above weak, and I never let it. The climb from weak to strong is carried entirely by the two signals I could <emphasis>not</emphasis> have talked myself into: an independent logo and an independent date.</p>
-<p>What the second account answered. @md_offgrid is not off-grid at all. The van is working — it is posting jobs, pickups, and a booking contact, all under a new brand, all in the weeks Marat swore the business was dead. That directly contradicts "the firm collapsed, there is nothing to recover." And <emphasis>that is the</emphasis></p>
-<cite><p>answer to the brief.* The lawyer asked whether Marat was still</p></cite>
-<p>trading under a hidden identity. On the open evidence, he is.</p>
-<p>Now the honest part about the rung. I reached strong — three independent threads agreeing — but I did <emphasis>not</emphasis> reach confirmed, and I say so in plain words. Confirmed would mean a piece of proof that ties the human being Marat Devlin to that account beyond a competing explanation: a subpoenaed platform record, a payment trail, an admission. I cannot get those from the open web, and I will not inflate strong into confirmed to please a client. So my report says exactly this: <emphasis>strong evidence that</emphasis></p>
-<cite><p>@md_offgrid is Marat's active account; recommend the lawyer<emphasis> </emphasis>compel the platform and payment records to close the final gap.</p></cite>
-<p>The open-source work takes it as far as open-source work honestly goes, and then hands off to the people who can compel the rest.</p>
+<p>What the second account answered. @md_offgrid is not off-grid at all. The van is working — it is posting jobs, pickups, and a booking contact, all under a new brand, all in the weeks Marat swore the business was dead. That directly contradicts "the firm collapsed, there is nothing to recover." And <emphasis>that is the</emphasis> <emphasis>answer to the brief.</emphasis> The lawyer asked whether Marat was still trading under a hidden identity. On the open evidence, he is.</p>
+<p>Now the honest part about the rung. I reached strong — three independent threads agreeing — but I did <emphasis>not</emphasis> reach confirmed, and I say so in plain words. Confirmed would mean a piece of proof that ties the human being Marat Devlin to that account beyond a competing explanation: a subpoenaed platform record, a payment trail, an admission. I cannot get those from the open web, and I will not inflate strong into confirmed to please a client. So my report says exactly this: <emphasis>strong evidence that</emphasis> <emphasis>@md_offgrid is Marat's active account; recommend the lawyer</emphasis> <emphasis>compel the platform and payment records to close the final gap.</emphasis> The open-source work takes it as far as open-source work honestly goes, and then hands off to the people who can compel the rest.</p>
 <p>I write the finding. Then I stop.</p>
 <subtitle>Where you stop, and why it is the real skill</subtitle>
 <p>The technique runs on innocent people's carelessness — a wife, a sister, who did nothing wrong and never agreed to be in anyone's investigation. That is exactly why it needs a hard limit, and one limit comes before all the others:</p>
-<cite><p>Never run the Family Chain to find someone who has<emphasis> </emphasis>gone dark for their own safety.</p></cite>
+<cite><p><emphasis>Never run the Family Chain to find someone who has</emphasis> <emphasis>gone dark for their own safety.</emphasis></p></cite>
 <p>A domestic-abuse survivor, an estranged ex, a person who cut contact and does not want to be found — locating them can put them in real, physical danger, sometimes from the very person paying you. A "client" who wants you to find someone who deliberately hid from <emphasis>them</emphasis> is a red flag to decline, not a brief to fulfil. This is the one job you say no to, no matter the fee.</p>
 <p>After that, the everyday discipline is one line: take only what answers the work question, then stop. I needed to know whether Marat was still trading. Lena's travel history, Kira's relationships, the family's address — none of it answers the brief, so none of it goes in the report. I saw the rest; I do not use it or store it. And keep to open sources only: the whole method rests on what people left public, so you never befriend, deceive, or blag your way into a closed profile.</p>
 <p>One legal line worth holding on to: your client's permission covers looking into their target, not cataloguing the private lives of the relatives you pass through. When the stakes are regulated — employment, credit, insurance, anything cross-border — that stops being something you eyeball and becomes something you get in writing, with counsel. The full playbook lives in Volume 4.</p>
@@ -719,62 +661,52 @@
 <p>• Your client's permission covers looking into the target, not cataloguing the relatives you pass through. Take only what answers the question, then stop. Regulated and cross-border detail: Volume 4.</p>
 <p>• Never run the chain to find someone hiding for their own safety — that "client" is a red flag to decline.</p>
 </section>
-<section><title><p>Making the Signals Agree</p></title><epigraph><p>One clue is a guess. Many independent clues that agree are an<emphasis> </emphasis>answer.</p></epigraph><image l:href="#illo011.jpg"/><subtitle>CHAPTER SEVEN</subtitle>
+<section><title><p>Making the Signals Agree</p></title><epigraph><p>One clue is a guess. Many independent clues that agree are an</p></epigraph><image l:href="#illo011.jpg"/><subtitle>CHAPTER SEVEN</subtitle>
+<p><emphasis>answer.</emphasis></p>
 <p>Beginners hunt for the killer clue. The one screenshot, the one leaked email, the one detail that ends the argument. They think attribution is a lock and somewhere there is a single key.</p>
 <p>It almost never works that way.</p>
 <p>Real attribution is quieter. It is a pile of small, unremarkable observations — when someone posts, how they spell, which emoji they overuse, who keeps showing up in their replies — that on their own prove nothing, but <emphasis>together</emphasis> point one way and refuse to point any other. No single signal carries the case. The agreement between them does.</p>
-<cite><p>A conclusion built on one clue falls over when that clue<emphasis> </emphasis>does. A conclusion built on five independent clues has to<emphasis> </emphasis>be knocked down five times.</p></cite>
+<cite><p><emphasis>A conclusion built on one clue falls over when that clue</emphasis> <emphasis>does. A conclusion built on five independent clues has to</emphasis> <emphasis>be knocked down five times.</emphasis></p></cite>
 <p>Volume 1 gave you the ladder: weak, moderate, strong, confirmed. This chapter is about how you actually <emphasis>climb</emphasis> it — not by finding stronger clues, but by stacking honest ones and watching them agree. And it is about the one mistake that quietly wrecks more attributions than any other: counting the same signal twice.</p>
 <p>One thing to settle before we start, because it trips people up. You will see those same four words — weak, moderate, strong, confirmed — used in <emphasis>two</emphasis> places, and they mean two related things. They grade an individual signal: how much weight this one clue carries on its own. And they grade your overall conclusion: how confident you are after stacking everything. The two are linked by counting — but count is a rule of thumb, not the test. The Bridge chapter set the rule for the conclusion. What earns <emphasis>strong</emphasis> is that the independent agreements are, together, hard to explain by any rival hypothesis. That usually takes three or more — but two heavy, diagnostic signals (a byte-identical avatar plus a verified self-link) can reach it, and three weak, common ones may not. Two agreeing independent signals is the usual floor for <emphasis>moderate</emphasis>. So a single "strong, independent" signal is not the same as a strong <emphasis>conclusion</emphasis> — it is one heavy clue that, with one or two more, gets you to a strong finding. When I label a signal below, I am rating that clue; when I name a rung at the end of a case, I am rating the pile. Keep the two senses apart and the chapter stays clear.</p>
 <subtitle>The idea: independent agreement is what moves the needle</subtitle>
 <p>Two accounts. You want to know if the same person runs both. You will never get a certificate. What you get instead is a set of signals, each of which is a little bit consistent — or a little bit inconsistent — with "same person."</p>
 <p>The magic word is independent.</p>
-<p>Two signals are independent when they come from <emphasis>different</emphasis></p>
-<cite><p>sources* and one could be true while the other is false. When they</p></cite>
-<p>agree anyway, that agreement is hard to explain by chance, and your confidence climbs fast. When they are <emphasis>not</emphasis> independent — when they secretly come from the same source — they feel like two witnesses but they are one witness talking twice. Stacking them fools you into false confidence.</p>
+<p>Two signals are independent when they come from <emphasis>different</emphasis> <emphasis>sources</emphasis> and one could be true while the other is false. When they agree anyway, that agreement is hard to explain by chance, and your confidence climbs fast. When they are <emphasis>not</emphasis> independent — when they secretly come from the same source — they feel like two witnesses but they are one witness talking twice. Stacking them fools you into false confidence.</p>
 <p>Here is the cleanest way to feel the difference.</p>
-<p>Say two accounts both display the name "Andrii Melnyk." Impressive? No. The display name is <emphasis>self-set</emphasis>. The person typed it into both boxes. If it is the same person, of course it matches — but if it is an impersonator, it also matches, on purpose. The display name agreeing tells you almost nothing, because both accounts' names come from the <emphasis>same single act of typing by</emphasis></p>
-<cite><p>whoever controls them*. One source. One signal.</p></cite>
+<p>Say two accounts both display the name "Andrii Melnyk." Impressive? No. The display name is <emphasis>self-set</emphasis>. The person typed it into both boxes. If it is the same person, of course it matches — but if it is an impersonator, it also matches, on purpose. The display name agreeing tells you almost nothing, because both accounts' names come from the <emphasis>same single act of typing by</emphasis> <emphasis>whoever controls them</emphasis>. One source. One signal.</p>
 <p>Now say account A posts almost only between 22:00 and 02:00 Kyiv time, and account B — on a different platform, which you checked separately — <emphasis>also</emphasis> goes quiet all day and lights up after 22:00. Neither account announced its hours. You measured them, independently, from two different timelines. Their agreement is not something a person set on purpose. That agreement is real signal.</p>
-<p>Same-looking evidence. Completely different weight. The question is never "do they match?" It is "do they match <emphasis>for</emphasis></p>
-<cite><p>reasons that could have come apart, and didn't*?"</p></cite>
-<p>Now the part most people miss, and it is the whole reason this chapter exists. "Did the target set it?" is only <emphasis>half</emphasis> of independence. There is a second, sneakier way signals stop being independent: when two clues share a hidden common cause that would make them agree <emphasis>even for two different people.</emphasis> Ask the real test out loud — would these two signals agree by coincidence for two different people drawn from the same population? If the answer is yes, they are not two independent votes. They are one vote wearing two coats. Here is the trap in one picture. Suppose your true rival hypothesis is not "same person versus a random stranger" but "same person versus <emphasis>a different person from the same city and the</emphasis></p>
-<cite><p>same online scene*." Now think about what two such people</p></cite>
-<p>would share <emphasis>by default</emphasis>: the same timezone, so the same posting hours. The same local slang. The same in-group emoji. The same regional spelling quirks. None of that is because they are the same person — it is because a shared city and a shared subculture is a common cause that pushes both accounts toward the same look. Under that hypothesis, timing and slang and emoji and typos are all downstream of one thing. Counting them as four independent hits is counting one coincidence four times.</p>
+<p>Same-looking evidence. Completely different weight. The question is never "do they match?" It is "do they match <emphasis>for</emphasis> <emphasis>reasons that could have come apart, and didn't</emphasis>?"</p>
+<p>Now the part most people miss, and it is the whole reason this chapter exists. "Did the target set it?" is only <emphasis>half</emphasis> of independence. There is a second, sneakier way signals stop being independent: when two clues share a hidden common cause that would make them agree <emphasis>even for two different people.</emphasis> Ask the real test out loud — would these two signals agree by coincidence for two different people drawn from the same population? If the answer is yes, they are not two independent votes. They are one vote wearing two coats. Here is the trap in one picture. Suppose your true rival hypothesis is not "same person versus a random stranger" but "same person versus <emphasis>a different person from the same city and the</emphasis> <emphasis>same online scene</emphasis>." Now think about what two such people would share <emphasis>by default</emphasis>: the same timezone, so the same posting hours. The same local slang. The same in-group emoji. The same regional spelling quirks. None of that is because they are the same person — it is because a shared city and a shared subculture is a common cause that pushes both accounts toward the same look. Under that hypothesis, timing and slang and emoji and typos are all downstream of one thing. Counting them as four independent hits is counting one coincidence four times.</p>
 <subtitle>The five workhorse signals</subtitle>
 <p>These are the signals you will reach for again and again. None is decisive alone. Learn what each is worth and, more importantly, whether it is independent of the others you already have.</p>
 <p>• Activity timing. When someone posts, over weeks, sketches their timezone and daily routine — the night-owl window, the lunchtime lull, the dead zone while they sleep. It is behavioural and hard to fake, because faking it means never slipping for months. Two accounts with the same posting fingerprint across many days is quietly strong. <emphasis>Independence:</emphasis></p>
-<cite><p>high against a random stranger — you measured it, they<emphasis> </emphasis>didn't set it. But careful: two different people in the same city<emphasis> </emphasis>share a timezone, so a broad "posts at night" agreement is<emphasis> </emphasis>weaker than it looks. What earns the weight is a specific,<emphasis> </emphasis>personal signature — the same odd 03:40 spikes, the same dead<emphasis> </emphasis>Sunday mornings — not just "both nocturnal."</p></cite>
+<cite><p><emphasis>high against a random stranger — you measured it, they</emphasis> <emphasis>didn't set it. But careful: two different people in the same city</emphasis> <emphasis>share a timezone, so a broad "posts at night" agreement is</emphasis> <emphasis>weaker than it looks. What earns the weight is a specific,</emphasis> <emphasis>personal signature — the same odd 03:40 spikes, the same dead</emphasis> <emphasis>Sunday mornings — not just "both nocturnal."</emphasis></p></cite>
 <p>• Writing style (stylometry-lite). Not fancy software — just the tics a person can't stop doing. A habitual "tbh," a comma before "but," British spellings mixed with American ones, a signature typo, starting sentences with "So." One tic is a coincidence. Five specific, unusual tics shared across accounts is a fingerprint. <emphasis>Independence: moderate to high, if the tics are</emphasis></p>
-<cite><p>genuinely distinctive — but beware, people in the same<emphasis> </emphasis>subculture share slang.</p></cite>
+<cite><p><emphasis>genuinely distinctive — but beware, people in the same</emphasis> <emphasis>subculture share slang.</emphasis></p></cite>
 <p>• Emoji and punctuation habits. A sub-species of style, worth its own line because it is so sticky. The exact emoji someone reaches for ( vs ), double spaces after full stops, "!!!" versus a lone "!", lowercase-everything. Muscle memory. People change their name before they change their emoji.</p>
 <cite><p>Independence: moderate — same caveat as style.</p></cite>
 <p>• Reused assets — bios, links, avatars. The same profile photo, the same bio sentence, the same linked website or Telegram handle across accounts. This is high-value <emphasis>but read</emphasis></p>
-<cite><p>the independence carefully.* A reused avatar file (byte-for-byte</p></cite>
+<cite><p><emphasis>the independence carefully.</emphasis> A reused avatar file (byte-for-byte</p></cite>
 <p>• identical, not just similar) is strong. A reused <emphasis>self-written bio</emphasis></p>
-<cite><p>line* is weaker than it looks — it is self-set, like the display</p></cite>
+<cite><p><emphasis>line</emphasis> is weaker than it looks — it is self-set, like the display</p></cite>
 <p>• name, so an impersonator can copy it deliberately.</p>
 <p>• Shared connections. The same friends, repliers, group co-members orbiting both accounts. A person's social graph is expensive to fake and slow to move. When two accounts share not one but a <emphasis>cluster</emphasis> of the same real associates, that is one of the strongest signals there is — because it lives on <emphasis>other</emphasis></p>
-<cite><p>people's<emphasis> pages, outside the target's control. </emphasis>Independence: high.</p></cite>
+<cite><p><emphasis>people's</emphasis> pages, outside the target's control. <emphasis>Independence: high.</emphasis></p></cite>
 <p>Notice the pattern. The signals you <emphasis>observe from the outside</emphasis> — timing, graph — tend to be independent and strong. The signals the account <emphasis>sets about itself</emphasis> — display name, bio text — tend to be non-independent and weak, because whoever controls the account controls them directly, honestly or not.</p>
 <p>So here is the rule that turns this from a vague worry into arithmetic — and it is the single most important rule in the chapter for the counting to come:</p>
-<p>Timing, slang, emoji, and typos are one family of signals, not four. Grade the whole family as a single factor, and set that factor's weight by how <emphasis>rare</emphasis> the shared trait is — not by how</p>
-<cite><p>many* traits you can list.</p></cite>
-<p>So four agreeing tics from one subculture is not four rungs of evidence — it is one observation, "these two look like they come from the same milieu," counted once. The rescue is <emphasis>specificity</emphasis>. A widespread tic ("posts at night," "says based") proves little and cannot be laundered into strength by piling more widespread tics beside it. But an odd, personal one — a consistent unique misspelling, a homemade contraction nobody else uses, an emoji nobody in that scene reaches for — is rare enough that a coincidental match across two strangers is genuinely unlikely.</p>
-<cite><p>That* is what carries weight, and one rare tic can be worth more</p></cite>
-<p>than ten common ones.</p>
+<p>Timing, slang, emoji, and typos are one family of signals, not four. Grade the whole family as a single factor, and set that factor's weight by how <emphasis>rare</emphasis> the shared trait is — not by how <emphasis>many</emphasis> traits you can list.</p>
+<p>So four agreeing tics from one subculture is not four rungs of evidence — it is one observation, "these two look like they come from the same milieu," counted once. The rescue is <emphasis>specificity</emphasis>. A widespread tic ("posts at night," "says based") proves little and cannot be laundered into strength by piling more widespread tics beside it. But an odd, personal one — a consistent unique misspelling, a homemade contraction nobody else uses, an emoji nobody in that scene reaches for — is rare enough that a coincidental match across two strangers is genuinely unlikely. <emphasis>That</emphasis> is what carries weight, and one rare tic can be worth more than ten common ones.</p>
 <p>So independence has two questions now, and you ask both of every signal:</p>
 <p>1. Did the account owner set it? If yes (display name, bio text), it is self-set and weak — an impersonator copies it on purpose. 2. Would it agree by coincidence for two different people from the same population? If yes (shared timezone, in-group slang), it is correlated, and it collapses into one factor with its cousins.</p>
 <p>A signal only counts as a full, independent vote when the answer to both is no.</p>
 <subtitle>The method: build a signal table, then test independence</subtitle>
 <p>Do not hold this in your head. Bias lives in your head. Put it in a table.</p>
-<p>For each signal write four things, and keep the last two in</p>
-<cite><p>separate* columns because they are separate questions. One: what</p></cite>
-<p>it is. Two: the value you observed on each account. Three: strength — how much this one clue is worth on its own (weak, moderate, strong). Four — the column everyone forgets — independent?, meaning both of our tests: not self-set, and not a coincidence two same-population strangers would share. Strength and independence are not the same axis. A signal can be strong-looking yet non-independent (a copied bio), or modest yet perfectly independent (one odd typo). Never fold them into one column.</p>
+<p>For each signal write four things, and keep the last two in <emphasis>separate</emphasis> columns because they are separate questions. One: what it is. Two: the value you observed on each account. Three: strength — how much this one clue is worth on its own (weak, moderate, strong). Four — the column everyone forgets — independent?, meaning both of our tests: not self-set, and not a coincidence two same-population strangers would share. Strength and independence are not the same axis. A signal can be strong-looking yet non-independent (a copied bio), or modest yet perfectly independent (one odd typo). Never fold them into one column.</p>
 <p>• INDEPENDENT SIGNALS</p>
 <p>• signal kind independent? display name self-set NO bio text self-set NO posting hours observed yes social graph observed yes slang + emoji one style count once</p>
 <p>• cross out self-set rows before you count — quantity is not independence</p>
-<cite><p>Two piles. On the left, signals the account sets about itself —<emphasis> </emphasis>display name, bio, avatar choice — which an impersonator copies<emphasis> </emphasis>on purpose. On the right, signals you observe from outside —<emphasis> </emphasis>posting rhythm, who replies, a rare typo — which the owner cannot<emphasis> </emphasis>quietly coordinate. The table's job is to sort every clue into the right<emphasis> </emphasis>pile before you count, and the "independent?" column is where that<emphasis> </emphasis>sorting is written down.</p></cite>
+<p><emphasis>Two piles. On the left, signals the account sets about itself —</emphasis> <emphasis>display name, bio, avatar choice — which an impersonator copies</emphasis> <emphasis>on purpose. On the right, signals you observe from outside —</emphasis> <emphasis>posting rhythm, who replies, a rare typo — which the owner cannot</emphasis> <emphasis>quietly coordinate. The table's job is to sort every clue into the right</emphasis> <emphasis>pile before you count, and the "independent?" column is where that</emphasis> <emphasis>sorting is written down.</emphasis></p>
 <p>Here is a real one, from the case below.</p>
 <p><code>signal-table.txt</code></p>
 <p><code>kv_designs  vs  kateryna.v.art</code></p>
@@ -794,17 +726,16 @@
 <p><code>  weighted by the rarest (the typo).</code></p>
 <p><code>! bio link is self-set, BUT a replier</code></p>
 <p><code>  posted it first -&gt; promote to YES.</code></p>
-<cite><p>Strength and independence are separate columns: a signal can be<emphasis> </emphasis>strong yet non-independent, or modest yet independent. The three* style-fam rows collapse into one factor before you count.</p></cite>
-<cite><p>Reading the marks: indep? asks "is this an independent vote?" —<emphasis> </emphasis>YES means it counts on its own, NO means it does not. <emphasis>style-fam</emphasis> <emphasis>tags the one correlated style-family (timing, slang, emoji, typos)</emphasis> <emphasis>that gets counted once, not per row. 3rd-party means the signal</emphasis> <emphasis>lives on other people's pages, outside the target's control. The ! is a</emphasis> *note flag — it points you to the numbered note under the box.</p></cite>
+<p>**Strength and independence are separate columns: a signal can be<emphasis> </emphasis>strong yet non-independent, or modest yet independent. The three<emphasis> style-fam rows collapse into one factor before you count.</emphasis></p>
+<p><emphasis>Reading the marks: indep? asks "is this an independent vote?" —</emphasis> <emphasis>YES means it counts on its own, NO means it does not. </emphasis>style-fam<emphasis> </emphasis>tags the one correlated style-family (timing, slang, emoji, typos)<emphasis> </emphasis>that gets counted once, not per row. 3rd-party means the signal<emphasis> </emphasis>lives on other people's pages, outside the target's control. The ! is a<emphasis> </emphasis>note flag — it points you to the numbered note under the box.**</p>
 <p>Read that table the way I do, in two passes. First pass: cross out the self-set rows. Display name, bio text, and — at first — the bio link, because those are things the owner simply typed and an impersonator could copy. Gone.</p>
-<p>Second pass, and this is the new discipline: I do <emphasis>not</emphasis> count the three *style-fam rows as three votes. Posting hours, the closing emoji, and the typo are correlated — two different people from Kateryna's city and design scene could share the night-owl hours and even the plant emoji by coincidence. So I collapse the family into one factor and weight it by its rarest member: the misspelling "wich," which is odd enough that a chance match across two strangers is genuinely unlikely. That one factor lands at moderate-to-strong on its own.</p>
+<p>Second pass, and this is the new discipline: I do <emphasis>not</emphasis> count the three <emphasis>style-fam rows as three votes. Posting hours, the closing emoji, and the typo are correlated — two different people from Kateryna's city and design scene could share the night-owl hours and even the plant emoji by coincidence. So I collapse the family into one factor and weight it by its rarest member: the misspelling "wich," which is odd enough that a chance match across two strangers is genuinely unlikely. That one factor lands at moderate-to-strong on its own.</emphasis></p>
 <p>So what actually survives to be counted? The identical avatar file (moderate, independent). The style-and-timing family, counted once (moderate-to-strong). The cluster of shared repliers living on other people's pages (strong, independent). Plus the promoted bio link. That is three-to-four genuinely independent agreeing factors — not the seven rows the table started with, and not the "five signals" a careless reading would claim.</p>
 <p>The bio-link row has a star, and this is the subtle move in the other direction. On its own the link is self-set — worthless. But I found that one of the <emphasis>shared repliers</emphasis> had posted that same Linktree link months earlier, tagging Kateryna, before either account displayed it. That gives the link an independent origin outside the account, so I promoted it to YES. The discipline cuts both ways: you demote correlated tics that only look like many, and you promote a self-set field when its origin turns out to be independent. You never grade a signal by how it looks — only by where it <emphasis>came from</emphasis> and whether it could have agreed by chance.</p>
 <subtitle>A worked case, with a seductive coincidence</subtitle>
 <p>A client ran a small design studio. A second account, kateryna.v.art, was posting their portfolio images as its own and taking commissions. The client swore it was a former freelancer, Kateryna, who had left on bad terms. My job: is kateryna.v.art actually Kateryna, or someone impersonating her to smear her — or just a random content thief? Fictional names, real method.</p>
 <p>The seductive coincidence, first. Both accounts displayed "Kateryna V." and both bios read, word for word, "designer · plants · slow living." My client waved this as proof. It felt like proof. It was not — and this is exactly the trap the chapter is about.</p>
-<p>The display name and the bio are <emphasis>self-set</emphasis>. If this were an impersonator building a fake Kateryna, they would copy the name and bio <emphasis>on purpose</emphasis> — that is the whole point of impersonation. So the match is equally consistent with "it's really her" and with "someone is pretending to be her." A signal that fits every hypothesis equally discriminates between none of them. I wrote it in the table, marked it NO — not independent, and refused to let it move my confidence a single rung. My client hated that. Good. Then the real work. I pulled the avatar files from both accounts and compared them byte-for-byte. Not "look alike" — identical file, same asset. That is harder to explain by an impersonator, who would more likely screenshot or re-crop. <emphasis>Moderate,</emphasis></p>
-<cite><p>independent.</p></cite>
+<p>The display name and the bio are <emphasis>self-set</emphasis>. If this were an impersonator building a fake Kateryna, they would copy the name and bio <emphasis>on purpose</emphasis> — that is the whole point of impersonation. So the match is equally consistent with "it's really her" and with "someone is pretending to be her." A signal that fits every hypothesis equally discriminates between none of them. I wrote it in the table, marked it NO — not independent, and refused to let it move my confidence a single rung. My client hated that. Good. Then the real work. I pulled the avatar files from both accounts and compared them byte-for-byte. Not "look alike" — identical file, same asset. That is harder to explain by an impersonator, who would more likely screenshot or re-crop. <emphasis>Moderate,</emphasis> <emphasis>independent.</emphasis></p>
 <p>Then the family of style-and-timing signals, and here I am deliberately careful <emphasis>not</emphasis> to overcount. I logged posting times for three weeks: both accounts lived in the same 21:00–01:00 window and both went quiet on Sunday mornings. Both ended most posts with a single . And both misspelled "which" as "wich" — the same specific slip, twice from A, three times from B. Now, a lazy analyst writes that up as three separate strong hits. I do not, because they are correlated: a different designer from the same city and the same plant-loving corner of the internet could plausibly share the night hours and the emoji by coincidence. So I fold timing, emoji, and typo into one factor and weight it by its rarest, most personal member — the misspelling "wich," which no shared subculture explains. As one factor, it lands at <emphasis>moderate to strong, independent.</emphasis> One factor, not three.</p>
 <p>The dead end. I got excited about a shared phone number. kateryna.v.art had a Telegram link, and the client gave me Kateryna's old number from a contract. They matched. For an hour I thought I was done. Then I checked <emphasis>where the number on the account came from.</emphasis> It was pulled from the studio's own public "our team" page — which had listed Kateryna's number while she worked there, and still did. So the impersonator hypothesis explained it just as well: anyone could have lifted that number from a page the studio itself published. The number was not independent of the public record. It fit both stories. Rejected — struck through in my notes, "not diagnostic, publicly available." A clue that fits both of your hypotheses is worth exactly nothing, no matter how much it feels like a win.</p>
 <p>What held. The clincher was the graph. I mapped the regular repliers on both accounts. Four of the six most frequent names were the <emphasis>same real people</emphasis> — a former classmate, two ex-colleagues, a sibling — and on the classmate's own public wall, she had replied to kateryna.v.art with "Kate, is this your new page?" and gotten a -signed "yeah, finally!" back. That exchange lived on <emphasis>someone else's</emphasis> page, outside either account's control, and it self-linked the account to the real person.</p>
@@ -825,13 +756,14 @@
 <p>• Non-independent signals — anything the account <emphasis>self-sets</emphasis>, like display name or bio text — feel like evidence but discriminate between nothing. An impersonator copies them on purpose.</p>
 <p>• Correlated tics are one factor, not many. Timing, slang, emoji, and typos move together for people from the same city or subculture — grade them once, by how <emphasis>rare</emphasis> the shared trait is, never by how many you can list.</p>
 <p>• The four ladder words grade two things: an <emphasis>individual</emphasis></p>
-<cite><p>signal's<emphasis> strength and your </emphasis>overall conclusion*. Two</p></cite>
+<cite><p><emphasis>signal's</emphasis> strength and your <emphasis>overall conclusion</emphasis>. Two</p></cite>
 <p>• independent agreements usually earn moderate; three or more usually earn strong — but count is only a rule of thumb. What actually earns <emphasis>strong</emphasis> is that the agreements are, together, hard to explain by any rival hypothesis. A single "strong" signal is not a strong finding.</p>
 <p>• Build a signal table with separate strength and independent? columns. Cross out the self-set rows, collapse the correlated family, then count what survives.</p>
 <p>• A clue that fits <emphasis>both</emphasis> of your hypotheses equally is not diagnostic — reject it, however good it feels.</p>
 <p>• The strongest signals live on <emphasis>other people's</emphasis> pages, outside the target's control. Weight them accordingly.</p>
 </section>
-<section><title><p>Fighting Your Own Certainty</p></title><epigraph><p>The account you most need to investigate is the one running the<emphasis> </emphasis>investigation.</p></epigraph><image l:href="#illo012.jpg"/><subtitle>CHAPTER EIGHT</subtitle>
+<section><title><p>Fighting Your Own Certainty</p></title><epigraph><p>The account you most need to investigate is the one running the</p></epigraph><image l:href="#illo012.jpg"/><subtitle>CHAPTER EIGHT</subtitle>
+<p><emphasis>investigation.</emphasis></p>
 <p>You have a good attribution. Several independent signals, all agreeing, a clean climb up the ladder. It feels finished. You can picture yourself writing "confirmed."</p>
 <p>That feeling is the most dangerous moment in the whole job.</p>
 <p>Because by now you <emphasis>want</emphasis> it to be true. You have spent hours on it. You told the client you were close. Your brain, helpfully, has stopped looking for problems and started defending the answer. Every new detail somehow fits. Nothing surprises you anymore. That is not the case getting stronger — that is you going blind.</p>
@@ -839,14 +771,14 @@
 <subtitle>The idea: try to break your own answer, on purpose</subtitle>
 <p>The instinct, once you have a theory, is to go collect more evidence <emphasis>for</emphasis> it. This feels like diligence. It is actually the trap. Every investigation has enough noise that a determined person can always find one more thing that "fits." Pile up enough confirming scraps and even a wrong theory looks armoured.</p>
 <p>The fix is to invert the search. Instead of asking "what else supports this?", you ask the question that actually tests a theory:</p>
-<cite><p>What would I expect to see if I were <emphasis>wrong</emphasis> — and do I<emphasis> </emphasis>see it?</p></cite>
+<cite><p><emphasis>What would I expect to see if I were </emphasis>wrong<emphasis> — and do I</emphasis> <emphasis>see it?</emphasis></p></cite>
 <p>This is the disproof pass. You state your conclusion as a hypothesis, you imagine the world in which it is false, you list what that false world would leave lying around, and then you go looking <emphasis>for that</emphasis>. If you hunt hard for the disproof and genuinely can't find it, your conclusion survives — and now it is battle-tested, not just comfortable. If you find the disproof, you just saved yourself from publishing a mistake.</p>
 <p>It is the same logic as the competing-hypotheses discipline analysts use: you don't win by racking up support for your favourite, you win by <emphasis>eliminating the alternatives</emphasis>.</p>
 <p>• THE DISPROOF PASS</p>
 <p>• Theory A Theory B fits BOTH -&gt; worthless</p>
 <p>• breaks A only breaks B only</p>
 <p>• try to break your own answer — keep what survives</p>
-<cite><p>Two live hypotheses — "same person" (A) and "two people, one<emphasis> </emphasis>subculture" (B). A signal that fits both explains nothing; only a<emphasis> </emphasis>signal that fits one and breaks the other moves you. The disproof<emphasis> </emphasis>pass hunts for the fact that kills your favourite — and here, one<emphasis> </emphasis>does.</p></cite>
+<p><emphasis>Two live hypotheses — "same person" (A) and "two people, one</emphasis> <emphasis>subculture" (B). A signal that fits both explains nothing; only a</emphasis> <emphasis>signal that fits one and breaks the other moves you. The disproof</emphasis> <emphasis>pass hunts for the fact that kills your favourite — and here, one</emphasis> <emphasis>does.</emphasis></p>
 <p>This matters more the longer you've worked a case. Effort quietly becomes ownership. Ten hours in, the theory isn't just a theory anymore — it's <emphasis>your</emphasis> theory, and knocking it down feels like admitting you wasted the ten hours. That is why the disproof pass has to be a <emphasis>procedure</emphasis>, not a mood. Good intentions won't save you; you already have good intentions and you're still biased. What saves you is sitting down, writing the false-world checklist, and grinding through it whether you feel like it or not — especially when you don't.</p>
 <subtitle>The method: four moves before you conclude</subtitle>
 <p>Run these in order, every time the answer starts to feel certain. They take twenty minutes and they will save your reputation.</p>
@@ -858,9 +790,7 @@
 <p>• A recycled handle — the username was abandoned and re-registered by a stranger, so "the account's history" is actually two people's histories stitched together at the handover date.</p>
 <p>• A plant or sockpuppet — someone <emphasis>built</emphasis> B to look like A, on purpose, copying the self-set signals to frame or impersonate. (This is exactly why Chapter Seven made you throw out self-set fields.)</p>
 <p>For each alternative, ask: what evidence would I expect it to leave, and have I actually ruled it out — or just not thought about it?</p>
-<p>4. Separate fact from inference in your notes. Go through your file and mark each line as one or the other. <emphasis>Fact:</emphasis> "both accounts posted 21:00–01:00 across three weeks" — you observed it.</p>
-<cite><p>Inference:* "therefore they're in the same timezone" — you</p></cite>
-<p>concluded it. Inferences can be wrong while the facts stay true (a scheduler, a VPN, insomnia in a different zone). When you blur the two, a chain of guesses starts to read like a chain of evidence. Keep them in different columns so you always know which is load-bearing.</p>
+<p>4. Separate fact from inference in your notes. Go through your file and mark each line as one or the other. <emphasis>Fact:</emphasis> "both accounts posted 21:00–01:00 across three weeks" — you observed it. <emphasis>Inference:</emphasis> "therefore they're in the same timezone" — you concluded it. Inferences can be wrong while the facts stay true (a scheduler, a VPN, insomnia in a different zone). When you blur the two, a chain of guesses starts to read like a chain of evidence. Keep them in different columns so you always know which is load-bearing.</p>
 <p>Here is what that separation looks like on paper.</p>
 <p><code>FACT (observed)      | INFERENCE (concluded)</code></p>
 <p><code>---------------------|----------------------</code></p>
@@ -873,34 +803,23 @@
 <p><code>flag: row 4 is a CONTRADICTION,</code></p>
 <p><code>not a supporting fact. do not</code></p>
 <p><code>file it under "evidence for."</code></p>
-<p><emphasis>case notes — keep the columns apart</emphasis></p>
-<cite><p>fact and inference kept in separate columns</p></cite>
+<p><emphasis>case notes — keep the columns apart</emphasis> <emphasis>fact and inference kept in separate columns</emphasis></p>
 <p>Look at that fourth row. It is a fact that does <emphasis>not</emphasis> fit the theory — A was verifiably offline for a week while B posted every day. A confirming mind skips past it. The disproof pass forces it into the light, in its own column, flagged. That row is where the real test of the case now lives.</p>
-<p>Try it (2026). Take an attribution you currently believe — your own live case, or a public one you've seen confidently asserted — and write down two questions on a blank page: <emphasis>"what would I</emphasis></p>
-<cite><p>expect to see if I were wrong?"<emphasis> and </emphasis>"what one fact would kill this?"</p></cite>
-<p>Then spend twenty minutes hunting only for that killer fact — not more support, not "colour," just the disproof. When the twenty minutes are up, re-grade your rung honestly against what you found (or didn't). If your confidence dropped a rung, or landed on "cannot confirm," the pass worked exactly as designed. This is the single most professionally useful habit in the book — the one that, more than any tool, separates people whose findings survive challenge from people whose findings don't.</p>
+<p>Try it (2026). Take an attribution you currently believe — your own live case, or a public one you've seen confidently asserted — and write down two questions on a blank page: <emphasis>"what would I</emphasis> <emphasis>expect to see if I were wrong?"</emphasis> and <emphasis>"what one fact would kill this?"</emphasis> Then spend twenty minutes hunting only for that killer fact — not more support, not "colour," just the disproof. When the twenty minutes are up, re-grade your rung honestly against what you found (or didn't). If your confidence dropped a rung, or landed on "cannot confirm," the pass worked exactly as designed. This is the single most professionally useful habit in the book — the one that, more than any tool, separates people whose findings survive challenge from people whose findings don't.</p>
 <subtitle>The calibration problem: weak piles are not strong</subtitle>
 <p>There is a slow, quiet failure mode that catches careful people. You gather ten weak leads. None is strong. But there are <emphasis>ten</emphasis> of them, and the sheer heap starts to feel like a strong case. So "weak × 10" silently becomes "confirmed" in your summary, and nobody — including you — notices the promotion happen.</p>
 <p>Chapter Seven already told you why: ten leads that trace back to one source are one lead counted ten times.</p>
-<p>So don't ask how many signals you have. Ask how many</p>
-<cite><p>independent* ones — and whether their agreement is hard to</p></cite>
-<p>explain unless the accounts are one person. Write the honest rung. A defensible "strong" beats an indefensible "confirmed" every single time.</p>
+<p>So don't ask how many signals you have. Ask how many <emphasis>independent</emphasis> ones — and whether their agreement is hard to explain unless the accounts are one person. Write the honest rung. A defensible "strong" beats an indefensible "confirmed" every single time.</p>
 <subtitle>A worked case that does not resolve</subtitle>
 <p>A newsroom asked me to confirm that an anonymous account, @civic_watch_ua, posting sharp criticism of a local council, was really a specific council employee — call her O. — leaking from the inside. It <emphasis>felt</emphasis> certain within an hour. That feeling is why I'm telling this story. Fictional details, real method.</p>
 <p>The seductive stack.@civic_watch_ua posted only 22:00–01:00 — O.'s known off-hours. It used specific procedural jargon a council insider would know. It once referenced a budget line before it was public. And its bio said "views my own · public servant." Timing, insider knowledge, a near-confession in the bio. The reporter was ready to run it.</p>
 <p>I wrote the hypothesis flat: <emphasis>"@civic_watch_ua is O."</emphasis> Then I ran the disproof pass, and it came apart in my hands.</p>
 <p>Disproof, move by move.<emphasis>What would I see if this is false?</emphasis> First: the bio. "Public servant" is self-set — O. would write it, but so would anyone wanting the account to <emphasis>read</emphasis> as an insider, including a rival trying to get O. blamed. It fit "it's O." and "someone's framing O." equally. Not diagnostic. Struck out.</p>
-<p>The budget-line "leak" felt strong until I hunted the alternative. I found the same figure in a committee circular that had gone to</p>
-<cite><p>forty* people. Insider knowledge, yes — insider to forty, not to</p></cite>
-<p>one. It narrowed the author to a large room, not to O. Downgraded to weak. Then the disproof landed a real hit. I checked for the contradiction — did the account ever run while O. was verifiably elsewhere? O. had posted holiday photos on her own real, named account from abroad, phone-timezone visible, for nine days in one stretch. @civic_watch_ua posted through all nine, in the <emphasis>same</emphasis> 22:00–01:00 Kyiv window, never shifting to holiday hours. Two readings: either it isn't O., or O. scheduled posts, or it's a shared account and the <emphasis>other</emphasis> hand kept posting. I could not tell which. That single fact broke the clean story and I could not un-break it.</p>
-<p>The alternatives, taken seriously.<emphasis>Two people:</emphasis> plausible — council slang and off-hours fit any of several insiders. <emphasis>Shared</emphasis></p>
-<cite><p>account:* plausible — could be a small group of employees, which</p></cite>
-<p>would explain posting straight through O.'s holiday. <emphasis>Recycled</emphasis></p>
-<cite><p>handle:<emphasis> checked, ruled out, the account was too young. </emphasis>Plant:</p></cite>
-<p>genuinely possible — a rival faction had motive to make leaks look like they came from O. I could eliminate none of the first, second, or fourth.</p>
+<p>The budget-line "leak" felt strong until I hunted the alternative. I found the same figure in a committee circular that had gone to <emphasis>forty</emphasis> people. Insider knowledge, yes — insider to forty, not to one. It narrowed the author to a large room, not to O. Downgraded to weak. Then the disproof landed a real hit. I checked for the contradiction — did the account ever run while O. was verifiably elsewhere? O. had posted holiday photos on her own real, named account from abroad, phone-timezone visible, for nine days in one stretch. @civic_watch_ua posted through all nine, in the <emphasis>same</emphasis> 22:00–01:00 Kyiv window, never shifting to holiday hours. Two readings: either it isn't O., or O. scheduled posts, or it's a shared account and the <emphasis>other</emphasis> hand kept posting. I could not tell which. That single fact broke the clean story and I could not un-break it.</p>
+<p>The alternatives, taken seriously.<emphasis>Two people:</emphasis> plausible — council slang and off-hours fit any of several insiders. <emphasis>Shared</emphasis> <emphasis>account:</emphasis> plausible — could be a small group of employees, which would explain posting straight through O.'s holiday. <emphasis>Recycled</emphasis> <emphasis>handle:</emphasis> checked, ruled out, the account was too young. <emphasis>Plant:</emphasis> genuinely possible — a rival faction had motive to make leaks look like they came from O. I could eliminate none of the first, second, or fourth.</p>
 <p>The honest outcome. I had timing that fit O. but also fit three other stories. I had insider knowledge shared by forty people. I had a self-set bio worth nothing. And I had one hard fact — posting straight through her verified absence — that actively fought the theory. Separating fact from inference, my facts were real but every bridge to "it's O." was an inference with a living alternative underneath it. I reported it as I found it: cannot confirm — do not conclude. Weak-to-moderate that the author is a council insider; <emphasis>no</emphasis> defensible attribution to O. specifically; a live, unexcluded possibility that the account was built to <emphasis>implicate</emphasis> her. I told the newsroom plainly that naming O. would not survive a challenge and could hand a smear the credibility of their masthead. They held the story. Months later a court filing named a three-person group — none of them O. My "cannot confirm" aged well. A "confirmed" would have been a disaster with my name on it.</p>
 <p>That is the chapter's whole point. The disciplined answer is sometimes "I don't know," and delivering that answer cleanly — refusing to let a warm feeling and a thick file bully you into a rung you can't defend — is not failure. It is the most professional thing you will ever do.</p>
-<cite><p>"I cannot attribute this" is a finding. Say it with the<emphasis> </emphasis>same confidence you'd say "confirmed."</p></cite>
+<cite><p><emphasis>"I cannot attribute this" is a finding. Say it with the</emphasis> <emphasis>same confidence you'd say "confirmed."</emphasis></p></cite>
 <subtitle>Exercise</subtitle>
 <p>Take an attribution you currently believe — one that feels solid. Now try to destroy it.</p>
 <p>• Write the hypothesis as one flat sentence. No hedging, no feeling — a claim.</p>
@@ -912,7 +831,7 @@
 <subtitle>Recap</subtitle>
 <p>• The biggest threat to an attribution is the analyst wanting to be right; certainty is a warning light, not a finish line.</p>
 <p>• Invert the search: don't gather more support, ask <emphasis>"what</emphasis></p>
-<cite><p>would prove me wrong?"* and go hunt the disproof.</p></cite>
+<cite><p><emphasis>would prove me wrong?"</emphasis> and go hunt the disproof.</p></cite>
 <p>• Four moves before concluding: state the hypothesis flatly, run the disproof pass, name and test every alternative (two people / shared account / recycled handle / plant), and separate fact from inference in your notes.</p>
 <p>• A pile of weak or non-independent leads is not a strong case. Quantity isn't independence; a hundred rumours from one mouth is one mouth.</p>
 <p>• "Cannot attribute" is a legitimate, professional finding. Deliver it cleanly rather than forcing a conclusion the evidence won't hold.</p>
@@ -923,7 +842,7 @@
 <p>The question was small. The answer took a week. I will show you the dead ends too. A case with no dead ends was not investigated — it was decorated.</p>
 <subtitle>The ask</subtitle>
 <p>A client ran a small electronics resale business. Someone on a marketplace had been buying returned stock in bulk under the seller name voltbin_ua, then reselling it as new and, when buyers complained, posting the client's real company address as the "warehouse" for angry pickups. The client wanted one thing:</p>
-<cite><p>Who is behind voltbin_ua, and is it one person or a shopfront?</p></cite>
+<p><emphasis>Who is behind voltbin_ua, and is it one person or a shopfront?</emphasis></p>
 <p>That is all. Not an arrest. Not a home. A name, and a confidence level honest enough to act on. Everything below serves that one sentence.</p>
 <p>I opened a fresh case note with three columns: claim, evidence, rung. Nothing goes in the report until it earns one.</p>
 <subtitle>The clue and the first wall</subtitle>
@@ -937,13 +856,12 @@
 <p><code>location: Kyiv (self-reported)</code></p>
 <p><code>contact:  via platform messages only</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>marketplace public seller card</p></cite>
+<p><emphasis>marketplace public seller card</emphasis></p>
 <p>That is the whole public surface. No phone. No email. Messaging locked behind the platform. The front door is shut; the side windows are another matter.</p>
 <p>So I stopped trying the front door. I did not attempt to buy an item to trigger a contact reveal — that manufactures a transaction and puts a real person on the hook. Open sources only.</p>
 <p>The only thing the wall gave me for free was the string itself: voltbin_ua.</p>
 <subtitle>Pivoting the handle</subtitle>
-<p>So I ran voltbin_ua, and the root voltbin, across platforms — by hand and with a handle-search tool, then verified every hit by</p>
-<cite><p>content*, never by the mere match.</p></cite>
+<p>So I ran voltbin_ua, and the root voltbin, across platforms — by hand and with a handle-search tool, then verified every hit by <emphasis>content</emphasis>, never by the mere match.</p>
 <p><code>handle sweep — root "voltbin"</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>voltbin_ua   telegram   EXISTS</code></p>
@@ -953,15 +871,13 @@
 <p><code>voltbin.shop domain     parked, no records</code></p>
 <p><code>voltbin      reddit     EXISTS (1 post, 2019)</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>username enumeration, unverified</p></cite>
+<p><emphasis>username enumeration, unverified</emphasis></p>
 <p>Six hits. Most are noise until proven otherwise. Watch how fast they fall. The redditvoltbin — one post, 2019, in an aquarium-keeping forum, written in English from a user whose other comments place them firmly in Canada. Our seller joined the marketplace in 2023 and trades in Ukraine. Wrong topic, wrong country, wrong years. I did not reject it because the name was <emphasis>slightly</emphasis> different — it was identical. I rejected it on content and dates.</p>
 <p>Rejected: reddit/voltbin. Not our target. Rung: n/a.</p>
 <p>The github 404 and the parked domain are simply empty. Empty is not a finding. I wrote "no data" and moved on — an absence is only useful if you first expected a presence.</p>
 <p>That leaves telegram and instagram. Both alive. Both worth a slow look.</p>
 <subtitle>Telegram — public only</subtitle>
-<p>The Telegram handle voltbin_ua resolved to a user. Public profile, no bio, generic avatar. But the handle appeared as an</p>
-<cite><p>author* in two public resale groups — open channels anyone can</p></cite>
-<p>read without joining anything private.</p>
+<p>The Telegram handle voltbin_ua resolved to a user. Public profile, no bio, generic avatar. But the handle appeared as an <emphasis>author</emphasis> in two public resale groups — open channels anyone can read without joining anything private.</p>
 <p><code>telegram — public group mention</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>group:  @kyiv_tech_resale (public)</code></p>
@@ -970,10 +886,7 @@
 <p><code>         Livyi bereh, opt vid 10 sht"</code></p>
 <p><code>date:   2024-02-18</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>public channel post, machine-read</p></cite>
-<p>Ukrainian: <emphasis>"batches of LCD matrices, self-pickup, Left Bank,</emphasis></p>
-<cite><p>wholesale from 10 units."* Same trade, same city, consistent with</p></cite>
-<p>the marketplace seller. That is a moderate-rung link between the marketplace voltbin_ua and the Telegram voltbin_ua — the topic, geography and timing align, but a shared handle plus a shared theme is still just two signals pointing the same way. It is not proof one hand types both.</p>
+<p><emphasis>public channel post, machine-read</emphasis> Ukrainian: <emphasis>"batches of LCD matrices, self-pickup, Left Bank,</emphasis> <emphasis>wholesale from 10 units."</emphasis> Same trade, same city, consistent with the marketplace seller. That is a moderate-rung link between the marketplace voltbin_ua and the Telegram voltbin_ua — the topic, geography and timing align, but a shared handle plus a shared theme is still just two signals pointing the same way. It is not proof one hand types both.</p>
 <p>I pulled the numeric Telegram user ID and logged it. Handles change; the ID is the spine of the account. If voltbin_ua renames itself tomorrow, the ID still stitches the history together. I did not join any closed group, did not message the account, did not add the number to a contact book to farm a name. Public read, ID recorded, stop.</p>
 <p>One quiet thing: the account had forwarded a message once, from a channel called @denys_zip_kyiv. A forward is a relationship of <emphasis>some</emphasis> kind — but a weak one, and I want to be clear up front about what it is not. It is not a self-link, not a shared photo, not a shared room. I parked it as a loose thread. It comes back late in this chapter, and — spoiler — it never earns its way into the answer.</p>
 <subtitle>The face problem</subtitle>
@@ -990,7 +903,7 @@
 <p><code>  - magnifier lamp, ring type</code></p>
 <p><code>  - barred window, 4 vertical bars</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>manual scene comparison, not biometric</p></cite>
+<p><emphasis>manual scene comparison, not biometric</emphasis></p>
 <p>This is <emphasis>scene</emphasis> matching — the room, not the man. Two accounts photographed the same physical workbench. Combined with the shared handle and the shared trade, the marketplace / Telegram / Instagram cluster now holds together at a strong rung — same <emphasis>workshop</emphasis>, near-certainly. Whether that means one operator or two people who share the room is a question the disproof pass has to settle later; the room-match alone can't. Still no name.</p>
 <subtitle>The bridge from a leak</subtitle>
 <p>To turn this cluster into a <emphasis>person</emphasis>, I needed an identifier that lives in the world — an email, a phone — tied to one of these accounts through an open source, not a purchase.</p>
@@ -1001,10 +914,8 @@
 <p><code>"Napyshit: voltbin.fix@gmail.com"</code></p>
 <p><code>"Telegram: @voltbin_ua"</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>archived page, public capture</p></cite>
-<p>An email the account <emphasis>published itself</emphasis>. That is fair game — it was posted openly for customers. Does that email appear in any known public breach corpus? A breach can tell you an email</p>
-<cite><p>co-occurred* with a name or a phone in some dump. It cannot, by</p></cite>
-<p>itself, tell you the truth of that pairing. Dumps are dirty. People lie on signup forms. Credentials get stuffed.</p>
+<p><emphasis>archived page, public capture</emphasis></p>
+<p>An email the account <emphasis>published itself</emphasis>. That is fair game — it was posted openly for customers. Does that email appear in any known public breach corpus? A breach can tell you an email <emphasis>co-occurred</emphasis> with a name or a phone in some dump. It cannot, by itself, tell you the truth of that pairing. Dumps are dirty. People lie on signup forms. Credentials get stuffed.</p>
 <p><code>breach-index lookup (fictional)</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>query: voltbin.fix@gmail.com</code></p>
@@ -1020,20 +931,17 @@
 <p><code>  name:  Artem Bond</code></p>
 <p><code>  phone: +380 (50) 555 0921</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>aggregated breach index result</p></cite>
+<p><emphasis>aggregated breach index result</emphasis></p>
 <p>Three sources. Two of them (A, B) agree on a first name: Denys, one gives a surname Koval, Kyiv, and a phone. The third (C) says Artem Bond with a different phone. That contradiction is not a nuisance — it is information. One of these is our operator's real signup, and at least one is noise: a reused password stuffed elsewhere, or someone who typed this email by accident, or a deliberately fake name.</p>
 <p>I did not pick "Denys" because two beats one and it felt right. Two dirty sources can share the same error. I marked the whole email→name step as weak until something <emphasis>outside</emphasis> the breach corpus backed it. This is the moment most cases go wrong — a plausible name appears and the investigator quietly promotes a guess to a fact.</p>
 <subtitle>The circle, and the locked door</subtitle>
 <p>The Family Chain move. When a target's own profile is shut, the people around them often are not, and the relationships are load-bearing.</p>
 <p>First, a temptation I refused. The dump had <emphasis>whispered</emphasis> a surname — "Koval," from source B — and the parked forward came from a channel called @denys_zip_kyiv, a name-root that also looked like "Denys." It would have been easy to braid those two threads together and announce "Denys Koval." But look at what that braid is made of: a dirty breach record and a handle-string. Two weak, self-set-adjacent scraps do not become strong by being tied to each other. I set both aside and went looking for the surname somewhere that could actually <emphasis>carry</emphasis> it.</p>
 <p>I found it in the account cluster itself. The Instagram voltbin had one photo it had been publicly tagged in by a different account — @koval_secondhand, a small second-hand electronics shop. A tag is a two-way public act: the shop chose to attach itself to our operator's post, in the open, years before I arrived. That link does not route through @denys_zip_kyiv at all. It stands on its own.</p>
-<p>I looked at @koval_secondhand publicly, and the room did the rest. One of its bench photos showed the <emphasis>same green cutting</emphasis></p>
-<cite><p>mat, worn at the same corner, and the same four-barred window</p></cite>
-<p>already tied to the cluster by the scene match. So this account was not a stranger who happened to share a name — it was photographed inside the very workshop the whole cluster keys off. And it was run, openly, by one O. Koval.</p>
+<p>I looked at @koval_secondhand publicly, and the room did the rest. One of its bench photos showed the <emphasis>same green cutting</emphasis> <emphasis>mat, worn at the same corner, and the same four-barred window</emphasis> already tied to the cluster by the scene match. So this account was not a stranger who happened to share a name — it was photographed inside the very workshop the whole cluster keys off. And it was run, openly, by one O. Koval.</p>
 <p>The breach's earlier "Koval" whisper now reads as corroboration — a third road that happens to agree — never the source.</p>
 <p>I did try to reach the operator's own name head-on, and hit a wall: the personal Facebook implied by the phone in source A was fully locked. No public posts, no friend list, nothing. A dead end by the front door — again.</p>
-<p>So, the Chapter Six move: not <emphasis>through</emphasis> the locked door, <emphasis>around</emphasis> it. @koval_secondhand was public and chatty. A post there, wishing someone a birthday, named "Denys" and showed a photo at a workbench — the <emphasis>same green cutting mat and barred</emphasis></p>
-<cite><p>window* from our scene match.</p></cite>
+<p>So, the Chapter Six move: not <emphasis>through</emphasis> the locked door, <emphasis>around</emphasis> it. @koval_secondhand was public and chatty. A post there, wishing someone a birthday, named "Denys" and showed a photo at a workbench — the <emphasis>same green cutting mat and barred</emphasis> <emphasis>window</emphasis> from our scene match.</p>
 <p><code>public post — @koval_secondhand</code></p>
 <p><code>--------------------------------</code></p>
 <p><code>date: 2024-05-12</code></p>
@@ -1043,7 +951,7 @@
 <p><code>photo: bench, green mat, barred</code></p>
 <p><code>       window (matches cluster)</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>relative's public birthday post</p></cite>
+<p><emphasis>relative's public birthday post</emphasis></p>
 <p>A relative, openly, put a first name on the exact room we had already tied to the account cluster by an independent method. The name Denys was no longer arriving for free — it was arriving from the <emphasis>scene</emphasis> now, not the dump.</p>
 <p>I did not contact the relative or ask them anything. I read what was already public and stopped — pretexting a family member to coax a surname is over the line.</p>
 <subtitle>Stacking, then trying to break it</subtitle>
@@ -1055,8 +963,7 @@
 <p>• Self-published email on archived blog <emphasis>(factor 3)</emphasis></p>
 <p>• The name — surname <emphasis>Koval</emphasis> and first name <emphasis>Denys</emphasis> both arriving via @koval_secondhand, one account roped to the cluster by the room-match. Two facts, one source <emphasis>(factor 4)</emphasis></p>
 <p>So the honest count is three-to-four independent factors, not five. Absent by design: the breach dump's name-guess and the @denys_zip_kyiv forward — neither carries the identity. Factor 4 is a single point of failure for the <emphasis>name</emphasis>; factors 1–3 hold the single-operator finding on their own. That layered structure moves the claim to strong, and, with the disproof pass below surviving, to strong-leaning — one signal short of confirmed while the brother rival stays open.</p>
-<p>Then I did the thing that feels like sabotage and isn't: I tried to</p>
-<cite><p>disprove* it. If I were wrong, what would I expect to see?</p></cite>
+<p>Then I did the thing that feels like sabotage and isn't: I tried to <emphasis>disprove</emphasis> it. If I were wrong, what would I expect to see?</p>
 <p>• If voltbin_ua were a <emphasis>shopfront</emphasis> — several people sharing one login — the writing style across the Telegram posts should drift: different hours, different phrasing, different dialect. It didn't. Consistent evening postings, consistent Surzhyk (mixed Ukrainian-Russian speech) phrasing, consistent typo (samovyviz always one word). Reads as one hand.</p>
 <p>• If the <emphasis>email</emphasis> belonged to someone else who merely reused it, the self-published blog linking that email to @voltbin_ua in 2022 would have to be a coincidence three ways over. It survives the challenge.</p>
 <p>• If "Denys Koval" were a stitch of two different people, the workbench room would not appear under both the account cluster <emphasis>and</emphasis> the relative's post. It appears under both.</p>
@@ -1064,8 +971,7 @@
 <p>voltbin_ua is a single operator working from the Koval workshop — most likely Denys Koval, Kyiv, with his brother O. Koval the named residual alternative I could not cleanly exclude. Rung: strong, bordering confirmed.</p>
 <subtitle>The branch that would not close</subtitle>
 <p>Now the part the clean textbooks skip.</p>
-<p>The client's fuller worry was that voltbin_ua was the front for an <emphasis>organised return-fraud ring</emphasis> — that "Denys" was one node among several coordinated sellers. The forward from @denys_zip_kyiv, the brother's shop, a couple of other resale handles that had cross-posted the same stock photos — it</p>
-<cite><p>smelled* like a network.</p></cite>
+<p>The client's fuller worry was that voltbin_ua was the front for an <emphasis>organised return-fraud ring</emphasis> — that "Denys" was one node among several coordinated sellers. The forward from @denys_zip_kyiv, the brother's shop, a couple of other resale handles that had cross-posted the same stock photos — it <emphasis>smelled</emphasis> like a network.</p>
 <p>I chased it. And I have to tell you honestly: I could not close it.</p>
 <p><code>network hypothesis — status</code></p>
 <p><code>--------------------------------</code></p>
@@ -1079,7 +985,7 @@
 <p><code>   status: UNRESOLVED</code></p>
 <p><code>ring coordination?  NOT SHOWN</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>analyst status board, open items</p></cite>
+<p><emphasis>analyst status board, open items</emphasis></p>
 <p>@denys_zip_kyiv shares a first name and a forwarded message with our target. That is it. The posting hours don't match the established pattern. No shared photos. Neither account ever links to the other as <emphasis>self</emphasis>. It could be the same Denys running a second account. It could be a genuinely different Denys in the same small trade — and in Kyiv's parts scene, common first name, overlapping suppliers, that is entirely ordinary. A shared handle-root is the weakest signal there is, and a forward is a contact, not an identity.</p>
 <p>So I did not resolve it.</p>
 <p>And this is the part that keeps the whole report honest: because that branch stayed weak, it fed <emphasis>nothing</emphasis> into the attribution above it. Strike @denys_zip_kyiv from the case entirely and "Denys Koval, single operator, strong" does not move a millimetre. That is the quarantine test — if deleting an unresolved lead would weaken your confident finding, a guess was propping up an answer. Here, it wasn't.</p>
@@ -1090,7 +996,7 @@
 <p>• leak email</p>
 <p>• relative ONE identity strong</p>
 <p>• ring branch one branch left UNRESOLVED (weak) many threads converge on one person — honestly, with the gaps named</p>
-<cite><p>The whole graph on one page: the voltbin_ua seed, pivoting out<emphasis> </emphasis>across marketplace, Telegram, Instagram and an archived blog,<emphasis> </emphasis>with four independent signals (handle, room-match,<emphasis> </emphasis>self-published email, room-tied relative account) converging on<emphasis> </emphasis>one identity — Denys Koval, strong. The @denys_zip_kyiv branch<emphasis> </emphasis>hangs off to the side, dotted and open: reached but never resolved,<emphasis> </emphasis>and deliberately load-bearing for nothing.</p></cite>
+<p><emphasis>The whole graph on one page: the voltbin_ua seed, pivoting out</emphasis> <emphasis>across marketplace, Telegram, Instagram and an archived blog,</emphasis> <emphasis>with four independent signals (handle, room-match,</emphasis> <emphasis>self-published email, room-tied relative account) converging on</emphasis> <emphasis>one identity — Denys Koval, strong. The @denys_zip_kyiv branch</emphasis> <emphasis>hangs off to the side, dotted and open: reached but never resolved,</emphasis> <emphasis>and deliberately load-bearing for nothing.</emphasis></p>
 <subtitle>The decision-grade mini-report</subtitle>
 <p>Everything above compresses to one page a client can act on.</p>
 <p><code>ATTRIBUTION SUMMARY — voltbin_ua</code></p>
@@ -1144,34 +1050,26 @@
 <p><code>  as dirty); relative's public post.</code></p>
 <p><code>  All captures archived + hashed.</code></p>
 <p><code>--------------------------------</code></p>
-<cite><p>deliverable, one page</p></cite>
+<p><emphasis>deliverable, one page</emphasis></p>
 <p>Note the shape. The confident claim leads. The rejections are named. The unresolved branch is stated <emphasis>as</emphasis> unresolved, not buried. What I chose not to do is listed, because a client deserves to know the edges of the work as much as its middle. And the sources carry an archive note — every public page was captured and hashed at the time, because open pages get deleted, and a finding you cannot re-show is a finding you cannot defend.</p>
 <subtitle>What this chapter was really about</subtitle>
 <p>Nine techniques, and not one of them was the answer on its own. The handle got me nowhere until content killed the false hit. The face I refused to search — the <emphasis>room</emphasis> is what talked. The breach handed me a name I was right not to trust, and the same name arriving a second way, from a relative, is what made it real. And the tidiest thread — the ring — is the one I had to leave hanging.</p>
 <p>That is cross-platform attribution.</p>
-<cite><p>The skill was never finding the signal. It was weighing<emphasis> </emphasis>it.</p></cite>
+<cite><p><emphasis>The skill was never finding the signal. It was weighing</emphasis> <emphasis>it.</emphasis></p></cite>
 </section>
 <section><title><p>What You Can Do Now</p></title><epigraph><p>— and what comes next.</p></epigraph>
 <p>Stop for a second and look at how far you have come.</p>
-<p>In Volume 1 you could take one clue and find a person. Now you can take a person who is scattered across a dozen platforms — private here, deleted there, hiding behind a second handle somewhere else — and weave them back into one identity you can actually stand behind. You can go around a wall instead of hitting it. You can tell an independent signal from a coincidence. And you can say, out loud and honestly, <emphasis>how sure</emphasis></p>
-<cite><p>you are* — including the hardest sentence in this craft: "I cannot</p></cite>
-<p>confirm this."</p>
-<p>That last skill is the one that separates you now. Anyone can collect. Attribution — deciding that all these scattered pieces are</p>
-<cite><p>one real person* — is where the judgement lives, and where the</p></cite>
-<p>damage is done when judgement fails. You have spent this whole book learning not to fool yourself. Keep it.</p>
+<p>In Volume 1 you could take one clue and find a person. Now you can take a person who is scattered across a dozen platforms — private here, deleted there, hiding behind a second handle somewhere else — and weave them back into one identity you can actually stand behind. You can go around a wall instead of hitting it. You can tell an independent signal from a coincidence. And you can say, out loud and honestly, <emphasis>how sure</emphasis> <emphasis>you are</emphasis> — including the hardest sentence in this craft: "I cannot confirm this."</p>
+<p>That last skill is the one that separates you now. Anyone can collect. Attribution — deciding that all these scattered pieces are <emphasis>one real person</emphasis> — is where the judgement lives, and where the damage is done when judgement fails. You have spent this whole book learning not to fool yourself. Keep it.</p>
 <subtitle>Keep the habits, not the tools</subtitle>
-<p>Platforms will change. The exact bot, the exact search, the exact site will be gone in a year or renamed. None of that matters. The</p>
-<cite><p>shape* of the work does not change: find what is open around a</p></cite>
-<p>closed door, pivot with discipline, stack independent signals — separate sources, counted once each — weigh every finding on the ladder, and stop at the line. Learn that, and every new platform is just another door for the same method.</p>
+<p>Platforms will change. The exact bot, the exact search, the exact site will be gone in a year or renamed. None of that matters. The <emphasis>shape</emphasis> of the work does not change: find what is open around a closed door, pivot with discipline, stack independent signals — separate sources, counted once each — weigh every finding on the ladder, and stop at the line. Learn that, and every new platform is just another door for the same method.</p>
 <subtitle>Where to keep sharpening</subtitle>
 <p>• Work yourself, across platforms. Do the whole thing on your own footprint — find every account, every tag, every leak that ties back to you. Then clean it up. Best exercise there is.</p>
 <p>• OSINT CTFs and verification challenges. They train cross-platform pivoting and the discipline of proof, safely and for free.</p>
 <p>• Missing-persons search events (such as Trace Labs) — real, meaningful work, alongside people who have done it for years, inside a firm no-contact rule.</p>
 <p>• The reputable guides — teams like Bellingcat publish careful, ethical, cross-platform methodology worth returning to.</p>
 <subtitle>A bridge to Volume Three</subtitle>
-<p>This book was about people across the platforms where they</p>
-<cite><p>are.<emphasis> Volume 3 — Hard Targets — is about the places they are </emphasis>not*: the account they deleted and thought was gone, the photo</p></cite>
-<p>with no caption that you geolocate from what is in the frame, the domain and the infrastructure behind an operation. It is where OSINT stops being about profiles and starts being about the world.</p>
+<p>This book was about people across the platforms where they <emphasis>are.</emphasis> Volume 3 — Hard Targets — is about the places they are <emphasis>not</emphasis>: the account they deleted and thought was gone, the photo with no caption that you geolocate from what is in the frame, the domain and the infrastructure behind an operation. It is where OSINT stops being about profiles and starts being about the world.</p>
 <p>For now, you have done the thing this book was for. You can follow one person across the whole internet — carefully, honestly, and knowing exactly where to stop.</p>
 <p>Keep your notes. Stay curious. Stay kind. I will see you in Volume 3.</p>
 <p>— Yehor</p>
@@ -1179,10 +1077,10 @@
 <section><title><p>Appendix</p></title><epigraph><p>New terms, the method on one page, and templates you can copy.</p></epigraph>
 <subtitle>A — New words in this volume</subtitle>
 <p>• Access layer — the open things <emphasis>around</emphasis> a private profile (mutual friends, tags, cached copies) that leak what the profile itself hides. You will also hear this called the <emphasis>ring</emphasis> around the target, or the <emphasis>leak layers</emphasis> — same idea, different names. This book uses access layer as the lead term; treat <emphasis>ring</emphasis> and <emphasis>leak</emphasis></p>
-<cite><p>layers* as synonyms for it.</p></cite>
+<cite><p><emphasis>layers</emphasis> as synonyms for it.</p></cite>
 <p>• Combolist — a plain list of email:password (or username:password) pairs, usually stitched together from many old breaches and passed around. Useful only to <emphasis>link</emphasis> identifiers, never to log in.</p>
 <p>• Confirmation by convergence — how you actually reach</p>
-<cite><p>confirmed*: several independent signals pointing at the same</p></cite>
+<cite><p><emphasis>confirmed</emphasis>: several independent signals pointing at the same</p></cite>
 <p>• person, with nothing contradicting. No single clue proves it; the agreement does. Sometimes called confirmation by independent signals.</p>
 <p>• Disproof pass — a deliberate step where you stop building the case and try to <emphasis>break</emphasis> it — hunting the one fact that would prove you wrong. If the finding survives, it is stronger. Better it fails here than in a report.</p>
 <p>• Dork (search operator) — a targeted search using an engine's own operators (site:, filetype:, quotes, minus) to force it to show exactly what you want. Often called a "Google dork."</p>
@@ -1203,7 +1101,7 @@
 <p>• Username enumerator — a tool that checks one username across dozens or hundreds of sites at once to see where it exists. A fast way to start the username web (Sherlock and Maigret are examples).</p>
 <p>• WHOIS — the public registration record for a domain name: who registered it, when, and through whom. Note: since GDPR, most personal details are redacted behind a privacy service, so WHOIS today is usually thinner than older guides suggest.</p>
 <subtitle>B — A starter toolbox (2026)</subtitle>
-<p>This book names almost no tools on purpose — the method is what lasts. But beginners keep asking "yes, but <emphasis>what do I open?</emphasis>", so here is a short, honest starting kit, grouped by job. Read this caveat first: tool names, owners, and terms change constantly, and any of these could be renamed, paywalled, or gone by the time you read this. Verify a tool's current status and legality before you lean on it. These are places to <emphasis>learn the method,</emphasis> not a crutch to skip it.</p>
+<p>This book names almost no tools on purpose — the method is what lasts. But beginners keep asking "yes, but <emphasis>what do I open?</emphasis>", so here is a short, honest starting kit, grouped by job. Read this caveat first: tool names, owners, and terms change constantly, and any of these could be renamed, paywalled, or gone by the time you read this. Verify a tool's current status and legality before you lean on it. These are places to <emphasis>learn the method,</emphasis> not a crutch to skip it.*</p>
 <p>• Breach membership — Have I Been Pwned (has an account or address turned up in a known breach); its Pwned Passwords service for the safe k-anonymity password check.</p>
 <p>• Username enumeration — Sherlock, Maigret, WhatsMyName (check one handle across many sites at once).</p>
 <p>• Image and face — Yandex Images, Google Lens, TinEye for reverse-image search. Dedicated <emphasis>face</emphasis>-search tools such as PimEyes exist, but they raise heavy ethics and legal flags (biometrics under GDPR and BIPA) — treat them as a red line to think hard about, not a default.</p>
@@ -1211,9 +1109,7 @@
 <p>• Frameworks and directories — the OSINT Framework and IntelTechniques, curated maps of what exists by category.</p>
 <p>Every one of these is a starting point for a way of <emphasis>thinking</emphasis> you already learned in these chapters. Method first, tools second — a tool is only ever a faster way to do something you could do by hand.</p>
 <subtitle>C — The method on one page (cross-platform)</subtitle>
-<p>1. Start from one clue on one platform. 2. When you hit a wall, go around it — work the access layers and the circle, not the locked door. 3. Pivot the identifier (handle, email, face, number) across every platform it might reach. 4. Stack independent signals — and only count them once each. 5. Climb the ladder — weak → moderate → strong → confirmed.</p>
-<cite><p>Strong* is earned when the independent signals are jointly hard to</p></cite>
-<p>explain by any rival hypothesis, not when they simply pile up — count is a floor, not the test. 6. Try to break it — hunt the evidence that would prove you wrong before you conclude. 7. Write it down as you go — screenshot, URL, date, and an archived copy. 8. Stop at the line — take only what answers the question; leave the private lives you passed through alone.</p>
+<p>1. Start from one clue on one platform. 2. When you hit a wall, go around it — work the access layers and the circle, not the locked door. 3. Pivot the identifier (handle, email, face, number) across every platform it might reach. 4. Stack independent signals — and only count them once each. 5. Climb the ladder — weak → moderate → strong → confirmed. <emphasis>Strong</emphasis> is earned when the independent signals are jointly hard to explain by any rival hypothesis, not when they simply pile up — count is a floor, not the test. 6. Try to break it — hunt the evidence that would prove you wrong before you conclude. 7. Write it down as you go — screenshot, URL, date, and an archived copy. 8. Stop at the line — take only what answers the question; leave the private lives you passed through alone.</p>
 <subtitle>D — Where to practise (safely and legally)</subtitle>
 <p>• Investigate yourself, across platforms — find every account, tag, and leak that ties back to you, then clean it up.</p>
 <p>• OSINT CTFs and verification challenges — built for cross-platform pivoting and proof discipline.</p>
@@ -1239,7 +1135,7 @@
 <p><code>profile photo   | matches      | yes</code></p>
 <p><code>posting hours   | 20:00-23:00  | yes (own signal)</code></p>
 <p><code>self-set name   | "Deb"        | NO (same source)</code></p>
-<cite><p>Caveat: observed style/timing signals from the same city or scene<emphasis> </emphasis>are correlated — collapse them into one factor, weighted by rarity,<emphasis> </emphasis>before counting. A shared "posting hours" is not a free independent<emphasis> </emphasis>vote if two same-population strangers would share it.</p></cite>
+<p><emphasis>Caveat: observed style/timing signals from the same city or scene</emphasis> <emphasis>are correlated — collapse them into one factor, weighted by rarity,</emphasis> <emphasis>before counting. A shared "posting hours" is not a free independent</emphasis> <emphasis>vote if two same-population strangers would share it.</emphasis></p>
 <p>The identity graph (sketch). Nodes are accounts and people; links are what ties them. Grow it until it points at one person:</p>
 <p><code>TARGET (locked)</code></p>
 <p><code>   |  [wall]</code></p>
@@ -1258,15 +1154,15 @@
 <p>• When the source was <emphasis>created</emphasis> vs when you <emphasis>saw</emphasis> it — a post written in 2019 and read by you in 2026 are two different dates. Note both; don't let "seen" masquerade as "created."</p>
 <p>Keep a running source log — one line per source, in the order you found them:</p>
 <p><code>URL | seen-UTC | archive | hash | note</code></p>
-<cite><p>the skeleton — one field per column</p></cite>
+<p><emphasis>the skeleton — one field per column</emphasis></p>
 <p><code>URL      blog.example/about</code></p>
 <p><code>seen-UTC 2026-05-12T14:03Z</code></p>
 <p><code>archive  wayback+today</code></p>
 <p><code>hash     sha256 ab12c...</code></p>
 <p><code>note     about page</code></p>
-<cite><p>a filled row from a real capture log</p></cite>
-<cite><p>One row per load-bearing source; fill it as you go, not at the end.</p></cite>
-<cite><p>If you cannot name the confidence rung, you have not<emphasis> </emphasis>finished the finding.</p></cite>
+<p><emphasis>a filled row from a real capture log</emphasis></p>
+<p><emphasis>One row per load-bearing source; fill it as you go, not at the end.</emphasis></p>
+<cite><p><emphasis>If you cannot name the confidence rung, you have not</emphasis> <emphasis>finished the finding.</emphasis></p></cite>
 <subtitle>G — Red lines (one card)</subtitle>
 <p>Scattered through the chapters, one page. These are professional declines, not moral lectures — the answers you give the client, or yourself, when the tempting move crosses a line.</p>
 <p>• Never type a leaked password into a login. Passwords from breach corpora are a <emphasis>linking</emphasis> signal, never a key. Using one is unauthorized access. (Ch5)</p>
