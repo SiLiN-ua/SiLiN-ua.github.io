@@ -12,7 +12,7 @@
 <document-info>
 <author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>266134ed-d1cf-4a8f-b6d8-80a6add08a39</id>
+<id>84be8149-5de0-43c0-8b4c-93df33509aca</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
@@ -2890,7 +2890,10 @@
 <p>Behind his back, at the third doors, the tray lay on the tatami exactly as he had left it; the tea in its slow manner cooled to a temperature that would still be almost right when the one who slept would find it in the morning; and the envelope lay on the tatami of the room, small, clean, white — with the face of a man circled in red inside — and waited for the one who slept to open his eyes.</p>
 <p>The corridor held the form of the corridor without him.</p>
 </section>
-<section><title><p>On Haiku and On Method</p></title><epigraph><p><emphasis>A few words for the reader who will want to check.</emphasis></p></epigraph><image l:href="#illo027.jpg"/><subtitle>Author's Note</subtitle>
+<section><title><p>NINE ROOMS</p></title><subtitle>The Doll Maker Files continues in</subtitle>
+
+</section>
+<section><title><p>On Haiku and On Method</p></title><epigraph><p><emphasis>A few words for the reader who will want to check.</emphasis></p></epigraph><image l:href="#illo028.jpg"/><subtitle>Author's Note</subtitle>
 <p>I knew part of the readership would go and check. So — a few caveats, briefly.</p>
 <p><strong>On haiku.</strong> The 5-7-5 form in Japanese poetry is a real norm, as are <emphasis>kire</emphasis> (the cut, the caesura) and <emphasis>kigo</emphasis> (seasonal word). This is not my invention. However, the "three-point method" by which Kurosawa reads Toshi's haiku — object, abstraction, temporal anchor — is a literary construction. Real haiku are not formally dissected this way; no Japanese scholar of poetry will sit down to lay a poem out along three structural points as one lays out coordinates. I gave the scheme a place in the novel because it keeps the OSINT line readable. It is a convenience, not a forensic method. I tried to write the Japanese originals with attention to syllable count, but permitted myself poetic license in the choice of <emphasis>kigo</emphasis> — so a native speaker will feel a slight offset here and there. That is by design.</p>
 <p><strong>On OSINT and police techniques.</strong> The platforms mentioned — 5channel, mixi, LiveJournal, Yahoo! Chiebukuro, Rakuten Travel, Jalan — exist and work approximately as described. But I compressed the procedural steps. Access to IP masks through the prosecutor's office in half a day, a script for correlating archival registrations with shifts in timestamps, a local database of <emphasis>my number</emphasis> cross-referenced with <emphasis>ryokan</emphasis> registries — these are artistic simplifications. In reality it is slower, requires more warrants, and often does not work the first time. Kurosawa is a character, not a manual. I sacrificed forensic accuracy for pace; those who have worked in this field will recognize the compromises.</p>
@@ -46640,7 +46643,7 @@ dKzMI413EsCBb8RX5r4r4zjeYMyQ+OsRNEwyy7BLuXL+Bj4M/NxzH4rESMqVGOI/Azfy/FR/gy/l
 nwlR+b4ixa+Fy5v4FwKlfC0xh18EJUtqE4gMCGvkd/DT5N4IOYuYCxIR1EuExICCysTExEqGYTnL
 v4cU9Zn8BiBAuNCBM44+FlcwIMzkiZgqZSoTcCBAKiURhiIitgWPQi+Fh8hcqohKlfG4Hw7ifD8J
 8f/Z</binary>
-<binary id="illo027.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUS
+<binary id="illo028.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUS
 FBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQk
 JCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wgARCAOtBogDASIA
 AhEBAxEB/8QAGwAAAwEBAQEBAAAAAAAAAAAAAAECAwQFBgf/xAAYAQEBAQEBAAAAAAAAAAAAAAAA

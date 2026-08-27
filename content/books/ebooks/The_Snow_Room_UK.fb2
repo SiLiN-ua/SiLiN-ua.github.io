@@ -12,7 +12,7 @@
 <document-info>
 <author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>c5363967-a38c-4859-bd10-e9bfaffbafc5</id>
+<id>618000c7-d251-46db-9402-47b05b79d68e</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
@@ -2892,10 +2892,13 @@
 <p>Він переступив поріг.</p>
 <p>Позаду тихо клацнув замок, який замикався сам, коли двері поверталися на місце.</p>
 <p>Він не озирнувся.</p>
-<p>За його спиною, при третіх дверях, — піднос лежав на татамі саме так, як він його залишив; чай у своїй повільній манері остигав до температури, яка все ще буде майже правильною, коли той, хто спить, знайде його вранці; і конверт лежав на татамі кімнати, невеликий, чистий, білий, — з обличчям людини, обведеним червоним колом усередині, — і чекав, поки та, хто спить, розплющить очі.</p>
+<p>За його спиною, при третіх дверях, — піднос лежав на татамі саме так, як він його залишив; чай у своїй повільній манері остигав до температури, яка все ще буде майже правильною, коли той, хто спить, знайде його вранці; і конверт лежав на татамі кімнати, невеликий, чистий, білий, — з обличчям людини, обведеним червоним колом усередині, — і чекав, поки той, хто спить, розплющить очі.</p>
 <p>Коридор тримав форму коридору без нього.</p>
 </section>
-<section><title><p>Про хайку і про метод</p></title><epigraph><p><emphasis>Кілька слів для читача, який захоче перевірити.</emphasis></p></epigraph><image l:href="#illo027.jpg"/><subtitle>Від автора</subtitle>
+<section><title><p>ДЕВ&#x27;ЯТЬ КІМНАТ</p></title><subtitle>Серія «Файли Ляльковика» триває у наступній книзі</subtitle>
+
+</section>
+<section><title><p>Про хайку і про метод</p></title><epigraph><p><emphasis>Кілька слів для читача, який захоче перевірити.</emphasis></p></epigraph><image l:href="#illo028.jpg"/><subtitle>Від автора</subtitle>
 <p>Я знав, що частина читачів піде перевіряти. Тому кілька застережень — коротко.</p>
 <p><strong>Про хайку.</strong> Форма 5-7-5 у японській поезії — реальна норма, як і <emphasis>кі-ре</emphasis> (пауза, зріз) та <emphasis>кіго</emphasis> (сезонне слово). Це не мій винахід. Проте «триточковий метод», за яким Куросава читає хайку Тоші — об’єкт, абстракція, часова прив’язка, — це літературна конструкція. Реальні хайку так формально не препаруються; жоден японський дослідник поезії не сяде розкладати вірш на три структурні точки, як розкладають координати. Я дав цій схемі місце в романі тому, що вона тримає OSINT-лінію читабельною. Це зручність, а не форензик. Оригінали японською я старався писати з дотриманням складів, але дозволяв собі поетичну вільність у виборі кіго — тому носій мови подекуди відчує зміщення. Так і задумано.</p>
 <p><strong>Про OSINT і поліцейські техніки.</strong> Платформи, які згадуються — 5channel, mixi, LiveJournal, Yahoo! Chiebukuro, Rakuten Travel, Jalan, — існують і працюють приблизно так, як описано. А от процедурні кроки я стиснув. Доступ до IP-масок через прокуратуру за півдня, скрипт зіставлення архівних реєстрацій зі зміною таймстампів, локальна база «майнамбера» на реєстрах <emphasis>рьокан</emphasis> — це художні спрощення. У реальності це повільніше, потребує більше ордерів і часто не спрацьовує з першого разу. Куросава — персонаж, а не інструкція. Форензик-точність я приніс у жертву темпу; хто працював у цій царині, впізнає компроміси.</p>
@@ -46641,7 +46644,7 @@ dKzMI413EsCBb8RX5r4r4zjeYMyQ+OsRNEwyy7BLuXL+Bj4M/NxzH4rESMqVGOI/Azfy/FR/gy/l
 nwlR+b4ixa+Fy5v4FwKlfC0xh18EJUtqE4gMCGvkd/DT5N4IOYuYCxIR1EuExICCysTExEqGYTnL
 v4cU9Zn8BiBAuNCBM44+FlcwIMzkiZgqZSoTcCBAKiURhiIitgWPQi+Fh8hcqohKlfG4Hw7ifD8J
 8f/Z</binary>
-<binary id="illo027.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUS
+<binary id="illo028.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUS
 FBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQk
 JCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wgARCAOtBogDASIA
 AhEBAxEB/8QAGwAAAwEBAQEBAAAAAAAAAAAAAAECAwQFBgf/xAAYAQEBAQEBAAAAAAAAAAAAAAAA

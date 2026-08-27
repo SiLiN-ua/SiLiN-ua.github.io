@@ -12,407 +12,839 @@
 <document-info>
 <author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>26e3341b-0dce-474e-8adc-5f0d76a64690</id>
+<id>9b9f5295-c8f3-4a2c-ab6f-3fae87b18592</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
 </description>
 <body>
 <title><p>Behind the Digital Trace</p></title>
-<section><title><p>Author Note</p></title>
-<p>This is a true account of years I would rather forget.</p>
-<p>Where it was necessary, I have changed names and details to protect people who are still living, still working, still close to danger. A few names I have kept exactly as they were. Alexander is one of them. He should be remembered by his own name.</p>
-<p>I am not a writer. I am someone who watches for a living. But there are things that have to be written down by the person who lived them, in his own words, or they are simply lost — and some of them are too important to lose.</p>
+<section><title><p>INTRODUCTION</p></title>
+<p>I didn't know OSINT was a profession.</p>
+<p>For a long time, I was just doing something that no one around me had a name for. I</p>
+<p>was looking at things differently. Finding connections that weren't obvious. Sitting</p>
+<p>with a name, a number, a fragment of identity — and following it further than most</p>
+<p>people thought to go. I thought this was just how investigation worked. I didn't</p>
+<p>know it was a discipline. I didn't know there was a community, a methodology, a</p>
+<p>word for it.</p>
+<p>The word found me later. By then, the way of thinking had already changed me.</p>
+<p>This book is about that change. Not what I found. Not which tools I used. Not the</p>
+<p>cases themselves. The change in the person doing the work.</p>
+<p>I spent four and a half years as a law enforcement officer in Ukraine. I started at the</p>
+<p>ground level — juvenile prevention, community policing. Honest work, necessary</p>
+<p>work, but not enough. I wanted to go deeper into the logic of things, into the</p>
+<p>structure behind behavior. When I passed selection into the Strategic Investigations</p>
+<p>Department, I thought I was entering a different kind of work. I was, but not in the</p>
+<p>way I expected. The tools were different. The cases were different. What changed</p>
+<p>most was me.</p>
+<p>After the police came OSINT as a profession. After that, freelance work, a</p>
+<p>detective agency, more than a hundred investigations for private clients and</p>
+<p>companies. Then a defense contractor, and three tools I built myself because the</p>
+<p>workflows I needed didn't exist anywhere I could find them.</p>
+<p>None of this was planned. I didn't choose OSINT the way you choose a career. It</p>
+<p>chose me by elimination — by being the thing that made sense when everything</p>
+<p>else felt wrong, the thing I kept returning to even when no one around me understood why.</p>
+<p>In Ukraine, people still ask me what I actually do. When I explain, some of them</p>
+<p>smile politely. Some tell me it sounds like typing into Google. Some think I'm</p>
+<p>wasting time on something that isn't real work. I spent years being the only person</p>
+<p>in the room who thought what I was doing mattered. That has changed somewhat.</p>
+<p>But not as much as it should have.</p>
+<p>This book is not written for the people who don't understand. It is written for the</p>
+<p>people who already feel what I'm describing — the pull of a detail that doesn't fit,</p>
+<p>the discomfort of a conclusion that closes too early, the strange sensation when a</p>
+<p>pattern suddenly becomes visible in something you were looking at for weeks</p>
+<p>without seeing it.</p>
+<p>And it is written for the people who are not yet there but want to understand what it</p>
+<p>means to think this way. What it costs. What it gives. What it permanently changes.</p>
+<p>I live in Dnipro. Since February 2022, I have lived in a country at war. This is not</p>
+<p>background information — it is the context in which everything in this book was</p>
+<p>built, refined, and used. The work I do, the tools I created, the questions that drive</p>
+<p>me — all of it exists inside that reality.</p>
+<p>I say this not to claim something exceptional. Millions of Ukrainians live inside the</p>
+<p>same reality. What I can speak to is only my own experience of it: what it means to</p>
+<p>do this kind of work here, now, under these conditions.</p>
+<p>It makes you someone who notices.</p>
 </section>
-<section><title><p>Prologue</p></title><epigraph><p>She knows the sound she was never meant to know.</p></epigraph>
-<p>She doesn't know her colors yet. She is only beginning to learn her words. She is one year and seven months old.</p>
-<p>But she knows the sound.</p>
-<p>When we are walking, or just talking, and it comes — that low buzzing in the sky — she runs to me. She presses her tiny finger to her nose and says <emphasis>tss.</emphasis> Quiet. Then <emphasis>dzzz,</emphasis> and she points up. She means a Shahed. She knows what a Shahed is before she knows what a butterfly is.</p>
-<p>Then she wraps her arms around me, and she begins to cry, and she says the only word she has for it: <emphasis>ba-bam.</emphasis></p>
-<p>She has never seen the world. She has done nothing to anyone. And she already flinches at the sky.</p>
-<p>I am an OSINT specialist. My work is to watch, to track, to know where it is flying and what it will reach. I can read the sky in data before it arrives. And still — still — all I can do in that moment is hold her, and lie, and say: <emphasis>everything is fine.</emphasis></p>
-<p>This book is about that distance. Between knowing everything — and being able to protect no one.</p>
+<section><title><p>THE WEEK THAT CHANGED EVERYTHING</p></title><subtitle>*CHAPTER 1*</subtitle>
+<p>They gave me a name and a week.</p>
+<p>No internal databases. No calls to colleagues. No asking the analysts. Just a name</p>
+<p>— first and last — and seven days to find everything I could.</p>
+<p>I had just arrived at the Strategic Investigations Department. I was new. A junior</p>
+<p>operative who had passed selection but had not yet proven anything in practical</p>
+<p>terms. This task was not explained to me as a test, but it was one. A task handed</p>
+<p>without context, with a single restriction that removed every method I had learned</p>
+<p>to rely on before.</p>
+<p>I sat with the name for a while and tried to think clearly about what I actually had</p>
+<p>available.</p>
+<p>Then I opened Telegram.</p>
+<p>I had heard somewhere, vaguely, that there were bots that could be used for</p>
+<p>information searches. I found one. Then another. I tried approaches I wasn't certain</p>
+<p>would work. Most of them didn't. A few of them did — and those few produced</p>
+<p>something I hadn't expected: a picture of a person built entirely from what they had</p>
+<p>left in public spaces without realizing they were leaving it.</p>
+<p>By the end of the week, I had more than the task required.</p>
+<p>My supervisor looked at what I had assembled. He was quiet for a moment. Then</p>
+<p>he asked me to show him the methodology — not the result, but how I had arrived</p>
+<p>at it.</p>
+<p>That was the moment. Not because of what he said. Because of what the question</p>
+<p>meant: that what I had done was not obvious, not standard, not something he had seen before in that department.</p>
+<p>I was the newest person in the room. I had no seniority, no history, no established</p>
+<p>track record. But I had found something useful through a route nobody else in that</p>
+<p>unit was using. And that changed how I was seen — not because of rank, but</p>
+<p>because of the result and the method behind it.</p>
+<p>From that point, there were moments when colleagues came to me not for official</p>
+<p>analytical support but for something off the formal channels. Information needed</p>
+<p>quickly, without creating a paper trail, without the machinery of a formal request. I</p>
+<p>was not senior. I was simply the person who had found a different path.</p>
+<p>I didn't call it OSINT then. I didn't know the word. I just called it what it was:</p>
+<p>looking more carefully at what was already there.</p>
+<subtitle>• • •</subtitle>
+<p>Most people, when they enter investigative work, are handed tools and taught to use</p>
+<p>them. The tools define the approach. The approach shapes what you find. And what</p>
+<p>you find gradually defines what you believe is possible.</p>
+<p>The restriction placed on me that week — no internal databases, no colleagues, no</p>
+<p>official channels — removed the entire standard toolkit at once. What remained</p>
+<p>was only me and whatever existed in publicly accessible space. It should have been</p>
+<p>a severe limitation. Instead, it functioned as a different kind of training.</p>
+<p>When you remove familiar instruments, you are forced to think about the problem</p>
+<p>differently. Not: what tools do I have? But: what is actually there? What exists that</p>
+<p>I haven't considered yet? Where does this person leave marks without knowing</p>
+<p>they're leaving them?</p>
+<p>These are different questions. They produce different thinking.</p>
+<p>What I discovered that week — slowly, through attempts that mostly failed — was</p>
+<p>that the open space contains far more than most investigators consider relevant. Not because the information is hidden. Because the habit of looking for it, the patience</p>
+<p>to follow it, the ability to connect fragments that appear unrelated — these are not</p>
+<p>default skills. They are developed ones.</p>
+<p>I learned this accidentally. Under a deadline, with no clear path, as the most junior</p>
+<p>person in the department.</p>
+<p>Looking back, I think this is how most people come to OSINT: not through a</p>
+<p>formal decision, not through a course or a credential, but through a moment when</p>
+<p>the standard approach fails and something else has to take its place. The something</p>
+<p>else, if you follow it long enough, becomes its own discipline.</p>
+<p>That week was my beginning.</p>
 </section>
-<section><title><p>Fifteen Minutes</p></title><subtitle>Chapter One</subtitle>
-<p>We were asleep.</p>
-<p>The day before, they had told us to be ready.</p>
-<p>Not rumors anymore. That was the phrase that went around the office, passed from one mouth to the next, quieter each time. <emphasis>Not rumors anymore. Something is coming.</emphasis> I was still in the Department of Strategic Investigations then, and we had learned which sentences to take seriously. That was one of them.</p>
-<p>But you can be warned a hundred times that the world is about to end, and your body will still not believe it. You go to sleep beside your wife. The room is dark and ordinary. Her breathing is the last ordinary sound of the old world, and you do not even know to listen for it.</p>
-<p>And then you are awake, and it is gone.</p>
-<p>I woke to explosions.</p>
-<p>I went to the window. It is the oldest reflex there is — to look, as if looking could explain anything. I stood there in the half-light and could not understand what I was seeing. Aircraft, where aircraft should not be. Then a blast somewhere across the city, and another behind it, and another.</p>
-<p>The glass in the windows was trembling. Not breaking. Just trembling, steadily, the way a thing trembles when something far larger than itself has leaned against it.</p>
-<p>I was not afraid in that first moment. I want to be honest, because this whole book is only worth something if it is honest. I was not brave either. I simply could not put the pieces together fast enough — the sound, the planes, the shaking glass — into the one short word they already spelled.</p>
-<p>War.</p>
-<p>Then my phone began to ring, and it did not stop. My chief. My colleagues. One call ending as the next was already arriving. Urgent assembly. Report in. And somewhere inside those voices, in the space between one call and the next, the life I had fallen asleep in quietly stopped existing.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I turned to my wife.</p>
-<p>I heard myself say it, in a voice that sounded almost calm — the voice I would learn to keep for years afterward: <emphasis>Collect what you need. You have fifteen minutes.</emphasis></p>
-<p>Fifteen minutes.</p>
-<p>How does a person fold a life into fifteen minutes? What do you take? What do you leave behind for the war to have?</p>
-<p>She did not argue. She did not freeze. She moved. I will remember that as long as I live — how fast she was, how steady, gathering the few things a person grabs when there is no time to choose what matters.</p>
-<p>We went down to the car. We drove. I was taking her to her parents — get her to family first, then go to work. The plan made itself; I do not remember deciding any part of it.</p>
-<p>And on the way, through the windshield, I saw the thing I have never been able to put down.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>People were standing at the bus stops.</p>
-<p>Waiting for the marshrutkas, the little route vans, the way they waited every single morning, to go to their shifts. Ordinary people. Ordinary jobs. On the first morning of the war.</p>
-<p>The explosions were rolling across the city. The windows of the whole region were trembling. And these people stood at the roadside and checked the time, and none of it seemed to reach them. As if the sky were not falling. As if it were an ordinary Tuesday and the vans were merely running late.</p>
-<p>I have thought about that picture for years now.</p>
-<p>I do not think it was calm. I think it was something else — the mind refusing, in real time, to accept what the ears were telling it. The very same refusal I had felt at my own window a few minutes before, multiplied across a whole city of strangers.</p>
-<p>We were all, every one of us, a few seconds behind the truth. And the truth was patient. It would wait for each of us to catch up, in our own time, in our own way.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I left my wife at her parents' door.</p>
-<p>There was no time for the things you are supposed to say at a moment like that — and anyway, I did not yet know it was that kind of moment. None of us did. We still thought in days. <emphasis>A few days,</emphasis> we told each other. <emphasis>It will be over in a few days.</emphasis></p>
-<p>I got back in the car and drove to work, to wait for instructions, to begin whatever this was going to be.</p>
-<p>For years I had learned to do this work the way I had watched the international professionals do it — patient, clean, from a distance. Investigations into people who would never know my name, in conflicts that were never my own.</p>
-<p>That version of the work ended that morning too.</p>
-<p>What I did from now on would carry a different weight. Different questions. Different stakes. The distance was gone. The subject of the analysis was the sky over my own family.</p>
-<p>That was the morning my work stopped being a job in someone else's war.</p>
-<p>That was the morning it became the war over my own home.</p>
+<section><title><p>THE MISTAKE I STILL THINK ABOUT</p></title><subtitle>*CHAPTER 2*</subtitle>
+<p>I was wrong about someone. Completely wrong.</p>
+<p>I had looked at the information, I had formed a picture, and I had moved toward a</p>
+<p>conclusion without verifying whether the conclusion was the only one the evidence</p>
+<p>could support. Not because I was careless — because everything I saw pointed in</p>
+<p>one direction, and I stopped questioning whether the direction was correct before</p>
+<p>committing to it.</p>
+<p>The person was not responsible for what I attributed to them. By the time I</p>
+<p>understood this, the conclusion had already been stated.</p>
+<p>I don't describe the case in detail. What I describe is what the mistake taught me,</p>
+<p>because the teaching has lasted longer than the case itself.</p>
+<subtitle>• • •</subtitle>
+<p>Speed is seductive in this work.</p>
+<p>When everything aligns — when the data is consistent, when the pattern holds,</p>
+<p>when each new piece confirms what you already see — there is a feeling that is</p>
+<p>almost physical. The uncertainty lifts. The tension of not knowing resolves into the</p>
+<p>clarity of knowing. It feels like arrival.</p>
+<p>That feeling is the most dangerous moment in any investigation.</p>
+<p>I know this now. I learned it by getting it wrong.</p>
+<p>The alignment I experienced was real. The data did point in one direction. What I</p>
+<p>had not done was ask the question that should precede every conclusion: what</p>
+<p>would this look like if I were wrong? What single piece of information, if it existed, would require me to rebuild this entire picture from the beginning?</p>
+<p>I hadn't asked those questions because the conclusion felt correct. Questioning it</p>
+<p>felt like introducing doubt into something that didn't seem to require it. But this is</p>
+<p>precisely the error — treating the absence of felt doubt as confirmation of accuracy.</p>
+<p>Doubt is not the opposite of good analysis. Doubt is the method. The absence of</p>
+<p>doubt is where errors are stored.</p>
+<p>What the mistake gave me, eventually, was a reflex. Not paranoia — not the</p>
+<p>endless revisiting of every conclusion. A specific habit: before I finalize anything, I</p>
+<p>build the case against my own interpretation. I try to construct the version of events</p>
+<p>in which I am completely wrong. I try to find the evidence that would exist if the</p>
+<p>alternative were true and check whether it is absent because the alternative is false,</p>
+<p>or because I haven't looked for it.</p>
+<p>This sounds straightforward. It isn't. The mind resists it actively. The mind wants</p>
+<p>the conclusion that is already there. It will find reasons to dismiss contradictions as</p>
+<p>anomalies, classify inconsistencies as noise, treat absence of counter-evidence as</p>
+<p>positive proof.</p>
+<p>You have to override this tendency deliberately. Every time. Even when —</p>
+<p>especially when — everything looks certain.</p>
+<p>I became better at this because I had already experienced what it costs not to do it.</p>
+<p>Because I knew what it felt like to stand behind a conclusion with full confidence</p>
+<p>and later discover the confidence was the problem, not the solution.</p>
+<p>That case is, in some ways, the most useful thing that has ever happened to my</p>
+<p>thinking.</p>
 </section>
-<section><title><p>The Man Who Gave Me Time</p></title><subtitle>Chapter Two</subtitle>
-<p>There are people who make you believe the world is still good.</p>
-<p>Alexander was one of them.</p>
-<p>He was the most human person I knew — and I knew it while he was alive. That is the part I hold onto. I did not discover his worth after, the way people sometimes do, once it is too late to tell anyone. I knew it then. I told him, in the way men tell each other such things, which is to say almost never out loud.</p>
-<p>We shared the same dreams. Businesses we were going to build. A life we were both walking toward, just past the edge of all this. When two people carry the same picture of the future, they belong to each other a little. We belonged to each other like that.</p>
-<p>Then, in 2022, my father stopped being able to walk.</p>
-<p>First group. Paralyzed. The state has a category for it — a number, a line on a form. What the form does not tell you is what it is to watch your own father become a man who cannot stand without you.</p>
-<p>I had left the police by then. I had no deferment from mobilization. And I needed one — a real one, lawful — for the simplest reason a man can have. Someone had to care for my father. That someone was his son.</p>
-<p>If you have never lived here, I need you to understand something, and I will say it quietly.</p>
-<p>Here, in wartime, a man does not simply walk into the recruitment office — the TCC, we call it — and calmly sort out his papers. You can go in to do everything correctly and not come back out. Declared fit. Sent on. The documents for a sick father set gently to one side. I had heard it happen. Not on the news — from people close enough that I had no choice but to believe them.</p>
-<p>I was afraid. I will say it plainly. Not of the front. I was afraid of the wrong door closing behind me while my father waited at home for hands that never came.</p>
-<p>And the man who stood with me inside that fear — who showed me how to do it right, who made sure every paper was where it had to be so the deferment would hold —</p>
-<p>was Alexander.</p>
-<p>He gave me time.</p>
-<p>I did not understand, then, what I was being handed. You never do.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>He had no deferment of his own.</p>
-<p>So he went.</p>
-<p>I have turned that over more times than I can count. He spent his care making certain that I could stay. He kept nothing back for himself.</p>
-<p>He was not afraid — or he never let me see it, which, with him, came to the same thing. <emphasis>I'm in my place,</emphasis> he would tell me. <emphasis>I won't die. What I do out there, I do well.</emphasis> And I believed him. You believed Alexander. He was good at everything he ever put his hands to. If the war kept a list of the men it would spare, his name belonged at the very top.</p>
-<p>He bought his own weapon. With his own money, with his own hands — because that is what it has come to here, men paying out of their own pockets for the tools to protect the rest of us. He was using it to fight off the small drones. The FPV ones. The kind built to hunt a single man.</p>
-<p>That is what found him.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>When they told me, I did not cry. Not at first.</p>
-<p>There is a state that comes before grief, and my language has no clean word for it either. You simply stand still while the floor keeps moving, and you wait for the words to start meaning what they mean. I stood in it for a while.</p>
-<p>Then there was work to do. There is always work. And mine — of everything it could have been —</p>
-<p>was to gather the full data on his family.</p>
-<p>My profession. The thing I am good at. The thing I am proud of. Turned, on the worst morning of all, toward the people Alexander loved most. I sat down and I did it — completely, correctly, the way it had to be done. My hands moved across the keys. The rest of me was somewhere above the room, watching a man work.</p>
-<p>And when it was finished — when everything was where it needed to be, and there was nothing left that needed me — I got into my car to drive home.</p>
-<p>I could not see the road.</p>
-<p>It was not the rain on the windshield.</p>
-<p>It was the rain on my side of the glass.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>There is one more thing. I have kept it for last, because it is the part I still cannot set down.</p>
-<p>The day before he died, Alexander sent me voice messages.</p>
-<p>He wanted to ask me for something. He needed my help with it — I could hear it in his voice. But he did not say what it was. <emphasis>I'll tell you a little later,</emphasis> he said. Later. When there was time. When things settled down.</p>
-<p>There was no later.</p>
-<p>He never told me what he needed. And so I never did it.</p>
-<p>I do not know what he wanted to ask of me. Whether it was something small, or something that mattered more than anything. Whether it was something only I could have done. That door closed with him, and it does not open again — no matter how many times I go back and stand in front of it, listening to his voice ask for help I was never given the chance to give.</p>
-<p>Forgive me. For the thing I did not do, because I never knew what it was.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>Alexander.</p>
-<p>I am writing this, and the tears have come again — here, onto this page, years later, in a quiet room. I want you to know that you are in a book now. That people who will never meet you are going to read your name, and feel, for one moment, the size of what was lost when we lost you.</p>
-<p>You were my brother in everything but blood.</p>
-<p>You gave me time when you had none left to give.</p>
-<p>I will spend a little of that time here, on these pages, making sure the world remembers that you were real.</p>
-<p>Rest now, my friend.</p>
+<section><title><p>WHAT THE UNIFORM COST AND WHAT IT BOUGHT</p></title><subtitle>*CHAPTER 3*</subtitle>
+<p>I left the police in 2024.</p>
+<p>There was no single incident. No breaking point I can point to and say — there, that</p>
+<p>was it. The decision formed slowly, over months, as a gradual recognition that what</p>
+<p>I was building inside the institution had grown past what the institution was</p>
+<p>structured to hold. The work I cared about most was pulling in a direction the</p>
+<p>system wasn't designed to follow.</p>
+<p>I gave up the uniform. The rank. The identity that came with both, which in</p>
+<p>Ukraine — in the context of law enforcement, in the context of what the country</p>
+<p>had been through and was still going through — carried a specific weight.</p>
+<p>What I got in return was time. Direction. And a name for the thing I had been doing</p>
+<p>for years without knowing what to call it.</p>
+<subtitle>• • •</subtitle>
+<p>Since February 24, 2022, I have lived in Ukraine at war.</p>
+<p>I say this plainly because it is plain. It is not dramatic — in the sense that drama</p>
+<p>requires contrast, and what I'm describing has long since become the baseline. You</p>
+<p>adapt. Everyone adapts. The adaptations accumulate until the thing you have</p>
+<p>adapted to simply becomes the condition of life.</p>
+<p>But adaptation is not indifference.</p>
+<p>There is something specific about living through this while doing the kind of work I</p>
+<p>do. I monitor. Not as a professional exercise — or not only as one. I monitor</p>
+<p>because I want to know. I want to understand what is moving, where it might land, what the pattern of recent activity suggests about what comes next. I follow</p>
+<p>channels, I track events, I correlate signals. I built an entire platform partly because</p>
+<p>the monitoring I was doing manually had become unsustainable.</p>
+<p>And then I call my family.</p>
+<p>I tell them what I know. I tell them when the pattern suggests it would be better to</p>
+<p>stay indoors, or to move, or to pay attention. I do not always know. No one always</p>
+<p>knows. But I know more than most, and knowing more creates its own kind of</p>
+<p>weight.</p>
+<p>The fear that exists in this — and it does exist, I am not going to pretend it doesn't</p>
+<p>— is not primarily fear for myself. It is fear for the people I love who did not</p>
+<p>choose this work, who do not have the monitoring habit, who are living through the</p>
+<p>same reality without the small advantage of paying close attention to what is</p>
+<p>happening around them.</p>
+<p>That gap — between what I know and what I can do with that knowledge — is</p>
+<p>something I think about.</p>
+<p>A cruise missile passes over the city and you hear it. Not as a dramatic event — as a</p>
+<p>fact of life that has been a fact of life for years. You register the direction, the</p>
+<p>altitude, the approximate type from the sound. You have learned to do this because</p>
+<p>living here requires it. And then you call the people you love, and then the night</p>
+<p>continues, and the city continues, and you continue.</p>
+<p>This is not heroism. It is simply what it is to be here, doing this work, inside this</p>
+<p>reality. The tools I have built, the cases I have worked, the thinking I have</p>
+<p>developed — all of it exists inside a country where what is at stake is not abstract.</p>
+<p>I don't say this to explain the work. The work stands independently of the context.</p>
+<p>I say it because the context is real, and leaving it out would make this book less</p>
+<p>honest than it should be.</p>
+<subtitle>• • •</subtitle>
+<p>OSINT is not a widely understood profession in Ukraine.</p>
+<p>I say this not as a complaint but as a fact that has shaped everything about how I</p>
+<p>have worked since leaving law enforcement. When I explain what I do, I watch</p>
+<p>people process it. Some understand immediately. Others hear "open sources" and</p>
+<p>think: you search Google. You look at social media. Anyone can do that.</p>
+<p>I've stopped arguing with this framing. What I do instead is show results.</p>
+<p>But there is something that still frustrates me — the reduction. The assumption that</p>
+<p>OSINT is a synonym for basic internet search. That if information is publicly</p>
+<p>available, finding it requires no particular skill. That the work is the data, not the</p>
+<p>thinking applied to the data.</p>
+<p>This misunderstanding costs real people real things. Organizations pay for</p>
+<p>inadequate assessments because they don't know what rigorous ones look like.</p>
+<p>Cases close without resolution because the investigator stopped at the first obvious</p>
+<p>layer and assumed that was the bottom.</p>
+<p>OSINT is not a tool. It is a way of thinking about information — what it means,</p>
+<p>what it connects to, what its absence signals, what the space between data points</p>
+<p>contains. GEOINT. SOCMINT. Behavioral analysis across platforms. Identity</p>
+<p>reconstruction from fragments. The reading of digital behavior the way a tracker</p>
+<p>reads ground.</p>
+<p>This is what I do. It took me years to say that clearly.</p>
 </section>
-<section><title><p>The Father</p></title><subtitle>Chapter Three</subtitle>
-<p>Before the war took everything else, another war had already begun inside my own family. It did not make the news. That kind never does.</p>
-<p>My father was a strong man. The kind you lean on — not the kind who leans. For most of my life he was the fixed point, the one I measured myself against. We even competed over it, the way fathers and sons do. Who would earn more. Who would build the better life. It was a joke between us, and it was not entirely a joke. I wanted to win. And I wanted him to be proud that I could.</p>
-<p>Then, in 2022, he stopped being able to walk.</p>
-<p>First group. Paralyzed.</p>
-<p>I have already told you about the morning the war began — the trembling windows, the fifteen minutes. This was the same kind of morning, except no one else felt the ground move. It was a second February, a private one. The end of one life, and the start of another, just for us.</p>
-<p>The man I had spent my whole life measuring myself against could no longer stand without me.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>He does not want to leave.</p>
-<p>People ask why we stay. Why I do not simply take my family somewhere the sky is quiet. Part of the answer is lying in a bed in the town where I grew up. It is his home. His land. And there is a pride in him the illness never touched — he will not be moved from the place that is his. Not by Russia. Not by his own body.</p>
-<p>So he stays in that house. And I carry a fear that has no solution.</p>
-<p>Because a man who cannot move cannot run. He cannot take the stairs. He cannot reach a shelter. And when the alert sounds over the town where he lies, I am not there. I am here, in another city, watching the same sky on a screen — knowing exactly what is in the air above my own father, and able to do nothing about it.</p>
-<p>That is the cruelest version of my whole profession. To know, in full detail, what is flying toward the people you love — and to be too far away to do anything but know.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I will tell you the one thing the war and the work never taught me. He did.</p>
-<p>Patience.</p>
-<p>OSINT teaches you speed. Decision. The cold, fast read. Caring for a man who cannot care for himself teaches you the opposite — the slow thing, the daily thing, the small unglamorous acts no one sees and no one thanks you for. Lifting. Turning. Waiting. Being there on the days when nothing happens at all, and the only war is the quiet one behind his eyes.</p>
-<p>I was a man who was good at finding things quickly. He has made me a man who can also stay.</p>
-<p>I do not know which of us is winning our old competition now. I stopped counting the money a long time ago.</p>
-<p>I only know that I am still measuring myself against him. And I always will.</p>
+<section><title><p>THE DESK THAT LOOKED LIKE EVERY OTHER DESK</p></title><subtitle>*CHAPTER 4*</subtitle>
+<p>I spent two days inside a fraud operation.</p>
+<p>Not as an officer. Not with a badge or a warrant. As a civilian — someone who had</p>
+<p>made contact through the right channels and been perceived as a potential recruit.</p>
+<p>Someone who might, theoretically, learn the system and become part of it.</p>
+<p>I had two days before I needed to leave without raising questions.</p>
+<p>I used them to watch.</p>
+<subtitle>• • •</subtitle>
+<p>The desk looked like every other desk.</p>
+<p>A screen, a headset, a database. People sitting nearby, doing work. The rhythm of</p>
+<p>an office — start time, end time, breaks, a manager who moved between stations,</p>
+<p>performance being tracked. If you had seen it from outside, through a window, you</p>
+<p>would have assumed it was an ordinary call center. Customer service. Insurance.</p>
+<p>Something organized, professional, and completely mundane.</p>
+<p>It was organized and professional. It was defrauding people across three countries.</p>
+<p>What struck me was not the malice of it. What struck me was the normality. The</p>
+<p>operators were not performing cruelty. They were doing a job they had been trained</p>
+<p>to do, with the professionalism that comes from repetition and refinement. The</p>
+<p>scripts had been tested over hundreds of calls and adjusted based on what worked.</p>
+<p>The escalation structure was designed with the logic of any sales organization,</p>
+<p>applied to the specific task of manufacturing trust in strangers. The system had learned what worked the way any system learns: by running the</p>
+<p>process, tracking outcomes, and eliminating what failed. What remained was</p>
+<p>efficient.</p>
+<p>I have told this story many times since those two days. I tell it not because fraud is</p>
+<p>unusual but because the form of it reveals something about how manipulation</p>
+<p>functions. It does not rely on stupidity. It relies on the same mechanisms that make</p>
+<p>all genuine human connection possible: trust, recognition, the experience of being</p>
+<p>understood. The only difference between manipulation and connection is the intent</p>
+<p>behind the behavior. The behavior itself is identical.</p>
+<p>This is the thing that most people miss when they say "I would never fall for that."</p>
+<p>The confidence in that statement assumes that falling requires a failure of</p>
+<p>intelligence. It doesn't. The system is designed to work on people as they actually</p>
+<p>are — precisely for people who trust carefully, who think critically, who would</p>
+<p>reject an obvious approach — because only those people have the kind of trust that</p>
+<p>is worth engineering over weeks.</p>
+<subtitle>• • •</subtitle>
+<p>Sitting inside that operation changed how I see systems.</p>
+<p>After those two days, I understood the escalation in a way that diagrams cannot</p>
+<p>convey. I understood the psychological sequence — not as an abstract model but as</p>
+<p>something I had watched applied to real people, in real time, with real effect. And I</p>
+<p>understood something that became one of the most important principles in my work</p>
+<p>afterward:</p>
+<p>By the time a victim transfers money, the decision has already been made. Not at</p>
+<p>the moment of transfer. Weeks earlier. At the point when a relationship became real</p>
+<p>to them, when the voice on the other end of the phone became someone they</p>
+<p>trusted, when the investment opportunity ceased to feel like a risk. The transfer is not the vulnerable moment. The vulnerable moment is earlier,</p>
+<p>subtler, and invisible to the person inside it.</p>
+<p>This is what OSINT, done seriously, is trying to see. Not the final action but the</p>
+<p>architecture behind it.</p>
 </section>
-<section><title><p>The One Beside Me</p></title>
-<p>I have written about the people the war took, and the people it broke. I have not yet written about the person who held the rest of us together while it tried.</p>
-<p>My wife.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>She carries her fear the way I carry mine. Silently. She almost never complains — and she has more right to than I do. She simply folds it inward and keeps moving, and unless you knew her the way I know her, you would think she was untouched. She is not untouched. She is only strong in the particular way this war demands: quietly, without applause, day after day after day.</p>
-<p>I learned how strong on the very first morning.</p>
-<p>Fifteen minutes — that was all I gave her, the morning the war began. Fifteen minutes to gather a whole life into a bag. And she did not fall apart, and she did not waste a second of it. She moved. That steadiness, in the worst minutes either of us had ever lived, is the moment I understood who I had married. Not someone who would need me to be the strong one. Someone who would be strong beside me — so that neither of us had to fall.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>She gave up things I do not speak about often enough.</p>
-<p>A normal life. Plans. The shape of a future she had every right to expect. The ordinary things a young woman builds toward — they were quietly set down, one by one, so that this family could keep standing in this place, through this. She made no speeches about it. She simply made the sacrifice. That is the kind of person she is.</p>
-<p>And I carry a guilt about it that I do not think will ever fully leave me.</p>
-<p>Because I could not get her out. I could not put her and our daughter somewhere the sky is empty. For all my skill, for all my knowing, the one thing a man most wants to do — to carry the people he loves to safety — is the very thing I have not been able to do. She has never once blamed me for it. I blame myself enough for the both of us.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>There is no grand gesture between us. No secret phrase, no special look that means <emphasis>we will be all right.</emphasis> I used to think there should be — something to hold onto, the way they have in films.</p>
-<p>There isn't. And I have come to understand that the absence is the whole point.</p>
-<p>Her reassurance is not a sign. It is simply that she is there. Every morning, every alert, every long night — still there, still steady, still mine. She is the thing that keeps me human. Without her I would have become only the cold half, the specialist, the man who reads the sky and feels nothing because feeling costs too much.</p>
-<p>She is the reason I am still a person, and not only a function.</p>
-<p>I tell my daughter that everything is fine. I tell my wife a little of the truth — not all of it, but some, which is more than I tell anyone else alive. And she takes that small piece of the truth, every single time, and she carries it with me.</p>
-<p>No one should have to. She does it anyway.</p>
+<section><title><p>TWO YEARS</p></title><subtitle>*CHAPTER 5*</subtitle>
+<p>Two years is a long time to carry a pattern that has no shape yet.</p>
+<p>The operation we were building against was large. Transnational. Multi-layered.</p>
+<p>The people at the center were careful. The structure was designed to survive partial</p>
+<p>disruption — remove one element and the rest continues.</p>
+<p>We worked it for two years.</p>
+<p>During that time I was not working toward an endpoint. I was building a picture,</p>
+<p>incrementally, in conditions where most of what I needed didn't exist yet and some</p>
+<p>of what I found I couldn't immediately use. You learn, in work like that, to hold</p>
+<p>partial structures in your mind without forcing them to close.</p>
+<subtitle>• • •</subtitle>
+<p>I have been asked what that kind of sustained work does to a person. The honest</p>
+<p>answer is: it builds a specific kind of patience that cannot be developed any other</p>
+<p>way.</p>
+<p>There is a version of patience that is passive — tolerating delay, waiting for</p>
+<p>something to happen, enduring the space between events. That is not what I mean.</p>
+<p>The patience that long investigations develop is active. It is the ability to work</p>
+<p>productively inside incompleteness. To continue building without requiring the</p>
+<p>building to resolve. To maintain equal seriousness toward a fragment that might</p>
+<p>matter and a fragment that might not — because you cannot always know in</p>
+<p>advance which is which.</p>
+<p>Most people find this genuinely uncomfortable. The mind prefers closure. It wants</p>
+<p>the fragments to fit into a picture, the picture to stabilize, the question to produce an answer. When they don't, the pressure to force coherence becomes real and difficult</p>
+<p>to resist.</p>
+<p>Two years of working that case burned the impulse toward forced coherence out of</p>
+<p>me. Not completely — the impulse never disappears entirely. But it was weakened</p>
+<p>enough that I stopped confusing the relief of premature closure with the satisfaction</p>
+<p>of actual understanding.</p>
+<p>When the operation finally collapsed — when the arrests happened, when fifteen</p>
+<p>people were charged, when the evidence that had taken two years to assemble was</p>
+<p>finally sufficient — I felt something I hadn't anticipated. Not triumph. Not relief.</p>
+<p>Something quieter and more difficult to name.</p>
+<p>The recognition that what we had been seeing for two years had always been there.</p>
+<p>The pattern had always existed. What changed was not the pattern but our ability to</p>
+<p>see it fully enough to act on it.</p>
+<p>The result confirmed what the investigation had been building toward. But the</p>
+<p>building had been the real work. The confirmation was almost secondary.</p>
 </section>
-<section><title><p>The House I Grew Up In</p></title>
-<p>I grew up somewhere else. Not in this city.</p>
-<p>There was a house, in another town, and that house made me. In it were my father and my mother, my grandmother and my grandfather. Four grown people and one boy. Whatever I am, I was assembled there.</p>
-<p>Most of them are still in that house. The war did not empty it. It only put a sky over it that none of them ever deserved.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>My mother is there, at my father's side. Theirs is the oldest promise there is — in sickness and in health — and the war has held her to the hardest half of it. She is the one who quietly worries for all of us at once, the way mothers do.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>My grandmother and my grandfather are still alive.</p>
-<p>Think about what that means. They have already lived through more than one hard age — the long grinding decades, the collapse of one whole world and the difficult building of another. They had earned a quiet old age. They had paid for it, many times over.</p>
-<p>And the war came for them anyway, at the very end, when they were owed peace more than anyone alive.</p>
-<p>I have to tell you one thing about my grandfather, because it explains something about all of us.</p>
-<p>When a strike lands near them, he does not hide. He goes toward it. An old man, walking to the place everyone else is running from — to pull at the rubble, to help whoever is under it, while the danger is still in the air and another one could come at any moment.</p>
-<p>I have spent a career learning to move toward the things other people avoid — in my own way, from behind a screen. I used to think that was something I chose. Now I think I simply inherited it, from a man who never needed a screen to do it.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>My sister is the one who got out.</p>
-<p>She is younger than me, and she left a long time ago, for somewhere abroad. For years she came back often — the way you do when home is only a journey away, and not a risk. Now, in the war, almost never. It is too dangerous here. And I am glad, genuinely glad, that she has somewhere safer to be.</p>
-<p>But glad and missing are not opposites. I can hold both at once. She is safe, and she is far, and there is a sister-shaped space at every table now that does not get filled.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>That is the truth of what the war did to my family. It did not destroy us. We are luckier than many — we are all, still, here.</p>
-<p>It only scattered us. Thinned us out across borders and cities and the plain fear of the roads. We can still gather. But getting every last one of us into a single room, at a single time — the way it once simply happened, without anyone having to try — has become almost impossible.</p>
-<p>And this is the part the speeches never mention. The war is not aimed at soldiers. It is aimed at exactly this. At houses like the one I grew up in — full of mothers and grandfathers, and the children who became whatever they are because of them.</p>
+<section><title><p>WHAT PEOPLE THINK OSINT IS</p></title><subtitle>*CHAPTER 6*</subtitle>
+<p>Someone once told me that I find things on the internet.</p>
+<p>As if that were a complete description.</p>
+<p>I didn't argue. The gap between that sentence and what OSINT actually is cannot be</p>
+<p>closed in a casual conversation.</p>
+<p>But I think about that sentence. Because even in its inadequacy, it contains</p>
+<p>something that points toward a real question. OSINT does involve finding things.</p>
+<p>The question is what finding actually means.</p>
+<subtitle>• • •</subtitle>
+<p>I have had a conversation many times, in various forms, with people who learn</p>
+<p>what I do professionally.</p>
+<p>They nod when I explain it. They ask some questions. And then, at some point, they</p>
+<p>say something like: but anyone could do that, couldn't they? If the information is</p>
+<p>out there publicly, it's just a matter of looking it up.</p>
+<p>My response, when I'm trying to make them understand rather than simply argue,</p>
+<p>goes something like this:</p>
+<p>I know things about you right now. Not because I've done any investigation — I</p>
+<p>haven't. But because you exist in digital space and you leave traces there, and I</p>
+<p>know how to read those traces. I know roughly where you live. I have a reasonable</p>
+<p>picture of your daily patterns. I know more about your relationships and your habits</p>
+<p>and your preferences than you have intentionally shared with me.</p>
+<p>This is not frightening by itself. Most of that information, in isolation, is harmless. But I want you to imagine something. Imagine that I were not a person doing legal</p>
+<p>investigative work. Imagine I were someone who wanted to find you. Someone</p>
+<p>who wanted to build a detailed picture of your life for reasons that were not benign.</p>
+<p>What would I be able to do with what I just told you I already know?</p>
+<p>People become quiet when I say this. Not because the information itself is alarming</p>
+<p>— but because the implication is. Because they realize, often for the first time, that</p>
+<p>the question is not whether the information exists. It does. The question is who is</p>
+<p>looking at it and what they intend to do with it.</p>
+<p>And then they stop laughing about the idea that this is "just Googling."</p>
+<subtitle>• • •</subtitle>
+<p>What OSINT actually involves is layered in a way that the word "finding" obscures.</p>
+<p>It involves understanding that deleted does not mean gone. It involves</p>
+<p>understanding that renamed does not mean changed. It involves understanding that</p>
+<p>private does not mean protected.</p>
+<p>A candidate's Instagram is locked. Their wife's is not. Their wife's sister's is not.</p>
+<p>And in 2019, the wife's sister posted a family photo with a caption that identified</p>
+<p>everyone in it — including the candidate, under a secondary username they had</p>
+<p>never mentioned to anyone professional.</p>
+<p>The information the candidate protected was their own. They had no control over</p>
+<p>what the people around them shared without understanding the implications.</p>
+<p>People protect themselves. They cannot protect their environments. And the</p>
+<p>environment, in most investigations, is where the truth lives.</p>
+<p>This is not a technical insight. It is a human one. It comes not from learning better</p>
+<p>tools but from spending enough time watching how people actually behave — in</p>
+<p>unguarded moments, in casual posts, in the small acts of documentation that people</p>
+<p>engage in without thinking about who might read them later. OSINT is the reading of those moments. The reconstruction of a person from the</p>
+<p>traces they and their world leave without intending to leave them.</p>
+<p>That is not the same as typing something into a search engine.</p>
 </section>
-<section><title><p>The Calm One</p></title><subtitle>Chapter Four</subtitle>
-<p>In my home, I am the calm one.</p>
-<p>My wife sees it. My daughter sees it. With every blast that shakes the windows, I say the same three words, in the same even voice. <emphasis>Everything is fine.</emphasis></p>
-<p>It is the largest lie of my life. And I tell it every day.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>The air-raid alert is always with us. In Dnipro it is not an event; it is the weather.</p>
-<p>I wake in the morning and put the coffee on, and the alert begins. I drive to work, and it is sounding. I drive home, and it is sounding still. And the worst one — the one I have never gotten used to — is the one that comes at night, when I have just lain down beside my family, when the room is finally dark and quiet, and then it isn't.</p>
-<p>You would think a person could get used to a sound he hears every single day. You do not get used to it. You only get better at hiding what it does to you.</p>
-<p>It has changed me in ways I did not get to choose. My sleep is thinner now; I hear every alert even half-asleep, and a quiet night is never a promise — more often I wake again and again to the next blast, and lie there counting the seconds, doing the math I wish I did not know how to do. And it has reached into the daylight too. A child's balloon bursts at a party, and my heart slams, and my body is ready to run before my mind can catch it and say there is nothing to run from.</p>
-<p>That does not switch off. I have stopped waiting for it to.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>There are two men in me when the sky starts up, and they do not like each other.</p>
-<p>One is the specialist. He is cold, and I need him to be cold. He reads the warnings as they arrive — the direction, the type, the speed — and he works out, quickly, where a thing might be going and what it might reach. He does not panic. Panic is useless and slow, and there is no time for useless things.</p>
-<p>The other is just a husband and a father, and he is terrified.</p>
-<p>The specialist picks up the phone and calls my family to tell them which way not to walk, which side of the apartment to stay away from, to lie back down and rest. His voice is steady. And underneath that steady voice, the other man is screaming — because he understands the one thing the steady voice will never say out loud.</p>
-<p>That I can guess where it is going. But I cannot stop it.</p>
-<p>A Shahed is not a ball you can knock away. A missile is not something you can stand in front of. When one of them arrives, it does not negotiate. After it, there may be nothing left at all. Not the building. Not the car. Not the person.</p>
-<p>I know all of this with the cold part of my mind, in full detail, better than most people around me. And the knowing does not help the warm part at all.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I have never broken in front of them.</p>
-<p>Not once. With every huge blast I say <emphasis>everything is fine,</emphasis> and maybe, <emphasis>better not to go and look,</emphasis> or <emphasis>better to rest a little longer.</emphasis> They see a man in control. They see calm.</p>
-<p>I keep the rest inside. I have always known how to do that — it is, in its way, a kind of professional skill, the same stillness I learned in the work. The only person I tell the truth to is my wife, and even then, not all of it. Only some of it. Only sometimes.</p>
-<p>The rest I carry alone. I think most men here carry something alone. We have simply agreed, without ever once discussing it, not to set our loads down in front of the people we are trying to protect.</p>
-<p>So I will say it here instead. On this page. Once. Plainly. Where they will not hear it.</p>
-<p>I am not calm.</p>
-<p>I have never been calm.</p>
-<p>I have only been quiet.</p>
+<section><title><p>HOW AN INVESTIGATION ACTUALLY BEGINS</p></title><subtitle>*CHAPTER 7*</subtitle>
+<p>People assume investigation begins with a search.</p>
+<p>It doesn't. It begins with a question. And before the question, there is something</p>
+<p>more basic: the problem of knowing which question to ask.</p>
+<subtitle>• • •</subtitle>
+<p>Every case starts with what I have. The inputs. A name, a username, a number, an</p>
+<p>email, a photograph, a single Telegram contact from which everything else will</p>
+<p>need to be built. Sometimes the input is rich. Sometimes it is one line of text and</p>
+<p>nothing else.</p>
+<p>The inputs determine what is possible. But they do not determine where to start.</p>
+<p>Where to start is determined by the task.</p>
+<p>This distinction matters more than it might appear. Because an investigation</p>
+<p>without a clear task is not an investigation — it is data collection. And data</p>
+<p>collection without a task has no natural stopping point, no criterion for relevance,</p>
+<p>no way to distinguish what matters from what is simply present.</p>
+<p>I have seen investigations that failed not because they couldn't find information but</p>
+<p>because they didn't know what they were looking for. They found things. Many</p>
+<p>things. They assembled large quantities of data and produced reports that were</p>
+<p>comprehensive and, in terms of actionable intelligence, nearly useless. The</p>
+<p>information was there but the thinking wasn't.</p>
+<p>The task defines the boundaries. It tells me which direction to go and — equally</p>
+<p>importantly — which directions not to. A client needs to know whether a counterparty is who they claim to be. That is a different investigation than: tell me</p>
+<p>everything about this person. The first has a clear criterion for completion. The</p>
+<p>second doesn't.</p>
+<p>I spend time at the beginning of every case being precise about what is actually</p>
+<p>being asked. What the client needs. What they will do with the information. What</p>
+<p>level of confidence is required and what constitutes sufficient evidence for the</p>
+<p>purpose at hand.</p>
+<p>This is not bureaucratic due diligence. It is the most intellectually important part of</p>
+<p>the process.</p>
+<subtitle>• • •</subtitle>
+<p>Once the task is clear, I look at the inputs again — differently now, through the lens</p>
+<p>of what I'm trying to answer.</p>
+<p>A single selector — a phone number, an email address, a username — is never just</p>
+<p>what it appears to be on the surface. It is an entry point into a network of</p>
+<p>associations that the person built over time, usually without thinking about how</p>
+<p>those associations connect.</p>
+<p>The same email address appears in a breach from 2019, in a registration on a</p>
+<p>freelance platform from 2021, linked to a Google account whose location data</p>
+<p>shows consistent activity in a city different from the one declared in the case file.</p>
+<p>Three data points, three different systems, one picture.</p>
+<p>The key is not the data. The key is the sequence. Which pivot leads where. Which</p>
+<p>connections are worth following and which are noise. How to move from one</p>
+<p>identifier to the next without losing the thread of what you're actually trying to</p>
+<p>establish.</p>
+<p>This is what the work feels like from the inside. Not a linear progression but a</p>
+<p>series of small decisions, each of which opens some possibilities and closes others.</p>
+<p>The decisions accumulate into a path. The path leads to a conclusion — or to a wall, which is itself a form of information.</p>
+<p>I approach each case with what I have, shaped by what I need to know. Everything</p>
+<p>else follows from those two points.</p>
 </section>
-<section><title><p>The Work</p></title><subtitle>Chapter Five</subtitle>
-<p>I should tell you what the work actually is now. Not the version in the job title. The real one.</p>
-<p>It begins before I am fully awake. I reach for the phone before I reach for anything else, and I read what came in the night — what flew, where, what is left. By the time the coffee is poured, I have already been to the war and back. I drink it reading the rest.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>People imagine OSINT as something cold and technical. Screens, data, a man behind glass. And it is that, partly. But here, underneath, it is something else.</p>
-<p>When the alert sounds while I am working, I do not panic, and I do not wait. After this many years, I already know — by direction, by type, by the shape of the thing — where it has come from and where it can still go. The analysis takes seconds. I have done it ten thousand times. And the moment it resolves, before I do anything official, I call my family.</p>
-<p>That is the real work. Everything else is built around it.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>A report, for me, is not paperwork. It is my name.</p>
-<p>It is reputation, trust, professionalism — the three things a person in my field truly has. I look at every detail as if someone's faith in me depends on it, because it does. One wrong fact, one identity confirmed too quickly, one source not checked a second time, and the trust is gone — and you do not get it back. That was always true in this work, long before the war. The verification of a human being is not a thing you are allowed to be careless with.</p>
-<p>Because when you verify a person, you are holding something fragile. You can be right, and protect someone. You can be wrong, and ruin them. I have never let myself forget which of those is in my hands.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>Let me tell you about one case. No names, no country, not a single detail anyone could be recognized by. Only so that you understand what the work itself feels like.</p>
-<p>There was a man who believed he had disappeared.</p>
-<p>He had been running a scheme — taking people's money — and at some point he did what everyone who thinks he is smarter than the rest eventually does. He deleted the account. Wiped the channel. Renamed what was left. And he decided he was a clean page now. That the past was simply gone.</p>
-<p>But the past is never gone. It only stops being in plain sight.</p>
-<p>I did not chase him. You do not chase, in this work. You wait, and you watch. I gathered the small things he had left behind and forgotten — a fragment of an old name; a date that surfaced in two places it had no business being; a habit a man does not change even when he changes everything else.</p>
-<p>And then there was one detail. Small. He would never have looked at it twice. I look at exactly those twice — that is the whole of my work. And it pulled the rest together: who he was, where he was, the real person behind the "deleted" trail.</p>
-<p>I remember that second. Not joy. Something closer to silence — the moment a scattered thing suddenly becomes a face.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>And here is what the manuals never tell you.</p>
-<p>In that second, I felt no triumph. I was sitting at a screen, and somewhere past the window a siren was rising — an ordinary night, like all the others — and a living person's face was looking back at me. Yes, he was what he was. Yes, he needed to be found. But there is a human being at the end of every trail, even the dirtiest one, and I have never let myself forget it.</p>
-<p>That is the difference between someone who can search, and someone who can be trusted to search. The first one sees the target. The second one remembers there is a person on the other side — and finishes the work anyway. Precisely. Carefully. Without a single mistake.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I am very good at this. I say that the way you would say you are tall — without pride. It is simply true, and it is mine.</p>
-<p>And on the worst nights, being good at it is exactly the problem. Because being good at it means I know more than the people I love. And knowing more, here, is not a gift.</p>
-<p>It is a weight you carry to a telephone, as fast as you can, praying you are fast enough.</p>
+<section><title><p>DEAD ENDS AND WHAT THEY CONTAIN</p></title><subtitle>*CHAPTER 8*</subtitle>
+<p>Every investigation has them.</p>
+<p>The moment when the path stops. When the last identifier leads to nothing, when</p>
+<p>the usual tools return empty, when the person simply does not appear to exist in the</p>
+<p>places you are looking.</p>
+<p>Most people, when they encounter a dead end, experience it as failure. I experience</p>
+<p>dead ends differently. Not as absence but as redirection. Not as the end of a path but</p>
+<p>as information about where the path actually is.</p>
+<subtitle>• • •</subtitle>
+<p>The subject was a candidate for a position with access to sensitive data. On every</p>
+<p>direct search: nothing that raised concern. On the surface, an ideal candidate.</p>
+<p>What this looked like to me: a profile assembled with awareness. The absence of</p>
+<p>natural irregularity. Surfaces that were too smooth.</p>
+<p>I ran the email and phone through breach databases. The results returned a</p>
+<p>Telegram link that led, initially, to nothing useful.</p>
+<p>I could have stopped here. Many investigations would have. Instead, I went around.</p>
+<p>Through cross-platform analysis, I found the wife's Facebook. She had left a link to</p>
+<p>her Instagram there. The Instagram was open — and it led, through tags and</p>
+<p>mentions, to the wife's sister.</p>
+<p>The sister's number appeared in old classified ads. In one listing, a note: "if I'm not</p>
+<p>available, call my wife's sister" — followed by her number. That number produced an account. And in 2023, the sister-in-law had posted a</p>
+<p>group photo from a family trip — tagged with the candidate's secondary username,</p>
+<p>listed without a second thought.</p>
+<p>Same face. Different life.</p>
+<p>The secondary account contained what the primary had been built to hide:</p>
+<p>documentation of high-risk financial activity, posts about transactions through</p>
+<p>unregulated channels. And in one comment: "everything is fine at work. No one</p>
+<p>will dig this deep."</p>
+<p>Total investigation time: two hours and ten minutes.</p>
+<p>The direct approach produced nothing. The indirect approach — through the family</p>
+<p>environment the candidate had no control over — produced everything.</p>
+<subtitle>• • •</subtitle>
+<p>The dead end was not the end. It was a sign that the subject had thought about the</p>
+<p>direct approach. Which meant the information existed somewhere else.</p>
+<p>When I hit a wall, I stop looking at the wall. I look at what is connected to it.</p>
 </section>
-<section><title><p>What I Build</p></title><subtitle>Chapter Six</subtitle>
-<p>There came a point when watching was not enough.</p>
-<p>The war moves fast, and it moves everywhere at once. No person, sitting alone at a screen, can keep up with all of it by hand — the channels, the reports, the hundred small signals arriving every minute from every direction. I tried. You cannot. Things slip past you. And the things that slip past you at night are the very things you most needed to see.</p>
-<p>So I did the only thing I know how to do when the world is too big to hold.</p>
-<p>I built something to hold it.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I will not say much about it. Some of it is not mine to tell, and I intend to keep it that way. But I built a system to watch — to gather what was happening across hundreds of sources, to lose nothing, to lay a whole night out in front of me so that I could see its shape, instead of only the piece that passed over my own roof.</p>
-<p>I have always been this way. I have never liked using other people's tools. Not out of arrogance — out of need. If something matters this much, I have to understand every part of it myself. I cannot stake the people I love on a resource I did not build and do not fully control. When the cost of being wrong is a life, <emphasis>it usually works</emphasis> is not good enough.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>But there was another reason, quieter than the rest, and it took me a long time to admit it.</p>
-<p>It was the helplessness.</p>
-<p>The worst hours of this war are the ones in which you can do nothing — where the sky is busy and your family is asleep and you simply lie there, a passenger in your own night. I am not built to be a passenger. Building was how I refused.</p>
-<p>While the city held its breath, I made something. I turned the helplessness into a screen full of knowing. It did not make us safer — nothing here makes you safer — but it gave my hands something to do besides shake. And on some nights, that is the whole difference between a man who is coping and a man who is not.</p>
-<p>I build because I cannot stop the sky.</p>
-<p>But I can refuse to simply lie beneath it.</p>
+<section><title><p>THE PASSWORD THAT OPENED EVERYTHING</p></title><subtitle>*CHAPTER 9*</subtitle>
+<p>Not every breakthrough looks like a breakthrough when it happens.</p>
+<p>Sometimes it is a single line in a database. A partial hash. A word that was</p>
+<p>someone's password in 2019 and, in the logic of human consistency, became</p>
+<p>something else entirely.</p>
+<subtitle>• • •</subtitle>
+<p>The subject had been unusually careful. No obvious social media presence under</p>
+<p>their real name. The questionnaire was notably sparse. The profile of someone who</p>
+<p>had thought about what they were being asked and given the minimum required.</p>
+<p>I ran the phone number through an aggregation bot. An old email address surfaced</p>
+<p>from a breach from years earlier.</p>
+<p>I ran the email through breach databases: three hits. Then through BreachDirectory,</p>
+<p>which returned partial hashed passwords from one of the breached datasets.</p>
+<p>I ran the hashes through a cracking service. One cracked. The password was a</p>
+<p>word, not a random string — chosen by a person, which meant it meant something</p>
+<p>to them.</p>
+<p>And then I had a thought.</p>
+<p>People reuse things. Not just passwords — identifiers. The same string of</p>
+<p>characters that works as a password often also works as a username, a forum</p>
+<p>handle, a display name. The psychology is the same: it's meaningful, it's</p>
+<p>memorable, it feels like theirs. I took the cracked password and put it into a cross-platform search as a username</p>
+<p>query.</p>
+<p>The results were immediate and substantial.</p>
+<p>Platform after platform, a consistent identity built around that string. Social media</p>
+<p>profiles the candidate had not mentioned. Activity that directly contradicted the</p>
+<p>questionnaire — family members listed nowhere in the official submission,</p>
+<p>associations that raised serious concerns.</p>
+<p>In old comments, under the handle built on the password: observations about the</p>
+<p>workplace, about management, about what it was possible to get away with</p>
+<p>undetected.</p>
+<subtitle>• • •</subtitle>
+<p>A password is not just a password. It is a choice made by a person at a specific</p>
+<p>moment, reflecting something about how they think, what they value, what they</p>
+<p>wanted to remember. That choice, made once, leaves residue in systems across</p>
+<p>years and platforms. And the residue, read correctly, is not just evidence of past</p>
+<p>behavior. It is a map to present identity.</p>
+<p>When the direct approach fails, ask: what else did this person choose? What other</p>
+<p>decisions did they make, elsewhere, that might have come from the same place?</p>
+<p>The answer is usually there. You just have to follow it far enough.</p>
 </section>
-<section><title><p>A Night in Dnipro</p></title><subtitle>Chapter Seven</subtitle>
-<p>Let me take you into one night. Not a special one. There is no such thing as a special one anymore. Just a night.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>It starts with the alert. It always starts with the alert.</p>
-<p>Then, if it is going to be that kind of night, you hear them. The Shaheds. That low, flat buzz coming in over the city — the sound my daughter learned before she learned her words. You lie in the dark and you listen, and you count, and you wait.</p>
-<p>I can tell them apart now, by sound. A Shahed is one thing. A cruise missile is another. A jet is another still. I never wanted this knowledge. No one should be able to read the sky by ear, half-asleep, lying beside his wife. But you learn the alphabet the war teaches, whether you want it or not.</p>
-<p>Then the air defense begins to work, somewhere out in the dark, and the sky cracks, and the windows do the thing they have done since the very first morning.</p>
-<p>They tremble.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>When a blast comes close, you already know the order. Family first. Always family first. I make sure they are breathing, that the sound did not belong to us. Only then do I let the specialist come back. The work can wait four seconds. I have learned that those four seconds are the only honest thing about me at night.</p>
-<p>And then I wait, in the dark, doing the one thing left to do.</p>
-<p>Knowing.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>The cruelty of it is that the sky does not aim at soldiers.</p>
-<p>The strike that reached my own relatives landed on the home of a priest. A man whose entire life was the opposite of war — who had nothing to do with any of it, who had never carried anything heavier than a prayer. There is no logic you can lay over that. After a while you stop trying. The sky here does not check whether you deserve it. It simply arrives.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>And then, eventually, the morning comes. It always comes. That is its own strange mercy.</p>
-<p>The morning after a bad night has a particular quiet to it — a stillness that is not peace. Often there is the smell of burning somewhere on the wind. And everyone does the same thing, all across the city, without ever arranging it: we reach for our phones, and we check who is on the line. Who answered. Who is still here.</p>
-<p>And then I do the thing I hate most of all.</p>
-<p>I scroll through the addresses that were hit in the night, and I read them with my heart in my throat, praying I will not recognize one.</p>
-<p>So far, most mornings, I have been lucky.</p>
-<p>Most mornings.</p>
+<section><title><p>THE MOMENTS I WANTED TO STOP</p></title><subtitle>*CHAPTER 10*</subtitle>
+<p>There were many.</p>
+<p>I say this directly because this book is supposed to be honest, and the honest</p>
+<p>version of this work does not look like continuous forward momentum. It looks like</p>
+<p>periods of genuine difficulty interrupted by results that make the difficulty</p>
+<p>worthwhile. And then more difficulty.</p>
+<subtitle>• • •</subtitle>
+<p>When I left law enforcement and moved into OSINT as a profession, I was not</p>
+<p>stepping into an established field in my country. I was stepping into a space that</p>
+<p>most people around me did not recognize as a space.</p>
+<p>The conversations were difficult. Not hostile — just uncomprehending. You do</p>
+<p>what? You find information about people using open sources? And this is a</p>
+<p>profession?</p>
+<p>I brought proposals. Ideas for systems that didn't exist — tools that could be built,</p>
+<p>workflows that could be automated. I made cases. I explained the methodology. I</p>
+<p>showed results.</p>
+<p>The consistent experience, for a long time, was that the people in a position to fund</p>
+<p>or implement new approaches preferred to pay for established names, familiar</p>
+<p>frameworks, things that had visible institutional backing. Not because what I was</p>
+<p>offering was worse. But because novelty is a harder sell than familiarity, and in</p>
+<p>Ukraine, in the field I was working in, I did not yet have a name that made the</p>
+<p>novelty easier to accept. Most people didn't know the field existed. I wasn't competing with established</p>
+<p>practitioners. I was competing with the assumption that what I was describing</p>
+<p>wasn't a thing.</p>
+<subtitle>• • •</subtitle>
+<p>What kept me going during the difficult periods was not an inspiring story I told</p>
+<p>myself about perseverance. It was simpler and less flattering than that: I did not</p>
+<p>have anything else I wanted to do.</p>
+<p>The work was frustrating. The environment was frustrating. The gap between what</p>
+<p>I could see was possible and what the market around me recognized as valuable</p>
+<p>was real and sometimes painful.</p>
+<p>But the alternative was returning to something that felt less true. Less connected to</p>
+<p>what I was actually capable of and actually interested in. And that felt worse than</p>
+<p>the frustration of the situation I was already in.</p>
+<p>So I kept working. I kept showing results. I started writing — not to build an</p>
+<p>audience initially, but because articulating the methodology forced me to think</p>
+<p>about it more carefully. I started building tools — not because I had resources or a</p>
+<p>team, but because the tools I needed didn't exist and waiting for someone else to</p>
+<p>build them was not a viable strategy.</p>
+<p>That is, in the end, the most honest account of how I got from where I was to where</p>
+<p>I am. Not momentum. Not inspiration. Just the refusal to choose the alternative.</p>
 </section>
-<section><title><p>To the Last Ukrainian</p></title><subtitle>Chapter Eight</subtitle>
-<p>There is an old saying here. <emphasis>Money is for the rich.</emphasis></p>
-<p>Like most sayings, it is partly true and partly an excuse. But it has stayed with me through all of this, because the war did not fall on everyone the same way. It never does.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I want to be careful here, because it would be easy to be unfair, and I have no interest in being unfair.</p>
-<p>I am not angry at people who have money. I am not angry at the ones who left. Every person in this world has the right to live, to be safe, to take their children somewhere the sky is empty. If you could get your family out, you should have. I would never hold that against anyone. I have wished, more than once, that I had been able to do the very same thing.</p>
-<p>That is not where my anger goes.</p>
-<p>My anger goes to one specific picture. A person sitting somewhere far away and safe — by the sea, in Dubai, in some comfortable country — posting to the world that we must fight on. To the end. To the last Ukrainian.</p>
-<p>To the last Ukrainian.</p>
-<p>It is easy to spend other people's children. It is easy to demand a war to the death from a balcony where no alert will ever sound, where no one you love will ever press a finger to their nose and point up at the sky.</p>
-<p>That is the part I cannot forgive. Not the leaving. The leaving, and then the speeches.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>People ask, sometimes, what war does to a country.</p>
-<p>I will tell you what I have seen. It does not only take buildings and lives. It takes something quieter, and much harder to name. It takes a percentage of the humanity out of people. A large percentage.</p>
-<p>The country split. Not into two clean halves — into a thousand small pieces. People became different. Harder. Quicker to judge, slower to forgive. And not only toward strangers. Toward the closest people in their lives. I have watched it happen between people who once loved each other.</p>
-<p>So I have decided, for myself, what humanity is now. It is very simple. It is helping another person, whatever situation you find yourself in. That is the whole of it. In a time when so many have let it go, I have stopped treating it as ordinary. It has become the rarest thing I know.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I do not know if I will ever take my family to the sea inside our own country again — anywhere but Odesa, and even that, who can say.</p>
-<p>I do not know if we will stay in Dnipro. I do not know if we will leave. The war goes on, and it does not share its plans, and so you stop making your own.</p>
-<p>That is its own kind of theft. Not of a place — of the future. Of the simple right to say, <emphasis>next summer we will go here,</emphasis> or <emphasis>next year she will start school there.</emphasis> We have been robbed of the word <emphasis>next.</emphasis></p>
-<p>And still — when I see those posts from the balconies above the sea — I do not envy the sea. I envy something smaller than that.</p>
-<p>I envy the silence.</p>
+<section><title><p>THE FRIEND AND THE THIRTY THOUSAND DOLLARS</p></title><subtitle>*CHAPTER 11*</subtitle>
+<p>He called me on a video call to talk about something else.</p>
+<p>He mentioned the investment almost as an aside — something good that was</p>
+<p>happening, something he was looking forward to. The tone was the tone of a person</p>
+<p>who has already made a decision and is sharing it, not asking for input. My friend is</p>
+<p>an economist. He is careful with money. He is not naive or impulsive.</p>
+<p>I asked a few questions. He answered them. With each answer, something I</p>
+<p>recognized from years of working organized fraud became more visible.</p>
+<p>I didn't tell him what I was seeing. I needed to know first.</p>
+<subtitle>• • •</subtitle>
+<p>The investigation that followed was not technically complex. By the time I had</p>
+<p>what I needed, the picture was clear. The person he had been speaking with for</p>
+<p>weeks was an operator in a structured fraud system. The account, the platform, the</p>
+<p>relationship — all of it had been constructed with a specific purpose.</p>
+<p>But the investigation was not the hard part.</p>
+<p>The hard part was the conversation I had with him afterward. Because by the time I</p>
+<p>called him back, he had already decided. Not legally — the transfer hadn't</p>
+<p>happened. Not financially — the money was still in his account. But</p>
+<p>psychologically. He had invested weeks in a relationship that had felt real, that had</p>
+<p>provided support during a difficult period.</p>
+<p>When I told him what I had found, he did not believe me immediately. This is important. Not as a criticism of him — he is an economist, trained to think</p>
+<p>carefully about financial decisions. The system was not designed to work on people</p>
+<p>who think carelessly. It was designed to work on people who think carefully.</p>
+<p>Because those people, once their trust is built, are more resistant to doubt.</p>
+<p>I did not just show him the evidence. I showed him the architecture. How the</p>
+<p>system worked. What each stage was designed to accomplish. Why the early profits</p>
+<p>were real — not because the investment was real, but because demonstrating a real</p>
+<p>return is the most effective way to eliminate the last barrier of doubt.</p>
+<p>He listened. He asked questions. Eventually he understood. Not with relief — with</p>
+<p>something closer to grief.</p>
+<p>The thirty thousand dollars stayed in his account.</p>
+<p>That outcome is not guaranteed. I was present. I recognized what I was looking at. I</p>
+<p>moved while there was still time. Another week and the decision would have been</p>
+<p>made in ways that could not be undone.</p>
+<subtitle>• • •</subtitle>
+<p>I think often about what would have changed if I hadn't been available, hadn't</p>
+<p>recognized the signs, hadn't pushed past his resistance. The answer is obvious and I</p>
+<p>don't dwell on it. But I do think about the cases that don't have someone available.</p>
+<p>The people who are inside the same architecture with no one who knows what</p>
+<p>they're looking at.</p>
+<p>The system does not distinguish. It runs on everyone who enters it.</p>
 </section>
-<section><title><p>What I Still Believe</p></title>
-<p>People assume a war either makes a man religious or kills his faith entirely. For me it did neither. It did something quieter. It sorted out what I actually believe from what I only used to say.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I am not sure I believe in God the way some men do. It is a hard question, and I will not pretend to an answer I do not have.</p>
-<p>What I believe is closer to this. I believe in fate. I believe that each of us has someone, somewhere above, watching over us — a guardian of our own. And I believe that nothing we live through is truly random. Every person who crosses your path, every meeting, every small detail that happens to you — none of it is an accident. It is all there for a reason, even when the reason is hidden from us. Even when the reason is cruel.</p>
-<p>I have to believe that. It is the only frame in which any of this holds together. It is the only way that Alexander's death is not simply a senseless tearing of the world — but a thread in something larger, something I am not high enough to see.</p>
-<p>Perhaps it is only a story I tell myself in order to survive. But I have noticed that the people who survive are, very often, the ones with a story.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>The war did change one thing in me completely.</p>
-<p>I used to plan. I used to look years ahead — where we would live, where we would travel, the kind of life we would build. I was a man with a future laid out in front of him like a map.</p>
-<p>I do not do that anymore.</p>
-<p>Now I live one day at a time, because one day is the only honest unit of time we have left. To plan far ahead is to assume a tomorrow the war has never promised you. So I have stopped asking for tomorrows. I hold the day I am in, and the people inside it, and I try not to ask the sky for anything beyond that.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>When I do ask — when I let myself want something — it is always the same thing.</p>
-<p>It is not victory. It is not riches. It is not even an end to the war, though God knows I want that too.</p>
-<p>It is simply this: that everyone I love stays whole. Untouched. Here. That is the entire content of my prayer, if it is a prayer. Keep them. Just keep them.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>And when I let myself picture the first day after — the first real day of peace — it is always the same picture.</p>
-<p>The sea. My family beside me. My phone left at home, somewhere far away, switched off and forgotten. And silence. A sky with nothing in it at all. The ordinary, impossible luxury of a day that asks nothing of me but to live inside it.</p>
-<p>I do not know if that day will come. I am not high enough to see it.</p>
-<p>But I believe, the way I believe everything else now — quietly, stubbornly, against all the evidence — that nothing in this life is for nothing. That all of it, even this, is leading somewhere.</p>
-<p>It has to be.</p>
-<p>I have decided that it has to be.</p>
+<section><title><p>WHAT THE WORK DOES TO YOUR THINKING</p></title><subtitle>*CHAPTER 12*</subtitle>
+<p>I cannot read a message anymore without noticing things I don't intend to notice.</p>
+<p>Timing. Word choice. What's present and what's absent. Whether the emotional</p>
+<p>register of the content matches the behavioral register of how it was sent.</p>
+<p>I don't do this deliberately. It happens before I make any decision to do it. The work</p>
+<p>has trained a layer of perception that operates independently of my intentions, in</p>
+<p>contexts where it has no professional purpose whatsoever.</p>
+<p>This is useful when I'm working.</p>
+<p>It is, sometimes, exhausting when I'm not.</p>
+<subtitle>• • •</subtitle>
+<p>There is a version of this that sounds like an asset. Heightened perceptiveness. A</p>
+<p>sharpened sense of inconsistency that functions automatically.</p>
+<p>But there is another version of it that is simply a cost. The tendency to</p>
+<p>over-interpret silence. To assign meaning to patterns that are not patterns. To find</p>
+<p>structure in data that has no structure, because the mind has been trained to find</p>
+<p>structure and does not always know when to stop.</p>
+<p>I have learned to recognize when this is happening. The recognition came from</p>
+<p>noticing a specific quality of certainty that precedes being wrong — a particular</p>
+<p>feeling of everything fitting together that should, by now, trigger slowdown rather</p>
+<p>than acceleration. When I feel that certainty, I have learned to treat it as a signal to</p>
+<p>check, not to conclude. The work does not make you more certain. Done correctly, it makes you less</p>
+<p>certain — but more precise about the distinction between what you know and what</p>
+<p>you are inferring. That distinction, maintained carefully, is what separates useful</p>
+<p>analysis from convincing noise.</p>
+<subtitle>• • •</subtitle>
+<p>There is something else the work does, more subtle and harder to articulate.</p>
+<p>It changes how you experience uncertainty in the rest of your life.</p>
+<p>I live in a country at war. Uncertainty about what will happen is not an occasional</p>
+<p>condition. It is the background against which everything else occurs.</p>
+<p>I have found that the discipline of working inside uncertainty professionally has</p>
+<p>transferred, in some degree, to working inside uncertainty personally. The reflex to</p>
+<p>demand certainty before acting has been weakened by years of practice in moving</p>
+<p>with incomplete pictures. The tolerance for not knowing, while continuing to</p>
+<p>function, has been built by necessity in both directions.</p>
+<p>I don't think this makes the war easier. Nothing makes it easier. But there is</p>
+<p>something in the alignment between the discipline the work requires and the</p>
+<p>conditions it is being performed in that feels, if not coherent, at least honest.</p>
+<p>You do not always know. You continue anyway. You keep building the picture.</p>
+<p>You act when you have enough, knowing "enough" is never the same as</p>
+<p>"complete."</p>
+<p>This is the work. It is also, in Ukraine in 2025, the life.</p>
 </section>
-<section><title><p>The Missing</p></title><subtitle>Chapter Nine</subtitle>
-<p>I have told you what OSINT becomes in a war. Now I want to tell you what it can still be.</p>
-<p>Because if I left you only with the pain of it, I would be lying to you by leaving out the rest. And I have promised you the truth.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I believe in this work. Not as a weapon, and not only as a shield — as a force. I believe OSINT is one of the most powerful good things a person can learn to do. That with open eyes and patient hands you can find what is hidden, and that finding it can change a life, change a case, sometimes change the world. My skills are not only good for recording destruction. I have always known that. The war just made it hard to remember.</p>
-<p>And then I was reminded.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I joined a team for a Trace Labs search — a few of us, working a real case of four missing people. Four hours. For four hours I was completely inside it, the way I am inside the worst nights — except this time the thing I was racing toward was not a warning.</p>
-<p>They were people. Four of them, gone. Families still waiting by a phone, somewhere, for any word at all.</p>
-<p>For those four hours my skills were not pointed at a threat, or at a ruin. They were pointed at a door — at the small, impossible hope of bringing even one of them back through it. I cannot fully describe what that did to me. It was the same work. The exact same skills. And it felt like the opposite of everything the war had turned them into.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>People write to me now and ask me to teach them. To show them how this is done.</p>
-<p>I do. Gladly. Not to make peace with anything — I do not do it to heal myself. I do it because I want to, simply and completely, with my whole heart. I want people to understand that OSINT matters. That it is not a parlor trick or a hacker's game, but a real power — and that power, in good hands, does good.</p>
-<p>If I can put a piece of that into someone else, and they into someone else again, then the thing I know how to do outlives me. It keeps doing good long after I have put it down.</p>
-<p>That is the version of this work I want my daughter to find one day, when she reads about what her father did.</p>
-<p>Not only the man who read the sky in fear.</p>
-<p>The man who used the same eyes to bring people home.</p>
+<section><title><p>WHAT I BUILD AND WHY</p></title><subtitle>*CHAPTER 13*</subtitle>
+<p>I build tools because they don't exist.</p>
+<p>This is the simple version. The longer version is: I reach a point in an investigation</p>
+<p>or a monitoring task where something that should be automatable is being done</p>
+<p>manually, and I think — there should be a way to do this better. I check whether it</p>
+<p>exists. It often doesn't. So I build it.</p>
+<p>This is not a statement about ambition. It is a statement about necessity. The tools I</p>
+<p>have created were not conceived as products or platforms. They were conceived as</p>
+<p>solutions to specific problems I was encountering in actual work.</p>
+<subtitle>• • •</subtitle>
+<p>KagamiID was the first. Built from a recurring pattern in my investigative work:</p>
+<p>the early stage of almost every investigation involves checking a username or an ID</p>
+<p>across multiple platforms. I was doing this manually, platform by platform, every</p>
+<p>time. After doing it enough times, I automated it.</p>
+<p>ThunderTrace came from the same logic, scaled up. Three hundred and fifty</p>
+<p>platforms. Social, gaming, developer communities, dating services, CIS-specific</p>
+<p>platforms, services that standard Western-built tools often miss because they were</p>
+<p>built for Western investigative contexts.</p>
+<p>MooN Attacks is different.</p>
+<p>I built a platform to monitor military events in real time — tracking what was</p>
+<p>happening in and around the war, through Telegram channels, geolocating events,</p>
+<p>generating structured intelligence reports. I built it while living in Dnipro. I built it</p>
+<p>while the events I was monitoring were sometimes audible through my window. There is something specific about building a tool that processes information about</p>
+<p>missiles and drones and explosions when you can hear confirmation of that</p>
+<p>information in real time. It changes the relationship between the work and its</p>
+<p>subject matter. The information is not abstract. The stakes are not professional</p>
+<p>abstractions.</p>
+<p>I think this has shaped how the tool was built — not technically, but in terms of</p>
+<p>what it prioritizes. Accuracy over speed. Contextual reliability over volume. The</p>
+<p>understanding that the person reading the report may be making decisions based on</p>
+<p>it that are not theoretical.</p>
+<p>The work and the life, in this tool more than any other, are not separate.</p>
+<subtitle>• • •</subtitle>
+<p>I am sometimes asked: why build tools when there are tools that already exist?</p>
+<p>The answer is that the tools that already exist were built for different contexts,</p>
+<p>different workflows, different investigative environments. Building from</p>
+<p>operational experience produces something that analysis of requirements cannot</p>
+<p>produce. The tool knows what the work actually involves, not just what someone</p>
+<p>described the work as involving.</p>
+<p>This is true of every tool I have built. Not conceived first and then used — used</p>
+<p>first, in real cases, until the absence of the tool became frustrating enough to</p>
+<p>motivate building it.</p>
 </section>
-<section><title><p>She Will Read This by the Sea</p></title><subtitle>Chapter Ten</subtitle>
-<p>I have already told you that my daughter knows the sound. Now I want to tell you how she learned it.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>It was an ordinary day. We were outside, walking, not far from home.</p>
-<p>The drones fly low over Ukraine now. Low enough to see against the sky, low enough that you do not need to be a specialist to find them — you only have to look up. One came across the sky above us, and she saw it before I could decide whether to point it out or not. She lifted her small finger and said, <emphasis>dzzz.</emphasis> A sound for a thing she had no name for.</p>
-<p>I knew it would pass. I always know; it is the one mercy of what I do. We were nearly home. I thought, she will forget this by morning, the way she forgets everything at her age.</p>
-<p>Then the air defense caught it, almost directly above us, and the sky broke open.</p>
-<p><emphasis>Ba-bam.</emphasis></p>
-<p>She was looking right at it when it happened. She heard that sound with her whole small body, and she kept it. She did not forget it by morning. She has not forgotten it since.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>That is the thing no one warns you about. It is not only the war that teaches her. It is everything that sounds like the war.</p>
-<p>When a neighbor starts a lawnmower, she freezes, and her face changes, and she runs to me — finger to her nose, pointing at the sky, <emphasis>ba-bam,</emphasis> already crying. When a motorcycle passes on the street, the same. A moped. Anything with that low, rising drone inside it.</p>
-<p>Her body has learned a lesson her mind is far too young to understand. She has been handed the fear without any of the things that are supposed to come with it — no explanation, no reason, no way to make it smaller. Just the fear, raw, inside a person who does not yet know her colors.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I think often about what I have not been able to give her.</p>
-<p>I have not shown her our country. I never even finished seeing it myself — there were always more years ahead to do it in, I thought. I wanted to take her everywhere. To show her that Ukraine is more than the inside of a stairwell during an alert, more than a sound in the sky. There is so much of it she has never seen, and may not see for a long time.</p>
-<p>And I have not been able to give her the simplest thing a father is supposed to give. A safe night. The plain, animal certainty that you can sleep in your own home, in your own country, and nothing will come for you out of the dark.</p>
-<p>She is one year and seven months old, and she does not have that. I cannot give it to her. It is not in my power — and I am a man whose entire profession is knowing things, and this is the one thing I cannot fix.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>So I will tell you why I am really writing this book.</p>
-<p>Not for the analysts. Not for an audience. For her.</p>
-<p>One day she will be old enough to read these pages. That is already more than this war wanted to allow — and if she can read them at all, then we will have won back something it tried to take.</p>
-<p>But I want more than that. I want her to read this book somewhere quiet. Far from here. By the sea — a real sea, a calm one — in a country that is finally at peace. I want her to read about the sound she once knew better than her own name, and I want it to feel impossibly far away to her. A story about someone else's childhood. A thing that could never happen to her — because she will not remember that it already did.</p>
-<p>If she reads these words and has to stop, because she cannot quite believe the sky was ever something to be afraid of —</p>
-<p>then all of it was worth it.</p>
-<p>That is the only ending I am working toward. The only one I will accept.</p>
+<section><title><p>THE ETHICS OF SEEING</p></title><subtitle>*CHAPTER 14*</subtitle>
+<p>Every investigation has a boundary.</p>
+<p>The boundary is not always where the law places it. The law defines what is</p>
+<p>prohibited. Ethics defines what should not be done even when it is technically</p>
+<p>permitted.</p>
+<p>In OSINT, the distinction matters more than in fields where the scope of access is</p>
+<p>more naturally constrained. Open sources are, by definition, open. What is</p>
+<p>technically accessible is a much larger set than what is appropriate to use for any</p>
+<p>given purpose.</p>
+<subtitle>• • •</subtitle>
+<p>I think about this in the terms of the task.</p>
+<p>The task defines what is relevant. What is relevant defines what should be</p>
+<p>collected. What should be collected defines what should be reported.</p>
+<p>If I am conducting a background check on a candidate for a sensitive position, my</p>
+<p>task is to assess risk relevant to that position. Not to compile an exhaustive dossier.</p>
+<p>Not to expose aspects of their life that have no bearing on the question being asked.</p>
+<p>People leave more than they realize in digital space. Much of it is personal,</p>
+<p>irrelevant to professional contexts, and was never intended for professional</p>
+<p>scrutiny. The fact that it is technically accessible does not make it appropriate to</p>
+<p>collect and report.</p>
+<p>The boundary, for me, is drawn at relevance. Everything beyond relevance is noise</p>
+<p>at best and a privacy violation at worst, regardless of technical accessibility.</p>
+<subtitle>• • •</subtitle>
+<p>There is also the question of what to do with what you find.</p>
+<p>Information collected in an investigation belongs, in some sense, to the</p>
+<p>investigation. It was assembled for a specific purpose. The purpose defines the</p>
+<p>context in which it has meaning and legitimacy.</p>
+<p>I have found things in investigations that were alarming in ways that went beyond</p>
+<p>the original scope. Information that pointed toward something larger — potential</p>
+<p>criminal activity, risk to third parties. These situations require judgment that rules</p>
+<p>cannot fully replace.</p>
+<p>The principle I try to apply: the more serious the potential harm, and the more</p>
+<p>clearly the information points toward preventing it, the stronger the case for doing</p>
+<p>something with it beyond the original scope.</p>
+<subtitle>• • •</subtitle>
+<p>There is a final dimension to the ethics of this work that I find harder to articulate</p>
+<p>but that I think is real.</p>
+<p>The act of investigation — of looking carefully at someone's digital presence,</p>
+<p>reconstructing their identity from fragments — is not neutral with respect to the</p>
+<p>person being investigated. Even when it is entirely legitimate, entirely lawful,</p>
+<p>entirely within appropriate scope.</p>
+<p>The person being investigated is a human being. Their data is, in some meaningful</p>
+<p>sense, a representation of their life.</p>
+<p>I hold this in mind. Not in a way that paralyzes the work — the work has genuine</p>
+<p>value and I believe in doing it well. But in a way that keeps me from treating</p>
+<p>investigations as purely technical exercises in which the subject is an object rather</p>
+<p>than a person. The best investigators carry this awareness. They are not less effective for it. They</p>
+<p>are, I think, more effective — because the awareness keeps their judgment honest.</p>
 </section>
-<section><title><p>What I Would Forget, What I Will Keep</p></title><subtitle>Chapter Eleven</subtitle>
-<p>People ask why I keep doing it. Why I keep watching, keep working, keep carrying it.</p>
-<p>It is, I think, a foolish question — though I understand why people ask.</p>
-<p>I keep going because life keeps going. Because I have a family to provide for, to protect, to make smile at the end of a day that tried to break all three of us. In the end, when everything else is stripped away, the truth is very small and very plain. Outside of the people closest to you — outside your family — you are not really needed by anyone. They are the reason. They have always been the reason. There does not have to be a larger one.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I love this work. I need you to understand that, because of what I am about to say.</p>
-<p>OSINT — real OSINT, the investigations, the attribution, the long patient work of turning scattered signals into the truth about a person — that is where my soul lives. I came up from inside real operations. I am good at it. It is mine.</p>
-<p>But OSINT in a war is a different thing wearing the same name.</p>
-<p>It is informational pain. And the cruelty of it is that you are not standing outside the pain, studying it. You are inside it. You are part of it. You read the sky, and you know more than the people you love, and then you have to race that knowing to a telephone — to warn them, to reach them in time, to be the one who knew, and to tell it fast enough to matter.</p>
-<p>I love OSINT. I do not love it here. I do not love it like this. And I think only the people who have lived through a war — who have had to keep a cold mind and not make a single mistake in a report, while their own city was the subject of it — will truly understand that sentence.</p>
-<p>The rest can sympathize. They cannot know. There is no pity that crosses that line. The only thing that crosses it is feeling — and you only come to feel it by living it, which I would not wish on anyone.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>Sometimes I go back to 2021, in my mind, and stand in front of a door that is closed now.</p>
-<p>There was a window then. A chance to send my family abroad, before any of this began. If I could return to that man — the one who still had the choice — I would tell him one thing, without a second's hesitation. <emphasis>Send them. Get them out.</emphasis></p>
-<p>And yet.</p>
-<p>If they had gone then, everything after would have been a different story — one I will never get to read. And I have always believed that nothing in this life is random. Every conversation, every meeting, every job, arrives at its hour for its reason. I believe that even about the worst of it. I have to. It is the only frame in which Alexander's death is not simply a senseless hole torn in the world.</p>
-<p>So I do not really know what I would change. I only know what I would say. And perhaps that is all going back is ever good for — not changing the road, only finally saying the thing out loud.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>I told you, earlier, that this work can feel like a prison with no fixed sentence.</p>
-<p>People who have been in prison can at least count down. We cannot. There is no date on the wall. There is only the war, going on, and the not-knowing when it stops.</p>
-<p>So I have thought a great deal about what freedom would even look like, if it came.</p>
-<p>It is not riches. It is not some grand victory I could announce from a balcony. It is almost embarrassingly small. Freedom is letting my wife and my daughter walk out the door to go for a walk — and not reaching for the news. Not listening for the sirens. Not running the sky in my head the whole time they are gone. Just letting them go, and trusting the air to be only air.</p>
-<p>That is the whole of it. That is everything I want.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>And when it is over — if I live to see it over — I will tell you honestly what I want to do with this entire period of my life.</p>
-<p>I want to forget it.</p>
-<p>All of it. The trembling windows. The fifteen minutes. The two men fighting inside me every night. The road I could not see for the tears. I want it gone, the way you want a long fever gone, leaving nothing behind.</p>
-<p>There is only one thing I will not let myself forget. One thing I will carry on purpose, for the rest of my life, no matter how much of the rest I am finally allowed to put down.</p>
-<p>The ones who gave their lives. For us. For this country. For a peace they did not live to stand in.</p>
-<p>Alexander among them.</p>
-<p>I will forget the war. I will not forget them. I do not think those two wishes contradict each other. I think they are the same wish, seen from two sides — to be free of the pain, and to keep faith with the people who paid for that freedom and never collected it.</p>
-<empty-line/><p>✦</p><empty-line/>
-<p>There is one more thing, and then I am finished.</p>
-<p>When the war ends, I am told, there will be celebrations. Fireworks, probably. Light thrown up into a sky that finally means us no harm.</p>
-<p>I do not think I will be able to stand under it.</p>
-<p>I think I will hear the first crack of it, and my heart will do what it has been trained to do, and I will look for my daughter before I look at the lights. I think a part of me will flinch at the sky for the rest of my life, no matter how blue and empty it becomes.</p>
-<p>But she might not.</p>
-<p>She is young enough. If we get her to that quiet place — that calm sea, that country at peace — she might grow up able to watch fireworks and see only fireworks. To hear a lawnmower and think only of cut grass. To look up and find nothing there at all but the evening.</p>
-<p>If that is the trade — that I keep the flinch, so that she can lose it —</p>
-<p>then I will take it. Gladly. A thousand times over.</p>
-<p>And when she asks me, one day, what it was like —</p>
-<p>I already know what I am going to tell her.</p>
-<p>I am going to hold her, the way I held her through every sound she was too small to understand.</p>
-<p>And I am going to say: <emphasis>everything is fine.</emphasis></p>
-<p>This time, finally, it will be true.</p>
+<section><title><p>BEFORE YOU CALL IT UNDERSTANDING</p></title><subtitle>*CHAPTER 15*</subtitle>
+<p>My friend called me a few weeks after the investigation.</p>
+<p>Not about what had happened. About something ordinary — work, family, plans.</p>
+<p>Near the end of the call, he said something I have thought about since.</p>
+<p>He said: you didn't treat me like I had done something wrong.</p>
+<p>I told him that was because he hadn't. He had trusted someone. The trust had been</p>
+<p>manufactured for him, specifically and deliberately, over weeks of careful work.</p>
+<p>There was no version of that story in which he should have known better. There</p>
+<p>was only the version in which I happened to be there, happened to recognize what I</p>
+<p>was looking at, and happened to move at the right moment.</p>
+<p>He was quiet. Then he said: I know. But still.</p>
+<p>I understood the still.</p>
+<subtitle>• • •</subtitle>
+<p>I have been doing this work long enough to know what it produces in a person,</p>
+<p>because I can see it in myself.</p>
+<p>It produces precision — not certainty, but precision. The ability to separate what</p>
+<p>you know from what you are inferring from what you are assuming, and to hold all</p>
+<p>three categories distinct even when the mind wants to collapse them.</p>
+<p>It produces patience of a specific kind. Not passive tolerance of delay but active</p>
+<p>comfort with incompleteness. The ability to keep building when the picture has not</p>
+<p>yet resolved. It produces, sometimes, a particular loneliness. The loneliness of working in a field</p>
+<p>that most people around you do not recognize as a field. Of seeing things that other</p>
+<p>people are not looking for. Of bringing something new into a room and watching it</p>
+<p>receive the polite acknowledgment that means no one will act on it.</p>
+<p>And it produces something that I find harder to name but that I consider the most</p>
+<p>important result of the work.</p>
+<p>A kind of attention. A permanent sharpening of the basic act of looking at things.</p>
+<p>The understanding — internalized through practice — that what is visible is almost</p>
+<p>never the whole of what is there. That the gap between what is visible and what</p>
+<p>exists is not a failure of visibility but the normal condition of the world. And that</p>
+<p>the real work, always, is in that gap.</p>
+<p>I started this book by saying I didn't know OSINT was a profession. That I had</p>
+<p>been doing it for years without having a word for it.</p>
+<p>I know the word now. I know the field, the community, the methodology, the tools,</p>
+<p>the debates.</p>
+<p>What I know most is this: none of those things are the point.</p>
+<p>The point is the attention. The particular quality of presence with information that</p>
+<p>this work either develops or it doesn't. The willingness to remain inside uncertainty</p>
+<p>while continuing to work. The discipline of not letting the mind close on a</p>
+<p>conclusion before that conclusion has earned itself against resistance.</p>
+<p>The missile passed over the city and I was awake.</p>
+<p>I heard it. I registered what I heard. I called my family.</p>
+<p>And then I continued.</p>
+<p>That is, in the end, the whole of it. You learn to notice. You learn to hold what you notice without rushing to</p>
+<p>conclusions. You learn to act on incomplete information with as much precision as</p>
+<p>the information allows.</p>
+<p>And then you cannot stop.</p>
+</section>
+<section><title><p>EPILOGUE — FOR WHOEVER IS READING THIS</p></title>
+<p>I don't know who you are.</p>
+<p>Maybe you are someone who works in this field and recognizes what I've described</p>
+<p>from the inside. Maybe you are someone who is just starting and is trying to</p>
+<p>understand what this work actually is, beneath the surface of tools and techniques.</p>
+<p>Maybe you are someone who has never heard the word OSINT and found this book</p>
+<p>by accident and is now trying to decide what to make of it.</p>
+<p>Whoever you are — this last part is for you.</p>
+<subtitle>• • •</subtitle>
+<p>I want to say something that I didn't say clearly enough in the chapters before this.</p>
+<p>Believe in what you are building. Even when no one around you understands it yet.</p>
+<p>Even when the environment doesn't recognize its value. Even when the only</p>
+<p>evidence you have that it matters is your own conviction that it does.</p>
+<p>This is not abstract advice. I lived it for years before the conviction was confirmed</p>
+<p>by anything external. There were long periods when the work was invisible to</p>
+<p>everyone except me. When the proposals went nowhere. When the explanations</p>
+<p>didn't land.</p>
+<p>I kept going anyway. Not because I was certain I was right. Because I was certain I</p>
+<p>couldn't return to something that felt less true.</p>
+<p>That is the only version of persistence that I trust: not the kind built on confidence,</p>
+<p>but the kind built on the absence of a better alternative. The kind that says — I don't</p>
+<p>know if this will work, but I know this is the direction. If you are in that place right now — where the work is real to you and invisible to</p>
+<p>everyone else — I want you to know that this is not evidence of failure. It is often</p>
+<p>evidence of being early.</p>
+<subtitle>• • •</subtitle>
+<p>Don't stop.</p>
+<p>Not because stopping is weak. Stopping to rest is necessary. Stopping to question</p>
+<p>your direction is necessary. But stopping because the environment doesn't yet</p>
+<p>understand you — that is the one form of stopping that costs the most, and gives the</p>
+<p>least in return.</p>
+<p>The environment catches up. It doesn't always happen quickly. But the work you</p>
+<p>are building now — the cases you are working, the thinking you are developing, the</p>
+<p>discipline you are building one decision at a time — that becomes the foundation</p>
+<p>for everything that follows.</p>
+<p>You will not see the full shape of what you are building while you are building it.</p>
+<p>You see it later, looking back, when the pattern is complete enough to recognize.</p>
+<p>Keep building.</p>
+<subtitle>• • •</subtitle>
+<p>Don't rush to conclusions.</p>
+<p>I have said this many times in this book, in different forms. I say it here one more</p>
+<p>time because it is the thing I forget most easily under pressure and remember most</p>
+<p>painfully after mistakes.</p>
+<p>The mind wants resolution. When you are under pressure — when time is short,</p>
+<p>when the evidence looks almost complete — the pull toward premature closure is at</p>
+<p>its strongest.</p>
+<p>Resist it. The conclusions that survive are the ones that earned themselves against resistance.</p>
+<p>The ones you tested, challenged, tried to break.</p>
+<p>Conclusions should be uncomfortable to reach. If they come too easily, that is the</p>
+<p>first sign they need to be checked.</p>
+<subtitle>• • •</subtitle>
+<p>Trust the process more than the result.</p>
+<p>The result tells you what happened this time. The process tells you what you are</p>
+<p>becoming. Over time, the process is what matters. It is what allows you to face the</p>
+<p>next case, the next problem, the next moment of uncertainty with something real.</p>
+<p>This is what I have tried to describe in this book. Not what I found. The way of</p>
+<p>thinking that makes finding possible. The discipline that keeps thinking honest. The</p>
+<p>patience that allows structure to emerge rather than imposing it.</p>
+<p>This is what I am still building. Every case, every mistake, every moment of</p>
+<p>uncertainty that I sit inside rather than escape from — it is all part of building</p>
+<p>something I cannot fully see yet.</p>
+<p>I trust that. I hope you do too.</p>
+<subtitle>• • •</subtitle>
+<p>One last thing.</p>
+<p>I started this book by saying I didn't know OSINT was a profession. That I had</p>
+<p>been doing it for years without a word for it.</p>
+<p>I know the word now. I have the community, the field, the recognition.</p>
+<p>But what I value most is not the word. It is the thing the word points at — the</p>
+<p>particular quality of attention that this work develops when you take it seriously.</p>
+<p>The refusal to accept surfaces at face value. The patience to sit with</p>
+<p>incompleteness. The discipline not to conclude before the evidence requires it. These are not skills limited to investigation. They are ways of being present with</p>
+<p>reality that make you more honest, more careful, and more useful — in this work</p>
+<p>and in every other part of life.</p>
+<p>Develop them. Protect them. Use them generously.</p>
+<p>The world needs people who look carefully at what is actually there.</p>
+<p>Be one of them.</p>
+<cite><p>Yehor Selin</p></cite>
+<cite><p>Dnipro, Ukraine · 2026</p></cite>
 </section>
 </body>
 <binary id="cover.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAQEAwUEBAQGBQUGCA0ICAcHCBALDAkNExAUExIQ

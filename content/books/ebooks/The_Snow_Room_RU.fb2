@@ -12,7 +12,7 @@
 <document-info>
 <author><first-name>Yehor</first-name><last-name>Selin</last-name></author>
 <date value="2026-01-01">2026</date>
-<id>d5fb5856-8201-4fa2-813f-dff093d41e6b</id>
+<id>57a2ac52-fda6-42a2-bc70-3943776a9041</id>
 <version>1.0</version>
 </document-info>
 <publish-info><publisher>Yehor Selin</publisher><year>2026</year></publish-info>
@@ -2896,7 +2896,10 @@
 <p>За его спиной, у третьих дверей, — поднос лежал на <emphasis>татами</emphasis> именно так, как он его оставил; чай в своей медленной манере остывал до температуры, которая всё ещё будет почти правильной, когда тот, кто спит, найдёт его утром; и конверт лежал на татами комнаты, небольшой, чистый, белый, — с лицом человека, обведённым красным кругом внутри, — и ждал, пока тот, кто спит, откроет глаза.</p>
 <p>Коридор держал форму коридора без него.</p>
 </section>
-<section><title><p>О хайку и о методе</p></title><epigraph><p><emphasis>Несколько слов для читателя, который захочет проверить.</emphasis></p></epigraph><image l:href="#illo027.jpg"/><subtitle>От автора</subtitle>
+<section><title><p>ДЕВЯТЬ КОМНАТ</p></title><subtitle>Серия «Файлы Кукольника» продолжается в следующей книге</subtitle>
+
+</section>
+<section><title><p>О хайку и о методе</p></title><epigraph><p><emphasis>Несколько слов для читателя, который захочет проверить.</emphasis></p></epigraph><image l:href="#illo028.jpg"/><subtitle>От автора</subtitle>
 <p>Я знал, что часть читателей пойдёт проверять. Поэтому несколько оговорок — коротко.</p>
 <p><strong>О хайку.</strong> Форма 5-7-5 в японской поэзии — реальная норма, как и <emphasis>ки-ре</emphasis> (пауза, срез) и <emphasis>киго</emphasis> (сезонное слово). Это не моё изобретение. Однако «трёхточечный метод», по которому Куросава читает <emphasis>хайку</emphasis> Тоси — объект, абстракция, временная привязка, — это литературная конструкция. Настоящие <emphasis>хайку</emphasis> так формально не препарируются; ни один японский исследователь поэзии не сядет раскладывать стихотворение на три структурные точки, как раскладывают координаты. Я дал этой схеме место в романе потому, что она держит OSINT-линию читаемой. Это удобство, а не форензик. Оригиналы по-японски я старался писать с соблюдением слогов, но позволял себе поэтическую вольность в выборе <emphasis>киго</emphasis> — поэтому носитель языка кое-где почувствует смещение. Так и задумано.</p>
 <p><strong>Об OSINT и полицейских техниках.</strong> Платформы, которые упоминаются — 5channel, mixi, LiveJournal, Yahoo! Chiebukuro, Rakuten Travel, Jalan, — существуют и работают примерно так, как описано. А вот процедурные шаги я сжал. Доступ к IP-маскам через прокуратуру за полдня, скрипт сопоставления архивных регистраций с изменением таймстампов, локальная база «майнамбера» на реестрах <emphasis>рёкан</emphasis> — это художественные упрощения. В реальности это медленнее, требует больше ордеров и часто не срабатывает с первого раза. Куросава — персонаж, а не инструкция. Форензик-точностью я пожертвовал ради темпа; кто работал в этой области, узнает компромиссы.</p>
@@ -46653,7 +46656,7 @@ dKzMI413EsCBb8RX5r4r4zjeYMyQ+OsRNEwyy7BLuXL+Bj4M/NxzH4rESMqVGOI/Azfy/FR/gy/l
 nwlR+b4ixa+Fy5v4FwKlfC0xh18EJUtqE4gMCGvkd/DT5N4IOYuYCxIR1EuExICCysTExEqGYTnL
 v4cU9Zn8BiBAuNCBM44+FlcwIMzkiZgqZSoTcCBAKiURhiIitgWPQi+Fh8hcqohKlfG4Hw7ifD8J
 8f/Z</binary>
-<binary id="illo027.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUS
+<binary id="illo028.jpg" content-type="image/jpeg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUS
 FBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQk
 JCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wgARCAOtBogDASIA
 AhEBAxEB/8QAGwAAAwEBAQEBAAAAAAAAAAAAAAECAwQFBgf/xAAYAQEBAQEBAAAAAAAAAAAAAAAA
