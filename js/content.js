@@ -97,7 +97,10 @@
     }
     lead = lead.trim();
     const rest = sentences.slice(taken).join('').trim();
-    const cover = item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${title}" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
+    // Covers carry their own typography, so the card shows the one that
+    // matches the interface language and falls back to the Ukrainian art.
+    const coverSrc = tr(item, 'cover');
+    const cover = coverSrc ? `<img src="${escapeHtml(coverSrc)}" alt="${title}" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
     const links = [];
     if (item.pdf_url_uk) links.push(`<a href="${escapeHtml(item.pdf_url_uk)}" target="_blank" rel="noopener" class="btn" style="padding:.6rem 1rem;font-size:.7rem">📖 Читати українською</a>`);
     if (item.pdf_url_en) links.push(`<a href="${escapeHtml(item.pdf_url_en)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 Read in English</a>`);

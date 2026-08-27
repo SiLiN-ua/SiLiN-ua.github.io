@@ -17,5 +17,7 @@
   "epub_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol3_RU.epub",
   "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol3_RU.fb2",
   "order": 3,
-  "published": true
+  "published": true,
+  "cover_uk": "/img/uploads/Cover_ShadowFiles_Vol3_UK.png",
+  "cover_en": "/img/uploads/Cover_ShadowFiles_Vol3_EN.png"
 }

@@ -17,5 +17,7 @@
   "fb2_url_en": "/content/books/ebooks/REPUTATION_EN.fb2",
   "pdf_url_ru": "/content/books/pdfs/REPUTATION_RU.pdf",
   "epub_url_ru": "/content/books/ebooks/REPUTATION_RU.epub",
-  "fb2_url_ru": "/content/books/ebooks/REPUTATION_RU.fb2"
+  "fb2_url_ru": "/content/books/ebooks/REPUTATION_RU.fb2",
+  "cover_uk": "/img/uploads/Cover_REPUTATION_UK.png",
+  "cover_en": "/img/uploads/Cover_REPUTATION_EN.png"
 }

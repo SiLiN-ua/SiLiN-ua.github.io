@@ -19,7 +19,9 @@
     "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol1_EN.fb2",
     "pdf_url_ru": "/content/books/pdfs/The_Shadow_Files_Vol1_RU.pdf",
     "epub_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol1_RU.epub",
-    "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol1_RU.fb2"
+    "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol1_RU.fb2",
+    "cover_uk": "/img/uploads/Cover_ShadowFiles_Vol1_UK.png",
+    "cover_en": "/img/uploads/Cover_ShadowFiles_Vol1_EN.png"
   },
   {
     "title_uk": "The Shadow Files · Том II: Крос-платформна атрибуція",
@@ -41,7 +43,9 @@
     "fb2_url_en": "/content/books/ebooks/The_Shadow_Files_Vol2_EN.fb2",
     "pdf_url_ru": "/content/books/pdfs/The_Shadow_Files_Vol2_RU.pdf",
     "epub_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol2_RU.epub",
-    "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol2_RU.fb2"
+    "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol2_RU.fb2",
+    "cover_uk": "/img/uploads/Cover_ShadowFiles_Vol2_UK.png",
+    "cover_en": "/img/uploads/Cover_ShadowFiles_Vol2_EN.png"
   },
   {
     "title_uk": "The Shadow Files · Том III: Важкі цілі",
@@ -63,7 +67,9 @@
     "fb2_url_ru": "/content/books/ebooks/The_Shadow_Files_Vol3_RU.fb2",
     "order": 3,
     "published": true,
-    "__slug": "the-shadow-files-vol-3-hard-targets"
+    "__slug": "the-shadow-files-vol-3-hard-targets",
+    "cover_uk": "/img/uploads/Cover_ShadowFiles_Vol3_UK.png",
+    "cover_en": "/img/uploads/Cover_ShadowFiles_Vol3_EN.png"
   },
   {
     "title_uk": "За цифровим слідом",
@@ -130,7 +136,9 @@
     "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2",
     "pdf_url_ru": "/content/books/pdfs/The_Snow_Room_RU.pdf",
     "epub_url_ru": "/content/books/ebooks/The_Snow_Room_RU.epub",
-    "fb2_url_ru": "/content/books/ebooks/The_Snow_Room_RU.fb2"
+    "fb2_url_ru": "/content/books/ebooks/The_Snow_Room_RU.fb2",
+    "cover_uk": "/img/uploads/Cover_TheSnowRoom_UK.png",
+    "cover_en": "/img/uploads/Cover_TheSnowRoom_EN.png"
   },
   {
     "title_uk": "Дев'ять кімнат",
@@ -152,7 +160,9 @@
     "fb2_url_ru": "/content/books/ebooks/Nine_Rooms_RU.fb2",
     "order": 16,
     "published": true,
-    "__slug": "nine-rooms"
+    "__slug": "nine-rooms",
+    "cover_uk": "/img/uploads/Cover_NineRooms_UK.png",
+    "cover_en": "/img/uploads/Cover_NineRooms_EN.png"
   },
   {
     "title_uk": "REPUTATION",
@@ -174,6 +184,8 @@
     "fb2_url_en": "/content/books/ebooks/REPUTATION_EN.fb2",
     "pdf_url_ru": "/content/books/pdfs/REPUTATION_RU.pdf",
     "epub_url_ru": "/content/books/ebooks/REPUTATION_RU.epub",
-    "fb2_url_ru": "/content/books/ebooks/REPUTATION_RU.fb2"
+    "fb2_url_ru": "/content/books/ebooks/REPUTATION_RU.fb2",
+    "cover_uk": "/img/uploads/Cover_REPUTATION_UK.png",
+    "cover_en": "/img/uploads/Cover_REPUTATION_EN.png"
   }
 ]
