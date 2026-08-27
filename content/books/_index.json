@@ -136,9 +136,7 @@
     "fb2_url_en": "/content/books/ebooks/The_Snow_Room_EN.fb2",
     "pdf_url_ru": "/content/books/pdfs/The_Snow_Room_RU.pdf",
     "epub_url_ru": "/content/books/ebooks/The_Snow_Room_RU.epub",
-    "fb2_url_ru": "/content/books/ebooks/The_Snow_Room_RU.fb2",
-    "cover_uk": "/img/uploads/Cover_TheSnowRoom_UK.png",
-    "cover_en": "/img/uploads/Cover_TheSnowRoom_EN.png"
+    "fb2_url_ru": "/content/books/ebooks/The_Snow_Room_RU.fb2"
   },
   {
     "title_uk": "Дев'ять кімнат",
@@ -160,9 +158,7 @@
     "fb2_url_ru": "/content/books/ebooks/Nine_Rooms_RU.fb2",
     "order": 16,
     "published": true,
-    "__slug": "nine-rooms",
-    "cover_uk": "/img/uploads/Cover_NineRooms_UK.png",
-    "cover_en": "/img/uploads/Cover_NineRooms_EN.png"
+    "__slug": "nine-rooms"
   },
   {
     "title_uk": "REPUTATION",
@@ -184,8 +180,6 @@
     "fb2_url_en": "/content/books/ebooks/REPUTATION_EN.fb2",
     "pdf_url_ru": "/content/books/pdfs/REPUTATION_RU.pdf",
     "epub_url_ru": "/content/books/ebooks/REPUTATION_RU.epub",
-    "fb2_url_ru": "/content/books/ebooks/REPUTATION_RU.fb2",
-    "cover_uk": "/img/uploads/Cover_REPUTATION_UK.png",
-    "cover_en": "/img/uploads/Cover_REPUTATION_EN.png"
+    "fb2_url_ru": "/content/books/ebooks/REPUTATION_RU.fb2"
   }
 ]

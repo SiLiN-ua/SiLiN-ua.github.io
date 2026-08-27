@@ -17,7 +17,5 @@
   "epub_url_ru": "/content/books/ebooks/Nine_Rooms_RU.epub",
   "fb2_url_ru": "/content/books/ebooks/Nine_Rooms_RU.fb2",
   "order": 16,
-  "published": true,
-  "cover_uk": "/img/uploads/Cover_NineRooms_UK.png",
-  "cover_en": "/img/uploads/Cover_NineRooms_EN.png"
+  "published": true
 }
