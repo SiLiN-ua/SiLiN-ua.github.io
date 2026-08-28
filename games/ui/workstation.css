@@ -1620,16 +1620,25 @@ body::before, body::after { display: none; }
 }
 .trace__meta b { color: var(--text-dim); font-weight: 500; }
 
-.trace__empty {
+.trace__empty,
+.atlas__empty,
+.archive__empty,
+.chat__empty {
   padding: 2.5rem 0 1rem;
 }
-.trace__empty-title {
+.trace__empty-title,
+.atlas__empty-title,
+.archive__empty-title,
+.chat__empty-title {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   color: var(--text-dim);
   margin-bottom: .3rem;
 }
-.trace__empty-note {
+.trace__empty-note,
+.atlas__empty-note,
+.archive__empty-note,
+.chat__empty-note {
   font-family: var(--font-mono);
   font-size: .74rem;
   color: var(--text-mute);
@@ -3310,6 +3319,145 @@ body::before, body::after { display: none; }
   font-variant-numeric: tabular-nums;
 }
 
+/* S7.4 — mute toggle in topbar. Same utilitarian typography as timer. */
+.ws-topbar__mute {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease;
+}
+.ws-topbar__mute:hover {
+  color: var(--text);
+  border-color: var(--hairline);
+}
+.ws-topbar__mute[aria-pressed="true"] {
+  color: var(--text-mute);
+  opacity: .6;
+}
+
+/* ==========================================================
+   S7.5 — Cinematic Scheduler beat effect classes.
+   9 beats: B3, B5, B6, B7, B8, B9, B10, B11, B12.
+   Each class is transient — added by scheduler for effect duration,
+   removed automatically. Under prefers-reduced-motion, animations
+   collapse to instant swap (no-op) but the state change still occurs.
+   ========================================================== */
+
+/* B3 — first photo focus. Subtle brightness pulse. */
+.is-b3-focus {
+  animation: b3Focus 500ms ease-out;
+}
+@keyframes b3Focus {
+  0%   { filter: brightness(1.06); }
+  100% { filter: brightness(1); }
+}
+
+/* B5 — TRACE result stagger. Three classes for the trio. */
+.is-b5-arriving-1 { animation: b5Arrive 600ms ease-out; }
+.is-b5-arriving-2 { animation: b5Arrive 600ms ease-out 150ms both; }
+.is-b5-arriving-3 { animation: b5Arrive 600ms ease-out 300ms both; }
+@keyframes b5Arrive {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* B6 — SAME FRAME overlap highlight (thin rim on matching posts). */
+.is-b6-overlap-highlight {
+  animation: b6Rim 700ms ease-out;
+  outline: 1px solid rgba(255,255,255,0.35);
+  outline-offset: -1px;
+}
+@keyframes b6Rim {
+  from { outline-color: rgba(255,255,255,0.6); }
+  to   { outline-color: rgba(255,255,255,0); }
+}
+
+/* B7 — archive snapshot load bar. Slides across top of pane. */
+.is-b7-loading {
+  position: relative;
+}
+.is-b7-loading::after {
+  content: ''; position: absolute; top: 0; left: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--text-mute), transparent);
+  animation: b7Load 550ms ease-out forwards;
+  pointer-events: none;
+}
+@keyframes b7Load {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* B8 — temporal date emphasis. Typographic weight bump on selected rows. */
+.is-b8-temporal-emphasis .evidence-row__provenance,
+.is-b8-temporal-emphasis .evidence-row__sub {
+  animation: b8Emphasis 1200ms ease-out;
+}
+@keyframes b8Emphasis {
+  0%   { color: var(--text); font-weight: 500; }
+  50%  { color: var(--text); font-weight: 500; }
+  100% { color: var(--text-mute); font-weight: 300; }
+}
+
+/* B9 — wrong-pick orange flash on report row. */
+.is-b9-wrong-flash {
+  animation: b9Flash 600ms ease-out;
+}
+@keyframes b9Flash {
+  0%, 100% { background: transparent; }
+  30%      { background: rgba(230, 130, 40, 0.15); }
+}
+
+/* B10 — chat handle recognition. Subtle underline appearing then fading. */
+.is-b10-handle-recog {
+  animation: b10Recog 800ms ease-out;
+}
+@keyframes b10Recog {
+  0%   { text-decoration-color: transparent; }
+  40%  { text-decoration: underline; text-decoration-color: var(--text-mute); }
+  100% { text-decoration: underline; text-decoration-color: transparent; }
+}
+
+/* B11 — atlas pin drop bounce. Applied to the pin element. */
+.is-b11-pin-drop {
+  animation: b11Pin 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes b11Pin {
+  0%   { transform: translate(-50%, -140%); opacity: 0; }
+  60%  { transform: translate(-50%, -50%); opacity: 1; }
+  75%  { transform: translate(-50%, -60%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* B12 — submit-gate perimeter trace + verdict unfold. */
+.is-b12-gate-open {
+  animation: b12Gate 900ms ease-out;
+}
+@keyframes b12Gate {
+  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  50%  { box-shadow: 0 0 0 2px rgba(255,255,255,0.25); }
+  100% { box-shadow: 0 0 0 1px rgba(255,255,255,0); }
+}
+
+/* Reduced-motion: all beat animations collapse to instant swap. */
+@media (prefers-reduced-motion: reduce) {
+  .is-b3-focus,
+  .is-b5-arriving-1, .is-b5-arriving-2, .is-b5-arriving-3,
+  .is-b6-overlap-highlight,
+  .is-b7-loading::after,
+  .is-b8-temporal-emphasis .evidence-row__provenance,
+  .is-b8-temporal-emphasis .evidence-row__sub,
+  .is-b9-wrong-flash,
+  .is-b10-handle-recog,
+  .is-b11-pin-drop,
+  .is-b12-gate-open { animation: none !important; transition: none !important; }
+}
+
 /* --- Reduced motion (§8.3 + S2_ACCEPTANCE §11.6) ---------- *
  * Collapse every animation/transition to an instant swap so state
  * changes remain observable but no motion plays.
@@ -3677,6 +3825,20 @@ body::before, body::after { display: none; }
 .report-doc .report-item.is-empty .report-item__label {
   color: var(--text-dim);
 }
+/* ✚ badge for criterion rows that earned a linked-pair bonus (V2 §6.2). */
+.report-doc .report-item__link-badge {
+  display: inline-block;
+  margin-left: .45rem;
+  font-family: var(--font-mono, monospace);
+  font-size: .85em;
+  font-weight: 600;
+  color: var(--accent, #d5b981);
+  vertical-align: baseline;
+  cursor: help;
+}
+.report-doc .report-item.has-link-bonus .report-item__label {
+  /* Subtle emphasis; badge does the semantic work. */
+}
 .report-doc .report-item__placeholder {
   font-family: var(--font-serif);
   font-size: .95rem;
@@ -3843,4 +4005,335 @@ body::before, body::after { display: none; }
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
+}
+
+/* ---------- How to play button + modal ------------------- *
+ * Visually matched to .lang-switch (same top, same visual weight,
+ * same padding/blur/bg/border) so both fixed corner chips read as one row.
+ */
+.howto-btn {
+  position: fixed;
+  top: .8rem;
+  right: 7.2rem;   /* left of .lang-switch (which sits at right: 1rem with ~5.5rem width) */
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  padding: .3rem .6rem;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  background: rgba(15, 21, 36, .8);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: color .15s var(--ease), border-color .15s var(--ease);
+}
+.howto-btn:hover,
+.howto-btn:focus-visible {
+  color: var(--cream);
+  border-color: var(--ice);
+  outline: none;
+}
+@media (max-width: 720px) {
+  .howto-btn { top: .5rem; right: 6rem; font-size: .62rem; padding: .25rem .5rem; }
+}
+.howto-modal[hidden] { display: none !important; }
+.howto-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.howto-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 4, 6, .82);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.howto-modal__sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  background: var(--bg, #0c0c10);
+  border: 1px solid var(--border, #2a2a30);
+  padding: 2rem 2rem 1.6rem;
+  color: var(--cream, #d9d9d9);
+  font-family: var(--font-mono, monospace);
+  border-radius: 3px;
+}
+.howto-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-mute, #8492a8);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  transition: color .15s;
+}
+.howto-modal__close:hover,
+.howto-modal__close:focus-visible {
+  color: var(--cream, #d9d9d9);
+  outline: none;
+}
+.howto-modal__title {
+  font-family: var(--font-mono, monospace);
+  font-size: 1rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cream, #d9d9d9);
+  margin: 0 0 1.2rem;
+  padding-right: 2rem;
+}
+.howto-modal__lead {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--cream, #d9d9d9);
+  margin: 0 0 1.4rem;
+}
+.howto-modal__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  counter-reset: howto;
+}
+.howto-modal__list li {
+  counter-increment: howto;
+  padding: .7rem 0 .7rem 2.2rem;
+  border-top: 1px solid var(--border, #2a2a30);
+  position: relative;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: var(--cream, #d9d9d9);
+}
+.howto-modal__list li:last-child { border-bottom: 1px solid var(--border, #2a2a30); }
+.howto-modal__list li::before {
+  content: counter(howto);
+  position: absolute;
+  left: 0;
+  top: .7rem;
+  width: 1.6rem;
+  font-family: var(--font-mono, monospace);
+  font-size: .78rem;
+  color: var(--ice, #8cc8ff);
+  letter-spacing: .1em;
+}
+.howto-modal__list li b {
+  color: var(--ice, #8cc8ff);
+  font-family: var(--font-mono, monospace);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.howto-modal__note {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: .9rem;
+  font-style: italic;
+  color: var(--text-mute, #8492a8);
+  line-height: 1.5;
+  margin: 0;
+}
+/* Hide howto button while brand intro is playing (keeps intro clean). */
+.brand-intro:not([hidden]) ~ .howto-btn,
+.brand-intro:not([hidden]) ~ .howto-modal { display: none; }
+
+/* ---------- Brand Intro cinematic (12.5s, plays once) ---- *
+ * Adapted from intro_prototype.html — same timing/typography,
+ * scoped under .brand-intro to avoid welcome/workstation collision.
+ * Skip button + localStorage gate wired in workstation.js.
+ */
+.brand-intro[hidden] { display: none !important; }
+.brand-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #000;
+  color: #d9d9d9;
+  font-family: var(--font-mono, monospace);
+  overflow: hidden;
+}
+.brand-intro__smoke {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.brand-intro__stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.brand-intro__panther {
+  --panther-size: min(62vh, 62vw);
+  width: var(--panther-size);
+  height: var(--panther-size);
+  opacity: 0.02;
+  transform: scale(1.02);
+  transition:
+    opacity 2.5s cubic-bezier(0.4, 0.0, 0.2, 1),
+    transform 2.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  background: url('../assets/brand/panther-emblem.png') center / contain no-repeat;
+}
+.brand-intro__panther.is-revealed {
+  opacity: 1;
+  transform: scale(1.00);
+}
+.brand-intro__text-row {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .4s ease;
+  color: #6b6b6b;
+  font-size: 22px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.brand-intro__text-row.is-visible { opacity: 1; }
+.brand-intro__text--small { font-size: 15px; letter-spacing: .25em; }
+.brand-intro__text--big { font-size: 26px; letter-spacing: .30em; color: #a5a5a5; }
+.brand-intro__motto {
+  position: absolute;
+  bottom: 4%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .8s ease;
+  color: #444;
+  font-size: 11px;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.brand-intro__motto.is-visible { opacity: 1; }
+.brand-intro__skip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  background: transparent;
+  border: 1px solid #333;
+  color: #666;
+  padding: 6px 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: .2em;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.brand-intro__skip:hover,
+.brand-intro__skip:focus-visible {
+  border-color: #888;
+  color: #d9d9d9;
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-intro__panther { transition: none; }
+  .brand-intro__text-row,
+  .brand-intro__motto { transition: opacity .1s linear; }
+}
+
+/* ---------- Mobile DENY screen (V2 §13.1 + §18.5) --------- *
+ * At ≥768px: DENY hidden, welcome + workstation render as usual.
+ * At <768px: welcome + workstation hidden, DENY takes the viewport.
+ * Pure CSS gate. No JS state, no engine touch.
+ */
+.ws-deny { display: none; }
+@media (max-width: 767px) {
+  .welcome,
+  .workstation,
+  .notif-stack,
+  .reset-hint {
+    display: none !important;
+  }
+  .ws-deny {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: var(--font-mono, monospace);
+    overflow-y: auto;
+  }
+  .ws-deny__sheet {
+    max-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    text-align: center;
+  }
+  .ws-deny__eyebrow {
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  .ws-deny__title {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    line-height: 1.35;
+    letter-spacing: .08em;
+    margin: 0;
+    color: var(--cream);
+  }
+  .ws-deny__body {
+    font-family: var(--font-mono);
+    font-size: .95rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--cream);
+  }
+  .ws-deny__note {
+    font-family: var(--font-mono);
+    font-size: .8rem;
+    line-height: 1.45;
+    margin: 0;
+    color: var(--text-mute);
+  }
+  .ws-deny__cta {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .8rem 1.1rem;
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ice, #8cc8ff);
+    border: 1px solid var(--ice, #8cc8ff);
+    border-radius: 2px;
+    transition: background .15s var(--ease, ease), color .15s var(--ease, ease);
+  }
+  .ws-deny__cta:hover,
+  .ws-deny__cta:focus-visible {
+    background: var(--ice, #8cc8ff);
+    color: var(--bg, #0d0d10);
+    outline: none;
+  }
 }

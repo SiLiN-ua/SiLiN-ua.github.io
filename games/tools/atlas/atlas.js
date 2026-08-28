@@ -35,6 +35,13 @@ function findSearchByQuery(caseData, q) {
     const art = caseData.artifacts[key];
     if (art.type !== 'atlas_search') continue;
     if (normalize(art.query) === needle) return art;
+    // S7.3.6 — case-scoped trigger list per VIDEO_EVIDENCE_SPEC §13 Q1.
+    // No fuzzy scoring, no synonym engine — exact match against authored triggers.
+    if (Array.isArray(art.triggers)) {
+      for (const trig of art.triggers) {
+        if (normalize(trig) === needle) return art;
+      }
+    }
   }
   return null;
 }
@@ -78,6 +85,13 @@ function renderSearch(paneEl, caseData, ctx) {
     view.query = input.value.trim();
     view.submitted = true;
     view.activeClaimId = null;
+    // S7.4a — emit search action per ACTION_BUS_CONTRACT §2.2.
+    const hit = findSearchByQuery(caseData, view.query);
+    emitAction('search', {
+      tool: 'atlas',
+      query: view.query,
+      resultCount: hit && Array.isArray(hit.results) ? hit.results.length : 0,
+    });
     renderAtlas(paneEl, caseData, ctx);
   });
 

@@ -138,7 +138,11 @@ const VALIDATORS = {
   },
   extract_frame: (p) => {
     if (!isStr(p.videoId)) return 'videoId: string required';
-    if (!isNum(p.timestamp) || p.timestamp < 0) return 'timestamp: non-negative number';
+    // DEV MODE (VIDEO_EVIDENCE_SPEC §11): placeholder still has no timeline,
+    // so `timestamp: null` is a valid signal. Real video → non-negative number.
+    if (p.timestamp != null && (!isNum(p.timestamp) || p.timestamp < 0)) {
+      return 'timestamp: non-negative number or null (DEV MODE)';
+    }
     if (!isStr(p.capturedArtifactId)) return 'capturedArtifactId: string required';
     return null;
   },

@@ -65,8 +65,15 @@ function evidenceExcerpt(evidence) {
   return snap.display_name || snap.username || snap.title || snap.id;
 }
 
-function itemBodyHtml(item, criterionSource, evidenceItems) {
+function itemBodyHtml(item, criterionSource, evidenceItems, earnedReasons) {
   const label = pick(item, 'label') || item.label;
+  const earnedBonus = earnedReasons && earnedReasons.has(item.id);
+  // ✚ badge (V2 §6.2) — appears only on met rows whose criterion.id matches an
+  // earned linked-pair reason. Absent when the row is unmet or when no pair
+  // with that reason is present in state.links with matching endpoints.
+  const badgeHtml = earnedBonus
+    ? `<span class="report-item__link-badge" title="+2 · linked pair" aria-label="+2 quality bonus (linked pair)">✚</span>`
+    : '';
   if (!item.met) {
     return `
       <div class="report-item is-empty" data-criterion="${esc(item.id)}">
@@ -86,18 +93,18 @@ function itemBodyHtml(item, criterionSource, evidenceItems) {
     </li>
   `).join('');
   return `
-    <div class="report-item is-met" data-criterion="${esc(item.id)}">
-      <div class="report-item__label">${esc(label)}</div>
+    <div class="report-item is-met${earnedBonus ? ' has-link-bonus' : ''}" data-criterion="${esc(item.id)}">
+      <div class="report-item__label">${esc(label)}${badgeHtml}</div>
       ${supporting.length ? `<ul class="report-item__evidence-list">${listHtml}</ul>` : ''}
     </div>
   `;
 }
 
-function sectionHtml(section, caseData, evidenceItems) {
+function sectionHtml(section, caseData, evidenceItems, earnedReasons) {
   const criteriaSource = caseData.report_criteria || [];
   const items = section.items.map(item => {
     const src = criteriaSource.find(c => c.id === item.id);
-    return itemBodyHtml(item, src, evidenceItems);
+    return itemBodyHtml(item, src, evidenceItems, earnedReasons);
   }).join('');
   return `
     <section class="report-doc__section">
@@ -111,13 +118,26 @@ function sectionHtml(section, caseData, evidenceItems) {
 
 // ---- Attribution + SUBMIT at document tail ----
 
-function attributionAndSubmitHtml(caseData, prefill, submitEnabled) {
+function attributionAndSubmitHtml(caseData, prefill, submitEnabled, missingCriteriaLabels) {
   const q = pick(caseData.final_answer || {}, 'question') || t('report.finalform.attribution_question');
   const attributionOk = (prefill.attribution || '').trim().length >= 2;
   const supportOk = (prefill.supportingEvidenceIds || []).length >= 1;
   const ready = attributionOk && supportOk;
   const disabled = !submitEnabled || !ready;
-  const helperVisible = submitEnabled && !ready;
+  // P0 fix (from Agent Player Simulation): whenever the button is disabled,
+  // show a helper that names EXACTLY what is missing. Previously the helper
+  // was gated on `submitEnabled && !ready` — so when criteria were missing
+  // (submitEnabled=false), no explanation appeared and the player saw only a
+  // grey button. Now we always show the helper on disabled, and it explains
+  // the specific block:
+  //   - missing report criteria (chain incomplete) — highest priority
+  //   - missing attribution text
+  //   - missing supporting evidence
+  const chainMissing = !submitEnabled;
+  const helperVisible = disabled;  // was: submitEnabled && !ready
+  const missingChainHtml = chainMissing && Array.isArray(missingCriteriaLabels) && missingCriteriaLabels.length
+    ? `<span data-helper-chain>${t('report.finalform.needs_chain')}: ${missingCriteriaLabels.map(esc).join(' · ')}</span>`
+    : '';
   return `
     <section class="report-doc__attribution">
       <div class="report-doc__eyebrow">${t('report.attribution.eyebrow')}</div>
@@ -134,9 +154,10 @@ function attributionAndSubmitHtml(caseData, prefill, submitEnabled) {
           ${prefill.submittedOnce ? t('report.finalform.revise') : t('report.finalform.submit')}
         </button>
         <div class="report-doc__helper" data-helper style="display:${helperVisible ? 'block' : 'none'}">
-          <span data-helper-attribution style="display:${attributionOk ? 'none' : 'inline'}">${t('report.finalform.needs_attribution')}</span>
-          <span data-helper-sep style="display:${(!attributionOk && !supportOk) ? 'inline' : 'none'}"> · </span>
-          <span data-helper-support style="display:${supportOk ? 'none' : 'inline'}">${t('report.finalform.needs_support')}</span>
+          ${missingChainHtml}
+          <span data-helper-attribution style="display:${(!chainMissing && !attributionOk) ? 'inline' : 'none'}">${t('report.finalform.needs_attribution')}</span>
+          <span data-helper-sep style="display:${(!chainMissing && !attributionOk && !supportOk) ? 'inline' : 'none'}"> · </span>
+          <span data-helper-support style="display:${(!chainMissing && !supportOk) ? 'inline' : 'none'}">${t('report.finalform.needs_support')}</span>
         </div>
       </div>
     </section>
@@ -248,6 +269,7 @@ let hasEverRendered = false;
 export function renderReportPane(paneEl, caseData) {
   const result = evaluateReport(caseData);
   const evidenceItems = getState().evidence || [];
+  const earnedReasons = new Set(result.quality?.earnedReasons || []);
 
   // Partition required vs optional (corroboration) — corroboration keeps its
   // existing panel style (not a document section).
@@ -261,6 +283,17 @@ export function renderReportPane(paneEl, caseData) {
 
   const chainComplete = result.allMet;
   const submitted = !!result.submission;
+  // P0 helper: labels of unmet REQUIRED criteria (optional/corroboration excluded).
+  // Passed to attributionAndSubmitHtml so a disabled submit button lists exactly
+  // which sections still need evidence — no more silent grey-out.
+  const missingCriteriaLabels = [];
+  for (const s of result.sections) {
+    for (const it of s.items) {
+      if (!it.optional && !it.met) {
+        missingCriteriaLabels.push(pick(it, 'missing_label') || it.missing_label || it.label || it.id);
+      }
+    }
+  }
 
   const currentMetIds = new Set();
   for (const s of requiredSections) {
@@ -291,13 +324,13 @@ export function renderReportPane(paneEl, caseData) {
       <h1 class="report-doc__doc-title">${t('report.doc.title')}</h1>
       <div class="report-doc__lede">${t('report.doc.lede')}</div>
 
-      ${requiredSections.map(s => sectionHtml(s, caseData, evidenceItems)).join('')}
+      ${requiredSections.map(s => sectionHtml(s, caseData, evidenceItems, earnedReasons)).join('')}
 
       ${optionalItems.length ? corroborationHtml(optionalItems) : ''}
 
       ${chainComplete ? qualityPanelHtml(result.quality, submitted) : ''}
 
-      ${attributionAndSubmitHtml(caseData, prefill, chainComplete)}
+      ${attributionAndSubmitHtml(caseData, prefill, chainComplete, missingCriteriaLabels)}
 
       ${submitted ? outcomeBlockHtml(result.submission, result.quality) : ''}
 
@@ -335,17 +368,23 @@ export function renderReportPane(paneEl, caseData) {
     const attributionOk = attribution.length >= 2;
     const supportOk = selected >= 1;
     const ready = attributionOk && supportOk;
+    const disabled = !chainComplete || !ready;
     const btn = paneEl.querySelector('[data-action="submit-report"]');
-    if (btn) btn.disabled = !chainComplete || !ready;
+    if (btn) btn.disabled = disabled;
     const helper = paneEl.querySelector('[data-helper]');
     if (helper) {
-      helper.style.display = (chainComplete && !ready) ? 'block' : 'none';
+      // Whenever the button is disabled, the helper is visible with the reason.
+      helper.style.display = disabled ? 'block' : 'none';
+      const chainMissing = !chainComplete;
       const ha = paneEl.querySelector('[data-helper-attribution]');
       const hs = paneEl.querySelector('[data-helper-support]');
       const sep = paneEl.querySelector('[data-helper-sep]');
-      if (ha) ha.style.display = attributionOk ? 'none' : 'inline';
-      if (hs) hs.style.display = supportOk ? 'none' : 'inline';
-      if (sep) sep.style.display = (!attributionOk && !supportOk) ? 'inline' : 'none';
+      // Chain hint is static per render (criteria don't change from typing).
+      // Attribution/support hints hide when chain is the only issue — so the
+      // player sees ONE clear reason at a time, not a stack.
+      if (ha) ha.style.display = (!chainMissing && !attributionOk) ? 'inline' : 'none';
+      if (hs) hs.style.display = (!chainMissing && !supportOk) ? 'inline' : 'none';
+      if (sep) sep.style.display = (!chainMissing && !attributionOk && !supportOk) ? 'inline' : 'none';
     }
   }
 

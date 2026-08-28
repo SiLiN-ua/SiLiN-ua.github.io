@@ -111,6 +111,13 @@
     }
   ],
 
+  "linked_pairs": [
+    { "reason": "content_overlap",   "from": "profile_001#p1",                       "to": "candidate_001#p1"           },
+    { "reason": "temporal_fake",     "from": "archive_snapshot_alex_miller_2024_03", "to": "candidate_001#p1"           },
+    { "reason": "operator_lead",     "from": "chat_profile_dcole_shoots",            "to": "candidate_001"              },
+    { "reason": "operator_verified", "from": "atlas_claim_dcole_prague",             "to": "chat_profile_dcole_shoots"  }
+  ],
+
   "artifacts": {
     "profile_001": {
       "id": "profile_001",
@@ -127,7 +134,7 @@
       "joined": "March 2024",
       "stats": { "posts": 24, "followers": 1847, "following": 312 },
       "posts": [
-        { "id": "p1", "cover": "assets/post-01.jpg", "video_still": "assets/video_still_post_01.jpg", "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
+        { "id": "p1", "cover": "assets/post-01.jpg", "video_still": "assets/video_still_post_01.jpg", "video": "assets/morning-in-prague.mp4", "video_webm": "assets/morning-in-prague.webm", "video_duration_ms": 11500, "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
         { "id": "p2", "cover": "assets/post-02.jpg", "caption_en": "Old town light.",       "caption_uk": "Світло старого міста.", "date": "5 days ago", "likes": 98 },
         { "id": "p3", "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.",   "caption_uk": "Довга прогулянка. Без плану.", "date": "1 week ago", "likes": 211 }
       ]
@@ -214,8 +221,8 @@
       "joined": "May 2020",
       "stats": { "posts": 118, "followers": 4310, "following": 502 },
       "posts": [
-        { "id": "c2p1", "cover": "assets/post-02.svg", "caption_en": "Sunday market. Kreuzberg.", "caption_uk": "Недільний ринок. Кройцберг.", "date": "3 days ago",  "likes": 78 },
-        { "id": "c2p2", "cover": "assets/post-03.svg", "caption_en": "Train to Leipzig.",         "caption_uk": "Потяг до Лейпцига.",          "date": "2 weeks ago", "likes": 122 }
+        { "id": "c2p1", "cover": "assets/c2p1-berlin-market.jpg", "caption_en": "Sunday market. Kreuzberg.", "caption_uk": "Недільний ринок. Кройцберг.", "date": "3 days ago",  "likes": 78 },
+        { "id": "c2p2", "cover": "assets/c2p2-train-leipzig.jpg", "caption_en": "Train to Leipzig.",         "caption_uk": "Потяг до Лейпцига.",          "date": "2 weeks ago", "likes": 122 }
       ]
     },
 
@@ -235,8 +242,8 @@
       "joined": "January 2019",
       "stats": { "posts": 61, "followers": 2890, "following": 133 },
       "posts": [
-        { "id": "c3p1", "cover": "assets/post-01.svg", "caption_en": "Studio night.",       "caption_uk": "Ніч у студії.",       "date": "1 week ago",  "likes": 214 },
-        { "id": "c3p2", "cover": "assets/post-02.svg", "caption_en": "Rehearsal, take 4.",  "caption_uk": "Репетиція, дубль 4.", "date": "3 weeks ago", "likes": 98 }
+        { "id": "c3p1", "cover": "assets/c3p1-studio-night.jpg",    "caption_en": "Studio night.",       "caption_uk": "Ніч у студії.",       "date": "1 week ago",  "likes": 214 },
+        { "id": "c3p2", "cover": "assets/c3p2-rehearsal-take4.jpg", "caption_en": "Rehearsal, take 4.",  "caption_uk": "Репетиція, дубль 4.", "date": "3 weeks ago", "likes": 98 }
       ]
     },
 
@@ -495,6 +502,24 @@
       ]
     },
 
+    "atlas_search_kaffe_nord": {
+      "id": "atlas_search_kaffe_nord",
+      "type": "atlas_search",
+      "tool": "atlas",
+      "query": "Kaffe Nord",
+      "triggers": ["kaffe nord", "kaffe", "nord"],
+      "engine_note": "ATLAS · venue & location record lookup",
+      "results": [
+        {
+          "id": "atlas_claim_dcole_prague",
+          "subject": "@dcole_shoots",
+          "status": "VENUE MATCH · PRAGUE",
+          "line_en": "Kaffe Nord — Old Town, Prague · referenced in subject's stated area",
+          "line_uk": "Kaffe Nord — Старе місто, Прага · згадується в заявленій зоні суб'єкта"
+        }
+      ]
+    },
+
     "atlas_claim_dcole_prague": {
       "id": "atlas_claim_dcole_prague",
       "type": "atlas_location_claim",
@@ -675,7 +700,7 @@
       "text_uk": "Цей кейс натхненний реальними OSINT-розслідуваннями фабрикації цифрових особистостей на публічних платформах.",
       "cta_en": "Read a real case study →",
       "cta_uk": "Читати справжній кейс →",
-      "url": "/cases.html?slug=instagram-teen-fake-attribution"
+      "url": "https://yehorselin.com/cases.html?slug=instagram-teen-fake-attribution"
     }
   }
 }

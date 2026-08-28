@@ -20,6 +20,8 @@ import { renderAtlas } from '../tools/atlas/atlas.js';
 import { renderEvidencePane } from './evidence-pane.js';
 import { renderReportPane } from './report-pane.js';
 import { renderAnalystPane } from './analyst-pane.js';
+import { initSoundBus, isMuted, toggleMuted } from '../engine/sound.js';   // S7.4
+import { initCinematicScheduler } from '../engine/cinematic.js';           // S7.5
 
 // Sidebar tool labels are ORIGINAL names (PRD §14) — never localized.
 // Only their LOCKED / COMING-SOON status text is localized.
@@ -123,8 +125,9 @@ function renderSidebar() {
       + (state.activeTool === tool.id ? ' is-active' : '')
       + (hasDot ? ' has-updates' : '');
     btn.dataset.tool = tool.id;
+    const label = t('sidebar.tool.' + tool.id) || tool.label;
     btn.innerHTML = `
-      <span>${tool.label}</span>
+      <span>${label}</span>
       ${isAvail
         ? `<span class="tool-btn__badge" data-badge="${tool.id}"></span>`
         : `<span class="tool-btn__lock">${t('sidebar.status.locked')}</span>`}
@@ -355,14 +358,23 @@ function pulseElement(el, className, ms) {
   setTimeout(() => el.classList.remove(className), ms);
 }
 
+let prevTopbarLinks = 0;
 function updateTopbar() {
   const state = getState();
   const meta = $('.ws-topbar__meta');
   if (!meta) return;
   const n = state.evidence.length;
-  meta.textContent = t('topbar.evidence', { n });
-  if (n !== prevTopbarCount && n > 0) pulseElement(meta, 'is-changing', 520);
+  const linksN = (state.links || []).length;
+  // Render EVIDENCE first, then LINKS (only when at least one exists so cold
+  // boot stays quiet). Space glyph separates the two counters per V2 §7.1.
+  const evText = t('topbar.evidence', { n });
+  const linksText = linksN > 0 ? ' · ' + t('topbar.links', { n: linksN }) : '';
+  meta.textContent = evText + linksText;
+  const evidenceGrew = n !== prevTopbarCount && n > 0;
+  const linksGrew = linksN !== prevTopbarLinks && linksN > 0;
+  if (evidenceGrew || linksGrew) pulseElement(meta, 'is-changing', 520);
   prevTopbarCount = n;
+  prevTopbarLinks = linksN;
 }
 
 // Breadcrumb — tool-level in S2.2. Level-2 (artifact-level) reserved for a
@@ -382,8 +394,8 @@ function updateBreadcrumb() {
     return;
   }
   const active = getState().activeTool;
-  const tool = TOOLS.find(t => t.id === active);
-  el.textContent = tool ? tool.label : '';
+  const tool = TOOLS.find(x => x.id === active);
+  el.textContent = tool ? (t('sidebar.tool.' + tool.id) || tool.label) : '';
 }
 
 // Session timer — investigation diary, not real-time between visits.
@@ -538,10 +550,146 @@ function updateWelcome() {
   }
 }
 
+// Brand Intro (12.5s). Plays EVERY time player clicks Play — skip button
+// (or Escape) available at any moment. Timing mirrors intro_prototype.html.
+const INTRO_TOTAL_MS = 12500;
+
+function startIntroSmoke(canvas) {
+  const ctx = canvas.getContext('2d');
+  let W, H, rafId, killed = false;
+  const resize = () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; };
+  resize();
+  const onResize = () => resize();
+  window.addEventListener('resize', onResize);
+  // Cool neutral charcoal palette (hue 210-225, saturation near-zero).
+  // Panther emblem dominates; smoke is atmospheric, not chromatic.
+  const mkCloud = () => {
+    const side = Math.random() < 0.5 ? -1 : 1;
+    return { x: W*0.5 + (Math.random()-0.5)*W*0.9, y: H + 60 + Math.random()*120,
+      r: 140 + Math.random()*220, a: 0.04 + Math.random()*0.07,
+      vy: -(0.18 + Math.random()*0.28), vx: side*(Math.random()*0.18),
+      ph: Math.random()*Math.PI*2, hue: 210 + Math.random()*15,
+      life: 0, maxL: 600 + Math.random()*500 };
+  };
+  const mkStrand = () => ({ x: W*0.5 + (Math.random()-0.5)*W*0.85, y: H + 20 + Math.random()*60,
+    r: 18 + Math.random()*38, a: 0.06 + Math.random()*0.1,
+    vy: -(0.4 + Math.random()*0.7), vx: (Math.random()-0.5)*0.35,
+    ph: Math.random()*Math.PI*2, hue: 210 + Math.random()*15,
+    life: 0, maxL: 250 + Math.random()*300 });
+  const clouds = Array.from({length: 22}, () => { const c = mkCloud(); c.y = H - Math.random()*H; c.life = Math.random()*c.maxL; return c; });
+  const strands = Array.from({length: 60}, () => { const s = mkStrand(); s.y = H - Math.random()*H; s.life = Math.random()*s.maxL; return s; });
+  const bgBlobs = Array.from({length: 6}, () => ({
+    x: Math.random()*W, y: H*0.5 + Math.random()*H*0.6,
+    r: 300 + Math.random()*350, a: 0.022 + Math.random()*0.03,
+    vx: (Math.random()-.5)*0.08, vy: -(0.03 + Math.random()*0.05),
+    ph: Math.random()*Math.PI*2, hue: 210 + Math.random()*15,
+  }));
+  function loop(ts) {
+    if (killed) return;
+    ctx.clearRect(0, 0, W, H);
+    // Cool carbon-black gradient (near-neutral, slight cold tint).
+    const bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#050508'); bg.addColorStop(0.5, '#030305'); bg.addColorStop(1, '#080809');
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+    bgBlobs.forEach(b => {
+      b.x += b.vx + Math.sin(ts*0.00018 + b.ph)*0.3; b.y += b.vy;
+      if (b.y < -b.r) { b.y = H + b.r; b.x = Math.random()*W; }
+      const g = ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
+      // Saturation lowered from 60%/50% → 6%/4% (near-monochrome charcoal).
+      g.addColorStop(0, `hsla(${b.hue},6%,10%,${b.a})`);
+      g.addColorStop(0.6, `hsla(${b.hue},4%,6%,${b.a*0.5})`);
+      g.addColorStop(1, 'transparent');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2); ctx.fill();
+    });
+    clouds.forEach(c => {
+      c.life++; if (c.life > c.maxL || c.y < -c.r*2) { Object.assign(c, mkCloud()); return; }
+      c.x += c.vx + Math.sin(ts*0.00022 + c.ph)*0.4; c.y += c.vy;
+      const fade = c.life < 80 ? c.life/80 : c.life > c.maxL-120 ? (c.maxL-c.life)/120 : 1;
+      const g = ctx.createRadialGradient(c.x,c.y,0,c.x,c.y,c.r);
+      // Saturation 40%/35% → 5%/4% (grey charcoal smoke).
+      g.addColorStop(0, `hsla(${c.hue},5%,18%,${c.a*fade})`);
+      g.addColorStop(0.5, `hsla(${c.hue},4%,12%,${c.a*fade*0.55})`);
+      g.addColorStop(1, 'transparent');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c.x,c.y,c.r,0,Math.PI*2); ctx.fill();
+    });
+    strands.forEach(s => {
+      s.life++; if (s.life > s.maxL || s.y < -s.r*2) { Object.assign(s, mkStrand()); return; }
+      s.x += s.vx + Math.sin(ts*0.00038 + s.ph)*0.5; s.y += s.vy;
+      const progress = s.life / s.maxL;
+      const r = s.r * (1 + progress*1.8);
+      const fade = progress < 0.15 ? progress/0.15 : progress > 0.75 ? (1-progress)/0.25 : 1;
+      const g = ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,r);
+      // Saturation 30%/25% → 5%/4%.
+      g.addColorStop(0, `hsla(${s.hue},5%,28%,${s.a*fade})`);
+      g.addColorStop(0.5, `hsla(${s.hue},4%,20%,${s.a*fade*0.4})`);
+      g.addColorStop(1, 'transparent');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(s.x,s.y,r,0,Math.PI*2); ctx.fill();
+    });
+    rafId = requestAnimationFrame(loop);
+  }
+  rafId = requestAnimationFrame(loop);
+  return () => { killed = true; cancelAnimationFrame(rafId); window.removeEventListener('resize', onResize); };
+}
+
+function playIntro(onComplete) {
+  const intro = $('.brand-intro');
+  if (!intro) { onComplete(); return; }
+  intro.hidden = false;
+  const smoke = intro.querySelector('.brand-intro__smoke');
+  const panther = intro.querySelector('.brand-intro__panther');
+  const t1 = intro.querySelector('[data-intro-text="1"]');
+  const t2 = intro.querySelector('[data-intro-text="2"]');
+  const t3 = intro.querySelector('[data-intro-text="3"]');
+  const motto = intro.querySelector('[data-intro-text="4"]');
+  const audio = intro.querySelector('.brand-intro__audio');
+  const skipBtn = intro.querySelector('[data-action="intro-skip"]');
+  const stopSmoke = startIntroSmoke(smoke);
+  const timers = [];
+  timers.push(setTimeout(() => { panther.classList.add('is-revealed'); try { audio.play().catch(()=>{}); } catch {} }, 2000));
+  timers.push(setTimeout(() => t1.classList.add('is-visible'), 4500));
+  timers.push(setTimeout(() => t1.classList.remove('is-visible'), 6300));
+  timers.push(setTimeout(() => t2.classList.add('is-visible'), 6500));
+  timers.push(setTimeout(() => t2.classList.remove('is-visible'), 8300));
+  timers.push(setTimeout(() => t3.classList.add('is-visible'), 8500));
+  timers.push(setTimeout(() => motto.classList.add('is-visible'), 9500));
+  let finished = false;
+  function finish() {
+    if (finished) return;
+    finished = true;
+    timers.forEach(clearTimeout);
+    stopSmoke();
+    try { audio.pause(); } catch {}
+    intro.hidden = true;
+    onComplete();
+  }
+  timers.push(setTimeout(finish, INTRO_TOTAL_MS));
+  skipBtn.addEventListener('click', finish, { once: true });
+  // Escape key also skips.
+  const onEsc = (e) => { if (e.key === 'Escape') { finish(); document.removeEventListener('keydown', onEsc); } };
+  document.addEventListener('keydown', onEsc);
+}
+
 function wireWelcome() {
   const playBtn = $('[data-action="play"]');
   updateWelcome();
-  playBtn.addEventListener('click', startWorkstation);
+  playBtn.addEventListener('click', () => {
+    playIntro(startWorkstation);
+  });
+}
+
+// How-to-play modal: text-only rules explainer, no gameplay hints per case.
+function wireHowto() {
+  const btn = document.querySelector('[data-action="howto-open"]');
+  const modal = document.querySelector('.howto-modal');
+  if (!btn || !modal) return;
+  const closers = modal.querySelectorAll('[data-action="howto-close"]');
+  function open() { modal.hidden = false; }
+  function close() { modal.hidden = true; }
+  btn.addEventListener('click', open);
+  closers.forEach(c => c.addEventListener('click', close));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
 }
 
 function wireReset() {
@@ -634,6 +782,14 @@ async function boot() {
   const { wasResume } = initState(caseData.id);
   configureActionBus({ fromResume: wasResume });
   registerActionHandlers(caseData);
+  // S7.4 — sound bus must be initialized AFTER action handlers so it can
+  // subscribe cleanly, and BEFORE setActionResumeMode(false) so its
+  // fromResume gating sees historical actions correctly.
+  initSoundBus(caseData);
+  // S7.5 — cinematic scheduler subscribes AFTER sound bus so any sound
+  // side-effect fires before beat effect classes are applied (sound is
+  // registered event, beat is DOM accent atop it).
+  initCinematicScheduler(caseData);
   setActionResumeMode(false);
   prevAvailability = currentAvailability();
   // Sync counter baselines so the first render after a resume does not
@@ -657,6 +813,23 @@ async function boot() {
     if (evt.type === 'tool_changed') {
       renderPane();
       updateBreadcrumb();
+      // B2-8 — when a tool with a search input becomes active, focus that
+      // input. renderPane() writes innerHTML synchronously so the input
+      // exists by this line — no rAF (rAF is throttled in hidden tabs).
+      // Guard only when focus is already INSIDE the newly-active pane on a
+      // form field — otherwise the previous tool's hidden input can be
+      // document.activeElement (Chrome doesn't blur on display:none) and
+      // block us from ever focusing anything again.
+      const pane = document.querySelector('.pane.is-active');
+      const searchInput = pane && pane.querySelector('input[name="q"]');
+      if (searchInput) {
+        const active = document.activeElement;
+        const alreadyInActivePaneField = active && pane.contains(active) &&
+          (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable);
+        if (!alreadyInActivePaneField) {
+          try { searchInput.focus({ preventScroll: true }); } catch {}
+        }
+      }
     }
     if (evt.type === 'evidence_added') {
       // Acknowledge the action the player took.
@@ -686,9 +859,14 @@ async function boot() {
       const a = getState().activeTool;
       if (a === 'evidence' || a === 'report') renderPane();
     }
+    // B2-4 — topbar LINKS N counter reacts to link add/remove.
+    if (evt.type === 'link_added' || evt.type === 'link_removed') {
+      updateTopbar();
+    }
     if (evt.type === 'reset') {
       prevBadgeCount = 0;
       prevTopbarCount = 0;
+      prevTopbarLinks = 0;
       renderSidebar();
       updateTopbar();
       updateBreadcrumb();
@@ -708,6 +886,22 @@ async function boot() {
   renderSidebar();
   wireWelcome();
   wireReset();
+  wireHowto();
+
+  // S7.4 — mute toggle in topbar. Text-only per anti-drift §19.
+  const muteBtn = document.querySelector('.ws-topbar__mute');
+  if (muteBtn) {
+    const syncMuteBtn = () => {
+      const m = isMuted();
+      muteBtn.textContent = m ? 'SOUND OFF' : 'SOUND ON';
+      muteBtn.setAttribute('aria-pressed', m ? 'true' : 'false');
+    };
+    syncMuteBtn();
+    muteBtn.addEventListener('click', () => {
+      toggleMuted();
+      syncMuteBtn();
+    });
+  }
   wireLangSwitch();
 }
 

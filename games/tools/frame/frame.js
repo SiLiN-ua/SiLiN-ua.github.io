@@ -10,6 +10,7 @@ import { emit as emitAction } from '../../engine/actions.js';
 import { resolveAsset } from '../../engine/case-loader.js';
 import { t, pick, getLang } from '../../engine/i18n.js';
 import { formatJoined } from '../../engine/dates.js';
+import { renderVideoPlayer } from './video-player.js';   // S7.3.3
 
 // Local view state, per profile id. Not persisted — a re-render
 // (activeTool switch away and back) returns FRAME to state A, which is
@@ -20,6 +21,10 @@ const openedPost = new Map(); // profileId -> postId
 // extract moment" from S5 §4.5: player clicks the affordance to reveal
 // the video still on top of the pane.
 const videoOpen = new Set(); // "profileId#postId"
+// S7.3.3 — cleanup fn returned by renderVideoPlayer per mount. Called on
+// re-render/close so the video-player component tears down cleanly
+// (autosave interval + keydown listener + state subscription).
+const activePlayerCleanup = new Map(); // "profileId#postId" -> () => void
 
 function esc(str) {
   return String(str ?? '')
@@ -129,7 +134,7 @@ function renderProfileState(paneEl, caseData, profile, { onEvidenceAdded, compac
         </div>
         <div class="frame-appbar__search">
           <span aria-hidden="true">⌕</span>
-          <input type="text" placeholder="Search" disabled aria-hidden="true">
+          <input type="text" placeholder="${esc(t('frame.search.placeholder'))}" disabled aria-hidden="true">
         </div>
         <div class="frame-appbar__icons" aria-hidden="true">
           <span title="Home">⌂</span>
@@ -267,12 +272,7 @@ function renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded }) 
         </header>
 
         ${showVideo ? `
-          <div class="frame-opened__video-still">
-            <div class="tx-letterbox" style="--tx-ratio: 9 / 16;">
-              <img src="${videoSrc}" alt="">
-            </div>
-            <button type="button" class="frame-opened__video-close" data-action="close-video">${t('frame.video.close')}</button>
-          </div>
+          <div class="frame-opened__video-mount" data-role="video-mount"></div>
         ` : `
           <div class="tx-letterbox frame-post-card__photo" style="--tx-ratio: 2 / 3;">
             <img src="${src}" alt="${esc(caption)}">
@@ -311,7 +311,18 @@ function renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded }) 
     initialFor(profile.username)
   );
 
+  // S7.3.3 — clean up any prior video-player mount before we possibly re-mount
+  // in the block below. Also called from goBack when leaving the post view.
+  const cleanupPlayer = () => {
+    const prev = activePlayerCleanup.get(postArtifactId);
+    if (prev) {
+      try { prev(); } catch (e) { console.warn('[frame] video-player cleanup threw', e); }
+      activePlayerCleanup.delete(postArtifactId);
+    }
+  };
+
   const goBack = () => {
+    cleanupPlayer();
     openedPost.delete(profile.id);
     videoOpen.delete(postArtifactId);
     renderFrameProfile(paneEl, caseData, profile, { onEvidenceAdded });
@@ -325,12 +336,27 @@ function renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded }) 
       renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded });
     });
   }
-  const closeVideoBtn = paneEl.querySelector('[data-action="close-video"]');
-  if (closeVideoBtn) {
-    closeVideoBtn.addEventListener('click', () => {
-      videoOpen.delete(postArtifactId);
-      renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded });
+
+  // S7.3.3 — mount the real video player into the video-mount slot per
+  // VIDEO_EVIDENCE_SPEC v1. Old close-video button is folded into the
+  // player's own close (×) button so we still get symmetric teardown.
+  const videoMountEl = paneEl.querySelector('[data-role="video-mount"]');
+  if (showVideo && videoMountEl) {
+    cleanupPlayer();  // clear stale mount before re-mount
+    const cleanup = renderVideoPlayer(videoMountEl, {
+      caseData,
+      profile,
+      post,
+      videoId: `${postArtifactId}#video`,
+      onClose: () => {
+        videoOpen.delete(postArtifactId);
+        renderOpenedPost(paneEl, caseData, profile, post, { onEvidenceAdded });
+      },
+      onFrameCaptured: () => {
+        onEvidenceAdded && onEvidenceAdded();
+      },
     });
+    activePlayerCleanup.set(postArtifactId, cleanup);
   }
 
   const addBtn = paneEl.querySelector('[data-action="add-to-case"]');

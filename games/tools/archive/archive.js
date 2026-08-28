@@ -87,6 +87,13 @@ function renderSearch(paneEl, caseData, ctx) {
     view.query = input.value.trim();
     view.submitted = true;
     view.activeSnapshotId = null;
+    // S7.4a — emit search action per ACTION_BUS_CONTRACT §2.2.
+    const hit = findSearchByQuery(caseData, view.query);
+    emitAction('search', {
+      tool: 'archive',
+      query: view.query,
+      resultCount: hit && Array.isArray(hit.snapshots) ? hit.snapshots.length : 0,
+    });
     renderArchive(paneEl, caseData, ctx);
   });
 

@@ -46,6 +46,8 @@ function defaultState(caseId) {
     splitView: {},                 // {[tool]: {a, b}}
     comparisons: [],               // Array<{aId, bId, aDate, bDate, ts}>
     videoBookmarks: {},            // {[videoId]: [{timestamp, label?, ts}]}
+    videoState: {},                // {[videoId]: {currentTime_ms, playing}} — S7.3 VIDEO_EVIDENCE_SPEC §10
+    frameCaptures: [],             // Array<{id, sourceVideoId, sourceTimestamp_ms, capturedAt_iso, imageDataUri}> — S7.3 §10
     links: [],                     // Array<{from, to, reason, ts}>
     picks: {},                     // {[criterionId]: evidenceId}
     cinematic: { firedOnce: [] },  // Array<beatId>
@@ -56,6 +58,11 @@ function defaultState(caseId) {
   };
 }
 
+// S7.3 hard cap on frame captures per case per VIDEO_EVIDENCE_SPEC §13 Q4.
+// At limit, extract_frame emits frame_capture_limit_reached event instead of
+// silently no-op'ing. UI must handle by showing the limit banner.
+export const FRAME_CAPTURE_HARD_CAP = 30;
+
 // v2 field defaults, used by migration. Keep in sync with defaultState().
 // A separate map so migration only adds missing keys — never overwrites.
 const V2_FIELD_DEFAULTS = {
@@ -65,6 +72,8 @@ const V2_FIELD_DEFAULTS = {
   splitView: () => ({}),
   comparisons: () => [],
   videoBookmarks: () => ({}),
+  videoState: () => ({}),          // S7.3 — VIDEO_EVIDENCE_SPEC §10
+  frameCaptures: () => [],         // S7.3 — VIDEO_EVIDENCE_SPEC §10
   links: () => [],
   picks: () => ({}),
   cinematic: () => ({ firedOnce: [] }),
@@ -253,6 +262,52 @@ export function submitFinalReport({ attribution, supportingEvidenceIds, outcome 
   return state.finalSubmission;
 }
 
+// S7.3 — merge a video-player position/state patch. Called by the video player
+// during autosave and on close. Not through action bus — this is UI-local
+// playback state, not investigative intent (per ACTION_BUS_CONTRACT §2.3 and
+// VIDEO_EVIDENCE_SPEC §8: play/pause/scrub stay UI-local).
+export function saveVideoState(videoId, patch) {
+  if (!videoId || !patch) return;
+  if (!state.videoState) state.videoState = {};
+  state.videoState[videoId] = { ...(state.videoState[videoId] || {}), ...patch };
+  persist();
+  emit({ type: 'video_state_updated', videoId, patch });
+}
+
+// S7.3 — manual delete of a frame_capture per VIDEO_EVIDENCE_SPEC §14 item 4.
+// Removes the capture from state.frameCaptures. If the capture was already
+// added to case as evidence, also removes it from state.evidence AND cleans up
+// any state.links / state.picks that referenced it. Never called automatically —
+// only via UI player action. Emits frame_capture_deleted for UI subscribers.
+export function deleteFrameCapture(captureId, caseData) {
+  if (!captureId || !state.frameCaptures) return false;
+  const before = state.frameCaptures.length;
+  state.frameCaptures = state.frameCaptures.filter(fc => fc.id !== captureId);
+  if (state.frameCaptures.length === before) return false;
+
+  // Remove any evidence entry that snapshotted this capture (sourceId match).
+  state.evidence = state.evidence.filter(e => e.sourceId !== captureId);
+
+  // Clean up links that reference the capture on either end.
+  state.links = state.links.filter(l => l.from !== captureId && l.to !== captureId);
+
+  // Unpick any criterion that pointed at this capture.
+  const nextPicks = {};
+  for (const [cid, evId] of Object.entries(state.picks || {})) {
+    if (evId !== captureId) nextPicks[cid] = evId;
+  }
+  state.picks = nextPicks;
+
+  // Drop from runtime artifact pool so open_artifact of a stale id fails cleanly.
+  if (caseData && caseData.artifacts && caseData.artifacts[captureId]) {
+    delete caseData.artifacts[captureId];
+  }
+
+  persist();
+  emit({ type: 'frame_capture_deleted', captureId });
+  return true;
+}
+
 // Dismissal path for the workstation host — close/ESC/tool-switch clear the
 // split without going through the action bus (dismissal is a UI-local
 // concern; the bus opens the split, the host closes it). Emits the same
@@ -268,6 +323,49 @@ export function clearSplitView(tool) {
   }
   persist();
   emit({ type: 'split_view_changed', tool: tool || null, splitView: state.splitView });
+}
+
+// ---- S7.3 helpers ----
+
+// Format ms → "MM:SS.T" timestamp for artifact captions.
+function formatTs(ms) {
+  if (ms == null || !Number.isFinite(Number(ms))) return '--:--.-';
+  const total = Math.max(0, Math.round(Number(ms)));
+  const mins = Math.floor(total / 60000);
+  const secs = Math.floor((total % 60000) / 1000);
+  const tenths = Math.floor((total % 1000) / 100);
+  return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}.${tenths}`;
+}
+
+// Build the runtime artifact record for a frame_capture. This is the shape
+// that lands in caseData.artifacts[capturedArtifactId] so add_to_case can
+// pick it up uniformly through the existing addEvidence path.
+function frameCaptureArtifact(capture) {
+  const ts = formatTs(capture.sourceTimestamp_ms);
+  return {
+    id: capture.id,
+    type: 'frame_capture',
+    tool: 'frame',
+    source_video: capture.sourceVideoId,
+    source_timestamp_ms: capture.sourceTimestamp_ms,
+    captured_at_iso: capture.capturedAt_iso,
+    image: capture.imageDataUri,
+    caption_en: `Frame at ${ts}`,
+    caption_uk: `Кадр ${ts}`,
+  };
+}
+
+// Rehydrate runtime artifact pool from persisted frameCaptures. Called by the
+// boot layer AFTER initState + caseData load — so a reload restores the same
+// artifact ids that were extracted previously, and any evidence snapshots
+// keep working. Idempotent: overwrites are safe (same content).
+export function rehydrateRuntimeArtifacts(caseData) {
+  if (!caseData || !caseData.artifacts) return;
+  if (!state || !Array.isArray(state.frameCaptures)) return;
+  for (const cap of state.frameCaptures) {
+    if (!cap || !cap.id) continue;
+    caseData.artifacts[cap.id] = frameCaptureArtifact(cap);
+  }
 }
 
 // ---- Action bus wiring ----
@@ -418,6 +516,60 @@ export function registerActionHandlers(caseData) {
     });
   }));
 
+  // S7.3 — extract_frame: create a frame_capture artifact from the video's
+  // current frame. Hard-capped at FRAME_CAPTURE_HARD_CAP per §13 Q4; at cap
+  // we emit `frame_capture_limit_reached` (never silently no-op) so the UI
+  // can show the limit banner and instruct manual delete.
+  //
+  // Expected payload: { videoId, timestamp, capturedArtifactId, imageDataUri }
+  // - imageDataUri: full-resolution JPEG data URI per §13 Q3 (quality 85)
+  // - timestamp: source_timestamp_ms (may be null in DEV MODE / placeholder)
+  offs.push(actions.on('extract_frame', ({ videoId, timestamp, capturedArtifactId, imageDataUri }) => {
+    if (!state.frameCaptures) state.frameCaptures = [];
+    if (state.frameCaptures.length >= FRAME_CAPTURE_HARD_CAP) {
+      emit({
+        type: 'frame_capture_limit_reached',
+        current: state.frameCaptures.length,
+        max: FRAME_CAPTURE_HARD_CAP,
+      });
+      return;
+    }
+    const capturedAt_iso = new Date().toISOString();
+    const capture = {
+      id: capturedArtifactId,
+      sourceVideoId: videoId,
+      sourceTimestamp_ms: timestamp == null ? null : Number(timestamp),
+      capturedAt_iso,
+      imageDataUri: imageDataUri || null,
+    };
+    state.frameCaptures.push(capture);
+
+    // Register a runtime artifact so +ADD TO CASE via add_to_case handler works
+    // uniformly (case.artifacts[id] lookup finds a valid record). This is a
+    // runtime mutation of caseData — not persisted in case.json, rehydrated
+    // from state.frameCaptures on load (see rehydrateRuntimeArtifacts below).
+    caseData.artifacts[capturedArtifactId] = frameCaptureArtifact(capture);
+
+    persist();
+    emit({ type: 'frame_captured', capture });
+  }));
+
+  // S7.3 — mark_moment: append a bookmark to state.videoBookmarks[videoId].
+  // Idempotency: same timestamp on same video does NOT dedup — different marks
+  // for different reasons are player-authored notes and belong preserved.
+  offs.push(actions.on('mark_moment', ({ videoId, timestamp, label }) => {
+    if (!videoId) return;
+    if (!state.videoBookmarks) state.videoBookmarks = {};
+    if (!state.videoBookmarks[videoId]) state.videoBookmarks[videoId] = [];
+    state.videoBookmarks[videoId].push({
+      timestamp: Number(timestamp) || 0,
+      label: label ? String(label).slice(0, 60) : null,
+      ts: Date.now(),
+    });
+    persist();
+    emit({ type: 'moment_marked', videoId, timestamp });
+  }));
+
   offs.push(actions.on('open_artifact', ({ artifactId }) => {
     // Set semantics — dedup a repeat click on the same card. The action
     // envelope still fires (per §2.2 idempotency: "Ні — кожен click"),
@@ -448,6 +600,20 @@ export function registerActionHandlers(caseData) {
   };
   const offGate = subscribe(gateListener);
   offs.push(offGate);
+
+  // §14.7 — Branch tracker. Wildcard consumer that logs every action envelope
+  // into state.timeline. Analyst Mode will use this to rebuild what the player
+  // did during the session (§14.7 spec). Skip fromResume replays so that a
+  // resume boot does NOT double-log the pre-resume history (that history is
+  // already in the persisted state.timeline). Persist after each push so
+  // timeline survives a reload — dependency on other handlers calling persist
+  // is not guaranteed for read-only actions (open_artifact, search, etc.).
+  const offTimeline = actions.onAny((envelope) => {
+    if (envelope?.meta?.fromResume) return;
+    state.timeline.push(envelope);
+    persist();
+  });
+  offs.push(offTimeline);
 
   unregisterActionHandlers = () => {
     for (const off of offs) off();

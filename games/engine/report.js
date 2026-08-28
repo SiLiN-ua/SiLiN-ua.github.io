@@ -50,9 +50,23 @@ function surveyCase(caseData) {
   return { allTools, availableSnapshots };
 }
 
+// Order-agnostic pair matcher. A spec pair {from, to, reason} is EARNED when
+// state.links contains a link whose endpoints are the same unordered pair AND
+// whose reason string equals the spec reason exactly. A link with a mismatched
+// reason (e.g. spec pair is `operator_lead` but player linked with reason
+// `content_overlap`) does NOT count — reason must be spec-conformant.
+function computeEarnedLinkedPairs(caseData, links) {
+  const specPairs = (caseData && caseData.linked_pairs) || [];
+  if (!specPairs.length || !links || !links.length) return [];
+  const key = (a, b, r) => `${[String(a), String(b)].sort().join('|')}::${String(r)}`;
+  const activeKeys = new Set(links.map(l => key(l.from, l.to, l.reason)));
+  return specPairs.filter(p => activeKeys.has(key(p.from, p.to, p.reason)));
+}
+
 function computeQuality(caseData, ids, requiredFlat, missingRequired) {
   const state = getState();
   const collectedItems = (state && state.evidence) || [];
+  const stateLinks = (state && state.links) || [];
   const { allTools, availableSnapshots } = surveyCase(caseData);
 
   // Chain
@@ -89,6 +103,8 @@ function computeQuality(caseData, ids, requiredFlat, missingRequired) {
   //   20 independent findings ratio
   //   15 source diversity ratio
   //   15 temporal depth ratio
+  //   +2 per earned linked pair (V2 §6.2), capped at +8
+  //   final overall capped at 100
   const chainScore = chainRequired === 'COMPLETE' ? 50 : 0;
   const indScore = independentFindings.total > 0
     ? 20 * (independentFindings.met / independentFindings.total) : 0;
@@ -96,13 +112,24 @@ function computeQuality(caseData, ids, requiredFlat, missingRequired) {
     ? 15 * (Math.min(sourceDiversity.toolsUsed.length, sourceDiversity.total) / sourceDiversity.total) : 0;
   const tempScore = temporalDepth.availableSnapshots > 0
     ? 15 * (Math.min(temporalDepth.collectedSnapshots, temporalDepth.availableSnapshots) / temporalDepth.availableSnapshots) : 0;
-  const overall = Math.round(chainScore + indScore + divScore + tempScore);
+
+  const earnedPairs = computeEarnedLinkedPairs(caseData, stateLinks);
+  const linkBonus = Math.min(2 * earnedPairs.length, 8);
+  const earnedReasons = earnedPairs.map(p => p.reason);
+
+  const overall = Math.min(
+    Math.round(chainScore + indScore + divScore + tempScore + linkBonus),
+    100,
+  );
 
   return {
     chainRequired,
     independentFindings,
     sourceDiversity,
     temporalDepth,
+    linkBonus,
+    earnedPairs,
+    earnedReasons,
     overall,
   };
 }

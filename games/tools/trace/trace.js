@@ -81,6 +81,14 @@ function renderSearch(paneEl, caseData, ctx) {
     view.query = input.value.trim();
     view.submitted = true;
     view.activeCandidateId = null;
+    // S7.4a — emit search action per ACTION_BUS_CONTRACT §2.2.
+    // resultCount reflects the authored search artifact (0 if no match).
+    const hit = findSearchByQuery(caseData, view.query);
+    emitAction('search', {
+      tool: 'trace',
+      query: view.query,
+      resultCount: hit && Array.isArray(hit.results) ? hit.results.length : 0,
+    });
     renderTrace(paneEl, caseData, ctx);
   });
 

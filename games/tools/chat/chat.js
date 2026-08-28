@@ -87,6 +87,13 @@ function renderSearch(paneEl, caseData, ctx) {
     view.query = input.value.trim();
     view.submitted = true;
     view.activeProfileId = null;
+    // S7.4a — emit search action per ACTION_BUS_CONTRACT §2.2.
+    const hit = findSearchByQuery(caseData, view.query);
+    emitAction('search', {
+      tool: 'chat',
+      query: view.query,
+      resultCount: hit && Array.isArray(hit.results) ? hit.results.length : 0,
+    });
     renderChat(paneEl, caseData, ctx);
   });
 

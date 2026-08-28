@@ -4,7 +4,7 @@
 // thumbnails, provenance line, and an inline `⟷ LINK` affordance per row.
 // See S4_EVIDENCE_PROGRESSION_ACCEPTANCE.md §3, §4.
 
-import { getState } from '../engine/state.js';
+import { getState, deleteFrameCapture } from '../engine/state.js';   // S7.3.4
 import { resolveAsset } from '../engine/case-loader.js';
 import { t, pick } from '../engine/i18n.js';
 import * as actions from '../engine/actions.js';
@@ -39,6 +39,16 @@ let uiMode = { mode: 'idle' };
 let lastPane = null;
 let lastCase = null;
 
+// S7.3.4 — MM:SS.T formatter for frame_capture titles / detail.
+function formatTsMs(ms) {
+  if (ms == null || !Number.isFinite(Number(ms))) return '--:--.-';
+  const total = Math.max(0, Math.round(Number(ms)));
+  const mins = Math.floor(total / 60000);
+  const secs = Math.floor((total % 60000) / 1000);
+  const tenths = Math.floor((total % 1000) / 100);
+  return `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}.${tenths}`;
+}
+
 // Resolve a display "handle" or title for an evidence item.
 function titleFor(evidence) {
   const snap = evidence.snapshot;
@@ -50,6 +60,12 @@ function titleFor(evidence) {
   }
   if (snap.type === 'atlas_location_claim') {
     return snap.subject || snap.status || t('atlas.claim.title');
+  }
+  if (snap.type === 'frame_capture') {
+    // "Frame at 00:04.7" — or "Frame (placeholder)" in DEV MODE.
+    return snap.source_timestamp_ms == null
+      ? 'Frame (placeholder)'
+      : `Frame at ${formatTsMs(snap.source_timestamp_ms)}`;
   }
   return snap.display_name || snap.username || snap.title || snap.id;
 }
@@ -65,6 +81,18 @@ function subMetaFor(evidence) {
   }
   if (snap.type === 'atlas_location_claim') {
     return [pick(snap, 'location_claimed'), snap.status].filter(Boolean).join(' · ');
+  }
+  if (snap.type === 'frame_capture') {
+    // S7.3.4 — source video hint + captured-at time-of-day.
+    const src = snap.source_video ? `from ${snap.source_video}` : '';
+    let capturedTime = '';
+    if (snap.captured_at_iso) {
+      try {
+        const d = new Date(snap.captured_at_iso);
+        capturedTime = `captured ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+      } catch { /* ignore */ }
+    }
+    return [src, capturedTime].filter(Boolean).join(' · ');
   }
   const handle = snap.username ? '@' + snap.username : '';
   return [handle, snap.url, pick(snap, 'location')].filter(Boolean).join(' · ');
@@ -85,6 +113,11 @@ function provenanceFor(evidence) {
 
 function thumbSrcFor(evidence, caseData) {
   const snap = evidence.snapshot;
+  // S7.3.4 — frame_capture stores full image as data URI in snap.image.
+  // Data URIs are self-contained; do not run through resolveAsset.
+  if (snap.type === 'frame_capture' && typeof snap.image === 'string' && snap.image.startsWith('data:')) {
+    return snap.image;
+  }
   const rel = snap.avatar || snap.preview || snap.cover || null;
   return rel ? resolveAsset(caseData, rel) : '';
 }
@@ -179,7 +212,7 @@ function linkCaptionHtml(reason, fromId, toId) {
   return `
     <div class="evidence-link-caption" data-from="${esc(fromId)}" data-to="${esc(toId)}">
       <span class="evidence-link-caption__glyph" aria-hidden="true">⟷</span>
-      <span class="evidence-link-caption__reason">${esc(String(reason || '').toUpperCase())}</span>
+      <span class="evidence-link-caption__reason">${esc((t('link.reason.' + reason) || reason || '').toUpperCase())}</span>
       <button type="button" class="evidence-link-caption__unlink" data-action="unlink" data-from="${esc(fromId)}" data-to="${esc(toId)}">
         × ${esc(t('evidence.link.unlink'))}
       </button>
@@ -211,6 +244,11 @@ function expandedDetailHtml(evidence, caseData) {
     const loc = pick(snap, 'location_claimed');
     if (loc) metaRows.push([t('atlas.claim.field.location_claimed'), loc]);
     if (snap.status) metaRows.push([t('atlas.claim.field.status'), snap.status]);
+  } else if (snap.type === 'frame_capture') {
+    // S7.3.4 — frame_capture meta: source video + timestamp + captured_at
+    if (snap.source_video) metaRows.push(['source', snap.source_video]);
+    metaRows.push(['timestamp', formatTsMs(snap.source_timestamp_ms)]);
+    if (snap.captured_at_iso) metaRows.push(['captured', snap.captured_at_iso]);
   } else {
     if (snap.username) metaRows.push(['@', snap.username]);
     if (snap.url) metaRows.push([t('archive.snapshot.field.source'), snap.url]);
@@ -235,10 +273,17 @@ function expandedDetailHtml(evidence, caseData) {
             <li>
               <span class="evidence-detail__link-glyph" aria-hidden="true">⟷</span>
               <span class="evidence-detail__link-target" data-jump="${esc(l.otherId)}">${esc(l.otherId)}</span>
-              <span class="evidence-detail__link-reason">${esc(String(l.reason || '').toUpperCase())}</span>
+              <span class="evidence-detail__link-reason">${esc((t('link.reason.' + l.reason) || l.reason || '').toUpperCase())}</span>
             </li>
           `).join('')}
         </ul>
+      ` : ''}
+      ${snap.type === 'frame_capture' ? `
+        <div class="evidence-detail__actions">
+          <button type="button" class="btn-ghost btn-ghost--sm evidence-detail__delete"
+                  data-action="delete-capture"
+                  data-capture-id="${esc(evidence.sourceId)}">DELETE CAPTURE</button>
+        </div>
       ` : ''}
     </aside>
   `;
@@ -259,7 +304,7 @@ function pickerBannerHtml() {
         <div class="evidence-picker__prompt">${t('evidence.link.reason_prompt')}</div>
         <select class="evidence-picker__reason" data-action="reason-select">
           <option value="">—</option>
-          ${LINK_REASONS.map(r => `<option value="${esc(r)}">${esc(r)}</option>`).join('')}
+          ${LINK_REASONS.map(r => `<option value="${esc(r)}">${esc(t('link.reason.' + r) || r)}</option>`).join('')}
         </select>
         <button type="button" class="evidence-picker__cancel" data-action="picker-cancel">× ${esc(t('evidence.link.cancel'))}</button>
       </div>
@@ -405,6 +450,20 @@ function wireEvents(paneEl) {
   paneEl.querySelectorAll('[data-jump]').forEach(el => {
     el.addEventListener('click', () => {
       uiMode = { mode: 'expanded', id: el.dataset.jump };
+      rerender();
+    });
+  });
+
+  // S7.3.4 — DELETE CAPTURE (frame_capture only). Removes from state.frameCaptures,
+  // state.evidence, links, picks, runtime artifact pool. Resets uiMode so the
+  // just-deleted detail closes cleanly.
+  paneEl.querySelectorAll('[data-action="delete-capture"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const captureId = btn.dataset.captureId;
+      if (!captureId) return;
+      deleteFrameCapture(captureId, lastCase);
+      uiMode = { mode: 'idle' };
       rerender();
     });
   });
