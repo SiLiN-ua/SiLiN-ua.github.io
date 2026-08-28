@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Zero — OSINT Investigation</title>
+  <meta name="description" content="Case Zero — a free OSINT investigation game by Yehor Selin. You don't play at OSINT. You investigate.">
+  <meta name="robots" content="noindex">
+  <!-- Fonts self-hosted under site/games/fonts/ — see workstation.css @font-face block (S5.5.3). -->
+  <link rel="stylesheet" href="ui/workstation.css">
+</head>
+<body>
+  <div class="game-root">
+
+    <!-- LANG SWITCHER (shared, fixed) -->
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="lang-switch__btn" aria-pressed="true">EN</button>
+      <span class="lang-switch__sep">·</span>
+      <button type="button" data-lang="uk" class="lang-switch__btn">UA</button>
+    </div>
+
+    <!-- HOW TO PLAY button (fixed, next to lang switch) -->
+    <button type="button" class="howto-btn" data-action="howto-open" data-i18n="howto.button" aria-label="How to play">
+      How to play?
+    </button>
+
+    <!-- HOW TO PLAY modal -->
+    <div class="howto-modal" data-modal="howto" hidden role="dialog" aria-modal="true" aria-labelledby="howto-title">
+      <div class="howto-modal__backdrop" data-action="howto-close"></div>
+      <div class="howto-modal__sheet">
+        <button type="button" class="howto-modal__close" data-action="howto-close" aria-label="Close">×</button>
+        <h2 id="howto-title" class="howto-modal__title" data-i18n="howto.title"></h2>
+        <div class="howto-modal__body">
+          <p class="howto-modal__lead" data-i18n="howto.lead"></p>
+          <ol class="howto-modal__list">
+            <li><b data-i18n="howto.step1.title"></b><span data-i18n="howto.step1.body"></span></li>
+            <li><b data-i18n="howto.step2.title"></b><span data-i18n="howto.step2.body"></span></li>
+            <li><b data-i18n="howto.step3.title"></b><span data-i18n="howto.step3.body"></span></li>
+            <li><b data-i18n="howto.step4.title"></b><span data-i18n="howto.step4.body"></span></li>
+            <li><b data-i18n="howto.step5.title"></b><span data-i18n="howto.step5.body"></span></li>
+          </ol>
+          <p class="howto-modal__note" data-i18n="howto.note"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND INTRO (12.5s cinematic, plays once per browser, gated by ss.intro_seen_v1) -->
+    <section class="brand-intro" data-intro-stage hidden>
+      <canvas class="brand-intro__smoke" aria-hidden="true"></canvas>
+      <div class="brand-intro__stage">
+        <div class="brand-intro__panther" aria-hidden="true"></div>
+        <div class="brand-intro__text-row brand-intro__text--head" data-intro-text="1">SHADOW OSINT GAMES</div>
+        <div class="brand-intro__text-row brand-intro__text--small" data-intro-text="2">PRESENTS</div>
+        <div class="brand-intro__text-row brand-intro__text--big" data-intro-text="3">CASE 001 &nbsp;&nbsp; // &nbsp;&nbsp; STOLEN FACE</div>
+        <div class="brand-intro__motto" data-intro-text="4">EVERY SHADOW HAS A NAME</div>
+      </div>
+      <audio class="brand-intro__audio" src="sounds/brand-intro.wav" preload="auto"></audio>
+      <button type="button" class="brand-intro__skip" data-action="intro-skip" aria-label="Skip intro">SKIP →</button>
+    </section>
+
+    <!-- WELCOME -->
+    <section class="welcome">
+      <div class="welcome__sheet">
+        <div class="welcome__eyebrow" data-i18n="welcome.eyebrow"></div>
+        <h1 class="welcome__title" data-i18n="welcome.title"></h1>
+        <p class="welcome__sub" data-i18n="welcome.sub" data-i18n-html></p>
+        <button class="welcome__cta" data-action="play"></button>
+        <div class="welcome__resume"></div>
+      </div>
+      <div class="welcome__watermark" aria-hidden="true"></div>
+    </section>
+
+    <!-- WORKSTATION -->
+    <section class="workstation">
+      <header class="ws-topbar">
+        <div class="ws-topbar__title">
+          <span data-i18n="topbar.case_prefix"></span><b data-i18n="topbar.case_title"></b>
+        </div>
+        <div class="ws-topbar__breadcrumb" aria-live="polite"></div>
+        <div class="ws-topbar__right">
+          <div class="ws-topbar__timer" aria-live="off"></div>
+          <!-- S7.4 — global mute toggle. Text-only per §19 anti-drift rule. -->
+          <button type="button" class="ws-topbar__mute" data-action="toggle-mute"
+                  aria-live="polite" aria-pressed="false" title="Toggle sound">SOUND ON</button>
+          <div class="ws-topbar__meta"></div>
+        </div>
+      </header>
+
+      <div class="ws-body">
+        <aside class="ws-sidebar">
+          <div class="ws-sidebar__group">
+            <div class="ws-sidebar__label" data-i18n="sidebar.group.sources"></div>
+            <div data-sidebar-group="sources"></div>
+          </div>
+          <div class="ws-sidebar__group">
+            <div class="ws-sidebar__label" data-i18n="sidebar.group.case"></div>
+            <div data-sidebar-group="case"></div>
+          </div>
+        </aside>
+
+        <main class="ws-main">
+          <div class="pane" data-pane="frame"></div>
+          <div class="pane" data-pane="trace"></div>
+          <div class="pane" data-pane="chat"></div>
+          <div class="pane" data-pane="atlas"></div>
+          <div class="pane" data-pane="archive"></div>
+          <div class="pane" data-pane="evidence"></div>
+          <div class="pane" data-pane="report"></div>
+          <div class="pane" data-pane="analyst"></div>
+          <div class="pane" data-pane="notes"></div>
+        </main>
+      </div>
+    </section>
+
+    <div class="notif-stack" role="status" aria-live="polite"></div>
+    <div class="reset-hint">
+      <button data-action="reset" data-i18n="reset.button"></button>
+    </div>
+
+    <!-- MOBILE DENY (V2 §13.1 + §18.5). Shown by CSS media query at <768px;
+         hides welcome + workstation. Pure CSS gate — no JS state. -->
+    <section class="ws-deny" role="dialog" aria-labelledby="ws-deny-title">
+      <div class="ws-deny__sheet">
+        <div class="ws-deny__eyebrow" data-i18n="deny.eyebrow"></div>
+        <h1 id="ws-deny-title" class="ws-deny__title" data-i18n="deny.title"></h1>
+        <p class="ws-deny__body" data-i18n="deny.body"></p>
+        <p class="ws-deny__note" data-i18n="deny.note"></p>
+        <a class="ws-deny__cta" href="https://yehorselin.com" target="_top" rel="noopener"
+           data-i18n="deny.cta"></a>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="ui/workstation.js"></script>
+</body>
+</html>

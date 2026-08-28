@@ -1,0 +1,706 @@
+{
+  "id": "case-001",
+  "slug": "stolen-face",
+  "title": "STOLEN FACE",
+  "client_brief_en": "I found an Instagram profile using my photos. I want to understand who is behind it.",
+  "client_brief_uk": "Я натрапив на профіль в Instagram, який використовує мої фотографії. Хочу зрозуміти, хто за ним стоїть.",
+
+  "unlock_rules": {
+    "trace":   { "requires_evidence": ["profile_001"] },
+    "chat":    { "requires_evidence": ["candidate_001"] },
+    "atlas":   { "requires_evidence": ["candidate_001"] },
+    "archive": { "requires_evidence": ["candidate_001"] },
+    "notes":   { "requires_evidence": ["profile_001"] },
+    "analyst": { "requires_submission": true }
+  },
+
+  "final_answer": {
+    "question_en": "Who is behind the account?",
+    "question_uk": "Хто стоїть за акаунтом?",
+    "attribution_expected": ["Daniel Cole", "Даніель Коул", "Деніел Коул"],
+    "attribution_match": "substring_ci_any",
+    "supporting_evidence_required": [
+      "chat_profile_alex_miller_handle",
+      "chat_profile_dcole_shoots"
+    ],
+    "supporting_evidence_min_count": 2
+  },
+
+  "report_criteria": [
+    {
+      "id": "identity_fake",
+      "section": "IDENTITY",
+      "label_en":         "Fake profile identified",
+      "label_uk":         "Фейковий профіль ідентифіковано",
+      "missing_label_en": "NO SUSPECT PROFILE IDENTIFIED",
+      "missing_label_uk": "ПРОФІЛЬ ПІД ПІДОЗРОЮ НЕ ІДЕНТИФІКОВАНО",
+      "requires_any": ["profile_001"]
+    },
+    {
+      "id": "identity_source",
+      "section": "IDENTITY",
+      "label_en":         "Original photo source identified",
+      "label_uk":         "Джерело оригіналів фото встановлено",
+      "missing_label_en": "SOURCE OF THE IMAGES NOT IDENTIFIED",
+      "missing_label_uk": "ДЖЕРЕЛО ЗОБРАЖЕНЬ НЕ ВСТАНОВЛЕНО",
+      "requires_any": ["candidate_001"]
+    },
+    {
+      "id": "content_overlap",
+      "section": "CONTENT",
+      "label_en":         "Content overlap established",
+      "label_uk":         "Збіг контенту встановлено",
+      "missing_label_en": "OVERLAP BETWEEN FAKE AND SOURCE NOT ESTABLISHED",
+      "missing_label_uk": "ЗБІГ МІЖ ФЕЙКОМ ТА ДЖЕРЕЛОМ НЕ ВСТАНОВЛЕНО",
+      "requires_all": ["profile_001", "candidate_001"]
+    },
+    {
+      "id": "temporal_fake",
+      "section": "TEMPORAL PROOF",
+      "label_en":         "Fake profile captured",
+      "label_uk":         "Фейковий профіль зафіксовано в архіві",
+      "missing_label_en": "NO ARCHIVE CAPTURE OF THE FAKE PROFILE",
+      "missing_label_uk": "НЕМАЄ АРХІВНОГО ЗНІМКА ФЕЙКОВОГО ПРОФІЛЮ",
+      "requires_any": ["archive_snapshot_alex_miller_2024_03"]
+    },
+    {
+      "id": "temporal_source",
+      "section": "TEMPORAL PROOF",
+      "label_en":         "Source ownership predates fake",
+      "label_uk":         "Джерело з'явилося раніше за фейк",
+      "missing_label_en": "INDEPENDENT ARCHIVE SNAPSHOT MISSING",
+      "missing_label_uk": "НЕЗАЛЕЖНОГО АРХІВНОГО ЗНІМКА НЕМАЄ",
+      "requires_any": [
+        "archive_snapshot_alex_miller_uk_2023_05",
+        "archive_snapshot_alex_miller_uk_2019_02"
+      ]
+    },
+    {
+      "id": "operator_lead",
+      "section": "OPERATOR",
+      "label_en":         "Handle linked to real identity",
+      "label_uk":         "Хендл прив'язано до реального імені",
+      "missing_label_en": "NO OPERATOR IDENTITY LEAD",
+      "missing_label_uk": "НЕМАЄ ЗАЧІПКИ ПРО ОПЕРАТОРА",
+      "requires_any": ["chat_profile_alex_miller_handle"]
+    },
+    {
+      "id": "operator_verified",
+      "section": "OPERATOR",
+      "label_en":         "Real identity independently corroborated",
+      "label_uk":         "Реальну особу незалежно підтверджено",
+      "missing_label_en": "UNVERIFIED",
+      "missing_label_uk": "НЕ ПІДТВЕРДЖЕНО",
+      "requires_any": ["chat_profile_dcole_shoots"]
+    },
+    {
+      "id": "corroboration_operator_location",
+      "section": "CORROBORATION",
+      "type": "optional",
+      "label_en": "Operator's location claim independently checked",
+      "label_uk": "Твердження оператора про локацію незалежно перевірено",
+      "requires_any": ["atlas_claim_dcole_prague"]
+    },
+    {
+      "id": "corroboration_source_presence",
+      "section": "CORROBORATION",
+      "type": "optional",
+      "label_en": "Source's professional presence independently verified",
+      "label_uk": "Професійну присутність джерела незалежно підтверджено",
+      "requires_any": ["atlas_claim_alex_miller_uk_manchester"]
+    }
+  ],
+
+  "linked_pairs": [
+    { "reason": "content_overlap",   "from": "profile_001#p1",                       "to": "candidate_001#p1"           },
+    { "reason": "temporal_fake",     "from": "archive_snapshot_alex_miller_2024_03", "to": "candidate_001#p1"           },
+    { "reason": "operator_lead",     "from": "chat_profile_dcole_shoots",            "to": "candidate_001"              },
+    { "reason": "operator_verified", "from": "atlas_claim_dcole_prague",             "to": "chat_profile_dcole_shoots"  }
+  ],
+
+  "artifacts": {
+    "profile_001": {
+      "id": "profile_001",
+      "type": "frame_profile",
+      "tool": "frame",
+      "url": "frame.social/alex_miller",
+      "username": "alex_miller",
+      "display_name": "Alex Miller",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "bio_en": "Traveler. Coffee. Slow mornings.\nPrague based ☕",
+      "bio_uk": "Мандрівник. Кава. Повільні ранки.\nЖиву у Празі ☕",
+      "location_en": "Prague, CZ",
+      "location_uk": "Прага, Чехія",
+      "joined": "March 2024",
+      "stats": { "posts": 24, "followers": 1847, "following": 312 },
+      "posts": [
+        { "id": "p1", "cover": "assets/post-01.jpg", "video_still": "assets/video_still_post_01.jpg", "video": "assets/morning-in-prague.mp4", "video_webm": "assets/morning-in-prague.webm", "video_duration_ms": 11500, "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
+        { "id": "p2", "cover": "assets/post-02.jpg", "caption_en": "Old town light.",       "caption_uk": "Світло старого міста.", "date": "5 days ago", "likes": 98 },
+        { "id": "p3", "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.",   "caption_uk": "Довга прогулянка. Без плану.", "date": "1 week ago", "likes": 211 }
+      ]
+    },
+
+    "trace_search_alex_miller": {
+      "id": "trace_search_alex_miller",
+      "type": "trace_search",
+      "tool": "trace",
+      "query": "alex_miller",
+      "engine_note": "TRACE · username search across public social platforms",
+      "results": [
+        {
+          "id": "candidate_001",
+          "url": "frame.social/alex.miller.uk",
+          "username": "alex.miller.uk",
+          "display_name": "Alex Miller",
+          "avatar": "assets/daniel-cole-portrait.jpg",
+          "snippet_en": "Photographer · Manchester. Landscape / portrait. Available for hire.",
+          "snippet_uk": "Фотограф · Манчестер. Пейзаж / портрет. Приймає замовлення.",
+          "signal_en": "Same name. Long-standing account. Photographer.",
+          "signal_uk": "Те саме ім'я. Давній акаунт. Фотограф."
+        },
+        {
+          "id": "candidate_002",
+          "url": "frame.social/alexm_travel",
+          "username": "alexm_travel",
+          "display_name": "Alex M.",
+          "avatar": "assets/candidate-002-portrait.jpg",
+          "snippet_en": "Traveler ☕ Coffee & long trains. Berlin-based.",
+          "snippet_uk": "Мандрівниця ☕ Кава та довгі потяги. Живе в Берліні.",
+          "signal_en": "Similar bio. Different first name spelling.",
+          "signal_uk": "Схоже біо. Інше написання імені."
+        },
+        {
+          "id": "candidate_003",
+          "url": "frame.social/alex_miller_music",
+          "username": "alex_miller_music",
+          "display_name": "Alex Miller",
+          "avatar": "assets/candidate-003-portrait.jpg",
+          "snippet_en": "Guitar / synths / voice. New EP out this fall.",
+          "snippet_uk": "Гітара / синтезатори / вокал. Новий EP восени.",
+          "signal_en": "Same name. Unrelated context.",
+          "signal_uk": "Те саме ім'я. Непов'язаний контекст."
+        }
+      ]
+    },
+
+    "candidate_001": {
+      "id": "candidate_001",
+      "type": "frame_profile",
+      "tool": "trace",
+      "source": "trace_search_alex_miller",
+      "url": "frame.social/alex.miller.uk",
+      "username": "alex.miller.uk",
+      "display_name": "Alex Miller",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "bio_en": "Photographer. Manchester, UK.\nLandscape · portrait · slow travel.\nAvailable for hire → DM.",
+      "bio_uk": "Фотограф. Манчестер, Велика Британія.\nПейзаж · портрет · повільні подорожі.\nПриймаю замовлення → в директ.",
+      "location_en": "Manchester, UK",
+      "location_uk": "Манчестер, Велика Британія",
+      "joined": "August 2018",
+      "stats": { "posts": 342, "followers": 12480, "following": 187 },
+      "posts": [
+        { "id": "c1p1", "cover": "assets/post-01.jpg", "caption_en": "Prague, spring 2023. Reprint available.", "caption_uk": "Прага, весна 2023. Доступний передрук.", "date": "1 year ago", "likes": 1290 },
+        { "id": "c1p2", "cover": "assets/post-02.jpg", "caption_en": "Old town — early light.",                  "caption_uk": "Старе місто — раннє світло.",         "date": "1 year ago", "likes": 812 },
+        { "id": "c1p3", "cover": "assets/post-03.jpg", "caption_en": "No plan, no map. Just walking.",           "caption_uk": "Без плану, без карти. Просто йдеш.",   "date": "1 year ago", "likes": 1521 }
+      ]
+    },
+
+    "candidate_002": {
+      "id": "candidate_002",
+      "type": "frame_profile",
+      "tool": "trace",
+      "source": "trace_search_alex_miller",
+      "url": "frame.social/alexm_travel",
+      "username": "alexm_travel",
+      "display_name": "Alex M.",
+      "avatar": "assets/candidate-002-portrait.jpg",
+      "bio_en": "Traveler ☕ Coffee & long trains.\nBerlin-based. She/her.",
+      "bio_uk": "Мандрівниця ☕ Кава та довгі потяги.\nЖиве в Берліні. She/her.",
+      "location_en": "Berlin, DE",
+      "location_uk": "Берлін, Німеччина",
+      "joined": "May 2020",
+      "stats": { "posts": 118, "followers": 4310, "following": 502 },
+      "posts": [
+        { "id": "c2p1", "cover": "assets/c2p1-berlin-market.jpg", "caption_en": "Sunday market. Kreuzberg.", "caption_uk": "Недільний ринок. Кройцберг.", "date": "3 days ago",  "likes": 78 },
+        { "id": "c2p2", "cover": "assets/c2p2-train-leipzig.jpg", "caption_en": "Train to Leipzig.",         "caption_uk": "Потяг до Лейпцига.",          "date": "2 weeks ago", "likes": 122 }
+      ]
+    },
+
+    "candidate_003": {
+      "id": "candidate_003",
+      "type": "frame_profile",
+      "tool": "trace",
+      "source": "trace_search_alex_miller",
+      "url": "frame.social/alex_miller_music",
+      "username": "alex_miller_music",
+      "display_name": "Alex Miller",
+      "avatar": "assets/candidate-003-portrait.jpg",
+      "bio_en": "Guitar / synths / voice.\nNew EP out this fall.\nBookings: hello@amiller.music",
+      "bio_uk": "Гітара / синтезатори / вокал.\nНовий EP восени.\nЗамовлення: hello@amiller.music",
+      "location_en": "Nashville, TN",
+      "location_uk": "Нашвілл, Теннессі",
+      "joined": "January 2019",
+      "stats": { "posts": 61, "followers": 2890, "following": 133 },
+      "posts": [
+        { "id": "c3p1", "cover": "assets/c3p1-studio-night.jpg",    "caption_en": "Studio night.",       "caption_uk": "Ніч у студії.",       "date": "1 week ago",  "likes": 214 },
+        { "id": "c3p2", "cover": "assets/c3p2-rehearsal-take4.jpg", "caption_en": "Rehearsal, take 4.",  "caption_uk": "Репетиція, дубль 4.", "date": "3 weeks ago", "likes": 98 }
+      ]
+    },
+
+    "archive_search_alex_miller": {
+      "id": "archive_search_alex_miller",
+      "type": "archive_search",
+      "tool": "archive",
+      "query": "alex_miller",
+      "source_url": "frame.social/alex_miller",
+      "engine_note": "ARCHIVE · public historical snapshots. Not a live view — captures only.",
+      "snapshots": [
+        {
+          "id": "archive_snapshot_alex_miller_2024_03",
+          "captured_at": "19 MAR 2024",
+          "captured_at_iso": "2024-03-19T22:07:00Z",
+          "note_en": "Populated profile. Three posts visible.",
+          "note_uk": "Заповнений профіль. Видно три пости."
+        }
+      ]
+    },
+
+    "archive_search_alex_miller_uk": {
+      "id": "archive_search_alex_miller_uk",
+      "type": "archive_search",
+      "tool": "archive",
+      "query": "alex.miller.uk",
+      "source_url": "frame.social/alex.miller.uk",
+      "engine_note": "ARCHIVE · public historical snapshots. Not a live view — captures only.",
+      "snapshots": [
+        {
+          "id": "archive_snapshot_alex_miller_uk_2023_05",
+          "captured_at": "14 MAY 2023",
+          "captured_at_iso": "2023-05-14T09:41:00Z",
+          "note_en": "Post containing the Prague photograph is present in this snapshot.",
+          "note_uk": "На цьому знімку вже присутній пост із празькою фотографією."
+        },
+        {
+          "id": "archive_snapshot_alex_miller_uk_2019_02",
+          "captured_at": "08 NOV 2019",
+          "captured_at_iso": "2019-11-08T03:12:00Z",
+          "note_en": "Account already exists at this capture. Portfolio-style bio, no posts yet.",
+          "note_uk": "На момент знімка акаунт уже існує. Біо у стилі портфоліо, постів ще немає."
+        }
+      ]
+    },
+
+    "archive_snapshot_alex_miller_2024_03": {
+      "id": "archive_snapshot_alex_miller_2024_03",
+      "type": "archive_snapshot",
+      "tool": "archive",
+      "source": "archive_search_alex_miller",
+      "source_url": "frame.social/alex_miller",
+      "captured_at": "19 MAR 2024",
+      "captured_at_iso": "2024-03-19T22:07:00Z",
+      "kind": "populated_profile",
+      "kind_label_en": "ARCHIVED PROFILE — POPULATED",
+      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ — ЗАПОВНЕНИЙ",
+      "note_en": "Profile is fully populated at this capture.\nThree posts visible — same source material as archived under a different handle before.",
+      "note_uk": "На момент знімка профіль повністю заповнений.\nВидно три пости — той самий вихідний матеріал, що раніше зафіксовано під іншим хендлом.",
+      "profile_snapshot": {
+        "username": "alex_miller",
+        "display_name": "Alex Miller",
+        "avatar": "assets/daniel-cole-portrait.jpg",
+        "bio_en": "Traveler. Coffee. Slow mornings.\nPrague based",
+        "bio_uk": "Мандрівник. Кава. Повільні ранки.\nЖиву у Празі",
+        "location_en": "Prague, CZ",
+        "location_uk": "Прага, Чехія",
+        "joined_en": "Joined March 2024",
+        "joined_uk": "Приєднався у березні 2024",
+        "posts_count": 24,
+        "followers_count": 1817,
+        "following_count": 312,
+        "posts": [
+          { "cover": "assets/post-01.jpg", "caption_en": "Morning in Prague", "caption_uk": "Ранок у Празі" },
+          { "cover": "assets/post-02.jpg", "caption_en": "Old town light.",   "caption_uk": "Світло старого міста." },
+          { "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.","caption_uk": "Довга прогулянка. Без плану." }
+        ]
+      }
+    },
+
+    "archive_snapshot_alex_miller_uk_2019_02": {
+      "id": "archive_snapshot_alex_miller_uk_2019_02",
+      "type": "archive_snapshot",
+      "tool": "archive",
+      "source": "archive_search_alex_miller_uk",
+      "source_url": "frame.social/alex.miller.uk",
+      "captured_at": "08 NOV 2019",
+      "captured_at_iso": "2019-11-08T03:12:00Z",
+      "kind": "account_exists_empty",
+      "kind_label_en": "ARCHIVED PROFILE — EMPTY",
+      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ — ПОРОЖНІЙ",
+      "note_en": "Account already exists at this capture.\nPortfolio-style bio, no posts yet.",
+      "note_uk": "На момент знімка акаунт уже існує.\nБіо у стилі портфоліо, постів ще немає.",
+      "profile_snapshot": {
+        "username": "alex.miller.uk",
+        "display_name": "Alex Miller",
+        "avatar": "assets/daniel-cole-portrait.jpg",
+        "bio_en": "Photographer. Manchester, UK.\nLandscape · portrait · slow travel.",
+        "bio_uk": "Фотограф. Манчестер, Велика Британія.\nПейзаж · портрет · повільні подорожі.",
+        "location_en": "Manchester, UK",
+        "location_uk": "Манчестер, Велика Британія",
+        "joined_en": "Joined August 2018",
+        "joined_uk": "Приєднався у серпні 2018",
+        "posts_count": 0,
+        "followers_count": 118,
+        "following_count": 47,
+        "posts": []
+      }
+    },
+
+    "archive_snapshot_alex_miller_uk_2023_05": {
+      "id": "archive_snapshot_alex_miller_uk_2023_05",
+      "type": "archive_snapshot",
+      "tool": "archive",
+      "source": "archive_search_alex_miller_uk",
+      "source_url": "frame.social/alex.miller.uk",
+      "captured_at": "14 MAY 2023",
+      "captured_at_iso": "2023-05-14T09:41:00Z",
+      "kind": "archived_post",
+      "kind_label_en": "ARCHIVED PROFILE — INTERMEDIATE",
+      "kind_label_uk": "АРХІВНИЙ ПРОФІЛЬ — ПРОМІЖНИЙ",
+      "note_en": "Post containing the Prague photograph is present in this snapshot.",
+      "note_uk": "На цьому знімку вже присутній пост із празькою фотографією.",
+      "profile_snapshot": {
+        "username": "alex.miller.uk",
+        "display_name": "Alex Miller",
+        "avatar": "assets/daniel-cole-portrait.jpg",
+        "bio_en": "Photographer. Manchester, UK.\nLandscape · portrait · slow travel.\nAvailable for hire → DM.",
+        "bio_uk": "Фотограф. Манчестер, Велика Британія.\nПейзаж · портрет · повільні подорожі.\nПриймаю замовлення → в директ.",
+        "location_en": "Manchester, UK",
+        "location_uk": "Манчестер, Велика Британія",
+        "joined_en": "Joined August 2018",
+        "joined_uk": "Приєднався у серпні 2018",
+        "posts_count": 214,
+        "followers_count": 8340,
+        "following_count": 176,
+        "posts": [
+          { "cover": "assets/post-01.jpg", "caption_en": "Prague, spring 2023. Reprint available.", "caption_uk": "Прага, весна 2023. Доступний передрук." },
+          { "cover": "assets/post-02.jpg", "caption_en": "Old town — early light.",                  "caption_uk": "Старе місто — раннє світло." }
+        ]
+      }
+    },
+
+    "chat_search_alex_miller": {
+      "id": "chat_search_alex_miller",
+      "type": "chat_search",
+      "tool": "chat",
+      "query": "alex_miller",
+      "engine_note": "CHAT · public handle lookup",
+      "results": [
+        {
+          "id": "chat_profile_alex_miller_handle",
+          "handle": "alex_miller",
+          "display_name": "Daniel Cole",
+          "avatar": "assets/daniel-cole-portrait.jpg",
+          "snippet_en": "Prague · new account · handle joined recently",
+          "snippet_uk": "Прага · новий акаунт · хендл зареєстровано нещодавно",
+          "joined": "Feb 2024"
+        }
+      ]
+    },
+
+    "chat_search_daniel_cole": {
+      "id": "chat_search_daniel_cole",
+      "type": "chat_search",
+      "tool": "chat",
+      "query": "daniel cole",
+      "engine_note": "CHAT · public handle lookup",
+      "results": [
+        {
+          "id": "chat_profile_dcole_shoots",
+          "handle": "dcole_shoots",
+          "display_name": "Daniel Cole",
+          "avatar": "assets/daniel-cole-portrait.jpg",
+          "snippet_en": "Freelance photographer · Prague · studio work",
+          "snippet_uk": "Фрилансер-фотограф · Прага · студійна зйомка",
+          "joined": "2019"
+        }
+      ]
+    },
+
+    "chat_profile_alex_miller_handle": {
+      "id": "chat_profile_alex_miller_handle",
+      "type": "chat_profile",
+      "tool": "chat",
+      "source": "chat_search_alex_miller",
+      "url": "chat.im/@alex_miller",
+      "handle": "alex_miller",
+      "display_name": "Daniel Cole",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "bio_en": "",
+      "bio_uk": "",
+      "location_en": "",
+      "location_uk": "",
+      "joined": "Feb 2024",
+      "last_seen_iso": "2024-03-19T22:07:00Z",
+      "signal_note": "Handle registered under a different display name."
+    },
+
+    "chat_profile_dcole_shoots": {
+      "id": "chat_profile_dcole_shoots",
+      "type": "chat_profile",
+      "tool": "chat",
+      "source": "chat_search_daniel_cole",
+      "url": "chat.im/@dcole_shoots",
+      "handle": "dcole_shoots",
+      "display_name": "Daniel Cole",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "bio_en": "Freelance photographer. Studio + location work.",
+      "bio_uk": "Фрилансер-фотограф. Студійна та виїзна зйомка.",
+      "location_en": "Prague, CZ",
+      "location_uk": "Прага, Чехія",
+      "joined": "Jan 2019",
+      "last_seen_iso": "2024-03-18T21:14:00Z",
+      "signal_note": "Long-standing account. Prague-based photographer."
+    },
+
+    "atlas_search_prague": {
+      "id": "atlas_search_prague",
+      "type": "atlas_search",
+      "tool": "atlas",
+      "query": "Prague",
+      "engine_note": "ATLAS · location & professional record lookup",
+      "results": [
+        {
+          "id": "atlas_claim_dcole_prague",
+          "subject": "@dcole_shoots",
+          "status": "CLAIM ONLY",
+          "line_en": "No independent record found",
+          "line_uk": "Незалежних записів не знайдено"
+        },
+        {
+          "id": "atlas_claim_alex_miller_uk_prague",
+          "subject": "@alex.miller.uk",
+          "status": "VISITED · DATED POST",
+          "line_en": "Not a professional-location verification",
+          "line_uk": "Це не є професійним підтвердженням локації"
+        }
+      ]
+    },
+
+    "atlas_search_manchester": {
+      "id": "atlas_search_manchester",
+      "type": "atlas_search",
+      "tool": "atlas",
+      "query": "Manchester",
+      "engine_note": "ATLAS · location & professional record lookup",
+      "results": [
+        {
+          "id": "atlas_claim_alex_miller_uk_manchester",
+          "subject": "@alex.miller.uk",
+          "status": "VERIFIED",
+          "line_en": "Manchester Photographer Guild · active since 2019",
+          "line_uk": "Гільдія фотографів Манчестера · активний член з 2019"
+        }
+      ]
+    },
+
+    "atlas_search_kaffe_nord": {
+      "id": "atlas_search_kaffe_nord",
+      "type": "atlas_search",
+      "tool": "atlas",
+      "query": "Kaffe Nord",
+      "triggers": ["kaffe nord", "kaffe", "nord"],
+      "engine_note": "ATLAS · venue & location record lookup",
+      "results": [
+        {
+          "id": "atlas_claim_dcole_prague",
+          "subject": "@dcole_shoots",
+          "status": "VENUE MATCH · PRAGUE",
+          "line_en": "Kaffe Nord — Old Town, Prague · referenced in subject's stated area",
+          "line_uk": "Kaffe Nord — Старе місто, Прага · згадується в заявленій зоні суб'єкта"
+        }
+      ]
+    },
+
+    "atlas_claim_dcole_prague": {
+      "id": "atlas_claim_dcole_prague",
+      "type": "atlas_location_claim",
+      "tool": "atlas",
+      "source": "atlas_search_prague",
+      "subject": "@dcole_shoots",
+      "subject_name_en": "Daniel Cole",
+      "subject_name_uk": "Деніел Коул",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "location_claimed_en": "Prague, Czech Republic",
+      "location_claimed_uk": "Прага, Чехія",
+      "status": "CLAIM ONLY",
+      "map_source": "assets/map-prague-old-town.png",
+      "map_pin": { "x": 0.353, "y": 0.6375 },
+      "inset": "assets/kaffe-nord-facade.jpg",
+      "inset_caption_en": "Kaffe Nord",
+      "inset_caption_uk": "Kaffe Nord",
+      "records_searched": [
+        { "name_en": "Business registry",   "name_uk": "Реєстр підприємств",     "result_en": "no match", "result_uk": "збігів немає" },
+        { "name_en": "Photographer guilds", "name_uk": "Гільдії фотографів",     "result_en": "no match", "result_uk": "збігів немає" },
+        { "name_en": "Studio directories",  "name_uk": "Каталоги студій",        "result_en": "no match", "result_uk": "збігів немає" },
+        { "name_en": "Public venue index",  "name_uk": "Реєстр публічних місць", "result_en": "no match", "result_uk": "збігів немає" }
+      ],
+      "note_en": "Subject asserts a Prague-based professional presence,\nbut no independent record corroborates this at this time.\n\nAbsence of a record is not proof of a false claim.",
+      "note_uk": "Суб'єкт заявляє про професійну присутність у Празі,\nале жоден незалежний запис наразі цього не підтверджує.\n\nВідсутність запису — це не доказ хибності твердження."
+    },
+
+    "atlas_claim_alex_miller_uk_prague": {
+      "id": "atlas_claim_alex_miller_uk_prague",
+      "type": "atlas_location_claim",
+      "tool": "atlas",
+      "source": "atlas_search_prague",
+      "subject": "@alex.miller.uk",
+      "subject_name_en": "Alex Miller",
+      "subject_name_uk": "Алекс Міллер",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "location_claimed_en": "Prague, CZ (referenced in one dated post)",
+      "location_claimed_uk": "Прага, Чехія (згадана в одному датованому пості)",
+      "status": "VISITED · DATED POST",
+      "records_searched": [
+        { "name_en": "Business registry",   "name_uk": "Реєстр підприємств",  "result_en": "no match",                            "result_uk": "збігів немає" },
+        { "name_en": "Photographer guilds", "name_uk": "Гільдії фотографів",  "result_en": "no match (subject registered elsewhere)", "result_uk": "збігів немає (суб'єкт зареєстрований в іншому місті)" },
+        { "name_en": "Studio directories",  "name_uk": "Каталоги студій",     "result_en": "no match",                            "result_uk": "збігів немає" }
+      ],
+      "note_en": "Subject visited or referenced Prague in a dated post.\nThis is presence in a location, not a professional-location verification.",
+      "note_uk": "Суб'єкт відвідував або згадував Прагу в датованому пості.\nЦе присутність у локації, а не професійне підтвердження місця."
+    },
+
+    "atlas_claim_alex_miller_uk_manchester": {
+      "id": "atlas_claim_alex_miller_uk_manchester",
+      "type": "atlas_location_claim",
+      "tool": "atlas",
+      "source": "atlas_search_manchester",
+      "subject": "@alex.miller.uk",
+      "subject_name_en": "Alex Miller",
+      "subject_name_uk": "Алекс Міллер",
+      "avatar": "assets/daniel-cole-portrait.jpg",
+      "location_claimed_en": "Manchester, United Kingdom",
+      "location_claimed_uk": "Манчестер, Велика Британія",
+      "status": "VERIFIED",
+      "records_searched": [
+        { "name_en": "Manchester Photographer Guild", "name_uk": "Гільдія фотографів Манчестера", "result_en": "active member since 2019",       "result_uk": "активний член з 2019 року" },
+        { "name_en": "Business registry",             "name_uk": "Реєстр підприємств",             "result_en": "listed as sole trader",          "result_uk": "зареєстрований як ФОП" },
+        { "name_en": "Studio directories",            "name_uk": "Каталоги студій",                "result_en": "one listing at cited address",   "result_uk": "один запис за вказаною адресою" }
+      ],
+      "note_en": "Subject's professional presence in the stated location is independently corroborated by more than one record.",
+      "note_uk": "Професійну присутність суб'єкта у заявленій локації незалежно підтверджують кілька записів."
+    }
+  },
+
+  "analyst_mode": {
+    "intro_en": "You filed your report. Below is what your investigation actually did — one OSINT concept at a time. This is not a scorecard. It is a walk-through of the techniques this case relied on and how each one showed up in your evidence.",
+    "intro_uk": "Ти подав звіт. Нижче — що саме зробило твоє розслідування, по одній OSINT-концепції за раз. Це не оцінка. Це розбір технік, на які спиралася ця справа, і того, як кожна з них проявилася в твоїх доказах.",
+    "concepts": [
+      {
+        "id": "attribution_ne_identification",
+        "title_en": "Attribution ≠ Identification",
+        "title_uk": "Атрибуція ≠ Ідентифікація",
+        "why_it_mattered_en": "The photograph is of a real person. That doesn't make the real person the operator of the account. Attribution is about who controls a profile. Identification is about who is in an image. Different questions, different evidence, different sources.",
+        "why_it_mattered_uk": "На фотографії — реальна людина. Це ще не означає, що саме вона керує акаунтом. Атрибуція — про те, хто контролює профіль. Ідентифікація — про те, хто зображений. Різні питання, різні докази, різні джерела.",
+        "player_observations": [
+          {
+            "when": { "requires_all": ["profile_001", "candidate_001"] },
+            "text_en": "You examined the account under investigation and separately examined a real person whose photographs matched the account's content.",
+            "text_uk": "Ти оглянув акаунт під розслідуванням і окремо — реальну людину, чиї фотографії збігаються з контентом акаунту."
+          },
+          {
+            "when": { "requires_all": ["candidate_001", "chat_profile_dcole_shoots"] },
+            "text_en": "Your evidence contains two distinct individuals: the person whose photographs the account uses, and a separate person tied to the operator handle.",
+            "text_uk": "Твої докази містять двох різних людей: того, чиї фотографії використовує акаунт, і окрему особу, пов'язану з хендлом оператора."
+          }
+        ],
+        "real_world_reference_en": "Attribution / image research — reverse-image services such as Google Lens or Yandex Images can surface possible sources for a photograph. A face match remains a lead about who is in the image, not proof of who controls the account.",
+        "real_world_reference_uk": "Атрибуція / робота зі зображеннями — сервіси зворотного пошуку зображень на кшталт Google Lens чи Yandex Images можуть показати можливі джерела фотографії. Збіг обличчя — це зачіпка про те, хто зображений, а не доказ того, хто керує акаунтом."
+      },
+      {
+        "id": "content_overlap",
+        "title_en": "Content overlap as evidence",
+        "title_uk": "Збіг контенту як доказ",
+        "why_it_mattered_en": "When the same images and near-identical captions appear on two different accounts, the overlap itself is data. The direction of the copy is decided by other evidence — timing, ownership, provenance — not by the overlap alone.",
+        "why_it_mattered_uk": "Коли одні й ті самі зображення та майже ідентичні підписи з'являються на двох різних акаунтах, сам факт збігу — це вже дані. Напрямок копіювання визначається іншими доказами — часом, правом власності, походженням — а не одним лише збігом.",
+        "player_observations": [
+          {
+            "when": { "requires_all": ["profile_001", "candidate_001"] },
+            "text_en": "You collected both accounts that carry the same imagery, keeping them alongside each other in your evidence.",
+            "text_uk": "Ти зібрав обидва акаунти з однаковими зображеннями, тримаючи їх поряд у своїх доказах."
+          }
+        ],
+        "real_world_reference_en": "Content forensics — visual comparison, EXIF inspection and reverse-image lookups are the standard tools for establishing that two posts share source material.",
+        "real_world_reference_uk": "Контент-форензика — візуальне порівняння, огляд EXIF та зворотний пошук зображень є стандартними інструментами, щоб встановити, що два пости мають спільний вихідний матеріал."
+      },
+      {
+        "id": "temporal_precedence",
+        "title_en": "Temporal precedence",
+        "title_uk": "Часова пріоритетність",
+        "why_it_mattered_en": "If a photograph is documented in a public archive at date A, and another account carrying that same photograph is documented no earlier than date B, and A predates B, then the later account cannot be the origin of the material. Temporal precedence turns a plausible story into a supported one.",
+        "why_it_mattered_uk": "Якщо фотографія задокументована в публічному архіві на дату А, а інший акаунт із тією ж фотографією задокументовано не раніше дати B, і А передує B, то пізніший акаунт не може бути джерелом матеріалу. Часова пріоритетність перетворює правдоподібну історію на підтверджену.",
+        "player_observations": [
+          {
+            "when": { "requires_any": ["archive_snapshot_alex_miller_2024_03"] },
+            "text_en": "You pulled the earliest indexed capture available for the account under investigation.",
+            "text_uk": "Ти взяв найраніший доступний архівний знімок для акаунту під розслідуванням."
+          },
+          {
+            "when": { "requires_any": ["archive_snapshot_alex_miller_uk_2023_05", "archive_snapshot_alex_miller_uk_2019_02"] },
+            "text_en": "You pulled an archived capture that shows the source material existed on the other account before that.",
+            "text_uk": "Ти взяв архівний знімок, який показує, що вихідний матеріал існував на іншому акаунті ще до того."
+          }
+        ],
+        "real_world_reference_en": "Temporal proof — The Internet Archive's Wayback Machine, archive.today and site-specific archives can establish that a page or a post existed at a specific point in time.",
+        "real_world_reference_uk": "Часовий доказ — Wayback Machine від Internet Archive, archive.today та архіви окремих сайтів дають змогу встановити, що сторінка чи пост існували у конкретний момент часу."
+      },
+      {
+        "id": "handle_to_identity",
+        "title_en": "Handle-to-identity leak",
+        "title_uk": "Витік реального імені через хендл",
+        "why_it_mattered_en": "The same handle can be registered on multiple platforms under different display metadata. When a public-metadata lookup on one platform returns a different real name than the persona presented on another, the mismatch is a lead about the operator — not a conclusion, but a lead worth following.",
+        "why_it_mattered_uk": "Один і той самий хендл може бути зареєстрований на різних платформах із різними публічними метаданими. Коли пошук за публічними метаданими на одній платформі повертає інше реальне ім'я, ніж персона, представлена на іншій, невідповідність — це зачіпка про оператора: не висновок, але зачіпка, яку варто розкрутити.",
+        "player_observations": [
+          {
+            "when": { "requires_any": ["chat_profile_alex_miller_handle"] },
+            "text_en": "You looked up the account's handle on a separate platform and captured the display name that came back with it.",
+            "text_uk": "Ти шукав хендл акаунту на окремій платформі та зафіксував відображуване ім'я, яке з ним прийшло."
+          },
+          {
+            "when": { "requires_any": ["chat_profile_dcole_shoots"] },
+            "text_en": "You then searched that display name and captured a second, long-standing handle attached to the same name.",
+            "text_uk": "Потім ти шукав це відображуване ім'я та зафіксував другий, давній хендл, прив'язаний до того самого імені."
+          }
+        ],
+        "real_world_reference_en": "Username discovery — tools such as Maigret and Sherlock enumerate reused usernames across public services. A shared handle is a lead; a real name binding two handles is stronger.",
+        "real_world_reference_uk": "Пошук нікнеймів — інструменти на кшталт Maigret і Sherlock перебирають використання одного нікнейма на різних публічних сервісах. Спільний хендл — це зачіпка; спільне реальне ім'я, що зв'язує два хендли, — сильніший сигнал."
+      },
+      {
+        "id": "independent_corroboration",
+        "title_en": "Independent corroboration",
+        "title_uk": "Незалежне підтвердження",
+        "why_it_mattered_en": "A subject's own bio is a claim. A record in an unrelated public database — a guild registry, a business directory, a professional certification — is corroboration. The distinction is about the source of the assertion, not about how confident the assertion sounds.",
+        "why_it_mattered_uk": "Власне біо суб'єкта — це твердження. Запис у не пов'язаній публічній базі — реєстрі гільдії, діловому каталозі, професійному сертифікаті — це підтвердження. Різниця в тому, хто робить заяву, а не в тому, наскільки впевнено вона звучить.",
+        "player_observations": [
+          {
+            "when": { "requires_any": ["atlas_claim_alex_miller_uk_manchester"] },
+            "text_en": "You obtained a public-record match that corroborates one subject's stated professional location through more than one independent register.",
+            "text_uk": "Ти отримав збіг у публічних записах, який підтверджує заявлену професійну локацію одного суб'єкта одразу в кількох незалежних реєстрах."
+          },
+          {
+            "when": { "requires_any": ["atlas_claim_dcole_prague"] },
+            "text_en": "You checked another subject's stated location against public records and captured the result even though nothing corroborated the claim.",
+            "text_uk": "Ти звірив заявлену локацію іншого суб'єкта з публічними записами й зафіксував результат, навіть попри те, що жоден запис не підтвердив це твердження."
+          }
+        ],
+        "real_world_reference_en": "Independent corroboration — public registries, professional guilds, licensing bodies and organizational directories can independently support (or fail to support) a self-claimed presence. Absence of a record is not proof of a false claim, only absence of corroboration.",
+        "real_world_reference_uk": "Незалежне підтвердження — публічні реєстри, професійні гільдії, ліцензійні органи та галузеві каталоги можуть незалежно підтвердити (або не підтвердити) заявлену присутність. Відсутність запису — не доказ хибності твердження, а лише відсутність підтвердження."
+      }
+    ],
+    "hook": {
+      "text_en": "This case was inspired by real OSINT investigations into identity fabrication on public platforms.",
+      "text_uk": "Цей кейс натхненний реальними OSINT-розслідуваннями фабрикації цифрових особистостей на публічних платформах.",
+      "cta_en": "Read a real case study →",
+      "cta_uk": "Читати справжній кейс →",
+      "url": "https://yehorselin.com/cases.html?slug=instagram-teen-fake-attribution"
+    }
+  }
+}
