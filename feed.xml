@@ -1,67 +1,373 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-<channel>
-  <title>Єгор Селін — OSINT-новини</title>
-  <link>https://yehorselin.com/blog.html</link>
-  <atom:link href="https://yehorselin.com/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>Головні події сфери OSINT з України та світу. Куратор: Єгор Селін.</description>
-  <language>uk</language>
-  <lastBuildDate>Wed, 15 Jul 2026 06:08:48 +0000</lastBuildDate>
-  <image><url>https://yehorselin.com/img/yehor.jpg</url><title>Єгор Селін</title><link>https://yehorselin.com/</link></image>
-  <item>
-    <title>«Школа OSINT» на Дія.Освіта — безкоштовний освітній серіал від Мінцифри</title>
-    <link>https://yehorselin.com/blog.html?slug=shkola-osint-diia-osvita</link>
-    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=shkola-osint-diia-osvita</guid>
-    <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
-    <category>Освіта</category>
-    <source url="https://yehorselin.com">Дія.Освіта · Мінцифри</source>
-    <description>На державній платформі Дія.Освіта доступний безкоштовний освітній серіал «Школа OSINT» з 5 епізодів. Курс створено за ініціативи Міністерства цифрової трансформації. Ведучі — Дмитро Золотухін (автор OSINT Academy) та Дмитро Однокоз (розробник технічних рішень для OSINT). Після проходження курсу глядач вміє перевіряти інформацію онлайн, розпізнавати фейки, знаходити видалені сторінки в архівах та шукати інформацію про людей у соцмережах.</description>
-  </item>
-  <item>
-    <title>Molfar продовжує ідентифікувати російських військових злочинців через OSINT</title>
-    <link>https://yehorselin.com/blog.html?slug=molfar-nove-rozsliduvannia-2026</link>
-    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=molfar-nove-rozsliduvannia-2026</guid>
-    <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-    <category>Розслідування</category>
-    <source url="https://yehorselin.com">Molfar Intelligence Institute</source>
-    <enclosure url="https://yehorselin.com/img/uploads/news/molfar-nove-rozsliduvannia-2026.jpg" type="image/jpeg"/>
-    <description>Український аналітичний інститут Molfar станом на липень 2026 року публікує нові розслідування щодо російських військових злочинів в Україні. Команда використовує методології OSINT для ідентифікації осіб, локалізації підрозділів, документування епізодів насильства над цивільними та пошуку викрадених дітей. Molfar входить до глобальної мережі з 19 OSINT-команд, що документують воєнні злочини для міжнародних правових процесів.</description>
-  </item>
-  <item>
-    <title>IT Arena 2026: панель «Онлайн-безпека — як використати OSINT на користь Україні»</title>
-    <link>https://yehorselin.com/blog.html?slug=it-arena-2026-osint-panel</link>
-    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=it-arena-2026-osint-panel</guid>
-    <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-    <category>Події</category>
-    <source url="https://yehorselin.com">IT Arena · Львів</source>
-    <enclosure url="https://yehorselin.com/img/uploads/news/it-arena-2026-osint-panel.jpg" type="image/jpeg"/>
-    <description>Найбільша IT-конференція Східної Європи IT Arena у 2026 році вперше винесла OSINT в окрему панель під назвою «Онлайн-безпека: як використати OSINT на користь Україні». Учасники обговорюють роль відкритих джерел у документуванні воєнних злочинів, боротьбі з дезінформацією та захисті критичної інфраструктури. Це — сигнал того, що OSINT увійшов у мейнстрім IT-порядку денного країни.</description>
-  </item>
-  <item>
-    <title>НАДС запустив навчання OSINT для державних службовців</title>
-    <link>https://yehorselin.com/blog.html?slug=nads-osint-navchannia-derzhsluzhbovtsiv</link>
-    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=nads-osint-navchannia-derzhsluzhbovtsiv</guid>
-    <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
-    <category>Держслужба</category>
-    <source url="https://yehorselin.com">Національне агентство України з питань державної служби</source>
-    <description>Національне агентство України з питань державної служби (НАДС) офіційно рекомендувало публічним службовцям та службам управління персоналом пройти онлайн-курс «OSINT — розвідка з відкритих джерел та інформаційна безпека» на платформі Prometheus. Курс безкоштовний, з видачею сертифіката, що зараховується як підвищення кваліфікації. Це — крок до масового впровадження OSINT-компетенцій у державному секторі.</description>
-  </item>
-  <item>
-    <title>OSINT-аналітик отримав статус офіційної професії в Україні</title>
-    <link>https://yehorselin.com/blog.html?slug=osint-analitik-oficijna-profesija</link>
-    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osint-analitik-oficijna-profesija</guid>
-    <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
-    <category>Україна</category>
-    <source url="https://yehorselin.com">Національна академія Служби безпеки України</source>
-    <description>У 2026 році в Україні затверджено професійний стандарт «Аналітик інформації з відкритих джерел (OSINT-аналітик)». Стандарт розроблено Національною академією Служби безпеки України спільно з науковцями сектору безпеки і оборони та громадськими організаціями. Це офіційно закріплює OSINT-аналітику як окрему професію, відкриває шлях до сертифікації, освітніх програм та кваліфікаційних вимог.</description>
-  </item>
-  <item>
-    <title>Комітет ВРУ закликав українців вивчати OSINT-інструменти для перевірки інформації</title>
-    <link>https://yehorselin.com/blog.html?slug=komitet-vru-osint-instrumenty</link>
-    <guid isPermaLink="true">https://yehorselin.com/blog.html?slug=komitet-vru-osint-instrumenty</guid>
-    <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
-    <category>Україна</category>
-    <source url="https://yehorselin.com">Комітет ВРУ з питань цифрової трансформації</source>
-    <description>Комітет Верховної Ради України з питань цифрової трансформації опублікував заклик до громадян навчитися перевіряти інформацію та аналізувати дані за допомогою OSINT-інструментів. У повідомленні наголошується, що OSINT — це не лише інструмент розвідки, а й спосіб захисту від дезінформації, важливий у контексті інформаційної війни. Комітет рекомендує безкоштовні освітні ресурси, доступні кожному.</description>
-  </item>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>Єгор Селін — OSINT-новини</title>
+<link>https://yehorselin.com/blog.html</link>
+<atom:link href="https://yehorselin.com/feed.xml" rel="self" type="application/rss+xml"/>
+<description>OSINT-новини з України та світу</description>
+<language>uk</language>
+<lastBuildDate>Tue, 01 Sep 2026 18:29:38 +0000</lastBuildDate>
+<item>
+<title>OSINT tools drop: кінець серпня 2026</title>
+<link>https://yehorselin.com/blog.html?slug=osint-tools-drop-2026-08-27</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osint-tools-drop-2026-08-27</guid>
+<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Інструменти</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/osint-tools-drop-2026-08-27.jpg" type="image/jpeg"/>
+<description>Другий за серпень tool-drop: Birdy-Edwards 2.0 (Facebook SOCMINT з offline-режимом), WayTrace (Wayback → 43 intel-категорії), ShadowBroker (60+ live-feeds situational-awareness), HaveIBeenFlocked? (пошук у 4M+ ALPR audit logs), Tandem Browser (AI-copilot з shared session), vPhone Workstation (iOS research VMs на macOS), GHOST v2.14.2, Google Docs MCP, Neo4j Agent Memory та Track Wanted.</description>
+</item>
+<item>
+<title>Dataminr вивів First Alert Advanced і виграв $318M-контракт з Департаментом війни США</title>
+<link>https://yehorselin.com/blog.html?slug=dataminr-first-alert-advanced-dow-contract-2026-08-26</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=dataminr-first-alert-advanced-dow-contract-2026-08-26</guid>
+<pubDate>Wed, 26 Aug 2026 15:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/dataminr-first-alert-advanced-dow-contract-2026-08-26.jpg" type="image/jpeg"/>
+<description>26 серпня 2026 Dataminr оголосив реліз First Alert Advanced (agentic-AI real-time alerting з 1M+ джерел, 150 мов, 60+ вузько-затюнених LLM) і одночасно 5-річний контракт з DoW на $317.8M до 2031 року. Публічні клієнти: 18 армій (15 NATO), 100+ US-агенцій, 2/3 Fortune 50. Найбільший US-держконтракт року у сегменті real-time OSINT-alerting.</description>
+</item>
+<item>
+<title>Cellebrite за тиждень: C-TEK для військових і GA Genesis для корпорацій</title>
+<link>https://yehorselin.com/blog.html?slug=cellebrite-c-tek-genesis-enterprise-2026-08-26</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=cellebrite-c-tek-genesis-enterprise-2026-08-26</guid>
+<pubDate>Wed, 26 Aug 2026 14:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/cellebrite-c-tek-genesis-enterprise-2026-08-26.jpg" type="image/jpeg"/>
+<description>Один тиждень — два кроки в різні сегменти. 19 серпня 2026: GA Genesis for Enterprise (AI-платформа для корпоративних internal-investigations) з розширенням у UK/AU/EU. 26 серпня: launch C-TEK (Cellebrite Tactical Extraction Kit) — портативний backpack-kit для військових з Inseyets і Digital Collector. Клієнти: USMC CID, NCIS, Army Military Police School.</description>
+</item>
+<item>
+<title>Норвегія готує заборону face-matching у smart glasses у публічних місцях</title>
+<link>https://yehorselin.com/blog.html?slug=norway-smart-glasses-face-matching-2026-08-26</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=norway-smart-glasses-face-matching-2026-08-26</guid>
+<pubDate>Wed, 26 Aug 2026 12:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/norway-smart-glasses-face-matching-2026-08-26.jpg" type="image/jpeg"/>
+<description>26 серпня 2026 міністр цифровізації Норвегії Karianne Tung оголосила про створення експертної групи і публічно поставила питання про заборону функції face-matching у smart glasses у публічних місцях. Не законопроєкт, а policy statement. Прямий цільовий вектор — Meta Ray-Bans. Перший явний державний рух проти wearable-face-search — вектору, який OSINT-дослідники red-team&#x27;или з 2024.</description>
+</item>
+<item>
+<title>UK ICO опублікував аудити facial recognition поліції — 107 рекомендацій переписують правила гри</title>
+<link>https://yehorselin.com/blog.html?slug=uk-ico-police-facial-recognition-audit-2026-08-19</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=uk-ico-police-facial-recognition-audit-2026-08-19</guid>
+<pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/uk-ico-police-facial-recognition-audit-2026-08-19.jpg" type="image/jpeg"/>
+<description>19 серпня 2026 Information Commissioner&#x27;s Office опублікував результати п&#x27;яти аудитів facial recognition у шести поліцейських служб Англії та Уельсу — 107 рекомендацій, з яких 93 прийняті повністю, 14 частково. Ключова знахідка: live-використання compliance проходить на «reasonable», retrospective (пошук по PND) — з виразними прогалинами. Metropolitan Police аудит — пізніше 2026.</description>
+</item>
+<item>
+<title>Український OSINT-ринок влітку 2026 — п&#x27;ять зсувів</title>
+<link>https://yehorselin.com/blog.html?slug=ua-osint-market-summer-2026-08-18</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=ua-osint-market-summer-2026-08-18</guid>
+<pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/ua-osint-market-summer-2026-08-18.jpg" type="image/jpeg"/>
+<description>16 червня 2026 наказом Нацакадемії СБУ №83 «Аналітик інформації з відкритих джерел» став офіційною професією з кодом 2490 у ДК 003:2010. Це головна структурна зміна, але не єдина: за літо 2026 український OSINT перейшов з фази «навички» у фазу «індустрія» — з держзакупівлями UA-вендорів, інтеграцією у autonomous weapons і виходом на світові премії.</description>
+</item>
+<item>
+<title>Свіжий улов OSINT-інструментів: липень–серпень 2026</title>
+<link>https://yehorselin.com/blog.html?slug=osint-tools-drop-2026-08-18</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osint-tools-drop-2026-08-18</guid>
+<pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Інструменти</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/osint-tools-drop-2026-08-18.jpg" type="image/jpeg"/>
+<description>Огляд ~15 нових OSINT-інструментів за липень–серпень 2026: AI-агенти з MCP-інтеграцією, case-management для одиночних дослідників, свіжий SOCMINT для Telegram (у тому числі один з України), GEOINT з нейромережевою геолокацією за 5–10 секунд і оновлений Bellingcat Toolkit v2.</description>
+</item>
+<item>
+<title>Babel Street вивела Agentic Risk Intelligence — AI-агенти для OSINT-workflow — на DoDIIS і CopTech</title>
+<link>https://yehorselin.com/blog.html?slug=babel-street-agentic-risk-intelligence-2026-08-11</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=babel-street-agentic-risk-intelligence-2026-08-11</guid>
+<pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/babel-street-agentic-risk-intelligence-2026-08-11.jpg" type="image/jpeg"/>
+<description>Один із топ-3 US-OSINT-вендорів вивів на DoDIIS Worldwide (11.08) і CopTech San Diego (12-14.08) свою «Agentic Risk Intelligence» — AI-агентів, які виконують complex intel workflows з human-in-the-loop і verifiable evidence. Це операційна фаза дорожньої карти, анонсованої ще в березні 2026.</description>
+</item>
+<item>
+<title>У Вашингтоні пройшов перший US OSINT Symposium — новий вертикальний форум від OSINT Combine</title>
+<link>https://yehorselin.com/blog.html?slug=us-osint-symposium-inaugural-2026-08-05</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=us-osint-symposium-inaugural-2026-08-05</guid>
+<pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Спільнота та події</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/us-osint-symposium-inaugural-2026-08-05.jpg" type="image/jpeg"/>
+<description>OSINT Combine провів у Вашингтоні перший US OSINT Symposium — американський аналог свого австралійського форуму. Це перший галузевий захід під новим власником після мерджу з Kaseware (Riverside, листопад 2025). Welcome reception 5 серпня, день сесій — 6 серпня.</description>
+</item>
+<item>
+<title>Міноборони України впровадило YouControl як єдину платформу перевірки постачальників</title>
+<link>https://yehorselin.com/blog.html?slug=youcontrol-ministry-of-defense-partnership-2026-08-03</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=youcontrol-ministry-of-defense-partnership-2026-08-03</guid>
+<pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/youcontrol-mod-partnership-2026-08-03.jpg" type="image/jpeg"/>
+<description>МО України та YouControl підписали меморандум: замість десятків окремих реєстрів — одна аналітична платформа для перевірки постачальників (звʼязки з РФ, борги, кримінальні провадження). Меморандум охоплює навчання персоналу МО. Перший в Україні flagship-держконтракт для комерційного OSINT-вендора.</description>
+</item>
+<item>
+<title>Chris Poulter (CEO OSINT Combine) — велике інтервʼю PI Perspectives про професіоналізацію OSINT</title>
+<link>https://yehorselin.com/blog.html?slug=pi-perspectives-poulter-osint-combine-2026-08-02</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=pi-perspectives-poulter-osint-combine-2026-08-02</guid>
+<pubDate>Sun, 02 Aug 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Спільнота та події</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/pi-perspectives-poulter-osint-combine-2026-08-02.jpg" type="image/jpeg"/>
+<description>Засновник OSINT Combine і Nexus (австралійська OSINT-школа) Chris Poulter вийшов на PI-media з розширеним інтервʼю про стан індустрії, розрив між «curiosity OSINT» і «operational OSINT» та про професіоналізацію ринку. Один з небагатьох CEO OSINT-школи, хто виступає на PI-майданчиках у вікні цього літа.</description>
+</item>
+<item>
+<title>GIJN опублікував тест на «OSINT mindset» — інтерактивний бенчмарк для investigative-аналітиків</title>
+<link>https://yehorselin.com/blog.html?slug=gijn-osint-mindset-quiz-2026-07-31</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=gijn-osint-mindset-quiz-2026-07-31</guid>
+<pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Освіта та методологія</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/gijn-osint-mindset-quiz-2026-07-31.jpg" type="image/jpeg"/>
+<description>Deputy director CIJ Tom Sanderson випустив у GIJN інтерактивний тест на «OSINT mindset». Ключова теза: інструменти застарівають, платформи вмирають, а мислення довговічне. GIJN пушить формат як benchmark для нових слідчих.</description>
+</item>
+<item>
+<title>Азербайджан ув&#x27;язнив 9 журналістів і активістів на 12–15 років</title>
+<link>https://yehorselin.com/blog.html?slug=occrp-azerbaijan-9-journalists-2026-07-28</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=occrp-azerbaijan-9-journalists-2026-07-28</guid>
+<pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Свобода преси</category>
+<description>Суд у Баку виніс вироки 9 журналістам і правозахисникам (12–15 років) у справі про «контрабанду валюти» та «відмивання коштів». Серед засуджених — команда розслідувального Toplum TV, а також активісти Third Republic Platform і Democratic Initiatives Institute.</description>
+</item>
+<item>
+<title>OCCRP: колишня посадовиця «Атоменергомашу» вимагала «15% відкату»</title>
+<link>https://yehorselin.com/blog.html?slug=occrp-atomenergomash-kickbacks-2026-07-28</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=occrp-atomenergomash-kickbacks-2026-07-28</guid>
+<pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Антикорупція</category>
+<description>Українські антикорупційні органи скерували до суду справу колишньої заступниці директора «Атоменергомашу», яку звинувачують у вимаганні 10–15% від суми контрактів у приватних підрядників. За даними слідства, вона особисто отримала близько $37 200.</description>
+</item>
+<item>
+<title>USCIS готує тендер на enterprise OSINT-платформу на $50-100 млн — солісітейшн 15.12.2026</title>
+<link>https://yehorselin.com/blog.html?slug=uscis-enterprise-osint-tender-2026-07-27</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=uscis-enterprise-osint-tender-2026-07-27</guid>
+<pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Індустрія та ринок</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/uscis-enterprise-osint-tender-2026-07-27.jpg" type="image/jpeg"/>
+<description>US Citizenship and Immigration Services публічно окреслили параметри майбутнього FFP-контракту на enterprise OSINT: subject recognition, batch queries, account management, аналітика public+commercial даних. Small-business set-aside через SEWP V. Один із найбільших очікуваних US-держзамовлень на OSINT-платформу за наступні 12 місяців.</description>
+</item>
+<item>
+<title>СБУ затримала студентку у Полтаві, яку ФСБ завербувала через Telegram</title>
+<link>https://yehorselin.com/blog.html?slug=sbu-poltava-student-fsb-recruitment-2026-07-27</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=sbu-poltava-student-fsb-recruitment-2026-07-27</guid>
+<pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Контррозвідка</category>
+<description>СБУ затримала студентку університету в Полтавській області, яку ФСБ завербувала через Telegram-канали з пропозиціями «швидкого заробітку». Оперативники зупинили її до передачі даних; вилучені пристрої з доказами.</description>
+</item>
+<item>
+<title>Суд відхилив DMCA-позов Google проти SerpApi — прецедент для OSINT-скрейпінгу</title>
+<link>https://yehorselin.com/blog.html?slug=google-vs-serpapi-dmca-dismissed-2026-07-27</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=google-vs-serpapi-dmca-dismissed-2026-07-27</guid>
+<pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Суди та регуляції</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/google-vs-serpapi-dmca-2026-07-27.jpg" type="image/jpeg"/>
+<description>N.D. California відхилив позов Google проти SerpApi за DMCA §1201. Суд визнав, що SearchGuard (CAPTCHA-подібний захист) не є «technological measure» у сенсі DMCA, бо контролює доступ незалежно від наявності копірайту, а більшість SERP-результатів взагалі не copyrightable. Google має 21 день на amend позову.</description>
+</item>
+<item>
+<title>Bihus.Info: службові квартири та нові посади в оточенні міністра МВС Виговського</title>
+<link>https://yehorselin.com/blog.html?slug=bihus-vygovsky-inner-circle-2026-07-24</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=bihus-vygovsky-inner-circle-2026-07-24</guid>
+<pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Розслідування</category>
+<description>Розслідувачі Bihus.Info простежили кар&#x27;єрне та майнове зростання соратників нового міністра внутрішніх справ Івана Виговського — з отриманням службових квартир у столичних ЖК «Славутич» і «Кришталеві джерела» з подальшою приватизацією.</description>
+</item>
+<item>
+<title>Bellingcat верифікував удари дронів Shahed по селах у Малі</title>
+<link>https://yehorselin.com/blog.html?slug=bellingcat-shahed-mali-2026-07-24</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=bellingcat-shahed-mali-2026-07-24</guid>
+<pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Геолокація</category>
+<description>Аналітики Bellingcat геолокували відео двох ударів дронів Shahed-136 по селах Інафарак (12 липня) і Талахандак (17 липня) в Малі. Експертиза уламків двигуна MD-550 указала на російське походження та мережу Africa Corps.</description>
+</item>
+<item>
+<title>ICE незаконно передав Palantir Medicaid-дані мільйонів людей — суд призначив серпневе слухання</title>
+<link>https://yehorselin.com/blog.html?slug=palantir-ice-medicaid-scandal-2026-07-23</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=palantir-ice-medicaid-scandal-2026-07-23</guid>
+<pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Суди та скандали</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/palantir-ice-medicaid-scandal-2026-07-23.jpg" type="image/jpeg"/>
+<description>З нових court filings випливло: CMS двічі передав ICE масив із мільйонами імен, адрес та етнічних міток бенефіціарів Medicaid. ICE прогнав дані через Palantir-івський застосунок ELITE, який показує адреси не-громадян. Суддя призначив слухання на серпень 2026 — визначатимуть, які категорії осіб взагалі можна легально передавати.</description>
+</item>
+<item>
+<title>Sherpa Intelligence Basecamp Briefing (21.07.2026): CUI Berегової охорони США, ПЗ РФ у FAA, WindTre GDPR-штраф</title>
+<link>https://yehorselin.com/blog.html?slug=sherpa-basecamp-briefing-2026-07-21</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=sherpa-basecamp-briefing-2026-07-21</guid>
+<pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Розвідка загроз</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/sherpa-basecamp-briefing-2026-07-21.jpg" type="image/jpeg"/>
+<description>Черговий випуск фахового брифінгу Tracy Z. Maleeff охоплює нову рамку CUI Береговою охороною США, аудити FAA щодо російського коду в ПЗ, штраф WindTre €1.7M, позов проти Toyota через трекінг-cookies та німецько-французьку співпрацю з AI-безпеки.</description>
+</item>
+<item>
+<title>LG забороняє резидентні проксі-SDK у застосунках Smart TV</title>
+<link>https://yehorselin.com/blog.html?slug=krebs-lg-residential-proxies-2026-07-21</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=krebs-lg-residential-proxies-2026-07-21</guid>
+<pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Загрози та інструменти</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/krebs-lg-residential-proxies-2026-07-21.jpg" type="image/jpeg"/>
+<description>LG Electronics USA оголосила про призупинення застосунків webOS, які перетворюють телевізори на постійно активні вузли резидентних проксі. Реакція викликана дослідженням Spur, яке зафіксувало SDK проксі у 42% застосунків webOS та 25% Tizen.</description>
+</item>
+<item>
+<title>Forescout: H1-2026 Threat Review — 37 000+ вразливостей, +25% ransomware</title>
+<link>https://yehorselin.com/blog.html?slug=forescout-h1-2026-threat-review-2026-07-21</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=forescout-h1-2026-threat-review-2026-07-21</guid>
+<pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Розвідка загроз</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/forescout-h1-2026-threat-review-2026-07-21.jpg" type="image/jpeg"/>
+<description>Vedere Labs опублікували піврічний звіт: 37 000+ вразливостей (+51% р/р), 4 544 ransomware-інциденти (+25%). Майже половина нових записів у CISA KEV — це старі непатчені CVE. Аналіз базується на OSINT-моніторингу 1000+ угруповань.</description>
+</item>
+<item>
+<title>Юлія Дукач стала менеджеркою зі стратегічного розвитку Molfar Intelligence Institute</title>
+<link>https://yehorselin.com/blog.html?slug=dukach-molfar-institute-2026-07-20</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=dukach-molfar-institute-2026-07-20</guid>
+<pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Організації</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/dukach-molfar-institute-2026-07-20.jpg" type="image/jpeg"/>
+<description>Дослідниця російських інформаційних операцій Юлія Дукач приєдналася до Molfar Intelligence Institute як менеджерка зі стратегічного розвитку. Вона посилить методологічну рамку та освітній напрям на перетині дата-журналістики й OSINT-аналітики.</description>
+</item>
+<item>
+<title>OSINTech оновлює каталог OSINT-репозиторіїв: 4090 інструментів, 39 нових за тиждень</title>
+<link>https://yehorselin.com/blog.html?slug=osintech-repos-pack-2026-07-19</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osintech-repos-pack-2026-07-19</guid>
+<pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Інструменти</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/osintech-repos-pack-2026-07-19.jpg" type="image/jpeg"/>
+<description>OSINTech випустив чергове оновлення структурованого датасету OSINT-репозиторіїв: 4090 інструментів, 39 нових додано за тиждень. Це не курований топ, а живий архів того, що реально використовується розслідувачами, журналістами й безпековиками. У фокусі тижня — Get SMS Online, Stealth Browser MCP і OpenSandbox.</description>
+</item>
+<item>
+<title>Тексти.org.ua застосували BERTopic для моніторингу проросійських наративів у 50 Telegram-каналах</title>
+<link>https://yehorselin.com/blog.html?slug=texty-bertopic-telegram-2026-07-17</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=texty-bertopic-telegram-2026-07-17</guid>
+<pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Розслідування</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/texty-bertopic-telegram-2026-07-17.jpg" type="image/jpeg"/>
+<description>Юліана Топольник і Наталія Романишин з Texty.org.ua опублікували 17 липня 2026 моніторинг українських соцмереж за 6–12 липня. Команда використала topic-modelling BERTopic для аналізу 50 великих анонімних Telegram-каналів і простежила міграцію семи проросійських наративів довкола інциденту у Львові у YouTube-коментарі та TikTok-відео. Це приклад OSINT-методики у медіа-дослідженнях в Україні.</description>
+</item>
+<item>
+<title>Sherpa Intelligence Basecamp Briefing (17.07.2026): витік даних АЕС «Куданкулам», кібер-регулювання, кадри</title>
+<link>https://yehorselin.com/blog.html?slug=sherpa-basecamp-briefing-2026-07-17</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=sherpa-basecamp-briefing-2026-07-17</guid>
+<pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Розслідування</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/sherpa-basecamp-briefing-2026-07-17.jpg" type="image/jpeg"/>
+<description>Курований OSINT / cyber-intel дайджест від Sherpa Intelligence. У центрі — витік файлів найбільшої АЕС Індії «Куданкулам», викладений групою World Leaks у дарквебі, а також нові правила кібербезпеки для водоканалів Нью-Йорка, звинувачення у Британії за пособництво іранській розвідці та кадрові рухи в галузі.</description>
+</item>
+<item>
+<title>«Ініціатива 143»: вісім українських медіа синхронно опублікували OSINT-розслідування про 143 обʼєкти нерухомості брата директора ДБР</title>
+<link>https://yehorselin.com/blog.html?slug=initiative-143-dbr-2026-07-17</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=initiative-143-dbr-2026-07-17</guid>
+<pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Антикорупційне розслідування</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/initiative-143-dbr-2026-07-17.jpg" type="image/jpeg"/>
+<description>17 липня 2026 «Детектор медіа» повідомив, що вісім українських медіа — Українська правда, Суспільне, «Схеми», Громадське, «Дзеркало тижня», NV, Bihus.Info та «Телебачення Торонто» — синхронно опублікували раніше заборонене Печерським судом розслідування «Слідства.Інфо» і ЦПК про 143 обʼєкти нерухомості Олександра Сукачова, брата директора ДБР Олексія Сукачова. Матеріал побудовано на даних Державного реєстру речових прав, судових рішеннях і фінансовій документації — тобто на класичних OSINT-джерелах відкритих реєстрів.</description>
+</item>
+<item>
+<title>Trace Labs · гайд з підготовки до Global OSINT Search Party CTF на DEF CON 34</title>
+<link>https://yehorselin.com/blog.html?slug=trace-labs-defcon34-prep-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=trace-labs-defcon34-prep-2026</guid>
+<pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
+<category>CTF · DEF CON · Trace Labs</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/trace-labs-defcon34-prep-2026.jpg" type="image/jpeg"/>
+<description>Trace Labs опублікували офіційний гайд з підготовки до **Global OSINT Search Party CTF на DEF CON 34**. Формат гібридний: **250 безкоштовних квитків on-site** для відвідувачів DEF CON + **400 платних remote-квитків**. Готуються **два тренувальні вебінари L100** (1 і 7 серпня) і **L150 case walkthrough** з розбором технік pivoting&#x27;у між платформами та ідентифікації сигналів. Спонсорські ресурси — від UserSearch, SockPuppet, Epieos.</description>
+</item>
+<item>
+<title>OSINTech Timeline #171: щотижневий OSINT-дайджест — 16.07.2026</title>
+<link>https://yehorselin.com/blog.html?slug=osintech-timeline-171-16072026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osintech-timeline-171-16072026</guid>
+<pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
+<category>Спільнота · Інструменти</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/osintech-timeline-171-16072026.jpg" type="image/jpeg"/>
+<description>Свіжий 171-й випуск щотижневого OSINT-дайджесту OSINTech покриває сім категорій: регіональний OSINT (Швейцарія, SMS-верифікація), нові інструменти (Global Ping, Lookyloo, browser isolation), AI-агенти для розслідувань (Chrome-side panel для Hermes Agent, LLM-powered Google Dorks), інфраструктурні утиліти, безпека Wi-Fi (WEP → WPA3), і найцікавіше — Telegram-аналітика по **6 000+ ботах і 6 000+ TON mini-apps** для розслідувань.</description>
+</item>
+<item>
+<title>Bellingcat: OSINT-атрибуція власника форуму LeakedBB через DNS, платіжки і крипту</title>
+<link>https://yehorselin.com/blog.html?slug=bellingcat-leakedbb-crypto-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=bellingcat-leakedbb-crypto-2026</guid>
+<pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
+<category>Identity Attribution · Bellingcat</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/bellingcat-leakedbb-crypto-2026.jpg" type="image/jpeg"/>
+<description>Bellingcat опублікував велике розслідування Коліни Колтай про **LeakedBB** — форум, який заробляв на торгівлі неконсенсуальними приватними фото жінок (2.2 млн зареєстрованих юзерів, ~2 млн відвідувань/місяць). Через OSINT-ланцюжок — DNS-записи, реєстрація доменів, платіжні системи, крипто-транзакції — ідентифіковано власника: **Jitendra Maharaj**, крипто-підприємець з Крайстчерч (Нова Зеландія) і колишній пілот. За добу після контакту журналістів — сайт впав.</description>
+</item>
+<item>
+<title>Trace Labs випустив OSINT VM 2026.05 — перебудовано на Debian 13</title>
+<link>https://yehorselin.com/blog.html?slug=trace-labs-osint-vm-2026-05</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=trace-labs-osint-vm-2026-05</guid>
+<pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
+<category>Інструменти · Реліз · Trace Labs</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/trace-labs-osint-vm-2026-05.jpg" type="image/jpeg"/>
+<description>Trace Labs випустив **OSINT VM 2026.05** — стандартну робочу віртуальну машину для OSINT-практиків. Ключова зміна: базу мігровано з **Kali Linux на Debian 13**. Це зменшило розмір образу і дозволило тонше контролювати остаточний вигляд, прибравши інструменти, які не відповідають місії Trace Labs. Додано Brave Browser з OSINT-розширеннями, Obsidian з готовими шаблонами, Owlculus, і новий system updater з нотифікаціями.</description>
+</item>
+<item>
+<title>ЄС та Британія: санкції проти офіцерів ГРУ РФ за багаторічну кібероперацію</title>
+<link>https://yehorselin.com/blog.html?slug=eu-uk-sankcii-gru-cyber-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=eu-uk-sankcii-gru-cyber-2026</guid>
+<pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
+<category>Санкції · Cyber OSINT</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/eu-uk-sankcii-gru-cyber-2026.jpg" type="image/jpeg"/>
+<description>Європейський Союз і Велика Британія 13 липня 2026 запровадили санкції проти офіцерів російської військової розвідки, хакерів та приватних компаній, причетних до багаторічної кібероперації. Санкції ЄС охоплюють **9 фізичних осіб і 4 організації** за причетність до атак на державні мережі та критичну інфраструктуру — включно з тепло- та енергосистемами — з 2010 року. Персонально названо офіцера ГРУ Євгена Башева і його компанію «Импульс».</description>
+</item>
+<item>
+<title>OSINT Industries — у топ-93 стеку інструментів OSINT 2026 року</title>
+<link>https://yehorselin.com/blog.html?slug=osint-industries-stack-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=osint-industries-stack-2026</guid>
+<pubDate>Fri, 26 Jun 2026 00:00:00 +0000</pubDate>
+<category>Індустрія · Інструменти</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/osint-industries-stack-2026.jpg" type="image/jpeg"/>
+<description>У щорічній індустріальній мапі «The OSINT Stack in 2026» (93 інструменти × 12 категорій) OSINT Industries увійшла в категорію **People Search &amp; Screening** — як одна з платформ, що визначає стандарт цифрової ідентифікації особистостей у розслідуваннях. Це підтверджує статус платформи як робочого інструменту №1 для крос-платформного пошуку за email / телефоном / username / крипто-гаманцем.</description>
+</item>
+<item>
+<title>Кабмін затвердив план заходів з реалізації Стратегії кібербезпеки України на 2026</title>
+<link>https://yehorselin.com/blog.html?slug=kabmin-plan-kiberbezpeky-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=kabmin-plan-kiberbezpeky-2026</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+<category>Законодавство · Кібербезпека</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/kabmin-plan-kiberbezpeky-2026.jpg" type="image/jpeg"/>
+<description>Розпорядженням №631-р від 24 червня 2026 Кабмін затвердив річний план заходів з реалізації Стратегії кібербезпеки України. Документ покриває десять напрямів — від розбудови кібервійськ і протидії кіберзлочинності до розвитку кадрового потенціалу і співпраці з НАТО та ЄС. Звіт про виконання — до грудня 2026.</description>
+</item>
+<item>
+<title>Molfar Intelligence × Swarmer: OSINT-дані для автономних роїв FPV</title>
+<link>https://yehorselin.com/blog.html?slug=molfar-swarmer-osint-partnership-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=molfar-swarmer-osint-partnership-2026</guid>
+<pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Оборонтех · AI</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/molfar-swarmer-osint-partnership-2026.jpg" type="image/jpeg"/>
+<description>Українсько-американський розробник Swarmer оголосив стратегічне партнерство з Molfar Intelligence. Molfar постачатиме Swarmer масиви OSINT-даних — геолокаційні знімки, відео та супутникові спостереження за ворожою технікою — які використовуватимуться для тренування AI-моделей об&#x27;єктного розпізнавання. Це прецедент вбудовування цивільного OSINT у контур бойового AI.</description>
+</item>
+<item>
+<title>Bellingcat відстежив «тіньовий флот» РФ: викрадене українське зерно дійшло до Лівії</title>
+<link>https://yehorselin.com/blog.html?slug=bellingcat-shadow-fleet-grain-libya</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=bellingcat-shadow-fleet-grain-libya</guid>
+<pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+<category>OSINT · GEOINT · Санкції</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/bellingcat-shadow-fleet-grain-libya.jpg" type="image/jpeg"/>
+<description>Розслідувачі задокументували балкер Grumant, який 15 лютого 2026 завантажився зерном у окупованій Феодосії та 18 квітня прибув до Бенгазі в Лівії. Це вже другий підтверджений випадок постачання «краденого» українського зерна з окупованих територій до Лівії. Ключова інновація — нова методика аналізу AIS-даних напрямку руху, яка дозволяє відновити маршрут навіть коли GPS-сигнал глушиться.</description>
+</item>
+<item>
+<title>Bellingcat + AFP: спільні OSINT-розслідування війни в Україні</title>
+<link>https://yehorselin.com/blog.html?slug=bellingcat-afp-ukraine-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=bellingcat-afp-ukraine-2026</guid>
+<pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+<category>OSINT · Розслідування</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/bellingcat-afp-ukraine-2026.jpg" type="image/jpeg"/>
+<description>Bellingcat разом з AFP випустили серію з трьох великих матеріалів, що поєднують супутникову зйомку, аналіз соцмереж і публічних наборів даних з польовою журналістикою. Тематика: руйнування Вовчанська, забруднення української території мінами та наслідки війни для дітей і підлітків.</description>
+</item>
+<item>
+<title>Berkeley Protocol у Міноборони: OSINT-стандарт входить в офіційні розслідування ЗСУ</title>
+<link>https://yehorselin.com/blog.html?slug=berkeley-protocol-mou-ukraine-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=berkeley-protocol-mou-ukraine-2026</guid>
+<pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+<category>Стандарти · Justice · OSINT</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/berkeley-protocol-mou-ukraine-2026.jpg" type="image/jpeg"/>
+<description>Міністерство оборони України розробляє проєкт положення про службові перевірки та розслідування, що враховує **принципи Berkeley Protocol** — міжнародного стандарту цифрових розслідувань з відкритих джерел. Військова служба правопорядку ЗСУ вже активно використовує OSINT-матеріали. Це системний крок: OSINT перестає бути «додатком» і стає інституційно вбудованим шаром доказової системи.</description>
+</item>
+<item>
+<title>EUAM Ukraine × CIR: OSINT-тренінг для слідчих Запорізької області з CRSV-кейсів</title>
+<link>https://yehorselin.com/blog.html?slug=euam-cir-osint-zaporizhzhia-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=euam-cir-osint-zaporizhzhia-2026</guid>
+<pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+<category>Освіта · Justice · OSINT</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/euam-cir-osint-zaporizhzhia-2026.jpg" type="image/jpeg"/>
+<description>Місія ЄС EUAM Ukraine спільно з Centre for Information Resilience провела дводенний OSINT-воркшоп для слідчих Запорізької області: обласної прокуратури, СБУ та Нацполіції. Фокус — робота з CRSV-кейсами (conflict-related sexual violence): геолокація, профайлинг, безпечне і етичне поводження з цифровими доказами.</description>
+</item>
+<item>
+<title>Законопроєкт про Кіберсили ЗСУ №12349 готують до другого читання</title>
+<link>https://yehorselin.com/blog.html?slug=kibersyly-zsu-zakonoproekt-2026</link>
+<guid isPermaLink="true">https://yehorselin.com/blog.html?slug=kibersyly-zsu-zakonoproekt-2026</guid>
+<pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+<category>Законодавство · Кібероборона</category>
+<enclosure url="https://yehorselin.com/img/uploads/news/kibersyly-zsu-zakonoproekt-2026.jpg" type="image/jpeg"/>
+<description>Генштаб ЗСУ разом з профільним комітетом ВРУ та Міноборони завершив доопрацювання законопроєкту №12349 про Кіберсили. Документ вводить у структурі ЗСУ окрему військову та технічну складову за стандартами НАТО — з завданнями кіберстримування, наступальних кібероперацій і захисту оборонних інфосистем.</description>
+</item>
 </channel></rss>

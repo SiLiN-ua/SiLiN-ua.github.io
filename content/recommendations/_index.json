@@ -1,18 +1,5 @@
 [
   {
-    "author_name": "Jason Lebreton",
-    "author_role": "OSINT Analyst · Ethical Hacker · Embedded Systems Background · Canada",
-    "author_linkedin": "https://www.linkedin.com/in/jason-lebreton-7b4b84401/",
-    "author_avatar": "/img/uploads/avatars/jason-lebreton.png",
-    "relationship": "client",
-    "date": "2026-08-14T00:00:00.000Z",
-    "text_uk": "Єгор власноруч створив і підтримує безкоштовну навчальну платформу з OSINT — з інтерактивними слідчими сценаріями для кожного, хто хоче опанувати цю справу, і без жодної копійки за доступ. Нещодавно він виступав перед спільнотою OSINT Moldova, допомагаючи закласти базу розслідувань тим, хто тільки заходить у поле. І все це — поверх повноцінної основної роботи, і все — безоплатно віддане спільноті, яка ще шукає власну опору.\n\nЩо вражає мене найбільше — скільки він віддає, коли його про це навіть не просять. Він робить це не заради визнання. Він робить це тому, що щиро хоче, аби сфера OSINT росла, — і вкладає в це реальні години.\n\nСамі навчальні матеріали — це не просто квізи. Вони змушують уважно думати, коли вже можна зафіксувати висновок, а коли варто почекати на другий незалежний якір, — і така строгість рідко трапляється у вільному доступі.\n\nВарто ще сказати, що він будує й викладає все це другою мовою — і все одно передає методологію OSINT ясніше, ніж більшість людей робить це рідною. Спільноті OSINT пощастило, що хтось віддає їй стільки себе!",
-    "text_en": "Yehor built and maintains a free OSINT training platform entirely on his own, offering interactive investigative scenarios to anyone trying to learn the craft, without charging a cent for access. He recently spoke for OSINT Moldova's community helping bring foundational investigative training to people just entering the field. All of this on top of a full-time career, and all of it given freely to a community that is still finding its footing.\n\nWhat stands out most to me is how much he gives back without being asked to. He is not building any of this for recognition. He is building it because he genuinely wants the OSINT field to grow, and he is putting in real hours to make that happen.\n\nThe training material itself is not just quizzes. It pushes people to think carefully about when to commit to a conclusion versus when to hold off until there is a second independent anchor, and that kind of rigor is rare to find freely available anywhere.\n\nIt is also worth saying that he is building and teaching all of this in a second language, and still communicates OSINT methodology more clearly than most people manage in their first. The OSINT community is lucky to have someone contributing this much of himself to it!",
-    "order": 0,
-    "published": true,
-    "__slug": "jason-lebreton"
-  },
-  {
     "author_name": "Claire Roise, CPI, OSC",
     "author_role": "Owner / Investigator @ Brightrock Intel · OSINT · Legal Investigation · Character Research · Marketing & PR Chair for PIAI · USA",
     "author_linkedin": "https://www.linkedin.com/in/claire-roise-cpi-osc-29b5739/",
@@ -63,5 +50,18 @@
     "order": 4,
     "published": true,
     "__slug": "igor-kulish"
+  },
+  {
+    "author_name": "Jason Lebreton",
+    "author_role": "OSINT Analyst · Ethical Hacker · Embedded Systems Background · Canada",
+    "author_linkedin": "https://www.linkedin.com/in/jason-lebreton-7b4b84401/",
+    "author_avatar": "/img/uploads/avatars/jason-lebreton.png",
+    "relationship": "client",
+    "date": "2026-08-14T00:00:00.000Z",
+    "text_uk": "Єгор власноруч створив і підтримує безкоштовну навчальну платформу з OSINT — з інтерактивними слідчими сценаріями для кожного, хто хоче опанувати цю справу, і без жодної копійки за доступ. Нещодавно він виступав перед спільнотою OSINT Moldova, допомагаючи закласти базу розслідувань тим, хто тільки заходить у поле. І все це — поверх повноцінної основної роботи, і все — безоплатно віддане спільноті, яка ще шукає власну опору.\n\nЩо вражає мене найбільше — скільки він віддає, коли його про це навіть не просять. Він робить це не заради визнання. Він робить це тому, що щиро хоче, аби сфера OSINT росла, — і вкладає в це реальні години.\n\nСамі навчальні матеріали — це не просто квізи. Вони змушують уважно думати, коли вже можна зафіксувати висновок, а коли варто почекати на другий незалежний якір, — і така строгість рідко трапляється у вільному доступі.\n\nВарто ще сказати, що він будує й викладає все це другою мовою — і все одно передає методологію OSINT ясніше, ніж більшість людей робить це рідною. Спільноті OSINT пощастило, що хтось віддає їй стільки себе!",
+    "text_en": "Yehor built and maintains a free OSINT training platform entirely on his own, offering interactive investigative scenarios to anyone trying to learn the craft, without charging a cent for access. He recently spoke for OSINT Moldova's community helping bring foundational investigative training to people just entering the field. All of this on top of a full-time career, and all of it given freely to a community that is still finding its footing.\n\nWhat stands out most to me is how much he gives back without being asked to. He is not building any of this for recognition. He is building it because he genuinely wants the OSINT field to grow, and he is putting in real hours to make that happen.\n\nThe training material itself is not just quizzes. It pushes people to think carefully about when to commit to a conclusion versus when to hold off until there is a second independent anchor, and that kind of rigor is rare to find freely available anywhere.\n\nIt is also worth saying that he is building and teaching all of this in a second language, and still communicates OSINT methodology more clearly than most people manage in their first. The OSINT community is lucky to have someone contributing this much of himself to it!",
+    "order": 0,
+    "published": true,
+    "__slug": "jason-lebreton"
   }
 ]
