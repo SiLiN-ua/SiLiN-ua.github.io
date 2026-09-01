@@ -8,6 +8,9 @@ on:
       - '!content/**/_index.json'
       - '.github/workflows/rebuild-indexes.yml'
 
+permissions:
+  contents: write
+
 jobs:
   rebuild:
     runs-on: ubuntu-latest
