@@ -134,7 +134,7 @@
       "joined": "March 2024",
       "stats": { "posts": 24, "followers": 1847, "following": 312 },
       "posts": [
-        { "id": "p1", "cover": "assets/post-01.jpg", "video_still": "assets/video_still_post_01.jpg", "video": "assets/morning-in-prague.mp4", "video_webm": "assets/morning-in-prague.webm", "video_duration_ms": 11500, "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
+        { "id": "p1", "cover": "assets/post-01.jpg", "caption_en": "Morning in Prague ☕️", "caption_uk": "Ранок у Празі ☕️",       "date": "2 days ago", "likes": 142 },
         { "id": "p2", "cover": "assets/post-02.jpg", "caption_en": "Old town light.",       "caption_uk": "Світло старого міста.", "date": "5 days ago", "likes": 98 },
         { "id": "p3", "cover": "assets/post-03.jpg", "caption_en": "Long walk. No plan.",   "caption_uk": "Довга прогулянка. Без плану.", "date": "1 week ago", "likes": 211 }
       ]
