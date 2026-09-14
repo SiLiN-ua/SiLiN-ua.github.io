@@ -16,6 +16,20 @@
     "__slug": "aprende-osint-socmint"
   },
   {
+    "title": "Maltego Community OSINT CTF · Qualifier A",
+    "issuer": "Maltego",
+    "date": "2026-09-12T00:00:00.000Z",
+    "credential_id": "ecbed687-6237-4233-b056-b4bb69632fd2",
+    "recipient": "Yehor Selin",
+    "image": "/img/uploads/certificates/maltego-ctf-qualifier-a.png",
+    "verify_url": "https://www.credly.com/badges/ecbed687-6237-4233-b056-b4bb69632fd2/public_url",
+    "description_uk": "Проходження Qualifier A щорічного Maltego Community OSINT CTF — офіційного онлайн-турніру, що охоплює 12 OSINT-категорій за 4 години: Geolocation, Chronolocation, Social Media, Fraud, Dark Web, Maritime & Aviation, Threat Intelligence, Due Diligence, Competitive Intelligence, Brand Protection, Trust & Safety та Physical Security. Індивідуальний залік — 74 місце з 2613 балами. Наступний етап — Qualifier B у листопаді 2026. ІД облікових даних: ecbed687-6237-4233-b056-b4bb69632fd2.",
+    "description_en": "Completion of Qualifier A in the annual Maltego Community OSINT CTF — an official online tournament covering 12 OSINT categories over 4 hours: Geolocation, Chronolocation, Social Media, Fraud, Dark Web, Maritime & Aviation, Threat Intelligence, Due Diligence, Competitive Intelligence, Brand Protection, Trust & Safety and Physical Security. Individual standing: 74th place with 2613 points. Qualifier B follows in November 2026. Credential ID: ecbed687-6237-4233-b056-b4bb69632fd2.",
+    "order": 0,
+    "published": true,
+    "__slug": "maltego-ctf-qualifier-a"
+  },
+  {
     "title": "OSINT: Educational Series",
     "issuer": "Trace Labs",
     "date": "2026-01-18T00:00:00.000Z",
