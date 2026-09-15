@@ -93,6 +93,22 @@
     "__slug": "prometheus-war-security"
   },
   {
+    "title": "SOCMINT AVANZADO — Aprende de 0 a investigar en Redes Sociales",
+    "issuer": "Manuel Travezaño · Udemy",
+    "date": "2026-07-22T00:00:00.000Z",
+    "credential_id": "UC-52a2dd84-13e2-4776-8a4a-33873f1ba256",
+    "recipient": "Yehor Selin",
+    "duration": "13 годин",
+    "image": "/img/uploads/certificates/socmint-avanzado-manuel-travezano.jpg",
+    "verify_url": "https://ude.my/UC-52a2dd84-13e2-4776-8a4a-33873f1ba256",
+    "skills": "Advanced SOCMINT · Multi-platform Social Media Investigation · Metadata & Steganography · Messenger OSINT · Analyst OPSEC",
+    "description_uk": "Поглиблений авторський курс SOCMINT від Мануеля Травезаньо — тактичного аналітика кіберрозвідки та фахівця з ethical hacking. 13 годин практики, побудованої на архітектурі «безпека аналітика → техніки збору → SOCMINT по кожній платформі → метадані → месенджери». Модулі: захист власної ідентичності (sockpuppets, тимчасові email/номери, VM/VPN, OSINT-браузери, Android-емулятори), верифікація по кожному ідентифікатору (email, username, телефон, IP, гео — iKy, h8mail, GHunt, Maigret, Sherlock, PhoneInfoga), окремі поглиблені блоки по SOCMINT для Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Discord і Skype, робота з метаданими та стеганографією (ExifTool, FOCA, FotoForensics, OpenStego), OSINT у WhatsApp, Telegram і WeChat, а також окремий великий модуль з Telegram-ботів для розслідувань. Сертифікат Udemy № UC-52a2dd84-13e2-4776-8a4a-33873f1ba256.",
+    "description_en": "The advanced SOCMINT course by Manuel Travezaño — tactical cyber-intelligence analyst and ethical hacking specialist. 13 hours of practice built on the architecture 'analyst security → collection techniques → platform-by-platform SOCMINT → metadata → messengers.' Modules: hardening one's own identity (sockpuppets, temporary email/phone, VM/VPN, OSINT browsers, Android emulators), per-identifier verification (email, username, phone, IP, geo — iKy, h8mail, GHunt, Maigret, Sherlock, PhoneInfoga), dedicated deep blocks on SOCMINT for Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Discord and Skype, working with metadata and steganography (ExifTool, FOCA, FotoForensics, OpenStego), OSINT across WhatsApp, Telegram and WeChat, plus a dedicated deep module on Telegram bots for investigations. Udemy certificate № UC-52a2dd84-13e2-4776-8a4a-33873f1ba256.",
+    "order": 3,
+    "published": true,
+    "__slug": "socmint-avanzado-manuel-travezano"
+  },
+  {
     "title": "Global OSINT Search Party CTF · Participant",
     "issuer": "Trace Labs",
     "date": "2026-06-06T00:00:00.000Z",
