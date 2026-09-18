@@ -48,6 +48,28 @@
     "__slug": "nine-rooms"
   },
   {
+    "title_uk": "Остання кімната",
+    "title_en": "The Last Room",
+    "category": "fiction",
+    "year": 2026,
+    "languages": "UA · EN · RU",
+    "cover": "/img/uploads/Cover_TheLastRoom_UK.png",
+    "description_uk": "Художній трилер. Третя, фінальна книга серії «Файли Ляльковика». Мис Ерімо, липень, сім місяців після «Дев'яти кімнат». Інспектор Юкіо Куросава приїздить на старий рибальський причал сам і рахує колони від берега. У восьмій з дев'яти — ніша: дитяча ключиця зі старою тріщиною й аркуш паперу, згорнутий учетверо, з одним словом чорним пером. Його прізвищем. У відділі новий начальник із Токіо вимагає закрити справу Ляльковика: Тоші засуджений, мережа розкрита. Куросава мовчить — аркуш лежить у внутрішній кишені пальта, і він нікому його не показував. Далі — сорок сім Йошід у реєстрах водіїв Хоккайдо, посилка з порцеляновою лялькою без обличчя, дві Аяно замість однієї, Тоші за склом у Tsukigata, який знає лише одне слово: Отару. Пролог, двадцять вісім розділів, епілог. Дорога до останньої кімнати починається звідси — і закінчується.",
+    "description_en": "A fiction thriller. The third and final book of The Doll Maker Files. Cape Erimo, July, seven months after Nine Rooms. Inspector Yukio Kurosawa drives to the old fishing pier alone and counts the columns from the shore. In the eighth of nine there is a niche: a child's collarbone with an old crack, and a sheet of paper folded in four, with one word in black ink. His name. Back at the department a new chief from Tokyo wants the Doll Maker case closed — Toshi convicted, the network exposed. Kurosawa says nothing; the sheet is in the inside pocket of his coat and he has shown it to no one. What follows: forty-seven men named Yoshida in Hokkaido's driver registries, a parcel with a faceless porcelain doll, two Ayanos where there should be one, and Toshi behind glass in Tsukigata, who knows a single word: Otaru. A prologue, twenty-eight chapters and an epilogue. The road to the last room begins here — and ends.",
+    "pdf_url_uk": "/content/books/pdfs/The_Last_Room_UK.pdf",
+    "pdf_url_en": "/content/books/pdfs/The_Last_Room_EN.pdf",
+    "pdf_url_ru": "/content/books/pdfs/The_Last_Room_RU.pdf",
+    "epub_url_uk": "/content/books/ebooks/The_Last_Room_UK.epub",
+    "fb2_url_uk": "/content/books/ebooks/The_Last_Room_UK.fb2",
+    "epub_url_en": "/content/books/ebooks/The_Last_Room_EN.epub",
+    "fb2_url_en": "/content/books/ebooks/The_Last_Room_EN.fb2",
+    "epub_url_ru": "/content/books/ebooks/The_Last_Room_RU.epub",
+    "fb2_url_ru": "/content/books/ebooks/The_Last_Room_RU.fb2",
+    "order": 17,
+    "published": true,
+    "__slug": "the-last-room"
+  },
+  {
     "title_uk": "REPUTATION",
     "title_en": "REPUTATION",
     "category": "fiction",
