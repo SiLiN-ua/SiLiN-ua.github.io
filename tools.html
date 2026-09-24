@@ -16,49 +16,17 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="alternate" type="application/rss+xml" title="OSINT-новини" href="/feed.xml">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="649f566b-92b8-426d-a454-4f3156a238db"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
+<script src="js/marked.umd.js"></script>
+<link rel="stylesheet" href="css/redesign.css?v=20260919f"><link rel="stylesheet" href="css/interiors.css?v=5"></head>
+<body class="redesign interior dossier page-tools">
 <canvas id="stars"></canvas>
 
-<nav class="nav">
-  <a href="index.html" class="nav__brand"><span data-i18n="brand.first">Єгор</span><span data-i18n="brand.dot">.</span><span data-i18n="brand.last">Селін</span></a>
-  <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
-  <ul class="nav__links">
-    <li><a href="index.html" data-i18n="nav.home">Головна</a></li>
-    <li><a href="about.html" data-i18n="nav.about">Про мене</a></li>
-    <li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li>
-    <li><a href="simulator.html"><img class="nav__ico" src="img/brand/panther-32.png?v=2" alt=""> <span data-i18n="nav.simulator">Симулятор</span></a></li>
-    <li><a href="games/case-zero.html?case=case-001"><img class="nav__ico" src="img/brand/panther-32.png?v=2" alt=""> <span data-i18n="nav.case_zero">Case Zero</span></a></li>
-    <li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
-    <li><a href="books.html" data-i18n="nav.books">Книги</a></li>
-    <li><a href="blog.html" data-i18n="nav.blog">Новини</a></li>
-    <li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li>
-    <li><a href="support.html" data-i18n="nav.support">На каву</a></li>
-    <li class="nav__more nav__more--active">
-      <button class="nav__more-btn" type="button" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.more">Більше</span> <span class="nav__more-caret">▾</span></button>
-      <ul class="nav__submenu" role="menu">
-        <li><a href="tools.html" class="active" data-i18n="nav.tools">Інструменти</a></li>
-        <li><a href="education.html" data-i18n="nav.education">Освіта</a></li>
-        <li><a href="speaking.html" data-i18n="nav.speaking">Виступи</a></li>
-        <li><a href="certificates.html" data-i18n="nav.certificates">Сертифікати</a></li>
-        <li><a href="awards.html" data-i18n="nav.awards">Відзнаки</a></li>
-        <li><a href="recommendations.html" data-i18n="nav.recommendations">Рекомендації</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Контакти</a></li>
-      </ul>
-    </li>
-    <li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li>
-  </ul>
-</nav>
+<nav class="nav" aria-label="Navigation"><a href="index.html" class="nav__brand"><img src="img/brand/panther-64.png" width="28" height="28" alt=""><span>SELIN<span class="brand-period">.</span></span></a><button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button><ul class="nav__links"><li><a href="cases.html" class=""><span data-i18n="r.nav.cases" >Розслідування</span><span aria-hidden="true">↗</span></a></li><li><a href="projects.html" class=""><span data-i18n="r.nav.projects" >Інструменти</span><span aria-hidden="true">↗</span></a></li><li><a href="books.html" class=""><span data-i18n="r.nav.books" >Книги</span><span aria-hidden="true">↗</span></a></li><li><a href="simulator.html" class=""><span data-i18n="r.nav.practice" >Симулятори</span><span aria-hidden="true">↗</span></a></li><li><a href="play.html" class=""><span data-i18n="r.nav.game" >Гра</span><span aria-hidden="true">↗</span></a></li><li><a href="support.html" class=""><span data-i18n="r.nav.coffee" >На каву</span><span aria-hidden="true">↗</span></a></li><li><a href="about.html" class=""><span data-i18n="r.nav.about" >Про мене</span><span aria-hidden="true">↗</span></a></li><li class="nav__more"><button class="nav__more-btn" aria-expanded="false"><span data-i18n="r.nav.more" >Більше</span> +</button><ul class="nav__submenu"><li><a href="play.html" class=""><span data-i18n="r.nav.zero" >Case Zero</span><span aria-hidden="true">↗</span></a></li><li><a href="blog.html" class=""><span data-i18n="r.nav.news" >Новини</span><span aria-hidden="true">↗</span></a></li><li><a href="guide.html" class=""><span data-i18n="r.nav.guide" >OSINT-гайд</span><span aria-hidden="true">↗</span></a></li><li><a href="tools.html" class=""><span data-i18n="r.nav.directory" >Каталог інструментів</span><span aria-hidden="true">↗</span></a></li><li><a href="education.html" class=""><span data-i18n="r.nav.education" >Освіта</span><span aria-hidden="true">↗</span></a></li><li><a href="speaking.html" class=""><span data-i18n="r.nav.speaking" >Виступи</span><span aria-hidden="true">↗</span></a></li><li><a href="certificates.html" class=""><span data-i18n="r.nav.certs" >Сертифікати</span><span aria-hidden="true">↗</span></a></li><li><a href="awards.html" class=""><span data-i18n="r.nav.awards" >Відзнаки</span><span aria-hidden="true">↗</span></a></li><li><a href="recommendations.html" class=""><span data-i18n="r.nav.recommendations" >Рекомендації</span><span aria-hidden="true">↗</span></a></li><li><a href="support.html" class=""><span data-i18n="r.nav.support" >На каву</span><span aria-hidden="true">↗</span></a></li><li><a href="contact.html" class=""><span data-i18n="r.nav.contact" >Контакти</span><span aria-hidden="true">↗</span></a></li></ul></li><li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li></ul></nav><header class="dossier-hero"><div class="dossier-breadcrumb"><a href="index.html"><span data-i18n="r.inner.home" >Головна</span></a><span>/</span><span>RESEARCH TOOLKIT</span></div><div class="dossier-hero-grid"><div class="dossier-intro"><div class="eyebrow">07 / RESEARCH TOOLKIT</div><h1 data-i18n="r.inner.tools.title" >Робочий інструментарій аналітика.</h1><p data-i18n="r.inner.tools.desc" >Джерела й інструменти для різних етапів дослідження. Знайдіть потрібний ресурс і перегляньте його призначення.</p><a class="action primary" href="#page-content"><span data-i18n="r.inner.explore" >Переглянути розділ</span> ↓</a></div><div class="dossier-scene scene-terminal" aria-hidden="true"><div class="scene-terminal"><header>RESEARCH / WORKSPACE <b>●</b></header><p>01 <span>SOURCE</span></p><p>02 <span>CORRELATE</span></p><p>03 <span>VERIFY</span></p><div class="terminal-lines"><i></i><i></i><i></i></div><footer>HUMAN INSIGHT <b>_</b></footer></div></div></div></header><div id="page-content" class="content-anchor"></div>
 
 <div id="list-view">
   <section style="padding-top:9rem">
     <div class="container">
-      <div class="sec-title reveal">
-        <span class="eyebrow" data-i18n="tools.eyebrow">Інструменти</span>
-        <h1 data-i18n="tools.title">Робочий арсенал</h1>
-        <p data-i18n="tools.subtitle">Інструменти, які я використовую у розслідуваннях та огляди на них.</p>
-      </div>
+
     </div>
   </section>
   <section style="padding-top:0">
@@ -80,17 +48,9 @@
   </div>
 </article>
 
-<footer class="footer" style="margin-top:6rem">
-  <div class="footer__grid">
-    <div><div class="footer__brand-tag" data-i18n="footer.tag">Кожна тінь має ім'я.</div><p style="margin-top:1rem;color:var(--text-mute);max-width:340px" data-i18n="footer.role">OSINT & SOCMINT Investigator · Дніпро, Україна</p></div>
-    <div class="footer__col"><h4 data-i18n="footer.nav">Навігація</h4><ul><li><a href="about.html" data-i18n="nav.about">Про мене</a></li><li><a href="cases.html" data-i18n="nav.cases">Кейси</a></li><li><a href="blog.html" data-i18n="nav.blog">Новини</a></li><li><a href="projects.html" data-i18n="nav.projects">Розробки</a></li>
-    <li><a href="tools.html" data-i18n="nav.tools">Інструменти</a></li><li><a href="books.html" data-i18n="nav.books">Книги</a></li><li><a href="support.html" data-i18n="nav.support">На каву</a></li></ul></div>
-    <div class="footer__col"><h4 data-i18n="footer.contacts">Контакти</h4><ul><li><a href="https://www.linkedin.com/in/yehor-selin" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/SiLiN-ua" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.patreon.com/cw/YehorSelin" target="_blank" rel="noopener">Patreon</a></li><li><a href="https://t.me/shadowsint0" target="_blank" rel="noopener">Telegram</a></li><li><a href="mailto:shadow@yehorselin.com">Email</a></li></ul></div>
-  </div>
-  <div class="footer__bottom"><span data-i18n="footer.rights">© 2026 Єгор Селін</span><span data-i18n="footer.built">Створено з увагою · Дніпро, UA</span></div>
-</footer>
+<aside class="section-switchboard"><div><span data-i18n="r.inner.next" >Продовжити дослідження</span></div><a data-i18n="r.inner.switch.cases" href="cases.html">Кейси</a><a data-i18n="r.inner.switch.projects" href="projects.html">Проєкти</a><a data-i18n="r.inner.switch.books" href="books.html">Книги</a><a data-i18n="r.inner.switch.sim" href="simulator.html">Симулятори</a><a data-i18n="r.inner.switch.play" href="play.html">Case Zero</a><a data-i18n="r.inner.switch.contact" href="contact.html">Контакти</a></aside><footer class="footer new-footer"><div class="footer-top"><a class="footer-logo" href="index.html">SELIN.</a><div><p data-i18n="r.footer.line" >Кожна тінь має ім’я.</p><a href="mailto:shadow@yehorselin.com">shadow@yehorselin.com ↗</a></div></div><div class="footer-links"><a href="cases.html" class=""><span data-i18n="r.foot.cases" >Розслідування</span><span aria-hidden="true">↗</span></a><a href="projects.html" class=""><span data-i18n="r.foot.projects" >Проєкти</span><span aria-hidden="true">↗</span></a><a href="books.html" class=""><span data-i18n="r.foot.books" >Книги</span><span aria-hidden="true">↗</span></a><a href="simulator.html" class=""><span data-i18n="r.foot.practice" >Симулятори</span><span aria-hidden="true">↗</span></a><a href="games/case-zero.html?case=case-001" class=""><span data-i18n="r.foot.game" >Гра</span><span aria-hidden="true">↗</span></a><a href="support.html" class=""><span data-i18n="r.foot.coffee" >На каву</span><span aria-hidden="true">↗</span></a><a href="contact.html" class=""><span data-i18n="r.foot.contact" >Контакти</span><span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/yehor-selin" class=""><span data-i18n="r.foot.linkedin" >LinkedIn</span><span aria-hidden="true">↗</span></a><a href="https://github.com/SiLiN-ua" class=""><span data-i18n="r.foot.github" >GitHub</span><span aria-hidden="true">↗</span></a><a href="https://t.me/shadowsint0" class=""><span data-i18n="r.foot.telegram" >Telegram</span><span aria-hidden="true">↗</span></a></div><div class="footer__bottom"><span>© 2026 YEHOR SELIN</span><span>DNIPRO, UKRAINE · OSINT / SOCMINT</span><a href="#">↑ <span data-i18n="r.top" >Нагору</span></a></div></footer>
 
-<script src="js/graph.js"></script>
+
 <script src="js/content.js"></script>
 <script src="js/main.js"></script>
 <script>
@@ -108,5 +68,5 @@
     document.addEventListener('langchange', render);
   })();
 </script>
-</body>
+<script src="js/redesign.js?v=20260918e"></script><script src="js/interiors.js?v=5"></script></body>
 </html>
