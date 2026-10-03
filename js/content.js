@@ -560,7 +560,8 @@
     const target = document.querySelector(targetSelector);
     if (!target) return;
     if (!items.length) {
-      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:2rem 0">Поки що порожньо.</p>`;
+      const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+      target.innerHTML = `<p class="center" style="color:var(--text-mute);padding:2rem 0">${escapeHtml(dict['tools.empty'] || 'Поки що порожньо.')}</p>`;
       return;
     }
     target.innerHTML = items.map(renderRecCard).join('');
@@ -575,21 +576,29 @@
       renderStackHTML(target, data);
     } catch (e) {
       console.error('renderToolsStack error:', e);
-      target.innerHTML = '<p class="center" style="color:var(--text-mute)">Не вдалося завантажити стек. <br><code style="color:var(--red);font-size:.8em">' + escapeHtml(String(e && e.message || e)) + '</code></p>';
+      const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
+      const err = dict['tools.loadError'] || 'Не вдалося завантажити стек.';
+      target.innerHTML = '<p class="center" style="color:var(--text-mute)">' + escapeHtml(err) + ' <br><code style="color:var(--red);font-size:.8em">' + escapeHtml(String(e && e.message || e)) + '</code></p>';
     }
   }
 
   function renderStackHTML(target, data) {
+    const lang = LANG();
+    const dict = (window.__i18nDict && window.__i18nDict[lang]) || {};
+    const T = (k, dflt) => dict[k] || dflt;
+    const pickGroup = (c) => (lang === 'en' ? (c.group_en || c.group) : c.group);
+    const pickCatTitle = (c) => (lang === 'en' ? (c.title_en || c.title) : c.title);
+
     const groups = {};
     data.categories.forEach(c => {
-      (groups[c.group] = groups[c.group] || []).push(c);
+      const g = pickGroup(c);
+      (groups[g] = groups[g] || []).push(c);
     });
     const ordered = data.categories.reduce((acc, c) => {
-      if (!acc.includes(c.group)) acc.push(c.group);
+      const g = pickGroup(c);
+      if (!acc.includes(g)) acc.push(g);
       return acc;
     }, []);
-
-    const lang = LANG();
     const rowHtml = (l) => {
       let host = '';
       try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
@@ -610,35 +619,38 @@
         </tr>`;
     };
 
-    const catHtml = (cat) => `
-      <div class="stack__cat" data-cat-title="${escapeHtml(cat.title.toLowerCase())}">
+    const catHtml = (cat) => {
+      const catTitle = pickCatTitle(cat);
+      return `
+      <div class="stack__cat" data-cat-title="${escapeHtml(catTitle.toLowerCase())}">
         <div class="stack__cat-head">
-          <h3>${escapeHtml(cat.title)}</h3>
+          <h3>${escapeHtml(catTitle)}</h3>
           <span class="stack__count">${cat.links.length}</span>
         </div>
         <div class="stack__table-wrap">
           <table class="stack__table">
             <thead>
               <tr>
-                <th class="stack__th-name">Назва</th>
-                <th class="stack__th-desc">Опис</th>
-                <th class="stack__th-link">Посилання</th>
+                <th class="stack__th-name">${escapeHtml(T('tools.table.name', 'Назва'))}</th>
+                <th class="stack__th-desc">${escapeHtml(T('tools.table.desc', 'Опис'))}</th>
+                <th class="stack__th-link">${escapeHtml(T('tools.table.link', 'Посилання'))}</th>
               </tr>
             </thead>
             <tbody>${cat.links.map(rowHtml).join('')}</tbody>
           </table>
         </div>
       </div>`;
+    };
 
     const html = `
       <div class="stack__meta">
         <div class="stack__counts">
-          <span><strong>${data.total_links}</strong> посилань</span>
-          <span><strong>${data.total_categories}</strong> категорій</span>
-          <span><strong>${ordered.length}</strong> напрямків</span>
+          <span><strong>${data.total_links}</strong> ${escapeHtml(T('tools.meta.links', 'посилань'))}</span>
+          <span><strong>${data.total_categories}</strong> ${escapeHtml(T('tools.meta.categories', 'категорій'))}</span>
+          <span><strong>${ordered.length}</strong> ${escapeHtml(T('tools.meta.groups', 'напрямків'))}</span>
         </div>
         <div class="stack__search">
-          <input type="search" id="stack-search" placeholder="Швидкий пошук: назва, опис, домен, категорія…" autocomplete="off">
+          <input type="search" id="stack-search" placeholder="${escapeHtml(T('tools.search.placeholder', 'Швидкий пошук: назва, опис, домен, категорія…'))}" autocomplete="off">
         </div>
       </div>
 

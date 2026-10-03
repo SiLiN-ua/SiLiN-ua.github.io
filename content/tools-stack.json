@@ -99,7 +99,8 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution"
     },
     {
       "title": "ID",
@@ -185,7 +186,8 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution"
     },
     {
       "title": "Usernames",
@@ -272,7 +274,8 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution"
     },
     {
       "title": "Пошта (email)",
@@ -379,7 +382,9 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution",
+      "title_en": "Email"
     },
     {
       "title": "Пошук за номером телефону",
@@ -421,7 +426,9 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution",
+      "title_en": "Phone number lookup"
     },
     {
       "title": "Реверс-пошук за фото",
@@ -506,7 +513,9 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution",
+      "title_en": "Reverse image search"
     },
     {
       "title": "Реверс-пошук за штучним інтелектом",
@@ -579,7 +588,9 @@
         }
       ],
       "group": "Ідентифікація особи",
-      "group_order": 0
+      "group_order": 0,
+      "group_en": "Identity attribution",
+      "title_en": "AI-powered reverse search"
     },
     {
       "title": "Chess.com",
@@ -593,7 +604,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "ClubHouse",
@@ -607,7 +619,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Discord",
@@ -628,7 +641,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Facebook",
@@ -663,7 +677,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Freelancer",
@@ -678,7 +693,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "GitHub",
@@ -714,7 +730,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Instagram",
@@ -736,7 +753,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "OnlyFans",
@@ -765,7 +783,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Reddit",
@@ -800,7 +819,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Roblox",
@@ -814,7 +834,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Skype",
@@ -828,7 +849,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Steam",
@@ -857,7 +879,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "TikTok",
@@ -905,7 +928,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Twich",
@@ -919,7 +943,9 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks",
+      "title_en": "Twitch"
     },
     {
       "title": "Twitter X",
@@ -961,7 +987,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "WhatsApp",
@@ -987,7 +1014,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "YouTube",
@@ -1065,7 +1093,8 @@
         }
       ],
       "group": "Соціальні мережі",
-      "group_order": 1
+      "group_order": 1,
+      "group_en": "Social networks"
     },
     {
       "title": "Translation Tools",
@@ -1086,7 +1115,8 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources"
     },
     {
       "title": "Translation Tools",
@@ -1135,7 +1165,8 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources"
     },
     {
       "title": "Іноземні реєстри",
@@ -1226,7 +1257,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Foreign registries"
     },
     {
       "title": "Інше (CN)",
@@ -1262,7 +1295,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Other (CN)"
     },
     {
       "title": "Австралія (реєстри)",
@@ -1282,7 +1317,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Australia (registries)"
     },
     {
       "title": "Академ. джерела та новини (CN)",
@@ -1441,7 +1478,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Academic sources & news (CN)"
     },
     {
       "title": "Велика Британія",
@@ -1462,7 +1501,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "United Kingdom"
     },
     {
       "title": "Данія",
@@ -1502,7 +1543,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Denmark"
     },
     {
       "title": "Естонія",
@@ -1517,7 +1560,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Estonia"
     },
     {
       "title": "Загальні пошукові системи",
@@ -1566,7 +1611,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "General search engines"
     },
     {
       "title": "Канада",
@@ -1616,7 +1663,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Canada"
     },
     {
       "title": "Корп. пошук (CN)",
@@ -1692,7 +1741,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Corporate search (CN)"
     },
     {
       "title": "Кіпр",
@@ -1705,7 +1756,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Cyprus"
     },
     {
       "title": "Наука, тех, тендери (CN)",
@@ -1788,7 +1841,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Science, tech, tenders (CN)"
     },
     {
       "title": "Нерухомість (AU)",
@@ -1844,7 +1899,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Real estate (AU)"
     },
     {
       "title": "Норвегія",
@@ -1876,7 +1933,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Norway"
     },
     {
       "title": "Пошук людей (AU)",
@@ -1967,7 +2026,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "People search (AU)"
     },
     {
       "title": "Пошукові ключі (CN)",
@@ -2014,7 +2075,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Search keys (CN)"
     },
     {
       "title": "Пошукові системи (CN)",
@@ -2042,7 +2105,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Search engines (CN)"
     },
     {
       "title": "РФ (реєстри)",
@@ -2056,7 +2121,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Russia (registries)"
     },
     {
       "title": "Російські ресурси",
@@ -2084,7 +2151,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Russian resources"
     },
     {
       "title": "США",
@@ -2112,7 +2181,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "United States"
     },
     {
       "title": "Соцмережі (CN)",
@@ -2175,7 +2246,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Social networks (CN)"
     },
     {
       "title": "Транспорт (AU)",
@@ -2249,7 +2322,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Transport (AU)"
     },
     {
       "title": "Українські реєстри",
@@ -2380,7 +2455,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Ukrainian registries"
     },
     {
       "title": "Франція",
@@ -2394,7 +2471,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "France"
     },
     {
       "title": "Цензура (CN)",
@@ -2436,7 +2515,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Censorship (CN)"
     },
     {
       "title": "Швейцарія",
@@ -2465,7 +2546,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Switzerland"
     },
     {
       "title": "Швеція",
@@ -2491,7 +2574,9 @@
         }
       ],
       "group": "Реєстри та відкриті джерела",
-      "group_order": 2
+      "group_order": 2,
+      "group_en": "Registries & open sources",
+      "title_en": "Sweden"
     },
     {
       "title": "IP",
@@ -2548,7 +2633,8 @@
         }
       ],
       "group": "Витоки та безпека",
-      "group_order": 3
+      "group_order": 3,
+      "group_en": "Leaks & security"
     },
     {
       "title": "Бази витоків",
@@ -2562,7 +2648,9 @@
         }
       ],
       "group": "Витоки та безпека",
-      "group_order": 3
+      "group_order": 3,
+      "group_en": "Leaks & security",
+      "title_en": "Breach databases"
     },
     {
       "title": "Перевірка WHOIS",
@@ -2647,7 +2735,9 @@
         }
       ],
       "group": "Витоки та безпека",
-      "group_order": 3
+      "group_order": 3,
+      "group_en": "Leaks & security",
+      "title_en": "WHOIS lookup"
     },
     {
       "title": "Перевірка на витоки",
@@ -2719,7 +2809,9 @@
         }
       ],
       "group": "Витоки та безпека",
-      "group_order": 3
+      "group_order": 3,
+      "group_en": "Leaks & security",
+      "title_en": "Breach check"
     },
     {
       "title": "Метадані",
@@ -2789,7 +2881,9 @@
         }
       ],
       "group": "Верифікація та експертиза",
-      "group_order": 4
+      "group_order": 4,
+      "group_en": "Verification & forensics",
+      "title_en": "Metadata"
     },
     {
       "title": "Робота з фото",
@@ -2872,7 +2966,9 @@
         }
       ],
       "group": "Верифікація та експертиза",
-      "group_order": 4
+      "group_order": 4,
+      "group_en": "Verification & forensics",
+      "title_en": "Photo forensics"
     },
     {
       "title": "Судова експертиза",
@@ -2944,7 +3040,9 @@
         }
       ],
       "group": "Верифікація та експертиза",
-      "group_order": 4
+      "group_order": 4,
+      "group_en": "Verification & forensics",
+      "title_en": "Forensics"
     },
     {
       "title": "Веб-архіви",
@@ -2983,7 +3081,9 @@
         }
       ],
       "group": "Веб та архіви",
-      "group_order": 5
+      "group_order": 5,
+      "group_en": "Web & archives",
+      "title_en": "Web archives"
     },
     {
       "title": "Веб-камери",
@@ -3032,7 +3132,9 @@
         }
       ],
       "group": "Веб та архіви",
-      "group_order": 5
+      "group_order": 5,
+      "group_en": "Web & archives",
+      "title_en": "Webcams"
     },
     {
       "title": "Веб-сканування",
@@ -3066,7 +3168,9 @@
         }
       ],
       "group": "Веб та архіви",
-      "group_order": 5
+      "group_order": 5,
+      "group_en": "Web & archives",
+      "title_en": "Web scanning"
     },
     {
       "title": "Відео",
@@ -3080,7 +3184,9 @@
         }
       ],
       "group": "Веб та архіви",
-      "group_order": 5
+      "group_order": 5,
+      "group_en": "Web & archives",
+      "title_en": "Video"
     },
     {
       "title": "Перекладачі",
@@ -3094,7 +3200,9 @@
         }
       ],
       "group": "Веб та архіви",
-      "group_order": 5
+      "group_order": 5,
+      "group_en": "Web & archives",
+      "title_en": "Translators"
     },
     {
       "title": "Скорочені URL",
@@ -3123,7 +3231,9 @@
         }
       ],
       "group": "Веб та архіви",
-      "group_order": 5
+      "group_order": 5,
+      "group_en": "Web & archives",
+      "title_en": "URL shorteners"
     },
     {
       "title": "Тимчасові пошта та телефон",
@@ -3197,7 +3307,9 @@
         }
       ],
       "group": "Комунікації",
-      "group_order": 6
+      "group_order": 6,
+      "group_en": "Communications",
+      "title_en": "Temporary email & phone"
     },
     {
       "title": "OSINT Combine Resources",
@@ -3240,7 +3352,8 @@
         }
       ],
       "group": "Інструменти й утиліти",
-      "group_order": 7
+      "group_order": 7,
+      "group_en": "Tools & utilities"
     },
     {
       "title": "Інші утиліти",
@@ -3254,7 +3367,9 @@
         }
       ],
       "group": "Інструменти й утиліти",
-      "group_order": 7
+      "group_order": 7,
+      "group_en": "Tools & utilities",
+      "title_en": "Other utilities"
     },
     {
       "title": "Конвертація даних",
@@ -3295,7 +3410,9 @@
         }
       ],
       "group": "Інструменти й утиліти",
-      "group_order": 7
+      "group_order": 7,
+      "group_en": "Tools & utilities",
+      "title_en": "Data conversion"
     },
     {
       "title": "Розробка",
@@ -3330,7 +3447,9 @@
         }
       ],
       "group": "Інструменти й утиліти",
-      "group_order": 7
+      "group_order": 7,
+      "group_en": "Tools & utilities",
+      "title_en": "Development"
     },
     {
       "title": "Різні OSINT-інструменти",
@@ -3428,7 +3547,9 @@
         }
       ],
       "group": "Інструменти й утиліти",
-      "group_order": 7
+      "group_order": 7,
+      "group_en": "Tools & utilities",
+      "title_en": "Various OSINT tools"
     },
     {
       "title": "BitCoin",
@@ -3442,7 +3563,8 @@
         }
       ],
       "group": "Крипто та фінанси",
-      "group_order": 8
+      "group_order": 8,
+      "group_en": "Crypto & finance"
     },
     {
       "title": "CTF",
@@ -3498,7 +3620,8 @@
         }
       ],
       "group": "Освіта",
-      "group_order": 9
+      "group_order": 9,
+      "group_en": "Education"
     },
     {
       "title": "Курси",
@@ -3535,7 +3658,9 @@
         }
       ],
       "group": "Освіта",
-      "group_order": 9
+      "group_order": 9,
+      "group_en": "Education",
+      "title_en": "Courses"
     },
     {
       "title": "Новини та моніторинг",
@@ -3563,7 +3688,9 @@
         }
       ],
       "group": "Освіта",
-      "group_order": 9
+      "group_order": 9,
+      "group_en": "Education",
+      "title_en": "News & monitoring"
     },
     {
       "title": "Australia",
@@ -3577,7 +3704,8 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other"
     },
     {
       "title": "SelIn",
@@ -3592,7 +3720,8 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other"
     },
     {
       "title": "Авиация",
@@ -3627,7 +3756,9 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other",
+      "title_en": "Aviation"
     },
     {
       "title": "Авто",
@@ -3648,7 +3779,9 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other",
+      "title_en": "Vehicles"
     },
     {
       "title": "Контейнеры",
@@ -3676,7 +3809,9 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other",
+      "title_en": "Shipping containers"
     },
     {
       "title": "Корабли",
@@ -3713,7 +3848,9 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other",
+      "title_en": "Ships"
     },
     {
       "title": "Поезда",
@@ -3734,7 +3871,9 @@
         }
       ],
       "group": "Інше",
-      "group_order": 10
+      "group_order": 10,
+      "group_en": "Other",
+      "title_en": "Trains"
     }
   ]
 }
