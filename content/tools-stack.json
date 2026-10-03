@@ -352,7 +352,8 @@
           "url": "https://www.comprobarcorreo.com/",
           "real_title": "Comprobar Correo – Validar email – Limpiar tu lista de correos",
           "description": "Comprueba si una cuenta de correo es correcta y existe. Verifica el formato de la cuenta, comprueba que existe el servidor de correo y que acepta mensajes para esa cuenta. Validar correos.",
-          "description_en": "Comprueba si una cuenta de correo es correcta y existe. Verifica el formato de la cuenta, comprueba que existe el servidor de correo y que acepta mensajes para esa cuenta. Validar correos."
+          "description_en": "Comprueba si una cuenta de correo es correcta y existe. Verifica el formato de la cuenta, comprueba que existe el servidor de correo y que acepta mensajes para esa cuenta. Validar correos.",
+          "title_en": "Check Email – Validate email – Clean your email list"
         },
         {
           "title": "Проверка в базах мошенников",
@@ -748,7 +749,8 @@
           "real_title": "Acceso Restringido | Panel VIP SOCMINT",
           "description": "Онлайн-ресурс на socmint.manuelbot59.com.",
           "synth_desc": true,
-          "description_en": "Online resource at socmint.manuelbot59.com."
+          "description_en": "Online resource at socmint.manuelbot59.com.",
+          "title_en": "Restricted Access | SOCMINT VIP Panel"
         },
         {
           "title": "Утечки по FB",
@@ -756,7 +758,8 @@
           "real_title": "Suite de Herramientas OSINT | Manuel Travezaño",
           "description": "Онлайн-ресурс на tools.manuelbot59.com.",
           "synth_desc": true,
-          "description_en": "Online resource at tools.manuelbot59.com."
+          "description_en": "Online resource at tools.manuelbot59.com.",
+          "title_en": "OSINT Toolkit | Manuel Travezaño"
         }
       ],
       "group": "Соціальні мережі",
@@ -1026,7 +1029,8 @@
           "url": "https://urlebird.com/es/",
           "real_title": "Ver TikTok sin la aplicación de forma anónima ❤️ Urlebird",
           "description": "Ver vídeos TikTok, perfiles, historias de forma anónima con Urlebird, sin cuenta o aplicación necesaria sólo tiene que abrir, buscar y ver o descargar",
-          "description_en": "Watch TikTok videos, profiles and stories anonymously with Urlebird — no account or app needed, just open, search and view or download."
+          "description_en": "Watch TikTok videos, profiles and stories anonymously with Urlebird — no account or app needed, just open, search and view or download.",
+          "title_en": "View TikTok anonymously without the app — Urlebird"
         },
         {
           "title": "Anonymous TikTok",
@@ -1124,14 +1128,16 @@
           "url": "https://2chat.co/es/tools/whatsapp-checker",
           "real_title": "Verificador de números de WhatsApp — 2Chat",
           "description": "Verificador de números de WhatsApp. Esta API te permite verificar si un número de teléfono tiene una cuenta de WhatsApp o no.",
-          "description_en": "WhatsApp number validator. An API that checks whether a phone number has a WhatsApp account."
+          "description_en": "WhatsApp number validator. An API that checks whether a phone number has a WhatsApp account.",
+          "title_en": "WhatsApp number verifier — 2Chat"
         },
         {
           "title": "Генерация смс чата сам с собой",
           "url": "https://www.nepchatapp.nl/",
           "real_title": "Maak nep WhatsApp en Messenger berichten - NepChatApp.nl - NepChatApp.nl",
           "description": "NepChatApp.nl - de niet van echt te onderscheiden chat imitator",
-          "description_en": "NepChatApp.nl - de niet van echt te onderscheiden chat imitator"
+          "description_en": "NepChatApp.nl - de niet van echt te onderscheiden chat imitator",
+          "title_en": "Create fake WhatsApp and Messenger messages — NepChatApp.nl"
         }
       ],
       "group": "Соціальні мережі",
@@ -1390,7 +1396,8 @@
           "url": "https://villena.cl/rut-a-edad-fecha-de-nacimiento.html",
           "real_title": "Obtener la Edad y Fecha de Nacimiento con RUT",
           "description": "Acá puedes obtener la edad y fecha de nacimiento de una persona con tan sólo conocer su número de RUT. Método estadísticamente comprobado.",
-          "description_en": "Derive a person's age and date of birth from their RUT number. Statistically verified method."
+          "description_en": "Derive a person's age and date of birth from their RUT number. Statistically verified method.",
+          "title_en": "Get age and date of birth from RUT (Chile)"
         },
         {
           "title": "Whitepages® | Find People, Phone Numbers, Addresses & More",
@@ -1654,7 +1661,8 @@
           "description": "Онлайн-ресурс на kns.cnki.net.",
           "synth_desc": true,
           "description_uk": "Онлайн-ресурс на kns.cnki.net.",
-          "description_en": "Online resource at kns.cnki.net."
+          "description_en": "Online resource at kns.cnki.net.",
+          "title_en": "kns.cnki — personalised home — China National Knowledge Infrastructure (CNKI)"
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -1695,7 +1703,8 @@
           "url": "https://ois.dk/",
           "real_title": "OIS - Din genvej til ejendomsdata",
           "description": "OIS.dk - Din genvej til ejendomsdata. Den Offentlige Informationsserver, OIS, er en statslig database der samler en række oplysninger vedrørende ejendomme i Danmark.",
-          "description_en": "OIS.dk — your shortcut to Danish property data. OIS, the Public Information Server, is a government database aggregating information on properties across Denmark."
+          "description_en": "OIS.dk — your shortcut to Danish property data. OIS, the Public Information Server, is a government database aggregating information on properties across Denmark.",
+          "title_en": "OIS — Shortcut to Danish property data"
         },
         {
           "title": "DENMARK - Official Register",
@@ -1703,7 +1712,8 @@
           "description": "Онлайн-ресурс на datacvr.virk.dk.",
           "synth_desc": true,
           "description_uk": "Онлайн-ресурс на datacvr.virk.dk.",
-          "description_en": "Online resource at datacvr.virk.dk."
+          "description_en": "Online resource at datacvr.virk.dk.",
+          "title_en": "Denmark — Official Register"
         },
         {
           "title": "DENMARK - Ownership of house or car",
@@ -4094,7 +4104,8 @@
           "real_title": "Manuel Travezaño OSINT — recursos osint, metodologías SOCMINT, Ciberinteligencia | Patreon",
           "description": "Get more from Manuel Travezaño OSINT on Patreon. recursos osint, metodologías SOCMINT, Ciberinteligencia. Support Manuel Travezaño OSINT and get exclusive access to their work.",
           "description_uk": "Отримайте більше від Manuel Travezaño OSINT на Patreon. рекурсос озін, метеорологічні засоби SOCMINT, Ciberinteligencia. Підтримка Manuel Travezaño OSINT і отримати ексклюзивний доступ до їх роботи.",
-          "description_en": "Get more from Manuel Travezaño OSINT on Patreon: OSINT resources, SOCMINT methodologies and cyber-intelligence. Support him for exclusive access to his work."
+          "description_en": "Get more from Manuel Travezaño OSINT on Patreon: OSINT resources, SOCMINT methodologies and cyber-intelligence. Support him for exclusive access to his work.",
+          "title_en": "Manuel Travezaño OSINT — OSINT resources, SOCMINT methodologies, cyber intelligence | Patreon"
         }
       ],
       "group": "Освіта",
