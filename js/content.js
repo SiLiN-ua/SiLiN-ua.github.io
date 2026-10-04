@@ -247,7 +247,7 @@
                   <a class="btn btn--ghost" data-send="mailapp">${tx('books.paid.mail_app', 'Інша пошта', 'Other mail app')}</a>
                   <button class="btn btn--ghost" type="button" data-send="copy">${tx('books.paid.copy', 'Скопіювати дані', 'Copy order details')}</button>
                 </div>
-                <p class="book-send-options__fallback">${tx('books.paid.fallback', 'Якщо лист не відкрився, скопіюйте дані та надішліть їх на', 'If email does not open, copy the details and send them to')} <a href="mailto:shadow@yehorselin.com">shadow@yehorselin.com</a></p>
+                <p class="book-send-options__fallback">${tx('books.paid.fallback', 'Якщо лист не відкрився, скопіюйте дані та надішліть їх на', 'If email does not open, copy the details and send them to')} <a href="mailto:selinegor22@gmail.com">selinegor22@gmail.com</a> ${tx('books.paid.or', 'або', 'or')} <a href="mailto:shadow@yehorselin.com">shadow@yehorselin.com</a></p>
                 <p class="book-send-options__status" role="status"></p>
               </div>
             </section>
