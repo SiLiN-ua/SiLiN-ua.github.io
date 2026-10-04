@@ -23,6 +23,13 @@
  const translate=()=>{
    syncMotion();cases.forEach(displayCase);
    document.querySelectorAll('[data-volume]').forEach(a=>{let n=a.dataset.volume,s=lang()==='en'?'EN':'UK';a.href=`content/books/pdfs/The_Shadow_Files_Vol${n}_${s}.pdf`;a.querySelector('img').src=`img/uploads/Cover_ShadowFiles_Vol${n}_${s}.png`;a.setAttribute('aria-label',`The Shadow Files · ${n} · ${a.querySelector('h3').textContent} · PDF`);});
+   const edition=lang()==='en'?'EN':'UK';
+   const blueCover=document.querySelector('.blue-room-cover');
+   if(blueCover){blueCover.src=`img/uploads/Cover_BlueRoom_${edition}.webp`;blueCover.alt=lang()==='en'?'The Blue Room — book cover':'Блакитна кімната — обкладинка';}
+   const memoirCover=document.querySelector('.memoir-art img');
+   const memoirLink=document.querySelector('.memoir-button');
+   if(memoirCover){memoirCover.src=`img/uploads/Cover_EverythingIsFine_${edition}.png`;memoirCover.alt=lang()==='en'?'Everything Is Fine — book cover':'Все добре — обкладинка';}
+   if(memoirLink) memoirLink.href=`content/books/pdfs/Everything_Is_Fine_${edition}.pdf`;
  };
  document.addEventListener('langchange',translate);translate();
  // Tilt the display surface while keeping the book's floating animation independent.
