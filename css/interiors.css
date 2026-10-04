@@ -153,3 +153,5 @@
 .page-certificates .cert-details p{overflow-wrap:anywhere}
 .page-certificates .cert .card__link{display:inline-block;margin-top:8px;font-size:11px}
 @media(max-width:760px){.page-certificates .cert__img{height:220px}.page-certificates .cert__body h3{font-size:21px}}
+
+.book-send-options{margin-top:18px;padding:18px;border:1px solid #6fa89b66;background:#091821}.book-send-options[hidden]{display:none}.book-send-options>strong{display:block;color:#d7e8e8;font:600 16px var(--font-sans)}.book-send-options>p{margin:8px 0 14px;color:#91aab4;font-size:11px;line-height:1.6}.book-send-options__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.book-send-options__grid .btn{display:flex;justify-content:center;align-items:center;min-height:44px;text-align:center;cursor:pointer}.book-send-options__fallback a{color:#b9e6dc;text-decoration:underline;text-underline-offset:3px}.book-send-options .book-send-options__status{min-height:18px;margin-bottom:0;color:#b9e6dc}.book-send-options__grid button{width:100%}@media(max-width:620px){.book-send-options__grid{grid-template-columns:1fr}}

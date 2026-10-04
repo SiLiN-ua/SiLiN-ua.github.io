@@ -236,8 +236,20 @@
                   <input name="transaction" type="text" required minlength="4" placeholder="${tx('books.paid.transaction_hint', 'Вкажіть після оплати', 'Enter after payment')}">
                 </label>
                 <p class="book-order-form__privacy">${tx('books.paid.privacy', 'Email та номер операції використовуються лише для перевірки платежу й доставки. Автоматичного завантаження немає.', 'Your email and transaction number are used only to verify payment and deliver the files. There is no automatic download.')}</p>
-                <button class="btn btn--filled" type="submit">${tx('books.paid.confirm', 'Надіслати підтвердження', 'Send payment confirmation')}</button>
+                <button class="btn btn--filled" type="submit">${tx('books.paid.confirm', 'Обрати спосіб надсилання', 'Choose how to send')}</button>
               </form>
+              <div class="book-send-options" hidden aria-live="polite">
+                <strong>${tx('books.paid.send_title', 'Як надіслати підтвердження?', 'How would you like to send it?')}</strong>
+                <p>${tx('books.paid.send_note', 'Оберіть зручний варіант. Готовий лист уже міститиме всі дані замовлення.', 'Choose any option. The prepared message will already contain all order details.')}</p>
+                <div class="book-send-options__grid">
+                  <a class="btn btn--filled" data-send="gmail" target="_blank" rel="noopener">Gmail</a>
+                  <a class="btn btn--ghost" data-send="outlook" target="_blank" rel="noopener">Outlook</a>
+                  <a class="btn btn--ghost" data-send="mailapp">${tx('books.paid.mail_app', 'Інша пошта', 'Other mail app')}</a>
+                  <button class="btn btn--ghost" type="button" data-send="copy">${tx('books.paid.copy', 'Скопіювати дані', 'Copy order details')}</button>
+                </div>
+                <p class="book-send-options__fallback">${tx('books.paid.fallback', 'Якщо лист не відкрився, скопіюйте дані та надішліть їх на', 'If email does not open, copy the details and send them to')} <a href="mailto:shadow@yehorselin.com">shadow@yehorselin.com</a></p>
+                <p class="book-send-options__status" role="status"></p>
+              </div>
             </section>
           </div>
           <p class="book-purchase-dialog__license">${tx('books.paid.license', 'Покупка надає особисту ліцензію на читання. Перепродаж і публічне поширення файлів не дозволені.', 'Purchase grants a personal reading licence. Resale and public redistribution of the files are not permitted.')}</p>`;
@@ -247,7 +259,10 @@
         dialog.querySelector('.book-purchase-dialog__close').addEventListener('click', close);
         dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
         dialog.addEventListener('close', () => dialog.remove());
-        dialog.querySelector('.book-order-form').addEventListener('submit', event => {
+        const orderForm = dialog.querySelector('.book-order-form');
+        const sendOptions = dialog.querySelector('.book-send-options');
+        orderForm.addEventListener('input', () => { sendOptions.hidden = true; });
+        orderForm.addEventListener('submit', event => {
           event.preventDefault();
           const data = new FormData(event.currentTarget);
           const chosenLanguage = dialog.querySelector('#book-order-language').value;
@@ -265,7 +280,26 @@
             `Transaction: ${transaction}`,
             `Delivery email: ${buyerEmail}`
           ].join('\n');
-          location.href = `mailto:shadow@yehorselin.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          const encodedSubject = encodeURIComponent(subject);
+          const encodedBody = encodeURIComponent(body);
+          const recipient = 'shadow@yehorselin.com';
+          sendOptions.querySelector('[data-send="gmail"]').href = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodedSubject}&body=${encodedBody}`;
+          sendOptions.querySelector('[data-send="outlook"]').href = `https://outlook.live.com/mail/0/deeplink/compose?to=${recipient}&subject=${encodedSubject}&body=${encodedBody}`;
+          sendOptions.querySelector('[data-send="mailapp"]').href = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
+          const copyButton = sendOptions.querySelector('[data-send="copy"]');
+          copyButton.dataset.copyText = `${subject}\n\n${body}\n\nSend to: ${recipient}`;
+          sendOptions.hidden = false;
+          sendOptions.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
+        sendOptions.querySelector('[data-send="copy"]').addEventListener('click', async event => {
+          const value = event.currentTarget.dataset.copyText || '';
+          const status = sendOptions.querySelector('.book-send-options__status');
+          try {
+            await navigator.clipboard.writeText(value);
+            status.textContent = tx('books.paid.copied', 'Дані скопійовано. Надішліть їх на shadow@yehorselin.com', 'Order details copied. Send them to shadow@yehorselin.com');
+          } catch (_) {
+            status.textContent = tx('books.paid.copy_failed', 'Не вдалося скопіювати. Виділіть дані вручну або напишіть на shadow@yehorselin.com', 'Could not copy. Select the details manually or email shadow@yehorselin.com');
+          }
         });
         if (dialog.showModal) dialog.showModal(); else dialog.setAttribute('open', '');
       });
