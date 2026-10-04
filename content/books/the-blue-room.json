@@ -1,0 +1,21 @@
+{
+  "title_uk": "Блакитна кімната",
+  "title_en": "The Blue Room",
+  "subtitle_uk": "Telegram OSINT у практичному розслідуванні",
+  "subtitle_en": "Telegram OSINT in Practical Investigations",
+  "category": "educational",
+  "year": 2026,
+  "languages": "UA · EN · RU",
+  "cover": "/img/uploads/Cover_BlueRoom_UK.webp",
+  "cover_uk": "/img/uploads/Cover_BlueRoom_UK.webp",
+  "cover_en": "/img/uploads/Cover_BlueRoom_EN.webp",
+  "description_uk": "Практична книга про розслідування в Telegram — від першого нікнейма або числового ID до перевіреного звіту. Шістнадцять розділів проводять через атрибуцію акаунтів, історію гендлів, телефонні й кросплатформні півоти, канали, групи, географію, боти, Fragment і захист власної операційної безпеки. Кожен метод має межу впевненості, режим відмови та пропрацьовану справу. Видання містить реалістичні реконструкції, практичні схеми, глосарій і чітку правову рамку. Після перевірки оплати покупець отримує персонально маркований комплект PDF, EPUB і FB2 обраною мовою.",
+  "description_en": "A practical book on Telegram investigations — from the first handle or numeric ID to a verified report. Sixteen chapters cover account attribution, handle history, phone and cross-platform pivots, channels, groups, geography, bots, Fragment, and the investigator's own operational security. Every method has a confidence ceiling, a failure mode, and a worked case. The edition includes realistic reconstructions, practical diagrams, a glossary, and a clear legal boundary. After payment is verified, the buyer receives a personally marked PDF, EPUB, and FB2 bundle in the selected language.",
+  "paid": true,
+  "price_usd": 25,
+  "product_code": "BLUE-ROOM",
+  "formats": "PDF · EPUB · FB2",
+  "order": 0,
+  "published": true,
+  "__slug": "the-blue-room"
+}

@@ -65,6 +65,39 @@
 @media(prefers-reduced-motion:reduce){.dossier *,.dossier *::before,.dossier *::after{animation:none!important;transition:none!important}.dossier-entrance{opacity:1!important;translate:none!important}}
 .redesign.interior.dossier .content-anchor+section{padding-top:45px!important}.dossier .dossier-catalogue{max-width:none!important}.dossier .dossier-catalogue .card__cover{min-width:0;max-width:none;padding:0}.dossier .dossier-catalogue .card{padding:0}
 .redesign.interior.dossier.page-project>section:first-of-type{padding-top:15px!important}.dossier .proj-section{padding-top:10px}.dossier .proj-back{margin-bottom:20px}.dossier .proj-head{padding-top:20px}.dossier .reader-map-nodes a:hover{border-color:#93d1bd;background:#19323a}
+
+/* Paid book checkout: the files remain offline until payment is verified. */
+.book-purchase{margin-top:18px;padding:16px;border:1px solid #75aeb466;background:linear-gradient(135deg,#18333a,#0d2029)}
+.book-purchase__line{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:9px}
+.book-purchase__line strong{font:600 22px var(--font-sans);color:#d7f5ed}
+.book-purchase__badge{font:8px var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:#9fd9d0}
+.dossier .book .book-purchase p{margin:0 0 13px;color:#8faab7;font-size:10px;line-height:1.55}
+.book-purchase__open{width:100%;justify-content:center;border:0;cursor:pointer}
+.book-purchase-dialog{width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 32px);margin:auto;padding:34px;background:#0b1722;color:#c7d8df;border:1px solid #709aa8;box-shadow:0 35px 100px #000b;overflow:auto}
+.book-purchase-dialog::backdrop{background:#02080dda;backdrop-filter:blur(8px)}
+.book-purchase-dialog__close{position:absolute;right:18px;top:12px;border:0;background:transparent;color:#bdd4db;font:32px/1 var(--font-sans);cursor:pointer}
+.book-purchase-dialog__eyebrow{font:9px var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:#91cfc4;margin-bottom:10px}
+.book-purchase-dialog h2{font:500 clamp(34px,5vw,55px)/1.05 var(--font-serif);color:#e3e8e7;margin:0 42px 15px 0}
+.book-purchase-dialog__lead{max-width:760px;color:#9fb4bf;font-size:14px;line-height:1.75}
+.book-purchase-dialog__steps{display:grid;gap:14px;margin-top:25px}
+.book-purchase-dialog__steps>section{position:relative;padding:24px 24px 24px 66px;border:1px solid #52748666;background:#10212c}
+.book-purchase-dialog__steps>section>span{position:absolute;left:23px;top:25px;font:10px var(--font-mono);color:#79baad}
+.book-purchase-dialog label,.book-purchase-dialog__payment-title{display:grid;gap:8px;font:11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:#9fc0c6}
+.book-purchase-dialog select,.book-purchase-dialog input{width:100%;padding:12px 13px;border:1px solid #567b8e;background:#091821;color:#d4e1e5;font:14px var(--font-sans);text-transform:none;letter-spacing:0}
+.book-payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}
+.book-payment-card{display:grid;gap:10px;align-content:start;padding:17px;border:1px solid #4f748166;background:#0b1a24}
+.book-payment-card strong{font:600 16px var(--font-sans);color:#d5e5e7}
+.book-payment-card code{overflow-wrap:anywhere;color:#a9d7cf}
+.book-payment-card small{color:#8ba5b0;line-height:1.5}
+.book-payment-card .btn{justify-content:center;text-align:center}
+.book-order-code{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:14px;padding:12px 14px;border-left:2px solid #83c2b4;background:#0a1821}
+.book-order-code span{font:9px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:#7f9fac}
+.book-order-code code{color:#b9e6dc}
+.book-order-form{display:grid;gap:15px}
+.book-order-form__privacy,.book-purchase-dialog__license{font-size:11px;line-height:1.65;color:#7f9ba8}
+.book-order-form .btn{justify-content:center;border:0;cursor:pointer}
+.book-purchase-dialog__license{margin:18px 0 0;padding-top:16px;border-top:1px solid #45677655}
+@media(max-width:620px){.book-purchase-dialog{padding:25px 17px}.book-purchase-dialog__steps>section{padding:20px}.book-purchase-dialog__steps>section>span{position:static;display:block;margin-bottom:12px}.book-payment-grid{grid-template-columns:1fr}.book-order-code{align-items:flex-start;flex-direction:column}}
 /* Evidence-led case and readable project gallery. */
 .dossier .investigation-map{border-top:1px solid #658a8c;margin-top:32px!important;padding-top:30px}
 .dossier .investigation-map h2{margin:12px 0 18px;font-size:clamp(30px,4vw,46px);max-width:650px;letter-spacing:-.035em}

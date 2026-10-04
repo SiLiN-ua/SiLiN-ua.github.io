@@ -103,6 +103,8 @@
     // matches the interface language and falls back to the Ukrainian art.
     const coverSrc = tr(item, 'cover');
     const cover = coverSrc ? `<img src="${escapeHtml(coverSrc)}" alt="${title}" loading="lazy" style="width:100%;height:100%;object-fit:cover">` : `<h3>${title}</h3>`;
+    const isPaid = item.paid === true;
+    const price = Number(item.price_usd || 0);
     const links = [];
     if (item.pdf_url_uk) links.push(`<a href="${escapeHtml(item.pdf_url_uk)}" target="_blank" rel="noopener" class="btn" style="padding:.6rem 1rem;font-size:.7rem">📖 Читати українською</a>`);
     if (item.pdf_url_en) links.push(`<a href="${escapeHtml(item.pdf_url_en)}" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:.6rem 1rem;font-size:.7rem">🇬🇧 Read in English</a>`);
@@ -135,6 +137,17 @@
          </details>`
       : '';
 
+    const paidBlock = isPaid
+      ? `<div class="book-purchase">
+           <div class="book-purchase__line">
+             <span class="book-purchase__badge">${escapeHtml(dict['books.paid.badge'] || 'Платне видання')}</span>
+             <strong>$${price}</strong>
+           </div>
+           <p>${escapeHtml(dict['books.paid.bundle'] || 'Одна мова · PDF, EPUB і FB2 · персональна копія')}</p>
+           <button type="button" class="btn btn--filled book-purchase__open" data-book-buy="${escapeHtml(item.__slug || '')}">${escapeHtml(dict['books.paid.buy'] || 'Купити за $25')}</button>
+         </div>`
+      : '';
+
     return `
       <div class="book">
         <div class="book__cover">${cover}</div>
@@ -147,9 +160,116 @@
               <p class="book__more-body">${rest}</p>
             </details>` : ''}
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem">${links.join('')}</div>
-          ${dlRow}
+          ${paidBlock}
+          ${isPaid ? '' : dlRow}
         </div>
       </div>`;
+  }
+
+  function bindBookPurchases(target, items) {
+    const old = document.getElementById('book-purchase-dialog');
+    if (old) old.remove();
+
+    target.querySelectorAll('[data-book-buy]').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = items.find(x => x.__slug === button.dataset.bookBuy);
+        if (!item) return;
+
+        const lang = LANG();
+        const dict = (window.__i18nDict && window.__i18nDict[lang]) || {};
+        const tx = (k, uk, en) => escapeHtml(dict[k] || (lang === 'en' ? en : uk));
+        const title = escapeHtml(tr(item, 'title'));
+        const price = Number(item.price_usd || 25);
+        const today = new Date();
+        const date = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, '0'), String(today.getDate()).padStart(2, '0')].join('');
+        const random = Math.random().toString(36).slice(2, 7).toUpperCase();
+        const orderCode = `BR-${date}-${random}`;
+
+        const dialog = document.createElement('dialog');
+        dialog.id = 'book-purchase-dialog';
+        dialog.className = 'book-purchase-dialog';
+        dialog.innerHTML = `
+          <button type="button" class="book-purchase-dialog__close" aria-label="${tx('books.paid.close', 'Закрити', 'Close')}">×</button>
+          <div class="book-purchase-dialog__eyebrow">${tx('books.paid.badge', 'Платне видання', 'Paid edition')} · $${price}</div>
+          <h2>${title}</h2>
+          <p class="book-purchase-dialog__lead">${tx('books.paid.lead', 'Оберіть мову, сплатіть зручним способом і надішліть дані операції. Після ручної перевірки ви отримаєте персонально маркований комплект.', 'Choose a language, pay using either method, and send the transaction details. After manual verification, you will receive a personally marked bundle.')}</p>
+
+          <div class="book-purchase-dialog__steps">
+            <section>
+              <span>01</span>
+              <label for="book-order-language">${tx('books.paid.language', 'Мова книги', 'Book language')}</label>
+              <select id="book-order-language">
+                <option value="UA">Українська / Ukrainian</option>
+                <option value="EN">English</option>
+                <option value="RU">Русский / Russian</option>
+              </select>
+            </section>
+
+            <section>
+              <span>02</span>
+              <div class="book-purchase-dialog__payment-title">${tx('books.paid.payment', 'Сплатіть $25', 'Pay $25')}</div>
+              <div class="book-payment-grid">
+                <div class="book-payment-card">
+                  <strong>PayPal</strong>
+                  <code>shadow@yehorselin.com</code>
+                  <a class="btn btn--ghost" href="https://www.paypal.com/myaccount/transfer/homepage/pay" target="_blank" rel="noopener">${tx('books.paid.open_paypal', 'Відкрити PayPal', 'Open PayPal')}</a>
+                </div>
+                <div class="book-payment-card">
+                  <strong>Monobank</strong>
+                  <small>${tx('books.paid.mono_note', 'Еквівалент $25 за курсом вашої картки', 'The $25 equivalent at your card rate')}</small>
+                  <a class="btn btn--ghost" href="https://send.monobank.ua/jar/8KyRZh9tTY" target="_blank" rel="noopener">${tx('books.paid.open_mono', 'Відкрити Банку', 'Open Monobank')}</a>
+                </div>
+              </div>
+              <div class="book-order-code"><span>${tx('books.paid.order', 'Код замовлення', 'Order code')}</span><code>${orderCode}</code></div>
+            </section>
+
+            <section>
+              <span>03</span>
+              <form class="book-order-form">
+                <label>${tx('books.paid.method', 'Спосіб оплати', 'Payment method')}
+                  <select name="method" required><option>PayPal</option><option>Monobank</option></select>
+                </label>
+                <label>${tx('books.paid.email', 'Email для отримання книги', 'Delivery email')}
+                  <input name="email" type="email" autocomplete="email" required placeholder="name@example.com">
+                </label>
+                <label>${tx('books.paid.transaction', 'Номер або ID операції', 'Transaction number or ID')}
+                  <input name="transaction" type="text" required minlength="4" placeholder="${tx('books.paid.transaction_hint', 'Вкажіть після оплати', 'Enter after payment')}">
+                </label>
+                <p class="book-order-form__privacy">${tx('books.paid.privacy', 'Email та номер операції використовуються лише для перевірки платежу й доставки. Автоматичного завантаження немає.', 'Your email and transaction number are used only to verify payment and deliver the files. There is no automatic download.')}</p>
+                <button class="btn btn--filled" type="submit">${tx('books.paid.confirm', 'Надіслати підтвердження', 'Send payment confirmation')}</button>
+              </form>
+            </section>
+          </div>
+          <p class="book-purchase-dialog__license">${tx('books.paid.license', 'Покупка надає особисту ліцензію на читання. Перепродаж і публічне поширення файлів не дозволені.', 'Purchase grants a personal reading licence. Resale and public redistribution of the files are not permitted.')}</p>`;
+
+        document.body.appendChild(dialog);
+        const close = () => dialog.close ? dialog.close() : dialog.removeAttribute('open');
+        dialog.querySelector('.book-purchase-dialog__close').addEventListener('click', close);
+        dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
+        dialog.addEventListener('close', () => dialog.remove());
+        dialog.querySelector('.book-order-form').addEventListener('submit', event => {
+          event.preventDefault();
+          const data = new FormData(event.currentTarget);
+          const chosenLanguage = dialog.querySelector('#book-order-language').value;
+          const buyerEmail = String(data.get('email') || '').trim();
+          const transaction = String(data.get('transaction') || '').trim();
+          const method = String(data.get('method') || '').trim();
+          const subject = `Blue Room order ${orderCode}`;
+          const body = [
+            `Order: ${orderCode}`,
+            `Book: ${tr(item, 'title')}`,
+            `Language: ${chosenLanguage}`,
+            `Bundle: PDF + EPUB + FB2`,
+            `Price: $${price}`,
+            `Payment: ${method}`,
+            `Transaction: ${transaction}`,
+            `Delivery email: ${buyerEmail}`
+          ].join('\n');
+          location.href = `mailto:shadow@yehorselin.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+        if (dialog.showModal) dialog.showModal(); else dialog.setAttribute('open', '');
+      });
+    });
   }
 
   function readingTime(text) {
@@ -282,6 +402,7 @@
     }
 
     target.innerHTML = `<div class="filters">${pillsHtml}</div>${bodyHtml}`;
+    bindBookPurchases(target, items);
 
     target.querySelectorAll('.filter-pill').forEach(b => {
       b.addEventListener('click', () => {
