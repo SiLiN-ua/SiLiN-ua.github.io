@@ -149,7 +149,7 @@
       : '';
 
     return `
-      <div class="book">
+      <div class="book"${item.__slug ? ` id="book-${escapeHtml(item.__slug)}"` : ''}>
         <div class="book__cover">${cover}</div>
         <div>
           <div class="book__meta">${year}${langs ? ' · ' + langs : ''}</div>
@@ -403,6 +403,10 @@
 
     target.innerHTML = `<div class="filters">${pillsHtml}</div>${bodyHtml}`;
     bindBookPurchases(target, items);
+    if (location.hash.startsWith('#book-')) {
+      const anchoredBook = document.querySelector(location.hash);
+      if (anchoredBook) requestAnimationFrame(() => anchoredBook.scrollIntoView({ block: 'center' }));
+    }
 
     target.querySelectorAll('.filter-pill').forEach(b => {
       b.addEventListener('click', () => {
