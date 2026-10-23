@@ -7,14 +7,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href="img/brand/panther-180.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="t9aKebeZxkHG-YJYZL_mMQNKXAllPDwWa54UEKTMoCs" />
-<title data-title-uk="Як грати · Єгор Селін" data-title-en="How to play · Yehor Selin">Як грати · Єгор Селін</title>
-<meta name="description" content="Референсний гайд 2026 з професії OSINT-аналітик в Україні: офіційний статус, скіли, курси, зарплати, кар'єрні шляхи (держава, приватка, військо, волонтерство), інструментарій та етика.">
-<meta name="keywords" content="OSINT Україна, OSINT-аналітик, професія OSINT, як стати OSINT, курси OSINT Україна, зарплата OSINT-аналітика, класифікатор професій OSINT, OSINT робота Україна, розвідка відкритих джерел кар'єра">
+<title data-title-uk="OSINT з нуля: практичний гайд · Єгор Селін" data-title-en="OSINT from zero: a practical guide · Yehor Selin">OSINT з нуля: практичний гайд · Єгор Селін</title>
+<meta name="description" content="Практичний гайд з OSINT для початківців: методика дослідження, базові навички, безпечний набір інструментів, план на 30 днів і шлях до першого портфоліо.">
+<meta name="keywords" content="OSINT Україна, OSINT для початківців, як почати OSINT, OSINT гайд, навчання OSINT, інструменти OSINT, розвідка відкритих джерел">
 <link rel="canonical" href="https://yehorselin.com/guide.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Як стати OSINT-аналітиком в Україні · Повний гайд 2026">
-<meta property="og:description" content="Референсний гайд 2026: офіційний статус професії, скіли, курси, зарплати, кар'єрні шляхи, інструментарій та етика.">
-<meta property="og:image" content="https://yehorselin.com/img/yehor.jpg">
+<meta property="og:title" content="OSINT з нуля: практичний гайд 2026">
+<meta property="og:description" content="Не список із сотні сервісів, а зрозумілий маршрут: питання, джерела, перевірка, висновок і перший власний кейс.">
+<meta property="og:image" content="https://yehorselin.com/img/uploads/cases/strike-video-cover.jpg">
 <meta property="og:url" content="https://yehorselin.com/guide.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +26,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Як стати OSINT-аналітиком в Україні — Повний гайд 2026",
-  "description": "Референсний гайд 2026 з професії OSINT-аналітик в Україні: офіційний статус, скіли, курси, зарплати, кар'єрні шляхи, інструментарій та етика.",
+  "headline": "OSINT з нуля: практичний гайд 2026",
+  "description": "Практичний вступ до OSINT: методика дослідження, базові навички, інструменти, безпека та план на перші 30 днів.",
   "author": {
     "@type": "Person",
     "name": "Єгор Селін",
@@ -39,511 +39,182 @@
     "url": "https://yehorselin.com/"
   },
   "datePublished": "2026-07-17",
-  "dateModified": "2026-07-17",
+  "dateModified": "2026-10-23",
   "inLanguage": "uk-UA",
-  "image": "https://yehorselin.com/img/yehor.jpg",
+  "image": "https://yehorselin.com/img/uploads/cases/strike-video-cover.jpg",
   "mainEntityOfPage": "https://yehorselin.com/guide.html"
 }
 </script>
-<style>
-.guide-hero { padding: 8rem 0 4rem; text-align: center; }
-.guide-hero .eyebrow { display: block; margin-bottom: 1.5rem; }
-.guide-hero h1 { max-width: 900px; margin: 0 auto; }
-.guide-hero .lead { max-width: 720px; margin: 2rem auto 0; color: var(--text-mute); font-size: 1.15rem; }
-.guide-meta { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; font-family: var(--font-mono); font-size: .78rem; color: var(--text-mute); text-transform: uppercase; letter-spacing: .18em; }
-.toc { max-width: 720px; margin: 0 auto 4rem; padding: 2rem; border: 1px solid var(--border-hi); background: rgba(20,28,48,.4); }
-.toc h3 { margin: 0 0 1.25rem; font-family: var(--font-mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .2em; color: var(--ice); }
-.toc ol { counter-reset: toc; list-style: none; padding: 0; margin: 0; }
-.toc ol li { counter-increment: toc; margin: .6rem 0; padding-left: 3rem; position: relative; }
-.toc ol li::before { content: counter(toc,decimal-leading-zero); position: absolute; left: 0; font-family: var(--font-mono); font-size: .78rem; color: var(--text-mute); }
-.toc a { color: var(--text-hi); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
-.toc a:hover { border-color: var(--ice); }
-.guide-body { max-width: 780px; margin: 0 auto; }
-.guide-body h2 { margin: 4.5rem 0 1.5rem; padding-top: 2rem; font-family: var(--font-serif); font-size: 2.2rem; line-height: 1.2; color: var(--text-hi); border-top: 1px solid var(--border-lo); }
-.guide-body h3 { margin: 3rem 0 1rem; font-family: var(--font-sans); font-size: 1.35rem; font-weight: 600; color: var(--ice); }
-.guide-body p { margin: 0 0 1.25rem; line-height: 1.75; color: var(--text-mid); font-size: 1.05rem; }
-.guide-body ul, .guide-body ol { margin: 1.25rem 0; padding-left: 1.5rem; color: var(--text-mid); line-height: 1.75; }
-.guide-body ul li, .guide-body ol li { margin: .6rem 0; }
-.guide-body strong { color: var(--text-hi); font-weight: 600; }
-.guide-body em { color: var(--ice); }
-.guide-body a { color: var(--ice); text-decoration: none; border-bottom: 1px solid var(--border-hi); transition: border-color .2s; }
-.guide-body a:hover { border-color: var(--ice); }
-.guide-body blockquote { margin: 2rem 0; padding: 1.5rem 2rem; border-left: 3px solid var(--ice); background: rgba(20,28,48,.3); font-style: italic; color: var(--text-hi); }
-.guide-body table { width: 100%; margin: 2rem 0; border-collapse: collapse; font-size: .95rem; }
-.guide-body table th, .guide-body table td { padding: .8rem 1rem; text-align: left; border-bottom: 1px solid var(--border-lo); }
-.guide-body table th { background: rgba(20,28,48,.5); font-family: var(--font-mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ice); font-weight: 500; }
-.guide-body .callout { margin: 2rem 0; padding: 1.5rem 1.75rem; border: 1px solid var(--border-hi); background: rgba(20,28,48,.35); border-radius: 2px; }
-.guide-body .callout strong { display: block; margin-bottom: .5rem; color: var(--ice); font-family: var(--font-mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .15em; }
-.guide-body hr { margin: 4rem 0; border: 0; border-top: 1px solid var(--border-lo); }
-.guide-cta { max-width: 780px; margin: 5rem auto; padding: 3rem; border: 1px solid var(--ice); background: linear-gradient(135deg, rgba(20,28,48,.7), rgba(10,14,26,.9)); text-align: center; }
-.guide-cta h3 { font-family: var(--font-serif); font-style: italic; font-size: 1.8rem; color: var(--text-hi); margin: 0 0 1rem; }
-.guide-cta p { color: var(--text-mute); margin: 0 0 1.5rem; }
-.guide-cta .btn { display: inline-block; margin: .3rem; }
-@media (max-width: 720px) {
-  .guide-hero { padding: 7rem 1rem 3rem; }
-  .guide-hero h1 { font-size: 2.2rem; }
-  .guide-meta { flex-direction: column; gap: .5rem; text-align: center; }
-  .toc { margin: 0 1rem 3rem; padding: 1.5rem; }
-  .guide-body { padding: 0 1rem; }
-  .guide-body h2 { font-size: 1.75rem; }
-  .guide-cta { margin: 3rem 1rem; padding: 2rem; }
-}
-</style>
+<link rel="stylesheet" href="css/guide.css?v=20261023a">
 <link rel="stylesheet" href="css/redesign.css?v=20260919f"><link rel="stylesheet" href="css/interiors.css?v=5"></head>
 <body class="redesign interior dossier page-guide">
 <canvas id="stars"></canvas>
 
-<nav class="nav" aria-label="Navigation"><a href="index.html" class="nav__brand"><img src="img/brand/panther-64.png" width="28" height="28" alt=""><span>SELIN<span class="brand-period">.</span></span></a><button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button><ul class="nav__links"><li><a href="cases.html" class=""><span data-i18n="r.nav.cases" >Розслідування</span><span aria-hidden="true">↗</span></a></li><li><a href="projects.html" class=""><span data-i18n="r.nav.projects" >Інструменти</span><span aria-hidden="true">↗</span></a></li><li><a href="books.html" class=""><span data-i18n="r.nav.books" >Книги</span><span aria-hidden="true">↗</span></a></li><li><a href="simulator.html" class=""><span data-i18n="r.nav.practice" >Симулятори</span><span aria-hidden="true">↗</span></a></li><li><a href="play.html" class=""><span data-i18n="r.nav.game" >Гра</span><span aria-hidden="true">↗</span></a></li><li><a href="support.html" class=""><span data-i18n="r.nav.coffee" >На каву</span><span aria-hidden="true">↗</span></a></li><li><a href="about.html" class=""><span data-i18n="r.nav.about" >Про мене</span><span aria-hidden="true">↗</span></a></li><li class="nav__more"><button class="nav__more-btn" aria-expanded="false"><span data-i18n="r.nav.more" >Більше</span> +</button><ul class="nav__submenu"><li><a href="play.html" class=""><span data-i18n="r.nav.zero" >Case Zero</span><span aria-hidden="true">↗</span></a></li><li><a href="blog.html" class=""><span data-i18n="r.nav.news" >Новини</span><span aria-hidden="true">↗</span></a></li><li><a href="guide.html" class=""><span data-i18n="r.nav.guide" >OSINT-гайд</span><span aria-hidden="true">↗</span></a></li><li><a href="tools.html" class=""><span data-i18n="r.nav.directory" >Каталог інструментів</span><span aria-hidden="true">↗</span></a></li><li><a href="education.html" class=""><span data-i18n="r.nav.education" >Освіта</span><span aria-hidden="true">↗</span></a></li><li><a href="speaking.html" class=""><span data-i18n="r.nav.speaking" >Виступи</span><span aria-hidden="true">↗</span></a></li><li><a href="certificates.html" class=""><span data-i18n="r.nav.certs" >Сертифікати</span><span aria-hidden="true">↗</span></a></li><li><a href="awards.html" class=""><span data-i18n="r.nav.awards" >Відзнаки</span><span aria-hidden="true">↗</span></a></li><li><a href="recommendations.html" class=""><span data-i18n="r.nav.recommendations" >Рекомендації</span><span aria-hidden="true">↗</span></a></li><li><a href="support.html" class=""><span data-i18n="r.nav.support" >На каву</span><span aria-hidden="true">↗</span></a></li><li><a href="contact.html" class=""><span data-i18n="r.nav.contact" >Контакти</span><span aria-hidden="true">↗</span></a></li></ul></li><li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li></ul></nav><header class="dossier-hero"><div class="dossier-breadcrumb"><a href="index.html"><span data-i18n="r.inner.home" >Головна</span></a><span>/</span><span>OSINT GUIDE</span></div><div class="dossier-hero-grid"><div class="dossier-intro"><div class="eyebrow">14 / OSINT GUIDE</div><h1 data-i18n="r.inner.guide.title" >Орієнтир для початку шляху.</h1><p data-i18n="r.inner.guide.desc" >Докладний україномовний гайд: навички, навчання, інструменти та професійні межі.</p><a class="action primary" href="#page-content"><span data-i18n="r.inner.explore" >Переглянути розділ</span> ↓</a></div><div class="dossier-scene scene-graph" aria-hidden="true"><div class="scene-radar"></div><svg viewBox="0 0 420 300"><path d="M55 150 Q150 25 220 75 T365 150 M55 150 Q130 260 245 225 L365 150 M220 75 L245 225 M55 150 L245 225"/><circle cx="55" cy="150" r="8" style="--i:0"/><circle cx="220" cy="75" r="11" style="--i:1"/><circle cx="365" cy="150" r="8" style="--i:2"/><circle cx="245" cy="225" r="11" style="--i:3"/><circle cx="115" cy="75" r="4" style="--i:4"/><circle cx="310" cy="240" r="4" style="--i:5"/></svg><div class="scene-caption">SOURCE / CONTEXT / VERIFICATION</div></div></div></header><div id="page-content" class="content-anchor"></div>
-
-
-<div class="guide-langbanner" id="guide-langbanner" hidden>
-  <div class="container">
-    <strong data-i18n="guide.en_only.title">This guide is currently Ukrainian-only</strong>
-    <p data-i18n="guide.en_only.body">The material is oriented to the Ukrainian OSINT market: local certifications, regulators, salary ranges and courses. An English adaptation is planned for later.</p>
-    <a href="blog.html" data-i18n="guide.en_only.link">↗ English OSINT articles in the blog</a>
-  </div>
-</div>
-<script>
-  (function(){
-    function apply(){
-      var b = document.getElementById('guide-langbanner');
-      if (!b) return;
-      b.hidden = (localStorage.getItem('yehor.lang') || 'uk') !== 'en';
-    }
-    document.addEventListener('DOMContentLoaded', apply);
-    document.addEventListener('langchange', apply);
-  })();
-</script>
-
-<section class="guide-hero reveal">
-  <div class="container">
-    <span class="eyebrow">OSINT · Кар'єрний гайд · Україна · 2026</span>
-    <h2>Як стати OSINT-аналітиком в Україні: повний гайд 2026</h2>
-    <p class="lead">Референсний матеріал для тих, хто розглядає OSINT як професію після офіційного визнання її державою. Формальний статус, реальні скіли, український та світовий стек курсів, зарплатні вилки, кар'єрні шляхи (держава / приватка / військо / волонтерство), інструментарій, юридичні межі — та практичний план першого місяця.</p>
-    <div class="guide-meta">
-      <span>Автор · Єгор Селін</span>
-      <span>Оновлено · 17.07.2026</span>
-      <span>≈ 18 хв читання</span>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="toc reveal">
-    <h3>Зміст</h3>
-    <ol>
-      <li><a href="#status">Офіційний статус професії у 2025-2026</a></li>
-      <li><a href="#who">Хто такий OSINT-аналітик і що він реально робить</a></li>
-      <li><a href="#skills">Скіли: hard + soft</a></li>
-      <li><a href="#start">Перший місяць: практичний план з нуля</a></li>
-      <li><a href="#courses-ua">Курси — український стек</a></li>
-      <li><a href="#courses-world">Курси — міжнародний стек</a></li>
-      <li><a href="#paths">Кар'єрні шляхи та зарплати</a></li>
-      <li><a href="#tools">Базовий інструментарій</a></li>
-      <li><a href="#ethics">Юридичні та етичні межі</a></li>
-      <li><a href="#community">Спільнота та де шукати роботу</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#next">Куди рухатись далі</a></li>
-    </ol>
-  </div>
-</section>
-
-<section style="padding-top:0" class="guide-body">
-
-<h2 id="status">1. Офіційний статус професії у 2025-2026</h2>
-
-<p>Ще п'ять років тому «OSINT-аналітик» в українських HR-документах виглядав екзотично. Кадровики не знали під якою рубрикою його оформити, кар'єрні консультанти радили писати «аналітик даних» або «спеціаліст з інформаційної безпеки». Формального професійного треку не існувало.</p>
-
-<p>У 2025 році ситуація змінилась. <strong>Національна академія Служби безпеки України розробила професійний стандарт «Аналітик інформації з відкритих джерел (OSINT-аналітик)»</strong>. Це офіційний документ, який визначає:</p>
-
-<ul>
-  <li>Кваліфікаційні рівні (від молодшого до провідного аналітика)</li>
-  <li>Перелік обов'язкових компетенцій</li>
-  <li>Необхідні знання (юридична база, методологія, інструментарій)</li>
-  <li>Умови допуску до професії</li>
-</ul>
-
-<p>Паралельно <strong>наказом Мінекономіки № 3073 від 12.12.2025</strong> внесено чергові зміни до Національного класифікатора професій ДК 003:2010, у межах яких формалізовано низку нових IT- і аналітичних спеціальностей. OSINT-аналітик увійшов у цю систему — тобто тепер його можна офіційно вписувати у штатний розпис, трудову книжку, оголошення про вакансії.</p>
-
-<div class="callout">
-<strong>Що це означає на практиці</strong>
-<p>Роботодавець тепер може відкривати вакансію «OSINT-аналітик» офіційно, з чіткою тарифною сіткою. Держслужба, силові структури, приватні компанії отримали правову рамку. Ти можеш вписувати «OSINT-аналітик» у CV і резюме без пояснювальної записки. Освітні заклади можуть будувати програми під офіційний профстандарт. Це фундамент, на якому у 2026-2028 виросте вся українська OSINT-екосистема.</p>
-</div>
-
-<p>З точки зору кар'єрної стратегії — це <strong>найкращий момент за останні 10 років, щоб заходити у професію</strong>. Ринок зростає, попит випереджає пропозицію, юридична рамка вже є, а конкуренція серед сертифікованих фахівців ще не насичена.</p>
-
-<hr>
-
-<h2 id="who">2. Хто такий OSINT-аналітик і що він реально робить</h2>
-
-<p>Формальне визначення: OSINT-аналітик — це фахівець, який <strong>збирає інформацію з відкритих джерел, верифікує її і перетворює на основу для рішення</strong>. Ключове тут — не «шукає в Google», а «перетворює на основу для рішення». Це три різні речі:</p>
-
-<h3>Збір</h3>
-<p>Систематичний, а не інтуїтивний. OSINT-аналітик знає ~200-400 джерел за категоріями (реєстри, соцмережі, супутникові знімки, судові рішення, крипто-транзакції, DNS-записи, доменна історія, breach-датасети). Він не гуглить — він працює з конкретним «стеком» під задачу.</p>
-
-<h3>Верифікація</h3>
-<p>Кожен факт має пройти крос-перевірку через ≥3 незалежні джерела. Одне джерело — гіпотеза. Три — доказ. Це фундаментальна дисципліна професії, яка відрізняє OSINT-аналітика від блогера-детектива.</p>
-
-<h3>Перетворення на рішення</h3>
-<p>Клієнт (роботодавець, слідчий, комплаєнс, HR) не потребує сирої купи даних. Він потребує <strong>структурованого звіту</strong> з висновком і рівнем впевненості. Це вимагає навички наративу, розуміння того, що з зібраного важливо, що ні, і як подати так, щоб зайняло 5 хвилин читання.</p>
-
-<h3>Типові щоденні задачі</h3>
-<ul>
-  <li><strong>SOCMINT-розслідування</strong> — глибокий аналіз соцмереж: поведінкові патерни, соціальний граф, «сімейні ланцюжки», приховані другі акаунти, репутаційні ризики. Це <em>ядро роботи</em>, з якого починається більшість кейсів</li>
-  <li><strong>Скринінг кандидата</strong> на чутливу посаду — цифровий слід, приховані афіліації, репутаційні ризики</li>
-  <li><strong>Due diligence контрагента</strong> — реєстри, бенефіціари, санкційна історія, судові справи</li>
-  <li><strong>Identity attribution</strong> — реконструкція реальної особи за фрагментарними ідентифікаторами (username, phone, email, обличчя)</li>
-  <li><strong>Threat intelligence</strong> — моніторинг активності конкретних осіб / груп / бренду в мережі</li>
-  <li><strong>Розслідування шахрайства</strong> — від фішинг-кампаній до складних фінансових схем</li>
-  <li><strong>GEOINT</strong> — верифікація геолокації фото/відео, аналіз супутникових знімків</li>
-  <li><strong>Документування воєнних злочинів</strong> — за стандартом Berkeley Protocol, з подальшою передачею у МКС / ICPA / національні органи</li>
-</ul>
-
-<div class="callout">
-<strong>OSINT vs SOCMINT — коротко про різницю</strong>
-<p><strong>OSINT</strong> — це «парасолька» над усіма відкритими джерелами (реєстри, супутники, DNS, breach-датасети, публікації, форуми). <strong>SOCMINT</strong> — це підмножина OSINT, зосереджена саме на <em>соцмережах</em>: цифровий слід у Facebook / Instagram / LinkedIn / Telegram / VK / TikTok, аналіз поведінки, крос-платформна атрибуція, «family chain»-техніки. У реальній практиці межа розмита — більшість кейсів комбінує обидва підходи.</p>
-</div>
-
-<hr>
-
-<h2 id="skills">3. Скіли: hard + soft</h2>
-
-<h3>Hard skills — обов'язковий мінімум</h3>
-
-<ul>
-  <li><strong>Розуміння інтернет-інфраструктури</strong> — як працюють DNS, WHOIS, домени, IP-адреси, SSL-сертифікати. Не треба бути мережевим інженером, але треба вміти читати ці дані</li>
-  <li><strong>Роботa з реєстрами</strong> — ЄДРПОУ, ProZorro, YouControl, Opendatabot, реєстр судових рішень, ДРФО, санкційні бази</li>
-  <li><strong>Соцмережеві дослідження</strong> — Facebook, Instagram, LinkedIn, Telegram, VK, TikTok, YouTube, Twitter/X, специфіка кожної</li>
-  <li><strong>Візуальна верифікація</strong> — reverse image search, аналіз метаданих, розпізнавання генеративного AI-контенту</li>
-  <li><strong>Геолокація</strong> — робота з Google Earth / Yandex Panoramas / супутниковими знімками, техніки chronolocation</li>
-  <li><strong>Google Dorks</strong> — точкові оператори пошуку для таргетованих запитів</li>
-  <li><strong>Базова автоматизація</strong> — bash-скрипти, Python на рівні читання чужих інструментів (Sherlock, Maigret, Holehe, Recon-ng), робота з API</li>
-  <li><strong>OPSEC</strong> — операційна безпека самого аналітика: VPN, sock puppet-акаунти, ізольовані середовища, робота без утиску власного цифрового сліду</li>
-</ul>
-
-<h3>Soft skills — фактично визначають вершину</h3>
-
-<ul>
-  <li><strong>Аналітичне мислення</strong> — здатність будувати гіпотези, шукати спростування, тримати одразу декілька версій</li>
-  <li><strong>Увага до деталей</strong> — 90% розслідувань виграється у тому, що більшість пропускає (дата створення акаунту, тип шрифту у метаданих, дрібниця у фоні фото)</li>
-  <li><strong>Терпіння</strong> — багато роботи — це рутина. Той хто не витримує 3 години на одному номері телефону — не залишиться</li>
-  <li><strong>Наратив</strong> — вміння написати звіт так, щоб клієнт зрозумів за 5 хвилин</li>
-  <li><strong>Етичний компас</strong> — розуміння де межа між публічним і приватним, коли зупинитись</li>
-  <li><strong>Іноземна мова</strong> — англійська обов'язково. Російська дає доступ до величезного пласту джерел. Європейські (польська, німецька) — плюс для міжнародних кейсів</li>
-</ul>
-
-<div class="callout">
-<strong>Про технічний бекграунд</strong>
-<p>Всупереч очікуванням, <em>технічна освіта не обов'язкова</em>. У профі OSINT працюють колишні економісти (краще бачать фінансові невідповідності), юристи (швидко ідентифікують підозрілу структуру угод), психологи (розуміють поведінкові патерни у соцмережах), журналісти, вчителі, військові, айтішники, історики. Критично важливий <em>склад розуму</em>, а не диплом.</p>
-</div>
-
-<hr>
-
-<h2 id="start">4. Перший місяць: практичний план з нуля</h2>
-
-<p>Це не «пройди курс і чекай роботи». Це <strong>практичний рухомий план на 30 днів</strong>, який доводить твою серйозність собі і, згодом, роботодавцю.</p>
-
-<h3>Тижні 1-2: фундамент</h3>
-<ul>
-  <li>Пройти <strong>безкоштовний курс на Prometheus</strong> «OSINT — розвідка з відкритих джерел» (~20 год, є сертифікат)</li>
-  <li>Створити <strong>окремий email + профілі-«сокпапети»</strong> для роботи (Gmail + Proton, з випадковими іменами, без прив'язки до реального телефону)</li>
-  <li>Встановити <strong>Firefox / Brave</strong> як робочий браузер з розширеннями: Wappalyzer, Hunchly (trial), Nimbus Screenshot, uBlock Origin, Vytal (для підміни таймзони)</li>
-  <li>Створити <strong>Obsidian-vault</strong> або Notion-workspace для case-notes: один файл = один pivot</li>
-  <li>Прочитати <strong>Bellingcat Online Investigation Toolkit</strong> — це де-факто дефолт-довідник індустрії</li>
-</ul>
-
-<h3>Тижні 3-4: практика на реальних кейсах</h3>
-<ul>
-  <li>Долучитись до першого <strong>Trace Labs Global OSINT Search Party CTF</strong> (~$20-25 за remote-квиток, virtual; на DEF CON edition — 250 безкоштовних on-site) — 6-годинне командне змагання, де знаходиш реальну інформацію про зниклих людей. 100% зборів іде на Trace Labs як charity</li>
-  <li>Взяти <strong>3 навчальні кейси</strong>: (1) верифікація місця фото з новин, (2) знайти всі публічні акаунти публічної особи, (3) reverse-lookup власника доменного імені</li>
-  <li>Написати <strong>перший звіт</strong> у форматі «Question / Method / Findings / Confidence / Sources» — це стандартна структура професійного OSINT-звіту</li>
-  <li>Опублікувати write-up у себе (LinkedIn / Medium / особистий блог) — <strong>публічний слід — це і є твоє CV</strong> в OSINT</li>
-  <li>Підписатись на <strong>OSINTech Timeline</strong> (щотижневий community-дайджест), <strong>Bellingcat</strong>, <strong>Nixintel</strong>, <strong>IntelTechniques Blog</strong></li>
-</ul>
-
-<p>Після 30 днів у тебе є: сертифікат Prometheus, 1 CTF-досвід, 3 задокументовані міні-кейси, публікація, налагоджене робоче середовище. Це вже досить, щоб <strong>подавати на молодшу позицію</strong>.</p>
-
-<hr>
-
-<h2 id="courses-ua">5. Курси — український стек</h2>
-
-<p>Всі — реально запущені у 2024-2026, з підтвердженою методологією:</p>
-
-<ul>
-  <li><strong>Prometheus · «OSINT — розвідка з відкритих джерел та інформаційна безпека»</strong> (2024) — базовий курс, безкоштовно. Створений <em>Victory Drones (БФ Dignitas)</em> у партнерстві з <em>Molfar</em>, <em>Лабораторією цифрової безпеки</em>, <em>Центром Протидії Корупції</em>, <em>YouControl Academy</em>. Цільова аудиторія: військові, волонтери, журналісти, освітяни, держслужба. Сертифікат — так.</li>
-
-  <li><strong>Дія.Освіта · OSINT-школа</strong> — публічний OSINT-курс у форматі «серіалу», для широкої аудиторії. Безкоштовно.</li>
-
-  <li><strong>Дія.Бізнес × YouControl Academy · «OSINT. Робота з реєстрами»</strong> — для підприємців/юристів/бізнес-аналітиків. Робота з ЄДРПОУ, ProZorro, YouControl, Datacrat, реєстром судових рішень. Безкоштовно, з сертифікатом.</li>
-
-  <li><strong>НАДС · навчання інструментам OSINT для держслужби</strong> — для публічних службовців і HR-служб. Проводиться з підтримкою CIR (Centre for Information Resilience).</li>
-
-  <li><strong>Ветеранський фонд · «Шлях ветерана · Освіта» — OSINT-аналітика</strong> — безкоштовно для ветеранів і ветеранок.</li>
-
-  <li><strong>OSINT Varta × SLON FM</strong> — безкоштовний онлайн-курс з чотирма модулями, п'ятий у розробці. Основна аудиторія — військові.</li>
-
-  <li><strong>Академія прокуратури, Академія СБУ, юрфак ЛНУ</strong> — формальні магістерські курси «OSINT та цифрова розвідка у праві» (з 2025-2026), для юристів і майбутніх слідчих.</li>
-
-  <li><strong>Pritula.Academy · «OSINT: як знайти інформацію в Інтернеті»</strong> — платний, з практичними кейсами.</li>
-
-  <li><strong>Laba · «OSINT-аналітик»</strong> — платний, комерційний трек з підготовкою під приватний сектор.</li>
-</ul>
-
-<hr>
-
-<h2 id="courses-world">6. Курси — міжнародний стек</h2>
-
-<p>Для тих, хто планує вихід на міжнародний ринок або хоче cutting-edge методологію:</p>
-
-<ul>
-  <li><strong>SANS SEC487 — Open-Source Intelligence Gathering and Analysis</strong> — фундаментальний, 6-денний, професійний стандарт індустрії. Дорого (~$8К), але з сертифікатом GIAC.</li>
-
-  <li><strong>SANS SEC587 — Advanced Open-Source Intelligence</strong> — просунутий, покриває dark web, крипто-трасування, дезінформаційні кампанії, російський і китайський OSINT, deepfake-forensics. 28+ hands-on labs.</li>
-
-  <li><strong>Bellingcat Online Investigation Toolkit</strong> — не курс, а живий довідник з 12 категорій інструментів (безкоштовно, з детальними описами і use-cases). Читається як підручник.</li>
-
-  <li><strong>Bellingcat онлайн-воркшопи</strong> — регулярні тренінги від команди-легенди галузі.</li>
-
-  <li><strong>Trace Labs Search Party CTF</strong> — не курс, а практика на реальних справах зниклих безвісти. Регулярні virtual-івенти (~$20-25 за квиток, 100% на charity), плюс безкоштовні on-site слоти на DEF CON. Найкращий спосіб набити реальний досвід.</li>
-
-  <li><strong>OSINT Combine · online courses</strong> — комерційні курси різних рівнів.</li>
-
-  <li><strong>Berkeley Protocol on Digital Open Source Investigations</strong> — міжнародний стандарт, безкоштовний PDF від OHCHR × Berkeley Law. Обов'язковий для тих, хто працює з воєнними злочинами і правами людини.</li>
-
-  <li><strong>Coursera / Udemy · різні OSINT-курси</strong> — від початківців до практиків, ціни від безкоштовних до ~$100.</li>
-
-  <li><strong>Council of Europe OSINT Training Manual</strong> — офіційний методичний посібник, використовується у навчанні антикорупційних органів (НАЗК, НАБУ, САП).</li>
-</ul>
-
-<hr>
-
-<h2 id="paths">7. Кар'єрні шляхи та зарплати</h2>
-
-<p>OSINT в Україні — це не одна кар'єра, а <strong>чотири суттєво різних треки</strong> з різними зарплатами, ритмом, ризиками і темами роботи. Обирай свідомо.</p>
-
-<table>
-<thead>
-<tr><th>Трек</th><th>Приклади роботодавців</th><th>Зарплата (грн/міс)</th><th>Ритм</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td><strong>Держава / силові</strong></td>
-  <td>СБУ, Нацполіція, НАЗК, НАБУ, САП, Мін'юст</td>
-  <td>15 000 – 40 000</td>
-  <td>Стабільно, з великим соц-пакетом</td>
-</tr>
-<tr>
-  <td><strong>Військо</strong></td>
-  <td>СБС (Сили Безпілотних Систем), військові бригади, розвідка</td>
-  <td>20 000 – 50 000+ бойові</td>
-  <td>Інтенсивно, у зоні ризику</td>
-</tr>
-<tr>
-  <td><strong>Приватка (UA)</strong></td>
-  <td>Molfar, YouControl, детективні агенції, банки, corporate security</td>
-  <td>30 000 – 90 000</td>
-  <td>Проєкти + retainer</td>
-</tr>
-<tr>
-  <td><strong>Міжнародний ринок / фріланс</strong></td>
-  <td>Bellingcat, OSINT for Ukraine, consulting, closed clients</td>
-  <td>$2 000 – $17 000 (~90К – 700К грн)</td>
-  <td>Проєктно, remote</td>
-</tr>
-</tbody>
-</table>
-
-<h3>Держава / силові</h3>
-<p>Стабільна вертикаль, соц-пакет, доступ до унікальних баз. Мінус — офіційна зарплата нижча за приватку, бюрократія, обмеження на публічну активність. Плюс — <strong>найкраща школа</strong> для формування дисципліни і методології. Багато топ-приватників починали саме звідси.</p>
-
-<h3>Військо / СБС</h3>
-<p>Найбільш затребувані зараз OSINT-фахівці у ЗСУ і СБС. Робота на реальних цілях, з реальними наслідками. Зарплата — тарифна ставка + бойові + іноді донатські бонуси через профільні фонди. Психологічний тиск високий, але і зростання швидке.</p>
-
-<h3>Приватка (Україна)</h3>
-<p>Найкращий баланс «зарплата / умови». Головні напрями: due diligence для банків і корпорацій, background checks для HR, розслідування шахрайства, антикорупційні дослідження для медіа. <strong>Molfar</strong> — де-факто найбільший приватний OSINT-роботодавець в Україні. Крім них: <strong>YouControl</strong> (продуктова компанія), детективні агенції, appearance-focus стартапи.</p>
-
-<h3>Міжнародний ринок / фріланс</h3>
-<p>Найвища стеля, але вимагає англійської і портфоліо. Клієнти: іноземні консалтингові фірми, юридичні компанії, приватні детективні агенції, дослідницькі організації, медіа. Ставки: junior $30-60/год, mid $75-120/год, senior $150-300+/год. Fedeзорних майданчиків мало, більшість роботи — через нетворкінг, LinkedIn, репутацію.</p>
-
-<h3>Волонтерство (окремий трек, часто паралельно з іншими)</h3>
-<p>InformNapalm, OSINT for Ukraine, Molfar Intelligence Institute, локальні розслідувальні спільноти. Оплата — нуль або символічна, але <strong>найкраща школа для реальних кейсів</strong> і найшвидший шлях до впізнаваності у міжнародній спільноті.</p>
-
-<hr>
-
-<h2 id="tools">8. Базовий інструментарій</h2>
-
-<p>«Стек» OSINT-практика виглядає приблизно так. Все нижче — або безкоштовне, або має безкоштовну версію:</p>
-
-<h3>Пошук людей / крос-платформна атрибуція</h3>
-<ul>
-  <li><strong>Sherlock, Maigret, WhatsMyName</strong> — перевірка username по 400+ платформам</li>
-  <li><strong>Holehe</strong> — перевірка email на реєстрації у сервісах</li>
-  <li><strong>Epieos</strong> — reverse lookup email → Google account footprint</li>
-  <li><strong>Have I Been Pwned, DeHashed, IntelX</strong> — breach-датасети</li>
-  <li><strong>GetContact</strong> — crowd-sourced контактна атрибуція за телефоном</li>
-</ul>
-
-<h3>Реєстри та корпоративні дані (Україна)</h3>
-<ul>
-  <li><strong>YouControl, Opendatabot, Datacrat</strong> — бенефіціари, юрособи, зв'язки</li>
-  <li><strong>Реєстр судових рішень</strong> (reyestr.court.gov.ua)</li>
-  <li><strong>Мін'юст ЄДР</strong> — офіційна реєстрація</li>
-  <li><strong>ProZorro</strong> — держзакупівлі</li>
-  <li><strong>Дія.Бізнес реєстри</strong></li>
-</ul>
-
-<h3>Візуальна верифікація</h3>
-<ul>
-  <li><strong>Google Reverse Image, Yandex, TinEye, Bing Visual</strong></li>
-  <li><strong>Search4Faces, PimEyes</strong> (facial recognition, останній — платний і етично суперечливий)</li>
-  <li><strong>InVID, WeVerify</strong> — верифікація відео</li>
-  <li><strong>ExifTool</strong> — метадані фото</li>
-</ul>
-
-<h3>Геолокація</h3>
-<ul>
-  <li><strong>Google Earth Pro</strong> (безкоштовно) + <strong>Yandex Panoramas</strong> (СНД, але покриття унікальне)</li>
-  <li><strong>Sentinel Hub, Planet Explorer</strong> — супутникові знімки</li>
-  <li><strong>SunCalc</strong> — визначення часу за тінями</li>
-</ul>
-
-<h3>Робоче середовище</h3>
-<ul>
-  <li><strong>Trace Labs OSINT VM</strong> (v2026.05, на Debian 13) — готова робоча ОС з інструментами</li>
-  <li><strong>Obsidian</strong> — case-notes і knowledge graph</li>
-  <li><strong>Hunchly</strong> — автоматичне збереження всього перегляду з ланцюжком доказів</li>
-  <li><strong>Maltego CE</strong> — link-analysis графи</li>
-</ul>
-
-<h3>Комерційні платформи (для приватки)</h3>
-<ul>
-  <li><strong>OSINT Industries</strong> — крос-платформне збагачення за одним селектором (1000+ джерел), стандарт індустрії</li>
-  <li><strong>ShadowDragon</strong> — for law enforcement / enterprise</li>
-  <li><strong>Social Links</strong>, <strong>Fivecast</strong>, <strong>Osavul</strong> — конкуренти у сегменті</li>
-</ul>
-
-<hr>
-
-<h2 id="ethics">9. Юридичні та етичні межі</h2>
-
-<p>Це найважливіший розділ. Без нього OSINT перетворюється на переслідування або незаконну діяльність.</p>
-
-<h3>Юридична база в Україні</h3>
-<ul>
-  <li>Закон «Про національну безпеку» (№ 2469-VIII, 2018)</li>
-  <li>Закон «Про розвідку» (№ 2331-III, 2001)</li>
-  <li>ЗУ «Про захист персональних даних»</li>
-  <li>Кримінальний кодекс — статті про порушення таємниці приватного життя (ст. 182), несанкціонований доступ (ст. 361), тощо</li>
-</ul>
-
-<h3>Ключові принципи (Berkeley Protocol)</h3>
-<ol>
-  <li><strong>Тільки відкриті джерела</strong> — жодного несанкціонованого доступу, паролів, приватних баз</li>
-  <li><strong>Хешування доказів</strong> — SHA-256 для кожного файлу-доказу</li>
-  <li><strong>Документування контексту</strong> — URL, timestamp, метод доступу для кожного знімка</li>
-  <li><strong>Мульти-джерельна кореляція</strong> — мінімум 3 незалежні підтвердження</li>
-  <li><strong>Безпека</strong> — цифрова, фізична і психосоціальна для дослідників, свідків, потерпілих</li>
-  <li><strong>Прозорість методології</strong> — здатність відтворити ланцюжок аналізу</li>
-</ol>
-
-<h3>Червоні лінії — що НЕ роблять професіонали</h3>
-<ul>
-  <li>❌ Не логіняться у чужі акаунти (навіть якщо є пароль з витоку)</li>
-  <li>❌ Не звертаються до об'єкта розслідування напряму без згоди клієнта</li>
-  <li>❌ Не публікують сирі персональні дані (адреси, номери, документи) у відкритих матеріалах</li>
-  <li>❌ Не працюють на замовлення сталкінгу, погроз чи насилля</li>
-  <li>❌ Не приймають кейси, де об'єкт — приватна особа без юридичної підстави для перевірки</li>
-</ul>
-
-<div class="callout">
-<strong>Практичне правило</strong>
-<p>Якщо ти не можеш чесно розповісти клієнту, знайомому та журналісту, як саме отримав дані — ти вже за межею. Професійний OSINT — це те, методологію якого можна опублікувати як case study без ризику для тебе.</p>
-</div>
-
-<hr>
-
-<h2 id="community">10. Спільнота та де шукати роботу</h2>
-
-<h3>Українські спільноти</h3>
-<ul>
-  <li><strong>OSINT Varta</strong> — Telegram / Discord</li>
-  <li><strong>InformNapalm</strong> — Telegram + сайт informnapalm.org</li>
-  <li><strong>Molfar</strong> — Telegram-канал і публікації</li>
-  <li>Профільні OSINT-чати в Telegram (шукати «OSINT Ukraine», «OSINT community UA»)</li>
-</ul>
-
-<h3>Міжнародні</h3>
-<ul>
-  <li><strong>Trace Labs Discord</strong> — обов'язково, ключова англомовна OSINT-спільнота</li>
-  <li><strong>Bellingcat Discord</strong> — доступ через їхній сайт</li>
-  <li><strong>OSINT Curious</strong>, <strong>Nixintel</strong> — блоги-community</li>
-  <li><strong>SANS OSINT community</strong></li>
-  <li><strong>OSINT.SH / OSINT Framework</strong> — публічні бази інструментів</li>
-</ul>
-
-<h3>Де шукати вакансії</h3>
-<ul>
-  <li><strong>Work.ua, Robota.ua</strong> — фільтр «OSINT», «аналітик відкритих джерел»</li>
-  <li><strong>OSINT-Jobs.com</strong> — міжнародні OSINT-позиції</li>
-  <li><strong>lfrecruiting.mil.gov.ua</strong> — військові позиції</li>
-  <li><strong>LinkedIn</strong> — головна платформа для міжнародних позицій, потрібен активний англійський профіль</li>
-  <li><strong>Discord-канали Trace Labs і Bellingcat</strong> — часто публікують внутрішні позиції та контракти</li>
-  <li><strong>Прямий контакт з Molfar / YouControl / Дія.Business партнерами</strong> — багато вакансій не публікуються</li>
-</ul>
-
-<hr>
-
-<h2 id="faq">11. FAQ</h2>
-
-<h3>Скільки часу треба, щоб стати junior OSINT-аналітиком?</h3>
-<p>Реалістично — 3-6 місяців інтенсивної практики. Місяць — базовий курс + перші кейси. Далі — CTF, публікації, застосування до реальних вакансій. Ті, хто вчаться між іншим, доходять за 12+ місяців.</p>
-
-<h3>Чи треба вища освіта?</h3>
-<p>Формально — ні. Практично — залежить від треку. Для держави / силових зазвичай треба (правнича, гуманітарна, безпекова). Для приватки і фрілансу — важливий портфель, а не диплом. Для міжнародних клієнтів — важлива англійська і сертифікати (SANS, GIAC, Coursera).</p>
-
-<h3>Чи можна поєднувати з основною роботою?</h3>
-<p>Так, і це часто оптимальний старт. 1-2 години вечорами на курс + вихідні на CTF і практичні кейси. Через 6 місяців — портфель з 5-10 задокументованих робіт + сертифікати. Тоді можна робити рішення про перехід.</p>
-
-<h3>Що потрібно для міжнародних клієнтів?</h3>
-<p>Англійська B2+, LinkedIn з активним контентом (пости, репости, коментарі), 3-5 задокументованих кейсів (з дозволу клієнта або анонімізовані), 1-2 сертифікати SANS або GIAC, участь у Trace Labs CTF (є publicly verifiable результати).</p>
-
-<h3>Чи є вікові обмеження?</h3>
-<p>Ні. У професії однаково успішні і 22-річні студенти, і 50-річні фахівці з попереднім бекграундом. Багато топ-практиків прийшли з інших сфер після 35.</p>
-
-<h3>Що робити, якщо немає технічного бекграунду?</h3>
-<p>Це не бар'єр. Технічну базу (Google Dorks, WHOIS, DNS) можна опанувати за 2 тижні. Важливіше — <em>склад розуму</em>: аналітичність, увага до деталей, терпіння. Якщо у тебе був досвід дослідницької роботи (журналіст, юрист, бухгалтер, науковець) — ти вже 60% дороги пройшов.</p>
-
-<h3>Скільки заробляє senior OSINT в Україні?</h3>
-<p>Приватка / senior позиція — 60-120К грн/місяць. Міжнародний фріланс на своїх клієнтах — від $3К до $15К/місяць (з досвідом 5+ років і сформованим брендом).</p>
-
-<h3>Чи це «сіра» професія?</h3>
-<p>Ні. З 2025 — офіційна, з профстандартом. Легально працюють у держструктурах, приватних компаніях, як ФОПи. Юридичні межі — у розділі 9.</p>
-
-<hr>
-
-<h2 id="next">12. Куди рухатись далі</h2>
-
-<p>Якщо ти прочитав до цієї точки — ти вже маєш більше системного розуміння професії, ніж 90% тих, хто «десь бачив слово OSINT». Три конкретні наступні кроки:</p>
-
-<ol>
-  <li><strong>Сьогодні</strong> — запишись на <a href="https://prometheus.org.ua/prometheus-free/osint-open-source-intelligence/" target="_blank" rel="noopener">безкоштовний Prometheus-курс</a>. Це нульовий бар'єр і 20 годин чистого фундаменту.</li>
-  <li><strong>Цього тижня</strong> — приєднайся до <a href="https://www.tracelabs.org/" target="_blank" rel="noopener">Trace Labs Discord</a> і зареєструйся на найближчий Search Party CTF (~$20-25 за virtual, 100% на charity). Перше реальне бойове хрещення.</li>
-  <li><strong>Цього місяця</strong> — розбери один <a href="cases.html">кейс з мого сайту</a>, повтори методологію на публічній персоні і опублікуй write-up у LinkedIn. Ти вже входиш у спільноту.</li>
-</ol>
-
-</section>
-
-<div class="guide-cta reveal">
-  <h3>Питання чи консультація?</h3>
-  <p>Якщо шукаєш ментора, хочеш обговорити конкретний кейс або порадитись з приводу треку — пиши.</p>
-  <a href="contact.html" class="btn btn--filled">Зв'язатися</a>
-  <a href="cases.html" class="btn">Розбір кейсів</a>
-  <a href="tools.html" class="btn">Стек інструментів</a>
-</div>
+<nav class="nav" aria-label="Navigation"><a href="index.html" class="nav__brand"><img src="img/brand/panther-64.png" width="28" height="28" alt=""><span>SELIN<span class="brand-period">.</span></span></a><button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button><ul class="nav__links"><li><a href="cases.html" class=""><span data-i18n="r.nav.cases" >Розслідування</span><span aria-hidden="true">↗</span></a></li><li><a href="projects.html" class=""><span data-i18n="r.nav.projects" >Інструменти</span><span aria-hidden="true">↗</span></a></li><li><a href="books.html" class=""><span data-i18n="r.nav.books" >Книги</span><span aria-hidden="true">↗</span></a></li><li><a href="simulator.html" class=""><span data-i18n="r.nav.practice" >Симулятори</span><span aria-hidden="true">↗</span></a></li><li><a href="play.html" class=""><span data-i18n="r.nav.game" >Гра</span><span aria-hidden="true">↗</span></a></li><li><a href="support.html" class=""><span data-i18n="r.nav.coffee" >На каву</span><span aria-hidden="true">↗</span></a></li><li><a href="about.html" class=""><span data-i18n="r.nav.about" >Про мене</span><span aria-hidden="true">↗</span></a></li><li class="nav__more"><button class="nav__more-btn" aria-expanded="false"><span data-i18n="r.nav.more" >Більше</span> +</button><ul class="nav__submenu"><li><a href="play.html" class=""><span data-i18n="r.nav.zero" >Case Zero</span><span aria-hidden="true">↗</span></a></li><li><a href="blog.html" class=""><span data-i18n="r.nav.news" >Новини</span><span aria-hidden="true">↗</span></a></li><li><a href="guide.html" class=""><span data-i18n="r.nav.guide" >OSINT-гайд</span><span aria-hidden="true">↗</span></a></li><li><a href="tools.html" class=""><span data-i18n="r.nav.directory" >Каталог інструментів</span><span aria-hidden="true">↗</span></a></li><li><a href="education.html" class=""><span data-i18n="r.nav.education" >Освіта</span><span aria-hidden="true">↗</span></a></li><li><a href="speaking.html" class=""><span data-i18n="r.nav.speaking" >Виступи</span><span aria-hidden="true">↗</span></a></li><li><a href="certificates.html" class=""><span data-i18n="r.nav.certs" >Сертифікати</span><span aria-hidden="true">↗</span></a></li><li><a href="awards.html" class=""><span data-i18n="r.nav.awards" >Відзнаки</span><span aria-hidden="true">↗</span></a></li><li><a href="recommendations.html" class=""><span data-i18n="r.nav.recommendations" >Рекомендації</span><span aria-hidden="true">↗</span></a></li><li><a href="support.html" class=""><span data-i18n="r.nav.support" >На каву</span><span aria-hidden="true">↗</span></a></li><li><a href="contact.html" class=""><span data-i18n="r.nav.contact" >Контакти</span><span aria-hidden="true">↗</span></a></li></ul></li><li class="nav__lang"><button data-lang="uk" class="active">UA</button><button data-lang="en">EN</button></li></ul></nav><div id="page-content" class="content-anchor"></div>
+
+
+<div class="guide-progress" aria-hidden="true"><span id="guide-progress-bar"></span></div>
+
+<main class="guide-shell" id="guide-main">
+  <article class="guide-edition" data-guide-lang="uk" lang="uk">
+    <header class="guide-cover reveal">
+      <div class="guide-cover__copy">
+        <span class="guide-kicker">Практичний гайд · редакція 2026</span>
+        <h1>OSINT з нуля.<br><em>Один сигнал. П'ять перевірок. Жодних здогадок.</em></h1>
+        <p>За 15 хвилин ви зрозумієте, як перейти від першої зачіпки до перевіреного висновку — і з чого почати власну практику вже сьогодні.</p>
+        <div class="guide-cover__actions">
+          <a class="action primary" href="#uk-route">Почати з маршруту ↓</a>
+          <a class="action" href="simulator.html">Перейти до практики ↗</a>
+        </div>
+        <div class="guide-byline"><span>Єгор Селін</span><span>Оновлено 23.10.2026</span><span>15 хв</span></div>
+      </div>
+      <div class="guide-cover__visual" aria-label="Візуальна схема OSINT-дослідження">
+        <div class="guide-signal guide-signal--a">ПУБЛІЧНИЙ СИГНАЛ<small>01 / SOURCE</small></div>
+        <div class="guide-signal guide-signal--b">КОНТЕКСТ<small>02 / VERIFY</small></div>
+        <div class="guide-signal guide-signal--c">ВИСНОВОК<small>03 / REPORT</small></div>
+        <svg viewBox="0 0 520 420" role="img"><path d="M62 90 C180 20 280 108 447 53M62 90C130 185 272 160 405 238M405 238C319 344 197 371 89 314M89 314C111 236 150 186 252 148"/><circle cx="62" cy="90" r="7"/><circle cx="252" cy="148" r="9"/><circle cx="405" cy="238" r="7"/><circle cx="89" cy="314" r="7"/></svg>
+      </div>
+    </header>
+
+    <section class="guide-reality reveal">
+      <p class="guide-reality__lead">OSINT — це не «знайти людину за п'ять хвилин». Це дисципліна, у якій важливіше правильно поставити питання, перевірити джерело і вчасно зупинитися, ніж відкрити ще один сервіс.</p>
+      <div class="guide-reality__grid">
+        <div><span>НЕ ЦЕ</span><strong>Колекціонувати інструменти</strong><p>Сервіси змінюються, закриваються і помиляються.</p></div>
+        <div><span>А ЦЕ</span><strong>Будувати доказовий ланцюг</strong><p>Кожен крок має джерело, контекст і межу достовірності.</p></div>
+      </div>
+    </section>
+
+    <aside class="guide-author reveal" aria-label="Автор гайду">
+      <div class="guide-author__portrait"><img src="img/yehor.jpg" alt="Єгор Селін" loading="lazy"><span>YEHOR SELIN / OSINT</span></div>
+      <div class="guide-author__copy"><span>ХТО ПІДГОТУВАВ ЦЕЙ ГАЙД</span><h2>Єгор Селін</h2><p>OSINT-аналітик, розробник дослідницьких платформ і автор книг. Працюю з міжнародними OSINT/SOCMINT-дослідженнями, навчаю практиків із різних країн, проводжу вебінари та долучаюся до розвитку OSINT Moldova.</p><strong>Якщо вам потрібен не черговий список інструментів, а зрозумілий маршрут і професійний зворотний зв'язок — я можу допомогти.</strong><div><a class="action primary" href="contact.html">Навчання та менторство ↗</a><a class="action" href="about.html">Про мене ↗</a><a class="action" href="https://www.linkedin.com/in/yehor-selin/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+    </aside>
+
+    <section class="guide-hook-gallery reveal" aria-labelledby="uk-hook-title">
+      <div class="guide-hook-gallery__head"><span>ЩО МОЖЕ СТАТИ ПОЧАТКОМ</span><h2 id="uk-hook-title">Іноді все починається з одного слабкого сигналу</h2><p>Не з готової відповіді. З деталі, яку ще потрібно перевірити, зіставити й правильно обмежити.</p></div>
+      <div class="guide-hook-gallery__grid">
+        <a href="cases.html?slug=strike-video-attribution"><img src="img/uploads/cases/strike-video-cover.jpg" alt="Публічне відео як початкова точка перевірки локації" loading="lazy"><span>ПУБЛІЧНЕ ВІДЕО</span><strong>Від кадру — до перевірки місця зйомки</strong><small>Не вгадати локацію, а довести її через незалежні орієнтири.</small><i>01 ↗</i></a>
+        <a href="cases.html?slug=monobank-jar-volunteer-attribution"><img src="img/uploads/cases/monobank-jar-cover.jpg" alt="Публічний збір як початкова точка перевірки зв'язків" loading="lazy"><span>ПУБЛІЧНИЙ ЗБІР</span><strong>Від сторінки збору — до карти зв'язків</strong><small>Перевірити організатора, контекст і незалежні підтвердження.</small><i>02 ↗</i></a>
+        <a href="cases.html?slug=numeric-identifier"><img src="img/uploads/cases/numeric-id-cover.jpg" alt="Цифровий ідентифікатор як пошуковий анкер" loading="lazy"><span>ЦИФРОВИЙ ID</span><strong>Від технічного анкера — до гіпотези про особу</strong><small>ID стабільний, але сам по собі ніколи не підтверджує особу.</small><i>03 ↗</i></a>
+      </div>
+    </section>
+
+    <nav class="guide-nav reveal" aria-label="Зміст гайду">
+      <a href="#uk-route"><b>01</b><span>Метод</span></a>
+      <a href="#uk-skills"><b>02</b><span>Навички</span></a>
+      <a href="#uk-lab"><b>03</b><span>Перша практика</span></a>
+      <a href="#uk-plan"><b>04</b><span>30 днів</span></a>
+      <a href="#uk-work"><b>05</b><span>Портфоліо</span></a>
+      <a href="#uk-safety"><b>06</b><span>Межі</span></a>
+    </nav>
+
+    <section class="guide-chapter" id="uk-route">
+      <div class="guide-chapter__head"><span>01 / МЕТОД</span><h2>П'ять кроків, на яких тримається будь-яке дослідження</h2><p>Починайте не з інструмента, а з питання. Тоді сервіс стає засобом, а не маршрутом.</p></div>
+      <figure class="guide-editorial reveal"><img src="img/uploads/guide/guide-question-2026.png" alt="Аналітик перетворює розрізнені відкриті матеріали на чітке дослідницьке питання" loading="lazy"><figcaption><span>ПОЧАТОК РОБОТИ</span><strong>Хороше дослідження починається не з пошуку, а з правильно сформульованого питання.</strong></figcaption></figure>
+      <div class="guide-pipeline reveal">
+        <div><b>01</b><strong>Питання</strong><p>Що саме треба встановити? Який результат буде достатнім?</p></div>
+        <div><b>02</b><strong>Збір</strong><p>Які відкриті джерела можуть містити потрібний сигнал?</p></div>
+        <div><b>03</b><strong>Перевірка</strong><p>Хто створив дані, коли, навіщо і чи можна їм довіряти?</p></div>
+        <div><b>04</b><strong>Кореляція</strong><p>Чи підтверджують один одного незалежні ідентифікатори?</p></div>
+        <div><b>05</b><strong>Висновок</strong><p>Що доведено, що лише ймовірно і чого ми не знаємо?</p></div>
+      </div>
+      <div class="guide-rule reveal"><span>Головне правило</span><p><strong>Один збіг — це індикатор, а не доказ.</strong> Username, фото, номер телефону або геолокація набувають ваги лише в сукупності з незалежним підтвердженням.</p></div>
+    </section>
+
+    <figure class="guide-case-study reveal">
+      <div class="guide-case-study__image"><img src="img/uploads/cases/strike-video-attribution-03-corroboration.jpg" alt="Приклад зіставлення незалежних ознак у публічному OSINT-кейсі" loading="lazy"></div>
+      <figcaption><span>ПРИКЛАД ІЗ ПРАКТИКИ</span><h3>Не шукайте «вирішальний скриншот»</h3><p>Сильний висновок зазвичай складається з кількох слабших сигналів: візуальних орієнтирів, часу, географії, архівних матеріалів та альтернативних пояснень.</p><a href="cases.html?slug=strike-video-attribution">Розібрати повний кейс ↗</a></figcaption>
+    </figure>
+    <figure class="guide-editorial guide-editorial--wide reveal"><img src="img/uploads/guide/guide-corroboration-2026.png" alt="Кілька незалежних відкритих джерел сходяться в одному перевіреному висновку" loading="lazy"><figcaption><span>НЕЗАЛЕЖНЕ ПІДТВЕРДЖЕННЯ</span><strong>Висновок стає сильнішим не від кількості скриншотів, а від незалежності джерел.</strong></figcaption></figure>
+
+    <section class="guide-chapter" id="uk-skills">
+      <div class="guide-chapter__head"><span>02 / НАВИЧКИ</span><h2>Що розвивати насправді</h2><p>Не треба знати все. Треба впевнено виконувати базовий цикл і розуміти обмеження власних методів.</p></div>
+      <div class="guide-skill-grid reveal">
+        <article><span>SEARCH</span><h3>Пошук і постановка запитів</h3><p>Оператори пошуку, варіанти написання, робота різними мовами, пошук за фрагментом та архівами.</p></article>
+        <article><span>VERIFY</span><h3>Верифікація джерел</h3><p>Походження, дата, авторство, контекст, можливі маніпуляції та незалежне підтвердження.</p></article>
+        <article><span>VISUAL</span><h3>Фото, відео і географія</h3><p>Зворотний пошук, кадрування, орієнтири, тіні, погода, карти та супутникові знімки.</p></article>
+        <article><span>DATA</span><h3>Структурування даних</h3><p>Таблиці, таймлайни, графи зв'язків, нормалізація ідентифікаторів і журнал джерел.</p></article>
+        <article><span>SECURITY</span><h3>Цифрова безпека</h3><p>Окреме робоче середовище, захист акаунтів, мінімізація цифрового сліду й оцінка ризику.</p></article>
+        <article><span>REPORT</span><h3>Аналітичне письмо</h3><p>Факт, індикатор, гіпотеза, рівень упевненості та межі висновку — без перебільшень.</p></article>
+      </div>
+    </section>
+    <figure class="guide-editorial reveal"><img src="img/uploads/guide/guide-geolocation-2026.png" alt="Порівняння міського кадру з картою та супутниковим знімком під час геолокації" loading="lazy"><figcaption><span>ВІЗУАЛЬНА ВЕРИФІКАЦІЯ</span><strong>Геолокація — це послідовне зіставлення орієнтирів, геометрії, світла й контексту.</strong></figcaption></figure>
+
+    <section class="guide-chapter guide-lab" id="uk-lab">
+      <div class="guide-chapter__head"><span>03 / ПЕРША ПРАКТИКА</span><h2>Один навчальний кейс важливіший за десять списків інструментів</h2><p>Візьміть безпечний об'єкт, де немає потреби втручатися в чиєсь приватне життя: власний цифровий слід, історичну подію, верифікацію публічного фото або матеріал із симулятора.</p></div>
+      <div class="guide-lab__layout reveal">
+        <div class="guide-lab__screen"><img src="img/uploads/simulator/shadow-simulator-splash.jpg" alt="Навчальний OSINT-симулятор Shadow Simulator" loading="lazy"><span>TRAINING ENVIRONMENT / SAFE DATA</span></div>
+        <ol>
+          <li><b>Сформулюйте питання</b><p>Одне речення. Без розмитого «знайти все».</p></li>
+          <li><b>Заведіть журнал</b><p>URL, дата доступу, скриншот, що саме підтверджує джерело.</p></li>
+          <li><b>Побудуйте дві гіпотези</b><p>Робочу й альтернативну. Шукайте дані, які можуть спростувати обидві.</p></li>
+          <li><b>Напишіть короткий висновок</b><p>До однієї сторінки: факти, оцінка, рівень упевненості, прогалини.</p></li>
+        </ol>
+      </div>
+      <a class="guide-wide-link reveal" href="simulator.html"><span>Готові спробувати?</span><strong>Відкрити безкоштовні OSINT-симулятори</strong><i>↗</i></a>
+    </section>
+
+    <section class="guide-chapter" id="uk-plan">
+      <div class="guide-chapter__head"><span>04 / ПЛАН НА 30 ДНІВ</span><h2>Перший місяць без хаотичного навчання</h2></div>
+      <div class="guide-weeks reveal">
+        <article><span>ТИЖДЕНЬ 01</span><h3>Метод і безпека</h3><ul><li>Сформулювати дослідницьке питання</li><li>Налаштувати окремий браузерний профіль</li><li>Навчитися фіксувати джерела</li></ul><b>Результат: шаблон журналу</b></article>
+        <article><span>ТИЖДЕНЬ 02</span><h3>Пошук і верифікація</h3><ul><li>Пошукові оператори й архіви</li><li>Зворотний пошук зображень</li><li>Перевірка автора, дати й контексту</li></ul><b>Результат: 3 мініперевірки</b></article>
+        <article><span>ТИЖДЕНЬ 03</span><h3>Один повний кейс</h3><ul><li>Питання і дві гіпотези</li><li>Кілька незалежних джерел</li><li>Таймлайн або карта зв'язків</li></ul><b>Результат: чернетка звіту</b></article>
+        <article><span>ТИЖДЕНЬ 04</span><h3>Редактура і портфоліо</h3><ul><li>Прибрати зайві персональні дані</li><li>Перевірити кожне твердження</li><li>Описати межі висновку</li></ul><b>Результат: перший публічний кейс</b></article>
+      </div>
+    </section>
+
+    <section class="guide-chapter guide-resources" id="uk-tools">
+      <div class="guide-chapter__head"><span>РОБОЧИЙ НАБІР</span><h2>Невеликий стек, якого достатньо для старту</h2><p>Не прив'язуйте методику до конкретного сервісу. Обирайте інструмент під задачу й завжди перевіряйте його обмеження.</p></div>
+      <div class="guide-resource-grid reveal">
+        <a href="https://www.google.com/advanced_search" target="_blank" rel="noopener"><span>ПОШУК</span><strong>Google Advanced Search</strong><p>Запити, точні фрази, домени, формати файлів.</p><i>↗</i></a>
+        <a href="https://lens.google/" target="_blank" rel="noopener"><span>ЗОБРАЖЕННЯ</span><strong>Google Lens</strong><p>Схожі зображення, об'єкти, текст і візуальні збіги.</p><i>↗</i></a>
+        <a href="https://web.archive.org/" target="_blank" rel="noopener"><span>АРХІВИ</span><strong>Wayback Machine</strong><p>Попередні версії публічних вебсторінок.</p><i>↗</i></a>
+        <a href="https://opencorporates.com/" target="_blank" rel="noopener"><span>КОМПАНІЇ</span><strong>OpenCorporates</strong><p>Пошук юридичних осіб у багатьох юрисдикціях.</p><i>↗</i></a>
+        <a href="https://bellingcat.gitbook.io/toolkit" target="_blank" rel="noopener"><span>КАТАЛОГ</span><strong>Bellingcat Toolkit</strong><p>Опис задач, вартості, обмежень та етичних ризиків.</p><i>↗</i></a>
+        <a href="tools.html"><span>ДОВІДНИК</span><strong>Мій каталог інструментів</strong><p>Добірка за типом дослідницького завдання.</p><i>↗</i></a>
+      </div>
+    </section>
+
+    <section class="guide-chapter" id="uk-work">
+      <div class="guide-chapter__head"><span>05 / ПОРТФОЛІО</span><h2>Що показує потенційному роботодавцю ваш рівень</h2></div>
+      <div class="guide-proof reveal">
+        <div><b>01</b><h3>Питання</h3><p>Ви вмієте звузити задачу до перевірюваної постановки.</p></div>
+        <div><b>02</b><h3>Метод</h3><p>Читач бачить логіку, а не тільки фінальне ім'я або адресу.</p></div>
+        <div><b>03</b><h3>Джерела</h3><p>Кожен важливий висновок має простежуване походження.</p></div>
+        <div><b>04</b><h3>Обережність</h3><p>Ви відділяєте факт від оцінки і не перебільшуєте впевненість.</p></div>
+      </div>
+      <div class="guide-note reveal"><strong>Краще один акуратний кейс, ніж двадцять сертифікатів без практики.</strong><p>Перед публікацією анонімізуйте дані, які можуть завдати шкоди, поясніть законну мету роботи й не залишайте відтворюваних інструкцій для зловживання.</p></div>
+    </section>
+    <figure class="guide-editorial guide-editorial--wide reveal"><img src="img/uploads/guide/guide-report-2026.png" alt="Аналітик перевіряє фінальний звіт із картою, джерелами та рівнями впевненості" loading="lazy"><figcaption><span>РЕЗУЛЬТАТ РОБОТИ</span><strong>Професійний результат — це зрозумілий звіт, у якому кожен висновок можна перевірити.</strong></figcaption></figure>
+
+    <section class="guide-chapter" id="uk-safety">
+      <div class="guide-chapter__head"><span>06 / ПРОФЕСІЙНІ МЕЖІ</span><h2>Відкритість даних не скасовує відповідальність</h2></div>
+      <div class="guide-boundaries reveal">
+        <div class="is-do"><span>ПРАЦЮЄМО ТАК</span><ul><li>Збираємо лише те, що потрібно для визначеної мети</li><li>Фіксуємо походження та час доступу до матеріалу</li><li>Перевіряємо альтернативні пояснення</li><li>Захищаємо чутливі дані та людей, яких вони стосуються</li></ul></div>
+        <div class="is-dont"><span>ЧЕРВОНІ ЛІНІЇ</span><ul><li>Обхід доступу, злам, фішинг або видавання себе за іншу особу</li><li>Переслідування, доксинг і публікація надмірних персональних даних</li><li>Твердження про особу на підставі одного збігу</li><li>Приховування невизначеності або джерел, що суперечать версії</li></ul></div>
+      </div>
+      <div class="guide-source-note reveal"><span>БАЗОВИЙ СТАНДАРТ</span><h3>Berkeley Protocol on Digital Open Source Investigations</h3><p>Практичний орієнтир щодо професійного, правового й етичного збирання, аналізу та збереження цифрової інформації.</p><a href="https://searchlibrary.ohchr.org/record/30334" target="_blank" rel="noopener">Відкрити публікацію OHCHR ↗</a></div>
+    </section>
+
+    <section class="guide-finish reveal">
+      <span>ВАШ НАСТУПНИЙ КРОК</span><h2>Хочете пройти цей шлях швидше — звертайтеся.</h2><p>Я допомагаю вибудувати персональний маршрут навчання, розібрати ваш перший кейс або допрацювати дослідження до професійного результату. Проводжу індивідуальні консультації та менторські сесії для початківців і практиків.</p>
+      <div><a class="action primary" href="contact.html">Обговорити навчання чи менторство ↗</a><a class="action" href="simulator.html">Почати з симулятора ↗</a><a class="action" href="cases.html">Подивитися мої кейси ↗</a></div>
+    </section>
+  </article>
+
+  <article class="guide-edition" data-guide-lang="en" lang="en" hidden><header class="guide-cover reveal"><div class="guide-cover__copy"><span class="guide-kicker">Practical guide · 2026 edition</span><h1>OSINT from zero.<br><em>One signal. Five checks. No guesswork.</em></h1><p>In 15 minutes, you will understand how to move from an initial lead to a verified conclusion—and how to begin practicing today.</p><div class="guide-cover__actions"><a class="action primary" href="#en-route">Start with the method ↓</a><a class="action" href="simulator.html">Practice now ↗</a></div><div class="guide-byline"><span>Yehor Selin</span><span>Updated Oct 23, 2026</span><span>15 min</span></div></div><div class="guide-cover__visual" aria-label="Visual diagram of an OSINT investigation"><div class="guide-signal guide-signal--a">PUBLIC SIGNAL<small>01 / SOURCE</small></div><div class="guide-signal guide-signal--b">CONTEXT<small>02 / VERIFY</small></div><div class="guide-signal guide-signal--c">CONCLUSION<small>03 / REPORT</small></div><svg viewBox="0 0 520 420" role="img"><path d="M62 90 C180 20 280 108 447 53M62 90C130 185 272 160 405 238M405 238C319 344 197 371 89 314M89 314C111 236 150 186 252 148"/><circle cx="62" cy="90" r="7"/><circle cx="252" cy="148" r="9"/><circle cx="405" cy="238" r="7"/><circle cx="89" cy="314" r="7"/></svg></div></header><section class="guide-reality reveal"><p class="guide-reality__lead">OSINT is not “finding anyone in five minutes.” It is a discipline where asking the right question, checking the source, and knowing when to stop matter more than opening another service.</p><div class="guide-reality__grid"><div><span>NOT THIS</span><strong>Collecting tools</strong><p>Services change, disappear, and produce false results.</p></div><div><span>THIS</span><strong>Building an evidence chain</strong><p>Every step has a source, context, and confidence boundary.</p></div></div></section>
+<aside class="guide-author reveal" aria-label="Guide author"><div class="guide-author__portrait"><img src="img/yehor.jpg" alt="Yehor Selin" loading="lazy"><span>YEHOR SELIN / OSINT</span></div><div class="guide-author__copy"><span>WHO CREATED THIS GUIDE</span><h2>Yehor Selin</h2><p>OSINT analyst, research-platform developer, and author. I work on international OSINT/SOCMINT investigations, train practitioners from different countries, lead webinars, and contribute to the development of OSINT Moldova.</p><strong>If you need more than another tool list—a clear learning path and professional feedback—I can help.</strong><div><a class="action primary" href="contact.html">Training and mentoring ↗</a><a class="action" href="about.html">About me ↗</a><a class="action" href="https://www.linkedin.com/in/yehor-selin/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div></aside>
+<section class="guide-hook-gallery reveal" aria-labelledby="en-hook-title">
+<div class="guide-hook-gallery__head"><span>WHERE AN INVESTIGATION CAN BEGIN</span><h2 id="en-hook-title">Sometimes one weak signal is enough to start</h2><p>Not an answer. A detail that still has to be verified, correlated, and carefully bounded.</p></div><div class="guide-hook-gallery__grid"><a href="cases.html?slug=strike-video-attribution"><img src="img/uploads/cases/strike-video-cover.jpg" alt="A public video as the starting point for location verification" loading="lazy"><span>PUBLIC VIDEO</span><strong>From one frame to a verified filming location</strong><small>Do not guess the place—establish it through independent landmarks.</small><i>01 ↗</i></a><a href="cases.html?slug=monobank-jar-volunteer-attribution"><img src="img/uploads/cases/monobank-jar-cover.jpg" alt="A public fundraiser as the starting point for relationship research" loading="lazy"><span>PUBLIC FUNDRAISER</span><strong>From a campaign page to a relationship map</strong><small>Check the organizer, context, and independent corroboration.</small><i>02 ↗</i></a><a href="cases.html?slug=numeric-identifier"><img src="img/uploads/cases/numeric-id-cover.jpg" alt="A numeric identifier as a search anchor" loading="lazy"><span>NUMERIC ID</span><strong>From a technical anchor to an identity hypothesis</strong><small>An ID may be stable, but it never proves identity on its own.</small><i>03 ↗</i></a></div></section><nav class="guide-nav reveal" aria-label="Guide contents"><a href="#en-route"><b>01</b><span>Method</span></a><a href="#en-skills"><b>02</b><span>Skills</span></a><a href="#en-lab"><b>03</b><span>First case</span></a><a href="#en-plan"><b>04</b><span>30 days</span></a><a href="#en-work"><b>05</b><span>Portfolio</span></a><a href="#en-safety"><b>06</b><span>Boundaries</span></a></nav><figure class="guide-editorial reveal"><img src="img/uploads/guide/guide-question-2026.png" alt="An analyst turns scattered public material into a precise research question" loading="lazy"><figcaption><span>WHERE WORK BEGINS</span><strong>A sound investigation begins not with a search, but with a well-framed question.</strong></figcaption></figure><section class="guide-chapter" id="en-route"><div class="guide-chapter__head"><span>01 / METHOD</span><h2>Five steps behind every sound investigation</h2><p>Start with a question, not a tool. A service should support the route, not define it.</p></div><div class="guide-pipeline reveal"><div><b>01</b><strong>Question</strong><p>What exactly must be established? What result is sufficient?</p></div><div><b>02</b><strong>Collection</strong><p>Which open sources may contain the relevant signal?</p></div><div><b>03</b><strong>Verification</strong><p>Who created the data, when, why, and how reliable is it?</p></div><div><b>04</b><strong>Correlation</strong><p>Do independent identifiers support one another?</p></div><div><b>05</b><strong>Conclusion</strong><p>What is proven, what is probable, and what remains unknown?</p></div></div><div class="guide-rule reveal"><span>CORE RULE</span><p><strong>One match is an indicator, not proof.</strong> A username, image, phone number, or location only gains weight when independently corroborated.</p></div></section><figure class="guide-case-study reveal"><div class="guide-case-study__image"><img src="img/uploads/cases/strike-video-attribution-03-corroboration.jpg" alt="Example of correlating independent indicators in a public OSINT case" loading="lazy"></div><figcaption><span>FROM A REAL CASE</span><h3>Do not hunt for a “single decisive screenshot”</h3><p>Strong findings usually combine several weaker signals: visual landmarks, time, geography, archived material, and competing explanations.</p><a href="cases.html?slug=strike-video-attribution">Read the full case ↗</a></figcaption></figure><figure class="guide-editorial guide-editorial--wide reveal"><img src="img/uploads/guide/guide-corroboration-2026.png" alt="Several independent open sources converge on one verified conclusion" loading="lazy"><figcaption><span>INDEPENDENT CORROBORATION</span><strong>A finding becomes stronger through source independence, not through screenshot volume.</strong></figcaption></figure>
+<section class="guide-chapter" id="en-skills"><div class="guide-chapter__head"><span>02 / SKILLS</span><h2>What you actually need to develop</h2><p>You do not need to know everything. You need a reliable basic workflow and an honest grasp of its limitations.</p></div><div class="guide-skill-grid reveal"><article><span>SEARCH</span><h3>Search strategy</h3><p>Operators, spelling variants, multilingual queries, fragments, and archives.</p></article><article><span>VERIFY</span><h3>Source verification</h3><p>Origin, date, authorship, context, manipulation, and corroboration.</p></article><article><span>VISUAL</span><h3>Images, video, geography</h3><p>Reverse search, crops, landmarks, shadows, weather, maps, and satellite imagery.</p></article><article><span>DATA</span><h3>Data organization</h3><p>Tables, timelines, link charts, identifier normalization, and source logs.</p></article><article><span>SECURITY</span><h3>Digital security</h3><p>Separate workspace, account protection, footprint reduction, and risk assessment.</p></article><article><span>REPORT</span><h3>Analytical writing</h3><p>Fact, indicator, hypothesis, confidence, and limitations—without overclaiming.</p></article></div></section><figure class="guide-editorial reveal"><img src="img/uploads/guide/guide-geolocation-2026.png" alt="Comparing a city image with a map and satellite view during geolocation" loading="lazy"><figcaption><span>VISUAL VERIFICATION</span><strong>Geolocation is the systematic comparison of landmarks, geometry, light, and context.</strong></figcaption></figure><section class="guide-chapter guide-lab" id="en-lab"><div class="guide-chapter__head"><span>03 / FIRST PRACTICE</span><h2>One training case beats ten tool lists</h2><p>Choose a safe subject that does not require invading anyone's privacy: your own digital footprint, a historical event, a public image, or a simulator scenario.</p></div><div class="guide-lab__layout reveal"><div class="guide-lab__screen"><img src="img/uploads/simulator/shadow-simulator-splash.jpg" alt="Shadow Simulator OSINT training environment" loading="lazy"><span>TRAINING ENVIRONMENT / SAFE DATA</span></div><ol><li><b>Frame one question</b><p>One sentence. Never “find everything.”</p></li><li><b>Keep a source log</b><p>URL, access date, capture, and the exact claim it supports.</p></li><li><b>Build two hypotheses</b><p>A working one and an alternative. Seek evidence that can disprove both.</p></li><li><b>Write a short conclusion</b><p>One page: facts, assessment, confidence, and gaps.</p></li></ol></div><a class="guide-wide-link reveal" href="simulator.html"><span>Ready to try?</span><strong>Open the free OSINT simulators</strong><i>↗</i></a></section><section class="guide-chapter" id="en-plan"><div class="guide-chapter__head"><span>04 / 30-DAY PLAN</span><h2>Your first month without chaotic learning</h2></div><div class="guide-weeks reveal"><article><span>WEEK 01</span><h3>Method and safety</h3><ul><li>Frame a research question</li><li>Set up a separate browser profile</li><li>Learn source preservation</li></ul><b>Output: source-log template</b></article><article><span>WEEK 02</span><h3>Search and verification</h3><ul><li>Search operators and archives</li><li>Reverse image search</li><li>Authorship, date, and context</li></ul><b>Output: three mini-checks</b></article><article><span>WEEK 03</span><h3>One complete case</h3><ul><li>A question and two hypotheses</li><li>Several independent sources</li><li>A timeline or link chart</li></ul><b>Output: report draft</b></article><article><span>WEEK 04</span><h3>Edit and publish</h3><ul><li>Remove unnecessary personal data</li><li>Check every material claim</li><li>State limitations clearly</li></ul><b>Output: first portfolio case</b></article></div></section><section class="guide-chapter guide-resources" id="en-tools"><div class="guide-chapter__head"><span>STARTER KIT</span><h2>A small stack is enough to begin</h2><p>Do not tie your method to one service. Choose tools by task and check their limitations.</p></div><div class="guide-resource-grid reveal"><a href="https://www.google.com/advanced_search" target="_blank" rel="noopener"><span>SEARCH</span><strong>Google Advanced Search</strong><p>Exact phrases, domains, and file formats.</p><i>↗</i></a><a href="https://lens.google/" target="_blank" rel="noopener"><span>IMAGES</span><strong>Google Lens</strong><p>Similar images, objects, text, and visual matches.</p><i>↗</i></a><a href="https://web.archive.org/" target="_blank" rel="noopener"><span>ARCHIVES</span><strong>Wayback Machine</strong><p>Earlier versions of public web pages.</p><i>↗</i></a><a href="https://opencorporates.com/" target="_blank" rel="noopener"><span>COMPANIES</span><strong>OpenCorporates</strong><p>Company records across many jurisdictions.</p><i>↗</i></a><a href="https://bellingcat.gitbook.io/toolkit" target="_blank" rel="noopener"><span>TOOLKIT</span><strong>Bellingcat Toolkit</strong><p>Use cases, cost, limitations, and ethical notes.</p><i>↗</i></a><a href="tools.html"><span>DIRECTORY</span><strong>My tools directory</strong><p>A task-based collection of research tools.</p><i>↗</i></a></div></section><section class="guide-chapter" id="en-work"><div class="guide-chapter__head"><span>05 / PORTFOLIO</span><h2>What shows an employer your real level</h2></div><div class="guide-proof reveal"><div><b>01</b><h3>Question</h3><p>You can narrow a vague task into a testable problem.</p></div><div><b>02</b><h3>Method</h3><p>The reader sees your reasoning, not only the final name or address.</p></div><div><b>03</b><h3>Sources</h3><p>Every material conclusion has traceable provenance.</p></div><div><b>04</b><h3>Restraint</h3><p>You separate fact from assessment and do not overstate confidence.</p></div></div><div class="guide-note reveal"><strong>One careful case is worth more than twenty certificates without practice.</strong><p>Before publishing, anonymize harmful details, explain the legitimate purpose, and remove reproducible instructions that enable abuse.</p></div></section><figure class="guide-editorial guide-editorial--wide reveal"><img src="img/uploads/guide/guide-report-2026.png" alt="An analyst reviews a final report with maps, sources, and confidence levels" loading="lazy"><figcaption><span>THE DELIVERABLE</span><strong>A professional result is a clear report in which every conclusion can be checked.</strong></figcaption></figure><section class="guide-chapter" id="en-safety"><div class="guide-chapter__head"><span>06 / PROFESSIONAL BOUNDARIES</span><h2>Public data does not remove responsibility</h2></div><div class="guide-boundaries reveal"><div class="is-do"><span>WORK THIS WAY</span><ul><li>Collect only what is necessary for a defined purpose</li><li>Record provenance and access time</li><li>Test alternative explanations</li><li>Protect sensitive data and affected people</li></ul></div><div class="is-dont"><span>RED LINES</span><ul><li>Unauthorized access, phishing, or impersonation</li><li>Harassment, doxxing, or excessive personal-data exposure</li><li>Identity claims based on a single match</li><li>Hiding uncertainty or contradictory sources</li></ul></div></div><div class="guide-source-note reveal"><span>FOUNDATIONAL STANDARD</span><h3>Berkeley Protocol on Digital Open Source Investigations</h3><p>A practical reference for collecting, analyzing, and preserving digital information professionally, legally, and ethically.</p><a href="https://searchlibrary.ohchr.org/record/30334" target="_blank" rel="noopener">Open the OHCHR publication ↗</a></div></section><section class="guide-finish reveal"><span>YOUR NEXT STEP</span><h2>Want to move faster? Work with me.</h2><p>I can help you build a personal learning path, review your first case, or develop an investigation into a professional deliverable. I offer one-to-one consultations and mentoring for beginners and working practitioners.</p><div><a class="action primary" href="contact.html">Discuss training or mentoring ↗</a><a class="action" href="simulator.html">Start with a simulator ↗</a><a class="action" href="cases.html">Explore my cases ↗</a></div></section></article>
+</main>
+
+<!-- The 2026 guide edition ends here. -->
 
 <aside class="section-switchboard"><div><span data-i18n="r.inner.next" >Продовжити дослідження</span></div><a data-i18n="r.inner.switch.cases" href="cases.html">Кейси</a><a data-i18n="r.inner.switch.projects" href="projects.html">Проєкти</a><a data-i18n="r.inner.switch.books" href="books.html">Книги</a><a data-i18n="r.inner.switch.sim" href="simulator.html">Симулятори</a><a data-i18n="r.inner.switch.play" href="play.html">Case Zero</a><a data-i18n="r.inner.switch.contact" href="contact.html">Контакти</a></aside><footer class="footer new-footer"><div class="footer-top"><a class="footer-logo" href="index.html">SELIN.</a><div><p data-i18n="r.footer.line" >Кожна тінь має ім’я.</p><a href="mailto:shadow@yehorselin.com">shadow@yehorselin.com ↗</a></div></div><div class="footer-links"><a href="cases.html" class=""><span data-i18n="r.foot.cases" >Розслідування</span><span aria-hidden="true">↗</span></a><a href="projects.html" class=""><span data-i18n="r.foot.projects" >Проєкти</span><span aria-hidden="true">↗</span></a><a href="books.html" class=""><span data-i18n="r.foot.books" >Книги</span><span aria-hidden="true">↗</span></a><a href="simulator.html" class=""><span data-i18n="r.foot.practice" >Симулятори</span><span aria-hidden="true">↗</span></a><a href="games/case-zero.html?case=case-001" class=""><span data-i18n="r.foot.game" >Гра</span><span aria-hidden="true">↗</span></a><a href="support.html" class=""><span data-i18n="r.foot.coffee" >На каву</span><span aria-hidden="true">↗</span></a><a href="contact.html" class=""><span data-i18n="r.foot.contact" >Контакти</span><span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/yehor-selin" class=""><span data-i18n="r.foot.linkedin" >LinkedIn</span><span aria-hidden="true">↗</span></a><a href="https://github.com/SiLiN-ua" class=""><span data-i18n="r.foot.github" >GitHub</span><span aria-hidden="true">↗</span></a><a href="https://t.me/krypka_21" class=""><span data-i18n="r.foot.telegram" >Telegram</span><span aria-hidden="true">↗</span></a></div><div class="footer__bottom"><span>© 2026 YEHOR SELIN</span><span>DNIPRO, UKRAINE · OSINT / SOCMINT</span><a href="#">↑ <span data-i18n="r.top" >Нагору</span></a></div></footer>
 
 
 <script src="js/main.js?v=20261003a"></script>
+<script src="js/guide.js?v=20261023a"></script>
 <script src="js/redesign.js?v=20260918e"></script><script src="js/interiors.js?v=5"></script></body>
 </html>
