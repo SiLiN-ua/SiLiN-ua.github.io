@@ -747,6 +747,21 @@
     const T = (k, dflt) => dict[k] || dflt;
     const pickGroup = (c) => (lang === 'en' ? (c.group_en || c.group) : c.group);
     const pickCatTitle = (c) => (lang === 'en' ? (c.title_en || c.title) : c.title);
+    const ui = lang === 'en' ? {
+      nav: 'Research directions',
+      search: 'Search by task, tool or domain…',
+      uaOnly: 'Only entries with a Ukrainian description',
+      links: 'resources', categories: 'categories', groups: 'directions',
+      name: 'Resource', desc: 'What it helps with', link: 'Open',
+      empty: 'Nothing matched. Try a shorter query or another direction.'
+    } : {
+      nav: 'Напрями дослідження',
+      search: 'Пошук за завданням, сервісом або доменом…',
+      uaOnly: 'Тільки записи з українським описом',
+      links: 'ресурсів', categories: 'категорій', groups: 'напрямів',
+      name: 'Ресурс', desc: 'Для якого завдання', link: 'Відкрити',
+      empty: 'Нічого не знайдено. Спробуйте коротший запит або інший напрям.'
+    };
 
     const groups = {};
     data.categories.forEach(c => {
@@ -758,12 +773,13 @@
       if (!acc.includes(g)) acc.push(g);
       return acc;
     }, []);
-    const rowHtml = (l) => {
+    const slugify = (value) => 'tools-' + String(value).toLowerCase().normalize('NFKD').replace(/[^a-z0-9а-яіїєґ]+/gi, '-').replace(/^-|-$/g, '');
+    const rowHtml = (l, catTitle, groupTitle) => {
       let host = '';
       try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
       const name = (lang === 'uk' ? (l.title_uk || l.real_title || l.title) : (l.real_title || l.title)) || host;
       const desc = (lang === 'uk' ? (l.description_uk || l.description) : (l.description_en || l.description)) || l.title || '';
-      const searchStr = (name + ' ' + desc + ' ' + host).toLowerCase();
+      const searchStr = (name + ' ' + desc + ' ' + host + ' ' + catTitle + ' ' + groupTitle).toLowerCase();
       const hasUk = !!l.description_uk;
       return `
         <tr class="stack__row" data-search="${escapeHtml(searchStr)}" data-has-uk="${hasUk ? '1' : '0'}">
@@ -778,57 +794,72 @@
         </tr>`;
     };
 
-    const catHtml = (cat) => {
+    const catHtml = (cat, groupTitle, catIndex, groupIndex) => {
       const catTitle = pickCatTitle(cat);
       return `
-      <div class="stack__cat" data-cat-title="${escapeHtml(catTitle.toLowerCase())}">
-        <div class="stack__cat-head">
+      <details class="stack__cat" data-cat-title="${escapeHtml(catTitle.toLowerCase())}" ${groupIndex === 0 && catIndex === 0 ? 'open' : ''}>
+        <summary class="stack__cat-head">
           <h3>${escapeHtml(catTitle)}</h3>
           <span class="stack__count">${cat.links.length}</span>
-        </div>
+        </summary>
         <div class="stack__table-wrap">
           <table class="stack__table">
             <thead>
               <tr>
-                <th class="stack__th-name">${escapeHtml(T('tools.table.name', 'Назва'))}</th>
-                <th class="stack__th-desc">${escapeHtml(T('tools.table.desc', 'Опис'))}</th>
-                <th class="stack__th-link">${escapeHtml(T('tools.table.link', 'Посилання'))}</th>
+                <th class="stack__th-name">${escapeHtml(ui.name)}</th>
+                <th class="stack__th-desc">${escapeHtml(ui.desc)}</th>
+                <th class="stack__th-link">${escapeHtml(ui.link)}</th>
               </tr>
             </thead>
-            <tbody>${cat.links.map(rowHtml).join('')}</tbody>
+            <tbody>${cat.links.map(l => rowHtml(l, catTitle, groupTitle)).join('')}</tbody>
           </table>
         </div>
-      </div>`;
+      </details>`;
     };
 
     const html = `
-      <div class="stack__meta">
-        <div class="stack__counts">
-          <span><strong>${data.total_links}</strong> ${escapeHtml(T('tools.meta.links', 'посилань'))}</span>
-          <span><strong>${data.total_categories}</strong> ${escapeHtml(T('tools.meta.categories', 'категорій'))}</span>
-          <span><strong>${ordered.length}</strong> ${escapeHtml(T('tools.meta.groups', 'напрямків'))}</span>
-        </div>
-        <div class="stack__search">
-          <input type="search" id="stack-search" placeholder="${escapeHtml(T('tools.search.placeholder', 'Швидкий пошук: назва, опис, домен, категорія…'))}" autocomplete="off">
+      <div class="stack__workspace">
+        <aside class="stack__sidebar" aria-label="${escapeHtml(ui.nav)}">
+          <div class="stack__side-head">${escapeHtml(ui.nav)}</div>
+          <nav class="stack__nav">
+            ${ordered.map((g, idx) => {
+              const count = groups[g].reduce((sum, cat) => sum + cat.links.length, 0);
+              return `<button type="button" data-target="${escapeHtml(slugify(g))}"><span class="stack__nav-index">${String(idx + 1).padStart(2, '0')}</span><span>${escapeHtml(g)}</span><span class="stack__nav-count">${count}</span></button>`;
+            }).join('')}
+          </nav>
+        </aside>
+        <div class="stack__main">
+          <div class="stack__meta">
+            <div class="stack__search">
+              <input type="search" id="stack-search" aria-label="${escapeHtml(ui.search)}" placeholder="${escapeHtml(ui.search)}" autocomplete="off">
+            </div>
+            <label class="stack__filter"><input type="checkbox" id="ua-only"><span>${escapeHtml(ui.uaOnly)}</span></label>
+            <div class="stack__counts">
+              <span><strong>${data.total_links}</strong> ${escapeHtml(ui.links)}</span>
+              <span><strong>${data.total_categories}</strong> ${escapeHtml(ui.categories)}</span>
+              <span><strong>${ordered.length}</strong> ${escapeHtml(ui.groups)}</span>
+            </div>
+          </div>
+          <div class="stack__results">
+            ${ordered.map((g, idx) => `
+              <section class="stack__group" id="${escapeHtml(slugify(g))}" data-group="${escapeHtml(g.toLowerCase())}">
+                <h2 class="stack__group-title"><span>${String(idx + 1).padStart(2, '0')} / ${String(ordered.length).padStart(2, '0')}</span>${escapeHtml(g)}<span>${groups[g].reduce((sum, cat) => sum + cat.links.length, 0)} ${escapeHtml(ui.links)}</span></h2>
+                <div class="stack__cats">${groups[g].map((cat, catIndex) => catHtml(cat, g, catIndex, idx)).join('')}</div>
+              </section>`).join('')}
+            <p class="stack__empty" aria-live="polite">${escapeHtml(ui.empty)}</p>
+          </div>
         </div>
       </div>
-
-      ${ordered.map(g => `
-        <section class="stack__group" data-group="${escapeHtml(g)}">
-          <h2 class="stack__group-title">${escapeHtml(g)}</h2>
-          <div class="stack__cats">
-            ${groups[g].map(catHtml).join('')}
-          </div>
-        </section>
-      `).join('')}
     `;
     target.innerHTML = html;
 
     const input = target.querySelector('#stack-search');
-    const uaOnly = document.getElementById('ua-only');
+    const uaOnly = target.querySelector('#ua-only');
+    const empty = target.querySelector('.stack__empty');
     const applyFilter = () => {
       const q = (input.value || '').trim().toLowerCase();
       const ua = !!(uaOnly && uaOnly.checked);
+      let totalVisible = 0;
       target.querySelectorAll('.stack__cat').forEach(cat => {
         const catTitle = cat.dataset.catTitle;
         const catMatch = catTitle.includes(q);
@@ -838,17 +869,27 @@
           const uaMatch = !ua || row.dataset.hasUk === '1';
           const match = searchMatch && uaMatch;
           row.style.display = match ? '' : 'none';
-          if (match) anyVisible = true;
+          if (match) { anyVisible = true; totalVisible += 1; }
         });
         cat.style.display = anyVisible ? '' : 'none';
+        if (q && anyVisible) cat.open = true;
       });
       target.querySelectorAll('.stack__group').forEach(g => {
         const anyVisible = Array.from(g.querySelectorAll('.stack__cat')).some(c => c.style.display !== 'none');
         g.style.display = anyVisible ? '' : 'none';
       });
+      empty.classList.toggle('is-visible', totalVisible === 0);
     };
     input.addEventListener('input', applyFilter);
     if (uaOnly) uaOnly.addEventListener('change', applyFilter);
+    target.querySelectorAll('.stack__nav button').forEach(button => {
+      button.addEventListener('click', () => {
+        const section = document.getElementById(button.dataset.target);
+        if (!section) return;
+        target.querySelectorAll('.stack__nav button').forEach(b => b.classList.toggle('is-active', b === button));
+        section.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
   }
 
   function renderProjectRow(item, idx, total) {
