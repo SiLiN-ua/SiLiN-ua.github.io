@@ -111,9 +111,9 @@
           "description_en": "Explore an interactive map tracking the latest news and events from Ukraine, the conflict in eastern Ukraine and Crimea."
         }
       ],
-      "group": "Ідентифікація особи",
+      "group": "Геолокація та карти",
       "group_order": 0,
-      "group_en": "Identity attribution"
+      "group_en": "Geolocation & maps"
     },
     {
       "title": "ID",
