@@ -780,19 +780,20 @@
     }, []);
     const slugify = (value) => 'tools-' + String(value).toLowerCase().normalize('NFKD').replace(/[^a-z0-9а-яіїєґ]+/gi, '-').replace(/^-|-$/g, '');
     const compact = (value, limit = 190) => {
-      const text = String(value || '').replace(/\s+/g, ' ').trim();
+      const text = String(value || '').replace(/\s+/g, ' ').replace(/\s+([,.;:!?])/g, '$1').replace(/\s+['’]\s*/g, '’').trim();
       if (text.length <= limit) return text;
       const cut = text.slice(0, limit + 1);
       const sentence = cut.lastIndexOf('. ');
       const space = cut.lastIndexOf(' ');
       return cut.slice(0, sentence > limit * .55 ? sentence + 1 : space > 0 ? space : limit).trim() + '…';
     };
-    const hasRussianMarkers = (value) => /[ыэъё]/i.test(value || '') || /\b(поиск|проверка|скачивание|архив|база данных|номер телефона|главная страница|исследуйте|смотреть)\b/i.test(value || '');
+    const hasRussianMarkers = (value) => /[ыэъё]/i.test(value || '') || /\b(поиск|проверка|скачивание|архив|база данных|номер телефона|главная страница|исследуйте|смотреть|войны|новости|поезда|корабли|самолётов)\b/i.test(value || '');
     const cleanName = (l, host) => {
       const preferred = lang === 'uk' && l.title_uk ? l.title_uk : (l.real_title || l.title || host);
       const alternative = l.real_title || host;
       let name = lang === 'uk' && hasRussianMarkers(preferred) ? alternative : preferred;
       name = String(name || host).replace(/\s+/g, ' ').trim();
+      if (lang === 'uk' && hasRussianMarkers(name)) name = host || name;
       if (name.length > 92) {
         const parts = name.split(/\s[|·]\s|\s[-—]\s/).filter(Boolean);
         if (parts[0] && parts[0].length >= 3) name = parts[0];

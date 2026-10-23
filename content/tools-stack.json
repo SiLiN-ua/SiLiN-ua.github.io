@@ -1,7 +1,7 @@
 {
   "updated": "2026-07-14",
-  "total_links": 446,
-  "total_categories": 83,
+  "total_links": 443,
+  "total_categories": 82,
   "categories": [
     {
       "title": "GEOINT",
@@ -1046,7 +1046,7 @@
       "group_en": "Social networks"
     },
     {
-      "title": "Twich",
+      "title": "Twitch",
       "links": [
         {
           "title": "Анализ стримов и канала",
@@ -1234,16 +1234,8 @@
       "group_en": "Social networks"
     },
     {
-      "title": "Translation Tools",
+      "title": "OCR та розпізнавання тексту",
       "links": [
-        {
-          "title": "Google Translate",
-          "url": "https://translate.google.com/",
-          "description": "Пошукова система Google — базовий інструмент OSINT.",
-          "synth_desc": true,
-          "description_uk": "Пошукова система Google — базовий інструмент OSINT.",
-          "description_en": "Google — the baseline search engine for OSINT work."
-        },
         {
           "title": "i2OCR",
           "url": "https://www.i2ocr.com/",
@@ -1255,10 +1247,11 @@
       ],
       "group": "Реєстри та відкриті джерела",
       "group_order": 2,
-      "group_en": "Registries & open sources"
+      "group_en": "Registries & open sources",
+      "title_en": "OCR & text recognition"
     },
     {
-      "title": "Translation Tools",
+      "title": "Перекладачі та мовні інструменти",
       "links": [
         {
           "title": "DeepL Translate",
@@ -1311,7 +1304,8 @@
       ],
       "group": "Реєстри та відкриті джерела",
       "group_order": 2,
-      "group_en": "Registries & open sources"
+      "group_en": "Registries & open sources",
+      "title_en": "Translation & language tools"
     },
     {
       "title": "Іноземні реєстри",
@@ -2515,14 +2509,6 @@
           "description": "Онлайн-ресурс на pandametrics.com.",
           "synth_desc": true,
           "description_en": "Online resource at pandametrics.com."
-        },
-        {
-          "title": "Extracting TikTok video Timestaps",
-          "url": "https://bellingcat.github.io/tiktok-timestamp/",
-          "real_title": "Tiktok date extractor",
-          "description": "Онлайн-ресурс на bellingcat.github.io.",
-          "synth_desc": true,
-          "description_en": "Online resource at bellingcat.github.io."
         }
       ],
       "group": "Реєстри та відкриті джерела",
@@ -4164,24 +4150,7 @@
       "group_en": "Other"
     },
     {
-      "title": "SelIn",
-      "links": [
-        {
-          "title": "App configuration",
-          "url": "https://my.telegram.org/apps",
-          "real_title": "Authorization",
-          "description": "Telegram — месенджер.",
-          "synth_desc": true,
-          "description_uk": "Telegram — месенджер.",
-          "description_en": "Telegram — a messenger."
-        }
-      ],
-      "group": "Інше",
-      "group_order": 10,
-      "group_en": "Other"
-    },
-    {
-      "title": "Авиация",
+      "title": "Авіація",
       "links": [
         {
           "title": "Карта движения самолётов и характеристика",
@@ -4247,7 +4216,7 @@
       "title_en": "Vehicles"
     },
     {
-      "title": "Контейнеры",
+      "title": "Контейнери",
       "links": [
         {
           "title": "BIC: Бюро міжнародних контейнерів",
@@ -4280,7 +4249,7 @@
       "title_en": "Shipping containers"
     },
     {
-      "title": "Корабли",
+      "title": "Судна",
       "links": [
         {
           "title": "Реестр кораблей/суднов",
@@ -4323,7 +4292,7 @@
       "title_en": "Ships"
     },
     {
-      "title": "Поезда",
+      "title": "Залізниця",
       "links": [
         {
           "title": "Карта колий (поездов, трамваев и т.д.)",
