@@ -1,88 +1,5 @@
 [
   {
-    "name": "Добрі Дрони · 🚁",
-    "subtitle_uk": "SOCMINT-моніторинг суспільних настроїв за подіями у російських регіонах",
-    "subtitle_en": "SOCMINT monitoring of public sentiment around events in Russian regions",
-    "tag": "War OSINT · SOCMINT · Sentiment",
-    "year": 2026,
-    "lang": "Python 3.11 · Flask · Telethon · Claude API · SocketIO · EventLet",
-    "license": "MIT",
-    "live_url": "",
-    "repo_url": "https://github.com/SiLiN-ua/dobri-drony",
-    "cover": "/img/uploads/projects/drony-splash.png",
-    "screenshots": [
-      "/img/uploads/projects/drony-splash.png",
-      "/img/uploads/projects/drony-login.png",
-      "/img/uploads/projects/drony-feed.png",
-      "/img/uploads/projects/drony-report.png"
-    ],
-    "description_uk": "OSINT-платформа для аналізу суспільних настроїв у російських регіонах під час резонансних подій. Збирає та класифікує повідомлення з **153 Telegram-джерел** по містах у реальному часі. Кожне повідомлення отримує тональну мітку: паніка / заперечення / роздратування / гумор / скарги / нейтральна інформація. Автоматично витягує назву міста з тексту повідомлення. AI-звіт від Claude формує структурований бриф про динаміку суспільних настроїв за обраний період.",
-    "description_en": "An OSINT platform for analysing public sentiment in Russian regions around notable events. Collects and classifies messages from **153 Telegram sources** across cities in real time. Each message is tagged by tone: panic / denial / irritation / humour / complaint / neutral information. Automatically extracts the city name from the message text. A Claude-powered AI report produces a structured brief on sentiment dynamics for a chosen period.",
-    "features_uk": [
-      "Live-моніторинг у реальному часі: 153 Telegram-джерела",
-      "Автокласифікатор тональності: паніка / заперечення / роздратування / гумор / скарги / інфо",
-      "Автовизначення міста з тексту повідомлення",
-      "AI-звіт з класифікацією настроїв через Claude",
-      "Експорт: PDF · HTML · Word (.doc) · CSV",
-      "Трекінг медіа: фото/відео з розмірами",
-      "Фільтр фіду і звітів за містами",
-      "Real-time через WebSockets + EventLet"
-    ],
-    "features_en": [
-      "Live monitoring: 153 Telegram sources in real time",
-      "Sentiment auto-classifier: panic / denial / irritation / humour / complaint / info",
-      "City detection from message text",
-      "Sentiment-classified AI report via Claude",
-      "Export: PDF · HTML · Word (.doc) · CSV",
-      "Media tracking: photo/video with size stats",
-      "City filter for feed and reports",
-      "Real-time via WebSockets + EventLet"
-    ],
-    "order": 3,
-    "published": true,
-    "problem_uk": "Немає публічної платформи, яка системно моніторить настрої у російських регіонах під час резонансних подій. Dobri Drony закриває цей пробіл — автоматизований SOCMINT для суспільно-сентиментальної аналітики.",
-    "problem_en": "No public platform systematically monitors sentiment across Russian regions during notable events. Dobri Drony closes this gap — automated SOCMINT for public-sentiment analytics.",
-    "for_whom_uk": [
-      "Аналітики інформаційно-психологічних операцій",
-      "Дослідники суспільних настроїв",
-      "OSINT-команди, які вивчають регіональну динаміку РФ"
-    ],
-    "for_whom_en": [
-      "Analysts of information-psychological operations",
-      "Researchers of public sentiment",
-      "OSINT teams studying Russian regional dynamics"
-    ],
-    "how_it_works_uk": [
-      "Live-моніторинг 153 Telegram-джерел по російських містах",
-      "Автоматична класифікація тональності: паніка / заперечення / роздратування / гумор / скарги / нейтральна інформація",
-      "Автовитяг назви міста з тексту повідомлення",
-      "Фільтр фіду і звітів за містами",
-      "AI-звіт від Claude — структурований бриф про динаміку настроїв за обраний період"
-    ],
-    "how_it_works_en": [
-      "Live monitoring of 153 Telegram sources across Russian cities",
-      "Automatic sentiment classification: panic / denial / irritation / humour / complaint / neutral info",
-      "Automatic city extraction from message text",
-      "Feed and report filters by city",
-      "Claude AI report — structured brief on sentiment dynamics for the selected period"
-    ],
-    "status_uk": "Активний · MIT · WebSockets real-time",
-    "status_en": "Active · MIT · real-time WebSockets",
-    "highlights_uk": [
-      "153 джерела",
-      "6 тонів",
-      "Real-time",
-      "MIT"
-    ],
-    "highlights_en": [
-      "153 sources",
-      "6 tones",
-      "Real-time",
-      "MIT"
-    ],
-    "__slug": "dobri-drony"
-  },
-  {
     "name": "KagamiID",
     "subtitle_uk": "OSINT-платформа ідентифікації · Every shadow has a name",
     "subtitle_en": "OSINT Identity Lookup Platform · Every shadow has a name",
@@ -98,30 +15,24 @@
       "/img/uploads/projects/kagamiid-search.png",
       "/img/uploads/projects/kagamiid-dorks.png"
     ],
-    "description_uk": "Open-source OSINT-платформа для швидкої ідентифікації по username, numeric ID, email. Пошук по **15 платформах** одночасно: GitHub, Reddit, VK, YouTube, Steam, Bluesky, TikTok, Facebook, Instagram, Twitter/X, Twitch, Pinterest, DeviantArt, Patreon, OK.ru. Ключова фіча — **VK FOAF XML enrichment**, який працює навіть по закритих/видалених профілях. Ротація User-Agent проти блокувань IP, ротація Instagram/OK.ru сесій. Автогенерація OSINT-дорків. Експорт у JSON, CSV, STIX 2.1.",
-    "description_en": "Open-source OSINT platform for fast identification by username, numeric ID, or email. Searches **15 platforms** simultaneously: GitHub, Reddit, VK, YouTube, Steam, Bluesky, TikTok, Facebook, Instagram, Twitter/X, Twitch, Pinterest, DeviantArt, Patreon, OK.ru. The signature feature is **VK FOAF XML enrichment**, which works even for closed or deleted profiles. User-Agent rotation to bypass IP blocks, Instagram/OK.ru session rotation. Automated OSINT-dork generation. Export to JSON, CSV, STIX 2.1.",
+    "description_uk": "Платформа пошуку за ідентифікаторами з відкритим кодом. Допомагає перевіряти доступні профілі, формувати пошукові запити й експортувати результати у JSON, CSV та STIX 2.1. Доступність метаданих визначається платформою-джерелом.",
+    "description_en": "An open-source identifier research platform. It helps check available profiles, generate search queries and export findings to JSON, CSV and STIX 2.1. Metadata availability depends on the source platform.",
     "features_uk": [
-      "Пошук username / ID по 15 платформах",
-      "VK FOAF enrichment (закриті профілі)",
-      "Автогенерація Google/Bing/DuckDuckGo дорків",
-      "Ротація UA + сесій проти rate-limit",
-      "Експорт: JSON · CSV · STIX 2.1",
-      "Японська естетика Ghost of Tsushima (сакура, місяць, зорі на Canvas)",
-      "Self-hosted · MIT · без БД"
+      "Пошук за username та ID",
+      "Робота з доступними метаданими профілів",
+      "Формування запитів для Google, Bing і DuckDuckGo",
+      "Експорт JSON, CSV та STIX 2.1"
     ],
     "features_en": [
-      "Username / ID search across 15 platforms",
-      "VK FOAF enrichment (closed profiles)",
-      "Auto-generated Google/Bing/DuckDuckGo dorks",
-      "UA + session rotation against rate limits",
-      "Export: JSON · CSV · STIX 2.1",
-      "Japanese Ghost of Tsushima aesthetic (sakura, moon, stars on Canvas)",
-      "Self-hosted · MIT · no database"
+      "Username and ID searches",
+      "Available profile metadata",
+      "Google, Bing and DuckDuckGo query generation",
+      "JSON, CSV and STIX 2.1 export"
     ],
     "order": 4,
     "published": true,
-    "problem_uk": "Стандартні username-lookup інструменти не бачать закриті/видалені VK-профілі, швидко попадають під rate-limit і не тримають numeric ID як селектор. KagamiID закриває всі три проблеми в одному місці.",
-    "problem_en": "Standard username-lookup tools don't see closed/deleted VK profiles, hit rate limits fast, and don't handle numeric IDs as a selector. KagamiID solves all three in one place.",
+    "problem_uk": "Під час пошуку за іменем користувача або ID важливо зберігати вихідний ідентифікатор і бачити напрямки подальшої перевірки. KagamiID поєднує пошук профілів, доступні метадані та пошукові запити.",
+    "problem_en": "Username and ID research requires preserving the starting identifier and identifying useful follow-up checks. KagamiID combines profile searches, available metadata and search queries.",
     "for_whom_uk": [
       "OSINT-дослідники (self-hosted, без залежності від хмарних сервісів)",
       "Threat intel аналітики",
@@ -135,21 +46,21 @@
       "OSINT course instructors (as an open-source reference stack)"
     ],
     "how_it_works_uk": [
-      "Введи username / numeric ID / email у пошуковий рядок",
-      "KagamiID паралельно запитує 15 платформ (GitHub, VK, Reddit, TikTok, Instagram та інші)",
-      "VK-профілі додатково збагачуються через FOAF XML (навіть якщо профіль закритий чи видалений)",
-      "Автогенеруються Google/Bing/DuckDuckGo дорки для подальшого поглиблення",
-      "Експорт у JSON / CSV / STIX 2.1 для інтеграції в інші робочі процеси"
+      "Вкажіть вихідний ідентифікатор",
+      "Перегляньте відповіді підключених платформ",
+      "Перевірте доступні метадані та альтернативні збіги",
+      "Використайте запропоновані запити для продовження дослідження",
+      "Експортуйте результати"
     ],
     "how_it_works_en": [
-      "Enter a username / numeric ID / email in the search bar",
-      "KagamiID queries 15 platforms in parallel (GitHub, VK, Reddit, TikTok, Instagram and others)",
-      "VK profiles get additional FOAF XML enrichment (works even for closed/deleted profiles)",
-      "Google/Bing/DuckDuckGo dorks auto-generated for deeper follow-up",
-      "Export to JSON / CSV / STIX 2.1 for integration with other workflows"
+      "Enter the starting identifier",
+      "Review responses from connected platforms",
+      "Check available metadata and alternative matches",
+      "Use suggested queries to continue the research",
+      "Export findings"
     ],
-    "status_uk": "Активний open-source · MIT · self-hosted, без БД · live demo доступне",
-    "status_en": "Active open-source · MIT · self-hosted, no database · live demo available",
+    "status_uk": "Відкритий код · MIT · самостійне розгортання",
+    "status_en": "Open source · MIT · self-hosted",
     "highlights_uk": [
       "15 платформ",
       "MIT",
@@ -162,94 +73,11 @@
       "VK FOAF",
       "STIX 2.1 export"
     ],
+    "output_uk": "Перелік потенційних профілів, запити для подальшого пошуку й експортовані результати.",
+    "output_en": "Potential profile matches, follow-up search queries and exported findings.",
+    "limitations_uk": "Збіг імені користувача не встановлює особу. Закритий або видалений профіль може не повернути даних; доступність FOAF та інших метаданих не гарантована.",
+    "limitations_en": "A matching username does not establish identity. Private or deleted profiles may return no data; FOAF and other metadata are not guaranteed to be available.",
     "__slug": "kagamiid"
-  },
-  {
-    "name": "Kiriko · 霧子",
-    "subtitle_uk": "AI-агент для швидкої перевірки кандидатів через OSINT · «Fog leaves a trace»",
-    "subtitle_en": "AI agent for fast candidate screening via OSINT · Fog leaves a trace",
-    "tag": "AI · OSINT · Candidate Screening",
-    "year": 2026,
-    "lang": "Python 3.12 · Flask · Claude API · Telethon · PyMuPDF · python-docx",
-    "license": "Closed",
-    "live_url": "",
-    "repo_url": "https://github.com/SiLiN-ua/kiriko",
-    "cover": "/img/uploads/projects/kiriko-splash.jpg",
-    "screenshots": [
-      "/img/uploads/projects/kiriko-splash.jpg",
-      "/img/uploads/projects/kiriko-chat.jpg",
-      "/img/uploads/projects/kiriko-report.jpg",
-      "/img/uploads/projects/kiriko-export.png"
-    ],
-    "description_uk": "Закрита AI-платформа для **швидкої перевірки кандидатів** через OSINT — автономний агент на Claude AI, який виступає **робочим інструментом досвідченого аналітика**, а не його замінником. Kiriko забирає рутинну частину — паралельний збір з внутрішніх OSINT-джерел, парсинг PDF-документів, ThunderTrace по 350+ платформах, реконструкцію ідентифікаторів, форматування звіту. Аналітик отримує на вхід структурований чорновик замість купи розрізнених даних — і фокусується на головному: інтерпретації, побудові гіпотез, фінальному вердикті. Експорт: Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом. Три мови: EN / UA / RU.",
-    "description_en": "Closed AI-powered OSINT platform for **fast candidate screening** — an autonomous agent built on Claude AI, designed as a **working tool for an experienced analyst, not a replacement for one**. Kiriko takes the routine layer — parallel collection from internal OSINT sources, PDF parsing, ThunderTrace across 350+ platforms, identifier reconstruction, report formatting. The analyst receives a structured draft instead of a pile of raw data — and focuses on what matters: interpretation, hypothesis-building, final verdict. Export: Word / PDF / HTML. Cyber-noir Japanese UI with matrix effects. Trilingual: EN / UA / RU.",
-    "features_uk": [
-      "Автономний AI-агент на Claude — повний цикл скринінгу кандидата без ручного втручання",
-      "Інтеграція з операційними OSINT-джерелами (deep-пошук, соцмережі, телефон)",
-      "ThunderTrace — 350+ платформ одночасно",
-      "Реконструкція повної історії цифрового сліду об'єкта",
-      "Експорт: Word (.docx) · PDF · HTML",
-      "Matrix-UI з glitch-ефектами та символьним дощем",
-      "Мультимовність: EN · UA · RU",
-      "Історія сесій з завантажуваними звітами"
-    ],
-    "features_en": [
-      "Autonomous Claude AI agent — full candidate-screening cycle hands-off",
-      "Integrated with operational OSINT sources (deep search, social, phone)",
-      "ThunderTrace — 350+ platforms simultaneously",
-      "Reconstruction of subject's complete digital-footprint history",
-      "Export: Word (.docx) · PDF · HTML",
-      "Matrix UI with glitch effects and live character rain",
-      "Multilingual: EN · UA · RU",
-      "Session history with downloadable reports"
-    ],
-    "order": 1,
-    "published": true,
-    "problem_uk": "Ручна перевірка одного кандидата через OSINT забирає 4-6 годин. Kiriko робить повний скринінг за 10-15 хвилин, автономно.",
-    "problem_en": "Manual OSINT screening of one candidate takes 4-6 hours. Kiriko runs the full screening autonomously in 10-15 minutes.",
-    "for_whom_uk": [
-      "HR-служби · швидкий скринінг кандидатів на посади",
-      "Corporate security · insider risk перед наймом",
-      "Детективні агенції · pre-hire перевірки",
-      "Комплаєнс-департаменти · due diligence фізосіб"
-    ],
-    "for_whom_en": [
-      "HR services · fast candidate screening for hiring",
-      "Corporate security · insider risk before hire",
-      "Detective agencies · pre-hire checks",
-      "Compliance departments · individual due diligence"
-    ],
-    "how_it_works_uk": [
-      "HR / рекрутер вводить дані кандидата (ПІБ / email / телефон / username)",
-      "AI-агент на Claude формулює план перевірки і запускає паралельний збір",
-      "Підключення до внутрішніх OSINT-джерел, парсинг наданих PDF-документів, ThunderTrace по 350+ платформах",
-      "Консолідація знайденого у єдиний профіль кандидата з мітками confidence і red flags",
-      "Автогенерація готового скринінг-звіту у Word / PDF / HTML — можна одразу підшити до HR-справи"
-    ],
-    "how_it_works_en": [
-      "HR / recruiter submits candidate data (name / email / phone / username)",
-      "Claude-based AI agent formulates the check plan and launches parallel collection",
-      "Connects to internal OSINT sources, parses provided PDF documents, ThunderTrace across 350+ platforms",
-      "Consolidates findings into a single candidate profile with confidence tags and red flags",
-      "Auto-generates a ready-to-file screening report in Word / PDF / HTML"
-    ],
-    "status_uk": "Закрита commercial-платформа · в активному використанні",
-    "status_en": "Closed commercial platform · in active use",
-    "highlights_uk": [
-      "10-15 хв",
-      "350+ платформ",
-      "AI-assist, не заміна",
-      "EN · UA · RU"
-    ],
-    "highlights_en": [
-      "10-15 min",
-      "350+ platforms",
-      "AI-assist, not replacement",
-      "EN · UA · RU"
-    ],
-    "note_uk": "**Kiriko не замінює аналітика — він його підсилює.** Автоматизація закриває рутинну частину скринінгу (збір, категоризація, форматування). Але **інтерпретація знайденого, побудова гіпотези і фінальний вердикт** — залишаються за людиною. AI без досвідченого аналітика на іншому кінці дає багато даних і мало сенсу. Kiriko — це прискорювач методології, а не її заміна.",
-    "note_en": "**Kiriko doesn't replace the analyst — it amplifies them.** Automation covers the routine layer of screening (collection, categorisation, formatting). But **interpretation of findings, hypothesis-building, and the final verdict** stay with the human. AI without an experienced analyst on the other end delivers a lot of data and little meaning. Kiriko is a methodology accelerator, not a substitute for one.",
-    "__slug": "kiriko"
   },
   {
     "name": "MooN Attacks",
@@ -290,8 +118,8 @@
     ],
     "order": 5,
     "published": true,
-    "problem_uk": "Ручне відстеження воєнних подій через сотні Telegram-каналів у реальному часі — неможливе для одного аналітика. MooN Attacks автоматизує збір, класифікацію і геолокацію — залишає аналітику лише інтерпретацію.",
-    "problem_en": "Manual tracking of military events through hundreds of Telegram channels in real time is impossible for one analyst. MooN Attacks automates collection, classification, and geolocation — leaving only interpretation to the analyst.",
+    "problem_uk": "Великий потік повідомлень складно зіставляти вручну. MooN Attacks упорядковує події за часом, місцем і типом та допомагає підготувати огляд із джерелами.",
+    "problem_en": "A large stream of messages is difficult to correlate manually. MooN Attacks organizes events by time, place and type, and helps prepare a sourced overview.",
     "for_whom_uk": [
       "Воєнні аналітики",
       "Дослідники конфлікту",
@@ -332,6 +160,10 @@
       "AI reports",
       "MIT"
     ],
+    "output_uk": "Хронологія повідомлень, мапа та експортований огляд подій.",
+    "output_en": "A report timeline, map and exported event overview.",
+    "limitations_uk": "Позначки на мапі та реконструйовані маршрути відображають інтерпретацію повідомлень. Вони потребують незалежної перевірки й не є підтвердженими координатами або траєкторіями.",
+    "limitations_en": "Map markers and reconstructed routes represent an interpretation of reports. They require independent verification and are not confirmed coordinates or trajectories.",
     "__slug": "moon-attacks"
   },
   {
@@ -372,8 +204,8 @@
     ],
     "order": 6,
     "published": true,
-    "problem_uk": "Класичні username-скрипти (Sherlock, Maigret) покривають 300-400 платформ, але без візуалізації, без confidence-scoring і без автогенерації варіацій. ThunderTrace — з усім цим у продакшн-інтерфейсі.",
-    "problem_en": "Classical username scripts (Sherlock, Maigret) cover 300-400 platforms, but without visualisation, confidence scoring, or variation generation. ThunderTrace adds all of that in a production-grade interface.",
+    "problem_uk": "Один нікнейм може траплятися на багатьох платформах. ThunderTrace збирає потенційні збіги, щоб дослідник міг порівняти їх і визначити наступні кроки.",
+    "problem_en": "A username can appear across many platforms. ThunderTrace collects potential matches so a researcher can compare them and choose the next checks.",
     "for_whom_uk": [
       "OSINT-практики, які хочуть широту одним запитом",
       "Red teams та pentesters (recon-фаза)",
@@ -416,6 +248,10 @@
       "World map",
       "MIT"
     ],
+    "output_uk": "Список можливих збігів із посиланнями та експорт для подальшого аналізу.",
+    "output_en": "A list of possible matches with links and exports for further analysis.",
+    "limitations_uk": "Оцінка збігу не підтверджує належність акаунта людині. Частина платформ може блокувати запити або повертати хибні спрацьовування. Мапа не є доказом місця перебування користувача.",
+    "limitations_en": "A match score does not confirm account ownership. Platforms may block requests or produce false positives. The map is not evidence of a user’s location.",
     "__slug": "thundertrace"
   },
   {
@@ -465,8 +301,8 @@
     ],
     "order": 2,
     "published": true,
-    "problem_uk": "Жоден публічний інструмент не поєднує live-моніторинг 400+ Telegram-каналів + 9-типову класифікацію + автоматичне відтворення траєкторій атак + OCR тексту з фото. UA-War — перший, який робить це в одному інтерфейсі.",
-    "problem_en": "No public tool combines live monitoring of 400+ Telegram channels + 9-type classification + automatic attack-trajectory reconstruction + OCR of text from photos. UA-War is the first to do it in one interface.",
+    "problem_uk": "Повідомлення про події розподілені між багатьма каналами. UA-War поєднує їх у стрічку, мапу й часову послідовність для подальшого аналізу.",
+    "problem_en": "Event reports are scattered across many channels. UA-War organizes them into a feed, map and timeline for further analysis.",
     "for_whom_uk": [
       "Воєнні аналітики та дослідники",
       "Розслідувальні журналісти, що покривають Україну",
@@ -509,6 +345,182 @@
       "Auto-trajectories",
       "OCR"
     ],
+    "output_uk": "Мапа повідомлень, хронологія та звіт із посиланнями на джерела.",
+    "output_en": "A map of reported events, a timeline and a report with source links.",
+    "limitations_uk": "Класифікація, геоприв’язка та зв’язки між подіями є автоматизованими оцінками. Повідомлення можуть бути неповними, дубльованими або помилковими. Це дослідницький інструмент, а не система офіційного оповіщення.",
+    "limitations_en": "Classification, geolocation and links between events are automated estimates. Reports may be incomplete, duplicated or wrong. This is a research tool, not an official warning system.",
     "__slug": "ua-war"
+  },
+  {
+    "name": "Добрі Дрони · 🚁",
+    "subtitle_uk": "SOCMINT-моніторинг суспільних настроїв за подіями у російських регіонах",
+    "subtitle_en": "SOCMINT monitoring of public sentiment around events in Russian regions",
+    "tag": "War OSINT · SOCMINT · Sentiment",
+    "year": 2026,
+    "lang": "Python 3.11 · Flask · Telethon · Claude API · SocketIO · EventLet",
+    "license": "MIT",
+    "live_url": "",
+    "repo_url": "https://github.com/SiLiN-ua/dobri-drony",
+    "cover": "/img/uploads/projects/drony-splash.png",
+    "screenshots": [
+      "/img/uploads/projects/drony-splash.png",
+      "/img/uploads/projects/drony-login.png",
+      "/img/uploads/projects/drony-feed.png",
+      "/img/uploads/projects/drony-report.png"
+    ],
+    "description_uk": "OSINT-платформа для аналізу суспільних настроїв у російських регіонах під час резонансних подій. Збирає та класифікує повідомлення з **153 Telegram-джерел** по містах у реальному часі. Кожне повідомлення отримує тональну мітку: паніка / заперечення / роздратування / гумор / скарги / нейтральна інформація. Автоматично витягує назву міста з тексту повідомлення. AI-звіт від Claude формує структурований бриф про динаміку суспільних настроїв за обраний період.",
+    "description_en": "An OSINT platform for analysing public sentiment in Russian regions around notable events. Collects and classifies messages from **153 Telegram sources** across cities in real time. Each message is tagged by tone: panic / denial / irritation / humour / complaint / neutral information. Automatically extracts the city name from the message text. A Claude-powered AI report produces a structured brief on sentiment dynamics for a chosen period.",
+    "features_uk": [
+      "Live-моніторинг у реальному часі: 153 Telegram-джерела",
+      "Автокласифікатор тональності: паніка / заперечення / роздратування / гумор / скарги / інфо",
+      "Автовизначення міста з тексту повідомлення",
+      "AI-звіт з класифікацією настроїв через Claude",
+      "Експорт: PDF · HTML · Word (.doc) · CSV",
+      "Трекінг медіа: фото/відео з розмірами",
+      "Фільтр фіду і звітів за містами",
+      "Real-time через WebSockets + EventLet"
+    ],
+    "features_en": [
+      "Live monitoring: 153 Telegram sources in real time",
+      "Sentiment auto-classifier: panic / denial / irritation / humour / complaint / info",
+      "City detection from message text",
+      "Sentiment-classified AI report via Claude",
+      "Export: PDF · HTML · Word (.doc) · CSV",
+      "Media tracking: photo/video with size stats",
+      "City filter for feed and reports",
+      "Real-time via WebSockets + EventLet"
+    ],
+    "order": 3,
+    "published": true,
+    "problem_uk": "Для аналізу публічних реакцій потрібні впорядковані повідомлення та часовий контекст. Платформа збирає матеріали й групує їх за містами та тональністю.",
+    "problem_en": "Analyzing public reactions requires organized messages and temporal context. The platform collects material and groups it by city and sentiment.",
+    "for_whom_uk": [
+      "Аналітики інформаційно-психологічних операцій",
+      "Дослідники суспільних настроїв",
+      "OSINT-команди, які вивчають регіональну динаміку РФ"
+    ],
+    "for_whom_en": [
+      "Analysts of information-psychological operations",
+      "Researchers of public sentiment",
+      "OSINT teams studying Russian regional dynamics"
+    ],
+    "how_it_works_uk": [
+      "Live-моніторинг 153 Telegram-джерел по російських містах",
+      "Автоматична класифікація тональності: паніка / заперечення / роздратування / гумор / скарги / нейтральна інформація",
+      "Автовитяг назви міста з тексту повідомлення",
+      "Фільтр фіду і звітів за містами",
+      "AI-звіт від Claude — структурований бриф про динаміку настроїв за обраний період"
+    ],
+    "how_it_works_en": [
+      "Live monitoring of 153 Telegram sources across Russian cities",
+      "Automatic sentiment classification: panic / denial / irritation / humour / complaint / neutral info",
+      "Automatic city extraction from message text",
+      "Feed and report filters by city",
+      "Claude AI report — structured brief on sentiment dynamics for the selected period"
+    ],
+    "status_uk": "Активний · MIT · WebSockets real-time",
+    "status_en": "Active · MIT · real-time WebSockets",
+    "highlights_uk": [
+      "153 джерела",
+      "6 тонів",
+      "Real-time",
+      "MIT"
+    ],
+    "highlights_en": [
+      "153 sources",
+      "6 tones",
+      "Real-time",
+      "MIT"
+    ],
+    "output_uk": "Стрічка повідомлень і огляд тональності за вибраний період.",
+    "output_en": "A message feed and a sentiment overview for a selected period.",
+    "limitations_uk": "Вибірка Telegram-джерел не представляє все населення. Сарказм, цитати й неоднозначні формулювання можуть спотворювати автоматичну оцінку тональності.",
+    "limitations_en": "A Telegram source sample does not represent the entire population. Sarcasm, quotations and ambiguous language can distort automated sentiment labels.",
+    "__slug": "dobri-drony"
+  },
+  {
+    "name": "Kiriko · 霧子",
+    "subtitle_uk": "AI-платформа для дослідження кандидатів і підготовки звітів",
+    "subtitle_en": "AI workspace for candidate research and report drafting",
+    "tag": "AI · OSINT · Candidate Screening",
+    "year": 2026,
+    "lang": "Python 3.12 · Flask · Claude API · Telethon · PyMuPDF · python-docx",
+    "license": "Closed",
+    "live_url": "",
+    "repo_url": "https://github.com/SiLiN-ua/kiriko",
+    "cover": "/img/uploads/projects/kiriko-splash.jpg",
+    "screenshots": [
+      "/img/uploads/projects/kiriko-splash.jpg",
+      "/img/uploads/projects/kiriko-chat.jpg",
+      "/img/uploads/projects/kiriko-report.jpg",
+      "/img/uploads/projects/kiriko-export.png"
+    ],
+    "description_uk": "Робоче середовище для збору відкритих даних, аналізу наданих документів і підготовки чернетки звіту. Аналітик перевіряє джерела, зіставляє ідентифікатори та визначає, які висновки обґрунтовані. Звіт можна експортувати у Word, PDF або HTML.",
+    "description_en": "A workspace for collecting open-source findings, reviewing supplied documents and drafting reports. The analyst verifies sources, correlates identifiers and decides which conclusions are supported. Reports can be exported to Word, PDF or HTML.",
+    "features_uk": [
+      "Збір і структурування знахідок із підключених джерел",
+      "Аналіз наданих PDF-документів",
+      "Інтеграція пошуку за username",
+      "Історія дослідницьких сесій",
+      "Експорт у Word, PDF та HTML"
+    ],
+    "features_en": [
+      "Collect and organize findings from connected sources",
+      "Review supplied PDF documents",
+      "Integrated username search",
+      "Research session history",
+      "Word, PDF and HTML export"
+    ],
+    "order": 1,
+    "published": true,
+    "problem_uk": "Під час перевірки кандидата знахідки надходять із різних джерел і документів. Kiriko допомагає зібрати їх у структуровану чернетку для перевірки аналітиком.",
+    "problem_en": "Candidate research produces findings across sources and documents. Kiriko brings them into a structured draft for an analyst to review.",
+    "for_whom_uk": [
+      "HR-служби · швидкий скринінг кандидатів на посади",
+      "Corporate security · insider risk перед наймом",
+      "Детективні агенції · pre-hire перевірки",
+      "Комплаєнс-департаменти · due diligence фізосіб"
+    ],
+    "for_whom_en": [
+      "HR services · fast candidate screening for hiring",
+      "Corporate security · insider risk before hire",
+      "Detective agencies · pre-hire checks",
+      "Compliance departments · individual due diligence"
+    ],
+    "how_it_works_uk": [
+      "Аналітик задає питання та вихідні ідентифікатори",
+      "Платформа збирає доступні знахідки й опрацьовує надані документи",
+      "Дані структуруються у чернетку звіту",
+      "Аналітик перевіряє джерела, виправляє помилки та формулює висновок",
+      "Перевірений матеріал експортується у потрібний формат"
+    ],
+    "how_it_works_en": [
+      "The analyst sets the question and starting identifiers",
+      "The platform collects available findings and processes supplied documents",
+      "Findings are organized into a report draft",
+      "The analyst checks sources, corrects errors and writes the conclusion",
+      "The reviewed material is exported in the required format"
+    ],
+    "status_uk": "Закрита платформа",
+    "status_en": "Closed platform",
+    "highlights_uk": [
+      "Чернетка звіту",
+      "Word · PDF · HTML",
+      "Перевірка аналітиком",
+      "EN · UA · RU"
+    ],
+    "highlights_en": [
+      "Report drafting",
+      "Word · PDF · HTML",
+      "Analyst review",
+      "EN · UA · RU"
+    ],
+    "note_uk": "**Kiriko не замінює аналітика — він його підсилює.** Автоматизація закриває рутинну частину скринінгу (збір, категоризація, форматування). Але **інтерпретація знайденого, побудова гіпотези і фінальний вердикт** — залишаються за людиною. AI без досвідченого аналітика на іншому кінці дає багато даних і мало сенсу. Kiriko — це прискорювач методології, а не її заміна.",
+    "note_en": "**Kiriko doesn't replace the analyst — it amplifies them.** Automation covers the routine layer of screening (collection, categorisation, formatting). But **interpretation of findings, hypothesis-building, and the final verdict** stay with the human. AI without an experienced analyst on the other end delivers a lot of data and little meaning. Kiriko is a methodology accelerator, not a substitute for one.",
+    "output_uk": "Чернетка звіту зі зібраними знахідками для перевірки, редагування та експорту.",
+    "output_en": "A report draft containing collected findings, ready for review, editing and export.",
+    "limitations_uk": "Час роботи залежить від джерел, доступу та обсягу матеріалу. AI може помилятися; збіги та оцінки ризику потребують перевірки. Платформа не ухвалює кадрових рішень.",
+    "limitations_en": "Runtime depends on sources, access and material volume. AI can make mistakes; matches and risk assessments need verification. The platform does not make hiring decisions.",
+    "__slug": "kiriko"
   }
 ]

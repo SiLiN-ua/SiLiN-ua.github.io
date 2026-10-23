@@ -39,8 +39,8 @@
   ],
   "order": 3,
   "published": true,
-  "problem_uk": "Немає публічної платформи, яка системно моніторить настрої у російських регіонах під час резонансних подій. Dobri Drony закриває цей пробіл — автоматизований SOCMINT для суспільно-сентиментальної аналітики.",
-  "problem_en": "No public platform systematically monitors sentiment across Russian regions during notable events. Dobri Drony closes this gap — automated SOCMINT for public-sentiment analytics.",
+  "problem_uk": "Для аналізу публічних реакцій потрібні впорядковані повідомлення та часовий контекст. Платформа збирає матеріали й групує їх за містами та тональністю.",
+  "problem_en": "Analyzing public reactions requires organized messages and temporal context. The platform collects material and groups it by city and sentiment.",
   "for_whom_uk": [
     "Аналітики інформаційно-психологічних операцій",
     "Дослідники суспільних настроїв",
@@ -78,5 +78,9 @@
     "6 tones",
     "Real-time",
     "MIT"
-  ]
+  ],
+  "output_uk": "Стрічка повідомлень і огляд тональності за вибраний період.",
+  "output_en": "A message feed and a sentiment overview for a selected period.",
+  "limitations_uk": "Вибірка Telegram-джерел не представляє все населення. Сарказм, цитати й неоднозначні формулювання можуть спотворювати автоматичну оцінку тональності.",
+  "limitations_en": "A Telegram source sample does not represent the entire population. Sarcasm, quotations and ambiguous language can distort automated sentiment labels."
 }

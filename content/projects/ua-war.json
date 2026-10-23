@@ -45,8 +45,8 @@
   ],
   "order": 2,
   "published": true,
-  "problem_uk": "Жоден публічний інструмент не поєднує live-моніторинг 400+ Telegram-каналів + 9-типову класифікацію + автоматичне відтворення траєкторій атак + OCR тексту з фото. UA-War — перший, який робить це в одному інтерфейсі.",
-  "problem_en": "No public tool combines live monitoring of 400+ Telegram channels + 9-type classification + automatic attack-trajectory reconstruction + OCR of text from photos. UA-War is the first to do it in one interface.",
+  "problem_uk": "Повідомлення про події розподілені між багатьма каналами. UA-War поєднує їх у стрічку, мапу й часову послідовність для подальшого аналізу.",
+  "problem_en": "Event reports are scattered across many channels. UA-War organizes them into a feed, map and timeline for further analysis.",
   "for_whom_uk": [
     "Воєнні аналітики та дослідники",
     "Розслідувальні журналісти, що покривають Україну",
@@ -88,5 +88,9 @@
     "9 event types",
     "Auto-trajectories",
     "OCR"
-  ]
+  ],
+  "output_uk": "Мапа повідомлень, хронологія та звіт із посиланнями на джерела.",
+  "output_en": "A map of reported events, a timeline and a report with source links.",
+  "limitations_uk": "Класифікація, геоприв’язка та зв’язки між подіями є автоматизованими оцінками. Повідомлення можуть бути неповними, дубльованими або помилковими. Це дослідницький інструмент, а не система офіційного оповіщення.",
+  "limitations_en": "Classification, geolocation and links between events are automated estimates. Reports may be incomplete, duplicated or wrong. This is a research tool, not an official warning system."
 }

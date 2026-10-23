@@ -991,6 +991,7 @@
           ${problem ? `<p class="proj-row__problem">${problem}</p>` : ''}
           ${whomShort ? `<div class="proj-row__whom-wrap"><span class="proj-row__whom-label">${L('for_whom', 'Для кого')}</span><ul class="proj-row__whom">${whomShort}</ul></div>` : ''}
           ${chips ? `<div class="proj-row__chips">${chips}</div>` : ''}
+          <p class="proj-row__status">${escapeHtml(tr(item, 'status') || '')}</p>
           <div class="proj-row__actions">${btnMore}${btnRepo}</div>
         </div>
       </article>`;
@@ -1030,7 +1031,19 @@
     const howItWorks = tr(item, 'how_it_works') || item.how_it_works_uk || [];
     const features = tr(item, 'features') || item.features_uk || [];
     const cover = item.cover ? `<div class="proj-hero"><img src="${escapeHtml(item.cover)}" alt="${name}" loading="lazy"></div>` : '';
-    const shots = (item.screenshots || []).slice(1).map(s => `<div class="proj-shot"><img src="${escapeHtml(s)}" alt="" loading="lazy"></div>`).join('');
+    const screens = (item.screenshots || []).slice(1);
+    const screenNames = {
+      kiriko: [['Робочий запит','Research query'],['Чернетка звіту','Report draft'],['Експорт','Export']],
+      'ua-war': [['Мапа','Map'],['Події на мапі','Mapped reports'],['Зв’язки подій','Event connections'],['Стрічка джерел','Source feed'],['Звіт','Report']],
+      'dobri-drony': [['Вхід','Sign in'],['Стрічка повідомлень','Message feed'],['Огляд тональності','Sentiment overview']],
+      kagamiid: [['Пошук','Search'],['Пошукові запити','Search queries']],
+      'moon-attacks': [['Робочий інтерфейс','Workspace']],
+      thundertrace: [['Пошук і результати','Search and results'],['Огляд результатів','Results overview']]
+    };
+    const en = LANG() === 'en';
+    const screenLabel = i => (screenNames[slug]?.[i] || ['Інтерфейс','Interface'])[en ? 1 : 0];
+    const shots = screens.length ? `<section class="project-tour" aria-label="${en ? 'Interface walkthrough' : 'Огляд інтерфейсу'}"><h2>${en ? 'See the workflow' : 'Як виглядає робота'}</h2><p class="contact-hint">${en ? 'Screenshots from the project. Select a screen to explore the interface.' : 'Скриншоти проєкту. Оберіть екран, щоб переглянути інтерфейс.'}</p><div class="project-tour__tabs">${screens.map((s,i)=>`<button type="button" data-project-screen="${i}" aria-pressed="${i===0}" aria-controls="project-screen">${String(i+1).padStart(2,'0')} / ${escapeHtml(screenLabel(i))}</button>`).join('')}</div><figure id="project-screen"><a href="${escapeHtml(screens[0])}" target="_blank" rel="noopener"><img src="${escapeHtml(screens[0])}" alt="${name}: ${escapeHtml(screenLabel(0))}" loading="lazy"></a><figcaption>${escapeHtml(screenLabel(0))} · ${en ? 'Open image at full size ↗' : 'Відкрити зображення в повному розмірі ↗'}</figcaption></figure></section>` : '';
+    const outputBlock = `<div class="project-output"><h3>${en ? 'What you get' : 'Результат роботи'}</h3><p>${escapeHtml(tr(item,'output') || '')}</p><h3>${en ? 'What needs checking' : 'Що потребує перевірки'}</h3><p>${escapeHtml(tr(item,'limitations') || '')}</p></div>`;
     const chips = highlights.length
       ? `<div class="proj-chips">${highlights.map(h => `<span class="proj-chip">${escapeHtml(h)}</span>`).join('')}</div>` : '';
     const note = escapeHtml(tr(item, 'note') || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -1065,6 +1078,8 @@
         </div>
         ${problemBlock}
         ${noteBlock}
+        ${shots}
+        ${outputBlock}
         <div class="proj-grid">
           <div class="proj-grid__main">
             ${howBlock}
@@ -1074,12 +1089,20 @@
           </div>
           <aside class="proj-grid__side">
             ${metaRows ? `<div class="proj-meta">${metaRows}</div>` : ''}
-            <div class="proj-actions">${btnRepo}</div>
+            <div class="proj-actions">${btnRepo}<a class="action primary" href="contact.html?topic=development&amp;project=${encodeURIComponent(slug)}#contact-form">${en ? 'Discuss this project ↗' : 'Обговорити проєкт ↗'}</a></div>
           </aside>
         </div>
-        ${shots ? `<div class="proj-shots">${shots}</div>` : ''}
       </article>
       ${backLink}`;
+    target.querySelectorAll('[data-project-screen]').forEach(button => button.addEventListener('click', () => {
+      const index = Number(button.dataset.projectScreen);
+      target.querySelectorAll('[data-project-screen]').forEach(b => b.setAttribute('aria-pressed',String(b===button)));
+      const figure = target.querySelector('#project-screen');
+      figure.querySelector('a').href = screens[index];
+      figure.querySelector('img').src = screens[index];
+      figure.querySelector('img').alt = `${item.name}: ${screenLabel(index)}`;
+      figure.querySelector('figcaption').textContent = screenLabel(index) + ' · ' + (en ? 'Open image at full size ↗' : 'Відкрити зображення в повному розмірі ↗');
+    }));
   }
 
   async function renderEducation(targetSelector) {

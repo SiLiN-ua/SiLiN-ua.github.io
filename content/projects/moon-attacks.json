@@ -37,8 +37,8 @@
   ],
   "order": 5,
   "published": true,
-  "problem_uk": "Ручне відстеження воєнних подій через сотні Telegram-каналів у реальному часі — неможливе для одного аналітика. MooN Attacks автоматизує збір, класифікацію і геолокацію — залишає аналітику лише інтерпретацію.",
-  "problem_en": "Manual tracking of military events through hundreds of Telegram channels in real time is impossible for one analyst. MooN Attacks automates collection, classification, and geolocation — leaving only interpretation to the analyst.",
+  "problem_uk": "Великий потік повідомлень складно зіставляти вручну. MooN Attacks упорядковує події за часом, місцем і типом та допомагає підготувати огляд із джерелами.",
+  "problem_en": "A large stream of messages is difficult to correlate manually. MooN Attacks organizes events by time, place and type, and helps prepare a sourced overview.",
   "for_whom_uk": [
     "Воєнні аналітики",
     "Дослідники конфлікту",
@@ -78,5 +78,9 @@
     "Live map",
     "AI reports",
     "MIT"
-  ]
+  ],
+  "output_uk": "Хронологія повідомлень, мапа та експортований огляд подій.",
+  "output_en": "A report timeline, map and exported event overview.",
+  "limitations_uk": "Позначки на мапі та реконструйовані маршрути відображають інтерпретацію повідомлень. Вони потребують незалежної перевірки й не є підтвердженими координатами або траєкторіями.",
+  "limitations_en": "Map markers and reconstructed routes represent an interpretation of reports. They require independent verification and are not confirmed coordinates or trajectories."
 }

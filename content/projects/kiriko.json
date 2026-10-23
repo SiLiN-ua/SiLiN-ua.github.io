@@ -1,7 +1,7 @@
 {
   "name": "Kiriko · 霧子",
-  "subtitle_uk": "AI-агент для швидкої перевірки кандидатів через OSINT · «Fog leaves a trace»",
-  "subtitle_en": "AI agent for fast candidate screening via OSINT · Fog leaves a trace",
+  "subtitle_uk": "AI-платформа для дослідження кандидатів і підготовки звітів",
+  "subtitle_en": "AI workspace for candidate research and report drafting",
   "tag": "AI · OSINT · Candidate Screening",
   "year": 2026,
   "lang": "Python 3.12 · Flask · Claude API · Telethon · PyMuPDF · python-docx",
@@ -15,32 +15,26 @@
     "/img/uploads/projects/kiriko-report.jpg",
     "/img/uploads/projects/kiriko-export.png"
   ],
-  "description_uk": "Закрита AI-платформа для **швидкої перевірки кандидатів** через OSINT — автономний агент на Claude AI, який виступає **робочим інструментом досвідченого аналітика**, а не його замінником. Kiriko забирає рутинну частину — паралельний збір з внутрішніх OSINT-джерел, парсинг PDF-документів, ThunderTrace по 350+ платформах, реконструкцію ідентифікаторів, форматування звіту. Аналітик отримує на вхід структурований чорновик замість купи розрізнених даних — і фокусується на головному: інтерпретації, побудові гіпотез, фінальному вердикті. Експорт: Word / PDF / HTML. Інтерфейс — cyber-noir у японській естетиці з matrix-ефектом. Три мови: EN / UA / RU.",
-  "description_en": "Closed AI-powered OSINT platform for **fast candidate screening** — an autonomous agent built on Claude AI, designed as a **working tool for an experienced analyst, not a replacement for one**. Kiriko takes the routine layer — parallel collection from internal OSINT sources, PDF parsing, ThunderTrace across 350+ platforms, identifier reconstruction, report formatting. The analyst receives a structured draft instead of a pile of raw data — and focuses on what matters: interpretation, hypothesis-building, final verdict. Export: Word / PDF / HTML. Cyber-noir Japanese UI with matrix effects. Trilingual: EN / UA / RU.",
+  "description_uk": "Робоче середовище для збору відкритих даних, аналізу наданих документів і підготовки чернетки звіту. Аналітик перевіряє джерела, зіставляє ідентифікатори та визначає, які висновки обґрунтовані. Звіт можна експортувати у Word, PDF або HTML.",
+  "description_en": "A workspace for collecting open-source findings, reviewing supplied documents and drafting reports. The analyst verifies sources, correlates identifiers and decides which conclusions are supported. Reports can be exported to Word, PDF or HTML.",
   "features_uk": [
-    "Автономний AI-агент на Claude — повний цикл скринінгу кандидата без ручного втручання",
-    "Інтеграція з операційними OSINT-джерелами (deep-пошук, соцмережі, телефон)",
-    "ThunderTrace — 350+ платформ одночасно",
-    "Реконструкція повної історії цифрового сліду об'єкта",
-    "Експорт: Word (.docx) · PDF · HTML",
-    "Matrix-UI з glitch-ефектами та символьним дощем",
-    "Мультимовність: EN · UA · RU",
-    "Історія сесій з завантажуваними звітами"
+    "Збір і структурування знахідок із підключених джерел",
+    "Аналіз наданих PDF-документів",
+    "Інтеграція пошуку за username",
+    "Історія дослідницьких сесій",
+    "Експорт у Word, PDF та HTML"
   ],
   "features_en": [
-    "Autonomous Claude AI agent — full candidate-screening cycle hands-off",
-    "Integrated with operational OSINT sources (deep search, social, phone)",
-    "ThunderTrace — 350+ platforms simultaneously",
-    "Reconstruction of subject's complete digital-footprint history",
-    "Export: Word (.docx) · PDF · HTML",
-    "Matrix UI with glitch effects and live character rain",
-    "Multilingual: EN · UA · RU",
-    "Session history with downloadable reports"
+    "Collect and organize findings from connected sources",
+    "Review supplied PDF documents",
+    "Integrated username search",
+    "Research session history",
+    "Word, PDF and HTML export"
   ],
   "order": 1,
   "published": true,
-  "problem_uk": "Ручна перевірка одного кандидата через OSINT забирає 4-6 годин. Kiriko робить повний скринінг за 10-15 хвилин, автономно.",
-  "problem_en": "Manual OSINT screening of one candidate takes 4-6 hours. Kiriko runs the full screening autonomously in 10-15 minutes.",
+  "problem_uk": "Під час перевірки кандидата знахідки надходять із різних джерел і документів. Kiriko допомагає зібрати їх у структуровану чернетку для перевірки аналітиком.",
+  "problem_en": "Candidate research produces findings across sources and documents. Kiriko brings them into a structured draft for an analyst to review.",
   "for_whom_uk": [
     "HR-служби · швидкий скринінг кандидатів на посади",
     "Corporate security · insider risk перед наймом",
@@ -54,33 +48,37 @@
     "Compliance departments · individual due diligence"
   ],
   "how_it_works_uk": [
-    "HR / рекрутер вводить дані кандидата (ПІБ / email / телефон / username)",
-    "AI-агент на Claude формулює план перевірки і запускає паралельний збір",
-    "Підключення до внутрішніх OSINT-джерел, парсинг наданих PDF-документів, ThunderTrace по 350+ платформах",
-    "Консолідація знайденого у єдиний профіль кандидата з мітками confidence і red flags",
-    "Автогенерація готового скринінг-звіту у Word / PDF / HTML — можна одразу підшити до HR-справи"
+    "Аналітик задає питання та вихідні ідентифікатори",
+    "Платформа збирає доступні знахідки й опрацьовує надані документи",
+    "Дані структуруються у чернетку звіту",
+    "Аналітик перевіряє джерела, виправляє помилки та формулює висновок",
+    "Перевірений матеріал експортується у потрібний формат"
   ],
   "how_it_works_en": [
-    "HR / recruiter submits candidate data (name / email / phone / username)",
-    "Claude-based AI agent formulates the check plan and launches parallel collection",
-    "Connects to internal OSINT sources, parses provided PDF documents, ThunderTrace across 350+ platforms",
-    "Consolidates findings into a single candidate profile with confidence tags and red flags",
-    "Auto-generates a ready-to-file screening report in Word / PDF / HTML"
+    "The analyst sets the question and starting identifiers",
+    "The platform collects available findings and processes supplied documents",
+    "Findings are organized into a report draft",
+    "The analyst checks sources, corrects errors and writes the conclusion",
+    "The reviewed material is exported in the required format"
   ],
-  "status_uk": "Закрита commercial-платформа · в активному використанні",
-  "status_en": "Closed commercial platform · in active use",
+  "status_uk": "Закрита платформа",
+  "status_en": "Closed platform",
   "highlights_uk": [
-    "10-15 хв",
-    "350+ платформ",
-    "AI-assist, не заміна",
+    "Чернетка звіту",
+    "Word · PDF · HTML",
+    "Перевірка аналітиком",
     "EN · UA · RU"
   ],
   "highlights_en": [
-    "10-15 min",
-    "350+ platforms",
-    "AI-assist, not replacement",
+    "Report drafting",
+    "Word · PDF · HTML",
+    "Analyst review",
     "EN · UA · RU"
   ],
   "note_uk": "**Kiriko не замінює аналітика — він його підсилює.** Автоматизація закриває рутинну частину скринінгу (збір, категоризація, форматування). Але **інтерпретація знайденого, побудова гіпотези і фінальний вердикт** — залишаються за людиною. AI без досвідченого аналітика на іншому кінці дає багато даних і мало сенсу. Kiriko — це прискорювач методології, а не її заміна.",
-  "note_en": "**Kiriko doesn't replace the analyst — it amplifies them.** Automation covers the routine layer of screening (collection, categorisation, formatting). But **interpretation of findings, hypothesis-building, and the final verdict** stay with the human. AI without an experienced analyst on the other end delivers a lot of data and little meaning. Kiriko is a methodology accelerator, not a substitute for one."
+  "note_en": "**Kiriko doesn't replace the analyst — it amplifies them.** Automation covers the routine layer of screening (collection, categorisation, formatting). But **interpretation of findings, hypothesis-building, and the final verdict** stay with the human. AI without an experienced analyst on the other end delivers a lot of data and little meaning. Kiriko is a methodology accelerator, not a substitute for one.",
+  "output_uk": "Чернетка звіту зі зібраними знахідками для перевірки, редагування та експорту.",
+  "output_en": "A report draft containing collected findings, ready for review, editing and export.",
+  "limitations_uk": "Час роботи залежить від джерел, доступу та обсягу матеріалу. AI може помилятися; збіги та оцінки ризику потребують перевірки. Платформа не ухвалює кадрових рішень.",
+  "limitations_en": "Runtime depends on sources, access and material volume. AI can make mistakes; matches and risk assessments need verification. The platform does not make hiring decisions."
 }

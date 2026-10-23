@@ -22,6 +22,7 @@
   <url><loc>https://yehorselin.com/guide.html</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/speaking.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/contact.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://yehorselin.com/mentoring.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/blog/inside-the-machine.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://yehorselin.com/cases/waze.html</loc><priority>0.8</priority></url>
   <url><loc>https://yehorselin.com/cases/telegram-deletion.html</loc><priority>0.8</priority></url>

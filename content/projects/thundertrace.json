@@ -36,8 +36,8 @@
   ],
   "order": 6,
   "published": true,
-  "problem_uk": "Класичні username-скрипти (Sherlock, Maigret) покривають 300-400 платформ, але без візуалізації, без confidence-scoring і без автогенерації варіацій. ThunderTrace — з усім цим у продакшн-інтерфейсі.",
-  "problem_en": "Classical username scripts (Sherlock, Maigret) cover 300-400 platforms, but without visualisation, confidence scoring, or variation generation. ThunderTrace adds all of that in a production-grade interface.",
+  "problem_uk": "Один нікнейм може траплятися на багатьох платформах. ThunderTrace збирає потенційні збіги, щоб дослідник міг порівняти їх і визначити наступні кроки.",
+  "problem_en": "A username can appear across many platforms. ThunderTrace collects potential matches so a researcher can compare them and choose the next checks.",
   "for_whom_uk": [
     "OSINT-практики, які хочуть широту одним запитом",
     "Red teams та pentesters (recon-фаза)",
@@ -79,5 +79,9 @@
     "3 UI languages",
     "World map",
     "MIT"
-  ]
+  ],
+  "output_uk": "Список можливих збігів із посиланнями та експорт для подальшого аналізу.",
+  "output_en": "A list of possible matches with links and exports for further analysis.",
+  "limitations_uk": "Оцінка збігу не підтверджує належність акаунта людині. Частина платформ може блокувати запити або повертати хибні спрацьовування. Мапа не є доказом місця перебування користувача.",
+  "limitations_en": "A match score does not confirm account ownership. Platforms may block requests or produce false positives. The map is not evidence of a user’s location."
 }
