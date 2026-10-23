@@ -726,13 +726,18 @@
     target.innerHTML = items.map(renderRecCard).join('');
   }
 
+  let toolsStackDataCache = null;
+
   async function renderToolsStack(targetSelector) {
     const target = document.querySelector(targetSelector);
     if (!target) return;
     try {
-      const res = await fetch('content/tools-stack.json?t=' + Date.now(), { cache: 'no-store' });
-      const data = await res.json();
-      renderStackHTML(target, data);
+      if (!toolsStackDataCache) {
+        const res = await fetch('content/tools-stack.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        toolsStackDataCache = await res.json();
+      }
+      renderStackHTML(target, toolsStackDataCache);
     } catch (e) {
       console.error('renderToolsStack error:', e);
       const dict = (window.__i18nDict && window.__i18nDict[LANG()]) || {};
@@ -774,19 +779,81 @@
       return acc;
     }, []);
     const slugify = (value) => 'tools-' + String(value).toLowerCase().normalize('NFKD').replace(/[^a-z0-9а-яіїєґ]+/gi, '-').replace(/^-|-$/g, '');
+    const compact = (value, limit = 190) => {
+      const text = String(value || '').replace(/\s+/g, ' ').trim();
+      if (text.length <= limit) return text;
+      const cut = text.slice(0, limit + 1);
+      const sentence = cut.lastIndexOf('. ');
+      const space = cut.lastIndexOf(' ');
+      return cut.slice(0, sentence > limit * .55 ? sentence + 1 : space > 0 ? space : limit).trim() + '…';
+    };
+    const hasRussianMarkers = (value) => /[ыэъё]/i.test(value || '') || /\b(поиск|проверка|скачивание|архив|база данных|номер телефона|главная страница|исследуйте|смотреть)\b/i.test(value || '');
+    const cleanName = (l, host) => {
+      const preferred = lang === 'uk' && l.title_uk ? l.title_uk : (l.real_title || l.title || host);
+      const alternative = l.real_title || host;
+      let name = lang === 'uk' && hasRussianMarkers(preferred) ? alternative : preferred;
+      name = String(name || host).replace(/\s+/g, ' ').trim();
+      if (name.length > 92) {
+        const parts = name.split(/\s[|·]\s|\s[-—]\s/).filter(Boolean);
+        if (parts[0] && parts[0].length >= 3) name = parts[0];
+      }
+      return compact(name, 92);
+    };
+    const purpose = (catTitle, groupTitle) => {
+      const cat = String(catTitle).toLowerCase();
+      if (lang === 'en') {
+        if (/geoint|map|geo/.test(cat)) return 'Maps and geospatial sources for verifying location and spatial context.';
+        if (/email|mail/.test(cat)) return 'Search and verification resources for public email-related signals.';
+        if (/phone|номер/.test(cat)) return 'Open-source checks for phone numbers and related public signals.';
+        if (/username|нік|user/.test(cat)) return 'Cross-platform username search and account correlation.';
+        if (/reverse image|photo|image/.test(cat)) return 'Image search and visual-source verification.';
+        if (/whois|dns|domain/.test(cat)) return 'Domain, DNS and public infrastructure research.';
+        if (/metadata|exif/.test(cat)) return 'Metadata inspection for images, documents and other files.';
+        if (/archive/.test(cat)) return 'Archived web pages and historical online content.';
+        return `A resource for ${catTitle} within the ${groupTitle} research direction.`;
+      }
+      if (/geoint|карт|гео/.test(cat)) return 'Карти й геопросторові джерела для перевірки місця та просторового контексту.';
+      if (/пошт|email|mail/.test(cat)) return 'Пошук і перевірка відкритих сигналів, пов’язаних з електронною поштою.';
+      if (/телефон|номер/.test(cat)) return 'Перевірка телефонних номерів і пов’язаних із ними відкритих сигналів.';
+      if (/username|нік|користувач/.test(cat)) return 'Кросплатформний пошук username та зіставлення облікових записів.';
+      if (/реверс|фото|зображ/.test(cat)) return 'Пошук зображень і перевірка візуальних джерел.';
+      if (/whois|dns|домен/.test(cat)) return 'Дослідження доменів, DNS та публічної цифрової інфраструктури.';
+      if (/метадан|exif/.test(cat)) return 'Перегляд метаданих зображень, документів та інших файлів.';
+      if (/архів/.test(cat)) return 'Пошук архівних версій вебсторінок та історичного онлайн-контенту.';
+      if (/реєстр/.test(groupTitle.toLowerCase())) return `Пошук у відкритих джерелах і реєстрах за напрямом «${catTitle}».`;
+      if (/соціаль/.test(groupTitle.toLowerCase())) return `Пошук і перевірка відкритих даних платформи ${catTitle}.`;
+      if (/верифікац/.test(groupTitle.toLowerCase())) return `Перевірка цифрових матеріалів за напрямом «${catTitle}».`;
+      return `Ресурс для завдань категорії «${catTitle}» у напрямі «${groupTitle}».`;
+    };
+    const cleanDescription = (l, catTitle, groupTitle) => {
+      const raw = lang === 'uk' ? l.description_uk : l.description_en;
+      const weak = !raw || l.synth_desc || /^Онлайн-ресурс на\b/i.test(raw) || /�|浜у|涓|蹇/.test(raw) || (lang === 'uk' && hasRussianMarkers(raw));
+      return compact(weak ? purpose(catTitle, groupTitle) : raw, 220);
+    };
+    const safeUrl = (value) => {
+      try {
+        const url = new URL(value);
+        const exposesLookup = /@|%40|(?:\d{1,3}\.){3}\d{1,3}|\/user\/|\/profile\/\d{8,}|\/peer\//i.test(value);
+        if (exposesLookup) return url.origin + '/';
+        url.search = '';
+        url.hash = '';
+        return url.toString();
+      } catch { return value; }
+    };
     const rowHtml = (l, catTitle, groupTitle) => {
       let host = '';
       try { host = new URL(l.url).hostname.replace(/^www\./, ''); } catch {}
-      const name = (lang === 'uk' ? (l.title_uk || l.real_title || l.title) : (l.real_title || l.title)) || host;
-      const desc = (lang === 'uk' ? (l.description_uk || l.description) : (l.description_en || l.description)) || l.title || '';
+      const name = cleanName(l, host);
+      const desc = cleanDescription(l, catTitle, groupTitle);
+      const href = safeUrl(l.url);
       const searchStr = (name + ' ' + desc + ' ' + host + ' ' + catTitle + ' ' + groupTitle).toLowerCase();
       const hasUk = !!l.description_uk;
       return `
         <tr class="stack__row" data-search="${escapeHtml(searchStr)}" data-has-uk="${hasUk ? '1' : '0'}">
-          <td class="stack__name">${escapeHtml(name)}</td>
-          <td class="stack__desc">${escapeHtml(desc)}</td>
+          <td class="stack__name"><span class="stack__name-text">${escapeHtml(name)}</span></td>
+          <td class="stack__desc"><span class="stack__desc-text">${escapeHtml(desc)}</span></td>
           <td class="stack__link">
-            <a href="${escapeHtml(l.url)}" target="_blank" rel="noopener nofollow">
+            <a href="${escapeHtml(href)}" target="_blank" rel="noopener nofollow">
               <span class="stack__link-host">${escapeHtml(host)}</span>
               <span class="stack__link-arrow">↗</span>
             </a>

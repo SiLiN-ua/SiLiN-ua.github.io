@@ -235,7 +235,15 @@
 .page-tools .stack__row { border-bottom-color: rgba(111, 147, 151, .12); }
 .page-tools .stack__row:hover { background: rgba(98, 148, 142, .055); }
 .page-tools .stack__name { color: #bdccd0; font-size: 12px; }
+.page-tools .stack__name-text,
+.page-tools .stack__desc-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.page-tools .stack__name-text { -webkit-line-clamp: 2; }
 .page-tools .stack__desc { color: #71878f; font-size: 11px; }
+.page-tools .stack__desc-text { -webkit-line-clamp: 3; }
 .page-tools .stack__link a { padding: 6px 9px; color: #8eb8b1; border-color: var(--tools-line); background: transparent; font-size: 9px; }
 .page-tools .stack__link a:hover { color: #d5e8e3; background: rgba(74, 112, 109, .22); border-color: var(--tools-line-hi); box-shadow: none; }
 .page-tools .stack__empty { display: none; padding: 48px 20px; border: 1px solid var(--tools-line); color: #80949b; text-align: center; font-size: 14px; }
