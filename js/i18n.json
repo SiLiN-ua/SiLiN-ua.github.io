@@ -1,5 +1,11 @@
 {
   "uk": {
+    "home.mentor.label": "НАВЧАННЯ / ПРАКТИКА",
+    "home.mentor.title": "Від знахідки — до обґрунтованого висновку.",
+    "home.mentor.desc": "Індивідуальне навчання, розбір вашого кейсу або заняття для команди. Працюємо над реальними питаннями: де шукати, як перевіряти та що можна стверджувати.",
+    "home.mentor.cta": "Обрати формат навчання",
+    "home.mentor.quote": "«Презентація була надзвичайно змістовною, а сам Єгор — щедрий у часі та інформації».",
+    "home.mentor.source": "Повна рекомендація ↗",
     "brand.first": "Єгор",
     "brand.last": "Селін",
     "brand.dot": ".",
@@ -849,6 +855,12 @@
     "contact.format.team": "Навчання команди"
   },
   "en": {
+    "home.mentor.label": "MENTORING / PRACTICE",
+    "home.mentor.title": "Turn a finding into a conclusion you can defend.",
+    "home.mentor.desc": "One-to-one mentoring, a review of your case, or training for your team. Work through practical questions: where to look, how to verify and what the evidence supports.",
+    "home.mentor.cta": "Explore training formats",
+    "home.mentor.quote": "“His presentation was extremely high value and he was more than generous with his time and information.”",
+    "home.mentor.source": "Read the full recommendation ↗",
     "brand.first": "Yehor",
     "brand.last": "Selin",
     "brand.dot": ".",
