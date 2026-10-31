@@ -679,9 +679,14 @@
     const desc     = escapeHtml(tr(item, 'description') || item.description || '');
     const link     = item.link ? escapeHtml(item.link) : '';
     const linkLbl  = escapeHtml(tr(item, 'link_label') || item.link_label || '');
-    const img      = item.image
-      ? `<div class="cert__img award__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
-      : '';
+    const images   = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
+    const img      = images.length
+      ? `<div class="speaking-gallery speaking-gallery--${Math.min(images.length, 3)}">${images.map((src, index) =>
+          `<button class="speaking-gallery__item" type="button" aria-label="${title} — ${index + 1}"><img src="${escapeHtml(src)}" alt="${title} — ${index + 1}" loading="lazy"></button>`
+        ).join('')}</div>`
+      : item.image
+        ? `<div class="cert__img award__img"><img src="${escapeHtml(item.image)}" alt="${title}" loading="lazy"></div>`
+        : '';
     const meta = [];
     if (format)   meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.format']||'Формат')}</span>${format}</div>`);
     if (audience) meta.push(`<div class="cert__meta-row"><span>${escapeHtml(dict['meta.audience']||'Аудиторія')}</span>${audience}</div>`);

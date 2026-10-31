@@ -1,5 +1,32 @@
 [
   {
+    "title_uk": "Перше заняття в ДДУВС як запрошеного OSINT-експерта",
+    "title_en": "First DDUVS session as a guest OSINT expert",
+    "date": "2026-10-31T00:00:00.000Z",
+    "format_uk": "Очне практичне заняття",
+    "format_en": "In-person practical session",
+    "audience_uk": "Курсанти 1 курсу факультету підготовки фахівців для підрозділів кримінальної поліції · спеціалізація «Кримінальний аналіз»",
+    "audience_en": "First-year cadets, Faculty for Training Specialists for Criminal Police Units · Criminal Analysis specialisation",
+    "location_uk": "Дніпровський державний університет внутрішніх справ · Дніпро",
+    "location_en": "Dnipro State University of Internal Affairs · Dnipro",
+    "topic_uk": "Від повідомлення до встановлення особи: навчальний OSINT-кейс",
+    "topic_en": "From a single message to identity resolution: a practical OSINT case",
+    "description_uk": "31 жовтня провів своє перше заняття в ДДУВС як запрошений експерт з OSINT. Розібрали навчальний кейс: як від одного публічного повідомлення перейти до технічних ідентифікаторів, перевірити гіпотези та встановити особу. Я продовжую працювати в OSINT і паралельно починаю передавати цей практичний досвід майбутнім фахівцям.",
+    "description_en": "On 31 October, I delivered my first session at DDUVS as a guest OSINT expert. We worked through a practical case showing how a single public message can lead to technical identifiers, testable hypotheses and, ultimately, identity resolution. I continue my day-to-day work in OSINT while adding another direction to it: sharing current investigative practice with future professionals.",
+    "link": "",
+    "link_label_uk": "",
+    "link_label_en": "",
+    "images": [
+      "img/uploads/events/dduvs-guest-expert-2026-10-31/dduvs-guest-expert-2026-10-31-03.png",
+      "img/uploads/events/dduvs-guest-expert-2026-10-31/dduvs-guest-expert-2026-10-31-01.png",
+      "img/uploads/events/dduvs-guest-expert-2026-10-31/dduvs-guest-expert-2026-10-31-02.png"
+    ],
+    "image": "img/uploads/events/dduvs-guest-expert-2026-10-31/dduvs-guest-expert-2026-10-31-03.png",
+    "order": 0,
+    "published": true,
+    "__slug": "dduvs-guest-expert-2026-10-31"
+  },
+  {
     "title_uk": "Міжнародне 1-on-1 менторство OSINT-фахівців",
     "title_en": "International 1-on-1 OSINT mentoring",
     "date": "2026-05-01T00:00:00.000Z",
