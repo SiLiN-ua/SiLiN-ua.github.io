@@ -677,7 +677,8 @@
     const location = escapeHtml(tr(item, 'location') || item.location || '');
     const topic    = escapeHtml(tr(item, 'topic') || item.topic || '');
     const desc     = escapeHtml(tr(item, 'description') || item.description || '');
-    const link     = item.link ? escapeHtml(item.link) : '';
+    const linkRaw  = tr(item, 'link') || item.link || '';
+    const link     = linkRaw ? escapeHtml(linkRaw) : '';
     const linkLbl  = escapeHtml(tr(item, 'link_label') || item.link_label || '');
     const images   = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
     const img      = images.length
